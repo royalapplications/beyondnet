@@ -140,12 +140,6 @@ final class TestClassesTests: XCTestCase {
 			value
 		}
 		
-		guard let charReturnerDelegate else {
-			XCTFail("CharReturnerDelegate ctor should return an instance")
-			
-			return
-		}
-		
 		guard let retVal = try? testClass.getChar(charReturnerDelegate) else {
 			XCTFail("TestClass.GetChar should not throw and return a char")
 			
@@ -174,8 +168,13 @@ final class TestClassesTests: XCTestCase {
             return
         }
         
-        var bookToModify: Beyond_NET_Sample_Book? = originalBook
-        var originalBookRet: Beyond_NET_Sample_Book?
+        var bookToModify = originalBook
+        
+        guard var originalBookRet = try? Beyond_NET_Sample_Book() else {
+            XCTFail()
+            
+            return
+        }
         
         XCTAssertNoThrow(try testClass.modifyByRefBookAndReturnOriginalBookAsOutParameter(&bookToModify,
                                                                                           targetBook,

@@ -31,11 +31,7 @@ final class SystemActionTests: XCTestCase {
 			numberOfTimesCalled += 1
 		}
 		
-		guard let action = System_Action(closure) else {
-			XCTFail("System.Action ctor should return an instance")
-			
-			return
-		}
+		let action = System_Action(closure)
 		
 		XCTAssertEqual(0, numberOfTimesCalled)
 		

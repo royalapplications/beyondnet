@@ -37,7 +37,7 @@ final class AsyncTestTests: XCTestCase {
             return
         }
         
-        guard let result = try? task.result(System.Int32.typeOf),
+        guard let result = try? task.result(TResult: System.Int32.typeOf),
               let unboxedResult = try? result.castToInt32() else {
             XCTFail("System.Threading.Tasks.Task.Wait should not throw and return an instance")
             
@@ -65,11 +65,7 @@ final class AsyncTestTests: XCTestCase {
             return
         }
         
-        guard let transformerDelegate = Beyond.NET.Sample.AsyncTests_TransformerDelegate(multiplierFunc) else {
-            XCTFail("Beyond.NET.Sample.AsyncTests.TransformerDelegate ctor should not throw and return an instance")
-            
-            return
-        }
+        let transformerDelegate = Beyond.NET.Sample.AsyncTests_TransformerDelegate(multiplierFunc)
         
         guard let task = try? asyncTests.transformNumbersAsync(number1, number2, transformerDelegate) else {
             XCTFail("Beyond.NET.Sample.AsyncTests.TransformNumbersAsync should not throw and return an instance of a task")
@@ -85,7 +81,7 @@ final class AsyncTestTests: XCTestCase {
             return
         }
         
-        guard let result = try? task.result(System.Int32.typeOf),
+        guard let result = try? task.result(TResult: System.Int32.typeOf),
               let unboxedResult = try? result.castToInt32() else {
             XCTFail("System.Threading.Tasks.Task.Wait should not throw and return an instance")
             

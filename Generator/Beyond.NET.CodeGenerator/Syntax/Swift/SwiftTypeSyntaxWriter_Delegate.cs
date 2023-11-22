@@ -560,14 +560,13 @@ public partial class SwiftTypeSyntaxWriter
             .Value($"{cTypeName}_Create(__outerContext, __cFunction, __cDestructorFunction)")
             .ToString();
         
-        sb.AppendLine($"guard {letDelegateC} else {{ return nil }}");
+        sb.AppendLine(letDelegateC);
         sb.AppendLine();
         sb.AppendLine("self.init(handle: __delegateC)");
 
         string initDecl = Builder.Initializer()
             .Public()
             .Convenience()
-            .Failable()
             .Parameters(Builder.FuncSignatureParameter("_", "__closure", $"@escaping {closureTypeTypeAliasName}").ToString())
             .Implementation(sb.ToString())
             .ToString();

@@ -29,15 +29,17 @@ final class TestRecordTests: XCTestCase {
         
         XCTAssertEqual(expectedString, retString)
         
-        var deconstructedStringDN: System.String?
-        
-        XCTAssertNoThrow(try aRecord.deconstruct(&deconstructedStringDN))
-        
-        guard let deconstructedString = deconstructedStringDN?.string() else {
-            XCTFail("Failed to convert a System.String to a swift string")
+        guard let emptyStringDN = System.String.empty else {
+            XCTFail("System.String.Empty should return a value")
             
             return
         }
+        
+        var deconstructedStringDN = emptyStringDN
+        
+        XCTAssertNoThrow(try aRecord.deconstruct(&deconstructedStringDN))
+        
+        let deconstructedString = deconstructedStringDN.string()
         
         XCTAssertEqual(expectedString, deconstructedString)
     }

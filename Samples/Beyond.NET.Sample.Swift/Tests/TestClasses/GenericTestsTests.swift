@@ -15,7 +15,7 @@ final class GenericTestsTests: XCTestCase {
 	func testReturnGenericTypeWithReferenceType() {
 		let genericType = System_String.typeOf
 		
-		guard let typeRet = try? Beyond_NET_Sample_GenericTests.returnGenericType(genericType) else {
+        guard let typeRet = try? Beyond_NET_Sample_GenericTests.returnGenericType(T: genericType) else {
 			XCTFail("ReturnGenericType<System.String> should not throw and return an instance")
 			
 			return
@@ -32,21 +32,21 @@ final class GenericTestsTests: XCTestCase {
 		let genericType = System_Guid.typeOf
 		
 		do {
-			_ = try Beyond_NET_Sample_GenericTests.returnGenericType(genericType)
+            _ = try Beyond_NET_Sample_GenericTests.returnGenericType(T: genericType)
 			
 			XCTFail("This should fail")
 		} catch { }
 	}
 	
 	func testReturnGenericTypeAsOutParameter() {
-		let genericType = System_String.typeOf
-		
-		var typeRet: System_Type?
-		
-		XCTAssertNoThrow(try Beyond_NET_Sample_GenericTests.returnGenericTypeAsOutParameter(genericType,
-																											 &typeRet))
-		
-		guard let typeRet else {
+        let genericType = System_String.typeOf
+        
+        var typeRet: System_Type?
+        
+        XCTAssertNoThrow(try Beyond_NET_Sample_GenericTests.returnGenericTypeAsOutParameter(T: genericType,
+                                                                                            &typeRet))
+        
+        guard let typeRet else {
 			XCTFail("ReturnGenericTypeAsOutParameter<System.String> should not throw and return an instance as out parameter")
 			
 			return
@@ -59,15 +59,15 @@ final class GenericTestsTests: XCTestCase {
 	func testReturnGenericTypeAsRefParameter() {
 		let genericType = System_String.typeOf
 		let systemObjectType = System_Object.typeOf
-		
-		var typeRet: System_Type? = systemObjectType
-		
-		XCTAssertNoThrow(try Beyond_NET_Sample_GenericTests.returnGenericTypeAsRefParameter(genericType,
-																											 &typeRet))
-		
-		guard let typeRet else {
-			XCTFail("ReturnGenericTypeAsRefParameter<System.String> should not throw and return an instance as ref parameter")
-			
+        
+        var typeRet: System_Type? = systemObjectType
+        
+        XCTAssertNoThrow(try Beyond_NET_Sample_GenericTests.returnGenericTypeAsRefParameter(T: genericType,
+                                                                                            &typeRet))
+        
+        guard let typeRet else {
+            XCTFail("ReturnGenericTypeAsRefParameter<System.String> should not throw and return an instance as ref parameter")
+            
 			return
 		}
 		
@@ -77,20 +77,20 @@ final class GenericTestsTests: XCTestCase {
 	
 	func testReturnGenericTypes() {
 		let genericType1 = System_String.typeOf
-		let genericType2 = System_Array.typeOf
-		
-		guard let typesArrayRet = try? Beyond_NET_Sample_GenericTests.returnGenericTypes(genericType1,
-																										  genericType2) else {
-			XCTFail("ReturnGenericTypes<System.String, System.Array> should not throw and return an instance")
-			
-			return
-		}
-		
-		let typesLength = (try? typesArrayRet.length) ?? -1
-		XCTAssertEqual(2, .init(typesLength))
-		
-		for idx in 0..<typesLength {
-			guard let type = try? typesArrayRet.getValue(idx) else {
+        let genericType2 = System_Array.typeOf
+        
+        guard let typesArrayRet = try? Beyond_NET_Sample_GenericTests.returnGenericTypes(T1: genericType1,
+                                                                                         T2: genericType2) else {
+            XCTFail("ReturnGenericTypes<System.String, System.Array> should not throw and return an instance")
+            
+            return
+        }
+        
+        let typesLength = (try? typesArrayRet.length) ?? -1
+        XCTAssertEqual(2, .init(typesLength))
+        
+        for idx in 0..<typesLength {
+            guard let type = try? typesArrayRet.getValue(idx) else {
 				XCTFail("System.Array.GetValue should not throw and return an instance")
 				
 				return
@@ -118,7 +118,7 @@ final class GenericTestsTests: XCTestCase {
 		let genericType = System_String.typeOf
 		
 		do {
-			let defaultValueRet = try Beyond_NET_Sample_GenericTests.returnDefaultValueOfGenericType(genericType)
+            let defaultValueRet = try Beyond_NET_Sample_GenericTests.returnDefaultValueOfGenericType(T: genericType)
 			
 			XCTAssertNil(defaultValueRet)
 		} catch {
@@ -133,7 +133,7 @@ final class GenericTestsTests: XCTestCase {
 		
 		let numberOfElements: Int32 = 10
 		
-		guard let defaultValuesArrayRet = try? Beyond_NET_Sample_GenericTests.returnArrayOfDefaultValuesOfGenericType(genericType,
+        guard let defaultValuesArrayRet = try? Beyond_NET_Sample_GenericTests.returnArrayOfDefaultValuesOfGenericType(T: genericType,
 																																	   numberOfElements) else {
 			XCTFail("ReturnArrayOfDefaultValuesOfGenericType should not throw and return an instance")
 			
@@ -174,7 +174,7 @@ final class GenericTestsTests: XCTestCase {
 			return
 		}
 
-		guard let arrayRet = try? genericTests.returnArrayOfRepeatedValues(systemObjectType,
+        guard let arrayRet = try? genericTests.returnArrayOfRepeatedValues(T: systemObjectType,
 																		   value,
 																		   numberOfElements) else {
 			XCTFail("ReturnArrayOfRepeatedValues should not throw and return an instance")
@@ -210,14 +210,14 @@ final class GenericTestsTests: XCTestCase {
 		
 		let expectedString = "Hello World"
 		let expectedStringDN = expectedString.dotNETString()
-		
-		XCTAssertNoThrow(try value.append(expectedStringDN))
-		
-		guard let keyValuePair = try? Beyond_NET_Sample_GenericTests.returnSimpleKeyValuePair(keyType,
-																											   valueType,
-																											   key,
-																											   value) else {
-			XCTFail("ReturnSimpleKeyValuePair should not throw and return an instance")
+        
+        XCTAssertNoThrow(try value.append(expectedStringDN))
+        
+        guard let keyValuePair = try? Beyond_NET_Sample_GenericTests.returnSimpleKeyValuePair(TKey: keyType,
+                                                                                              TValue: valueType,
+                                                                                              key,
+                                                                                              value) else {
+            XCTFail("ReturnSimpleKeyValuePair should not throw and return an instance")
 			
 			return
 		}
@@ -259,15 +259,15 @@ final class GenericTestsTests: XCTestCase {
 			
 			return
 		}
-		
-		do {
-			_ = try Beyond_NET_Sample_GenericTests.returnSimpleKeyValuePair(keyType,
-																							 valueType,
-																							 key,
-																							 value)
-			
-			XCTFail("ReturnSimpleKeyValuePair should throw an exception because the value passed in does not match the provided generic type")
-		} catch {
+        
+        do {
+            _ = try Beyond_NET_Sample_GenericTests.returnSimpleKeyValuePair(TKey: keyType,
+                                                                            TValue: valueType,
+                                                                            key,
+                                                                            value)
+            
+            XCTFail("ReturnSimpleKeyValuePair should throw an exception because the value passed in does not match the provided generic type")
+        } catch {
 			let exceptionMessage = error.localizedDescription
 			
 			XCTAssertEqual(exceptionMessage, "Object of type \'System.Object\' cannot be converted to type \'System.Text.StringBuilder\'.")
@@ -305,12 +305,12 @@ final class GenericTestsTests: XCTestCase {
 		
 		let expectedString = strings.joined(separator: separator)
 
-		guard let stringRet = try? Beyond_NET_Sample_GenericTests.returnStringOfJoinedArray(stringType,
-																											 arrayOfStrings,
-																											 separatorDN)?.string() else {
-			XCTFail("ReturnStringOfJoinedArray should not throw and return an instance")
-			
-			return
+        guard let stringRet = try? Beyond_NET_Sample_GenericTests.returnStringOfJoinedArray(T: stringType,
+                                                                                            arrayOfStrings,
+                                                                                            separatorDN)?.string() else {
+            XCTFail("ReturnStringOfJoinedArray should not throw and return an instance")
+            
+            return
 		}
 		
 		XCTAssertEqual(expectedString, stringRet)
@@ -350,7 +350,7 @@ final class GenericTestsTests: XCTestCase {
 		
 		XCTAssertTrue(listOfStrings.is(listOfStringType))
 		
-		guard let arrayOfStrings = try? listOfStrings.toArray(systemStringType) else {
+        guard let arrayOfStrings = try? listOfStrings.toArray(T: systemStringType) else {
 			XCTFail("System.Collections.Generic.List<System.String>.ToArray should not throw and return an instance")
 			
 			return

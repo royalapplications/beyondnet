@@ -567,6 +567,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         foreach (GeneratedMember swiftGeneratedMember in generatedMembers) {
             string extensionMethod = SwiftMethodSyntaxWriter.WriteExtensionMethod(
                 swiftGeneratedMember,
+                isExtendedTypeOptional,
                 typeDescriptorRegistry
             );
 

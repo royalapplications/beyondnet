@@ -1,5 +1,5 @@
-// Number of generated types: 1756
-// Number of generated members: 5647
+// Number of generated types: 1758
+// Number of generated members: 5651
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -5578,6 +5578,9 @@ typedef void* Beyond_NET_Sample_SubclassingTests_MyBaseClass_t;
 
 typedef void* Beyond_NET_Sample_SubclassingTests_MySubClass_t;
 
+typedef void* Beyond_NET_Sample_Source_NullableValueTypeTests_t;
+
+
 typedef void* Beyond_NET_Sample_Transformer_BuiltInTransformers_t;
 
 typedef void* System_Action_t;
@@ -5611,7 +5614,7 @@ typedef void (*System_Reflection_TypeFilter_CDestructorFunction_t)(void* context
 
 typedef bool (*System_Reflection_TypeFilter_CFunction_t)(
 	void* context,
-	System_Type_t _Nullable m,
+	System_Type_t _Nonnull m,
 	System_Object_t _Nullable filterCriteria
 );
 
@@ -5630,7 +5633,7 @@ typedef void (*System_AsyncCallback_CDestructorFunction_t)(void* context);
 
 typedef void (*System_AsyncCallback_CFunction_t)(
 	void* context,
-	System_IAsyncResult_t _Nullable ar
+	System_IAsyncResult_t _Nonnull ar
 );
 
 
@@ -5639,8 +5642,8 @@ typedef void (*System_Reflection_ModuleResolveEventHandler_CDestructorFunction_t
 
 typedef System_Reflection_Module_t _Nullable (*System_Reflection_ModuleResolveEventHandler_CFunction_t)(
 	void* context,
-	System_Object_t _Nullable sender,
-	System_ResolveEventArgs_t _Nullable e
+	System_Object_t _Nonnull sender,
+	System_ResolveEventArgs_t _Nonnull e
 );
 
 
@@ -5649,7 +5652,7 @@ typedef void (*System_Reflection_MemberFilter_CDestructorFunction_t)(void* conte
 
 typedef bool (*System_Reflection_MemberFilter_CFunction_t)(
 	void* context,
-	System_Reflection_MemberInfo_t _Nullable m,
+	System_Reflection_MemberInfo_t _Nonnull m,
 	System_Object_t _Nullable filterCriteria
 );
 
@@ -5668,8 +5671,8 @@ typedef void (*System_UnhandledExceptionEventHandler_CDestructorFunction_t)(void
 
 typedef void (*System_UnhandledExceptionEventHandler_CFunction_t)(
 	void* context,
-	System_Object_t _Nullable sender,
-	System_UnhandledExceptionEventArgs_t _Nullable e
+	System_Object_t _Nonnull sender,
+	System_UnhandledExceptionEventArgs_t _Nonnull e
 );
 
 
@@ -5679,7 +5682,7 @@ typedef void (*System_EventHandler_CDestructorFunction_t)(void* context);
 typedef void (*System_EventHandler_CFunction_t)(
 	void* context,
 	System_Object_t _Nullable sender,
-	System_EventArgs_t _Nullable e
+	System_EventArgs_t _Nonnull e
 );
 
 
@@ -5689,7 +5692,7 @@ typedef void (*System_AssemblyLoadEventHandler_CDestructorFunction_t)(void* cont
 typedef void (*System_AssemblyLoadEventHandler_CFunction_t)(
 	void* context,
 	System_Object_t _Nullable sender,
-	System_AssemblyLoadEventArgs_t _Nullable args
+	System_AssemblyLoadEventArgs_t _Nonnull args
 );
 
 
@@ -5699,7 +5702,7 @@ typedef void (*System_ResolveEventHandler_CDestructorFunction_t)(void* context);
 typedef System_Reflection_Assembly_t _Nullable (*System_ResolveEventHandler_CFunction_t)(
 	void* context,
 	System_Object_t _Nullable sender,
-	System_ResolveEventArgs_t _Nullable args
+	System_ResolveEventArgs_t _Nonnull args
 );
 
 
@@ -5725,8 +5728,8 @@ typedef void (*Beyond_NET_Sample_MoveDelegate_CDestructorFunction_t)(void* conte
 
 typedef Beyond_NET_Sample_Address_t _Nullable (*Beyond_NET_Sample_MoveDelegate_CFunction_t)(
 	void* context,
-	System_String_t _Nullable newStreet,
-	System_String_t _Nullable newCity
+	System_String_t _Nonnull newStreet,
+	System_String_t _Nonnull newCity
 );
 
 
@@ -5735,7 +5738,7 @@ typedef void (*Beyond_NET_Sample_AnimalCreatorDelegate_CDestructorFunction_t)(vo
 
 typedef Beyond_NET_Sample_IAnimal_t _Nullable (*Beyond_NET_Sample_AnimalCreatorDelegate_CFunction_t)(
 	void* context,
-	System_String_t _Nullable animalName
+	System_String_t _Nonnull animalName
 );
 
 
@@ -5772,7 +5775,7 @@ typedef void (*Beyond_NET_Sample_EventTests_ValueChangedDelegate_CDestructorFunc
 
 typedef void (*Beyond_NET_Sample_EventTests_ValueChangedDelegate_CFunction_t)(
 	void* context,
-	System_Object_t _Nullable sender,
+	System_Object_t _Nonnull sender,
 	int32_t newValue
 );
 
@@ -5798,7 +5801,7 @@ typedef void (*Beyond_NET_Sample_SpanTest_ByteArrayToSpanDelegate_CDestructorFun
 
 typedef DNReadOnlySpanOfByte (*Beyond_NET_Sample_SpanTest_ByteArrayToSpanDelegate_CFunction_t)(
 	void* context,
-	System_Byte_Array_t _Nullable bytes
+	System_Byte_Array_t _Nonnull bytes
 );
 
 
@@ -5830,7 +5833,7 @@ typedef void (*Beyond_NET_Sample_Transformer_StringTransformerDelegate_CDestruct
 
 typedef System_String_t _Nullable (*Beyond_NET_Sample_Transformer_StringTransformerDelegate_CFunction_t)(
 	void* context,
-	System_String_t _Nullable inputString
+	System_String_t _Nonnull inputString
 );
 
 
@@ -6516,7 +6519,7 @@ System_Object_Destroy(
 #pragma mark - BEGIN APIs of System.Type
 System_Type_t _Nullable /* System.Type */
 System_Type_GetType(
-	System_String_t _Nullable /* System.String */ typeName,
+	System_String_t _Nonnull /* System.String */ typeName,
 	bool /* System.Boolean */ throwOnError,
 	bool /* System.Boolean */ ignoreCase,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -6524,14 +6527,14 @@ System_Type_GetType(
 
 System_Type_t _Nullable /* System.Type */
 System_Type_GetType_1(
-	System_String_t _Nullable /* System.String */ typeName,
+	System_String_t _Nonnull /* System.String */ typeName,
 	bool /* System.Boolean */ throwOnError,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Type_t _Nullable /* System.Type */
 System_Type_GetType_2(
-	System_String_t _Nullable /* System.String */ typeName,
+	System_String_t _Nonnull /* System.String */ typeName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -6599,7 +6602,7 @@ System_Type_IsAssignableTo(
 System_Reflection_ConstructorInfo_t _Nullable /* System.Reflection.ConstructorInfo */
 System_Type_GetConstructor(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -6607,7 +6610,7 @@ System_Reflection_ConstructorInfo_t _Nullable /* System.Reflection.ConstructorIn
 System_Type_GetConstructor_1(
 	System_Type_t _Nullable /* System.Type */ self,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -6616,7 +6619,7 @@ System_Type_GetConstructor_2(
 	System_Type_t _Nullable /* System.Type */ self,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ binder,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Reflection_ParameterModifier_Array_t _Nullable /* System.Reflection.ParameterModifier[] */ modifiers,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -6627,7 +6630,7 @@ System_Type_GetConstructor_3(
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ binder,
 	System_Reflection_CallingConventions_t /* System.Reflection.CallingConventions */ callConvention,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Reflection_ParameterModifier_Array_t _Nullable /* System.Reflection.ParameterModifier[] */ modifiers,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -6648,14 +6651,14 @@ System_Type_GetConstructors_1(
 System_Reflection_EventInfo_t _Nullable /* System.Reflection.EventInfo */
 System_Type_GetEvent(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_EventInfo_t _Nullable /* System.Reflection.EventInfo */
 System_Type_GetEvent_1(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -6676,14 +6679,14 @@ System_Type_GetEvents_1(
 System_Reflection_FieldInfo_t _Nullable /* System.Reflection.FieldInfo */
 System_Type_GetField(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_FieldInfo_t _Nullable /* System.Reflection.FieldInfo */
 System_Type_GetField_1(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -6722,14 +6725,14 @@ System_Type_GetFunctionPointerParameterTypes(
 System_Reflection_MemberInfo_Array_t _Nullable /* System.Reflection.MemberInfo[] */
 System_Type_GetMember(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_MemberInfo_Array_t _Nullable /* System.Reflection.MemberInfo[] */
 System_Type_GetMember_1(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -6737,7 +6740,7 @@ System_Type_GetMember_1(
 System_Reflection_MemberInfo_Array_t _Nullable /* System.Reflection.MemberInfo[] */
 System_Type_GetMember_2(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_MemberTypes_t /* System.Reflection.MemberTypes */ type,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -6752,7 +6755,7 @@ System_Type_GetMembers(
 System_Reflection_MemberInfo_t _Nullable /* System.Reflection.MemberInfo */
 System_Type_GetMemberWithSameMetadataDefinitionAs(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_Reflection_MemberInfo_t _Nullable /* System.Reflection.MemberInfo */ member,
+	System_Reflection_MemberInfo_t _Nonnull /* System.Reflection.MemberInfo */ member,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -6766,14 +6769,14 @@ System_Type_GetMembers_1(
 System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */
 System_Type_GetMethod(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */
 System_Type_GetMethod_1(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -6781,25 +6784,25 @@ System_Type_GetMethod_1(
 System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */
 System_Type_GetMethod_2(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */
 System_Type_GetMethod_3(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */
 System_Type_GetMethod_4(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Reflection_ParameterModifier_Array_t _Nullable /* System.Reflection.ParameterModifier[] */ modifiers,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -6807,10 +6810,10 @@ System_Type_GetMethod_4(
 System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */
 System_Type_GetMethod_5(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ binder,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Reflection_ParameterModifier_Array_t _Nullable /* System.Reflection.ParameterModifier[] */ modifiers,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -6818,11 +6821,11 @@ System_Type_GetMethod_5(
 System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */
 System_Type_GetMethod_6(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ binder,
 	System_Reflection_CallingConventions_t /* System.Reflection.CallingConventions */ callConvention,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Reflection_ParameterModifier_Array_t _Nullable /* System.Reflection.ParameterModifier[] */ modifiers,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -6830,18 +6833,18 @@ System_Type_GetMethod_6(
 System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */
 System_Type_GetMethod_7(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	int32_t /* System.Int32 */ genericParameterCount,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */
 System_Type_GetMethod_8(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	int32_t /* System.Int32 */ genericParameterCount,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Reflection_ParameterModifier_Array_t _Nullable /* System.Reflection.ParameterModifier[] */ modifiers,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -6849,11 +6852,11 @@ System_Type_GetMethod_8(
 System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */
 System_Type_GetMethod_9(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	int32_t /* System.Int32 */ genericParameterCount,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ binder,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Reflection_ParameterModifier_Array_t _Nullable /* System.Reflection.ParameterModifier[] */ modifiers,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -6861,12 +6864,12 @@ System_Type_GetMethod_9(
 System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */
 System_Type_GetMethod_10(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	int32_t /* System.Int32 */ genericParameterCount,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ binder,
 	System_Reflection_CallingConventions_t /* System.Reflection.CallingConventions */ callConvention,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Reflection_ParameterModifier_Array_t _Nullable /* System.Reflection.ParameterModifier[] */ modifiers,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -6887,14 +6890,14 @@ System_Type_GetMethods_1(
 System_Type_t _Nullable /* System.Type */
 System_Type_GetNestedType(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Type_t _Nullable /* System.Type */
 System_Type_GetNestedType_1(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -6915,14 +6918,14 @@ System_Type_GetNestedTypes_1(
 System_Reflection_PropertyInfo_t _Nullable /* System.Reflection.PropertyInfo */
 System_Type_GetProperty(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_PropertyInfo_t _Nullable /* System.Reflection.PropertyInfo */
 System_Type_GetProperty_1(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -6930,7 +6933,7 @@ System_Type_GetProperty_1(
 System_Reflection_PropertyInfo_t _Nullable /* System.Reflection.PropertyInfo */
 System_Type_GetProperty_2(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Type_t _Nullable /* System.Type */ returnType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -6938,26 +6941,26 @@ System_Type_GetProperty_2(
 System_Reflection_PropertyInfo_t _Nullable /* System.Reflection.PropertyInfo */
 System_Type_GetProperty_3(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_PropertyInfo_t _Nullable /* System.Reflection.PropertyInfo */
 System_Type_GetProperty_4(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Type_t _Nullable /* System.Type */ returnType,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_PropertyInfo_t _Nullable /* System.Reflection.PropertyInfo */
 System_Type_GetProperty_5(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Type_t _Nullable /* System.Type */ returnType,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Reflection_ParameterModifier_Array_t _Nullable /* System.Reflection.ParameterModifier[] */ modifiers,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -6965,11 +6968,11 @@ System_Type_GetProperty_5(
 System_Reflection_PropertyInfo_t _Nullable /* System.Reflection.PropertyInfo */
 System_Type_GetProperty_6(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ binder,
 	System_Type_t _Nullable /* System.Type */ returnType,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Reflection_ParameterModifier_Array_t _Nullable /* System.Reflection.ParameterModifier[] */ modifiers,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -6995,13 +6998,13 @@ System_Type_GetDefaultMembers(
 
 System_RuntimeTypeHandle_t _Nonnull /* System.RuntimeTypeHandle */
 System_Type_GetTypeHandle(
-	System_Object_t _Nullable /* System.Object */ o,
+	System_Object_t _Nonnull /* System.Object */ o,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Type_Array_t _Nullable /* System.Type[] */
 System_Type_GetTypeArray(
-	System_Object_Array_t _Nullable /* System.Object[] */ args,
+	System_Object_Array_t _Nonnull /* System.Object[] */ args,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -7041,27 +7044,27 @@ System_Type_GetTypeFromCLSID_3(
 
 System_Type_t _Nullable /* System.Type */
 System_Type_GetTypeFromProgID(
-	System_String_t _Nullable /* System.String */ progID,
+	System_String_t _Nonnull /* System.String */ progID,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Type_t _Nullable /* System.Type */
 System_Type_GetTypeFromProgID_1(
-	System_String_t _Nullable /* System.String */ progID,
+	System_String_t _Nonnull /* System.String */ progID,
 	bool /* System.Boolean */ throwOnError,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Type_t _Nullable /* System.Type */
 System_Type_GetTypeFromProgID_2(
-	System_String_t _Nullable /* System.String */ progID,
+	System_String_t _Nonnull /* System.String */ progID,
 	System_String_t _Nullable /* System.String */ server,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Type_t _Nullable /* System.Type */
 System_Type_GetTypeFromProgID_3(
-	System_String_t _Nullable /* System.String */ progID,
+	System_String_t _Nonnull /* System.String */ progID,
 	System_String_t _Nullable /* System.String */ server,
 	bool /* System.Boolean */ throwOnError,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -7070,7 +7073,7 @@ System_Type_GetTypeFromProgID_3(
 System_Object_t _Nullable /* System.Object */
 System_Type_InvokeMember(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ invokeAttr,
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ binder,
 	System_Object_t _Nullable /* System.Object */ target,
@@ -7081,7 +7084,7 @@ System_Type_InvokeMember(
 System_Object_t _Nullable /* System.Object */
 System_Type_InvokeMember_1(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ invokeAttr,
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ binder,
 	System_Object_t _Nullable /* System.Object */ target,
@@ -7093,7 +7096,7 @@ System_Type_InvokeMember_1(
 System_Object_t _Nullable /* System.Object */
 System_Type_InvokeMember_2(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ invokeAttr,
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ binder,
 	System_Object_t _Nullable /* System.Object */ target,
@@ -7107,14 +7110,14 @@ System_Type_InvokeMember_2(
 System_Type_t _Nullable /* System.Type */
 System_Type_GetInterface(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Type_t _Nullable /* System.Type */
 System_Type_GetInterface_1(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	bool /* System.Boolean */ ignoreCase,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -7128,7 +7131,7 @@ System_Type_GetInterfaces(
 System_Reflection_InterfaceMapping_t _Nonnull /* System.Reflection.InterfaceMapping */
 System_Type_GetInterfaceMap(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_Type_t _Nullable /* System.Type */ interfaceType,
+	System_Type_t _Nonnull /* System.Type */ interfaceType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -7186,7 +7189,7 @@ System_Type_MakeByRefType(
 System_Type_t _Nullable /* System.Type */
 System_Type_MakeGenericType(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_Type_Array_t _Nullable /* System.Type[] */ typeArguments,
+	System_Type_Array_t _Nonnull /* System.Type[] */ typeArguments,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -7198,8 +7201,8 @@ System_Type_MakePointerType(
 
 System_Type_t _Nullable /* System.Type */
 System_Type_MakeGenericSignatureType(
-	System_Type_t _Nullable /* System.Type */ genericTypeDefinition,
-	System_Type_Array_t _Nullable /* System.Type[] */ typeArguments,
+	System_Type_t _Nonnull /* System.Type */ genericTypeDefinition,
+	System_Type_Array_t _Nonnull /* System.Type[] */ typeArguments,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -7237,7 +7240,7 @@ System_Type_Equals_1(
 
 System_Type_t _Nullable /* System.Type */
 System_Type_ReflectionOnlyGetType(
-	System_String_t _Nullable /* System.String */ typeName,
+	System_String_t _Nonnull /* System.String */ typeName,
 	bool /* System.Boolean */ throwIfNotFound,
 	bool /* System.Boolean */ ignoreCase,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -7246,14 +7249,14 @@ System_Type_ReflectionOnlyGetType(
 bool /* System.Boolean */
 System_Type_IsEnumDefined(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_Type_GetEnumName(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -7266,7 +7269,7 @@ System_Type_GetEnumNames(
 System_Type_Array_t _Nullable /* System.Type[] */
 System_Type_FindInterfaces(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_Reflection_TypeFilter_t _Nullable /* System.Reflection.TypeFilter */ filter,
+	System_Reflection_TypeFilter_t _Nonnull /* System.Reflection.TypeFilter */ filter,
 	System_Object_t _Nullable /* System.Object */ filterCriteria,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -7284,7 +7287,7 @@ System_Type_FindMembers(
 bool /* System.Boolean */
 System_Type_IsSubclassOf(
 	System_Type_t _Nullable /* System.Type */ self,
-	System_Type_t _Nullable /* System.Type */ c,
+	System_Type_t _Nonnull /* System.Type */ c,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -7836,14 +7839,14 @@ System_Type_Destroy(
 bool /* System.Boolean */
 System_Reflection_MemberInfo_HasSameMetadataDefinitionAs(
 	System_Reflection_MemberInfo_t _Nullable /* System.Reflection.MemberInfo */ self,
-	System_Reflection_MemberInfo_t _Nullable /* System.Reflection.MemberInfo */ other,
+	System_Reflection_MemberInfo_t _Nonnull /* System.Reflection.MemberInfo */ other,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Reflection_MemberInfo_IsDefined(
 	System_Reflection_MemberInfo_t _Nullable /* System.Reflection.MemberInfo */ self,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -7858,7 +7861,7 @@ System_Reflection_MemberInfo_GetCustomAttributes(
 System_Object_Array_t _Nullable /* System.Object[] */
 System_Reflection_MemberInfo_GetCustomAttributes_1(
 	System_Reflection_MemberInfo_t _Nullable /* System.Reflection.MemberInfo */ self,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -7961,7 +7964,7 @@ System_Reflection_ICustomAttributeProvider_GetCustomAttributes(
 System_Object_Array_t _Nullable /* System.Object[] */
 System_Reflection_ICustomAttributeProvider_GetCustomAttributes_1(
 	System_Reflection_ICustomAttributeProvider_t _Nullable /* System.Reflection.ICustomAttributeProvider */ self,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -7969,7 +7972,7 @@ System_Reflection_ICustomAttributeProvider_GetCustomAttributes_1(
 bool /* System.Boolean */
 System_Reflection_ICustomAttributeProvider_IsDefined(
 	System_Reflection_ICustomAttributeProvider_t _Nullable /* System.Reflection.ICustomAttributeProvider */ self,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -7992,9 +7995,9 @@ System_Reflection_ICustomAttributeProvider_Destroy(
 #pragma mark - BEGIN APIs of System.Array
 void /* System.Void */
 System_Array_ConstrainedCopy(
-	System_Array_t _Nullable /* System.Array */ sourceArray,
+	System_Array_t _Nonnull /* System.Array */ sourceArray,
 	int32_t /* System.Int32 */ sourceIndex,
-	System_Array_t _Nullable /* System.Array */ destinationArray,
+	System_Array_t _Nonnull /* System.Array */ destinationArray,
 	int32_t /* System.Int32 */ destinationIndex,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -8002,13 +8005,13 @@ System_Array_ConstrainedCopy(
 
 void /* System.Void */
 System_Array_Clear(
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Array_Clear_1(
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -8043,14 +8046,14 @@ System_Array_Initialize(
 
 System_Array_t _Nullable /* System.Array */
 System_Array_CreateInstance(
-	System_Type_t _Nullable /* System.Type */ elementType,
+	System_Type_t _Nonnull /* System.Type */ elementType,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Array_t _Nullable /* System.Array */
 System_Array_CreateInstance_1(
-	System_Type_t _Nullable /* System.Type */ elementType,
+	System_Type_t _Nonnull /* System.Type */ elementType,
 	int32_t /* System.Int32 */ length1,
 	int32_t /* System.Int32 */ length2,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -8058,7 +8061,7 @@ System_Array_CreateInstance_1(
 
 System_Array_t _Nullable /* System.Array */
 System_Array_CreateInstance_2(
-	System_Type_t _Nullable /* System.Type */ elementType,
+	System_Type_t _Nonnull /* System.Type */ elementType,
 	int32_t /* System.Int32 */ length1,
 	int32_t /* System.Int32 */ length2,
 	int32_t /* System.Int32 */ length3,
@@ -8067,39 +8070,39 @@ System_Array_CreateInstance_2(
 
 System_Array_t _Nullable /* System.Array */
 System_Array_CreateInstance_3(
-	System_Type_t _Nullable /* System.Type */ elementType,
-	System_Int32_Array_t _Nullable /* System.Int32[] */ lengths,
+	System_Type_t _Nonnull /* System.Type */ elementType,
+	System_Int32_Array_t _Nonnull /* System.Int32[] */ lengths,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Array_t _Nullable /* System.Array */
 System_Array_CreateInstance_4(
-	System_Type_t _Nullable /* System.Type */ elementType,
-	System_Int32_Array_t _Nullable /* System.Int32[] */ lengths,
-	System_Int32_Array_t _Nullable /* System.Int32[] */ lowerBounds,
+	System_Type_t _Nonnull /* System.Type */ elementType,
+	System_Int32_Array_t _Nonnull /* System.Int32[] */ lengths,
+	System_Int32_Array_t _Nonnull /* System.Int32[] */ lowerBounds,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Array_t _Nullable /* System.Array */
 System_Array_CreateInstance_5(
-	System_Type_t _Nullable /* System.Type */ elementType,
-	System_Int64_Array_t _Nullable /* System.Int64[] */ lengths,
+	System_Type_t _Nonnull /* System.Type */ elementType,
+	System_Int64_Array_t _Nonnull /* System.Int64[] */ lengths,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Array_Copy(
-	System_Array_t _Nullable /* System.Array */ sourceArray,
-	System_Array_t _Nullable /* System.Array */ destinationArray,
+	System_Array_t _Nonnull /* System.Array */ sourceArray,
+	System_Array_t _Nonnull /* System.Array */ destinationArray,
 	int64_t /* System.Int64 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Array_Copy_1(
-	System_Array_t _Nullable /* System.Array */ sourceArray,
+	System_Array_t _Nonnull /* System.Array */ sourceArray,
 	int64_t /* System.Int64 */ sourceIndex,
-	System_Array_t _Nullable /* System.Array */ destinationArray,
+	System_Array_t _Nonnull /* System.Array */ destinationArray,
 	int64_t /* System.Int64 */ destinationIndex,
 	int64_t /* System.Int64 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -8107,17 +8110,17 @@ System_Array_Copy_1(
 
 void /* System.Void */
 System_Array_Copy_2(
-	System_Array_t _Nullable /* System.Array */ sourceArray,
-	System_Array_t _Nullable /* System.Array */ destinationArray,
+	System_Array_t _Nonnull /* System.Array */ sourceArray,
+	System_Array_t _Nonnull /* System.Array */ destinationArray,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Array_Copy_3(
-	System_Array_t _Nullable /* System.Array */ sourceArray,
+	System_Array_t _Nonnull /* System.Array */ sourceArray,
 	int32_t /* System.Int32 */ sourceIndex,
-	System_Array_t _Nullable /* System.Array */ destinationArray,
+	System_Array_t _Nonnull /* System.Array */ destinationArray,
 	int32_t /* System.Int32 */ destinationIndex,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -8126,7 +8129,7 @@ System_Array_Copy_3(
 System_Object_t _Nullable /* System.Object */
 System_Array_GetValue(
 	System_Array_t _Nullable /* System.Array */ self,
-	System_Int32_Array_t _Nullable /* System.Int32[] */ indices,
+	System_Int32_Array_t _Nonnull /* System.Int32[] */ indices,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -8185,7 +8188,7 @@ void /* System.Void */
 System_Array_SetValue_3(
 	System_Array_t _Nullable /* System.Array */ self,
 	System_Object_t _Nullable /* System.Object */ value,
-	System_Int32_Array_t _Nullable /* System.Int32[] */ indices,
+	System_Int32_Array_t _Nonnull /* System.Int32[] */ indices,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -8216,7 +8219,7 @@ System_Array_GetValue_6(
 System_Object_t _Nullable /* System.Object */
 System_Array_GetValue_7(
 	System_Array_t _Nullable /* System.Array */ self,
-	System_Int64_Array_t _Nullable /* System.Int64[] */ indices,
+	System_Int64_Array_t _Nonnull /* System.Int64[] */ indices,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -8251,7 +8254,7 @@ void /* System.Void */
 System_Array_SetValue_7(
 	System_Array_t _Nullable /* System.Array */ self,
 	System_Object_t _Nullable /* System.Object */ value,
-	System_Int64_Array_t _Nullable /* System.Int64[] */ indices,
+	System_Int64_Array_t _Nonnull /* System.Int64[] */ indices,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -8270,14 +8273,14 @@ System_Array_Clone(
 
 int32_t /* System.Int32 */
 System_Array_BinarySearch(
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	System_Object_t _Nullable /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Array_BinarySearch_1(
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ length,
 	System_Object_t _Nullable /* System.Object */ value,
@@ -8286,7 +8289,7 @@ System_Array_BinarySearch_1(
 
 int32_t /* System.Int32 */
 System_Array_BinarySearch_2(
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	System_Object_t _Nullable /* System.Object */ value,
 	System_Collections_IComparer_t _Nullable /* System.Collections.IComparer */ comparer,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -8294,7 +8297,7 @@ System_Array_BinarySearch_2(
 
 int32_t /* System.Int32 */
 System_Array_BinarySearch_3(
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ length,
 	System_Object_t _Nullable /* System.Object */ value,
@@ -8323,7 +8326,7 @@ System_Array_BinarySearch_A1_1(
 void /* System.Void */
 System_Array_CopyTo(
 	System_Array_t _Nullable /* System.Array */ self,
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	int32_t /* System.Int32 */ index,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -8331,7 +8334,7 @@ System_Array_CopyTo(
 void /* System.Void */
 System_Array_CopyTo_1(
 	System_Array_t _Nullable /* System.Array */ self,
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	int64_t /* System.Int64 */ index,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -8362,14 +8365,14 @@ System_Array_Fill_A1_1(
 
 int32_t /* System.Int32 */
 System_Array_IndexOf(
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	System_Object_t _Nullable /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Array_IndexOf_1(
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	System_Object_t _Nullable /* System.Object */ value,
 	int32_t /* System.Int32 */ startIndex,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -8377,7 +8380,7 @@ System_Array_IndexOf_1(
 
 int32_t /* System.Int32 */
 System_Array_IndexOf_2(
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	System_Object_t _Nullable /* System.Object */ value,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ count,
@@ -8413,14 +8416,14 @@ System_Array_IndexOf_A1_2(
 
 int32_t /* System.Int32 */
 System_Array_LastIndexOf(
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	System_Object_t _Nullable /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Array_LastIndexOf_1(
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	System_Object_t _Nullable /* System.Object */ value,
 	int32_t /* System.Int32 */ startIndex,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -8428,7 +8431,7 @@ System_Array_LastIndexOf_1(
 
 int32_t /* System.Int32 */
 System_Array_LastIndexOf_2(
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	System_Object_t _Nullable /* System.Object */ value,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ count,
@@ -8464,13 +8467,13 @@ System_Array_LastIndexOf_A1_2(
 
 void /* System.Void */
 System_Array_Reverse(
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Array_Reverse_1(
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -8494,20 +8497,20 @@ System_Array_Reverse_A1_1(
 
 void /* System.Void */
 System_Array_Sort(
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Array_Sort_1(
-	System_Array_t _Nullable /* System.Array */ keys,
+	System_Array_t _Nonnull /* System.Array */ keys,
 	System_Array_t _Nullable /* System.Array */ items,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Array_Sort_2(
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -8515,7 +8518,7 @@ System_Array_Sort_2(
 
 void /* System.Void */
 System_Array_Sort_3(
-	System_Array_t _Nullable /* System.Array */ keys,
+	System_Array_t _Nonnull /* System.Array */ keys,
 	System_Array_t _Nullable /* System.Array */ items,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ length,
@@ -8524,14 +8527,14 @@ System_Array_Sort_3(
 
 void /* System.Void */
 System_Array_Sort_4(
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	System_Collections_IComparer_t _Nullable /* System.Collections.IComparer */ comparer,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Array_Sort_5(
-	System_Array_t _Nullable /* System.Array */ keys,
+	System_Array_t _Nonnull /* System.Array */ keys,
 	System_Array_t _Nullable /* System.Array */ items,
 	System_Collections_IComparer_t _Nullable /* System.Collections.IComparer */ comparer,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -8539,7 +8542,7 @@ System_Array_Sort_5(
 
 void /* System.Void */
 System_Array_Sort_6(
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ length,
 	System_Collections_IComparer_t _Nullable /* System.Collections.IComparer */ comparer,
@@ -8548,7 +8551,7 @@ System_Array_Sort_6(
 
 void /* System.Void */
 System_Array_Sort_7(
-	System_Array_t _Nullable /* System.Array */ keys,
+	System_Array_t _Nonnull /* System.Array */ keys,
 	System_Array_t _Nullable /* System.Array */ items,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ length,
@@ -8780,7 +8783,7 @@ System_Collections_IList_Destroy(
 void /* System.Void */
 System_Collections_ICollection_CopyTo(
 	System_Collections_ICollection_t _Nullable /* System.Collections.ICollection */ self,
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	int32_t /* System.Int32 */ index,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -9052,7 +9055,7 @@ System_IConvertible_ToString(
 System_Object_t _Nullable /* System.Object */
 System_IConvertible_ToType(
 	System_IConvertible_t _Nullable /* System.IConvertible */ self,
-	System_Type_t _Nullable /* System.Type */ conversionType,
+	System_Type_t _Nonnull /* System.Type */ conversionType,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -9079,8 +9082,8 @@ System_Enum_GetName_A1(
 
 System_String_t _Nullable /* System.String */
 System_Enum_GetName_1(
-	System_Type_t _Nullable /* System.Type */ enumType,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Type_t _Nonnull /* System.Type */ enumType,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -9092,13 +9095,13 @@ System_Enum_GetNames_A1(
 
 System_String_Array_t _Nullable /* System.String[] */
 System_Enum_GetNames_1(
-	System_Type_t _Nullable /* System.Type */ enumType,
+	System_Type_t _Nonnull /* System.Type */ enumType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Type_t _Nullable /* System.Type */
 System_Enum_GetUnderlyingType(
-	System_Type_t _Nullable /* System.Type */ enumType,
+	System_Type_t _Nonnull /* System.Type */ enumType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -9110,7 +9113,7 @@ System_Enum_GetValues_A1(
 
 System_Array_t _Nullable /* System.Array */
 System_Enum_GetValues_1(
-	System_Type_t _Nullable /* System.Type */ enumType,
+	System_Type_t _Nonnull /* System.Type */ enumType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -9122,14 +9125,14 @@ System_Enum_GetValuesAsUnderlyingType_A1(
 
 System_Array_t _Nullable /* System.Array */
 System_Enum_GetValuesAsUnderlyingType_1(
-	System_Type_t _Nullable /* System.Type */ enumType,
+	System_Type_t _Nonnull /* System.Type */ enumType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Enum_HasFlag(
 	System_Enum_t _Nullable /* System.Enum */ self,
-	System_Enum_t _Nullable /* System.Enum */ flag,
+	System_Enum_t _Nonnull /* System.Enum */ flag,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -9142,22 +9145,22 @@ System_Enum_IsDefined_A1(
 
 bool /* System.Boolean */
 System_Enum_IsDefined_1(
-	System_Type_t _Nullable /* System.Type */ enumType,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Type_t _Nonnull /* System.Type */ enumType,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Object_t _Nullable /* System.Object */
 System_Enum_Parse(
-	System_Type_t _Nullable /* System.Type */ enumType,
-	System_String_t _Nullable /* System.String */ value,
+	System_Type_t _Nonnull /* System.Type */ enumType,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Object_t _Nullable /* System.Object */
 System_Enum_Parse_1(
-	System_Type_t _Nullable /* System.Type */ enumType,
-	System_String_t _Nullable /* System.String */ value,
+	System_Type_t _Nonnull /* System.Type */ enumType,
+	System_String_t _Nonnull /* System.String */ value,
 	bool /* System.Boolean */ ignoreCase,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -9179,7 +9182,7 @@ System_Enum_Parse_A1_1(
 
 bool /* System.Boolean */
 System_Enum_TryParse(
-	System_Type_t _Nullable /* System.Type */ enumType,
+	System_Type_t _Nonnull /* System.Type */ enumType,
 	System_String_t _Nullable /* System.String */ value,
 	System_Object_t _Nullable* _Nullable /* System.Object */ result,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -9187,7 +9190,7 @@ System_Enum_TryParse(
 
 bool /* System.Boolean */
 System_Enum_TryParse_1(
-	System_Type_t _Nullable /* System.Type */ enumType,
+	System_Type_t _Nonnull /* System.Type */ enumType,
 	System_String_t _Nullable /* System.String */ value,
 	bool /* System.Boolean */ ignoreCase,
 	System_Object_t _Nullable* _Nullable /* System.Object */ result,
@@ -9261,9 +9264,9 @@ System_Enum_ToString_3(
 
 System_String_t _Nullable /* System.String */
 System_Enum_Format(
-	System_Type_t _Nullable /* System.Type */ enumType,
-	System_Object_t _Nullable /* System.Object */ value,
-	System_String_t _Nullable /* System.String */ format,
+	System_Type_t _Nonnull /* System.Type */ enumType,
+	System_Object_t _Nonnull /* System.Object */ value,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -9275,63 +9278,63 @@ System_Enum_GetTypeCode(
 
 System_Object_t _Nullable /* System.Object */
 System_Enum_ToObject(
-	System_Type_t _Nullable /* System.Type */ enumType,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Type_t _Nonnull /* System.Type */ enumType,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Object_t _Nullable /* System.Object */
 System_Enum_ToObject_1(
-	System_Type_t _Nullable /* System.Type */ enumType,
+	System_Type_t _Nonnull /* System.Type */ enumType,
 	int8_t /* System.SByte */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Object_t _Nullable /* System.Object */
 System_Enum_ToObject_2(
-	System_Type_t _Nullable /* System.Type */ enumType,
+	System_Type_t _Nonnull /* System.Type */ enumType,
 	int16_t /* System.Int16 */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Object_t _Nullable /* System.Object */
 System_Enum_ToObject_3(
-	System_Type_t _Nullable /* System.Type */ enumType,
+	System_Type_t _Nonnull /* System.Type */ enumType,
 	int32_t /* System.Int32 */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Object_t _Nullable /* System.Object */
 System_Enum_ToObject_4(
-	System_Type_t _Nullable /* System.Type */ enumType,
+	System_Type_t _Nonnull /* System.Type */ enumType,
 	uint8_t /* System.Byte */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Object_t _Nullable /* System.Object */
 System_Enum_ToObject_5(
-	System_Type_t _Nullable /* System.Type */ enumType,
+	System_Type_t _Nonnull /* System.Type */ enumType,
 	uint16_t /* System.UInt16 */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Object_t _Nullable /* System.Object */
 System_Enum_ToObject_6(
-	System_Type_t _Nullable /* System.Type */ enumType,
+	System_Type_t _Nonnull /* System.Type */ enumType,
 	uint32_t /* System.UInt32 */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Object_t _Nullable /* System.Object */
 System_Enum_ToObject_7(
-	System_Type_t _Nullable /* System.Type */ enumType,
+	System_Type_t _Nonnull /* System.Type */ enumType,
 	int64_t /* System.Int64 */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Object_t _Nullable /* System.Object */
 System_Enum_ToObject_8(
-	System_Type_t _Nullable /* System.Type */ enumType,
+	System_Type_t _Nonnull /* System.Type */ enumType,
 	uint64_t /* System.UInt64 */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -9385,13 +9388,13 @@ System_IFormattable_Destroy(
 #pragma mark - BEGIN APIs of System.String
 System_String_t _Nullable /* System.String */
 System_String_Intern(
-	System_String_t _Nullable /* System.String */ str,
+	System_String_t _Nonnull /* System.String */ str,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_String_IsInterned(
-	System_String_t _Nullable /* System.String */ str,
+	System_String_t _Nonnull /* System.String */ str,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -9526,14 +9529,14 @@ System_String_CompareTo_1(
 bool /* System.Boolean */
 System_String_EndsWith(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_String_EndsWith_1(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_StringComparison_t /* System.StringComparison */ comparisonType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -9541,7 +9544,7 @@ System_String_EndsWith_1(
 bool /* System.Boolean */
 System_String_EndsWith_2(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	bool /* System.Boolean */ ignoreCase,
 	System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */ culture,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -9607,14 +9610,14 @@ System_String_GetHashCode_1(
 bool /* System.Boolean */
 System_String_StartsWith(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_String_StartsWith_1(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_StringComparison_t /* System.StringComparison */ comparisonType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -9622,7 +9625,7 @@ System_String_StartsWith_1(
 bool /* System.Boolean */
 System_String_StartsWith_2(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	bool /* System.Boolean */ ignoreCase,
 	System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */ culture,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -9643,7 +9646,7 @@ System_String_Clone(
 
 System_String_t _Nullable /* System.String */
 System_String_Copy(
-	System_String_t _Nullable /* System.String */ str,
+	System_String_t _Nonnull /* System.String */ str,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -9651,7 +9654,7 @@ void /* System.Void */
 System_String_CopyTo(
 	System_String_t _Nullable /* System.String */ self,
 	int32_t /* System.Int32 */ sourceIndex,
-	System_Char_Array_t _Nullable /* System.Char[] */ destination,
+	System_Char_Array_t _Nonnull /* System.Char[] */ destination,
 	int32_t /* System.Int32 */ destinationIndex,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -9763,13 +9766,13 @@ System_String_Concat_2(
 
 System_String_t _Nullable /* System.String */
 System_String_Concat_3(
-	System_Object_Array_t _Nullable /* System.Object[] */ args,
+	System_Object_Array_t _Nonnull /* System.Object[] */ args,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_String_Concat_4(
-	System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */ values,
+	System_Collections_Generic_IEnumerable_A1_t _Nonnull /* System.Collections.Generic.IEnumerable<System.String> */ values,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -9799,20 +9802,20 @@ System_String_Concat_7(
 
 System_String_t _Nullable /* System.String */
 System_String_Concat_8(
-	System_String_Array_t _Nullable /* System.String[] */ values,
+	System_String_Array_t _Nonnull /* System.String[] */ values,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_String_Format(
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_String_Format_1(
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Object_t _Nullable /* System.Object */ arg1,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -9820,7 +9823,7 @@ System_String_Format_1(
 
 System_String_t _Nullable /* System.String */
 System_String_Format_2(
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Object_t _Nullable /* System.Object */ arg1,
 	System_Object_t _Nullable /* System.Object */ arg2,
@@ -9829,15 +9832,15 @@ System_String_Format_2(
 
 System_String_t _Nullable /* System.String */
 System_String_Format_3(
-	System_String_t _Nullable /* System.String */ format,
-	System_Object_Array_t _Nullable /* System.Object[] */ args,
+	System_String_t _Nonnull /* System.String */ format,
+	System_Object_Array_t _Nonnull /* System.Object[] */ args,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_String_Format_4(
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -9845,7 +9848,7 @@ System_String_Format_4(
 System_String_t _Nullable /* System.String */
 System_String_Format_5(
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Object_t _Nullable /* System.Object */ arg1,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -9854,7 +9857,7 @@ System_String_Format_5(
 System_String_t _Nullable /* System.String */
 System_String_Format_6(
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Object_t _Nullable /* System.Object */ arg1,
 	System_Object_t _Nullable /* System.Object */ arg2,
@@ -9864,8 +9867,8 @@ System_String_Format_6(
 System_String_t _Nullable /* System.String */
 System_String_Format_7(
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
-	System_String_t _Nullable /* System.String */ format,
-	System_Object_Array_t _Nullable /* System.Object[] */ args,
+	System_String_t _Nonnull /* System.String */ format,
+	System_Object_Array_t _Nonnull /* System.Object[] */ args,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -9905,8 +9908,8 @@ System_String_Format_A3(
 System_String_t _Nullable /* System.String */
 System_String_Format_8(
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
-	System_Text_CompositeFormat_t _Nullable /* System.Text.CompositeFormat */ format,
-	System_Object_Array_t _Nullable /* System.Object[] */ args,
+	System_Text_CompositeFormat_t _Nonnull /* System.Text.CompositeFormat */ format,
+	System_Object_Array_t _Nonnull /* System.Object[] */ args,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -9914,28 +9917,28 @@ System_String_t _Nullable /* System.String */
 System_String_Insert(
 	System_String_t _Nullable /* System.String */ self,
 	int32_t /* System.Int32 */ startIndex,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_String_Join(
 	wchar_t /* System.Char */ separator,
-	System_String_Array_t _Nullable /* System.String[] */ value,
+	System_String_Array_t _Nonnull /* System.String[] */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_String_Join_1(
 	System_String_t _Nullable /* System.String */ separator,
-	System_String_Array_t _Nullable /* System.String[] */ value,
+	System_String_Array_t _Nonnull /* System.String[] */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_String_Join_2(
 	wchar_t /* System.Char */ separator,
-	System_String_Array_t _Nullable /* System.String[] */ value,
+	System_String_Array_t _Nonnull /* System.String[] */ value,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -9944,7 +9947,7 @@ System_String_Join_2(
 System_String_t _Nullable /* System.String */
 System_String_Join_3(
 	System_String_t _Nullable /* System.String */ separator,
-	System_String_Array_t _Nullable /* System.String[] */ value,
+	System_String_Array_t _Nonnull /* System.String[] */ value,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -9953,21 +9956,21 @@ System_String_Join_3(
 System_String_t _Nullable /* System.String */
 System_String_Join_4(
 	System_String_t _Nullable /* System.String */ separator,
-	System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */ values,
+	System_Collections_Generic_IEnumerable_A1_t _Nonnull /* System.Collections.Generic.IEnumerable<System.String> */ values,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_String_Join_5(
 	wchar_t /* System.Char */ separator,
-	System_Object_Array_t _Nullable /* System.Object[] */ values,
+	System_Object_Array_t _Nonnull /* System.Object[] */ values,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_String_Join_6(
 	System_String_t _Nullable /* System.String */ separator,
-	System_Object_Array_t _Nullable /* System.Object[] */ values,
+	System_Object_Array_t _Nonnull /* System.Object[] */ values,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -10019,7 +10022,7 @@ System_String_Remove_1(
 System_String_t _Nullable /* System.String */
 System_String_Replace(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ oldValue,
+	System_String_t _Nonnull /* System.String */ oldValue,
 	System_String_t _Nullable /* System.String */ newValue,
 	bool /* System.Boolean */ ignoreCase,
 	System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */ culture,
@@ -10029,7 +10032,7 @@ System_String_Replace(
 System_String_t _Nullable /* System.String */
 System_String_Replace_1(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ oldValue,
+	System_String_t _Nonnull /* System.String */ oldValue,
 	System_String_t _Nullable /* System.String */ newValue,
 	System_StringComparison_t /* System.StringComparison */ comparisonType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -10046,7 +10049,7 @@ System_String_Replace_2(
 System_String_t _Nullable /* System.String */
 System_String_Replace_3(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ oldValue,
+	System_String_t _Nonnull /* System.String */ oldValue,
 	System_String_t _Nullable /* System.String */ newValue,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -10060,7 +10063,7 @@ System_String_ReplaceLineEndings(
 System_String_t _Nullable /* System.String */
 System_String_ReplaceLineEndings_1(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ replacementText,
+	System_String_t _Nonnull /* System.String */ replacementText,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -10263,14 +10266,14 @@ System_String_TrimEnd_2(
 bool /* System.Boolean */
 System_String_Contains(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_String_Contains_1(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_StringComparison_t /* System.StringComparison */ comparisonType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -10325,14 +10328,14 @@ System_String_IndexOf_3(
 int32_t /* System.Int32 */
 System_String_IndexOfAny(
 	System_String_t _Nullable /* System.String */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ anyOf,
+	System_Char_Array_t _Nonnull /* System.Char[] */ anyOf,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_String_IndexOfAny_1(
 	System_String_t _Nullable /* System.String */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ anyOf,
+	System_Char_Array_t _Nonnull /* System.Char[] */ anyOf,
 	int32_t /* System.Int32 */ startIndex,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -10340,7 +10343,7 @@ System_String_IndexOfAny_1(
 int32_t /* System.Int32 */
 System_String_IndexOfAny_2(
 	System_String_t _Nullable /* System.String */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ anyOf,
+	System_Char_Array_t _Nonnull /* System.Char[] */ anyOf,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -10349,14 +10352,14 @@ System_String_IndexOfAny_2(
 int32_t /* System.Int32 */
 System_String_IndexOf_4(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_String_IndexOf_5(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	int32_t /* System.Int32 */ startIndex,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -10364,7 +10367,7 @@ System_String_IndexOf_5(
 int32_t /* System.Int32 */
 System_String_IndexOf_6(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -10373,7 +10376,7 @@ System_String_IndexOf_6(
 int32_t /* System.Int32 */
 System_String_IndexOf_7(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_StringComparison_t /* System.StringComparison */ comparisonType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -10381,7 +10384,7 @@ System_String_IndexOf_7(
 int32_t /* System.Int32 */
 System_String_IndexOf_8(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	int32_t /* System.Int32 */ startIndex,
 	System_StringComparison_t /* System.StringComparison */ comparisonType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -10390,7 +10393,7 @@ System_String_IndexOf_8(
 int32_t /* System.Int32 */
 System_String_IndexOf_9(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ count,
 	System_StringComparison_t /* System.StringComparison */ comparisonType,
@@ -10424,14 +10427,14 @@ System_String_LastIndexOf_2(
 int32_t /* System.Int32 */
 System_String_LastIndexOfAny(
 	System_String_t _Nullable /* System.String */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ anyOf,
+	System_Char_Array_t _Nonnull /* System.Char[] */ anyOf,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_String_LastIndexOfAny_1(
 	System_String_t _Nullable /* System.String */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ anyOf,
+	System_Char_Array_t _Nonnull /* System.Char[] */ anyOf,
 	int32_t /* System.Int32 */ startIndex,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -10439,7 +10442,7 @@ System_String_LastIndexOfAny_1(
 int32_t /* System.Int32 */
 System_String_LastIndexOfAny_2(
 	System_String_t _Nullable /* System.String */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ anyOf,
+	System_Char_Array_t _Nonnull /* System.Char[] */ anyOf,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -10448,14 +10451,14 @@ System_String_LastIndexOfAny_2(
 int32_t /* System.Int32 */
 System_String_LastIndexOf_3(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_String_LastIndexOf_4(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	int32_t /* System.Int32 */ startIndex,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -10463,7 +10466,7 @@ System_String_LastIndexOf_4(
 int32_t /* System.Int32 */
 System_String_LastIndexOf_5(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -10472,7 +10475,7 @@ System_String_LastIndexOf_5(
 int32_t /* System.Int32 */
 System_String_LastIndexOf_6(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_StringComparison_t /* System.StringComparison */ comparisonType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -10480,7 +10483,7 @@ System_String_LastIndexOf_6(
 int32_t /* System.Int32 */
 System_String_LastIndexOf_7(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	int32_t /* System.Int32 */ startIndex,
 	System_StringComparison_t /* System.StringComparison */ comparisonType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -10489,7 +10492,7 @@ System_String_LastIndexOf_7(
 int32_t /* System.Int32 */
 System_String_LastIndexOf_8(
 	System_String_t _Nullable /* System.String */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ count,
 	System_StringComparison_t /* System.StringComparison */ comparisonType,
@@ -10504,7 +10507,7 @@ System_String_Create(
 
 System_String_t _Nullable /* System.String */
 System_String_Create_1(
-	System_Char_Array_t _Nullable /* System.Char[] */ value,
+	System_Char_Array_t _Nonnull /* System.Char[] */ value,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -11157,7 +11160,7 @@ System_Numerics_IUnsignedNumber_A1_Destroy(
 #pragma mark - BEGIN APIs of System.Globalization.CultureInfo
 System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */
 System_Globalization_CultureInfo_CreateSpecificCulture(
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -11213,7 +11216,7 @@ System_Globalization_CultureInfo_Clone(
 
 System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */
 System_Globalization_CultureInfo_ReadOnly(
-	System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */ ci,
+	System_Globalization_CultureInfo_t _Nonnull /* System.Globalization.CultureInfo */ ci,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -11225,39 +11228,39 @@ System_Globalization_CultureInfo_GetCultureInfo(
 
 System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */
 System_Globalization_CultureInfo_GetCultureInfo_1(
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */
 System_Globalization_CultureInfo_GetCultureInfo_2(
-	System_String_t _Nullable /* System.String */ name,
-	System_String_t _Nullable /* System.String */ altName,
+	System_String_t _Nonnull /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ altName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */
 System_Globalization_CultureInfo_GetCultureInfo_3(
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	bool /* System.Boolean */ predefinedOnly,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */
 System_Globalization_CultureInfo_GetCultureInfoByIetfLanguageTag(
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */
 System_Globalization_CultureInfo_Create_1(
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */
 System_Globalization_CultureInfo_Create_2(
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	bool /* System.Boolean */ useUserOverride,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -11516,7 +11519,7 @@ int32_t /* System.Int32 */
 System_Collections_IStructuralComparable_CompareTo(
 	System_Collections_IStructuralComparable_t _Nullable /* System.Collections.IStructuralComparable */ self,
 	System_Object_t _Nullable /* System.Object */ other,
-	System_Collections_IComparer_t _Nullable /* System.Collections.IComparer */ comparer,
+	System_Collections_IComparer_t _Nonnull /* System.Collections.IComparer */ comparer,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -11558,14 +11561,14 @@ bool /* System.Boolean */
 System_Collections_IStructuralEquatable_Equals(
 	System_Collections_IStructuralEquatable_t _Nullable /* System.Collections.IStructuralEquatable */ self,
 	System_Object_t _Nullable /* System.Object */ other,
-	System_Collections_IEqualityComparer_t _Nullable /* System.Collections.IEqualityComparer */ comparer,
+	System_Collections_IEqualityComparer_t _Nonnull /* System.Collections.IEqualityComparer */ comparer,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Collections_IStructuralEquatable_GetHashCode(
 	System_Collections_IStructuralEquatable_t _Nullable /* System.Collections.IStructuralEquatable */ self,
-	System_Collections_IEqualityComparer_t _Nullable /* System.Collections.IEqualityComparer */ comparer,
+	System_Collections_IEqualityComparer_t _Nonnull /* System.Collections.IEqualityComparer */ comparer,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -11593,7 +11596,7 @@ System_Collections_IEqualityComparer_Equals(
 int32_t /* System.Int32 */
 System_Collections_IEqualityComparer_GetHashCode(
 	System_Collections_IEqualityComparer_t _Nullable /* System.Collections.IEqualityComparer */ self,
-	System_Object_t _Nullable /* System.Object */ obj,
+	System_Object_t _Nonnull /* System.Object */ obj,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -11795,14 +11798,14 @@ System_Collections_Generic_IReadOnlyCollection_A1_Destroy(
 System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */
 System_Globalization_CompareInfo_GetCompareInfo(
 	int32_t /* System.Int32 */ culture,
-	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ assembly,
+	System_Reflection_Assembly_t _Nonnull /* System.Reflection.Assembly */ assembly,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */
 System_Globalization_CompareInfo_GetCompareInfo_1(
-	System_String_t _Nullable /* System.String */ name,
-	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ assembly,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Reflection_Assembly_t _Nonnull /* System.Reflection.Assembly */ assembly,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -11814,7 +11817,7 @@ System_Globalization_CompareInfo_GetCompareInfo_2(
 
 System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */
 System_Globalization_CompareInfo_GetCompareInfo_3(
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -11826,7 +11829,7 @@ System_Globalization_CompareInfo_IsSortable(
 
 bool /* System.Boolean */
 System_Globalization_CompareInfo_IsSortable_1(
-	System_String_t _Nullable /* System.String */ text,
+	System_String_t _Nonnull /* System.String */ text,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -11902,8 +11905,8 @@ System_Globalization_CompareInfo_Compare_5(
 bool /* System.Boolean */
 System_Globalization_CompareInfo_IsPrefix(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
-	System_String_t _Nullable /* System.String */ prefix,
+	System_String_t _Nonnull /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ prefix,
 	System_Globalization_CompareOptions_t /* System.Globalization.CompareOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -11911,16 +11914,16 @@ System_Globalization_CompareInfo_IsPrefix(
 bool /* System.Boolean */
 System_Globalization_CompareInfo_IsPrefix_1(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
-	System_String_t _Nullable /* System.String */ prefix,
+	System_String_t _Nonnull /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ prefix,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Globalization_CompareInfo_IsSuffix(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
-	System_String_t _Nullable /* System.String */ suffix,
+	System_String_t _Nonnull /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ suffix,
 	System_Globalization_CompareOptions_t /* System.Globalization.CompareOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -11928,15 +11931,15 @@ System_Globalization_CompareInfo_IsSuffix(
 bool /* System.Boolean */
 System_Globalization_CompareInfo_IsSuffix_1(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
-	System_String_t _Nullable /* System.String */ suffix,
+	System_String_t _Nonnull /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ suffix,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_IndexOf(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ source,
 	wchar_t /* System.Char */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -11944,15 +11947,15 @@ System_Globalization_CompareInfo_IndexOf(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_IndexOf_1(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_IndexOf_2(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ source,
 	wchar_t /* System.Char */ value,
 	System_Globalization_CompareOptions_t /* System.Globalization.CompareOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -11961,8 +11964,8 @@ System_Globalization_CompareInfo_IndexOf_2(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_IndexOf_3(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Globalization_CompareOptions_t /* System.Globalization.CompareOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -11970,7 +11973,7 @@ System_Globalization_CompareInfo_IndexOf_3(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_IndexOf_4(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ source,
 	wchar_t /* System.Char */ value,
 	int32_t /* System.Int32 */ startIndex,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -11979,8 +11982,8 @@ System_Globalization_CompareInfo_IndexOf_4(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_IndexOf_5(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ value,
 	int32_t /* System.Int32 */ startIndex,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -11988,7 +11991,7 @@ System_Globalization_CompareInfo_IndexOf_5(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_IndexOf_6(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ source,
 	wchar_t /* System.Char */ value,
 	int32_t /* System.Int32 */ startIndex,
 	System_Globalization_CompareOptions_t /* System.Globalization.CompareOptions */ options,
@@ -11998,8 +12001,8 @@ System_Globalization_CompareInfo_IndexOf_6(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_IndexOf_7(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ value,
 	int32_t /* System.Int32 */ startIndex,
 	System_Globalization_CompareOptions_t /* System.Globalization.CompareOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -12008,7 +12011,7 @@ System_Globalization_CompareInfo_IndexOf_7(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_IndexOf_8(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ source,
 	wchar_t /* System.Char */ value,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ count,
@@ -12018,8 +12021,8 @@ System_Globalization_CompareInfo_IndexOf_8(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_IndexOf_9(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ value,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -12028,7 +12031,7 @@ System_Globalization_CompareInfo_IndexOf_9(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_IndexOf_10(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ source,
 	wchar_t /* System.Char */ value,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ count,
@@ -12039,8 +12042,8 @@ System_Globalization_CompareInfo_IndexOf_10(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_IndexOf_11(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ value,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ count,
 	System_Globalization_CompareOptions_t /* System.Globalization.CompareOptions */ options,
@@ -12050,7 +12053,7 @@ System_Globalization_CompareInfo_IndexOf_11(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_LastIndexOf(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ source,
 	wchar_t /* System.Char */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12058,15 +12061,15 @@ System_Globalization_CompareInfo_LastIndexOf(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_LastIndexOf_1(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_LastIndexOf_2(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ source,
 	wchar_t /* System.Char */ value,
 	System_Globalization_CompareOptions_t /* System.Globalization.CompareOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -12075,8 +12078,8 @@ System_Globalization_CompareInfo_LastIndexOf_2(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_LastIndexOf_3(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Globalization_CompareOptions_t /* System.Globalization.CompareOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12084,7 +12087,7 @@ System_Globalization_CompareInfo_LastIndexOf_3(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_LastIndexOf_4(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ source,
 	wchar_t /* System.Char */ value,
 	int32_t /* System.Int32 */ startIndex,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -12093,8 +12096,8 @@ System_Globalization_CompareInfo_LastIndexOf_4(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_LastIndexOf_5(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ value,
 	int32_t /* System.Int32 */ startIndex,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12102,7 +12105,7 @@ System_Globalization_CompareInfo_LastIndexOf_5(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_LastIndexOf_6(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ source,
 	wchar_t /* System.Char */ value,
 	int32_t /* System.Int32 */ startIndex,
 	System_Globalization_CompareOptions_t /* System.Globalization.CompareOptions */ options,
@@ -12112,8 +12115,8 @@ System_Globalization_CompareInfo_LastIndexOf_6(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_LastIndexOf_7(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ value,
 	int32_t /* System.Int32 */ startIndex,
 	System_Globalization_CompareOptions_t /* System.Globalization.CompareOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -12122,7 +12125,7 @@ System_Globalization_CompareInfo_LastIndexOf_7(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_LastIndexOf_8(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ source,
 	wchar_t /* System.Char */ value,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ count,
@@ -12132,8 +12135,8 @@ System_Globalization_CompareInfo_LastIndexOf_8(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_LastIndexOf_9(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ value,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -12142,7 +12145,7 @@ System_Globalization_CompareInfo_LastIndexOf_9(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_LastIndexOf_10(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ source,
 	wchar_t /* System.Char */ value,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ count,
@@ -12153,8 +12156,8 @@ System_Globalization_CompareInfo_LastIndexOf_10(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_LastIndexOf_11(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ value,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ count,
 	System_Globalization_CompareOptions_t /* System.Globalization.CompareOptions */ options,
@@ -12164,7 +12167,7 @@ System_Globalization_CompareInfo_LastIndexOf_11(
 System_Globalization_SortKey_t _Nullable /* System.Globalization.SortKey */
 System_Globalization_CompareInfo_GetSortKey(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ source,
 	System_Globalization_CompareOptions_t /* System.Globalization.CompareOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12172,7 +12175,7 @@ System_Globalization_CompareInfo_GetSortKey(
 System_Globalization_SortKey_t _Nullable /* System.Globalization.SortKey */
 System_Globalization_CompareInfo_GetSortKey_1(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ source,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -12192,7 +12195,7 @@ System_Globalization_CompareInfo_GetHashCode(
 int32_t /* System.Int32 */
 System_Globalization_CompareInfo_GetHashCode_1(
 	System_Globalization_CompareInfo_t _Nullable /* System.Globalization.CompareInfo */ self,
-	System_String_t _Nullable /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ source,
 	System_Globalization_CompareOptions_t /* System.Globalization.CompareOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12259,19 +12262,19 @@ System_Runtime_Serialization_IDeserializationCallback_Destroy(
 #pragma mark - BEGIN APIs of System.Reflection.Assembly
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_Reflection_Assembly_Load(
-	System_String_t _Nullable /* System.String */ assemblyString,
+	System_String_t _Nonnull /* System.String */ assemblyString,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_Reflection_Assembly_LoadWithPartialName(
-	System_String_t _Nullable /* System.String */ partialName,
+	System_String_t _Nonnull /* System.String */ partialName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_Reflection_Assembly_Load_1(
-	System_Reflection_AssemblyName_t _Nullable /* System.Reflection.AssemblyName */ assemblyRef,
+	System_Reflection_AssemblyName_t _Nonnull /* System.Reflection.AssemblyName */ assemblyRef,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -12306,7 +12309,7 @@ System_Reflection_Assembly_GetForwardedTypes(
 System_Reflection_ManifestResourceInfo_t _Nullable /* System.Reflection.ManifestResourceInfo */
 System_Reflection_Assembly_GetManifestResourceInfo(
 	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ self,
-	System_String_t _Nullable /* System.String */ resourceName,
+	System_String_t _Nonnull /* System.String */ resourceName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -12319,15 +12322,15 @@ System_Reflection_Assembly_GetManifestResourceNames(
 System_IO_Stream_t _Nullable /* System.IO.Stream */
 System_Reflection_Assembly_GetManifestResourceStream(
 	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_Stream_t _Nullable /* System.IO.Stream */
 System_Reflection_Assembly_GetManifestResourceStream_1(
 	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ self,
-	System_Type_t _Nullable /* System.Type */ type,
-	System_String_t _Nullable /* System.String */ name,
+	System_Type_t _Nonnull /* System.Type */ type,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -12347,14 +12350,14 @@ System_Reflection_Assembly_GetName_1(
 System_Type_t _Nullable /* System.Type */
 System_Reflection_Assembly_GetType_1(
 	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Type_t _Nullable /* System.Type */
 System_Reflection_Assembly_GetType_2(
 	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	bool /* System.Boolean */ throwOnError,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12362,7 +12365,7 @@ System_Reflection_Assembly_GetType_2(
 System_Type_t _Nullable /* System.Type */
 System_Reflection_Assembly_GetType_3(
 	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	bool /* System.Boolean */ throwOnError,
 	bool /* System.Boolean */ ignoreCase,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -12371,7 +12374,7 @@ System_Reflection_Assembly_GetType_3(
 bool /* System.Boolean */
 System_Reflection_Assembly_IsDefined(
 	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ self,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12392,7 +12395,7 @@ System_Reflection_Assembly_GetCustomAttributes_1(
 System_Object_Array_t _Nullable /* System.Object[] */
 System_Reflection_Assembly_GetCustomAttributes_2(
 	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ self,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12400,14 +12403,14 @@ System_Reflection_Assembly_GetCustomAttributes_2(
 System_Object_t _Nullable /* System.Object */
 System_Reflection_Assembly_CreateInstance(
 	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ self,
-	System_String_t _Nullable /* System.String */ typeName,
+	System_String_t _Nonnull /* System.String */ typeName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Object_t _Nullable /* System.Object */
 System_Reflection_Assembly_CreateInstance_1(
 	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ self,
-	System_String_t _Nullable /* System.String */ typeName,
+	System_String_t _Nonnull /* System.String */ typeName,
 	bool /* System.Boolean */ ignoreCase,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12415,7 +12418,7 @@ System_Reflection_Assembly_CreateInstance_1(
 System_Object_t _Nullable /* System.Object */
 System_Reflection_Assembly_CreateInstance_2(
 	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ self,
-	System_String_t _Nullable /* System.String */ typeName,
+	System_String_t _Nonnull /* System.String */ typeName,
 	bool /* System.Boolean */ ignoreCase,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ binder,
@@ -12428,7 +12431,7 @@ System_Reflection_Assembly_CreateInstance_2(
 System_Reflection_Module_t _Nullable /* System.Reflection.Module */
 System_Reflection_Assembly_GetModule(
 	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -12467,14 +12470,14 @@ System_Reflection_Assembly_GetReferencedAssemblies(
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_Reflection_Assembly_GetSatelliteAssembly(
 	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ self,
-	System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */ culture,
+	System_Globalization_CultureInfo_t _Nonnull /* System.Globalization.CultureInfo */ culture,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_Reflection_Assembly_GetSatelliteAssembly_1(
 	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ self,
-	System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */ culture,
+	System_Globalization_CultureInfo_t _Nonnull /* System.Globalization.CultureInfo */ culture,
 	System_Version_t _Nullable /* System.Version */ version,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12482,7 +12485,7 @@ System_Reflection_Assembly_GetSatelliteAssembly_1(
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_Reflection_Assembly_GetFile(
 	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -12502,7 +12505,7 @@ System_Reflection_Assembly_GetFiles_1(
 void /* System.Void */
 System_Reflection_Assembly_GetObjectData(
 	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ self,
-	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_SerializationInfo_t _Nonnull /* System.Runtime.Serialization.SerializationInfo */ info,
 	System_Runtime_Serialization_StreamingContext_t _Nonnull /* System.Runtime.Serialization.StreamingContext */ context,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12535,7 +12538,7 @@ System_Reflection_Assembly_CreateQualifiedName(
 
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_Reflection_Assembly_GetAssembly(
-	System_Type_t _Nullable /* System.Type */ type,
+	System_Type_t _Nonnull /* System.Type */ type,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -12546,32 +12549,32 @@ System_Reflection_Assembly_GetEntryAssembly(
 
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_Reflection_Assembly_Load_2(
-	System_Byte_Array_t _Nullable /* System.Byte[] */ rawAssembly,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ rawAssembly,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_Reflection_Assembly_Load_3(
-	System_Byte_Array_t _Nullable /* System.Byte[] */ rawAssembly,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ rawAssembly,
 	System_Byte_Array_t _Nullable /* System.Byte[] */ rawSymbolStore,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_Reflection_Assembly_LoadFile(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_Reflection_Assembly_LoadFrom(
-	System_String_t _Nullable /* System.String */ assemblyFile,
+	System_String_t _Nonnull /* System.String */ assemblyFile,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_Reflection_Assembly_LoadFrom_1(
-	System_String_t _Nullable /* System.String */ assemblyFile,
+	System_String_t _Nonnull /* System.String */ assemblyFile,
 	System_Byte_Array_t _Nullable /* System.Byte[] */ hashValue,
 	System_Configuration_Assemblies_AssemblyHashAlgorithm_t /* System.Configuration.Assemblies.AssemblyHashAlgorithm */ hashAlgorithm,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -12579,14 +12582,14 @@ System_Reflection_Assembly_LoadFrom_1(
 
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_Reflection_Assembly_UnsafeLoadFrom(
-	System_String_t _Nullable /* System.String */ assemblyFile,
+	System_String_t _Nonnull /* System.String */ assemblyFile,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_Module_t _Nullable /* System.Reflection.Module */
 System_Reflection_Assembly_LoadModule(
 	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ self,
-	System_String_t _Nullable /* System.String */ moduleName,
+	System_String_t _Nonnull /* System.String */ moduleName,
 	System_Byte_Array_t _Nullable /* System.Byte[] */ rawModule,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12594,7 +12597,7 @@ System_Reflection_Assembly_LoadModule(
 System_Reflection_Module_t _Nullable /* System.Reflection.Module */
 System_Reflection_Assembly_LoadModule_1(
 	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ self,
-	System_String_t _Nullable /* System.String */ moduleName,
+	System_String_t _Nonnull /* System.String */ moduleName,
 	System_Byte_Array_t _Nullable /* System.Byte[] */ rawModule,
 	System_Byte_Array_t _Nullable /* System.Byte[] */ rawSymbolStore,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -12602,19 +12605,19 @@ System_Reflection_Assembly_LoadModule_1(
 
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_Reflection_Assembly_ReflectionOnlyLoad(
-	System_Byte_Array_t _Nullable /* System.Byte[] */ rawAssembly,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ rawAssembly,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_Reflection_Assembly_ReflectionOnlyLoad_1(
-	System_String_t _Nullable /* System.String */ assemblyString,
+	System_String_t _Nonnull /* System.String */ assemblyString,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_Reflection_Assembly_ReflectionOnlyLoadFrom(
-	System_String_t _Nullable /* System.String */ assemblyFile,
+	System_String_t _Nonnull /* System.String */ assemblyFile,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -12773,7 +12776,7 @@ System_Reflection_Assembly_Destroy(
 void /* System.Void */
 System_Runtime_Serialization_ISerializable_GetObjectData(
 	System_Runtime_Serialization_ISerializable_t _Nullable /* System.Runtime.Serialization.ISerializable */ self,
-	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_SerializationInfo_t _Nonnull /* System.Runtime.Serialization.SerializationInfo */ info,
 	System_Runtime_Serialization_StreamingContext_t _Nonnull /* System.Runtime.Serialization.StreamingContext */ context,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12794,7 +12797,7 @@ System_Runtime_Serialization_ISerializable_Destroy(
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_SetType(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_Type_t _Nullable /* System.Type */ type,
+	System_Type_t _Nonnull /* System.Type */ type,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -12807,16 +12810,16 @@ System_Runtime_Serialization_SerializationInfo_GetEnumerator(
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_AddValue(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Object_t _Nullable /* System.Object */ value,
-	System_Type_t _Nullable /* System.Type */ type,
+	System_Type_t _Nonnull /* System.Type */ type,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_AddValue_1(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Object_t _Nullable /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12824,7 +12827,7 @@ System_Runtime_Serialization_SerializationInfo_AddValue_1(
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_AddValue_2(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	bool /* System.Boolean */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12832,7 +12835,7 @@ System_Runtime_Serialization_SerializationInfo_AddValue_2(
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_AddValue_3(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	wchar_t /* System.Char */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12840,7 +12843,7 @@ System_Runtime_Serialization_SerializationInfo_AddValue_3(
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_AddValue_4(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	int8_t /* System.SByte */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12848,7 +12851,7 @@ System_Runtime_Serialization_SerializationInfo_AddValue_4(
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_AddValue_5(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	uint8_t /* System.Byte */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12856,7 +12859,7 @@ System_Runtime_Serialization_SerializationInfo_AddValue_5(
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_AddValue_6(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	int16_t /* System.Int16 */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12864,7 +12867,7 @@ System_Runtime_Serialization_SerializationInfo_AddValue_6(
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_AddValue_7(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	uint16_t /* System.UInt16 */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12872,7 +12875,7 @@ System_Runtime_Serialization_SerializationInfo_AddValue_7(
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_AddValue_8(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	int32_t /* System.Int32 */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12880,7 +12883,7 @@ System_Runtime_Serialization_SerializationInfo_AddValue_8(
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_AddValue_9(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	uint32_t /* System.UInt32 */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12888,7 +12891,7 @@ System_Runtime_Serialization_SerializationInfo_AddValue_9(
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_AddValue_10(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	int64_t /* System.Int64 */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12896,7 +12899,7 @@ System_Runtime_Serialization_SerializationInfo_AddValue_10(
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_AddValue_11(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	uint64_t /* System.UInt64 */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12904,7 +12907,7 @@ System_Runtime_Serialization_SerializationInfo_AddValue_11(
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_AddValue_12(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	float /* System.Single */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12912,7 +12915,7 @@ System_Runtime_Serialization_SerializationInfo_AddValue_12(
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_AddValue_13(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	double /* System.Double */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12920,7 +12923,7 @@ System_Runtime_Serialization_SerializationInfo_AddValue_13(
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_AddValue_14(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Decimal_t _Nonnull /* System.Decimal */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12928,7 +12931,7 @@ System_Runtime_Serialization_SerializationInfo_AddValue_14(
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_AddValue_15(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_DateTime_t _Nonnull /* System.DateTime */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -12936,127 +12939,127 @@ System_Runtime_Serialization_SerializationInfo_AddValue_15(
 System_Object_t _Nullable /* System.Object */
 System_Runtime_Serialization_SerializationInfo_GetValue(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
-	System_Type_t _Nullable /* System.Type */ type,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Type_t _Nonnull /* System.Type */ type,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Runtime_Serialization_SerializationInfo_GetBoolean(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 wchar_t /* System.Char */
 System_Runtime_Serialization_SerializationInfo_GetChar(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int8_t /* System.SByte */
 System_Runtime_Serialization_SerializationInfo_GetSByte(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 uint8_t /* System.Byte */
 System_Runtime_Serialization_SerializationInfo_GetByte(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int16_t /* System.Int16 */
 System_Runtime_Serialization_SerializationInfo_GetInt16(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 uint16_t /* System.UInt16 */
 System_Runtime_Serialization_SerializationInfo_GetUInt16(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Runtime_Serialization_SerializationInfo_GetInt32(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 uint32_t /* System.UInt32 */
 System_Runtime_Serialization_SerializationInfo_GetUInt32(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int64_t /* System.Int64 */
 System_Runtime_Serialization_SerializationInfo_GetInt64(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 uint64_t /* System.UInt64 */
 System_Runtime_Serialization_SerializationInfo_GetUInt64(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 float /* System.Single */
 System_Runtime_Serialization_SerializationInfo_GetSingle(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 double /* System.Double */
 System_Runtime_Serialization_SerializationInfo_GetDouble(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Decimal_t _Nonnull /* System.Decimal */
 System_Runtime_Serialization_SerializationInfo_GetDecimal(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_Runtime_Serialization_SerializationInfo_GetDateTime(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_Runtime_Serialization_SerializationInfo_GetString(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */
 System_Runtime_Serialization_SerializationInfo_Create(
-	System_Type_t _Nullable /* System.Type */ type,
-	System_Runtime_Serialization_IFormatterConverter_t _Nullable /* System.Runtime.Serialization.IFormatterConverter */ converter,
+	System_Type_t _Nonnull /* System.Type */ type,
+	System_Runtime_Serialization_IFormatterConverter_t _Nonnull /* System.Runtime.Serialization.IFormatterConverter */ converter,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */
 System_Runtime_Serialization_SerializationInfo_Create_1(
-	System_Type_t _Nullable /* System.Type */ type,
-	System_Runtime_Serialization_IFormatterConverter_t _Nullable /* System.Runtime.Serialization.IFormatterConverter */ converter,
+	System_Type_t _Nonnull /* System.Type */ type,
+	System_Runtime_Serialization_IFormatterConverter_t _Nonnull /* System.Runtime.Serialization.IFormatterConverter */ converter,
 	bool /* System.Boolean */ requireSameTokenInPartialTrust,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -14401,27 +14404,27 @@ System_Decimal_ToString_3(
 
 System_Decimal_t _Nonnull /* System.Decimal */
 System_Decimal_Parse(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Decimal_t _Nonnull /* System.Decimal */
 System_Decimal_Parse_1(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Globalization_NumberStyles_t /* System.Globalization.NumberStyles */ style,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Decimal_t _Nonnull /* System.Decimal */
 System_Decimal_Parse_2(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Decimal_t _Nonnull /* System.Decimal */
 System_Decimal_Parse_3(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Globalization_NumberStyles_t /* System.Globalization.NumberStyles */ style,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -14773,7 +14776,7 @@ System_Decimal_Create_6(
 
 System_Decimal_t _Nonnull /* System.Decimal */
 System_Decimal_Create_7(
-	System_Int32_Array_t _Nullable /* System.Int32[] */ bits,
+	System_Int32_Array_t _Nonnull /* System.Int32[] */ bits,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -15053,20 +15056,20 @@ System_DateTime_IsLeapYear(
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_DateTime_Parse(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_DateTime_Parse_1(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_DateTime_Parse_2(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Globalization_DateTimeStyles_t /* System.Globalization.DateTimeStyles */ styles,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -15074,16 +15077,16 @@ System_DateTime_Parse_2(
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_DateTime_ParseExact(
-	System_String_t _Nullable /* System.String */ s,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ format,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_DateTime_ParseExact_1(
-	System_String_t _Nullable /* System.String */ s,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ format,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Globalization_DateTimeStyles_t /* System.Globalization.DateTimeStyles */ style,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -15091,8 +15094,8 @@ System_DateTime_ParseExact_1(
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_DateTime_ParseExact_2(
-	System_String_t _Nullable /* System.String */ s,
-	System_String_Array_t _Nullable /* System.String[] */ formats,
+	System_String_t _Nonnull /* System.String */ s,
+	System_String_Array_t _Nonnull /* System.String[] */ formats,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Globalization_DateTimeStyles_t /* System.Globalization.DateTimeStyles */ style,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -15330,7 +15333,7 @@ System_DateTime_Create_5(
 	int32_t /* System.Int32 */ year,
 	int32_t /* System.Int32 */ month,
 	int32_t /* System.Int32 */ day,
-	System_Globalization_Calendar_t _Nullable /* System.Globalization.Calendar */ calendar,
+	System_Globalization_Calendar_t _Nonnull /* System.Globalization.Calendar */ calendar,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -15343,7 +15346,7 @@ System_DateTime_Create_6(
 	int32_t /* System.Int32 */ minute,
 	int32_t /* System.Int32 */ second,
 	int32_t /* System.Int32 */ millisecond,
-	System_Globalization_Calendar_t _Nullable /* System.Globalization.Calendar */ calendar,
+	System_Globalization_Calendar_t _Nonnull /* System.Globalization.Calendar */ calendar,
 	System_DateTimeKind_t /* System.DateTimeKind */ kind,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -15379,7 +15382,7 @@ System_DateTime_Create_9(
 	int32_t /* System.Int32 */ hour,
 	int32_t /* System.Int32 */ minute,
 	int32_t /* System.Int32 */ second,
-	System_Globalization_Calendar_t _Nullable /* System.Globalization.Calendar */ calendar,
+	System_Globalization_Calendar_t _Nonnull /* System.Globalization.Calendar */ calendar,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -15417,7 +15420,7 @@ System_DateTime_Create_12(
 	int32_t /* System.Int32 */ minute,
 	int32_t /* System.Int32 */ second,
 	int32_t /* System.Int32 */ millisecond,
-	System_Globalization_Calendar_t _Nullable /* System.Globalization.Calendar */ calendar,
+	System_Globalization_Calendar_t _Nonnull /* System.Globalization.Calendar */ calendar,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -15458,7 +15461,7 @@ System_DateTime_Create_15(
 	int32_t /* System.Int32 */ second,
 	int32_t /* System.Int32 */ millisecond,
 	int32_t /* System.Int32 */ microsecond,
-	System_Globalization_Calendar_t _Nullable /* System.Globalization.Calendar */ calendar,
+	System_Globalization_Calendar_t _Nonnull /* System.Globalization.Calendar */ calendar,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -15472,7 +15475,7 @@ System_DateTime_Create_16(
 	int32_t /* System.Int32 */ second,
 	int32_t /* System.Int32 */ millisecond,
 	int32_t /* System.Int32 */ microsecond,
-	System_Globalization_Calendar_t _Nullable /* System.Globalization.Calendar */ calendar,
+	System_Globalization_Calendar_t _Nonnull /* System.Globalization.Calendar */ calendar,
 	System_DateTimeKind_t /* System.DateTimeKind */ kind,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -15780,37 +15783,37 @@ System_TimeSpan_FromTicks(
 
 System_TimeSpan_t _Nonnull /* System.TimeSpan */
 System_TimeSpan_Parse(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_TimeSpan_t _Nonnull /* System.TimeSpan */
 System_TimeSpan_Parse_1(
-	System_String_t _Nullable /* System.String */ input,
+	System_String_t _Nonnull /* System.String */ input,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ formatProvider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_TimeSpan_t _Nonnull /* System.TimeSpan */
 System_TimeSpan_ParseExact(
-	System_String_t _Nullable /* System.String */ input,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ input,
+	System_String_t _Nonnull /* System.String */ format,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ formatProvider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_TimeSpan_t _Nonnull /* System.TimeSpan */
 System_TimeSpan_ParseExact_1(
-	System_String_t _Nullable /* System.String */ input,
-	System_String_Array_t _Nullable /* System.String[] */ formats,
+	System_String_t _Nonnull /* System.String */ input,
+	System_String_Array_t _Nonnull /* System.String[] */ formats,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ formatProvider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_TimeSpan_t _Nonnull /* System.TimeSpan */
 System_TimeSpan_ParseExact_2(
-	System_String_t _Nullable /* System.String */ input,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ input,
+	System_String_t _Nonnull /* System.String */ format,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ formatProvider,
 	System_Globalization_TimeSpanStyles_t /* System.Globalization.TimeSpanStyles */ styles,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -15818,8 +15821,8 @@ System_TimeSpan_ParseExact_2(
 
 System_TimeSpan_t _Nonnull /* System.TimeSpan */
 System_TimeSpan_ParseExact_3(
-	System_String_t _Nullable /* System.String */ input,
-	System_String_Array_t _Nullable /* System.String[] */ formats,
+	System_String_t _Nonnull /* System.String */ input,
+	System_String_Array_t _Nonnull /* System.String[] */ formats,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ formatProvider,
 	System_Globalization_TimeSpanStyles_t /* System.Globalization.TimeSpanStyles */ styles,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -16234,13 +16237,13 @@ System_DateOnly_GetHashCode(
 
 System_DateOnly_t _Nonnull /* System.DateOnly */
 System_DateOnly_Parse(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateOnly_t _Nonnull /* System.DateOnly */
 System_DateOnly_Parse_1(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Globalization_DateTimeStyles_t /* System.Globalization.DateTimeStyles */ style,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -16248,15 +16251,15 @@ System_DateOnly_Parse_1(
 
 System_DateOnly_t _Nonnull /* System.DateOnly */
 System_DateOnly_ParseExact(
-	System_String_t _Nullable /* System.String */ s,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateOnly_t _Nonnull /* System.DateOnly */
 System_DateOnly_ParseExact_1(
-	System_String_t _Nullable /* System.String */ s,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ format,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Globalization_DateTimeStyles_t /* System.Globalization.DateTimeStyles */ style,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -16264,15 +16267,15 @@ System_DateOnly_ParseExact_1(
 
 System_DateOnly_t _Nonnull /* System.DateOnly */
 System_DateOnly_ParseExact_2(
-	System_String_t _Nullable /* System.String */ s,
-	System_String_Array_t _Nullable /* System.String[] */ formats,
+	System_String_t _Nonnull /* System.String */ s,
+	System_String_Array_t _Nonnull /* System.String[] */ formats,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateOnly_t _Nonnull /* System.DateOnly */
 System_DateOnly_ParseExact_3(
-	System_String_t _Nullable /* System.String */ s,
-	System_String_Array_t _Nullable /* System.String[] */ formats,
+	System_String_t _Nonnull /* System.String */ s,
+	System_String_Array_t _Nonnull /* System.String[] */ formats,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Globalization_DateTimeStyles_t /* System.Globalization.DateTimeStyles */ style,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -16372,7 +16375,7 @@ System_DateOnly_ToString_3(
 
 System_DateOnly_t _Nonnull /* System.DateOnly */
 System_DateOnly_Parse_2(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -16398,7 +16401,7 @@ System_DateOnly_Create_1(
 	int32_t /* System.Int32 */ year,
 	int32_t /* System.Int32 */ month,
 	int32_t /* System.Int32 */ day,
-	System_Globalization_Calendar_t _Nullable /* System.Globalization.Calendar */ calendar,
+	System_Globalization_Calendar_t _Nonnull /* System.Globalization.Calendar */ calendar,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -16624,13 +16627,13 @@ System_TimeOnly_GetHashCode(
 
 System_TimeOnly_t _Nonnull /* System.TimeOnly */
 System_TimeOnly_Parse(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_TimeOnly_t _Nonnull /* System.TimeOnly */
 System_TimeOnly_Parse_1(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Globalization_DateTimeStyles_t /* System.Globalization.DateTimeStyles */ style,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -16638,15 +16641,15 @@ System_TimeOnly_Parse_1(
 
 System_TimeOnly_t _Nonnull /* System.TimeOnly */
 System_TimeOnly_ParseExact(
-	System_String_t _Nullable /* System.String */ s,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_TimeOnly_t _Nonnull /* System.TimeOnly */
 System_TimeOnly_ParseExact_1(
-	System_String_t _Nullable /* System.String */ s,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ format,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Globalization_DateTimeStyles_t /* System.Globalization.DateTimeStyles */ style,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -16654,15 +16657,15 @@ System_TimeOnly_ParseExact_1(
 
 System_TimeOnly_t _Nonnull /* System.TimeOnly */
 System_TimeOnly_ParseExact_2(
-	System_String_t _Nullable /* System.String */ s,
-	System_String_Array_t _Nullable /* System.String[] */ formats,
+	System_String_t _Nonnull /* System.String */ s,
+	System_String_Array_t _Nonnull /* System.String[] */ formats,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_TimeOnly_t _Nonnull /* System.TimeOnly */
 System_TimeOnly_ParseExact_3(
-	System_String_t _Nullable /* System.String */ s,
-	System_String_Array_t _Nullable /* System.String[] */ formats,
+	System_String_t _Nonnull /* System.String */ s,
+	System_String_Array_t _Nonnull /* System.String[] */ formats,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Globalization_DateTimeStyles_t /* System.Globalization.DateTimeStyles */ style,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -16762,7 +16765,7 @@ System_TimeOnly_ToString_3(
 
 System_TimeOnly_t _Nonnull /* System.TimeOnly */
 System_TimeOnly_Parse_2(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -16907,7 +16910,7 @@ System_Globalization_Calendar_Clone(
 
 System_Globalization_Calendar_t _Nullable /* System.Globalization.Calendar */
 System_Globalization_Calendar_ReadOnly(
-	System_Globalization_Calendar_t _Nullable /* System.Globalization.Calendar */ calendar,
+	System_Globalization_Calendar_t _Nonnull /* System.Globalization.Calendar */ calendar,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -17272,15 +17275,15 @@ System_Globalization_Calendar_Destroy(
 System_Object_t _Nullable /* System.Object */
 System_Runtime_Serialization_IFormatterConverter_Convert(
 	System_Runtime_Serialization_IFormatterConverter_t _Nullable /* System.Runtime.Serialization.IFormatterConverter */ self,
-	System_Object_t _Nullable /* System.Object */ value,
-	System_Type_t _Nullable /* System.Type */ type,
+	System_Object_t _Nonnull /* System.Object */ value,
+	System_Type_t _Nonnull /* System.Type */ type,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Object_t _Nullable /* System.Object */
 System_Runtime_Serialization_IFormatterConverter_Convert_1(
 	System_Runtime_Serialization_IFormatterConverter_t _Nullable /* System.Runtime.Serialization.IFormatterConverter */ self,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_TypeCode_t /* System.TypeCode */ typeCode,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -17288,105 +17291,105 @@ System_Runtime_Serialization_IFormatterConverter_Convert_1(
 bool /* System.Boolean */
 System_Runtime_Serialization_IFormatterConverter_ToBoolean(
 	System_Runtime_Serialization_IFormatterConverter_t _Nullable /* System.Runtime.Serialization.IFormatterConverter */ self,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 wchar_t /* System.Char */
 System_Runtime_Serialization_IFormatterConverter_ToChar(
 	System_Runtime_Serialization_IFormatterConverter_t _Nullable /* System.Runtime.Serialization.IFormatterConverter */ self,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int8_t /* System.SByte */
 System_Runtime_Serialization_IFormatterConverter_ToSByte(
 	System_Runtime_Serialization_IFormatterConverter_t _Nullable /* System.Runtime.Serialization.IFormatterConverter */ self,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 uint8_t /* System.Byte */
 System_Runtime_Serialization_IFormatterConverter_ToByte(
 	System_Runtime_Serialization_IFormatterConverter_t _Nullable /* System.Runtime.Serialization.IFormatterConverter */ self,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int16_t /* System.Int16 */
 System_Runtime_Serialization_IFormatterConverter_ToInt16(
 	System_Runtime_Serialization_IFormatterConverter_t _Nullable /* System.Runtime.Serialization.IFormatterConverter */ self,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 uint16_t /* System.UInt16 */
 System_Runtime_Serialization_IFormatterConverter_ToUInt16(
 	System_Runtime_Serialization_IFormatterConverter_t _Nullable /* System.Runtime.Serialization.IFormatterConverter */ self,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Runtime_Serialization_IFormatterConverter_ToInt32(
 	System_Runtime_Serialization_IFormatterConverter_t _Nullable /* System.Runtime.Serialization.IFormatterConverter */ self,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 uint32_t /* System.UInt32 */
 System_Runtime_Serialization_IFormatterConverter_ToUInt32(
 	System_Runtime_Serialization_IFormatterConverter_t _Nullable /* System.Runtime.Serialization.IFormatterConverter */ self,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int64_t /* System.Int64 */
 System_Runtime_Serialization_IFormatterConverter_ToInt64(
 	System_Runtime_Serialization_IFormatterConverter_t _Nullable /* System.Runtime.Serialization.IFormatterConverter */ self,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 uint64_t /* System.UInt64 */
 System_Runtime_Serialization_IFormatterConverter_ToUInt64(
 	System_Runtime_Serialization_IFormatterConverter_t _Nullable /* System.Runtime.Serialization.IFormatterConverter */ self,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 float /* System.Single */
 System_Runtime_Serialization_IFormatterConverter_ToSingle(
 	System_Runtime_Serialization_IFormatterConverter_t _Nullable /* System.Runtime.Serialization.IFormatterConverter */ self,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 double /* System.Double */
 System_Runtime_Serialization_IFormatterConverter_ToDouble(
 	System_Runtime_Serialization_IFormatterConverter_t _Nullable /* System.Runtime.Serialization.IFormatterConverter */ self,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Decimal_t _Nonnull /* System.Decimal */
 System_Runtime_Serialization_IFormatterConverter_ToDecimal(
 	System_Runtime_Serialization_IFormatterConverter_t _Nullable /* System.Runtime.Serialization.IFormatterConverter */ self,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_Runtime_Serialization_IFormatterConverter_ToDateTime(
 	System_Runtime_Serialization_IFormatterConverter_t _Nullable /* System.Runtime.Serialization.IFormatterConverter */ self,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_Runtime_Serialization_IFormatterConverter_ToString(
 	System_Runtime_Serialization_IFormatterConverter_t _Nullable /* System.Runtime.Serialization.IFormatterConverter */ self,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -17469,7 +17472,7 @@ System_Reflection_AssemblyName_Clone(
 
 System_Reflection_AssemblyName_t _Nullable /* System.Reflection.AssemblyName */
 System_Reflection_AssemblyName_GetAssemblyName(
-	System_String_t _Nullable /* System.String */ assemblyFile,
+	System_String_t _Nonnull /* System.String */ assemblyFile,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -17508,7 +17511,7 @@ System_Reflection_AssemblyName_ToString(
 void /* System.Void */
 System_Reflection_AssemblyName_GetObjectData(
 	System_Reflection_AssemblyName_t _Nullable /* System.Reflection.AssemblyName */ self,
-	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_SerializationInfo_t _Nonnull /* System.Runtime.Serialization.SerializationInfo */ info,
 	System_Runtime_Serialization_StreamingContext_t _Nonnull /* System.Runtime.Serialization.StreamingContext */ context,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -17529,7 +17532,7 @@ System_Reflection_AssemblyName_ReferenceMatchesDefinition(
 
 System_Reflection_AssemblyName_t _Nullable /* System.Reflection.AssemblyName */
 System_Reflection_AssemblyName_Create(
-	System_String_t _Nullable /* System.String */ assemblyName,
+	System_String_t _Nonnull /* System.String */ assemblyName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -17774,7 +17777,7 @@ System_Version_ToString_1(
 
 System_Version_t _Nullable /* System.Version */
 System_Version_Parse(
-	System_String_t _Nullable /* System.String */ input,
+	System_String_t _Nonnull /* System.String */ input,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -17811,7 +17814,7 @@ System_Version_Create_2(
 
 System_Version_t _Nullable /* System.Version */
 System_Version_Create_3(
-	System_String_t _Nullable /* System.String */ version,
+	System_String_t _Nonnull /* System.String */ version,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -17880,19 +17883,19 @@ System_Version_Destroy(
 #pragma mark - BEGIN APIs of System.Reflection.StrongNameKeyPair
 System_Reflection_StrongNameKeyPair_t _Nullable /* System.Reflection.StrongNameKeyPair */
 System_Reflection_StrongNameKeyPair_Create(
-	System_IO_FileStream_t _Nullable /* System.IO.FileStream */ keyPairFile,
+	System_IO_FileStream_t _Nonnull /* System.IO.FileStream */ keyPairFile,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_StrongNameKeyPair_t _Nullable /* System.Reflection.StrongNameKeyPair */
 System_Reflection_StrongNameKeyPair_Create_1(
-	System_Byte_Array_t _Nullable /* System.Byte[] */ keyPairArray,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ keyPairArray,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_StrongNameKeyPair_t _Nullable /* System.Reflection.StrongNameKeyPair */
 System_Reflection_StrongNameKeyPair_Create_2(
-	System_String_t _Nullable /* System.String */ keyPairContainer,
+	System_String_t _Nonnull /* System.String */ keyPairContainer,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -17942,7 +17945,7 @@ System_IO_FileStream_FlushAsync(
 int32_t /* System.Int32 */
 System_IO_FileStream_Read(
 	System_IO_FileStream_t _Nullable /* System.IO.FileStream */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ buffer,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -17951,7 +17954,7 @@ System_IO_FileStream_Read(
 System_Threading_Tasks_Task_A1_t _Nullable /* System.Threading.Tasks.Task<System.Int32> */
 System_IO_FileStream_ReadAsync(
 	System_IO_FileStream_t _Nullable /* System.IO.FileStream */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ buffer,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ count,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
@@ -17961,7 +17964,7 @@ System_IO_FileStream_ReadAsync(
 void /* System.Void */
 System_IO_FileStream_Write(
 	System_IO_FileStream_t _Nullable /* System.IO.FileStream */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ buffer,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -17977,7 +17980,7 @@ System_IO_FileStream_Write_1(
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_FileStream_WriteAsync(
 	System_IO_FileStream_t _Nullable /* System.IO.FileStream */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ buffer,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ count,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
@@ -18026,7 +18029,7 @@ System_IO_FileStream_DisposeAsync(
 void /* System.Void */
 System_IO_FileStream_CopyTo(
 	System_IO_FileStream_t _Nullable /* System.IO.FileStream */ self,
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ destination,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ destination,
 	int32_t /* System.Int32 */ bufferSize,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -18034,7 +18037,7 @@ System_IO_FileStream_CopyTo(
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_FileStream_CopyToAsync(
 	System_IO_FileStream_t _Nullable /* System.IO.FileStream */ self,
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ destination,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ destination,
 	int32_t /* System.Int32 */ bufferSize,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -18043,7 +18046,7 @@ System_IO_FileStream_CopyToAsync(
 System_IAsyncResult_t _Nullable /* System.IAsyncResult */
 System_IO_FileStream_BeginRead(
 	System_IO_FileStream_t _Nullable /* System.IO.FileStream */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ buffer,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ count,
 	System_AsyncCallback_t _Nullable /* System.AsyncCallback */ callback,
@@ -18054,14 +18057,14 @@ System_IO_FileStream_BeginRead(
 int32_t /* System.Int32 */
 System_IO_FileStream_EndRead(
 	System_IO_FileStream_t _Nullable /* System.IO.FileStream */ self,
-	System_IAsyncResult_t _Nullable /* System.IAsyncResult */ asyncResult,
+	System_IAsyncResult_t _Nonnull /* System.IAsyncResult */ asyncResult,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IAsyncResult_t _Nullable /* System.IAsyncResult */
 System_IO_FileStream_BeginWrite(
 	System_IO_FileStream_t _Nullable /* System.IO.FileStream */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ buffer,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ count,
 	System_AsyncCallback_t _Nullable /* System.AsyncCallback */ callback,
@@ -18072,7 +18075,7 @@ System_IO_FileStream_BeginWrite(
 void /* System.Void */
 System_IO_FileStream_EndWrite(
 	System_IO_FileStream_t _Nullable /* System.IO.FileStream */ self,
-	System_IAsyncResult_t _Nullable /* System.IAsyncResult */ asyncResult,
+	System_IAsyncResult_t _Nonnull /* System.IAsyncResult */ asyncResult,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -18120,14 +18123,14 @@ System_IO_FileStream_Create_3(
 
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_FileStream_Create_4(
-	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */ handle,
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nonnull /* Microsoft.Win32.SafeHandles.SafeFileHandle */ handle,
 	System_IO_FileAccess_t /* System.IO.FileAccess */ access,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_FileStream_Create_5(
-	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */ handle,
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nonnull /* Microsoft.Win32.SafeHandles.SafeFileHandle */ handle,
 	System_IO_FileAccess_t /* System.IO.FileAccess */ access,
 	int32_t /* System.Int32 */ bufferSize,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -18135,7 +18138,7 @@ System_IO_FileStream_Create_5(
 
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_FileStream_Create_6(
-	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */ handle,
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nonnull /* Microsoft.Win32.SafeHandles.SafeFileHandle */ handle,
 	System_IO_FileAccess_t /* System.IO.FileAccess */ access,
 	int32_t /* System.Int32 */ bufferSize,
 	bool /* System.Boolean */ isAsync,
@@ -18144,14 +18147,14 @@ System_IO_FileStream_Create_6(
 
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_FileStream_Create_7(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_IO_FileMode_t /* System.IO.FileMode */ mode,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_FileStream_Create_8(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_IO_FileMode_t /* System.IO.FileMode */ mode,
 	System_IO_FileAccess_t /* System.IO.FileAccess */ access,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -18159,7 +18162,7 @@ System_IO_FileStream_Create_8(
 
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_FileStream_Create_9(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_IO_FileMode_t /* System.IO.FileMode */ mode,
 	System_IO_FileAccess_t /* System.IO.FileAccess */ access,
 	System_IO_FileShare_t /* System.IO.FileShare */ share,
@@ -18168,7 +18171,7 @@ System_IO_FileStream_Create_9(
 
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_FileStream_Create_10(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_IO_FileMode_t /* System.IO.FileMode */ mode,
 	System_IO_FileAccess_t /* System.IO.FileAccess */ access,
 	System_IO_FileShare_t /* System.IO.FileShare */ share,
@@ -18178,7 +18181,7 @@ System_IO_FileStream_Create_10(
 
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_FileStream_Create_11(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_IO_FileMode_t /* System.IO.FileMode */ mode,
 	System_IO_FileAccess_t /* System.IO.FileAccess */ access,
 	System_IO_FileShare_t /* System.IO.FileShare */ share,
@@ -18189,7 +18192,7 @@ System_IO_FileStream_Create_11(
 
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_FileStream_Create_12(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_IO_FileMode_t /* System.IO.FileMode */ mode,
 	System_IO_FileAccess_t /* System.IO.FileAccess */ access,
 	System_IO_FileShare_t /* System.IO.FileShare */ share,
@@ -18200,8 +18203,8 @@ System_IO_FileStream_Create_12(
 
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_FileStream_Create_13(
-	System_String_t _Nullable /* System.String */ path,
-	System_IO_FileStreamOptions_t _Nullable /* System.IO.FileStreamOptions */ options,
+	System_String_t _Nonnull /* System.String */ path,
+	System_IO_FileStreamOptions_t _Nonnull /* System.IO.FileStreamOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -18291,14 +18294,14 @@ System_IO_FileStream_Destroy(
 void /* System.Void */
 System_IO_Stream_CopyTo(
 	System_IO_Stream_t _Nullable /* System.IO.Stream */ self,
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ destination,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ destination,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_Stream_CopyTo_1(
 	System_IO_Stream_t _Nullable /* System.IO.Stream */ self,
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ destination,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ destination,
 	int32_t /* System.Int32 */ bufferSize,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -18306,14 +18309,14 @@ System_IO_Stream_CopyTo_1(
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_Stream_CopyToAsync(
 	System_IO_Stream_t _Nullable /* System.IO.Stream */ self,
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ destination,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ destination,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_Stream_CopyToAsync_1(
 	System_IO_Stream_t _Nullable /* System.IO.Stream */ self,
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ destination,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ destination,
 	int32_t /* System.Int32 */ bufferSize,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -18321,7 +18324,7 @@ System_IO_Stream_CopyToAsync_1(
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_Stream_CopyToAsync_2(
 	System_IO_Stream_t _Nullable /* System.IO.Stream */ self,
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ destination,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ destination,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -18329,7 +18332,7 @@ System_IO_Stream_CopyToAsync_2(
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_Stream_CopyToAsync_3(
 	System_IO_Stream_t _Nullable /* System.IO.Stream */ self,
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ destination,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ destination,
 	int32_t /* System.Int32 */ bufferSize,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -18375,7 +18378,7 @@ System_IO_Stream_FlushAsync_1(
 System_IAsyncResult_t _Nullable /* System.IAsyncResult */
 System_IO_Stream_BeginRead(
 	System_IO_Stream_t _Nullable /* System.IO.Stream */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ buffer,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ count,
 	System_AsyncCallback_t _Nullable /* System.AsyncCallback */ callback,
@@ -18386,14 +18389,14 @@ System_IO_Stream_BeginRead(
 int32_t /* System.Int32 */
 System_IO_Stream_EndRead(
 	System_IO_Stream_t _Nullable /* System.IO.Stream */ self,
-	System_IAsyncResult_t _Nullable /* System.IAsyncResult */ asyncResult,
+	System_IAsyncResult_t _Nonnull /* System.IAsyncResult */ asyncResult,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_A1_t _Nullable /* System.Threading.Tasks.Task<System.Int32> */
 System_IO_Stream_ReadAsync(
 	System_IO_Stream_t _Nullable /* System.IO.Stream */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ buffer,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -18402,7 +18405,7 @@ System_IO_Stream_ReadAsync(
 System_Threading_Tasks_Task_A1_t _Nullable /* System.Threading.Tasks.Task<System.Int32> */
 System_IO_Stream_ReadAsync_1(
 	System_IO_Stream_t _Nullable /* System.IO.Stream */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ buffer,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ count,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
@@ -18412,7 +18415,7 @@ System_IO_Stream_ReadAsync_1(
 System_Threading_Tasks_ValueTask_t _Nonnull /* System.Threading.Tasks.ValueTask */
 System_IO_Stream_ReadExactlyAsync(
 	System_IO_Stream_t _Nullable /* System.IO.Stream */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ buffer,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ count,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
@@ -18422,7 +18425,7 @@ System_IO_Stream_ReadExactlyAsync(
 System_IAsyncResult_t _Nullable /* System.IAsyncResult */
 System_IO_Stream_BeginWrite(
 	System_IO_Stream_t _Nullable /* System.IO.Stream */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ buffer,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ count,
 	System_AsyncCallback_t _Nullable /* System.AsyncCallback */ callback,
@@ -18433,14 +18436,14 @@ System_IO_Stream_BeginWrite(
 void /* System.Void */
 System_IO_Stream_EndWrite(
 	System_IO_Stream_t _Nullable /* System.IO.Stream */ self,
-	System_IAsyncResult_t _Nullable /* System.IAsyncResult */ asyncResult,
+	System_IAsyncResult_t _Nonnull /* System.IAsyncResult */ asyncResult,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_Stream_WriteAsync(
 	System_IO_Stream_t _Nullable /* System.IO.Stream */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ buffer,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -18449,7 +18452,7 @@ System_IO_Stream_WriteAsync(
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_Stream_WriteAsync_1(
 	System_IO_Stream_t _Nullable /* System.IO.Stream */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ buffer,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ count,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
@@ -18474,7 +18477,7 @@ System_IO_Stream_SetLength(
 int32_t /* System.Int32 */
 System_IO_Stream_Read_1(
 	System_IO_Stream_t _Nullable /* System.IO.Stream */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ buffer,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -18489,7 +18492,7 @@ System_IO_Stream_ReadByte(
 void /* System.Void */
 System_IO_Stream_ReadExactly_1(
 	System_IO_Stream_t _Nullable /* System.IO.Stream */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ buffer,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -18498,7 +18501,7 @@ System_IO_Stream_ReadExactly_1(
 void /* System.Void */
 System_IO_Stream_Write_1(
 	System_IO_Stream_t _Nullable /* System.IO.Stream */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ buffer,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -18520,7 +18523,7 @@ System_IO_Stream_WriteByte(
 
 System_IO_Stream_t _Nullable /* System.IO.Stream */
 System_IO_Stream_Synchronized(
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ stream,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -18672,7 +18675,7 @@ System_Threading_Tasks_ValueTask_FromCanceled(
 
 System_Threading_Tasks_ValueTask_t _Nonnull /* System.Threading.Tasks.ValueTask */
 System_Threading_Tasks_ValueTask_FromException(
-	System_Exception_t _Nullable /* System.Exception */ exception,
+	System_Exception_t _Nonnull /* System.Exception */ exception,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -18723,13 +18726,13 @@ System_Threading_Tasks_ValueTask_ConfigureAwait(
 
 System_Threading_Tasks_ValueTask_t _Nonnull /* System.Threading.Tasks.ValueTask */
 System_Threading_Tasks_ValueTask_Create(
-	System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */ task,
+	System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */ task,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_ValueTask_t _Nonnull /* System.Threading.Tasks.ValueTask */
 System_Threading_Tasks_ValueTask_Create_1(
-	System_Threading_Tasks_Sources_IValueTaskSource_t _Nullable /* System.Threading.Tasks.Sources.IValueTaskSource */ source,
+	System_Threading_Tasks_Sources_IValueTaskSource_t _Nonnull /* System.Threading.Tasks.Sources.IValueTaskSource */ source,
 	int16_t /* System.Int16 */ token,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -18791,14 +18794,14 @@ System_Threading_Tasks_ValueTask_Destroy(
 System_Threading_CancellationTokenRegistration_t _Nonnull /* System.Threading.CancellationTokenRegistration */
 System_Threading_CancellationToken_Register(
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ self,
-	System_Action_t _Nullable /* System.Action */ callback,
+	System_Action_t _Nonnull /* System.Action */ callback,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_CancellationTokenRegistration_t _Nonnull /* System.Threading.CancellationTokenRegistration */
 System_Threading_CancellationToken_Register_1(
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ self,
-	System_Action_t _Nullable /* System.Action */ callback,
+	System_Action_t _Nonnull /* System.Action */ callback,
 	bool /* System.Boolean */ useSynchronizationContext,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -18931,27 +18934,27 @@ System_Threading_WaitHandle_WaitOne_4(
 
 bool /* System.Boolean */
 System_Threading_WaitHandle_WaitAll(
-	System_Threading_WaitHandle_Array_t _Nullable /* System.Threading.WaitHandle[] */ waitHandles,
+	System_Threading_WaitHandle_Array_t _Nonnull /* System.Threading.WaitHandle[] */ waitHandles,
 	int32_t /* System.Int32 */ millisecondsTimeout,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Threading_WaitHandle_WaitAll_1(
-	System_Threading_WaitHandle_Array_t _Nullable /* System.Threading.WaitHandle[] */ waitHandles,
+	System_Threading_WaitHandle_Array_t _Nonnull /* System.Threading.WaitHandle[] */ waitHandles,
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ timeout,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Threading_WaitHandle_WaitAll_2(
-	System_Threading_WaitHandle_Array_t _Nullable /* System.Threading.WaitHandle[] */ waitHandles,
+	System_Threading_WaitHandle_Array_t _Nonnull /* System.Threading.WaitHandle[] */ waitHandles,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Threading_WaitHandle_WaitAll_3(
-	System_Threading_WaitHandle_Array_t _Nullable /* System.Threading.WaitHandle[] */ waitHandles,
+	System_Threading_WaitHandle_Array_t _Nonnull /* System.Threading.WaitHandle[] */ waitHandles,
 	int32_t /* System.Int32 */ millisecondsTimeout,
 	bool /* System.Boolean */ exitContext,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -18959,7 +18962,7 @@ System_Threading_WaitHandle_WaitAll_3(
 
 bool /* System.Boolean */
 System_Threading_WaitHandle_WaitAll_4(
-	System_Threading_WaitHandle_Array_t _Nullable /* System.Threading.WaitHandle[] */ waitHandles,
+	System_Threading_WaitHandle_Array_t _Nonnull /* System.Threading.WaitHandle[] */ waitHandles,
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ timeout,
 	bool /* System.Boolean */ exitContext,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -18967,27 +18970,27 @@ System_Threading_WaitHandle_WaitAll_4(
 
 int32_t /* System.Int32 */
 System_Threading_WaitHandle_WaitAny(
-	System_Threading_WaitHandle_Array_t _Nullable /* System.Threading.WaitHandle[] */ waitHandles,
+	System_Threading_WaitHandle_Array_t _Nonnull /* System.Threading.WaitHandle[] */ waitHandles,
 	int32_t /* System.Int32 */ millisecondsTimeout,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Threading_WaitHandle_WaitAny_1(
-	System_Threading_WaitHandle_Array_t _Nullable /* System.Threading.WaitHandle[] */ waitHandles,
+	System_Threading_WaitHandle_Array_t _Nonnull /* System.Threading.WaitHandle[] */ waitHandles,
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ timeout,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Threading_WaitHandle_WaitAny_2(
-	System_Threading_WaitHandle_Array_t _Nullable /* System.Threading.WaitHandle[] */ waitHandles,
+	System_Threading_WaitHandle_Array_t _Nonnull /* System.Threading.WaitHandle[] */ waitHandles,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Threading_WaitHandle_WaitAny_3(
-	System_Threading_WaitHandle_Array_t _Nullable /* System.Threading.WaitHandle[] */ waitHandles,
+	System_Threading_WaitHandle_Array_t _Nonnull /* System.Threading.WaitHandle[] */ waitHandles,
 	int32_t /* System.Int32 */ millisecondsTimeout,
 	bool /* System.Boolean */ exitContext,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -18995,7 +18998,7 @@ System_Threading_WaitHandle_WaitAny_3(
 
 int32_t /* System.Int32 */
 System_Threading_WaitHandle_WaitAny_4(
-	System_Threading_WaitHandle_Array_t _Nullable /* System.Threading.WaitHandle[] */ waitHandles,
+	System_Threading_WaitHandle_Array_t _Nonnull /* System.Threading.WaitHandle[] */ waitHandles,
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ timeout,
 	bool /* System.Boolean */ exitContext,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -19003,15 +19006,15 @@ System_Threading_WaitHandle_WaitAny_4(
 
 bool /* System.Boolean */
 System_Threading_WaitHandle_SignalAndWait(
-	System_Threading_WaitHandle_t _Nullable /* System.Threading.WaitHandle */ toSignal,
-	System_Threading_WaitHandle_t _Nullable /* System.Threading.WaitHandle */ toWaitOn,
+	System_Threading_WaitHandle_t _Nonnull /* System.Threading.WaitHandle */ toSignal,
+	System_Threading_WaitHandle_t _Nonnull /* System.Threading.WaitHandle */ toWaitOn,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Threading_WaitHandle_SignalAndWait_1(
-	System_Threading_WaitHandle_t _Nullable /* System.Threading.WaitHandle */ toSignal,
-	System_Threading_WaitHandle_t _Nullable /* System.Threading.WaitHandle */ toWaitOn,
+	System_Threading_WaitHandle_t _Nonnull /* System.Threading.WaitHandle */ toSignal,
+	System_Threading_WaitHandle_t _Nonnull /* System.Threading.WaitHandle */ toWaitOn,
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ timeout,
 	bool /* System.Boolean */ exitContext,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -19019,8 +19022,8 @@ System_Threading_WaitHandle_SignalAndWait_1(
 
 bool /* System.Boolean */
 System_Threading_WaitHandle_SignalAndWait_2(
-	System_Threading_WaitHandle_t _Nullable /* System.Threading.WaitHandle */ toSignal,
-	System_Threading_WaitHandle_t _Nullable /* System.Threading.WaitHandle */ toWaitOn,
+	System_Threading_WaitHandle_t _Nonnull /* System.Threading.WaitHandle */ toSignal,
+	System_Threading_WaitHandle_t _Nonnull /* System.Threading.WaitHandle */ toWaitOn,
 	int32_t /* System.Int32 */ millisecondsTimeout,
 	bool /* System.Boolean */ exitContext,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -19314,7 +19317,7 @@ System_Exception_GetBaseException(
 void /* System.Void */
 System_Exception_GetObjectData(
 	System_Exception_t _Nullable /* System.Exception */ self,
-	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_SerializationInfo_t _Nonnull /* System.Runtime.Serialization.SerializationInfo */ info,
 	System_Runtime_Serialization_StreamingContext_t _Nonnull /* System.Runtime.Serialization.StreamingContext */ context,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -19697,7 +19700,7 @@ System_Reflection_MethodBase_Destroy(
 void /* System.Void */
 System_RuntimeMethodHandle_GetObjectData(
 	System_RuntimeMethodHandle_t _Nonnull /* System.RuntimeMethodHandle */ self,
-	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_SerializationInfo_t _Nonnull /* System.Runtime.Serialization.SerializationInfo */ info,
 	System_Runtime_Serialization_StreamingContext_t _Nonnull /* System.Runtime.Serialization.StreamingContext */ context,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -19807,7 +19810,7 @@ System_RuntimeTypeHandle_GetModuleHandle(
 void /* System.Void */
 System_RuntimeTypeHandle_GetObjectData(
 	System_RuntimeTypeHandle_t _Nonnull /* System.RuntimeTypeHandle */ self,
-	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_SerializationInfo_t _Nonnull /* System.Runtime.Serialization.SerializationInfo */ info,
 	System_Runtime_Serialization_StreamingContext_t _Nonnull /* System.Runtime.Serialization.StreamingContext */ context,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -20004,7 +20007,7 @@ System_RuntimeFieldHandle_ToIntPtr(
 void /* System.Void */
 System_RuntimeFieldHandle_GetObjectData(
 	System_RuntimeFieldHandle_t _Nonnull /* System.RuntimeFieldHandle */ self,
-	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_SerializationInfo_t _Nonnull /* System.Runtime.Serialization.SerializationInfo */ info,
 	System_Runtime_Serialization_StreamingContext_t _Nonnull /* System.Runtime.Serialization.StreamingContext */ context,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -20045,7 +20048,7 @@ System_RuntimeFieldHandle_Destroy(
 bool /* System.Boolean */
 System_Reflection_ParameterInfo_IsDefined(
 	System_Reflection_ParameterInfo_t _Nullable /* System.Reflection.ParameterInfo */ self,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -20066,7 +20069,7 @@ System_Reflection_ParameterInfo_GetCustomAttributes_1(
 System_Object_Array_t _Nullable /* System.Object[] */
 System_Reflection_ParameterInfo_GetCustomAttributes_2(
 	System_Reflection_ParameterInfo_t _Nullable /* System.Reflection.ParameterInfo */ self,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -20244,25 +20247,25 @@ System_Runtime_Serialization_IObjectReference_Destroy(
 #pragma mark - BEGIN APIs of System.Reflection.CustomAttributeData
 System_Collections_Generic_IList_A1_t _Nullable /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */
 System_Reflection_CustomAttributeData_GetCustomAttributes(
-	System_Reflection_MemberInfo_t _Nullable /* System.Reflection.MemberInfo */ target,
+	System_Reflection_MemberInfo_t _Nonnull /* System.Reflection.MemberInfo */ target,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IList_A1_t _Nullable /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */
 System_Reflection_CustomAttributeData_GetCustomAttributes_1(
-	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ target,
+	System_Reflection_Module_t _Nonnull /* System.Reflection.Module */ target,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IList_A1_t _Nullable /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */
 System_Reflection_CustomAttributeData_GetCustomAttributes_2(
-	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ target,
+	System_Reflection_Assembly_t _Nonnull /* System.Reflection.Assembly */ target,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IList_A1_t _Nullable /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */
 System_Reflection_CustomAttributeData_GetCustomAttributes_3(
-	System_Reflection_ParameterInfo_t _Nullable /* System.Reflection.ParameterInfo */ target,
+	System_Reflection_ParameterInfo_t _Nonnull /* System.Reflection.ParameterInfo */ target,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -20351,7 +20354,7 @@ System_Reflection_Module_IsResource(
 bool /* System.Boolean */
 System_Reflection_Module_IsDefined(
 	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ self,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -20372,7 +20375,7 @@ System_Reflection_Module_GetCustomAttributes_1(
 System_Object_Array_t _Nullable /* System.Object[] */
 System_Reflection_Module_GetCustomAttributes_2(
 	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ self,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -20380,26 +20383,26 @@ System_Reflection_Module_GetCustomAttributes_2(
 System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */
 System_Reflection_Module_GetMethod(
 	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */
 System_Reflection_Module_GetMethod_1(
 	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ self,
-	System_String_t _Nullable /* System.String */ name,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */
 System_Reflection_Module_GetMethod_2(
 	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ binder,
 	System_Reflection_CallingConventions_t /* System.Reflection.CallingConventions */ callConvention,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Reflection_ParameterModifier_Array_t _Nullable /* System.Reflection.ParameterModifier[] */ modifiers,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -20420,14 +20423,14 @@ System_Reflection_Module_GetMethods_1(
 System_Reflection_FieldInfo_t _Nullable /* System.Reflection.FieldInfo */
 System_Reflection_Module_GetField(
 	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_FieldInfo_t _Nullable /* System.Reflection.FieldInfo */
 System_Reflection_Module_GetField_1(
 	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -20454,14 +20457,14 @@ System_Reflection_Module_GetTypes(
 System_Type_t _Nullable /* System.Type */
 System_Reflection_Module_GetType_1(
 	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ self,
-	System_String_t _Nullable /* System.String */ className,
+	System_String_t _Nonnull /* System.String */ className,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Type_t _Nullable /* System.Type */
 System_Reflection_Module_GetType_2(
 	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ self,
-	System_String_t _Nullable /* System.String */ className,
+	System_String_t _Nonnull /* System.String */ className,
 	bool /* System.Boolean */ ignoreCase,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -20469,7 +20472,7 @@ System_Reflection_Module_GetType_2(
 System_Type_t _Nullable /* System.Type */
 System_Reflection_Module_GetType_3(
 	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ self,
-	System_String_t _Nullable /* System.String */ className,
+	System_String_t _Nonnull /* System.String */ className,
 	bool /* System.Boolean */ throwOnError,
 	bool /* System.Boolean */ ignoreCase,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -20564,7 +20567,7 @@ System_Reflection_Module_ResolveType_1(
 void /* System.Void */
 System_Reflection_Module_GetObjectData(
 	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ self,
-	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_SerializationInfo_t _Nonnull /* System.Runtime.Serialization.SerializationInfo */ info,
 	System_Runtime_Serialization_StreamingContext_t _Nonnull /* System.Runtime.Serialization.StreamingContext */ context,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -20678,7 +20681,7 @@ System_Reflection_Module_Destroy(
 #pragma mark - BEGIN APIs of System.Guid
 System_Guid_t _Nonnull /* System.Guid */
 System_Guid_Parse(
-	System_String_t _Nullable /* System.String */ input,
+	System_String_t _Nonnull /* System.String */ input,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -20691,8 +20694,8 @@ System_Guid_TryParse(
 
 System_Guid_t _Nonnull /* System.Guid */
 System_Guid_ParseExact(
-	System_String_t _Nullable /* System.String */ input,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ input,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -20774,7 +20777,7 @@ System_Guid_ToString_2(
 
 System_Guid_t _Nonnull /* System.Guid */
 System_Guid_Parse_1(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -20794,7 +20797,7 @@ System_Guid_NewGuid(
 
 System_Guid_t _Nonnull /* System.Guid */
 System_Guid_Create(
-	System_Byte_Array_t _Nullable /* System.Byte[] */ b,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ b,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -20832,7 +20835,7 @@ System_Guid_Create_4(
 	int32_t /* System.Int32 */ a,
 	int16_t /* System.Int16 */ b,
 	int16_t /* System.Int16 */ c,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ d,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ d,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -20854,7 +20857,7 @@ System_Guid_Create_5(
 
 System_Guid_t _Nonnull /* System.Guid */
 System_Guid_Create_6(
-	System_String_t _Nullable /* System.String */ g,
+	System_String_t _Nonnull /* System.String */ g,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -20904,7 +20907,7 @@ System_Reflection_MethodInfo_GetGenericMethodDefinition(
 System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */
 System_Reflection_MethodInfo_MakeGenericMethod(
 	System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */ self,
-	System_Type_Array_t _Nullable /* System.Type[] */ typeArguments,
+	System_Type_Array_t _Nonnull /* System.Type[] */ typeArguments,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -20917,14 +20920,14 @@ System_Reflection_MethodInfo_GetBaseDefinition(
 System_Delegate_t _Nullable /* System.Delegate */
 System_Reflection_MethodInfo_CreateDelegate(
 	System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */ self,
-	System_Type_t _Nullable /* System.Type */ delegateType,
+	System_Type_t _Nonnull /* System.Type */ delegateType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Delegate_t _Nullable /* System.Delegate */
 System_Reflection_MethodInfo_CreateDelegate_1(
 	System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */ self,
-	System_Type_t _Nullable /* System.Type */ delegateType,
+	System_Type_t _Nonnull /* System.Type */ delegateType,
 	System_Object_t _Nullable /* System.Object */ target,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -21012,8 +21015,8 @@ System_Reflection_FieldInfo_t _Nullable /* System.Reflection.FieldInfo */
 System_Reflection_Binder_BindToField(
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ self,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
-	System_Reflection_FieldInfo_Array_t _Nullable /* System.Reflection.FieldInfo[] */ match,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Reflection_FieldInfo_Array_t _Nonnull /* System.Reflection.FieldInfo[] */ match,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */ culture,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -21022,8 +21025,8 @@ System_Reflection_MethodBase_t _Nullable /* System.Reflection.MethodBase */
 System_Reflection_Binder_BindToMethod(
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ self,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
-	System_Reflection_MethodBase_Array_t _Nullable /* System.Reflection.MethodBase[] */ match,
-	System_Object_Array_t _Nullable* _Nullable /* System.Object[] */ args,
+	System_Reflection_MethodBase_Array_t _Nonnull /* System.Reflection.MethodBase[] */ match,
+	System_Object_Array_t _Nonnull* _Nonnull /* System.Object[] */ args,
 	System_Reflection_ParameterModifier_Array_t _Nullable /* System.Reflection.ParameterModifier[] */ modifiers,
 	System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */ culture,
 	System_String_Array_t _Nullable /* System.String[] */ names,
@@ -21034,8 +21037,8 @@ System_Reflection_Binder_BindToMethod(
 System_Object_t _Nullable /* System.Object */
 System_Reflection_Binder_ChangeType(
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ self,
-	System_Object_t _Nullable /* System.Object */ value,
-	System_Type_t _Nullable /* System.Type */ type,
+	System_Object_t _Nonnull /* System.Object */ value,
+	System_Type_t _Nonnull /* System.Type */ type,
 	System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */ culture,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -21043,8 +21046,8 @@ System_Reflection_Binder_ChangeType(
 void /* System.Void */
 System_Reflection_Binder_ReorderArgumentArray(
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ self,
-	System_Object_Array_t _Nullable* _Nullable /* System.Object[] */ args,
-	System_Object_t _Nullable /* System.Object */ state,
+	System_Object_Array_t _Nonnull* _Nonnull /* System.Object[] */ args,
+	System_Object_t _Nonnull /* System.Object */ state,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -21052,8 +21055,8 @@ System_Reflection_MethodBase_t _Nullable /* System.Reflection.MethodBase */
 System_Reflection_Binder_SelectMethod(
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ self,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
-	System_Reflection_MethodBase_Array_t _Nullable /* System.Reflection.MethodBase[] */ match,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_Reflection_MethodBase_Array_t _Nonnull /* System.Reflection.MethodBase[] */ match,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Reflection_ParameterModifier_Array_t _Nullable /* System.Reflection.ParameterModifier[] */ modifiers,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -21062,7 +21065,7 @@ System_Reflection_PropertyInfo_t _Nullable /* System.Reflection.PropertyInfo */
 System_Reflection_Binder_SelectProperty(
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ self,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
-	System_Reflection_PropertyInfo_Array_t _Nullable /* System.Reflection.PropertyInfo[] */ match,
+	System_Reflection_PropertyInfo_Array_t _Nonnull /* System.Reflection.PropertyInfo[] */ match,
 	System_Type_t _Nullable /* System.Type */ returnType,
 	System_Type_Array_t _Nullable /* System.Type[] */ indexes,
 	System_Reflection_ParameterModifier_Array_t _Nullable /* System.Reflection.ParameterModifier[] */ modifiers,
@@ -21702,14 +21705,14 @@ System_Reflection_CustomAttributeTypedArgument_Equals_1(
 
 System_Reflection_CustomAttributeTypedArgument_t _Nonnull /* System.Reflection.CustomAttributeTypedArgument */
 System_Reflection_CustomAttributeTypedArgument_Create(
-	System_Type_t _Nullable /* System.Type */ argumentType,
+	System_Type_t _Nonnull /* System.Type */ argumentType,
 	System_Object_t _Nullable /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_CustomAttributeTypedArgument_t _Nonnull /* System.Reflection.CustomAttributeTypedArgument */
 System_Reflection_CustomAttributeTypedArgument_Create_1(
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -21784,14 +21787,14 @@ System_Reflection_CustomAttributeNamedArgument_Equals_1(
 
 System_Reflection_CustomAttributeNamedArgument_t _Nonnull /* System.Reflection.CustomAttributeNamedArgument */
 System_Reflection_CustomAttributeNamedArgument_Create(
-	System_Reflection_MemberInfo_t _Nullable /* System.Reflection.MemberInfo */ memberInfo,
+	System_Reflection_MemberInfo_t _Nonnull /* System.Reflection.MemberInfo */ memberInfo,
 	System_Object_t _Nullable /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_CustomAttributeNamedArgument_t _Nonnull /* System.Reflection.CustomAttributeNamedArgument */
 System_Reflection_CustomAttributeNamedArgument_Create_1(
-	System_Reflection_MemberInfo_t _Nullable /* System.Reflection.MemberInfo */ memberInfo,
+	System_Reflection_MemberInfo_t _Nonnull /* System.Reflection.MemberInfo */ memberInfo,
 	System_Reflection_CustomAttributeTypedArgument_t _Nonnull /* System.Reflection.CustomAttributeTypedArgument */ typedArgument,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -22037,14 +22040,14 @@ System_Reflection_ExceptionHandlingClause_Destroy(
 bool /* System.Boolean */
 System_Collections_IDictionary_Contains(
 	System_Collections_IDictionary_t _Nullable /* System.Collections.IDictionary */ self,
-	System_Object_t _Nullable /* System.Object */ key,
+	System_Object_t _Nonnull /* System.Object */ key,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Collections_IDictionary_Add(
 	System_Collections_IDictionary_t _Nullable /* System.Collections.IDictionary */ self,
-	System_Object_t _Nullable /* System.Object */ key,
+	System_Object_t _Nonnull /* System.Object */ key,
 	System_Object_t _Nullable /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -22064,21 +22067,21 @@ System_Collections_IDictionary_GetEnumerator(
 void /* System.Void */
 System_Collections_IDictionary_Remove(
 	System_Collections_IDictionary_t _Nullable /* System.Collections.IDictionary */ self,
-	System_Object_t _Nullable /* System.Object */ key,
+	System_Object_t _Nonnull /* System.Object */ key,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Object_t _Nullable /* System.Object */
 System_Collections_IDictionary_Item_Get(
 	System_Collections_IDictionary_t _Nullable /* System.Collections.IDictionary */ self,
-	System_Object_t _Nullable /* System.Object */ key,
+	System_Object_t _Nonnull /* System.Object */ key,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Collections_IDictionary_Item_Set(
 	System_Collections_IDictionary_t _Nullable /* System.Collections.IDictionary */ self,
-	System_Object_t _Nullable /* System.Object */ key,
+	System_Object_t _Nonnull /* System.Object */ key,
 	System_Object_t _Nullable /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -22162,7 +22165,7 @@ System_Collections_IDictionaryEnumerator_Destroy(
 void /* System.Void */
 System_Collections_DictionaryEntry_Deconstruct(
 	System_Collections_DictionaryEntry_t _Nonnull /* System.Collections.DictionaryEntry */ self,
-	System_Object_t _Nullable* _Nullable /* System.Object */ key,
+	System_Object_t _Nonnull* _Nonnull /* System.Object */ key,
 	System_Object_t _Nullable* _Nullable /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -22175,7 +22178,7 @@ System_Collections_DictionaryEntry_ToString(
 
 System_Collections_DictionaryEntry_t _Nonnull /* System.Collections.DictionaryEntry */
 System_Collections_DictionaryEntry_Create(
-	System_Object_t _Nullable /* System.Object */ key,
+	System_Object_t _Nonnull /* System.Object */ key,
 	System_Object_t _Nullable /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -22235,7 +22238,7 @@ System_Threading_Tasks_Task_Start(
 void /* System.Void */
 System_Threading_Tasks_Task_Start_1(
 	System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */ self,
-	System_Threading_Tasks_TaskScheduler_t _Nullable /* System.Threading.Tasks.TaskScheduler */ scheduler,
+	System_Threading_Tasks_TaskScheduler_t _Nonnull /* System.Threading.Tasks.TaskScheduler */ scheduler,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -22248,7 +22251,7 @@ System_Threading_Tasks_Task_RunSynchronously(
 void /* System.Void */
 System_Threading_Tasks_Task_RunSynchronously_1(
 	System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */ self,
-	System_Threading_Tasks_TaskScheduler_t _Nullable /* System.Threading.Tasks.TaskScheduler */ scheduler,
+	System_Threading_Tasks_TaskScheduler_t _Nonnull /* System.Threading.Tasks.TaskScheduler */ scheduler,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -22344,7 +22347,7 @@ System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_Threading_Tasks_Task_WaitAsync_2(
 	System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */ self,
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ timeout,
-	System_TimeProvider_t _Nullable /* System.TimeProvider */ timeProvider,
+	System_TimeProvider_t _Nonnull /* System.TimeProvider */ timeProvider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -22360,41 +22363,41 @@ System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_Threading_Tasks_Task_WaitAsync_4(
 	System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */ self,
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ timeout,
-	System_TimeProvider_t _Nullable /* System.TimeProvider */ timeProvider,
+	System_TimeProvider_t _Nonnull /* System.TimeProvider */ timeProvider,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Threading_Tasks_Task_WaitAll(
-	System_Threading_Tasks_Task_Array_t _Nullable /* System.Threading.Tasks.Task[] */ tasks,
+	System_Threading_Tasks_Task_Array_t _Nonnull /* System.Threading.Tasks.Task[] */ tasks,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Threading_Tasks_Task_WaitAll_1(
-	System_Threading_Tasks_Task_Array_t _Nullable /* System.Threading.Tasks.Task[] */ tasks,
+	System_Threading_Tasks_Task_Array_t _Nonnull /* System.Threading.Tasks.Task[] */ tasks,
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ timeout,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Threading_Tasks_Task_WaitAll_2(
-	System_Threading_Tasks_Task_Array_t _Nullable /* System.Threading.Tasks.Task[] */ tasks,
+	System_Threading_Tasks_Task_Array_t _Nonnull /* System.Threading.Tasks.Task[] */ tasks,
 	int32_t /* System.Int32 */ millisecondsTimeout,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Threading_Tasks_Task_WaitAll_3(
-	System_Threading_Tasks_Task_Array_t _Nullable /* System.Threading.Tasks.Task[] */ tasks,
+	System_Threading_Tasks_Task_Array_t _Nonnull /* System.Threading.Tasks.Task[] */ tasks,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Threading_Tasks_Task_WaitAll_4(
-	System_Threading_Tasks_Task_Array_t _Nullable /* System.Threading.Tasks.Task[] */ tasks,
+	System_Threading_Tasks_Task_Array_t _Nonnull /* System.Threading.Tasks.Task[] */ tasks,
 	int32_t /* System.Int32 */ millisecondsTimeout,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -22402,34 +22405,34 @@ System_Threading_Tasks_Task_WaitAll_4(
 
 int32_t /* System.Int32 */
 System_Threading_Tasks_Task_WaitAny(
-	System_Threading_Tasks_Task_Array_t _Nullable /* System.Threading.Tasks.Task[] */ tasks,
+	System_Threading_Tasks_Task_Array_t _Nonnull /* System.Threading.Tasks.Task[] */ tasks,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Threading_Tasks_Task_WaitAny_1(
-	System_Threading_Tasks_Task_Array_t _Nullable /* System.Threading.Tasks.Task[] */ tasks,
+	System_Threading_Tasks_Task_Array_t _Nonnull /* System.Threading.Tasks.Task[] */ tasks,
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ timeout,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Threading_Tasks_Task_WaitAny_2(
-	System_Threading_Tasks_Task_Array_t _Nullable /* System.Threading.Tasks.Task[] */ tasks,
+	System_Threading_Tasks_Task_Array_t _Nonnull /* System.Threading.Tasks.Task[] */ tasks,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Threading_Tasks_Task_WaitAny_3(
-	System_Threading_Tasks_Task_Array_t _Nullable /* System.Threading.Tasks.Task[] */ tasks,
+	System_Threading_Tasks_Task_Array_t _Nonnull /* System.Threading.Tasks.Task[] */ tasks,
 	int32_t /* System.Int32 */ millisecondsTimeout,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Threading_Tasks_Task_WaitAny_4(
-	System_Threading_Tasks_Task_Array_t _Nullable /* System.Threading.Tasks.Task[] */ tasks,
+	System_Threading_Tasks_Task_Array_t _Nonnull /* System.Threading.Tasks.Task[] */ tasks,
 	int32_t /* System.Int32 */ millisecondsTimeout,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -22437,7 +22440,7 @@ System_Threading_Tasks_Task_WaitAny_4(
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_Threading_Tasks_Task_FromException(
-	System_Exception_t _Nullable /* System.Exception */ exception,
+	System_Exception_t _Nonnull /* System.Exception */ exception,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -22449,13 +22452,13 @@ System_Threading_Tasks_Task_FromCanceled(
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_Threading_Tasks_Task_Run_1(
-	System_Action_t _Nullable /* System.Action */ action,
+	System_Action_t _Nonnull /* System.Action */ action,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_Threading_Tasks_Task_Run_2(
-	System_Action_t _Nullable /* System.Action */ action,
+	System_Action_t _Nonnull /* System.Action */ action,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -22469,7 +22472,7 @@ System_Threading_Tasks_Task_Delay(
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_Threading_Tasks_Task_Delay_1(
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ delay,
-	System_TimeProvider_t _Nullable /* System.TimeProvider */ timeProvider,
+	System_TimeProvider_t _Nonnull /* System.TimeProvider */ timeProvider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -22483,7 +22486,7 @@ System_Threading_Tasks_Task_Delay_2(
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_Threading_Tasks_Task_Delay_3(
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ delay,
-	System_TimeProvider_t _Nullable /* System.TimeProvider */ timeProvider,
+	System_TimeProvider_t _Nonnull /* System.TimeProvider */ timeProvider,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -22503,58 +22506,58 @@ System_Threading_Tasks_Task_Delay_5(
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_Threading_Tasks_Task_WhenAll(
-	System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.Threading.Tasks.Task> */ tasks,
+	System_Collections_Generic_IEnumerable_A1_t _Nonnull /* System.Collections.Generic.IEnumerable<System.Threading.Tasks.Task> */ tasks,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_Threading_Tasks_Task_WhenAll_1(
-	System_Threading_Tasks_Task_Array_t _Nullable /* System.Threading.Tasks.Task[] */ tasks,
+	System_Threading_Tasks_Task_Array_t _Nonnull /* System.Threading.Tasks.Task[] */ tasks,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_A1_t _Nullable /* System.Threading.Tasks.Task<System.Threading.Tasks.Task> */
 System_Threading_Tasks_Task_WhenAny(
-	System_Threading_Tasks_Task_Array_t _Nullable /* System.Threading.Tasks.Task[] */ tasks,
+	System_Threading_Tasks_Task_Array_t _Nonnull /* System.Threading.Tasks.Task[] */ tasks,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_A1_t _Nullable /* System.Threading.Tasks.Task<System.Threading.Tasks.Task> */
 System_Threading_Tasks_Task_WhenAny_1(
-	System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */ task1,
-	System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */ task2,
+	System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */ task1,
+	System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */ task2,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_A1_t _Nullable /* System.Threading.Tasks.Task<System.Threading.Tasks.Task> */
 System_Threading_Tasks_Task_WhenAny_2(
-	System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.Threading.Tasks.Task> */ tasks,
+	System_Collections_Generic_IEnumerable_A1_t _Nonnull /* System.Collections.Generic.IEnumerable<System.Threading.Tasks.Task> */ tasks,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_Threading_Tasks_Task_Create(
-	System_Action_t _Nullable /* System.Action */ action,
+	System_Action_t _Nonnull /* System.Action */ action,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_Threading_Tasks_Task_Create_1(
-	System_Action_t _Nullable /* System.Action */ action,
+	System_Action_t _Nonnull /* System.Action */ action,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_Threading_Tasks_Task_Create_2(
-	System_Action_t _Nullable /* System.Action */ action,
+	System_Action_t _Nonnull /* System.Action */ action,
 	System_Threading_Tasks_TaskCreationOptions_t /* System.Threading.Tasks.TaskCreationOptions */ creationOptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_Threading_Tasks_Task_Create_3(
-	System_Action_t _Nullable /* System.Action */ action,
+	System_Action_t _Nonnull /* System.Action */ action,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Threading_Tasks_TaskCreationOptions_t /* System.Threading.Tasks.TaskCreationOptions */ creationOptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -22736,7 +22739,7 @@ System_Threading_Tasks_TaskScheduler_Destroy(
 void /* System.Void */
 System_AggregateException_GetObjectData(
 	System_AggregateException_t _Nullable /* System.AggregateException */ self,
-	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_SerializationInfo_t _Nonnull /* System.Runtime.Serialization.SerializationInfo */ info,
 	System_Runtime_Serialization_StreamingContext_t _Nonnull /* System.Runtime.Serialization.StreamingContext */ context,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -22773,33 +22776,33 @@ System_AggregateException_Create_1(
 System_AggregateException_t _Nullable /* System.AggregateException */
 System_AggregateException_Create_2(
 	System_String_t _Nullable /* System.String */ message,
-	System_Exception_t _Nullable /* System.Exception */ innerException,
+	System_Exception_t _Nonnull /* System.Exception */ innerException,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_AggregateException_t _Nullable /* System.AggregateException */
 System_AggregateException_Create_3(
-	System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.Exception> */ innerExceptions,
+	System_Collections_Generic_IEnumerable_A1_t _Nonnull /* System.Collections.Generic.IEnumerable<System.Exception> */ innerExceptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_AggregateException_t _Nullable /* System.AggregateException */
 System_AggregateException_Create_4(
-	System_Exception_Array_t _Nullable /* System.Exception[] */ innerExceptions,
+	System_Exception_Array_t _Nonnull /* System.Exception[] */ innerExceptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_AggregateException_t _Nullable /* System.AggregateException */
 System_AggregateException_Create_5(
 	System_String_t _Nullable /* System.String */ message,
-	System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.Exception> */ innerExceptions,
+	System_Collections_Generic_IEnumerable_A1_t _Nonnull /* System.Collections.Generic.IEnumerable<System.Exception> */ innerExceptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_AggregateException_t _Nullable /* System.AggregateException */
 System_AggregateException_Create_6(
 	System_String_t _Nullable /* System.String */ message,
-	System_Exception_Array_t _Nullable /* System.Exception[] */ innerExceptions,
+	System_Exception_Array_t _Nonnull /* System.Exception[] */ innerExceptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -22911,14 +22914,14 @@ System_Collections_ObjectModel_ReadOnlyCollection_A1_Destroy(
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_Threading_Tasks_TaskFactory_StartNew(
 	System_Threading_Tasks_TaskFactory_t _Nullable /* System.Threading.Tasks.TaskFactory */ self,
-	System_Action_t _Nullable /* System.Action */ action,
+	System_Action_t _Nonnull /* System.Action */ action,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_Threading_Tasks_TaskFactory_StartNew_1(
 	System_Threading_Tasks_TaskFactory_t _Nullable /* System.Threading.Tasks.TaskFactory */ self,
-	System_Action_t _Nullable /* System.Action */ action,
+	System_Action_t _Nonnull /* System.Action */ action,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -22926,7 +22929,7 @@ System_Threading_Tasks_TaskFactory_StartNew_1(
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_Threading_Tasks_TaskFactory_StartNew_2(
 	System_Threading_Tasks_TaskFactory_t _Nullable /* System.Threading.Tasks.TaskFactory */ self,
-	System_Action_t _Nullable /* System.Action */ action,
+	System_Action_t _Nonnull /* System.Action */ action,
 	System_Threading_Tasks_TaskCreationOptions_t /* System.Threading.Tasks.TaskCreationOptions */ creationOptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -22934,10 +22937,10 @@ System_Threading_Tasks_TaskFactory_StartNew_2(
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_Threading_Tasks_TaskFactory_StartNew_3(
 	System_Threading_Tasks_TaskFactory_t _Nullable /* System.Threading.Tasks.TaskFactory */ self,
-	System_Action_t _Nullable /* System.Action */ action,
+	System_Action_t _Nonnull /* System.Action */ action,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Threading_Tasks_TaskCreationOptions_t /* System.Threading.Tasks.TaskCreationOptions */ creationOptions,
-	System_Threading_Tasks_TaskScheduler_t _Nullable /* System.Threading.Tasks.TaskScheduler */ scheduler,
+	System_Threading_Tasks_TaskScheduler_t _Nonnull /* System.Threading.Tasks.TaskScheduler */ scheduler,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -23052,14 +23055,14 @@ System_Threading_Tasks_TaskFactory_Destroy(
 void /* System.Void */
 System_Runtime_CompilerServices_TaskAwaiter_OnCompleted(
 	System_Runtime_CompilerServices_TaskAwaiter_t _Nonnull /* System.Runtime.CompilerServices.TaskAwaiter */ self,
-	System_Action_t _Nullable /* System.Action */ continuation,
+	System_Action_t _Nonnull /* System.Action */ continuation,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_CompilerServices_TaskAwaiter_UnsafeOnCompleted(
 	System_Runtime_CompilerServices_TaskAwaiter_t _Nonnull /* System.Runtime.CompilerServices.TaskAwaiter */ self,
-	System_Action_t _Nullable /* System.Action */ continuation,
+	System_Action_t _Nonnull /* System.Action */ continuation,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -23097,7 +23100,7 @@ System_Runtime_CompilerServices_TaskAwaiter_Destroy(
 void /* System.Void */
 System_Runtime_CompilerServices_ICriticalNotifyCompletion_UnsafeOnCompleted(
 	System_Runtime_CompilerServices_ICriticalNotifyCompletion_t _Nullable /* System.Runtime.CompilerServices.ICriticalNotifyCompletion */ self,
-	System_Action_t _Nullable /* System.Action */ continuation,
+	System_Action_t _Nonnull /* System.Action */ continuation,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -23117,7 +23120,7 @@ System_Runtime_CompilerServices_ICriticalNotifyCompletion_Destroy(
 void /* System.Void */
 System_Runtime_CompilerServices_INotifyCompletion_OnCompleted(
 	System_Runtime_CompilerServices_INotifyCompletion_t _Nullable /* System.Runtime.CompilerServices.INotifyCompletion */ self,
-	System_Action_t _Nullable /* System.Action */ continuation,
+	System_Action_t _Nonnull /* System.Action */ continuation,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -23161,14 +23164,14 @@ System_Runtime_CompilerServices_ConfiguredTaskAwaitable_Destroy(
 void /* System.Void */
 System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_OnCompleted(
 	System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_t _Nonnull /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */ self,
-	System_Action_t _Nullable /* System.Action */ continuation,
+	System_Action_t _Nonnull /* System.Action */ continuation,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_UnsafeOnCompleted(
 	System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter_t _Nonnull /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */ self,
-	System_Action_t _Nullable /* System.Action */ continuation,
+	System_Action_t _Nonnull /* System.Action */ continuation,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -23230,14 +23233,14 @@ System_Runtime_CompilerServices_YieldAwaitable_Destroy(
 void /* System.Void */
 System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_OnCompleted(
 	System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t _Nonnull /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */ self,
-	System_Action_t _Nullable /* System.Action */ continuation,
+	System_Action_t _Nonnull /* System.Action */ continuation,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_UnsafeOnCompleted(
 	System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter_t _Nonnull /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */ self,
-	System_Action_t _Nullable /* System.Action */ continuation,
+	System_Action_t _Nonnull /* System.Action */ continuation,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -23308,7 +23311,7 @@ System_TimeProvider_GetElapsedTime_1(
 System_Threading_ITimer_t _Nullable /* System.Threading.ITimer */
 System_TimeProvider_CreateTimer(
 	System_TimeProvider_t _Nullable /* System.TimeProvider */ self,
-	System_Threading_TimerCallback_t _Nullable /* System.Threading.TimerCallback */ callback,
+	System_Threading_TimerCallback_t _Nonnull /* System.Threading.TimerCallback */ callback,
 	System_Object_t _Nullable /* System.Object */ state,
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ dueTime,
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ period,
@@ -23493,20 +23496,20 @@ System_DateTimeOffset_GetHashCode(
 
 System_DateTimeOffset_t _Nonnull /* System.DateTimeOffset */
 System_DateTimeOffset_Parse(
-	System_String_t _Nullable /* System.String */ input,
+	System_String_t _Nonnull /* System.String */ input,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTimeOffset_t _Nonnull /* System.DateTimeOffset */
 System_DateTimeOffset_Parse_1(
-	System_String_t _Nullable /* System.String */ input,
+	System_String_t _Nonnull /* System.String */ input,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ formatProvider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTimeOffset_t _Nonnull /* System.DateTimeOffset */
 System_DateTimeOffset_Parse_2(
-	System_String_t _Nullable /* System.String */ input,
+	System_String_t _Nonnull /* System.String */ input,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ formatProvider,
 	System_Globalization_DateTimeStyles_t /* System.Globalization.DateTimeStyles */ styles,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -23514,16 +23517,16 @@ System_DateTimeOffset_Parse_2(
 
 System_DateTimeOffset_t _Nonnull /* System.DateTimeOffset */
 System_DateTimeOffset_ParseExact(
-	System_String_t _Nullable /* System.String */ input,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ input,
+	System_String_t _Nonnull /* System.String */ format,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ formatProvider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTimeOffset_t _Nonnull /* System.DateTimeOffset */
 System_DateTimeOffset_ParseExact_1(
-	System_String_t _Nullable /* System.String */ input,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ input,
+	System_String_t _Nonnull /* System.String */ format,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ formatProvider,
 	System_Globalization_DateTimeStyles_t /* System.Globalization.DateTimeStyles */ styles,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -23531,8 +23534,8 @@ System_DateTimeOffset_ParseExact_1(
 
 System_DateTimeOffset_t _Nonnull /* System.DateTimeOffset */
 System_DateTimeOffset_ParseExact_2(
-	System_String_t _Nullable /* System.String */ input,
-	System_String_Array_t _Nullable /* System.String[] */ formats,
+	System_String_t _Nonnull /* System.String */ input,
+	System_String_Array_t _Nonnull /* System.String[] */ formats,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ formatProvider,
 	System_Globalization_DateTimeStyles_t /* System.Globalization.DateTimeStyles */ styles,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -23725,7 +23728,7 @@ System_DateTimeOffset_Create_6(
 	int32_t /* System.Int32 */ minute,
 	int32_t /* System.Int32 */ second,
 	int32_t /* System.Int32 */ millisecond,
-	System_Globalization_Calendar_t _Nullable /* System.Globalization.Calendar */ calendar,
+	System_Globalization_Calendar_t _Nonnull /* System.Globalization.Calendar */ calendar,
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ offset,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -23754,7 +23757,7 @@ System_DateTimeOffset_Create_8(
 	int32_t /* System.Int32 */ second,
 	int32_t /* System.Int32 */ millisecond,
 	int32_t /* System.Int32 */ microsecond,
-	System_Globalization_Calendar_t _Nullable /* System.Globalization.Calendar */ calendar,
+	System_Globalization_Calendar_t _Nonnull /* System.Globalization.Calendar */ calendar,
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ offset,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -24023,26 +24026,26 @@ System_TimeZoneInfo_ClearCachedData(
 System_DateTimeOffset_t _Nonnull /* System.DateTimeOffset */
 System_TimeZoneInfo_ConvertTimeBySystemTimeZoneId(
 	System_DateTimeOffset_t _Nonnull /* System.DateTimeOffset */ dateTimeOffset,
-	System_String_t _Nullable /* System.String */ destinationTimeZoneId,
+	System_String_t _Nonnull /* System.String */ destinationTimeZoneId,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_TimeZoneInfo_ConvertTimeBySystemTimeZoneId_1(
 	System_DateTime_t _Nonnull /* System.DateTime */ dateTime,
-	System_String_t _Nullable /* System.String */ destinationTimeZoneId,
+	System_String_t _Nonnull /* System.String */ destinationTimeZoneId,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_TimeZoneInfo_t _Nullable /* System.TimeZoneInfo */
 System_TimeZoneInfo_FindSystemTimeZoneById(
-	System_String_t _Nullable /* System.String */ id,
+	System_String_t _Nonnull /* System.String */ id,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_TimeZoneInfo_TryFindSystemTimeZoneById(
-	System_String_t _Nullable /* System.String */ id,
+	System_String_t _Nonnull /* System.String */ id,
 	System_TimeZoneInfo_t _Nullable* _Nullable /* System.TimeZoneInfo */ timeZoneInfo,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -24050,37 +24053,37 @@ System_TimeZoneInfo_TryFindSystemTimeZoneById(
 System_DateTime_t _Nonnull /* System.DateTime */
 System_TimeZoneInfo_ConvertTimeBySystemTimeZoneId_2(
 	System_DateTime_t _Nonnull /* System.DateTime */ dateTime,
-	System_String_t _Nullable /* System.String */ sourceTimeZoneId,
-	System_String_t _Nullable /* System.String */ destinationTimeZoneId,
+	System_String_t _Nonnull /* System.String */ sourceTimeZoneId,
+	System_String_t _Nonnull /* System.String */ destinationTimeZoneId,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTimeOffset_t _Nonnull /* System.DateTimeOffset */
 System_TimeZoneInfo_ConvertTime_1(
 	System_DateTimeOffset_t _Nonnull /* System.DateTimeOffset */ dateTimeOffset,
-	System_TimeZoneInfo_t _Nullable /* System.TimeZoneInfo */ destinationTimeZone,
+	System_TimeZoneInfo_t _Nonnull /* System.TimeZoneInfo */ destinationTimeZone,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_TimeZoneInfo_ConvertTime_2(
 	System_DateTime_t _Nonnull /* System.DateTime */ dateTime,
-	System_TimeZoneInfo_t _Nullable /* System.TimeZoneInfo */ destinationTimeZone,
+	System_TimeZoneInfo_t _Nonnull /* System.TimeZoneInfo */ destinationTimeZone,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_TimeZoneInfo_ConvertTime_3(
 	System_DateTime_t _Nonnull /* System.DateTime */ dateTime,
-	System_TimeZoneInfo_t _Nullable /* System.TimeZoneInfo */ sourceTimeZone,
-	System_TimeZoneInfo_t _Nullable /* System.TimeZoneInfo */ destinationTimeZone,
+	System_TimeZoneInfo_t _Nonnull /* System.TimeZoneInfo */ sourceTimeZone,
+	System_TimeZoneInfo_t _Nonnull /* System.TimeZoneInfo */ destinationTimeZone,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_TimeZoneInfo_ConvertTimeFromUtc(
 	System_DateTime_t _Nonnull /* System.DateTime */ dateTime,
-	System_TimeZoneInfo_t _Nullable /* System.TimeZoneInfo */ destinationTimeZone,
+	System_TimeZoneInfo_t _Nonnull /* System.TimeZoneInfo */ destinationTimeZone,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -24093,7 +24096,7 @@ System_TimeZoneInfo_ConvertTimeToUtc(
 System_DateTime_t _Nonnull /* System.DateTime */
 System_TimeZoneInfo_ConvertTimeToUtc_1(
 	System_DateTime_t _Nonnull /* System.DateTime */ dateTime,
-	System_TimeZoneInfo_t _Nullable /* System.TimeZoneInfo */ sourceTimeZone,
+	System_TimeZoneInfo_t _Nonnull /* System.TimeZoneInfo */ sourceTimeZone,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -24113,7 +24116,7 @@ System_TimeZoneInfo_Equals_1(
 
 System_TimeZoneInfo_t _Nullable /* System.TimeZoneInfo */
 System_TimeZoneInfo_FromSerializedString(
-	System_String_t _Nullable /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ source,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -24137,7 +24140,7 @@ System_TimeZoneInfo_GetSystemTimeZones_1(
 bool /* System.Boolean */
 System_TimeZoneInfo_HasSameRules(
 	System_TimeZoneInfo_t _Nullable /* System.TimeZoneInfo */ self,
-	System_TimeZoneInfo_t _Nullable /* System.TimeZoneInfo */ other,
+	System_TimeZoneInfo_t _Nonnull /* System.TimeZoneInfo */ other,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -24155,7 +24158,7 @@ System_TimeZoneInfo_ToString(
 
 System_TimeZoneInfo_t _Nullable /* System.TimeZoneInfo */
 System_TimeZoneInfo_CreateCustomTimeZone(
-	System_String_t _Nullable /* System.String */ id,
+	System_String_t _Nonnull /* System.String */ id,
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ baseUtcOffset,
 	System_String_t _Nullable /* System.String */ displayName,
 	System_String_t _Nullable /* System.String */ standardDisplayName,
@@ -24164,7 +24167,7 @@ System_TimeZoneInfo_CreateCustomTimeZone(
 
 System_TimeZoneInfo_t _Nullable /* System.TimeZoneInfo */
 System_TimeZoneInfo_CreateCustomTimeZone_1(
-	System_String_t _Nullable /* System.String */ id,
+	System_String_t _Nonnull /* System.String */ id,
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ baseUtcOffset,
 	System_String_t _Nullable /* System.String */ displayName,
 	System_String_t _Nullable /* System.String */ standardDisplayName,
@@ -24175,7 +24178,7 @@ System_TimeZoneInfo_CreateCustomTimeZone_1(
 
 System_TimeZoneInfo_t _Nullable /* System.TimeZoneInfo */
 System_TimeZoneInfo_CreateCustomTimeZone_2(
-	System_String_t _Nullable /* System.String */ id,
+	System_String_t _Nonnull /* System.String */ id,
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ baseUtcOffset,
 	System_String_t _Nullable /* System.String */ displayName,
 	System_String_t _Nullable /* System.String */ standardDisplayName,
@@ -24187,21 +24190,21 @@ System_TimeZoneInfo_CreateCustomTimeZone_2(
 
 bool /* System.Boolean */
 System_TimeZoneInfo_TryConvertIanaIdToWindowsId(
-	System_String_t _Nullable /* System.String */ ianaId,
+	System_String_t _Nonnull /* System.String */ ianaId,
 	System_String_t _Nullable* _Nullable /* System.String */ windowsId,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_TimeZoneInfo_TryConvertWindowsIdToIanaId(
-	System_String_t _Nullable /* System.String */ windowsId,
+	System_String_t _Nonnull /* System.String */ windowsId,
 	System_String_t _Nullable* _Nullable /* System.String */ ianaId,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_TimeZoneInfo_TryConvertWindowsIdToIanaId_1(
-	System_String_t _Nullable /* System.String */ windowsId,
+	System_String_t _Nonnull /* System.String */ windowsId,
 	System_String_t _Nullable /* System.String */ region,
 	System_String_t _Nullable* _Nullable /* System.String */ ianaId,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -24797,14 +24800,14 @@ System_Runtime_CompilerServices_ValueTaskAwaiter_GetResult(
 void /* System.Void */
 System_Runtime_CompilerServices_ValueTaskAwaiter_OnCompleted(
 	System_Runtime_CompilerServices_ValueTaskAwaiter_t _Nonnull /* System.Runtime.CompilerServices.ValueTaskAwaiter */ self,
-	System_Action_t _Nullable /* System.Action */ continuation,
+	System_Action_t _Nonnull /* System.Action */ continuation,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_CompilerServices_ValueTaskAwaiter_UnsafeOnCompleted(
 	System_Runtime_CompilerServices_ValueTaskAwaiter_t _Nonnull /* System.Runtime.CompilerServices.ValueTaskAwaiter */ self,
-	System_Action_t _Nullable /* System.Action */ continuation,
+	System_Action_t _Nonnull /* System.Action */ continuation,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -24866,14 +24869,14 @@ System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTask
 void /* System.Void */
 System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_OnCompleted(
 	System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_t _Nonnull /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */ self,
-	System_Action_t _Nullable /* System.Action */ continuation,
+	System_Action_t _Nonnull /* System.Action */ continuation,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_UnsafeOnCompleted(
 	System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter_t _Nonnull /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */ self,
-	System_Action_t _Nullable /* System.Action */ continuation,
+	System_Action_t _Nonnull /* System.Action */ continuation,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -25085,42 +25088,42 @@ System_Reflection_TypeInfo_AsType(
 System_Reflection_EventInfo_t _Nullable /* System.Reflection.EventInfo */
 System_Reflection_TypeInfo_GetDeclaredEvent(
 	System_Reflection_TypeInfo_t _Nullable /* System.Reflection.TypeInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_FieldInfo_t _Nullable /* System.Reflection.FieldInfo */
 System_Reflection_TypeInfo_GetDeclaredField(
 	System_Reflection_TypeInfo_t _Nullable /* System.Reflection.TypeInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */
 System_Reflection_TypeInfo_GetDeclaredMethod(
 	System_Reflection_TypeInfo_t _Nullable /* System.Reflection.TypeInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_TypeInfo_t _Nullable /* System.Reflection.TypeInfo */
 System_Reflection_TypeInfo_GetDeclaredNestedType(
 	System_Reflection_TypeInfo_t _Nullable /* System.Reflection.TypeInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_PropertyInfo_t _Nullable /* System.Reflection.PropertyInfo */
 System_Reflection_TypeInfo_GetDeclaredProperty(
 	System_Reflection_TypeInfo_t _Nullable /* System.Reflection.TypeInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.Reflection.MethodInfo> */
 System_Reflection_TypeInfo_GetDeclaredMethods(
 	System_Reflection_TypeInfo_t _Nullable /* System.Reflection.TypeInfo */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -25210,10 +25213,10 @@ System_Reflection_TypeInfo_Destroy(
 System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */
 System_Reflection_IReflect_GetMethod(
 	System_Reflection_IReflect_t _Nullable /* System.Reflection.IReflect */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ binder,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Reflection_ParameterModifier_Array_t _Nullable /* System.Reflection.ParameterModifier[] */ modifiers,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -25221,7 +25224,7 @@ System_Reflection_IReflect_GetMethod(
 System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */
 System_Reflection_IReflect_GetMethod_1(
 	System_Reflection_IReflect_t _Nullable /* System.Reflection.IReflect */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -25236,7 +25239,7 @@ System_Reflection_IReflect_GetMethods(
 System_Reflection_FieldInfo_t _Nullable /* System.Reflection.FieldInfo */
 System_Reflection_IReflect_GetField(
 	System_Reflection_IReflect_t _Nullable /* System.Reflection.IReflect */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -25251,7 +25254,7 @@ System_Reflection_IReflect_GetFields(
 System_Reflection_PropertyInfo_t _Nullable /* System.Reflection.PropertyInfo */
 System_Reflection_IReflect_GetProperty(
 	System_Reflection_IReflect_t _Nullable /* System.Reflection.IReflect */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -25259,11 +25262,11 @@ System_Reflection_IReflect_GetProperty(
 System_Reflection_PropertyInfo_t _Nullable /* System.Reflection.PropertyInfo */
 System_Reflection_IReflect_GetProperty_1(
 	System_Reflection_IReflect_t _Nullable /* System.Reflection.IReflect */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ binder,
 	System_Type_t _Nullable /* System.Type */ returnType,
-	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_Type_Array_t _Nonnull /* System.Type[] */ types,
 	System_Reflection_ParameterModifier_Array_t _Nullable /* System.Reflection.ParameterModifier[] */ modifiers,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -25278,7 +25281,7 @@ System_Reflection_IReflect_GetProperties(
 System_Reflection_MemberInfo_Array_t _Nullable /* System.Reflection.MemberInfo[] */
 System_Reflection_IReflect_GetMember(
 	System_Reflection_IReflect_t _Nullable /* System.Reflection.IReflect */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -25293,7 +25296,7 @@ System_Reflection_IReflect_GetMembers(
 System_Object_t _Nullable /* System.Object */
 System_Reflection_IReflect_InvokeMember(
 	System_Reflection_IReflect_t _Nullable /* System.Reflection.IReflect */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ invokeAttr,
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ binder,
 	System_Object_t _Nullable /* System.Object */ target,
@@ -25551,13 +25554,13 @@ System_Reflection_ManifestResourceInfo_Destroy(
 #pragma mark - BEGIN APIs of System.ResolveEventArgs
 System_ResolveEventArgs_t _Nullable /* System.ResolveEventArgs */
 System_ResolveEventArgs_Create(
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_ResolveEventArgs_t _Nullable /* System.ResolveEventArgs */
 System_ResolveEventArgs_Create_1(
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ requestingAssembly,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -25688,7 +25691,7 @@ System_Text_Rune_GetHashCode(
 
 System_Text_Rune_t _Nonnull /* System.Text.Rune */
 System_Text_Rune_GetRuneAt(
-	System_String_t _Nullable /* System.String */ input,
+	System_String_t _Nonnull /* System.String */ input,
 	int32_t /* System.Int32 */ index,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -25742,7 +25745,7 @@ System_Text_Rune_TryCreate_3(
 
 bool /* System.Boolean */
 System_Text_Rune_TryGetRuneAt(
-	System_String_t _Nullable /* System.String */ input,
+	System_String_t _Nonnull /* System.String */ input,
 	int32_t /* System.Int32 */ index,
 	System_Text_Rune_t _Nonnull* _Nonnull /* System.Text.Rune */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -25829,7 +25832,7 @@ System_Text_Rune_IsWhiteSpace(
 System_Text_Rune_t _Nonnull /* System.Text.Rune */
 System_Text_Rune_ToLower(
 	System_Text_Rune_t _Nonnull /* System.Text.Rune */ value,
-	System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */ culture,
+	System_Globalization_CultureInfo_t _Nonnull /* System.Globalization.CultureInfo */ culture,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -25842,7 +25845,7 @@ System_Text_Rune_ToLowerInvariant(
 System_Text_Rune_t _Nonnull /* System.Text.Rune */
 System_Text_Rune_ToUpper(
 	System_Text_Rune_t _Nonnull /* System.Text.Rune */ value,
-	System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */ culture,
+	System_Globalization_CultureInfo_t _Nonnull /* System.Globalization.CultureInfo */ culture,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -25948,8 +25951,8 @@ System_Text_Rune_Destroy(
 #pragma mark - BEGIN APIs of System.Globalization.SortKey
 int32_t /* System.Int32 */
 System_Globalization_SortKey_Compare(
-	System_Globalization_SortKey_t _Nullable /* System.Globalization.SortKey */ sortkey1,
-	System_Globalization_SortKey_t _Nullable /* System.Globalization.SortKey */ sortkey2,
+	System_Globalization_SortKey_t _Nonnull /* System.Globalization.SortKey */ sortkey1,
+	System_Globalization_SortKey_t _Nonnull /* System.Globalization.SortKey */ sortkey2,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26062,7 +26065,7 @@ System_Globalization_TextInfo_Clone(
 
 System_Globalization_TextInfo_t _Nullable /* System.Globalization.TextInfo */
 System_Globalization_TextInfo_ReadOnly(
-	System_Globalization_TextInfo_t _Nullable /* System.Globalization.TextInfo */ textInfo,
+	System_Globalization_TextInfo_t _Nonnull /* System.Globalization.TextInfo */ textInfo,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26076,7 +26079,7 @@ System_Globalization_TextInfo_ToLower(
 System_String_t _Nullable /* System.String */
 System_Globalization_TextInfo_ToLower_1(
 	System_Globalization_TextInfo_t _Nullable /* System.Globalization.TextInfo */ self,
-	System_String_t _Nullable /* System.String */ str,
+	System_String_t _Nonnull /* System.String */ str,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26090,7 +26093,7 @@ System_Globalization_TextInfo_ToUpper(
 System_String_t _Nullable /* System.String */
 System_Globalization_TextInfo_ToUpper_1(
 	System_Globalization_TextInfo_t _Nullable /* System.Globalization.TextInfo */ self,
-	System_String_t _Nullable /* System.String */ str,
+	System_String_t _Nonnull /* System.String */ str,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26116,7 +26119,7 @@ System_Globalization_TextInfo_ToString(
 System_String_t _Nullable /* System.String */
 System_Globalization_TextInfo_ToTitleCase(
 	System_Globalization_TextInfo_t _Nullable /* System.Globalization.TextInfo */ self,
-	System_String_t _Nullable /* System.String */ str,
+	System_String_t _Nonnull /* System.String */ str,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26224,7 +26227,7 @@ System_Globalization_NumberFormatInfo_GetFormat(
 
 System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */
 System_Globalization_NumberFormatInfo_ReadOnly(
-	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ nfi,
+	System_Globalization_NumberFormatInfo_t _Nonnull /* System.Globalization.NumberFormatInfo */ nfi,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26665,7 +26668,7 @@ System_Globalization_DateTimeFormatInfo_Clone(
 int32_t /* System.Int32 */
 System_Globalization_DateTimeFormatInfo_GetEra(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ eraName,
+	System_String_t _Nonnull /* System.String */ eraName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26733,14 +26736,14 @@ System_Globalization_DateTimeFormatInfo_GetMonthName(
 
 System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */
 System_Globalization_DateTimeFormatInfo_ReadOnly(
-	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ dtfi,
+	System_Globalization_DateTimeFormatInfo_t _Nonnull /* System.Globalization.DateTimeFormatInfo */ dtfi,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_SetAllDateTimePatterns(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_Array_t _Nullable /* System.String[] */ patterns,
+	System_String_Array_t _Nonnull /* System.String[] */ patterns,
 	wchar_t /* System.Char */ format,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -27211,7 +27214,7 @@ System_Text_StringRuneEnumerator_Destroy(
 #pragma mark - BEGIN APIs of System.Text.CompositeFormat
 System_Text_CompositeFormat_t _Nullable /* System.Text.CompositeFormat */
 System_Text_CompositeFormat_Parse(
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27250,17 +27253,17 @@ System_Text_CompositeFormat_Destroy(
 #pragma mark - BEGIN APIs of System.Text.Encoding
 System_Byte_Array_t _Nullable /* System.Byte[] */
 System_Text_Encoding_Convert(
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ srcEncoding,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ dstEncoding,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ srcEncoding,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ dstEncoding,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Byte_Array_t _Nullable /* System.Byte[] */
 System_Text_Encoding_Convert_1(
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ srcEncoding,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ dstEncoding,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ srcEncoding,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ dstEncoding,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -27268,7 +27271,7 @@ System_Text_Encoding_Convert_1(
 
 void /* System.Void */
 System_Text_Encoding_RegisterProvider(
-	System_Text_EncodingProvider_t _Nullable /* System.Text.EncodingProvider */ provider,
+	System_Text_EncodingProvider_t _Nonnull /* System.Text.EncodingProvider */ provider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27281,22 +27284,22 @@ System_Text_Encoding_GetEncoding(
 System_Text_Encoding_t _Nullable /* System.Text.Encoding */
 System_Text_Encoding_GetEncoding_1(
 	int32_t /* System.Int32 */ codepage,
-	System_Text_EncoderFallback_t _Nullable /* System.Text.EncoderFallback */ encoderFallback,
-	System_Text_DecoderFallback_t _Nullable /* System.Text.DecoderFallback */ decoderFallback,
+	System_Text_EncoderFallback_t _Nonnull /* System.Text.EncoderFallback */ encoderFallback,
+	System_Text_DecoderFallback_t _Nonnull /* System.Text.DecoderFallback */ decoderFallback,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Text_Encoding_t _Nullable /* System.Text.Encoding */
 System_Text_Encoding_GetEncoding_2(
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Text_Encoding_t _Nullable /* System.Text.Encoding */
 System_Text_Encoding_GetEncoding_3(
-	System_String_t _Nullable /* System.String */ name,
-	System_Text_EncoderFallback_t _Nullable /* System.Text.EncoderFallback */ encoderFallback,
-	System_Text_DecoderFallback_t _Nullable /* System.Text.DecoderFallback */ decoderFallback,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Text_EncoderFallback_t _Nonnull /* System.Text.EncoderFallback */ encoderFallback,
+	System_Text_DecoderFallback_t _Nonnull /* System.Text.DecoderFallback */ decoderFallback,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27320,21 +27323,21 @@ System_Text_Encoding_Clone(
 int32_t /* System.Int32 */
 System_Text_Encoding_GetByteCount(
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ chars,
+	System_Char_Array_t _Nonnull /* System.Char[] */ chars,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Text_Encoding_GetByteCount_1(
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ self,
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Text_Encoding_GetByteCount_2(
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ chars,
+	System_Char_Array_t _Nonnull /* System.Char[] */ chars,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -27343,7 +27346,7 @@ System_Text_Encoding_GetByteCount_2(
 int32_t /* System.Int32 */
 System_Text_Encoding_GetByteCount_3(
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ self,
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -27352,14 +27355,14 @@ System_Text_Encoding_GetByteCount_3(
 System_Byte_Array_t _Nullable /* System.Byte[] */
 System_Text_Encoding_GetBytes(
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ chars,
+	System_Char_Array_t _Nonnull /* System.Char[] */ chars,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Byte_Array_t _Nullable /* System.Byte[] */
 System_Text_Encoding_GetBytes_1(
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ chars,
+	System_Char_Array_t _Nonnull /* System.Char[] */ chars,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -27368,10 +27371,10 @@ System_Text_Encoding_GetBytes_1(
 int32_t /* System.Int32 */
 System_Text_Encoding_GetBytes_2(
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ chars,
+	System_Char_Array_t _Nonnull /* System.Char[] */ chars,
 	int32_t /* System.Int32 */ charIndex,
 	int32_t /* System.Int32 */ charCount,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	int32_t /* System.Int32 */ byteIndex,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -27379,14 +27382,14 @@ System_Text_Encoding_GetBytes_2(
 System_Byte_Array_t _Nullable /* System.Byte[] */
 System_Text_Encoding_GetBytes_3(
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ self,
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Byte_Array_t _Nullable /* System.Byte[] */
 System_Text_Encoding_GetBytes_4(
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ self,
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -27395,10 +27398,10 @@ System_Text_Encoding_GetBytes_4(
 int32_t /* System.Int32 */
 System_Text_Encoding_GetBytes_5(
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ self,
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	int32_t /* System.Int32 */ charIndex,
 	int32_t /* System.Int32 */ charCount,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	int32_t /* System.Int32 */ byteIndex,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -27406,14 +27409,14 @@ System_Text_Encoding_GetBytes_5(
 int32_t /* System.Int32 */
 System_Text_Encoding_GetCharCount(
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Text_Encoding_GetCharCount_1(
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -27429,14 +27432,14 @@ System_Text_Encoding_GetCharCount_2(
 System_Char_Array_t _Nullable /* System.Char[] */
 System_Text_Encoding_GetChars(
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Char_Array_t _Nullable /* System.Char[] */
 System_Text_Encoding_GetChars_1(
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -27445,10 +27448,10 @@ System_Text_Encoding_GetChars_1(
 int32_t /* System.Int32 */
 System_Text_Encoding_GetChars_2(
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	int32_t /* System.Int32 */ byteIndex,
 	int32_t /* System.Int32 */ byteCount,
-	System_Char_Array_t _Nullable /* System.Char[] */ chars,
+	System_Char_Array_t _Nonnull /* System.Char[] */ chars,
 	int32_t /* System.Int32 */ charIndex,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -27502,14 +27505,14 @@ System_Text_Encoding_GetMaxCharCount(
 System_String_t _Nullable /* System.String */
 System_Text_Encoding_GetString_1(
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_Text_Encoding_GetString_2(
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -27530,9 +27533,9 @@ System_Text_Encoding_GetHashCode(
 
 System_IO_Stream_t _Nullable /* System.IO.Stream */
 System_Text_Encoding_CreateTranscodingStream(
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ innerStream,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ innerStreamEncoding,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ outerStreamEncoding,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ innerStream,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ innerStreamEncoding,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ outerStreamEncoding,
 	bool /* System.Boolean */ leaveOpen,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -27720,7 +27723,7 @@ System_Text_Encoding_Destroy(
 System_Text_Encoding_t _Nullable /* System.Text.Encoding */
 System_Text_EncodingProvider_GetEncoding(
 	System_Text_EncodingProvider_t _Nullable /* System.Text.EncodingProvider */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27734,9 +27737,9 @@ System_Text_EncodingProvider_GetEncoding_1(
 System_Text_Encoding_t _Nullable /* System.Text.Encoding */
 System_Text_EncodingProvider_GetEncoding_2(
 	System_Text_EncodingProvider_t _Nullable /* System.Text.EncodingProvider */ self,
-	System_String_t _Nullable /* System.String */ name,
-	System_Text_EncoderFallback_t _Nullable /* System.Text.EncoderFallback */ encoderFallback,
-	System_Text_DecoderFallback_t _Nullable /* System.Text.DecoderFallback */ decoderFallback,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Text_EncoderFallback_t _Nonnull /* System.Text.EncoderFallback */ encoderFallback,
+	System_Text_DecoderFallback_t _Nonnull /* System.Text.DecoderFallback */ decoderFallback,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27744,8 +27747,8 @@ System_Text_Encoding_t _Nullable /* System.Text.Encoding */
 System_Text_EncodingProvider_GetEncoding_3(
 	System_Text_EncodingProvider_t _Nullable /* System.Text.EncodingProvider */ self,
 	int32_t /* System.Int32 */ codepage,
-	System_Text_EncoderFallback_t _Nullable /* System.Text.EncoderFallback */ encoderFallback,
-	System_Text_DecoderFallback_t _Nullable /* System.Text.DecoderFallback */ decoderFallback,
+	System_Text_EncoderFallback_t _Nonnull /* System.Text.EncoderFallback */ encoderFallback,
+	System_Text_DecoderFallback_t _Nonnull /* System.Text.DecoderFallback */ decoderFallback,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27902,7 +27905,7 @@ System_Text_DecoderFallback_Destroy(
 bool /* System.Boolean */
 System_Text_DecoderFallbackBuffer_Fallback(
 	System_Text_DecoderFallbackBuffer_t _Nullable /* System.Text.DecoderFallbackBuffer */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytesUnknown,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytesUnknown,
 	int32_t /* System.Int32 */ index,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -27968,10 +27971,10 @@ System_Text_EncodingInfo_GetHashCode(
 
 System_Text_EncodingInfo_t _Nullable /* System.Text.EncodingInfo */
 System_Text_EncodingInfo_Create(
-	System_Text_EncodingProvider_t _Nullable /* System.Text.EncodingProvider */ provider,
+	System_Text_EncodingProvider_t _Nonnull /* System.Text.EncodingProvider */ provider,
 	int32_t /* System.Int32 */ codePage,
-	System_String_t _Nullable /* System.String */ name,
-	System_String_t _Nullable /* System.String */ displayName,
+	System_String_t _Nonnull /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ displayName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -28026,7 +28029,7 @@ System_Text_Decoder_Reset(
 int32_t /* System.Int32 */
 System_Text_Decoder_GetCharCount(
 	System_Text_Decoder_t _Nullable /* System.Text.Decoder */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -28035,7 +28038,7 @@ System_Text_Decoder_GetCharCount(
 int32_t /* System.Int32 */
 System_Text_Decoder_GetCharCount_1(
 	System_Text_Decoder_t _Nullable /* System.Text.Decoder */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	bool /* System.Boolean */ flush,
@@ -28053,10 +28056,10 @@ System_Text_Decoder_GetCharCount_2(
 int32_t /* System.Int32 */
 System_Text_Decoder_GetChars(
 	System_Text_Decoder_t _Nullable /* System.Text.Decoder */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	int32_t /* System.Int32 */ byteIndex,
 	int32_t /* System.Int32 */ byteCount,
-	System_Char_Array_t _Nullable /* System.Char[] */ chars,
+	System_Char_Array_t _Nonnull /* System.Char[] */ chars,
 	int32_t /* System.Int32 */ charIndex,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -28064,10 +28067,10 @@ System_Text_Decoder_GetChars(
 int32_t /* System.Int32 */
 System_Text_Decoder_GetChars_1(
 	System_Text_Decoder_t _Nullable /* System.Text.Decoder */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	int32_t /* System.Int32 */ byteIndex,
 	int32_t /* System.Int32 */ byteCount,
-	System_Char_Array_t _Nullable /* System.Char[] */ chars,
+	System_Char_Array_t _Nonnull /* System.Char[] */ chars,
 	int32_t /* System.Int32 */ charIndex,
 	bool /* System.Boolean */ flush,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -28076,10 +28079,10 @@ System_Text_Decoder_GetChars_1(
 void /* System.Void */
 System_Text_Decoder_Convert(
 	System_Text_Decoder_t _Nullable /* System.Text.Decoder */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	int32_t /* System.Int32 */ byteIndex,
 	int32_t /* System.Int32 */ byteCount,
-	System_Char_Array_t _Nullable /* System.Char[] */ chars,
+	System_Char_Array_t _Nonnull /* System.Char[] */ chars,
 	int32_t /* System.Int32 */ charIndex,
 	int32_t /* System.Int32 */ charCount,
 	bool /* System.Boolean */ flush,
@@ -28132,7 +28135,7 @@ System_Text_Encoder_Reset(
 int32_t /* System.Int32 */
 System_Text_Encoder_GetByteCount(
 	System_Text_Encoder_t _Nullable /* System.Text.Encoder */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ chars,
+	System_Char_Array_t _Nonnull /* System.Char[] */ chars,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	bool /* System.Boolean */ flush,
@@ -28142,10 +28145,10 @@ System_Text_Encoder_GetByteCount(
 int32_t /* System.Int32 */
 System_Text_Encoder_GetBytes(
 	System_Text_Encoder_t _Nullable /* System.Text.Encoder */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ chars,
+	System_Char_Array_t _Nonnull /* System.Char[] */ chars,
 	int32_t /* System.Int32 */ charIndex,
 	int32_t /* System.Int32 */ charCount,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	int32_t /* System.Int32 */ byteIndex,
 	bool /* System.Boolean */ flush,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -28154,10 +28157,10 @@ System_Text_Encoder_GetBytes(
 void /* System.Void */
 System_Text_Encoder_Convert(
 	System_Text_Encoder_t _Nullable /* System.Text.Encoder */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ chars,
+	System_Char_Array_t _Nonnull /* System.Char[] */ chars,
 	int32_t /* System.Int32 */ charIndex,
 	int32_t /* System.Int32 */ charCount,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	int32_t /* System.Int32 */ byteIndex,
 	int32_t /* System.Int32 */ byteCount,
 	bool /* System.Boolean */ flush,
@@ -28557,232 +28560,232 @@ System_Runtime_InteropServices_StructLayoutAttribute_Destroy(
 #pragma mark - BEGIN APIs of System.Attribute
 System_Attribute_Array_t _Nullable /* System.Attribute[] */
 System_Attribute_GetCustomAttributes(
-	System_Reflection_MemberInfo_t _Nullable /* System.Reflection.MemberInfo */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_MemberInfo_t _Nonnull /* System.Reflection.MemberInfo */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_Array_t _Nullable /* System.Attribute[] */
 System_Attribute_GetCustomAttributes_1(
-	System_Reflection_MemberInfo_t _Nullable /* System.Reflection.MemberInfo */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_MemberInfo_t _Nonnull /* System.Reflection.MemberInfo */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_Array_t _Nullable /* System.Attribute[] */
 System_Attribute_GetCustomAttributes_2(
-	System_Reflection_MemberInfo_t _Nullable /* System.Reflection.MemberInfo */ element,
+	System_Reflection_MemberInfo_t _Nonnull /* System.Reflection.MemberInfo */ element,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_Array_t _Nullable /* System.Attribute[] */
 System_Attribute_GetCustomAttributes_3(
-	System_Reflection_MemberInfo_t _Nullable /* System.Reflection.MemberInfo */ element,
+	System_Reflection_MemberInfo_t _Nonnull /* System.Reflection.MemberInfo */ element,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Attribute_IsDefined(
-	System_Reflection_MemberInfo_t _Nullable /* System.Reflection.MemberInfo */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_MemberInfo_t _Nonnull /* System.Reflection.MemberInfo */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Attribute_IsDefined_1(
-	System_Reflection_MemberInfo_t _Nullable /* System.Reflection.MemberInfo */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_MemberInfo_t _Nonnull /* System.Reflection.MemberInfo */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_t _Nullable /* System.Attribute */
 System_Attribute_GetCustomAttribute_1(
-	System_Reflection_MemberInfo_t _Nullable /* System.Reflection.MemberInfo */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_MemberInfo_t _Nonnull /* System.Reflection.MemberInfo */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_t _Nullable /* System.Attribute */
 System_Attribute_GetCustomAttribute_2(
-	System_Reflection_MemberInfo_t _Nullable /* System.Reflection.MemberInfo */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_MemberInfo_t _Nonnull /* System.Reflection.MemberInfo */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_Array_t _Nullable /* System.Attribute[] */
 System_Attribute_GetCustomAttributes_4(
-	System_Reflection_ParameterInfo_t _Nullable /* System.Reflection.ParameterInfo */ element,
+	System_Reflection_ParameterInfo_t _Nonnull /* System.Reflection.ParameterInfo */ element,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_Array_t _Nullable /* System.Attribute[] */
 System_Attribute_GetCustomAttributes_5(
-	System_Reflection_ParameterInfo_t _Nullable /* System.Reflection.ParameterInfo */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_ParameterInfo_t _Nonnull /* System.Reflection.ParameterInfo */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_Array_t _Nullable /* System.Attribute[] */
 System_Attribute_GetCustomAttributes_6(
-	System_Reflection_ParameterInfo_t _Nullable /* System.Reflection.ParameterInfo */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_ParameterInfo_t _Nonnull /* System.Reflection.ParameterInfo */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_Array_t _Nullable /* System.Attribute[] */
 System_Attribute_GetCustomAttributes_7(
-	System_Reflection_ParameterInfo_t _Nullable /* System.Reflection.ParameterInfo */ element,
+	System_Reflection_ParameterInfo_t _Nonnull /* System.Reflection.ParameterInfo */ element,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Attribute_IsDefined_2(
-	System_Reflection_ParameterInfo_t _Nullable /* System.Reflection.ParameterInfo */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_ParameterInfo_t _Nonnull /* System.Reflection.ParameterInfo */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Attribute_IsDefined_3(
-	System_Reflection_ParameterInfo_t _Nullable /* System.Reflection.ParameterInfo */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_ParameterInfo_t _Nonnull /* System.Reflection.ParameterInfo */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_t _Nullable /* System.Attribute */
 System_Attribute_GetCustomAttribute_3(
-	System_Reflection_ParameterInfo_t _Nullable /* System.Reflection.ParameterInfo */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_ParameterInfo_t _Nonnull /* System.Reflection.ParameterInfo */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_t _Nullable /* System.Attribute */
 System_Attribute_GetCustomAttribute_4(
-	System_Reflection_ParameterInfo_t _Nullable /* System.Reflection.ParameterInfo */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_ParameterInfo_t _Nonnull /* System.Reflection.ParameterInfo */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_Array_t _Nullable /* System.Attribute[] */
 System_Attribute_GetCustomAttributes_8(
-	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_Module_t _Nonnull /* System.Reflection.Module */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_Array_t _Nullable /* System.Attribute[] */
 System_Attribute_GetCustomAttributes_9(
-	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ element,
+	System_Reflection_Module_t _Nonnull /* System.Reflection.Module */ element,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_Array_t _Nullable /* System.Attribute[] */
 System_Attribute_GetCustomAttributes_10(
-	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ element,
+	System_Reflection_Module_t _Nonnull /* System.Reflection.Module */ element,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_Array_t _Nullable /* System.Attribute[] */
 System_Attribute_GetCustomAttributes_11(
-	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_Module_t _Nonnull /* System.Reflection.Module */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Attribute_IsDefined_4(
-	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_Module_t _Nonnull /* System.Reflection.Module */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Attribute_IsDefined_5(
-	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_Module_t _Nonnull /* System.Reflection.Module */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_t _Nullable /* System.Attribute */
 System_Attribute_GetCustomAttribute_5(
-	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_Module_t _Nonnull /* System.Reflection.Module */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_t _Nullable /* System.Attribute */
 System_Attribute_GetCustomAttribute_6(
-	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_Module_t _Nonnull /* System.Reflection.Module */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_Array_t _Nullable /* System.Attribute[] */
 System_Attribute_GetCustomAttributes_12(
-	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_Assembly_t _Nonnull /* System.Reflection.Assembly */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_Array_t _Nullable /* System.Attribute[] */
 System_Attribute_GetCustomAttributes_13(
-	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_Assembly_t _Nonnull /* System.Reflection.Assembly */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_Array_t _Nullable /* System.Attribute[] */
 System_Attribute_GetCustomAttributes_14(
-	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ element,
+	System_Reflection_Assembly_t _Nonnull /* System.Reflection.Assembly */ element,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_Array_t _Nullable /* System.Attribute[] */
 System_Attribute_GetCustomAttributes_15(
-	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ element,
+	System_Reflection_Assembly_t _Nonnull /* System.Reflection.Assembly */ element,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Attribute_IsDefined_6(
-	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_Assembly_t _Nonnull /* System.Reflection.Assembly */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Attribute_IsDefined_7(
-	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_Assembly_t _Nonnull /* System.Reflection.Assembly */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_t _Nullable /* System.Attribute */
 System_Attribute_GetCustomAttribute_7(
-	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_Assembly_t _Nonnull /* System.Reflection.Assembly */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Attribute_t _Nullable /* System.Attribute */
 System_Attribute_GetCustomAttribute_8(
-	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ element,
-	System_Type_t _Nullable /* System.Type */ attributeType,
+	System_Reflection_Assembly_t _Nonnull /* System.Reflection.Assembly */ element,
+	System_Type_t _Nonnull /* System.Type */ attributeType,
 	bool /* System.Boolean */ inherit,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -28927,42 +28930,42 @@ System_Reflection_InterfaceMapping_Destroy(
 #pragma mark - BEGIN APIs of System.Runtime.InteropServices.Marshal
 void* /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_OffsetOf(
-	System_Type_t _Nullable /* System.Type */ t,
-	System_String_t _Nullable /* System.String */ fieldName,
+	System_Type_t _Nonnull /* System.Type */ t,
+	System_String_t _Nonnull /* System.String */ fieldName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 uint8_t /* System.Byte */
 System_Runtime_InteropServices_Marshal_ReadByte(
-	System_Object_t _Nullable /* System.Object */ ptr,
+	System_Object_t _Nonnull /* System.Object */ ptr,
 	int32_t /* System.Int32 */ ofs,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int16_t /* System.Int16 */
 System_Runtime_InteropServices_Marshal_ReadInt16(
-	System_Object_t _Nullable /* System.Object */ ptr,
+	System_Object_t _Nonnull /* System.Object */ ptr,
 	int32_t /* System.Int32 */ ofs,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Runtime_InteropServices_Marshal_ReadInt32(
-	System_Object_t _Nullable /* System.Object */ ptr,
+	System_Object_t _Nonnull /* System.Object */ ptr,
 	int32_t /* System.Int32 */ ofs,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int64_t /* System.Int64 */
 System_Runtime_InteropServices_Marshal_ReadInt64(
-	System_Object_t _Nullable* _Nullable /* System.Object */ ptr,
+	System_Object_t _Nonnull* _Nonnull /* System.Object */ ptr,
 	int32_t /* System.Int32 */ ofs,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_WriteByte(
-	System_Object_t _Nullable /* System.Object */ ptr,
+	System_Object_t _Nonnull /* System.Object */ ptr,
 	int32_t /* System.Int32 */ ofs,
 	uint8_t /* System.Byte */ val,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -28970,7 +28973,7 @@ System_Runtime_InteropServices_Marshal_WriteByte(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_WriteInt32(
-	System_Object_t _Nullable /* System.Object */ ptr,
+	System_Object_t _Nonnull /* System.Object */ ptr,
 	int32_t /* System.Int32 */ ofs,
 	int32_t /* System.Int32 */ val,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -28978,7 +28981,7 @@ System_Runtime_InteropServices_Marshal_WriteInt32(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_WriteInt64(
-	System_Object_t _Nullable /* System.Object */ ptr,
+	System_Object_t _Nonnull /* System.Object */ ptr,
 	int32_t /* System.Int32 */ ofs,
 	int64_t /* System.Int64 */ val,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -29007,7 +29010,7 @@ System_Runtime_InteropServices_Marshal_GetExceptionCode(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_StructureToPtr(
-	System_Object_t _Nullable /* System.Object */ structure,
+	System_Object_t _Nonnull /* System.Object */ structure,
 	void* /* System.IntPtr */ ptr,
 	bool /* System.Boolean */ fDeleteOld,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -29016,7 +29019,7 @@ System_Runtime_InteropServices_Marshal_StructureToPtr(
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_DestroyStructure(
 	void* /* System.IntPtr */ ptr,
-	System_Type_t _Nullable /* System.Type */ structuretype,
+	System_Type_t _Nonnull /* System.Type */ structuretype,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -29067,7 +29070,7 @@ System_Runtime_InteropServices_Marshal_PtrToStringUTF8_1(
 
 int32_t /* System.Int32 */
 System_Runtime_InteropServices_Marshal_SizeOf(
-	System_Object_t _Nullable /* System.Object */ structure,
+	System_Object_t _Nonnull /* System.Object */ structure,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -29080,7 +29083,7 @@ System_Runtime_InteropServices_Marshal_SizeOf_A1(
 
 int32_t /* System.Int32 */
 System_Runtime_InteropServices_Marshal_SizeOf_1(
-	System_Type_t _Nullable /* System.Type */ t,
+	System_Type_t _Nonnull /* System.Type */ t,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -29112,7 +29115,7 @@ System_Runtime_InteropServices_Marshal_Release(
 
 void* /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_UnsafeAddrOfPinnedArrayElement(
-	System_Array_t _Nullable /* System.Array */ arr,
+	System_Array_t _Nonnull /* System.Array */ arr,
 	int32_t /* System.Int32 */ index,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -29134,7 +29137,7 @@ System_Runtime_InteropServices_Marshal_OffsetOf_A1(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy(
-	System_Int32_Array_t _Nullable /* System.Int32[] */ source,
+	System_Int32_Array_t _Nonnull /* System.Int32[] */ source,
 	int32_t /* System.Int32 */ startIndex,
 	void* /* System.IntPtr */ destination,
 	int32_t /* System.Int32 */ length,
@@ -29143,7 +29146,7 @@ System_Runtime_InteropServices_Marshal_Copy(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy_1(
-	System_Char_Array_t _Nullable /* System.Char[] */ source,
+	System_Char_Array_t _Nonnull /* System.Char[] */ source,
 	int32_t /* System.Int32 */ startIndex,
 	void* /* System.IntPtr */ destination,
 	int32_t /* System.Int32 */ length,
@@ -29152,7 +29155,7 @@ System_Runtime_InteropServices_Marshal_Copy_1(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy_2(
-	System_Int16_Array_t _Nullable /* System.Int16[] */ source,
+	System_Int16_Array_t _Nonnull /* System.Int16[] */ source,
 	int32_t /* System.Int32 */ startIndex,
 	void* /* System.IntPtr */ destination,
 	int32_t /* System.Int32 */ length,
@@ -29161,7 +29164,7 @@ System_Runtime_InteropServices_Marshal_Copy_2(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy_3(
-	System_Int64_Array_t _Nullable /* System.Int64[] */ source,
+	System_Int64_Array_t _Nonnull /* System.Int64[] */ source,
 	int32_t /* System.Int32 */ startIndex,
 	void* /* System.IntPtr */ destination,
 	int32_t /* System.Int32 */ length,
@@ -29170,7 +29173,7 @@ System_Runtime_InteropServices_Marshal_Copy_3(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy_4(
-	System_Single_Array_t _Nullable /* System.Single[] */ source,
+	System_Single_Array_t _Nonnull /* System.Single[] */ source,
 	int32_t /* System.Int32 */ startIndex,
 	void* /* System.IntPtr */ destination,
 	int32_t /* System.Int32 */ length,
@@ -29179,7 +29182,7 @@ System_Runtime_InteropServices_Marshal_Copy_4(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy_5(
-	System_Double_Array_t _Nullable /* System.Double[] */ source,
+	System_Double_Array_t _Nonnull /* System.Double[] */ source,
 	int32_t /* System.Int32 */ startIndex,
 	void* /* System.IntPtr */ destination,
 	int32_t /* System.Int32 */ length,
@@ -29188,7 +29191,7 @@ System_Runtime_InteropServices_Marshal_Copy_5(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy_6(
-	System_Byte_Array_t _Nullable /* System.Byte[] */ source,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ source,
 	int32_t /* System.Int32 */ startIndex,
 	void* /* System.IntPtr */ destination,
 	int32_t /* System.Int32 */ length,
@@ -29197,7 +29200,7 @@ System_Runtime_InteropServices_Marshal_Copy_6(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy_7(
-	System_IntPtr_Array_t _Nullable /* System.IntPtr[] */ source,
+	System_IntPtr_Array_t _Nonnull /* System.IntPtr[] */ source,
 	int32_t /* System.Int32 */ startIndex,
 	void* /* System.IntPtr */ destination,
 	int32_t /* System.Int32 */ length,
@@ -29207,7 +29210,7 @@ System_Runtime_InteropServices_Marshal_Copy_7(
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy_8(
 	void* /* System.IntPtr */ source,
-	System_Int32_Array_t _Nullable /* System.Int32[] */ destination,
+	System_Int32_Array_t _Nonnull /* System.Int32[] */ destination,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -29216,7 +29219,7 @@ System_Runtime_InteropServices_Marshal_Copy_8(
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy_9(
 	void* /* System.IntPtr */ source,
-	System_Char_Array_t _Nullable /* System.Char[] */ destination,
+	System_Char_Array_t _Nonnull /* System.Char[] */ destination,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -29225,7 +29228,7 @@ System_Runtime_InteropServices_Marshal_Copy_9(
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy_10(
 	void* /* System.IntPtr */ source,
-	System_Int16_Array_t _Nullable /* System.Int16[] */ destination,
+	System_Int16_Array_t _Nonnull /* System.Int16[] */ destination,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -29234,7 +29237,7 @@ System_Runtime_InteropServices_Marshal_Copy_10(
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy_11(
 	void* /* System.IntPtr */ source,
-	System_Int64_Array_t _Nullable /* System.Int64[] */ destination,
+	System_Int64_Array_t _Nonnull /* System.Int64[] */ destination,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -29243,7 +29246,7 @@ System_Runtime_InteropServices_Marshal_Copy_11(
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy_12(
 	void* /* System.IntPtr */ source,
-	System_Single_Array_t _Nullable /* System.Single[] */ destination,
+	System_Single_Array_t _Nonnull /* System.Single[] */ destination,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -29252,7 +29255,7 @@ System_Runtime_InteropServices_Marshal_Copy_12(
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy_13(
 	void* /* System.IntPtr */ source,
-	System_Double_Array_t _Nullable /* System.Double[] */ destination,
+	System_Double_Array_t _Nonnull /* System.Double[] */ destination,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -29261,7 +29264,7 @@ System_Runtime_InteropServices_Marshal_Copy_13(
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy_14(
 	void* /* System.IntPtr */ source,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ destination,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ destination,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -29270,7 +29273,7 @@ System_Runtime_InteropServices_Marshal_Copy_14(
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Copy_15(
 	void* /* System.IntPtr */ source,
-	System_IntPtr_Array_t _Nullable /* System.IntPtr[] */ destination,
+	System_IntPtr_Array_t _Nonnull /* System.IntPtr[] */ destination,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -29317,7 +29320,7 @@ System_Runtime_InteropServices_Marshal_ReadInt32_2(
 
 void* /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_ReadIntPtr(
-	System_Object_t _Nullable /* System.Object */ ptr,
+	System_Object_t _Nonnull /* System.Object */ ptr,
 	int32_t /* System.Int32 */ ofs,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -29388,7 +29391,7 @@ System_Runtime_InteropServices_Marshal_WriteIntPtr(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_WriteIntPtr_1(
-	System_Object_t _Nullable /* System.Object */ ptr,
+	System_Object_t _Nonnull /* System.Object */ ptr,
 	int32_t /* System.Int32 */ ofs,
 	void* /* System.IntPtr */ val,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -29418,13 +29421,13 @@ System_Runtime_InteropServices_Marshal_WriteInt64_2(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_Prelink(
-	System_Reflection_MethodInfo_t _Nullable /* System.Reflection.MethodInfo */ m,
+	System_Reflection_MethodInfo_t _Nonnull /* System.Reflection.MethodInfo */ m,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_PrelinkAll(
-	System_Type_t _Nullable /* System.Type */ c,
+	System_Type_t _Nonnull /* System.Type */ c,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -29440,14 +29443,14 @@ System_Runtime_InteropServices_Marshal_StructureToPtr_A1(
 System_Object_t _Nullable /* System.Object */
 System_Runtime_InteropServices_Marshal_PtrToStructure(
 	void* /* System.IntPtr */ ptr,
-	System_Type_t _Nullable /* System.Type */ structureType,
+	System_Type_t _Nonnull /* System.Type */ structureType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_PtrToStructure_1(
 	void* /* System.IntPtr */ ptr,
-	System_Object_t _Nullable /* System.Object */ structure,
+	System_Object_t _Nonnull /* System.Object */ structure,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -29475,7 +29478,7 @@ System_Runtime_InteropServices_Marshal_DestroyStructure_A1(
 
 void* /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_GetHINSTANCE(
-	System_Reflection_Module_t _Nullable /* System.Reflection.Module */ m,
+	System_Reflection_Module_t _Nonnull /* System.Reflection.Module */ m,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -29507,31 +29510,31 @@ System_Runtime_InteropServices_Marshal_ThrowExceptionForHR_1(
 
 void* /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_SecureStringToBSTR(
-	System_Security_SecureString_t _Nullable /* System.Security.SecureString */ s,
+	System_Security_SecureString_t _Nonnull /* System.Security.SecureString */ s,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void* /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_SecureStringToCoTaskMemAnsi(
-	System_Security_SecureString_t _Nullable /* System.Security.SecureString */ s,
+	System_Security_SecureString_t _Nonnull /* System.Security.SecureString */ s,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void* /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_SecureStringToCoTaskMemUnicode(
-	System_Security_SecureString_t _Nullable /* System.Security.SecureString */ s,
+	System_Security_SecureString_t _Nonnull /* System.Security.SecureString */ s,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void* /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_SecureStringToGlobalAllocAnsi(
-	System_Security_SecureString_t _Nullable /* System.Security.SecureString */ s,
+	System_Security_SecureString_t _Nonnull /* System.Security.SecureString */ s,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void* /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_SecureStringToGlobalAllocUnicode(
-	System_Security_SecureString_t _Nullable /* System.Security.SecureString */ s,
+	System_Security_SecureString_t _Nonnull /* System.Security.SecureString */ s,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -29567,20 +29570,20 @@ System_Runtime_InteropServices_Marshal_StringToCoTaskMemAnsi(
 
 System_Guid_t _Nonnull /* System.Guid */
 System_Runtime_InteropServices_Marshal_GenerateGuidForType(
-	System_Type_t _Nullable /* System.Type */ type,
+	System_Type_t _Nonnull /* System.Type */ type,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_Runtime_InteropServices_Marshal_GenerateProgIdForType(
-	System_Type_t _Nullable /* System.Type */ type,
+	System_Type_t _Nonnull /* System.Type */ type,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Delegate_t _Nullable /* System.Delegate */
 System_Runtime_InteropServices_Marshal_GetDelegateForFunctionPointer(
 	void* /* System.IntPtr */ ptr,
-	System_Type_t _Nullable /* System.Type */ t,
+	System_Type_t _Nonnull /* System.Type */ t,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -29593,7 +29596,7 @@ System_Runtime_InteropServices_Marshal_GetDelegateForFunctionPointer_A1(
 
 void* /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_GetFunctionPointerForDelegate(
-	System_Delegate_t _Nullable /* System.Delegate */ d,
+	System_Delegate_t _Nonnull /* System.Delegate */ d,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -29665,7 +29668,7 @@ System_Runtime_InteropServices_Marshal_GetTypeFromCLSID(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_InitHandle(
-	System_Runtime_InteropServices_SafeHandle_t _Nullable /* System.Runtime.InteropServices.SafeHandle */ safeHandle,
+	System_Runtime_InteropServices_SafeHandle_t _Nonnull /* System.Runtime.InteropServices.SafeHandle */ safeHandle,
 	void* /* System.IntPtr */ handle,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -29694,13 +29697,13 @@ System_Runtime_InteropServices_Marshal_AreComObjectsAvailableForCleanup(
 void* /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_CreateAggregatedObject(
 	void* /* System.IntPtr */ pOuter,
-	System_Object_t _Nullable /* System.Object */ o,
+	System_Object_t _Nonnull /* System.Object */ o,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Object_t _Nullable /* System.Object */
 System_Runtime_InteropServices_Marshal_BindToMoniker(
-	System_String_t _Nullable /* System.String */ monikerName,
+	System_String_t _Nonnull /* System.String */ monikerName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -29720,7 +29723,7 @@ System_Runtime_InteropServices_Marshal_CreateAggregatedObject_A1(
 System_Object_t _Nullable /* System.Object */
 System_Runtime_InteropServices_Marshal_CreateWrapperOfType(
 	System_Object_t _Nullable /* System.Object */ o,
-	System_Type_t _Nullable /* System.Type */ t,
+	System_Type_t _Nonnull /* System.Type */ t,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -29734,28 +29737,28 @@ System_Runtime_InteropServices_Marshal_CreateWrapperOfType_A2(
 
 void /* System.Void */
 System_Runtime_InteropServices_Marshal_ChangeWrapperHandleStrength(
-	System_Object_t _Nullable /* System.Object */ otp,
+	System_Object_t _Nonnull /* System.Object */ otp,
 	bool /* System.Boolean */ fIsWeak,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Runtime_InteropServices_Marshal_FinalReleaseComObject(
-	System_Object_t _Nullable /* System.Object */ o,
+	System_Object_t _Nonnull /* System.Object */ o,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void* /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_GetComInterfaceForObject(
-	System_Object_t _Nullable /* System.Object */ o,
-	System_Type_t _Nullable /* System.Type */ T,
+	System_Object_t _Nonnull /* System.Object */ o,
+	System_Type_t _Nonnull /* System.Type */ T,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void* /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_GetComInterfaceForObject_1(
-	System_Object_t _Nullable /* System.Object */ o,
-	System_Type_t _Nullable /* System.Type */ T,
+	System_Object_t _Nonnull /* System.Object */ o,
+	System_Type_t _Nonnull /* System.Type */ T,
 	System_Runtime_InteropServices_CustomQueryInterfaceMode_t /* System.Runtime.InteropServices.CustomQueryInterfaceMode */ mode,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -29770,20 +29773,20 @@ System_Runtime_InteropServices_Marshal_GetComInterfaceForObject_A2(
 
 System_Object_t _Nullable /* System.Object */
 System_Runtime_InteropServices_Marshal_GetComObjectData(
-	System_Object_t _Nullable /* System.Object */ obj,
-	System_Object_t _Nullable /* System.Object */ key,
+	System_Object_t _Nonnull /* System.Object */ obj,
+	System_Object_t _Nonnull /* System.Object */ key,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void* /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_GetIDispatchForObject(
-	System_Object_t _Nullable /* System.Object */ o,
+	System_Object_t _Nonnull /* System.Object */ o,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void* /* System.IntPtr */
 System_Runtime_InteropServices_Marshal_GetIUnknownForObject(
-	System_Object_t _Nullable /* System.Object */ o,
+	System_Object_t _Nonnull /* System.Object */ o,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -29805,7 +29808,7 @@ System_Runtime_InteropServices_Marshal_GetNativeVariantForObject_A1(
 System_Object_t _Nullable /* System.Object */
 System_Runtime_InteropServices_Marshal_GetTypedObjectForIUnknown(
 	void* /* System.IntPtr */ pUnk,
-	System_Type_t _Nullable /* System.Type */ t,
+	System_Type_t _Nonnull /* System.Type */ t,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -29845,13 +29848,13 @@ System_Runtime_InteropServices_Marshal_GetObjectsForNativeVariants_A1(
 
 int32_t /* System.Int32 */
 System_Runtime_InteropServices_Marshal_GetStartComSlot(
-	System_Type_t _Nullable /* System.Type */ t,
+	System_Type_t _Nonnull /* System.Type */ t,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Runtime_InteropServices_Marshal_GetEndComSlot(
-	System_Type_t _Nullable /* System.Type */ t,
+	System_Type_t _Nonnull /* System.Type */ t,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -29863,26 +29866,26 @@ System_Runtime_InteropServices_Marshal_GetUniqueObjectForIUnknown(
 
 bool /* System.Boolean */
 System_Runtime_InteropServices_Marshal_IsComObject(
-	System_Object_t _Nullable /* System.Object */ o,
+	System_Object_t _Nonnull /* System.Object */ o,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Runtime_InteropServices_Marshal_IsTypeVisibleFromCom(
-	System_Type_t _Nullable /* System.Type */ t,
+	System_Type_t _Nonnull /* System.Type */ t,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Runtime_InteropServices_Marshal_ReleaseComObject(
-	System_Object_t _Nullable /* System.Object */ o,
+	System_Object_t _Nonnull /* System.Object */ o,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Runtime_InteropServices_Marshal_SetComObjectData(
-	System_Object_t _Nullable /* System.Object */ obj,
-	System_Object_t _Nullable /* System.Object */ key,
+	System_Object_t _Nonnull /* System.Object */ obj,
+	System_Object_t _Nonnull /* System.Object */ key,
 	System_Object_t _Nullable /* System.Object */ data,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -30302,27 +30305,27 @@ System_UIntPtr_TypeOf(
 #pragma mark - BEGIN APIs of System.AppContext
 System_Object_t _Nullable /* System.Object */
 System_AppContext_GetData(
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_AppContext_SetData(
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Object_t _Nullable /* System.Object */ data,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_AppContext_TryGetSwitch(
-	System_String_t _Nullable /* System.String */ switchName,
+	System_String_t _Nonnull /* System.String */ switchName,
 	bool* /* System.Boolean */ isEnabled,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_AppContext_SetSwitch(
-	System_String_t _Nullable /* System.String */ switchName,
+	System_String_t _Nonnull /* System.String */ switchName,
 	bool /* System.Boolean */ isEnabled,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -30474,7 +30477,7 @@ System_GC_RemoveMemoryPressure(
 
 int32_t /* System.Int32 */
 System_GC_GetGeneration(
-	System_Object_t _Nullable /* System.Object */ obj,
+	System_Object_t _Nonnull /* System.Object */ obj,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -30527,7 +30530,7 @@ System_GC_KeepAlive(
 
 int32_t /* System.Int32 */
 System_GC_GetGeneration_1(
-	System_WeakReference_t _Nullable /* System.WeakReference */ wo,
+	System_WeakReference_t _Nonnull /* System.WeakReference */ wo,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -30538,13 +30541,13 @@ System_GC_WaitForPendingFinalizers(
 
 void /* System.Void */
 System_GC_SuppressFinalize(
-	System_Object_t _Nullable /* System.Object */ obj,
+	System_Object_t _Nonnull /* System.Object */ obj,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_GC_ReRegisterForFinalize(
-	System_Object_t _Nullable /* System.Object */ obj,
+	System_Object_t _Nonnull /* System.Object */ obj,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -30635,7 +30638,7 @@ System_GC_EndNoGCRegion(
 void /* System.Void */
 System_GC_RegisterNoGCRegionCallback(
 	int64_t /* System.Int64 */ totalSize,
-	System_Action_t _Nullable /* System.Action */ callback,
+	System_Action_t _Nonnull /* System.Action */ callback,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -30820,7 +30823,7 @@ System_GCMemoryInfo_Destroy(
 void /* System.Void */
 System_WeakReference_GetObjectData(
 	System_WeakReference_t _Nullable /* System.WeakReference */ self,
-	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_SerializationInfo_t _Nonnull /* System.Runtime.Serialization.SerializationInfo */ info,
 	System_Runtime_Serialization_StreamingContext_t _Nonnull /* System.Runtime.Serialization.StreamingContext */ context,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -31784,14 +31787,14 @@ System_Convert_ChangeType_1(
 System_Object_t _Nullable /* System.Object */
 System_Convert_ChangeType_2(
 	System_Object_t _Nullable /* System.Object */ value,
-	System_Type_t _Nullable /* System.Type */ conversionType,
+	System_Type_t _Nonnull /* System.Type */ conversionType,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Object_t _Nullable /* System.Object */
 System_Convert_ChangeType_3(
 	System_Object_t _Nullable /* System.Object */ value,
-	System_Type_t _Nullable /* System.Type */ conversionType,
+	System_Type_t _Nonnull /* System.Type */ conversionType,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -31981,13 +31984,13 @@ System_Convert_ToChar_11(
 
 wchar_t /* System.Char */
 System_Convert_ToChar_12(
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 wchar_t /* System.Char */
 System_Convert_ToChar_13(
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -32115,7 +32118,7 @@ System_Convert_ToSByte_15(
 
 int8_t /* System.SByte */
 System_Convert_ToSByte_16(
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -33630,20 +33633,20 @@ System_Convert_ToString_35(
 
 System_String_t _Nullable /* System.String */
 System_Convert_ToBase64String(
-	System_Byte_Array_t _Nullable /* System.Byte[] */ inArray,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ inArray,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_Convert_ToBase64String_1(
-	System_Byte_Array_t _Nullable /* System.Byte[] */ inArray,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ inArray,
 	System_Base64FormattingOptions_t /* System.Base64FormattingOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_Convert_ToBase64String_2(
-	System_Byte_Array_t _Nullable /* System.Byte[] */ inArray,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ inArray,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -33651,7 +33654,7 @@ System_Convert_ToBase64String_2(
 
 System_String_t _Nullable /* System.String */
 System_Convert_ToBase64String_3(
-	System_Byte_Array_t _Nullable /* System.Byte[] */ inArray,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ inArray,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ length,
 	System_Base64FormattingOptions_t /* System.Base64FormattingOptions */ options,
@@ -33667,20 +33670,20 @@ System_Convert_ToBase64String_4(
 
 int32_t /* System.Int32 */
 System_Convert_ToBase64CharArray(
-	System_Byte_Array_t _Nullable /* System.Byte[] */ inArray,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ inArray,
 	int32_t /* System.Int32 */ offsetIn,
 	int32_t /* System.Int32 */ length,
-	System_Char_Array_t _Nullable /* System.Char[] */ outArray,
+	System_Char_Array_t _Nonnull /* System.Char[] */ outArray,
 	int32_t /* System.Int32 */ offsetOut,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_Convert_ToBase64CharArray_1(
-	System_Byte_Array_t _Nullable /* System.Byte[] */ inArray,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ inArray,
 	int32_t /* System.Int32 */ offsetIn,
 	int32_t /* System.Int32 */ length,
-	System_Char_Array_t _Nullable /* System.Char[] */ outArray,
+	System_Char_Array_t _Nonnull /* System.Char[] */ outArray,
 	int32_t /* System.Int32 */ offsetOut,
 	System_Base64FormattingOptions_t /* System.Base64FormattingOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -33688,13 +33691,13 @@ System_Convert_ToBase64CharArray_1(
 
 System_Byte_Array_t _Nullable /* System.Byte[] */
 System_Convert_FromBase64String(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Byte_Array_t _Nullable /* System.Byte[] */
 System_Convert_FromBase64CharArray(
-	System_Char_Array_t _Nullable /* System.Char[] */ inArray,
+	System_Char_Array_t _Nonnull /* System.Char[] */ inArray,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -33702,19 +33705,19 @@ System_Convert_FromBase64CharArray(
 
 System_Byte_Array_t _Nullable /* System.Byte[] */
 System_Convert_FromHexString(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_Convert_ToHexString(
-	System_Byte_Array_t _Nullable /* System.Byte[] */ inArray,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ inArray,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_Convert_ToHexString_1(
-	System_Byte_Array_t _Nullable /* System.Byte[] */ inArray,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ inArray,
 	int32_t /* System.Int32 */ offset,
 	int32_t /* System.Int32 */ length,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -33870,31 +33873,31 @@ System_Threading_Thread_AllocateDataSlot(
 
 System_LocalDataStoreSlot_t _Nullable /* System.LocalDataStoreSlot */
 System_Threading_Thread_AllocateNamedDataSlot(
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_LocalDataStoreSlot_t _Nullable /* System.LocalDataStoreSlot */
 System_Threading_Thread_GetNamedDataSlot(
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Threading_Thread_FreeNamedDataSlot(
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Object_t _Nullable /* System.Object */
 System_Threading_Thread_GetData(
-	System_LocalDataStoreSlot_t _Nullable /* System.LocalDataStoreSlot */ slot,
+	System_LocalDataStoreSlot_t _Nonnull /* System.LocalDataStoreSlot */ slot,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Threading_Thread_SetData(
-	System_LocalDataStoreSlot_t _Nullable /* System.LocalDataStoreSlot */ slot,
+	System_LocalDataStoreSlot_t _Nonnull /* System.LocalDataStoreSlot */ slot,
 	System_Object_t _Nullable /* System.Object */ data,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -33922,7 +33925,7 @@ System_Threading_Thread_GetCompressedStack(
 void /* System.Void */
 System_Threading_Thread_SetCompressedStack(
 	System_Threading_Thread_t _Nullable /* System.Threading.Thread */ self,
-	System_Threading_CompressedStack_t _Nullable /* System.Threading.CompressedStack */ stack,
+	System_Threading_CompressedStack_t _Nonnull /* System.Threading.CompressedStack */ stack,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -34142,26 +34145,26 @@ System_Threading_Thread_GetCurrentProcessorId(
 
 System_Threading_Thread_t _Nullable /* System.Threading.Thread */
 System_Threading_Thread_Create(
-	System_Threading_ThreadStart_t _Nullable /* System.Threading.ThreadStart */ start,
+	System_Threading_ThreadStart_t _Nonnull /* System.Threading.ThreadStart */ start,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Thread_t _Nullable /* System.Threading.Thread */
 System_Threading_Thread_Create_1(
-	System_Threading_ThreadStart_t _Nullable /* System.Threading.ThreadStart */ start,
+	System_Threading_ThreadStart_t _Nonnull /* System.Threading.ThreadStart */ start,
 	int32_t /* System.Int32 */ maxStackSize,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Thread_t _Nullable /* System.Threading.Thread */
 System_Threading_Thread_Create_2(
-	System_Threading_ParameterizedThreadStart_t _Nullable /* System.Threading.ParameterizedThreadStart */ start,
+	System_Threading_ParameterizedThreadStart_t _Nonnull /* System.Threading.ParameterizedThreadStart */ start,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Thread_t _Nullable /* System.Threading.Thread */
 System_Threading_Thread_Create_3(
-	System_Threading_ParameterizedThreadStart_t _Nullable /* System.Threading.ParameterizedThreadStart */ start,
+	System_Threading_ParameterizedThreadStart_t _Nonnull /* System.Threading.ParameterizedThreadStart */ start,
 	int32_t /* System.Int32 */ maxStackSize,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -34319,7 +34322,7 @@ System_Threading_Thread_Destroy(
 bool /* System.Boolean */
 System_Security_Principal_IPrincipal_IsInRole(
 	System_Security_Principal_IPrincipal_t _Nullable /* System.Security.Principal.IPrincipal */ self,
-	System_String_t _Nullable /* System.String */ role,
+	System_String_t _Nonnull /* System.String */ role,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -34380,7 +34383,7 @@ System_Security_Principal_IIdentity_Destroy(
 void /* System.Void */
 System_Threading_ExecutionContext_GetObjectData(
 	System_Threading_ExecutionContext_t _Nullable /* System.Threading.ExecutionContext */ self,
-	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_SerializationInfo_t _Nonnull /* System.Runtime.Serialization.SerializationInfo */ info,
 	System_Runtime_Serialization_StreamingContext_t _Nonnull /* System.Runtime.Serialization.StreamingContext */ context,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -34407,15 +34410,15 @@ System_Threading_ExecutionContext_IsFlowSuppressed(
 
 void /* System.Void */
 System_Threading_ExecutionContext_Run(
-	System_Threading_ExecutionContext_t _Nullable /* System.Threading.ExecutionContext */ executionContext,
-	System_Threading_ContextCallback_t _Nullable /* System.Threading.ContextCallback */ callback,
+	System_Threading_ExecutionContext_t _Nonnull /* System.Threading.ExecutionContext */ executionContext,
+	System_Threading_ContextCallback_t _Nonnull /* System.Threading.ContextCallback */ callback,
 	System_Object_t _Nullable /* System.Object */ state,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Threading_ExecutionContext_Restore_1(
-	System_Threading_ExecutionContext_t _Nullable /* System.Threading.ExecutionContext */ executionContext,
+	System_Threading_ExecutionContext_t _Nonnull /* System.Threading.ExecutionContext */ executionContext,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -34511,7 +34514,7 @@ System_LocalDataStoreSlot_Destroy(
 void /* System.Void */
 System_Threading_CompressedStack_GetObjectData(
 	System_Threading_CompressedStack_t _Nullable /* System.Threading.CompressedStack */ self,
-	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_SerializationInfo_t _Nonnull /* System.Runtime.Serialization.SerializationInfo */ info,
 	System_Runtime_Serialization_StreamingContext_t _Nonnull /* System.Runtime.Serialization.StreamingContext */ context,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -34534,8 +34537,8 @@ System_Threading_CompressedStack_GetCompressedStack(
 
 void /* System.Void */
 System_Threading_CompressedStack_Run(
-	System_Threading_CompressedStack_t _Nullable /* System.Threading.CompressedStack */ compressedStack,
-	System_Threading_ContextCallback_t _Nullable /* System.Threading.ContextCallback */ callback,
+	System_Threading_CompressedStack_t _Nonnull /* System.Threading.CompressedStack */ compressedStack,
+	System_Threading_ContextCallback_t _Nonnull /* System.Threading.ContextCallback */ callback,
 	System_Object_t _Nullable /* System.Object */ state,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -34563,27 +34566,27 @@ System_AppDomain_SetDynamicBase(
 System_String_t _Nullable /* System.String */
 System_AppDomain_ApplyPolicy(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ assemblyName,
+	System_String_t _Nonnull /* System.String */ assemblyName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_AppDomain_t _Nullable /* System.AppDomain */
 System_AppDomain_CreateDomain(
-	System_String_t _Nullable /* System.String */ friendlyName,
+	System_String_t _Nonnull /* System.String */ friendlyName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_AppDomain_ExecuteAssembly(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ assemblyFile,
+	System_String_t _Nonnull /* System.String */ assemblyFile,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_AppDomain_ExecuteAssembly_1(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ assemblyFile,
+	System_String_t _Nonnull /* System.String */ assemblyFile,
 	System_String_Array_t _Nullable /* System.String[] */ args,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -34591,7 +34594,7 @@ System_AppDomain_ExecuteAssembly_1(
 int32_t /* System.Int32 */
 System_AppDomain_ExecuteAssembly_2(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ assemblyFile,
+	System_String_t _Nonnull /* System.String */ assemblyFile,
 	System_String_Array_t _Nullable /* System.String[] */ args,
 	System_Byte_Array_t _Nullable /* System.Byte[] */ hashValue,
 	System_Configuration_Assemblies_AssemblyHashAlgorithm_t /* System.Configuration.Assemblies.AssemblyHashAlgorithm */ hashAlgorithm,
@@ -34601,7 +34604,7 @@ System_AppDomain_ExecuteAssembly_2(
 int32_t /* System.Int32 */
 System_AppDomain_ExecuteAssemblyByName(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_Reflection_AssemblyName_t _Nullable /* System.Reflection.AssemblyName */ assemblyName,
+	System_Reflection_AssemblyName_t _Nonnull /* System.Reflection.AssemblyName */ assemblyName,
 	System_String_Array_t _Nullable /* System.String[] */ args,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -34609,14 +34612,14 @@ System_AppDomain_ExecuteAssemblyByName(
 int32_t /* System.Int32 */
 System_AppDomain_ExecuteAssemblyByName_1(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ assemblyName,
+	System_String_t _Nonnull /* System.String */ assemblyName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 int32_t /* System.Int32 */
 System_AppDomain_ExecuteAssemblyByName_2(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ assemblyName,
+	System_String_t _Nonnull /* System.String */ assemblyName,
 	System_String_Array_t _Nullable /* System.String[] */ args,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -34624,14 +34627,14 @@ System_AppDomain_ExecuteAssemblyByName_2(
 System_Object_t _Nullable /* System.Object */
 System_AppDomain_GetData(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_AppDomain_SetData(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Object_t _Nullable /* System.Object */ data,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -34656,21 +34659,21 @@ System_AppDomain_ToString(
 
 void /* System.Void */
 System_AppDomain_Unload(
-	System_AppDomain_t _Nullable /* System.AppDomain */ domain,
+	System_AppDomain_t _Nonnull /* System.AppDomain */ domain,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_AppDomain_Load(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ rawAssembly,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ rawAssembly,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_AppDomain_Load_1(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ rawAssembly,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ rawAssembly,
 	System_Byte_Array_t _Nullable /* System.Byte[] */ rawSymbolStore,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -34678,14 +34681,14 @@ System_AppDomain_Load_1(
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_AppDomain_Load_2(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_Reflection_AssemblyName_t _Nullable /* System.Reflection.AssemblyName */ assemblyRef,
+	System_Reflection_AssemblyName_t _Nonnull /* System.Reflection.AssemblyName */ assemblyRef,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_AppDomain_Load_3(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ assemblyString,
+	System_String_t _Nonnull /* System.String */ assemblyString,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -34755,23 +34758,23 @@ System_AppDomain_SetPrincipalPolicy(
 void /* System.Void */
 System_AppDomain_SetThreadPrincipal(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_Security_Principal_IPrincipal_t _Nullable /* System.Security.Principal.IPrincipal */ principal,
+	System_Security_Principal_IPrincipal_t _Nonnull /* System.Security.Principal.IPrincipal */ principal,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Runtime_Remoting_ObjectHandle_t _Nullable /* System.Runtime.Remoting.ObjectHandle */
 System_AppDomain_CreateInstance(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ assemblyName,
-	System_String_t _Nullable /* System.String */ typeName,
+	System_String_t _Nonnull /* System.String */ assemblyName,
+	System_String_t _Nonnull /* System.String */ typeName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Runtime_Remoting_ObjectHandle_t _Nullable /* System.Runtime.Remoting.ObjectHandle */
 System_AppDomain_CreateInstance_1(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ assemblyName,
-	System_String_t _Nullable /* System.String */ typeName,
+	System_String_t _Nonnull /* System.String */ assemblyName,
+	System_String_t _Nonnull /* System.String */ typeName,
 	bool /* System.Boolean */ ignoreCase,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ binder,
@@ -34784,8 +34787,8 @@ System_AppDomain_CreateInstance_1(
 System_Runtime_Remoting_ObjectHandle_t _Nullable /* System.Runtime.Remoting.ObjectHandle */
 System_AppDomain_CreateInstance_2(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ assemblyName,
-	System_String_t _Nullable /* System.String */ typeName,
+	System_String_t _Nonnull /* System.String */ assemblyName,
+	System_String_t _Nonnull /* System.String */ typeName,
 	System_Object_Array_t _Nullable /* System.Object[] */ activationAttributes,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -34793,16 +34796,16 @@ System_AppDomain_CreateInstance_2(
 System_Object_t _Nullable /* System.Object */
 System_AppDomain_CreateInstanceAndUnwrap(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ assemblyName,
-	System_String_t _Nullable /* System.String */ typeName,
+	System_String_t _Nonnull /* System.String */ assemblyName,
+	System_String_t _Nonnull /* System.String */ typeName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Object_t _Nullable /* System.Object */
 System_AppDomain_CreateInstanceAndUnwrap_1(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ assemblyName,
-	System_String_t _Nullable /* System.String */ typeName,
+	System_String_t _Nonnull /* System.String */ assemblyName,
+	System_String_t _Nonnull /* System.String */ typeName,
 	bool /* System.Boolean */ ignoreCase,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ binder,
@@ -34815,8 +34818,8 @@ System_AppDomain_CreateInstanceAndUnwrap_1(
 System_Object_t _Nullable /* System.Object */
 System_AppDomain_CreateInstanceAndUnwrap_2(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ assemblyName,
-	System_String_t _Nullable /* System.String */ typeName,
+	System_String_t _Nonnull /* System.String */ assemblyName,
+	System_String_t _Nonnull /* System.String */ typeName,
 	System_Object_Array_t _Nullable /* System.Object[] */ activationAttributes,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -34824,16 +34827,16 @@ System_AppDomain_CreateInstanceAndUnwrap_2(
 System_Runtime_Remoting_ObjectHandle_t _Nullable /* System.Runtime.Remoting.ObjectHandle */
 System_AppDomain_CreateInstanceFrom(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ assemblyFile,
-	System_String_t _Nullable /* System.String */ typeName,
+	System_String_t _Nonnull /* System.String */ assemblyFile,
+	System_String_t _Nonnull /* System.String */ typeName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Runtime_Remoting_ObjectHandle_t _Nullable /* System.Runtime.Remoting.ObjectHandle */
 System_AppDomain_CreateInstanceFrom_1(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ assemblyFile,
-	System_String_t _Nullable /* System.String */ typeName,
+	System_String_t _Nonnull /* System.String */ assemblyFile,
+	System_String_t _Nonnull /* System.String */ typeName,
 	bool /* System.Boolean */ ignoreCase,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ binder,
@@ -34846,8 +34849,8 @@ System_AppDomain_CreateInstanceFrom_1(
 System_Runtime_Remoting_ObjectHandle_t _Nullable /* System.Runtime.Remoting.ObjectHandle */
 System_AppDomain_CreateInstanceFrom_2(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ assemblyFile,
-	System_String_t _Nullable /* System.String */ typeName,
+	System_String_t _Nonnull /* System.String */ assemblyFile,
+	System_String_t _Nonnull /* System.String */ typeName,
 	System_Object_Array_t _Nullable /* System.Object[] */ activationAttributes,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -34855,16 +34858,16 @@ System_AppDomain_CreateInstanceFrom_2(
 System_Object_t _Nullable /* System.Object */
 System_AppDomain_CreateInstanceFromAndUnwrap(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ assemblyFile,
-	System_String_t _Nullable /* System.String */ typeName,
+	System_String_t _Nonnull /* System.String */ assemblyFile,
+	System_String_t _Nonnull /* System.String */ typeName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Object_t _Nullable /* System.Object */
 System_AppDomain_CreateInstanceFromAndUnwrap_1(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ assemblyFile,
-	System_String_t _Nullable /* System.String */ typeName,
+	System_String_t _Nonnull /* System.String */ assemblyFile,
+	System_String_t _Nonnull /* System.String */ typeName,
 	bool /* System.Boolean */ ignoreCase,
 	System_Reflection_BindingFlags_t /* System.Reflection.BindingFlags */ bindingAttr,
 	System_Reflection_Binder_t _Nullable /* System.Reflection.Binder */ binder,
@@ -34877,8 +34880,8 @@ System_AppDomain_CreateInstanceFromAndUnwrap_1(
 System_Object_t _Nullable /* System.Object */
 System_AppDomain_CreateInstanceFromAndUnwrap_2(
 	System_AppDomain_t _Nullable /* System.AppDomain */ self,
-	System_String_t _Nullable /* System.String */ assemblyFile,
-	System_String_t _Nullable /* System.String */ typeName,
+	System_String_t _Nonnull /* System.String */ assemblyFile,
+	System_String_t _Nonnull /* System.String */ typeName,
 	System_Object_Array_t _Nullable /* System.Object[] */ activationAttributes,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -35163,9 +35166,9 @@ System_Security_PermissionSet_ContainsNonCodeAccessPermissions(
 
 System_Byte_Array_t _Nullable /* System.Byte[] */
 System_Security_PermissionSet_ConvertPermissionSet(
-	System_String_t _Nullable /* System.String */ inFormat,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ inData,
-	System_String_t _Nullable /* System.String */ outFormat,
+	System_String_t _Nonnull /* System.String */ inFormat,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ inData,
+	System_String_t _Nonnull /* System.String */ outFormat,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -35178,7 +35181,7 @@ System_Security_PermissionSet_Copy(
 void /* System.Void */
 System_Security_PermissionSet_CopyTo(
 	System_Security_PermissionSet_t _Nullable /* System.Security.PermissionSet */ self,
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	int32_t /* System.Int32 */ index,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -35205,7 +35208,7 @@ System_Security_PermissionSet_Equals(
 void /* System.Void */
 System_Security_PermissionSet_FromXml(
 	System_Security_PermissionSet_t _Nullable /* System.Security.PermissionSet */ self,
-	System_Security_SecurityElement_t _Nullable /* System.Security.SecurityElement */ et,
+	System_Security_SecurityElement_t _Nonnull /* System.Security.SecurityElement */ et,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -35354,7 +35357,7 @@ System_Security_PermissionSet_Destroy(
 void /* System.Void */
 System_Security_ISecurityEncodable_FromXml(
 	System_Security_ISecurityEncodable_t _Nullable /* System.Security.ISecurityEncodable */ self,
-	System_Security_SecurityElement_t _Nullable /* System.Security.SecurityElement */ e,
+	System_Security_SecurityElement_t _Nonnull /* System.Security.SecurityElement */ e,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -35380,15 +35383,15 @@ System_Security_ISecurityEncodable_Destroy(
 void /* System.Void */
 System_Security_SecurityElement_AddAttribute(
 	System_Security_SecurityElement_t _Nullable /* System.Security.SecurityElement */ self,
-	System_String_t _Nullable /* System.String */ name,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Security_SecurityElement_AddChild(
 	System_Security_SecurityElement_t _Nullable /* System.Security.SecurityElement */ self,
-	System_Security_SecurityElement_t _Nullable /* System.Security.SecurityElement */ child,
+	System_Security_SecurityElement_t _Nonnull /* System.Security.SecurityElement */ child,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -35444,39 +35447,39 @@ System_Security_SecurityElement_ToString(
 System_String_t _Nullable /* System.String */
 System_Security_SecurityElement_Attribute(
 	System_Security_SecurityElement_t _Nullable /* System.Security.SecurityElement */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Security_SecurityElement_t _Nullable /* System.Security.SecurityElement */
 System_Security_SecurityElement_SearchForChildByTag(
 	System_Security_SecurityElement_t _Nullable /* System.Security.SecurityElement */ self,
-	System_String_t _Nullable /* System.String */ tag,
+	System_String_t _Nonnull /* System.String */ tag,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_Security_SecurityElement_SearchForTextOfTag(
 	System_Security_SecurityElement_t _Nullable /* System.Security.SecurityElement */ self,
-	System_String_t _Nullable /* System.String */ tag,
+	System_String_t _Nonnull /* System.String */ tag,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Security_SecurityElement_t _Nullable /* System.Security.SecurityElement */
 System_Security_SecurityElement_FromString(
-	System_String_t _Nullable /* System.String */ xml,
+	System_String_t _Nonnull /* System.String */ xml,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Security_SecurityElement_t _Nullable /* System.Security.SecurityElement */
 System_Security_SecurityElement_Create(
-	System_String_t _Nullable /* System.String */ tag,
+	System_String_t _Nonnull /* System.String */ tag,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Security_SecurityElement_t _Nullable /* System.Security.SecurityElement */
 System_Security_SecurityElement_Create_1(
-	System_String_t _Nullable /* System.String */ tag,
+	System_String_t _Nonnull /* System.String */ tag,
 	System_String_t _Nullable /* System.String */ text,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -35553,7 +35556,7 @@ System_Security_SecurityElement_Destroy(
 void /* System.Void */
 System_Collections_Hashtable_Add(
 	System_Collections_Hashtable_t _Nullable /* System.Collections.Hashtable */ self,
-	System_Object_t _Nullable /* System.Object */ key,
+	System_Object_t _Nonnull /* System.Object */ key,
 	System_Object_t _Nullable /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -35573,14 +35576,14 @@ System_Collections_Hashtable_Clone(
 bool /* System.Boolean */
 System_Collections_Hashtable_Contains(
 	System_Collections_Hashtable_t _Nullable /* System.Collections.Hashtable */ self,
-	System_Object_t _Nullable /* System.Object */ key,
+	System_Object_t _Nonnull /* System.Object */ key,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Collections_Hashtable_ContainsKey(
 	System_Collections_Hashtable_t _Nullable /* System.Collections.Hashtable */ self,
-	System_Object_t _Nullable /* System.Object */ key,
+	System_Object_t _Nonnull /* System.Object */ key,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -35594,7 +35597,7 @@ System_Collections_Hashtable_ContainsValue(
 void /* System.Void */
 System_Collections_Hashtable_CopyTo(
 	System_Collections_Hashtable_t _Nullable /* System.Collections.Hashtable */ self,
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	int32_t /* System.Int32 */ arrayIndex,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -35608,20 +35611,20 @@ System_Collections_Hashtable_GetEnumerator(
 void /* System.Void */
 System_Collections_Hashtable_Remove(
 	System_Collections_Hashtable_t _Nullable /* System.Collections.Hashtable */ self,
-	System_Object_t _Nullable /* System.Object */ key,
+	System_Object_t _Nonnull /* System.Object */ key,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Hashtable_t _Nullable /* System.Collections.Hashtable */
 System_Collections_Hashtable_Synchronized(
-	System_Collections_Hashtable_t _Nullable /* System.Collections.Hashtable */ table,
+	System_Collections_Hashtable_t _Nonnull /* System.Collections.Hashtable */ table,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Collections_Hashtable_GetObjectData(
 	System_Collections_Hashtable_t _Nullable /* System.Collections.Hashtable */ self,
-	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_SerializationInfo_t _Nonnull /* System.Runtime.Serialization.SerializationInfo */ info,
 	System_Runtime_Serialization_StreamingContext_t _Nonnull /* System.Runtime.Serialization.StreamingContext */ context,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -35689,20 +35692,20 @@ System_Collections_Hashtable_Create_7(
 
 System_Collections_Hashtable_t _Nullable /* System.Collections.Hashtable */
 System_Collections_Hashtable_Create_8(
-	System_Collections_IDictionary_t _Nullable /* System.Collections.IDictionary */ d,
+	System_Collections_IDictionary_t _Nonnull /* System.Collections.IDictionary */ d,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Hashtable_t _Nullable /* System.Collections.Hashtable */
 System_Collections_Hashtable_Create_9(
-	System_Collections_IDictionary_t _Nullable /* System.Collections.IDictionary */ d,
+	System_Collections_IDictionary_t _Nonnull /* System.Collections.IDictionary */ d,
 	float /* System.Single */ loadFactor,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Hashtable_t _Nullable /* System.Collections.Hashtable */
 System_Collections_Hashtable_Create_10(
-	System_Collections_IDictionary_t _Nullable /* System.Collections.IDictionary */ d,
+	System_Collections_IDictionary_t _Nonnull /* System.Collections.IDictionary */ d,
 	System_Collections_IHashCodeProvider_t _Nullable /* System.Collections.IHashCodeProvider */ hcp,
 	System_Collections_IComparer_t _Nullable /* System.Collections.IComparer */ comparer,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -35710,7 +35713,7 @@ System_Collections_Hashtable_Create_10(
 
 System_Collections_Hashtable_t _Nullable /* System.Collections.Hashtable */
 System_Collections_Hashtable_Create_11(
-	System_Collections_IDictionary_t _Nullable /* System.Collections.IDictionary */ d,
+	System_Collections_IDictionary_t _Nonnull /* System.Collections.IDictionary */ d,
 	System_Collections_IEqualityComparer_t _Nullable /* System.Collections.IEqualityComparer */ equalityComparer,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -35726,7 +35729,7 @@ System_Collections_Hashtable_Create_12(
 
 System_Collections_Hashtable_t _Nullable /* System.Collections.Hashtable */
 System_Collections_Hashtable_Create_13(
-	System_Collections_IDictionary_t _Nullable /* System.Collections.IDictionary */ d,
+	System_Collections_IDictionary_t _Nonnull /* System.Collections.IDictionary */ d,
 	float /* System.Single */ loadFactor,
 	System_Collections_IHashCodeProvider_t _Nullable /* System.Collections.IHashCodeProvider */ hcp,
 	System_Collections_IComparer_t _Nullable /* System.Collections.IComparer */ comparer,
@@ -35735,7 +35738,7 @@ System_Collections_Hashtable_Create_13(
 
 System_Collections_Hashtable_t _Nullable /* System.Collections.Hashtable */
 System_Collections_Hashtable_Create_14(
-	System_Collections_IDictionary_t _Nullable /* System.Collections.IDictionary */ d,
+	System_Collections_IDictionary_t _Nonnull /* System.Collections.IDictionary */ d,
 	float /* System.Single */ loadFactor,
 	System_Collections_IEqualityComparer_t _Nullable /* System.Collections.IEqualityComparer */ equalityComparer,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -35744,14 +35747,14 @@ System_Collections_Hashtable_Create_14(
 System_Object_t _Nullable /* System.Object */
 System_Collections_Hashtable_Item_Get(
 	System_Collections_Hashtable_t _Nullable /* System.Collections.Hashtable */ self,
-	System_Object_t _Nullable /* System.Object */ key,
+	System_Object_t _Nonnull /* System.Object */ key,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Collections_Hashtable_Item_Set(
 	System_Collections_Hashtable_t _Nullable /* System.Collections.Hashtable */ self,
-	System_Object_t _Nullable /* System.Object */ key,
+	System_Object_t _Nonnull /* System.Object */ key,
 	System_Object_t _Nullable /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -35822,7 +35825,7 @@ System_Collections_Hashtable_Destroy(
 int32_t /* System.Int32 */
 System_Collections_IHashCodeProvider_GetHashCode(
 	System_Collections_IHashCodeProvider_t _Nullable /* System.Collections.IHashCodeProvider */ self,
-	System_Object_t _Nullable /* System.Object */ obj,
+	System_Object_t _Nonnull /* System.Object */ obj,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -35841,7 +35844,7 @@ System_Collections_IHashCodeProvider_Destroy(
 #pragma mark - BEGIN APIs of System.Collections.ArrayList
 System_Collections_ArrayList_t _Nullable /* System.Collections.ArrayList */
 System_Collections_ArrayList_Adapter(
-	System_Collections_IList_t _Nullable /* System.Collections.IList */ list,
+	System_Collections_IList_t _Nonnull /* System.Collections.IList */ list,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -35855,7 +35858,7 @@ System_Collections_ArrayList_Add(
 void /* System.Void */
 System_Collections_ArrayList_AddRange(
 	System_Collections_ArrayList_t _Nullable /* System.Collections.ArrayList */ self,
-	System_Collections_ICollection_t _Nullable /* System.Collections.ICollection */ c,
+	System_Collections_ICollection_t _Nonnull /* System.Collections.ICollection */ c,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -35906,14 +35909,14 @@ System_Collections_ArrayList_Contains(
 void /* System.Void */
 System_Collections_ArrayList_CopyTo(
 	System_Collections_ArrayList_t _Nullable /* System.Collections.ArrayList */ self,
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_Collections_ArrayList_CopyTo_1(
 	System_Collections_ArrayList_t _Nullable /* System.Collections.ArrayList */ self,
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	int32_t /* System.Int32 */ arrayIndex,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -35922,7 +35925,7 @@ void /* System.Void */
 System_Collections_ArrayList_CopyTo_2(
 	System_Collections_ArrayList_t _Nullable /* System.Collections.ArrayList */ self,
 	int32_t /* System.Int32 */ index,
-	System_Array_t _Nullable /* System.Array */ array,
+	System_Array_t _Nonnull /* System.Array */ array,
 	int32_t /* System.Int32 */ arrayIndex,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -35930,13 +35933,13 @@ System_Collections_ArrayList_CopyTo_2(
 
 System_Collections_IList_t _Nullable /* System.Collections.IList */
 System_Collections_ArrayList_FixedSize(
-	System_Collections_IList_t _Nullable /* System.Collections.IList */ list,
+	System_Collections_IList_t _Nonnull /* System.Collections.IList */ list,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_ArrayList_t _Nullable /* System.Collections.ArrayList */
 System_Collections_ArrayList_FixedSize_1(
-	System_Collections_ArrayList_t _Nullable /* System.Collections.ArrayList */ list,
+	System_Collections_ArrayList_t _Nonnull /* System.Collections.ArrayList */ list,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -35990,7 +35993,7 @@ void /* System.Void */
 System_Collections_ArrayList_InsertRange(
 	System_Collections_ArrayList_t _Nullable /* System.Collections.ArrayList */ self,
 	int32_t /* System.Int32 */ index,
-	System_Collections_ICollection_t _Nullable /* System.Collections.ICollection */ c,
+	System_Collections_ICollection_t _Nonnull /* System.Collections.ICollection */ c,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -36020,13 +36023,13 @@ System_Collections_ArrayList_LastIndexOf_2(
 
 System_Collections_IList_t _Nullable /* System.Collections.IList */
 System_Collections_ArrayList_ReadOnly(
-	System_Collections_IList_t _Nullable /* System.Collections.IList */ list,
+	System_Collections_IList_t _Nonnull /* System.Collections.IList */ list,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_ArrayList_t _Nullable /* System.Collections.ArrayList */
 System_Collections_ArrayList_ReadOnly_1(
-	System_Collections_ArrayList_t _Nullable /* System.Collections.ArrayList */ list,
+	System_Collections_ArrayList_t _Nonnull /* System.Collections.ArrayList */ list,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -36077,7 +36080,7 @@ void /* System.Void */
 System_Collections_ArrayList_SetRange(
 	System_Collections_ArrayList_t _Nullable /* System.Collections.ArrayList */ self,
 	int32_t /* System.Int32 */ index,
-	System_Collections_ICollection_t _Nullable /* System.Collections.ICollection */ c,
+	System_Collections_ICollection_t _Nonnull /* System.Collections.ICollection */ c,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -36113,13 +36116,13 @@ System_Collections_ArrayList_Sort_2(
 
 System_Collections_IList_t _Nullable /* System.Collections.IList */
 System_Collections_ArrayList_Synchronized(
-	System_Collections_IList_t _Nullable /* System.Collections.IList */ list,
+	System_Collections_IList_t _Nonnull /* System.Collections.IList */ list,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_ArrayList_t _Nullable /* System.Collections.ArrayList */
 System_Collections_ArrayList_Synchronized_1(
-	System_Collections_ArrayList_t _Nullable /* System.Collections.ArrayList */ list,
+	System_Collections_ArrayList_t _Nonnull /* System.Collections.ArrayList */ list,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -36132,7 +36135,7 @@ System_Collections_ArrayList_ToArray(
 System_Array_t _Nullable /* System.Array */
 System_Collections_ArrayList_ToArray_1(
 	System_Collections_ArrayList_t _Nullable /* System.Collections.ArrayList */ self,
-	System_Type_t _Nullable /* System.Type */ type,
+	System_Type_t _Nonnull /* System.Type */ type,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -36155,7 +36158,7 @@ System_Collections_ArrayList_Create_1(
 
 System_Collections_ArrayList_t _Nullable /* System.Collections.ArrayList */
 System_Collections_ArrayList_Create_2(
-	System_Collections_ICollection_t _Nullable /* System.Collections.ICollection */ c,
+	System_Collections_ICollection_t _Nonnull /* System.Collections.ICollection */ c,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -36322,7 +36325,7 @@ System_Security_IPermission_Destroy(
 #pragma mark - BEGIN APIs of System.UnhandledExceptionEventArgs
 System_UnhandledExceptionEventArgs_t _Nullable /* System.UnhandledExceptionEventArgs */
 System_UnhandledExceptionEventArgs_Create(
-	System_Object_t _Nullable /* System.Object */ exception,
+	System_Object_t _Nonnull /* System.Object */ exception,
 	bool /* System.Boolean */ isTerminating,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -36366,7 +36369,7 @@ System_UnhandledExceptionEventArgs_Destroy(
 #pragma mark - BEGIN APIs of System.AssemblyLoadEventArgs
 System_AssemblyLoadEventArgs_t _Nullable /* System.AssemblyLoadEventArgs */
 System_AssemblyLoadEventArgs_Create(
-	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ loadedAssembly,
+	System_Reflection_Assembly_t _Nonnull /* System.Reflection.Assembly */ loadedAssembly,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -36450,7 +36453,7 @@ System_Threading_Timer_Change_3(
 bool /* System.Boolean */
 System_Threading_Timer_Dispose(
 	System_Threading_Timer_t _Nullable /* System.Threading.Timer */ self,
-	System_Threading_WaitHandle_t _Nullable /* System.Threading.WaitHandle */ notifyObject,
+	System_Threading_WaitHandle_t _Nonnull /* System.Threading.WaitHandle */ notifyObject,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -36468,7 +36471,7 @@ System_Threading_Timer_DisposeAsync(
 
 System_Threading_Timer_t _Nullable /* System.Threading.Timer */
 System_Threading_Timer_Create(
-	System_Threading_TimerCallback_t _Nullable /* System.Threading.TimerCallback */ callback,
+	System_Threading_TimerCallback_t _Nonnull /* System.Threading.TimerCallback */ callback,
 	System_Object_t _Nullable /* System.Object */ state,
 	int32_t /* System.Int32 */ dueTime,
 	int32_t /* System.Int32 */ period,
@@ -36477,7 +36480,7 @@ System_Threading_Timer_Create(
 
 System_Threading_Timer_t _Nullable /* System.Threading.Timer */
 System_Threading_Timer_Create_1(
-	System_Threading_TimerCallback_t _Nullable /* System.Threading.TimerCallback */ callback,
+	System_Threading_TimerCallback_t _Nonnull /* System.Threading.TimerCallback */ callback,
 	System_Object_t _Nullable /* System.Object */ state,
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ dueTime,
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ period,
@@ -36486,7 +36489,7 @@ System_Threading_Timer_Create_1(
 
 System_Threading_Timer_t _Nullable /* System.Threading.Timer */
 System_Threading_Timer_Create_2(
-	System_Threading_TimerCallback_t _Nullable /* System.Threading.TimerCallback */ callback,
+	System_Threading_TimerCallback_t _Nonnull /* System.Threading.TimerCallback */ callback,
 	System_Object_t _Nullable /* System.Object */ state,
 	uint32_t /* System.UInt32 */ dueTime,
 	uint32_t /* System.UInt32 */ period,
@@ -36495,7 +36498,7 @@ System_Threading_Timer_Create_2(
 
 System_Threading_Timer_t _Nullable /* System.Threading.Timer */
 System_Threading_Timer_Create_3(
-	System_Threading_TimerCallback_t _Nullable /* System.Threading.TimerCallback */ callback,
+	System_Threading_TimerCallback_t _Nonnull /* System.Threading.TimerCallback */ callback,
 	System_Object_t _Nullable /* System.Object */ state,
 	int64_t /* System.Int64 */ dueTime,
 	int64_t /* System.Int64 */ period,
@@ -36504,7 +36507,7 @@ System_Threading_Timer_Create_3(
 
 System_Threading_Timer_t _Nullable /* System.Threading.Timer */
 System_Threading_Timer_Create_4(
-	System_Threading_TimerCallback_t _Nullable /* System.Threading.TimerCallback */ callback,
+	System_Threading_TimerCallback_t _Nonnull /* System.Threading.TimerCallback */ callback,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -36587,7 +36590,7 @@ System_Threading_CancellationTokenSource_CreateLinkedTokenSource_1(
 
 System_Threading_CancellationTokenSource_t _Nullable /* System.Threading.CancellationTokenSource */
 System_Threading_CancellationTokenSource_CreateLinkedTokenSource_2(
-	System_Threading_CancellationToken_Array_t _Nullable /* System.Threading.CancellationToken[] */ tokens,
+	System_Threading_CancellationToken_Array_t _Nonnull /* System.Threading.CancellationToken[] */ tokens,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -36605,7 +36608,7 @@ System_Threading_CancellationTokenSource_Create_2(
 System_Threading_CancellationTokenSource_t _Nullable /* System.Threading.CancellationTokenSource */
 System_Threading_CancellationTokenSource_Create_3(
 	System_TimeSpan_t _Nonnull /* System.TimeSpan */ delay,
-	System_TimeProvider_t _Nullable /* System.TimeProvider */ timeProvider,
+	System_TimeProvider_t _Nonnull /* System.TimeProvider */ timeProvider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -36709,7 +36712,7 @@ System_Random_NextDouble(
 void /* System.Void */
 System_Random_NextBytes(
 	System_Random_t _Nullable /* System.Random */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ buffer,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -36874,7 +36877,7 @@ void /* System.Void */
 System_Text_StringBuilder_CopyTo(
 	System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */ self,
 	int32_t /* System.Int32 */ sourceIndex,
-	System_Char_Array_t _Nullable /* System.Char[] */ destination,
+	System_Char_Array_t _Nonnull /* System.Char[] */ destination,
 	int32_t /* System.Int32 */ destinationIndex,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -37036,7 +37039,7 @@ System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */
 System_Text_StringBuilder_AppendJoin(
 	System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */ self,
 	System_String_t _Nullable /* System.String */ separator,
-	System_Object_Array_t _Nullable /* System.Object[] */ values,
+	System_Object_Array_t _Nonnull /* System.Object[] */ values,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -37044,7 +37047,7 @@ System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */
 System_Text_StringBuilder_AppendJoin_1(
 	System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */ self,
 	System_String_t _Nullable /* System.String */ separator,
-	System_String_Array_t _Nullable /* System.String[] */ values,
+	System_String_Array_t _Nonnull /* System.String[] */ values,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -37052,7 +37055,7 @@ System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */
 System_Text_StringBuilder_AppendJoin_2(
 	System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */ self,
 	wchar_t /* System.Char */ separator,
-	System_Object_Array_t _Nullable /* System.Object[] */ values,
+	System_Object_Array_t _Nonnull /* System.Object[] */ values,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -37060,7 +37063,7 @@ System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */
 System_Text_StringBuilder_AppendJoin_3(
 	System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */ self,
 	wchar_t /* System.Char */ separator,
-	System_String_Array_t _Nullable /* System.String[] */ values,
+	System_String_Array_t _Nonnull /* System.String[] */ values,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -37205,7 +37208,7 @@ System_Text_StringBuilder_Insert_17(
 System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */
 System_Text_StringBuilder_AppendFormat(
 	System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */ self,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -37213,7 +37216,7 @@ System_Text_StringBuilder_AppendFormat(
 System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */
 System_Text_StringBuilder_AppendFormat_1(
 	System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */ self,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Object_t _Nullable /* System.Object */ arg1,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -37222,7 +37225,7 @@ System_Text_StringBuilder_AppendFormat_1(
 System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */
 System_Text_StringBuilder_AppendFormat_2(
 	System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */ self,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Object_t _Nullable /* System.Object */ arg1,
 	System_Object_t _Nullable /* System.Object */ arg2,
@@ -37232,8 +37235,8 @@ System_Text_StringBuilder_AppendFormat_2(
 System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */
 System_Text_StringBuilder_AppendFormat_3(
 	System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */ self,
-	System_String_t _Nullable /* System.String */ format,
-	System_Object_Array_t _Nullable /* System.Object[] */ args,
+	System_String_t _Nonnull /* System.String */ format,
+	System_Object_Array_t _Nonnull /* System.Object[] */ args,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -37241,7 +37244,7 @@ System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */
 System_Text_StringBuilder_AppendFormat_4(
 	System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */ self,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -37250,7 +37253,7 @@ System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */
 System_Text_StringBuilder_AppendFormat_5(
 	System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */ self,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Object_t _Nullable /* System.Object */ arg1,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -37260,7 +37263,7 @@ System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */
 System_Text_StringBuilder_AppendFormat_6(
 	System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */ self,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Object_t _Nullable /* System.Object */ arg1,
 	System_Object_t _Nullable /* System.Object */ arg2,
@@ -37271,8 +37274,8 @@ System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */
 System_Text_StringBuilder_AppendFormat_7(
 	System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */ self,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
-	System_String_t _Nullable /* System.String */ format,
-	System_Object_Array_t _Nullable /* System.Object[] */ args,
+	System_String_t _Nonnull /* System.String */ format,
+	System_Object_Array_t _Nonnull /* System.Object[] */ args,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -37316,15 +37319,15 @@ System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */
 System_Text_StringBuilder_AppendFormat_8(
 	System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */ self,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
-	System_Text_CompositeFormat_t _Nullable /* System.Text.CompositeFormat */ format,
-	System_Object_Array_t _Nullable /* System.Object[] */ args,
+	System_Text_CompositeFormat_t _Nonnull /* System.Text.CompositeFormat */ format,
+	System_Object_Array_t _Nonnull /* System.Object[] */ args,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */
 System_Text_StringBuilder_Replace(
 	System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */ self,
-	System_String_t _Nullable /* System.String */ oldValue,
+	System_String_t _Nonnull /* System.String */ oldValue,
 	System_String_t _Nullable /* System.String */ newValue,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -37339,7 +37342,7 @@ System_Text_StringBuilder_Equals(
 System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */
 System_Text_StringBuilder_Replace_1(
 	System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */ self,
-	System_String_t _Nullable /* System.String */ oldValue,
+	System_String_t _Nonnull /* System.String */ oldValue,
 	System_String_t _Nullable /* System.String */ newValue,
 	int32_t /* System.Int32 */ startIndex,
 	int32_t /* System.Int32 */ count,
@@ -37501,7 +37504,7 @@ System_Text_StringBuilder_ChunkEnumerator_Destroy(
 void /* System.Void */
 System_Text_StringBuilder_AppendInterpolatedStringHandler_AppendLiteral(
 	System_Text_StringBuilder_AppendInterpolatedStringHandler_t _Nonnull /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -37570,7 +37573,7 @@ System_Text_StringBuilder_AppendInterpolatedStringHandler_t _Nonnull /* System.T
 System_Text_StringBuilder_AppendInterpolatedStringHandler_Create(
 	int32_t /* System.Int32 */ literalLength,
 	int32_t /* System.Int32 */ formattedCount,
-	System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */ stringBuilder,
+	System_Text_StringBuilder_t _Nonnull /* System.Text.StringBuilder */ stringBuilder,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -37578,7 +37581,7 @@ System_Text_StringBuilder_AppendInterpolatedStringHandler_t _Nonnull /* System.T
 System_Text_StringBuilder_AppendInterpolatedStringHandler_Create_1(
 	int32_t /* System.Int32 */ literalLength,
 	int32_t /* System.Int32 */ formattedCount,
-	System_Text_StringBuilder_t _Nullable /* System.Text.StringBuilder */ stringBuilder,
+	System_Text_StringBuilder_t _Nonnull /* System.Text.StringBuilder */ stringBuilder,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -37656,7 +37659,7 @@ System_IO_Path_GetRandomFileName(
 
 bool /* System.Boolean */
 System_IO_Path_IsPathFullyQualified(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -37668,31 +37671,31 @@ System_IO_Path_HasExtension(
 
 System_String_t _Nullable /* System.String */
 System_IO_Path_Combine(
-	System_String_t _Nullable /* System.String */ path1,
-	System_String_t _Nullable /* System.String */ path2,
+	System_String_t _Nonnull /* System.String */ path1,
+	System_String_t _Nonnull /* System.String */ path2,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_IO_Path_Combine_1(
-	System_String_t _Nullable /* System.String */ path1,
-	System_String_t _Nullable /* System.String */ path2,
-	System_String_t _Nullable /* System.String */ path3,
+	System_String_t _Nonnull /* System.String */ path1,
+	System_String_t _Nonnull /* System.String */ path2,
+	System_String_t _Nonnull /* System.String */ path3,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_IO_Path_Combine_2(
-	System_String_t _Nullable /* System.String */ path1,
-	System_String_t _Nullable /* System.String */ path2,
-	System_String_t _Nullable /* System.String */ path3,
-	System_String_t _Nullable /* System.String */ path4,
+	System_String_t _Nonnull /* System.String */ path1,
+	System_String_t _Nonnull /* System.String */ path2,
+	System_String_t _Nonnull /* System.String */ path3,
+	System_String_t _Nonnull /* System.String */ path4,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_IO_Path_Combine_3(
-	System_String_Array_t _Nullable /* System.String[] */ paths,
+	System_String_Array_t _Nonnull /* System.String[] */ paths,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -37722,20 +37725,20 @@ System_IO_Path_Join_2(
 
 System_String_t _Nullable /* System.String */
 System_IO_Path_Join_3(
-	System_String_Array_t _Nullable /* System.String[] */ paths,
+	System_String_Array_t _Nonnull /* System.String[] */ paths,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_IO_Path_GetRelativePath(
-	System_String_t _Nullable /* System.String */ relativeTo,
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ relativeTo,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_IO_Path_TrimEndingDirectorySeparator(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -37757,14 +37760,14 @@ System_IO_Path_GetInvalidPathChars(
 
 System_String_t _Nullable /* System.String */
 System_IO_Path_GetFullPath(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_IO_Path_GetFullPath_1(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ basePath,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ basePath,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -37835,53 +37838,53 @@ System_IO_Path_Destroy(
 #pragma mark - BEGIN APIs of System.IO.File
 System_IO_StreamReader_t _Nullable /* System.IO.StreamReader */
 System_IO_File_OpenText(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */
 System_IO_File_CreateText(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */
 System_IO_File_AppendText(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_Copy(
-	System_String_t _Nullable /* System.String */ sourceFileName,
-	System_String_t _Nullable /* System.String */ destFileName,
+	System_String_t _Nonnull /* System.String */ sourceFileName,
+	System_String_t _Nonnull /* System.String */ destFileName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_Copy_1(
-	System_String_t _Nullable /* System.String */ sourceFileName,
-	System_String_t _Nullable /* System.String */ destFileName,
+	System_String_t _Nonnull /* System.String */ sourceFileName,
+	System_String_t _Nonnull /* System.String */ destFileName,
 	bool /* System.Boolean */ overwrite,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_File_Create_1(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_File_Create_2(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	int32_t /* System.Int32 */ bufferSize,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_File_Create_3(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	int32_t /* System.Int32 */ bufferSize,
 	System_IO_FileOptions_t /* System.IO.FileOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -37889,7 +37892,7 @@ System_IO_File_Create_3(
 
 void /* System.Void */
 System_IO_File_Delete(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -37901,21 +37904,21 @@ System_IO_File_Exists(
 
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_File_Open_1(
-	System_String_t _Nullable /* System.String */ path,
-	System_IO_FileStreamOptions_t _Nullable /* System.IO.FileStreamOptions */ options,
+	System_String_t _Nonnull /* System.String */ path,
+	System_IO_FileStreamOptions_t _Nonnull /* System.IO.FileStreamOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_File_Open_2(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_IO_FileMode_t /* System.IO.FileMode */ mode,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_File_Open_3(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_IO_FileMode_t /* System.IO.FileMode */ mode,
 	System_IO_FileAccess_t /* System.IO.FileAccess */ access,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -37923,7 +37926,7 @@ System_IO_File_Open_3(
 
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_File_Open_4(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_IO_FileMode_t /* System.IO.FileMode */ mode,
 	System_IO_FileAccess_t /* System.IO.FileAccess */ access,
 	System_IO_FileShare_t /* System.IO.FileShare */ share,
@@ -37932,7 +37935,7 @@ System_IO_File_Open_4(
 
 Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */
 System_IO_File_OpenHandle(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_IO_FileMode_t /* System.IO.FileMode */ mode,
 	System_IO_FileAccess_t /* System.IO.FileAccess */ access,
 	System_IO_FileShare_t /* System.IO.FileShare */ share,
@@ -37943,378 +37946,378 @@ System_IO_File_OpenHandle(
 
 void /* System.Void */
 System_IO_File_SetCreationTime(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_DateTime_t _Nonnull /* System.DateTime */ creationTime,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_SetCreationTime_1(
-	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nonnull /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
 	System_DateTime_t _Nonnull /* System.DateTime */ creationTime,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_SetCreationTimeUtc(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_DateTime_t _Nonnull /* System.DateTime */ creationTimeUtc,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_SetCreationTimeUtc_1(
-	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nonnull /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
 	System_DateTime_t _Nonnull /* System.DateTime */ creationTimeUtc,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_IO_File_GetCreationTime(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_IO_File_GetCreationTime_1(
-	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nonnull /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_IO_File_GetCreationTimeUtc(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_IO_File_GetCreationTimeUtc_1(
-	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nonnull /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_SetLastAccessTime(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_DateTime_t _Nonnull /* System.DateTime */ lastAccessTime,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_SetLastAccessTime_1(
-	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nonnull /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
 	System_DateTime_t _Nonnull /* System.DateTime */ lastAccessTime,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_SetLastAccessTimeUtc(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_DateTime_t _Nonnull /* System.DateTime */ lastAccessTimeUtc,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_SetLastAccessTimeUtc_1(
-	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nonnull /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
 	System_DateTime_t _Nonnull /* System.DateTime */ lastAccessTimeUtc,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_IO_File_GetLastAccessTime(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_IO_File_GetLastAccessTime_1(
-	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nonnull /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_IO_File_GetLastAccessTimeUtc(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_IO_File_GetLastAccessTimeUtc_1(
-	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nonnull /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_SetLastWriteTime(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_DateTime_t _Nonnull /* System.DateTime */ lastWriteTime,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_SetLastWriteTime_1(
-	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nonnull /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
 	System_DateTime_t _Nonnull /* System.DateTime */ lastWriteTime,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_SetLastWriteTimeUtc(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_DateTime_t _Nonnull /* System.DateTime */ lastWriteTimeUtc,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_SetLastWriteTimeUtc_1(
-	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nonnull /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
 	System_DateTime_t _Nonnull /* System.DateTime */ lastWriteTimeUtc,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_IO_File_GetLastWriteTime(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_IO_File_GetLastWriteTime_1(
-	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nonnull /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_IO_File_GetLastWriteTimeUtc(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_IO_File_GetLastWriteTimeUtc_1(
-	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nonnull /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_FileAttributes_t /* System.IO.FileAttributes */
 System_IO_File_GetAttributes(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_FileAttributes_t /* System.IO.FileAttributes */
 System_IO_File_GetAttributes_1(
-	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nonnull /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_SetAttributes(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_IO_FileAttributes_t /* System.IO.FileAttributes */ fileAttributes,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_SetAttributes_1(
-	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nonnull /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
 	System_IO_FileAttributes_t /* System.IO.FileAttributes */ fileAttributes,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_UnixFileMode_t /* System.IO.UnixFileMode */
 System_IO_File_GetUnixFileMode(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_UnixFileMode_t /* System.IO.UnixFileMode */
 System_IO_File_GetUnixFileMode_1(
-	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nonnull /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_SetUnixFileMode(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_IO_UnixFileMode_t /* System.IO.UnixFileMode */ mode,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_SetUnixFileMode_1(
-	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nullable /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
+	Microsoft_Win32_SafeHandles_SafeFileHandle_t _Nonnull /* Microsoft.Win32.SafeHandles.SafeFileHandle */ fileHandle,
 	System_IO_UnixFileMode_t /* System.IO.UnixFileMode */ mode,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_File_OpenRead(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_File_OpenWrite(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_IO_File_ReadAllText(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_IO_File_ReadAllText_1(
-	System_String_t _Nullable /* System.String */ path,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_WriteAllText(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_String_t _Nullable /* System.String */ contents,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_WriteAllText_1(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_String_t _Nullable /* System.String */ contents,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Byte_Array_t _Nullable /* System.Byte[] */
 System_IO_File_ReadAllBytes(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_WriteAllBytes(
-	System_String_t _Nullable /* System.String */ path,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_Array_t _Nullable /* System.String[] */
 System_IO_File_ReadAllLines(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_Array_t _Nullable /* System.String[] */
 System_IO_File_ReadAllLines_1(
-	System_String_t _Nullable /* System.String */ path,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */
 System_IO_File_ReadLines(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */
 System_IO_File_ReadLines_1(
-	System_String_t _Nullable /* System.String */ path,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IAsyncEnumerable_A1_t _Nullable /* System.Collections.Generic.IAsyncEnumerable<System.String> */
 System_IO_File_ReadLinesAsync(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IAsyncEnumerable_A1_t _Nullable /* System.Collections.Generic.IAsyncEnumerable<System.String> */
 System_IO_File_ReadLinesAsync_1(
-	System_String_t _Nullable /* System.String */ path,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_WriteAllLines(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_Array_t _Nullable /* System.String[] */ contents,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_Array_t _Nonnull /* System.String[] */ contents,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_WriteAllLines_1(
-	System_String_t _Nullable /* System.String */ path,
-	System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */ contents,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Collections_Generic_IEnumerable_A1_t _Nonnull /* System.Collections.Generic.IEnumerable<System.String> */ contents,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_WriteAllLines_2(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_Array_t _Nullable /* System.String[] */ contents,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_Array_t _Nonnull /* System.String[] */ contents,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_WriteAllLines_3(
-	System_String_t _Nullable /* System.String */ path,
-	System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */ contents,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Collections_Generic_IEnumerable_A1_t _Nonnull /* System.Collections.Generic.IEnumerable<System.String> */ contents,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_AppendAllText(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_String_t _Nullable /* System.String */ contents,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_AppendAllText_1(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_String_t _Nullable /* System.String */ contents,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_AppendAllLines(
-	System_String_t _Nullable /* System.String */ path,
-	System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */ contents,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Collections_Generic_IEnumerable_A1_t _Nonnull /* System.Collections.Generic.IEnumerable<System.String> */ contents,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_AppendAllLines_1(
-	System_String_t _Nullable /* System.String */ path,
-	System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */ contents,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Collections_Generic_IEnumerable_A1_t _Nonnull /* System.Collections.Generic.IEnumerable<System.String> */ contents,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_Replace(
-	System_String_t _Nullable /* System.String */ sourceFileName,
-	System_String_t _Nullable /* System.String */ destinationFileName,
+	System_String_t _Nonnull /* System.String */ sourceFileName,
+	System_String_t _Nonnull /* System.String */ destinationFileName,
 	System_String_t _Nullable /* System.String */ destinationBackupFileName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_Replace_1(
-	System_String_t _Nullable /* System.String */ sourceFileName,
-	System_String_t _Nullable /* System.String */ destinationFileName,
+	System_String_t _Nonnull /* System.String */ sourceFileName,
+	System_String_t _Nonnull /* System.String */ destinationFileName,
 	System_String_t _Nullable /* System.String */ destinationBackupFileName,
 	bool /* System.Boolean */ ignoreMetadataErrors,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -38322,49 +38325,49 @@ System_IO_File_Replace_1(
 
 void /* System.Void */
 System_IO_File_Move(
-	System_String_t _Nullable /* System.String */ sourceFileName,
-	System_String_t _Nullable /* System.String */ destFileName,
+	System_String_t _Nonnull /* System.String */ sourceFileName,
+	System_String_t _Nonnull /* System.String */ destFileName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_Move_1(
-	System_String_t _Nullable /* System.String */ sourceFileName,
-	System_String_t _Nullable /* System.String */ destFileName,
+	System_String_t _Nonnull /* System.String */ sourceFileName,
+	System_String_t _Nonnull /* System.String */ destFileName,
 	bool /* System.Boolean */ overwrite,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_Encrypt(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_File_Decrypt(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_A1_t _Nullable /* System.Threading.Tasks.Task<System.String> */
 System_IO_File_ReadAllTextAsync(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_A1_t _Nullable /* System.Threading.Tasks.Task<System.String> */
 System_IO_File_ReadAllTextAsync_1(
-	System_String_t _Nullable /* System.String */ path,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_File_WriteAllTextAsync(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_String_t _Nullable /* System.String */ contents,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -38372,63 +38375,63 @@ System_IO_File_WriteAllTextAsync(
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_File_WriteAllTextAsync_1(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_String_t _Nullable /* System.String */ contents,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_A1_t _Nullable /* System.Threading.Tasks.Task<System.Byte[]> */
 System_IO_File_ReadAllBytesAsync(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_File_WriteAllBytesAsync(
-	System_String_t _Nullable /* System.String */ path,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_A1_t _Nullable /* System.Threading.Tasks.Task<System.String[]> */
 System_IO_File_ReadAllLinesAsync(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_A1_t _Nullable /* System.Threading.Tasks.Task<System.String[]> */
 System_IO_File_ReadAllLinesAsync_1(
-	System_String_t _Nullable /* System.String */ path,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_File_WriteAllLinesAsync(
-	System_String_t _Nullable /* System.String */ path,
-	System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */ contents,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Collections_Generic_IEnumerable_A1_t _Nonnull /* System.Collections.Generic.IEnumerable<System.String> */ contents,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_File_WriteAllLinesAsync_1(
-	System_String_t _Nullable /* System.String */ path,
-	System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */ contents,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Collections_Generic_IEnumerable_A1_t _Nonnull /* System.Collections.Generic.IEnumerable<System.String> */ contents,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_File_AppendAllTextAsync(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_String_t _Nullable /* System.String */ contents,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -38436,40 +38439,40 @@ System_IO_File_AppendAllTextAsync(
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_File_AppendAllTextAsync_1(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_String_t _Nullable /* System.String */ contents,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_File_AppendAllLinesAsync(
-	System_String_t _Nullable /* System.String */ path,
-	System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */ contents,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Collections_Generic_IEnumerable_A1_t _Nonnull /* System.Collections.Generic.IEnumerable<System.String> */ contents,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_File_AppendAllLinesAsync_1(
-	System_String_t _Nullable /* System.String */ path,
-	System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */ contents,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Collections_Generic_IEnumerable_A1_t _Nonnull /* System.Collections.Generic.IEnumerable<System.String> */ contents,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_FileSystemInfo_t _Nullable /* System.IO.FileSystemInfo */
 System_IO_File_CreateSymbolicLink(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ pathToTarget,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ pathToTarget,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_FileSystemInfo_t _Nullable /* System.IO.FileSystemInfo */
 System_IO_File_ResolveLinkTarget(
-	System_String_t _Nullable /* System.String */ linkPath,
+	System_String_t _Nonnull /* System.String */ linkPath,
 	bool /* System.Boolean */ returnFinalTarget,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -38514,7 +38517,7 @@ System_IO_StreamReader_Read(
 int32_t /* System.Int32 */
 System_IO_StreamReader_Read_1(
 	System_IO_StreamReader_t _Nullable /* System.IO.StreamReader */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ buffer,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -38529,7 +38532,7 @@ System_IO_StreamReader_ReadToEnd(
 int32_t /* System.Int32 */
 System_IO_StreamReader_ReadBlock(
 	System_IO_StreamReader_t _Nullable /* System.IO.StreamReader */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ buffer,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -38563,7 +38566,7 @@ System_IO_StreamReader_ReadToEndAsync_1(
 System_Threading_Tasks_Task_A1_t _Nullable /* System.Threading.Tasks.Task<System.Int32> */
 System_IO_StreamReader_ReadAsync(
 	System_IO_StreamReader_t _Nullable /* System.IO.StreamReader */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ buffer,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -38572,7 +38575,7 @@ System_IO_StreamReader_ReadAsync(
 System_Threading_Tasks_Task_A1_t _Nullable /* System.Threading.Tasks.Task<System.Int32> */
 System_IO_StreamReader_ReadBlockAsync(
 	System_IO_StreamReader_t _Nullable /* System.IO.StreamReader */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ buffer,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -38580,36 +38583,36 @@ System_IO_StreamReader_ReadBlockAsync(
 
 System_IO_StreamReader_t _Nullable /* System.IO.StreamReader */
 System_IO_StreamReader_Create(
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ stream,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_StreamReader_t _Nullable /* System.IO.StreamReader */
 System_IO_StreamReader_Create_1(
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ stream,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
 	bool /* System.Boolean */ detectEncodingFromByteOrderMarks,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_StreamReader_t _Nullable /* System.IO.StreamReader */
 System_IO_StreamReader_Create_2(
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ stream,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_StreamReader_t _Nullable /* System.IO.StreamReader */
 System_IO_StreamReader_Create_3(
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ stream,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	bool /* System.Boolean */ detectEncodingFromByteOrderMarks,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_StreamReader_t _Nullable /* System.IO.StreamReader */
 System_IO_StreamReader_Create_4(
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ stream,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	bool /* System.Boolean */ detectEncodingFromByteOrderMarks,
 	int32_t /* System.Int32 */ bufferSize,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -38617,7 +38620,7 @@ System_IO_StreamReader_Create_4(
 
 System_IO_StreamReader_t _Nullable /* System.IO.StreamReader */
 System_IO_StreamReader_Create_5(
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ stream,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
 	bool /* System.Boolean */ detectEncodingFromByteOrderMarks,
 	int32_t /* System.Int32 */ bufferSize,
@@ -38627,36 +38630,36 @@ System_IO_StreamReader_Create_5(
 
 System_IO_StreamReader_t _Nullable /* System.IO.StreamReader */
 System_IO_StreamReader_Create_6(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_StreamReader_t _Nullable /* System.IO.StreamReader */
 System_IO_StreamReader_Create_7(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	bool /* System.Boolean */ detectEncodingFromByteOrderMarks,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_StreamReader_t _Nullable /* System.IO.StreamReader */
 System_IO_StreamReader_Create_8(
-	System_String_t _Nullable /* System.String */ path,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_StreamReader_t _Nullable /* System.IO.StreamReader */
 System_IO_StreamReader_Create_9(
-	System_String_t _Nullable /* System.String */ path,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	bool /* System.Boolean */ detectEncodingFromByteOrderMarks,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_StreamReader_t _Nullable /* System.IO.StreamReader */
 System_IO_StreamReader_Create_10(
-	System_String_t _Nullable /* System.String */ path,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	bool /* System.Boolean */ detectEncodingFromByteOrderMarks,
 	int32_t /* System.Int32 */ bufferSize,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -38664,17 +38667,17 @@ System_IO_StreamReader_Create_10(
 
 System_IO_StreamReader_t _Nullable /* System.IO.StreamReader */
 System_IO_StreamReader_Create_11(
-	System_String_t _Nullable /* System.String */ path,
-	System_IO_FileStreamOptions_t _Nullable /* System.IO.FileStreamOptions */ options,
+	System_String_t _Nonnull /* System.String */ path,
+	System_IO_FileStreamOptions_t _Nonnull /* System.IO.FileStreamOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_StreamReader_t _Nullable /* System.IO.StreamReader */
 System_IO_StreamReader_Create_12(
-	System_String_t _Nullable /* System.String */ path,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	bool /* System.Boolean */ detectEncodingFromByteOrderMarks,
-	System_IO_FileStreamOptions_t _Nullable /* System.IO.FileStreamOptions */ options,
+	System_IO_FileStreamOptions_t _Nonnull /* System.IO.FileStreamOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -38745,7 +38748,7 @@ System_IO_TextReader_Read(
 int32_t /* System.Int32 */
 System_IO_TextReader_Read_1(
 	System_IO_TextReader_t _Nullable /* System.IO.TextReader */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ buffer,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -38760,7 +38763,7 @@ System_IO_TextReader_ReadToEnd(
 int32_t /* System.Int32 */
 System_IO_TextReader_ReadBlock(
 	System_IO_TextReader_t _Nullable /* System.IO.TextReader */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ buffer,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -38794,7 +38797,7 @@ System_IO_TextReader_ReadToEndAsync_1(
 System_Threading_Tasks_Task_A1_t _Nullable /* System.Threading.Tasks.Task<System.Int32> */
 System_IO_TextReader_ReadAsync(
 	System_IO_TextReader_t _Nullable /* System.IO.TextReader */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ buffer,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -38803,7 +38806,7 @@ System_IO_TextReader_ReadAsync(
 System_Threading_Tasks_Task_A1_t _Nullable /* System.Threading.Tasks.Task<System.Int32> */
 System_IO_TextReader_ReadBlockAsync(
 	System_IO_TextReader_t _Nullable /* System.IO.TextReader */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ buffer,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -38811,7 +38814,7 @@ System_IO_TextReader_ReadBlockAsync(
 
 System_IO_TextReader_t _Nullable /* System.IO.TextReader */
 System_IO_TextReader_Synchronized(
-	System_IO_TextReader_t _Nullable /* System.IO.TextReader */ reader,
+	System_IO_TextReader_t _Nonnull /* System.IO.TextReader */ reader,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -38873,7 +38876,7 @@ System_IO_StreamWriter_Write_1(
 void /* System.Void */
 System_IO_StreamWriter_Write_2(
 	System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ buffer,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -38896,7 +38899,7 @@ System_IO_StreamWriter_WriteLine(
 void /* System.Void */
 System_IO_StreamWriter_Write_4(
 	System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */ self,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -38904,7 +38907,7 @@ System_IO_StreamWriter_Write_4(
 void /* System.Void */
 System_IO_StreamWriter_Write_5(
 	System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */ self,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Object_t _Nullable /* System.Object */ arg1,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -38913,7 +38916,7 @@ System_IO_StreamWriter_Write_5(
 void /* System.Void */
 System_IO_StreamWriter_Write_6(
 	System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */ self,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Object_t _Nullable /* System.Object */ arg1,
 	System_Object_t _Nullable /* System.Object */ arg2,
@@ -38923,15 +38926,15 @@ System_IO_StreamWriter_Write_6(
 void /* System.Void */
 System_IO_StreamWriter_Write_7(
 	System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */ self,
-	System_String_t _Nullable /* System.String */ format,
-	System_Object_Array_t _Nullable /* System.Object[] */ arg,
+	System_String_t _Nonnull /* System.String */ format,
+	System_Object_Array_t _Nonnull /* System.Object[] */ arg,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_StreamWriter_WriteLine_1(
 	System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */ self,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -38939,7 +38942,7 @@ System_IO_StreamWriter_WriteLine_1(
 void /* System.Void */
 System_IO_StreamWriter_WriteLine_2(
 	System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */ self,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Object_t _Nullable /* System.Object */ arg1,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -38948,7 +38951,7 @@ System_IO_StreamWriter_WriteLine_2(
 void /* System.Void */
 System_IO_StreamWriter_WriteLine_3(
 	System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */ self,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Object_t _Nullable /* System.Object */ arg1,
 	System_Object_t _Nullable /* System.Object */ arg2,
@@ -38958,8 +38961,8 @@ System_IO_StreamWriter_WriteLine_3(
 void /* System.Void */
 System_IO_StreamWriter_WriteLine_4(
 	System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */ self,
-	System_String_t _Nullable /* System.String */ format,
-	System_Object_Array_t _Nullable /* System.Object[] */ arg,
+	System_String_t _Nonnull /* System.String */ format,
+	System_Object_Array_t _Nonnull /* System.Object[] */ arg,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -38980,7 +38983,7 @@ System_IO_StreamWriter_WriteAsync_1(
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_StreamWriter_WriteAsync_2(
 	System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ buffer,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -39009,7 +39012,7 @@ System_IO_StreamWriter_WriteLineAsync_2(
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_StreamWriter_WriteLineAsync_3(
 	System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ buffer,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -39030,28 +39033,28 @@ System_IO_StreamWriter_FlushAsync_1(
 
 System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */
 System_IO_StreamWriter_Create(
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ stream,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */
 System_IO_StreamWriter_Create_1(
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ stream,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */
 System_IO_StreamWriter_Create_2(
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ stream,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	int32_t /* System.Int32 */ bufferSize,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */
 System_IO_StreamWriter_Create_3(
-	System_IO_Stream_t _Nullable /* System.IO.Stream */ stream,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
 	int32_t /* System.Int32 */ bufferSize,
 	bool /* System.Boolean */ leaveOpen,
@@ -39060,46 +39063,46 @@ System_IO_StreamWriter_Create_3(
 
 System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */
 System_IO_StreamWriter_Create_4(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */
 System_IO_StreamWriter_Create_5(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	bool /* System.Boolean */ append,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */
 System_IO_StreamWriter_Create_6(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	bool /* System.Boolean */ append,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */
 System_IO_StreamWriter_Create_7(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	bool /* System.Boolean */ append,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
 	int32_t /* System.Int32 */ bufferSize,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */
 System_IO_StreamWriter_Create_8(
-	System_String_t _Nullable /* System.String */ path,
-	System_IO_FileStreamOptions_t _Nullable /* System.IO.FileStreamOptions */ options,
+	System_String_t _Nonnull /* System.String */ path,
+	System_IO_FileStreamOptions_t _Nonnull /* System.IO.FileStreamOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_StreamWriter_t _Nullable /* System.IO.StreamWriter */
 System_IO_StreamWriter_Create_9(
-	System_String_t _Nullable /* System.String */ path,
-	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ encoding,
-	System_IO_FileStreamOptions_t _Nullable /* System.IO.FileStreamOptions */ options,
+	System_String_t _Nonnull /* System.String */ path,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ encoding,
+	System_IO_FileStreamOptions_t _Nonnull /* System.IO.FileStreamOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -39191,7 +39194,7 @@ System_IO_TextWriter_Write_1(
 void /* System.Void */
 System_IO_TextWriter_Write_2(
 	System_IO_TextWriter_t _Nullable /* System.IO.TextWriter */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ buffer,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -39277,7 +39280,7 @@ System_IO_TextWriter_Write_13(
 void /* System.Void */
 System_IO_TextWriter_Write_14(
 	System_IO_TextWriter_t _Nullable /* System.IO.TextWriter */ self,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -39285,7 +39288,7 @@ System_IO_TextWriter_Write_14(
 void /* System.Void */
 System_IO_TextWriter_Write_15(
 	System_IO_TextWriter_t _Nullable /* System.IO.TextWriter */ self,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Object_t _Nullable /* System.Object */ arg1,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -39294,7 +39297,7 @@ System_IO_TextWriter_Write_15(
 void /* System.Void */
 System_IO_TextWriter_Write_16(
 	System_IO_TextWriter_t _Nullable /* System.IO.TextWriter */ self,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Object_t _Nullable /* System.Object */ arg1,
 	System_Object_t _Nullable /* System.Object */ arg2,
@@ -39304,8 +39307,8 @@ System_IO_TextWriter_Write_16(
 void /* System.Void */
 System_IO_TextWriter_Write_17(
 	System_IO_TextWriter_t _Nullable /* System.IO.TextWriter */ self,
-	System_String_t _Nullable /* System.String */ format,
-	System_Object_Array_t _Nullable /* System.Object[] */ arg,
+	System_String_t _Nonnull /* System.String */ format,
+	System_Object_Array_t _Nonnull /* System.Object[] */ arg,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -39332,7 +39335,7 @@ System_IO_TextWriter_WriteLine_2(
 void /* System.Void */
 System_IO_TextWriter_WriteLine_3(
 	System_IO_TextWriter_t _Nullable /* System.IO.TextWriter */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ buffer,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -39418,7 +39421,7 @@ System_IO_TextWriter_WriteLine_14(
 void /* System.Void */
 System_IO_TextWriter_WriteLine_15(
 	System_IO_TextWriter_t _Nullable /* System.IO.TextWriter */ self,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -39426,7 +39429,7 @@ System_IO_TextWriter_WriteLine_15(
 void /* System.Void */
 System_IO_TextWriter_WriteLine_16(
 	System_IO_TextWriter_t _Nullable /* System.IO.TextWriter */ self,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Object_t _Nullable /* System.Object */ arg1,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -39435,7 +39438,7 @@ System_IO_TextWriter_WriteLine_16(
 void /* System.Void */
 System_IO_TextWriter_WriteLine_17(
 	System_IO_TextWriter_t _Nullable /* System.IO.TextWriter */ self,
-	System_String_t _Nullable /* System.String */ format,
+	System_String_t _Nonnull /* System.String */ format,
 	System_Object_t _Nullable /* System.Object */ arg0,
 	System_Object_t _Nullable /* System.Object */ arg1,
 	System_Object_t _Nullable /* System.Object */ arg2,
@@ -39445,8 +39448,8 @@ System_IO_TextWriter_WriteLine_17(
 void /* System.Void */
 System_IO_TextWriter_WriteLine_18(
 	System_IO_TextWriter_t _Nullable /* System.IO.TextWriter */ self,
-	System_String_t _Nullable /* System.String */ format,
-	System_Object_Array_t _Nullable /* System.Object[] */ arg,
+	System_String_t _Nonnull /* System.String */ format,
+	System_Object_Array_t _Nonnull /* System.Object[] */ arg,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -39482,7 +39485,7 @@ System_IO_TextWriter_WriteAsync_3(
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_TextWriter_WriteAsync_4(
 	System_IO_TextWriter_t _Nullable /* System.IO.TextWriter */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ buffer,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -39520,7 +39523,7 @@ System_IO_TextWriter_WriteLineAsync_3(
 System_Threading_Tasks_Task_t _Nullable /* System.Threading.Tasks.Task */
 System_IO_TextWriter_WriteLineAsync_4(
 	System_IO_TextWriter_t _Nullable /* System.IO.TextWriter */ self,
-	System_Char_Array_t _Nullable /* System.Char[] */ buffer,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
 	int32_t /* System.Int32 */ index,
 	int32_t /* System.Int32 */ count,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -39547,7 +39550,7 @@ System_IO_TextWriter_FlushAsync_1(
 
 System_IO_TextWriter_t _Nullable /* System.IO.TextWriter */
 System_IO_TextWriter_Synchronized(
-	System_IO_TextWriter_t _Nullable /* System.IO.TextWriter */ writer,
+	System_IO_TextWriter_t _Nonnull /* System.IO.TextWriter */ writer,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -39646,7 +39649,7 @@ System_Collections_Generic_IAsyncEnumerator_A1_Destroy(
 void /* System.Void */
 System_IO_FileSystemInfo_GetObjectData(
 	System_IO_FileSystemInfo_t _Nullable /* System.IO.FileSystemInfo */ self,
-	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_SerializationInfo_t _Nonnull /* System.Runtime.Serialization.SerializationInfo */ info,
 	System_Runtime_Serialization_StreamingContext_t _Nonnull /* System.Runtime.Serialization.StreamingContext */ context,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -39660,7 +39663,7 @@ System_IO_FileSystemInfo_Delete(
 void /* System.Void */
 System_IO_FileSystemInfo_CreateAsSymbolicLink(
 	System_IO_FileSystemInfo_t _Nullable /* System.IO.FileSystemInfo */ self,
-	System_String_t _Nullable /* System.String */ pathToTarget,
+	System_String_t _Nonnull /* System.String */ pathToTarget,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -39846,7 +39849,7 @@ System_IO_FileSystemInfo_Destroy(
 System_IO_FileStream_t _Nullable /* System.IO.FileStream */
 System_IO_FileInfo_Open(
 	System_IO_FileInfo_t _Nullable /* System.IO.FileInfo */ self,
-	System_IO_FileStreamOptions_t _Nullable /* System.IO.FileStreamOptions */ options,
+	System_IO_FileStreamOptions_t _Nonnull /* System.IO.FileStreamOptions */ options,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -39871,14 +39874,14 @@ System_IO_FileInfo_AppendText(
 System_IO_FileInfo_t _Nullable /* System.IO.FileInfo */
 System_IO_FileInfo_CopyTo(
 	System_IO_FileInfo_t _Nullable /* System.IO.FileInfo */ self,
-	System_String_t _Nullable /* System.String */ destFileName,
+	System_String_t _Nonnull /* System.String */ destFileName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_FileInfo_t _Nullable /* System.IO.FileInfo */
 System_IO_FileInfo_CopyTo_1(
 	System_IO_FileInfo_t _Nullable /* System.IO.FileInfo */ self,
-	System_String_t _Nullable /* System.String */ destFileName,
+	System_String_t _Nonnull /* System.String */ destFileName,
 	bool /* System.Boolean */ overwrite,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -39934,14 +39937,14 @@ System_IO_FileInfo_OpenWrite(
 void /* System.Void */
 System_IO_FileInfo_MoveTo(
 	System_IO_FileInfo_t _Nullable /* System.IO.FileInfo */ self,
-	System_String_t _Nullable /* System.String */ destFileName,
+	System_String_t _Nonnull /* System.String */ destFileName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_FileInfo_MoveTo_1(
 	System_IO_FileInfo_t _Nullable /* System.IO.FileInfo */ self,
-	System_String_t _Nullable /* System.String */ destFileName,
+	System_String_t _Nonnull /* System.String */ destFileName,
 	bool /* System.Boolean */ overwrite,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -39949,7 +39952,7 @@ System_IO_FileInfo_MoveTo_1(
 System_IO_FileInfo_t _Nullable /* System.IO.FileInfo */
 System_IO_FileInfo_Replace(
 	System_IO_FileInfo_t _Nullable /* System.IO.FileInfo */ self,
-	System_String_t _Nullable /* System.String */ destinationFileName,
+	System_String_t _Nonnull /* System.String */ destinationFileName,
 	System_String_t _Nullable /* System.String */ destinationBackupFileName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -39957,7 +39960,7 @@ System_IO_FileInfo_Replace(
 System_IO_FileInfo_t _Nullable /* System.IO.FileInfo */
 System_IO_FileInfo_Replace_1(
 	System_IO_FileInfo_t _Nullable /* System.IO.FileInfo */ self,
-	System_String_t _Nullable /* System.String */ destinationFileName,
+	System_String_t _Nonnull /* System.String */ destinationFileName,
 	System_String_t _Nullable /* System.String */ destinationBackupFileName,
 	bool /* System.Boolean */ ignoreMetadataErrors,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -39977,7 +39980,7 @@ System_IO_FileInfo_Encrypt(
 
 System_IO_FileInfo_t _Nullable /* System.IO.FileInfo */
 System_IO_FileInfo_Create_2(
-	System_String_t _Nullable /* System.String */ fileName,
+	System_String_t _Nonnull /* System.String */ fileName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -40046,7 +40049,7 @@ System_IO_FileInfo_Destroy(
 System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */
 System_IO_DirectoryInfo_CreateSubdirectory(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -40065,14 +40068,14 @@ System_IO_DirectoryInfo_GetFiles(
 System_IO_FileInfo_Array_t _Nullable /* System.IO.FileInfo[] */
 System_IO_DirectoryInfo_GetFiles_1(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_FileInfo_Array_t _Nullable /* System.IO.FileInfo[] */
 System_IO_DirectoryInfo_GetFiles_2(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_IO_SearchOption_t /* System.IO.SearchOption */ searchOption,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -40080,8 +40083,8 @@ System_IO_DirectoryInfo_GetFiles_2(
 System_IO_FileInfo_Array_t _Nullable /* System.IO.FileInfo[] */
 System_IO_DirectoryInfo_GetFiles_3(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ searchPattern,
-	System_IO_EnumerationOptions_t _Nullable /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_String_t _Nonnull /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t _Nonnull /* System.IO.EnumerationOptions */ enumerationOptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -40094,14 +40097,14 @@ System_IO_DirectoryInfo_GetFileSystemInfos(
 System_IO_FileSystemInfo_Array_t _Nullable /* System.IO.FileSystemInfo[] */
 System_IO_DirectoryInfo_GetFileSystemInfos_1(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_FileSystemInfo_Array_t _Nullable /* System.IO.FileSystemInfo[] */
 System_IO_DirectoryInfo_GetFileSystemInfos_2(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_IO_SearchOption_t /* System.IO.SearchOption */ searchOption,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -40109,8 +40112,8 @@ System_IO_DirectoryInfo_GetFileSystemInfos_2(
 System_IO_FileSystemInfo_Array_t _Nullable /* System.IO.FileSystemInfo[] */
 System_IO_DirectoryInfo_GetFileSystemInfos_3(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ searchPattern,
-	System_IO_EnumerationOptions_t _Nullable /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_String_t _Nonnull /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t _Nonnull /* System.IO.EnumerationOptions */ enumerationOptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -40123,14 +40126,14 @@ System_IO_DirectoryInfo_GetDirectories(
 System_IO_DirectoryInfo_Array_t _Nullable /* System.IO.DirectoryInfo[] */
 System_IO_DirectoryInfo_GetDirectories_1(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_DirectoryInfo_Array_t _Nullable /* System.IO.DirectoryInfo[] */
 System_IO_DirectoryInfo_GetDirectories_2(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_IO_SearchOption_t /* System.IO.SearchOption */ searchOption,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -40138,8 +40141,8 @@ System_IO_DirectoryInfo_GetDirectories_2(
 System_IO_DirectoryInfo_Array_t _Nullable /* System.IO.DirectoryInfo[] */
 System_IO_DirectoryInfo_GetDirectories_3(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ searchPattern,
-	System_IO_EnumerationOptions_t _Nullable /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_String_t _Nonnull /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t _Nonnull /* System.IO.EnumerationOptions */ enumerationOptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -40152,14 +40155,14 @@ System_IO_DirectoryInfo_EnumerateDirectories(
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.IO.DirectoryInfo> */
 System_IO_DirectoryInfo_EnumerateDirectories_1(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.IO.DirectoryInfo> */
 System_IO_DirectoryInfo_EnumerateDirectories_2(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_IO_SearchOption_t /* System.IO.SearchOption */ searchOption,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -40167,8 +40170,8 @@ System_IO_DirectoryInfo_EnumerateDirectories_2(
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.IO.DirectoryInfo> */
 System_IO_DirectoryInfo_EnumerateDirectories_3(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ searchPattern,
-	System_IO_EnumerationOptions_t _Nullable /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_String_t _Nonnull /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t _Nonnull /* System.IO.EnumerationOptions */ enumerationOptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -40181,14 +40184,14 @@ System_IO_DirectoryInfo_EnumerateFiles(
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.IO.FileInfo> */
 System_IO_DirectoryInfo_EnumerateFiles_1(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.IO.FileInfo> */
 System_IO_DirectoryInfo_EnumerateFiles_2(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_IO_SearchOption_t /* System.IO.SearchOption */ searchOption,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -40196,8 +40199,8 @@ System_IO_DirectoryInfo_EnumerateFiles_2(
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.IO.FileInfo> */
 System_IO_DirectoryInfo_EnumerateFiles_3(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ searchPattern,
-	System_IO_EnumerationOptions_t _Nullable /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_String_t _Nonnull /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t _Nonnull /* System.IO.EnumerationOptions */ enumerationOptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -40210,14 +40213,14 @@ System_IO_DirectoryInfo_EnumerateFileSystemInfos(
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.IO.FileSystemInfo> */
 System_IO_DirectoryInfo_EnumerateFileSystemInfos_1(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.IO.FileSystemInfo> */
 System_IO_DirectoryInfo_EnumerateFileSystemInfos_2(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_IO_SearchOption_t /* System.IO.SearchOption */ searchOption,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -40225,15 +40228,15 @@ System_IO_DirectoryInfo_EnumerateFileSystemInfos_2(
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.IO.FileSystemInfo> */
 System_IO_DirectoryInfo_EnumerateFileSystemInfos_3(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ searchPattern,
-	System_IO_EnumerationOptions_t _Nullable /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_String_t _Nonnull /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t _Nonnull /* System.IO.EnumerationOptions */ enumerationOptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_DirectoryInfo_MoveTo(
 	System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */ self,
-	System_String_t _Nullable /* System.String */ destDirName,
+	System_String_t _Nonnull /* System.String */ destDirName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -40252,7 +40255,7 @@ System_IO_DirectoryInfo_Delete_1(
 
 System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */
 System_IO_DirectoryInfo_Create_2(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -40459,19 +40462,19 @@ System_IO_EnumerationOptions_Destroy(
 #pragma mark - BEGIN APIs of System.IO.Directory
 System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */
 System_IO_Directory_GetParent(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */
 System_IO_Directory_CreateDirectory(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_DirectoryInfo_t _Nullable /* System.IO.DirectoryInfo */
 System_IO_Directory_CreateDirectory_1(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_IO_UnixFileMode_t /* System.IO.UnixFileMode */ unixCreateMode,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -40490,259 +40493,259 @@ System_IO_Directory_Exists(
 
 void /* System.Void */
 System_IO_Directory_SetCreationTime(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_DateTime_t _Nonnull /* System.DateTime */ creationTime,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_Directory_SetCreationTimeUtc(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_DateTime_t _Nonnull /* System.DateTime */ creationTimeUtc,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_IO_Directory_GetCreationTime(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_IO_Directory_GetCreationTimeUtc(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_Directory_SetLastWriteTime(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_DateTime_t _Nonnull /* System.DateTime */ lastWriteTime,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_Directory_SetLastWriteTimeUtc(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_DateTime_t _Nonnull /* System.DateTime */ lastWriteTimeUtc,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_IO_Directory_GetLastWriteTime(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_IO_Directory_GetLastWriteTimeUtc(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_Directory_SetLastAccessTime(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_DateTime_t _Nonnull /* System.DateTime */ lastAccessTime,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_Directory_SetLastAccessTimeUtc(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_DateTime_t _Nonnull /* System.DateTime */ lastAccessTimeUtc,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_IO_Directory_GetLastAccessTime(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_DateTime_t _Nonnull /* System.DateTime */
 System_IO_Directory_GetLastAccessTimeUtc(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_Array_t _Nullable /* System.String[] */
 System_IO_Directory_GetFiles(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_Array_t _Nullable /* System.String[] */
 System_IO_Directory_GetFiles_1(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_Array_t _Nullable /* System.String[] */
 System_IO_Directory_GetFiles_2(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_IO_SearchOption_t /* System.IO.SearchOption */ searchOption,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_Array_t _Nullable /* System.String[] */
 System_IO_Directory_GetFiles_3(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ searchPattern,
-	System_IO_EnumerationOptions_t _Nullable /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t _Nonnull /* System.IO.EnumerationOptions */ enumerationOptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_Array_t _Nullable /* System.String[] */
 System_IO_Directory_GetDirectories(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_Array_t _Nullable /* System.String[] */
 System_IO_Directory_GetDirectories_1(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_Array_t _Nullable /* System.String[] */
 System_IO_Directory_GetDirectories_2(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_IO_SearchOption_t /* System.IO.SearchOption */ searchOption,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_Array_t _Nullable /* System.String[] */
 System_IO_Directory_GetDirectories_3(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ searchPattern,
-	System_IO_EnumerationOptions_t _Nullable /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t _Nonnull /* System.IO.EnumerationOptions */ enumerationOptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_Array_t _Nullable /* System.String[] */
 System_IO_Directory_GetFileSystemEntries(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_Array_t _Nullable /* System.String[] */
 System_IO_Directory_GetFileSystemEntries_1(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_Array_t _Nullable /* System.String[] */
 System_IO_Directory_GetFileSystemEntries_2(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_IO_SearchOption_t /* System.IO.SearchOption */ searchOption,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_Array_t _Nullable /* System.String[] */
 System_IO_Directory_GetFileSystemEntries_3(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ searchPattern,
-	System_IO_EnumerationOptions_t _Nullable /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t _Nonnull /* System.IO.EnumerationOptions */ enumerationOptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */
 System_IO_Directory_EnumerateDirectories(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */
 System_IO_Directory_EnumerateDirectories_1(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */
 System_IO_Directory_EnumerateDirectories_2(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_IO_SearchOption_t /* System.IO.SearchOption */ searchOption,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */
 System_IO_Directory_EnumerateDirectories_3(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ searchPattern,
-	System_IO_EnumerationOptions_t _Nullable /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t _Nonnull /* System.IO.EnumerationOptions */ enumerationOptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */
 System_IO_Directory_EnumerateFiles(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */
 System_IO_Directory_EnumerateFiles_1(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */
 System_IO_Directory_EnumerateFiles_2(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_IO_SearchOption_t /* System.IO.SearchOption */ searchOption,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */
 System_IO_Directory_EnumerateFiles_3(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ searchPattern,
-	System_IO_EnumerationOptions_t _Nullable /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t _Nonnull /* System.IO.EnumerationOptions */ enumerationOptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */
 System_IO_Directory_EnumerateFileSystemEntries(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */
 System_IO_Directory_EnumerateFileSystemEntries_1(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */
 System_IO_Directory_EnumerateFileSystemEntries_2(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ searchPattern,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ searchPattern,
 	System_IO_SearchOption_t /* System.IO.SearchOption */ searchOption,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Collections_Generic_IEnumerable_A1_t _Nullable /* System.Collections.Generic.IEnumerable<System.String> */
 System_IO_Directory_EnumerateFileSystemEntries_3(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ searchPattern,
-	System_IO_EnumerationOptions_t _Nullable /* System.IO.EnumerationOptions */ enumerationOptions,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ searchPattern,
+	System_IO_EnumerationOptions_t _Nonnull /* System.IO.EnumerationOptions */ enumerationOptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_IO_Directory_GetDirectoryRoot(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -40753,26 +40756,26 @@ System_IO_Directory_GetCurrentDirectory(
 
 void /* System.Void */
 System_IO_Directory_SetCurrentDirectory(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_Directory_Move(
-	System_String_t _Nullable /* System.String */ sourceDirName,
-	System_String_t _Nullable /* System.String */ destDirName,
+	System_String_t _Nonnull /* System.String */ sourceDirName,
+	System_String_t _Nonnull /* System.String */ destDirName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_Directory_Delete(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 System_IO_Directory_Delete_1(
-	System_String_t _Nullable /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ path,
 	bool /* System.Boolean */ recursive,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -40784,14 +40787,14 @@ System_IO_Directory_GetLogicalDrives(
 
 System_IO_FileSystemInfo_t _Nullable /* System.IO.FileSystemInfo */
 System_IO_Directory_CreateSymbolicLink(
-	System_String_t _Nullable /* System.String */ path,
-	System_String_t _Nullable /* System.String */ pathToTarget,
+	System_String_t _Nonnull /* System.String */ path,
+	System_String_t _Nonnull /* System.String */ pathToTarget,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_IO_FileSystemInfo_t _Nullable /* System.IO.FileSystemInfo */
 System_IO_Directory_ResolveLinkTarget(
-	System_String_t _Nullable /* System.String */ linkPath,
+	System_String_t _Nonnull /* System.String */ linkPath,
 	bool /* System.Boolean */ returnFinalTarget,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -41282,27 +41285,27 @@ System_Half_IsSubnormal(
 
 System_Half_t _Nonnull /* System.Half */
 System_Half_Parse(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Half_t _Nonnull /* System.Half */
 System_Half_Parse_1(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Globalization_NumberStyles_t /* System.Globalization.NumberStyles */ style,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Half_t _Nonnull /* System.Half */
 System_Half_Parse_2(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Half_t _Nonnull /* System.Half */
 System_Half_Parse_3(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Globalization_NumberStyles_t /* System.Globalization.NumberStyles */ style,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -42124,27 +42127,27 @@ System_Int128_ToString_3(
 
 System_Int128_t _Nonnull /* System.Int128 */
 System_Int128_Parse(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Int128_t _Nonnull /* System.Int128 */
 System_Int128_Parse_1(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Globalization_NumberStyles_t /* System.Globalization.NumberStyles */ style,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Int128_t _Nonnull /* System.Int128 */
 System_Int128_Parse_2(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Int128_t _Nonnull /* System.Int128 */
 System_Int128_Parse_3(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Globalization_NumberStyles_t /* System.Globalization.NumberStyles */ style,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -42500,27 +42503,27 @@ System_UInt128_ToString_3(
 
 System_UInt128_t _Nonnull /* System.UInt128 */
 System_UInt128_Parse(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_UInt128_t _Nonnull /* System.UInt128 */
 System_UInt128_Parse_1(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Globalization_NumberStyles_t /* System.Globalization.NumberStyles */ style,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_UInt128_t _Nonnull /* System.UInt128 */
 System_UInt128_Parse_2(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_UInt128_t _Nonnull /* System.UInt128 */
 System_UInt128_Parse_3(
-	System_String_t _Nullable /* System.String */ s,
+	System_String_t _Nonnull /* System.String */ s,
 	System_Globalization_NumberStyles_t /* System.Globalization.NumberStyles */ style,
 	System_IFormatProvider_t _Nullable /* System.IFormatProvider */ provider,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -44456,16 +44459,16 @@ System_Tuple_A8_Destroy(
 Beyond_NET_Sample_Address_t _Nullable /* Beyond.NET.Sample.Address */
 Beyond_NET_Sample_Address_Move(
 	Beyond_NET_Sample_Address_t _Nullable /* Beyond.NET.Sample.Address */ self,
-	Beyond_NET_Sample_MoveDelegate_t _Nullable /* Beyond.NET.Sample.MoveDelegate */ mover,
-	System_String_t _Nullable /* System.String */ newStreet,
-	System_String_t _Nullable /* System.String */ newCity,
+	Beyond_NET_Sample_MoveDelegate_t _Nonnull /* Beyond.NET.Sample.MoveDelegate */ mover,
+	System_String_t _Nonnull /* System.String */ newStreet,
+	System_String_t _Nonnull /* System.String */ newCity,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 Beyond_NET_Sample_Address_t _Nullable /* Beyond.NET.Sample.Address */
 Beyond_NET_Sample_Address_Create(
-	System_String_t _Nullable /* System.String */ street,
-	System_String_t _Nullable /* System.String */ city,
+	System_String_t _Nonnull /* System.String */ street,
+	System_String_t _Nonnull /* System.String */ city,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -44499,7 +44502,7 @@ Beyond_NET_Sample_Address_Destroy(
 System_String_t _Nullable /* System.String */
 Beyond_NET_Sample_IAnimal_Eat(
 	Beyond_NET_Sample_IAnimal_t _Nullable /* Beyond.NET.Sample.IAnimal */ self,
-	System_String_t _Nullable /* System.String */ food,
+	System_String_t _Nonnull /* System.String */ food,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -44525,14 +44528,14 @@ Beyond_NET_Sample_IAnimal_Destroy(
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.AnimalFactory
 Beyond_NET_Sample_IAnimal_t _Nullable /* Beyond.NET.Sample.IAnimal */
 Beyond_NET_Sample_AnimalFactory_CreateAnimal(
-	System_String_t _Nullable /* System.String */ animalName,
+	System_String_t _Nonnull /* System.String */ animalName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 Beyond_NET_Sample_IAnimal_t _Nullable /* Beyond.NET.Sample.IAnimal */
 Beyond_NET_Sample_AnimalFactory_CreateAnimal_1(
-	System_String_t _Nullable /* System.String */ animalName,
-	Beyond_NET_Sample_AnimalCreatorDelegate_t _Nullable /* Beyond.NET.Sample.AnimalCreatorDelegate */ creator,
+	System_String_t _Nonnull /* System.String */ animalName,
+	Beyond_NET_Sample_AnimalCreatorDelegate_t _Nonnull /* Beyond.NET.Sample.AnimalCreatorDelegate */ creator,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -44565,7 +44568,7 @@ Beyond_NET_Sample_AnimalFactory_Destroy(
 System_String_t _Nullable /* System.String */
 Beyond_NET_Sample_BaseAnimal_Eat(
 	Beyond_NET_Sample_BaseAnimal_t _Nullable /* Beyond.NET.Sample.BaseAnimal */ self,
-	System_String_t _Nullable /* System.String */ food,
+	System_String_t _Nonnull /* System.String */ food,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -44643,7 +44646,7 @@ Beyond_NET_Sample_Dog_Destroy(
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.GenericAnimal
 Beyond_NET_Sample_GenericAnimal_t _Nullable /* Beyond.NET.Sample.GenericAnimal */
 Beyond_NET_Sample_GenericAnimal_Create(
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -44711,7 +44714,7 @@ Beyond_NET_Sample_AsyncTests_TransformNumbersAsync(
 	Beyond_NET_Sample_AsyncTests_t _Nullable /* Beyond.NET.Sample.AsyncTests */ self,
 	int32_t /* System.Int32 */ number1,
 	int32_t /* System.Int32 */ number2,
-	Beyond_NET_Sample_AsyncTests_TransformerDelegate_t _Nullable /* Beyond.NET.Sample.AsyncTests.TransformerDelegate */ transformerDelegate,
+	Beyond_NET_Sample_AsyncTests_TransformerDelegate_t _Nonnull /* Beyond.NET.Sample.AsyncTests.TransformerDelegate */ transformerDelegate,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -44781,14 +44784,14 @@ Beyond_NET_Sample_Point_Destroy(
 int32_t /* System.Int32 */
 Beyond_NET_Sample_DelegatesTest_TransformInt(
 	int32_t /* System.Int32 */ i,
-	Beyond_NET_Sample_DelegatesTest_TransformIntDelegate_t _Nullable /* Beyond.NET.Sample.DelegatesTest.TransformIntDelegate */ intTransformer,
+	Beyond_NET_Sample_DelegatesTest_TransformIntDelegate_t _Nonnull /* Beyond.NET.Sample.DelegatesTest.TransformIntDelegate */ intTransformer,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 Beyond_NET_Sample_Point_t _Nonnull /* Beyond.NET.Sample.Point */
 Beyond_NET_Sample_DelegatesTest_TransformPoint(
 	Beyond_NET_Sample_Point_t _Nonnull /* Beyond.NET.Sample.Point */ point,
-	Beyond_NET_Sample_DelegatesTest_PointTransformDelegate_t _Nullable /* Beyond.NET.Sample.DelegatesTest.PointTransformDelegate */ pointTransformer,
+	Beyond_NET_Sample_DelegatesTest_PointTransformDelegate_t _Nonnull /* Beyond.NET.Sample.DelegatesTest.PointTransformDelegate */ pointTransformer,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -45003,8 +45006,8 @@ Beyond_NET_Sample_GenericTestClass_A2_Destroy(
 System_String_t _Nullable /* System.String */
 Beyond_NET_Sample_GenericTests_JoinListOfStrings(
 	Beyond_NET_Sample_GenericTests_t _Nullable /* Beyond.NET.Sample.GenericTests */ self,
-	System_Collections_Generic_List_A1_t _Nullable /* System.Collections.Generic.List<System.String> */ listOfString,
-	System_String_t _Nullable /* System.String */ separator,
+	System_Collections_Generic_List_A1_t _Nonnull /* System.Collections.Generic.List<System.String> */ listOfString,
+	System_String_t _Nonnull /* System.String */ separator,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -45279,7 +45282,7 @@ Beyond_NET_Sample_IndexerTests_StoredValue_Get(
 System_Object_Array_t _Nullable /* System.Object[] */
 Beyond_NET_Sample_IndexerTests_Item_Get(
 	Beyond_NET_Sample_IndexerTests_t _Nullable /* Beyond.NET.Sample.IndexerTests */ self,
-	System_String_t _Nullable /* System.String */ aString,
+	System_String_t _Nonnull /* System.String */ aString,
 	int32_t /* System.Int32 */ aNumber,
 	System_Guid_t _Nonnull /* System.Guid */ aGuid,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -45288,7 +45291,7 @@ Beyond_NET_Sample_IndexerTests_Item_Get(
 void /* System.Void */
 Beyond_NET_Sample_IndexerTests_Item_Set(
 	Beyond_NET_Sample_IndexerTests_t _Nullable /* Beyond.NET.Sample.IndexerTests */ self,
-	System_String_t _Nullable /* System.String */ aString,
+	System_String_t _Nonnull /* System.String */ aString,
 	int32_t /* System.Int32 */ aNumber,
 	System_Guid_t _Nonnull /* System.Guid */ aGuid,
 	System_Object_Array_t _Nullable /* System.Object[] */ value,
@@ -45323,7 +45326,7 @@ Beyond_NET_Sample_OverloadTests_Print_1(
 
 void /* System.Void */
 Beyond_NET_Sample_OverloadTests_Print_2(
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -45355,14 +45358,14 @@ Beyond_NET_Sample_Person_GetWelcomeMessage(
 void /* System.Void */
 Beyond_NET_Sample_Person_AddChild(
 	Beyond_NET_Sample_Person_t _Nullable /* Beyond.NET.Sample.Person */ self,
-	Beyond_NET_Sample_Person_t _Nullable /* Beyond.NET.Sample.Person */ child,
+	Beyond_NET_Sample_Person_t _Nonnull /* Beyond.NET.Sample.Person */ child,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 Beyond_NET_Sample_Person_RemoveChild(
 	Beyond_NET_Sample_Person_t _Nullable /* Beyond.NET.Sample.Person */ self,
-	Beyond_NET_Sample_Person_t _Nullable /* Beyond.NET.Sample.Person */ child,
+	Beyond_NET_Sample_Person_t _Nonnull /* Beyond.NET.Sample.Person */ child,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -45389,16 +45392,16 @@ Beyond_NET_Sample_Person_ChangeAge(
 
 Beyond_NET_Sample_Person_t _Nullable /* Beyond.NET.Sample.Person */
 Beyond_NET_Sample_Person_Create(
-	System_String_t _Nullable /* System.String */ firstName,
-	System_String_t _Nullable /* System.String */ lastName,
+	System_String_t _Nonnull /* System.String */ firstName,
+	System_String_t _Nonnull /* System.String */ lastName,
 	int32_t /* System.Int32 */ age,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 Beyond_NET_Sample_Person_t _Nullable /* Beyond.NET.Sample.Person */
 Beyond_NET_Sample_Person_Create_1(
-	System_String_t _Nullable /* System.String */ firstName,
-	System_String_t _Nullable /* System.String */ lastName,
+	System_String_t _Nonnull /* System.String */ firstName,
+	System_String_t _Nonnull /* System.String */ lastName,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -45573,14 +45576,14 @@ System_Uri_HexEscape(
 
 wchar_t /* System.Char */
 System_Uri_HexUnescape(
-	System_String_t _Nullable /* System.String */ pattern,
+	System_String_t _Nonnull /* System.String */ pattern,
 	int32_t* /* System.Int32 */ index,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Uri_IsHexEncoding(
-	System_String_t _Nullable /* System.String */ pattern,
+	System_String_t _Nonnull /* System.String */ pattern,
 	int32_t /* System.Int32 */ index,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -45625,14 +45628,14 @@ System_Uri_Equals(
 System_Uri_t _Nullable /* System.Uri */
 System_Uri_MakeRelativeUri(
 	System_Uri_t _Nullable /* System.Uri */ self,
-	System_Uri_t _Nullable /* System.Uri */ uri,
+	System_Uri_t _Nonnull /* System.Uri */ uri,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_Uri_MakeRelative_1(
 	System_Uri_t _Nullable /* System.Uri */ self,
-	System_Uri_t _Nullable /* System.Uri */ toUri,
+	System_Uri_t _Nonnull /* System.Uri */ toUri,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -45701,45 +45704,45 @@ System_Uri_IsWellFormedUriString(
 
 System_String_t _Nullable /* System.String */
 System_Uri_UnescapeDataString(
-	System_String_t _Nullable /* System.String */ stringToUnescape,
+	System_String_t _Nonnull /* System.String */ stringToUnescape,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_Uri_EscapeUriString(
-	System_String_t _Nullable /* System.String */ stringToEscape,
+	System_String_t _Nonnull /* System.String */ stringToEscape,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 System_Uri_EscapeDataString(
-	System_String_t _Nullable /* System.String */ stringToEscape,
+	System_String_t _Nonnull /* System.String */ stringToEscape,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 System_Uri_IsBaseOf(
 	System_Uri_t _Nullable /* System.Uri */ self,
-	System_Uri_t _Nullable /* System.Uri */ uri,
+	System_Uri_t _Nonnull /* System.Uri */ uri,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Uri_t _Nullable /* System.Uri */
 System_Uri_Create(
-	System_String_t _Nullable /* System.String */ uriString,
+	System_String_t _Nonnull /* System.String */ uriString,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Uri_t _Nullable /* System.Uri */
 System_Uri_Create_1(
-	System_String_t _Nullable /* System.String */ uriString,
+	System_String_t _Nonnull /* System.String */ uriString,
 	bool /* System.Boolean */ dontEscape,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Uri_t _Nullable /* System.Uri */
 System_Uri_Create_2(
-	System_Uri_t _Nullable /* System.Uri */ baseUri,
+	System_Uri_t _Nonnull /* System.Uri */ baseUri,
 	System_String_t _Nullable /* System.String */ relativeUri,
 	bool /* System.Boolean */ dontEscape,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -45747,29 +45750,29 @@ System_Uri_Create_2(
 
 System_Uri_t _Nullable /* System.Uri */
 System_Uri_Create_3(
-	System_String_t _Nullable /* System.String */ uriString,
+	System_String_t _Nonnull /* System.String */ uriString,
 	System_UriKind_t /* System.UriKind */ uriKind,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Uri_t _Nullable /* System.Uri */
 System_Uri_Create_4(
-	System_String_t _Nullable /* System.String */ uriString,
+	System_String_t _Nonnull /* System.String */ uriString,
 	System_UriCreationOptions_t _Nonnull* _Nonnull /* System.UriCreationOptions */ creationOptions,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Uri_t _Nullable /* System.Uri */
 System_Uri_Create_5(
-	System_Uri_t _Nullable /* System.Uri */ baseUri,
+	System_Uri_t _Nonnull /* System.Uri */ baseUri,
 	System_String_t _Nullable /* System.String */ relativeUri,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_Uri_t _Nullable /* System.Uri */
 System_Uri_Create_6(
-	System_Uri_t _Nullable /* System.Uri */ baseUri,
-	System_Uri_t _Nullable /* System.Uri */ relativeUri,
+	System_Uri_t _Nonnull /* System.Uri */ baseUri,
+	System_Uri_t _Nonnull /* System.Uri */ relativeUri,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -46088,14 +46091,14 @@ System_UriCreationOptions_Destroy(
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Person_Extensions
 void /* System.Void */
 Beyond_NET_Sample_Person_Extensions_IncreaseAge(
-	Beyond_NET_Sample_Person_t _Nullable /* Beyond.NET.Sample.Person */ person,
+	Beyond_NET_Sample_Person_t _Nonnull /* Beyond.NET.Sample.Person */ person,
 	int32_t /* System.Int32 */ byYears,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 bool /* System.Boolean */
 Beyond_NET_Sample_Person_Extensions_TryGetAddress(
-	Beyond_NET_Sample_Person_t _Nullable /* Beyond.NET.Sample.Person */ person,
+	Beyond_NET_Sample_Person_t _Nonnull /* Beyond.NET.Sample.Person */ person,
 	Beyond_NET_Sample_Address_t _Nullable* _Nullable /* Beyond.NET.Sample.Address */ address,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -46169,8 +46172,8 @@ Beyond_NET_Sample_SpanTest_TryGetDataAsReadOnlySpan(
 DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */
 Beyond_NET_Sample_SpanTest_ConvertByteArrayToSpan(
 	Beyond_NET_Sample_SpanTest_t _Nullable /* Beyond.NET.Sample.SpanTest */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ bytes,
-	Beyond_NET_Sample_SpanTest_ByteArrayToSpanDelegate_t _Nullable /* Beyond.NET.Sample.SpanTest.ByteArrayToSpanDelegate */ converter,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes,
+	Beyond_NET_Sample_SpanTest_ByteArrayToSpanDelegate_t _Nonnull /* Beyond.NET.Sample.SpanTest.ByteArrayToSpanDelegate */ converter,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -46178,13 +46181,13 @@ System_Byte_Array_t _Nullable /* System.Byte[] */
 Beyond_NET_Sample_SpanTest_ConvertSpanToByteArray(
 	Beyond_NET_Sample_SpanTest_t _Nullable /* Beyond.NET.Sample.SpanTest */ self,
 	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ span,
-	Beyond_NET_Sample_SpanTest_SpanToByteArrayDelegate_t _Nullable /* Beyond.NET.Sample.SpanTest.SpanToByteArrayDelegate */ converter,
+	Beyond_NET_Sample_SpanTest_SpanToByteArrayDelegate_t _Nonnull /* Beyond.NET.Sample.SpanTest.SpanToByteArrayDelegate */ converter,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 Beyond_NET_Sample_SpanTest_t _Nullable /* Beyond.NET.Sample.SpanTest */
 Beyond_NET_Sample_SpanTest_Create(
-	System_Byte_Array_t _Nullable /* System.Byte[] */ data,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ data,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -46302,7 +46305,7 @@ Beyond_NET_Sample_StructTest_Destroy(
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Book
 Beyond_NET_Sample_Book_t _Nullable /* Beyond.NET.Sample.Book */
 Beyond_NET_Sample_Book_Create(
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -46347,7 +46350,7 @@ Beyond_NET_Sample_Book_Destroy(
 wchar_t /* System.Char */
 Beyond_NET_Sample_TestClass_GetChar(
 	Beyond_NET_Sample_TestClass_t _Nullable /* Beyond.NET.Sample.TestClass */ self,
-	Beyond_NET_Sample_CharReturnerDelegate_t _Nullable /* Beyond.NET.Sample.CharReturnerDelegate */ charReturnerDelegate,
+	Beyond_NET_Sample_CharReturnerDelegate_t _Nonnull /* Beyond.NET.Sample.CharReturnerDelegate */ charReturnerDelegate,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -46360,7 +46363,7 @@ Beyond_NET_Sample_TestClass_SayHello(
 void /* System.Void */
 Beyond_NET_Sample_TestClass_SayHello_1(
 	Beyond_NET_Sample_TestClass_t _Nullable /* Beyond.NET.Sample.TestClass */ self,
-	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ name,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -46416,9 +46419,9 @@ Beyond_NET_Sample_TestClass_ModifyByRefEnum(
 void /* System.Void */
 Beyond_NET_Sample_TestClass_ModifyByRefBookAndReturnOriginalBookAsOutParameter(
 	Beyond_NET_Sample_TestClass_t _Nullable /* Beyond.NET.Sample.TestClass */ self,
-	Beyond_NET_Sample_Book_t _Nullable* _Nullable /* Beyond.NET.Sample.Book */ bookToModify,
-	Beyond_NET_Sample_Book_t _Nullable /* Beyond.NET.Sample.Book */ targetBook,
-	Beyond_NET_Sample_Book_t _Nullable* _Nullable /* Beyond.NET.Sample.Book */ originalBook,
+	Beyond_NET_Sample_Book_t _Nonnull* _Nonnull /* Beyond.NET.Sample.Book */ bookToModify,
+	Beyond_NET_Sample_Book_t _Nonnull /* Beyond.NET.Sample.Book */ targetBook,
+	Beyond_NET_Sample_Book_t _Nonnull* _Nonnull /* Beyond.NET.Sample.Book */ originalBook,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -46513,13 +46516,13 @@ Beyond_NET_Sample_TestRecord_Equals_1(
 void /* System.Void */
 Beyond_NET_Sample_TestRecord_Deconstruct(
 	Beyond_NET_Sample_TestRecord_t _Nullable /* Beyond.NET.Sample.TestRecord */ self,
-	System_String_t _Nullable* _Nullable /* System.String */ AString,
+	System_String_t _Nonnull* _Nonnull /* System.String */ AString,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 Beyond_NET_Sample_TestRecord_t _Nullable /* Beyond.NET.Sample.TestRecord */
 Beyond_NET_Sample_TestRecord_Create(
-	System_String_t _Nullable /* System.String */ AString,
+	System_String_t _Nonnull /* System.String */ AString,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -46691,8 +46694,8 @@ Beyond_NET_Sample_TestReadOnlyRecordStruct_Destroy(
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Transformer
 System_String_t _Nullable /* System.String */
 Beyond_NET_Sample_Transformer_TransformString(
-	System_String_t _Nullable /* System.String */ inputString,
-	Beyond_NET_Sample_Transformer_StringTransformerDelegate_t _Nullable /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */ stringTransformer,
+	System_String_t _Nonnull /* System.String */ inputString,
+	Beyond_NET_Sample_Transformer_StringTransformerDelegate_t _Nonnull /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */ stringTransformer,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -46700,20 +46703,20 @@ double /* System.Double */
 Beyond_NET_Sample_Transformer_TransformDoubles(
 	double /* System.Double */ number1,
 	double /* System.Double */ number2,
-	Beyond_NET_Sample_Transformer_DoublesTransformerDelegate_t _Nullable /* Beyond.NET.Sample.Transformer.DoublesTransformerDelegate */ doublesTransformer,
+	Beyond_NET_Sample_Transformer_DoublesTransformerDelegate_t _Nonnull /* Beyond.NET.Sample.Transformer.DoublesTransformerDelegate */ doublesTransformer,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 Beyond_NET_Sample_Transformer_GetAndTransformString(
-	Beyond_NET_Sample_Transformer_StringGetterDelegate_t _Nullable /* Beyond.NET.Sample.Transformer.StringGetterDelegate */ stringGetter,
-	Beyond_NET_Sample_Transformer_StringTransformerDelegate_t _Nullable /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */ stringTransformer,
+	Beyond_NET_Sample_Transformer_StringGetterDelegate_t _Nonnull /* Beyond.NET.Sample.Transformer.StringGetterDelegate */ stringGetter,
+	Beyond_NET_Sample_Transformer_StringTransformerDelegate_t _Nonnull /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */ stringTransformer,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 System_String_t _Nullable /* System.String */
 Beyond_NET_Sample_Transformer_UppercaseString(
-	System_String_t _Nullable /* System.String */ inputString,
+	System_String_t _Nonnull /* System.String */ inputString,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -46777,6 +46780,31 @@ Beyond_NET_Sample_SubclassingTests_MySubClass_Destroy(
 
 #pragma mark - END APIs of Beyond.NET.Sample.SubclassingTests.MySubClass
 
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.NullableValueTypeTests
+Beyond_NET_Sample_Source_NullableValueTypeTests_t _Nullable /* Beyond.NET.Sample.Source.NullableValueTypeTests */
+Beyond_NET_Sample_Source_NullableValueTypeTests_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Guid_t _Nullable* _Nullable /* System.Guid */
+Beyond_NET_Sample_Source_NullableValueTypeTests_NullGuid_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_Source_NullableValueTypeTests_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_NullableValueTypeTests_Destroy(
+	Beyond_NET_Sample_Source_NullableValueTypeTests_t _Nullable /* Beyond.NET.Sample.Source.NullableValueTypeTests */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.Source.NullableValueTypeTests
+
+
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Transformer.BuiltInTransformers
 Beyond_NET_Sample_Transformer_StringTransformerDelegate_t _Nullable /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */
 Beyond_NET_Sample_Transformer_BuiltInTransformers_UppercaseStringTransformer_Get(
@@ -46803,7 +46831,7 @@ Beyond_NET_Sample_Transformer_BuiltInTransformers_Destroy(
 #pragma mark - END APIs of Beyond.NET.Sample.Transformer.BuiltInTransformers
 
 #pragma mark - BEGIN APIs of System.Action
-System_Action_t /* System.Action */
+System_Action_t _Nonnull /* System.Action */
 System_Action_Create(
 	const void* context,
 	System_Action_CFunction_t function,
@@ -46843,7 +46871,7 @@ System_Action_Destroy(
 #pragma mark - END APIs of System.Action
 
 #pragma mark - BEGIN APIs of System.MulticastDelegate
-System_MulticastDelegate_t /* System.MulticastDelegate */
+System_MulticastDelegate_t _Nonnull /* System.MulticastDelegate */
 System_MulticastDelegate_Create(
 	const void* context,
 	System_MulticastDelegate_CFunction_t function,
@@ -46883,7 +46911,7 @@ System_MulticastDelegate_Destroy(
 #pragma mark - END APIs of System.MulticastDelegate
 
 #pragma mark - BEGIN APIs of System.Delegate
-System_Delegate_t /* System.Delegate */
+System_Delegate_t _Nonnull /* System.Delegate */
 System_Delegate_Create(
 	const void* context,
 	System_Delegate_CFunction_t function,
@@ -46925,7 +46953,7 @@ System_Delegate_Destroy(
 
 
 #pragma mark - BEGIN APIs of System.Reflection.TypeFilter
-System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */
+System_Reflection_TypeFilter_t _Nonnull /* System.Reflection.TypeFilter */
 System_Reflection_TypeFilter_Create(
 	const void* context,
 	System_Reflection_TypeFilter_CFunction_t function,
@@ -46934,7 +46962,7 @@ System_Reflection_TypeFilter_Create(
 
 bool
 System_Reflection_TypeFilter_Invoke(
-	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self, System_Type_t _Nullable /* System.Type */ m,
+	System_Reflection_TypeFilter_t /* System.Reflection.TypeFilter */ self, System_Type_t _Nonnull /* System.Type */ m,
 	System_Object_t _Nullable /* System.Object */ filterCriteria, System_Exception_t* /* System.Exception */ outException
 );
 
@@ -46966,7 +46994,7 @@ System_Reflection_TypeFilter_Destroy(
 #pragma mark - END APIs of System.Reflection.TypeFilter
 
 #pragma mark - BEGIN APIs of System.Threading.TimerCallback
-System_Threading_TimerCallback_t /* System.Threading.TimerCallback */
+System_Threading_TimerCallback_t _Nonnull /* System.Threading.TimerCallback */
 System_Threading_TimerCallback_Create(
 	const void* context,
 	System_Threading_TimerCallback_CFunction_t function,
@@ -47006,7 +47034,7 @@ System_Threading_TimerCallback_Destroy(
 #pragma mark - END APIs of System.Threading.TimerCallback
 
 #pragma mark - BEGIN APIs of System.AsyncCallback
-System_AsyncCallback_t /* System.AsyncCallback */
+System_AsyncCallback_t _Nonnull /* System.AsyncCallback */
 System_AsyncCallback_Create(
 	const void* context,
 	System_AsyncCallback_CFunction_t function,
@@ -47015,7 +47043,7 @@ System_AsyncCallback_Create(
 
 void
 System_AsyncCallback_Invoke(
-	System_AsyncCallback_t /* System.AsyncCallback */ self, System_IAsyncResult_t _Nullable /* System.IAsyncResult */ ar, System_Exception_t* /* System.Exception */ outException
+	System_AsyncCallback_t /* System.AsyncCallback */ self, System_IAsyncResult_t _Nonnull /* System.IAsyncResult */ ar, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -47046,7 +47074,7 @@ System_AsyncCallback_Destroy(
 #pragma mark - END APIs of System.AsyncCallback
 
 #pragma mark - BEGIN APIs of System.Reflection.ModuleResolveEventHandler
-System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */
+System_Reflection_ModuleResolveEventHandler_t _Nonnull /* System.Reflection.ModuleResolveEventHandler */
 System_Reflection_ModuleResolveEventHandler_Create(
 	const void* context,
 	System_Reflection_ModuleResolveEventHandler_CFunction_t function,
@@ -47055,8 +47083,8 @@ System_Reflection_ModuleResolveEventHandler_Create(
 
 System_Reflection_Module_t _Nullable
 System_Reflection_ModuleResolveEventHandler_Invoke(
-	System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */ self, System_Object_t _Nullable /* System.Object */ sender,
-	System_ResolveEventArgs_t _Nullable /* System.ResolveEventArgs */ e, System_Exception_t* /* System.Exception */ outException
+	System_Reflection_ModuleResolveEventHandler_t /* System.Reflection.ModuleResolveEventHandler */ self, System_Object_t _Nonnull /* System.Object */ sender,
+	System_ResolveEventArgs_t _Nonnull /* System.ResolveEventArgs */ e, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -47087,7 +47115,7 @@ System_Reflection_ModuleResolveEventHandler_Destroy(
 #pragma mark - END APIs of System.Reflection.ModuleResolveEventHandler
 
 #pragma mark - BEGIN APIs of System.Reflection.MemberFilter
-System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */
+System_Reflection_MemberFilter_t _Nonnull /* System.Reflection.MemberFilter */
 System_Reflection_MemberFilter_Create(
 	const void* context,
 	System_Reflection_MemberFilter_CFunction_t function,
@@ -47096,7 +47124,7 @@ System_Reflection_MemberFilter_Create(
 
 bool
 System_Reflection_MemberFilter_Invoke(
-	System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */ self, System_Reflection_MemberInfo_t _Nullable /* System.Reflection.MemberInfo */ m,
+	System_Reflection_MemberFilter_t /* System.Reflection.MemberFilter */ self, System_Reflection_MemberInfo_t _Nonnull /* System.Reflection.MemberInfo */ m,
 	System_Object_t _Nullable /* System.Object */ filterCriteria, System_Exception_t* /* System.Exception */ outException
 );
 
@@ -47128,7 +47156,7 @@ System_Reflection_MemberFilter_Destroy(
 #pragma mark - END APIs of System.Reflection.MemberFilter
 
 #pragma mark - BEGIN APIs of System.Threading.ContextCallback
-System_Threading_ContextCallback_t /* System.Threading.ContextCallback */
+System_Threading_ContextCallback_t _Nonnull /* System.Threading.ContextCallback */
 System_Threading_ContextCallback_Create(
 	const void* context,
 	System_Threading_ContextCallback_CFunction_t function,
@@ -47168,7 +47196,7 @@ System_Threading_ContextCallback_Destroy(
 #pragma mark - END APIs of System.Threading.ContextCallback
 
 #pragma mark - BEGIN APIs of System.UnhandledExceptionEventHandler
-System_UnhandledExceptionEventHandler_t /* System.UnhandledExceptionEventHandler */
+System_UnhandledExceptionEventHandler_t _Nonnull /* System.UnhandledExceptionEventHandler */
 System_UnhandledExceptionEventHandler_Create(
 	const void* context,
 	System_UnhandledExceptionEventHandler_CFunction_t function,
@@ -47177,8 +47205,8 @@ System_UnhandledExceptionEventHandler_Create(
 
 void
 System_UnhandledExceptionEventHandler_Invoke(
-	System_UnhandledExceptionEventHandler_t /* System.UnhandledExceptionEventHandler */ self, System_Object_t _Nullable /* System.Object */ sender,
-	System_UnhandledExceptionEventArgs_t _Nullable /* System.UnhandledExceptionEventArgs */ e, System_Exception_t* /* System.Exception */ outException
+	System_UnhandledExceptionEventHandler_t /* System.UnhandledExceptionEventHandler */ self, System_Object_t _Nonnull /* System.Object */ sender,
+	System_UnhandledExceptionEventArgs_t _Nonnull /* System.UnhandledExceptionEventArgs */ e, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -47209,7 +47237,7 @@ System_UnhandledExceptionEventHandler_Destroy(
 #pragma mark - END APIs of System.UnhandledExceptionEventHandler
 
 #pragma mark - BEGIN APIs of System.EventHandler
-System_EventHandler_t /* System.EventHandler */
+System_EventHandler_t _Nonnull /* System.EventHandler */
 System_EventHandler_Create(
 	const void* context,
 	System_EventHandler_CFunction_t function,
@@ -47219,7 +47247,7 @@ System_EventHandler_Create(
 void
 System_EventHandler_Invoke(
 	System_EventHandler_t /* System.EventHandler */ self, System_Object_t _Nullable /* System.Object */ sender,
-	System_EventArgs_t _Nullable /* System.EventArgs */ e, System_Exception_t* /* System.Exception */ outException
+	System_EventArgs_t _Nonnull /* System.EventArgs */ e, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -47250,7 +47278,7 @@ System_EventHandler_Destroy(
 #pragma mark - END APIs of System.EventHandler
 
 #pragma mark - BEGIN APIs of System.AssemblyLoadEventHandler
-System_AssemblyLoadEventHandler_t /* System.AssemblyLoadEventHandler */
+System_AssemblyLoadEventHandler_t _Nonnull /* System.AssemblyLoadEventHandler */
 System_AssemblyLoadEventHandler_Create(
 	const void* context,
 	System_AssemblyLoadEventHandler_CFunction_t function,
@@ -47260,7 +47288,7 @@ System_AssemblyLoadEventHandler_Create(
 void
 System_AssemblyLoadEventHandler_Invoke(
 	System_AssemblyLoadEventHandler_t /* System.AssemblyLoadEventHandler */ self, System_Object_t _Nullable /* System.Object */ sender,
-	System_AssemblyLoadEventArgs_t _Nullable /* System.AssemblyLoadEventArgs */ args, System_Exception_t* /* System.Exception */ outException
+	System_AssemblyLoadEventArgs_t _Nonnull /* System.AssemblyLoadEventArgs */ args, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -47291,7 +47319,7 @@ System_AssemblyLoadEventHandler_Destroy(
 #pragma mark - END APIs of System.AssemblyLoadEventHandler
 
 #pragma mark - BEGIN APIs of System.ResolveEventHandler
-System_ResolveEventHandler_t /* System.ResolveEventHandler */
+System_ResolveEventHandler_t _Nonnull /* System.ResolveEventHandler */
 System_ResolveEventHandler_Create(
 	const void* context,
 	System_ResolveEventHandler_CFunction_t function,
@@ -47301,7 +47329,7 @@ System_ResolveEventHandler_Create(
 System_Reflection_Assembly_t _Nullable
 System_ResolveEventHandler_Invoke(
 	System_ResolveEventHandler_t /* System.ResolveEventHandler */ self, System_Object_t _Nullable /* System.Object */ sender,
-	System_ResolveEventArgs_t _Nullable /* System.ResolveEventArgs */ args, System_Exception_t* /* System.Exception */ outException
+	System_ResolveEventArgs_t _Nonnull /* System.ResolveEventArgs */ args, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -47332,7 +47360,7 @@ System_ResolveEventHandler_Destroy(
 #pragma mark - END APIs of System.ResolveEventHandler
 
 #pragma mark - BEGIN APIs of System.Threading.ThreadStart
-System_Threading_ThreadStart_t /* System.Threading.ThreadStart */
+System_Threading_ThreadStart_t _Nonnull /* System.Threading.ThreadStart */
 System_Threading_ThreadStart_Create(
 	const void* context,
 	System_Threading_ThreadStart_CFunction_t function,
@@ -47372,7 +47400,7 @@ System_Threading_ThreadStart_Destroy(
 #pragma mark - END APIs of System.Threading.ThreadStart
 
 #pragma mark - BEGIN APIs of System.Threading.ParameterizedThreadStart
-System_Threading_ParameterizedThreadStart_t /* System.Threading.ParameterizedThreadStart */
+System_Threading_ParameterizedThreadStart_t _Nonnull /* System.Threading.ParameterizedThreadStart */
 System_Threading_ParameterizedThreadStart_Create(
 	const void* context,
 	System_Threading_ParameterizedThreadStart_CFunction_t function,
@@ -47412,7 +47440,7 @@ System_Threading_ParameterizedThreadStart_Destroy(
 #pragma mark - END APIs of System.Threading.ParameterizedThreadStart
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.MoveDelegate
-Beyond_NET_Sample_MoveDelegate_t /* Beyond.NET.Sample.MoveDelegate */
+Beyond_NET_Sample_MoveDelegate_t _Nonnull /* Beyond.NET.Sample.MoveDelegate */
 Beyond_NET_Sample_MoveDelegate_Create(
 	const void* context,
 	Beyond_NET_Sample_MoveDelegate_CFunction_t function,
@@ -47421,8 +47449,8 @@ Beyond_NET_Sample_MoveDelegate_Create(
 
 Beyond_NET_Sample_Address_t _Nullable
 Beyond_NET_Sample_MoveDelegate_Invoke(
-	Beyond_NET_Sample_MoveDelegate_t /* Beyond.NET.Sample.MoveDelegate */ self, System_String_t _Nullable /* System.String */ newStreet,
-	System_String_t _Nullable /* System.String */ newCity, System_Exception_t* /* System.Exception */ outException
+	Beyond_NET_Sample_MoveDelegate_t /* Beyond.NET.Sample.MoveDelegate */ self, System_String_t _Nonnull /* System.String */ newStreet,
+	System_String_t _Nonnull /* System.String */ newCity, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -47453,7 +47481,7 @@ Beyond_NET_Sample_MoveDelegate_Destroy(
 #pragma mark - END APIs of Beyond.NET.Sample.MoveDelegate
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.AnimalCreatorDelegate
-Beyond_NET_Sample_AnimalCreatorDelegate_t /* Beyond.NET.Sample.AnimalCreatorDelegate */
+Beyond_NET_Sample_AnimalCreatorDelegate_t _Nonnull /* Beyond.NET.Sample.AnimalCreatorDelegate */
 Beyond_NET_Sample_AnimalCreatorDelegate_Create(
 	const void* context,
 	Beyond_NET_Sample_AnimalCreatorDelegate_CFunction_t function,
@@ -47462,7 +47490,7 @@ Beyond_NET_Sample_AnimalCreatorDelegate_Create(
 
 Beyond_NET_Sample_IAnimal_t _Nullable
 Beyond_NET_Sample_AnimalCreatorDelegate_Invoke(
-	Beyond_NET_Sample_AnimalCreatorDelegate_t /* Beyond.NET.Sample.AnimalCreatorDelegate */ self, System_String_t _Nullable /* System.String */ animalName, System_Exception_t* /* System.Exception */ outException
+	Beyond_NET_Sample_AnimalCreatorDelegate_t /* Beyond.NET.Sample.AnimalCreatorDelegate */ self, System_String_t _Nonnull /* System.String */ animalName, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -47493,7 +47521,7 @@ Beyond_NET_Sample_AnimalCreatorDelegate_Destroy(
 #pragma mark - END APIs of Beyond.NET.Sample.AnimalCreatorDelegate
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.AsyncTests.TransformerDelegate
-Beyond_NET_Sample_AsyncTests_TransformerDelegate_t /* Beyond.NET.Sample.AsyncTests.TransformerDelegate */
+Beyond_NET_Sample_AsyncTests_TransformerDelegate_t _Nonnull /* Beyond.NET.Sample.AsyncTests.TransformerDelegate */
 Beyond_NET_Sample_AsyncTests_TransformerDelegate_Create(
 	const void* context,
 	Beyond_NET_Sample_AsyncTests_TransformerDelegate_CFunction_t function,
@@ -47534,7 +47562,7 @@ Beyond_NET_Sample_AsyncTests_TransformerDelegate_Destroy(
 #pragma mark - END APIs of Beyond.NET.Sample.AsyncTests.TransformerDelegate
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.DelegatesTest.TransformIntDelegate
-Beyond_NET_Sample_DelegatesTest_TransformIntDelegate_t /* Beyond.NET.Sample.DelegatesTest.TransformIntDelegate */
+Beyond_NET_Sample_DelegatesTest_TransformIntDelegate_t _Nonnull /* Beyond.NET.Sample.DelegatesTest.TransformIntDelegate */
 Beyond_NET_Sample_DelegatesTest_TransformIntDelegate_Create(
 	const void* context,
 	Beyond_NET_Sample_DelegatesTest_TransformIntDelegate_CFunction_t function,
@@ -47574,7 +47602,7 @@ Beyond_NET_Sample_DelegatesTest_TransformIntDelegate_Destroy(
 #pragma mark - END APIs of Beyond.NET.Sample.DelegatesTest.TransformIntDelegate
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.DelegatesTest.PointTransformDelegate
-Beyond_NET_Sample_DelegatesTest_PointTransformDelegate_t /* Beyond.NET.Sample.DelegatesTest.PointTransformDelegate */
+Beyond_NET_Sample_DelegatesTest_PointTransformDelegate_t _Nonnull /* Beyond.NET.Sample.DelegatesTest.PointTransformDelegate */
 Beyond_NET_Sample_DelegatesTest_PointTransformDelegate_Create(
 	const void* context,
 	Beyond_NET_Sample_DelegatesTest_PointTransformDelegate_CFunction_t function,
@@ -47614,7 +47642,7 @@ Beyond_NET_Sample_DelegatesTest_PointTransformDelegate_Destroy(
 #pragma mark - END APIs of Beyond.NET.Sample.DelegatesTest.PointTransformDelegate
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.EventTests.ValueChangedDelegate
-Beyond_NET_Sample_EventTests_ValueChangedDelegate_t /* Beyond.NET.Sample.EventTests.ValueChangedDelegate */
+Beyond_NET_Sample_EventTests_ValueChangedDelegate_t _Nonnull /* Beyond.NET.Sample.EventTests.ValueChangedDelegate */
 Beyond_NET_Sample_EventTests_ValueChangedDelegate_Create(
 	const void* context,
 	Beyond_NET_Sample_EventTests_ValueChangedDelegate_CFunction_t function,
@@ -47623,7 +47651,7 @@ Beyond_NET_Sample_EventTests_ValueChangedDelegate_Create(
 
 void
 Beyond_NET_Sample_EventTests_ValueChangedDelegate_Invoke(
-	Beyond_NET_Sample_EventTests_ValueChangedDelegate_t /* Beyond.NET.Sample.EventTests.ValueChangedDelegate */ self, System_Object_t _Nullable /* System.Object */ sender,
+	Beyond_NET_Sample_EventTests_ValueChangedDelegate_t /* Beyond.NET.Sample.EventTests.ValueChangedDelegate */ self, System_Object_t _Nonnull /* System.Object */ sender,
 	int32_t /* System.Int32 */ newValue, System_Exception_t* /* System.Exception */ outException
 );
 
@@ -47655,7 +47683,7 @@ Beyond_NET_Sample_EventTests_ValueChangedDelegate_Destroy(
 #pragma mark - END APIs of Beyond.NET.Sample.EventTests.ValueChangedDelegate
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Person.NumberOfChildrenChangedDelegate
-Beyond_NET_Sample_Person_NumberOfChildrenChangedDelegate_t /* Beyond.NET.Sample.Person.NumberOfChildrenChangedDelegate */
+Beyond_NET_Sample_Person_NumberOfChildrenChangedDelegate_t _Nonnull /* Beyond.NET.Sample.Person.NumberOfChildrenChangedDelegate */
 Beyond_NET_Sample_Person_NumberOfChildrenChangedDelegate_Create(
 	const void* context,
 	Beyond_NET_Sample_Person_NumberOfChildrenChangedDelegate_CFunction_t function,
@@ -47695,7 +47723,7 @@ Beyond_NET_Sample_Person_NumberOfChildrenChangedDelegate_Destroy(
 #pragma mark - END APIs of Beyond.NET.Sample.Person.NumberOfChildrenChangedDelegate
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Person.NewAgeProviderDelegate
-Beyond_NET_Sample_Person_NewAgeProviderDelegate_t /* Beyond.NET.Sample.Person.NewAgeProviderDelegate */
+Beyond_NET_Sample_Person_NewAgeProviderDelegate_t _Nonnull /* Beyond.NET.Sample.Person.NewAgeProviderDelegate */
 Beyond_NET_Sample_Person_NewAgeProviderDelegate_Create(
 	const void* context,
 	Beyond_NET_Sample_Person_NewAgeProviderDelegate_CFunction_t function,
@@ -47735,7 +47763,7 @@ Beyond_NET_Sample_Person_NewAgeProviderDelegate_Destroy(
 #pragma mark - END APIs of Beyond.NET.Sample.Person.NewAgeProviderDelegate
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.SpanTest.ByteArrayToSpanDelegate
-Beyond_NET_Sample_SpanTest_ByteArrayToSpanDelegate_t /* Beyond.NET.Sample.SpanTest.ByteArrayToSpanDelegate */
+Beyond_NET_Sample_SpanTest_ByteArrayToSpanDelegate_t _Nonnull /* Beyond.NET.Sample.SpanTest.ByteArrayToSpanDelegate */
 Beyond_NET_Sample_SpanTest_ByteArrayToSpanDelegate_Create(
 	const void* context,
 	Beyond_NET_Sample_SpanTest_ByteArrayToSpanDelegate_CFunction_t function,
@@ -47744,7 +47772,7 @@ Beyond_NET_Sample_SpanTest_ByteArrayToSpanDelegate_Create(
 
 DNReadOnlySpanOfByte
 Beyond_NET_Sample_SpanTest_ByteArrayToSpanDelegate_Invoke(
-	Beyond_NET_Sample_SpanTest_ByteArrayToSpanDelegate_t /* Beyond.NET.Sample.SpanTest.ByteArrayToSpanDelegate */ self, System_Byte_Array_t _Nullable /* System.Byte[] */ bytes, System_Exception_t* /* System.Exception */ outException
+	Beyond_NET_Sample_SpanTest_ByteArrayToSpanDelegate_t /* Beyond.NET.Sample.SpanTest.ByteArrayToSpanDelegate */ self, System_Byte_Array_t _Nonnull /* System.Byte[] */ bytes, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -47775,7 +47803,7 @@ Beyond_NET_Sample_SpanTest_ByteArrayToSpanDelegate_Destroy(
 #pragma mark - END APIs of Beyond.NET.Sample.SpanTest.ByteArrayToSpanDelegate
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.SpanTest.SpanToByteArrayDelegate
-Beyond_NET_Sample_SpanTest_SpanToByteArrayDelegate_t /* Beyond.NET.Sample.SpanTest.SpanToByteArrayDelegate */
+Beyond_NET_Sample_SpanTest_SpanToByteArrayDelegate_t _Nonnull /* Beyond.NET.Sample.SpanTest.SpanToByteArrayDelegate */
 Beyond_NET_Sample_SpanTest_SpanToByteArrayDelegate_Create(
 	const void* context,
 	Beyond_NET_Sample_SpanTest_SpanToByteArrayDelegate_CFunction_t function,
@@ -47827,7 +47855,7 @@ Beyond_NET_Sample_SpanTest_SpanToByteArrayDelegate_Destroy(
 #pragma mark - END APIs of Beyond.NET.Sample.OutParametersDelegate
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.CharReturnerDelegate
-Beyond_NET_Sample_CharReturnerDelegate_t /* Beyond.NET.Sample.CharReturnerDelegate */
+Beyond_NET_Sample_CharReturnerDelegate_t _Nonnull /* Beyond.NET.Sample.CharReturnerDelegate */
 Beyond_NET_Sample_CharReturnerDelegate_Create(
 	const void* context,
 	Beyond_NET_Sample_CharReturnerDelegate_CFunction_t function,
@@ -47867,7 +47895,7 @@ Beyond_NET_Sample_CharReturnerDelegate_Destroy(
 #pragma mark - END APIs of Beyond.NET.Sample.CharReturnerDelegate
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Transformer.StringTransformerDelegate
-Beyond_NET_Sample_Transformer_StringTransformerDelegate_t /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */
+Beyond_NET_Sample_Transformer_StringTransformerDelegate_t _Nonnull /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */
 Beyond_NET_Sample_Transformer_StringTransformerDelegate_Create(
 	const void* context,
 	Beyond_NET_Sample_Transformer_StringTransformerDelegate_CFunction_t function,
@@ -47876,7 +47904,7 @@ Beyond_NET_Sample_Transformer_StringTransformerDelegate_Create(
 
 System_String_t _Nullable
 Beyond_NET_Sample_Transformer_StringTransformerDelegate_Invoke(
-	Beyond_NET_Sample_Transformer_StringTransformerDelegate_t /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */ self, System_String_t _Nullable /* System.String */ inputString, System_Exception_t* /* System.Exception */ outException
+	Beyond_NET_Sample_Transformer_StringTransformerDelegate_t /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */ self, System_String_t _Nonnull /* System.String */ inputString, System_Exception_t* /* System.Exception */ outException
 );
 
 const void*
@@ -47907,7 +47935,7 @@ Beyond_NET_Sample_Transformer_StringTransformerDelegate_Destroy(
 #pragma mark - END APIs of Beyond.NET.Sample.Transformer.StringTransformerDelegate
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Transformer.DoublesTransformerDelegate
-Beyond_NET_Sample_Transformer_DoublesTransformerDelegate_t /* Beyond.NET.Sample.Transformer.DoublesTransformerDelegate */
+Beyond_NET_Sample_Transformer_DoublesTransformerDelegate_t _Nonnull /* Beyond.NET.Sample.Transformer.DoublesTransformerDelegate */
 Beyond_NET_Sample_Transformer_DoublesTransformerDelegate_Create(
 	const void* context,
 	Beyond_NET_Sample_Transformer_DoublesTransformerDelegate_CFunction_t function,
@@ -47948,7 +47976,7 @@ Beyond_NET_Sample_Transformer_DoublesTransformerDelegate_Destroy(
 #pragma mark - END APIs of Beyond.NET.Sample.Transformer.DoublesTransformerDelegate
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Transformer.StringGetterDelegate
-Beyond_NET_Sample_Transformer_StringGetterDelegate_t /* Beyond.NET.Sample.Transformer.StringGetterDelegate */
+Beyond_NET_Sample_Transformer_StringGetterDelegate_t _Nonnull /* Beyond.NET.Sample.Transformer.StringGetterDelegate */
 Beyond_NET_Sample_Transformer_StringGetterDelegate_Create(
 	const void* context,
 	Beyond_NET_Sample_Transformer_StringGetterDelegate_CFunction_t function,

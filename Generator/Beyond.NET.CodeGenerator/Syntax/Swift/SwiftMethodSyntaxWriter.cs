@@ -625,6 +625,7 @@ if let __exceptionC {
 
     internal static string WriteExtensionMethod(
         GeneratedMember swiftGeneratedMember,
+        bool isExtendedTypeOptional,
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
@@ -656,6 +657,24 @@ if let __exceptionC {
         IEnumerable<Type> genericParameters = Array.Empty<Type>();
         
         List<ParameterInfo> parameters = methodBase.GetParameters().ToList();
+        var extendedTypeParameter = parameters[0];
+        
+        if (isExtendedTypeOptional) {
+            if (!isGeneric &&
+                extendedTypeParameter.ParameterType.IsReferenceType()) {
+                var nullabilityContext = new NullabilityInfoContext();
+                var parameterNullability = nullabilityContext.Create(extendedTypeParameter);
+
+                if (parameterNullability.ReadState == parameterNullability.WriteState) {
+                    bool isNotNull = parameterNullability.ReadState == NullabilityState.NotNull;
+
+                    if (isNotNull) {
+                        return string.Empty;
+                    }
+                }
+            }
+        }
+        
         parameters.RemoveAt(0);
 
         string parametersString = WriteParameters(
@@ -768,6 +787,8 @@ if let __exceptionC {
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
+        var nullabilityContext = new NullabilityInfoContext();
+        
         List<string> parameterList = new();
 
         if (isGeneric) {
@@ -786,7 +807,7 @@ if let __exceptionC {
 
                 string parameterString = onlyWriteParameterNames 
                     ? parameterName 
-                    : $"_ {parameterName}: {nativeSystemTypeTypeName} /* {systemTypeTypeName} */";
+                    : $"{parameterName}: {nativeSystemTypeTypeName} /* {systemTypeTypeName} */";
             
                 parameterList.Add(parameterString);
             }
@@ -823,12 +844,25 @@ if let __exceptionC {
                 parameterType = typeof(Array);
             }
             
+            bool isNotNull = false;
+
+            if (!isGeneric &&
+                !isGenericParameterType &&
+                !isGenericArrayParameterType &&
+                parameterType.IsReferenceType()) {
+                var parameterNullability = nullabilityContext.Create(parameter);
+
+                if (parameterNullability.ReadState == parameterNullability.WriteState) {
+                    isNotNull = parameterNullability.ReadState == NullabilityState.NotNull;
+                }
+            }
+            
             TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
 
             string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
                 CodeLanguage.Swift,
                 true,
-                Nullability.NotSpecified,
+                isNotNull ? Nullability.NonNullable : Nullability.NotSpecified,
                 isOutParameter,
                 isByRefParameter,
                 isInParameter
@@ -978,6 +1012,7 @@ if let __exceptionC {
             WriteParameterConversion(
                 sourceLanguage,
                 targetLanguage,
+                parameter,
                 parameterName,
                 parameterType,
                 isOutParameter,
@@ -1012,6 +1047,7 @@ if let __exceptionC {
             WriteParameterConversion(
                 sourceLanguage,
                 targetLanguage,
+                null, // TODO
                 parameterName,
                 parameterType,
                 isOutParameter,
@@ -1040,6 +1076,7 @@ if let __exceptionC {
     private static void WriteParameterConversion(
         CodeLanguage sourceLanguage,
         CodeLanguage targetLanguage,
+        ParameterInfo? parameterInfo,
         string parameterName,
         Type parameterType,
         bool isOutParameter,
@@ -1054,6 +1091,8 @@ if let __exceptionC {
         if (string.IsNullOrEmpty(parameterName)) {
             throw new Exception("Parameter has no name");   
         }
+        
+        var nullabilityContext = new NullabilityInfoContext();
         
         string convertedParameterNameSuffix;
 
@@ -1114,7 +1153,24 @@ if let __exceptionC {
             
             if (sourceLanguage == CodeLanguage.Swift &&
                 targetLanguage == CodeLanguage.C) {
-                optionalString = parameterTypeDescriptor.Nullability.GetSwiftOptionalitySpecifier();
+                bool isNotNull = false;
+
+                if (parameterInfo is not null &&
+                    !isGeneric &&
+                    !isGenericParameterType &&
+                    parameterType.IsReferenceType()) {
+                    var parameterNullabilityInfo = nullabilityContext.Create(parameterInfo);
+
+                    if (parameterNullabilityInfo.ReadState == parameterNullabilityInfo.WriteState) {
+                        isNotNull = parameterNullabilityInfo.ReadState == NullabilityState.NotNull;
+                    }
+                }
+
+                Nullability parameterNullability = isNotNull
+                    ? Nullability.NonNullable
+                    : parameterTypeDescriptor.Nullability;
+                
+                optionalString = parameterNullability.GetSwiftOptionalitySpecifier();
             } else {
                 optionalString = string.Empty;
             }

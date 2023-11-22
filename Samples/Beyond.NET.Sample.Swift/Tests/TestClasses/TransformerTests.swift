@@ -80,11 +80,7 @@ final class TransformerTests: XCTestCase {
             return result
         }
         
-        guard let doublesTransformerDelegate = Beyond_NET_Sample_Transformer_DoublesTransformerDelegate(multiplier) else {
-            XCTFail("DoublesTransformerDelegate ctor should return an instance")
-            
-            return
-        }
+        let doublesTransformerDelegate = Beyond_NET_Sample_Transformer_DoublesTransformerDelegate(multiplier)
         
         let inputNumber1: Double = 2.5
         let inputNumber2: Double = 3.5
@@ -137,19 +133,13 @@ private extension TransformerTests {
             return outputStringDN
         }
         
-        guard let stringGetterDelegate = Beyond_NET_Sample_Transformer_StringGetterDelegate(fixedStringProvider) else {
-            XCTFail("StringGetterDelegate ctor should return an instance")
-            
-            return nil
-        }
+        let stringGetterDelegate = Beyond_NET_Sample_Transformer_StringGetterDelegate(fixedStringProvider)
         
         return stringGetterDelegate
     }
     
     func createUppercaser() -> Beyond_NET_Sample_Transformer_StringTransformerDelegate? {
         let caser: Beyond_NET_Sample_Transformer_StringTransformerDelegate.ClosureType = { inputStringDN in
-            guard let inputStringDN else { return nil }
-            
             let inputString = inputStringDN.string()
             
             let outputString = inputString.uppercased()
@@ -158,19 +148,13 @@ private extension TransformerTests {
             return outputStringDN
         }
         
-        guard let stringTransformerDelegate = Beyond_NET_Sample_Transformer_StringTransformerDelegate(caser) else {
-            XCTFail("StringTransformerDelegate ctor should return an instance")
-            
-            return nil
-        }
+        let stringTransformerDelegate = Beyond_NET_Sample_Transformer_StringTransformerDelegate(caser)
         
         return stringTransformerDelegate
     }
     
     func createLowercaser() -> Beyond_NET_Sample_Transformer_StringTransformerDelegate? {
         let caser: Beyond_NET_Sample_Transformer_StringTransformerDelegate.ClosureType = { inputStringDN in
-            guard let inputStringDN else { return nil }
-            
             let inputString = inputStringDN.string()
             
             let outputString = inputString.lowercased()
@@ -179,11 +163,7 @@ private extension TransformerTests {
             return outputStringDN
         }
         
-        guard let stringTransformerDelegate = Beyond_NET_Sample_Transformer_StringTransformerDelegate(caser) else {
-            XCTFail("StringTransformerDelegate ctor should return an instance")
-            
-            return nil
-        }
+        let stringTransformerDelegate = Beyond_NET_Sample_Transformer_StringTransformerDelegate(caser)
         
         return stringTransformerDelegate
     }

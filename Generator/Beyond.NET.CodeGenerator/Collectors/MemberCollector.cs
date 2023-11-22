@@ -9,6 +9,7 @@ public class MemberCollector
 {
     private readonly Type m_type;
     private readonly TypeCollector m_typeCollector;
+    private readonly bool m_enableGenericsSupport;
 
     private static readonly Dictionary<Type, string[]> TYPES_TO_UNSUPPORTED_MEMBER_NAMES_MAPPING = new() {
         { typeof(System.Runtime.InteropServices.Marshal), new [] {
@@ -25,8 +26,12 @@ public class MemberCollector
     {
         m_type = type ?? throw new ArgumentNullException(nameof(type));
         m_typeCollector = typeCollector ?? throw new ArgumentNullException(nameof(typeCollector));
+        m_enableGenericsSupport = m_typeCollector.EnableGenericsSupport;
 
-        TYPES_TO_UNSUPPORTED_MEMBER_NAMES_MAPPING.TryGetValue(type, out string[]? unsupportedMemberNames);
+        TYPES_TO_UNSUPPORTED_MEMBER_NAMES_MAPPING.TryGetValue(
+            type,
+            out string[]? unsupportedMemberNames
+        );
         
         m_excludedMemberNames = unsupportedMemberNames;
     }
@@ -197,6 +202,13 @@ public class MemberCollector
         Dictionary<MemberInfo, string> unsupportedMembers
     )
     {
+        if (!m_enableGenericsSupport &&
+            methodInfo.IsGenericMethod) {
+            unsupportedMembers[methodInfo] = "Is Generic Method";
+            
+            return;
+        }
+        
         // This filters out getters/setters and operator overloading methods
         bool isSpecialName = methodInfo.IsSpecialName;
 

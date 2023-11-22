@@ -82,13 +82,7 @@ final class AddressTests: XCTestCase {
 			return newAddress
 		}
 
-		guard let moverDelegate = Beyond_NET_Sample_MoveDelegate(moverFunc) else {
-			XCTFail("Delegate should not be nil")
-
-			return
-		}
-
-		guard let newAddress = try? originalAddress.move(moverDelegate,
+        guard let newAddress = try? originalAddress.move(.init(moverFunc),
 														 newStreetDN,
 														 newCityDN) else {
 			XCTFail("Address.Move should not throw and return an instance")

@@ -21,7 +21,7 @@ final class SystemThreadingThreadTests: XCTestCase {
 			numberOfTimesCalled += 1
 		}
 		
-		let threadStart = System_Threading_ThreadStart(closure)
+        let threadStart = System_Threading_ThreadStart(closure)
 		
 		guard let thread = try? System_Threading_Thread(threadStart) else {
 			XCTFail("System.Threading.Thread ctor should not throw and return an instance")

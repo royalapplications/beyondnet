@@ -16,7 +16,7 @@ final class GenericTestClassTests: XCTestCase {
 	func testWith1GenericArgument() {
 		let systemStringType = System_String.typeOf
 		
-		guard let genericTestClass = try? Beyond_NET_Sample_GenericTestClass_A1(systemStringType) else {
+        guard let genericTestClass = try? Beyond_NET_Sample_GenericTestClass_A1(T: systemStringType) else {
 			XCTFail("GenericTestClass<System.String>.GenericTestClass ctor should not throw and return an instance")
 			
 			return
@@ -36,7 +36,7 @@ final class GenericTestClassTests: XCTestCase {
 		
 		XCTAssertTrue(genericTestClassTypeName.contains("GenericTestClass`1[[System.String"))
 		
-		guard let genericArgumentType = try? genericTestClass.returnGenericClassType(systemStringType) else {
+        guard let genericArgumentType = try? genericTestClass.returnGenericClassType(T: systemStringType) else {
 			XCTFail("GenericTestClass<System.String>.ReturnGenericClassType should not throw and return an instance")
 			
 			return
@@ -47,9 +47,9 @@ final class GenericTestClassTests: XCTestCase {
 		
 		let value: Int32 = 5
 		
-		XCTAssertNoThrow(try genericTestClass.aProperty_set(systemStringType, value))
+        XCTAssertNoThrow(try genericTestClass.aProperty_set(T: systemStringType, value))
 		
-		guard let propValueRet = try? genericTestClass.aProperty(systemStringType) else {
+        guard let propValueRet = try? genericTestClass.aProperty(T: systemStringType) else {
 			XCTFail("Should not throw and return an instance")
 			
 			return
@@ -57,17 +57,17 @@ final class GenericTestClassTests: XCTestCase {
 		
 		XCTAssertEqual(value, propValueRet)
 		
-		genericTestClass.aField_set(systemStringType, value)
+        genericTestClass.aField_set(T: systemStringType, value)
 		
-		let fieldValueRet = genericTestClass.aField(systemStringType)
+        let fieldValueRet = genericTestClass.aField(T: systemStringType)
 		XCTAssertEqual(value, fieldValueRet)
 		
 		let systemArrayType = System_Array.typeOf
-		
-		guard let genericArgumentAndMethodType = try? Beyond_NET_Sample_GenericTestClass_A1.returnGenericClassTypeAndGenericMethodType(systemStringType,
-																																						systemArrayType) else {
-			XCTFail("GenericTestClass<System.String>.ReturnGenericClassTypeAndGenericMethodType<System.Array> should not throw and return an instance")
-			
+        
+        guard let genericArgumentAndMethodType = try? Beyond_NET_Sample_GenericTestClass_A1.returnGenericClassTypeAndGenericMethodType(T: systemStringType,
+                                                                                                                                       TM: systemArrayType) else {
+            XCTFail("GenericTestClass<System.String>.ReturnGenericClassTypeAndGenericMethodType<System.Array> should not throw and return an instance")
+            
 			return
 		}
 		
@@ -95,7 +95,7 @@ final class GenericTestClassTests: XCTestCase {
 		let systemStringType = System_String.typeOf
 		let systemExceptionType = System_Exception.typeOf
 		
-		guard let genericTestClass = try? Beyond_NET_Sample_GenericTestClass_A1(systemStringType) else {
+        guard let genericTestClass = try? Beyond_NET_Sample_GenericTestClass_A1(T: systemStringType) else {
 			XCTFail("GenericTestClass<System.String>.GenericTestClass ctor should not throw and return an instance")
 			
 			return
@@ -117,8 +117,8 @@ final class GenericTestClassTests: XCTestCase {
 		
 		var output: System_Object?
 		
-		guard let returnValue = try? genericTestClass.extreme(systemStringType,
-															  systemExceptionType,
+        guard let returnValue = try? genericTestClass.extreme(T: systemStringType,
+                                                              TM: systemExceptionType,
 															  countIn,
 															  &countOut,
 															  stringDN,
@@ -144,8 +144,8 @@ final class GenericTestClassTests: XCTestCase {
 		let systemStringType = System_String.typeOf
 		let systemExceptionType = System_Exception.typeOf
 		
-		guard let genericTestClass = try? Beyond_NET_Sample_GenericTestClass_A2(systemStringType,
-																								 systemExceptionType) else {
+        guard let genericTestClass = try? Beyond_NET_Sample_GenericTestClass_A2(T1: systemStringType,
+                                                                                T2: systemExceptionType) else {
 			XCTFail("GenericTestClass<System.String, System.Exception> ctor should not throw and return an instance")
 			
 			return
@@ -166,8 +166,8 @@ final class GenericTestClassTests: XCTestCase {
 		XCTAssertTrue(genericTestClassTypeName.contains("GenericTestClass`2[[System.String"))
 		XCTAssertTrue(genericTestClassTypeName.contains(",[System.Exception"))
 		
-		guard let genericArgumentTypes = try? genericTestClass.returnGenericClassTypes(systemStringType,
-																					   systemExceptionType) else {
+        guard let genericArgumentTypes = try? genericTestClass.returnGenericClassTypes(T1: systemStringType,
+                                                                                       T2: systemExceptionType) else {
 			XCTFail("GenericTestClass<System.String, System.Exception>.ReturnGenericClassTypes should not throw and return an instance")
 			
 			return
@@ -196,13 +196,13 @@ final class GenericTestClassTests: XCTestCase {
 		
 		let value: Int32 = 5
 		
-		XCTAssertNoThrow(try genericTestClass.aProperty_set(systemStringType,
-															systemExceptionType,
+        XCTAssertNoThrow(try genericTestClass.aProperty_set(T1: systemStringType,
+                                                            T2: systemExceptionType,
 															value))
 		
 		do {
-			let propValueRet = try genericTestClass.aProperty(systemStringType,
-                                                              systemExceptionType)
+            let propValueRet = try genericTestClass.aProperty(T1: systemStringType,
+                                                              T2: systemExceptionType)
 			
 			XCTAssertEqual(value, propValueRet)
 		} catch {
@@ -211,20 +211,20 @@ final class GenericTestClassTests: XCTestCase {
 			return
 		}
 		
-		genericTestClass.aField_set(systemStringType,
-									systemExceptionType,
+        genericTestClass.aField_set(T1: systemStringType,
+                                    T2: systemExceptionType,
 									value)
 		
-        let fieldValueRet = genericTestClass.aField(systemStringType,
-                                                    systemExceptionType)
+        let fieldValueRet = genericTestClass.aField(T1: systemStringType,
+                                                    T2: systemExceptionType)
 		
 		XCTAssertEqual(value, fieldValueRet)
 		
 		let systemArrayType = System_Array.typeOf
 		
-		guard let genericArgumentsAndMethodType = try? Beyond_NET_Sample_GenericTestClass_A2.returnGenericClassTypeAndGenericMethodType(systemStringType,
-																																						 systemExceptionType,
-																																						 systemArrayType) else {
+        guard let genericArgumentsAndMethodType = try? Beyond_NET_Sample_GenericTestClass_A2.returnGenericClassTypeAndGenericMethodType(T1: systemStringType,
+                                                                                                                                        T2: systemExceptionType,
+                                                                                                                                        TM: systemArrayType) else {
 			XCTFail("GenericTestClass<System.String, System.Exception>.ReturnGenericClassTypeAndGenericMethodType<System.Array> should not throw and return an instance")
 			
 			return

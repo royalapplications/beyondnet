@@ -7,7 +7,7 @@ namespace Beyond.NET.CodeGenerator.Collectors;
 public class TypeCollector
 {
     private readonly Assembly? m_assembly;
-    private readonly bool m_enableGenericsSupport;
+    internal bool EnableGenericsSupport { get; }
 
     private static readonly Type[] INCLUDED_TYPES = new [] {
         typeof(System.Object),
@@ -91,7 +91,7 @@ public class TypeCollector
         m_excludedTypes = blacklist.ToArray();
         
         m_assembly = assembly;
-        m_enableGenericsSupport = settings.EnableGenericsSupport;
+        EnableGenericsSupport = settings.EnableGenericsSupport;
     }
 
     public HashSet<Type> Collect(out Dictionary<Type, string> unsupportedTypes)
@@ -392,7 +392,7 @@ public class TypeCollector
 
         if (!isNullableStruct &&
             !isReadOnlySpanOfByte &&
-            !m_enableGenericsSupport &&
+            !EnableGenericsSupport &&
             type.IsGenericInAnyWay(true)) {
             unsupportedReason = "Is Generic (disabled by configuration)";
             return false;

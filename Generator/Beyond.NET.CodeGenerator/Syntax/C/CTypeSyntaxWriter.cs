@@ -97,6 +97,8 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         MethodInfo? delegateInvokeMethod
     )
     {
+        var nullabilityContext = new NullabilityInfoContext();
+        
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         string? fullTypeName = delegateType.FullName;
@@ -171,11 +173,25 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
             }
             
             TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
+            
+            bool isNotNull = false;
+
+            if (parameterType.IsReferenceType()) {
+                var parameterNullabilityInfo = nullabilityContext.Create(parameter);
+
+                if (parameterNullabilityInfo.ReadState == parameterNullabilityInfo.WriteState) {
+                    isNotNull = parameterNullabilityInfo.ReadState == NullabilityState.NotNull;
+                }
+            }
+
+            Nullability parameterNullability = isNotNull
+                ? Nullability.NonNullable
+                : Nullability.NotSpecified;
 
             string parameterTypeName = parameterTypeDescriptor.GetTypeName(
                 CodeLanguage.C,
                 true,
-                Nullability.NotSpecified,
+                parameterNullability,
                 isOutParameter,
                 isByRefParameter,
                 isInParameter
@@ -420,7 +436,9 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         string destrutorFunctionType = $"{cMemberNamePrefix}_CDestructorFunction_t";
 
         #region Create
-        sb.AppendLine($"{cTypeName} /* {fullTypeName} */");
+        var nonNullAttr = Nullability.NonNullable.GetClangAttribute();
+        
+        sb.AppendLine($"{cTypeName} {nonNullAttr} /* {fullTypeName} */");
         sb.AppendLine($"{cMemberNamePrefix}_Create(");
         sb.AppendLine($"\t{contextType} context,");
         sb.AppendLine($"\t{functionType} function,");

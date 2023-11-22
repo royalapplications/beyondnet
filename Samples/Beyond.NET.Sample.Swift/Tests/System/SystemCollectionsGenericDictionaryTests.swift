@@ -16,8 +16,8 @@ final class SystemCollectionsGenericDictionaryTests: XCTestCase {
         let systemStringType = System_String.typeOf
         let systemExceptionType = System_Exception.typeOf
         
-        guard let dictionary = try? System_Collections_Generic_Dictionary_A2(systemStringType,
-                                                                             systemExceptionType) else {
+        guard let dictionary = try? System_Collections_Generic_Dictionary_A2(TKey: systemStringType,
+                                                                             TValue: systemExceptionType) else {
             XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception> ctor should not throw and return an instance")
             
             return
@@ -43,8 +43,8 @@ final class SystemCollectionsGenericDictionaryTests: XCTestCase {
         let systemStringType = System_String.typeOf
         let systemExceptionType = System_Exception.typeOf
         
-        guard let dictionary = try? System_Collections_Generic_Dictionary_A2(systemStringType,
-                                                                             systemExceptionType) else {
+        guard let dictionary = try? System_Collections_Generic_Dictionary_A2(TKey: systemStringType,
+                                                                             TValue: systemExceptionType) else {
             XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception> ctor should not throw and return an instance")
 
             return
@@ -59,8 +59,8 @@ final class SystemCollectionsGenericDictionaryTests: XCTestCase {
             return
         }
         
-        guard (try? dictionary.tryAdd(systemStringType,
-                                      systemExceptionType,
+        guard (try? dictionary.tryAdd(TKey: systemStringType,
+                                      TValue: systemExceptionType,
                                       exceptionMessageDN,
                                       exceptionValue)) ?? false else {
             XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception>.TryAdd should not throw and return true")
@@ -76,8 +76,8 @@ final class SystemCollectionsGenericDictionaryTests: XCTestCase {
         
         var valueForEmptyString: System_Object?
 
-        guard !((try? dictionary.tryGetValue(systemStringType,
-                                             systemExceptionType,
+        guard !((try? dictionary.tryGetValue(TKey: systemStringType,
+                                             TValue: systemExceptionType,
                                              emptyString,
                                              &valueForEmptyString)) ?? true),
               valueForEmptyString == nil else {
@@ -86,8 +86,8 @@ final class SystemCollectionsGenericDictionaryTests: XCTestCase {
             return
         }
 		
-        guard let valueRet = try? dictionary.item(systemStringType,
-                                                  systemExceptionType,
+        guard let valueRet = try? dictionary.item(TKey: systemStringType,
+                                                  TValue: systemExceptionType,
                                                   exceptionMessageDN) else {
 			XCTFail("System.Collections.Generic.Dictionary<System.String, System.Exception>[] should not throw and return an instance")
 

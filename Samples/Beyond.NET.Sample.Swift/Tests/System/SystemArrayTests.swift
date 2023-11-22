@@ -95,7 +95,7 @@ final class SystemArrayTests: XCTestCase {
     func testEmptyArrayWithGenerics() {
         let systemStringType = System_String.typeOf
 
-        guard let emptyArrayOfString = try? System_Array.empty(systemStringType) else {
+        guard let emptyArrayOfString = try? System_Array.empty(T: systemStringType) else {
             XCTFail("System.Array<System.String>.Empty should not throw and return an instance")
 
             return
@@ -138,7 +138,7 @@ final class SystemArrayTests: XCTestCase {
         let string = "Abc"
         let stringDN = string.dotNETString()
         
-        XCTAssertNoThrow(try System_Array.fill(systemStringType,
+        XCTAssertNoThrow(try System_Array.fill(T: systemStringType,
                                                arrayOfString,
                                                stringDN))
 
@@ -180,7 +180,7 @@ final class SystemArrayTests: XCTestCase {
                                                         Int32(idx)))
         }
         
-        XCTAssertNoThrow(try System_Array.reverse(systemStringType,
+        XCTAssertNoThrow(try System_Array.reverse(T: systemStringType,
                                                   arrayOfString))
 
         let reversedStrings = [String](strings.reversed())

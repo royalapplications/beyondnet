@@ -88,12 +88,6 @@ final class AnimalTests: XCTestCase {
 	
 	func testCustomAnimalCreator() {
 		let creatorFunc: Beyond_NET_Sample_AnimalCreatorDelegate.ClosureType = { innerAnimalName in
-			guard let innerAnimalName else {
-				// Can't create an animal without a name
-
-				return nil
-			}
-
 			guard let animal = try? Beyond_NET_Sample_GenericAnimal(innerAnimalName),
 				  let animalAsIAnimal = try? animal.castTo(Beyond_NET_Sample_IAnimal.self) else {
 				XCTFail("GenericAnimal ctor should not throw and return an instance")
@@ -104,24 +98,20 @@ final class AnimalTests: XCTestCase {
 			return animalAsIAnimal
 		}
 
-		guard let creatorDelegate = Beyond_NET_Sample_AnimalCreatorDelegate(creatorFunc) else {
-			XCTFail("AnimalCreatorDelegate ctor should return an instance")
-
-			return
-		}
+		let creatorDelegate = Beyond_NET_Sample_AnimalCreatorDelegate(creatorFunc)
 		
 		let animalName = "Horse"
-		let animalNameDN = animalName.dotNETString()
-
-		guard let horse = try? Beyond_NET_Sample_AnimalFactory.createAnimal(animalNameDN,
-																							 creatorDelegate) else {
-			XCTFail("AnimalFactory.CreateAnimal should not throw and return an instance")
-
-			return
-		}
-
-		guard let retrievedAnimalName = try? horse.name?.string() else {
-			XCTFail()
+        let animalNameDN = animalName.dotNETString()
+        
+        guard let horse = try? Beyond_NET_Sample_AnimalFactory.createAnimal(animalNameDN,
+                                                                            creatorDelegate) else {
+            XCTFail("AnimalFactory.CreateAnimal should not throw and return an instance")
+            
+            return
+        }
+        
+        guard let retrievedAnimalName = try? horse.name?.string() else {
+            XCTFail()
 
 			return
 		}
@@ -176,7 +166,7 @@ final class AnimalTests: XCTestCase {
 		// MARK: Cat
 		let catType = Beyond_NET_Sample_Cat.typeOf
 		
-		guard let cat = try? Beyond_NET_Sample_AnimalFactory.createAnimal(catType) else {
+        guard let cat = try? Beyond_NET_Sample_AnimalFactory.createAnimal(T: catType) else {
 			XCTFail("CreateAnimal<Cat> should not throw and return an instance")
 			
 			return
@@ -194,7 +184,7 @@ final class AnimalTests: XCTestCase {
 		// MARK: Dog
 		let dogType = Beyond_NET_Sample_Dog.typeOf
 		
-		guard let dog = try? Beyond_NET_Sample_AnimalFactory.createAnimal(dogType) else {
+        guard let dog = try? Beyond_NET_Sample_AnimalFactory.createAnimal(T: dogType) else {
 			XCTFail("CreateAnimal<Dog> should not throw and return an instance")
 			
 			return
@@ -213,7 +203,7 @@ final class AnimalTests: XCTestCase {
 		let stringType = System_String.typeOf
 		
 		do {
-			_ = try Beyond_NET_Sample_AnimalFactory.createAnimal(stringType)
+            _ = try Beyond_NET_Sample_AnimalFactory.createAnimal(T: stringType)
 			
 			XCTFail("Should throw")
 		} catch {

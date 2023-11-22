@@ -39,17 +39,15 @@ final class SystemThreadingTimerTests: XCTestCase {
 				}
 			}
 		}
-		
-		let callback = System_Threading_TimerCallback(closure)
-		
-		guard let _timer = try? System_Threading_Timer(callback,
-													  nil,
-													  50 as Int32,
-													  10 as Int32) else {
-			XCTFail("System.Threading.Timer ctor should not throw and return an instance")
-			
-			return
-		}
+        
+        guard let _timer = try? System_Threading_Timer(.init(closure),
+                                                       nil,
+                                                       50 as Int32,
+                                                       10 as Int32) else {
+            XCTFail("System.Threading.Timer ctor should not throw and return an instance")
+            
+            return
+        }
 		
 		timer = _timer
 		

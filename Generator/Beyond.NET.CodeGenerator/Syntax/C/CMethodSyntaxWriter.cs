@@ -281,6 +281,8 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
+        var nullabilityContext = new NullabilityInfoContext();
+        
         List<string> parameterList = new();
 
         if (!isStatic) {
@@ -339,13 +341,30 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             if (isGenericArrayParameterType) {
                 parameterType = typeof(Array);
             }
-                
+
+            bool isNotNull = false;
+
+            if (!isGeneric &&
+                !isGenericParameterType &&
+                !isGenericArrayParameterType &&
+                parameterType.IsReferenceType()) {
+                var parameterNullabilityInfo = nullabilityContext.Create(parameter);
+
+                if (parameterNullabilityInfo.ReadState == parameterNullabilityInfo.WriteState) {
+                    isNotNull = parameterNullabilityInfo.ReadState == NullabilityState.NotNull;
+                }
+            }
+            
+            Nullability parameterNullability = isNotNull
+                ? Nullability.NonNullable
+                : Nullability.NotSpecified;
+            
             TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
                 
             string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
                 CodeLanguage.C,
                 true,
-                Nullability.NotSpecified,
+                parameterNullability,
                 isOutParameter,
                 isByRefParameter,
                 isInParameter

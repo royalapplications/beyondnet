@@ -314,13 +314,9 @@ final class PersonTests: XCTestCase {
 		let ageAfterCreation = (try? person.age) ?? -1
         XCTAssertEqual(initialAge, ageAfterCreation)
 
-		guard let newAgeProviderDelegate = Beyond_NET_Sample_Person_NewAgeProviderDelegate({
+		let newAgeProviderDelegate = Beyond_NET_Sample_Person_NewAgeProviderDelegate({
 			10
-		}) else {
-            XCTFail("Person.NewAgeProviderDelegate ctor should return an instance")
-
-            return
-        }
+		})
 
 		XCTAssertNoThrow(try person.changeAge(newAgeProviderDelegate))
 
@@ -394,13 +390,9 @@ final class PersonTests: XCTestCase {
             return
         }
 
-		guard let numberOfChildrenChangedDelegate = Beyond_NET_Sample_Person_NumberOfChildrenChangedDelegate({
+		let numberOfChildrenChangedDelegate = Beyond_NET_Sample_Person_NumberOfChildrenChangedDelegate({
 			numberOfTimesNumberOfChildrenChangedWasCalled += 1
-		}) else {
-			XCTFail("Number of children changed delegate ctor should return an instance")
-
-			return
-		}
+		})
 		
 		mother.numberOfChildrenChanged_add(numberOfChildrenChangedDelegate)
 

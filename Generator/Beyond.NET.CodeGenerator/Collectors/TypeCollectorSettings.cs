@@ -1,7 +1,7 @@
 namespace Beyond.NET.CodeGenerator.Collectors;
 
-public record class TypeCollectorSettings(
+public record TypeCollectorSettings(
     bool EnableGenericsSupport,
     Type[] IncludedTypes,
     Type[] ExcludedTypes
-) { }
+);

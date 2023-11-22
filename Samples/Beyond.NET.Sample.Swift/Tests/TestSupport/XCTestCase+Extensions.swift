@@ -38,7 +38,7 @@ private extension XCTestCase {
         let handler: System.UnhandledExceptionEventHandler? = .init { sender, e in
             let exceptionAsString: String?
             
-            if let exceptionObject = try? e?.exceptionObject {
+            if let exceptionObject = try? e.exceptionObject {
                 exceptionAsString = try? exceptionObject.toString()?.string()
             } else {
                 exceptionAsString = nil
