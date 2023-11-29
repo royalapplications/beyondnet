@@ -10,6 +10,7 @@ public class App
     public const string ARGUMENT_IMPORT_SEARCH_PATH = "-I";
     public const string ARGUMENT_FRAMEWORK_SEARCH_PATH = "-F";
     public const string FLAG_OPTIMIZATIONS = "-O";
+    public const string FLAG_WHOLE_MODULE_OPTIMIZATION = "-whole-module-optimization";
     public const string ARGUMENT_VFSOVERLAY = "-vfsoverlay";
     public const string FLAG_SAVE_TEMPS = "-save-temps";
     public const string FLAG_PARSE_AS_LIBRARY = "-parse-as-library";

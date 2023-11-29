@@ -498,6 +498,7 @@ public class SwiftBuilder
                 Apple.XCRun.SwiftC.App.ARGUMENT_IMPORT_SEARCH_PATH, ".",
                 Apple.XCRun.SwiftC.App.ARGUMENT_VFSOVERLAY, headerMapFileName,
                 Apple.XCRun.SwiftC.App.FLAG_OPTIMIZATIONS,
+                Apple.XCRun.SwiftC.App.FLAG_WHOLE_MODULE_OPTIMIZATION,
                 Apple.XCRun.SwiftC.App.ARGUMENT_SWIFT_VERSION, swiftVersion,
                 Apple.XCRun.SwiftC.App.FLAG_DISABLE_CROSS_MODULE_OPTIMIZATION,
                 Apple.XCRun.SwiftC.App.FLAG_ENABLE_TESTING,
