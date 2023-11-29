@@ -213,47 +213,6 @@ public class DotNETNativeBuilder
                 
                 macOSX64Func = () => DotNETPublish(macOSX64TempPath, RuntimeIdentifier.MacOS_X64);
             }
-
-            if (BuildInParallel) {
-                List<Task> tasks = new();
-
-                Task? macOSARM64Task = null;
-                if (macOSARM64Func is not null) {
-                    macOSARM64Task = Task.Run(macOSARM64Func);
-                    tasks.Add(macOSARM64Task);
-                }
-                
-                Task? macOSX64Task = null;
-                if (macOSX64Func is not null) {
-                    macOSX64Task = Task.Run(macOSX64Func);
-                    tasks.Add(macOSX64Task);
-                }
-                
-                Logger.LogDebug($"Waiting for {tasks.Count} .NET compilation tasks to complete in parallel");
-                
-                Task.WaitAll(tasks.ToArray());
-            } else {
-                macOSARM64Func?.Invoke();
-                macOSX64Func?.Invoke();
-            }
-
-            if (Targets.HasFlag(BuildTargets.MacOSUniversal)) {
-                Logger.LogDebug($"Creating directory for macOS Universal build at \"{macOSUniversalBuildPath}\"");
-                Directory.CreateDirectory(macOSUniversalBuildPath!);
-    
-                Logger.LogDebug($"Merging macOS ARM64 build at \"{macOSARM64FilePath}\" and macOS x64 build at \"{macOSX64FilePath}\" into macOS Universal build at \"{macOSUniversalFilePath}\"");
-                
-                Apple.Lipo.App.Create(
-                    new[] {
-                        macOSARM64FilePath!,
-                        macOSX64FilePath!
-                    },
-                    macOSUniversalFilePath!
-                );
-    
-                Logger.LogDebug($"Changing library ID of macOS Universal build at \"{macOSUniversalFilePath}\" to \"{newLibraryId}\"");
-                Apple.InstallNameTool.App.ChangeId(macOSUniversalFilePath!, newLibraryId);
-            }
             #endregion macOS
             
             #region iOS
@@ -301,37 +260,66 @@ public class DotNETNativeBuilder
                     Apple.InstallNameTool.App.ChangeId(iOSSimulatorX64FilePath!, newLibraryId);
                 };
             }
+            #endregion iOS
             
+            #region Invoke Builds
             if (BuildInParallel) {
                 List<Task> tasks = new();
 
-                Task? iOSARM64Task = null;
+                if (macOSARM64Func is not null) {
+                    tasks.Add(Task.Run(macOSARM64Func));
+                }
+
+                if (macOSX64Func is not null) {
+                    tasks.Add(Task.Run(macOSX64Func));
+                }
+
                 if (iOSARM64Func is not null) {
-                    iOSARM64Task = Task.Run(iOSARM64Func);
-                    tasks.Add(iOSARM64Task);
+                    tasks.Add(Task.Run(iOSARM64Func));
                 }
-                
-                Task? iOSSimulatorARM64Task = null;
+
                 if (iOSSimulatorARM64Func is not null) {
-                    iOSSimulatorARM64Task = Task.Run(iOSSimulatorARM64Func);
-                    tasks.Add(iOSSimulatorARM64Task);
+                    tasks.Add(Task.Run(iOSSimulatorARM64Func));
                 }
-                
-                Task? iOSSimulatorX64Task = null;
+
                 if (iOSSimulatorX64Func is not null) {
-                    iOSSimulatorX64Task = Task.Run(iOSSimulatorX64Func);
-                    tasks.Add(iOSSimulatorX64Task);
+                    tasks.Add(Task.Run(iOSSimulatorX64Func));
                 }
                 
                 Logger.LogDebug($"Waiting for {tasks.Count} .NET compilation tasks to complete in parallel");
                 
                 Task.WaitAll(tasks.ToArray());
             } else {
+                macOSARM64Func?.Invoke();
+                macOSX64Func?.Invoke();
+                
                 iOSARM64Func?.Invoke();
                 iOSSimulatorARM64Func?.Invoke();
                 iOSSimulatorX64Func?.Invoke();
             }
+            #endregion Invoke Builds
+            
+            #region Lipo macOS Builds
+            if (Targets.HasFlag(BuildTargets.MacOSUniversal)) {
+                Logger.LogDebug($"Creating directory for macOS Universal build at \"{macOSUniversalBuildPath}\"");
+                Directory.CreateDirectory(macOSUniversalBuildPath!);
+    
+                Logger.LogDebug($"Merging macOS ARM64 build at \"{macOSARM64FilePath}\" and macOS x64 build at \"{macOSX64FilePath}\" into macOS Universal build at \"{macOSUniversalFilePath}\"");
+                
+                Apple.Lipo.App.Create(
+                    new[] {
+                        macOSARM64FilePath!,
+                        macOSX64FilePath!
+                    },
+                    macOSUniversalFilePath!
+                );
+    
+                Logger.LogDebug($"Changing library ID of macOS Universal build at \"{macOSUniversalFilePath}\" to \"{newLibraryId}\"");
+                Apple.InstallNameTool.App.ChangeId(macOSUniversalFilePath!, newLibraryId);
+            }
+            #endregion macOS
 
+            #region Lipo iOS Builds
             if (Targets.HasFlag(BuildTargets.iOSSimulatorUniversal)) {
                 Logger.LogDebug($"Creating directory for iOS Simulator Universal build at \"{iOSSimulatorUniversalBuildPath}\"");
                 Directory.CreateDirectory(iOSSimulatorUniversalBuildPath!);
@@ -349,7 +337,7 @@ public class DotNETNativeBuilder
                 Logger.LogDebug($"Changing library ID of iOS Simulator Universal build at \"{iOSSimulatorUniversalFilePath}\" to \"{newLibraryId}\"");
                 Apple.InstallNameTool.App.ChangeId(iOSSimulatorUniversalFilePath!, newLibraryId);
             }
-            #endregion iOS
+            #endregion Lipo iOS Builds
             #endregion dotnet publish
             
             #region Create Frameworks for Platforms
