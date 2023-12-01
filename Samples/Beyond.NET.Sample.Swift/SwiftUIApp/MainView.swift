@@ -23,6 +23,10 @@ struct MainView: View {
                 .tabItem {
                     Label("Timer", systemImage: "timer.circle.fill")
                 }
+            PerformanceView()
+                .tabItem {
+                    Label("Performance", systemImage: "hare.circle.fill")
+                }
         }
         .padding()
     }

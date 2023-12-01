@@ -17,6 +17,7 @@
 		E77457872A73C85500920E39 /* Base64View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77457862A73C85500920E39 /* Base64View.swift */; };
 		E77457892A73D1E500920E39 /* ExceptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77457882A73D1E500920E39 /* ExceptionView.swift */; };
 		E7977F862A73F6A900493C61 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7977F852A73F6A900493C61 /* TimerView.swift */; };
+		E7FC0A952B1A383400259AC6 /* PerformanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FC0A942B1A383400259AC6 /* PerformanceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		E77457862A73C85500920E39 /* Base64View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64View.swift; sourceTree = "<group>"; };
 		E77457882A73D1E500920E39 /* ExceptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExceptionView.swift; sourceTree = "<group>"; };
 		E7977F852A73F6A900493C61 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		E7FC0A942B1A383400259AC6 /* PerformanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				E77457862A73C85500920E39 /* Base64View.swift */,
 				E77457882A73D1E500920E39 /* ExceptionView.swift */,
 				E7977F852A73F6A900493C61 /* TimerView.swift */,
+				E7FC0A942B1A383400259AC6 /* PerformanceView.swift */,
 				E774576E2A73AA6300920E39 /* Assets.xcassets */,
 				E77457702A73AA6300920E39 /* BeyondNETSampleSwiftUIApp.entitlements */,
 			);
@@ -175,6 +178,7 @@
 				E77457852A73B60400920E39 /* ClockView.swift in Sources */,
 				E77457892A73D1E500920E39 /* ExceptionView.swift in Sources */,
 				E774576D2A73AA6300920E39 /* MainView.swift in Sources */,
+				E7FC0A952B1A383400259AC6 /* PerformanceView.swift in Sources */,
 				E77457872A73C85500920E39 /* Base64View.swift in Sources */,
 				E774576B2A73AA6300920E39 /* SampleApp.swift in Sources */,
 			);
