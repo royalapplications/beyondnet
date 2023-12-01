@@ -238,4 +238,35 @@ final class SystemArrayTests: XCTestCase {
         
         XCTAssertEqual(arrayOfString[1]?.castAs(System.String.self)?.string(), newStringAtIdxOne)
     }
+    
+    func testIteratingArrayPerformance() throws {
+        let systemObjectType = System.Object.typeOf
+        let count: Int32 = 10_000
+        
+        var values = [System.Object]()
+        
+        let systemArray = try System_Array.createInstance(systemObjectType,
+                                                          count)
+        
+        for idx in 0..<count {
+            let obj = try System.Object()
+            
+            values.append(obj)
+            try systemArray.setValue(obj, idx)
+        }
+        
+        XCTAssertEqual(systemArray.count, values.count)
+        
+        measure {
+            var idx = 0
+            
+            for obj in systemArray {
+                let expectedObj = values[idx]
+                
+                XCTAssertTrue(obj === expectedObj)
+                
+                idx += 1
+            }
+        }
+    }
 }

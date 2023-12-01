@@ -1085,40 +1085,8 @@ extension System_Array: MutableCollection {
     public typealias Index = Int32
     public typealias Element = System_Object?
     
-    public struct Iterator: IteratorProtocol {
-        private let array: System_Array
-        private var index: Index = 0
-        
-        private var length: Int32 {
-            do {
-                let arrayLength = try self.array.length
-                
-                return arrayLength
-            } catch {
-                fatalError("An exception was thrown while calling System.Array.Length: \(error.localizedDescription)")
-            }
-        }
-        
-        init(_ array: System_Array) {
-            self.array = array
-        }
-        
-        public mutating func next() -> Element? {
-            defer { index += 1 }
-            guard index < length else { return nil }
-            
-            do {
-                let element = try self.array.getValue(index)
-                
-                return element
-            } catch {
-                fatalError("An exception was thrown while calling System.Array.GetValue: \(error.localizedDescription)")
-            }
-        }
-    }
-    
     public var startIndex: Index {
-        return 0
+        0
     }
     
     public var endIndex: Index {
@@ -1134,18 +1102,12 @@ extension System_Array: MutableCollection {
             return 0
         }
         
-        let theEndIndex = length - 1
-        
-        return theEndIndex
+        return length
     }
     
-    public func index(after i: Index) -> Index {
-        return i + 1
-    }
-    
-    public subscript (position: Index) -> System_Object? {
+    public subscript(position: Index) -> Element {
         get {
-            precondition(position >= startIndex && position <= endIndex, "Out of bounds")
+            assert(position >= startIndex && position < endIndex, "Out of bounds")
             
             do {
                 guard let element = try self.getValue(position) else {
@@ -1158,7 +1120,7 @@ extension System_Array: MutableCollection {
             }
         }
         set {
-            precondition(position >= startIndex && position <= endIndex, "Out of bounds")
+            assert(position >= startIndex && position < endIndex, "Out of bounds")
 
             do {
                 try self.setValue(newValue, position)
@@ -1168,8 +1130,12 @@ extension System_Array: MutableCollection {
         }
     }
     
-    public func makeIterator() -> Iterator {
-        return Iterator(self)
+    public func index(after i: Index) -> Index {
+        i + 1
+    }
+    
+    public func index(before i: Index) -> Index {
+        i - 1
     }
 }
 
