@@ -1081,7 +1081,7 @@ extension System_Guid {
     }
 }
 
-extension System_Array: Collection {
+extension System_Array: MutableCollection {
 	public typealias Index = Int32
 	public typealias Element = System_Object?
 	
@@ -1130,13 +1130,20 @@ extension System_Array: Collection {
 	}
 	
 	public subscript (position: Index) -> System_Object? {
-		precondition(position >= startIndex && position <= endIndex, "Out of bounds")
-		
-		guard let element = try? self.getValue(position) else {
-			return nil
-		}
-		
-		return element
+	    get {
+            precondition(position >= startIndex && position <= endIndex, "Out of bounds")
+            
+            guard let element = try? self.getValue(position) else {
+                return nil
+            }
+            
+            return element
+        }
+        set {
+            precondition(position >= startIndex && position <= endIndex, "Out of bounds")
+
+            try? self.setValue(newValue, position)
+        }
 	}
 	
 	public func makeIterator() -> Iterator {

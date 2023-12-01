@@ -202,4 +202,40 @@ final class SystemArrayTests: XCTestCase {
 		
 		XCTAssertEqual(strings[1], secondString)
 	}
+    
+    func testMutatingSystemArray() throws {
+        let systemStringType = System_String.typeOf
+        
+        let strings = [
+            "Hello",
+            "World"
+        ]
+        
+        let arrayOfString = try System_Array.createInstance(systemStringType,
+                                                            Int32(strings.count))
+        
+        for (idx, string) in strings.enumerated() {
+            arrayOfString[.init(idx)] = string.dotNETString()
+        }
+        
+        for (idx, objDN) in arrayOfString.enumerated() {
+            guard let objDN,
+                  let stringDN = objDN.castAs(System.String.self) else {
+                XCTFail("Failed to get .NET String from Array")
+                
+                return
+            }
+            
+            let convertedString = stringDN.string()
+            let originalString = strings[idx]
+            
+            XCTAssertEqual(convertedString, originalString)
+        }
+        
+        let newStringAtIdxOne = "New World"
+        
+        arrayOfString[1] = newStringAtIdxOne.dotNETString()
+        
+        XCTAssertEqual(arrayOfString[1]?.castAs(System.String.self)?.string(), newStringAtIdxOne)
+    }
 }
