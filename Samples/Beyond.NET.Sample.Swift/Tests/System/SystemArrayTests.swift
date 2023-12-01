@@ -257,15 +257,16 @@ final class SystemArrayTests: XCTestCase {
         
         XCTAssertEqual(systemArray.count, values.count)
         
-        measure {
-            var idx = 0
+        for (idx, obj) in systemArray.enumerated() {
+            let expectedObj = values[idx]
             
+            XCTAssertTrue(obj === expectedObj)
+        }
+        
+        measure {
             for obj in systemArray {
-                let expectedObj = values[idx]
-                
-                XCTAssertTrue(obj === expectedObj)
-                
-                idx += 1
+                // Aka PleaseDontOptimizeThisOut
+                let _ = obj
             }
         }
     }
