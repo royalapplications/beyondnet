@@ -5253,6 +5253,8 @@ extension System_IO_MatchCasing {
 	
 }
 
+/// Describes how nice one can be.
+/// Ordered from not nice, to very nice.
 public enum Beyond_NET_Sample_NiceLevels: UInt32 {
 	init(cValue: Beyond_NET_Sample_NiceLevels_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -106353,6 +106355,7 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 // Type "T6" was skipped. Reason: It has no full name.
 // Type "T7" was skipped. Reason: It has no full name.
 // Type "TRest" was skipped. Reason: It has no full name.
+/// Describes an Address.
 public class Beyond_NET_Sample_Address /* Beyond.NET.Sample.Address */: System_Object {
 	public override class var typeName: String { get {
 		"Address"
@@ -113726,6 +113729,7 @@ public class System_Threading_ParameterizedThreadStart /* System.Threading.Param
 	
 }
 
+/// A delegate that returns a new Address.
 public class Beyond_NET_Sample_MoveDelegate /* Beyond.NET.Sample.MoveDelegate */: System_MulticastDelegate {
 	public override class var typeName: String { get {
 		"Beyond.NET.Sample.MoveDelegate"
@@ -113816,6 +113820,7 @@ public class Beyond_NET_Sample_MoveDelegate /* Beyond.NET.Sample.MoveDelegate */
 	
 	
 }
+
 
 public class Beyond_NET_Sample_AnimalCreatorDelegate /* Beyond.NET.Sample.AnimalCreatorDelegate */: System_MulticastDelegate {
 	public override class var typeName: String { get {

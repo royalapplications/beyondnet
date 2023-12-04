@@ -8,4 +8,5 @@ public abstract class Settings
     public bool GenerateTypeCheckedDestroyMethods { get; init; }
     public bool DoNotGenerateSwiftNestedTypeAliases { get; init; }
     public TypeCollectorSettings? TypeCollectorSettings { get; init; }
+    public XmlDocumentation? XmlDocumentation { get; init; }
 }

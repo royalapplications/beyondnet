@@ -141,12 +141,20 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         string swiftEnumTypeName = typeDescriptor.GetTypeName(CodeLanguage.Swift, false);
         
         bool isFlagsEnum = type.IsDefined(typeof(FlagsAttribute), false);
+        
+        var typeDocumentationComment = Settings.XmlDocumentation?
+            .GetTypeDocumentation(type)
+            ?.GetFormattedDocumentationComment();
 
         if (isFlagsEnum) {
             string structDecl = Builder.Struct(swiftEnumTypeName)
                 .ProtocolConformance("OptionSet")
                 .Public()
                 .ToString();
+            
+            if (!string.IsNullOrEmpty(typeDocumentationComment)) {
+                sb.AppendLine(typeDocumentationComment);
+            }
             
             sb.AppendLine($"{structDecl} {{");
 
@@ -181,6 +189,10 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
                 .Public()
                 .RawTypeName(rawSwiftTypeName)
                 .ToString();
+            
+            if (!string.IsNullOrEmpty(typeDocumentationComment)) {
+                sb.AppendLine(typeDocumentationComment);
+            }
             
             sb.AppendLine($"{enumDecl} {{");
         }
@@ -399,7 +411,15 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
                     .BaseTypeName(swiftBaseTypeName)
                     // .ProtocolConformance(protocolConformancesString)
                     .Public()
-                    .ToString();                
+                    .ToString();
+            }
+            
+            var typeDocumentationComment = Settings.XmlDocumentation?
+                .GetTypeDocumentation(type)
+                ?.GetFormattedDocumentationComment();
+            
+            if (!string.IsNullOrEmpty(typeDocumentationComment)) {
+                sb.AppendLine(typeDocumentationComment);
             }
 
             sb.AppendLine($"{typeDecl} {{");

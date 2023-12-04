@@ -278,9 +278,22 @@ public partial class SwiftTypeSyntaxWriter
             .Implementation(sb.ToString())
             .ToString();
         
-        string code = typeDecl;
+        var typeDocumentationComment = Settings.XmlDocumentation?
+            .GetTypeDocumentation(type)
+            ?.GetFormattedDocumentationComment();
 
-        return code;
+        StringBuilder sbFinal;
+        
+        if (!string.IsNullOrEmpty(typeDocumentationComment)) {
+            sbFinal = new(typeDocumentationComment + "\n");
+            sbFinal.AppendLine(typeDecl);
+        } else {
+            sbFinal = new(typeDecl);
+        }
+
+        var final = sbFinal.ToString();
+
+        return final;
     }
 
     private string WriteTypeNames(

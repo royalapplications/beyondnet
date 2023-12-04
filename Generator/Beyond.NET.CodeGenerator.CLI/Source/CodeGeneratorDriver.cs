@@ -155,7 +155,11 @@ internal class CodeGeneratorDriver
             #region Load Assembly
             Logger.LogInformation($"Loading assembly from \"{assemblyPath}\"");
             
-            Assembly assembly = AssemblyLoader.LoadFrom(assemblyPath);
+            Assembly assembly = AssemblyLoader.LoadFrom(
+                assemblyPath,
+                true,
+                out XmlDocumentation? xmlDocumentation
+            );
             #endregion Load Assembly
     
             #region Collect Types
@@ -196,7 +200,8 @@ internal class CodeGeneratorDriver
                 namespaceForCSharpUnamangedCode,
                 emitUnsupported,
                 generateTypeCheckedDestroyMethods,
-                typeCollectorSettings
+                typeCollectorSettings,
+                xmlDocumentation
             );
     
             var cSharpUnmanagedResult = cSharpUnmanagedResultObject.Result;
@@ -211,7 +216,8 @@ internal class CodeGeneratorDriver
                 unsupportedTypes,
                 cSharpUnmanagedResult,
                 emitUnsupported,
-                typeCollectorSettings
+                typeCollectorSettings,
+                xmlDocumentation
             );
     
             var cResult = cResultObject.Result;
@@ -228,7 +234,8 @@ internal class CodeGeneratorDriver
                 cResult,
                 emitUnsupported,
                 doNotGenerateSwiftNestedTypeAliases,
-                typeCollectorSettings
+                typeCollectorSettings,
+                xmlDocumentation
             );
     
             var swiftResult = swiftResultObject.Result;
@@ -494,7 +501,8 @@ internal class CodeGeneratorDriver
         string namespaceForGeneratedCode,
         bool emitUnsupported,
         bool generateTypeCheckedDestroyMethods,
-        TypeCollectorSettings typeCollectorSettings
+        TypeCollectorSettings typeCollectorSettings,
+        XmlDocumentation? xmlDocumentation
     )
     {
         SourceCodeWriter writer = new();
@@ -502,7 +510,8 @@ internal class CodeGeneratorDriver
         Generator.CSharpUnmanaged.Settings settings = new(namespaceForGeneratedCode) {
             EmitUnsupported = emitUnsupported,
             GenerateTypeCheckedDestroyMethods = generateTypeCheckedDestroyMethods,
-            TypeCollectorSettings = typeCollectorSettings
+            TypeCollectorSettings = typeCollectorSettings,
+            XmlDocumentation = xmlDocumentation
         };
         
         CSharpUnmanagedCodeGenerator codeGenerator = new(settings);
@@ -540,14 +549,16 @@ internal class CodeGeneratorDriver
         Dictionary<Type, string> unsupportedTypes,
         Result cSharpUnmanagedResult,
         bool emitUnsupported,
-        TypeCollectorSettings typeCollectorSettings
+        TypeCollectorSettings typeCollectorSettings,
+        XmlDocumentation? xmlDocumentation
     )
     {
         SourceCodeWriter writer = new();
         
         Generator.C.Settings settings = new() {
             EmitUnsupported = emitUnsupported,
-            TypeCollectorSettings = typeCollectorSettings
+            TypeCollectorSettings = typeCollectorSettings,
+            XmlDocumentation = xmlDocumentation
         };
         
         CCodeGenerator codeGenerator = new(settings, cSharpUnmanagedResult);
@@ -588,7 +599,8 @@ internal class CodeGeneratorDriver
         Result cResult,
         bool emitUnsupported,
         bool doNotGenerateSwiftNestedTypeAliases,
-        TypeCollectorSettings typeCollectorSettings
+        TypeCollectorSettings typeCollectorSettings,
+        XmlDocumentation? xmlDocumentation
     )
     {
         SourceCodeWriter writer = new();
@@ -596,10 +608,15 @@ internal class CodeGeneratorDriver
         Generator.Swift.Settings settings = new() {
             EmitUnsupported = emitUnsupported,
             TypeCollectorSettings = typeCollectorSettings,
-            DoNotGenerateSwiftNestedTypeAliases = doNotGenerateSwiftNestedTypeAliases
+            DoNotGenerateSwiftNestedTypeAliases = doNotGenerateSwiftNestedTypeAliases,
+            XmlDocumentation = xmlDocumentation
         };
         
-        SwiftCodeGenerator codeGenerator = new(settings, cSharpUnmanagedResult, cResult);
+        SwiftCodeGenerator codeGenerator = new(
+            settings,
+            cSharpUnmanagedResult,
+            cResult
+        );
         
         Result result = codeGenerator.Generate(
             types,
