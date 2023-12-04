@@ -6,6 +6,10 @@
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <RootNamespace>Beyond.NET.Sample</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <!-- Disable no XML comment warnings -->
+    <NoWarn>CS1591</NoWarn> 
   </PropertyGroup>
 
 </Project>
