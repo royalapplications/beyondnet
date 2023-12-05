@@ -7,6 +7,8 @@ public delegate Address MoveDelegate(string newStreet, string newCity);
 
 /// <summary>
 /// Describes an Address.
+/// Summaries can have multiple lines.
+/// Right?
 /// </summary>
 public class Address
 {

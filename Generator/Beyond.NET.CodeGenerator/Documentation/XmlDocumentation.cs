@@ -26,24 +26,32 @@ public class XmlDocumentation
     private static Dictionary<XmlDocumentationMemberIdentifier, XmlDocumentationContent> GetXmlDocumentationMembers(string xmlDocumentationContent)
     {
         Dictionary<XmlDocumentationMemberIdentifier, XmlDocumentationContent> members = new();
-        
-        using XmlReader xmlReader = XmlReader.Create(new StringReader(xmlDocumentationContent));
-        
-        while (xmlReader.Read()) {
-            if (xmlReader.NodeType == XmlNodeType.Element &&
-                xmlReader.Name == "member") {
-                var rawName = xmlReader["name"];
 
-                if (string.IsNullOrEmpty(rawName)) {
-                    continue;
+        try {
+            XmlDocument doc = new();
+            
+            doc.LoadXml(xmlDocumentationContent);
+            var root = doc.DocumentElement;
+            var memberNodes = root?.SelectNodes("//doc/members/member");
+
+            if (memberNodes is not null) {
+                foreach (XmlNode memberNode in memberNodes) {
+                    var rawName = memberNode.Attributes?["name"]?.Value;
+
+                    if (string.IsNullOrEmpty(rawName)) {
+                        continue;
+                    }
+                    
+                    var memberType = new XmlDocumentationMemberIdentifier(rawName);
+                    
+                    var memberContent = new XmlDocumentationContent(memberNode);
+                    
+                    members[memberType] = memberContent;
                 }
-
-                var memberType = new XmlDocumentationMemberIdentifier(rawName);
-                var memberXml = xmlReader.ReadInnerXml();
-                var memberContent = new XmlDocumentationContent(memberXml);
-
-                members[memberType] = memberContent;
             }
+        } catch (Exception ex) {
+            // TODO: Logging
+            Console.WriteLine($"Error: {ex}");
         }
 
         return members;
