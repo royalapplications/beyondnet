@@ -78,30 +78,72 @@ public static class XmlDocumentation_Extensions
         return typeDocu;
     }
     
-    public static XmlDocumentationContent? GetDocumentation(this FieldInfo field)
+    public static XmlDocumentationContent? GetDocumentation(this FieldInfo fieldInfo)
     {
-        var assembly = field.DeclaringType?.Assembly;
+        var assembly = fieldInfo.DeclaringType?.Assembly;
 
         if (assembly is null) {
             return null;
         }
         
         var docu = XmlDocumentationStore.Shared.GetDocumentation(assembly);
-        var memberDocu = docu?.GetDocumentation(new(field));
+        var memberDocu = docu?.GetDocumentation(new(fieldInfo));
 
         return memberDocu;
     }
     
-    public static XmlDocumentationContent? GetDocumentation(this PropertyInfo property)
+    public static XmlDocumentationContent? GetDocumentation(this PropertyInfo propertyInfo)
     {
-        var assembly = property.DeclaringType?.Assembly;
+        var assembly = propertyInfo.DeclaringType?.Assembly;
 
         if (assembly is null) {
             return null;
         }
         
         var docu = XmlDocumentationStore.Shared.GetDocumentation(assembly);
-        var memberDocu = docu?.GetDocumentation(new(property));
+        var memberDocu = docu?.GetDocumentation(new(propertyInfo));
+
+        return memberDocu;
+    }
+    
+    public static XmlDocumentationContent? GetDocumentation(this EventInfo eventInfo)
+    {
+        var assembly = eventInfo.DeclaringType?.Assembly;
+
+        if (assembly is null) {
+            return null;
+        }
+        
+        var docu = XmlDocumentationStore.Shared.GetDocumentation(assembly);
+        var memberDocu = docu?.GetDocumentation(new(eventInfo));
+
+        return memberDocu;
+    }
+    
+    public static XmlDocumentationContent? GetDocumentation(this ConstructorInfo constructorInfo)
+    {
+        var assembly = constructorInfo.DeclaringType?.Assembly;
+
+        if (assembly is null) {
+            return null;
+        }
+        
+        var docu = XmlDocumentationStore.Shared.GetDocumentation(assembly);
+        var memberDocu = docu?.GetDocumentation(new(constructorInfo));
+
+        return memberDocu;
+    }
+    
+    public static XmlDocumentationContent? GetDocumentation(this MethodInfo methodInfo)
+    {
+        var assembly = methodInfo.DeclaringType?.Assembly;
+
+        if (assembly is null) {
+            return null;
+        }
+        
+        var docu = XmlDocumentationStore.Shared.GetDocumentation(assembly);
+        var memberDocu = docu?.GetDocumentation(new(methodInfo));
 
         return memberDocu;
     }

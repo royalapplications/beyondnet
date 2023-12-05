@@ -40,9 +40,9 @@ internal struct XmlDocumentationMemberIdentifier
         m_key = $"{IDENTIFIER_TYPE}:{XmlDocumentationKeyHelper(typeFullName)}";
     }
     
-    internal XmlDocumentationMemberIdentifier(FieldInfo field)
+    internal XmlDocumentationMemberIdentifier(FieldInfo fieldInfo)
     {
-        var type = field.DeclaringType;
+        var type = fieldInfo.DeclaringType;
 
         if (type is null) {
             m_key = string.Empty;
@@ -58,14 +58,14 @@ internal struct XmlDocumentationMemberIdentifier
             return;
         }
 
-        var memberName = field.Name;
+        var memberName = fieldInfo.Name;
 
         m_key = $"{IDENTIFIER_FIELD}:{XmlDocumentationKeyHelper(typeFullName, memberName)}";
     }
     
-    internal XmlDocumentationMemberIdentifier(PropertyInfo property)
+    internal XmlDocumentationMemberIdentifier(PropertyInfo propertyInfo)
     {
-        var type = property.DeclaringType;
+        var type = propertyInfo.DeclaringType;
 
         if (type is null) {
             m_key = string.Empty;
@@ -81,9 +81,80 @@ internal struct XmlDocumentationMemberIdentifier
             return;
         }
 
-        var memberName = property.Name;
+        var memberName = propertyInfo.Name;
 
         m_key = $"{IDENTIFIER_PROPERTY}:{XmlDocumentationKeyHelper(typeFullName, memberName)}";
+    }
+    
+    internal XmlDocumentationMemberIdentifier(EventInfo eventInfo)
+    {
+        var type = eventInfo.DeclaringType;
+
+        if (type is null) {
+            m_key = string.Empty;
+            
+            return;
+        }
+        
+        var typeFullName = type.FullName;
+
+        if (string.IsNullOrEmpty(typeFullName)) {
+            m_key = string.Empty;
+            
+            return;
+        }
+
+        var memberName = eventInfo.Name;
+
+        m_key = $"{IDENTIFIER_EVENT}:{XmlDocumentationKeyHelper(typeFullName, memberName)}";
+    }
+    
+    internal XmlDocumentationMemberIdentifier(ConstructorInfo constructorInfo)
+    {
+        var type = constructorInfo.DeclaringType;
+
+        if (type is null) {
+            m_key = string.Empty;
+            
+            return;
+        }
+        
+        var typeFullName = type.FullName;
+
+        if (string.IsNullOrEmpty(typeFullName)) {
+            m_key = string.Empty;
+            
+            return;
+        }
+
+        var memberName = constructorInfo.Name;
+
+        // TODO: https://learn.microsoft.com/en-us/archive/msdn-magazine/2019/october/csharp-accessing-xml-documentation-via-reflection
+        m_key = $"{IDENTIFIER_METHOD}:{XmlDocumentationKeyHelper(typeFullName, memberName)}";
+    }
+    
+    internal XmlDocumentationMemberIdentifier(MethodInfo methodInfo)
+    {
+        var type = methodInfo.DeclaringType;
+
+        if (type is null) {
+            m_key = string.Empty;
+            
+            return;
+        }
+        
+        var typeFullName = type.FullName;
+
+        if (string.IsNullOrEmpty(typeFullName)) {
+            m_key = string.Empty;
+            
+            return;
+        }
+
+        var memberName = methodInfo.Name;
+
+        // TODO: https://learn.microsoft.com/en-us/archive/msdn-magazine/2019/october/csharp-accessing-xml-documentation-via-reflection
+        m_key = $"{IDENTIFIER_METHOD}:{XmlDocumentationKeyHelper(typeFullName, memberName)}";
     }
     
     private static string XmlDocumentationKeyHelper(

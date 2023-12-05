@@ -5526,6 +5526,8 @@ public class System_Object /* System.Object */: DNObject {
 		"System.Object"
 	}}
 
+	/// Gets the   of the current instance.
+	/// The exact runtime type of the current instance.
 	public func getType() throws -> System_Type /* System.Type */ {
 		
 		
@@ -5546,6 +5548,8 @@ public class System_Object /* System.Object */: DNObject {
 		
 	}
 	
+	/// Returns a string that represents the current object.
+	/// A string that represents the current object.
 	public func toString() throws -> System_String? /* System.String */ {
 		
 		
@@ -5625,6 +5629,8 @@ public class System_Object /* System.Object */: DNObject {
 		
 	}
 	
+	/// Serves as the default hash function.
+	/// A hash code for the current object.
 	public func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -5685,6 +5691,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		"System.Type"
 	}}
 
+	/// Gets the current  .
+	/// A class initializer is invoked and throws an exception.
+	/// The current  .
 	public class func getType(_ typeName: System_String /* System.String */, _ throwOnError: Bool /* System.Boolean */, _ ignoreCase: Bool /* System.Boolean */) throws -> System_Type? /* System.Type */ {
 		let typeNameC = typeName.__handle
 		
@@ -5706,6 +5715,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Gets the current  .
+	/// A class initializer is invoked and throws an exception.
+	/// The current  .
 	public class func getType(_ typeName: System_String /* System.String */, _ throwOnError: Bool /* System.Boolean */) throws -> System_Type? /* System.Type */ {
 		let typeNameC = typeName.__handle
 		
@@ -5727,6 +5739,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Gets the current  .
+	/// A class initializer is invoked and throws an exception.
+	/// The current  .
 	public class func getType(_ typeName: System_String /* System.String */) throws -> System_Type? /* System.Type */ {
 		let typeNameC = typeName.__handle
 		
@@ -5769,6 +5784,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Gets the current  .
+	/// A class initializer is invoked and throws an exception.
+	/// The current  .
 	public override func getType() throws -> System_Type /* System.Type */ {
 		
 		
@@ -5789,6 +5807,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// When overridden in a derived class, returns the   of the object encompassed or referred to by the current array, pointer or reference type.
+	/// The   of the object encompassed or referred to by the current array, pointer, or reference type, or   if the current   is not an array or a pointer, or is not passed by reference, or represents a generic type or a type parameter in the definition of a generic type or generic method.
 	public func getElementType() throws -> System_Type? /* System.Type */ {
 		
 		
@@ -5809,6 +5829,10 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Gets the number of dimensions in an array.
+	/// The functionality of this method is unsupported in the base class and must be implemented in a derived class instead.
+	/// The current type is not an array.
+	/// An integer that contains the number of dimensions in the current type.
 	public func getArrayRank() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -5827,6 +5851,10 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns a   object that represents a generic type definition from which the current generic type can be constructed.
+	/// The current type is not a generic type.  That is,   returns  .
+	/// The invoked method is not supported in the base class. Derived classes must provide an implementation.
+	/// A   object representing a generic type from which the current type can be constructed.
 	public func getGenericTypeDefinition() throws -> System_Type /* System.Type */ {
 		
 		
@@ -5847,6 +5875,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns an array of   objects that represent the type arguments of a closed generic type or the type parameters of a generic type definition.
+	/// The invoked method is not supported in the base class. Derived classes must provide an implementation.
+	/// An array of   objects that represent the type arguments of a generic type. Returns an empty array if the current type is not a generic type.
 	public func getGenericArguments() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
@@ -5867,6 +5898,12 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// When overridden in a derived class, returns the optional custom modifiers of the current  .
+	/// An array of   objects that identify the optional custom modifiers of the current  .
+	/// -or-
+	/// An empty array of type  , if the current   has no custom modifiers.
+	/// -or-
+	/// An empty array of type  , if the current   is not a modified  . A modified   is obtained from  ,  , or  .
 	public func getOptionalCustomModifiers() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
@@ -5887,6 +5924,12 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// When overridden in a derived class, returns the required custom modifiers of the current  .
+	/// An array of   objects that identify the required custom modifiers of the current  .
+	/// -or-
+	/// An empty array of type  , if the current   has no custom modifiers.
+	/// -or-
+	/// An empty array of type  , if the current   is not a modified  . A modified   is obtained from  ,  , or  .
 	public func getRequiredCustomModifiers() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
@@ -5907,6 +5950,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns an array of   objects that represent the constraints on the current generic type parameter.
+	/// The current   object is not a generic type parameter. That is, the   property returns  .
+	/// An array of   objects that represent the constraints on the current generic type parameter.
 	public func getGenericParameterConstraints() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
@@ -6038,6 +6084,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns all the public constructors defined for the current  .
+	/// An array of   objects representing all the public instance constructors defined for the current  , but not including the type initializer (static constructor). If no public instance constructors are defined for the current  , or if the current   represents a type parameter in the definition of a generic type or generic method, an empty array of type   is returned.
 	public func getConstructors() throws -> System_Reflection_ConstructorInfo_Array /* System.Reflection.ConstructorInfo[] */ {
 		
 		
@@ -6058,6 +6106,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns all the public constructors defined for the current  .
+	/// An array of   objects representing all the public instance constructors defined for the current  , but not including the type initializer (static constructor). If no public instance constructors are defined for the current  , or if the current   represents a type parameter in the definition of a generic type or generic method, an empty array of type   is returned.
 	public func getConstructors(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_ConstructorInfo_Array /* System.Reflection.ConstructorInfo[] */ {
 		let bindingAttrC = bindingAttr.cValue
 		
@@ -6122,6 +6172,10 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns all the public events that are declared or inherited by the current  .
+	/// An array of   objects representing all the public events which are declared or inherited by the current  .
+	/// -or-
+	/// An empty array of type  , if the current   does not have public events.
 	public func getEvents() throws -> System_Reflection_EventInfo_Array /* System.Reflection.EventInfo[] */ {
 		
 		
@@ -6142,6 +6196,10 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns all the public events that are declared or inherited by the current  .
+	/// An array of   objects representing all the public events which are declared or inherited by the current  .
+	/// -or-
+	/// An empty array of type  , if the current   does not have public events.
 	public func getEvents(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_EventInfo_Array /* System.Reflection.EventInfo[] */ {
 		let bindingAttrC = bindingAttr.cValue
 		
@@ -6206,6 +6264,10 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns all the public fields of the current  .
+	/// An array of   objects representing all the public fields defined for the current  .
+	/// -or-
+	/// An empty array of type  , if no public fields are defined for the current  .
 	public func getFields() throws -> System_Reflection_FieldInfo_Array /* System.Reflection.FieldInfo[] */ {
 		
 		
@@ -6226,6 +6288,10 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns all the public fields of the current  .
+	/// An array of   objects representing all the public fields defined for the current  .
+	/// -or-
+	/// An empty array of type  , if no public fields are defined for the current  .
 	public func getFields(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_FieldInfo_Array /* System.Reflection.FieldInfo[] */ {
 		let bindingAttrC = bindingAttr.cValue
 		
@@ -6247,6 +6313,13 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// When overridden in a derived class, returns the calling conventions of the current function pointer  .
+	/// The current type is not a function pointer. That is, the   property returns  .
+	/// An array of   objects representing all the calling conventions for the current function pointer  .
+	/// -or-
+	/// An empty array of type  , if no calling conventions are defined for the current function pointer  .
+	/// -or-
+	/// An empty array of type  , if the current function pointer   is not a modified  . A modified   is obtained from  ,  , or  .
 	public func getFunctionPointerCallingConventions() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
@@ -6267,6 +6340,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// When overridden in a derived class, returns the return type of the current function pointer  .
+	/// The current type is not a function pointer. That is, the   property returns  .
+	/// A   object representing the return type for the current function pointer  .
 	public func getFunctionPointerReturnType() throws -> System_Type /* System.Type */ {
 		
 		
@@ -6287,6 +6363,11 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// When overridden in a derived class, returns the parameter types of the current function pointer  .
+	/// The current type is not a function pointer. That is, the   property returns  .
+	/// An array of   objects representing all the parameter types for the current function pointer  .
+	/// -or-
+	/// An empty array of type  , if no parameters are defined for the current function pointer  .
 	public func getFunctionPointerParameterTypes() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
@@ -6373,6 +6454,10 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns all the public members of the current  .
+	/// An array of   objects representing all the public members of the current  .
+	/// -or-
+	/// An empty array of type  , if the current   does not have public members.
 	public func getMembers() throws -> System_Reflection_MemberInfo_Array /* System.Reflection.MemberInfo[] */ {
 		
 		
@@ -6414,6 +6499,10 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns all the public members of the current  .
+	/// An array of   objects representing all the public members of the current  .
+	/// -or-
+	/// An empty array of type  , if the current   does not have public members.
 	public func getMembers(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_MemberInfo_Array /* System.Reflection.MemberInfo[] */ {
 		let bindingAttrC = bindingAttr.cValue
 		
@@ -6693,6 +6782,10 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns all the public methods of the current  .
+	/// An array of   objects representing all the public methods defined for the current  .
+	/// -or-
+	/// An empty array of type  , if no public methods are defined for the current  .
 	public func getMethods() throws -> System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ {
 		
 		
@@ -6713,6 +6806,10 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns all the public methods of the current  .
+	/// An array of   objects representing all the public methods defined for the current  .
+	/// -or-
+	/// An empty array of type  , if no public methods are defined for the current  .
 	public func getMethods(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ {
 		let bindingAttrC = bindingAttr.cValue
 		
@@ -6777,6 +6874,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns the public types nested in the current  .
+	/// An array of   objects representing the public types nested in the current   (the search is not recursive), or an empty array of type   if no public types are nested in the current  .
 	public func getNestedTypes() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
@@ -6797,6 +6896,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns the public types nested in the current  .
+	/// An array of   objects representing the public types nested in the current   (the search is not recursive), or an empty array of type   if no public types are nested in the current  .
 	public func getNestedTypes(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Type_Array /* System.Type[] */ {
 		let bindingAttrC = bindingAttr.cValue
 		
@@ -6978,6 +7079,10 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns all the public properties of the current  .
+	/// An array of   objects representing all public properties of the current  .
+	/// -or-
+	/// An empty array of type  , if the current   does not have public properties.
 	public func getProperties() throws -> System_Reflection_PropertyInfo_Array /* System.Reflection.PropertyInfo[] */ {
 		
 		
@@ -6998,6 +7103,10 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns all the public properties of the current  .
+	/// An array of   objects representing all public properties of the current  .
+	/// -or-
+	/// An empty array of type  , if the current   does not have public properties.
 	public func getProperties(_ bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_PropertyInfo_Array /* System.Reflection.PropertyInfo[] */ {
 		let bindingAttrC = bindingAttr.cValue
 		
@@ -7019,6 +7128,10 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Searches for the members defined for the current   whose   is set.
+	/// An array of   objects representing all default members of the current  .
+	/// -or-
+	/// An empty array of type  , if the current   does not have default members.
 	public func getDefaultMembers() throws -> System_Reflection_MemberInfo_Array /* System.Reflection.MemberInfo[] */ {
 		
 		
@@ -7395,6 +7508,11 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// When overridden in a derived class, gets all the interfaces implemented or inherited by the current  .
+	/// A static initializer is invoked and throws an exception.
+	/// An array of   objects representing all the interfaces implemented or inherited by the current  .
+	/// -or-
+	/// An empty array of type  , if no interfaces are implemented or inherited by the current  .
 	public func getInterfaces() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
@@ -7474,6 +7592,11 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns the underlying type of the current enumeration type.
+	/// The current type is not an enumeration.
+	/// -or-
+	/// The enumeration type is not valid, because it contains more than one instance field.
+	/// The underlying type of the current enumeration.
 	public func getEnumUnderlyingType() throws -> System_Type /* System.Type */ {
 		
 		
@@ -7494,6 +7617,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns an array of the values of the constants in the current enumeration type.
+	/// The current type is not an enumeration.
+	/// An array that contains the values. The elements of the array are sorted by the binary values (that is, the unsigned values) of the enumeration constants.
 	public func getEnumValues() throws -> System_Array /* System.Array */ {
 		
 		
@@ -7514,6 +7640,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Retrieves an array of the values of the underlying type constants of this enumeration type.
+	/// This type is not an enumeration type.
+	/// An array that contains the values of the underlying type constants in this enumeration type.
 	public func getEnumValuesAsUnderlyingType() throws -> System_Array /* System.Array */ {
 		
 		
@@ -7534,6 +7663,12 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns a   object representing a one-dimensional array of the current type, with a lower bound of zero.
+	/// The invoked method is not supported in the base class. Derived classes must provide an implementation.
+	/// The current type is  .
+	/// -or-
+	/// The current type is a   type. That is,   returns  .
+	/// A   object representing a one-dimensional array of the current type, with a lower bound of zero.
 	public func makeArrayType() throws -> System_Type /* System.Type */ {
 		
 		
@@ -7554,6 +7689,12 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns a   object representing a one-dimensional array of the current type, with a lower bound of zero.
+	/// The invoked method is not supported in the base class. Derived classes must provide an implementation.
+	/// The current type is  .
+	/// -or-
+	/// The current type is a   type. That is,   returns  .
+	/// A   object representing a one-dimensional array of the current type, with a lower bound of zero.
 	public func makeArrayType(_ rank: Int32 /* System.Int32 */) throws -> System_Type /* System.Type */ {
 		
 		
@@ -7574,6 +7715,12 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns a   object that represents the current type when passed as a   parameter (  parameter in Visual Basic).
+	/// The invoked method is not supported in the base class.
+	/// The current type is  .
+	/// -or-
+	/// The current type is a   type. That is,   returns  .
+	/// A   object that represents the current type when passed as a   parameter (  parameter in Visual Basic).
 	public func makeByRefType() throws -> System_Type /* System.Type */ {
 		
 		
@@ -7615,6 +7762,12 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns a   object that represents a pointer to the current type.
+	/// The invoked method is not supported in the base class.
+	/// The current type is  .
+	/// -or-
+	/// The current type is a   type. That is,   returns  .
+	/// A   object that represents a pointer to the current type.
 	public func makePointerType() throws -> System_Type /* System.Type */ {
 		
 		
@@ -7677,6 +7830,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns a   representing the name of the current  .
+	/// A   representing the name of the current  .
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -7716,6 +7871,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// The hash code for this instance.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -7814,6 +7971,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Returns the names of the members of the current enumeration type.
+	/// The current type is not an enumeration.
+	/// An array that contains the names of the members of the enumeration.
 	public func getEnumNames() throws -> System_String_Array /* System.String[] */ {
 		
 		
@@ -9612,6 +9772,8 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 		
 	}
 	
+	/// Returns a list of   objects representing data about the attributes that have been applied to the target member.
+	/// A generic list of   objects representing data about the attributes that have been applied to the target member.
 	public func getCustomAttributesData() throws -> System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
 		
 		
@@ -9651,6 +9813,8 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -10081,6 +10245,7 @@ public class System_Array /* System.Array */: System_Object {
 		
 	}
 	
+	/// Initializes every element of the value-type   by calling the parameterless constructor of the value type.
 	public func initialize() throws {
 		
 		
@@ -10630,6 +10795,8 @@ public class System_Array /* System.Array */: System_Object {
 		
 	}
 	
+	/// Creates a shallow copy of the  .
+	/// A shallow copy of the  .
 	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
@@ -11423,6 +11590,8 @@ public class System_Array /* System.Array */: System_Object {
 		
 	}
 	
+	/// Returns an   for the  .
+	/// An   for the  .
 	public func getEnumerator() throws -> System_Collections_IEnumerator /* System.Collections.IEnumerator */ {
 		
 		
@@ -11638,6 +11807,8 @@ public class System_ICloneable /* System.ICloneable */: DNObject {
 		"System.ICloneable"
 	}}
 
+	/// Creates a new object that is a copy of the current instance.
+	/// A new object that is a copy of this instance.
 	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
@@ -11720,6 +11891,8 @@ public class System_Collections_IList /* System.Collections.IList */: DNObject {
 		
 	}
 	
+	/// Removes all items from the  .
+	/// The   is read-only.
 	public func clear() throws {
 		
 		
@@ -12020,6 +12193,8 @@ public class System_Collections_IEnumerable /* System.Collections.IEnumerable */
 		"System.Collections.IEnumerable"
 	}}
 
+	/// Returns an enumerator that iterates through a collection.
+	/// An   object that can be used to iterate through the collection.
 	public func getEnumerator() throws -> System_Collections_IEnumerator /* System.Collections.IEnumerator */ {
 		
 		
@@ -12064,6 +12239,9 @@ public class System_Collections_IEnumerator /* System.Collections.IEnumerator */
 		"System.Collections.IEnumerator"
 	}}
 
+	/// Advances the enumerator to the next element of the collection.
+	/// The collection was modified after the enumerator was created.
+	/// if the enumerator was successfully advanced to the next element;   if the enumerator has passed the end of the collection.
 	public func moveNext() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -12082,6 +12260,9 @@ public class System_Collections_IEnumerator /* System.Collections.IEnumerator */
 		
 	}
 	
+	/// Sets the enumerator to its initial position, which is before the first element in the collection.
+	/// The collection was modified after the enumerator was created.
+	/// The enumerator does not support being reset.
 	public func reset() throws {
 		
 		
@@ -12184,6 +12365,8 @@ public class System_ValueType /* System.ValueType */: System_Object {
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer that is the hash code for this instance.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -12202,6 +12385,8 @@ public class System_ValueType /* System.ValueType */: System_Object {
 		
 	}
 	
+	/// Returns the fully qualified type name of this instance.
+	/// The fully qualified type name.
 	public override func toString() throws -> System_String? /* System.String */ {
 		
 		
@@ -12308,6 +12493,8 @@ public class System_IConvertible /* System.IConvertible */: DNObject {
 		"System.IConvertible"
 	}}
 
+	/// Returns the   for this instance.
+	/// The enumerated constant that is the   of the class or value type that implements this interface.
 	public func getTypeCode() throws -> System_TypeCode /* System.TypeCode */ {
 		
 		
@@ -13120,6 +13307,8 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
+	/// Returns the hash code for the value of this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -13157,6 +13346,8 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of this instance to its equivalent string representation.
+	/// The string representation of the value of this instance.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -13177,6 +13368,8 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of this instance to its equivalent string representation.
+	/// The string representation of the value of this instance.
 	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
@@ -13198,6 +13391,8 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of this instance to its equivalent string representation.
+	/// The string representation of the value of this instance.
 	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
@@ -13219,6 +13414,8 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of this instance to its equivalent string representation.
+	/// The string representation of the value of this instance.
 	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let providerC = provider?.__handle
@@ -13264,6 +13461,9 @@ public class System_Enum /* System.Enum */: System_ValueType {
 		
 	}
 	
+	/// Returns the type code of the underlying type of this enumeration member.
+	/// The enumeration type is unknown.
+	/// The type code of the underlying type of this instance.
 	public func getTypeCode() throws -> System_TypeCode /* System.TypeCode */ {
 		
 		
@@ -14073,6 +14273,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Returns the hash code for this string.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -14091,6 +14293,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Returns the hash code for this string.
+	/// A 32-bit signed integer hash code.
 	public func getHashCode(_ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Int32 /* System.Int32 */ {
 		let comparisonTypeC = comparisonType.cValue
 		
@@ -14188,6 +14392,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Returns a reference to this instance of  .
+	/// This instance of  .
 	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
@@ -14247,6 +14453,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Copies the characters in this instance to a Unicode character array.
+	/// A Unicode character array whose elements are the individual characters of this instance. If this instance is an empty string, the returned array is empty and has a zero length.
 	public func toCharArray() throws -> System_Char_Array /* System.Char[] */ {
 		
 		
@@ -14267,6 +14475,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Copies the characters in this instance to a Unicode character array.
+	/// A Unicode character array whose elements are the individual characters of this instance. If this instance is an empty string, the returned array is empty and has a zero length.
 	public func toCharArray(_ startIndex: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws -> System_Char_Array /* System.Char[] */ {
 		
 		
@@ -14325,6 +14535,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Returns this instance of  ; no actual conversion is performed.
+	/// The current string.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -14345,6 +14557,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Returns this instance of  ; no actual conversion is performed.
+	/// The current string.
 	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
@@ -14366,6 +14580,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Retrieves an object that can iterate through the individual characters in this string.
+	/// An enumerator object.
 	public func getEnumerator() throws -> System_CharEnumerator /* System.CharEnumerator */ {
 		
 		
@@ -14386,6 +14602,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Returns an enumeration of   from this string.
+	/// A string rune enumerator.
 	public func enumerateRunes() throws -> System_Text_StringRuneEnumerator /* System.Text.StringRuneEnumerator */ {
 		
 		
@@ -14406,6 +14624,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Returns the   for the   class.
+	/// The enumerated constant,  .
 	public func getTypeCode() throws -> System_TypeCode /* System.TypeCode */ {
 		
 		
@@ -14426,6 +14646,9 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Indicates whether this string is in Unicode normalization form C.
+	/// The current instance contains invalid Unicode characters.
+	/// if this string is in normalization form C; otherwise,  .
 	public func isNormalized() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -14444,6 +14667,9 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Indicates whether this string is in Unicode normalization form C.
+	/// The current instance contains invalid Unicode characters.
+	/// if this string is in normalization form C; otherwise,  .
 	public func isNormalized(_ normalizationForm: System_Text_NormalizationForm /* System.Text.NormalizationForm */) throws -> Bool /* System.Boolean */ {
 		let normalizationFormC = normalizationForm.cValue
 		
@@ -14463,6 +14689,9 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Returns a new string whose textual value is the same as this string, but whose binary representation is in Unicode normalization form C.
+	/// The current instance contains invalid Unicode characters.
+	/// A new, normalized string whose textual value is the same as this string, but whose binary representation is in normalization form C.
 	public func normalize() throws -> System_String /* System.String */ {
 		
 		
@@ -14483,6 +14712,9 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Returns a new string whose textual value is the same as this string, but whose binary representation is in Unicode normalization form C.
+	/// The current instance contains invalid Unicode characters.
+	/// A new, normalized string whose textual value is the same as this string, but whose binary representation is in normalization form C.
 	public func normalize(_ normalizationForm: System_Text_NormalizationForm /* System.Text.NormalizationForm */) throws -> System_String /* System.String */ {
 		let normalizationFormC = normalizationForm.cValue
 		
@@ -15376,6 +15608,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Replaces all newline sequences in the current string with  .
+	/// A string whose contents match the current string, but with all newline sequences replaced with  .
 	public func replaceLineEndings() throws -> System_String /* System.String */ {
 		
 		
@@ -15396,6 +15630,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Replaces all newline sequences in the current string with  .
+	/// A string whose contents match the current string, but with all newline sequences replaced with  .
 	public func replaceLineEndings(_ replacementText: System_String /* System.String */) throws -> System_String /* System.String */ {
 		let replacementTextC = replacementText.__handle
 		
@@ -15675,6 +15911,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Returns a copy of this string converted to lowercase.
+	/// A string in lowercase.
 	public func toLower() throws -> System_String /* System.String */ {
 		
 		
@@ -15695,6 +15933,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Returns a copy of this string converted to lowercase.
+	/// A string in lowercase.
 	public func toLower(_ culture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws -> System_String /* System.String */ {
 		let cultureC = culture?.__handle
 		
@@ -15716,6 +15956,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Returns a copy of this   object converted to lowercase using the casing rules of the invariant culture.
+	/// The lowercase equivalent of the current string.
 	public func toLowerInvariant() throws -> System_String /* System.String */ {
 		
 		
@@ -15736,6 +15978,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Returns a copy of this string converted to uppercase.
+	/// The uppercase equivalent of the current string.
 	public func toUpper() throws -> System_String /* System.String */ {
 		
 		
@@ -15756,6 +16000,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Returns a copy of this string converted to uppercase.
+	/// The uppercase equivalent of the current string.
 	public func toUpper(_ culture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws -> System_String /* System.String */ {
 		let cultureC = culture?.__handle
 		
@@ -15777,6 +16023,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Returns a copy of this   object converted to uppercase using the casing rules of the invariant culture.
+	/// The uppercase equivalent of the current string.
 	public func toUpperInvariant() throws -> System_String /* System.String */ {
 		
 		
@@ -15797,6 +16045,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Removes all leading and trailing white-space characters from the current string.
+	/// The string that remains after all white-space characters are removed from the start and end of the current string. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.
 	public func trim() throws -> System_String /* System.String */ {
 		
 		
@@ -15817,6 +16067,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Removes all leading and trailing white-space characters from the current string.
+	/// The string that remains after all white-space characters are removed from the start and end of the current string. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.
 	public func trim(_ trimChar: DNChar /* System.Char */) throws -> System_String /* System.String */ {
 		let trimCharC = trimChar.cValue
 		
@@ -15838,6 +16090,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Removes all leading and trailing white-space characters from the current string.
+	/// The string that remains after all white-space characters are removed from the start and end of the current string. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.
 	public func trim(_ trimChars: System_Char_Array? /* System.Char[] */) throws -> System_String /* System.String */ {
 		let trimCharsC = trimChars?.__handle
 		
@@ -15859,6 +16113,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Removes all the leading white-space characters from the current string.
+	/// The string that remains after all white-space characters are removed from the start of the current string. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.
 	public func trimStart() throws -> System_String /* System.String */ {
 		
 		
@@ -15879,6 +16135,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Removes all the leading white-space characters from the current string.
+	/// The string that remains after all white-space characters are removed from the start of the current string. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.
 	public func trimStart(_ trimChar: DNChar /* System.Char */) throws -> System_String /* System.String */ {
 		let trimCharC = trimChar.cValue
 		
@@ -15900,6 +16158,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Removes all the leading white-space characters from the current string.
+	/// The string that remains after all white-space characters are removed from the start of the current string. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.
 	public func trimStart(_ trimChars: System_Char_Array? /* System.Char[] */) throws -> System_String /* System.String */ {
 		let trimCharsC = trimChars?.__handle
 		
@@ -15921,6 +16181,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Removes all the trailing white-space characters from the current string.
+	/// The string that remains after all white-space characters are removed from the end of the current string. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.
 	public func trimEnd() throws -> System_String /* System.String */ {
 		
 		
@@ -15941,6 +16203,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Removes all the trailing white-space characters from the current string.
+	/// The string that remains after all white-space characters are removed from the end of the current string. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.
 	public func trimEnd(_ trimChar: DNChar /* System.Char */) throws -> System_String /* System.String */ {
 		let trimCharC = trimChar.cValue
 		
@@ -15962,6 +16226,8 @@ public class System_String /* System.String */: System_Object {
 		
 	}
 	
+	/// Removes all the trailing white-space characters from the current string.
+	/// The string that remains after all white-space characters are removed from the end of the current string. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.
 	public func trimEnd(_ trimChars: System_Char_Array? /* System.Char[] */) throws -> System_String /* System.String */ {
 		let trimCharsC = trimChars?.__handle
 		
@@ -16755,6 +17021,7 @@ public class System_IDisposable /* System.IDisposable */: DNObject {
 		"System.IDisposable"
 	}}
 
+	/// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
 	public func dispose() throws {
 		
 		
@@ -18042,6 +18309,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
+	/// Serves as a hash function for the current  , suitable for hashing algorithms and data structures, such as a hash table.
+	/// A hash code for the current  .
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -18060,6 +18329,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
+	/// Returns a string containing the name of the current   in the format languagecode2-country/regioncode2.
+	/// A string containing the name of the current  .
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -18101,6 +18372,7 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
+	/// Refreshes cached culture-related information.
 	public func clearCachedData() throws {
 		
 		
@@ -18118,6 +18390,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
+	/// Gets an alternate user interface culture suitable for console applications when the default graphic user interface culture is unsuitable.
+	/// An alternate culture that is used to read and display text on the console.
 	public func getConsoleFallbackUICulture() throws -> System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ {
 		
 		
@@ -18138,6 +18412,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
+	/// Creates a copy of the current  .
+	/// A copy of the current  .
 	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
@@ -19495,6 +19771,8 @@ public class System_Collections_Generic_ICollection_A1 /* System.Collections.Gen
 		
 	}
 	
+	/// Removes all items from the  .
+	/// The   is read-only.
 	public func clear(T: System_Type /* System.Type */) throws {
 		let TC = T.__handle
 		
@@ -20649,6 +20927,8 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 		
 	}
 	
+	/// Serves as a hash function for the current   for hashing algorithms and data structures, such as a hash table.
+	/// A hash code for the current  .
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -20667,6 +20947,8 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 		
 	}
 	
+	/// Serves as a hash function for the current   for hashing algorithms and data structures, such as a hash table.
+	/// A hash code for the current  .
 	public func getHashCode(_ source: System_String /* System.String */, _ options: System_Globalization_CompareOptions /* System.Globalization.CompareOptions */) throws -> Int32 /* System.Int32 */ {
 		let sourceC = source.__handle
 		let optionsC = options.cValue
@@ -20687,6 +20969,8 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 		
 	}
 	
+	/// Returns a string that represents the current   object.
+	/// A string that represents the current   object.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -20903,6 +21187,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
+	/// Gets the assembly that contains the code that is currently executing.
+	/// The assembly that contains the code that is currently executing.
 	public class func getExecutingAssembly() throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		
 		
@@ -20923,6 +21209,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
+	/// Returns the   of the method that invoked the currently executing method.
+	/// The   object of the method that invoked the currently executing method.
 	public class func getCallingAssembly() throws -> System_Reflection_Assembly /* System.Reflection.Assembly */ {
 		
 		
@@ -20943,6 +21231,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
+	/// Gets all types defined in this assembly.
+	/// The assembly contains one or more types that cannot be loaded. The array returned by the   property of this exception contains a   object for each type that was loaded and   for each type that could not be loaded, while the   property contains an exception for each type that could not be loaded.
+	/// An array that contains all the types that are defined in this assembly.
 	public func getTypes() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
@@ -20963,6 +21254,10 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
+	/// Gets the public types defined in this assembly that are visible outside the assembly.
+	/// The assembly is a dynamic assembly.
+	/// Unable to load a dependent assembly.
+	/// An array that represents the types defined in this assembly that are visible outside the assembly.
 	public func getExportedTypes() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
@@ -21024,6 +21319,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
+	/// Returns the names of all the resources in this assembly.
+	/// An array that contains the names of all the resources.
 	public func getManifestResourceNames() throws -> System_String_Array /* System.String[] */ {
 		
 		
@@ -21087,6 +21384,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
+	/// Gets an   for this assembly.
+	/// An object that contains the fully parsed display name for this assembly.
 	public func getName() throws -> System_Reflection_AssemblyName /* System.Reflection.AssemblyName */ {
 		
 		
@@ -21107,6 +21406,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
+	/// Gets an   for this assembly.
+	/// An object that contains the fully parsed display name for this assembly.
 	public func getName(_ copiedName: Bool /* System.Boolean */) throws -> System_Reflection_AssemblyName /* System.Reflection.AssemblyName */ {
 		
 		
@@ -21209,6 +21510,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
+	/// Returns information about the attributes that have been applied to the current  , expressed as   objects.
+	/// A generic list of   objects representing data about the attributes that have been applied to the current assembly.
 	public func getCustomAttributesData() throws -> System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
 		
 		
@@ -21359,6 +21662,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
+	/// Gets all the modules that are part of this assembly.
+	/// The module to be loaded does not specify a file name extension.
+	/// An array of modules.
 	public func getModules() throws -> System_Reflection_Module_Array /* System.Reflection.Module[] */ {
 		
 		
@@ -21379,6 +21685,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
+	/// Gets all the modules that are part of this assembly.
+	/// The module to be loaded does not specify a file name extension.
+	/// An array of modules.
 	public func getModules(_ getResourceModules: Bool /* System.Boolean */) throws -> System_Reflection_Module_Array /* System.Reflection.Module[] */ {
 		
 		
@@ -21399,6 +21708,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
+	/// Gets all the loaded modules that are part of this assembly.
+	/// An array of modules.
 	public func getLoadedModules() throws -> System_Reflection_Module_Array /* System.Reflection.Module[] */ {
 		
 		
@@ -21419,6 +21730,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
+	/// Gets all the loaded modules that are part of this assembly.
+	/// An array of modules.
 	public func getLoadedModules(_ getResourceModules: Bool /* System.Boolean */) throws -> System_Reflection_Module_Array /* System.Reflection.Module[] */ {
 		
 		
@@ -21439,6 +21752,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
+	/// Gets the   objects for all the assemblies referenced by this assembly.
+	/// An array that contains the fully parsed display names of all the assemblies referenced by this assembly.
 	public func getReferencedAssemblies() throws -> System_Reflection_AssemblyName_Array /* System.Reflection.AssemblyName[] */ {
 		
 		
@@ -21523,6 +21838,11 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
+	/// Gets the files in the file table of an assembly manifest.
+	/// A file that was found could not be loaded.
+	/// A file was not found.
+	/// A file was not a valid assembly.
+	/// An array of streams that contain the files.
 	public func getFiles() throws -> System_IO_FileStream_Array /* System.IO.FileStream[] */ {
 		
 		
@@ -21543,6 +21863,11 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
+	/// Gets the files in the file table of an assembly manifest.
+	/// A file that was found could not be loaded.
+	/// A file was not found.
+	/// A file was not a valid assembly.
+	/// An array of streams that contain the files.
 	public func getFiles(_ getResourceModules: Bool /* System.Boolean */) throws -> System_IO_FileStream_Array /* System.IO.FileStream[] */ {
 		
 		
@@ -21582,6 +21907,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
+	/// Returns the full name of the assembly, also known as the display name.
+	/// The full name of the assembly, or the class name if the full name of the assembly cannot be determined.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -21621,6 +21948,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -21682,6 +22011,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
+	/// Gets the process executable in the default application domain. In other application domains, this is the first executable that was executed by  .
+	/// The assembly that is the process executable in the default application domain, or the first executable that was executed by  . Can return   when called from unmanaged code.
 	public class func getEntryAssembly() throws -> System_Reflection_Assembly? /* System.Reflection.Assembly */ {
 		
 		
@@ -22344,6 +22675,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
+	/// Occurs when the common language runtime class loader cannot resolve a reference to an internal module of an assembly through normal means.
 	public func moduleResolve_add(_ value: System_Reflection_ModuleResolveEventHandler? /* System.Reflection.ModuleResolveEventHandler */) {
 		let valueC = value?.__handle
 		
@@ -22352,6 +22684,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 		
 	}
+	/// Occurs when the common language runtime class loader cannot resolve a reference to an internal module of an assembly through normal means.
 	public func moduleResolve_remove(_ value: System_Reflection_ModuleResolveEventHandler? /* System.Reflection.ModuleResolveEventHandler */) {
 		let valueC = value?.__handle
 		
@@ -22447,6 +22780,8 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 		
 	}
 	
+	/// Returns a   used to iterate through the name-value pairs in the   store.
+	/// A   for parsing the name-value pairs contained in the   store.
 	public func getEnumerator() throws -> System_Runtime_Serialization_SerializationInfoEnumerator /* System.Runtime.Serialization.SerializationInfoEnumerator */ {
 		
 		
@@ -23314,6 +23649,8 @@ public class System_Runtime_Serialization_SerializationInfoEnumerator /* System.
 		"System.Runtime.Serialization.SerializationInfoEnumerator"
 	}}
 
+	/// Updates the enumerator to the next item.
+	/// if a new element is found; otherwise,  .
 	public func moveNext() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -23332,6 +23669,7 @@ public class System_Runtime_Serialization_SerializationInfoEnumerator /* System.
 		
 	}
 	
+	/// Resets the enumerator to the first item.
 	public func reset() throws {
 		
 		
@@ -25030,6 +25368,8 @@ public class System_Numerics_IFloatingPoint_A1 /* System.Numerics.IFloatingPoint
 		
 	}
 	
+	/// Gets the number of bytes that will be written as part of  .
+	/// The number of bytes that will be written as part of  .
 	public func getExponentByteCount(TSelf: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let TSelfC = TSelf.__handle
 		
@@ -25049,6 +25389,8 @@ public class System_Numerics_IFloatingPoint_A1 /* System.Numerics.IFloatingPoint
 		
 	}
 	
+	/// Gets the length, in bits, of the shortest two's complement representation of the current exponent.
+	/// The length, in bits, of the shortest two's complement representation of the current exponent.
 	public func getExponentShortestBitLength(TSelf: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let TSelfC = TSelf.__handle
 		
@@ -25068,6 +25410,8 @@ public class System_Numerics_IFloatingPoint_A1 /* System.Numerics.IFloatingPoint
 		
 	}
 	
+	/// Gets the length, in bits, of the current significand.
+	/// The length, in bits, of the current significand.
 	public func getSignificandBitLength(TSelf: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let TSelfC = TSelf.__handle
 		
@@ -25087,6 +25431,8 @@ public class System_Numerics_IFloatingPoint_A1 /* System.Numerics.IFloatingPoint
 		
 	}
 	
+	/// Gets the number of bytes that will be written as part of  .
+	/// The number of bytes that will be written as part of  .
 	public func getSignificandByteCount(TSelf: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let TSelfC = TSelf.__handle
 		
@@ -26434,6 +26780,8 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -26493,6 +26841,8 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 		
 	}
 	
+	/// Converts the numeric value of this instance to its equivalent string representation.
+	/// A string that represents the value of this instance.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -26513,6 +26863,8 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 		
 	}
 	
+	/// Converts the numeric value of this instance to its equivalent string representation.
+	/// A string that represents the value of this instance.
 	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
@@ -26534,6 +26886,8 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 		
 	}
 	
+	/// Converts the numeric value of this instance to its equivalent string representation.
+	/// A string that represents the value of this instance.
 	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
@@ -26555,6 +26909,8 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 		
 	}
 	
+	/// Converts the numeric value of this instance to its equivalent string representation.
+	/// A string that represents the value of this instance.
 	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let providerC = provider?.__handle
@@ -27141,6 +27497,8 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 		
 	}
 	
+	/// Returns the   for value type  .
+	/// The enumerated constant  .
 	public func getTypeCode() throws -> System_TypeCode /* System.TypeCode */ {
 		
 		
@@ -28392,6 +28750,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Indicates whether this instance of   is within the daylight saving time range for the current time zone.
+	/// if the value of the   property is   or   and the value of this instance of   is within the daylight saving time range for the local time zone;   if   is  .
 	public func isDaylightSavingTime() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -28432,6 +28792,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Serializes the current   object to a 64-bit binary value that subsequently can be used to recreate the   object.
+	/// A 64-bit signed integer that encodes the   and   properties.
 	public func toBinary() throws -> Int64 /* System.Int64 */ {
 		
 		
@@ -28450,6 +28812,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -28665,6 +29029,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of this instance to the equivalent OLE Automation date.
+	/// The value of this instance cannot be represented as an OLE Automation Date.
+	/// A double-precision floating-point number that contains an OLE Automation date equivalent to the value of this instance.
 	public func toOADate() throws -> Double /* System.Double */ {
 		
 		
@@ -28683,6 +29050,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to a Windows file time.
+	/// The resulting file time would represent a date and time before 12:00 midnight January 1, 1601 C.E. UTC.
+	/// The value of the current   object expressed as a Windows file time.
 	public func toFileTime() throws -> Int64 /* System.Int64 */ {
 		
 		
@@ -28701,6 +29071,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to a Windows file time.
+	/// The resulting file time would represent a date and time before 12:00 midnight January 1, 1601 C.E. UTC.
+	/// The value of the current   object expressed as a Windows file time.
 	public func toFileTimeUtc() throws -> Int64 /* System.Int64 */ {
 		
 		
@@ -28719,6 +29092,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to local time.
+	/// An object whose   property is  , and whose value is the local time equivalent to the value of the current   object, or  DateTime.MaxValue  if the converted value is too large to be represented by a   object, or  DateTime.MinValue  if the converted value is too small to be represented as a   object.
 	public func toLocalTime() throws -> System_DateTime /* System.DateTime */ {
 		
 		
@@ -28739,6 +29114,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent long date string representation.
+	/// A string that contains the long date string representation of the current   object.
 	public func toLongDateString() throws -> System_String /* System.String */ {
 		
 		
@@ -28759,6 +29136,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent long time string representation.
+	/// A string that contains the long time string representation of the current   object.
 	public func toLongTimeString() throws -> System_String /* System.String */ {
 		
 		
@@ -28779,6 +29158,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent short date string representation.
+	/// A string that contains the short date string representation of the current   object.
 	public func toShortDateString() throws -> System_String /* System.String */ {
 		
 		
@@ -28799,6 +29180,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent short time string representation.
+	/// A string that contains the short time string representation of the current   object.
 	public func toShortTimeString() throws -> System_String /* System.String */ {
 		
 		
@@ -28819,6 +29202,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent string representation using the formatting conventions of the current culture.
+	/// The date and time is outside the range of dates supported by the calendar used by the current culture.
+	/// A string representation of the value of the current   object.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -28839,6 +29225,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent string representation using the formatting conventions of the current culture.
+	/// The date and time is outside the range of dates supported by the calendar used by the current culture.
+	/// A string representation of the value of the current   object.
 	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
@@ -28860,6 +29249,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent string representation using the formatting conventions of the current culture.
+	/// The date and time is outside the range of dates supported by the calendar used by the current culture.
+	/// A string representation of the value of the current   object.
 	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
@@ -28881,6 +29273,9 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent string representation using the formatting conventions of the current culture.
+	/// The date and time is outside the range of dates supported by the calendar used by the current culture.
+	/// A string representation of the value of the current   object.
 	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let providerC = provider?.__handle
@@ -28903,6 +29298,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to Coordinated Universal Time (UTC).
+	/// An object whose   property is  , and whose value is the UTC equivalent to the value of the current   object, or  DateTime.MaxValue  if the converted value is too large to be represented by a   object, or  DateTime.MinValue  if the converted value is too small to be represented by a   object.
 	public func toUniversalTime() throws -> System_DateTime /* System.DateTime */ {
 		
 		
@@ -29064,6 +29461,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of this instance to all the string representations supported by the standard date and time format specifiers.
+	/// A string array where each element is the representation of the value of this instance formatted with one of the standard date and time format specifiers.
 	public func getDateTimeFormats() throws -> System_String_Array /* System.String[] */ {
 		
 		
@@ -29084,6 +29483,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of this instance to all the string representations supported by the standard date and time format specifiers.
+	/// A string array where each element is the representation of the value of this instance formatted with one of the standard date and time format specifiers.
 	public func getDateTimeFormats(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String_Array /* System.String[] */ {
 		let providerC = provider?.__handle
 		
@@ -29105,6 +29506,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of this instance to all the string representations supported by the standard date and time format specifiers.
+	/// A string array where each element is the representation of the value of this instance formatted with one of the standard date and time format specifiers.
 	public func getDateTimeFormats(_ format: DNChar /* System.Char */) throws -> System_String_Array /* System.String[] */ {
 		let formatC = format.cValue
 		
@@ -29126,6 +29529,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of this instance to all the string representations supported by the standard date and time format specifiers.
+	/// A string array where each element is the representation of the value of this instance formatted with one of the standard date and time format specifiers.
 	public func getDateTimeFormats(_ format: DNChar /* System.Char */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String_Array /* System.String[] */ {
 		let formatC = format.cValue
 		let providerC = provider?.__handle
@@ -29148,6 +29553,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Returns the   for value type  .
+	/// The enumerated constant,  .
 	public func getTypeCode() throws -> System_TypeCode /* System.TypeCode */ {
 		
 		
@@ -30094,6 +30501,9 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 	}
 	
+	/// Returns a new   object whose value is the absolute value of the current   object.
+	/// The value of this instance is  TimeSpan.MinValue .
+	/// A new object whose value is the absolute value of the current   object.
 	public func duration() throws -> System_TimeSpan /* System.TimeSpan */ {
 		
 		
@@ -30172,6 +30582,8 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 	}
 	
+	/// Returns a hash code for this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -30270,6 +30682,9 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 	}
 	
+	/// Returns a new   object whose value is the negated value of this instance.
+	/// The negated value of this instance cannot be represented by a  ; that is, the value of this instance is  TimeSpan.MinValue .
+	/// A new object with the same numeric value as this instance, but with the opposite sign.
 	public func negate() throws -> System_TimeSpan /* System.TimeSpan */ {
 		
 		
@@ -30696,6 +31111,8 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent string representation.
+	/// The string representation of the current   value.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -30716,6 +31133,8 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent string representation.
+	/// The string representation of the current   value.
 	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
@@ -30737,6 +31156,8 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent string representation.
+	/// The string representation of the current   value.
 	public func toString(_ format: System_String? /* System.String */, _ formatProvider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let formatProviderC = formatProvider?.__handle
@@ -31590,6 +32011,8 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -31892,6 +32315,8 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent long date string representation.
+	/// A string that contains the long date string representation of the current   object.
 	public func toLongDateString() throws -> System_String /* System.String */ {
 		
 		
@@ -31912,6 +32337,8 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent short date string representation.
+	/// A string that contains the short date string representation of the current   object.
 	public func toShortDateString() throws -> System_String /* System.String */ {
 		
 		
@@ -31932,6 +32359,9 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent string representation using the formatting conventions of the current culture.
+	/// The   object will be formatted in short form.
+	/// A string that contains the short date string representation of the current   object.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -31952,6 +32382,9 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent string representation using the formatting conventions of the current culture.
+	/// The   object will be formatted in short form.
+	/// A string that contains the short date string representation of the current   object.
 	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
@@ -31973,6 +32406,9 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent string representation using the formatting conventions of the current culture.
+	/// The   object will be formatted in short form.
+	/// A string that contains the short date string representation of the current   object.
 	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
@@ -31994,6 +32430,9 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent string representation using the formatting conventions of the current culture.
+	/// The   object will be formatted in short form.
+	/// A string that contains the short date string representation of the current   object.
 	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let providerC = provider?.__handle
@@ -32576,6 +33015,8 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 	}
 	
+	/// Convert the current   instance to a   object.
+	/// A   object spanning to the time specified in the current   instance.
 	public func toTimeSpan() throws -> System_TimeSpan /* System.TimeSpan */ {
 		
 		
@@ -32672,6 +33113,8 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -32974,6 +33417,8 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 	}
 	
+	/// Converts the value of the current   instance to its equivalent long date string representation.
+	/// The long time string representation of the current instance.
 	public func toLongTimeString() throws -> System_String /* System.String */ {
 		
 		
@@ -32994,6 +33439,8 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 	}
 	
+	/// Converts the current   instance to its equivalent short time string representation.
+	/// The short time string representation of the current instance.
 	public func toShortTimeString() throws -> System_String /* System.String */ {
 		
 		
@@ -33014,6 +33461,8 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 	}
 	
+	/// Converts the current   instance to its equivalent short time string representation using the formatting conventions of the current culture.
+	/// The short time string representation of the current instance.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -33034,6 +33483,8 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 	}
 	
+	/// Converts the current   instance to its equivalent short time string representation using the formatting conventions of the current culture.
+	/// The short time string representation of the current instance.
 	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
@@ -33055,6 +33506,8 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 	}
 	
+	/// Converts the current   instance to its equivalent short time string representation using the formatting conventions of the current culture.
+	/// The short time string representation of the current instance.
 	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
@@ -33076,6 +33529,8 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 	}
 	
+	/// Converts the current   instance to its equivalent short time string representation using the formatting conventions of the current culture.
+	/// The short time string representation of the current instance.
 	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let providerC = provider?.__handle
@@ -33475,6 +33930,8 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 		"System.Globalization.Calendar"
 	}}
 
+	/// Creates a new object that is a copy of the current   object.
+	/// A new instance of   that is the memberwise clone of the current   object.
 	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
@@ -34776,6 +35233,8 @@ public class System_Runtime_Serialization_StreamingContext /* System.Runtime.Ser
 		
 	}
 	
+	/// Returns a hash code of this object.
+	/// The   value that contains the source or destination of the serialization for this  .
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -34921,6 +35380,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		"System.Reflection.AssemblyName"
 	}}
 
+	/// Makes a copy of this   object.
+	/// An object that is a copy of this   object.
 	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
@@ -34962,6 +35423,9 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 	}
 	
+	/// Gets the public key of the assembly.
+	/// A public key was provided (for example, by using the   method), but no public key token was provided.
+	/// A byte array that contains the public key of the assembly.
 	public func getPublicKey() throws -> System_Byte_Array? /* System.Byte[] */ {
 		
 		
@@ -35000,6 +35464,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 	}
 	
+	/// Gets the public key token, which is the last 8 bytes of the SHA-1 hash of the public key under which the application or assembly is signed.
+	/// A byte array that contains the public key token.
 	public func getPublicKeyToken() throws -> System_Byte_Array? /* System.Byte[] */ {
 		
 		
@@ -35038,6 +35504,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 	}
 	
+	/// Returns the full name of the assembly, also known as the display name.
+	/// The full name of the assembly, or the class name if the full name cannot be determined.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -35686,6 +36154,8 @@ public class System_Version /* System.Version */: System_Object {
 		"System.Version"
 	}}
 
+	/// Returns a new   object whose value is the same as the current   object.
+	/// A new   whose values are a copy of the current   object.
 	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
@@ -35782,6 +36252,8 @@ public class System_Version /* System.Version */: System_Object {
 		
 	}
 	
+	/// Returns a hash code for the current   object.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -35800,6 +36272,10 @@ public class System_Version /* System.Version */: System_Object {
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent   representation.
+	/// The   representation of the values of the major, minor, build, and revision components of the current   object, as depicted in the following format. Each component is separated by a period character ('.'). Square brackets ('[' and ']') indicate a component that will not appear in the return value if the component is not defined:
+	/// major.minor[.build[.revision]]
+	/// For example, if you create a   object using the constructor  Version(1,1) , the returned string is "1.1". If you create a   object using the constructor  Version(1,3,4,2) , the returned string is "1.3.4.2".
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -35820,6 +36296,10 @@ public class System_Version /* System.Version */: System_Object {
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent   representation.
+	/// The   representation of the values of the major, minor, build, and revision components of the current   object, as depicted in the following format. Each component is separated by a period character ('.'). Square brackets ('[' and ']') indicate a component that will not appear in the return value if the component is not defined:
+	/// major.minor[.build[.revision]]
+	/// For example, if you create a   object using the constructor  Version(1,1) , the returned string is "1.1". If you create a   object using the constructor  Version(1,3,4,2) , the returned string is "1.3.4.2".
 	public func toString(_ fieldCount: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
@@ -36389,6 +36869,9 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 	}
 	
+	/// Clears buffers for this stream and causes any buffered data to be written to the file.
+	/// An I/O error occurred.
+	/// The stream is closed.
 	public override func flush() throws {
 		
 		
@@ -36406,6 +36889,9 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 	}
 	
+	/// Clears buffers for this stream and causes any buffered data to be written to the file.
+	/// An I/O error occurred.
+	/// The stream is closed.
 	public func flush(_ flushToDisk: Bool /* System.Boolean */) throws {
 		
 		
@@ -36440,6 +36926,10 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 	}
 	
+	/// Reads a byte from the file and advances the read position one byte.
+	/// The current stream does not support reading.
+	/// The current stream is closed.
+	/// The byte, cast to an  , or -1 if the end of the stream has been reached.
 	public override func readByte() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -36475,6 +36965,8 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 	}
 	
+	/// Asynchronously releases the unmanaged resources used by the  .
+	/// A task that represents the asynchronous dispose operation.
 	public override func disposeAsync() throws -> System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTask */ {
 		
 		
@@ -37291,6 +37783,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
+	/// Releases all resources used by the  .
 	public func dispose() throws {
 		
 		
@@ -37308,6 +37801,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
+	/// Closes the current stream and releases any resources (such as sockets and file handles) associated with the current stream. Instead of calling this method, ensure that the stream is properly disposed.
 	public func close() throws {
 		
 		
@@ -37325,6 +37819,8 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
+	/// Asynchronously releases the unmanaged resources used by the  .
+	/// A task that represents the asynchronous dispose operation.
 	public func disposeAsync() throws -> System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTask */ {
 		
 		
@@ -37345,6 +37841,8 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
+	/// When overridden in a derived class, clears all buffers for this stream and causes any buffered data to be written to the underlying device.
+	/// An I/O error occurs.
 	public func flush() throws {
 		
 		
@@ -37362,6 +37860,9 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
+	/// Asynchronously clears all buffers for this stream and causes any buffered data to be written to the underlying device.
+	/// The stream has been disposed.
+	/// A task that represents the asynchronous flush operation.
 	public func flushAsync() throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		
 		
@@ -37382,6 +37883,9 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
+	/// Asynchronously clears all buffers for this stream and causes any buffered data to be written to the underlying device.
+	/// The stream has been disposed.
+	/// A task that represents the asynchronous flush operation.
 	public func flushAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -37649,6 +38153,10 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
+	/// Reads a byte from the stream and advances the position within the stream by one byte, or returns -1 if at the end of the stream.
+	/// The stream does not support reading.
+	/// Methods were called after the stream was closed.
+	/// The unsigned byte cast to an  , or -1 if at the end of the stream.
 	public func readByte() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -38030,6 +38538,10 @@ public class System_MarshalByRefObject /* System.MarshalByRefObject */: System_O
 		"System.MarshalByRefObject"
 	}}
 
+	/// Retrieves the current lifetime service object that controls the lifetime policy for this instance.
+	/// The immediate caller does not have infrastructure permission.
+	/// .NET Core and .NET 5+ only: In all cases.
+	/// An object of type   used to control the lifetime policy for this instance.
 	public func getLifetimeService() throws -> System_Object /* System.Object */ {
 		
 		
@@ -38050,6 +38562,10 @@ public class System_MarshalByRefObject /* System.MarshalByRefObject */: System_O
 		
 	}
 	
+	/// Obtains a lifetime service object to control the lifetime policy for this instance.
+	/// The immediate caller does not have infrastructure permission.
+	/// .NET Core and .NET 5+ only: In all cases.
+	/// An object of type   used to control the lifetime policy for this instance. This is the current lifetime service object for this instance if one exists; otherwise, a new lifetime service object initialized to the value of the   property.
 	public func initializeLifetimeService() throws -> System_Object /* System.Object */ {
 		
 		
@@ -38094,6 +38610,8 @@ public class System_IAsyncDisposable /* System.IAsyncDisposable */: DNObject {
 		"System.IAsyncDisposable"
 	}}
 
+	/// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources asynchronously.
+	/// A task that represents the asynchronous dispose operation.
 	public func disposeAsync() throws -> System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTask */ {
 		
 		
@@ -38180,6 +38698,8 @@ public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTas
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// The hash code for the current object.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -38236,6 +38756,8 @@ public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTas
 		
 	}
 	
+	/// Retrieves a   object that represents this  .
+	/// The   object that is wrapped in this   if one exists, or a new   object that represents the result.
 	public func asTask() throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		
 		
@@ -38256,6 +38778,8 @@ public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTas
 		
 	}
 	
+	/// Gets a   that may be used at any point in the future.
+	/// The preserved  .
 	public func preserve() throws -> System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTask */ {
 		
 		
@@ -38276,6 +38800,8 @@ public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTas
 		
 	}
 	
+	/// Creates an awaiter for this value.
+	/// The awaiter.
 	public func getAwaiter() throws -> System_Runtime_CompilerServices_ValueTaskAwaiter /* System.Runtime.CompilerServices.ValueTaskAwaiter */ {
 		
 		
@@ -38585,6 +39111,8 @@ public class System_Threading_CancellationToken /* System.Threading.Cancellation
 		
 	}
 	
+	/// Serves as a hash function for a  .
+	/// A hash code for the current   instance.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -38603,6 +39131,8 @@ public class System_Threading_CancellationToken /* System.Threading.Cancellation
 		
 	}
 	
+	/// Throws a   if this token has had cancellation requested.
+	/// The token has had cancellation requested.
 	public func throwIfCancellationRequested() throws {
 		
 		
@@ -38771,6 +39301,7 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 		"System.Threading.WaitHandle"
 	}}
 
+	/// Releases all resources held by the current  .
 	public func close() throws {
 		
 		
@@ -38788,6 +39319,7 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 		
 	}
 	
+	/// Releases all resources used by the current instance of the   class.
 	public func dispose() throws {
 		
 		
@@ -38805,6 +39337,11 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 		
 	}
 	
+	/// Blocks the current thread until the current   receives a signal.
+	/// The current instance has already been disposed.
+	/// The wait completed because a thread exited without releasing a mutex.
+	/// The current instance is a transparent proxy for a   in another application domain.
+	/// if the current instance receives a signal. If the current instance is never signaled,   never returns.
 	public func waitOne(_ millisecondsTimeout: Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
 		
 		
@@ -38823,6 +39360,11 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 		
 	}
 	
+	/// Blocks the current thread until the current   receives a signal.
+	/// The current instance has already been disposed.
+	/// The wait completed because a thread exited without releasing a mutex.
+	/// The current instance is a transparent proxy for a   in another application domain.
+	/// if the current instance receives a signal. If the current instance is never signaled,   never returns.
 	public func waitOne(_ timeout: System_TimeSpan /* System.TimeSpan */) throws -> Bool /* System.Boolean */ {
 		let timeoutC = timeout.__handle
 		
@@ -38842,6 +39384,11 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 		
 	}
 	
+	/// Blocks the current thread until the current   receives a signal.
+	/// The current instance has already been disposed.
+	/// The wait completed because a thread exited without releasing a mutex.
+	/// The current instance is a transparent proxy for a   in another application domain.
+	/// if the current instance receives a signal. If the current instance is never signaled,   never returns.
 	public func waitOne() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -38860,6 +39407,11 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 		
 	}
 	
+	/// Blocks the current thread until the current   receives a signal.
+	/// The current instance has already been disposed.
+	/// The wait completed because a thread exited without releasing a mutex.
+	/// The current instance is a transparent proxy for a   in another application domain.
+	/// if the current instance receives a signal. If the current instance is never signaled,   never returns.
 	public func waitOne(_ millisecondsTimeout: Int32 /* System.Int32 */, _ exitContext: Bool /* System.Boolean */) throws -> Bool /* System.Boolean */ {
 		
 		
@@ -38878,6 +39430,11 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 		
 	}
 	
+	/// Blocks the current thread until the current   receives a signal.
+	/// The current instance has already been disposed.
+	/// The wait completed because a thread exited without releasing a mutex.
+	/// The current instance is a transparent proxy for a   in another application domain.
+	/// if the current instance receives a signal. If the current instance is never signaled,   never returns.
 	public func waitOne(_ timeout: System_TimeSpan /* System.TimeSpan */, _ exitContext: Bool /* System.Boolean */) throws -> Bool /* System.Boolean */ {
 		let timeoutC = timeout.__handle
 		
@@ -39442,6 +39999,8 @@ public class System_Runtime_InteropServices_SafeHandle /* System.Runtime.Interop
 		"System.Runtime.InteropServices.SafeHandle"
 	}}
 
+	/// Returns the value of the   field.
+	/// An   representing the value of the   field. If the handle has been marked invalid with  , this method still returns the original handle value, which can be a stale value.
 	public func dangerousGetHandle() throws -> UnsafeMutableRawPointer? /* System.IntPtr */ {
 		
 		
@@ -39460,6 +40019,7 @@ public class System_Runtime_InteropServices_SafeHandle /* System.Runtime.Interop
 		
 	}
 	
+	/// Marks the handle for releasing and freeing resources.
 	public func close() throws {
 		
 		
@@ -39477,6 +40037,7 @@ public class System_Runtime_InteropServices_SafeHandle /* System.Runtime.Interop
 		
 	}
 	
+	/// Releases all resources used by the   class.
 	public func dispose() throws {
 		
 		
@@ -39494,6 +40055,7 @@ public class System_Runtime_InteropServices_SafeHandle /* System.Runtime.Interop
 		
 	}
 	
+	/// Marks a handle as no longer used.
 	public func setHandleAsInvalid() throws {
 		
 		
@@ -39528,6 +40090,7 @@ public class System_Runtime_InteropServices_SafeHandle /* System.Runtime.Interop
 		
 	}
 	
+	/// Manually decrements the reference counter on a   instance.
 	public func dangerousRelease() throws {
 		
 		
@@ -39662,6 +40225,7 @@ public class System_Threading_CancellationTokenRegistration /* System.Threading.
 		"System.Threading.CancellationTokenRegistration"
 	}}
 
+	/// Disposes of the registration and unregisters the target callback from the associated  .
 	public func dispose() throws {
 		
 		
@@ -39679,6 +40243,9 @@ public class System_Threading_CancellationTokenRegistration /* System.Threading.
 		
 	}
 	
+	/// Disposes of the registration and unregisters the target callback from the associated
+	/// .
+	/// A task that represents the asynchronous dispose operation.
 	public func disposeAsync() throws -> System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTask */ {
 		
 		
@@ -39699,6 +40266,9 @@ public class System_Threading_CancellationTokenRegistration /* System.Threading.
 		
 	}
 	
+	/// Disposes of the registration and unregisters the target callback from the associated
+	/// .
+	/// if the method succeeds; otherwise,  .
 	public func unregister() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -39755,6 +40325,8 @@ public class System_Threading_CancellationTokenRegistration /* System.Threading.
 		
 	}
 	
+	/// Serves as a hash function for a  .
+	/// A hash code for the current   instance.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -39841,6 +40413,8 @@ public class System_Exception /* System.Exception */: System_Object {
 		"System.Exception"
 	}}
 
+	/// When overridden in a derived class, returns the   that is the root cause of one or more subsequent exceptions.
+	/// The first exception thrown in a chain of exceptions. If the   property of the current exception is a null reference (  in Visual Basic), this property returns the current exception.
 	public func getBaseException() throws -> System_Exception /* System.Exception */ {
 		
 		
@@ -39880,6 +40454,8 @@ public class System_Exception /* System.Exception */: System_Object {
 		
 	}
 	
+	/// Creates and returns a string representation of the current exception.
+	/// A string representation of the current exception.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -39900,6 +40476,8 @@ public class System_Exception /* System.Exception */: System_Object {
 		
 	}
 	
+	/// Gets the runtime type of the current instance.
+	/// A   object that represents the exact runtime type of the current instance.
 	public override func getType() throws -> System_Type /* System.Type */ {
 		
 		
@@ -40284,6 +40862,10 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 	}
 	
+	/// Returns a   object representing the currently executing method.
+	/// This member was invoked with a late-binding mechanism.
+	/// is a static method that is called from within an executing method and that returns information about that method.
+	/// A   object representing the currently executing method.
 	public class func getCurrentMethod() throws -> System_Reflection_MethodBase? /* System.Reflection.MethodBase */ {
 		
 		
@@ -40304,6 +40886,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 	}
 	
+	/// When overridden in a derived class, gets the parameters of the specified method or constructor.
+	/// An array of type   containing information that matches the signature of the method (or constructor) reflected by this   instance.
 	public func getParameters() throws -> System_Reflection_ParameterInfo_Array /* System.Reflection.ParameterInfo[] */ {
 		
 		
@@ -40324,6 +40908,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 	}
 	
+	/// When overridden in a derived class, returns the   flags.
+	/// The   flags.
 	public func getMethodImplementationFlags() throws -> System_Reflection_MethodImplAttributes /* System.Reflection.MethodImplAttributes */ {
 		
 		
@@ -40344,6 +40930,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 	}
 	
+	/// When overridden in a derived class, gets a   object that provides access to the MSIL stream, local variables, and exceptions for the current method.
+	/// This method is invalid unless overridden in a derived class.
+	/// A   object that provides access to the MSIL stream, local variables, and exceptions for the current method.
 	public func getMethodBody() throws -> System_Reflection_MethodBody? /* System.Reflection.MethodBody */ {
 		
 		
@@ -40364,6 +40953,9 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 	}
 	
+	/// Returns an array of   objects that represent the type arguments of a generic method or the type parameters of a generic method definition.
+	/// The current object is a  . Generic constructors are not supported in the .NET Framework version 2.0. This exception is the default behavior if this method is not overridden in a derived class.
+	/// An array of   objects that represent the type arguments of a generic method or the type parameters of a generic method definition. Returns an empty array if the current method is not a generic method.
 	public func getGenericArguments() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
@@ -40450,6 +41042,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -41021,6 +41615,8 @@ public class System_RuntimeMethodHandle /* System.RuntimeMethodHandle */: System
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -41116,6 +41712,9 @@ public class System_RuntimeMethodHandle /* System.RuntimeMethodHandle */: System
 		
 	}
 	
+	/// Obtains a pointer to the method represented by this instance.
+	/// The caller does not have the necessary permission to perform this operation.
+	/// A pointer to the method represented by this instance.
 	public func getFunctionPointer() throws -> UnsafeMutableRawPointer? /* System.IntPtr */ {
 		
 		
@@ -41238,6 +41837,8 @@ public class System_RuntimeTypeHandle /* System.RuntimeTypeHandle */: System_Val
 		
 	}
 	
+	/// Returns the hash code for the current instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -41294,6 +41895,8 @@ public class System_RuntimeTypeHandle /* System.RuntimeTypeHandle */: System_Val
 		
 	}
 	
+	/// Gets a handle to the module that contains the type represented by the current instance.
+	/// A   structure representing a handle to the module that contains the type represented by the current instance.
 	public func getModuleHandle() throws -> System_ModuleHandle /* System.ModuleHandle */ {
 		
 		
@@ -41398,6 +42001,8 @@ public class System_ModuleHandle /* System.ModuleHandle */: System_ValueType {
 		"System.ModuleHandle"
 	}}
 
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer that is the hash code for this instance.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -41744,6 +42349,8 @@ public class System_RuntimeFieldHandle /* System.RuntimeFieldHandle */: System_V
 		"System.RuntimeFieldHandle"
 	}}
 
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer that is the hash code for this instance.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -41963,6 +42570,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 	}
 	
+	/// Returns a list of   objects for the current parameter, which can be used in the reflection-only context.
+	/// A generic list of   objects representing data about the attributes that have been applied to the current parameter.
 	public func getCustomAttributesData() throws -> System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
 		
 		
@@ -42024,6 +42633,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 	}
 	
+	/// Gets the modified type of this parameter object.
+	/// A modified type.
 	public func getModifiedParameterType() throws -> System_Type /* System.Type */ {
 		
 		
@@ -42044,6 +42655,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 	}
 	
+	/// Gets the optional custom modifiers of the parameter.
+	/// An array of   objects that identify the optional custom modifiers of the current parameter, such as   or  .
 	public func getOptionalCustomModifiers() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
@@ -42064,6 +42677,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 	}
 	
+	/// Gets the required custom modifiers of the parameter.
+	/// An array of   objects that identify the required custom modifiers of the current parameter, such as   or  .
 	public func getRequiredCustomModifiers() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
@@ -42105,6 +42720,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 	}
 	
+	/// Gets the parameter type and name represented as a string.
+	/// A string containing the type and the name of the parameter.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -42611,6 +43228,8 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 		
 	}
 	
+	/// Returns a string representation of the custom attribute.
+	/// A string value that represents the custom attribute.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -42631,6 +43250,8 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 		
 	}
 	
+	/// Serves as a hash function for a particular type.
+	/// A hash code for the current  .
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -42830,6 +43451,8 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
+	/// Gets a value indicating whether the object is a resource.
+	/// if the object is a resource; otherwise,  .
 	public func isResource() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -42867,6 +43490,8 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
+	/// Returns a list of   objects for the current module, which can be used in the reflection-only context.
+	/// A generic list of   objects representing data about the attributes that have been applied to the current module.
 	public func getCustomAttributesData() throws -> System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.CustomAttributeData> */ {
 		
 		
@@ -42997,6 +43622,8 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
+	/// Returns the global methods defined on the module.
+	/// An array of   objects representing all the global methods defined on the module; if there are no global methods, an empty array is returned.
 	public func getMethods() throws -> System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ {
 		
 		
@@ -43017,6 +43644,8 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
+	/// Returns the global methods defined on the module.
+	/// An array of   objects representing all the global methods defined on the module; if there are no global methods, an empty array is returned.
 	public func getMethods(_ bindingFlags: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ {
 		let bindingFlagsC = bindingFlags.cValue
 		
@@ -43081,6 +43710,8 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
+	/// Returns the global fields defined on the module.
+	/// An array of   objects representing the global fields defined on the module; if there are no global fields, an empty array is returned.
 	public func getFields() throws -> System_Reflection_FieldInfo_Array /* System.Reflection.FieldInfo[] */ {
 		
 		
@@ -43101,6 +43732,8 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
+	/// Returns the global fields defined on the module.
+	/// An array of   objects representing the global fields defined on the module; if there are no global fields, an empty array is returned.
 	public func getFields(_ bindingFlags: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */) throws -> System_Reflection_FieldInfo_Array /* System.Reflection.FieldInfo[] */ {
 		let bindingFlagsC = bindingFlags.cValue
 		
@@ -43122,6 +43755,10 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
+	/// Returns all the types defined within this module.
+	/// One or more classes in a module could not be loaded.
+	/// The caller does not have the required permission.
+	/// An array of type   containing types defined within the module that is reflected by this instance.
 	public func getTypes() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
@@ -43473,6 +44110,8 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -43491,6 +44130,8 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
+	/// Returns the name of the module.
+	/// A   representing the name of this module.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -43855,6 +44496,8 @@ public class System_Guid /* System.Guid */: System_ValueType {
 		
 	}
 	
+	/// Returns a 16-element byte array that contains the value of this instance.
+	/// A 16-element byte array.
 	public func toByteArray() throws -> System_Byte_Array /* System.Byte[] */ {
 		
 		
@@ -43875,6 +44518,8 @@ public class System_Guid /* System.Guid */: System_ValueType {
 		
 	}
 	
+	/// Returns a 16-element byte array that contains the value of this instance.
+	/// A 16-element byte array.
 	public func toByteArray(_ bigEndian: Bool /* System.Boolean */) throws -> System_Byte_Array /* System.Byte[] */ {
 		
 		
@@ -43895,6 +44540,8 @@ public class System_Guid /* System.Guid */: System_ValueType {
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// The hash code for this instance.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -43989,6 +44636,10 @@ public class System_Guid /* System.Guid */: System_ValueType {
 		
 	}
 	
+	/// Returns a string representation of the value of this instance in registry format.
+	/// The value of this  , formatted by using the "D" format specifier as follows:
+	/// xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+	/// where the value of the GUID is represented as a series of lowercase hexadecimal digits in groups of 8, 4, 4, 4, and 12 digits and separated by hyphens. An example of a return value is "382c74c3-721d-4f34-80e5-57657b6cbc27". To convert the hexadecimal digits from a through f to uppercase, call the   method on the returned string.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -44009,6 +44660,10 @@ public class System_Guid /* System.Guid */: System_ValueType {
 		
 	}
 	
+	/// Returns a string representation of the value of this instance in registry format.
+	/// The value of this  , formatted by using the "D" format specifier as follows:
+	/// xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+	/// where the value of the GUID is represented as a series of lowercase hexadecimal digits in groups of 8, 4, 4, 4, and 12 digits and separated by hyphens. An example of a return value is "382c74c3-721d-4f34-80e5-57657b6cbc27". To convert the hexadecimal digits from a through f to uppercase, call the   method on the returned string.
 	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
@@ -44030,6 +44685,10 @@ public class System_Guid /* System.Guid */: System_ValueType {
 		
 	}
 	
+	/// Returns a string representation of the value of this instance in registry format.
+	/// The value of this  , formatted by using the "D" format specifier as follows:
+	/// xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+	/// where the value of the GUID is represented as a series of lowercase hexadecimal digits in groups of 8, 4, 4, 4, and 12 digits and separated by hyphens. An example of a return value is "382c74c3-721d-4f34-80e5-57657b6cbc27". To convert the hexadecimal digits from a through f to uppercase, call the   method on the returned string.
 	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let providerC = provider?.__handle
@@ -44098,6 +44757,8 @@ public class System_Guid /* System.Guid */: System_ValueType {
 		
 	}
 	
+	/// Initializes a new instance of the   structure.
+	/// A new GUID object.
 	public class func newGuid() throws -> System_Guid /* System.Guid */ {
 		
 		
@@ -44315,6 +44976,9 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 		"System.Reflection.MethodInfo"
 	}}
 
+	/// Returns an array of   objects that represent the type arguments of a generic method or the type parameters of a generic method definition.
+	/// This method is not supported.
+	/// An array of   objects that represent the type arguments of a generic method or the type parameters of a generic method definition. Returns an empty array if the current method is not a generic method.
 	public override func getGenericArguments() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
@@ -44335,6 +44999,10 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 		
 	}
 	
+	/// Returns a   object that represents a generic method definition from which the current method can be constructed.
+	/// The current method is not a generic method. That is,   returns  .
+	/// This method is not supported.
+	/// A   object representing a generic method definition from which the current method can be constructed.
 	public func getGenericMethodDefinition() throws -> System_Reflection_MethodInfo /* System.Reflection.MethodInfo */ {
 		
 		
@@ -44376,6 +45044,8 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 		
 	}
 	
+	/// When overridden in a derived class, returns the   object for the method on the direct or indirect base class in which the method represented by this instance was first declared.
+	/// A   object for the first implementation of this method.
 	public func getBaseDefinition() throws -> System_Reflection_MethodInfo /* System.Reflection.MethodInfo */ {
 		
 		
@@ -44501,6 +45171,8 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -44898,6 +45570,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -44978,6 +45652,11 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 	}
 	
+	/// Returns a literal value associated with the field by a compiler.
+	/// The Constant table in unmanaged metadata does not contain a constant value for the current field.
+	/// The type of the value is not one of the types permitted by the Common Language Specification (CLS). See the ECMA Partition II specification Metadata Logical Format: Other Structures, Element Types used in Signatures.
+	/// The constant value for the field is not set.
+	/// An   that contains the literal value associated with the field. If the literal value is a class type with an element value of zero, the return value is  .
 	public func getRawConstantValue() throws -> System_Object? /* System.Object */ {
 		
 		
@@ -44998,6 +45677,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 	}
 	
+	/// Gets the modified type of this field object.
+	/// A modified type.
 	public func getModifiedFieldType() throws -> System_Type /* System.Type */ {
 		
 		
@@ -45018,6 +45699,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 	}
 	
+	/// Gets an array of types that identify the optional custom modifiers of the field.
+	/// An array of   objects that identify the optional custom modifiers of the current field, such as  .
 	public func getOptionalCustomModifiers() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
@@ -45038,6 +45721,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 	}
 	
+	/// Gets an array of types that identify the required custom modifiers of the property.
+	/// An array of   objects that identify the required custom modifiers of the current property, such as   or  .
 	public func getRequiredCustomModifiers() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
@@ -45664,6 +46349,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		"System.Reflection.PropertyInfo"
 	}}
 
+	/// When overridden in a derived class, returns an array of all the index parameters for the property.
+	/// An array of type   containing the parameters for the indexes. If the property is not indexed, the array has 0 (zero) elements.
 	public func getIndexParameters() throws -> System_Reflection_ParameterInfo_Array /* System.Reflection.ParameterInfo[] */ {
 		
 		
@@ -45684,6 +46371,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 	}
 	
+	/// Returns an array whose elements reflect the public   and   accessors of the property reflected by the current instance.
+	/// An array of   objects that reflect the public   and   accessors of the property reflected by the current instance, if found; otherwise, this method returns an array with zero (0) elements.
 	public func getAccessors() throws -> System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ {
 		
 		
@@ -45704,6 +46393,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 	}
 	
+	/// Returns an array whose elements reflect the public   and   accessors of the property reflected by the current instance.
+	/// An array of   objects that reflect the public   and   accessors of the property reflected by the current instance, if found; otherwise, this method returns an array with zero (0) elements.
 	public func getAccessors(_ nonPublic: Bool /* System.Boolean */) throws -> System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ {
 		
 		
@@ -45724,6 +46415,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 	}
 	
+	/// Returns the public   accessor for this property.
+	/// A   object representing the public   accessor for this property, or   if the   accessor is non-public or does not exist.
 	public func getGetMethod() throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
 		
 		
@@ -45744,6 +46437,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 	}
 	
+	/// Returns the public   accessor for this property.
+	/// A   object representing the public   accessor for this property, or   if the   accessor is non-public or does not exist.
 	public func getGetMethod(_ nonPublic: Bool /* System.Boolean */) throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
 		
 		
@@ -45764,6 +46459,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 	}
 	
+	/// Returns the public   accessor for this property.
+	/// The   object representing the   method for this property if the   accessor is public, or   if the   accessor is not public.
 	public func getSetMethod() throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
 		
 		
@@ -45784,6 +46481,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 	}
 	
+	/// Returns the public   accessor for this property.
+	/// The   object representing the   method for this property if the   accessor is public, or   if the   accessor is not public.
 	public func getSetMethod(_ nonPublic: Bool /* System.Boolean */) throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
 		
 		
@@ -45804,6 +46503,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 	}
 	
+	/// Gets the modified type of this property object.
+	/// A modified type.
 	public func getModifiedPropertyType() throws -> System_Type /* System.Type */ {
 		
 		
@@ -45824,6 +46525,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 	}
 	
+	/// Returns an array of types representing the optional custom modifiers of the property.
+	/// An array of   objects that identify the optional custom modifiers of the current property, such as   or  .
 	public func getOptionalCustomModifiers() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
@@ -45844,6 +46547,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 	}
 	
+	/// Returns an array of types representing the required custom modifiers of the property.
+	/// An array of   objects that identify the required custom modifiers of the current property, such as   or  .
 	public func getRequiredCustomModifiers() throws -> System_Type_Array /* System.Type[] */ {
 		
 		
@@ -45932,6 +46637,10 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 	}
 	
+	/// Returns a literal value associated with the property by a compiler.
+	/// The Constant table in unmanaged metadata does not contain a constant value for the current property.
+	/// The type of the value is not one of the types permitted by the Common Language Specification (CLS). See the ECMA Partition II specification, Metadata.
+	/// An   that contains the literal value associated with the property. If the literal value is a class type with an element value of zero, the return value is  .
 	public func getConstantValue() throws -> System_Object? /* System.Object */ {
 		
 		
@@ -45952,6 +46661,10 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 	}
 	
+	/// Returns a literal value associated with the property by a compiler.
+	/// The Constant table in unmanaged metadata does not contain a constant value for the current property.
+	/// The type of the value is not one of the types permitted by the Common Language Specification (CLS). See the ECMA Partition II specification, Metadata Logical Format: Other Structures, Element Types used in Signatures.
+	/// An   that contains the literal value associated with the property. If the literal value is a class type with an element value of zero, the return value is  .
 	public func getRawConstantValue() throws -> System_Object? /* System.Object */ {
 		
 		
@@ -46053,6 +46766,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -46389,6 +47104,8 @@ public class System_Reflection_ConstructorInfo /* System.Reflection.ConstructorI
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -46488,6 +47205,8 @@ public class System_Reflection_CustomAttributeTypedArgument /* System.Reflection
 		"System.Reflection.CustomAttributeTypedArgument"
 	}}
 
+	/// Returns a string consisting of the argument name, the equal sign, and a string representation of the argument value.
+	/// A string consisting of the argument name, the equal sign, and a string representation of the argument value.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -46508,6 +47227,8 @@ public class System_Reflection_CustomAttributeTypedArgument /* System.Reflection
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer that is the hash code for this instance.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -46719,6 +47440,8 @@ public class System_Reflection_CustomAttributeNamedArgument /* System.Reflection
 		"System.Reflection.CustomAttributeNamedArgument"
 	}}
 
+	/// Returns a string that consists of the argument name, the equal sign, and a string representation of the argument value.
+	/// A string that consists of the argument name, the equal sign, and a string representation of the argument value.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -46739,6 +47462,8 @@ public class System_Reflection_CustomAttributeNamedArgument /* System.Reflection
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -46992,6 +47717,8 @@ public class System_Reflection_MethodBody /* System.Reflection.MethodBody */: Sy
 		"System.Reflection.MethodBody"
 	}}
 
+	/// Returns the MSIL for the method body, as an array of bytes.
+	/// An array of type   that contains the MSIL for the method body.
 	public func getILAsByteArray() throws -> System_Byte_Array? /* System.Byte[] */ {
 		
 		
@@ -47153,6 +47880,8 @@ public class System_Reflection_LocalVariableInfo /* System.Reflection.LocalVaria
 		"System.Reflection.LocalVariableInfo"
 	}}
 
+	/// Returns a user-readable string that describes the local variable.
+	/// A string that displays information about the local variable, including the type name, index, and pinned status.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -47288,6 +48017,8 @@ public class System_Reflection_ExceptionHandlingClause /* System.Reflection.Exce
 		"System.Reflection.ExceptionHandlingClause"
 	}}
 
+	/// A string representation of the exception-handling clause.
+	/// A string that lists appropriate property values for the filter clause type.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -47541,6 +48272,8 @@ public class System_Collections_IDictionary /* System.Collections.IDictionary */
 		
 	}
 	
+	/// Removes all elements from the   object.
+	/// The   object is read-only.
 	public func clear() throws {
 		
 		
@@ -47558,6 +48291,8 @@ public class System_Collections_IDictionary /* System.Collections.IDictionary */
 		
 	}
 	
+	/// Returns an   object for the   object.
+	/// An   object for the   object.
 	public func getEnumerator() throws -> System_Collections_IDictionaryEnumerator /* System.Collections.IDictionaryEnumerator */ {
 		
 		
@@ -48034,6 +48769,9 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		"System.Threading.Tasks.Task"
 	}}
 
+	/// Starts the  , scheduling it for execution to the current  .
+	/// The   instance has been disposed.
+	/// The   is not in a valid state to be started. It may have already been started, executed, or canceled, or it may have been created in a manner that doesn't support direct scheduling.
 	public func start() throws {
 		
 		
@@ -48051,6 +48789,9 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
+	/// Starts the  , scheduling it for execution to the current  .
+	/// The   instance has been disposed.
+	/// The   is not in a valid state to be started. It may have already been started, executed, or canceled, or it may have been created in a manner that doesn't support direct scheduling.
 	public func start(_ scheduler: System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.TaskScheduler */) throws {
 		let schedulerC = scheduler.__handle
 		
@@ -48069,6 +48810,9 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
+	/// Runs the   synchronously on the current  .
+	/// The   instance has been disposed.
+	/// The   is not in a valid state to be started. It may have already been started, executed, or canceled, or it may have been created in a manner that doesn't support direct scheduling.
 	public func runSynchronously() throws {
 		
 		
@@ -48086,6 +48830,9 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
+	/// Runs the   synchronously on the current  .
+	/// The   instance has been disposed.
+	/// The   is not in a valid state to be started. It may have already been started, executed, or canceled, or it may have been created in a manner that doesn't support direct scheduling.
 	public func runSynchronously(_ scheduler: System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.TaskScheduler */) throws {
 		let schedulerC = scheduler.__handle
 		
@@ -48104,6 +48851,8 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
+	/// Releases all resources used by the current instance of the   class.
+	/// The task is not in one of the final states:  ,  , or  .
 	public func dispose() throws {
 		
 		
@@ -48121,6 +48870,8 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
+	/// Gets an awaiter used to await this  .
+	/// An awaiter instance.
 	public func getAwaiter() throws -> System_Runtime_CompilerServices_TaskAwaiter /* System.Runtime.CompilerServices.TaskAwaiter */ {
 		
 		
@@ -48182,6 +48933,8 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
+	/// Creates an awaitable task that asynchronously yields back to the current context when awaited.
+	/// A context that, when awaited, will asynchronously transition back into the current context at the time of the await. If the current   is non-null, it is treated as the current context. Otherwise, the task scheduler that is associated with the currently executing task is treated as the current context.
 	public class func yield() throws -> System_Runtime_CompilerServices_YieldAwaitable /* System.Runtime.CompilerServices.YieldAwaitable */ {
 		
 		
@@ -48202,6 +48955,11 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
+	/// Waits for the   to complete execution.
+	/// The   has been disposed.
+	/// The task was canceled. The   collection contains a   object.
+	/// -or-
+	/// An exception was thrown during the execution of the task. The   collection contains information about the exception or exceptions.
 	public func wait() throws {
 		
 		
@@ -48219,6 +48977,11 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
+	/// Waits for the   to complete execution.
+	/// The   has been disposed.
+	/// The task was canceled. The   collection contains a   object.
+	/// -or-
+	/// An exception was thrown during the execution of the task. The   collection contains information about the exception or exceptions.
 	public func wait(_ timeout: System_TimeSpan /* System.TimeSpan */) throws -> Bool /* System.Boolean */ {
 		let timeoutC = timeout.__handle
 		
@@ -48238,6 +49001,11 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
+	/// Waits for the   to complete execution.
+	/// The   has been disposed.
+	/// The task was canceled. The   collection contains a   object.
+	/// -or-
+	/// An exception was thrown during the execution of the task. The   collection contains information about the exception or exceptions.
 	public func wait(_ timeout: System_TimeSpan /* System.TimeSpan */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> Bool /* System.Boolean */ {
 		let timeoutC = timeout.__handle
 		let cancellationTokenC = cancellationToken.__handle
@@ -48258,6 +49026,11 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
+	/// Waits for the   to complete execution.
+	/// The   has been disposed.
+	/// The task was canceled. The   collection contains a   object.
+	/// -or-
+	/// An exception was thrown during the execution of the task. The   collection contains information about the exception or exceptions.
 	public func wait(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws {
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -48276,6 +49049,11 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
+	/// Waits for the   to complete execution.
+	/// The   has been disposed.
+	/// The task was canceled. The   collection contains a   object.
+	/// -or-
+	/// An exception was thrown during the execution of the task. The   collection contains information about the exception or exceptions.
 	public func wait(_ millisecondsTimeout: Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
 		
 		
@@ -48294,6 +49072,11 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
+	/// Waits for the   to complete execution.
+	/// The   has been disposed.
+	/// The task was canceled. The   collection contains a   object.
+	/// -or-
+	/// An exception was thrown during the execution of the task. The   collection contains information about the exception or exceptions.
 	public func wait(_ millisecondsTimeout: Int32 /* System.Int32 */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> Bool /* System.Boolean */ {
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -49395,6 +50178,9 @@ public class System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.Task
 		"System.Threading.Tasks.TaskScheduler"
 	}}
 
+	/// Creates a   associated with the current  .
+	/// The current SynchronizationContext may not be used as a TaskScheduler.
+	/// A   associated with the current  , as determined by  .
 	public class func fromCurrentSynchronizationContext() throws -> System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.TaskScheduler */ {
 		
 		
@@ -49546,6 +50332,8 @@ public class System_AggregateException /* System.AggregateException */: System_E
 		
 	}
 	
+	/// Returns the   that is the root cause of this exception.
+	/// The   that is the root cause of this exception.
 	public override func getBaseException() throws -> System_Exception /* System.Exception */ {
 		
 		
@@ -49566,6 +50354,8 @@ public class System_AggregateException /* System.AggregateException */: System_E
 		
 	}
 	
+	/// Flattens an   instances into a single, new instance.
+	/// A new, flattened  .
 	public func flatten() throws -> System_AggregateException /* System.AggregateException */ {
 		
 		
@@ -49586,6 +50376,8 @@ public class System_AggregateException /* System.AggregateException */: System_E
 		
 	}
 	
+	/// Creates and returns a string representation of the current  .
+	/// A string representation of the current exception.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -50383,6 +51175,10 @@ public class System_Runtime_CompilerServices_TaskAwaiter /* System.Runtime.Compi
 		
 	}
 	
+	/// Ends the wait for the completion of the asynchronous task.
+	/// The   object was not properly initialized.
+	/// The task was canceled.
+	/// The task completed in a   state.
 	public func getResult() throws {
 		
 		
@@ -50548,6 +51344,8 @@ public class System_Runtime_CompilerServices_ConfiguredTaskAwaitable /* System.R
 		"System.Runtime.CompilerServices.ConfiguredTaskAwaitable"
 	}}
 
+	/// Returns an awaiter for this awaitable object.
+	/// The awaiter.
 	public func getAwaiter() throws -> System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */ {
 		
 		
@@ -50646,6 +51444,10 @@ public class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredT
 		
 	}
 	
+	/// Ends the await on the completed task.
+	/// The awaiter was not properly initialized.
+	/// The task was canceled.
+	/// The task completed in a faulted state.
 	public func getResult() throws {
 		
 		
@@ -50727,6 +51529,8 @@ public class System_Runtime_CompilerServices_YieldAwaitable /* System.Runtime.Co
 		"System.Runtime.CompilerServices.YieldAwaitable"
 	}}
 
+	/// Retrieves a   object  for this instance of the class.
+	/// The object that is used to monitor the completion of an asynchronous operation.
 	public func getAwaiter() throws -> System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */ {
 		
 		
@@ -50825,6 +51629,7 @@ public class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter /* Syst
 		
 	}
 	
+	/// Ends the await operation.
 	public func getResult() throws {
 		
 		
@@ -50905,6 +51710,7 @@ public class System_TimeProvider /* System.TimeProvider */: System_Object {
 		"System.TimeProvider"
 	}}
 
+	/// Gets the current Coordinated Universal Time (UTC) date and time with an offset of zero, according to this  's notion of time.
 	public func getUtcNow() throws -> System_DateTimeOffset /* System.DateTimeOffset */ {
 		
 		
@@ -50925,6 +51731,7 @@ public class System_TimeProvider /* System.TimeProvider */: System_Object {
 		
 	}
 	
+	/// Gets the current date and time according to this  's notion of time based on  , with the offset set to the  's offset from Coordinated Universal Time (UTC).
 	public func getLocalNow() throws -> System_DateTimeOffset /* System.DateTimeOffset */ {
 		
 		
@@ -50945,6 +51752,8 @@ public class System_TimeProvider /* System.TimeProvider */: System_Object {
 		
 	}
 	
+	/// Gets the current high-frequency value designed to measure small time intervals with high accuracy in the timer mechanism.
+	/// A long integer representing the high-frequency counter value of the underlying timer mechanism.
 	public func getTimestamp() throws -> Int64 /* System.Int64 */ {
 		
 		
@@ -51513,6 +52322,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 		
 	}
 	
+	/// Returns the hash code for the current   object.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -51710,6 +52521,9 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 		
 	}
 	
+	/// Converts the value of the current   object to a Windows file time.
+	/// The resulting file time would represent a date and time before midnight on January 1, 1601 C.E. Coordinated Universal Time (UTC).
+	/// The value of the current   object, expressed as a Windows file time.
 	public func toFileTime() throws -> Int64 /* System.Int64 */ {
 		
 		
@@ -51728,6 +52542,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 		
 	}
 	
+	/// Returns the number of seconds that have elapsed since 1970-01-01T00:00:00Z.
+	/// The number of seconds that have elapsed since 1970-01-01T00:00:00Z.
 	public func toUnixTimeSeconds() throws -> Int64 /* System.Int64 */ {
 		
 		
@@ -51746,6 +52562,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 		
 	}
 	
+	/// Returns the number of milliseconds that have elapsed since 1970-01-01T00:00:00.000Z.
+	/// The number of milliseconds that have elapsed since 1970-01-01T00:00:00.000Z.
 	public func toUnixTimeMilliseconds() throws -> Int64 /* System.Int64 */ {
 		
 		
@@ -51764,6 +52582,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 		
 	}
 	
+	/// Converts the current   object to a   object that represents the local time.
+	/// An object that represents the date and time of the current   object converted to local time.
 	public func toLocalTime() throws -> System_DateTimeOffset /* System.DateTimeOffset */ {
 		
 		
@@ -51784,6 +52604,9 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent string representation.
+	/// The date and time is outside the range of dates supported by the calendar used by the current culture.
+	/// A string representation of a   object that includes the offset appended at the end of the string.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -51804,6 +52627,9 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent string representation.
+	/// The date and time is outside the range of dates supported by the calendar used by the current culture.
+	/// A string representation of a   object that includes the offset appended at the end of the string.
 	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
@@ -51825,6 +52651,9 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent string representation.
+	/// The date and time is outside the range of dates supported by the calendar used by the current culture.
+	/// A string representation of a   object that includes the offset appended at the end of the string.
 	public func toString(_ formatProvider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatProviderC = formatProvider?.__handle
 		
@@ -51846,6 +52675,9 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 		
 	}
 	
+	/// Converts the value of the current   object to its equivalent string representation.
+	/// The date and time is outside the range of dates supported by the calendar used by the current culture.
+	/// A string representation of a   object that includes the offset appended at the end of the string.
 	public func toString(_ format: System_String? /* System.String */, _ formatProvider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let formatProviderC = formatProvider?.__handle
@@ -51868,6 +52700,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 		
 	}
 	
+	/// Converts the current   object to a   value that represents the Coordinated Universal Time (UTC).
+	/// An object that represents the date and time of the current   object converted to Coordinated Universal Time (UTC).
 	public func toUniversalTime() throws -> System_DateTimeOffset /* System.DateTimeOffset */ {
 		
 		
@@ -52962,6 +53796,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
+	/// Clears cached time zone data.
 	public class func clearCachedData() throws {
 		
 		
@@ -53281,6 +54116,8 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
+	/// Serves as a hash function for hashing algorithms and data structures such as hash tables.
+	/// A 32-bit signed integer that serves as the hash code for this   object.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -53299,6 +54136,10 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
+	/// Returns a sorted collection of all the time zones about which information is available on the local system.
+	/// There is insufficient memory to store all time zone information.
+	/// The user does not have permission to read from the registry keys that contain time zone information.
+	/// A read-only collection of   objects.
 	public class func getSystemTimeZones() throws -> System_Collections_ObjectModel_ReadOnlyCollection_A1 /* System.Collections.ObjectModel.ReadOnlyCollection<System.TimeZoneInfo> */ {
 		
 		
@@ -53319,6 +54160,10 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
+	/// Returns a sorted collection of all the time zones about which information is available on the local system.
+	/// There is insufficient memory to store all time zone information.
+	/// The user does not have permission to read from the registry keys that contain time zone information.
+	/// A read-only collection of   objects.
 	public class func getSystemTimeZones(_ skipSorting: Bool /* System.Boolean */) throws -> System_Collections_ObjectModel_ReadOnlyCollection_A1 /* System.Collections.ObjectModel.ReadOnlyCollection<System.TimeZoneInfo> */ {
 		
 		
@@ -53358,6 +54203,8 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
+	/// Converts the current   object to a serialized string.
+	/// A string that represents the current   object.
 	public func toSerializedString() throws -> System_String /* System.String */ {
 		
 		
@@ -53378,6 +54225,8 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
+	/// Returns the current   object's display name.
+	/// The value of the   property of the current   object.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -53544,6 +54393,9 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
+	/// Retrieves an array of   objects that apply to the current   object.
+	/// The system does not have enough memory to make an in-memory copy of the adjustment rules.
+	/// An array of objects for this time zone.
 	public func getAdjustmentRules() throws -> System_TimeZoneInfo_AdjustmentRule_Array /* System.TimeZoneInfo.AdjustmentRule[] */ {
 		
 		
@@ -53904,6 +54756,8 @@ public class System_TimeZoneInfo_AdjustmentRule /* System.TimeZoneInfo.Adjustmen
 		
 	}
 	
+	/// Serves as a hash function for hashing algorithms and data structures such as hash tables.
+	/// A 32-bit signed integer that serves as the hash code for the current   object.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -54175,6 +55029,8 @@ public class System_TimeZoneInfo_TransitionTime /* System.TimeZoneInfo.Transitio
 		
 	}
 	
+	/// Serves as a hash function for hashing algorithms and data structures such as hash tables.
+	/// A 32-bit signed integer that serves as the hash code for this   object.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -54907,6 +55763,11 @@ public class System_Runtime_CompilerServices_TaskAwaiter_A1 /* System.Runtime.Co
 		
 	}
 	
+	/// Ends the wait for the completion of the asynchronous task.
+	/// The   object was not properly initialized.
+	/// The task was canceled.
+	/// The task completed in a   state.
+	/// The result of the completed task.
 	public func getResult(TResult: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TResultC = TResult.__handle
 		
@@ -55056,6 +55917,7 @@ public class System_Runtime_CompilerServices_ValueTaskAwaiter /* System.Runtime.
 		"System.Runtime.CompilerServices.ValueTaskAwaiter"
 	}}
 
+	/// Gets the result of the ValueTask.
 	public func getResult() throws {
 		
 		
@@ -55172,6 +56034,8 @@ public class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable /* Sys
 		"System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable"
 	}}
 
+	/// Returns an awaiter for this   instance.
+	/// The awaiter for this instance.
 	public func getAwaiter() throws -> System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */ {
 		
 		
@@ -55234,6 +56098,7 @@ public class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_Config
 		"System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter"
 	}}
 
+	/// Gets the result of the ValueTask.
 	public func getResult() throws {
 		
 		
@@ -55827,6 +56692,8 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 		"System.Reflection.TypeInfo"
 	}}
 
+	/// Returns the current type as a   object.
+	/// The current type.
 	public func asType() throws -> System_Type /* System.Type */ {
 		
 		
@@ -56547,6 +57414,8 @@ public class System_Reflection_IReflectableType /* System.Reflection.IReflectabl
 		"System.Reflection.IReflectableType"
 	}}
 
+	/// Retrieves an object that represents this type.
+	/// An object that represents this type.
 	public func getTypeInfo() throws -> System_Reflection_TypeInfo /* System.Reflection.TypeInfo */ {
 		
 		
@@ -56591,6 +57460,8 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		"System.Reflection.EventInfo"
 	}}
 
+	/// Returns the public methods that have been associated with an event in metadata using the   directive.
+	/// An array representing the public methods that have been associated with the event in metadata by using the   directive. If there are no such public methods, an empty array is returned.
 	public func getOtherMethods() throws -> System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ {
 		
 		
@@ -56611,6 +57482,8 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		
 	}
 	
+	/// Returns the public methods that have been associated with an event in metadata using the   directive.
+	/// An array representing the public methods that have been associated with the event in metadata by using the   directive. If there are no such public methods, an empty array is returned.
 	public func getOtherMethods(_ nonPublic: Bool /* System.Boolean */) throws -> System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ {
 		
 		
@@ -56631,6 +57504,8 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		
 	}
 	
+	/// Returns the method used to add an event handler delegate to the event source.
+	/// A   object representing the method used to add an event handler delegate to the event source.
 	public func getAddMethod() throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
 		
 		
@@ -56651,6 +57526,8 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		
 	}
 	
+	/// Returns the method used to remove an event handler delegate from the event source.
+	/// A   object representing the method used to remove an event handler delegate from the event source.
 	public func getRemoveMethod() throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
 		
 		
@@ -56671,6 +57548,8 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		
 	}
 	
+	/// Returns the method that is called when the event is raised.
+	/// The method that is called when the event is raised.
 	public func getRaiseMethod() throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
 		
 		
@@ -56691,6 +57570,8 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		
 	}
 	
+	/// Returns the method used to add an event handler delegate to the event source.
+	/// A   object representing the method used to add an event handler delegate to the event source.
 	public func getAddMethod(_ nonPublic: Bool /* System.Boolean */) throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
 		
 		
@@ -56711,6 +57592,8 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		
 	}
 	
+	/// Returns the method used to remove an event handler delegate from the event source.
+	/// A   object representing the method used to remove an event handler delegate from the event source.
 	public func getRemoveMethod(_ nonPublic: Bool /* System.Boolean */) throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
 		
 		
@@ -56731,6 +57614,8 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		
 	}
 	
+	/// Returns the method that is called when the event is raised.
+	/// The method that is called when the event is raised.
 	public func getRaiseMethod(_ nonPublic: Bool /* System.Boolean */) throws -> System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
 		
 		
@@ -56808,6 +57693,8 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -57503,6 +58390,8 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// The hash code for this instance.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -57578,6 +58467,8 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 		
 	}
 	
+	/// Returns the string representation of this   instance.
+	/// The string representation of this rune.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -58357,6 +59248,8 @@ public class System_Globalization_SortKey /* System.Globalization.SortKey */: Sy
 		
 	}
 	
+	/// Serves as a hash function for the current   object that is suitable for hashing algorithms and data structures such as a hash table.
+	/// A hash code for the current   object.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -58375,6 +59268,8 @@ public class System_Globalization_SortKey /* System.Globalization.SortKey */: Sy
 		
 	}
 	
+	/// Returns a string that represents the current   object.
+	/// A string that represents the current   object.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -58503,6 +59398,8 @@ public class System_Globalization_SortVersion /* System.Globalization.SortVersio
 		
 	}
 	
+	/// Returns a hash code for this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -58610,6 +59507,8 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		"System.Globalization.TextInfo"
 	}}
 
+	/// Creates a new object that is a copy of the current   object.
+	/// A new instance of   that is the memberwise clone of the current   object.
 	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
@@ -58754,6 +59653,8 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		
 	}
 	
+	/// Serves as a hash function for the current  , suitable for hashing algorithms and data structures, such as a hash table.
+	/// A hash code for the current  .
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -58772,6 +59673,8 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		
 	}
 	
+	/// Returns a string that represents the current  .
+	/// A string that represents the current  .
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -59074,6 +59977,8 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
+	/// Creates a shallow copy of the   object.
+	/// A new object copied from the original   object.
 	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
@@ -60547,6 +61452,8 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
+	/// Creates a shallow copy of the  .
+	/// A new   object copied from the original  .
 	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
@@ -60668,6 +61575,8 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
+	/// Returns all the standard patterns in which date and time values can be formatted.
+	/// An array that contains the standard patterns in which date and time values can be formatted.
 	public func getAllDateTimePatterns() throws -> System_String_Array /* System.String[] */ {
 		
 		
@@ -60688,6 +61597,8 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
+	/// Returns all the standard patterns in which date and time values can be formatted.
+	/// An array that contains the standard patterns in which date and time values can be formatted.
 	public func getAllDateTimePatterns(_ format: DNChar /* System.Char */) throws -> System_String_Array /* System.String[] */ {
 		let formatC = format.cValue
 		
@@ -62049,6 +62960,8 @@ public class System_CharEnumerator /* System.CharEnumerator */: System_Object {
 		"System.CharEnumerator"
 	}}
 
+	/// Creates a copy of the current   object.
+	/// An   that is a copy of the current   object.
 	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
@@ -62069,6 +62982,8 @@ public class System_CharEnumerator /* System.CharEnumerator */: System_Object {
 		
 	}
 	
+	/// Increments the internal index of the current   object to the next character of the enumerated string.
+	/// if the index is successfully incremented and within the enumerated string; otherwise,  .
 	public func moveNext() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -62087,6 +63002,7 @@ public class System_CharEnumerator /* System.CharEnumerator */: System_Object {
 		
 	}
 	
+	/// Releases all resources used by the current instance of the   class.
 	public func dispose() throws {
 		
 		
@@ -62104,6 +63020,7 @@ public class System_CharEnumerator /* System.CharEnumerator */: System_Object {
 		
 	}
 	
+	/// Initializes the index to a position logically before the first character of the enumerated string.
 	public func reset() throws {
 		
 		
@@ -62169,6 +63086,8 @@ public class System_Text_StringRuneEnumerator /* System.Text.StringRuneEnumerato
 		"System.Text.StringRuneEnumerator"
 	}}
 
+	/// Returns the current enumerator instance.
+	/// The current enumerator instance.
 	public func getEnumerator() throws -> System_Text_StringRuneEnumerator /* System.Text.StringRuneEnumerator */ {
 		
 		
@@ -62189,6 +63108,8 @@ public class System_Text_StringRuneEnumerator /* System.Text.StringRuneEnumerato
 		
 	}
 	
+	/// Advances the enumerator to the next   of the string.
+	/// if the enumerator successfully advanced to the next item;   if the end of the string has been reached.
 	public func moveNext() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -62519,6 +63440,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
+	/// Returns an array that contains all encodings.
+	/// An array that contains all encodings.
 	public class func getEncodings() throws -> System_Text_EncodingInfo_Array /* System.Text.EncodingInfo[] */ {
 		
 		
@@ -62539,6 +63462,10 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
+	/// When overridden in a derived class, returns a sequence of bytes that specifies the encoding used.
+	/// A byte array containing a sequence of bytes that specifies the encoding used.
+	/// -or-
+	/// A byte array of length zero, if a preamble is not required.
 	public func getPreamble() throws -> System_Byte_Array /* System.Byte[] */ {
 		
 		
@@ -62559,6 +63486,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
+	/// When overridden in a derived class, creates a shallow copy of the current   object.
+	/// A copy of the current   object.
 	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
@@ -62919,6 +63848,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
+	/// Gets a value indicating whether the current encoding is always normalized, using the default normalization form.
+	/// if the current   is always normalized; otherwise,  . The default is  .
 	public func isAlwaysNormalized() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -62937,6 +63868,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
+	/// Gets a value indicating whether the current encoding is always normalized, using the default normalization form.
+	/// if the current   is always normalized; otherwise,  . The default is  .
 	public func isAlwaysNormalized(_ form: System_Text_NormalizationForm /* System.Text.NormalizationForm */) throws -> Bool /* System.Boolean */ {
 		let formC = form.cValue
 		
@@ -62956,6 +63889,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
+	/// When overridden in a derived class, obtains a decoder that converts an encoded sequence of bytes into a sequence of characters.
+	/// A   that converts an encoded sequence of bytes into a sequence of characters.
 	public func getDecoder() throws -> System_Text_Decoder /* System.Text.Decoder */ {
 		
 		
@@ -62976,6 +63911,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
+	/// When overridden in a derived class, obtains an encoder that converts a sequence of Unicode characters into an encoded sequence of bytes.
+	/// A   that converts a sequence of Unicode characters into an encoded sequence of bytes.
 	public func getEncoder() throws -> System_Text_Encoder /* System.Text.Encoder */ {
 		
 		
@@ -63093,6 +64030,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
+	/// Returns the hash code for the current instance.
+	/// The hash code for the current instance.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -63806,6 +64745,8 @@ public class System_Text_EncodingProvider /* System.Text.EncodingProvider */: Sy
 		
 	}
 	
+	/// Returns an array that contains all the encodings that are supported by the  .
+	/// An array that contains all the supported encodings.
 	public func getEncodings() throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Text.EncodingInfo> */ {
 		
 		
@@ -63850,6 +64791,8 @@ public class System_Text_EncoderFallback /* System.Text.EncoderFallback */: Syst
 		"System.Text.EncoderFallback"
 	}}
 
+	/// When overridden in a derived class, initializes a new instance of the   class.
+	/// An object that provides a fallback buffer for an encoder.
 	public func createFallbackBuffer() throws -> System_Text_EncoderFallbackBuffer /* System.Text.EncoderFallbackBuffer */ {
 		
 		
@@ -64000,6 +64943,8 @@ public class System_Text_EncoderFallbackBuffer /* System.Text.EncoderFallbackBuf
 		
 	}
 	
+	/// When overridden in a derived class, retrieves the next character in the fallback buffer.
+	/// The next character in the fallback buffer.
 	public func getNextChar() throws -> DNChar /* System.Char */ {
 		
 		
@@ -64020,6 +64965,8 @@ public class System_Text_EncoderFallbackBuffer /* System.Text.EncoderFallbackBuf
 		
 	}
 	
+	/// When overridden in a derived class, causes the next call to the   method to access the data buffer character position that is prior to the current character position.
+	/// if the   operation was successful; otherwise,  .
 	public func movePrevious() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -64038,6 +64985,7 @@ public class System_Text_EncoderFallbackBuffer /* System.Text.EncoderFallbackBuf
 		
 	}
 	
+	/// Initializes all data and state information pertaining to this fallback buffer.
 	public func reset() throws {
 		
 		
@@ -64100,6 +65048,8 @@ public class System_Text_DecoderFallback /* System.Text.DecoderFallback */: Syst
 		"System.Text.DecoderFallback"
 	}}
 
+	/// When overridden in a derived class, initializes a new instance of the   class.
+	/// An object that provides a fallback buffer for a decoder.
 	public func createFallbackBuffer() throws -> System_Text_DecoderFallbackBuffer /* System.Text.DecoderFallbackBuffer */ {
 		
 		
@@ -64230,6 +65180,8 @@ public class System_Text_DecoderFallbackBuffer /* System.Text.DecoderFallbackBuf
 		
 	}
 	
+	/// When overridden in a derived class, retrieves the next character in the fallback buffer.
+	/// The next character in the fallback buffer.
 	public func getNextChar() throws -> DNChar /* System.Char */ {
 		
 		
@@ -64250,6 +65202,8 @@ public class System_Text_DecoderFallbackBuffer /* System.Text.DecoderFallbackBuf
 		
 	}
 	
+	/// When overridden in a derived class, causes the next call to the   method to access the data buffer character position that is prior to the current character position.
+	/// if the   operation was successful; otherwise,  .
 	public func movePrevious() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -64268,6 +65222,7 @@ public class System_Text_DecoderFallbackBuffer /* System.Text.DecoderFallbackBuf
 		
 	}
 	
+	/// Initializes all data and state information pertaining to this fallback buffer.
 	public func reset() throws {
 		
 		
@@ -64334,6 +65289,8 @@ public class System_Text_EncodingInfo /* System.Text.EncodingInfo */: System_Obj
 		"System.Text.EncodingInfo"
 	}}
 
+	/// Returns a   object that corresponds to the current   object.
+	/// A   object that corresponds to the current   object.
 	public func getEncoding() throws -> System_Text_Encoding /* System.Text.Encoding */ {
 		
 		
@@ -64373,6 +65330,8 @@ public class System_Text_EncodingInfo /* System.Text.EncodingInfo */: System_Obj
 		
 	}
 	
+	/// Returns the hash code for the current   object.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -64525,6 +65484,7 @@ public class System_Text_Decoder /* System.Text.Decoder */: System_Object {
 		"System.Text.Decoder"
 	}}
 
+	/// When overridden in a derived class, sets the decoder back to its initial state.
 	public func reset() throws {
 		
 		
@@ -64751,6 +65711,7 @@ public class System_Text_Encoder /* System.Text.Encoder */: System_Object {
 		"System.Text.Encoder"
 	}}
 
+	/// When overridden in a derived class, sets the encoder back to its initial state.
 	public func reset() throws {
 		
 		
@@ -66013,6 +66974,8 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -66050,6 +67013,8 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 	}
 	
+	/// When overridden in a derived class, indicates whether the value of this instance is the default value for the derived class.
+	/// if this instance is the default attribute for the class; otherwise,  .
 	public func isDefaultAttribute() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -66468,6 +67433,8 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
+	/// Get the last platform invoke error on the current thread.
+	/// The last platform invoke error.
 	public class func getLastPInvokeError() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -66503,6 +67470,8 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
+	/// Retrieves a computer-independent description of an exception, and information about the state that existed for the thread when the exception occurred.
+	/// A pointer to an EXCEPTION_POINTERS structure.
 	public class func getExceptionPointers() throws -> UnsafeMutableRawPointer? /* System.IntPtr */ {
 		
 		
@@ -66521,6 +67490,8 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
+	/// Retrieves a code that identifies the type of the exception that occurred.
+	/// The type of the exception.
 	public class func getExceptionCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -68106,6 +69077,8 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
+	/// Returns the HRESULT corresponding to the last error incurred by Win32 code executed using  .
+	/// The HRESULT corresponding to the last Win32 error code.
 	public class func getHRForLastWin32Error() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -68304,6 +69277,8 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
+	/// Returns the error code returned by the last unmanaged function that was called using platform invoke that has the   flag set.
+	/// The last error code set by a call to the Win32 SetLastError function.
 	public class func getLastWin32Error() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -68322,6 +69297,8 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
+	/// Gets the system error message for the last PInvoke error code.
+	/// The error message associated with the last PInvoke error code.
 	public class func getLastPInvokeErrorMessage() throws -> System_String /* System.String */ {
 		
 		
@@ -68361,6 +69338,8 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
+	/// Indicates whether runtime callable wrappers (RCWs) from any context are available for cleanup.
+	/// if there are any RCWs available for cleanup; otherwise,  .
 	public class func areComObjectsAvailableForCleanup() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -68419,6 +69398,7 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
+	/// Notifies the runtime to clean up all Runtime Callable Wrappers (RCWs) allocated in the current context.
 	public class func cleanupUnusedObjectsInCurrentContext() throws {
 		
 		
@@ -69157,6 +70137,8 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
+	/// Gets the last system error on the current thread.
+	/// The last system error.
 	public class func getLastSystemError() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -69383,6 +70365,9 @@ public class System_Security_SecureString /* System.Security.SecureString */: Sy
 		
 	}
 	
+	/// Deletes the value of the current secure string.
+	/// This secure string has already been disposed.
+	/// This secure string is read-only.
 	public func clear() throws {
 		
 		
@@ -69400,6 +70385,10 @@ public class System_Security_SecureString /* System.Security.SecureString */: Sy
 		
 	}
 	
+	/// Creates a copy of the current secure string.
+	/// This secure string has already been disposed.
+	/// An error occurred while protecting or unprotecting the value of this secure string.
+	/// A duplicate of this secure string.
 	public func copy() throws -> System_Security_SecureString /* System.Security.SecureString */ {
 		
 		
@@ -69420,6 +70409,7 @@ public class System_Security_SecureString /* System.Security.SecureString */: Sy
 		
 	}
 	
+	/// Releases all resources used by the current   object.
 	public func dispose() throws {
 		
 		
@@ -69455,6 +70445,9 @@ public class System_Security_SecureString /* System.Security.SecureString */: Sy
 		
 	}
 	
+	/// Indicates whether this secure string is marked read-only.
+	/// This secure string has already been disposed.
+	/// if this secure string is marked read-only; otherwise,  .
 	public func isReadOnly() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -69473,6 +70466,8 @@ public class System_Security_SecureString /* System.Security.SecureString */: Sy
 		
 	}
 	
+	/// Makes the text value of this secure string read-only.
+	/// This secure string has already been disposed.
 	public func makeReadOnly() throws {
 		
 		
@@ -70183,6 +71178,8 @@ public class System_Runtime_InteropServices_GCHandle /* System.Runtime.InteropSe
 		
 	}
 	
+	/// Releases a  .
+	/// The handle was freed or never initialized.
 	public func free() throws {
 		
 		
@@ -70200,6 +71197,9 @@ public class System_Runtime_InteropServices_GCHandle /* System.Runtime.InteropSe
 		
 	}
 	
+	/// Retrieves the address of object data in a   handle.
+	/// The handle is any type other than  .
+	/// The address of the pinned data object.
 	public func addrOfPinnedObject() throws -> UnsafeMutableRawPointer? /* System.IntPtr */ {
 		
 		
@@ -70257,6 +71257,8 @@ public class System_Runtime_InteropServices_GCHandle /* System.Runtime.InteropSe
 		
 	}
 	
+	/// Returns an identifier for the current   object.
+	/// An identifier for the current   object.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -70422,6 +71424,8 @@ public class System_GC /* System.GC */: System_Object {
 		"System.GC"
 	}}
 
+	/// Gets garbage collection memory information.
+	/// An object that contains information about the garbage collector's memory usage.
 	public class func getGCMemoryInfo() throws -> System_GCMemoryInfo /* System.GCMemoryInfo */ {
 		
 		
@@ -70442,6 +71446,8 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Gets garbage collection memory information.
+	/// An object that contains information about the garbage collector's memory usage.
 	public class func getGCMemoryInfo(_ kind: System_GCKind /* System.GCKind */) throws -> System_GCMemoryInfo /* System.GCMemoryInfo */ {
 		let kindC = kind.cValue
 		
@@ -70516,6 +71522,7 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Forces an immediate garbage collection of all generations.
 	public class func collect(_ generation: Int32 /* System.Int32 */) throws {
 		
 		
@@ -70533,6 +71540,7 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Forces an immediate garbage collection of all generations.
 	public class func collect() throws {
 		
 		
@@ -70550,6 +71558,7 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Forces an immediate garbage collection of all generations.
 	public class func collect(_ generation: Int32 /* System.Int32 */, _ mode: System_GCCollectionMode /* System.GCCollectionMode */) throws {
 		let modeC = mode.cValue
 		
@@ -70568,6 +71577,7 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Forces an immediate garbage collection of all generations.
 	public class func collect(_ generation: Int32 /* System.Int32 */, _ mode: System_GCCollectionMode /* System.GCCollectionMode */, _ blocking: Bool /* System.Boolean */) throws {
 		let modeC = mode.cValue
 		
@@ -70586,6 +71596,7 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Forces an immediate garbage collection of all generations.
 	public class func collect(_ generation: Int32 /* System.Int32 */, _ mode: System_GCCollectionMode /* System.GCCollectionMode */, _ blocking: Bool /* System.Boolean */, _ compacting: Bool /* System.Boolean */) throws {
 		let modeC = mode.cValue
 		
@@ -70659,6 +71670,7 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Suspends the current thread until the thread that is processing the queue of finalizers has emptied that queue.
 	public class func waitForPendingFinalizers() throws {
 		
 		
@@ -70730,6 +71742,8 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Gets the total number of bytes allocated to the current thread since the beginning of its lifetime.
+	/// The total number of bytes allocated to the current thread since the beginning of its lifetime.
 	public class func getAllocatedBytesForCurrentThread() throws -> Int64 /* System.Int64 */ {
 		
 		
@@ -70783,6 +71797,8 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Cancels the registration of a garbage collection notification.
+	/// This member is not available when concurrent garbage collection is enabled. See the &lt;gcConcurrent&gt; runtime setting for information about how to disable concurrent garbage collection.
 	public class func cancelFullGCNotification() throws {
 		
 		
@@ -70800,6 +71816,8 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Returns the status of a registered notification for determining whether a full, blocking garbage collection by the common language runtime is imminent.
+	/// The status of the registered garbage collection notification.
 	public class func waitForFullGCApproach() throws -> System_GCNotificationStatus /* System.GCNotificationStatus */ {
 		
 		
@@ -70820,6 +71838,8 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Returns the status of a registered notification for determining whether a full, blocking garbage collection by the common language runtime is imminent.
+	/// The status of the registered garbage collection notification.
 	public class func waitForFullGCApproach(_ millisecondsTimeout: Int32 /* System.Int32 */) throws -> System_GCNotificationStatus /* System.GCNotificationStatus */ {
 		
 		
@@ -70840,6 +71860,8 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Returns the status of a registered notification for determining whether a full, blocking garbage collection by the common language runtime has completed.
+	/// The status of the registered garbage collection notification.
 	public class func waitForFullGCComplete() throws -> System_GCNotificationStatus /* System.GCNotificationStatus */ {
 		
 		
@@ -70860,6 +71882,8 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Returns the status of a registered notification for determining whether a full, blocking garbage collection by the common language runtime has completed.
+	/// The status of the registered garbage collection notification.
 	public class func waitForFullGCComplete(_ millisecondsTimeout: Int32 /* System.Int32 */) throws -> System_GCNotificationStatus /* System.GCNotificationStatus */ {
 		
 		
@@ -70952,6 +71976,12 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Ends the no GC region latency mode.
+	/// The garbage collector is not in no GC region latency mode.
+	/// -or-
+	/// The no GC region latency mode was ended previously because a garbage collection was induced.
+	/// -or-
+	/// A memory allocation exceeded the amount specified in the call to the   method.
 	public class func endNoGCRegion() throws {
 		
 		
@@ -71029,6 +72059,8 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Gets the total amount of time paused in GC since the beginning of the process.
+	/// The total amount of time paused in GC since the beginning of the process.
 	public class func getTotalPauseDuration() throws -> System_TimeSpan /* System.TimeSpan */ {
 		
 		
@@ -71049,6 +72081,8 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Gets the configurations used by the garbage collector.
+	/// A read-only dictionary with the configuration names and values as the keys and values of the dictionary, respectively.
 	public class func getConfigurationVariables() throws -> System_Collections_Generic_IReadOnlyDictionary_A2 /* System.Collections.Generic.IReadOnlyDictionary<System.String,System.Object> */ {
 		
 		
@@ -71069,6 +72103,10 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Instructs the Garbage Collector to reconfigure itself by detecting the various memory limits on the system.
+	/// The hard limit is too low. This can happen if the heap hard limit that the refresh will set, either because of new AppData settings or implied by the container memory-limit changes, is lower than what's already committed.
+	/// -or-
+	/// The hard limit is invalid. This can happen, for example, with negative heap hard-limit percentages.
 	public class func refreshMemoryLimit() throws {
 		
 		
@@ -71086,6 +72124,8 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Returns the status of a registered notification for determining whether a full, blocking garbage collection by the common language runtime is imminent.
+	/// The status of the registered garbage collection notification.
 	public class func waitForFullGCApproach(_ timeout: System_TimeSpan /* System.TimeSpan */) throws -> System_GCNotificationStatus /* System.GCNotificationStatus */ {
 		let timeoutC = timeout.__handle
 		
@@ -71107,6 +72147,8 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Returns the status of a registered notification for determining whether a full, blocking garbage collection by the common language runtime has completed.
+	/// The status of the registered garbage collection notification.
 	public class func waitForFullGCComplete(_ timeout: System_TimeSpan /* System.TimeSpan */) throws -> System_GCNotificationStatus /* System.GCNotificationStatus */ {
 		let timeoutC = timeout.__handle
 		
@@ -71791,6 +72833,8 @@ public class System_Collections_Generic_KeyValuePair_A2 /* System.Collections.Ge
 		"System.Collections.Generic.KeyValuePair<,>"
 	}}
 
+	/// Returns a string representation of the  , using the string representations of the key and value.
+	/// A string representation of the  , which includes the string representations of the key and value.
 	public func toString(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */) throws -> System_String /* System.String */ {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
@@ -80095,6 +81139,8 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Causes the calling thread to yield execution to another thread that is ready to run on the current processor. The operating system selects the thread to yield to.
+	/// if the operating system switched execution to another thread; otherwise,  .
 	public class func yield() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -80113,6 +81159,8 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Returns an   value indicating the apartment state.
+	/// One of the   values indicating the apartment state of the managed thread. The default is  .
 	public func getApartmentState() throws -> System_Threading_ApartmentState /* System.Threading.ApartmentState */ {
 		
 		
@@ -80133,6 +81181,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Turns off automatic cleanup of runtime callable wrappers (RCW) for the current thread.
 	public func disableComObjectEagerCleanup() throws {
 		
 		
@@ -80150,6 +81199,8 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Interrupts a thread that is in the   thread state.
+	/// The caller does not have the appropriate  .
 	public func interrupt() throws {
 		
 		
@@ -80167,6 +81218,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Blocks the calling thread until the thread represented by this instance terminates, while continuing to perform standard COM and   pumping.
+	/// The caller attempted to join a thread that is in the   state.
+	/// The thread is interrupted while waiting.
 	public func join(_ millisecondsTimeout: Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
 		
 		
@@ -80185,6 +81239,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Causes the operating system to change the state of the current instance to  .
+	/// The thread has already been started.
+	/// There is not enough memory available to start this thread.
 	public func start(_ parameter: System_Object? /* System.Object */) throws {
 		let parameterC = parameter?.__handle
 		
@@ -80203,6 +81260,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Causes the operating system to change the state of the current instance to  .
+	/// The thread has already been started.
+	/// There is not enough memory available to start this thread.
 	public func unsafeStart(_ parameter: System_Object? /* System.Object */) throws {
 		let parameterC = parameter?.__handle
 		
@@ -80221,6 +81281,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Causes the operating system to change the state of the current instance to  .
+	/// The thread has already been started.
+	/// There is not enough memory available to start this thread.
 	public func start() throws {
 		
 		
@@ -80238,6 +81301,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Causes the operating system to change the state of the current instance to  .
+	/// The thread has already been started.
+	/// There is not enough memory available to start this thread.
 	public func unsafeStart() throws {
 		
 		
@@ -80272,6 +81338,10 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Raises a   in the thread on which it is invoked, to begin the process of terminating the thread. Calling this method usually terminates the thread.
+	/// .NET Core and .NET 5+ only: In all cases.
+	/// The caller does not have the required permission.
+	/// The thread that is being aborted is currently suspended.
 	public func abort() throws {
 		
 		
@@ -80289,6 +81359,10 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Raises a   in the thread on which it is invoked, to begin the process of terminating the thread. Calling this method usually terminates the thread.
+	/// .NET Core and .NET 5+ only: In all cases.
+	/// The caller does not have the required permission.
+	/// The thread that is being aborted is currently suspended.
 	public func abort(_ stateInfo: System_Object? /* System.Object */) throws {
 		let stateInfoC = stateInfo?.__handle
 		
@@ -80307,6 +81381,10 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Cancels an   requested for the current thread.
+	/// .NET Core and .NET 5+ only: In all cases.
+	/// was not invoked on the current thread.
+	/// The caller does not have the required security permission for the current thread.
 	public class func resetAbort() throws {
 		
 		
@@ -80324,6 +81402,10 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Either suspends the thread, or if the thread is already suspended, has no effect.
+	/// .NET Core and .NET 5+ only: In all cases.
+	/// The thread has not been started or is dead.
+	/// The caller does not have the appropriate  .
 	public func suspend() throws {
 		
 		
@@ -80341,6 +81423,10 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Resumes a thread that has been suspended.
+	/// .NET Core and .NET 5+ only: In all cases.
+	/// The thread has not been started, is dead, or is not in the suspended state.
+	/// The caller does not have the appropriate  .
 	public func resume() throws {
 		
 		
@@ -80358,6 +81444,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Notifies a host that execution is about to enter a region of code in which the effects of a thread abort or unhandled exception might jeopardize other tasks in the application domain.
 	public class func beginCriticalRegion() throws {
 		
 		
@@ -80375,6 +81462,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Notifies a host that execution is about to enter a region of code in which the effects of a thread abort or unhandled exception are limited to the current task.
 	public class func endCriticalRegion() throws {
 		
 		
@@ -80392,6 +81480,8 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Notifies a host that managed code is about to execute instructions that depend on the identity of the current physical operating system thread.
+	/// The caller does not have the required permission.
 	public class func beginThreadAffinity() throws {
 		
 		
@@ -80409,6 +81499,8 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Notifies a host that managed code has finished executing instructions that depend on the identity of the current physical operating system thread.
+	/// The caller does not have the required permission.
 	public class func endThreadAffinity() throws {
 		
 		
@@ -80426,6 +81518,8 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Allocates an unnamed data slot on all the threads. For better performance, use fields that are marked with the   attribute instead.
+	/// The allocated named data slot on all threads.
 	public class func allocateDataSlot() throws -> System_LocalDataStoreSlot /* System.LocalDataStoreSlot */ {
 		
 		
@@ -80583,6 +81677,8 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Returns a   object that can be used to capture the stack for the current thread.
+	/// In all cases.
 	public func getCompressedStack() throws -> System_Threading_CompressedStack /* System.Threading.CompressedStack */ {
 		
 		
@@ -80621,6 +81717,8 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Returns the current domain in which the current thread is running.
+	/// An   representing the current application domain of the running thread.
 	public class func getDomain() throws -> System_AppDomain /* System.AppDomain */ {
 		
 		
@@ -80641,6 +81739,8 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Returns a unique application domain identifier.
+	/// A 32-bit signed integer uniquely identifying the application domain.
 	public class func getDomainID() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -80659,6 +81759,8 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Returns a hash code for the current thread.
+	/// An integer hash code value.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -80677,6 +81779,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Blocks the calling thread until the thread represented by this instance terminates, while continuing to perform standard COM and   pumping.
+	/// The caller attempted to join a thread that is in the   state.
+	/// The thread is interrupted while waiting.
 	public func join() throws {
 		
 		
@@ -80694,6 +81799,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Blocks the calling thread until the thread represented by this instance terminates, while continuing to perform standard COM and   pumping.
+	/// The caller attempted to join a thread that is in the   state.
+	/// The thread is interrupted while waiting.
 	public func join(_ timeout: System_TimeSpan /* System.TimeSpan */) throws -> Bool /* System.Boolean */ {
 		let timeoutC = timeout.__handle
 		
@@ -80713,6 +81821,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Synchronizes memory access as follows: The processor executing the current thread cannot reorder instructions in such a way that memory accesses prior to the call to   execute after memory accesses that follow the call to  .
 	public class func memoryBarrier() throws {
 		
 		
@@ -81214,6 +82323,8 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Gets an ID used to indicate on which processor the current thread is executing.
+	/// An integer representing the cached processor ID.
 	public class func getCurrentProcessorId() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -81953,6 +83064,8 @@ public class System_Threading_ExecutionContext /* System.Threading.ExecutionCont
 		
 	}
 	
+	/// Captures the execution context from the current thread.
+	/// An   object representing the execution context for the current thread.
 	public class func capture() throws -> System_Threading_ExecutionContext? /* System.Threading.ExecutionContext */ {
 		
 		
@@ -81973,6 +83086,9 @@ public class System_Threading_ExecutionContext /* System.Threading.ExecutionCont
 		
 	}
 	
+	/// Suppresses the flow of the execution context across asynchronous threads.
+	/// The context flow is already suppressed.
+	/// An   structure for restoring the flow.
 	public class func suppressFlow() throws -> System_Threading_AsyncFlowControl /* System.Threading.AsyncFlowControl */ {
 		
 		
@@ -81993,6 +83109,8 @@ public class System_Threading_ExecutionContext /* System.Threading.ExecutionCont
 		
 	}
 	
+	/// Restores the flow of the execution context across asynchronous threads.
+	/// The context flow cannot be restored because it is not being suppressed.
 	public class func restoreFlow() throws {
 		
 		
@@ -82010,6 +83128,8 @@ public class System_Threading_ExecutionContext /* System.Threading.ExecutionCont
 		
 	}
 	
+	/// Indicates whether the flow of the execution context is currently suppressed.
+	/// if the flow is suppressed; otherwise,  .
 	public class func isFlowSuppressed() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -82066,6 +83186,9 @@ public class System_Threading_ExecutionContext /* System.Threading.ExecutionCont
 		
 	}
 	
+	/// Creates a copy of the current execution context.
+	/// This context cannot be copied because it is used. Only newly captured contexts can be copied.
+	/// An   object representing the current execution context.
 	public func createCopy() throws -> System_Threading_ExecutionContext /* System.Threading.ExecutionContext */ {
 		
 		
@@ -82086,6 +83209,7 @@ public class System_Threading_ExecutionContext /* System.Threading.ExecutionCont
 		
 	}
 	
+	/// Releases all resources used by the current instance of the   class.
 	public func dispose() throws {
 		
 		
@@ -82127,6 +83251,10 @@ public class System_Threading_AsyncFlowControl /* System.Threading.AsyncFlowCont
 		"System.Threading.AsyncFlowControl"
 	}}
 
+	/// Restores the flow of the execution context between threads.
+	/// The   structure is not used on the thread where it was created.
+	/// -or-
+	/// The   structure has already been used to call   or  .
 	public func undo() throws {
 		
 		
@@ -82144,6 +83272,10 @@ public class System_Threading_AsyncFlowControl /* System.Threading.AsyncFlowCont
 		
 	}
 	
+	/// Releases all resources used by the current instance of the   class.
+	/// The   structure is not used on the thread where it was created.
+	/// -or-
+	/// The   structure has already been used to call   or  .
 	public func dispose() throws {
 		
 		
@@ -82199,6 +83331,8 @@ public class System_Threading_AsyncFlowControl /* System.Threading.AsyncFlowCont
 		
 	}
 	
+	/// Gets a hash code for the current   structure.
+	/// A hash code for the current   structure.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -82304,6 +83438,8 @@ public class System_Threading_CompressedStack /* System.Threading.CompressedStac
 		
 	}
 	
+	/// Captures the compressed stack from the current thread.
+	/// A   object.
 	public class func capture() throws -> System_Threading_CompressedStack /* System.Threading.CompressedStack */ {
 		
 		
@@ -82324,6 +83460,8 @@ public class System_Threading_CompressedStack /* System.Threading.CompressedStac
 		
 	}
 	
+	/// Creates a copy of the current compressed stack.
+	/// A   object representing the current compressed stack.
 	public func createCopy() throws -> System_Threading_CompressedStack /* System.Threading.CompressedStack */ {
 		
 		
@@ -82344,6 +83482,11 @@ public class System_Threading_CompressedStack /* System.Threading.CompressedStac
 		
 	}
 	
+	/// Gets the compressed stack for the current thread.
+	/// A caller in the call chain does not have permission to access unmanaged code.
+	/// -or-
+	/// The request for   failed.
+	/// A   for the current thread.
 	public class func getCompressedStack() throws -> System_Threading_CompressedStack /* System.Threading.CompressedStack */ {
 		
 		
@@ -82628,6 +83771,8 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
+	/// Returns a value that indicates whether the application domain is the default application domain for the process.
+	/// if the current   object represents the default application domain for the process; otherwise,  .
 	public func isDefaultAppDomain() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -82646,6 +83791,8 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
+	/// Indicates whether this application domain is unloading, and the objects it contains are being finalized by the common language runtime.
+	/// if this application domain is unloading and the common language runtime has started invoking finalizers; otherwise,  .
 	public func isFinalizingForUnload() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -82664,6 +83811,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
+	/// Obtains a string representation that includes the friendly name of the application domain and any context policies.
+	/// The application domain represented by the current   has been unloaded.
+	/// A string formed by concatenating the literal string "Name:", the friendly name of the application domain, and either string representations of the context policies or the string "There are no context policies."
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -82787,6 +83937,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
+	/// Returns the assemblies that have been loaded into the reflection-only context of the application domain.
+	/// An operation is attempted on an unloaded application domain.
+	/// An array of   objects that represent the assemblies loaded into the reflection-only context of the application domain.
 	public func reflectionOnlyGetAssemblies() throws -> System_Reflection_Assembly_Array /* System.Reflection.Assembly[] */ {
 		
 		
@@ -82807,6 +83960,8 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
+	/// Gets the current thread identifier.
+	/// A 32-bit signed integer that is the identifier of the current thread.
 	public class func getCurrentThreadId() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -82843,6 +83998,8 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
+	/// Resets the path that specifies the location of private assemblies to the empty string ("").
+	/// The operation is attempted on an unloaded application domain.
 	public func clearPrivatePath() throws {
 		
 		
@@ -82860,6 +84017,8 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
+	/// Resets the list of directories containing shadow copied assemblies to the empty string ("").
+	/// The operation is attempted on an unloaded application domain.
 	public func clearShadowCopyPath() throws {
 		
 		
@@ -82895,6 +84054,8 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
+	/// Turns on shadow copying.
+	/// The operation is attempted on an unloaded application domain.
 	public func setShadowCopyFiles() throws {
 		
 		
@@ -82930,6 +84091,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
+	/// Gets the assemblies that have been loaded into the execution context of this application domain.
+	/// The operation is attempted on an unloaded application domain.
+	/// An array of assemblies in this application domain.
 	public func getAssemblies() throws -> System_Reflection_Assembly_Array /* System.Reflection.Assembly[] */ {
 		
 		
@@ -83656,6 +84820,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// Occurs when an exception is not caught.
 	public func unhandledException_add(_ value: System_UnhandledExceptionEventHandler? /* System.UnhandledExceptionEventHandler */) {
 		let valueC = value?.__handle
 		
@@ -83664,6 +84829,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		
 	}
+	/// Occurs when an exception is not caught.
 	public func unhandledException_remove(_ value: System_UnhandledExceptionEventHandler? /* System.UnhandledExceptionEventHandler */) {
 		let valueC = value?.__handle
 		
@@ -83674,6 +84840,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}
 	
 	
+	/// Occurs when an   is about to be unloaded.
 	public func domainUnload_add(_ value: System_EventHandler? /* System.EventHandler */) {
 		let valueC = value?.__handle
 		
@@ -83682,6 +84849,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		
 	}
+	/// Occurs when an   is about to be unloaded.
 	public func domainUnload_remove(_ value: System_EventHandler? /* System.EventHandler */) {
 		let valueC = value?.__handle
 		
@@ -83692,6 +84860,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}
 	
 	
+	/// Occurs when the default application domain's parent process exits.
 	public func processExit_add(_ value: System_EventHandler? /* System.EventHandler */) {
 		let valueC = value?.__handle
 		
@@ -83700,6 +84869,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		
 	}
+	/// Occurs when the default application domain's parent process exits.
 	public func processExit_remove(_ value: System_EventHandler? /* System.EventHandler */) {
 		let valueC = value?.__handle
 		
@@ -83710,6 +84880,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}
 	
 	
+	/// Occurs when an assembly is loaded.
 	public func assemblyLoad_add(_ value: System_AssemblyLoadEventHandler? /* System.AssemblyLoadEventHandler */) {
 		let valueC = value?.__handle
 		
@@ -83718,6 +84889,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		
 	}
+	/// Occurs when an assembly is loaded.
 	public func assemblyLoad_remove(_ value: System_AssemblyLoadEventHandler? /* System.AssemblyLoadEventHandler */) {
 		let valueC = value?.__handle
 		
@@ -83728,6 +84900,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}
 	
 	
+	/// Occurs when the resolution of an assembly fails.
 	public func assemblyResolve_add(_ value: System_ResolveEventHandler? /* System.ResolveEventHandler */) {
 		let valueC = value?.__handle
 		
@@ -83736,6 +84909,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		
 	}
+	/// Occurs when the resolution of an assembly fails.
 	public func assemblyResolve_remove(_ value: System_ResolveEventHandler? /* System.ResolveEventHandler */) {
 		let valueC = value?.__handle
 		
@@ -83746,6 +84920,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}
 	
 	
+	/// Occurs when the resolution of an assembly fails in the reflection-only context.
 	public func reflectionOnlyAssemblyResolve_add(_ value: System_ResolveEventHandler? /* System.ResolveEventHandler */) {
 		let valueC = value?.__handle
 		
@@ -83754,6 +84929,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		
 	}
+	/// Occurs when the resolution of an assembly fails in the reflection-only context.
 	public func reflectionOnlyAssemblyResolve_remove(_ value: System_ResolveEventHandler? /* System.ResolveEventHandler */) {
 		let valueC = value?.__handle
 		
@@ -83764,6 +84940,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}
 	
 	
+	/// Occurs when the resolution of a type fails.
 	public func typeResolve_add(_ value: System_ResolveEventHandler? /* System.ResolveEventHandler */) {
 		let valueC = value?.__handle
 		
@@ -83772,6 +84949,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		
 	}
+	/// Occurs when the resolution of a type fails.
 	public func typeResolve_remove(_ value: System_ResolveEventHandler? /* System.ResolveEventHandler */) {
 		let valueC = value?.__handle
 		
@@ -83782,6 +84960,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}
 	
 	
+	/// Occurs when the resolution of a resource fails because the resource is not a valid linked or embedded resource in the assembly.
 	public func resourceResolve_add(_ value: System_ResolveEventHandler? /* System.ResolveEventHandler */) {
 		let valueC = value?.__handle
 		
@@ -83790,6 +84969,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 		
 	}
+	/// Occurs when the resolution of a resource fails because the resource is not a valid linked or embedded resource in the assembly.
 	public func resourceResolve_remove(_ value: System_ResolveEventHandler? /* System.ResolveEventHandler */) {
 		let valueC = value?.__handle
 		
@@ -83915,6 +85095,10 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 	}
 	
+	/// Declares that the calling code can access the resource protected by a permission demand through the code that calls this method, even if callers higher in the stack have not been granted permission to access the resource. Using   can create security vulnerabilities.
+	/// The   instance asserted has not been granted to the asserting code.
+	/// -or-
+	/// There is already an active   for the current frame.
 	public func assert() throws {
 		
 		
@@ -83932,6 +85116,8 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 	}
 	
+	/// Gets a value indicating whether the   contains permissions that are not derived from  .
+	/// if the   contains permissions that are not derived from  ; otherwise,  .
 	public func containsNonCodeAccessPermissions() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -83973,6 +85159,8 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 	}
 	
+	/// Creates a copy of the  .
+	/// A copy of the  .
 	public func copy() throws -> System_Security_PermissionSet /* System.Security.PermissionSet */ {
 		
 		
@@ -84011,6 +85199,8 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 	}
 	
+	/// Forces a   at run time if all callers higher in the call stack have not been granted the permissions specified by the current instance.
+	/// A caller in the call chain does not have the permission demanded.
 	public func demand() throws {
 		
 		
@@ -84028,6 +85218,8 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 	}
 	
+	/// Causes any   that passes through the calling code for a permission that has an intersection with a permission of a type contained in the current   to fail.
+	/// A previous call to   has already restricted the permissions for the current stack frame.
 	public func deny() throws {
 		
 		
@@ -84082,6 +85274,8 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 	}
 	
+	/// Returns an enumerator for the permissions of the set.
+	/// An enumerator object for the permissions of the set.
 	public func getEnumerator() throws -> System_Collections_IEnumerator /* System.Collections.IEnumerator */ {
 		
 		
@@ -84102,6 +85296,8 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 	}
 	
+	/// Gets a hash code for the   object that is suitable for use in hashing algorithms and data structures such as a hash table.
+	/// A hash code for the current   object.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -84162,6 +85358,8 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 	}
 	
+	/// Gets a value indicating whether the   is empty.
+	/// if the   is empty; otherwise,  .
 	public func isEmpty() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -84199,6 +85397,8 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 	}
 	
+	/// Determines whether the   is  .
+	/// if the   is  ; otherwise,  .
 	public func isUnrestricted() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -84217,6 +85417,7 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 	}
 	
+	/// Causes any   that passes through the calling code for any   that is not a subset of the current   to fail.
 	public func permitOnly() throws {
 		
 		
@@ -84255,6 +85456,8 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 	}
 	
+	/// Causes any previous   for the current frame to be removed and no longer be in effect.
+	/// There is no previous   for the current frame.
 	public class func revertAssert() throws {
 		
 		
@@ -84293,6 +85496,8 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 	}
 	
+	/// Returns a string representation of the  .
+	/// A representation of the  .
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -84313,6 +85518,8 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 	}
 	
+	/// Creates an XML encoding of the security object and its current state.
+	/// An XML encoding of the security object, including any state information.
 	public func toXml() throws -> System_Security_SecurityElement? /* System.Security.SecurityElement */ {
 		
 		
@@ -84520,6 +85727,8 @@ public class System_Security_ISecurityEncodable /* System.Security.ISecurityEnco
 		
 	}
 	
+	/// Creates an XML encoding of the security object and its current state.
+	/// An XML encoding of the security object, including any state information.
 	public func toXml() throws -> System_Security_SecurityElement? /* System.Security.SecurityElement */ {
 		
 		
@@ -84620,6 +85829,8 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		
 	}
 	
+	/// Creates and returns an identical copy of the current   object.
+	/// A copy of the current   object.
 	public func copy() throws -> System_Security_SecurityElement /* System.Security.SecurityElement */ {
 		
 		
@@ -84737,6 +85948,8 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		
 	}
 	
+	/// Produces a string representation of an XML element and its constituent attributes, child elements, and text.
+	/// The XML element and its contents.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -85103,6 +86316,8 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		
 	}
 	
+	/// Removes all elements from the  .
+	/// The   is read-only.
 	public func clear() throws {
 		
 		
@@ -85120,6 +86335,8 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		
 	}
 	
+	/// Creates a shallow copy of the  .
+	/// A shallow copy of the  .
 	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
@@ -85215,6 +86432,8 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 		
 	}
 	
+	/// Returns an   that iterates through the  .
+	/// An   for the  .
 	public func getEnumerator() throws -> System_Collections_IDictionaryEnumerator /* System.Collections.IDictionaryEnumerator */ {
 		
 		
@@ -85979,6 +87198,10 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
+	/// Removes all elements from the  .
+	/// The   is read-only.
+	/// -or-
+	/// The   has a fixed size.
 	public func clear() throws {
 		
 		
@@ -85996,6 +87219,8 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
+	/// Creates a shallow copy of the  .
+	/// A shallow copy of the  .
 	public func clone() throws -> System_Object /* System.Object */ {
 		
 		
@@ -86131,6 +87356,8 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
+	/// Returns an enumerator for the entire  .
+	/// An   for the entire  .
 	public func getEnumerator() throws -> System_Collections_IEnumerator /* System.Collections.IEnumerator */ {
 		
 		
@@ -86151,6 +87378,8 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
+	/// Returns an enumerator for the entire  .
+	/// An   for the entire  .
 	public func getEnumerator(_ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Collections_IEnumerator /* System.Collections.IEnumerator */ {
 		
 		
@@ -86436,6 +87665,8 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
+	/// Reverses the order of the elements in the entire  .
+	/// The   is read-only.
 	public func reverse() throws {
 		
 		
@@ -86453,6 +87684,8 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
+	/// Reverses the order of the elements in the entire  .
+	/// The   is read-only.
 	public func reverse(_ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws {
 		
 		
@@ -86508,6 +87741,8 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
+	/// Sorts the elements in the entire  .
+	/// The   is read-only.
 	public func sort() throws {
 		
 		
@@ -86525,6 +87760,8 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
+	/// Sorts the elements in the entire  .
+	/// The   is read-only.
 	public func sort(_ comparer: System_Collections_IComparer? /* System.Collections.IComparer */) throws {
 		let comparerC = comparer?.__handle
 		
@@ -86543,6 +87780,8 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
+	/// Sorts the elements in the entire  .
+	/// The   is read-only.
 	public func sort(_ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ comparer: System_Collections_IComparer? /* System.Collections.IComparer */) throws {
 		let comparerC = comparer?.__handle
 		
@@ -86603,6 +87842,8 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
+	/// Copies the elements of the   to a new   array.
+	/// An   array containing copies of the elements of the  .
 	public func toArray() throws -> System_Object_Array /* System.Object[] */ {
 		
 		
@@ -86623,6 +87864,8 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
+	/// Copies the elements of the   to a new   array.
+	/// An   array containing copies of the elements of the  .
 	public func toArray(_ type: System_Type /* System.Type */) throws -> System_Array /* System.Array */ {
 		let typeC = type.__handle
 		
@@ -86644,6 +87887,10 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
+	/// Sets the capacity to the actual number of elements in the  .
+	/// The   is read-only.
+	/// -or-
+	/// The   has a fixed size.
 	public func trimToSize() throws {
 		
 		
@@ -86928,6 +88175,8 @@ public class System_Security_IStackWalk /* System.Security.IStackWalk */: DNObje
 		"System.Security.IStackWalk"
 	}}
 
+	/// Asserts that the calling code can access the resource identified by the current permission object, even if callers higher in the stack have not been granted permission to access the resource.
+	/// The calling code does not have  .
 	public func assert() throws {
 		
 		
@@ -86945,6 +88194,10 @@ public class System_Security_IStackWalk /* System.Security.IStackWalk */: DNObje
 		
 	}
 	
+	/// Determines at run time whether all callers in the call stack have been granted the permission specified by the current permission object.
+	/// A caller higher in the call stack does not have the permission specified by the current permission object.
+	/// -or-
+	/// A caller in the call stack has called   on the current permission object.
 	public func demand() throws {
 		
 		
@@ -86962,6 +88215,7 @@ public class System_Security_IStackWalk /* System.Security.IStackWalk */: DNObje
 		
 	}
 	
+	/// Causes every   for the current object that passes through the calling code to fail.
 	public func deny() throws {
 		
 		
@@ -86979,6 +88233,7 @@ public class System_Security_IStackWalk /* System.Security.IStackWalk */: DNObje
 		
 	}
 	
+	/// Causes every   for all objects except the current one that passes through the calling code to fail, even if code higher in the call stack has been granted permission to access other resources.
 	public func permitOnly() throws {
 		
 		
@@ -87020,6 +88275,8 @@ public class System_Security_IPermission /* System.Security.IPermission */: DNOb
 		"System.Security.IPermission"
 	}}
 
+	/// Creates and returns an identical copy of the current permission.
+	/// A copy of the current permission.
 	public func copy() throws -> System_Security_IPermission /* System.Security.IPermission */ {
 		
 		
@@ -87040,6 +88297,7 @@ public class System_Security_IPermission /* System.Security.IPermission */: DNOb
 		
 	}
 	
+	/// Throws a   at run time if the security requirement is not met.
 	public func demand() throws {
 		
 		
@@ -87321,6 +88579,8 @@ public class System_Runtime_Remoting_ObjectHandle /* System.Runtime.Remoting.Obj
 		"System.Runtime.Remoting.ObjectHandle"
 	}}
 
+	/// Returns the wrapped object.
+	/// The wrapped object.
 	public func unwrap() throws -> System_Object? /* System.Object */ {
 		
 		
@@ -87458,6 +88718,7 @@ public class System_Threading_Timer /* System.Threading.Timer */: System_Marshal
 		
 	}
 	
+	/// Releases all resources used by the current instance of  .
 	public func dispose(_ notifyObject: System_Threading_WaitHandle /* System.Threading.WaitHandle */) throws -> Bool /* System.Boolean */ {
 		let notifyObjectC = notifyObject.__handle
 		
@@ -87477,6 +88738,7 @@ public class System_Threading_Timer /* System.Threading.Timer */: System_Marshal
 		
 	}
 	
+	/// Releases all resources used by the current instance of  .
 	public func dispose() throws {
 		
 		
@@ -87494,6 +88756,8 @@ public class System_Threading_Timer /* System.Threading.Timer */: System_Marshal
 		
 	}
 	
+	/// Releases all resources used by the current instance of  .
+	/// A   that completes when all work associated with the timer has ceased.
 	public func disposeAsync() throws -> System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTask */ {
 		
 		
@@ -87660,6 +88924,9 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 		"System.Threading.CancellationTokenSource"
 	}}
 
+	/// Communicates a request for cancellation.
+	/// This   has been disposed.
+	/// An aggregate exception containing all the exceptions thrown by the registered callbacks on the associated  .
 	public func cancel() throws {
 		
 		
@@ -87677,6 +88944,9 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 		
 	}
 	
+	/// Communicates a request for cancellation.
+	/// This   has been disposed.
+	/// An aggregate exception containing all the exceptions thrown by the registered callbacks on the associated  .
 	public func cancel(_ throwOnFirstException: Bool /* System.Boolean */) throws {
 		
 		
@@ -87694,6 +88964,9 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 		
 	}
 	
+	/// Communicates a request for cancellation asynchronously.
+	/// This   has been disposed.
+	/// A task that will complete after cancelable operations and callbacks registered with the associated   have completed.
 	public func cancelAsync() throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		
 		
@@ -87749,6 +89022,8 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 		
 	}
 	
+	/// Attempts to reset the   to be used for an unrelated operation.
+	/// if the   has not had cancellation requested and could have its state reset to be reused for a subsequent operation; otherwise,  .
 	public func tryReset() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -87767,6 +89042,7 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 		
 	}
 	
+	/// Releases all resources used by the current instance of the   class.
 	public func dispose() throws {
 		
 		
@@ -88018,6 +89294,8 @@ public class System_Random /* System.Random */: System_Object {
 		"System.Random"
 	}}
 
+	/// Returns a non-negative random integer.
+	/// A 32-bit signed integer that is greater than or equal to 0 and less than  Int32.MaxValue .
 	public func next() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -88036,6 +89314,8 @@ public class System_Random /* System.Random */: System_Object {
 		
 	}
 	
+	/// Returns a non-negative random integer.
+	/// A 32-bit signed integer that is greater than or equal to 0 and less than  Int32.MaxValue .
 	public func next(_ maxValue: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -88054,6 +89334,8 @@ public class System_Random /* System.Random */: System_Object {
 		
 	}
 	
+	/// Returns a non-negative random integer.
+	/// A 32-bit signed integer that is greater than or equal to 0 and less than  Int32.MaxValue .
 	public func next(_ minValue: Int32 /* System.Int32 */, _ maxValue: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -88072,6 +89354,8 @@ public class System_Random /* System.Random */: System_Object {
 		
 	}
 	
+	/// Returns a non-negative random integer.
+	/// A 64-bit signed integer that is greater than or equal to 0 and less than  Int64.MaxValue .
 	public func nextInt64() throws -> Int64 /* System.Int64 */ {
 		
 		
@@ -88090,6 +89374,8 @@ public class System_Random /* System.Random */: System_Object {
 		
 	}
 	
+	/// Returns a non-negative random integer.
+	/// A 64-bit signed integer that is greater than or equal to 0 and less than  Int64.MaxValue .
 	public func nextInt64(_ maxValue: Int64 /* System.Int64 */) throws -> Int64 /* System.Int64 */ {
 		
 		
@@ -88108,6 +89394,8 @@ public class System_Random /* System.Random */: System_Object {
 		
 	}
 	
+	/// Returns a non-negative random integer.
+	/// A 64-bit signed integer that is greater than or equal to 0 and less than  Int64.MaxValue .
 	public func nextInt64(_ minValue: Int64 /* System.Int64 */, _ maxValue: Int64 /* System.Int64 */) throws -> Int64 /* System.Int64 */ {
 		
 		
@@ -88126,6 +89414,8 @@ public class System_Random /* System.Random */: System_Object {
 		
 	}
 	
+	/// Returns a random floating-point number that is greater than or equal to 0.0, and less than 1.0.
+	/// A single-precision floating point number that is greater than or equal to 0.0, and less than 1.0.
 	public func nextSingle() throws -> Float /* System.Single */ {
 		
 		
@@ -88144,6 +89434,8 @@ public class System_Random /* System.Random */: System_Object {
 		
 	}
 	
+	/// Returns a random floating-point number that is greater than or equal to 0.0, and less than 1.0.
+	/// A double-precision floating point number that is greater than or equal to 0.0, and less than 1.0.
 	public func nextDouble() throws -> Double /* System.Double */ {
 		
 		
@@ -88331,6 +89623,8 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
+	/// Converts the value of this instance to a  .
+	/// A string whose value is the same as this instance.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -88351,6 +89645,8 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
+	/// Converts the value of this instance to a  .
+	/// A string whose value is the same as this instance.
 	public func toString(_ startIndex: Int32 /* System.Int32 */, _ length: Int32 /* System.Int32 */) throws -> System_String /* System.String */ {
 		
 		
@@ -88371,6 +89667,8 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
+	/// Removes all characters from the current   instance.
+	/// An object whose   is 0 (zero).
 	public func clear() throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
@@ -88391,6 +89689,8 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
+	/// Returns an object that can be used to iterate through the chunks of characters represented in a   created from this   instance.
+	/// An enumerator for the chunks in the  .
 	public func getChunks() throws -> System_Text_StringBuilder_ChunkEnumerator /* System.Text.StringBuilder.ChunkEnumerator */ {
 		
 		
@@ -88537,6 +89837,9 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
+	/// Appends the default line terminator to the end of the current   object.
+	/// Enlarging the value of this instance would exceed  .
+	/// A reference to this instance after the append operation has completed.
 	public func appendLine() throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		
 		
@@ -88557,6 +89860,9 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
+	/// Appends the default line terminator to the end of the current   object.
+	/// Enlarging the value of this instance would exceed  .
+	/// A reference to this instance after the append operation has completed.
 	public func appendLine(_ value: System_String? /* System.String */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let valueC = value?.__handle
 		
@@ -88990,6 +90296,9 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
+	/// Appends the default line terminator to the end of the current   object.
+	/// Enlarging the value of this instance would exceed  .
+	/// A reference to this instance after the append operation has completed.
 	public func appendLine(_ handler: inout System_Text_StringBuilder_AppendInterpolatedStringHandler /* System.Text.StringBuilder.AppendInterpolatedStringHandler */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		var handlerC = handler.__handle
 		
@@ -89014,6 +90323,9 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
+	/// Appends the default line terminator to the end of the current   object.
+	/// Enlarging the value of this instance would exceed  .
+	/// A reference to this instance after the append operation has completed.
 	public func appendLine(_ provider: System_IFormatProvider? /* System.IFormatProvider */, _ handler: inout System_Text_StringBuilder_AppendInterpolatedStringHandler /* System.Text.StringBuilder.AppendInterpolatedStringHandler */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
 		let providerC = provider?.__handle
 		var handlerC = handler.__handle
@@ -90147,6 +91459,8 @@ public class System_Text_StringBuilder_ChunkEnumerator /* System.Text.StringBuil
 		"System.Text.StringBuilder.ChunkEnumerator"
 	}}
 
+	/// Provides an   implementation that returns   as the  .
+	/// An enumerator object that can be used to iterate through the chunks.
 	public func getEnumerator() throws -> System_Text_StringBuilder_ChunkEnumerator /* System.Text.StringBuilder.ChunkEnumerator */ {
 		
 		
@@ -90167,6 +91481,8 @@ public class System_Text_StringBuilder_ChunkEnumerator /* System.Text.StringBuil
 		
 	}
 	
+	/// Advances the enumerator to the next chunk in the collection.
+	/// if the enumerator was successfully advanced to the next element;   if the enumerator has passed the end of the collection.
 	public func moveNext() throws -> Bool /* System.Boolean */ {
 		
 		
@@ -90596,6 +91912,8 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
+	/// Returns a random folder name or file name.
+	/// A random folder name or file name.
 	public class func getRandomFileName() throws -> System_String /* System.String */ {
 		
 		
@@ -90896,6 +92214,8 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
+	/// Gets an array containing the characters that are not allowed in file names.
+	/// An array containing the characters that are not allowed in file names.
 	public class func getInvalidFileNameChars() throws -> System_Char_Array /* System.Char[] */ {
 		
 		
@@ -90916,6 +92236,8 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
+	/// Gets an array containing the characters that are not allowed in path names.
+	/// An array containing the characters that are not allowed in path names.
 	public class func getInvalidPathChars() throws -> System_Char_Array /* System.Char[] */ {
 		
 		
@@ -90979,6 +92301,9 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
+	/// Returns the path of the current user's temporary folder.
+	/// The caller does not have the required permissions.
+	/// The path to the temporary folder, ending with a   .
 	public class func getTempPath() throws -> System_String /* System.String */ {
 		
 		
@@ -90999,6 +92324,11 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
+	/// Creates a uniquely named, zero-byte temporary file on disk and returns the full path of that file.
+	/// An I/O error occurs, such as no unique temporary file name is available.
+	/// -or-
+	/// This method was unable to create a temporary file.
+	/// The full path of the temporary file.
 	public class func getTempFileName() throws -> System_String /* System.String */ {
 		
 		
@@ -93061,6 +94391,7 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		"System.IO.StreamReader"
 	}}
 
+	/// Closes the   object and the underlying stream, and releases any system resources associated with the reader.
 	public override func close() throws {
 		
 		
@@ -93078,6 +94409,7 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 	}
 	
+	/// Clears the internal buffer.
 	public func discardBufferedData() throws {
 		
 		
@@ -93095,6 +94427,9 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 	}
 	
+	/// Returns the next available character but does not consume it.
+	/// An I/O error occurs.
+	/// An integer representing the next character to be read, or -1 if there are no characters to be read or if the stream does not support seeking.
 	public override func peek() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -93113,6 +94448,9 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 	}
 	
+	/// Reads the next character from the input stream and advances the character position by one character.
+	/// An I/O error occurs.
+	/// The next character from the input stream represented as an   object, or -1 if no more characters are available.
 	public override func read() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -93131,6 +94469,9 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 	}
 	
+	/// Reads the next character from the input stream and advances the character position by one character.
+	/// An I/O error occurs.
+	/// The next character from the input stream represented as an   object, or -1 if no more characters are available.
 	public override func read(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
 		let bufferC = buffer.__handle
 		
@@ -93150,6 +94491,10 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 	}
 	
+	/// Reads all characters from the current position to the end of the stream.
+	/// There is insufficient memory to allocate a buffer for the returned string.
+	/// An I/O error occurs.
+	/// The rest of the stream as a string, from the current position to the end. If the current position is at the end of the stream, returns an empty string ("").
 	public override func readToEnd() throws -> System_String /* System.String */ {
 		
 		
@@ -93189,6 +94534,10 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 	}
 	
+	/// Reads a line of characters from the current stream and returns the data as a string.
+	/// There is insufficient memory to allocate a buffer for the returned string.
+	/// An I/O error occurs.
+	/// The next line from the input stream, or   if the end of the input stream is reached.
 	public override func readLine() throws -> System_String? /* System.String */ {
 		
 		
@@ -93209,6 +94558,11 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 	}
 	
+	/// Reads a line of characters asynchronously from the current stream and returns the data as a string.
+	/// The number of characters in the next line is larger than  Int32.MaxValue .
+	/// The stream has been disposed.
+	/// The reader is currently in use by a previous read operation.
+	/// A task that represents the asynchronous read operation. The value of the   parameter contains the next line from the stream, or is   if all the characters have been read.
 	public override func readLineAsync() throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.String> */ {
 		
 		
@@ -93229,6 +94583,11 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 	}
 	
+	/// Reads all characters from the current position to the end of the stream asynchronously and returns them as one string.
+	/// The number of characters is larger than  Int32.MaxValue .
+	/// The stream has been disposed.
+	/// The reader is currently in use by a previous read operation.
+	/// A task that represents the asynchronous read operation. The value of the   parameter contains a string with the characters from the current position to the end of the stream.
 	public override func readToEndAsync() throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.String> */ {
 		
 		
@@ -93249,6 +94608,11 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 	}
 	
+	/// Reads all characters from the current position to the end of the stream asynchronously and returns them as one string.
+	/// The number of characters is larger than  Int32.MaxValue .
+	/// The stream has been disposed.
+	/// The reader is currently in use by a previous read operation.
+	/// A task that represents the asynchronous read operation. The value of the   parameter contains a string with the characters from the current position to the end of the stream.
 	public override func readToEndAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.String> */ {
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -93674,6 +95038,7 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		"System.IO.TextReader"
 	}}
 
+	/// Closes the   and releases any system resources associated with the  .
 	public func close() throws {
 		
 		
@@ -93691,6 +95056,7 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		
 	}
 	
+	/// Releases all resources used by the   object.
 	public func dispose() throws {
 		
 		
@@ -93708,6 +95074,10 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		
 	}
 	
+	/// Reads the next character without changing the state of the reader or the character source. Returns the next available character without actually reading it from the reader.
+	/// The   is closed.
+	/// An I/O error occurs.
+	/// An integer representing the next character to be read, or -1 if no more characters are available or the reader does not support seeking.
 	public func peek() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -93726,6 +95096,10 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		
 	}
 	
+	/// Reads the next character from the text reader and advances the character position by one character.
+	/// The   is closed.
+	/// An I/O error occurs.
+	/// The next character from the text reader, or -1 if no more characters are available. The default implementation returns -1.
 	public func read() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -93744,6 +95118,10 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		
 	}
 	
+	/// Reads the next character from the text reader and advances the character position by one character.
+	/// The   is closed.
+	/// An I/O error occurs.
+	/// The next character from the text reader, or -1 if no more characters are available. The default implementation returns -1.
 	public func read(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
 		let bufferC = buffer.__handle
 		
@@ -93763,6 +95141,12 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		
 	}
 	
+	/// Reads all characters from the current position to the end of the text reader and returns them as one string.
+	/// An I/O error occurs.
+	/// The   is closed.
+	/// There is insufficient memory to allocate a buffer for the returned string.
+	/// The number of characters in the next line is larger than  Int32.MaxValue
+	/// A string that contains all characters from the current position to the end of the text reader.
 	public func readToEnd() throws -> System_String /* System.String */ {
 		
 		
@@ -93802,6 +95186,12 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		
 	}
 	
+	/// Reads a line of characters from the text reader and returns the data as a string.
+	/// An I/O error occurs.
+	/// There is insufficient memory to allocate a buffer for the returned string.
+	/// The   is closed.
+	/// The number of characters in the next line is larger than  Int32.MaxValue
+	/// The next line from the reader, or   if all characters have been read.
 	public func readLine() throws -> System_String? /* System.String */ {
 		
 		
@@ -93822,6 +95212,11 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		
 	}
 	
+	/// Reads a line of characters asynchronously and returns the data as a string.
+	/// The number of characters in the next line is larger than  Int32.MaxValue .
+	/// The text reader has been disposed.
+	/// The reader is currently in use by a previous read operation.
+	/// A task that represents the asynchronous read operation. The value of the   parameter contains the next line from the text reader, or is   if all of the characters have been read.
 	public func readLineAsync() throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.String> */ {
 		
 		
@@ -93842,6 +95237,11 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		
 	}
 	
+	/// Reads all characters from the current position to the end of the text reader asynchronously and returns them as one string.
+	/// The number of characters is larger than  Int32.MaxValue .
+	/// The text reader has been disposed.
+	/// The reader is currently in use by a previous read operation.
+	/// A task that represents the asynchronous read operation. The value of the   parameter contains a string with the characters from the current position to the end of the text reader.
 	public func readToEndAsync() throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.String> */ {
 		
 		
@@ -93862,6 +95262,11 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		
 	}
 	
+	/// Reads all characters from the current position to the end of the text reader asynchronously and returns them as one string.
+	/// The number of characters is larger than  Int32.MaxValue .
+	/// The text reader has been disposed.
+	/// The reader is currently in use by a previous read operation.
+	/// A task that represents the asynchronous read operation. The value of the   parameter contains a string with the characters from the current position to the end of the text reader.
 	public func readToEndAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<System.String> */ {
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -93991,6 +95396,8 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		"System.IO.StreamWriter"
 	}}
 
+	/// Closes the current   object and the underlying stream.
+	/// The current encoding does not support displaying half of a Unicode surrogate pair.
 	public override func close() throws {
 		
 		
@@ -94008,6 +95415,8 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
+	/// Asynchronously writes any buffered data to the underlying stream and releases the unmanaged resources used by the  .
+	/// A task that represents the asynchronous dispose operation.
 	public override func disposeAsync() throws -> System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTask */ {
 		
 		
@@ -94028,6 +95437,10 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
+	/// Clears all buffers for the current writer and causes any buffered data to be written to the underlying stream.
+	/// The current writer is closed.
+	/// An I/O error has occurred.
+	/// The current encoding does not support displaying half of a Unicode surrogate pair.
 	public override func flush() throws {
 		
 		
@@ -94356,6 +95769,10 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
+	/// Asynchronously writes a line terminator to the stream.
+	/// The stream writer is disposed.
+	/// The stream writer is currently in use by a previous write operation.
+	/// A task that represents the asynchronous write operation.
 	public override func writeLineAsync() throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		
 		
@@ -94376,6 +95793,10 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
+	/// Asynchronously writes a line terminator to the stream.
+	/// The stream writer is disposed.
+	/// The stream writer is currently in use by a previous write operation.
+	/// A task that represents the asynchronous write operation.
 	public override func writeLineAsync(_ value: DNChar /* System.Char */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let valueC = value.cValue
 		
@@ -94397,6 +95818,10 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
+	/// Asynchronously writes a line terminator to the stream.
+	/// The stream writer is disposed.
+	/// The stream writer is currently in use by a previous write operation.
+	/// A task that represents the asynchronous write operation.
 	public override func writeLineAsync(_ value: System_String? /* System.String */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let valueC = value?.__handle
 		
@@ -94418,6 +95843,10 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
+	/// Asynchronously writes a line terminator to the stream.
+	/// The stream writer is disposed.
+	/// The stream writer is currently in use by a previous write operation.
+	/// A task that represents the asynchronous write operation.
 	public override func writeLineAsync(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let bufferC = buffer.__handle
 		
@@ -94439,6 +95868,9 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
+	/// Clears all buffers for this stream asynchronously and causes any buffered data to be written to the underlying device.
+	/// The stream has been disposed.
+	/// A task that represents the asynchronous flush operation.
 	public override func flushAsync() throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		
 		
@@ -94459,6 +95891,9 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
+	/// Clears all buffers for this stream asynchronously and causes any buffered data to be written to the underlying device.
+	/// The stream has been disposed.
+	/// A task that represents the asynchronous flush operation.
 	public override func flushAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -94800,6 +96235,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		"System.IO.TextWriter"
 	}}
 
+	/// Closes the current writer and releases any system resources associated with the writer.
 	public func close() throws {
 		
 		
@@ -94817,6 +96253,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Releases all resources used by the   object.
 	public func dispose() throws {
 		
 		
@@ -94834,6 +96271,8 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Asynchronously releases all resources used by the   object.
+	/// A task that represents the asynchronous dispose operation.
 	public func disposeAsync() throws -> System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTask */ {
 		
 		
@@ -94854,6 +96293,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Clears all buffers for the current writer and causes any buffered data to be written to the underlying device.
 	public func flush() throws {
 		
 		
@@ -95195,6 +96635,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Writes a line terminator to the text stream.
+	/// The   is closed.
+	/// An I/O error occurs.
 	public func writeLine() throws {
 		
 		
@@ -95212,6 +96655,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Writes a line terminator to the text stream.
+	/// The   is closed.
+	/// An I/O error occurs.
 	public func writeLine(_ value: DNChar /* System.Char */) throws {
 		let valueC = value.cValue
 		
@@ -95230,6 +96676,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Writes a line terminator to the text stream.
+	/// The   is closed.
+	/// An I/O error occurs.
 	public func writeLine(_ buffer: System_Char_Array? /* System.Char[] */) throws {
 		let bufferC = buffer?.__handle
 		
@@ -95248,6 +96697,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Writes a line terminator to the text stream.
+	/// The   is closed.
+	/// An I/O error occurs.
 	public func writeLine(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws {
 		let bufferC = buffer.__handle
 		
@@ -95266,6 +96718,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Writes a line terminator to the text stream.
+	/// The   is closed.
+	/// An I/O error occurs.
 	public func writeLine(_ value: Bool /* System.Boolean */) throws {
 		
 		
@@ -95283,6 +96738,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Writes a line terminator to the text stream.
+	/// The   is closed.
+	/// An I/O error occurs.
 	public func writeLine(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -95300,6 +96758,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Writes a line terminator to the text stream.
+	/// The   is closed.
+	/// An I/O error occurs.
 	public func writeLine(_ value: UInt32 /* System.UInt32 */) throws {
 		
 		
@@ -95317,6 +96778,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Writes a line terminator to the text stream.
+	/// The   is closed.
+	/// An I/O error occurs.
 	public func writeLine(_ value: Int64 /* System.Int64 */) throws {
 		
 		
@@ -95334,6 +96798,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Writes a line terminator to the text stream.
+	/// The   is closed.
+	/// An I/O error occurs.
 	public func writeLine(_ value: UInt64 /* System.UInt64 */) throws {
 		
 		
@@ -95351,6 +96818,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Writes a line terminator to the text stream.
+	/// The   is closed.
+	/// An I/O error occurs.
 	public func writeLine(_ value: Float /* System.Single */) throws {
 		
 		
@@ -95368,6 +96838,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Writes a line terminator to the text stream.
+	/// The   is closed.
+	/// An I/O error occurs.
 	public func writeLine(_ value: Double /* System.Double */) throws {
 		
 		
@@ -95385,6 +96858,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Writes a line terminator to the text stream.
+	/// The   is closed.
+	/// An I/O error occurs.
 	public func writeLine(_ value: System_Decimal /* System.Decimal */) throws {
 		let valueC = value.__handle
 		
@@ -95403,6 +96879,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Writes a line terminator to the text stream.
+	/// The   is closed.
+	/// An I/O error occurs.
 	public func writeLine(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -95421,6 +96900,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Writes a line terminator to the text stream.
+	/// The   is closed.
+	/// An I/O error occurs.
 	public func writeLine(_ value: System_Text_StringBuilder? /* System.Text.StringBuilder */) throws {
 		let valueC = value?.__handle
 		
@@ -95439,6 +96921,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Writes a line terminator to the text stream.
+	/// The   is closed.
+	/// An I/O error occurs.
 	public func writeLine(_ value: System_Object? /* System.Object */) throws {
 		let valueC = value?.__handle
 		
@@ -95457,6 +96942,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Writes a line terminator to the text stream.
+	/// The   is closed.
+	/// An I/O error occurs.
 	public func writeLine(_ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */) throws {
 		let formatC = format.__handle
 		let arg0C = arg0?.__handle
@@ -95476,6 +96964,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Writes a line terminator to the text stream.
+	/// The   is closed.
+	/// An I/O error occurs.
 	public func writeLine(_ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */) throws {
 		let formatC = format.__handle
 		let arg0C = arg0?.__handle
@@ -95496,6 +96987,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Writes a line terminator to the text stream.
+	/// The   is closed.
+	/// An I/O error occurs.
 	public func writeLine(_ format: System_String /* System.String */, _ arg0: System_Object? /* System.Object */, _ arg1: System_Object? /* System.Object */, _ arg2: System_Object? /* System.Object */) throws {
 		let formatC = format.__handle
 		let arg0C = arg0?.__handle
@@ -95517,6 +97011,9 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Writes a line terminator to the text stream.
+	/// The   is closed.
+	/// An I/O error occurs.
 	public func writeLine(_ format: System_String /* System.String */, _ arg: System_Object_Array /* System.Object[] */) throws {
 		let formatC = format.__handle
 		let argC = arg.__handle
@@ -95642,6 +97139,10 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Asynchronously writes a line terminator to the text stream.
+	/// The text writer is disposed.
+	/// The text writer is currently in use by a previous write operation.
+	/// A task that represents the asynchronous write operation.
 	public func writeLineAsync(_ value: DNChar /* System.Char */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let valueC = value.cValue
 		
@@ -95663,6 +97164,10 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Asynchronously writes a line terminator to the text stream.
+	/// The text writer is disposed.
+	/// The text writer is currently in use by a previous write operation.
+	/// A task that represents the asynchronous write operation.
 	public func writeLineAsync(_ value: System_String? /* System.String */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let valueC = value?.__handle
 		
@@ -95684,6 +97189,10 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Asynchronously writes a line terminator to the text stream.
+	/// The text writer is disposed.
+	/// The text writer is currently in use by a previous write operation.
+	/// A task that represents the asynchronous write operation.
 	public func writeLineAsync(_ value: System_Text_StringBuilder? /* System.Text.StringBuilder */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let valueC = value?.__handle
 		let cancellationTokenC = cancellationToken.__handle
@@ -95706,6 +97215,10 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Asynchronously writes a line terminator to the text stream.
+	/// The text writer is disposed.
+	/// The text writer is currently in use by a previous write operation.
+	/// A task that represents the asynchronous write operation.
 	public func writeLineAsync(_ buffer: System_Char_Array? /* System.Char[] */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let bufferC = buffer?.__handle
 		
@@ -95727,6 +97240,10 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Asynchronously writes a line terminator to the text stream.
+	/// The text writer is disposed.
+	/// The text writer is currently in use by a previous write operation.
+	/// A task that represents the asynchronous write operation.
 	public func writeLineAsync(_ buffer: System_Char_Array /* System.Char[] */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let bufferC = buffer.__handle
 		
@@ -95748,6 +97265,10 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Asynchronously writes a line terminator to the text stream.
+	/// The text writer is disposed.
+	/// The text writer is currently in use by a previous write operation.
+	/// A task that represents the asynchronous write operation.
 	public func writeLineAsync() throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		
 		
@@ -95768,6 +97289,10 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Asynchronously clears all buffers for the current writer and causes any buffered data to be written to the underlying device.
+	/// The text writer is disposed.
+	/// The writer is currently in use by a previous write operation.
+	/// A task that represents the asynchronous flush operation.
 	public func flushAsync() throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		
 		
@@ -95788,6 +97313,10 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Asynchronously clears all buffers for the current writer and causes any buffered data to be written to the underlying device.
+	/// The text writer is disposed.
+	/// The writer is currently in use by a previous write operation.
+	/// A task that represents the asynchronous flush operation.
 	public func flushAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
 		let cancellationTokenC = cancellationToken.__handle
 		
@@ -96069,6 +97598,9 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 	}
 	
+	/// Deletes a file or directory.
+	/// The specified path is invalid; for example, it is on an unmapped drive.
+	/// There is an open handle on the file or directory, and the operating system is Windows XP or earlier. This open handle can result from enumerating directories and files. For more information, see How to: Enumerate Directories and Files.
 	public func delete() throws {
 		
 		
@@ -96124,6 +97656,8 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 	}
 	
+	/// Returns the original path. Use the   or   properties for the full path or file/directory name.
+	/// A string with the original path.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -96144,6 +97678,8 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 	}
 	
+	/// Refreshes the state of the object.
+	/// A device such as a disk drive is not ready.
 	public func refresh() throws {
 		
 		
@@ -96727,6 +98263,12 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
+	/// Creates a   with UTF8 encoding that reads from an existing text file.
+	/// The caller does not have the required permission.
+	/// The file is not found.
+	/// is read-only or is a directory.
+	/// The specified path is invalid, such as being on an unmapped drive.
+	/// A new   with UTF8 encoding.
 	public func openText() throws -> System_IO_StreamReader /* System.IO.StreamReader */ {
 		
 		
@@ -96747,6 +98289,11 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
+	/// Creates a   that writes a new text file.
+	/// The file name is a directory.
+	/// The disk is read-only.
+	/// The caller does not have the required permission.
+	/// A new  .
 	public func createText() throws -> System_IO_StreamWriter /* System.IO.StreamWriter */ {
 		
 		
@@ -96767,6 +98314,8 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
+	/// Creates a   that appends text to the file represented by this instance of the  .
+	/// A new  .
 	public func appendText() throws -> System_IO_StreamWriter /* System.IO.StreamWriter */ {
 		
 		
@@ -96829,6 +98378,8 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
+	/// Creates a file.
+	/// A new file.
 	public func create() throws -> System_IO_FileStream /* System.IO.FileStream */ {
 		
 		
@@ -96849,6 +98400,12 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
+	/// Permanently deletes a file.
+	/// The target file is open or memory-mapped on a computer running Microsoft Windows NT.
+	/// -or-
+	/// There is an open handle on the file, and the operating system is Windows XP or earlier. This open handle can result from enumerating directories and files. For more information, see How to: Enumerate Directories and Files.
+	/// The caller does not have the required permission.
+	/// The path is a directory.
 	public override func delete() throws {
 		
 		
@@ -96932,6 +98489,11 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
+	/// Creates a read-only  .
+	/// is read-only or is a directory.
+	/// The specified path is invalid, such as being on an unmapped drive.
+	/// The file is already open.
+	/// A new read-only   object.
 	public func openRead() throws -> System_IO_FileStream /* System.IO.FileStream */ {
 		
 		
@@ -96952,6 +98514,10 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
+	/// Creates a write-only  .
+	/// The path specified when creating an instance of the   object is read-only or is a directory.
+	/// The path specified when creating an instance of the   object is invalid, such as being on an unmapped drive.
+	/// A write-only unshared   object for a new or existing file.
 	public func openWrite() throws -> System_IO_FileStream /* System.IO.FileStream */ {
 		
 		
@@ -97052,6 +98618,17 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
+	/// Decrypts a file that was encrypted by the current account using the   method.
+	/// An invalid drive was specified.
+	/// The file described by the current   object could not be found.
+	/// An I/O error occurred while opening the file.
+	/// The file system is not NTFS.
+	/// The current operating system is not Microsoft Windows NT or later.
+	/// The file described by the current   object is read-only.
+	/// -or-
+	/// This operation is not supported on the current platform.
+	/// -or-
+	/// The caller does not have the required permission.
 	public func decrypt() throws {
 		
 		
@@ -97069,6 +98646,17 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
+	/// Encrypts a file so that only the account used to encrypt the file can decrypt it.
+	/// An invalid drive was specified.
+	/// The file described by the current   object could not be found.
+	/// An I/O error occurred while opening the file.
+	/// The file system is not NTFS.
+	/// The current operating system is not Microsoft Windows NT or later.
+	/// The file described by the current   object is read-only.
+	/// -or-
+	/// This operation is not supported on the current platform.
+	/// -or-
+	/// The caller does not have the required permission.
 	public func encrypt() throws {
 		
 		
@@ -97321,6 +98909,8 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Creates a directory.
+	/// The directory cannot be created.
 	public func create() throws {
 		
 		
@@ -97338,6 +98928,9 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns a file list from the current directory.
+	/// The path is invalid, such as being on an unmapped drive.
+	/// An array of type  .
 	public func getFiles() throws -> System_IO_FileInfo_Array /* System.IO.FileInfo[] */ {
 		
 		
@@ -97358,6 +98951,9 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns a file list from the current directory.
+	/// The path is invalid, such as being on an unmapped drive.
+	/// An array of type  .
 	public func getFiles(_ searchPattern: System_String /* System.String */) throws -> System_IO_FileInfo_Array /* System.IO.FileInfo[] */ {
 		let searchPatternC = searchPattern.__handle
 		
@@ -97379,6 +98975,9 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns a file list from the current directory.
+	/// The path is invalid, such as being on an unmapped drive.
+	/// An array of type  .
 	public func getFiles(_ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_IO_FileInfo_Array /* System.IO.FileInfo[] */ {
 		let searchPatternC = searchPattern.__handle
 		let searchOptionC = searchOption.cValue
@@ -97401,6 +99000,9 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns a file list from the current directory.
+	/// The path is invalid, such as being on an unmapped drive.
+	/// An array of type  .
 	public func getFiles(_ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_IO_FileInfo_Array /* System.IO.FileInfo[] */ {
 		let searchPatternC = searchPattern.__handle
 		let enumerationOptionsC = enumerationOptions.__handle
@@ -97423,6 +99025,9 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns an array of strongly typed   entries representing all the files and subdirectories in a directory.
+	/// The path is invalid (for example, it is on an unmapped drive).
+	/// An array of strongly typed   entries.
 	public func getFileSystemInfos() throws -> System_IO_FileSystemInfo_Array /* System.IO.FileSystemInfo[] */ {
 		
 		
@@ -97443,6 +99048,9 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns an array of strongly typed   entries representing all the files and subdirectories in a directory.
+	/// The path is invalid (for example, it is on an unmapped drive).
+	/// An array of strongly typed   entries.
 	public func getFileSystemInfos(_ searchPattern: System_String /* System.String */) throws -> System_IO_FileSystemInfo_Array /* System.IO.FileSystemInfo[] */ {
 		let searchPatternC = searchPattern.__handle
 		
@@ -97464,6 +99072,9 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns an array of strongly typed   entries representing all the files and subdirectories in a directory.
+	/// The path is invalid (for example, it is on an unmapped drive).
+	/// An array of strongly typed   entries.
 	public func getFileSystemInfos(_ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_IO_FileSystemInfo_Array /* System.IO.FileSystemInfo[] */ {
 		let searchPatternC = searchPattern.__handle
 		let searchOptionC = searchOption.cValue
@@ -97486,6 +99097,9 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns an array of strongly typed   entries representing all the files and subdirectories in a directory.
+	/// The path is invalid (for example, it is on an unmapped drive).
+	/// An array of strongly typed   entries.
 	public func getFileSystemInfos(_ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_IO_FileSystemInfo_Array /* System.IO.FileSystemInfo[] */ {
 		let searchPatternC = searchPattern.__handle
 		let enumerationOptionsC = enumerationOptions.__handle
@@ -97508,6 +99122,11 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns the subdirectories of the current directory.
+	/// The path encapsulated in the   object is invalid, such as being on an unmapped drive.
+	/// The caller does not have the required permission.
+	/// The caller does not have the required permission.
+	/// An array of   objects.
 	public func getDirectories() throws -> System_IO_DirectoryInfo_Array /* System.IO.DirectoryInfo[] */ {
 		
 		
@@ -97528,6 +99147,11 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns the subdirectories of the current directory.
+	/// The path encapsulated in the   object is invalid, such as being on an unmapped drive.
+	/// The caller does not have the required permission.
+	/// The caller does not have the required permission.
+	/// An array of   objects.
 	public func getDirectories(_ searchPattern: System_String /* System.String */) throws -> System_IO_DirectoryInfo_Array /* System.IO.DirectoryInfo[] */ {
 		let searchPatternC = searchPattern.__handle
 		
@@ -97549,6 +99173,11 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns the subdirectories of the current directory.
+	/// The path encapsulated in the   object is invalid, such as being on an unmapped drive.
+	/// The caller does not have the required permission.
+	/// The caller does not have the required permission.
+	/// An array of   objects.
 	public func getDirectories(_ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_IO_DirectoryInfo_Array /* System.IO.DirectoryInfo[] */ {
 		let searchPatternC = searchPattern.__handle
 		let searchOptionC = searchOption.cValue
@@ -97571,6 +99200,11 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns the subdirectories of the current directory.
+	/// The path encapsulated in the   object is invalid, such as being on an unmapped drive.
+	/// The caller does not have the required permission.
+	/// The caller does not have the required permission.
+	/// An array of   objects.
 	public func getDirectories(_ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_IO_DirectoryInfo_Array /* System.IO.DirectoryInfo[] */ {
 		let searchPatternC = searchPattern.__handle
 		let enumerationOptionsC = enumerationOptions.__handle
@@ -97593,6 +99227,10 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns an enumerable collection of directory information in the current directory.
+	/// The path encapsulated in the   object is invalid (for example, it is on an unmapped drive).
+	/// The caller does not have the required permission.
+	/// An enumerable collection of directories in the current directory.
 	public func enumerateDirectories() throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.DirectoryInfo> */ {
 		
 		
@@ -97613,6 +99251,10 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns an enumerable collection of directory information in the current directory.
+	/// The path encapsulated in the   object is invalid (for example, it is on an unmapped drive).
+	/// The caller does not have the required permission.
+	/// An enumerable collection of directories in the current directory.
 	public func enumerateDirectories(_ searchPattern: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.DirectoryInfo> */ {
 		let searchPatternC = searchPattern.__handle
 		
@@ -97634,6 +99276,10 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns an enumerable collection of directory information in the current directory.
+	/// The path encapsulated in the   object is invalid (for example, it is on an unmapped drive).
+	/// The caller does not have the required permission.
+	/// An enumerable collection of directories in the current directory.
 	public func enumerateDirectories(_ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.DirectoryInfo> */ {
 		let searchPatternC = searchPattern.__handle
 		let searchOptionC = searchOption.cValue
@@ -97656,6 +99302,10 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns an enumerable collection of directory information in the current directory.
+	/// The path encapsulated in the   object is invalid (for example, it is on an unmapped drive).
+	/// The caller does not have the required permission.
+	/// An enumerable collection of directories in the current directory.
 	public func enumerateDirectories(_ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.DirectoryInfo> */ {
 		let searchPatternC = searchPattern.__handle
 		let enumerationOptionsC = enumerationOptions.__handle
@@ -97678,6 +99328,10 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns an enumerable collection of file information in the current directory.
+	/// The path encapsulated in the   object is invalid (for example, it is on an unmapped drive).
+	/// The caller does not have the required permission.
+	/// An enumerable collection of the files in the current directory.
 	public func enumerateFiles() throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.FileInfo> */ {
 		
 		
@@ -97698,6 +99352,10 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns an enumerable collection of file information in the current directory.
+	/// The path encapsulated in the   object is invalid (for example, it is on an unmapped drive).
+	/// The caller does not have the required permission.
+	/// An enumerable collection of the files in the current directory.
 	public func enumerateFiles(_ searchPattern: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.FileInfo> */ {
 		let searchPatternC = searchPattern.__handle
 		
@@ -97719,6 +99377,10 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns an enumerable collection of file information in the current directory.
+	/// The path encapsulated in the   object is invalid (for example, it is on an unmapped drive).
+	/// The caller does not have the required permission.
+	/// An enumerable collection of the files in the current directory.
 	public func enumerateFiles(_ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.FileInfo> */ {
 		let searchPatternC = searchPattern.__handle
 		let searchOptionC = searchOption.cValue
@@ -97741,6 +99403,10 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns an enumerable collection of file information in the current directory.
+	/// The path encapsulated in the   object is invalid (for example, it is on an unmapped drive).
+	/// The caller does not have the required permission.
+	/// An enumerable collection of the files in the current directory.
 	public func enumerateFiles(_ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.FileInfo> */ {
 		let searchPatternC = searchPattern.__handle
 		let enumerationOptionsC = enumerationOptions.__handle
@@ -97763,6 +99429,10 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns an enumerable collection of file system information in the current directory.
+	/// The path encapsulated in the   object is invalid (for example, it is on an unmapped drive).
+	/// The caller does not have the required permission.
+	/// An enumerable collection of file system information in the current directory.
 	public func enumerateFileSystemInfos() throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.FileSystemInfo> */ {
 		
 		
@@ -97783,6 +99453,10 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns an enumerable collection of file system information in the current directory.
+	/// The path encapsulated in the   object is invalid (for example, it is on an unmapped drive).
+	/// The caller does not have the required permission.
+	/// An enumerable collection of file system information in the current directory.
 	public func enumerateFileSystemInfos(_ searchPattern: System_String /* System.String */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.FileSystemInfo> */ {
 		let searchPatternC = searchPattern.__handle
 		
@@ -97804,6 +99478,10 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns an enumerable collection of file system information in the current directory.
+	/// The path encapsulated in the   object is invalid (for example, it is on an unmapped drive).
+	/// The caller does not have the required permission.
+	/// An enumerable collection of file system information in the current directory.
 	public func enumerateFileSystemInfos(_ searchPattern: System_String /* System.String */, _ searchOption: System_IO_SearchOption /* System.IO.SearchOption */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.FileSystemInfo> */ {
 		let searchPatternC = searchPattern.__handle
 		let searchOptionC = searchOption.cValue
@@ -97826,6 +99504,10 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Returns an enumerable collection of file system information in the current directory.
+	/// The path encapsulated in the   object is invalid (for example, it is on an unmapped drive).
+	/// The caller does not have the required permission.
+	/// An enumerable collection of file system information in the current directory.
 	public func enumerateFileSystemInfos(_ searchPattern: System_String /* System.String */, _ enumerationOptions: System_IO_EnumerationOptions /* System.IO.EnumerationOptions */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.IO.FileSystemInfo> */ {
 		let searchPatternC = searchPattern.__handle
 		let enumerationOptionsC = enumerationOptions.__handle
@@ -97866,6 +99548,15 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Deletes this   if it is empty.
+	/// The directory contains a read-only file.
+	/// The directory described by this   object does not exist or could not be found.
+	/// The directory is not empty.
+	/// -or-
+	/// The directory is the application's current working directory.
+	/// -or-
+	/// There is an open handle on the directory, and the operating system is Windows XP or earlier. This open handle can result from enumerating directories. For more information, see How to: Enumerate Directories and Files.
+	/// The caller does not have the required permission.
 	public override func delete() throws {
 		
 		
@@ -97883,6 +99574,15 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Deletes this   if it is empty.
+	/// The directory contains a read-only file.
+	/// The directory described by this   object does not exist or could not be found.
+	/// The directory is not empty.
+	/// -or-
+	/// The directory is the application's current working directory.
+	/// -or-
+	/// There is an open handle on the directory, and the operating system is Windows XP or earlier. This open handle can result from enumerating directories. For more information, see How to: Enumerate Directories and Files.
+	/// The caller does not have the required permission.
 	public func delete(_ recursive: Bool /* System.Boolean */) throws {
 		
 		
@@ -99375,6 +101075,11 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
+	/// Gets the current working directory of the application.
+	/// The caller does not have the required permission.
+	/// The operating system is Windows CE, which does not have current directory functionality.
+	/// This method is available in the .NET Compact Framework, but is not currently supported.
+	/// A string that contains the absolute path of the current working directory, and does not end with a backslash (\).
 	public class func getCurrentDirectory() throws -> System_String /* System.String */ {
 		
 		
@@ -99468,6 +101173,10 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 		
 	}
 	
+	/// Retrieves the names of the logical drives on this computer in the form "&lt;drive letter&gt;:\".
+	/// An I/O error occurred (for example, a disk error).
+	/// The caller does not have the required permission.
+	/// The logical drives on this computer.
 	public class func getLogicalDrives() throws -> System_String_Array /* System.String[] */ {
 		
 		
@@ -101212,6 +102921,8 @@ public class System_Half /* System.Half */: System_ValueType {
 		
 	}
 	
+	/// Returns the hash code for this instance.
+	/// A 32-bit signed integer hash code.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -101230,6 +102941,8 @@ public class System_Half /* System.Half */: System_ValueType {
 		
 	}
 	
+	/// Converts the numeric value of this instance to its equivalent string representation.
+	/// The string representation of the value of this instance.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -101250,6 +102963,8 @@ public class System_Half /* System.Half */: System_ValueType {
 		
 	}
 	
+	/// Converts the numeric value of this instance to its equivalent string representation.
+	/// The string representation of the value of this instance.
 	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
@@ -101271,6 +102986,8 @@ public class System_Half /* System.Half */: System_ValueType {
 		
 	}
 	
+	/// Converts the numeric value of this instance to its equivalent string representation.
+	/// The string representation of the value of this instance.
 	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
@@ -101292,6 +103009,8 @@ public class System_Half /* System.Half */: System_ValueType {
 		
 	}
 	
+	/// Converts the numeric value of this instance to its equivalent string representation.
+	/// The string representation of the value of this instance.
 	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let providerC = provider?.__handle
@@ -103556,6 +105275,8 @@ public class System_Int128 /* System.Int128 */: System_ValueType {
 		
 	}
 	
+	/// Serves as the default hash function.
+	/// A hash code for the current object.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -103574,6 +105295,8 @@ public class System_Int128 /* System.Int128 */: System_ValueType {
 		
 	}
 	
+	/// Returns a string that represents the current object.
+	/// A string that represents the current object.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -103594,6 +105317,8 @@ public class System_Int128 /* System.Int128 */: System_ValueType {
 		
 	}
 	
+	/// Returns a string that represents the current object.
+	/// A string that represents the current object.
 	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
@@ -103615,6 +105340,8 @@ public class System_Int128 /* System.Int128 */: System_ValueType {
 		
 	}
 	
+	/// Returns a string that represents the current object.
+	/// A string that represents the current object.
 	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
@@ -103636,6 +105363,8 @@ public class System_Int128 /* System.Int128 */: System_ValueType {
 		
 	}
 	
+	/// Returns a string that represents the current object.
+	/// A string that represents the current object.
 	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let providerC = provider?.__handle
@@ -104688,6 +106417,8 @@ public class System_UInt128 /* System.UInt128 */: System_ValueType {
 		
 	}
 	
+	/// Serves as the default hash function.
+	/// A hash code for the current object.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
 		
 		
@@ -104706,6 +106437,8 @@ public class System_UInt128 /* System.UInt128 */: System_ValueType {
 		
 	}
 	
+	/// Returns a string that represents the current object.
+	/// A string that represents the current object.
 	public override func toString() throws -> System_String /* System.String */ {
 		
 		
@@ -104726,6 +106459,8 @@ public class System_UInt128 /* System.UInt128 */: System_ValueType {
 		
 	}
 	
+	/// Returns a string that represents the current object.
+	/// A string that represents the current object.
 	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let providerC = provider?.__handle
 		
@@ -104747,6 +106482,8 @@ public class System_UInt128 /* System.UInt128 */: System_ValueType {
 		
 	}
 	
+	/// Returns a string that represents the current object.
+	/// A string that represents the current object.
 	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		
@@ -104768,6 +106505,8 @@ public class System_UInt128 /* System.UInt128 */: System_ValueType {
 		
 	}
 	
+	/// Returns a string that represents the current object.
+	/// A string that represents the current object.
 	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
 		let formatC = format?.__handle
 		let providerC = provider?.__handle
@@ -105847,6 +107586,7 @@ public class System_Runtime_CompilerServices_ConditionalWeakTable_A2 /* System.R
 		
 	}
 	
+	/// Clears all the key/value pairs.
 	public func clear(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */) throws {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
@@ -105976,6 +107716,7 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 		
 	}
 	
+	/// Removes all elements from the  .
 	public func clear(T: System_Type /* System.Type */) throws {
 		let TC = T.__handle
 		
@@ -106327,6 +108068,7 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 		
 	}
 	
+	/// Reverses the order of the elements in the entire  .
 	public func reverse(T: System_Type /* System.Type */) throws {
 		let TC = T.__handle
 		
@@ -106345,6 +108087,7 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 		
 	}
 	
+	/// Reverses the order of the elements in the entire  .
 	public func reverse(T: System_Type /* System.Type */, _ index: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws {
 		let TC = T.__handle
 		
@@ -106363,6 +108106,8 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 		
 	}
 	
+	/// Sorts the elements in the entire   using the default comparer.
+	/// The default comparer   cannot find an implementation of the   generic interface or the   interface for type  .
 	public func sort(T: System_Type /* System.Type */) throws {
 		let TC = T.__handle
 		
@@ -106381,6 +108126,8 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 		
 	}
 	
+	/// Copies the elements of the   to a new array.
+	/// An array containing copies of the elements of the  .
 	public func toArray(T: System_Type /* System.Type */) throws -> System_Array /* System.Array */ {
 		let TC = T.__handle
 		
@@ -106402,6 +108149,7 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 		
 	}
 	
+	/// Sets the capacity to the actual number of elements in the  , if that number is less than a threshold value.
 	public func trimExcess(T: System_Type /* System.Type */) throws {
 		let TC = T.__handle
 		
@@ -106615,6 +108363,7 @@ public class System_Collections_Generic_Dictionary_A2 /* System.Collections.Gene
 		
 	}
 	
+	/// Removes all keys and values from the  .
 	public func clear(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */) throws {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
@@ -106830,6 +108579,7 @@ public class System_Collections_Generic_Dictionary_A2 /* System.Collections.Gene
 		
 	}
 	
+	/// Sets the capacity of this dictionary to what it would be if it had been originally initialized with all its entries.
 	public func trimExcess(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */) throws {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
@@ -106849,6 +108599,7 @@ public class System_Collections_Generic_Dictionary_A2 /* System.Collections.Gene
 		
 	}
 	
+	/// Sets the capacity of this dictionary to what it would be if it had been originally initialized with all its entries.
 	public func trimExcess(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */, _ capacity: Int32 /* System.Int32 */) throws {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
@@ -107184,6 +108935,8 @@ public class System_Tuple_A1 /* System.Tuple<> */: System_Object {
 		
 	}
 	
+	/// Returns the hash code for the current   object.
+	/// A 32-bit signed integer hash code.
 	public func getHashCode(T1: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let T1C = T1.__handle
 		
@@ -107203,6 +108956,8 @@ public class System_Tuple_A1 /* System.Tuple<> */: System_Object {
 		
 	}
 	
+	/// Returns a string that represents the value of this   instance.
+	/// The string representation of this   object.
 	public func toString(T1: System_Type /* System.Type */) throws -> System_String /* System.String */ {
 		let T1C = T1.__handle
 		
@@ -107382,6 +109137,8 @@ public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
 		
 	}
 	
+	/// Returns the hash code for the current   object.
+	/// A 32-bit signed integer hash code.
 	public func getHashCode(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -107402,6 +109159,8 @@ public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
 		
 	}
 	
+	/// Returns a string that represents the value of this   instance.
+	/// The string representation of this   object.
 	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */) throws -> System_String /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -107547,6 +109306,8 @@ public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
 		
 	}
 	
+	/// Returns the hash code for the current   object.
+	/// A 32-bit signed integer hash code.
 	public func getHashCode(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -107568,6 +109329,8 @@ public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
 		
 	}
 	
+	/// Returns a string that represents the value of this   instance.
+	/// The string representation of this   object.
 	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */) throws -> System_String /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -107747,6 +109510,8 @@ public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
 		
 	}
 	
+	/// Returns the hash code for the current   object.
+	/// A 32-bit signed integer hash code.
 	public func getHashCode(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -107769,6 +109534,8 @@ public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
 		
 	}
 	
+	/// Returns a string that represents the value of this   instance.
+	/// The string representation of this   object.
 	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */) throws -> System_String /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -107984,6 +109751,8 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 		
 	}
 	
+	/// Returns the hash code for the current   object.
+	/// A 32-bit signed integer hash code.
 	public func getHashCode(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -108007,6 +109776,8 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 		
 	}
 	
+	/// Returns a string that represents the value of this   instance.
+	/// The string representation of this   object.
 	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */) throws -> System_String /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -108260,6 +110031,8 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 		
 	}
 	
+	/// Returns the hash code for the current   object.
+	/// A 32-bit signed integer hash code.
 	public func getHashCode(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -108284,6 +110057,8 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 		
 	}
 	
+	/// Returns a string that represents the value of this   instance.
+	/// The string representation of this   object.
 	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */) throws -> System_String /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -108577,6 +110352,8 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 		
 	}
 	
+	/// Returns the hash code for the current   object.
+	/// A 32-bit signed integer hash code.
 	public func getHashCode(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -108602,6 +110379,8 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 		
 	}
 	
+	/// Returns a string that represents the value of this   instance.
+	/// The string representation of this   object.
 	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */) throws -> System_String /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -108937,6 +110716,8 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 		
 	}
 	
+	/// Calculates the hash code for the current   object.
+	/// A 32-bit signed integer hash code.
 	public func getHashCode(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */, TRest: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -108963,6 +110744,8 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 		
 	}
 	
+	/// Returns a string that represents the value of this   instance.
+	/// The string representation of this   object.
 	public func toString(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */, TRest: System_Type /* System.Type */) throws -> System_String /* System.String */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle

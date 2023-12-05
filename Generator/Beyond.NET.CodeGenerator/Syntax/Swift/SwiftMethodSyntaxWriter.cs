@@ -381,13 +381,9 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             typeDescriptorRegistry
         );
 
-        string? declarationComment;
         string declaration;
 
         if (memberKind == MemberKind.Constructor) {
-            // TODO
-            declarationComment = null;
-            
             declaration = Builder.Initializer()
                 .Convenience()
                 .Visibility(onlyWriteSignatureForProtocol 
@@ -398,8 +394,6 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 .Implementation(memberImpl)
                 .ToString();
         } else if (memberKind == MemberKind.Destructor) {
-            declarationComment = null;
-            
             declaration = Builder.Func(methodNameSwift)
                 .Visibility(onlyWriteSignatureForProtocol
                     ? SwiftVisibilities.None
@@ -410,8 +404,6 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 .Implementation(memberImpl)
                 .ToString();
         } else if (memberKind == MemberKind.TypeOf) {
-            declarationComment = null;
-            
             bool isEnum = declaringType.IsEnum;
             
             string propTypeName = !returnOrSetterOrEventHandlerType.IsVoid()
@@ -434,17 +426,6 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 ? swiftReturnOrSetterTypeNameWithComment
                 : throw new Exception("A property must have a return type");
 
-            if (originatingMemberInfo is FieldInfo fieldInfo) {
-                declarationComment = fieldInfo.GetDocumentation()
-                    ?.GetFormattedDocumentationComment();
-            } else if (originatingMemberInfo is PropertyInfo propertyInfo) {
-                declarationComment = propertyInfo.GetDocumentation()
-                    ?.GetFormattedDocumentationComment();
-            } else {
-                // TODO
-                declarationComment = null;
-            }
-
             declaration = Builder.GetOnlyProperty(methodNameSwift, propTypeName)
                 .Visibility(onlyWriteSignatureForProtocol
                     ? SwiftVisibilities.None
@@ -457,17 +438,6 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 .Implementation(memberImpl)
                 .ToString();
         } else {
-            if (originatingMemberInfo is FieldInfo fieldInfo) {
-                declarationComment = fieldInfo.GetDocumentation()
-                    ?.GetFormattedDocumentationComment();
-            } else if (originatingMemberInfo is PropertyInfo propertyInfo) {
-                declarationComment = propertyInfo.GetDocumentation()
-                    ?.GetFormattedDocumentationComment();
-            } else {
-                // TODO
-                declarationComment = null;
-            }
-            
             declaration = Builder.Func(methodNameSwift)
                 .Visibility(onlyWriteSignatureForProtocol 
                     ? SwiftVisibilities.None
@@ -486,6 +456,25 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         }
         #endregion Func Declaration
 
+        XmlDocumentationContent? xmlDocumentationContent;
+        
+        if (originatingMemberInfo is FieldInfo originatingFieldInfo) {
+            xmlDocumentationContent = originatingFieldInfo.GetDocumentation();
+        } else if (originatingMemberInfo is PropertyInfo originatingPropertyInfo) {
+            xmlDocumentationContent = originatingPropertyInfo.GetDocumentation();
+        } else if (originatingMemberInfo is EventInfo originatingEventInfo) {
+            xmlDocumentationContent = originatingEventInfo.GetDocumentation();
+        } else if (originatingMemberInfo is ConstructorInfo originatingConstructorInfo) {
+            xmlDocumentationContent = originatingConstructorInfo.GetDocumentation();
+        } else if (originatingMemberInfo is MethodInfo originatingMethodInfo) {
+            xmlDocumentationContent = originatingMethodInfo.GetDocumentation();
+        } else {
+            xmlDocumentationContent = null;
+        }
+        
+        var declarationComment = xmlDocumentationContent
+            ?.GetFormattedDocumentationComment();
+        
         string declarationWithComment;
 
         if (!string.IsNullOrEmpty(declarationComment)) {
