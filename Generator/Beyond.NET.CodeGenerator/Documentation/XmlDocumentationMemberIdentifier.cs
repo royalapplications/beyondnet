@@ -8,13 +8,23 @@ internal struct XmlDocumentationMemberIdentifier
     private readonly string m_key;
     internal bool IsValid => !string.IsNullOrEmpty(m_key);
 
-    // private const string IDENTIFIER_NAMESPACE = "N";
-    private const string IDENTIFIER_TYPE = "T";
-    private const string IDENTIFIER_FIELD = "F";
-    private const string IDENTIFIER_PROPERTY = "P";
-    private const string IDENTIFIER_METHOD = "M";
-    private const string IDENTIFIER_EVENT = "E";
-    // private const string IDENTIFIER_ERRORSTRING = "!";
+    internal const string IDENTIFIER_NAMESPACE = "N";
+    internal const string IDENTIFIER_TYPE = "T";
+    internal const string IDENTIFIER_FIELD = "F";
+    internal const string IDENTIFIER_PROPERTY = "P";
+    internal const string IDENTIFIER_METHOD = "M";
+    internal const string IDENTIFIER_EVENT = "E";
+    internal const string IDENTIFIER_ERRORSTRING = "!";
+
+    internal static readonly string[] Identifiers = new[] {
+	    IDENTIFIER_NAMESPACE,
+	    IDENTIFIER_TYPE,
+	    IDENTIFIER_FIELD,
+	    IDENTIFIER_PROPERTY,
+	    IDENTIFIER_METHOD,
+	    IDENTIFIER_EVENT,
+	    IDENTIFIER_ERRORSTRING
+    };
 
     internal XmlDocumentationMemberIdentifier(string key)
     {

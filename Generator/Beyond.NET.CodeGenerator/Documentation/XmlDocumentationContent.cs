@@ -87,6 +87,17 @@ public struct XmlDocumentationContent
             foreach (XmlNode exceptionNode in exceptionNodes) {
                 var exceptionType = exceptionNode.Attributes?["cref"]?.Value ?? "N/A";
 
+                foreach (var identifier in XmlDocumentationMemberIdentifier.Identifiers) {
+                    var identifierPrefix = $"{identifier}:";
+                    
+                    if (!exceptionType.StartsWith(identifierPrefix) ||
+                        exceptionType.Length <= identifierPrefix.Length) {
+                        continue;
+                    }
+
+                    exceptionType = exceptionType.Substring(identifierPrefix.Length);
+                }
+
                 var exceptionNodeText = exceptionNode.InnerXml.Trim(newLinesAndBlanks);
                 var exceptionNodeLines = exceptionNodeText.Split(newLines, StringSplitOptions.RemoveEmptyEntries);
 
