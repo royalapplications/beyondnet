@@ -43,6 +43,7 @@ public class SwiftTypeOfSyntaxWriter: SwiftMethodSyntaxWriter, ITypeOfSyntaxWrit
             true,
             typeDescriptorRegistry,
             state,
+            null,
             out _
         );
 

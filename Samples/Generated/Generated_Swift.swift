@@ -7918,6 +7918,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 		
 	}
 	
+	/// Gets a value indicating whether the   is an interface; that is, not a class or a value type.
+	/// if the   is an interface; otherwise,  .
 	public var isInterface: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -7937,6 +7939,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a   value indicating that this member is a type or a nested type.
+	/// A   value indicating that this member is a type or a nested type.
 	public override var memberType: System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ { get throws {
 		
 		
@@ -7958,6 +7962,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets the namespace of the  .
+	/// The namespace of the  ;   if the current instance has no namespace or represents a generic parameter.
 	public var namespace: System_String? /* System.String */ { get throws {
 		
 		
@@ -7979,6 +7985,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets the assembly-qualified name of the type, which includes the name of the assembly from which this   object was loaded.
+	/// The assembly-qualified name of the  , which includes the name of the assembly from which the   was loaded, or   if the current instance represents a generic type parameter.
 	public var assemblyQualifiedName: System_String? /* System.String */ { get throws {
 		
 		
@@ -8000,6 +8008,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets the fully qualified name of the type, including its namespace but not its assembly.
+	/// The fully qualified name of the type, including its namespace but not its assembly; or   if the current instance represents a generic type parameter, an array type, pointer type, or   type based on a type parameter, or a generic type that is not a generic type definition but contains unresolved type parameters.
 	public var fullName: System_String? /* System.String */ { get throws {
 		
 		
@@ -8021,6 +8031,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets the   in which the type is declared. For generic types, gets the   in which the generic type is defined.
+	/// An   instance that describes the assembly containing the current type. For generic types, the instance describes the assembly that contains the generic type definition, not the assembly that creates and uses a particular constructed type.
 	public var assembly: System_Reflection_Assembly /* System.Reflection.Assembly */ { get throws {
 		
 		
@@ -8042,6 +8054,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets the module (the DLL) in which the current   is defined.
+	/// The module in which the current   is defined.
 	public override var module: System_Reflection_Module /* System.Reflection.Module */ { get throws {
 		
 		
@@ -8063,6 +8077,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the current   object represents a type whose definition is nested inside the definition of another type.
+	/// if the   is nested inside another type; otherwise,  .
 	public var isNested: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8082,6 +8098,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets the type that declares the current nested type or generic type parameter.
+	/// A   object representing the enclosing type, if the current type is a nested type; or the generic type definition, if the current type is a type parameter of a generic type; or the type that declares the generic method, if the current type is a type parameter of a generic method; otherwise,  .
 	public override var declaringType: System_Type? /* System.Type */ { get throws {
 		
 		
@@ -8103,6 +8121,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a   that represents the declaring method, if the current   represents a type parameter of a generic method.
+	/// If the current   represents a type parameter of a generic method, a   that represents declaring method; otherwise,  .
 	public var declaringMethod: System_Reflection_MethodBase? /* System.Reflection.MethodBase */ { get throws {
 		
 		
@@ -8124,6 +8144,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets the class object that was used to obtain this member.
+	/// The   object through which this   object was obtained.
 	public override var reflectedType: System_Type? /* System.Type */ { get throws {
 		
 		
@@ -8145,6 +8167,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Indicates the type provided by the common language runtime that represents this type.
+	/// The underlying system type for the  .
 	public var underlyingSystemType: System_Type /* System.Type */ { get throws {
 		
 		
@@ -8166,6 +8190,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value that indicates whether the type is a type definition.
+	/// if the current   is a type definition; otherwise,  .
 	public var isTypeDefinition: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8185,6 +8211,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value that indicates whether the type is an array.
+	/// if the current type is an array; otherwise,  .
 	public var isArray: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8204,6 +8232,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   is passed by reference.
+	/// if the   is passed by reference; otherwise,  .
 	public var isByRef: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8223,6 +8253,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   is a pointer.
+	/// if the   is a pointer; otherwise,  .
 	public var isPointer: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8242,6 +8274,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value that indicates whether this object represents a constructed generic type. You can create instances of a constructed generic type.
+	/// if this object represents a constructed generic type; otherwise,  .
 	public var isConstructedGenericType: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8261,6 +8295,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the current   represents a type parameter in the definition of a generic type or method.
+	/// if the   object represents a type parameter of a generic type definition or generic method definition; otherwise,  .
 	public var isGenericParameter: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8280,6 +8316,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value that indicates whether the current   represents a type parameter in the definition of a generic type.
+	/// if the   object represents a type parameter of a generic type definition; otherwise,  .
 	public var isGenericTypeParameter: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8299,6 +8337,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value that indicates whether the current   represents a type parameter in the definition of a generic method.
+	/// if the   object represents a type parameter of a generic method definition; otherwise,  .
 	public var isGenericMethodParameter: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8318,6 +8358,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the current type is a generic type.
+	/// if the current type is a generic type; otherwise,  .
 	public var isGenericType: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8337,6 +8379,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the current   represents a generic type definition, from which other generic types can be constructed.
+	/// if the   object represents a generic type definition; otherwise,  .
 	public var isGenericTypeDefinition: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8356,6 +8400,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value that indicates whether the type is an array type that can represent only a single-dimensional array with a zero lower bound.
+	/// if the current   is an array type that can represent only a single-dimensional array with a zero lower bound; otherwise,  .
 	public var isSZArray: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8375,6 +8421,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value that indicates whether the type is an array type that can represent a multi-dimensional array or an array with an arbitrary lower bound.
+	/// if the current   is an array type that can represent a multi-dimensional array or an array with an arbitrary lower bound; otherwise,  .
 	public var isVariableBoundArray: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8394,6 +8442,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value that indicates whether the type is a byref-like structure.
+	/// if the   is a byref-like structure; otherwise,  .
 	public var isByRefLike: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8413,6 +8463,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value that indicates whether the current   is a function pointer.
+	/// if the current   is a function pointer; otherwise,  .
 	public var isFunctionPointer: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8432,6 +8484,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value that indicates whether the current   is an unmanaged function pointer.
+	/// if the current   is an unmanaged function pointer; otherwise,  .
 	public var isUnmanagedFunctionPointer: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8451,6 +8505,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the current   encompasses or refers to another type; that is, whether the current   is an array, a pointer, or is passed by reference.
+	/// if the   is an array, a pointer, or is passed by reference; otherwise,  .
 	public var hasElementType: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8470,6 +8526,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets an array of the generic type arguments for this type.
+	/// An array of the generic type arguments for this type.
 	public var genericTypeArguments: System_Type_Array /* System.Type[] */ { get throws {
 		
 		
@@ -8491,6 +8549,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets the position of the type parameter in the type parameter list of the generic type or method that declared the parameter, when the   object represents a type parameter of a generic type or a generic method.
+	/// The current type does not represent a type parameter. That is,   returns  .
+	/// The position of a type parameter in the type parameter list of the generic type or method that defines the parameter. Position numbers begin at 0.
 	public var genericParameterPosition: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -8510,6 +8571,10 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a combination of   flags that describe the covariance and special constraints of the current generic type parameter.
+	/// The current   object is not a generic type parameter. That is, the   property returns  .
+	/// The invoked method is not supported in the base class.
+	/// A bitwise combination of   values that describes the covariance and special constraints of the current generic type parameter.
 	public var genericParameterAttributes: System_Reflection_GenericParameterAttributes /* System.Reflection.GenericParameterAttributes */ { get throws {
 		
 		
@@ -8531,6 +8596,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets the attributes associated with the  .
+	/// A   object representing the attribute set of the  , unless the   represents a generic type parameter, in which case the value is unspecified.
 	public var attributes: System_Reflection_TypeAttributes /* System.Reflection.TypeAttributes */ { get throws {
 		
 		
@@ -8552,6 +8619,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   is abstract and must be overridden.
+	/// if the   is abstract; otherwise,  .
 	public var isAbstract: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8571,6 +8640,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   has a   attribute applied, indicating that it was imported from a COM type library.
+	/// if the   has a  ; otherwise,  .
 	public var isImport: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8590,6 +8661,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   is declared sealed.
+	/// if the   is declared sealed; otherwise,  .
 	public var isSealed: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8609,6 +8682,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the type has a name that requires special handling.
+	/// if the type has a name that requires special handling; otherwise,  .
 	public var isSpecialName: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8628,6 +8703,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   is a class or a delegate; that is, not a value type or interface.
+	/// if the   is a class; otherwise,  .
 	public var isClass: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8647,6 +8724,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   is nested and visible only within its own assembly.
+	/// if the   is nested and visible only within its own assembly; otherwise,  .
 	public var isNestedAssembly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8666,6 +8745,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   is nested and visible only to classes that belong to both its own family and its own assembly.
+	/// if the   is nested and visible only to classes that belong to both its own family and its own assembly; otherwise,  .
 	public var isNestedFamANDAssem: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8685,6 +8766,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   is nested and visible only within its own family.
+	/// if the   is nested and visible only within its own family; otherwise,  .
 	public var isNestedFamily: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8704,6 +8787,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   is nested and visible only to classes that belong to either its own family or to its own assembly.
+	/// if the   is nested and visible only to classes that belong to its own family or to its own assembly; otherwise,  .
 	public var isNestedFamORAssem: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8723,6 +8808,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   is nested and declared private.
+	/// if the   is nested and declared private; otherwise,  .
 	public var isNestedPrivate: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8742,6 +8829,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether a class is nested and declared public.
+	/// if the class is nested and declared public; otherwise,  .
 	public var isNestedPublic: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8761,6 +8850,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   is not declared public.
+	/// if the   is not declared public and is not a nested type; otherwise,  .
 	public var isNotPublic: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8780,6 +8871,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   is declared public.
+	/// if the   is declared public and is not a nested type; otherwise,  .
 	public var isPublic: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8799,6 +8892,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the fields of the current type are laid out automatically by the common language runtime.
+	/// if the   property of the current type includes  ; otherwise,  .
 	public var isAutoLayout: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8818,6 +8913,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the fields of the current type are laid out at explicitly specified offsets.
+	/// if the   property of the current type includes  ; otherwise,  .
 	public var isExplicitLayout: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8837,6 +8934,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the fields of the current type are laid out sequentially, in the order that they were defined or emitted to the metadata.
+	/// if the   property of the current type includes  ; otherwise,  .
 	public var isLayoutSequential: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8856,6 +8955,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the string format attribute   is selected for the  .
+	/// if the string format attribute   is selected for the  ; otherwise,  .
 	public var isAnsiClass: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8875,6 +8976,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the string format attribute   is selected for the  .
+	/// if the string format attribute   is selected for the  ; otherwise,  .
 	public var isAutoClass: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8894,6 +8997,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the string format attribute   is selected for the  .
+	/// if the string format attribute   is selected for the  ; otherwise,  .
 	public var isUnicodeClass: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8913,6 +9018,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   is a COM object.
+	/// if the   is a COM object; otherwise,  .
 	public var isCOMObject: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8932,6 +9039,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   can be hosted in a context.
+	/// if the   can be hosted in a context; otherwise,  .
 	public var isContextful: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8951,6 +9060,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the current   represents an enumeration.
+	/// if the current   represents an enumeration; otherwise,  .
 	public var isEnum: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8970,6 +9081,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   is marshaled by reference.
+	/// if the   is marshaled by reference; otherwise,  .
 	public var isMarshalByRef: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -8989,6 +9102,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   is one of the primitive types.
+	/// if the   is one of the primitive types; otherwise,  .
 	public var isPrimitive: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -9008,6 +9123,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   is a value type.
+	/// if the   is a value type; otherwise,  .
 	public var isValueType: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -9027,6 +9144,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value that indicates whether the type is a signature type.
+	/// if the   is a signature type; otherwise,  .
 	public var isSignatureType: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -9046,6 +9165,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value that indicates whether the current type is security-critical or security-safe-critical at the current trust level, and therefore can perform critical operations.
+	/// if the current type is security-critical or security-safe-critical at the current trust level;   if it is transparent.
 	public var isSecurityCritical: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -9065,6 +9186,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value that indicates whether the current type is security-safe-critical at the current trust level; that is, whether it can perform critical operations and can be accessed by transparent code.
+	/// if the current type is security-safe-critical at the current trust level;   if it is security-critical or transparent.
 	public var isSecuritySafeCritical: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -9084,6 +9207,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value that indicates whether the current type is transparent at the current trust level, and therefore cannot perform critical operations.
+	/// if the type is security-transparent at the current trust level; otherwise,  .
 	public var isSecurityTransparent: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -9103,6 +9228,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a   that describes the layout of the current type.
+	/// The invoked method is not supported in the base class.
+	/// Gets a   that describes the gross layout features of the current type.
 	public var structLayoutAttribute: System_Runtime_InteropServices_StructLayoutAttribute? /* System.Runtime.InteropServices.StructLayoutAttribute */ { get throws {
 		
 		
@@ -9124,6 +9252,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets the initializer for the type.
+	/// An object that contains the name of the class constructor for the  .
 	public var typeInitializer: System_Reflection_ConstructorInfo? /* System.Reflection.ConstructorInfo */ { get throws {
 		
 		
@@ -9145,6 +9275,9 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets the handle for the current  .
+	/// The .NET Compact Framework does not currently support this property.
+	/// The handle for the current  .
 	public var typeHandle: System_RuntimeTypeHandle /* System.RuntimeTypeHandle */ { get throws {
 		
 		
@@ -9166,6 +9299,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets the GUID associated with the  .
+	/// The GUID associated with the  .
 	public var gUID: System_Guid /* System.Guid */ { get throws {
 		
 		
@@ -9187,6 +9322,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets the type from which the current   directly inherits.
+	/// The   from which the current   directly inherits, or   if the current   represents the   class or an interface.
 	public var baseType: System_Type? /* System.Type */ { get throws {
 		
 		
@@ -9208,6 +9345,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a reference to the default binder, which implements internal rules for selecting the appropriate members to be called by  .
+	/// A reference to the default binder used by the system.
 	public class var defaultBinder: System_Reflection_Binder /* System.Reflection.Binder */ { get throws {
 		
 		
@@ -9229,6 +9368,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   is binary serializable.
+	/// if the   is binary serializable; otherwise,  .
 	public var isSerializable: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -9248,6 +9389,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the current   object has type parameters that have not been replaced by specific types.
+	/// if the   object is itself a generic type parameter or has type parameters for which specific types have not been supplied; otherwise,  .
 	public var containsGenericParameters: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -9267,6 +9410,8 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Gets a value indicating whether the   can be accessed by code outside the assembly.
+	/// if the current   is a public type or a public nested type such that all the enclosing types are public; otherwise,  .
 	public var isVisible: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -9286,6 +9431,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Separates names in the namespace of the  . This field is read-only.
 	public class var delimiter: DNChar /* System.Char */ { get {
 		
 		
@@ -9298,6 +9444,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Represents an empty array of type  . This field is read-only.
 	public class var emptyTypes: System_Type_Array /* System.Type[] */ { get {
 		
 		
@@ -9310,6 +9457,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Represents a missing value in the   information. This field is read-only.
 	public class var missing: System_Object /* System.Object */ { get {
 		
 		
@@ -9322,6 +9470,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Represents the member filter used on attributes. This field is read-only.
 	public class var filterAttribute: System_Reflection_MemberFilter /* System.Reflection.MemberFilter */ { get {
 		
 		
@@ -9334,6 +9483,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Represents the case-sensitive member filter used on names. This field is read-only.
 	public class var filterName: System_Reflection_MemberFilter /* System.Reflection.MemberFilter */ { get {
 		
 		
@@ -9346,6 +9496,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	}}
 	
 	
+	/// Represents the case-insensitive member filter used on names. This field is read-only.
 	public class var filterNameIgnoreCase: System_Reflection_MemberFilter /* System.Reflection.MemberFilter */ { get {
 		
 		
@@ -9518,6 +9669,8 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 		
 	}
 	
+	/// When overridden in a derived class, gets a   value indicating the type of the member - method, constructor, event, and so on.
+	/// A   value indicating the type of member.
 	public var memberType: System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ { get throws {
 		
 		
@@ -9539,6 +9692,8 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 	}}
 	
 	
+	/// Gets the name of the current member.
+	/// A   containing the name of this member.
 	public var name: System_String /* System.String */ { get throws {
 		
 		
@@ -9560,6 +9715,8 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 	}}
 	
 	
+	/// Gets the class that declares this member.
+	/// The   object for the class that declares this member.
 	public var declaringType: System_Type? /* System.Type */ { get throws {
 		
 		
@@ -9581,6 +9738,8 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 	}}
 	
 	
+	/// Gets the class object that was used to obtain this instance of  .
+	/// The   object through which this   object was obtained.
 	public var reflectedType: System_Type? /* System.Type */ { get throws {
 		
 		
@@ -9602,6 +9761,9 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 	}}
 	
 	
+	/// Gets the module in which the type that declares the member represented by the current   is defined.
+	/// This method is not implemented.
+	/// The   in which the type that declares the member represented by the current   is defined.
 	public var module: System_Reflection_Module /* System.Reflection.Module */ { get throws {
 		
 		
@@ -9623,6 +9785,8 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 	}}
 	
 	
+	/// Gets a collection that contains this member's custom attributes.
+	/// A collection that contains this member's custom attributes.
 	public var customAttributes: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ { get throws {
 		
 		
@@ -9644,6 +9808,8 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 	}}
 	
 	
+	/// Gets a value that indicates whether this   object is part of an assembly held in a collectible  .
+	/// if the   is part of an assembly held in a collectible assembly load context; otherwise,  .
 	public var isCollectible: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -9663,6 +9829,9 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 	}}
 	
 	
+	/// Gets a value that identifies a metadata element.
+	/// The current   represents an array method, such as  , on an array type whose element type is a dynamic type that has not been completed. To get a metadata token in this case, pass the   object to the   method; or use the   method to get the token directly, instead of using the   method to get a   first.
+	/// A value which, in combination with  , uniquely identifies a metadata element.
 	public var metadataToken: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -11274,6 +11443,9 @@ public class System_Array /* System.Array */: System_Object {
 		
 	}
 	
+	/// Gets the total number of elements in all the dimensions of the  .
+	/// The array is multidimensional and contains more than  Int32.MaxValue  elements.
+	/// The total number of elements in all the dimensions of the  ; zero if there are no elements in the array.
 	public var length: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -11293,6 +11465,8 @@ public class System_Array /* System.Array */: System_Object {
 	}}
 	
 	
+	/// Gets a 64-bit integer that represents the total number of elements in all the dimensions of the  .
+	/// A 64-bit integer that represents the total number of elements in all the dimensions of the  .
 	public var longLength: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -11312,6 +11486,8 @@ public class System_Array /* System.Array */: System_Object {
 	}}
 	
 	
+	/// Gets the rank (number of dimensions) of the  . For example, a one-dimensional array returns 1, a two-dimensional array returns 2, and so on.
+	/// The rank (number of dimensions) of the  .
 	public var rank: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -11331,6 +11507,8 @@ public class System_Array /* System.Array */: System_Object {
 	}}
 	
 	
+	/// Gets an object that can be used to synchronize access to the  .
+	/// An object that can be used to synchronize access to the  .
 	public var syncRoot: System_Object /* System.Object */ { get throws {
 		
 		
@@ -11352,6 +11530,8 @@ public class System_Array /* System.Array */: System_Object {
 	}}
 	
 	
+	/// Gets a value indicating whether the   is read-only.
+	/// This property is always   for all arrays.
 	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -11371,6 +11551,8 @@ public class System_Array /* System.Array */: System_Object {
 	}}
 	
 	
+	/// Gets a value indicating whether the   has a fixed size.
+	/// This property is always   for all arrays.
 	public var isFixedSize: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -11390,6 +11572,8 @@ public class System_Array /* System.Array */: System_Object {
 	}}
 	
 	
+	/// Gets a value indicating whether access to the   is synchronized (thread safe).
+	/// This property is always   for all arrays.
 	public var isSynchronized: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -11409,6 +11593,8 @@ public class System_Array /* System.Array */: System_Object {
 	}}
 	
 	
+	/// Gets the maximum number of elements that may be contained in an array.
+	/// The maximum count of elements allowed in any array.
 	public class var maxLength: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -11661,6 +11847,8 @@ public class System_Collections_IList /* System.Collections.IList */: DNObject {
 	}
 	
 	
+	/// Gets a value indicating whether the   is read-only.
+	/// if the   is read-only; otherwise,  .
 	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -11680,6 +11868,8 @@ public class System_Collections_IList /* System.Collections.IList */: DNObject {
 	}}
 	
 	
+	/// Gets a value indicating whether the   has a fixed size.
+	/// if the   has a fixed size; otherwise,  .
 	public var isFixedSize: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -11741,6 +11931,8 @@ public class System_Collections_ICollection /* System.Collections.ICollection */
 		
 	}
 	
+	/// Gets the number of elements contained in the  .
+	/// The number of elements contained in the  .
 	public var count: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -11760,6 +11952,8 @@ public class System_Collections_ICollection /* System.Collections.ICollection */
 	}}
 	
 	
+	/// Gets an object that can be used to synchronize access to the  .
+	/// An object that can be used to synchronize access to the  .
 	public var syncRoot: System_Object /* System.Object */ { get throws {
 		
 		
@@ -11781,6 +11975,8 @@ public class System_Collections_ICollection /* System.Collections.ICollection */
 	}}
 	
 	
+	/// Gets a value indicating whether access to the   is synchronized (thread safe).
+	/// if access to the   is synchronized (thread safe); otherwise,  .
 	public var isSynchronized: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -11903,6 +12099,8 @@ public class System_Collections_IEnumerator /* System.Collections.IEnumerator */
 		
 	}
 	
+	/// Gets the element in the collection at the current position of the enumerator.
+	/// The element in the collection at the current position of the enumerator.
 	public var current: System_Object? /* System.Object */ { get throws {
 		
 		
@@ -16423,6 +16621,8 @@ public class System_String /* System.String */: System_Object {
 	}
 	
 	
+	/// Gets the number of characters in the current   object.
+	/// The number of characters in the current string.
 	public var length: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -16442,6 +16642,7 @@ public class System_String /* System.String */: System_Object {
 	}}
 	
 	
+	/// Represents the empty string. This field is read-only.
 	public class var empty: System_String /* System.String */ { get {
 		
 		
@@ -16506,6 +16707,8 @@ public class System_Collections_Generic_IEnumerator_A1 /* System.Collections.Gen
 		"System.Collections.Generic.IEnumerator<>"
 	}}
 
+	/// Gets the element in the collection at the current position of the enumerator.
+	/// The element in the collection at the current position of the enumerator.
 	public func current(T: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TC = T.__handle
 		
@@ -16754,6 +16957,7 @@ public class System_Numerics_IBinaryNumber_A1 /* System.Numerics.IBinaryNumber<>
 		
 	}
 	
+	/// Gets an instance of the binary type in which all bits are set.
 	public class func allBitsSet(TSelf: System_Type /* System.Type */) throws -> System_Object /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		
@@ -17222,6 +17426,7 @@ public class System_Numerics_IAdditiveIdentity_A2 /* System.Numerics.IAdditiveId
 		"System.Numerics.IAdditiveIdentity<,>"
 	}}
 
+	/// Gets the additive identity of the current type.
 	public class func additiveIdentity(TSelf: System_Type /* System.Type */, TResult: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		let TResultC = TResult.__handle
@@ -17362,6 +17567,7 @@ public class System_Numerics_IMultiplicativeIdentity_A2 /* System.Numerics.IMult
 		"System.Numerics.IMultiplicativeIdentity<,>"
 	}}
 
+	/// Gets the multiplicative identity of the current type.
 	public class func multiplicativeIdentity(TSelf: System_Type /* System.Type */, TResult: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		let TResultC = TResult.__handle
@@ -17675,6 +17881,7 @@ public class System_Numerics_IMinMaxValue_A1 /* System.Numerics.IMinMaxValue<> *
 		"System.Numerics.IMinMaxValue<>"
 	}}
 
+	/// Gets the minimum value of the current type.
 	public class func minValue(TSelf: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		
@@ -17697,6 +17904,7 @@ public class System_Numerics_IMinMaxValue_A1 /* System.Numerics.IMinMaxValue<> *
 	}
 	
 	
+	/// Gets the maximum value of the current type.
 	public class func maxValue(TSelf: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		
@@ -18150,6 +18358,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		
 	}
 	
+	/// Gets or sets the   object that represents the culture used by the current thread and task-based asynchronous operations.
+	/// The property is set to  .
+	/// The culture used by the current thread and task-based asynchronous operations.
 	public class var currentCulture: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ { get throws {
 		
 		
@@ -18169,6 +18380,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		return __returnValue
 		
 	}}
+	/// Gets or sets the   object that represents the culture used by the current thread and task-based asynchronous operations.
+	/// The property is set to  .
+	/// The culture used by the current thread and task-based asynchronous operations.
 	public class func currentCulture_set(_ value: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws {
 		let valueC = value?.__handle
 		
@@ -18188,6 +18402,10 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}
 	
 	
+	/// Gets or sets the   object that represents the current user interface culture used by the Resource Manager to look up culture-specific resources at run time.
+	/// The property is set to  .
+	/// The property is set to a culture name that cannot be used to locate a resource file. Resource filenames can include only letters, numbers, hyphens, or underscores.
+	/// The culture used by the Resource Manager to look up culture-specific resources at run time.
 	public class var currentUICulture: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ { get throws {
 		
 		
@@ -18207,6 +18425,10 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		return __returnValue
 		
 	}}
+	/// Gets or sets the   object that represents the current user interface culture used by the Resource Manager to look up culture-specific resources at run time.
+	/// The property is set to  .
+	/// The property is set to a culture name that cannot be used to locate a resource file. Resource filenames can include only letters, numbers, hyphens, or underscores.
+	/// The culture used by the Resource Manager to look up culture-specific resources at run time.
 	public class func currentUICulture_set(_ value: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws {
 		let valueC = value?.__handle
 		
@@ -18226,6 +18448,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}
 	
 	
+	/// Gets the   that represents the culture installed with the operating system.
+	/// The   that represents the culture installed with the operating system.
 	public class var installedUICulture: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ { get throws {
 		
 		
@@ -18247,6 +18471,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Gets or sets the default culture for threads in the current application domain.
+	/// The default culture for threads in the current application domain, or   if the current system culture is the default thread culture in the application domain.
 	public class var defaultThreadCurrentCulture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
 		
 		
@@ -18266,6 +18492,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		return __returnValue
 		
 	}}
+	/// Gets or sets the default culture for threads in the current application domain.
+	/// The default culture for threads in the current application domain, or   if the current system culture is the default thread culture in the application domain.
 	public class func defaultThreadCurrentCulture_set(_ value: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws {
 		let valueC = value?.__handle
 		
@@ -18285,6 +18513,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}
 	
 	
+	/// Gets or sets the default UI culture for threads in the current application domain.
+	/// In a set operation, the   property value is invalid.
+	/// The default UI culture for threads in the current application domain, or   if the current system UI culture is the default thread UI culture in the application domain.
 	public class var defaultThreadCurrentUICulture: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
 		
 		
@@ -18304,6 +18535,9 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		return __returnValue
 		
 	}}
+	/// Gets or sets the default UI culture for threads in the current application domain.
+	/// In a set operation, the   property value is invalid.
+	/// The default UI culture for threads in the current application domain, or   if the current system UI culture is the default thread UI culture in the application domain.
 	public class func defaultThreadCurrentUICulture_set(_ value: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws {
 		let valueC = value?.__handle
 		
@@ -18323,6 +18557,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}
 	
 	
+	/// Gets the   object that is culture-independent (invariant).
+	/// The object that is culture-independent (invariant).
 	public class var invariantCulture: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ { get throws {
 		
 		
@@ -18344,6 +18580,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Gets the   that represents the parent culture of the current  .
+	/// The   that represents the parent culture of the current  .
 	public var parent: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ { get throws {
 		
 		
@@ -18365,6 +18603,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Gets the culture identifier for the current  .
+	/// The culture identifier for the current  .
 	public var lCID: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -18384,6 +18624,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Gets the active input locale identifier.
+	/// A 32-bit signed number that specifies an input locale identifier.
 	public var keyboardLayoutId: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -18403,6 +18645,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Gets the culture name in the format languagecode2-country/regioncode2.
+	/// The culture name in the format languagecode2-country/regioncode2, if the current   is culture-dependent; or an empty string, if it's an invariant culture. languagecode2 is a lowercase two-letter code as defined in ISO 639-1, or, if no two-letter code is available, a three-letter code as defined in ISO 639-3. country/regioncode2 contains a value defined in ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag.
 	public var name: System_String /* System.String */ { get throws {
 		
 		
@@ -18424,6 +18668,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Deprecated. Gets the RFC 4646 standard identification for a language.
+	/// A string that is the RFC 4646 standard identification for a language.
 	public var ietfLanguageTag: System_String /* System.String */ { get throws {
 		
 		
@@ -18445,6 +18691,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Gets the full localized culture name.
+	/// The full localized culture name in the format languagefull [country/regionfull], where languagefull is the full name of the language and country/regionfull is the full name of the country/region.
 	public var displayName: System_String /* System.String */ { get throws {
 		
 		
@@ -18466,6 +18714,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Gets the culture name, consisting of the language, the country/region, and the optional script, that the culture is set to display.
+	/// The culture name, consisting of the full name of the language, the full name of the country/region, and the optional script. The format is discussed in the description of the   class.
 	public var nativeName: System_String /* System.String */ { get throws {
 		
 		
@@ -18487,6 +18737,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Gets the culture name in the format languagefull [country/regionfull] in English.
+	/// The culture name in the format languagefull [country/regionfull] in English, where languagefull is the full name of the language and country/regionfull is the full name of the country/region.
 	public var englishName: System_String /* System.String */ { get throws {
 		
 		
@@ -18508,6 +18760,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Gets the ISO 639-1 two-letter or ISO 639-3 three-letter code for the language of the current  .
+	/// The ISO 639-1 two-letter code for the language of the current  . If no two-letter code is available, the three-letter code from ISO 639-3 is used.
 	public var twoLetterISOLanguageName: System_String /* System.String */ { get throws {
 		
 		
@@ -18529,6 +18783,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Gets the ISO 639-2 three-letter code for the language of the current  .
+	/// The ISO 639-2 three-letter code for the language of the current  .
 	public var threeLetterISOLanguageName: System_String /* System.String */ { get throws {
 		
 		
@@ -18550,6 +18806,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Gets the three-letter code for the language as defined in the Windows API.
+	/// The three-letter code for the language as defined in the Windows API.
 	public var threeLetterWindowsLanguageName: System_String /* System.String */ { get throws {
 		
 		
@@ -18571,6 +18829,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Gets the   that defines how to compare strings for the culture.
+	/// The   that defines how to compare strings for the culture.
 	public var compareInfo: System_Globalization_CompareInfo /* System.Globalization.CompareInfo */ { get throws {
 		
 		
@@ -18592,6 +18852,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Gets the   that defines the writing system associated with the culture.
+	/// The   that defines the writing system associated with the culture.
 	public var textInfo: System_Globalization_TextInfo /* System.Globalization.TextInfo */ { get throws {
 		
 		
@@ -18613,6 +18875,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Gets a value indicating whether the current   represents a neutral culture.
+	/// if the current   represents a neutral culture; otherwise,  .
 	public var isNeutralCulture: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -18632,6 +18896,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Gets the culture types that pertain to the current   object.
+	/// A bitwise combination of one or more   values. There is no default value.
 	public var cultureTypes: System_Globalization_CultureTypes /* System.Globalization.CultureTypes */ { get throws {
 		
 		
@@ -18653,6 +18919,10 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Gets or sets a   that defines the culturally appropriate format of displaying numbers, currency, and percentage.
+	/// The property is set to null.
+	/// The   property or any of the   properties is set, and the   is read-only.
+	/// A   that defines the culturally appropriate format of displaying numbers, currency, and percentage.
 	public var numberFormat: System_Globalization_NumberFormatInfo /* System.Globalization.NumberFormatInfo */ { get throws {
 		
 		
@@ -18672,6 +18942,10 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		return __returnValue
 		
 	}}
+	/// Gets or sets a   that defines the culturally appropriate format of displaying numbers, currency, and percentage.
+	/// The property is set to null.
+	/// The   property or any of the   properties is set, and the   is read-only.
+	/// A   that defines the culturally appropriate format of displaying numbers, currency, and percentage.
 	public func numberFormat_set(_ value: System_Globalization_NumberFormatInfo? /* System.Globalization.NumberFormatInfo */) throws {
 		let valueC = value?.__handle
 		
@@ -18691,6 +18965,10 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}
 	
 	
+	/// Gets or sets a   that defines the culturally appropriate format of displaying dates and times.
+	/// The property is set to null.
+	/// The   property or any of the   properties is set, and the   is read-only.
+	/// A   that defines the culturally appropriate format of displaying dates and times.
 	public var dateTimeFormat: System_Globalization_DateTimeFormatInfo /* System.Globalization.DateTimeFormatInfo */ { get throws {
 		
 		
@@ -18710,6 +18988,10 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 		return __returnValue
 		
 	}}
+	/// Gets or sets a   that defines the culturally appropriate format of displaying dates and times.
+	/// The property is set to null.
+	/// The   property or any of the   properties is set, and the   is read-only.
+	/// A   that defines the culturally appropriate format of displaying dates and times.
 	public func dateTimeFormat_set(_ value: System_Globalization_DateTimeFormatInfo? /* System.Globalization.DateTimeFormatInfo */) throws {
 		let valueC = value?.__handle
 		
@@ -18729,6 +19011,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}
 	
 	
+	/// Gets the default calendar used by the culture.
+	/// A   that represents the default calendar used by the culture.
 	public var calendar: System_Globalization_Calendar /* System.Globalization.Calendar */ { get throws {
 		
 		
@@ -18750,6 +19034,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Gets the list of calendars that can be used by the culture.
+	/// An array of type   that represents the calendars that can be used by the culture represented by the current  .
 	public var optionalCalendars: System_Globalization_Calendar_Array /* System.Globalization.Calendar[] */ { get throws {
 		
 		
@@ -18771,6 +19057,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Gets a value indicating whether the current   object uses the user-selected culture settings.
+	/// if the current   uses the user-selected culture settings; otherwise,  .
 	public var useUserOverride: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -18790,6 +19078,8 @@ public class System_Globalization_CultureInfo /* System.Globalization.CultureInf
 	}}
 	
 	
+	/// Gets a value indicating whether the current   is read-only.
+	/// if the current   is read-only; otherwise,  . The default is  .
 	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -19282,6 +19572,8 @@ public class System_Collections_Generic_ICollection_A1 /* System.Collections.Gen
 		
 	}
 	
+	/// Gets the number of elements contained in the  .
+	/// The number of elements contained in the  .
 	public func count(T: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let TC = T.__handle
 		
@@ -19302,6 +19594,8 @@ public class System_Collections_Generic_ICollection_A1 /* System.Collections.Gen
 	}
 	
 	
+	/// Gets a value indicating whether the   is read-only.
+	/// if the   is read-only; otherwise,  .
 	public func isReadOnly(T: System_Type /* System.Type */) throws -> Bool /* System.Boolean */ {
 		let TC = T.__handle
 		
@@ -19406,6 +19700,8 @@ public class System_Collections_Generic_IReadOnlyCollection_A1 /* System.Collect
 		"System.Collections.Generic.IReadOnlyCollection<>"
 	}}
 
+	/// Gets the number of elements in the collection.
+	/// The number of elements in the collection.
 	public func count(T: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let TC = T.__handle
 		
@@ -20411,6 +20707,8 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 		
 	}
 	
+	/// Gets the name of the culture used for sorting operations by this   object.
+	/// The name of a culture.
 	public var name: System_String /* System.String */ { get throws {
 		
 		
@@ -20432,6 +20730,8 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 	}}
 	
 	
+	/// Gets information about the version of Unicode used for comparing and sorting strings.
+	/// An object that contains information about the Unicode version used for comparing and sorting strings.
 	public var version: System_Globalization_SortVersion /* System.Globalization.SortVersion */ { get throws {
 		
 		
@@ -20453,6 +20753,8 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 	}}
 	
 	
+	/// Gets the properly formed culture identifier for the current  .
+	/// The properly formed culture identifier for the current  .
 	public var lCID: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -21637,6 +21939,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 		
 	}
 	
+	/// Gets a collection of the types defined in this assembly.
+	/// A collection of the types defined in this assembly.
 	public var definedTypes: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.TypeInfo> */ { get throws {
 		
 		
@@ -21658,6 +21962,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
+	/// Gets a collection of the public types defined in this assembly that are visible outside the assembly.
+	/// A collection of the public types defined in this assembly that are visible outside the assembly.
 	public var exportedTypes: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Type> */ { get throws {
 		
 		
@@ -21679,6 +21985,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
+	/// Gets the location of the assembly as specified originally, for example, in an   object.
+	/// .NET Core and .NET 5+ only: In all cases.
+	/// The location of the assembly as specified originally.
 	public var codeBase: System_String? /* System.String */ { get throws {
 		
 		
@@ -21700,6 +22009,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
+	/// Gets the entry point of this assembly.
+	/// An object that represents the entry point of this assembly. If no entry point is found (for example, the assembly is a DLL),   is returned.
 	public var entryPoint: System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ { get throws {
 		
 		
@@ -21721,6 +22032,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
+	/// Gets the display name of the assembly.
+	/// The display name of the assembly.
 	public var fullName: System_String? /* System.String */ { get throws {
 		
 		
@@ -21742,6 +22055,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
+	/// Gets a string representing the version of the common language runtime (CLR) saved in the file containing the manifest.
+	/// The CLR version folder name. This is not a full path.
 	public var imageRuntimeVersion: System_String /* System.String */ { get throws {
 		
 		
@@ -21763,6 +22078,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
+	/// Gets a value that indicates whether the current assembly was generated dynamically in the current process by using reflection emit.
+	/// if the current assembly was generated dynamically in the current process; otherwise,  .
 	public var isDynamic: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -21782,6 +22099,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
+	/// Gets the full path or UNC location of the loaded file that contains the manifest.
+	/// The current assembly is a dynamic assembly, represented by an   object.
+	/// The location of the loaded file that contains the manifest. If the assembly is loaded from a byte array, such as when using  , the value returned is an empty string ("").
 	public var location: System_String /* System.String */ { get throws {
 		
 		
@@ -21803,6 +22123,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
+	/// Gets a   value indicating whether this assembly was loaded into the reflection-only context.
+	/// if the assembly was loaded into the reflection-only context, rather than the execution context; otherwise,  .
 	public var reflectionOnly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -21822,6 +22144,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
+	/// Gets a value that indicates whether this assembly is held in a collectible  .
+	/// if this assembly is held in a collectible  ; otherwise,  .
 	public var isCollectible: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -21841,6 +22165,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
+	/// Gets a value that indicates whether the current assembly is loaded with full trust.
+	/// if the current assembly is loaded with full trust; otherwise,  .
 	public var isFullyTrusted: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -21860,6 +22186,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
+	/// Gets a collection that contains this assembly's custom attributes.
+	/// A collection that contains this assembly's custom attributes.
 	public var customAttributes: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ { get throws {
 		
 		
@@ -21881,6 +22209,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
+	/// Gets the URI, including escape characters, that represents the codebase.
+	/// A URI with escape characters.
 	public var escapedCodeBase: System_String /* System.String */ { get throws {
 		
 		
@@ -21902,6 +22232,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
+	/// Gets the module that contains the manifest for the current assembly.
+	/// The module that contains the manifest for the assembly.
 	public var manifestModule: System_Reflection_Module /* System.Reflection.Module */ { get throws {
 		
 		
@@ -21923,6 +22255,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
+	/// Gets a collection that contains the modules in this assembly.
+	/// A collection that contains the modules in this assembly.
 	public var modules: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.Module> */ { get throws {
 		
 		
@@ -21944,6 +22278,9 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
+	/// Gets a value indicating whether the assembly was loaded from the global assembly cache (.NET Framework only).
+	/// .NET Framework only:   if the assembly was loaded from the global assembly cache; otherwise,  .
+	/// .NET Core and .NET 5 and later:   in all cases.
 	public var globalAssemblyCache: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -21963,6 +22300,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
+	/// Gets the host context with which the assembly was loaded.
+	/// An   value that indicates the host context with which the assembly was loaded, if any.
 	public var hostContext: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -21982,6 +22321,8 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 	}}
 	
 	
+	/// Gets a value that indicates which set of security rules the common language runtime (CLR) enforces for this assembly.
+	/// The security rule set that the CLR enforces for this assembly.
 	public var securityRuleSet: System_Security_SecurityRuleSet /* System.Security.SecurityRuleSet */ { get throws {
 		
 		
@@ -22775,6 +23116,9 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 		
 	}
 	
+	/// Gets or sets the full name of the   to serialize.
+	/// The value this property is set to is  .
+	/// The full name of the type to serialize.
 	public var fullTypeName: System_String /* System.String */ { get throws {
 		
 		
@@ -22794,6 +23138,9 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 		return __returnValue
 		
 	}}
+	/// Gets or sets the full name of the   to serialize.
+	/// The value this property is set to is  .
+	/// The full name of the type to serialize.
 	public func fullTypeName_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -22813,6 +23160,9 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 	}
 	
 	
+	/// Gets or sets the assembly name of the type to serialize during serialization only.
+	/// The value the property is set to is  .
+	/// The full name of the assembly of the type to serialize.
 	public var assemblyName: System_String /* System.String */ { get throws {
 		
 		
@@ -22832,6 +23182,9 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 		return __returnValue
 		
 	}}
+	/// Gets or sets the assembly name of the type to serialize during serialization only.
+	/// The value the property is set to is  .
+	/// The full name of the assembly of the type to serialize.
 	public func assemblyName_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -22851,6 +23204,8 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 	}
 	
 	
+	/// Gets whether the full type name has been explicitly set.
+	/// if the full type name has been explicitly set; otherwise,  .
 	public var isFullTypeNameSetExplicit: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -22870,6 +23225,8 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 	}}
 	
 	
+	/// Gets whether the assembly name has been explicitly set.
+	/// if the assembly name has been explicitly set; otherwise,  .
 	public var isAssemblyNameSetExplicit: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -22889,6 +23246,8 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 	}}
 	
 	
+	/// Gets the number of members that have been added to the   store.
+	/// The number of members that have been added to the current  .
 	public var memberCount: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -22908,6 +23267,8 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 	}}
 	
 	
+	/// Returns the type of the object to be serialized.
+	/// The type of the object being serialized.
 	public var objectType: System_Type /* System.Type */ { get throws {
 		
 		
@@ -22988,6 +23349,9 @@ public class System_Runtime_Serialization_SerializationInfoEnumerator /* System.
 		
 	}
 	
+	/// Gets the item currently being examined.
+	/// The enumerator has not started enumerating items or has reached the end of the enumeration.
+	/// The item currently being examined.
 	public var current: System_Runtime_Serialization_SerializationEntry /* System.Runtime.Serialization.SerializationEntry */ { get throws {
 		
 		
@@ -23009,6 +23373,9 @@ public class System_Runtime_Serialization_SerializationInfoEnumerator /* System.
 	}}
 	
 	
+	/// Gets the name for the item currently being examined.
+	/// The enumerator has not started enumerating items or has reached the end of the enumeration.
+	/// The item name.
 	public var name: System_String /* System.String */ { get throws {
 		
 		
@@ -23030,6 +23397,9 @@ public class System_Runtime_Serialization_SerializationInfoEnumerator /* System.
 	}}
 	
 	
+	/// Gets the value of the item currently being examined.
+	/// The enumerator has not started enumerating items or has reached the end of the enumeration.
+	/// The value of the item currently being examined.
 	public var value: System_Object? /* System.Object */ { get throws {
 		
 		
@@ -23051,6 +23421,9 @@ public class System_Runtime_Serialization_SerializationInfoEnumerator /* System.
 	}}
 	
 	
+	/// Gets the type of the item currently being examined.
+	/// The enumerator has not started enumerating items or has reached the end of the enumeration.
+	/// The type of the item currently being examined.
 	public var objectType: System_Type /* System.Type */ { get throws {
 		
 		
@@ -23096,6 +23469,8 @@ public class System_Runtime_Serialization_SerializationEntry /* System.Runtime.S
 		"System.Runtime.Serialization.SerializationEntry"
 	}}
 
+	/// Gets the value contained in the object.
+	/// The value contained in the object.
 	public var value: System_Object? /* System.Object */ { get throws {
 		
 		
@@ -23117,6 +23492,8 @@ public class System_Runtime_Serialization_SerializationEntry /* System.Runtime.S
 	}}
 	
 	
+	/// Gets the name of the object.
+	/// The name of the object.
 	public var name: System_String /* System.String */ { get throws {
 		
 		
@@ -23138,6 +23515,8 @@ public class System_Runtime_Serialization_SerializationEntry /* System.Runtime.S
 	}}
 	
 	
+	/// Gets the   of the object.
+	/// The   of the object.
 	public var objectType: System_Type /* System.Type */ { get throws {
 		
 		
@@ -23266,6 +23645,7 @@ public class System_Numerics_ISignedNumber_A1 /* System.Numerics.ISignedNumber<>
 		"System.Numerics.ISignedNumber<>"
 	}}
 
+	/// Gets the value  -1  for the type.
 	public class func negativeOne(TSelf: System_Type /* System.Type */) throws -> System_Object /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		
@@ -24094,6 +24474,7 @@ public class System_Numerics_IFloatingPointIeee754_A1 /* System.Numerics.IFloati
 		
 	}
 	
+	/// Gets the smallest value such that can be added to  0  that does not result in  0 .
 	public class func epsilon(TSelf: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		
@@ -24116,6 +24497,7 @@ public class System_Numerics_IFloatingPointIeee754_A1 /* System.Numerics.IFloati
 	}
 	
 	
+	/// Gets a value that represents  NaN .
 	public class func naN(TSelf: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		
@@ -24138,6 +24520,7 @@ public class System_Numerics_IFloatingPointIeee754_A1 /* System.Numerics.IFloati
 	}
 	
 	
+	/// Gets a value that represents negative  infinity .
 	public class func negativeInfinity(TSelf: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		
@@ -24160,6 +24543,7 @@ public class System_Numerics_IFloatingPointIeee754_A1 /* System.Numerics.IFloati
 	}
 	
 	
+	/// Gets a value that represents negative  zero .
 	public class func negativeZero(TSelf: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		
@@ -24182,6 +24566,7 @@ public class System_Numerics_IFloatingPointIeee754_A1 /* System.Numerics.IFloati
 	}
 	
 	
+	/// Gets a value that represents positive  infinity .
 	public class func positiveInfinity(TSelf: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		
@@ -24392,6 +24777,7 @@ public class System_Numerics_IFloatingPointConstants_A1 /* System.Numerics.IFloa
 		"System.Numerics.IFloatingPointConstants<>"
 	}}
 
+	/// Gets the mathematical constant  e .
 	public class func e(TSelf: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		
@@ -24414,6 +24800,7 @@ public class System_Numerics_IFloatingPointConstants_A1 /* System.Numerics.IFloa
 	}
 	
 	
+	/// Gets the mathematical constant  pi .
 	public class func pi(TSelf: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		
@@ -24436,6 +24823,7 @@ public class System_Numerics_IFloatingPointConstants_A1 /* System.Numerics.IFloa
 	}
 	
 	
+	/// Gets the mathematical constant  tau .
 	public class func tau(TSelf: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TSelfC = TSelf.__handle
 		
@@ -27389,6 +27777,7 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 		
 	}
 	
+	/// Gets the scaling factor of the decimal, which is a number from 0 to 28 that represents the number of decimal digits.
 	public var scale: UInt8 /* System.Byte */ { get throws {
 		
 		
@@ -27408,6 +27797,7 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 	}}
 	
 	
+	/// Represents the number zero (0).
 	public class var zero: System_Decimal /* System.Decimal */ { get {
 		
 		
@@ -27420,6 +27810,7 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 	}}
 	
 	
+	/// Represents the number one (1).
 	public class var one: System_Decimal /* System.Decimal */ { get {
 		
 		
@@ -27432,6 +27823,7 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 	}}
 	
 	
+	/// Represents the number negative one (-1).
 	public class var minusOne: System_Decimal /* System.Decimal */ { get {
 		
 		
@@ -27444,6 +27836,7 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 	}}
 	
 	
+	/// Represents the largest possible value of  . This field is constant and read-only.
 	public class var maxValue: System_Decimal /* System.Decimal */ { get {
 		
 		
@@ -27456,6 +27849,7 @@ public class System_Decimal /* System.Decimal */: System_ValueType {
 	}}
 	
 	
+	/// Represents the smallest possible value of  . This field is constant and read-only.
 	public class var minValue: System_Decimal /* System.Decimal */ { get {
 		
 		
@@ -29121,6 +29515,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 		
 	}
 	
+	/// Gets the date component of this instance.
+	/// A new object with the same date as this instance, and the time value set to 12:00:00 midnight (00:00:00).
 	public var date: System_DateTime /* System.DateTime */ { get throws {
 		
 		
@@ -29142,6 +29538,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// Gets the day of the month represented by this instance.
+	/// The day component, expressed as a value between 1 and 31.
 	public var day: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -29161,6 +29559,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// Gets the day of the week represented by this instance.
+	/// An enumerated constant that indicates the day of the week of this   value.
 	public var dayOfWeek: System_DayOfWeek /* System.DayOfWeek */ { get throws {
 		
 		
@@ -29182,6 +29582,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// Gets the day of the year represented by this instance.
+	/// The day of the year, expressed as a value between 1 and 366.
 	public var dayOfYear: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -29201,6 +29603,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// Gets the hour component of the date represented by this instance.
+	/// The hour component, expressed as a value between 0 and 23.
 	public var hour: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -29220,6 +29624,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// Gets a value that indicates whether the time represented by this instance is based on local time, Coordinated Universal Time (UTC), or neither.
+	/// One of the enumeration values that indicates what the current time represents. The default is  .
 	public var kind: System_DateTimeKind /* System.DateTimeKind */ { get throws {
 		
 		
@@ -29241,6 +29647,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// Gets the milliseconds component of the date represented by this instance.
+	/// The milliseconds component, expressed as a value between 0 and 999.
 	public var millisecond: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -29260,6 +29668,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// The microseconds component, expressed as a value between 0 and 999.
 	public var microsecond: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -29279,6 +29688,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// The nanoseconds component, expressed as a value between 0 and 900 (in increments of 100 nanoseconds).
 	public var nanosecond: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -29298,6 +29708,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// Gets the minute component of the date represented by this instance.
+	/// The minute component, expressed as a value between 0 and 59.
 	public var minute: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -29317,6 +29729,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// Gets the month component of the date represented by this instance.
+	/// The month component, expressed as a value between 1 and 12.
 	public var month: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -29336,6 +29750,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// Gets a   object that is set to the current date and time on this computer, expressed as the local time.
+	/// An object whose value is the current local date and time.
 	public class var now: System_DateTime /* System.DateTime */ { get throws {
 		
 		
@@ -29357,6 +29773,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// Gets the seconds component of the date represented by this instance.
+	/// The seconds component, expressed as a value between 0 and 59.
 	public var second: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -29376,6 +29794,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// Gets the number of ticks that represent the date and time of this instance.
+	/// The number of ticks that represent the date and time of this instance. The value is between   and  .
 	public var ticks: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -29395,6 +29815,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// Gets the time of day for this instance.
+	/// A time interval that represents the fraction of the day that has elapsed since midnight.
 	public var timeOfDay: System_TimeSpan /* System.TimeSpan */ { get throws {
 		
 		
@@ -29416,6 +29838,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// Gets the current date.
+	/// An object that is set to today's date, with the time component set to 00:00:00.
 	public class var today: System_DateTime /* System.DateTime */ { get throws {
 		
 		
@@ -29437,6 +29861,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// Gets the year component of the date represented by this instance.
+	/// The year, between 1 and 9999.
 	public var year: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -29456,6 +29882,8 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// Gets a   object that is set to the current date and time on this computer, expressed as the Coordinated Universal Time (UTC).
+	/// An object whose value is the current UTC date and time.
 	public class var utcNow: System_DateTime /* System.DateTime */ { get throws {
 		
 		
@@ -29477,6 +29905,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// Represents the smallest possible value of  . This field is read-only.
 	public class var minValue: System_DateTime /* System.DateTime */ { get {
 		
 		
@@ -29489,6 +29918,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// Represents the largest possible value of  . This field is read-only.
 	public class var maxValue: System_DateTime /* System.DateTime */ { get {
 		
 		
@@ -29501,6 +29931,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 	}}
 	
 	
+	/// The value of this constant is equivalent to 00:00:00.0000000 UTC, January 1, 1970, in the Gregorian calendar.   defines the point in time when Unix time is equal to 0.
 	public class var unixEpoch: System_DateTime /* System.DateTime */ { get {
 		
 		
@@ -30418,6 +30849,8 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 		
 	}
 	
+	/// Gets the number of ticks that represent the value of the current   structure.
+	/// The number of ticks contained in this instance.
 	public var ticks: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -30437,6 +30870,8 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Gets the days component of the time interval represented by the current   structure.
+	/// The day component of this instance. The return value can be positive or negative.
 	public var days: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -30456,6 +30891,8 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Gets the hours component of the time interval represented by the current   structure.
+	/// The hour component of the current   structure. The return value ranges from -23 through 23.
 	public var hours: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -30475,6 +30912,8 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Gets the milliseconds component of the time interval represented by the current   structure.
+	/// The millisecond component of the current   structure. The return value ranges from -999 through 999.
 	public var milliseconds: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -30494,6 +30933,7 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Gets the microseconds component of the time interval represented by the current   structure.
 	public var microseconds: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -30513,6 +30953,7 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Gets the nanoseconds component of the time interval represented by the current   structure.
 	public var nanoseconds: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -30532,6 +30973,8 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Gets the minutes component of the time interval represented by the current   structure.
+	/// The minute component of the current   structure. The return value ranges from -59 through 59.
 	public var minutes: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -30551,6 +30994,8 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Gets the seconds component of the time interval represented by the current   structure.
+	/// The second component of the current   structure. The return value ranges from -59 through 59.
 	public var seconds: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -30570,6 +31015,8 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Gets the value of the current   structure expressed in whole and fractional days.
+	/// The total number of days represented by this instance.
 	public var totalDays: Double /* System.Double */ { get throws {
 		
 		
@@ -30589,6 +31036,8 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Gets the value of the current   structure expressed in whole and fractional hours.
+	/// The total number of hours represented by this instance.
 	public var totalHours: Double /* System.Double */ { get throws {
 		
 		
@@ -30608,6 +31057,8 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Gets the value of the current   structure expressed in whole and fractional milliseconds.
+	/// The total number of milliseconds represented by this instance.
 	public var totalMilliseconds: Double /* System.Double */ { get throws {
 		
 		
@@ -30627,6 +31078,7 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Gets the value of the current   structure expressed in whole and fractional microseconds.
 	public var totalMicroseconds: Double /* System.Double */ { get throws {
 		
 		
@@ -30646,6 +31098,7 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Gets the value of the current   structure expressed in whole and fractional nanoseconds.
 	public var totalNanoseconds: Double /* System.Double */ { get throws {
 		
 		
@@ -30665,6 +31118,8 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Gets the value of the current   structure expressed in whole and fractional minutes.
+	/// The total number of minutes represented by this instance.
 	public var totalMinutes: Double /* System.Double */ { get throws {
 		
 		
@@ -30684,6 +31139,8 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Gets the value of the current   structure expressed in whole and fractional seconds.
+	/// The total number of seconds represented by this instance.
 	public var totalSeconds: Double /* System.Double */ { get throws {
 		
 		
@@ -30703,6 +31160,7 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Represents the zero   value. This field is read-only.
 	public class var zero: System_TimeSpan /* System.TimeSpan */ { get {
 		
 		
@@ -30715,6 +31173,7 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Represents the maximum   value. This field is read-only.
 	public class var maxValue: System_TimeSpan /* System.TimeSpan */ { get {
 		
 		
@@ -30727,6 +31186,7 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Represents the minimum   value. This field is read-only.
 	public class var minValue: System_TimeSpan /* System.TimeSpan */ { get {
 		
 		
@@ -30739,6 +31199,7 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Represents the number of nanoseconds per tick. This field is constant.
 	public class var nanosecondsPerTick: Int64 /* System.Int64 */ { get {
 		
 		
@@ -30749,6 +31210,7 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Represents the number of ticks in 1 microsecond. This field is constant.
 	public class var ticksPerMicrosecond: Int64 /* System.Int64 */ { get {
 		
 		
@@ -30759,6 +31221,7 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Represents the number of ticks in 1 millisecond. This field is constant.
 	public class var ticksPerMillisecond: Int64 /* System.Int64 */ { get {
 		
 		
@@ -30769,6 +31232,7 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Represents the number of ticks in 1 second.
 	public class var ticksPerSecond: Int64 /* System.Int64 */ { get {
 		
 		
@@ -30779,6 +31243,7 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Represents the number of ticks in 1 minute. This field is constant.
 	public class var ticksPerMinute: Int64 /* System.Int64 */ { get {
 		
 		
@@ -30789,6 +31254,7 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Represents the number of ticks in 1 hour. This field is constant.
 	public class var ticksPerHour: Int64 /* System.Int64 */ { get {
 		
 		
@@ -30799,6 +31265,7 @@ public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	}}
 	
 	
+	/// Represents the number of ticks in 1 day. This field is constant.
 	public class var ticksPerDay: Int64 /* System.Int64 */ { get {
 		
 		
@@ -31632,6 +32099,8 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 		
 	}
 	
+	/// Gets the earliest possible date that can be created.
+	/// A   representing the earliest possible date that can be created.
 	public class var minValue: System_DateOnly /* System.DateOnly */ { get throws {
 		
 		
@@ -31653,6 +32122,8 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 	}}
 	
 	
+	/// Gets the latest possible date that can be created.
+	/// A   representing the latest possible date that can be created.
 	public class var maxValue: System_DateOnly /* System.DateOnly */ { get throws {
 		
 		
@@ -31674,6 +32145,8 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 	}}
 	
 	
+	/// Gets the year component of the date represented by this instance.
+	/// A number that represents the year component of the date.
 	public var year: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -31693,6 +32166,8 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 	}}
 	
 	
+	/// Gets the month component of the date represented by this instance.
+	/// A number that represents the month component of the date.
 	public var month: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -31712,6 +32187,8 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 	}}
 	
 	
+	/// Gets the day component of the date represented by this instance.
+	/// A number representing the day component of the date represented by this instance.
 	public var day: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -31731,6 +32208,8 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 	}}
 	
 	
+	/// Gets the day of the week represented by this instance.
+	/// A number that represents the day of the week represented by this instance.
 	public var dayOfWeek: System_DayOfWeek /* System.DayOfWeek */ { get throws {
 		
 		
@@ -31752,6 +32231,8 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 	}}
 	
 	
+	/// Gets the day of the year represented by this instance.
+	/// A number that represents the day of the year represented by this instance.
 	public var dayOfYear: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -31771,6 +32252,8 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 	}}
 	
 	
+	/// Gets the number of days since January 1, 0001 in the Proleptic Gregorian calendar represented by this instance.
+	/// The number of days since January 1, 0001 in the Proleptic Gregorian calendar represented by this instance.
 	public var dayNumber: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -32751,6 +33234,8 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 		
 	}
 	
+	/// Gets the smallest possible value of  .
+	/// The smallest possible value of  , which is 00:00:00 (midnight).
 	public class var minValue: System_TimeOnly /* System.TimeOnly */ { get throws {
 		
 		
@@ -32772,6 +33257,8 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 	}}
 	
 	
+	/// Gets the largest possible value of  .
+	/// The largest possible value of  , which is 23:59:59.9999999.
 	public class var maxValue: System_TimeOnly /* System.TimeOnly */ { get throws {
 		
 		
@@ -32793,6 +33280,7 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 	}}
 	
 	
+	/// Gets the hour component of the time represented by this instance.
 	public var hour: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -32812,6 +33300,8 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 	}}
 	
 	
+	/// Gets the minute component of the time represented by this instance.
+	/// A number representing the minute component of this  .
 	public var minute: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -32831,6 +33321,8 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 	}}
 	
 	
+	/// Gets the seconds component of the time represented by this instance.
+	/// A number representing the seconds component of this instance.
 	public var second: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -32850,6 +33342,8 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 	}}
 	
 	
+	/// Gets the millisecond component of the time represented by this instance.
+	/// A number representing the millisecond component of this  .
 	public var millisecond: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -32869,6 +33363,7 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 	}}
 	
 	
+	/// Gets the microsecond component of the time represented by this instance.
 	public var microsecond: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -32888,6 +33383,7 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 	}}
 	
 	
+	/// Gets the nanosecond component of the time represented by this instance.
 	public var nanosecond: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -32907,6 +33403,8 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 	}}
 	
 	
+	/// Gets the number of ticks that represent the time of this instance.
+	/// A number representing the number of ticks of this instance.
 	public var ticks: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -33709,6 +34207,8 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 		
 	}
 	
+	/// Gets the earliest date and time supported by this   object.
+	/// The earliest date and time supported by this calendar. The default is  DateTime.MinValue .
 	public var minSupportedDateTime: System_DateTime /* System.DateTime */ { get throws {
 		
 		
@@ -33730,6 +34230,8 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 	}}
 	
 	
+	/// Gets the latest date and time supported by this   object.
+	/// The latest date and time supported by this calendar. The default is  DateTime.MaxValue .
 	public var maxSupportedDateTime: System_DateTime /* System.DateTime */ { get throws {
 		
 		
@@ -33751,6 +34253,8 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 	}}
 	
 	
+	/// Gets a value indicating whether the current calendar is solar-based, lunar-based, or a combination of both.
+	/// One of the   values.
 	public var algorithmType: System_Globalization_CalendarAlgorithmType /* System.Globalization.CalendarAlgorithmType */ { get throws {
 		
 		
@@ -33772,6 +34276,8 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 	}}
 	
 	
+	/// Gets a value indicating whether this   object is read-only.
+	/// if this   object is read-only; otherwise,  .
 	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -33791,6 +34297,8 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 	}}
 	
 	
+	/// When overridden in a derived class, gets the list of eras in the current calendar.
+	/// An array of integers that represents the eras in the current calendar.
 	public var eras: System_Int32_Array /* System.Int32[] */ { get throws {
 		
 		
@@ -33812,6 +34320,9 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 	}}
 	
 	
+	/// Gets or sets the last year of a 100-year range that can be represented by a 2-digit year.
+	/// The current   object is read-only.
+	/// The last year of a 100-year range that can be represented by a 2-digit year.
 	public var twoDigitYearMax: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -33829,6 +34340,9 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 		return __returnValueC
 		
 	}}
+	/// Gets or sets the last year of a 100-year range that can be represented by a 2-digit year.
+	/// The current   object is read-only.
+	/// The last year of a 100-year range that can be represented by a 2-digit year.
 	public func twoDigitYearMax_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -33847,6 +34361,7 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 	}
 	
 	
+	/// Represents the current era of the current calendar. The value of this field is 0.
 	public class var currentEra: Int32 /* System.Int32 */ { get {
 		
 		
@@ -34318,6 +34833,8 @@ public class System_Runtime_Serialization_StreamingContext /* System.Runtime.Ser
 		
 	}
 	
+	/// Gets the source or destination of the transmitted data.
+	/// During serialization, the destination of the transmitted data. During deserialization, the source of the data.
 	public var state: System_Runtime_Serialization_StreamingContextStates /* System.Runtime.Serialization.StreamingContextStates */ { get throws {
 		
 		
@@ -34339,6 +34856,8 @@ public class System_Runtime_Serialization_StreamingContext /* System.Runtime.Ser
 	}}
 	
 	
+	/// Gets context specified as part of the additional context.
+	/// The context specified as part of the additional context.
 	public var context: System_Object? /* System.Object */ { get throws {
 		
 		
@@ -34633,6 +35152,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		
 	}
 	
+	/// Gets or sets the simple name of the assembly. This is usually, but not necessarily, the file name of the manifest file of the assembly, minus its extension.
+	/// The simple name of the assembly.
 	public var name: System_String? /* System.String */ { get throws {
 		
 		
@@ -34652,6 +35173,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		return __returnValue
 		
 	}}
+	/// Gets or sets the simple name of the assembly. This is usually, but not necessarily, the file name of the manifest file of the assembly, minus its extension.
+	/// The simple name of the assembly.
 	public func name_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -34671,6 +35194,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 	}
 	
 	
+	/// Gets or sets the major, minor, build, and revision numbers of the assembly.
+	/// An object that represents the major, minor, build, and revision numbers of the assembly.
 	public var version: System_Version? /* System.Version */ { get throws {
 		
 		
@@ -34690,6 +35215,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		return __returnValue
 		
 	}}
+	/// Gets or sets the major, minor, build, and revision numbers of the assembly.
+	/// An object that represents the major, minor, build, and revision numbers of the assembly.
 	public func version_set(_ value: System_Version? /* System.Version */) throws {
 		let valueC = value?.__handle
 		
@@ -34709,6 +35236,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 	}
 	
 	
+	/// Gets or sets the culture supported by the assembly.
+	/// An object that represents the culture supported by the assembly.
 	public var cultureInfo: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */ { get throws {
 		
 		
@@ -34728,6 +35257,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		return __returnValue
 		
 	}}
+	/// Gets or sets the culture supported by the assembly.
+	/// An object that represents the culture supported by the assembly.
 	public func cultureInfo_set(_ value: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws {
 		let valueC = value?.__handle
 		
@@ -34747,6 +35278,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 	}
 	
 	
+	/// Gets or sets the name of the culture associated with the assembly.
+	/// The culture name.
 	public var cultureName: System_String? /* System.String */ { get throws {
 		
 		
@@ -34766,6 +35299,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		return __returnValue
 		
 	}}
+	/// Gets or sets the name of the culture associated with the assembly.
+	/// The culture name.
 	public func cultureName_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -34785,6 +35320,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 	}
 	
 	
+	/// Gets or sets the location of the assembly as a URL.
+	/// A string that is the URL location of the assembly.
 	public var codeBase: System_String? /* System.String */ { get throws {
 		
 		
@@ -34804,6 +35341,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		return __returnValue
 		
 	}}
+	/// Gets or sets the location of the assembly as a URL.
+	/// A string that is the URL location of the assembly.
 	public func codeBase_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -34823,6 +35362,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 	}
 	
 	
+	/// Gets the URI, including escape characters, that represents the codebase.
+	/// A URI with escape characters.
 	public var escapedCodeBase: System_String? /* System.String */ { get throws {
 		
 		
@@ -34844,6 +35385,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 	}}
 	
 	
+	/// Gets or sets a value that identifies the processor and bits-per-word of the platform targeted by an executable.
+	/// One of the enumeration values that identifies the processor and bits-per-word of the platform targeted by an executable.
 	public var processorArchitecture: System_Reflection_ProcessorArchitecture /* System.Reflection.ProcessorArchitecture */ { get throws {
 		
 		
@@ -34863,6 +35406,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		return __returnValue
 		
 	}}
+	/// Gets or sets a value that identifies the processor and bits-per-word of the platform targeted by an executable.
+	/// One of the enumeration values that identifies the processor and bits-per-word of the platform targeted by an executable.
 	public func processorArchitecture_set(_ value: System_Reflection_ProcessorArchitecture /* System.Reflection.ProcessorArchitecture */) throws {
 		let valueC = value.cValue
 		
@@ -34882,6 +35427,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 	}
 	
 	
+	/// Gets or sets a value that indicates what type of content the assembly contains.
+	/// A value that indicates what type of content the assembly contains.
 	public var contentType: System_Reflection_AssemblyContentType /* System.Reflection.AssemblyContentType */ { get throws {
 		
 		
@@ -34901,6 +35448,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		return __returnValue
 		
 	}}
+	/// Gets or sets a value that indicates what type of content the assembly contains.
+	/// A value that indicates what type of content the assembly contains.
 	public func contentType_set(_ value: System_Reflection_AssemblyContentType /* System.Reflection.AssemblyContentType */) throws {
 		let valueC = value.cValue
 		
@@ -34920,6 +35469,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 	}
 	
 	
+	/// Gets or sets the attributes of the assembly.
+	/// A value that represents the attributes of the assembly.
 	public var flags: System_Reflection_AssemblyNameFlags /* System.Reflection.AssemblyNameFlags */ { get throws {
 		
 		
@@ -34939,6 +35490,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		return __returnValue
 		
 	}}
+	/// Gets or sets the attributes of the assembly.
+	/// A value that represents the attributes of the assembly.
 	public func flags_set(_ value: System_Reflection_AssemblyNameFlags /* System.Reflection.AssemblyNameFlags */) throws {
 		let valueC = value.cValue
 		
@@ -34958,6 +35511,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 	}
 	
 	
+	/// Gets or sets the hash algorithm used by the assembly manifest.
+	/// The hash algorithm used by the assembly manifest.
 	public var hashAlgorithm: System_Configuration_Assemblies_AssemblyHashAlgorithm /* System.Configuration.Assemblies.AssemblyHashAlgorithm */ { get throws {
 		
 		
@@ -34977,6 +35532,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		return __returnValue
 		
 	}}
+	/// Gets or sets the hash algorithm used by the assembly manifest.
+	/// The hash algorithm used by the assembly manifest.
 	public func hashAlgorithm_set(_ value: System_Configuration_Assemblies_AssemblyHashAlgorithm /* System.Configuration.Assemblies.AssemblyHashAlgorithm */) throws {
 		let valueC = value.cValue
 		
@@ -34996,6 +35553,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 	}
 	
 	
+	/// Gets or sets the information related to the assembly's compatibility with other assemblies.
+	/// A value that represents information about the assembly's compatibility with other assemblies.
 	public var versionCompatibility: System_Configuration_Assemblies_AssemblyVersionCompatibility /* System.Configuration.Assemblies.AssemblyVersionCompatibility */ { get throws {
 		
 		
@@ -35015,6 +35574,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		return __returnValue
 		
 	}}
+	/// Gets or sets the information related to the assembly's compatibility with other assemblies.
+	/// A value that represents information about the assembly's compatibility with other assemblies.
 	public func versionCompatibility_set(_ value: System_Configuration_Assemblies_AssemblyVersionCompatibility /* System.Configuration.Assemblies.AssemblyVersionCompatibility */) throws {
 		let valueC = value.cValue
 		
@@ -35034,6 +35595,9 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 	}
 	
 	
+	/// Gets or sets the public and private cryptographic key pair that is used to create a strong name signature for the assembly.
+	/// .NET 6+ only: In all cases.
+	/// The public and private cryptographic key pair to be used to create a strong name for the assembly.
 	public var keyPair: System_Reflection_StrongNameKeyPair? /* System.Reflection.StrongNameKeyPair */ { get throws {
 		
 		
@@ -35053,6 +35617,9 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 		return __returnValue
 		
 	}}
+	/// Gets or sets the public and private cryptographic key pair that is used to create a strong name signature for the assembly.
+	/// .NET 6+ only: In all cases.
+	/// The public and private cryptographic key pair to be used to create a strong name for the assembly.
 	public func keyPair_set(_ value: System_Reflection_StrongNameKeyPair? /* System.Reflection.StrongNameKeyPair */) throws {
 		let valueC = value?.__handle
 		
@@ -35072,6 +35639,8 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 	}
 	
 	
+	/// Gets the full name of the assembly, also known as the display name.
+	/// A string that is the full name of the assembly, also known as the display name.
 	public var fullName: System_String /* System.String */ { get throws {
 		
 		
@@ -35406,6 +35975,8 @@ public class System_Version /* System.Version */: System_Object {
 		
 	}
 	
+	/// Gets the value of the major component of the version number for the current   object.
+	/// The major version number.
 	public var major: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -35425,6 +35996,8 @@ public class System_Version /* System.Version */: System_Object {
 	}}
 	
 	
+	/// Gets the value of the minor component of the version number for the current   object.
+	/// The minor version number.
 	public var minor: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -35444,6 +36017,8 @@ public class System_Version /* System.Version */: System_Object {
 	}}
 	
 	
+	/// Gets the value of the build component of the version number for the current   object.
+	/// The build number, or -1 if the build number is undefined.
 	public var build: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -35463,6 +36038,8 @@ public class System_Version /* System.Version */: System_Object {
 	}}
 	
 	
+	/// Gets the value of the revision component of the version number for the current   object.
+	/// The revision number, or -1 if the revision number is undefined.
 	public var revision: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -35482,6 +36059,8 @@ public class System_Version /* System.Version */: System_Object {
 	}}
 	
 	
+	/// Gets the high 16 bits of the revision number.
+	/// A 16-bit signed integer.
 	public var majorRevision: Int16 /* System.Int16 */ { get throws {
 		
 		
@@ -35501,6 +36080,8 @@ public class System_Version /* System.Version */: System_Object {
 	}}
 	
 	
+	/// Gets the low 16 bits of the revision number.
+	/// A 16-bit signed integer.
 	public var minorRevision: Int16 /* System.Int16 */ { get throws {
 		
 		
@@ -35606,6 +36187,9 @@ public class System_Reflection_StrongNameKeyPair /* System.Reflection.StrongName
 		
 	}
 	
+	/// Gets the public part of the public key or public key token of the key pair.
+	/// .NET Core and .NET 5+ only: In all cases.
+	/// An array of type   containing the public key or public key token of the key pair.
 	public var publicKey: System_Byte_Array /* System.Byte[] */ { get throws {
 		
 		
@@ -36339,6 +36923,9 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		
 	}
 	
+	/// Gets the operating system file handle for the file that the current   object encapsulates.
+	/// The caller does not have the required permission.
+	/// The operating system file handle for the file encapsulated by this   object, or -1 if the   has been closed.
 	public var handle: UnsafeMutableRawPointer? /* System.IntPtr */ { get throws {
 		
 		
@@ -36358,6 +36945,8 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 	}}
 	
 	
+	/// Gets a value that indicates whether the current stream supports reading.
+	/// if the stream supports reading;   if the stream is closed or was opened with write-only access.
 	public override var canRead: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -36377,6 +36966,8 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 	}}
 	
 	
+	/// Gets a value that indicates whether the current stream supports writing.
+	/// if the stream supports writing;   if the stream is closed or was opened with read-only access.
 	public override var canWrite: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -36396,6 +36987,8 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 	}}
 	
 	
+	/// Gets a   object that represents the operating system file handle for the file that the current   object encapsulates.
+	/// An object that represents the operating system file handle for the file that the current   object encapsulates.
 	public var safeFileHandle: Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHandles.SafeFileHandle */ { get throws {
 		
 		
@@ -36417,6 +37010,8 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 	}}
 	
 	
+	/// Gets the absolute path of the file opened in the  .
+	/// A string that is the absolute path of the file.
 	public var name: System_String /* System.String */ { get throws {
 		
 		
@@ -36438,6 +37033,8 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 	}}
 	
 	
+	/// Gets a value that indicates whether the   was opened asynchronously or synchronously.
+	/// if the   was opened asynchronously; otherwise,  .
 	public var isAsync: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -36457,6 +37054,10 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 	}}
 	
 	
+	/// Gets the length in bytes of the stream.
+	/// for this stream is  .
+	/// An I/O error, such as the file being closed, occurred.
+	/// A long value representing the length of the stream in bytes.
 	public override var length: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -36476,6 +37077,12 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 	}}
 	
 	
+	/// Gets or sets the current position of this stream.
+	/// The stream does not support seeking.
+	/// An I/O error occurred.
+	/// Attempted to set the position to a negative value.
+	/// Attempted seeking past the end of a stream that does not support this.
+	/// The current position of this stream.
 	public override var position: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -36493,6 +37100,12 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 		return __returnValueC
 		
 	}}
+	/// Gets or sets the current position of this stream.
+	/// The stream does not support seeking.
+	/// An I/O error occurred.
+	/// Attempted to set the position to a negative value.
+	/// Attempted seeking past the end of a stream that does not support this.
+	/// The current position of this stream.
 	public override func position_set(_ value: Int64 /* System.Int64 */) throws {
 		
 		
@@ -36511,6 +37124,8 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 	}
 	
 	
+	/// Gets a value that indicates whether the current stream supports seeking.
+	/// if the stream supports seeking;   if the stream is closed or if the   was constructed from an operating-system handle such as a pipe or output to the console.
 	public override var canSeek: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -37144,6 +37759,8 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		
 	}
 	
+	/// When overridden in a derived class, gets a value indicating whether the current stream supports reading.
+	/// if the stream supports reading; otherwise,  .
 	public var canRead: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -37163,6 +37780,8 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// When overridden in a derived class, gets a value indicating whether the current stream supports writing.
+	/// if the stream supports writing; otherwise,  .
 	public var canWrite: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -37182,6 +37801,8 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// When overridden in a derived class, gets a value indicating whether the current stream supports seeking.
+	/// if the stream supports seeking; otherwise,  .
 	public var canSeek: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -37201,6 +37822,8 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// Gets a value that determines whether the current stream can time out.
+	/// A value that determines whether the current stream can time out.
 	public var canTimeout: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -37220,6 +37843,10 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// When overridden in a derived class, gets the length in bytes of the stream.
+	/// A class derived from   does not support seeking and the length is unknown.
+	/// Methods were called after the stream was closed.
+	/// A long value representing the length of the stream in bytes.
 	public var length: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -37239,6 +37866,11 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// When overridden in a derived class, gets or sets the position within the current stream.
+	/// An I/O error occurs.
+	/// The stream does not support seeking.
+	/// Methods were called after the stream was closed.
+	/// The current position within the stream.
 	public var position: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -37256,6 +37888,11 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		return __returnValueC
 		
 	}}
+	/// When overridden in a derived class, gets or sets the position within the current stream.
+	/// An I/O error occurs.
+	/// The stream does not support seeking.
+	/// Methods were called after the stream was closed.
+	/// The current position within the stream.
 	public func position_set(_ value: Int64 /* System.Int64 */) throws {
 		
 		
@@ -37274,6 +37911,9 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 	}
 	
 	
+	/// Gets or sets a value, in milliseconds, that determines how long the stream will attempt to read before timing out.
+	/// The   method always throws an  .
+	/// A value, in milliseconds, that determines how long the stream will attempt to read before timing out.
 	public var readTimeout: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -37291,6 +37931,9 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		return __returnValueC
 		
 	}}
+	/// Gets or sets a value, in milliseconds, that determines how long the stream will attempt to read before timing out.
+	/// The   method always throws an  .
+	/// A value, in milliseconds, that determines how long the stream will attempt to read before timing out.
 	public func readTimeout_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -37309,6 +37952,9 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 	}
 	
 	
+	/// Gets or sets a value, in milliseconds, that determines how long the stream will attempt to write before timing out.
+	/// The   method always throws an  .
+	/// A value, in milliseconds, that determines how long the stream will attempt to write before timing out.
 	public var writeTimeout: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -37326,6 +37972,9 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 		return __returnValueC
 		
 	}}
+	/// Gets or sets a value, in milliseconds, that determines how long the stream will attempt to write before timing out.
+	/// The   method always throws an  .
+	/// A value, in milliseconds, that determines how long the stream will attempt to write before timing out.
 	public func writeTimeout_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -37344,6 +37993,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 	}
 	
 	
+	/// A   with no backing store.
 	public class var null: System_IO_Stream /* System.IO.Stream */ { get {
 		
 		
@@ -37704,6 +38354,7 @@ public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTas
 		
 	}
 	
+	/// Gets a task that has already completed successfully.
 	public class var completedTask: System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTask */ { get throws {
 		
 		
@@ -37725,6 +38376,8 @@ public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTas
 	}}
 	
 	
+	/// Gets a value that indicates whether this object represents a completed operation.
+	/// if this object represents a completed operation; otherwise,  .
 	public var isCompleted: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -37744,6 +38397,8 @@ public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTas
 	}}
 	
 	
+	/// Gets a value that indicates whether this object represents a successfully completed operation.
+	/// if this object represents a successfully completed operation; otherwise,  .
 	public var isCompletedSuccessfully: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -37763,6 +38418,8 @@ public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTas
 	}}
 	
 	
+	/// Gets a value that indicates whether this object represents a failed operation.
+	/// if this object represents a failed operation; otherwise,  .
 	public var isFaulted: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -37782,6 +38439,8 @@ public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTas
 	}}
 	
 	
+	/// Gets a value that indicates whether this object represents a canceled operation.
+	/// if this object represents a canceled operation; otherwise,  .
 	public var isCanceled: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -37979,6 +38638,8 @@ public class System_Threading_CancellationToken /* System.Threading.Cancellation
 		
 	}
 	
+	/// Returns an empty   value.
+	/// An empty cancellation token.
 	public class var none: System_Threading_CancellationToken /* System.Threading.CancellationToken */ { get throws {
 		
 		
@@ -38000,6 +38661,8 @@ public class System_Threading_CancellationToken /* System.Threading.Cancellation
 	}}
 	
 	
+	/// Gets whether cancellation has been requested for this token.
+	/// if cancellation has been requested for this token; otherwise,  .
 	public var isCancellationRequested: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -38019,6 +38682,8 @@ public class System_Threading_CancellationToken /* System.Threading.Cancellation
 	}}
 	
 	
+	/// Gets whether this token is capable of being in the canceled state.
+	/// if this token is capable of being in the canceled state; otherwise,  .
 	public var canBeCanceled: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -38038,6 +38703,9 @@ public class System_Threading_CancellationToken /* System.Threading.Cancellation
 	}}
 	
 	
+	/// Gets a   that is signaled when the token is canceled.
+	/// The associated   has been disposed.
+	/// A   that is signaled when the token is canceled.
 	public var waitHandle: System_Threading_WaitHandle /* System.Threading.WaitHandle */ { get throws {
 		
 		
@@ -38484,6 +39152,8 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 		
 	}
 	
+	/// Gets or sets the native operating system handle.
+	/// An   representing the native operating system handle. The default is the value of the   field.
 	public var handle: UnsafeMutableRawPointer? /* System.IntPtr */ { get throws {
 		
 		
@@ -38501,6 +39171,8 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 		return __returnValueC
 		
 	}}
+	/// Gets or sets the native operating system handle.
+	/// An   representing the native operating system handle. The default is the value of the   field.
 	public func handle_set(_ value: UnsafeMutableRawPointer? /* System.IntPtr */) throws {
 		
 		
@@ -38519,6 +39191,8 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 	}
 	
 	
+	/// Gets or sets the native operating system handle.
+	/// A   representing the native operating system handle.
 	public var safeWaitHandle: Microsoft_Win32_SafeHandles_SafeWaitHandle /* Microsoft.Win32.SafeHandles.SafeWaitHandle */ { get throws {
 		
 		
@@ -38538,6 +39212,8 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 		return __returnValue
 		
 	}}
+	/// Gets or sets the native operating system handle.
+	/// A   representing the native operating system handle.
 	public func safeWaitHandle_set(_ value: Microsoft_Win32_SafeHandles_SafeWaitHandle? /* Microsoft.Win32.SafeHandles.SafeWaitHandle */) throws {
 		let valueC = value?.__handle
 		
@@ -38557,6 +39233,7 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 	}
 	
 	
+	/// Indicates that a   operation timed out before any of the wait handles were signaled. This field is constant.
 	public class var waitTimeout: Int32 /* System.Int32 */ { get {
 		
 		
@@ -38720,6 +39397,8 @@ public class Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid /* Mi
 		"Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid"
 	}}
 
+	/// Gets a value that indicates whether the handle is invalid.
+	/// if the handle is not valid; otherwise,  .
 	public override var isInvalid: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -38866,6 +39545,8 @@ public class System_Runtime_InteropServices_SafeHandle /* System.Runtime.Interop
 		
 	}
 	
+	/// Gets a value indicating whether the handle is closed.
+	/// if the handle is closed; otherwise,  .
 	public var isClosed: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -38885,6 +39566,8 @@ public class System_Runtime_InteropServices_SafeHandle /* System.Runtime.Interop
 	}}
 	
 	
+	/// When overridden in a derived class, gets a value indicating whether the handle value is invalid.
+	/// if the handle value is invalid; otherwise,  .
 	public var isInvalid: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -39090,6 +39773,9 @@ public class System_Threading_CancellationTokenRegistration /* System.Threading.
 		
 	}
 	
+	/// Gets the   with which this registration is associated.
+	/// The cancellation token with which this registration is associated, or a default token if the
+	/// registration isn't associated with a token.
 	public var token: System_Threading_CancellationToken /* System.Threading.CancellationToken */ { get throws {
 		
 		
@@ -39291,6 +39977,8 @@ public class System_Exception /* System.Exception */: System_Object {
 		
 	}
 	
+	/// Gets the method that throws the current exception.
+	/// The   that threw the current exception.
 	public var targetSite: System_Reflection_MethodBase? /* System.Reflection.MethodBase */ { get throws {
 		
 		
@@ -39312,6 +40000,8 @@ public class System_Exception /* System.Exception */: System_Object {
 	}}
 	
 	
+	/// Gets a message that describes the current exception.
+	/// The error message that explains the reason for the exception, or an empty string ("").
 	public var message: System_String /* System.String */ { get throws {
 		
 		
@@ -39333,6 +40023,8 @@ public class System_Exception /* System.Exception */: System_Object {
 	}}
 	
 	
+	/// Gets a collection of key/value pairs that provide additional user-defined information about the exception.
+	/// An object that implements the   interface and contains a collection of user-defined key/value pairs. The default is an empty collection.
 	public var data: System_Collections_IDictionary /* System.Collections.IDictionary */ { get throws {
 		
 		
@@ -39354,6 +40046,8 @@ public class System_Exception /* System.Exception */: System_Object {
 	}}
 	
 	
+	/// Gets the   instance that caused the current exception.
+	/// An object that describes the error that caused the current exception. The   property returns the same value as was passed into the   constructor, or   if the inner exception value was not supplied to the constructor. This property is read-only.
 	public var innerException: System_Exception? /* System.Exception */ { get throws {
 		
 		
@@ -39375,6 +40069,8 @@ public class System_Exception /* System.Exception */: System_Object {
 	}}
 	
 	
+	/// Gets or sets a link to the help file associated with this exception.
+	/// The Uniform Resource Name (URN) or Uniform Resource Locator (URL).
 	public var helpLink: System_String? /* System.String */ { get throws {
 		
 		
@@ -39394,6 +40090,8 @@ public class System_Exception /* System.Exception */: System_Object {
 		return __returnValue
 		
 	}}
+	/// Gets or sets a link to the help file associated with this exception.
+	/// The Uniform Resource Name (URN) or Uniform Resource Locator (URL).
 	public func helpLink_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -39413,6 +40111,9 @@ public class System_Exception /* System.Exception */: System_Object {
 	}
 	
 	
+	/// Gets or sets the name of the application or the object that causes the error.
+	/// The object must be a runtime   object.
+	/// The name of the application or the object that causes the error.
 	public var source: System_String? /* System.String */ { get throws {
 		
 		
@@ -39432,6 +40133,9 @@ public class System_Exception /* System.Exception */: System_Object {
 		return __returnValue
 		
 	}}
+	/// Gets or sets the name of the application or the object that causes the error.
+	/// The object must be a runtime   object.
+	/// The name of the application or the object that causes the error.
 	public func source_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -39451,6 +40155,8 @@ public class System_Exception /* System.Exception */: System_Object {
 	}
 	
 	
+	/// Gets or sets HRESULT, a coded numerical value that is assigned to a specific exception.
+	/// The HRESULT value.
 	public var hResult: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -39468,6 +40174,8 @@ public class System_Exception /* System.Exception */: System_Object {
 		return __returnValueC
 		
 	}}
+	/// Gets or sets HRESULT, a coded numerical value that is assigned to a specific exception.
+	/// The HRESULT value.
 	public func hResult_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -39486,6 +40194,8 @@ public class System_Exception /* System.Exception */: System_Object {
 	}
 	
 	
+	/// Gets a string representation of the immediate frames on the call stack.
+	/// A string that describes the immediate frames of the call stack.
 	public var stackTrace: System_String? /* System.String */ { get throws {
 		
 		
@@ -39758,6 +40468,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 		
 	}
 	
+	/// Gets the attributes associated with this method.
+	/// One of the   values.
 	public var attributes: System_Reflection_MethodAttributes /* System.Reflection.MethodAttributes */ { get throws {
 		
 		
@@ -39779,6 +40491,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets the   flags that specify the attributes of a method implementation.
+	/// The method implementation flags.
 	public var methodImplementationFlags: System_Reflection_MethodImplAttributes /* System.Reflection.MethodImplAttributes */ { get throws {
 		
 		
@@ -39800,6 +40514,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value indicating the calling conventions for this method.
+	/// The   for this method.
 	public var callingConvention: System_Reflection_CallingConventions /* System.Reflection.CallingConventions */ { get throws {
 		
 		
@@ -39821,6 +40537,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether the method is abstract.
+	/// if the method is abstract; otherwise,  .
 	public var isAbstract: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -39840,6 +40558,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether the method is a constructor.
+	/// if this method is a constructor represented by a   object (see note in Remarks about   objects); otherwise,  .
 	public var isConstructor: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -39859,6 +40579,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether this method is  .
+	/// if this method is  ; otherwise,  .
 	public var isFinal: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -39878,6 +40600,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether only a member of the same kind with exactly the same signature is hidden in the derived class.
+	/// if the member is hidden by signature; otherwise,  .
 	public var isHideBySig: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -39897,6 +40621,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether this method has a special name.
+	/// if this method has a special name; otherwise,  .
 	public var isSpecialName: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -39916,6 +40642,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether the method is  .
+	/// if this method is  ; otherwise,  .
 	public var isStatic: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -39935,6 +40663,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether the method is  .
+	/// if this method is  ; otherwise,  .
 	public var isVirtual: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -39954,6 +40684,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether the potential visibility of this method or constructor is described by  ; that is, the method or constructor is visible at most to other types in the same assembly, and is not visible to derived types outside the assembly.
+	/// if the visibility of this method or constructor is exactly described by  ; otherwise,  .
 	public var isAssembly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -39973,6 +40705,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether the visibility of this method or constructor is described by  ; that is, the method or constructor is visible only within its class and derived classes.
+	/// if access to this method or constructor is exactly described by  ; otherwise,  .
 	public var isFamily: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -39992,6 +40726,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether the visibility of this method or constructor is described by  ; that is, the method or constructor can be called by derived classes, but only if they are in the same assembly.
+	/// if access to this method or constructor is exactly described by  ; otherwise,  .
 	public var isFamilyAndAssembly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -40011,6 +40747,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether the potential visibility of this method or constructor is described by  ; that is, the method or constructor can be called by derived classes wherever they are, and by classes in the same assembly.
+	/// if access to this method or constructor is exactly described by  ; otherwise,  .
 	public var isFamilyOrAssembly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -40030,6 +40768,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether this member is private.
+	/// if access to this method is restricted to other members of the class itself; otherwise,  .
 	public var isPrivate: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -40049,6 +40789,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether this is a public method.
+	/// if this method is public; otherwise,  .
 	public var isPublic: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -40087,6 +40829,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether the method is generic.
+	/// if the current   represents a generic method; otherwise,  .
 	public var isGenericMethod: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -40106,6 +40850,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether the method is a generic method definition.
+	/// if the current   object represents the definition of a generic method; otherwise,  .
 	public var isGenericMethodDefinition: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -40125,6 +40871,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether the generic method contains unassigned generic type parameters.
+	/// if the current   object represents a generic method that contains unassigned generic type parameters; otherwise,  .
 	public var containsGenericParameters: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -40144,6 +40892,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a handle to the internal metadata representation of a method.
+	/// A   object.
 	public var methodHandle: System_RuntimeMethodHandle /* System.RuntimeMethodHandle */ { get throws {
 		
 		
@@ -40165,6 +40915,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value that indicates whether the current method or constructor is security-critical or security-safe-critical at the current trust level, and therefore can perform critical operations.
+	/// if the current method or constructor is security-critical or security-safe-critical at the current trust level;   if it is transparent.
 	public var isSecurityCritical: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -40184,6 +40936,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value that indicates whether the current method or constructor is security-safe-critical at the current trust level; that is, whether it can perform critical operations and can be accessed by transparent code.
+	/// if the method or constructor is security-safe-critical at the current trust level;   if it is security-critical or transparent.
 	public var isSecuritySafeCritical: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -40203,6 +40957,8 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 	}}
 	
 	
+	/// Gets a value that indicates whether the current method or constructor is transparent at the current trust level, and therefore cannot perform critical operations.
+	/// if the method or constructor is security-transparent at the current trust level; otherwise,  .
 	public var isSecurityTransparent: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -40378,6 +41134,8 @@ public class System_RuntimeMethodHandle /* System.RuntimeMethodHandle */: System
 		
 	}
 	
+	/// Gets the value of this instance.
+	/// A   that is the internal metadata representation of a method.
 	public var value: UnsafeMutableRawPointer? /* System.IntPtr */ { get throws {
 		
 		
@@ -40575,6 +41333,8 @@ public class System_RuntimeTypeHandle /* System.RuntimeTypeHandle */: System_Val
 		
 	}
 	
+	/// Gets a handle to the type represented by this instance.
+	/// A handle to the type represented by this instance.
 	public var value: UnsafeMutableRawPointer? /* System.IntPtr */ { get throws {
 		
 		
@@ -40880,6 +41640,8 @@ public class System_ModuleHandle /* System.ModuleHandle */: System_ValueType {
 		
 	}
 	
+	/// Gets the metadata stream version.
+	/// A 32-bit integer representing the metadata stream version. The high-order two bytes represent the major version number, and the low-order two bytes represent the minor version number.
 	public var mDStreamVersion: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -40899,6 +41661,7 @@ public class System_ModuleHandle /* System.ModuleHandle */: System_ValueType {
 	}}
 	
 	
+	/// Represents an empty module handle.
 	public class var emptyHandle: System_ModuleHandle /* System.ModuleHandle */ { get {
 		
 		
@@ -41095,6 +41858,8 @@ public class System_RuntimeFieldHandle /* System.RuntimeFieldHandle */: System_V
 		
 	}
 	
+	/// Gets a handle to the field represented by the current instance.
+	/// An   that contains the handle to the field represented by the current instance.
 	public var value: UnsafeMutableRawPointer? /* System.IntPtr */ { get throws {
 		
 		
@@ -41360,6 +42125,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 		
 	}
 	
+	/// Gets the attributes for this parameter.
+	/// A   object representing the attributes for this parameter.
 	public var attributes: System_Reflection_ParameterAttributes /* System.Reflection.ParameterAttributes */ { get throws {
 		
 		
@@ -41381,6 +42148,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 	}}
 	
 	
+	/// Gets a value indicating the member in which the parameter is implemented.
+	/// The member which implanted the parameter represented by this  .
 	public var member: System_Reflection_MemberInfo /* System.Reflection.MemberInfo */ { get throws {
 		
 		
@@ -41402,6 +42171,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 	}}
 	
 	
+	/// Gets the name of the parameter.
+	/// The simple name of this parameter.
 	public var name: System_String? /* System.String */ { get throws {
 		
 		
@@ -41423,6 +42194,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 	}}
 	
 	
+	/// Gets the   of this parameter.
+	/// The   object that represents the   of this parameter.
 	public var parameterType: System_Type /* System.Type */ { get throws {
 		
 		
@@ -41444,6 +42217,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 	}}
 	
 	
+	/// Gets the zero-based position of the parameter in the formal parameter list.
+	/// An integer representing the position this parameter occupies in the parameter list.
 	public var position: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -41463,6 +42238,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 	}}
 	
 	
+	/// Gets a value indicating whether this is an input parameter.
+	/// if the parameter is an input parameter; otherwise,  .
 	public var isIn: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -41482,6 +42259,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 	}}
 	
 	
+	/// Gets a value indicating whether this parameter is a locale identifier (lcid).
+	/// if the parameter is a locale identifier; otherwise,  .
 	public var isLcid: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -41501,6 +42280,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 	}}
 	
 	
+	/// Gets a value indicating whether this parameter is optional.
+	/// if the parameter is optional; otherwise,  .
 	public var isOptional: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -41520,6 +42301,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 	}}
 	
 	
+	/// Gets a value indicating whether this is an output parameter.
+	/// if the parameter is an output parameter; otherwise,  .
 	public var isOut: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -41539,6 +42322,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 	}}
 	
 	
+	/// Gets a value indicating whether this is a   parameter.
+	/// if the parameter is a  ; otherwise,  .
 	public var isRetval: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -41558,6 +42343,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 	}}
 	
 	
+	/// Gets a value indicating the default value if the parameter has a default value.
+	/// The default value of the parameter, or   if the parameter has no default value.
 	public var defaultValue: System_Object? /* System.Object */ { get throws {
 		
 		
@@ -41579,6 +42366,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 	}}
 	
 	
+	/// Gets a value indicating the default value if the parameter has a default value.
+	/// The default value of the parameter, or   if the parameter has no default value.
 	public var rawDefaultValue: System_Object? /* System.Object */ { get throws {
 		
 		
@@ -41600,6 +42389,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 	}}
 	
 	
+	/// Gets a value that indicates whether this parameter has a default value.
+	/// if this parameter has a default value; otherwise,  .
 	public var hasDefaultValue: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -41619,6 +42410,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 	}}
 	
 	
+	/// Gets a collection that contains this parameter's custom attributes.
+	/// A collection that contains this parameter's custom attributes.
 	public var customAttributes: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ { get throws {
 		
 		
@@ -41640,6 +42433,8 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 	}}
 	
 	
+	/// Gets a value that identifies this parameter in metadata.
+	/// A value which, in combination with the module, uniquely identifies this parameter in metadata.
 	public var metadataToken: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -41873,6 +42668,8 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 		
 	}
 	
+	/// Gets the type of the attribute.
+	/// The type of the attribute.
 	public var attributeType: System_Type /* System.Type */ { get throws {
 		
 		
@@ -41894,6 +42691,8 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 	}}
 	
 	
+	/// Gets a   object that represents the constructor that would have initialized the custom attribute.
+	/// An object that represents the constructor that would have initialized the custom attribute represented by the current instance of the   class.
 	public var constructor: System_Reflection_ConstructorInfo /* System.Reflection.ConstructorInfo */ { get throws {
 		
 		
@@ -41915,6 +42714,8 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 	}}
 	
 	
+	/// Gets the list of positional arguments specified for the attribute instance represented by the   object.
+	/// A collection of structures that represent the positional arguments specified for the custom attribute instance.
 	public var constructorArguments: System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.CustomAttributeTypedArgument> */ { get throws {
 		
 		
@@ -41936,6 +42737,8 @@ public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAt
 	}}
 	
 	
+	/// Gets the list of named arguments specified for the attribute instance represented by the   object.
+	/// A collection of structures that represent the named arguments specified for the custom attribute instance.
 	public var namedArguments: System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.CustomAttributeNamedArgument> */ { get throws {
 		
 		
@@ -42708,6 +43511,8 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 		
 	}
 	
+	/// Gets the appropriate   for this instance of  .
+	/// An   object.
 	public var assembly: System_Reflection_Assembly /* System.Reflection.Assembly */ { get throws {
 		
 		
@@ -42729,6 +43534,9 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 	}}
 	
 	
+	/// Gets a string representing the fully qualified name and path to this module.
+	/// The caller does not have the required permissions.
+	/// The fully qualified module name.
 	public var fullyQualifiedName: System_String /* System.String */ { get throws {
 		
 		
@@ -42750,6 +43558,8 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 	}}
 	
 	
+	/// Gets a   representing the name of the module with the path removed.
+	/// The module name with no path.
 	public var name: System_String /* System.String */ { get throws {
 		
 		
@@ -42771,6 +43581,8 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 	}}
 	
 	
+	/// Gets the metadata stream version.
+	/// A 32-bit integer representing the metadata stream version. The high-order two bytes represent the major version number, and the low-order two bytes represent the minor version number.
 	public var mDStreamVersion: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -42790,6 +43602,8 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 	}}
 	
 	
+	/// Gets a universally unique identifier (UUID) that can be used to distinguish between two versions of a module.
+	/// A   that can be used to distinguish between two versions of a module.
 	public var moduleVersionId: System_Guid /* System.Guid */ { get throws {
 		
 		
@@ -42811,6 +43625,8 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 	}}
 	
 	
+	/// Gets a string representing the name of the module.
+	/// The module name.
 	public var scopeName: System_String /* System.String */ { get throws {
 		
 		
@@ -42832,6 +43648,8 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 	}}
 	
 	
+	/// Gets a handle for the module.
+	/// A   structure for the current module.
 	public var moduleHandle: System_ModuleHandle /* System.ModuleHandle */ { get throws {
 		
 		
@@ -42853,6 +43671,8 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 	}}
 	
 	
+	/// Gets a collection that contains this module's custom attributes.
+	/// A collection that contains this module's custom attributes.
 	public var customAttributes: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.CustomAttributeData> */ { get throws {
 		
 		
@@ -42874,6 +43694,8 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 	}}
 	
 	
+	/// Gets a token that identifies the module in metadata.
+	/// An integer token that identifies the current module in metadata.
 	public var metadataToken: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -42893,6 +43715,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 	}}
 	
 	
+	/// A   object that filters the list of types defined in this module based upon the name. This field is case-sensitive and read-only.
 	public class var filterTypeName: System_Reflection_TypeFilter /* System.Reflection.TypeFilter */ { get {
 		
 		
@@ -42905,6 +43728,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 	}}
 	
 	
+	/// A   object that filters the list of types defined in this module based upon the name. This field is case-insensitive and read-only.
 	public class var filterTypeNameIgnoreCase: System_Reflection_TypeFilter /* System.Reflection.TypeFilter */ { get {
 		
 		
@@ -43425,6 +44249,7 @@ public class System_Guid /* System.Guid */: System_ValueType {
 		
 	}
 	
+	/// A read-only instance of the   structure whose value is all zeros.
 	public class var empty: System_Guid /* System.Guid */ { get {
 		
 		
@@ -43694,6 +44519,8 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 		
 	}
 	
+	/// Gets a   value indicating that this member is a method.
+	/// A   value indicating that this member is a method.
 	public override var memberType: System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ { get throws {
 		
 		
@@ -43715,6 +44542,9 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 	}}
 	
 	
+	/// Gets a   object that contains information about the return type of the method, such as whether the return type has custom modifiers.
+	/// This method is not implemented.
+	/// A   object that contains information about the return type.
 	public var returnParameter: System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo */ { get throws {
 		
 		
@@ -43736,6 +44566,8 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 	}}
 	
 	
+	/// Gets the return type of this method.
+	/// The return type of this method.
 	public var returnType: System_Type /* System.Type */ { get throws {
 		
 		
@@ -43757,6 +44589,8 @@ public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: Sy
 	}}
 	
 	
+	/// Gets the custom attributes for the return type.
+	/// An   object representing the custom attributes for the return type.
 	public var returnTypeCustomAttributes: System_Reflection_ICustomAttributeProvider /* System.Reflection.ICustomAttributeProvider */ { get throws {
 		
 		
@@ -44224,6 +45058,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 		
 	}
 	
+	/// Gets a   value indicating that this member is a field.
+	/// A   value indicating that this member is a field.
 	public override var memberType: System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ { get throws {
 		
 		
@@ -44245,6 +45081,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}}
 	
 	
+	/// Gets the attributes associated with this field.
+	/// The   for this field.
 	public var attributes: System_Reflection_FieldAttributes /* System.Reflection.FieldAttributes */ { get throws {
 		
 		
@@ -44266,6 +45104,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}}
 	
 	
+	/// Gets the type of this field object.
+	/// The type of this field object.
 	public var fieldType: System_Type /* System.Type */ { get throws {
 		
 		
@@ -44287,6 +45127,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}}
 	
 	
+	/// Gets a value indicating whether the field can only be set in the body of the constructor.
+	/// if the field has the   attribute set; otherwise,  .
 	public var isInitOnly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -44306,6 +45148,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}}
 	
 	
+	/// Gets a value indicating whether the value is written at compile time and cannot be changed.
+	/// if the field has the   attribute set; otherwise,  .
 	public var isLiteral: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -44325,6 +45169,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}}
 	
 	
+	/// Gets a value indicating whether this field has the   attribute.
+	/// if the field has the   attribute set; otherwise,  .
 	public var isNotSerialized: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -44344,6 +45190,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}}
 	
 	
+	/// Gets a value indicating whether the corresponding   attribute is set in  .
+	/// if the   attribute is set in  ; otherwise,  .
 	public var isPinvokeImpl: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -44363,6 +45211,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}}
 	
 	
+	/// Gets a value indicating whether the corresponding   attribute is set in the   enumerator.
+	/// if the   attribute is set in  ; otherwise,  .
 	public var isSpecialName: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -44382,6 +45232,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}}
 	
 	
+	/// Gets a value indicating whether the field is static.
+	/// if this field is static; otherwise,  .
 	public var isStatic: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -44401,6 +45253,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}}
 	
 	
+	/// Gets a value indicating whether the potential visibility of this field is described by  ; that is, the field is visible at most to other types in the same assembly, and is not visible to derived types outside the assembly.
+	/// if the visibility of this field is exactly described by  ; otherwise,  .
 	public var isAssembly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -44420,6 +45274,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}}
 	
 	
+	/// Gets a value indicating whether the visibility of this field is described by  ; that is, the field is visible only within its class and derived classes.
+	/// if access to this field is exactly described by  ; otherwise,  .
 	public var isFamily: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -44439,6 +45295,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}}
 	
 	
+	/// Gets a value indicating whether the visibility of this field is described by  ; that is, the field can be accessed from derived classes, but only if they are in the same assembly.
+	/// if access to this field is exactly described by  ; otherwise,  .
 	public var isFamilyAndAssembly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -44458,6 +45316,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}}
 	
 	
+	/// Gets a value indicating whether the potential visibility of this field is described by  ; that is, the field can be accessed by derived classes wherever they are, and by classes in the same assembly.
+	/// if access to this field is exactly described by  ; otherwise,  .
 	public var isFamilyOrAssembly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -44477,6 +45337,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}}
 	
 	
+	/// Gets a value indicating whether the field is private.
+	/// if the field is private; otherwise;  .
 	public var isPrivate: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -44496,6 +45358,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}}
 	
 	
+	/// Gets a value indicating whether the field is public.
+	/// if this field is public; otherwise,  .
 	public var isPublic: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -44515,6 +45379,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}}
 	
 	
+	/// Gets a value that indicates whether the current field is security-critical or security-safe-critical at the current trust level.
+	/// if the current field is security-critical or security-safe-critical at the current trust level;   if it is transparent.
 	public var isSecurityCritical: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -44534,6 +45400,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}}
 	
 	
+	/// Gets a value that indicates whether the current field is security-safe-critical at the current trust level.
+	/// if the current field is security-safe-critical at the current trust level;   if it is security-critical or transparent.
 	public var isSecuritySafeCritical: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -44553,6 +45421,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}}
 	
 	
+	/// Gets a value that indicates whether the current field is transparent at the current trust level.
+	/// if the field is security-transparent at the current trust level; otherwise,  .
 	public var isSecurityTransparent: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -44572,6 +45442,8 @@ public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: Syst
 	}}
 	
 	
+	/// Gets a  , which is a handle to the internal metadata representation of a field.
+	/// A handle to the internal metadata representation of a field.
 	public var fieldHandle: System_RuntimeFieldHandle /* System.RuntimeFieldHandle */ { get throws {
 		
 		
@@ -45199,6 +46071,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 		
 	}
 	
+	/// Gets a   value indicating that this member is a property.
+	/// A   value indicating that this member is a property.
 	public override var memberType: System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ { get throws {
 		
 		
@@ -45220,6 +46094,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 	}}
 	
 	
+	/// Gets the type of this property.
+	/// The type of this property.
 	public var propertyType: System_Type /* System.Type */ { get throws {
 		
 		
@@ -45241,6 +46117,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 	}}
 	
 	
+	/// Gets the attributes for this property.
+	/// The attributes of this property.
 	public var attributes: System_Reflection_PropertyAttributes /* System.Reflection.PropertyAttributes */ { get throws {
 		
 		
@@ -45262,6 +46140,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 	}}
 	
 	
+	/// Gets a value indicating whether the property is the special name.
+	/// if this property is the special name; otherwise,  .
 	public var isSpecialName: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -45281,6 +46161,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 	}}
 	
 	
+	/// Gets a value indicating whether the property can be read.
+	/// if this property can be read; otherwise,  .
 	public var canRead: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -45300,6 +46182,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 	}}
 	
 	
+	/// Gets a value indicating whether the property can be written to.
+	/// if this property can be written to; otherwise,  .
 	public var canWrite: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -45319,6 +46203,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 	}}
 	
 	
+	/// Gets the   accessor for this property.
+	/// The   accessor for this property.
 	public var getMethod: System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ { get throws {
 		
 		
@@ -45340,6 +46226,8 @@ public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */
 	}}
 	
 	
+	/// Gets the   accessor for this property.
+	/// The   accessor for this property, or   if the property is read-only.
 	public var setMethod: System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ { get throws {
 		
 		
@@ -45519,6 +46407,8 @@ public class System_Reflection_ConstructorInfo /* System.Reflection.ConstructorI
 		
 	}
 	
+	/// Gets a   value indicating that this member is a constructor.
+	/// A   value indicating that this member is a constructor.
 	public override var memberType: System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ { get throws {
 		
 		
@@ -45540,6 +46430,7 @@ public class System_Reflection_ConstructorInfo /* System.Reflection.ConstructorI
 	}}
 	
 	
+	/// Represents the name of the class constructor method as it is stored in metadata. This name is always ".ctor". This field is read-only.
 	public class var constructorName: System_String /* System.String */ { get {
 		
 		
@@ -45552,6 +46443,7 @@ public class System_Reflection_ConstructorInfo /* System.Reflection.ConstructorI
 	}}
 	
 	
+	/// Represents the name of the type constructor method as it is stored in metadata. This name is always ".cctor". This property is read-only.
 	public class var typeConstructorName: System_String /* System.String */ { get {
 		
 		
@@ -45711,6 +46603,8 @@ public class System_Reflection_CustomAttributeTypedArgument /* System.Reflection
 		
 	}
 	
+	/// Gets the type of the argument or of the array argument element.
+	/// A   object representing the type of the argument or of the array element.
 	public var argumentType: System_Type /* System.Type */ { get throws {
 		
 		
@@ -45732,6 +46626,8 @@ public class System_Reflection_CustomAttributeTypedArgument /* System.Reflection
 	}}
 	
 	
+	/// Gets the value of the argument for a simple argument or for an element of an array argument; gets a collection of values for an array argument.
+	/// An object that represents the value of the argument or element, or a generic   of   objects that represent the values of an array-type argument.
 	public var value: System_Object? /* System.Object */ { get throws {
 		
 		
@@ -45939,6 +46835,8 @@ public class System_Reflection_CustomAttributeNamedArgument /* System.Reflection
 		
 	}
 	
+	/// Gets the attribute member that would be used to set the named argument.
+	/// The attribute member that would be used to set the named argument.
 	public var memberInfo: System_Reflection_MemberInfo /* System.Reflection.MemberInfo */ { get throws {
 		
 		
@@ -45960,6 +46858,8 @@ public class System_Reflection_CustomAttributeNamedArgument /* System.Reflection
 	}}
 	
 	
+	/// Gets a   structure that can be used to obtain the type and value of the current named argument.
+	/// A structure that can be used to obtain the type and value of the current named argument.
 	public var typedValue: System_Reflection_CustomAttributeTypedArgument /* System.Reflection.CustomAttributeTypedArgument */ { get throws {
 		
 		
@@ -45981,6 +46881,8 @@ public class System_Reflection_CustomAttributeNamedArgument /* System.Reflection
 	}}
 	
 	
+	/// Gets the name of the attribute member that would be used to set the named argument.
+	/// The name of the attribute member that would be used to set the named argument.
 	public var memberName: System_String /* System.String */ { get throws {
 		
 		
@@ -46002,6 +46904,8 @@ public class System_Reflection_CustomAttributeNamedArgument /* System.Reflection
 	}}
 	
 	
+	/// Gets a value that indicates whether the named argument is a field.
+	/// if the named argument is a field; otherwise,  .
 	public var isField: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -46108,6 +47012,8 @@ public class System_Reflection_MethodBody /* System.Reflection.MethodBody */: Sy
 		
 	}
 	
+	/// Gets a metadata token for the signature that describes the local variables for the method in metadata.
+	/// An integer that represents the metadata token.
 	public var localSignatureMetadataToken: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -46127,6 +47033,8 @@ public class System_Reflection_MethodBody /* System.Reflection.MethodBody */: Sy
 	}}
 	
 	
+	/// Gets the list of local variables declared in the method body.
+	/// An   of   objects that describe the local variables declared in the method body.
 	public var localVariables: System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.LocalVariableInfo> */ { get throws {
 		
 		
@@ -46148,6 +47056,8 @@ public class System_Reflection_MethodBody /* System.Reflection.MethodBody */: Sy
 	}}
 	
 	
+	/// Gets the maximum number of items on the operand stack when the method is executing.
+	/// The maximum number of items on the operand stack when the method is executing.
 	public var maxStackSize: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -46167,6 +47077,8 @@ public class System_Reflection_MethodBody /* System.Reflection.MethodBody */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether local variables in the method body are initialized to the default values for their types.
+	/// if the method body contains code to initialize local variables to   for reference types, or to the zero-initialized value for value types; otherwise,  .
 	public var initLocals: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -46186,6 +47098,8 @@ public class System_Reflection_MethodBody /* System.Reflection.MethodBody */: Sy
 	}}
 	
 	
+	/// Gets a list that includes all the exception-handling clauses in the method body.
+	/// An   of   objects representing the exception-handling clauses in the body of the method.
 	public var exceptionHandlingClauses: System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<System.Reflection.ExceptionHandlingClause> */ { get throws {
 		
 		
@@ -46259,6 +47173,8 @@ public class System_Reflection_LocalVariableInfo /* System.Reflection.LocalVaria
 		
 	}
 	
+	/// Gets the type of the local variable.
+	/// The type of the local variable.
 	public var localType: System_Type /* System.Type */ { get throws {
 		
 		
@@ -46280,6 +47196,8 @@ public class System_Reflection_LocalVariableInfo /* System.Reflection.LocalVaria
 	}}
 	
 	
+	/// Gets the index of the local variable within the method body.
+	/// An integer value that represents the order of declaration of the local variable within the method body.
 	public var localIndex: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -46299,6 +47217,8 @@ public class System_Reflection_LocalVariableInfo /* System.Reflection.LocalVaria
 	}}
 	
 	
+	/// Gets a   value that indicates whether the object referred to by the local variable is pinned in memory.
+	/// if the object referred to by the variable is pinned in memory; otherwise,  .
 	public var isPinned: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -46388,6 +47308,8 @@ public class System_Reflection_ExceptionHandlingClause /* System.Reflection.Exce
 		
 	}
 	
+	/// Gets a value indicating whether this exception-handling clause is a finally clause, a type-filtered clause, or a user-filtered clause.
+	/// An   value that indicates what kind of action this clause performs.
 	public var flags: System_Reflection_ExceptionHandlingClauseOptions /* System.Reflection.ExceptionHandlingClauseOptions */ { get throws {
 		
 		
@@ -46409,6 +47331,8 @@ public class System_Reflection_ExceptionHandlingClause /* System.Reflection.Exce
 	}}
 	
 	
+	/// The offset within the method, in bytes, of the try block that includes this exception-handling clause.
+	/// An integer that represents the offset within the method, in bytes, of the try block that includes this exception-handling clause.
 	public var tryOffset: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -46428,6 +47352,8 @@ public class System_Reflection_ExceptionHandlingClause /* System.Reflection.Exce
 	}}
 	
 	
+	/// The total length, in bytes, of the try block that includes this exception-handling clause.
+	/// The total length, in bytes, of the try block that includes this exception-handling clause.
 	public var tryLength: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -46447,6 +47373,8 @@ public class System_Reflection_ExceptionHandlingClause /* System.Reflection.Exce
 	}}
 	
 	
+	/// Gets the offset within the method body, in bytes, of this exception-handling clause.
+	/// An integer that represents the offset within the method body, in bytes, of this exception-handling clause.
 	public var handlerOffset: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -46466,6 +47394,8 @@ public class System_Reflection_ExceptionHandlingClause /* System.Reflection.Exce
 	}}
 	
 	
+	/// Gets the length, in bytes, of the body of this exception-handling clause.
+	/// An integer that represents the length, in bytes, of the MSIL that forms the body of this exception-handling clause.
 	public var handlerLength: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -46485,6 +47415,9 @@ public class System_Reflection_ExceptionHandlingClause /* System.Reflection.Exce
 	}}
 	
 	
+	/// Gets the offset within the method body, in bytes, of the user-supplied filter code.
+	/// Cannot get the offset because the exception handling clause is not a filter.
+	/// The offset within the method body, in bytes, of the user-supplied filter code. The value of this property has no meaning if the   property has any value other than  .
 	public var filterOffset: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -46504,6 +47437,9 @@ public class System_Reflection_ExceptionHandlingClause /* System.Reflection.Exce
 	}}
 	
 	
+	/// Gets the type of exception handled by this clause.
+	/// Invalid use of property for the object's current state.
+	/// A   object that represents that type of exception handled by this clause, or   if the   property is   or  .
 	public var catchType: System_Type? /* System.Type */ { get throws {
 		
 		
@@ -46700,6 +47636,8 @@ public class System_Collections_IDictionary /* System.Collections.IDictionary */
 	}
 	
 	
+	/// Gets an   object containing the keys of the   object.
+	/// An   object containing the keys of the   object.
 	public var keys: System_Collections_ICollection /* System.Collections.ICollection */ { get throws {
 		
 		
@@ -46721,6 +47659,8 @@ public class System_Collections_IDictionary /* System.Collections.IDictionary */
 	}}
 	
 	
+	/// Gets an   object containing the values in the   object.
+	/// An   object containing the values in the   object.
 	public var values: System_Collections_ICollection /* System.Collections.ICollection */ { get throws {
 		
 		
@@ -46742,6 +47682,8 @@ public class System_Collections_IDictionary /* System.Collections.IDictionary */
 	}}
 	
 	
+	/// Gets a value indicating whether the   object is read-only.
+	/// if the   object is read-only; otherwise,  .
 	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -46761,6 +47703,8 @@ public class System_Collections_IDictionary /* System.Collections.IDictionary */
 	}}
 	
 	
+	/// Gets a value indicating whether the   object has a fixed size.
+	/// if the   object has a fixed size; otherwise,  .
 	public var isFixedSize: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -46804,6 +47748,9 @@ public class System_Collections_IDictionaryEnumerator /* System.Collections.IDic
 		"System.Collections.IDictionaryEnumerator"
 	}}
 
+	/// Gets the key of the current dictionary entry.
+	/// The   is positioned before the first entry of the dictionary or after the last entry.
+	/// The key of the current element of the enumeration.
 	public var key: System_Object /* System.Object */ { get throws {
 		
 		
@@ -46825,6 +47772,9 @@ public class System_Collections_IDictionaryEnumerator /* System.Collections.IDic
 	}}
 	
 	
+	/// Gets the value of the current dictionary entry.
+	/// The   is positioned before the first entry of the dictionary or after the last entry.
+	/// The value of the current element of the enumeration.
 	public var value: System_Object? /* System.Object */ { get throws {
 		
 		
@@ -46846,6 +47796,9 @@ public class System_Collections_IDictionaryEnumerator /* System.Collections.IDic
 	}}
 	
 	
+	/// Gets both the key and the value of the current dictionary entry.
+	/// The   is positioned before the first entry of the dictionary or after the last entry.
+	/// A   containing both the key and the value of the current dictionary entry.
 	public var entry: System_Collections_DictionaryEntry /* System.Collections.DictionaryEntry */ { get throws {
 		
 		
@@ -46955,6 +47908,8 @@ public class System_Collections_DictionaryEntry /* System.Collections.Dictionary
 		
 	}
 	
+	/// Gets or sets the key in the key/value pair.
+	/// The key in the key/value pair.
 	public var key: System_Object /* System.Object */ { get throws {
 		
 		
@@ -46974,6 +47929,8 @@ public class System_Collections_DictionaryEntry /* System.Collections.Dictionary
 		return __returnValue
 		
 	}}
+	/// Gets or sets the key in the key/value pair.
+	/// The key in the key/value pair.
 	public func key_set(_ value: System_Object? /* System.Object */) throws {
 		let valueC = value?.__handle
 		
@@ -46993,6 +47950,8 @@ public class System_Collections_DictionaryEntry /* System.Collections.Dictionary
 	}
 	
 	
+	/// Gets or sets the value in the key/value pair.
+	/// The value in the key/value pair.
 	public var value: System_Object? /* System.Object */ { get throws {
 		
 		
@@ -47012,6 +47971,8 @@ public class System_Collections_DictionaryEntry /* System.Collections.Dictionary
 		return __returnValue
 		
 	}}
+	/// Gets or sets the value in the key/value pair.
+	/// The value in the key/value pair.
 	public func value_set(_ value: System_Object? /* System.Object */) throws {
 		let valueC = value?.__handle
 		
@@ -48055,6 +49016,8 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 		
 	}
 	
+	/// Gets an ID for this   instance.
+	/// The identifier that is assigned by the system to this   instance.
 	public var id: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -48074,6 +49037,8 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 	}}
 	
 	
+	/// Gets the   that caused the   to end prematurely. If the   completed successfully or has not yet thrown any exceptions, this will return  .
+	/// The   that caused the   to end prematurely.
 	public var exception: System_AggregateException? /* System.AggregateException */ { get throws {
 		
 		
@@ -48095,6 +49060,8 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 	}}
 	
 	
+	/// Gets the   of this task.
+	/// The current   of this task instance.
 	public var status: System_Threading_Tasks_TaskStatus /* System.Threading.Tasks.TaskStatus */ { get throws {
 		
 		
@@ -48116,6 +49083,8 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 	}}
 	
 	
+	/// Gets whether this   instance has completed execution due to being canceled.
+	/// if the task has completed due to being canceled; otherwise  .
 	public var isCanceled: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -48135,6 +49104,8 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 	}}
 	
 	
+	/// Gets a value that indicates whether the task has completed.
+	/// if the task has completed (that is, the task is in one of the three final states:  ,  , or  ); otherwise,  .
 	public var isCompleted: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -48154,6 +49125,8 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 	}}
 	
 	
+	/// Gets whether the task ran to completion.
+	/// if the task ran to completion; otherwise  .
 	public var isCompletedSuccessfully: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -48173,6 +49146,8 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 	}}
 	
 	
+	/// Gets the   used to create this task.
+	/// The   used to create this task.
 	public var creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */ { get throws {
 		
 		
@@ -48194,6 +49169,8 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 	}}
 	
 	
+	/// Gets the state object supplied when the   was created, or null if none was supplied.
+	/// An   that represents the state data that was passed in to the task when it was created.
 	public var asyncState: System_Object? /* System.Object */ { get throws {
 		
 		
@@ -48215,6 +49192,8 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 	}}
 	
 	
+	/// Provides access to factory methods for creating and configuring   and   instances.
+	/// A factory object that can create a variety of   and   objects.
 	public class var factory: System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFactory */ { get throws {
 		
 		
@@ -48236,6 +49215,8 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 	}}
 	
 	
+	/// Gets a task that has already completed successfully.
+	/// The successfully completed task.
 	public class var completedTask: System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ { get throws {
 		
 		
@@ -48257,6 +49238,8 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 	}}
 	
 	
+	/// Gets whether the   completed due to an unhandled exception.
+	/// if the task has thrown an unhandled exception; otherwise  .
 	public var isFaulted: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -48300,6 +49283,8 @@ public class System_IAsyncResult /* System.IAsyncResult */: DNObject {
 		"System.IAsyncResult"
 	}}
 
+	/// Gets a value that indicates whether the asynchronous operation has completed.
+	/// if the operation is complete; otherwise,  .
 	public var isCompleted: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -48319,6 +49304,8 @@ public class System_IAsyncResult /* System.IAsyncResult */: DNObject {
 	}}
 	
 	
+	/// Gets a   that is used to wait for an asynchronous operation to complete.
+	/// A   that is used to wait for an asynchronous operation to complete.
 	public var asyncWaitHandle: System_Threading_WaitHandle /* System.Threading.WaitHandle */ { get throws {
 		
 		
@@ -48340,6 +49327,8 @@ public class System_IAsyncResult /* System.IAsyncResult */: DNObject {
 	}}
 	
 	
+	/// Gets a user-defined object that qualifies or contains information about an asynchronous operation.
+	/// A user-defined object that qualifies or contains information about an asynchronous operation.
 	public var asyncState: System_Object? /* System.Object */ { get throws {
 		
 		
@@ -48361,6 +49350,8 @@ public class System_IAsyncResult /* System.IAsyncResult */: DNObject {
 	}}
 	
 	
+	/// Gets a value that indicates whether the asynchronous operation completed synchronously.
+	/// if the asynchronous operation completed synchronously; otherwise,  .
 	public var completedSynchronously: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -48424,6 +49415,8 @@ public class System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.Task
 		
 	}
 	
+	/// Indicates the maximum concurrency level this   is able to support.
+	/// Returns an integer that represents the maximum concurrency level. The default scheduler returns  Int32.MaxValue .
 	public var maximumConcurrencyLevel: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -48443,6 +49436,8 @@ public class System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.Task
 	}}
 	
 	
+	/// Gets the default   instance that is provided by .NET.
+	/// Returns the default   instance.
 	public class var `default`: System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.TaskScheduler */ { get throws {
 		
 		
@@ -48464,6 +49459,8 @@ public class System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.Task
 	}}
 	
 	
+	/// Gets the   associated with the currently executing task.
+	/// Returns the   associated with the currently executing task.
 	public class var current: System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.TaskScheduler */ { get throws {
 		
 		
@@ -48485,6 +49482,8 @@ public class System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.Task
 	}}
 	
 	
+	/// Gets the unique ID for this  .
+	/// Returns the unique ID for this  .
 	public var id: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -48742,6 +49741,8 @@ public class System_AggregateException /* System.AggregateException */: System_E
 		
 	}
 	
+	/// Gets a read-only collection of the   instances that caused the current exception.
+	/// A read-only collection of the   instances that caused the current exception.
 	public var innerExceptions: System_Collections_ObjectModel_ReadOnlyCollection_A1 /* System.Collections.ObjectModel.ReadOnlyCollection<System.Exception> */ { get throws {
 		
 		
@@ -48763,6 +49764,8 @@ public class System_AggregateException /* System.AggregateException */: System_E
 	}}
 	
 	
+	/// Gets a message that describes the exception.
+	/// The message that describes the exception.
 	public override var message: System_String /* System.String */ { get throws {
 		
 		
@@ -48868,6 +49871,8 @@ public class System_Collections_ObjectModel_ReadOnlyCollection_A1 /* System.Coll
 		
 	}
 	
+	/// Gets an empty  .
+	/// An empty  .
 	public class func empty(T: System_Type /* System.Type */) throws -> System_Object /* System.Object */ {
 		let TC = T.__handle
 		
@@ -48890,6 +49895,8 @@ public class System_Collections_ObjectModel_ReadOnlyCollection_A1 /* System.Coll
 	}
 	
 	
+	/// Gets the number of elements contained in the   instance.
+	/// The number of elements contained in the   instance.
 	public func count(T: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let TC = T.__handle
 		
@@ -49174,6 +50181,8 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 		
 	}
 	
+	/// Gets the default cancellation token for this task factory.
+	/// The default task cancellation token for this task factory.
 	public var cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */ { get throws {
 		
 		
@@ -49195,6 +50204,8 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 	}}
 	
 	
+	/// Gets the default task scheduler for this task factory.
+	/// The default task scheduler for this task factory.
 	public var scheduler: System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */ { get throws {
 		
 		
@@ -49216,6 +50227,8 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 	}}
 	
 	
+	/// Gets the default task creation options for this task factory.
+	/// The default task creation options for this task factory.
 	public var creationOptions: System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */ { get throws {
 		
 		
@@ -49237,6 +50250,8 @@ public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFa
 	}}
 	
 	
+	/// Gets the default task continuation options for this task factory.
+	/// The default task continuation options for this task factory.
 	public var continuationOptions: System_Threading_Tasks_TaskContinuationOptions /* System.Threading.Tasks.TaskContinuationOptions */ { get throws {
 		
 		
@@ -49385,6 +50400,9 @@ public class System_Runtime_CompilerServices_TaskAwaiter /* System.Runtime.Compi
 		
 	}
 	
+	/// Gets a value that indicates whether the asynchronous task has completed.
+	/// The   object was not properly initialized.
+	/// if the task has completed; otherwise,  .
 	public var isCompleted: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -49582,6 +50600,7 @@ public class System_Runtime_CompilerServices_ConfiguredTaskAwaitable /* System.R
 }
 
 
+/// Provides an awaiter for an awaitable ( ) object.
 public class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter */: System_ValueType {
 	public override class var typeName: String { get {
 		"ConfiguredTaskAwaiter"
@@ -49644,6 +50663,9 @@ public class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredT
 		
 	}
 	
+	/// Gets a value that specifies whether the task being awaited is completed.
+	/// The awaiter was not properly initialized.
+	/// if the task being awaited is completed; otherwise,  .
 	public var isCompleted: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -49757,6 +50779,7 @@ public class System_Runtime_CompilerServices_YieldAwaitable /* System.Runtime.Co
 }
 
 
+/// Provides an awaiter for switching into a target environment.
 public class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter /* System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter */: System_ValueType {
 	public override class var typeName: String { get {
 		"YieldAwaiter"
@@ -49819,6 +50842,8 @@ public class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter /* Syst
 		
 	}
 	
+	/// Gets a value that indicates whether a yield is not required.
+	/// Always  , which indicates that a yield is always required for  .
 	public var isCompleted: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -50002,6 +51027,7 @@ public class System_TimeProvider /* System.TimeProvider */: System_Object {
 		
 	}
 	
+	/// Gets a   that provides a clock based on  , a time zone based on  , a high-performance time stamp based on  , and a timer based on  .
 	public class var system: System_TimeProvider /* System.TimeProvider */ { get throws {
 		
 		
@@ -50023,6 +51049,7 @@ public class System_TimeProvider /* System.TimeProvider */: System_Object {
 	}}
 	
 	
+	/// Gets the local time zone according to this  's notion of time.
 	public var localTimeZone: System_TimeZoneInfo /* System.TimeZoneInfo */ { get throws {
 		
 		
@@ -50044,6 +51071,7 @@ public class System_TimeProvider /* System.TimeProvider */: System_Object {
 	}}
 	
 	
+	/// Gets the frequency of   as the number of ticks per second.
 	public var timestampFrequency: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -51187,6 +52215,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 		
 	}
 	
+	/// Gets a   object whose date and time are set to the current Coordinated Universal Time (UTC) date and time and whose offset is  .
+	/// An object whose date and time is the current Coordinated Universal Time (UTC) and whose offset is  .
 	public class var utcNow: System_DateTimeOffset /* System.DateTimeOffset */ { get throws {
 		
 		
@@ -51208,6 +52238,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets a   value that represents the date and time of the current   object.
+	/// The date and time of the current   object.
 	public var dateTime: System_DateTime /* System.DateTime */ { get throws {
 		
 		
@@ -51229,6 +52261,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets a   value that represents the Coordinated Universal Time (UTC) date and time of the current   object.
+	/// The Coordinated Universal Time (UTC) date and time of the current   object.
 	public var utcDateTime: System_DateTime /* System.DateTime */ { get throws {
 		
 		
@@ -51250,6 +52284,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets a   value that represents the local date and time of the current   object.
+	/// The local date and time of the current   object.
 	public var localDateTime: System_DateTime /* System.DateTime */ { get throws {
 		
 		
@@ -51271,6 +52307,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets a   value that represents the date component of the current   object.
+	/// A   value that represents the date component of the current   object.
 	public var date: System_DateTime /* System.DateTime */ { get throws {
 		
 		
@@ -51292,6 +52330,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets the day of the month represented by the current   object.
+	/// The day component of the current   object, expressed as a value between 1 and 31.
 	public var day: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -51311,6 +52351,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets the day of the week represented by the current   object.
+	/// One of the enumeration values that indicates the day of the week of the current   object.
 	public var dayOfWeek: System_DayOfWeek /* System.DayOfWeek */ { get throws {
 		
 		
@@ -51332,6 +52374,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets the day of the year represented by the current   object.
+	/// The day of the year of the current   object, expressed as a value between 1 and 366.
 	public var dayOfYear: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -51351,6 +52395,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets the hour component of the time represented by the current   object.
+	/// The hour component of the current   object. This property uses a 24-hour clock; the value ranges from 0 to 23.
 	public var hour: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -51370,6 +52416,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets the millisecond component of the time represented by the current   object.
+	/// The millisecond component of the current   object, expressed as an integer between 0 and 999.
 	public var millisecond: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -51389,6 +52437,7 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets the microsecond component of the time represented by the current   object.
 	public var microsecond: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -51408,6 +52457,7 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets the nanosecond component of the time represented by the current   object.
 	public var nanosecond: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -51427,6 +52477,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets the minute component of the time represented by the current   object.
+	/// The minute component of the current   object, expressed as an integer between 0 and 59.
 	public var minute: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -51446,6 +52498,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets the month component of the date represented by the current   object.
+	/// The month component of the current   object, expressed as an integer between 1 and 12.
 	public var month: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -51465,6 +52519,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets the time's offset from Coordinated Universal Time (UTC).
+	/// The difference between the current   object's time value and Coordinated Universal Time (UTC).
 	public var offset: System_TimeSpan /* System.TimeSpan */ { get throws {
 		
 		
@@ -51486,6 +52542,7 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets the time's offset from Coordinated Universal Time (UTC) in minutes.
 	public var totalOffsetMinutes: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -51505,6 +52562,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets the second component of the clock time represented by the current   object.
+	/// The second component of the   object, expressed as an integer value between 0 and 59.
 	public var second: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -51524,6 +52583,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets the number of ticks that represents the date and time of the current   object in clock time.
+	/// The number of ticks in the   object's clock time.
 	public var ticks: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -51543,6 +52604,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets the number of ticks that represents the date and time of the current   object in Coordinated Universal Time (UTC).
+	/// The number of ticks in the   object's Coordinated Universal Time (UTC).
 	public var utcTicks: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -51562,6 +52625,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets the time of day for the current   object.
+	/// The time interval of the current date that has elapsed since midnight.
 	public var timeOfDay: System_TimeSpan /* System.TimeSpan */ { get throws {
 		
 		
@@ -51583,6 +52648,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets the year component of the date represented by the current   object.
+	/// The year component of the current   object, expressed as an integer value between 0 and 9999.
 	public var year: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -51602,6 +52669,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Gets a   object that is set to the current date and time on the current computer, with the offset set to the local time's offset from Coordinated Universal Time (UTC).
+	/// A   object whose date and time is the current local time and whose offset is the local time zone's offset from Coordinated Universal Time (UTC).
 	public class var now: System_DateTimeOffset /* System.DateTimeOffset */ { get throws {
 		
 		
@@ -51623,6 +52692,7 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Represents the earliest possible   value. This field is read-only.
 	public class var minValue: System_DateTimeOffset /* System.DateTimeOffset */ { get {
 		
 		
@@ -51635,6 +52705,8 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// Represents the greatest possible value of  . This field is read-only.
+	/// DateTime.MaxValue  is outside the range of the current or specified culture's default calendar.
 	public class var maxValue: System_DateTimeOffset /* System.DateTimeOffset */ { get {
 		
 		
@@ -51647,6 +52719,7 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 	}}
 	
 	
+	/// The value of this constant is equivalent to 00:00:00.0000000 UTC, January 1, 1970, in the Gregorian calendar.   defines the point in time when Unix time is equal to 0.
 	public class var unixEpoch: System_DateTimeOffset /* System.DateTimeOffset */ { get {
 		
 		
@@ -52491,6 +53564,8 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 		
 	}
 	
+	/// Gets the time zone identifier.
+	/// The time zone identifier.
 	public var id: System_String /* System.String */ { get throws {
 		
 		
@@ -52512,6 +53587,7 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 	}}
 	
 	
+	/// Returns   if this TimeZoneInfo object has an IANA ID.
 	public var hasIanaId: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -52531,6 +53607,8 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 	}}
 	
 	
+	/// Gets the general display name that represents the time zone.
+	/// The time zone's general display name.
 	public var displayName: System_String /* System.String */ { get throws {
 		
 		
@@ -52552,6 +53630,8 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 	}}
 	
 	
+	/// Gets the display name for the time zone's standard time.
+	/// The display name of the time zone's standard time.
 	public var standardName: System_String /* System.String */ { get throws {
 		
 		
@@ -52573,6 +53653,8 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 	}}
 	
 	
+	/// Gets the display name for the current time zone's daylight saving time.
+	/// The display name for the time zone's daylight saving time.
 	public var daylightName: System_String /* System.String */ { get throws {
 		
 		
@@ -52594,6 +53676,8 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 	}}
 	
 	
+	/// Gets the time difference between the current time zone's standard time and Coordinated Universal Time (UTC).
+	/// An object that indicates the time difference between the current time zone's standard time and Coordinated Universal Time (UTC).
 	public var baseUtcOffset: System_TimeSpan /* System.TimeSpan */ { get throws {
 		
 		
@@ -52615,6 +53699,8 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 	}}
 	
 	
+	/// Gets a value indicating whether the time zone has any daylight saving time rules.
+	/// if the time zone supports daylight saving time; otherwise,  .
 	public var supportsDaylightSavingTime: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -52634,6 +53720,8 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 	}}
 	
 	
+	/// Gets a   object that represents the local time zone.
+	/// An object that represents the local time zone.
 	public class var local: System_TimeZoneInfo /* System.TimeZoneInfo */ { get throws {
 		
 		
@@ -52655,6 +53743,8 @@ public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 	}}
 	
 	
+	/// Gets a   object that represents the Coordinated Universal Time (UTC) zone.
+	/// An object that represents the Coordinated Universal Time (UTC) zone.
 	public class var utc: System_TimeZoneInfo /* System.TimeZoneInfo */ { get throws {
 		
 		
@@ -52766,6 +53856,7 @@ public class System_TimeZoneInfo_AdjustmentRule_Array /* System.TimeZoneInfo.Adj
 
 
 
+/// Provides information about a time zone adjustment, such as the transition to and from daylight saving time.
 public class System_TimeZoneInfo_AdjustmentRule /* System.TimeZoneInfo.AdjustmentRule */: System_Object {
 	public override class var typeName: String { get {
 		"AdjustmentRule"
@@ -52882,6 +53973,8 @@ public class System_TimeZoneInfo_AdjustmentRule /* System.TimeZoneInfo.Adjustmen
 		
 	}
 	
+	/// Gets the date when the adjustment rule takes effect.
+	/// A   value that indicates when the adjustment rule takes effect.
 	public var dateStart: System_DateTime /* System.DateTime */ { get throws {
 		
 		
@@ -52903,6 +53996,8 @@ public class System_TimeZoneInfo_AdjustmentRule /* System.TimeZoneInfo.Adjustmen
 	}}
 	
 	
+	/// Gets the date when the adjustment rule ceases to be in effect.
+	/// A   value that indicates the end date of the adjustment rule.
 	public var dateEnd: System_DateTime /* System.DateTime */ { get throws {
 		
 		
@@ -52924,6 +54019,8 @@ public class System_TimeZoneInfo_AdjustmentRule /* System.TimeZoneInfo.Adjustmen
 	}}
 	
 	
+	/// Gets the amount of time that is required to form the time zone's daylight saving time. This amount of time is added to the time zone's offset from Coordinated Universal Time (UTC).
+	/// A   object that indicates the amount of time to add to the standard time changes as a result of the adjustment rule.
 	public var daylightDelta: System_TimeSpan /* System.TimeSpan */ { get throws {
 		
 		
@@ -52945,6 +54042,8 @@ public class System_TimeZoneInfo_AdjustmentRule /* System.TimeZoneInfo.Adjustmen
 	}}
 	
 	
+	/// Gets information about the annual transition from standard time to daylight saving time.
+	/// A   object that defines the annual transition from a time zone's standard time to daylight saving time.
 	public var daylightTransitionStart: System_TimeZoneInfo_TransitionTime /* System.TimeZoneInfo.TransitionTime */ { get throws {
 		
 		
@@ -52966,6 +54065,8 @@ public class System_TimeZoneInfo_AdjustmentRule /* System.TimeZoneInfo.Adjustmen
 	}}
 	
 	
+	/// Gets information about the annual transition from daylight saving time back to standard time.
+	/// A   object that defines the annual transition from daylight saving time back to the time zone's standard time.
 	public var daylightTransitionEnd: System_TimeZoneInfo_TransitionTime /* System.TimeZoneInfo.TransitionTime */ { get throws {
 		
 		
@@ -52987,6 +54088,8 @@ public class System_TimeZoneInfo_AdjustmentRule /* System.TimeZoneInfo.Adjustmen
 	}}
 	
 	
+	/// Gets the time difference with the base UTC offset for the time zone during the adjustment-rule period.
+	/// A   instance representing the time difference.
 	public var baseUtcOffsetDelta: System_TimeSpan /* System.TimeSpan */ { get throws {
 		
 		
@@ -53024,6 +54127,7 @@ public class System_TimeZoneInfo_AdjustmentRule /* System.TimeZoneInfo.Adjustmen
 
 
 
+/// Provides information about a specific time change, such as the change from daylight saving time to standard time or vice versa, in a particular time zone.
 public class System_TimeZoneInfo_TransitionTime /* System.TimeZoneInfo.TransitionTime */: System_ValueType {
 	public override class var typeName: String { get {
 		"TransitionTime"
@@ -53132,6 +54236,8 @@ public class System_TimeZoneInfo_TransitionTime /* System.TimeZoneInfo.Transitio
 		
 	}
 	
+	/// Gets the hour, minute, and second at which the time change occurs.
+	/// The time of day at which the time change occurs.
 	public var timeOfDay: System_DateTime /* System.DateTime */ { get throws {
 		
 		
@@ -53153,6 +54259,8 @@ public class System_TimeZoneInfo_TransitionTime /* System.TimeZoneInfo.Transitio
 	}}
 	
 	
+	/// Gets the month in which the time change occurs.
+	/// The month in which the time change occurs.
 	public var month: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -53172,6 +54280,8 @@ public class System_TimeZoneInfo_TransitionTime /* System.TimeZoneInfo.Transitio
 	}}
 	
 	
+	/// Gets the week of the month in which a time change occurs.
+	/// The week of the month in which the time change occurs.
 	public var week: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -53191,6 +54301,8 @@ public class System_TimeZoneInfo_TransitionTime /* System.TimeZoneInfo.Transitio
 	}}
 	
 	
+	/// Gets the day on which the time change occurs.
+	/// The day on which the time change occurs.
 	public var day: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -53210,6 +54322,8 @@ public class System_TimeZoneInfo_TransitionTime /* System.TimeZoneInfo.Transitio
 	}}
 	
 	
+	/// Gets the day of the week on which the time change occurs.
+	/// The day of the week on which the time change occurs.
 	public var dayOfWeek: System_DayOfWeek /* System.DayOfWeek */ { get throws {
 		
 		
@@ -53231,6 +54345,8 @@ public class System_TimeZoneInfo_TransitionTime /* System.TimeZoneInfo.Transitio
 	}}
 	
 	
+	/// Gets a value indicating whether the time change occurs at a fixed date and time (such as November 1) or a floating date and time (such as the last Sunday of October).
+	/// if the time change rule is fixed-date;   if the time change rule is floating-date.
 	public var isFixedDateRule: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -53459,6 +54575,11 @@ public class System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<> */:
 		
 	}
 	
+	/// Gets the result value of this  .
+	/// The task was canceled. The   collection contains a   object.
+	/// -or-
+	/// An exception was thrown during the execution of the task. The   collection contains information about the exception or exceptions.
+	/// The result value of this  , which is of the same type as the task's type parameter.
 	public func result(TResult: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TResultC = TResult.__handle
 		
@@ -53614,6 +54735,8 @@ public class System_Threading_Tasks_TaskFactory_A1 /* System.Threading.Tasks.Tas
 		
 	}
 	
+	/// Gets the default cancellation token for this task factory.
+	/// The default cancellation token for this task factory.
 	public func cancellationToken(TResult: System_Type /* System.Type */) throws -> System_Threading_CancellationToken /* System.Threading.CancellationToken */ {
 		let TResultC = TResult.__handle
 		
@@ -53636,6 +54759,8 @@ public class System_Threading_Tasks_TaskFactory_A1 /* System.Threading.Tasks.Tas
 	}
 	
 	
+	/// Gets the task scheduler for this task factory.
+	/// The task scheduler for this task factory.
 	public func scheduler(TResult: System_Type /* System.Type */) throws -> System_Threading_Tasks_TaskScheduler? /* System.Threading.Tasks.TaskScheduler */ {
 		let TResultC = TResult.__handle
 		
@@ -53658,6 +54783,8 @@ public class System_Threading_Tasks_TaskFactory_A1 /* System.Threading.Tasks.Tas
 	}
 	
 	
+	/// Gets the   enumeration value for this task factory.
+	/// One of the enumeration values that specifies the default creation options for this task factory.
 	public func creationOptions(TResult: System_Type /* System.Type */) throws -> System_Threading_Tasks_TaskCreationOptions /* System.Threading.Tasks.TaskCreationOptions */ {
 		let TResultC = TResult.__handle
 		
@@ -53680,6 +54807,8 @@ public class System_Threading_Tasks_TaskFactory_A1 /* System.Threading.Tasks.Tas
 	}
 	
 	
+	/// Gets the   enumeration value for this task factory.
+	/// One of the enumeration values that specifies the default continuation options for this task factory.
 	public func continuationOptions(TResult: System_Type /* System.Type */) throws -> System_Threading_Tasks_TaskContinuationOptions /* System.Threading.Tasks.TaskContinuationOptions */ {
 		let TResultC = TResult.__handle
 		
@@ -53799,6 +54928,9 @@ public class System_Runtime_CompilerServices_TaskAwaiter_A1 /* System.Runtime.Co
 		
 	}
 	
+	/// Gets a value that indicates whether the asynchronous task has completed.
+	/// The   object was not properly initialized.
+	/// if the task has completed; otherwise,  .
 	public func isCompleted(TResult: System_Type /* System.Type */) throws -> Bool /* System.Boolean */ {
 		let TResultC = TResult.__handle
 		
@@ -53977,6 +55109,8 @@ public class System_Runtime_CompilerServices_ValueTaskAwaiter /* System.Runtime.
 		
 	}
 	
+	/// Gets a value that indicates whether the   has completed.
+	/// if the ValueTask has completed; otherwise,  .
 	public var isCompleted: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -54090,6 +55224,7 @@ public class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable /* Sys
 }
 
 
+/// Provides an awaiter for a  .
 public class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter */: System_ValueType {
 	public override class var typeName: String { get {
 		"ConfiguredValueTaskAwaiter"
@@ -54152,6 +55287,8 @@ public class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_Config
 		
 	}
 	
+	/// Gets a value that indicates whether the   has completed.
+	/// if the   has completed; otherwise,  .
 	public var isCompleted: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -54318,6 +55455,8 @@ public class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeH
 		
 	}
 	
+	/// Gets a value that determines if the handle is asynchronous or not.
+	/// if the handle is asynchronous;   otherwise.
 	public var isAsync: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -54337,6 +55476,8 @@ public class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeH
 	}}
 	
 	
+	/// Gets a value that indicates whether the handle is invalid.
+	/// if the handle is not valid; otherwise,  .
 	public override var isInvalid: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -54398,6 +55539,9 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		
 	}
 	
+	/// One of the enumeration values that determines how to open or create the file.
+	/// When   contains an invalid value.
+	/// One of the enumeration values of the   enum.
 	public var mode: System_IO_FileMode /* System.IO.FileMode */ { get throws {
 		
 		
@@ -54417,6 +55561,9 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		return __returnValue
 		
 	}}
+	/// One of the enumeration values that determines how to open or create the file.
+	/// When   contains an invalid value.
+	/// One of the enumeration values of the   enum.
 	public func mode_set(_ value: System_IO_FileMode /* System.IO.FileMode */) throws {
 		let valueC = value.cValue
 		
@@ -54436,6 +55583,9 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 	}
 	
 	
+	/// A bitwise combination of the enumeration values that determines how the file can be accessed by the   object. This also determines the values returned by the   and   properties of the   object.
+	/// When   contains an invalid value.
+	/// A bitwise combination of the   enum flags.
 	public var access: System_IO_FileAccess /* System.IO.FileAccess */ { get throws {
 		
 		
@@ -54455,6 +55605,9 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		return __returnValue
 		
 	}}
+	/// A bitwise combination of the enumeration values that determines how the file can be accessed by the   object. This also determines the values returned by the   and   properties of the   object.
+	/// When   contains an invalid value.
+	/// A bitwise combination of the   enum flags.
 	public func access_set(_ value: System_IO_FileAccess /* System.IO.FileAccess */) throws {
 		let valueC = value.cValue
 		
@@ -54474,6 +55627,9 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 	}
 	
 	
+	/// A bitwise combination of the enumeration values that determines how the file will be shared by processes. The default value is  .
+	/// When   contains an invalid value.
+	/// A bitwise combination of the   enum flags.
 	public var share: System_IO_FileShare /* System.IO.FileShare */ { get throws {
 		
 		
@@ -54493,6 +55649,9 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		return __returnValue
 		
 	}}
+	/// A bitwise combination of the enumeration values that determines how the file will be shared by processes. The default value is  .
+	/// When   contains an invalid value.
+	/// A bitwise combination of the   enum flags.
 	public func share_set(_ value: System_IO_FileShare /* System.IO.FileShare */) throws {
 		let valueC = value.cValue
 		
@@ -54512,6 +55671,9 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 	}
 	
 	
+	/// A bitwise combination of the enumeration values that specifies additional file options. The default value is  , which indicates synchronous IO.
+	/// When   contains an invalid value.
+	/// A bitwise combination of the   enum flags.
 	public var options: System_IO_FileOptions /* System.IO.FileOptions */ { get throws {
 		
 		
@@ -54531,6 +55693,9 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		return __returnValue
 		
 	}}
+	/// A bitwise combination of the enumeration values that specifies additional file options. The default value is  , which indicates synchronous IO.
+	/// When   contains an invalid value.
+	/// A bitwise combination of the   enum flags.
 	public func options_set(_ value: System_IO_FileOptions /* System.IO.FileOptions */) throws {
 		let valueC = value.cValue
 		
@@ -54550,6 +55715,9 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 	}
 	
 	
+	/// The initial allocation size in bytes for the file. A positive value is effective only when a regular file is being created or overwritten (  or  ). Negative values are not allowed. In other cases (including the default 0 value), it's ignored. This value is a hint and is not a strong guarantee. It is not supported on Web Assembly (WASM) and FreeBSD (the value is ignored). For Windows, Linux and macOS we will try to preallocate the disk space to fill the requested allocation size. If that turns out to be impossible, the operation is going to throw an exception. The final file length (EOF) will be determined by the number of bytes written to the file.
+	/// When   is negative.
+	/// A non-negative number that represents the initial allocation size in bytes for the file.
 	public var preallocationSize: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -54567,6 +55735,9 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		return __returnValueC
 		
 	}}
+	/// The initial allocation size in bytes for the file. A positive value is effective only when a regular file is being created or overwritten (  or  ). Negative values are not allowed. In other cases (including the default 0 value), it's ignored. This value is a hint and is not a strong guarantee. It is not supported on Web Assembly (WASM) and FreeBSD (the value is ignored). For Windows, Linux and macOS we will try to preallocate the disk space to fill the requested allocation size. If that turns out to be impossible, the operation is going to throw an exception. The final file length (EOF) will be determined by the number of bytes written to the file.
+	/// When   is negative.
+	/// A non-negative number that represents the initial allocation size in bytes for the file.
 	public func preallocationSize_set(_ value: Int64 /* System.Int64 */) throws {
 		
 		
@@ -54585,6 +55756,10 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 	}
 	
 	
+	/// The size of the buffer used by   for buffering. The default buffer size is 4096.
+	/// 0 or 1 means that buffering should be disabled. Negative values are not allowed.
+	/// When   is negative.
+	/// A non-negative number that represents the buffer size used by   for buffering.
 	public var bufferSize: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -54602,6 +55777,10 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 		return __returnValueC
 		
 	}}
+	/// The size of the buffer used by   for buffering. The default buffer size is 4096.
+	/// 0 or 1 means that buffering should be disabled. Negative values are not allowed.
+	/// When   is negative.
+	/// A non-negative number that represents the buffer size used by   for buffering.
 	public func bufferSize_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -54813,6 +55992,8 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 		
 	}
 	
+	/// Gets an array of the generic type parameters of the current instance.
+	/// An array that contains the current instance's generic type parameters, or an array of   zero if the current instance has no generic type parameters.
 	public var genericTypeParameters: System_Type_Array /* System.Type[] */ { get throws {
 		
 		
@@ -54834,6 +56015,8 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 	}}
 	
 	
+	/// Gets a collection of the constructors declared by the current type.
+	/// A collection of the constructors declared by the current type.
 	public var declaredConstructors: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.ConstructorInfo> */ { get throws {
 		
 		
@@ -54855,6 +56038,8 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 	}}
 	
 	
+	/// Gets a collection of the events defined by the current type.
+	/// A collection of the events defined by the current type.
 	public var declaredEvents: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.EventInfo> */ { get throws {
 		
 		
@@ -54876,6 +56061,8 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 	}}
 	
 	
+	/// Gets a collection of the fields defined by the current type.
+	/// A collection of the fields defined by the current type.
 	public var declaredFields: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.FieldInfo> */ { get throws {
 		
 		
@@ -54897,6 +56084,8 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 	}}
 	
 	
+	/// Gets a collection of the members defined by the current type.
+	/// A collection of the members defined by the current type.
 	public var declaredMembers: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.MemberInfo> */ { get throws {
 		
 		
@@ -54918,6 +56107,8 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 	}}
 	
 	
+	/// Gets a collection of the methods defined by the current type.
+	/// A collection of the methods defined by the current type.
 	public var declaredMethods: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.MethodInfo> */ { get throws {
 		
 		
@@ -54939,6 +56130,8 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 	}}
 	
 	
+	/// Gets a collection of the nested types defined by the current type.
+	/// A collection of nested types defined by the current type.
 	public var declaredNestedTypes: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.TypeInfo> */ { get throws {
 		
 		
@@ -54960,6 +56153,8 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 	}}
 	
 	
+	/// Gets a collection of the properties defined by the current type.
+	/// A collection of the properties defined by the current type.
 	public var declaredProperties: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Reflection.PropertyInfo> */ { get throws {
 		
 		
@@ -54981,6 +56176,8 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 	}}
 	
 	
+	/// Gets a collection of the interfaces implemented by the current type.
+	/// A collection of the interfaces implemented by the current type.
 	public var implementedInterfaces: System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Type> */ { get throws {
 		
 		
@@ -55277,6 +56474,8 @@ public class System_Reflection_IReflect /* System.Reflection.IReflect */: DNObje
 		
 	}
 	
+	/// Gets the underlying type that represents the   object.
+	/// The underlying type that represents the   object.
 	public var underlyingSystemType: System_Type /* System.Type */ { get throws {
 		
 		
@@ -55627,6 +56826,8 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 		
 	}
 	
+	/// Gets a   value indicating that this member is an event.
+	/// A   value indicating that this member is an event.
 	public override var memberType: System_Reflection_MemberTypes /* System.Reflection.MemberTypes */ { get throws {
 		
 		
@@ -55648,6 +56849,8 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 	}}
 	
 	
+	/// Gets the attributes for this event.
+	/// The read-only attributes for this event.
 	public var attributes: System_Reflection_EventAttributes /* System.Reflection.EventAttributes */ { get throws {
 		
 		
@@ -55669,6 +56872,8 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 	}}
 	
 	
+	/// Gets a value indicating whether the   has a name with a special meaning.
+	/// if this event has a special name; otherwise,  .
 	public var isSpecialName: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -55688,6 +56893,8 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 	}}
 	
 	
+	/// Gets the   object for the   method of the event, including non-public methods.
+	/// The   object for the   method.
 	public var addMethod: System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ { get throws {
 		
 		
@@ -55709,6 +56916,8 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 	}}
 	
 	
+	/// Gets the   object for removing a method of the event, including non-public methods.
+	/// The   object for removing a method of the event.
 	public var removeMethod: System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ { get throws {
 		
 		
@@ -55730,6 +56939,8 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 	}}
 	
 	
+	/// Gets the method that is called when the event is raised, including non-public methods.
+	/// The method that is called when the event is raised.
 	public var raiseMethod: System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ { get throws {
 		
 		
@@ -55751,6 +56962,9 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 	}}
 	
 	
+	/// Gets a value indicating whether the event is multicast.
+	/// The caller does not have the required permission.
+	/// if the delegate is an instance of a multicast delegate; otherwise,  .
 	public var isMulticast: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -55770,6 +56984,9 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 	}}
 	
 	
+	/// Gets the   object of the underlying event-handler delegate associated with this event.
+	/// The caller does not have the required permission.
+	/// A read-only   object representing the delegate event handler.
 	public var eventHandlerType: System_Type? /* System.Type */ { get throws {
 		
 		
@@ -55844,6 +57061,8 @@ public class System_Reflection_ManifestResourceInfo /* System.Reflection.Manifes
 		
 	}
 	
+	/// Gets the containing assembly for the manifest resource.
+	/// The manifest resource's containing assembly.
 	public var referencedAssembly: System_Reflection_Assembly? /* System.Reflection.Assembly */ { get throws {
 		
 		
@@ -55865,6 +57084,8 @@ public class System_Reflection_ManifestResourceInfo /* System.Reflection.Manifes
 	}}
 	
 	
+	/// Gets the name of the file that contains the manifest resource, if it is not the same as the manifest file.
+	/// The manifest resource's file name.
 	public var fileName: System_String? /* System.String */ { get throws {
 		
 		
@@ -55886,6 +57107,8 @@ public class System_Reflection_ManifestResourceInfo /* System.Reflection.Manifes
 	}}
 	
 	
+	/// Gets the manifest resource's location.
+	/// A bitwise combination of   flags that indicates the location of the manifest resource.
 	public var resourceLocation: System_Reflection_ResourceLocation /* System.Reflection.ResourceLocation */ { get throws {
 		
 		
@@ -55970,6 +57193,8 @@ public class System_ResolveEventArgs /* System.ResolveEventArgs */: System_Event
 		
 	}
 	
+	/// Gets the name of the item to resolve.
+	/// The name of the item to resolve.
 	public var name: System_String /* System.String */ { get throws {
 		
 		
@@ -55991,6 +57216,8 @@ public class System_ResolveEventArgs /* System.ResolveEventArgs */: System_Event
 	}}
 	
 	
+	/// Gets the assembly whose dependency is being resolved.
+	/// The assembly that requested the item specified by the   property.
 	public var requestingAssembly: System_Reflection_Assembly? /* System.Reflection.Assembly */ { get throws {
 		
 		
@@ -56054,6 +57281,7 @@ public class System_EventArgs /* System.EventArgs */: System_Object {
 		
 	}
 	
+	/// Provides a value to use with events that do not have event data.
 	public class var empty: System_EventArgs /* System.EventArgs */ { get {
 		
 		
@@ -56894,6 +58122,8 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 		
 	}
 	
+	/// Gets a value that indicates whether the scalar value associated with this   is within the ASCII encoding range.
+	/// if the scalar value associated is within the ASCII encoding range ([ U+0000..U+007F ]) and therefore representable by a single UTF-8 code unit; otherwise,  .
 	public var isAscii: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -56913,6 +58143,8 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 	}}
 	
 	
+	/// Gets a value that indicates whether the scalar value associated with this   is within the BMP encoding range.
+	/// if the scalar value associated is within the BMP encoding range ([ U+0000..U+FFFF ]) and therefore representable by a single UTF-16 code unit; otherwise,  .
 	public var isBmp: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -56932,6 +58164,8 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 	}}
 	
 	
+	/// Gets the Unicode plane (0 to 16, inclusive) that contains this scalar.
+	/// The Unicode plane (0 to 16, inclusive) that contains this scalar.
 	public var plane: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -56951,6 +58185,8 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 	}}
 	
 	
+	/// Gets a   instance that represents the Unicode replacement character U+FFFD.
+	/// A   instance that represents the Unicode replacement character U+FFFD.
 	public class var replacementChar: System_Text_Rune /* System.Text.Rune */ { get throws {
 		
 		
@@ -56972,6 +58208,8 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 	}}
 	
 	
+	/// Gets the length in code units ( ) of the UTF-16 sequence required to represent this scalar value.
+	/// The length in code units ( ) of the UTF-16 sequence required to represent this scalar value.
 	public var utf16SequenceLength: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -56991,6 +58229,8 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 	}}
 	
 	
+	/// Gets the length in code units of the UTF-8 sequence required to represent this scalar value.
+	/// The length in code units of the UTF-8 sequence required to represent this scalar value.
 	public var utf8SequenceLength: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -57010,6 +58250,8 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 	}}
 	
 	
+	/// Gets the Unicode scalar value as an integer.
+	/// The Unicode scalar value as an integer.
 	public var value: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -57153,6 +58395,8 @@ public class System_Globalization_SortKey /* System.Globalization.SortKey */: Sy
 		
 	}
 	
+	/// Gets the original string used to create the current   object.
+	/// The original string used to create the current   object.
 	public var originalString: System_String /* System.String */ { get throws {
 		
 		
@@ -57174,6 +58418,8 @@ public class System_Globalization_SortKey /* System.Globalization.SortKey */: Sy
 	}}
 	
 	
+	/// Gets the byte array representing the current   object.
+	/// A byte array representing the current   object.
 	public var keyData: System_Byte_Array /* System.Byte[] */ { get throws {
 		
 		
@@ -57294,6 +58540,8 @@ public class System_Globalization_SortVersion /* System.Globalization.SortVersio
 		
 	}
 	
+	/// Gets the full version number of the   object.
+	/// The version number of this   object.
 	public var fullVersion: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -57313,6 +58561,8 @@ public class System_Globalization_SortVersion /* System.Globalization.SortVersio
 	}}
 	
 	
+	/// Gets a globally unique identifier for this   object.
+	/// A globally unique identifier for this   object.
 	public var sortId: System_Guid /* System.Guid */ { get throws {
 		
 		
@@ -57563,6 +58813,8 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		
 	}
 	
+	/// Gets the American National Standards Institute (ANSI) code page used by the writing system represented by the current  .
+	/// The ANSI code page used by the writing system represented by the current  .
 	public var aNSICodePage: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -57582,6 +58834,8 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 	}}
 	
 	
+	/// Gets the original equipment manufacturer (OEM) code page used by the writing system represented by the current  .
+	/// The OEM code page used by the writing system represented by the current  .
 	public var oEMCodePage: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -57601,6 +58855,8 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 	}}
 	
 	
+	/// Gets the Macintosh code page used by the writing system represented by the current  .
+	/// The Macintosh code page used by the writing system represented by the current  .
 	public var macCodePage: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -57620,6 +58876,8 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 	}}
 	
 	
+	/// Gets the Extended Binary Coded Decimal Interchange Code (EBCDIC) code page used by the writing system represented by the current  .
+	/// The EBCDIC code page used by the writing system represented by the current  .
 	public var eBCDICCodePage: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -57639,6 +58897,8 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 	}}
 	
 	
+	/// Gets the culture identifier for the culture associated with the current   object.
+	/// A number that identifies the culture from which the current   object was created.
 	public var lCID: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -57658,6 +58918,8 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 	}}
 	
 	
+	/// Gets the name of the culture associated with the current   object.
+	/// The name of a culture.
 	public var cultureName: System_String /* System.String */ { get throws {
 		
 		
@@ -57679,6 +58941,8 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 	}}
 	
 	
+	/// Gets a value indicating whether the current   object is read-only.
+	/// if the current   object is read-only; otherwise,  .
 	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -57698,6 +58962,10 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 	}}
 	
 	
+	/// Gets or sets the string that separates items in a list.
+	/// The value in a set operation is null.
+	/// In a set operation, the current   object is read-only.
+	/// The string that separates items in a list.
 	public var listSeparator: System_String /* System.String */ { get throws {
 		
 		
@@ -57717,6 +58985,10 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		return __returnValue
 		
 	}}
+	/// Gets or sets the string that separates items in a list.
+	/// The value in a set operation is null.
+	/// In a set operation, the current   object is read-only.
+	/// The string that separates items in a list.
 	public func listSeparator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -57736,6 +59008,8 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 	}
 	
 	
+	/// Gets a value indicating whether the current   object represents a writing system where text flows from right to left.
+	/// if text flows from right to left; otherwise,  .
 	public var isRightToLeft: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -57880,6 +59154,8 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		
 	}
 	
+	/// Gets a read-only   object that is culture-independent (invariant).
+	/// A read-only  object that is culture-independent (invariant).
 	public class var invariantInfo: System_Globalization_NumberFormatInfo /* System.Globalization.NumberFormatInfo */ { get throws {
 		
 		
@@ -57901,6 +59177,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}}
 	
 	
+	/// Gets or sets the number of decimal places to use in currency values.
+	/// The property is being set to a value that is less than 0 or greater than 99.
+	/// The property is being set and the   object is read-only.
+	/// The number of decimal places to use in currency values. The default for   is 2.
 	public var currencyDecimalDigits: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -57918,6 +59198,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValueC
 		
 	}}
+	/// Gets or sets the number of decimal places to use in currency values.
+	/// The property is being set to a value that is less than 0 or greater than 99.
+	/// The property is being set and the   object is read-only.
+	/// The number of decimal places to use in currency values. The default for   is 2.
 	public func currencyDecimalDigits_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -57936,6 +59220,11 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the string to use as the decimal separator in currency values.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The property is being set to an empty string.
+	/// The string to use as the decimal separator in currency values. The default for   is ".".
 	public var currencyDecimalSeparator: System_String /* System.String */ { get throws {
 		
 		
@@ -57955,6 +59244,11 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValue
 		
 	}}
+	/// Gets or sets the string to use as the decimal separator in currency values.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The property is being set to an empty string.
+	/// The string to use as the decimal separator in currency values. The default for   is ".".
 	public func currencyDecimalSeparator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -57974,6 +59268,8 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets a value that indicates whether this   object is read-only.
+	/// if the   is read-only; otherwise,  .
 	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -57993,6 +59289,13 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}}
 	
 	
+	/// Gets or sets the number of digits in each group to the left of the decimal in currency values.
+	/// The property is being set to  .
+	/// The property is being set and the array contains an entry that is less than 0 or greater than 9.
+	/// -or-
+	/// The property is being set and the array contains an entry, other than the last entry, that is set to 0.
+	/// The property is being set and the   object is read-only.
+	/// The number of digits in each group to the left of the decimal in currency values. The default for   is a one-dimensional array with only one element, which is set to 3.
 	public var currencyGroupSizes: System_Int32_Array /* System.Int32[] */ { get throws {
 		
 		
@@ -58012,6 +59315,13 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValue
 		
 	}}
+	/// Gets or sets the number of digits in each group to the left of the decimal in currency values.
+	/// The property is being set to  .
+	/// The property is being set and the array contains an entry that is less than 0 or greater than 9.
+	/// -or-
+	/// The property is being set and the array contains an entry, other than the last entry, that is set to 0.
+	/// The property is being set and the   object is read-only.
+	/// The number of digits in each group to the left of the decimal in currency values. The default for   is a one-dimensional array with only one element, which is set to 3.
 	public func currencyGroupSizes_set(_ value: System_Int32_Array? /* System.Int32[] */) throws {
 		let valueC = value?.__handle
 		
@@ -58031,6 +59341,13 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the number of digits in each group to the left of the decimal in numeric values.
+	/// The property is being set to  .
+	/// The property is being set and the array contains an entry that is less than 0 or greater than 9.
+	/// -or-
+	/// The property is being set and the array contains an entry, other than the last entry, that is set to 0.
+	/// The property is being set and the   object is read-only.
+	/// The number of digits in each group to the left of the decimal in numeric values. The default for   is a one-dimensional array with only one element, which is set to 3.
 	public var numberGroupSizes: System_Int32_Array /* System.Int32[] */ { get throws {
 		
 		
@@ -58050,6 +59367,13 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValue
 		
 	}}
+	/// Gets or sets the number of digits in each group to the left of the decimal in numeric values.
+	/// The property is being set to  .
+	/// The property is being set and the array contains an entry that is less than 0 or greater than 9.
+	/// -or-
+	/// The property is being set and the array contains an entry, other than the last entry, that is set to 0.
+	/// The property is being set and the   object is read-only.
+	/// The number of digits in each group to the left of the decimal in numeric values. The default for   is a one-dimensional array with only one element, which is set to 3.
 	public func numberGroupSizes_set(_ value: System_Int32_Array? /* System.Int32[] */) throws {
 		let valueC = value?.__handle
 		
@@ -58069,6 +59393,13 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the number of digits in each group to the left of the decimal in percent values.
+	/// The property is being set to  .
+	/// The property is being set and the array contains an entry that is less than 0 or greater than 9.
+	/// -or-
+	/// The property is being set and the array contains an entry, other than the last entry, that is set to 0.
+	/// The property is being set and the   object is read-only.
+	/// The number of digits in each group to the left of the decimal in percent values. The default for   is a one-dimensional array with only one element, which is set to 3.
 	public var percentGroupSizes: System_Int32_Array /* System.Int32[] */ { get throws {
 		
 		
@@ -58088,6 +59419,13 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValue
 		
 	}}
+	/// Gets or sets the number of digits in each group to the left of the decimal in percent values.
+	/// The property is being set to  .
+	/// The property is being set and the array contains an entry that is less than 0 or greater than 9.
+	/// -or-
+	/// The property is being set and the array contains an entry, other than the last entry, that is set to 0.
+	/// The property is being set and the   object is read-only.
+	/// The number of digits in each group to the left of the decimal in percent values. The default for   is a one-dimensional array with only one element, which is set to 3.
 	public func percentGroupSizes_set(_ value: System_Int32_Array? /* System.Int32[] */) throws {
 		let valueC = value?.__handle
 		
@@ -58107,6 +59445,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the string that separates groups of digits to the left of the decimal in currency values.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string that separates groups of digits to the left of the decimal in currency values. The default for   is ",".
 	public var currencyGroupSeparator: System_String /* System.String */ { get throws {
 		
 		
@@ -58126,6 +59468,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValue
 		
 	}}
+	/// Gets or sets the string that separates groups of digits to the left of the decimal in currency values.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string that separates groups of digits to the left of the decimal in currency values. The default for   is ",".
 	public func currencyGroupSeparator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -58145,6 +59491,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the string to use as the currency symbol.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string to use as the currency symbol. The default for   is "¤".
 	public var currencySymbol: System_String /* System.String */ { get throws {
 		
 		
@@ -58164,6 +59514,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValue
 		
 	}}
+	/// Gets or sets the string to use as the currency symbol.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string to use as the currency symbol. The default for   is "¤".
 	public func currencySymbol_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -58183,6 +59537,8 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets a read-only   that formats values based on the current culture.
+	/// A read-only   based on the culture of the current thread.
 	public class var currentInfo: System_Globalization_NumberFormatInfo /* System.Globalization.NumberFormatInfo */ { get throws {
 		
 		
@@ -58204,6 +59560,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}}
 	
 	
+	/// Gets or sets the string that represents the IEEE NaN (not a number) value.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string that represents the IEEE NaN (not a number) value. The default for   is "NaN".
 	public var naNSymbol: System_String /* System.String */ { get throws {
 		
 		
@@ -58223,6 +59583,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValue
 		
 	}}
+	/// Gets or sets the string that represents the IEEE NaN (not a number) value.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string that represents the IEEE NaN (not a number) value. The default for   is "NaN".
 	public func naNSymbol_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -58242,6 +59606,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the format pattern for negative currency values.
+	/// The property is set to a value that's less than 0 or greater than 16. On .NET Core 3.1 and earlier versions, this exception is thrown if the value is greater than 15.
+	/// The property is being set and the   object is read-only.
+	/// The format pattern for negative currency values. The default for   is 0, which represents "($n)", where "$" is the   and   is a number.
 	public var currencyNegativePattern: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -58259,6 +59627,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValueC
 		
 	}}
+	/// Gets or sets the format pattern for negative currency values.
+	/// The property is set to a value that's less than 0 or greater than 16. On .NET Core 3.1 and earlier versions, this exception is thrown if the value is greater than 15.
+	/// The property is being set and the   object is read-only.
+	/// The format pattern for negative currency values. The default for   is 0, which represents "($n)", where "$" is the   and   is a number.
 	public func currencyNegativePattern_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -58277,6 +59649,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the format pattern for negative numeric values.
+	/// The property is being set to a value that is less than 0 or greater than 4.
+	/// The property is being set and the   object is read-only.
+	/// The format pattern for negative numeric values.
 	public var numberNegativePattern: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -58294,6 +59670,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValueC
 		
 	}}
+	/// Gets or sets the format pattern for negative numeric values.
+	/// The property is being set to a value that is less than 0 or greater than 4.
+	/// The property is being set and the   object is read-only.
+	/// The format pattern for negative numeric values.
 	public func numberNegativePattern_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -58312,6 +59692,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the format pattern for positive percent values.
+	/// The property is being set to a value that is less than 0 or greater than 3.
+	/// The property is being set and the   object is read-only.
+	/// The format pattern for positive percent values. The default for   is 0, which represents "n %", where "%" is the   and   is a number.
 	public var percentPositivePattern: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -58329,6 +59713,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValueC
 		
 	}}
+	/// Gets or sets the format pattern for positive percent values.
+	/// The property is being set to a value that is less than 0 or greater than 3.
+	/// The property is being set and the   object is read-only.
+	/// The format pattern for positive percent values. The default for   is 0, which represents "n %", where "%" is the   and   is a number.
 	public func percentPositivePattern_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -58347,6 +59735,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the format pattern for negative percent values.
+	/// The property is being set to a value that is less than 0 or greater than 11.
+	/// The property is being set and the   object is read-only.
+	/// The format pattern for negative percent values. The default for   is 0, which represents "-n %", where "%" is the   and   is a number.
 	public var percentNegativePattern: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -58364,6 +59756,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValueC
 		
 	}}
+	/// Gets or sets the format pattern for negative percent values.
+	/// The property is being set to a value that is less than 0 or greater than 11.
+	/// The property is being set and the   object is read-only.
+	/// The format pattern for negative percent values. The default for   is 0, which represents "-n %", where "%" is the   and   is a number.
 	public func percentNegativePattern_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -58382,6 +59778,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the string that represents negative infinity.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string that represents negative infinity. The default for   is "-Infinity".
 	public var negativeInfinitySymbol: System_String /* System.String */ { get throws {
 		
 		
@@ -58401,6 +59801,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValue
 		
 	}}
+	/// Gets or sets the string that represents negative infinity.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string that represents negative infinity. The default for   is "-Infinity".
 	public func negativeInfinitySymbol_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -58420,6 +59824,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the string that denotes that the associated number is negative.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string that denotes that the associated number is negative. The default for   is "-".
 	public var negativeSign: System_String /* System.String */ { get throws {
 		
 		
@@ -58439,6 +59847,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValue
 		
 	}}
+	/// Gets or sets the string that denotes that the associated number is negative.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string that denotes that the associated number is negative. The default for   is "-".
 	public func negativeSign_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -58458,6 +59870,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the number of decimal places to use in numeric values.
+	/// The property is being set to a value that is less than 0 or greater than 99.
+	/// The property is being set and the   object is read-only.
+	/// The number of decimal places to use in numeric values. The default for   is 2.
 	public var numberDecimalDigits: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -58475,6 +59891,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValueC
 		
 	}}
+	/// Gets or sets the number of decimal places to use in numeric values.
+	/// The property is being set to a value that is less than 0 or greater than 99.
+	/// The property is being set and the   object is read-only.
+	/// The number of decimal places to use in numeric values. The default for   is 2.
 	public func numberDecimalDigits_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -58493,6 +59913,11 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the string to use as the decimal separator in numeric values.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The property is being set to an empty string.
+	/// The string to use as the decimal separator in numeric values. The default for   is ".".
 	public var numberDecimalSeparator: System_String /* System.String */ { get throws {
 		
 		
@@ -58512,6 +59937,11 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValue
 		
 	}}
+	/// Gets or sets the string to use as the decimal separator in numeric values.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The property is being set to an empty string.
+	/// The string to use as the decimal separator in numeric values. The default for   is ".".
 	public func numberDecimalSeparator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -58531,6 +59961,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the string that separates groups of digits to the left of the decimal in numeric values.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string that separates groups of digits to the left of the decimal in numeric values. The default for   is ",".
 	public var numberGroupSeparator: System_String /* System.String */ { get throws {
 		
 		
@@ -58550,6 +59984,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValue
 		
 	}}
+	/// Gets or sets the string that separates groups of digits to the left of the decimal in numeric values.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string that separates groups of digits to the left of the decimal in numeric values. The default for   is ",".
 	public func numberGroupSeparator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -58569,6 +60007,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the format pattern for positive currency values.
+	/// The property is being set to a value that is less than 0 or greater than 3.
+	/// The property is being set and the   object is read-only.
+	/// The format pattern for positive currency values. The default for   is 0, which represents "$n", where "$" is the   and   is a number.
 	public var currencyPositivePattern: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -58586,6 +60028,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValueC
 		
 	}}
+	/// Gets or sets the format pattern for positive currency values.
+	/// The property is being set to a value that is less than 0 or greater than 3.
+	/// The property is being set and the   object is read-only.
+	/// The format pattern for positive currency values. The default for   is 0, which represents "$n", where "$" is the   and   is a number.
 	public func currencyPositivePattern_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -58604,6 +60050,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the string that represents positive infinity.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string that represents positive infinity. The default for   is "Infinity".
 	public var positiveInfinitySymbol: System_String /* System.String */ { get throws {
 		
 		
@@ -58623,6 +60073,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValue
 		
 	}}
+	/// Gets or sets the string that represents positive infinity.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string that represents positive infinity. The default for   is "Infinity".
 	public func positiveInfinitySymbol_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -58642,6 +60096,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the string that denotes that the associated number is positive.
+	/// In a set operation, the value to be assigned is  .
+	/// The property is being set and the   object is read-only.
+	/// The string that denotes that the associated number is positive. The default for   is "+".
 	public var positiveSign: System_String /* System.String */ { get throws {
 		
 		
@@ -58661,6 +60119,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValue
 		
 	}}
+	/// Gets or sets the string that denotes that the associated number is positive.
+	/// In a set operation, the value to be assigned is  .
+	/// The property is being set and the   object is read-only.
+	/// The string that denotes that the associated number is positive. The default for   is "+".
 	public func positiveSign_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -58680,6 +60142,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the number of decimal places to use in percent values.
+	/// The property is being set to a value that is less than 0 or greater than 99.
+	/// The property is being set and the   object is read-only.
+	/// The number of decimal places to use in percent values. The default for   is 2.
 	public var percentDecimalDigits: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -58697,6 +60163,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValueC
 		
 	}}
+	/// Gets or sets the number of decimal places to use in percent values.
+	/// The property is being set to a value that is less than 0 or greater than 99.
+	/// The property is being set and the   object is read-only.
+	/// The number of decimal places to use in percent values. The default for   is 2.
 	public func percentDecimalDigits_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -58715,6 +60185,11 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the string to use as the decimal separator in percent values.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The property is being set to an empty string.
+	/// The string to use as the decimal separator in percent values. The default for   is ".".
 	public var percentDecimalSeparator: System_String /* System.String */ { get throws {
 		
 		
@@ -58734,6 +60209,11 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValue
 		
 	}}
+	/// Gets or sets the string to use as the decimal separator in percent values.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The property is being set to an empty string.
+	/// The string to use as the decimal separator in percent values. The default for   is ".".
 	public func percentDecimalSeparator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -58753,6 +60233,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the string that separates groups of digits to the left of the decimal in percent values.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string that separates groups of digits to the left of the decimal in percent values. The default for   is ",".
 	public var percentGroupSeparator: System_String /* System.String */ { get throws {
 		
 		
@@ -58772,6 +60256,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValue
 		
 	}}
+	/// Gets or sets the string that separates groups of digits to the left of the decimal in percent values.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string that separates groups of digits to the left of the decimal in percent values. The default for   is ",".
 	public func percentGroupSeparator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -58791,6 +60279,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the string to use as the percent symbol.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string to use as the percent symbol. The default for   is "%".
 	public var percentSymbol: System_String /* System.String */ { get throws {
 		
 		
@@ -58810,6 +60302,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValue
 		
 	}}
+	/// Gets or sets the string to use as the percent symbol.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string to use as the percent symbol. The default for   is "%".
 	public func percentSymbol_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -58829,6 +60325,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets the string to use as the per mille symbol.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string to use as the per mille symbol. The default for   is "‰", which is the Unicode character U+2030.
 	public var perMilleSymbol: System_String /* System.String */ { get throws {
 		
 		
@@ -58848,6 +60348,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValue
 		
 	}}
+	/// Gets or sets the string to use as the per mille symbol.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string to use as the per mille symbol. The default for   is "‰", which is the Unicode character U+2030.
 	public func perMilleSymbol_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -58867,6 +60371,19 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets a string array of native digits equivalent to the Western digits 0 through 9.
+	/// The current   object is read-only.
+	/// In a set operation, the value is  .
+	/// -or-
+	/// In a set operation, an element of the value array is  .
+	/// In a set operation, the value array does not contain 10 elements.
+	/// -or-
+	/// In a set operation, an element of the value array does not contain either a single   object or a pair of   objects that comprise a surrogate pair.
+	/// -or-
+	/// In a set operation, an element of the value array is not a number digit as defined by the Unicode Standard. That is, the digit in the array element does not have the Unicode   (Nd) General Category value.
+	/// -or-
+	/// In a set operation, the numeric value of an element in the value array does not correspond to the element's position in the array. That is, the element at index 0, which is the first element of the array, does not have a numeric value of 0, or the element at index 1 does not have a numeric value of 1.
+	/// A string array that contains the native equivalent of the Western digits 0 through 9. The default is an array having the elements "0", "1", "2", "3", "4", "5", "6", "7", "8", and "9".
 	public var nativeDigits: System_String_Array /* System.String[] */ { get throws {
 		
 		
@@ -58886,6 +60403,19 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValue
 		
 	}}
+	/// Gets or sets a string array of native digits equivalent to the Western digits 0 through 9.
+	/// The current   object is read-only.
+	/// In a set operation, the value is  .
+	/// -or-
+	/// In a set operation, an element of the value array is  .
+	/// In a set operation, the value array does not contain 10 elements.
+	/// -or-
+	/// In a set operation, an element of the value array does not contain either a single   object or a pair of   objects that comprise a surrogate pair.
+	/// -or-
+	/// In a set operation, an element of the value array is not a number digit as defined by the Unicode Standard. That is, the digit in the array element does not have the Unicode   (Nd) General Category value.
+	/// -or-
+	/// In a set operation, the numeric value of an element in the value array does not correspond to the element's position in the array. That is, the element at index 0, which is the first element of the array, does not have a numeric value of 0, or the element at index 1 does not have a numeric value of 1.
+	/// A string array that contains the native equivalent of the Western digits 0 through 9. The default is an array having the elements "0", "1", "2", "3", "4", "5", "6", "7", "8", and "9".
 	public func nativeDigits_set(_ value: System_String_Array? /* System.String[] */) throws {
 		let valueC = value?.__handle
 		
@@ -58905,6 +60435,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 	}
 	
 	
+	/// Gets or sets a value that specifies how the graphical user interface displays the shape of a digit.
+	/// The current   object is read-only.
+	/// The value in a set operation is not a valid   value.
+	/// One of the enumeration values that specifies the culture-specific digit shape.
 	public var digitSubstitution: System_Globalization_DigitShapes /* System.Globalization.DigitShapes */ { get throws {
 		
 		
@@ -58924,6 +60458,10 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 		return __returnValue
 		
 	}}
+	/// Gets or sets a value that specifies how the graphical user interface displays the shape of a digit.
+	/// The current   object is read-only.
+	/// The value in a set operation is not a valid   value.
+	/// One of the enumeration values that specifies the culture-specific digit shape.
 	public func digitSubstitution_set(_ value: System_Globalization_DigitShapes /* System.Globalization.DigitShapes */) throws {
 		let valueC = value.cValue
 		
@@ -59290,6 +60828,8 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		
 	}
 	
+	/// Gets the default read-only   object that is culture-independent (invariant).
+	/// A read-only object that is culture-independent (invariant).
 	public class var invariantInfo: System_Globalization_DateTimeFormatInfo /* System.Globalization.DateTimeFormatInfo */ { get throws {
 		
 		
@@ -59311,6 +60851,8 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}}
 	
 	
+	/// Gets a read-only   object that formats values based on the current culture.
+	/// A read-only   object based on the   object for the current thread.
 	public class var currentInfo: System_Globalization_DateTimeFormatInfo /* System.Globalization.DateTimeFormatInfo */ { get throws {
 		
 		
@@ -59332,6 +60874,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}}
 	
 	
+	/// Gets or sets the string designator for hours that are "ante meridiem" (before noon).
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string designator for hours that are ante meridiem. The default for   is "AM".
 	public var aMDesignator: System_String /* System.String */ { get throws {
 		
 		
@@ -59351,6 +60897,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets the string designator for hours that are "ante meridiem" (before noon).
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string designator for hours that are ante meridiem. The default for   is "AM".
 	public func aMDesignator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -59370,6 +60920,11 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets or sets the calendar to use for the current culture.
+	/// The property is being set to  .
+	/// The property is being set to a   object that is not valid for the current culture.
+	/// The property is being set and the   object is read-only.
+	/// The calendar to use for the current culture. The default for   is a   object.
 	public var calendar: System_Globalization_Calendar /* System.Globalization.Calendar */ { get throws {
 		
 		
@@ -59389,6 +60944,11 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets the calendar to use for the current culture.
+	/// The property is being set to  .
+	/// The property is being set to a   object that is not valid for the current culture.
+	/// The property is being set and the   object is read-only.
+	/// The calendar to use for the current culture. The default for   is a   object.
 	public func calendar_set(_ value: System_Globalization_Calendar? /* System.Globalization.Calendar */) throws {
 		let valueC = value?.__handle
 		
@@ -59408,6 +60968,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets or sets the string that separates the components of a date, that is, the year, month, and day.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string that separates the components of a date, that is, the year, month, and day. The default for   is "/".
 	public var dateSeparator: System_String /* System.String */ { get throws {
 		
 		
@@ -59427,6 +60991,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets the string that separates the components of a date, that is, the year, month, and day.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string that separates the components of a date, that is, the year, month, and day. The default for   is "/".
 	public func dateSeparator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -59446,6 +61014,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets or sets the first day of the week.
+	/// The property is being set to a value that is not a valid   value.
+	/// The property is being set and the   object is read-only.
+	/// An enumeration value that represents the first day of the week. The default for   is  .
 	public var firstDayOfWeek: System_DayOfWeek /* System.DayOfWeek */ { get throws {
 		
 		
@@ -59465,6 +61037,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets the first day of the week.
+	/// The property is being set to a value that is not a valid   value.
+	/// The property is being set and the   object is read-only.
+	/// An enumeration value that represents the first day of the week. The default for   is  .
 	public func firstDayOfWeek_set(_ value: System_DayOfWeek /* System.DayOfWeek */) throws {
 		let valueC = value.cValue
 		
@@ -59484,6 +61060,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets or sets a value that specifies which rule is used to determine the first calendar week of the year.
+	/// The property is being set to a value that is not a valid   value.
+	/// In a set operation, the current   object is read-only.
+	/// A value that determines the first calendar week of the year. The default for   is  .
 	public var calendarWeekRule: System_Globalization_CalendarWeekRule /* System.Globalization.CalendarWeekRule */ { get throws {
 		
 		
@@ -59503,6 +61083,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets a value that specifies which rule is used to determine the first calendar week of the year.
+	/// The property is being set to a value that is not a valid   value.
+	/// In a set operation, the current   object is read-only.
+	/// A value that determines the first calendar week of the year. The default for   is  .
 	public func calendarWeekRule_set(_ value: System_Globalization_CalendarWeekRule /* System.Globalization.CalendarWeekRule */) throws {
 		let valueC = value.cValue
 		
@@ -59522,6 +61106,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets or sets the custom format string for a long date and long time value.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The custom format string for a long date and long time value.
 	public var fullDateTimePattern: System_String /* System.String */ { get throws {
 		
 		
@@ -59541,6 +61129,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets the custom format string for a long date and long time value.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The custom format string for a long date and long time value.
 	public func fullDateTimePattern_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -59560,6 +61152,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets or sets the custom format string for a long date value.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The custom format string for a long date value.
 	public var longDatePattern: System_String /* System.String */ { get throws {
 		
 		
@@ -59579,6 +61175,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets the custom format string for a long date value.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The custom format string for a long date value.
 	public func longDatePattern_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -59598,6 +61198,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets or sets the custom format string for a long time value.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The format pattern for a long time value.
 	public var longTimePattern: System_String /* System.String */ { get throws {
 		
 		
@@ -59617,6 +61221,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets the custom format string for a long time value.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The format pattern for a long time value.
 	public func longTimePattern_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -59636,6 +61244,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets or sets the custom format string for a month and day value.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The custom format string for a month and day value.
 	public var monthDayPattern: System_String /* System.String */ { get throws {
 		
 		
@@ -59655,6 +61267,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets the custom format string for a month and day value.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The custom format string for a month and day value.
 	public func monthDayPattern_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -59674,6 +61290,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets or sets the string designator for hours that are "post meridiem" (after noon).
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string designator for hours that are "post meridiem" (after noon). The default for   is "PM".
 	public var pMDesignator: System_String /* System.String */ { get throws {
 		
 		
@@ -59693,6 +61313,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets the string designator for hours that are "post meridiem" (after noon).
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string designator for hours that are "post meridiem" (after noon). The default for   is "PM".
 	public func pMDesignator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -59712,6 +61336,8 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets the custom format string for a time value that is based on the Internet Engineering Task Force (IETF) Request for Comments (RFC) 1123 specification.
+	/// The custom format string for a time value that is based on the IETF RFC 1123 specification.
 	public var rFC1123Pattern: System_String /* System.String */ { get throws {
 		
 		
@@ -59733,6 +61359,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}}
 	
 	
+	/// Gets or sets the custom format string for a short date value.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The custom format string for a short date value.
 	public var shortDatePattern: System_String /* System.String */ { get throws {
 		
 		
@@ -59752,6 +61382,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets the custom format string for a short date value.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The custom format string for a short date value.
 	public func shortDatePattern_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -59771,6 +61405,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets or sets the custom format string for a short time value.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The custom format string for a short time value.
 	public var shortTimePattern: System_String /* System.String */ { get throws {
 		
 		
@@ -59790,6 +61428,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets the custom format string for a short time value.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The custom format string for a short time value.
 	public func shortTimePattern_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -59809,6 +61451,8 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets the custom format string for a sortable date and time value.
+	/// The custom format string for a sortable date and time value.
 	public var sortableDateTimePattern: System_String /* System.String */ { get throws {
 		
 		
@@ -59830,6 +61474,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}}
 	
 	
+	/// Gets or sets the string that separates the components of time, that is, the hour, minutes, and seconds.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string that separates the components of time. The default for   is ":".
 	public var timeSeparator: System_String /* System.String */ { get throws {
 		
 		
@@ -59849,6 +61497,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets the string that separates the components of time, that is, the hour, minutes, and seconds.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The string that separates the components of time. The default for   is ":".
 	public func timeSeparator_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -59868,6 +61520,8 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets the custom format string for a universal, sortable date and time string, as defined by ISO 8601.
+	/// The custom format string for a universal, sortable date and time string.
 	public var universalSortableDateTimePattern: System_String /* System.String */ { get throws {
 		
 		
@@ -59889,6 +61543,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}}
 	
 	
+	/// Gets or sets the custom format string for a year and month value.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The custom format string for a year and month value.
 	public var yearMonthPattern: System_String /* System.String */ { get throws {
 		
 		
@@ -59908,6 +61566,10 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets the custom format string for a year and month value.
+	/// The property is being set to  .
+	/// The property is being set and the   object is read-only.
+	/// The custom format string for a year and month value.
 	public func yearMonthPattern_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -59927,6 +61589,11 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets or sets a one-dimensional array of type   containing the culture-specific abbreviated names of the days of the week.
+	/// The property is being set to  .
+	/// The property is being set to an array that is multidimensional or that has a length that is not exactly 7.
+	/// The property is being set and the   object is read-only.
+	/// A one-dimensional array of type   containing the culture-specific abbreviated names of the days of the week. The array for   contains "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", and "Sat".
 	public var abbreviatedDayNames: System_String_Array /* System.String[] */ { get throws {
 		
 		
@@ -59946,6 +61613,11 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets a one-dimensional array of type   containing the culture-specific abbreviated names of the days of the week.
+	/// The property is being set to  .
+	/// The property is being set to an array that is multidimensional or that has a length that is not exactly 7.
+	/// The property is being set and the   object is read-only.
+	/// A one-dimensional array of type   containing the culture-specific abbreviated names of the days of the week. The array for   contains "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", and "Sat".
 	public func abbreviatedDayNames_set(_ value: System_String_Array? /* System.String[] */) throws {
 		let valueC = value?.__handle
 		
@@ -59965,6 +61637,11 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets or sets a string array of the shortest unique abbreviated day names associated with the current   object.
+	/// In a set operation, the array does not have exactly seven elements.
+	/// In a set operation, the value array or one of the elements of the value array is  .
+	/// In a set operation, the current   object is read-only.
+	/// A string array of day names.
 	public var shortestDayNames: System_String_Array /* System.String[] */ { get throws {
 		
 		
@@ -59984,6 +61661,11 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets a string array of the shortest unique abbreviated day names associated with the current   object.
+	/// In a set operation, the array does not have exactly seven elements.
+	/// In a set operation, the value array or one of the elements of the value array is  .
+	/// In a set operation, the current   object is read-only.
+	/// A string array of day names.
 	public func shortestDayNames_set(_ value: System_String_Array? /* System.String[] */) throws {
 		let valueC = value?.__handle
 		
@@ -60003,6 +61685,11 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets or sets a one-dimensional string array that contains the culture-specific full names of the days of the week.
+	/// The property is being set to  .
+	/// The property is being set to an array that is multidimensional or that has a length that is not exactly 7.
+	/// The property is being set and the   object is read-only.
+	/// A one-dimensional string array that contains the culture-specific full names of the days of the week. The array for   contains "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", and "Saturday".
 	public var dayNames: System_String_Array /* System.String[] */ { get throws {
 		
 		
@@ -60022,6 +61709,11 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets a one-dimensional string array that contains the culture-specific full names of the days of the week.
+	/// The property is being set to  .
+	/// The property is being set to an array that is multidimensional or that has a length that is not exactly 7.
+	/// The property is being set and the   object is read-only.
+	/// A one-dimensional string array that contains the culture-specific full names of the days of the week. The array for   contains "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", and "Saturday".
 	public func dayNames_set(_ value: System_String_Array? /* System.String[] */) throws {
 		let valueC = value?.__handle
 		
@@ -60041,6 +61733,11 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets or sets a one-dimensional string array that contains the culture-specific abbreviated names of the months.
+	/// The property is being set to  .
+	/// The property is being set to an array that is multidimensional or that has a length that is not exactly 13.
+	/// The property is being set and the   object is read-only.
+	/// A one-dimensional string array with 13 elements that contains the culture-specific abbreviated names of the months. For 12-month calendars, the 13th element of the array is an empty string. The array for   contains "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", and "".
 	public var abbreviatedMonthNames: System_String_Array /* System.String[] */ { get throws {
 		
 		
@@ -60060,6 +61757,11 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets a one-dimensional string array that contains the culture-specific abbreviated names of the months.
+	/// The property is being set to  .
+	/// The property is being set to an array that is multidimensional or that has a length that is not exactly 13.
+	/// The property is being set and the   object is read-only.
+	/// A one-dimensional string array with 13 elements that contains the culture-specific abbreviated names of the months. For 12-month calendars, the 13th element of the array is an empty string. The array for   contains "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", and "".
 	public func abbreviatedMonthNames_set(_ value: System_String_Array? /* System.String[] */) throws {
 		let valueC = value?.__handle
 		
@@ -60079,6 +61781,11 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets or sets a one-dimensional array of type   containing the culture-specific full names of the months.
+	/// The property is being set to  .
+	/// The property is being set to an array that is multidimensional or that has a length that is not exactly 13.
+	/// The property is being set and the   object is read-only.
+	/// A one-dimensional array of type   containing the culture-specific full names of the months. In a 12-month calendar, the 13th element of the array is an empty string. The array for   contains "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", and "".
 	public var monthNames: System_String_Array /* System.String[] */ { get throws {
 		
 		
@@ -60098,6 +61805,11 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets a one-dimensional array of type   containing the culture-specific full names of the months.
+	/// The property is being set to  .
+	/// The property is being set to an array that is multidimensional or that has a length that is not exactly 13.
+	/// The property is being set and the   object is read-only.
+	/// A one-dimensional array of type   containing the culture-specific full names of the months. In a 12-month calendar, the 13th element of the array is an empty string. The array for   contains "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", and "".
 	public func monthNames_set(_ value: System_String_Array? /* System.String[] */) throws {
 		let valueC = value?.__handle
 		
@@ -60117,6 +61829,8 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets a value indicating whether the   object is read-only.
+	/// if the   object is read-only; otherwise,  .
 	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -60136,6 +61850,8 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}}
 	
 	
+	/// Gets the native name of the calendar associated with the current   object.
+	/// The native name of the calendar used in the culture associated with the current   object if that name is available, or the empty string ("") if the native calendar name is not available.
 	public var nativeCalendarName: System_String /* System.String */ { get throws {
 		
 		
@@ -60157,6 +61873,11 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}}
 	
 	
+	/// Gets or sets a string array of abbreviated month names associated with the current   object.
+	/// In a set operation, the array is multidimensional or has a length that is not exactly 13.
+	/// In a set operation, the array or one of the elements of the array is  .
+	/// In a set operation, the current   object is read-only.
+	/// An array of abbreviated month names.
 	public var abbreviatedMonthGenitiveNames: System_String_Array /* System.String[] */ { get throws {
 		
 		
@@ -60176,6 +61897,11 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets a string array of abbreviated month names associated with the current   object.
+	/// In a set operation, the array is multidimensional or has a length that is not exactly 13.
+	/// In a set operation, the array or one of the elements of the array is  .
+	/// In a set operation, the current   object is read-only.
+	/// An array of abbreviated month names.
 	public func abbreviatedMonthGenitiveNames_set(_ value: System_String_Array? /* System.String[] */) throws {
 		let valueC = value?.__handle
 		
@@ -60195,6 +61921,11 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 	}
 	
 	
+	/// Gets or sets a string array of month names associated with the current   object.
+	/// In a set operation, the array is multidimensional or has a length that is not exactly 13.
+	/// In a set operation, the array or one of its elements is  .
+	/// In a set operation, the current   object is read-only.
+	/// A string array of month names.
 	public var monthGenitiveNames: System_String_Array /* System.String[] */ { get throws {
 		
 		
@@ -60214,6 +61945,11 @@ public class System_Globalization_DateTimeFormatInfo /* System.Globalization.Dat
 		return __returnValue
 		
 	}}
+	/// Gets or sets a string array of month names associated with the current   object.
+	/// In a set operation, the array is multidimensional or has a length that is not exactly 13.
+	/// In a set operation, the array or one of its elements is  .
+	/// In a set operation, the current   object is read-only.
+	/// A string array of month names.
 	public func monthGenitiveNames_set(_ value: System_String_Array? /* System.String[] */) throws {
 		let valueC = value?.__handle
 		
@@ -60385,6 +62121,9 @@ public class System_CharEnumerator /* System.CharEnumerator */: System_Object {
 		
 	}
 	
+	/// Gets the currently referenced character in the string enumerated by this   object.
+	/// The index is invalid; that is, it is before the first or after the last character of the enumerated string.
+	/// The Unicode character currently referenced by this   object.
 	public var current: DNChar /* System.Char */ { get throws {
 		
 		
@@ -60468,6 +62207,8 @@ public class System_Text_StringRuneEnumerator /* System.Text.StringRuneEnumerato
 		
 	}
 	
+	/// Gets the   at the current position of the enumerator.
+	/// The   at the current position of the enumerator.
 	public var current: System_Text_Rune /* System.Text.Rune */ { get throws {
 		
 		
@@ -60556,6 +62297,7 @@ public class System_Text_CompositeFormat /* System.Text.CompositeFormat */: Syst
 		
 	}
 	
+	/// Gets the original composite format string used to create this   instance.
 	public var format: System_String /* System.String */ { get throws {
 		
 		
@@ -60577,6 +62319,7 @@ public class System_Text_CompositeFormat /* System.Text.CompositeFormat */: Syst
 	}}
 	
 	
+	/// Gets the minimum number of arguments that must be passed to a formatting operation using this  .
 	public var minimumArgumentCount: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -61391,6 +63134,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		
 	}
 	
+	/// Gets the default encoding for this .NET implementation.
+	/// The default encoding for this .NET implementation.
 	public class var `default`: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
@@ -61412,6 +63157,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// When overridden in a derived class, returns a span containing the sequence of bytes that specifies the encoding used.
+	/// A byte span containing a sequence of bytes that specifies the encoding used, or a span of length zero, if a preamble is not required.
 	public var preamble: Data? /* System.ReadOnlySpan<System.Byte> */ { get throws {
 		
 		
@@ -61433,6 +63180,10 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// When overridden in a derived class, gets a name for the current encoding that can be used with mail agent body tags.
+	/// A name for the current   that can be used with mail agent body tags.
+	/// -or-
+	/// An empty string (""), if the current   cannot be used.
 	public var bodyName: System_String /* System.String */ { get throws {
 		
 		
@@ -61454,6 +63205,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// When overridden in a derived class, gets the human-readable description of the current encoding.
+	/// The human-readable description of the current  .
 	public var encodingName: System_String /* System.String */ { get throws {
 		
 		
@@ -61475,6 +63228,10 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// When overridden in a derived class, gets a name for the current encoding that can be used with mail agent header tags.
+	/// A name for the current   to use with mail agent header tags.
+	/// -or-
+	/// An empty string (""), if the current   cannot be used.
 	public var headerName: System_String /* System.String */ { get throws {
 		
 		
@@ -61496,6 +63253,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// When overridden in a derived class, gets the name registered with the Internet Assigned Numbers Authority (IANA) for the current encoding.
+	/// The IANA name for the current  .
 	public var webName: System_String /* System.String */ { get throws {
 		
 		
@@ -61517,6 +63276,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// When overridden in a derived class, gets the Windows operating system code page that most closely corresponds to the current encoding.
+	/// The Windows operating system code page that most closely corresponds to the current  .
 	public var windowsCodePage: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -61536,6 +63297,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// When overridden in a derived class, gets a value indicating whether the current encoding can be used by browser clients for displaying content.
+	/// if the current   can be used by browser clients for displaying content; otherwise,  .
 	public var isBrowserDisplay: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -61555,6 +63318,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// When overridden in a derived class, gets a value indicating whether the current encoding can be used by browser clients for saving content.
+	/// if the current   can be used by browser clients for saving content; otherwise,  .
 	public var isBrowserSave: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -61574,6 +63339,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// When overridden in a derived class, gets a value indicating whether the current encoding can be used by mail and news clients for displaying content.
+	/// if the current   can be used by mail and news clients for displaying content; otherwise,  .
 	public var isMailNewsDisplay: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -61593,6 +63360,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// When overridden in a derived class, gets a value indicating whether the current encoding can be used by mail and news clients for saving content.
+	/// if the current   can be used by mail and news clients for saving content; otherwise,  .
 	public var isMailNewsSave: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -61612,6 +63381,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// When overridden in a derived class, gets a value indicating whether the current encoding uses single-byte code points.
+	/// if the current   uses single-byte code points; otherwise,  .
 	public var isSingleByte: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -61631,6 +63402,10 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// Gets or sets the   object for the current   object.
+	/// The value in a set operation is  .
+	/// A value cannot be assigned in a set operation because the current   object is read-only.
+	/// The encoder fallback object for the current   object.
 	public var encoderFallback: System_Text_EncoderFallback /* System.Text.EncoderFallback */ { get throws {
 		
 		
@@ -61650,6 +63425,10 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		return __returnValue
 		
 	}}
+	/// Gets or sets the   object for the current   object.
+	/// The value in a set operation is  .
+	/// A value cannot be assigned in a set operation because the current   object is read-only.
+	/// The encoder fallback object for the current   object.
 	public func encoderFallback_set(_ value: System_Text_EncoderFallback? /* System.Text.EncoderFallback */) throws {
 		let valueC = value?.__handle
 		
@@ -61669,6 +63448,10 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}
 	
 	
+	/// Gets or sets the   object for the current   object.
+	/// The value in a set operation is  .
+	/// A value cannot be assigned in a set operation because the current   object is read-only.
+	/// The decoder fallback object for the current   object.
 	public var decoderFallback: System_Text_DecoderFallback /* System.Text.DecoderFallback */ { get throws {
 		
 		
@@ -61688,6 +63471,10 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 		return __returnValue
 		
 	}}
+	/// Gets or sets the   object for the current   object.
+	/// The value in a set operation is  .
+	/// A value cannot be assigned in a set operation because the current   object is read-only.
+	/// The decoder fallback object for the current   object.
 	public func decoderFallback_set(_ value: System_Text_DecoderFallback? /* System.Text.DecoderFallback */) throws {
 		let valueC = value?.__handle
 		
@@ -61707,6 +63494,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}
 	
 	
+	/// When overridden in a derived class, gets a value indicating whether the current encoding is read-only.
+	/// if the current   is read-only; otherwise,  . The default is  .
 	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -61726,6 +63515,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// Gets an encoding for the ASCII (7-bit) character set.
+	/// An encoding for the ASCII (7-bit) character set.
 	public class var aSCII: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
@@ -61747,6 +63538,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// Gets an encoding for the Latin1 character set (ISO-8859-1).
 	public class var latin1: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
@@ -61768,6 +63560,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// When overridden in a derived class, gets the code page identifier of the current  .
+	/// The code page identifier of the current  .
 	public var codePage: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -61787,6 +63581,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// Gets an encoding for the UTF-16 format using the little endian byte order.
+	/// An encoding for the UTF-16 format using the little endian byte order.
 	public class var unicode: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
@@ -61808,6 +63604,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// Gets an encoding for the UTF-16 format that uses the big endian byte order.
+	/// An encoding object for the UTF-16 format that uses the big endian byte order.
 	public class var bigEndianUnicode: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
@@ -61829,6 +63627,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// Gets an encoding for the UTF-7 format.
+	/// An encoding for the UTF-7 format.
 	public class var uTF7: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
@@ -61850,6 +63650,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// Gets an encoding for the UTF-8 format.
+	/// An encoding for the UTF-8 format.
 	public class var uTF8: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
@@ -61871,6 +63673,8 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	}}
 	
 	
+	/// Gets an encoding for the UTF-32 format using the little endian byte order.
+	/// An encoding object for the UTF-32 format using the little endian byte order.
 	public class var uTF32: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
@@ -62066,6 +63870,8 @@ public class System_Text_EncoderFallback /* System.Text.EncoderFallback */: Syst
 		
 	}
 	
+	/// Gets an object that outputs a substitute string in place of an input character that cannot be encoded.
+	/// A type derived from the   class. The default value is a   object that replaces unknown input characters with the QUESTION MARK character ("?", U+003F).
 	public class var replacementFallback: System_Text_EncoderFallback /* System.Text.EncoderFallback */ { get throws {
 		
 		
@@ -62087,6 +63893,8 @@ public class System_Text_EncoderFallback /* System.Text.EncoderFallback */: Syst
 	}}
 	
 	
+	/// Gets an object that throws an exception when an input character cannot be encoded.
+	/// A type derived from the   class. The default value is a   object.
 	public class var exceptionFallback: System_Text_EncoderFallback /* System.Text.EncoderFallback */ { get throws {
 		
 		
@@ -62108,6 +63916,8 @@ public class System_Text_EncoderFallback /* System.Text.EncoderFallback */: Syst
 	}}
 	
 	
+	/// When overridden in a derived class, gets the maximum number of characters the current   object can return.
+	/// The maximum number of characters the current   object can return.
 	public var maxCharCount: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -62245,6 +64055,8 @@ public class System_Text_EncoderFallbackBuffer /* System.Text.EncoderFallbackBuf
 		
 	}
 	
+	/// When overridden in a derived class, gets the number of characters in the current   object that remain to be processed.
+	/// The number of characters in the current fallback buffer that have not yet been processed.
 	public var remaining: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -62308,6 +64120,8 @@ public class System_Text_DecoderFallback /* System.Text.DecoderFallback */: Syst
 		
 	}
 	
+	/// Gets an object that outputs a substitute string in place of an input byte sequence that cannot be decoded.
+	/// A type derived from the   class. The default value is a   object that emits the QUESTION MARK character ("?", U+003F) in place of unknown byte sequences.
 	public class var replacementFallback: System_Text_DecoderFallback /* System.Text.DecoderFallback */ { get throws {
 		
 		
@@ -62329,6 +64143,8 @@ public class System_Text_DecoderFallback /* System.Text.DecoderFallback */: Syst
 	}}
 	
 	
+	/// Gets an object that throws an exception when an input byte sequence cannot be decoded.
+	/// A type derived from the   class. The default value is a   object.
 	public class var exceptionFallback: System_Text_DecoderFallback /* System.Text.DecoderFallback */ { get throws {
 		
 		
@@ -62350,6 +64166,8 @@ public class System_Text_DecoderFallback /* System.Text.DecoderFallback */: Syst
 	}}
 	
 	
+	/// When overridden in a derived class, gets the maximum number of characters the current   object can return.
+	/// The maximum number of characters the current   object can return.
 	public var maxCharCount: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -62467,6 +64285,8 @@ public class System_Text_DecoderFallbackBuffer /* System.Text.DecoderFallbackBuf
 		
 	}
 	
+	/// When overridden in a derived class, gets the number of characters in the current   object that remain to be processed.
+	/// The number of characters in the current fallback buffer that have not yet been processed.
 	public var remaining: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -62592,6 +64412,8 @@ public class System_Text_EncodingInfo /* System.Text.EncodingInfo */: System_Obj
 		
 	}
 	
+	/// Gets the code page identifier of the encoding.
+	/// The code page identifier of the encoding.
 	public var codePage: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -62611,6 +64433,8 @@ public class System_Text_EncodingInfo /* System.Text.EncodingInfo */: System_Obj
 	}}
 	
 	
+	/// Gets the name registered with the Internet Assigned Numbers Authority (IANA) for the encoding.
+	/// The IANA name for the encoding.
 	public var name: System_String /* System.String */ { get throws {
 		
 		
@@ -62632,6 +64456,8 @@ public class System_Text_EncodingInfo /* System.Text.EncodingInfo */: System_Obj
 	}}
 	
 	
+	/// Gets the human-readable description of the encoding.
+	/// The human-readable description of the encoding.
 	public var displayName: System_String /* System.String */ { get throws {
 		
 		
@@ -62832,6 +64658,10 @@ public class System_Text_Decoder /* System.Text.Decoder */: System_Object {
 		
 	}
 	
+	/// Gets or sets a   object for the current   object.
+	/// The value in a set operation is   ( ).
+	/// A new value cannot be assigned in a set operation because the current   object contains data that has not been decoded yet.
+	/// A   object.
 	public var fallback: System_Text_DecoderFallback? /* System.Text.DecoderFallback */ { get throws {
 		
 		
@@ -62851,6 +64681,10 @@ public class System_Text_Decoder /* System.Text.Decoder */: System_Object {
 		return __returnValue
 		
 	}}
+	/// Gets or sets a   object for the current   object.
+	/// The value in a set operation is   ( ).
+	/// A new value cannot be assigned in a set operation because the current   object contains data that has not been decoded yet.
+	/// A   object.
 	public func fallback_set(_ value: System_Text_DecoderFallback? /* System.Text.DecoderFallback */) throws {
 		let valueC = value?.__handle
 		
@@ -62870,6 +64704,8 @@ public class System_Text_Decoder /* System.Text.Decoder */: System_Object {
 	}
 	
 	
+	/// Gets the   object associated with the current   object.
+	/// A   object.
 	public var fallbackBuffer: System_Text_DecoderFallbackBuffer /* System.Text.DecoderFallbackBuffer */ { get throws {
 		
 		
@@ -62990,6 +64826,13 @@ public class System_Text_Encoder /* System.Text.Encoder */: System_Object {
 		
 	}
 	
+	/// Gets or sets a   object for the current   object.
+	/// The value in a set operation is   ( ).
+	/// A new value cannot be assigned in a set operation because the current   object contains data that has not been encoded yet.
+	/// A fallback occurred (for more information, see Character Encoding in .NET)
+	/// -and-
+	/// is set to  .
+	/// A   object.
 	public var fallback: System_Text_EncoderFallback? /* System.Text.EncoderFallback */ { get throws {
 		
 		
@@ -63009,6 +64852,13 @@ public class System_Text_Encoder /* System.Text.Encoder */: System_Object {
 		return __returnValue
 		
 	}}
+	/// Gets or sets a   object for the current   object.
+	/// The value in a set operation is   ( ).
+	/// A new value cannot be assigned in a set operation because the current   object contains data that has not been encoded yet.
+	/// A fallback occurred (for more information, see Character Encoding in .NET)
+	/// -and-
+	/// is set to  .
+	/// A   object.
 	public func fallback_set(_ value: System_Text_EncoderFallback? /* System.Text.EncoderFallback */) throws {
 		let valueC = value?.__handle
 		
@@ -63028,6 +64878,8 @@ public class System_Text_Encoder /* System.Text.Encoder */: System_Object {
 	}
 	
 	
+	/// Gets the   object associated with the current   object.
+	/// A   object.
 	public var fallbackBuffer: System_Text_EncoderFallbackBuffer /* System.Text.EncoderFallbackBuffer */ { get throws {
 		
 		
@@ -63355,6 +65207,8 @@ public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runt
 		
 	}
 	
+	/// Gets the   value that specifies how the class or structure is arranged.
+	/// One of the enumeration values that specifies how the class or structure is arranged.
 	public var value: System_Runtime_InteropServices_LayoutKind /* System.Runtime.InteropServices.LayoutKind */ { get throws {
 		
 		
@@ -63376,6 +65230,7 @@ public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runt
 	}}
 	
 	
+	/// Controls the alignment of data fields of a class or structure in memory.
 	public var pack: Int32 /* System.Int32 */ { get {
 		
 		
@@ -63384,6 +65239,7 @@ public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runt
 		return __returnValueC
 		
 	}}
+	/// Controls the alignment of data fields of a class or structure in memory.
 	public func pack_set(_ value: Int32 /* System.Int32 */) {
 		
 		
@@ -63393,6 +65249,7 @@ public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runt
 	}
 	
 	
+	/// Indicates the absolute size of the class or structure.
 	public var size: Int32 /* System.Int32 */ { get {
 		
 		
@@ -63401,6 +65258,7 @@ public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runt
 		return __returnValueC
 		
 	}}
+	/// Indicates the absolute size of the class or structure.
 	public func size_set(_ value: Int32 /* System.Int32 */) {
 		
 		
@@ -63410,6 +65268,7 @@ public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runt
 	}
 	
 	
+	/// Indicates whether string data fields within the class should be marshaled as   or   by default.
 	public var charSet: System_Runtime_InteropServices_CharSet /* System.Runtime.InteropServices.CharSet */ { get {
 		
 		
@@ -63420,6 +65279,7 @@ public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runt
 		return __returnValue
 		
 	}}
+	/// Indicates whether string data fields within the class should be marshaled as   or   by default.
 	public func charSet_set(_ value: System_Runtime_InteropServices_CharSet /* System.Runtime.InteropServices.CharSet */) {
 		let valueC = value.cValue
 		
@@ -64208,6 +66068,8 @@ public class System_Attribute /* System.Attribute */: System_Object {
 		
 	}
 	
+	/// When implemented in a derived class, gets a unique identifier for this  .
+	/// An   that is a unique identifier for the attribute.
 	public var typeId: System_Object /* System.Object */ { get throws {
 		
 		
@@ -64323,6 +66185,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 		"System.Reflection.InterfaceMapping"
 	}}
 
+	/// Represents the type that was used to create the interface mapping.
 	public var targetType: System_Type /* System.Type */ { get {
 		
 		
@@ -64333,6 +66196,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 		return __returnValue
 		
 	}}
+	/// Represents the type that was used to create the interface mapping.
 	public func targetType_set(_ value: System_Type? /* System.Type */) {
 		let valueC = value?.__handle
 		
@@ -64343,6 +66207,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 	}
 	
 	
+	/// Shows the type that represents the interface.
 	public var interfaceType: System_Type /* System.Type */ { get {
 		
 		
@@ -64353,6 +66218,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 		return __returnValue
 		
 	}}
+	/// Shows the type that represents the interface.
 	public func interfaceType_set(_ value: System_Type? /* System.Type */) {
 		let valueC = value?.__handle
 		
@@ -64363,6 +66229,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 	}
 	
 	
+	/// Shows the methods that implement the interface.
 	public var targetMethods: System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ { get {
 		
 		
@@ -64373,6 +66240,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 		return __returnValue
 		
 	}}
+	/// Shows the methods that implement the interface.
 	public func targetMethods_set(_ value: System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */) {
 		let valueC = value?.__handle
 		
@@ -64383,6 +66251,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 	}
 	
 	
+	/// Shows the methods that are defined on the interface.
 	public var interfaceMethods: System_Reflection_MethodInfo_Array /* System.Reflection.MethodInfo[] */ { get {
 		
 		
@@ -64393,6 +66262,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 		return __returnValue
 		
 	}}
+	/// Shows the methods that are defined on the interface.
 	public func interfaceMethods_set(_ value: System_Reflection_MethodInfo_Array? /* System.Reflection.MethodInfo[] */) {
 		let valueC = value?.__handle
 		
@@ -67342,6 +69212,7 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 		
 	}
 	
+	/// Represents the default character size on the system; the default is 2 for Unicode systems and 1 for ANSI systems. This field is read-only.
 	public class var systemDefaultCharSize: Int32 /* System.Int32 */ { get {
 		
 		
@@ -67352,6 +69223,7 @@ public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropSer
 	}}
 	
 	
+	/// Represents the maximum size of a double byte character set (DBCS) size, in bytes, for the current operating system. This field is read-only.
 	public class var systemMaxDBCSCharSize: Int32 /* System.Int32 */ { get {
 		
 		
@@ -67671,6 +69543,9 @@ public class System_Security_SecureString /* System.Security.SecureString */: Sy
 		
 	}
 	
+	/// Gets the number of characters in the current secure string.
+	/// This secure string has already been disposed.
+	/// The number of   objects in this secure string.
 	public var length: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -68195,6 +70070,8 @@ public class System_AppContext /* System.AppContext */: System_Object {
 		
 	}
 	
+	/// Gets the file path of the base directory that the assembly resolver uses to probe for assemblies.
+	/// The file path of the base directory that the assembly resolver uses to probe for assemblies.
 	public class var baseDirectory: System_String /* System.String */ { get throws {
 		
 		
@@ -68216,6 +70093,8 @@ public class System_AppContext /* System.AppContext */: System_Object {
 	}}
 	
 	
+	/// Gets the name of the framework version targeted by the current application.
+	/// The name of the framework version targeted by the current application.
 	public class var targetFrameworkName: System_String? /* System.String */ { get throws {
 		
 		
@@ -68434,6 +70313,9 @@ public class System_Runtime_InteropServices_GCHandle /* System.Runtime.InteropSe
 		
 	}
 	
+	/// Gets or sets the object this handle represents.
+	/// The handle was freed, or never initialized.
+	/// The object this handle represents.
 	public var target: System_Object? /* System.Object */ { get throws {
 		
 		
@@ -68453,6 +70335,9 @@ public class System_Runtime_InteropServices_GCHandle /* System.Runtime.InteropSe
 		return __returnValue
 		
 	}}
+	/// Gets or sets the object this handle represents.
+	/// The handle was freed, or never initialized.
+	/// The object this handle represents.
 	public func target_set(_ value: System_Object? /* System.Object */) throws {
 		let valueC = value?.__handle
 		
@@ -68472,6 +70357,8 @@ public class System_Runtime_InteropServices_GCHandle /* System.Runtime.InteropSe
 	}
 	
 	
+	/// Gets a value indicating whether the handle is allocated.
+	/// if the handle is allocated; otherwise,  .
 	public var isAllocated: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -69241,6 +71128,8 @@ public class System_GC /* System.GC */: System_Object {
 		
 	}
 	
+	/// Gets the maximum number of generations that the system currently supports.
+	/// A value that ranges from zero to the maximum number of supported generations.
 	public class var maxGeneration: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -69284,6 +71173,8 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 		"System.GCMemoryInfo"
 	}}
 
+	/// Gets the high memory load threshold when the last garbage collection occurred.
+	/// The high memory load threshold, in bytes, when the last garbage collection occurred.
 	public var highMemoryLoadThresholdBytes: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -69303,6 +71194,8 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 	}}
 	
 	
+	/// Gets the physical memory load when the last garbage collection occurred.
+	/// The physical memory load, in bytes, when the last garbage collection occurred.
 	public var memoryLoadBytes: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -69322,6 +71215,8 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 	}}
 	
 	
+	/// Gets the total available memory for the garbage collector to use when the last garbage collection occurred.
+	/// The total available memory, in bytes, for the garbage collector to use when the last garbage collection occurred.
 	public var totalAvailableMemoryBytes: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -69341,6 +71236,8 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 	}}
 	
 	
+	/// Gets the total heap size when the last garbage collection occurred.
+	/// The total heap size, in bytes, when the last garbage collection occurred.
 	public var heapSizeBytes: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -69360,6 +71257,8 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 	}}
 	
 	
+	/// Gets the total fragmentation when the last garbage collection occurred.
+	/// The total fragmentation when the last garbage collection occurred.
 	public var fragmentedBytes: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -69379,6 +71278,8 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 	}}
 	
 	
+	/// Gets the index of this GC.
+	/// The index of this GC.
 	public var index: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -69398,6 +71299,8 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 	}}
 	
 	
+	/// Gets the generation this GC collected. Collecting a generation also collects younger generations.
+	/// The generation this GC collected.
 	public var generation: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -69417,6 +71320,8 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 	}}
 	
 	
+	/// Gets a value that indicates if this is a compacting GC or not.
+	/// if this is a compacting GC;   otherwise.
 	public var compacted: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -69436,6 +71341,8 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 	}}
 	
 	
+	/// Gets a value that indicates if this is a concurrent GC (background GC) or not.
+	/// if this is a concurrent GC (background GC);   otherwise.
 	public var concurrent: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -69455,6 +71362,8 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 	}}
 	
 	
+	/// Gets the total committed bytes of the managed heap.
+	/// The total committed bytes of the managed heap.
 	public var totalCommittedBytes: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -69474,6 +71383,8 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 	}}
 	
 	
+	/// Gets the promoted bytes for this GC.
+	/// The number of promoted bytes for this GC.
 	public var promotedBytes: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -69493,6 +71404,8 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 	}}
 	
 	
+	/// Gets the number of pinned objects this GC observed.
+	/// The total number of pinned objects observed by this GC.
 	public var pinnedObjectsCount: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -69512,6 +71425,8 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 	}}
 	
 	
+	/// Gets the number of objects that are ready for finalization that this GC observed.
+	/// The total number of objects observed by this GC that are ready for finalization.
 	public var finalizationPendingCount: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -69531,6 +71446,8 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 	}}
 	
 	
+	/// Gets the pause time percentage in the GC so far. If the pause time is 1.2%, this property's value is 1.2. The value is calculated by taking the sum of all GC pauses so far and dividing that by the total elapsed time of the process since the runtime was loaded. This running counter is updated at the end of each GC. It does not distinguish between  . That is, at every GC, the calculated value is updated, and when you access this property, it gets the latest calculated value.
+	/// The pause time percentage.
 	public var pauseTimePercentage: Double /* System.Double */ { get throws {
 		
 		
@@ -69649,6 +71566,8 @@ public class System_WeakReference /* System.WeakReference */: System_Object {
 		
 	}
 	
+	/// Gets an indication whether the object referenced by the current   object is tracked after it is finalized.
+	/// if the object the current   object refers to is tracked after finalization; or   if the object is only tracked until finalization.
 	public var trackResurrection: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -69668,6 +71587,8 @@ public class System_WeakReference /* System.WeakReference */: System_Object {
 	}}
 	
 	
+	/// Gets an indication whether the object referenced by the current   object has been garbage collected.
+	/// if the object referenced by the current   object has not been garbage collected and is still accessible; otherwise,  .
 	public var isAlive: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -69687,6 +71608,9 @@ public class System_WeakReference /* System.WeakReference */: System_Object {
 	}}
 	
 	
+	/// Gets or sets the object (the target) referenced by the current   object.
+	/// The reference to the target object is invalid. This exception can be thrown while setting this property if the value is a null reference or if the object has been finalized during the set operation.
+	/// if the object referenced by the current   object has been garbage collected; otherwise, a reference to the object referenced by the current   object.
 	public var target: System_Object? /* System.Object */ { get throws {
 		
 		
@@ -69706,6 +71630,9 @@ public class System_WeakReference /* System.WeakReference */: System_Object {
 		return __returnValue
 		
 	}}
+	/// Gets or sets the object (the target) referenced by the current   object.
+	/// The reference to the target object is invalid. This exception can be thrown while setting this property if the value is a null reference or if the object has been finalized during the set operation.
+	/// if the object referenced by the current   object has been garbage collected; otherwise, a reference to the object referenced by the current   object.
 	public func target_set(_ value: System_Object? /* System.Object */) throws {
 		let valueC = value?.__handle
 		
@@ -69934,6 +71861,8 @@ public class System_Collections_Generic_KeyValuePair_A2 /* System.Collections.Ge
 		
 	}
 	
+	/// Gets the key in the key/value pair.
+	/// A   that is the key of the  .
 	public func key(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
@@ -69957,6 +71886,8 @@ public class System_Collections_Generic_KeyValuePair_A2 /* System.Collections.Ge
 	}
 	
 	
+	/// Gets the value in the key/value pair.
+	/// A   that is the value of the  .
 	public func value(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
@@ -71980,6 +73911,7 @@ public class System_Math /* System.Math */: System_Object {
 		
 	}
 	
+	/// Represents the natural logarithmic base, specified by the constant,  .
 	public class var e: Double /* System.Double */ { get {
 		
 		
@@ -71990,6 +73922,7 @@ public class System_Math /* System.Math */: System_Object {
 	}}
 	
 	
+	/// Represents the ratio of the circumference of a circle to its diameter, specified by the constant, π.
 	public class var pI: Double /* System.Double */ { get {
 		
 		
@@ -72000,6 +73933,7 @@ public class System_Math /* System.Math */: System_Object {
 	}}
 	
 	
+	/// Represents the number of radians in one turn, specified by the constant, τ.
 	public class var tau: Double /* System.Double */ { get {
 		
 		
@@ -78107,6 +80041,7 @@ public class System_Convert /* System.Convert */: System_Object {
 		
 	}
 	
+	/// A constant that represents a database column that is absent of data; that is, database null.
 	public class var dBNull: System_Object /* System.Object */ { get {
 		
 		
@@ -79373,6 +81308,8 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
+	/// Gets a unique identifier for the current managed thread.
+	/// An integer that represents a unique identifier for this managed thread.
 	public var managedThreadId: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -79392,6 +81329,8 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	}}
 	
 	
+	/// Gets a value indicating the execution status of the current thread.
+	/// if this thread has been started and has not terminated normally or aborted; otherwise,  .
 	public var isAlive: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -79411,6 +81350,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	}}
 	
 	
+	/// Gets or sets a value indicating whether or not a thread is a background thread.
+	/// The thread is dead.
+	/// if this thread is or is to become a background thread; otherwise,  .
 	public var isBackground: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -79428,6 +81370,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		return __returnValueC
 		
 	}}
+	/// Gets or sets a value indicating whether or not a thread is a background thread.
+	/// The thread is dead.
+	/// if this thread is or is to become a background thread; otherwise,  .
 	public func isBackground_set(_ value: Bool /* System.Boolean */) throws {
 		
 		
@@ -79446,6 +81391,8 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	}
 	
 	
+	/// Gets a value indicating whether or not a thread belongs to the managed thread pool.
+	/// if this thread belongs to the managed thread pool; otherwise,  .
 	public var isThreadPoolThread: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -79465,6 +81412,10 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	}}
 	
 	
+	/// Gets or sets a value indicating the scheduling priority of a thread.
+	/// The thread has reached a final state, such as  .
+	/// The value specified for a set operation is not a valid   value.
+	/// One of the   values. The default value is  .
 	public var priority: System_Threading_ThreadPriority /* System.Threading.ThreadPriority */ { get throws {
 		
 		
@@ -79484,6 +81435,10 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		return __returnValue
 		
 	}}
+	/// Gets or sets a value indicating the scheduling priority of a thread.
+	/// The thread has reached a final state, such as  .
+	/// The value specified for a set operation is not a valid   value.
+	/// One of the   values. The default value is  .
 	public func priority_set(_ value: System_Threading_ThreadPriority /* System.Threading.ThreadPriority */) throws {
 		let valueC = value.cValue
 		
@@ -79503,6 +81458,8 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	}
 	
 	
+	/// Gets a value containing the states of the current thread.
+	/// One of the   values indicating the state of the current thread. The initial value is  .
 	public var threadState: System_Threading_ThreadState /* System.Threading.ThreadState */ { get throws {
 		
 		
@@ -79524,6 +81481,10 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	}}
 	
 	
+	/// Gets or sets the culture for the current thread.
+	/// The property is set to  .
+	/// .NET Core and .NET 5+ only: Reading or writing the culture of a thread from another thread is not supported.
+	/// An object that represents the culture for the current thread.
 	public var currentCulture: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ { get throws {
 		
 		
@@ -79543,6 +81504,10 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		return __returnValue
 		
 	}}
+	/// Gets or sets the culture for the current thread.
+	/// The property is set to  .
+	/// .NET Core and .NET 5+ only: Reading or writing the culture of a thread from another thread is not supported.
+	/// An object that represents the culture for the current thread.
 	public func currentCulture_set(_ value: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws {
 		let valueC = value?.__handle
 		
@@ -79562,6 +81527,11 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	}
 	
 	
+	/// Gets or sets the current culture used by the Resource Manager to look up culture-specific resources at run time.
+	/// The property is set to  .
+	/// The property is set to a culture name that cannot be used to locate a resource file. Resource filenames must include only letters, numbers, hyphens or underscores.
+	/// .NET Core and .NET 5+ only: Reading or writing the culture of a thread from another thread is not supported.
+	/// An object that represents the current culture.
 	public var currentUICulture: System_Globalization_CultureInfo /* System.Globalization.CultureInfo */ { get throws {
 		
 		
@@ -79581,6 +81551,11 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		return __returnValue
 		
 	}}
+	/// Gets or sets the current culture used by the Resource Manager to look up culture-specific resources at run time.
+	/// The property is set to  .
+	/// The property is set to a culture name that cannot be used to locate a resource file. Resource filenames must include only letters, numbers, hyphens or underscores.
+	/// .NET Core and .NET 5+ only: Reading or writing the culture of a thread from another thread is not supported.
+	/// An object that represents the current culture.
 	public func currentUICulture_set(_ value: System_Globalization_CultureInfo? /* System.Globalization.CultureInfo */) throws {
 		let valueC = value?.__handle
 		
@@ -79600,6 +81575,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	}
 	
 	
+	/// Gets or sets the thread's current principal (for role-based security).
+	/// The caller does not have the permission required to set the principal.
+	/// An   value representing the security context.
 	public class var currentPrincipal: System_Security_Principal_IPrincipal? /* System.Security.Principal.IPrincipal */ { get throws {
 		
 		
@@ -79619,6 +81597,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		return __returnValue
 		
 	}}
+	/// Gets or sets the thread's current principal (for role-based security).
+	/// The caller does not have the permission required to set the principal.
+	/// An   value representing the security context.
 	public class func currentPrincipal_set(_ value: System_Security_Principal_IPrincipal? /* System.Security.Principal.IPrincipal */) throws {
 		let valueC = value?.__handle
 		
@@ -79638,6 +81619,8 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	}
 	
 	
+	/// Gets the currently running thread.
+	/// A   that is the representation of the currently running thread.
 	public class var currentThread: System_Threading_Thread /* System.Threading.Thread */ { get throws {
 		
 		
@@ -79659,6 +81642,8 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	}}
 	
 	
+	/// Gets an   object that contains information about the various contexts of the current thread.
+	/// An   object that consolidates context information for the current thread.
 	public var executionContext: System_Threading_ExecutionContext? /* System.Threading.ExecutionContext */ { get throws {
 		
 		
@@ -79680,6 +81665,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	}}
 	
 	
+	/// Gets or sets the name of the thread.
+	/// A set operation was requested, but the   property has already been set.
+	/// A string containing the name of the thread, or   if no name was set.
 	public var name: System_String? /* System.String */ { get throws {
 		
 		
@@ -79699,6 +81687,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		return __returnValue
 		
 	}}
+	/// Gets or sets the name of the thread.
+	/// A set operation was requested, but the   property has already been set.
+	/// A string containing the name of the thread, or   if no name was set.
 	public func name_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -79718,6 +81709,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 	}
 	
 	
+	/// Gets or sets the apartment state of this thread.
+	/// An attempt is made to set this property to a state that is not a valid apartment state (a state other than single-threaded apartment ( ) or multithreaded apartment ( )).
+	/// One of the   values. The initial value is  .
 	public var apartmentState: System_Threading_ApartmentState /* System.Threading.ApartmentState */ { get throws {
 		
 		
@@ -79737,6 +81731,9 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		return __returnValue
 		
 	}}
+	/// Gets or sets the apartment state of this thread.
+	/// An attempt is made to set this property to a state that is not a valid apartment state (a state other than single-threaded apartment ( ) or multithreaded apartment ( )).
+	/// One of the   values. The initial value is  .
 	public func apartmentState_set(_ value: System_Threading_ApartmentState /* System.Threading.ApartmentState */) throws {
 		let valueC = value.cValue
 		
@@ -79799,6 +81796,8 @@ public class System_Security_Principal_IPrincipal /* System.Security.Principal.I
 		
 	}
 	
+	/// Gets the identity of the current principal.
+	/// The   object associated with the current principal.
 	public var identity: System_Security_Principal_IIdentity? /* System.Security.Principal.IIdentity */ { get throws {
 		
 		
@@ -79844,6 +81843,8 @@ public class System_Security_Principal_IIdentity /* System.Security.Principal.II
 		"System.Security.Principal.IIdentity"
 	}}
 
+	/// Gets the name of the current user.
+	/// The name of the user on whose behalf the code is running.
 	public var name: System_String? /* System.String */ { get throws {
 		
 		
@@ -79865,6 +81866,8 @@ public class System_Security_Principal_IIdentity /* System.Security.Principal.II
 	}}
 	
 	
+	/// Gets the type of authentication used.
+	/// The type of authentication used to identify the user.
 	public var authenticationType: System_String? /* System.String */ { get throws {
 		
 		
@@ -79886,6 +81889,8 @@ public class System_Security_Principal_IIdentity /* System.Security.Principal.II
 	}}
 	
 	
+	/// Gets a value that indicates whether the user has been authenticated.
+	/// if the user was authenticated; otherwise,  .
 	public var isAuthenticated: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -81269,6 +83274,8 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		
 	}
 	
+	/// Gets the current application domain for the current  .
+	/// The current application domain.
 	public class var currentDomain: System_AppDomain /* System.AppDomain */ { get throws {
 		
 		
@@ -81290,6 +83297,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// Gets the base directory that the assembly resolver uses to probe for assemblies.
+	/// The operation is attempted on an unloaded application domain.
+	/// The base directory that the assembly resolver uses to probe for assemblies.
 	public var baseDirectory: System_String /* System.String */ { get throws {
 		
 		
@@ -81311,6 +83321,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// Gets the path under the base directory where the assembly resolver should probe for private assemblies.
+	/// The operation is attempted on an unloaded application domain.
+	/// The path under the base directory where the assembly resolver should probe for private assemblies.
 	public var relativeSearchPath: System_String? /* System.String */ { get throws {
 		
 		
@@ -81332,6 +83345,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// Gets the application domain configuration information for this instance.
+	/// The operation is attempted on an unloaded application domain.
+	/// The application domain initialization information.
 	public var setupInformation: System_AppDomainSetup /* System.AppDomainSetup */ { get throws {
 		
 		
@@ -81353,6 +83369,8 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// Gets the permission set of a sandboxed application domain.
+	/// The permission set of the sandboxed application domain.
 	public var permissionSet: System_Security_PermissionSet /* System.Security.PermissionSet */ { get throws {
 		
 		
@@ -81374,6 +83392,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// Gets the directory that the assembly resolver uses to probe for dynamically created assemblies.
+	/// The operation is attempted on an unloaded application domain.
+	/// The directory that the assembly resolver uses to probe for dynamically created assemblies.
 	public var dynamicDirectory: System_String? /* System.String */ { get throws {
 		
 		
@@ -81395,6 +83416,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// Gets the friendly name of this application domain.
+	/// The operation is attempted on an unloaded application domain.
+	/// The friendly name of this application domain.
 	public var friendlyName: System_String /* System.String */ { get throws {
 		
 		
@@ -81416,6 +83440,8 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// Gets an integer that uniquely identifies the application domain within the process.
+	/// An integer that identifies the application domain.
 	public var id: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -81435,6 +83461,8 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// Gets a value that indicates whether assemblies that are loaded into the current application domain execute with full trust.
+	/// if assemblies that are loaded into the current application domain execute with full trust; otherwise,  .
 	public var isFullyTrusted: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -81454,6 +83482,8 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// Gets a value that indicates whether the current application domain has a set of permissions that is granted to all assemblies that are loaded into the application domain.
+	/// if the current application domain has a homogenous set of permissions; otherwise,  .
 	public var isHomogenous: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -81473,6 +83503,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// Gets or sets a value that indicates whether CPU and memory monitoring of application domains is enabled for the current process. Once monitoring is enabled for a process, it cannot be disabled.
+	/// The current process attempted to assign the value   to this property.
+	/// if monitoring is enabled; otherwise  .
 	public class var monitoringIsEnabled: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -81490,6 +83523,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 		return __returnValueC
 		
 	}}
+	/// Gets or sets a value that indicates whether CPU and memory monitoring of application domains is enabled for the current process. Once monitoring is enabled for a process, it cannot be disabled.
+	/// The current process attempted to assign the value   to this property.
+	/// if monitoring is enabled; otherwise  .
 	public class func monitoringIsEnabled_set(_ value: Bool /* System.Boolean */) throws {
 		
 		
@@ -81508,6 +83544,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}
 	
 	
+	/// Gets the number of bytes that survived the last collection and that are known to be referenced by the current application domain.
+	/// The   (  in Visual Basic)   property is set to  .
+	/// The number of surviving bytes.
 	public var monitoringSurvivedMemorySize: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -81527,6 +83566,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// Gets the total bytes that survived from the last collection for all application domains in the process.
+	/// The   (  in Visual Basic)   property is set to  .
+	/// The total number of surviving bytes for the process.
 	public class var monitoringSurvivedProcessMemorySize: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -81546,6 +83588,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// Gets the total size, in bytes, of all memory allocations that have been made by the application domain since it was created, without subtracting memory that has been collected.
+	/// The   (  in Visual Basic)   property is set to  .
+	/// The total size of all memory allocations.
 	public var monitoringTotalAllocatedMemorySize: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -81565,6 +83610,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// Gets an indication whether the application domain is configured to shadow copy files.
+	/// The operation is attempted on an unloaded application domain.
+	/// if the application domain is configured to shadow copy files; otherwise,  .
 	public var shadowCopyFiles: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -81584,6 +83632,9 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 	}}
 	
 	
+	/// Gets the total processor time that has been used by all threads while executing in the current application domain, since the process started.
+	/// The   (  in Visual Basic)   property is set to  .
+	/// Total processor time for the current application domain.
 	public var monitoringTotalProcessorTime: System_TimeSpan /* System.TimeSpan */ { get throws {
 		
 		
@@ -81773,6 +83824,8 @@ public class System_AppDomainSetup /* System.AppDomainSetup */: System_Object {
 		"System.AppDomainSetup"
 	}}
 
+	/// Gets the name of the directory containing the application.
+	/// The name of the application base directory.
 	public var applicationBase: System_String? /* System.String */ { get throws {
 		
 		
@@ -81794,6 +83847,8 @@ public class System_AppDomainSetup /* System.AppDomainSetup */: System_Object {
 	}}
 	
 	
+	/// Gets (or, in .NET Framework, sets) a string that specifies the target framework in a format that can be parsed by the   constructor.
+	/// The target framework of the executable that started the process.
 	public var targetFrameworkName: System_String? /* System.String */ { get throws {
 		
 		
@@ -82337,6 +84392,8 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 		
 	}
 	
+	/// Gets the number of permission objects contained in the permission set.
+	/// The number of permission objects contained in the  .
 	public var count: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -82356,6 +84413,8 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 	}}
 	
 	
+	/// Gets a value indicating whether the collection is read-only.
+	/// Always  .
 	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -82375,6 +84434,8 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 	}}
 	
 	
+	/// Gets a value indicating whether the collection is guaranteed to be thread safe.
+	/// Always  .
 	public var isSynchronized: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -82394,6 +84455,8 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 	}}
 	
 	
+	/// Gets the root object of the current collection.
+	/// The root object of the current collection.
 	public var syncRoot: System_Object /* System.Object */ { get throws {
 		
 		
@@ -82817,6 +84880,10 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		
 	}
 	
+	/// Gets or sets the tag name of an XML element.
+	/// The tag is  .
+	/// The tag is not valid in XML.
+	/// The tag name of an XML element.
 	public var tag: System_String /* System.String */ { get throws {
 		
 		
@@ -82836,6 +84903,10 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		return __returnValue
 		
 	}}
+	/// Gets or sets the tag name of an XML element.
+	/// The tag is  .
+	/// The tag is not valid in XML.
+	/// The tag name of an XML element.
 	public func tag_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -82855,6 +84926,10 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 	}
 	
 	
+	/// Gets or sets the attributes of an XML element as name/value pairs.
+	/// The name or value of the   object is invalid.
+	/// The name is not a valid XML attribute name.
+	/// The   object for the attribute values of the XML element.
 	public var attributes: System_Collections_Hashtable? /* System.Collections.Hashtable */ { get throws {
 		
 		
@@ -82874,6 +84949,10 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		return __returnValue
 		
 	}}
+	/// Gets or sets the attributes of an XML element as name/value pairs.
+	/// The name or value of the   object is invalid.
+	/// The name is not a valid XML attribute name.
+	/// The   object for the attribute values of the XML element.
 	public func attributes_set(_ value: System_Collections_Hashtable? /* System.Collections.Hashtable */) throws {
 		let valueC = value?.__handle
 		
@@ -82893,6 +84972,9 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 	}
 	
 	
+	/// Gets or sets the text within an XML element.
+	/// The text is not valid in XML.
+	/// The value of the text within an XML element.
 	public var text: System_String? /* System.String */ { get throws {
 		
 		
@@ -82912,6 +84994,9 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		return __returnValue
 		
 	}}
+	/// Gets or sets the text within an XML element.
+	/// The text is not valid in XML.
+	/// The value of the text within an XML element.
 	public func text_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -82931,6 +85016,9 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 	}
 	
 	
+	/// Gets or sets the array of child elements of the XML element.
+	/// A child of the XML parent node is  .
+	/// The ordered child elements of the XML element as security elements.
 	public var children: System_Collections_ArrayList? /* System.Collections.ArrayList */ { get throws {
 		
 		
@@ -82950,6 +85038,9 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 		return __returnValue
 		
 	}}
+	/// Gets or sets the array of child elements of the XML element.
+	/// A child of the XML parent node is  .
+	/// The ordered child elements of the XML element as security elements.
 	public func children_set(_ value: System_Collections_ArrayList? /* System.Collections.ArrayList */) throws {
 		let valueC = value?.__handle
 		
@@ -83551,6 +85642,8 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 	}
 	
 	
+	/// Gets a value indicating whether the   is read-only.
+	/// if the   is read-only; otherwise,  . The default is  .
 	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -83570,6 +85663,8 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether the   has a fixed size.
+	/// if the   has a fixed size; otherwise,  . The default is  .
 	public var isFixedSize: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -83589,6 +85684,8 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether access to the   is synchronized (thread safe).
+	/// if access to the   is synchronized (thread safe); otherwise,  . The default is  .
 	public var isSynchronized: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -83608,6 +85705,8 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 	}}
 	
 	
+	/// Gets an   containing the keys in the  .
+	/// An   containing the keys in the  .
 	public var keys: System_Collections_ICollection /* System.Collections.ICollection */ { get throws {
 		
 		
@@ -83629,6 +85728,8 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 	}}
 	
 	
+	/// Gets an   containing the values in the  .
+	/// An   containing the values in the  .
 	public var values: System_Collections_ICollection /* System.Collections.ICollection */ { get throws {
 		
 		
@@ -83650,6 +85751,8 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 	}}
 	
 	
+	/// Gets an object that can be used to synchronize access to the  .
+	/// An object that can be used to synchronize access to the  .
 	public var syncRoot: System_Object /* System.Object */ { get throws {
 		
 		
@@ -83671,6 +85774,8 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 	}}
 	
 	
+	/// Gets the number of key/value pairs contained in the  .
+	/// The number of key/value pairs contained in the  .
 	public var count: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -84611,6 +86716,10 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		
 	}
 	
+	/// Gets or sets the number of elements that the   can contain.
+	/// is set to a value that is less than  .
+	/// There is not enough memory available on the system.
+	/// The number of elements that the   can contain.
 	public var capacity: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -84628,6 +86737,10 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 		return __returnValueC
 		
 	}}
+	/// Gets or sets the number of elements that the   can contain.
+	/// is set to a value that is less than  .
+	/// There is not enough memory available on the system.
+	/// The number of elements that the   can contain.
 	public func capacity_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -84646,6 +86759,8 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 	}
 	
 	
+	/// Gets the number of elements actually contained in the  .
+	/// The number of elements actually contained in the  .
 	public var count: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -84665,6 +86780,8 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether the   has a fixed size.
+	/// if the   has a fixed size; otherwise,  . The default is  .
 	public var isFixedSize: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -84684,6 +86801,8 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether the   is read-only.
+	/// if the   is read-only; otherwise,  . The default is  .
 	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -84703,6 +86822,8 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 	}}
 	
 	
+	/// Gets a value indicating whether access to the   is synchronized (thread safe).
+	/// if access to the   is synchronized (thread safe); otherwise,  . The default is  .
 	public var isSynchronized: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -84722,6 +86843,8 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 	}}
 	
 	
+	/// Gets an object that can be used to synchronize access to the  .
+	/// An object that can be used to synchronize access to the  .
 	public var syncRoot: System_Object /* System.Object */ { get throws {
 		
 		
@@ -85038,6 +87161,8 @@ public class System_UnhandledExceptionEventArgs /* System.UnhandledExceptionEven
 		
 	}
 	
+	/// Gets the unhandled exception object.
+	/// The unhandled exception object.
 	public var exceptionObject: System_Object /* System.Object */ { get throws {
 		
 		
@@ -85059,6 +87184,8 @@ public class System_UnhandledExceptionEventArgs /* System.UnhandledExceptionEven
 	}}
 	
 	
+	/// Indicates whether the common language runtime is terminating.
+	/// if the runtime is terminating; otherwise,  .
 	public var isTerminating: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -85147,6 +87274,8 @@ public class System_AssemblyLoadEventArgs /* System.AssemblyLoadEventArgs */: Sy
 		
 	}
 	
+	/// Gets an   that represents the currently loaded assembly.
+	/// An instance of   that represents the currently loaded assembly.
 	public var loadedAssembly: System_Reflection_Assembly /* System.Reflection.Assembly */ { get throws {
 		
 		
@@ -85486,6 +87615,8 @@ public class System_Threading_Timer /* System.Threading.Timer */: System_Marshal
 		
 	}
 	
+	/// Gets the number of timers that are currently active. An active timer is registered to tick at some point in the future, and has not yet been canceled.
+	/// The number of timers that are currently active.
 	public class var activeCount: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -85792,6 +87923,8 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 		
 	}
 	
+	/// Gets whether cancellation has been requested for this  .
+	/// if cancellation has been requested for this  ; otherwise,  .
 	public var isCancellationRequested: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -85811,6 +87944,9 @@ public class System_Threading_CancellationTokenSource /* System.Threading.Cancel
 	}}
 	
 	
+	/// Gets the   associated with this  .
+	/// The token source has been disposed.
+	/// The   associated with this  .
 	public var token: System_Threading_CancellationToken /* System.Threading.CancellationToken */ { get throws {
 		
 		
@@ -86121,6 +88257,8 @@ public class System_Random /* System.Random */: System_Object {
 		
 	}
 	
+	/// Provides a thread-safe   instance that may be used concurrently from any thread.
+	/// A   instance.
 	public class var shared: System_Random /* System.Random */ { get throws {
 		
 		
@@ -87840,6 +89978,11 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
+	/// Gets or sets the maximum number of characters that can be contained in the memory allocated by the current instance.
+	/// The value specified for a set operation is less than the current length of this instance.
+	/// -or-
+	/// The value specified for a set operation is greater than the maximum capacity.
+	/// The maximum number of characters that can be contained in the memory allocated by the current instance. Its value can range from   to  .
 	public var capacity: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -87857,6 +90000,11 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		return __returnValueC
 		
 	}}
+	/// Gets or sets the maximum number of characters that can be contained in the memory allocated by the current instance.
+	/// The value specified for a set operation is less than the current length of this instance.
+	/// -or-
+	/// The value specified for a set operation is greater than the maximum capacity.
+	/// The maximum number of characters that can be contained in the memory allocated by the current instance. Its value can range from   to  .
 	public func capacity_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -87875,6 +90023,8 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 	}
 	
 	
+	/// Gets the maximum capacity of this instance.
+	/// The maximum number of characters this instance can hold.
 	public var maxCapacity: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -87894,6 +90044,9 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 	}}
 	
 	
+	/// Gets or sets the length of the current   object.
+	/// The value specified for a set operation is less than zero or greater than  .
+	/// The length of this instance.
 	public var length: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -87911,6 +90064,9 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		return __returnValueC
 		
 	}}
+	/// Gets or sets the length of the current   object.
+	/// The value specified for a set operation is less than zero or greater than  .
+	/// The length of this instance.
 	public func length_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -87981,6 +90137,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 }
 
 
+/// Supports simple iteration over the chunks of a   instance.
 public class System_Text_StringBuilder_ChunkEnumerator /* System.Text.StringBuilder.ChunkEnumerator */: System_ValueType {
 	public override class var typeName: String { get {
 		"ChunkEnumerator"
@@ -88060,6 +90217,7 @@ public class System_Text_StringBuilder_ChunkEnumerator /* System.Text.StringBuil
 }
 
 
+/// Provides a handler used by the language compiler to append interpolated strings into   instances.
 public class System_Text_StringBuilder_AppendInterpolatedStringHandler /* System.Text.StringBuilder.AppendInterpolatedStringHandler */: System_ValueType {
 	public override class var typeName: String { get {
 		"AppendInterpolatedStringHandler"
@@ -88901,6 +91059,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 		
 	}
 	
+	/// Provides a platform-specific character used to separate directory levels in a path string that reflects a hierarchical file system organization.
 	public class var directorySeparatorChar: DNChar /* System.Char */ { get {
 		
 		
@@ -88913,6 +91072,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 	}}
 	
 	
+	/// Provides a platform-specific alternate character used to separate directory levels in a path string that reflects a hierarchical file system organization.
 	public class var altDirectorySeparatorChar: DNChar /* System.Char */ { get {
 		
 		
@@ -88925,6 +91085,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 	}}
 	
 	
+	/// Provides a platform-specific volume separator character.
 	public class var volumeSeparatorChar: DNChar /* System.Char */ { get {
 		
 		
@@ -88937,6 +91098,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 	}}
 	
 	
+	/// A platform-specific separator character used to separate path strings in environment variables.
 	public class var pathSeparator: DNChar /* System.Char */ { get {
 		
 		
@@ -88949,6 +91111,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 	}}
 	
 	
+	/// Provides a platform-specific array of characters that cannot be specified in path string arguments passed to members of the   class.
 	public class var invalidPathChars: System_Char_Array /* System.Char[] */ { get {
 		
 		
@@ -91406,6 +93569,8 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 		
 	}
 	
+	/// Gets the current character encoding that the current   object is using.
+	/// The current character encoding used by the current reader. The value can be different after the first call to any   method of  , since encoding autodetection is not done until the first call to a   method.
 	public var currentEncoding: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
@@ -91427,6 +93592,8 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 	}}
 	
 	
+	/// Returns the underlying stream.
+	/// The underlying stream.
 	public var baseStream: System_IO_Stream /* System.IO.Stream */ { get throws {
 		
 		
@@ -91448,6 +93615,9 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 	}}
 	
 	
+	/// Gets a value that indicates whether the current stream position is at the end of the stream.
+	/// The underlying stream has been disposed.
+	/// if the current stream position is at the end of the stream; otherwise  .
 	public var endOfStream: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -91467,6 +93637,7 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 	}}
 	
 	
+	/// A   object around an empty stream.
 	public override class var null: System_IO_StreamReader /* System.IO.StreamReader */ { get {
 		
 		
@@ -91775,6 +93946,7 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 		
 	}
 	
+	/// Provides a   with no data to read from.
 	public class var null: System_IO_TextReader /* System.IO.TextReader */ { get {
 		
 		
@@ -92506,6 +94678,8 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		
 	}
 	
+	/// Gets or sets a value indicating whether the   will flush its buffer to the underlying stream after every call to  .
+	/// to force   to flush its buffer; otherwise,  .
 	public var autoFlush: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -92523,6 +94697,8 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 		return __returnValueC
 		
 	}}
+	/// Gets or sets a value indicating whether the   will flush its buffer to the underlying stream after every call to  .
+	/// to force   to flush its buffer; otherwise,  .
 	public func autoFlush_set(_ value: Bool /* System.Boolean */) throws {
 		
 		
@@ -92541,6 +94717,8 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 	}
 	
 	
+	/// Gets the underlying stream that interfaces with a backing store.
+	/// The stream this   is writing to.
 	public var baseStream: System_IO_Stream /* System.IO.Stream */ { get throws {
 		
 		
@@ -92562,6 +94740,8 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 	}}
 	
 	
+	/// Gets the   in which the output is written.
+	/// The   specified in the constructor for the current instance, or   if an encoding was not specified.
 	public override var encoding: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
@@ -92583,6 +94763,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 	}}
 	
 	
+	/// Provides a   with no backing store that can be written to, but not read from.
 	public override class var null: System_IO_StreamWriter /* System.IO.StreamWriter */ { get {
 		
 		
@@ -93649,6 +95830,8 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	/// Gets an object that controls formatting.
+	/// An   object for a specific culture, or the formatting of the current culture if no other culture is specified.
 	public var formatProvider: System_IFormatProvider /* System.IFormatProvider */ { get throws {
 		
 		
@@ -93670,6 +95853,8 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 	}}
 	
 	
+	/// When overridden in a derived class, returns the character encoding in which the output is written.
+	/// The character encoding in which the output is written.
 	public var encoding: System_Text_Encoding /* System.Text.Encoding */ { get throws {
 		
 		
@@ -93691,6 +95876,8 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 	}}
 	
 	
+	/// Gets or sets the line terminator string used by the current  .
+	/// The line terminator string for the current  .
 	public var newLine: System_String /* System.String */ { get throws {
 		
 		
@@ -93710,6 +95897,8 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		return __returnValue
 		
 	}}
+	/// Gets or sets the line terminator string used by the current  .
+	/// The line terminator string for the current  .
 	public func newLine_set(_ value: System_String? /* System.String */) throws {
 		let valueC = value?.__handle
 		
@@ -93729,6 +95918,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 	}
 	
 	
+	/// Provides a   with no backing store that can be written to, but not read from.
 	public class var null: System_IO_TextWriter /* System.IO.TextWriter */ { get {
 		
 		
@@ -93793,6 +95983,8 @@ public class System_Collections_Generic_IAsyncEnumerator_A1 /* System.Collection
 		"System.Collections.Generic.IAsyncEnumerator<>"
 	}}
 
+	/// Gets the element in the collection at the current position of the enumerator.
+	/// The element in the collection at the current position of the enumerator.
 	public func current(T: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let TC = T.__handle
 		
@@ -93969,6 +96161,10 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		
 	}
 	
+	/// Gets the full path of the directory or file.
+	/// The fully qualified path and file name exceed the system-defined maximum length.
+	/// The caller does not have the required permission.
+	/// A string containing the full path.
 	public var fullName: System_String /* System.String */ { get throws {
 		
 		
@@ -93990,6 +96186,8 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 	}}
 	
 	
+	/// Gets the extension part of the file name, including the leading dot  .  even if it is the entire file name, or an empty string if no extension is present.
+	/// A string containing the   extension.
 	public var `extension`: System_String /* System.String */ { get throws {
 		
 		
@@ -94011,6 +96209,8 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 	}}
 	
 	
+	/// For files, gets the name of the file. For directories, gets the name of the last directory in the hierarchy if a hierarchy exists. Otherwise, the   property gets the name of the directory.
+	/// A string that is the name of the parent directory, the name of the last directory in the hierarchy, or the name of a file, including the file name extension.
 	public var name: System_String /* System.String */ { get throws {
 		
 		
@@ -94032,6 +96232,8 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 	}}
 	
 	
+	/// Gets a value indicating whether the file or directory exists.
+	/// if the file or directory exists; otherwise,  .
 	public var exists: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -94051,6 +96253,12 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 	}}
 	
 	
+	/// Gets or sets the creation time of the current file or directory.
+	/// cannot initialize the data.
+	/// The specified path is invalid; for example, it is on an unmapped drive.
+	/// The current operating system is not Windows NT or later.
+	/// The caller attempts to set an invalid creation time.
+	/// The creation date and time of the current   object.
 	public var creationTime: System_DateTime /* System.DateTime */ { get throws {
 		
 		
@@ -94070,6 +96278,12 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		return __returnValue
 		
 	}}
+	/// Gets or sets the creation time of the current file or directory.
+	/// cannot initialize the data.
+	/// The specified path is invalid; for example, it is on an unmapped drive.
+	/// The current operating system is not Windows NT or later.
+	/// The caller attempts to set an invalid creation time.
+	/// The creation date and time of the current   object.
 	public func creationTime_set(_ value: System_DateTime /* System.DateTime */) throws {
 		let valueC = value.__handle
 		
@@ -94089,6 +96303,12 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 	}
 	
 	
+	/// Gets or sets the creation time, in coordinated universal time (UTC), of the current file or directory.
+	/// cannot initialize the data.
+	/// The specified path is invalid; for example, it is on an unmapped drive.
+	/// The current operating system is not Windows NT or later.
+	/// The caller attempts to set an invalid creation time.
+	/// The creation date and time in UTC format of the current   object.
 	public var creationTimeUtc: System_DateTime /* System.DateTime */ { get throws {
 		
 		
@@ -94108,6 +96328,12 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		return __returnValue
 		
 	}}
+	/// Gets or sets the creation time, in coordinated universal time (UTC), of the current file or directory.
+	/// cannot initialize the data.
+	/// The specified path is invalid; for example, it is on an unmapped drive.
+	/// The current operating system is not Windows NT or later.
+	/// The caller attempts to set an invalid creation time.
+	/// The creation date and time in UTC format of the current   object.
 	public func creationTimeUtc_set(_ value: System_DateTime /* System.DateTime */) throws {
 		let valueC = value.__handle
 		
@@ -94127,6 +96353,11 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 	}
 	
 	
+	/// Gets or sets the time the current file or directory was last accessed.
+	/// cannot initialize the data.
+	/// The current operating system is not Windows NT or later.
+	/// The caller attempts to set an invalid access time
+	/// The time that the current file or directory was last accessed.
 	public var lastAccessTime: System_DateTime /* System.DateTime */ { get throws {
 		
 		
@@ -94146,6 +96377,11 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		return __returnValue
 		
 	}}
+	/// Gets or sets the time the current file or directory was last accessed.
+	/// cannot initialize the data.
+	/// The current operating system is not Windows NT or later.
+	/// The caller attempts to set an invalid access time
+	/// The time that the current file or directory was last accessed.
 	public func lastAccessTime_set(_ value: System_DateTime /* System.DateTime */) throws {
 		let valueC = value.__handle
 		
@@ -94165,6 +96401,11 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 	}
 	
 	
+	/// Gets or sets the time, in coordinated universal time (UTC), that the current file or directory was last accessed.
+	/// cannot initialize the data.
+	/// The current operating system is not Windows NT or later.
+	/// The caller attempts to set an invalid access time.
+	/// The UTC time that the current file or directory was last accessed.
 	public var lastAccessTimeUtc: System_DateTime /* System.DateTime */ { get throws {
 		
 		
@@ -94184,6 +96425,11 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		return __returnValue
 		
 	}}
+	/// Gets or sets the time, in coordinated universal time (UTC), that the current file or directory was last accessed.
+	/// cannot initialize the data.
+	/// The current operating system is not Windows NT or later.
+	/// The caller attempts to set an invalid access time.
+	/// The UTC time that the current file or directory was last accessed.
 	public func lastAccessTimeUtc_set(_ value: System_DateTime /* System.DateTime */) throws {
 		let valueC = value.__handle
 		
@@ -94203,6 +96449,11 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 	}
 	
 	
+	/// Gets or sets the time when the current file or directory was last written to.
+	/// cannot initialize the data.
+	/// The current operating system is not Windows NT or later.
+	/// The caller attempts to set an invalid write time.
+	/// The time the current file was last written.
 	public var lastWriteTime: System_DateTime /* System.DateTime */ { get throws {
 		
 		
@@ -94222,6 +96473,11 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		return __returnValue
 		
 	}}
+	/// Gets or sets the time when the current file or directory was last written to.
+	/// cannot initialize the data.
+	/// The current operating system is not Windows NT or later.
+	/// The caller attempts to set an invalid write time.
+	/// The time the current file was last written.
 	public func lastWriteTime_set(_ value: System_DateTime /* System.DateTime */) throws {
 		let valueC = value.__handle
 		
@@ -94241,6 +96497,11 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 	}
 	
 	
+	/// Gets or sets the time, in coordinated universal time (UTC), when the current file or directory was last written to.
+	/// cannot initialize the data.
+	/// The current operating system is not Windows NT or later.
+	/// The caller attempts to set an invalid write time.
+	/// The UTC time when the current file was last written to.
 	public var lastWriteTimeUtc: System_DateTime /* System.DateTime */ { get throws {
 		
 		
@@ -94260,6 +96521,11 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		return __returnValue
 		
 	}}
+	/// Gets or sets the time, in coordinated universal time (UTC), when the current file or directory was last written to.
+	/// cannot initialize the data.
+	/// The current operating system is not Windows NT or later.
+	/// The caller attempts to set an invalid write time.
+	/// The UTC time when the current file was last written to.
 	public func lastWriteTimeUtc_set(_ value: System_DateTime /* System.DateTime */) throws {
 		let valueC = value.__handle
 		
@@ -94279,6 +96545,8 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 	}
 	
 	
+	/// Gets the target path of the link located in  , or   if this   instance doesn't represent a link.
+	/// The target path of the link located in  , or   if this   instance doesn't represent a link.
 	public var linkTarget: System_String? /* System.String */ { get throws {
 		
 		
@@ -94300,6 +96568,14 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 	}}
 	
 	
+	/// Gets or sets the Unix file mode for the current file or directory.
+	/// The file mode is invalid.
+	/// The caller does not have the required permission.
+	/// The specified path exceeds the system-defined maximum length.
+	/// The specified path is invalid. Only thrown when setting the property value.
+	/// The specified file doesn't exist. Only thrown when setting the property value.
+	/// cannot initialize the data.
+	/// of the current  .
 	public var unixFileMode: System_IO_UnixFileMode /* System.IO.UnixFileMode */ { get throws {
 		
 		
@@ -94319,6 +96595,14 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		return __returnValue
 		
 	}}
+	/// Gets or sets the Unix file mode for the current file or directory.
+	/// The file mode is invalid.
+	/// The caller does not have the required permission.
+	/// The specified path exceeds the system-defined maximum length.
+	/// The specified path is invalid. Only thrown when setting the property value.
+	/// The specified file doesn't exist. Only thrown when setting the property value.
+	/// cannot initialize the data.
+	/// of the current  .
 	public func unixFileMode_set(_ value: System_IO_UnixFileMode /* System.IO.UnixFileMode */) throws {
 		let valueC = value.cValue
 		
@@ -94338,6 +96622,17 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 	}
 	
 	
+	/// Gets or sets the attributes for the current file or directory.
+	/// The specified file doesn't exist. Only thrown when setting the property value.
+	/// The specified path is invalid. For example, it's on an unmapped drive. Only thrown when setting the property value.
+	/// The caller doesn't have the required permission.
+	/// .NET Core and .NET 5+ only: The user attempts to set an attribute value but doesn't have write permission.
+	/// The specified path, file name, or both exceed the system-defined maximum length.
+	/// The caller attempts to set an invalid file attribute.
+	/// -or-
+	/// .NET Framework only: The user attempts to set an attribute value but doesn't have write permission.
+	/// cannot initialize the data.
+	/// of the current  .
 	public var attributes: System_IO_FileAttributes /* System.IO.FileAttributes */ { get throws {
 		
 		
@@ -94357,6 +96652,17 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 		return __returnValue
 		
 	}}
+	/// Gets or sets the attributes for the current file or directory.
+	/// The specified file doesn't exist. Only thrown when setting the property value.
+	/// The specified path is invalid. For example, it's on an unmapped drive. Only thrown when setting the property value.
+	/// The caller doesn't have the required permission.
+	/// .NET Core and .NET 5+ only: The user attempts to set an attribute value but doesn't have write permission.
+	/// The specified path, file name, or both exceed the system-defined maximum length.
+	/// The caller attempts to set an invalid file attribute.
+	/// -or-
+	/// .NET Framework only: The user attempts to set an attribute value but doesn't have write permission.
+	/// cannot initialize the data.
+	/// of the current  .
 	public func attributes_set(_ value: System_IO_FileAttributes /* System.IO.FileAttributes */) throws {
 		let valueC = value.cValue
 		
@@ -94799,6 +97105,8 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		
 	}
 	
+	/// Gets the name of the file.
+	/// The name of the file.
 	public override var name: System_String /* System.String */ { get throws {
 		
 		
@@ -94820,6 +97128,12 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 	}}
 	
 	
+	/// Gets the size, in bytes, of the current file.
+	/// cannot update the state of the file or directory.
+	/// The file does not exist.
+	/// -or-
+	/// The   property is called for a directory.
+	/// The size of the current file in bytes.
 	public var length: Int64 /* System.Int64 */ { get throws {
 		
 		
@@ -94839,6 +97153,11 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 	}}
 	
 	
+	/// Gets a string representing the directory's full path.
+	/// was passed in for the directory name.
+	/// The fully qualified path name exceeds the system-defined maximum length.
+	/// The caller does not have the required permission.
+	/// A string representing the directory's full path.
 	public var directoryName: System_String? /* System.String */ { get throws {
 		
 		
@@ -94860,6 +97179,10 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 	}}
 	
 	
+	/// Gets an instance of the parent directory.
+	/// The specified path is invalid, such as being on an unmapped drive.
+	/// The caller does not have the required permission.
+	/// A   object representing the parent directory of this file.
 	public var directory: System_IO_DirectoryInfo? /* System.IO.DirectoryInfo */ { get throws {
 		
 		
@@ -94881,6 +97204,14 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 	}}
 	
 	
+	/// Gets or sets a value that determines if the current file is read only.
+	/// The file described by the current   object could not be found when trying to set the IsReadOnly property. (Note that getting this property for a nonexistent file will not throw an exception, but rather returns  .)
+	/// An I/O error occurred while opening the file.
+	/// This operation is not supported on the current platform.
+	/// -or-
+	/// The caller does not have the required permission.
+	/// The user does not have write permission, but attempted to set this property to  .
+	/// if the current file is read only or could not be found; otherwise,  .
 	public var isReadOnly: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -94898,6 +97229,14 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		return __returnValueC
 		
 	}}
+	/// Gets or sets a value that determines if the current file is read only.
+	/// The file described by the current   object could not be found when trying to set the IsReadOnly property. (Note that getting this property for a nonexistent file will not throw an exception, but rather returns  .)
+	/// An I/O error occurred while opening the file.
+	/// This operation is not supported on the current platform.
+	/// -or-
+	/// The caller does not have the required permission.
+	/// The user does not have write permission, but attempted to set this property to  .
+	/// if the current file is read only or could not be found; otherwise,  .
 	public func isReadOnly_set(_ value: Bool /* System.Boolean */) throws {
 		
 		
@@ -94916,6 +97255,8 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 	}
 	
 	
+	/// Gets a value indicating whether a file exists.
+	/// if the file exists;   if the file does not exist or if the file is a directory.
 	public override var exists: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -95578,6 +97919,8 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 		
 	}
 	
+	/// Gets the name of this   instance.
+	/// The directory name.
 	public override var name: System_String /* System.String */ { get throws {
 		
 		
@@ -95599,6 +97942,9 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 	}}
 	
 	
+	/// Gets the parent directory of a specified subdirectory.
+	/// The caller does not have the required permission.
+	/// The parent directory, or   if the path is null or if the file path denotes a root (such as \, C:\, or \\server\share).
 	public var parent: System_IO_DirectoryInfo? /* System.IO.DirectoryInfo */ { get throws {
 		
 		
@@ -95620,6 +97966,9 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 	}}
 	
 	
+	/// Gets the root portion of the directory.
+	/// The caller does not have the required permission.
+	/// An object that represents the root of the directory.
 	public var root: System_IO_DirectoryInfo /* System.IO.DirectoryInfo */ { get throws {
 		
 		
@@ -95641,6 +97990,8 @@ public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_Fi
 	}}
 	
 	
+	/// Gets a value indicating whether the directory exists.
+	/// if the directory exists; otherwise,  .
 	public override var exists: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -95728,6 +98079,8 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		
 	}
 	
+	/// Gets or sets a value that indicates whether to recurse into subdirectories while enumerating.
+	/// to recurse into subdirectories; otherwise,  . The default is  .
 	public var recurseSubdirectories: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -95745,6 +98098,8 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		return __returnValueC
 		
 	}}
+	/// Gets or sets a value that indicates whether to recurse into subdirectories while enumerating.
+	/// to recurse into subdirectories; otherwise,  . The default is  .
 	public func recurseSubdirectories_set(_ value: Bool /* System.Boolean */) throws {
 		
 		
@@ -95763,6 +98118,8 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 	}
 	
 	
+	/// Gets or sets a value that indicates whether to skip files or directories when access is denied (for example,   or  ).
+	/// to skip innacessible files or directories; otherwise,  . The default is  .
 	public var ignoreInaccessible: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -95780,6 +98137,8 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		return __returnValueC
 		
 	}}
+	/// Gets or sets a value that indicates whether to skip files or directories when access is denied (for example,   or  ).
+	/// to skip innacessible files or directories; otherwise,  . The default is  .
 	public func ignoreInaccessible_set(_ value: Bool /* System.Boolean */) throws {
 		
 		
@@ -95798,6 +98157,8 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 	}
 	
 	
+	/// Gets or sets the suggested buffer size, in bytes.
+	/// The buffer size. The default is 0 (no suggestion).
 	public var bufferSize: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -95815,6 +98176,8 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		return __returnValueC
 		
 	}}
+	/// Gets or sets the suggested buffer size, in bytes.
+	/// The buffer size. The default is 0 (no suggestion).
 	public func bufferSize_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -95833,6 +98196,8 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 	}
 	
 	
+	/// Gets or sets the attributes to skip.
+	/// The attributes to skip. The default is  FileAttributes.Hidden | FileAttributes.System .
 	public var attributesToSkip: System_IO_FileAttributes /* System.IO.FileAttributes */ { get throws {
 		
 		
@@ -95852,6 +98217,8 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		return __returnValue
 		
 	}}
+	/// Gets or sets the attributes to skip.
+	/// The attributes to skip. The default is  FileAttributes.Hidden | FileAttributes.System .
 	public func attributesToSkip_set(_ value: System_IO_FileAttributes /* System.IO.FileAttributes */) throws {
 		let valueC = value.cValue
 		
@@ -95871,6 +98238,8 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 	}
 	
 	
+	/// Gets or sets the match type.
+	/// One of the enumeration values that indicates the match type. The default is  .
 	public var matchType: System_IO_MatchType /* System.IO.MatchType */ { get throws {
 		
 		
@@ -95890,6 +98259,8 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		return __returnValue
 		
 	}}
+	/// Gets or sets the match type.
+	/// One of the enumeration values that indicates the match type. The default is  .
 	public func matchType_set(_ value: System_IO_MatchType /* System.IO.MatchType */) throws {
 		let valueC = value.cValue
 		
@@ -95909,6 +98280,8 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 	}
 	
 	
+	/// Gets or sets the case-matching behavior.
+	/// One of the enumeration values that indicates the case-matching behavior. The default is  .
 	public var matchCasing: System_IO_MatchCasing /* System.IO.MatchCasing */ { get throws {
 		
 		
@@ -95928,6 +98301,8 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		return __returnValue
 		
 	}}
+	/// Gets or sets the case-matching behavior.
+	/// One of the enumeration values that indicates the case-matching behavior. The default is  .
 	public func matchCasing_set(_ value: System_IO_MatchCasing /* System.IO.MatchCasing */) throws {
 		let valueC = value.cValue
 		
@@ -95947,6 +98322,8 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 	}
 	
 	
+	/// Gets or sets a value that indicates the maximum directory depth to recurse while enumerating, when   is set to  .
+	/// A number that represents the maximum directory depth to recurse while enumerating. The default is  Int32.MaxValue .
 	public var maxRecursionDepth: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -95964,6 +98341,8 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		return __returnValueC
 		
 	}}
+	/// Gets or sets a value that indicates the maximum directory depth to recurse while enumerating, when   is set to  .
+	/// A number that represents the maximum directory depth to recurse while enumerating. The default is  Int32.MaxValue .
 	public func maxRecursionDepth_set(_ value: Int32 /* System.Int32 */) throws {
 		
 		
@@ -95982,6 +98361,8 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 	}
 	
 	
+	/// Gets or sets a value that indicates whether to return the special directory entries "." and "..".
+	/// to return the special directory entries "." and ".."; otherwise,  .
 	public var returnSpecialDirectories: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -95999,6 +98380,8 @@ public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: Sy
 		return __returnValueC
 		
 	}}
+	/// Gets or sets a value that indicates whether to return the special directory entries "." and "..".
+	/// to return the special directory entries "." and ".."; otherwise,  .
 	public func returnSpecialDirectories_set(_ value: Bool /* System.Boolean */) throws {
 		
 		
@@ -100676,6 +103059,8 @@ public class System_Half /* System.Half */: System_ValueType {
 		
 	}
 	
+	/// Represents the smallest positive   value that is greater than zero.
+	/// 5.9604645E-08
 	public class var epsilon: System_Half /* System.Half */ { get throws {
 		
 		
@@ -100697,6 +103082,8 @@ public class System_Half /* System.Half */: System_ValueType {
 	}}
 	
 	
+	/// Represents positive infinity.
+	/// Infinity.
 	public class var positiveInfinity: System_Half /* System.Half */ { get throws {
 		
 		
@@ -100718,6 +103105,8 @@ public class System_Half /* System.Half */: System_ValueType {
 	}}
 	
 	
+	/// Represents negative infinity.
+	/// -Infinity.
 	public class var negativeInfinity: System_Half /* System.Half */ { get throws {
 		
 		
@@ -100739,6 +103128,8 @@ public class System_Half /* System.Half */: System_ValueType {
 	}}
 	
 	
+	/// Represents not a number.
+	/// NaN.
 	public class var naN: System_Half /* System.Half */ { get throws {
 		
 		
@@ -100760,6 +103151,8 @@ public class System_Half /* System.Half */: System_ValueType {
 	}}
 	
 	
+	/// Represents the smallest possible value of   .
+	/// -65504
 	public class var minValue: System_Half /* System.Half */ { get throws {
 		
 		
@@ -100781,6 +103174,8 @@ public class System_Half /* System.Half */: System_ValueType {
 	}}
 	
 	
+	/// Represents the largest possible value of   .
+	/// 65504
 	public class var maxValue: System_Half /* System.Half */ { get throws {
 		
 		
@@ -100802,6 +103197,7 @@ public class System_Half /* System.Half */: System_ValueType {
 	}}
 	
 	
+	/// Gets the mathematical constant  e .
 	public class var e: System_Half /* System.Half */ { get throws {
 		
 		
@@ -100823,6 +103219,7 @@ public class System_Half /* System.Half */: System_ValueType {
 	}}
 	
 	
+	/// Gets the mathematical constant  pi .
 	public class var pi: System_Half /* System.Half */ { get throws {
 		
 		
@@ -100844,6 +103241,7 @@ public class System_Half /* System.Half */: System_ValueType {
 	}}
 	
 	
+	/// Gets the mathematical constant  tau .
 	public class var tau: System_Half /* System.Half */ { get throws {
 		
 		
@@ -100865,6 +103263,7 @@ public class System_Half /* System.Half */: System_ValueType {
 	}}
 	
 	
+	/// Gets a value that represents negative  zero .
 	public class var negativeZero: System_Half /* System.Half */ { get throws {
 		
 		
@@ -100886,6 +103285,7 @@ public class System_Half /* System.Half */: System_ValueType {
 	}}
 	
 	
+	/// Gets the multiplicative identity of the current type.
 	public class var multiplicativeIdentity: System_Half /* System.Half */ { get throws {
 		
 		
@@ -100907,6 +103307,7 @@ public class System_Half /* System.Half */: System_ValueType {
 	}}
 	
 	
+	/// Gets the value  1  for the type.
 	public class var one: System_Half /* System.Half */ { get throws {
 		
 		
@@ -100928,6 +103329,7 @@ public class System_Half /* System.Half */: System_ValueType {
 	}}
 	
 	
+	/// Gets the value  0  for the type.
 	public class var zero: System_Half /* System.Half */ { get throws {
 		
 		
@@ -100949,6 +103351,7 @@ public class System_Half /* System.Half */: System_ValueType {
 	}}
 	
 	
+	/// Gets the value  -1  for the type.
 	public class var negativeOne: System_Half /* System.Half */ { get throws {
 		
 		
@@ -102010,6 +104413,7 @@ public class System_Int128 /* System.Int128 */: System_ValueType {
 		
 	}
 	
+	/// Gets the minimum value of the current type.
 	public class var minValue: System_Int128 /* System.Int128 */ { get throws {
 		
 		
@@ -102031,6 +104435,7 @@ public class System_Int128 /* System.Int128 */: System_ValueType {
 	}}
 	
 	
+	/// Gets the maximum value of the current type.
 	public class var maxValue: System_Int128 /* System.Int128 */ { get throws {
 		
 		
@@ -102052,6 +104457,7 @@ public class System_Int128 /* System.Int128 */: System_ValueType {
 	}}
 	
 	
+	/// Gets the value  1  for the type.
 	public class var one: System_Int128 /* System.Int128 */ { get throws {
 		
 		
@@ -102073,6 +104479,7 @@ public class System_Int128 /* System.Int128 */: System_ValueType {
 	}}
 	
 	
+	/// Gets the value  0  for the type.
 	public class var zero: System_Int128 /* System.Int128 */ { get throws {
 		
 		
@@ -102094,6 +104501,7 @@ public class System_Int128 /* System.Int128 */: System_ValueType {
 	}}
 	
 	
+	/// Gets the value  -1  for the type.
 	public class var negativeOne: System_Int128 /* System.Int128 */ { get throws {
 		
 		
@@ -103012,6 +105420,7 @@ public class System_UInt128 /* System.UInt128 */: System_ValueType {
 		
 	}
 	
+	/// Gets the minimum value of the current type.
 	public class var minValue: System_UInt128 /* System.UInt128 */ { get throws {
 		
 		
@@ -103033,6 +105442,7 @@ public class System_UInt128 /* System.UInt128 */: System_ValueType {
 	}}
 	
 	
+	/// Gets the maximum value of the current type.
 	public class var maxValue: System_UInt128 /* System.UInt128 */ { get throws {
 		
 		
@@ -103054,6 +105464,7 @@ public class System_UInt128 /* System.UInt128 */: System_ValueType {
 	}}
 	
 	
+	/// Gets the value  1  for the type.
 	public class var one: System_UInt128 /* System.UInt128 */ { get throws {
 		
 		
@@ -103075,6 +105486,7 @@ public class System_UInt128 /* System.UInt128 */: System_ValueType {
 	}}
 	
 	
+	/// Gets the value  0  for the type.
 	public class var zero: System_UInt128 /* System.UInt128 */ { get throws {
 		
 		
@@ -104046,6 +106458,10 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 		
 	}
 	
+	/// Gets or sets the total number of elements the internal data structure can hold without resizing.
+	/// is set to a value that is less than  .
+	/// There is not enough memory available on the system.
+	/// The number of elements that the   can contain before resizing is required.
 	public func capacity(T: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let TC = T.__handle
 		
@@ -104064,6 +106480,10 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 		return __returnValueC
 		
 	}
+	/// Gets or sets the total number of elements the internal data structure can hold without resizing.
+	/// is set to a value that is less than  .
+	/// There is not enough memory available on the system.
+	/// The number of elements that the   can contain before resizing is required.
 	public func capacity_set(T: System_Type /* System.Type */, _ value: Int32 /* System.Int32 */) throws {
 		let TC = T.__handle
 		
@@ -104083,6 +106503,8 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 	}
 	
 	
+	/// Gets the number of elements contained in the  .
+	/// The number of elements contained in the  .
 	public func count(T: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let TC = T.__handle
 		
@@ -104486,6 +106908,8 @@ public class System_Collections_Generic_Dictionary_A2 /* System.Collections.Gene
 		
 	}
 	
+	/// Gets the number of key/value pairs contained in the  .
+	/// The number of key/value pairs contained in the  .
 	public func count(TKey: System_Type /* System.Type */, TValue: System_Type /* System.Type */) throws -> Int32 /* System.Int32 */ {
 		let TKeyC = TKey.__handle
 		let TValueC = TValue.__handle
@@ -104820,6 +107244,8 @@ public class System_Tuple_A1 /* System.Tuple<> */: System_Object {
 		
 	}
 	
+	/// Gets the value of the   object's single component.
+	/// The value of the current   object's single component.
 	public func item1(T1: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		
@@ -104866,6 +107292,8 @@ public class System_Runtime_CompilerServices_ITuple /* System.Runtime.CompilerSe
 		"System.Runtime.CompilerServices.ITuple"
 	}}
 
+	/// Gets the number of elements in this   instance.
+	/// The number of elements in this   instance.
 	public var length: Int32 /* System.Int32 */ { get throws {
 		
 		
@@ -105018,6 +107446,8 @@ public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
 		
 	}
 	
+	/// Gets the value of the current   object's first component.
+	/// The value of the current   object's first component.
 	public func item1(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -105041,6 +107471,8 @@ public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's second component.
+	/// The value of the current   object's second component.
 	public func item2(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -105183,6 +107615,8 @@ public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
 		
 	}
 	
+	/// Gets the value of the current   object's first component.
+	/// The value of the current   object's first component.
 	public func item1(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -105207,6 +107641,8 @@ public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's second component.
+	/// The value of the current   object's second component.
 	public func item2(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -105231,6 +107667,8 @@ public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's third component.
+	/// The value of the current   object's third component.
 	public func item3(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -105381,6 +107819,8 @@ public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
 		
 	}
 	
+	/// Gets the value of the current   object's first component.
+	/// The value of the current   object's first component.
 	public func item1(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -105406,6 +107846,8 @@ public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's second component.
+	/// The value of the current   object's second component.
 	public func item2(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -105431,6 +107873,8 @@ public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's third component.
+	/// The value of the current   object's third component.
 	public func item3(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -105456,6 +107900,8 @@ public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's fourth component.
+	/// The value of the current   object's fourth component.
 	public func item4(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -105614,6 +108060,8 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 		
 	}
 	
+	/// Gets the value of the current   object's first component.
+	/// The value of the current   object's first component.
 	public func item1(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -105640,6 +108088,8 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's second component.
+	/// The value of the current   object's second component.
 	public func item2(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -105666,6 +108116,8 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's third component.
+	/// The value of the current   object's third component.
 	public func item3(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -105692,6 +108144,8 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's fourth component.
+	/// The value of the current   object's fourth component.
 	public func item4(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -105718,6 +108172,8 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's fifth component.
+	/// The value of the current   object's fifth component.
 	public func item5(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -105884,6 +108340,8 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 		
 	}
 	
+	/// Gets the value of the current   object's first component.
+	/// The value of the current   object's first component.
 	public func item1(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -105911,6 +108369,8 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's second component.
+	/// The value of the current   object's second component.
 	public func item2(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -105938,6 +108398,8 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's third component.
+	/// The value of the current   object's third component.
 	public func item3(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -105965,6 +108427,8 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's fourth component.
+	/// The value of the current   object's fourth component.
 	public func item4(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -105992,6 +108456,8 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's fifth component.
+	/// The value of the current   object's fifth  component.
 	public func item5(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -106019,6 +108485,8 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's sixth component.
+	/// The value of the current   object's sixth component.
 	public func item6(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -106193,6 +108661,8 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 		
 	}
 	
+	/// Gets the value of the current   object's first component.
+	/// The value of the current   object's first component.
 	public func item1(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -106221,6 +108691,8 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's second component.
+	/// The value of the current   object's second component.
 	public func item2(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -106249,6 +108721,8 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's third component.
+	/// The value of the current   object's third component.
 	public func item3(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -106277,6 +108751,8 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's fourth component.
+	/// The value of the current   object's fourth component.
 	public func item4(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -106305,6 +108781,8 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's fifth component.
+	/// The value of the current   object's fifth component.
 	public func item5(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -106333,6 +108811,8 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's sixth component.
+	/// The value of the current   object's sixth component.
 	public func item6(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -106361,6 +108841,8 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's seventh component.
+	/// The value of the current   object's seventh component.
 	public func item7(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -106543,6 +109025,8 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 		
 	}
 	
+	/// Gets the value of the current   object's first component.
+	/// The value of the current   object's first component.
 	public func item1(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */, TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -106572,6 +109056,8 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's second component.
+	/// The value of the current   object's second component.
 	public func item2(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */, TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -106601,6 +109087,8 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's third component.
+	/// The value of the current   object's third component.
 	public func item3(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */, TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -106630,6 +109118,8 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's fourth component.
+	/// The value of the current   object's fourth component.
 	public func item4(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */, TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -106659,6 +109149,8 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's fifth component.
+	/// The value of the current   object's fifth component.
 	public func item5(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */, TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -106688,6 +109180,8 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's sixth component.
+	/// The value of the current   object's sixth component.
 	public func item6(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */, TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -106717,6 +109211,8 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the value of the current   object's seventh component.
+	/// The value of the current   object's seventh component.
 	public func item7(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */, TRest: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -106746,6 +109242,8 @@ public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 	}
 	
 	
+	/// Gets the current   object's remaining components.
+	/// The value of the current   object's remaining components.
 	public func rest(T1: System_Type /* System.Type */, T2: System_Type /* System.Type */, T3: System_Type /* System.Type */, T4: System_Type /* System.Type */, T5: System_Type /* System.Type */, T6: System_Type /* System.Type */, T7: System_Type /* System.Type */, TRest: System_Type /* System.Type */) throws -> System_Object /* System.Object */ {
 		let T1C = T1.__handle
 		let T2C = T2.__handle
@@ -106850,6 +109348,7 @@ public class Beyond_NET_Sample_Address /* Beyond.NET.Sample.Address */: System_O
 		
 	}
 	
+	/// The Street of the Address.
 	public var street: System_String /* System.String */ { get throws {
 		
 		
@@ -106871,6 +109370,7 @@ public class Beyond_NET_Sample_Address /* Beyond.NET.Sample.Address */: System_O
 	}}
 	
 	
+	/// The City of the Address.
 	public var city: System_String /* System.String */ { get throws {
 		
 		
@@ -115605,9 +118105,9 @@ public struct System {
 	public typealias TimeZoneInfo_Array = System_TimeZoneInfo_Array
 	
 	public typealias TimeZoneInfo_AdjustmentRule_Array = System_TimeZoneInfo_AdjustmentRule_Array
-	
+	/// Provides information about a time zone adjustment, such as the transition to and from daylight saving time.
 	public typealias TimeZoneInfo_AdjustmentRule = System_TimeZoneInfo_AdjustmentRule
-	
+	/// Provides information about a specific time change, such as the change from daylight saving time to standard time or vice versa, in a particular time zone.
 	public typealias TimeZoneInfo_TransitionTime = System_TimeZoneInfo_TransitionTime
 	/// Provides data for loader resolution events, such as the  ,  ,  , and   events.
 	public typealias ResolveEventArgs = System_ResolveEventArgs
@@ -115828,17 +118328,17 @@ public extension System.Runtime {
 		public typealias INotifyCompletion = System_Runtime_CompilerServices_INotifyCompletion
 		/// Provides an awaitable object that enables configured awaits on a task.
 		public typealias ConfiguredTaskAwaitable = System_Runtime_CompilerServices_ConfiguredTaskAwaitable
-		
+		/// Provides an awaiter for an awaitable ( ) object.
 		public typealias ConfiguredTaskAwaitable_ConfiguredTaskAwaiter = System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter
 		/// Provides the context for waiting when asynchronously switching into a target environment.
 		public typealias YieldAwaitable = System_Runtime_CompilerServices_YieldAwaitable
-		
+		/// Provides an awaiter for switching into a target environment.
 		public typealias YieldAwaitable_YieldAwaiter = System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter
 		/// Provides an awaiter for a  .
 		public typealias ValueTaskAwaiter = System_Runtime_CompilerServices_ValueTaskAwaiter
 		/// Provides an awaitable type that enables configured awaits on a  .
 		public typealias ConfiguredValueTaskAwaitable = System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable
-		
+		/// Provides an awaiter for a  .
 		public typealias ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter = System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter
 		/// Defines a general-purpose Tuple implementation that allows access to Tuple instance members without knowing the underlying Tuple type.
 		public typealias ITuple = System_Runtime_CompilerServices_ITuple
@@ -116276,9 +118776,9 @@ public extension System {
 		public typealias Encoder = System_Text_Encoder
 		/// Represents a mutable string of characters. This class cannot be inherited.
 		public typealias StringBuilder = System_Text_StringBuilder
-		
+		/// Supports simple iteration over the chunks of a   instance.
 		public typealias StringBuilder_ChunkEnumerator = System_Text_StringBuilder_ChunkEnumerator
-		
+		/// Provides a handler used by the language compiler to append interpolated strings into   instances.
 		public typealias StringBuilder_AppendInterpolatedStringHandler = System_Text_StringBuilder_AppendInterpolatedStringHandler
 		
     }

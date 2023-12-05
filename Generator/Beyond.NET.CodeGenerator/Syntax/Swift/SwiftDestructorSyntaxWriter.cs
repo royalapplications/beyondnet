@@ -44,6 +44,7 @@ public class SwiftDestructorSyntaxWriter: SwiftMethodSyntaxWriter, IDestructorSy
             true,
             typeDescriptorRegistry,
             state,
+            null,
             out _
         );
 

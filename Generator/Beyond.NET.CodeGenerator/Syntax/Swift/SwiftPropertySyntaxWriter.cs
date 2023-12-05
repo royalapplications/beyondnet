@@ -71,6 +71,7 @@ public class SwiftPropertySyntaxWriter: SwiftMethodSyntaxWriter, IPropertySyntax
                 addToState,
                 typeDescriptorRegistry,
                 state,
+                property,
                 out string generatedName
             );
 
@@ -104,6 +105,7 @@ public class SwiftPropertySyntaxWriter: SwiftMethodSyntaxWriter, IPropertySyntax
                 addToState,
                 typeDescriptorRegistry,
                 state,
+                property,
                 out string generatedName
             );
 

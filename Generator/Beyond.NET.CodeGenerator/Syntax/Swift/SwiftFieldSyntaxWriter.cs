@@ -63,6 +63,7 @@ public class SwiftFieldSyntaxWriter: SwiftMethodSyntaxWriter, IFieldSyntaxWriter
                 addToState,
                 typeDescriptorRegistry,
                 state,
+                field,
                 out string generatedName
             );
 
@@ -95,6 +96,7 @@ public class SwiftFieldSyntaxWriter: SwiftMethodSyntaxWriter, IFieldSyntaxWriter
                 addToState,
                 typeDescriptorRegistry,
                 state,
+                field,
                 out string generatedName
             );
 

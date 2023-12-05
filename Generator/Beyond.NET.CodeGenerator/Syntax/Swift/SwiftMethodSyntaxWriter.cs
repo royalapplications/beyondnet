@@ -48,6 +48,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             true,
             typeDescriptorRegistry,
             state,
+            method,
             out _
         );
 
@@ -68,6 +69,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         bool addToState,
         TypeDescriptorRegistry typeDescriptorRegistry,
         State state,
+        MemberInfo? originatingMemberInfo,
         out string generatedName
     )
     {
@@ -379,10 +381,14 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             typeDescriptorRegistry
         );
 
-        string fullDecl;
+        string? declarationComment;
+        string declaration;
 
         if (memberKind == MemberKind.Constructor) {
-            fullDecl = Builder.Initializer()
+            // TODO
+            declarationComment = null;
+            
+            declaration = Builder.Initializer()
                 .Convenience()
                 .Visibility(onlyWriteSignatureForProtocol 
                     ? SwiftVisibilities.None
@@ -392,7 +398,9 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 .Implementation(memberImpl)
                 .ToString();
         } else if (memberKind == MemberKind.Destructor) {
-            fullDecl = Builder.Func(methodNameSwift)
+            declarationComment = null;
+            
+            declaration = Builder.Func(methodNameSwift)
                 .Visibility(onlyWriteSignatureForProtocol
                     ? SwiftVisibilities.None
                     : SwiftVisibilities.Internal)
@@ -402,13 +410,15 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 .Implementation(memberImpl)
                 .ToString();
         } else if (memberKind == MemberKind.TypeOf) {
+            declarationComment = null;
+            
             bool isEnum = declaringType.IsEnum;
             
             string propTypeName = !returnOrSetterOrEventHandlerType.IsVoid()
                 ? swiftReturnOrSetterTypeNameWithComment
                 : throw new Exception("A property must have a return type");
 
-            fullDecl = Builder.GetOnlyProperty(methodNameSwift, propTypeName)
+            declaration = Builder.GetOnlyProperty(methodNameSwift, propTypeName)
                 .Visibility(onlyWriteSignatureForProtocol 
                     ? SwiftVisibilities.None
                     : SwiftVisibilities.Public)
@@ -424,7 +434,18 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 ? swiftReturnOrSetterTypeNameWithComment
                 : throw new Exception("A property must have a return type");
 
-            fullDecl = Builder.GetOnlyProperty(methodNameSwift, propTypeName)
+            if (originatingMemberInfo is FieldInfo fieldInfo) {
+                declarationComment = fieldInfo.GetDocumentation()
+                    ?.GetFormattedDocumentationComment();
+            } else if (originatingMemberInfo is PropertyInfo propertyInfo) {
+                declarationComment = propertyInfo.GetDocumentation()
+                    ?.GetFormattedDocumentationComment();
+            } else {
+                // TODO
+                declarationComment = null;
+            }
+
+            declaration = Builder.GetOnlyProperty(methodNameSwift, propTypeName)
                 .Visibility(onlyWriteSignatureForProtocol
                     ? SwiftVisibilities.None
                     : SwiftVisibilities.Public)
@@ -436,7 +457,18 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 .Implementation(memberImpl)
                 .ToString();
         } else {
-            fullDecl = Builder.Func(methodNameSwift)
+            if (originatingMemberInfo is FieldInfo fieldInfo) {
+                declarationComment = fieldInfo.GetDocumentation()
+                    ?.GetFormattedDocumentationComment();
+            } else if (originatingMemberInfo is PropertyInfo propertyInfo) {
+                declarationComment = propertyInfo.GetDocumentation()
+                    ?.GetFormattedDocumentationComment();
+            } else {
+                // TODO
+                declarationComment = null;
+            }
+            
+            declaration = Builder.Func(methodNameSwift)
                 .Visibility(onlyWriteSignatureForProtocol 
                     ? SwiftVisibilities.None
                     : SwiftVisibilities.Public)
@@ -453,8 +485,16 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 .ToString();
         }
         #endregion Func Declaration
+
+        string declarationWithComment;
+
+        if (!string.IsNullOrEmpty(declarationComment)) {
+            declarationWithComment = declarationComment + "\n" + declaration;
+        } else {
+            declarationWithComment = declaration;
+        }
         
-        return fullDecl;
+        return declarationWithComment;
     }
 
     private static bool CanBeGeneratedAsGetOnlyProperty(

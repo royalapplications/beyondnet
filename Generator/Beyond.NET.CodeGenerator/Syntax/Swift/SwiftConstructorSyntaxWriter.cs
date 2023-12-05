@@ -50,6 +50,7 @@ public class SwiftConstructorSyntaxWriter: SwiftMethodSyntaxWriter, IConstructor
             true,
             typeDescriptorRegistry,
             state,
+            constructor,
             out _
         );
 

@@ -77,6 +77,7 @@ public class SwiftEventSyntaxWriter: SwiftMethodSyntaxWriter, IEventSyntaxWriter
                 addToState,
                 typeDescriptorRegistry,
                 state,
+                @event,
                 out string generatedName
             );
 
@@ -110,6 +111,7 @@ public class SwiftEventSyntaxWriter: SwiftMethodSyntaxWriter, IEventSyntaxWriter
                 addToState,
                 typeDescriptorRegistry,
                 state,
+                @event,
                 out string generatedName
             );
 
