@@ -37,7 +37,7 @@ internal struct XmlDocumentationMemberIdentifier
             return;
         }
         
-        m_key = $"{IDENTIFIER_TYPE}:{XmlDocumentationKeyHelper(typeFullName)}";
+        m_key = $"{IDENTIFIER_TYPE}:{EncodeKey(typeFullName)}";
     }
     
     internal XmlDocumentationMemberIdentifier(FieldInfo fieldInfo)
@@ -60,7 +60,7 @@ internal struct XmlDocumentationMemberIdentifier
 
         var memberName = fieldInfo.Name;
 
-        m_key = $"{IDENTIFIER_FIELD}:{XmlDocumentationKeyHelper(typeFullName, memberName)}";
+        m_key = $"{IDENTIFIER_FIELD}:{EncodeKey(typeFullName, memberName)}";
     }
     
     internal XmlDocumentationMemberIdentifier(PropertyInfo propertyInfo)
@@ -83,7 +83,7 @@ internal struct XmlDocumentationMemberIdentifier
 
         var memberName = propertyInfo.Name;
 
-        m_key = $"{IDENTIFIER_PROPERTY}:{XmlDocumentationKeyHelper(typeFullName, memberName)}";
+        m_key = $"{IDENTIFIER_PROPERTY}:{EncodeKey(typeFullName, memberName)}";
     }
     
     internal XmlDocumentationMemberIdentifier(EventInfo eventInfo)
@@ -106,12 +106,25 @@ internal struct XmlDocumentationMemberIdentifier
 
         var memberName = eventInfo.Name;
 
-        m_key = $"{IDENTIFIER_EVENT}:{XmlDocumentationKeyHelper(typeFullName, memberName)}";
+        m_key = $"{IDENTIFIER_EVENT}:{EncodeKey(typeFullName, memberName)}";
+    }
+
+    internal XmlDocumentationMemberIdentifier(MethodInfo methodInfo) 
+	    : this(methodInfo, false)
+    {
     }
     
-    internal XmlDocumentationMemberIdentifier(ConstructorInfo constructorInfo)
+    internal XmlDocumentationMemberIdentifier(ConstructorInfo constructorInfo) 
+	    : this(constructorInfo, true)
     {
-        var type = constructorInfo.DeclaringType;
+    }
+    
+    private XmlDocumentationMemberIdentifier(
+	    MethodBase methodBase,
+	    bool isConstructor
+	)
+    {
+        var type = methodBase.DeclaringType;
 
         if (type is null) {
             m_key = string.Empty;
@@ -127,37 +140,115 @@ internal struct XmlDocumentationMemberIdentifier
             return;
         }
 
-        var memberName = constructorInfo.Name;
+        var memberName = GetXmlMethodName(
+	        type,
+	        methodBase,
+	        isConstructor
+        );
 
-        // TODO: https://learn.microsoft.com/en-us/archive/msdn-magazine/2019/october/csharp-accessing-xml-documentation-via-reflection
-        m_key = $"{IDENTIFIER_METHOD}:{XmlDocumentationKeyHelper(typeFullName, memberName)}";
+        m_key = $"{IDENTIFIER_METHOD}:{memberName}";
     }
-    
-    internal XmlDocumentationMemberIdentifier(MethodInfo methodInfo)
-    {
-        var type = methodInfo.DeclaringType;
 
-        if (type is null) {
-            m_key = string.Empty;
-            
-            return;
-        }
+    private static string? GetXmlMethodName(
+	    Type declaringType,
+	    MethodBase methodBase,
+	    bool isConstructor
+	)
+	{
+		if (methodBase.IsGenericMethod ||
+		    methodBase.ContainsGenericParameters ||
+            methodBase.Name is "op_Implicit" ||
+            methodBase.Name is "op_Explicit") {
+			return null;
+		}
+		
+		var parameterInfos = methodBase.GetParameters();
+
+		var declarationTypeString = GetXmlDocumenationFormattedString(
+			declaringType,
+			false
+		);
+		
+		var memberNameString = isConstructor
+            ? "#ctor" 
+            : methodBase.Name;
+		
+		string parametersString = parameterInfos.Length > 0 
+			? "(" + string.Join(",", methodBase.GetParameters().Select(x => GetXmlDocumenationFormattedString(x.ParameterType, true))) + ")" 
+			: string.Empty;
+
+		string methodName = declarationTypeString +
+		                    "." +
+		                    memberNameString +
+		                    parametersString;
         
-        var typeFullName = type.FullName;
+		return methodName;
+	}
 
-        if (string.IsNullOrEmpty(typeFullName)) {
-            m_key = string.Empty;
-            
-            return;
-        }
+    private static string? GetXmlDocumenationFormattedString(
+		Type type,
+		bool isMethodParameter
+	)
+	{
+		if (type.IsGenericType ||
+		    type.IsGenericParameter) {
+			return null;
+		} else if (type.HasElementType) {
+			var elementType = type.GetElementType();
 
-        var memberName = methodInfo.Name;
+			if (elementType is null) {
+				return null;
+			}
+			
+			var elementTypeString = GetXmlDocumenationFormattedString(
+				elementType,
+				isMethodParameter
+			);
 
-        // TODO: https://learn.microsoft.com/en-us/archive/msdn-magazine/2019/october/csharp-accessing-xml-documentation-via-reflection
-        m_key = $"{IDENTIFIER_METHOD}:{XmlDocumentationKeyHelper(typeFullName, memberName)}";
-    }
+			if (type.IsPointer) {
+				return elementTypeString + "*";
+			} else if (type.IsByRef) {
+				return elementTypeString + "@";
+			} else if (type.IsArray) {
+				int rank = type.GetArrayRank();
+				
+				string arrayDimensionsString = rank > 1
+					? "[" + string.Join(",", Enumerable.Repeat("0:", rank)) + "]"
+					: "[]";
+				
+				return elementTypeString + arrayDimensionsString;
+			} else {
+				return null;
+			}
+		} else {
+			var isNested = type.IsNested;
+
+			string prefaceString;
+			
+			if (isNested) {
+				var declaringType = type.DeclaringType;
+
+				if (declaringType is null) {
+					return null;
+				}
+				
+				prefaceString = GetXmlDocumenationFormattedString(
+					declaringType,
+					isMethodParameter
+				) + ".";
+			} else {
+				prefaceString = type.Namespace + ".";
+			}
+
+			string typeNameString = isMethodParameter
+				? Regex.Replace(type.Name, @"`\d+", string.Empty)
+				: type.Name;
+
+			return prefaceString + typeNameString;
+		}
+	}
     
-    private static string XmlDocumentationKeyHelper(
+    private static string EncodeKey(
         string fullTypeName,
         string? memberName = null
     ) {

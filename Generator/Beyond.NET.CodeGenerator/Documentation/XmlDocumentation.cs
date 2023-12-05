@@ -120,20 +120,6 @@ public static class XmlDocumentation_Extensions
         return memberDocu;
     }
     
-    public static XmlDocumentationContent? GetDocumentation(this ConstructorInfo constructorInfo)
-    {
-        var assembly = constructorInfo.DeclaringType?.Assembly;
-
-        if (assembly is null) {
-            return null;
-        }
-        
-        var docu = XmlDocumentationStore.Shared.GetDocumentation(assembly);
-        var memberDocu = docu?.GetDocumentation(new(constructorInfo));
-
-        return memberDocu;
-    }
-    
     public static XmlDocumentationContent? GetDocumentation(this MethodInfo methodInfo)
     {
         var assembly = methodInfo.DeclaringType?.Assembly;
@@ -144,6 +130,20 @@ public static class XmlDocumentation_Extensions
         
         var docu = XmlDocumentationStore.Shared.GetDocumentation(assembly);
         var memberDocu = docu?.GetDocumentation(new(methodInfo));
+
+        return memberDocu;
+    }
+    
+    public static XmlDocumentationContent? GetDocumentation(this ConstructorInfo constructorInfo)
+    {
+        var assembly = constructorInfo.DeclaringType?.Assembly;
+
+        if (assembly is null) {
+            return null;
+        }
+        
+        var docu = XmlDocumentationStore.Shared.GetDocumentation(assembly);
+        var memberDocu = docu?.GetDocumentation(new(constructorInfo));
 
         return memberDocu;
     }
