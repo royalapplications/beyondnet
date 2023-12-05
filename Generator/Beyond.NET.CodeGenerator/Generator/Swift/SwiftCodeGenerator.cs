@@ -5,6 +5,7 @@ using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.SourceCode;
 using Beyond.NET.CodeGenerator.Syntax;
 using Beyond.NET.CodeGenerator.Syntax.Swift;
+using Builder = Beyond.NET.CodeGenerator.Syntax.Swift.Builder;
 using Beyond.NET.CodeGenerator.Types;
 using Beyond.NET.Core;
 
@@ -213,7 +214,7 @@ public class SwiftCodeGenerator: ICodeGenerator
         string fullNamespaceName = namespaceNode.FullName;
         var typesInNamespace = result.GetTypesInNamespace(fullNamespaceName);
 
-        Dictionary<string, string> typeAliases = new();
+        Dictionary<string, Tuple<Type, string>> typeAliases = new();
 
         foreach (var type in typesInNamespace) {
             Type nonByRefType = type.GetNonByRefType();
@@ -255,17 +256,25 @@ public class SwiftCodeGenerator: ICodeGenerator
                 .Replace(swiftNamespacePrefix, string.Empty)
                 .EscapedSwiftTypeAliasTypeName();
 
-            typeAliases[swiftTypeName] = swiftTypeNameWithoutNamespace;
+            typeAliases[swiftTypeName] = new(nonByRefType, swiftTypeNameWithoutNamespace);
         }
 
         StringBuilder sbTypeAliases = new();
 
         foreach (var kvp in typeAliases) {
-            string swiftTypeName = kvp.Key;
-            string swiftTypeNameWithoutNamespace = kvp.Value;
+            var swiftTypeName = kvp.Key;
+            var type = kvp.Value.Item1;
+            var swiftTypeNameWithoutNamespace = kvp.Value.Item2;
             
-            string typeAlias = $"public typealias {swiftTypeNameWithoutNamespace} = {swiftTypeName}";
+            var typeAlias = Builder.TypeAlias(swiftTypeNameWithoutNamespace, swiftTypeName)
+                .Public()
+                .Build()
+                .ToString();
             
+            var typeDocumentationComment = type.GetDocumentation()
+                ?.GetFormattedDocumentationComment();
+
+            sbTypeAliases.AppendLine(typeDocumentationComment);
             sbTypeAliases.AppendLine(typeAlias);
         }
 

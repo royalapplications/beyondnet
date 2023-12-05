@@ -15,60 +15,42 @@ internal class XmlDocumentationStore
         if (AssemblyDocumentations.TryGetValue(assembly, out XmlDocumentation? existingDocumentation)) {
             return existingDocumentation;
         }
+        
+        var assemblyFilePath = assembly.Location;
 
-        var newDocumentation = XmlDocumentation.FromAssembly(assembly);
+        XmlDocumentation? newDocumentation = null;
+        
+        if (File.Exists(assemblyFilePath)) {
+            var xmlDocumentationFilePaths = GetXmlDocumentationFilePaths(
+                assembly,
+                assemblyFilePath
+            );
+
+            foreach (var xmlDocumentationFilePath in xmlDocumentationFilePaths) {
+                if (!File.Exists(xmlDocumentationFilePath)) {
+                    continue;
+                }
+                
+                newDocumentation ??= new XmlDocumentation();
+                newDocumentation.PopulateMembersFromXmlDocumentationPath(xmlDocumentationFilePath);
+            }
+        }
 
         AssemblyDocumentations[assembly] = newDocumentation;
 
         return newDocumentation;
     }
-}
-
-// TODO: Right now this only gets documentation from the targeted assembly but we must also make it so it's able to add documentation from multiple Assemblies when they are loaded by the AssemblyLoader's AppDomain_OnAssemblyResolve method.
-public class XmlDocumentation
-{
-    private readonly Dictionary<XmlDocumentationMemberIdentifier, XmlDocumentationContent> m_members;
-
-    private XmlDocumentation(Dictionary<XmlDocumentationMemberIdentifier, XmlDocumentationContent> members)
-    {
-        m_members = members ?? throw new ArgumentNullException(nameof(members));
-    }
-
-    #region Parsing
-    internal static XmlDocumentation? FromAssembly(Assembly assembly)
-    {
-        string assemblyFilePath = assembly.Location;
-
-        var docu = FromAssemblyPath(assemblyFilePath);
-
-        return docu;
-    }
     
-    internal static XmlDocumentation? FromAssemblyPath(string assemblyFilePath)
-    {
-        if (!File.Exists(assemblyFilePath)) {
-            return null;
-        }
-        
-        var xmlFilePath = GetXmlDocumentationFilePath(assemblyFilePath);
-        
-        if (!File.Exists(xmlFilePath)) {
-            return null;
-        }
-
-        var content = File.ReadAllText(xmlFilePath);
-        var docu = ParseXmlDocumentation(content);
-
-        return docu;
-    }
-    
-    private static string? GetXmlDocumentationFilePath(string assemblyFilePath)
+    private static IEnumerable<string> GetXmlDocumentationFilePaths(
+        Assembly assembly,
+        string assemblyFilePath
+    )
     {
         var assemblyName = Path.GetFileNameWithoutExtension(assemblyFilePath);
         var assemblyDir = Path.GetDirectoryName(assemblyFilePath);
 
         if (string.IsNullOrEmpty(assemblyDir)) {
-            return null;
+            return Array.Empty<string>();
         }
         
         var xmlFileName = assemblyName + ".xml"; 
@@ -78,10 +60,71 @@ public class XmlDocumentation
             xmlFileName
         );
 
-        return xmlFilePath;
+        if (File.Exists(xmlFilePath)) {
+            string[] xmlFilePaths = new [] { xmlFilePath };
+
+            return xmlFilePaths;   
+        } else {
+            bool isSystemPrivateCoreLib = assembly.GetName().Name == "System.Private.CoreLib" &&
+                                          assembly.ExportedTypes.Contains(typeof(object));
+
+            if (isSystemPrivateCoreLib) {
+                return GetSystemXmlDocumentationFilePaths(
+                    assembly,
+                    assemblyFilePath
+                );
+            } else {
+                return Array.Empty<string>();
+            }
+        }
     }
 
-    private static XmlDocumentation ParseXmlDocumentation(string xmlDocumentationContent)
+    private static IEnumerable<string> GetSystemXmlDocumentationFilePaths(
+        Assembly systemPrivateCoreLibAssembly,
+        string assemblyFilePath
+    )
+    {
+        // var name = systemPrivateCoreLibAssembly.GetName();
+        // var version = name.Version;
+        
+        // TODO: How to get this dynamically?!
+        var refPath = "/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.0/ref/net8.0";
+
+        if (!Directory.Exists(refPath)) {
+            return Array.Empty<string>();
+        }
+
+        var xmlFilePaths = Directory.GetFiles(
+            refPath,
+            "*.xml",
+            SearchOption.AllDirectories
+        );
+
+        return xmlFilePaths;
+    }
+}
+
+public class XmlDocumentation
+{
+    private readonly Dictionary<XmlDocumentationMemberIdentifier, XmlDocumentationContent> m_members;
+
+    internal XmlDocumentation()
+    {
+        m_members = new();
+    }
+
+    #region Parsing
+    internal void PopulateMembersFromXmlDocumentationPath(string xmlDocumentationFilePath)
+    {
+        var content = File.ReadAllText(xmlDocumentationFilePath);
+        var newMembers = GetXmlDocumentationMembers(content);
+
+        foreach (var newMember in newMembers) {
+            m_members[newMember.Key] = newMember.Value;
+        }
+    }
+
+    private static Dictionary<XmlDocumentationMemberIdentifier, XmlDocumentationContent> GetXmlDocumentationMembers(string xmlDocumentationContent)
     {
         Dictionary<XmlDocumentationMemberIdentifier, XmlDocumentationContent> members = new();
         
@@ -104,9 +147,7 @@ public class XmlDocumentation
             }
         }
 
-        var docu = new XmlDocumentation(members);
-
-        return docu;
+        return members;
     }
     #endregion Parsing
 

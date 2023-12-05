@@ -3100,6 +3100,7 @@ extension System_Array: MutableCollection {
 // MARK: - END Unsupported Types
 
 // MARK: - BEGIN APIs
+/// Specifies the type of an object.
 public enum System_TypeCode: Int32 {
 	init(cValue: System_TypeCode_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -3139,6 +3140,7 @@ extension System_TypeCode {
 	
 }
 
+/// Defines the types of culture lists that can be retrieved using the   method.
 public struct System_Globalization_CultureTypes: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -3175,6 +3177,7 @@ extension System_Globalization_CultureTypes {
 	
 }
 
+/// Determines the styles permitted in numeric string arguments that are passed to the   and   methods of the integral and floating-point numeric types.
 public struct System_Globalization_NumberStyles: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -3222,6 +3225,7 @@ extension System_Globalization_NumberStyles {
 	
 }
 
+/// Specifies the strategy that mathematical rounding methods should use to round a number.
 public enum System_MidpointRounding: Int32 {
 	init(cValue: System_MidpointRounding_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -3248,6 +3252,7 @@ extension System_MidpointRounding {
 	
 }
 
+/// Defines the formatting options that customize string parsing for the   and   methods.
 public struct System_Globalization_TimeSpanStyles: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -3278,6 +3283,7 @@ extension System_Globalization_TimeSpanStyles {
 	
 }
 
+/// Specifies whether a   object represents a local time, a Coordinated Universal Time (UTC), or is not specified as either local time or UTC.
 public enum System_DateTimeKind: Int32 {
 	init(cValue: System_DateTimeKind_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -3302,6 +3308,7 @@ extension System_DateTimeKind {
 	
 }
 
+/// Specifies the day of the week.
 public enum System_DayOfWeek: Int32 {
 	init(cValue: System_DayOfWeek_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -3330,6 +3337,7 @@ extension System_DayOfWeek {
 	
 }
 
+/// Defines the formatting options that customize string parsing for some date and time parsing methods.
 public struct System_Globalization_DateTimeStyles: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -3368,6 +3376,7 @@ extension System_Globalization_DateTimeStyles {
 	
 }
 
+/// Specifies whether a calendar is solar-based, lunar-based, or lunisolar-based.
 public enum System_Globalization_CalendarAlgorithmType: Int32 {
 	init(cValue: System_Globalization_CalendarAlgorithmType_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -3393,6 +3402,7 @@ extension System_Globalization_CalendarAlgorithmType {
 	
 }
 
+/// Defines different rules for determining the first week of the year.
 public enum System_Globalization_CalendarWeekRule: Int32 {
 	init(cValue: System_Globalization_CalendarWeekRule_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -3417,6 +3427,7 @@ extension System_Globalization_CalendarWeekRule {
 	
 }
 
+/// Defines a set of flags that specifies the source or destination context for the stream during serialization.
 public struct System_Runtime_Serialization_StreamingContextStates: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -3454,6 +3465,7 @@ extension System_Runtime_Serialization_StreamingContextStates {
 	
 }
 
+/// Identifies the processor and bits-per-word of the platform targeted by an executable.
 public enum System_Reflection_ProcessorArchitecture: Int32 {
 	init(cValue: System_Reflection_ProcessorArchitecture_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -3481,6 +3493,7 @@ extension System_Reflection_ProcessorArchitecture {
 	
 }
 
+/// Provides information about the type of code contained in an assembly.
 public enum System_Reflection_AssemblyContentType: Int32 {
 	init(cValue: System_Reflection_AssemblyContentType_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -3504,6 +3517,7 @@ extension System_Reflection_AssemblyContentType {
 	
 }
 
+/// Provides information about an   reference.
 public struct System_Reflection_AssemblyNameFlags: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -3537,6 +3551,7 @@ extension System_Reflection_AssemblyNameFlags {
 	
 }
 
+/// Specifies all the hash algorithms used for hashing files and for generating the strong name.
 public enum System_Configuration_Assemblies_AssemblyHashAlgorithm: Int32 {
 	init(cValue: System_Configuration_Assemblies_AssemblyHashAlgorithm_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -3564,6 +3579,7 @@ extension System_Configuration_Assemblies_AssemblyHashAlgorithm {
 	
 }
 
+/// Defines the different types of assembly version compatibility.
 public enum System_Configuration_Assemblies_AssemblyVersionCompatibility: Int32 {
 	init(cValue: System_Configuration_Assemblies_AssemblyVersionCompatibility_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -3588,6 +3604,7 @@ extension System_Configuration_Assemblies_AssemblyVersionCompatibility {
 	
 }
 
+/// Defines the attributes that can be associated with a parameter. These are defined in CorHdr.h.
 public struct System_Reflection_ParameterAttributes: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -3627,6 +3644,7 @@ extension System_Reflection_ParameterAttributes {
 	
 }
 
+/// Identifies the nature of the code in an executable file.
 public struct System_Reflection_PortableExecutableKinds: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -3661,6 +3679,7 @@ extension System_Reflection_PortableExecutableKinds {
 	
 }
 
+/// Identifies the platform targeted by an executable.
 public enum System_Reflection_ImageFileMachine: Int32 {
 	init(cValue: System_Reflection_ImageFileMachine_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -3686,6 +3705,7 @@ extension System_Reflection_ImageFileMachine {
 	
 }
 
+/// Marks each type of member that is defined as a derived class of  .
 public struct System_Reflection_MemberTypes: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -3723,6 +3743,7 @@ extension System_Reflection_MemberTypes {
 	
 }
 
+/// Specifies flags that control binding and the way in which the search for members and types is conducted by reflection.
 public struct System_Reflection_BindingFlags: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -3772,6 +3793,7 @@ extension System_Reflection_BindingFlags {
 	
 }
 
+/// Specifies flags that describe the attributes of a field.
 public struct System_Reflection_FieldAttributes: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -3819,6 +3841,7 @@ extension System_Reflection_FieldAttributes {
 	
 }
 
+/// Defines the attributes that can be associated with a property. These attribute values are defined in corhdr.h.
 public struct System_Reflection_PropertyAttributes: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -3855,6 +3878,7 @@ extension System_Reflection_PropertyAttributes {
 	
 }
 
+/// Defines the valid calling conventions for a method.
 public struct System_Reflection_CallingConventions: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -3888,6 +3912,7 @@ extension System_Reflection_CallingConventions {
 	
 }
 
+/// Specifies flags for method attributes. These flags are defined in the corhdr.h file.
 public struct System_Reflection_MethodAttributes: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -3940,6 +3965,7 @@ extension System_Reflection_MethodAttributes {
 	
 }
 
+/// Specifies flags for the attributes of a method implementation.
 public enum System_Reflection_MethodImplAttributes: Int32 {
 	init(cValue: System_Reflection_MethodImplAttributes_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -3978,6 +4004,7 @@ extension System_Reflection_MethodImplAttributes {
 	
 }
 
+/// Identifies kinds of exception-handling clauses.
 public struct System_Reflection_ExceptionHandlingClauseOptions: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -4010,6 +4037,7 @@ extension System_Reflection_ExceptionHandlingClauseOptions {
 	
 }
 
+/// Represents the current stage in the lifecycle of a  .
 public enum System_Threading_Tasks_TaskStatus: Int32 {
 	init(cValue: System_Threading_Tasks_TaskStatus_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -4039,6 +4067,7 @@ extension System_Threading_Tasks_TaskStatus {
 	
 }
 
+/// Specifies flags that control optional behavior for the creation and execution of tasks.
 public struct System_Threading_Tasks_TaskCreationOptions: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -4074,6 +4103,7 @@ extension System_Threading_Tasks_TaskCreationOptions {
 	
 }
 
+/// Specifies the behavior for a task that is created by using the   or   method.
 public struct System_Threading_Tasks_TaskContinuationOptions: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -4117,6 +4147,7 @@ extension System_Threading_Tasks_TaskContinuationOptions {
 	
 }
 
+/// Options to control behavior when awaiting.
 public struct System_Threading_Tasks_ConfigureAwaitOptions: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -4149,6 +4180,7 @@ extension System_Threading_Tasks_ConfigureAwaitOptions {
 	
 }
 
+/// Indicates the status of an   or  .
 public enum System_Threading_Tasks_Sources_ValueTaskSourceStatus: Int32 {
 	init(cValue: System_Threading_Tasks_Sources_ValueTaskSourceStatus_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -4174,6 +4206,7 @@ extension System_Threading_Tasks_Sources_ValueTaskSourceStatus {
 	
 }
 
+/// Provides flags passed from   and   to the   method to control the behavior of a continuation.
 public struct System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -4205,6 +4238,7 @@ extension System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags {
 	
 }
 
+/// Specifies the position in a stream to use for seeking.
 public enum System_IO_SeekOrigin: Int32 {
 	init(cValue: System_IO_SeekOrigin_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -4229,6 +4263,7 @@ extension System_IO_SeekOrigin {
 	
 }
 
+/// Defines constants for read, write, or read/write access to a file.
 public struct System_IO_FileAccess: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -4260,6 +4295,7 @@ extension System_IO_FileAccess {
 	
 }
 
+/// Specifies how the operating system should open a file.
 public enum System_IO_FileMode: Int32 {
 	init(cValue: System_IO_FileMode_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -4287,6 +4323,7 @@ extension System_IO_FileMode {
 	
 }
 
+/// Contains constants for controlling the kind of access other operations can have to the same file.
 public struct System_IO_FileShare: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -4321,6 +4358,7 @@ extension System_IO_FileShare {
 	
 }
 
+/// Represents advanced options for creating a   object.
 public struct System_IO_FileOptions: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -4356,6 +4394,7 @@ extension System_IO_FileOptions {
 	
 }
 
+/// Specifies the attributes of an event.
 public struct System_Reflection_EventAttributes: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -4388,6 +4427,7 @@ extension System_Reflection_EventAttributes {
 	
 }
 
+/// Specifies the resource location.
 public struct System_Reflection_ResourceLocation: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -4419,6 +4459,7 @@ extension System_Reflection_ResourceLocation {
 	
 }
 
+/// Identifies the set of security rules the common language runtime should enforce for an assembly.
 public enum System_Security_SecurityRuleSet: UInt8 {
 	init(cValue: System_Security_SecurityRuleSet_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -4443,6 +4484,7 @@ extension System_Security_SecurityRuleSet {
 	
 }
 
+/// Defines the values that can be returned from span-based operations that support processing of input contained in multiple discontiguous buffers.
 public enum System_Buffers_OperationStatus: Int32 {
 	init(cValue: System_Buffers_OperationStatus_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -4468,6 +4510,7 @@ extension System_Buffers_OperationStatus {
 	
 }
 
+/// Defines the Unicode category of a character.
 public enum System_Globalization_UnicodeCategory: Int32 {
 	init(cValue: System_Globalization_UnicodeCategory_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -4519,6 +4562,7 @@ extension System_Globalization_UnicodeCategory {
 	
 }
 
+/// Defines the string comparison options to use with  .
 public struct System_Globalization_CompareOptions: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -4556,6 +4600,7 @@ extension System_Globalization_CompareOptions {
 	
 }
 
+/// Specifies the culture-specific display of digits.
 public enum System_Globalization_DigitShapes: Int32 {
 	init(cValue: System_Globalization_DigitShapes_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -4580,6 +4625,7 @@ extension System_Globalization_DigitShapes {
 	
 }
 
+/// Specifies the culture, case, and sort rules to be used by certain overloads of the   and   methods.
 public enum System_StringComparison: Int32 {
 	init(cValue: System_StringComparison_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -4607,6 +4653,7 @@ extension System_StringComparison {
 	
 }
 
+/// Defines the type of normalization to perform.
 public enum System_Text_NormalizationForm: Int32 {
 	init(cValue: System_Text_NormalizationForm_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -4632,6 +4679,7 @@ extension System_Text_NormalizationForm {
 	
 }
 
+/// Specifies options for applicable   method overloads, such as whether to omit empty substrings from the returned array or trim whitespace from substrings.
 public struct System_StringSplitOptions: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -4663,6 +4711,7 @@ extension System_StringSplitOptions {
 	
 }
 
+/// Describes the constraints on a generic type parameter of a generic type or method.
 public struct System_Reflection_GenericParameterAttributes: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -4699,6 +4748,7 @@ extension System_Reflection_GenericParameterAttributes {
 	
 }
 
+/// Specifies type attributes.
 public struct System_Reflection_TypeAttributes: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -4759,6 +4809,7 @@ extension System_Reflection_TypeAttributes {
 	
 }
 
+/// Controls the layout of an object when exported to unmanaged code.
 public enum System_Runtime_InteropServices_LayoutKind: Int32 {
 	init(cValue: System_Runtime_InteropServices_LayoutKind_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -4783,6 +4834,7 @@ extension System_Runtime_InteropServices_LayoutKind {
 	
 }
 
+/// Dictates which character set marshaled strings should use.
 public enum System_Runtime_InteropServices_CharSet: Int32 {
 	init(cValue: System_Runtime_InteropServices_CharSet_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -4808,6 +4860,7 @@ extension System_Runtime_InteropServices_CharSet {
 	
 }
 
+/// Indicates whether the   method's IUnknown::QueryInterface calls can use the   interface.
 public enum System_Runtime_InteropServices_CustomQueryInterfaceMode: Int32 {
 	init(cValue: System_Runtime_InteropServices_CustomQueryInterfaceMode_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -4831,6 +4884,7 @@ extension System_Runtime_InteropServices_CustomQueryInterfaceMode {
 	
 }
 
+/// Represents the types of handles the   type can allocate.
 public enum System_Runtime_InteropServices_GCHandleType: Int32 {
 	init(cValue: System_Runtime_InteropServices_GCHandleType_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -4856,6 +4910,7 @@ extension System_Runtime_InteropServices_GCHandleType {
 	
 }
 
+/// Specifies the kind of a garbage collection.
 public enum System_GCKind: Int32 {
 	init(cValue: System_GCKind_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -4881,6 +4936,7 @@ extension System_GCKind {
 	
 }
 
+/// Specifies the behavior for a forced garbage collection.
 public enum System_GCCollectionMode: Int32 {
 	init(cValue: System_GCCollectionMode_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -4906,6 +4962,7 @@ extension System_GCCollectionMode {
 	
 }
 
+/// Provides information about the current registration for notification of the next full garbage collection.
 public enum System_GCNotificationStatus: Int32 {
 	init(cValue: System_GCNotificationStatus_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -4932,6 +4989,7 @@ extension System_GCNotificationStatus {
 	
 }
 
+/// Specifies whether relevant   and   methods insert line breaks in their output.
 public struct System_Base64FormattingOptions: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -4962,6 +5020,7 @@ extension System_Base64FormattingOptions {
 	
 }
 
+/// Specifies the scheduling priority of a  .
 public enum System_Threading_ThreadPriority: Int32 {
 	init(cValue: System_Threading_ThreadPriority_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -4988,6 +5047,7 @@ extension System_Threading_ThreadPriority {
 	
 }
 
+/// Specifies the execution states of a  .
 public struct System_Threading_ThreadState: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -5026,6 +5086,7 @@ extension System_Threading_ThreadState {
 	
 }
 
+/// Specifies the apartment state of a  .
 public enum System_Threading_ApartmentState: Int32 {
 	init(cValue: System_Threading_ApartmentState_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -5050,6 +5111,7 @@ extension System_Threading_ApartmentState {
 	
 }
 
+/// Specifies whether a permission should have all or no access to resources at creation.
 public enum System_Security_Permissions_PermissionState: Int32 {
 	init(cValue: System_Security_Permissions_PermissionState_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -5073,6 +5135,7 @@ extension System_Security_Permissions_PermissionState {
 	
 }
 
+/// Specifies how principal and identity objects should be created for an application domain. The default is  .
 public enum System_Security_Principal_PrincipalPolicy: Int32 {
 	init(cValue: System_Security_Principal_PrincipalPolicy_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -5097,6 +5160,7 @@ extension System_Security_Principal_PrincipalPolicy {
 	
 }
 
+/// Provides attributes for files and directories.
 public struct System_IO_FileAttributes: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -5142,6 +5206,8 @@ extension System_IO_FileAttributes {
 	
 }
 
+/// Represents the Unix filesystem permissions.
+/// This enumeration supports a bitwise combination of its member values.
 public struct System_IO_UnixFileMode: OptionSet {
 	public typealias RawValue = Int32
 	public let rawValue: RawValue
@@ -5183,6 +5249,7 @@ extension System_IO_UnixFileMode {
 	
 }
 
+/// Specifies whether to search the current directory, or the current directory and all subdirectories.
 public enum System_IO_SearchOption: Int32 {
 	init(cValue: System_IO_SearchOption_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -5206,6 +5273,7 @@ extension System_IO_SearchOption {
 	
 }
 
+/// Specifies the type of wildcard matching to use.
 public enum System_IO_MatchType: Int32 {
 	init(cValue: System_IO_MatchType_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -5229,6 +5297,7 @@ extension System_IO_MatchType {
 	
 }
 
+/// Specifies the type of character casing to match.
 public enum System_IO_MatchCasing: Int32 {
 	init(cValue: System_IO_MatchCasing_t) {
 		self.init(rawValue: cValue.rawValue)!
@@ -5447,6 +5516,7 @@ extension Beyond_NET_Sample_TestEnum {
 	
 }
 
+/// Supports all classes in the .NET class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all .NET classes; it is the root of the type hierarchy.
 public class System_Object /* System.Object */: DNObject {
 	public override class var typeName: String { get {
 		"Object"
@@ -5605,6 +5675,7 @@ public class System_Object /* System.Object */: DNObject {
 }
 
 
+/// Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.
 public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 	public override class var typeName: String { get {
 		"Type"
@@ -9301,6 +9372,7 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo {
 }
 
 
+/// Obtains information about the attributes of a member and provides access to member metadata.
 public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: System_Object {
 	public override class var typeName: String { get {
 		"MemberInfo"
@@ -9624,6 +9696,7 @@ public class System_Reflection_MemberInfo /* System.Reflection.MemberInfo */: Sy
 }
 
 
+/// Provides custom attributes for reflection objects that support them.
 public class System_Reflection_ICustomAttributeProvider /* System.Reflection.ICustomAttributeProvider */: DNObject {
 	public override class var typeName: String { get {
 		"ICustomAttributeProvider"
@@ -9720,6 +9793,7 @@ public class System_Object_Array /* System.Object[] */: System_Array {
 }
 
 
+/// Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays in the common language runtime.
 public class System_Array /* System.Array */: System_Object {
 	public override class var typeName: String { get {
 		"Array"
@@ -11368,6 +11442,7 @@ public class System_Array /* System.Array */: System_Object {
 }
 
 
+/// Supports cloning, which creates a new instance of a class with the same value as an existing instance.
 public class System_ICloneable /* System.ICloneable */: DNObject {
 	public override class var typeName: String { get {
 		"ICloneable"
@@ -11411,6 +11486,7 @@ public class System_ICloneable /* System.ICloneable */: DNObject {
 }
 
 
+/// Represents a non-generic collection of objects that can be individually accessed by index.
 public class System_Collections_IList /* System.Collections.IList */: DNObject {
 	public override class var typeName: String { get {
 		"IList"
@@ -11637,6 +11713,7 @@ public class System_Collections_IList /* System.Collections.IList */: DNObject {
 }
 
 
+/// Defines size, enumerators, and synchronization methods for all nongeneric collections.
 public class System_Collections_ICollection /* System.Collections.ICollection */: DNObject {
 	public override class var typeName: String { get {
 		"ICollection"
@@ -11737,6 +11814,7 @@ public class System_Collections_ICollection /* System.Collections.ICollection */
 }
 
 
+/// Exposes an enumerator, which supports a simple iteration over a non-generic collection.
 public class System_Collections_IEnumerable /* System.Collections.IEnumerable */: DNObject {
 	public override class var typeName: String { get {
 		"IEnumerable"
@@ -11780,6 +11858,7 @@ public class System_Collections_IEnumerable /* System.Collections.IEnumerable */
 }
 
 
+/// Supports a simple iteration over a non-generic collection.
 public class System_Collections_IEnumerator /* System.Collections.IEnumerator */: DNObject {
 	public override class var typeName: String { get {
 		"IEnumerator"
@@ -11859,6 +11938,7 @@ public class System_Collections_IEnumerator /* System.Collections.IEnumerator */
 }
 
 
+/// Represents a Boolean (  or  ) value.
 public class System_Boolean /* System.Boolean */: System_ValueType {
 	public override class var typeName: String { get {
 		"Boolean"
@@ -11877,6 +11957,7 @@ public class System_Boolean /* System.Boolean */: System_ValueType {
 }
 
 
+/// Provides the base class for value types.
 public class System_ValueType /* System.ValueType */: System_Object {
 	public override class var typeName: String { get {
 		"ValueType"
@@ -11957,6 +12038,7 @@ public class System_ValueType /* System.ValueType */: System_Object {
 }
 
 
+/// Represents a 32-bit signed integer.
 public class System_Int32 /* System.Int32 */: System_ValueType {
 	public override class var typeName: String { get {
 		"Int32"
@@ -11975,6 +12057,7 @@ public class System_Int32 /* System.Int32 */: System_ValueType {
 }
 
 
+/// Defines a generalized type-specific comparison method that a value type or class implements to order or sort its instances.
 public class System_IComparable /* System.IComparable */: DNObject {
 	public override class var typeName: String { get {
 		"IComparable"
@@ -12017,6 +12100,7 @@ public class System_IComparable /* System.IComparable */: DNObject {
 }
 
 
+/// Defines methods that convert the value of the implementing reference or value type to a common language runtime type that has an equivalent value.
 public class System_IConvertible /* System.IConvertible */: DNObject {
 	public override class var typeName: String { get {
 		"IConvertible"
@@ -12375,6 +12459,7 @@ public class System_IConvertible /* System.IConvertible */: DNObject {
 }
 
 
+/// Provides the base class for enumerations.
 public class System_Enum /* System.Enum */: System_ValueType {
 	public override class var typeName: String { get {
 		"Enum"
@@ -13205,6 +13290,7 @@ public class System_Enum /* System.Enum */: System_ValueType {
 }
 
 
+/// Provides functionality to format the string representation of an object into a span.
 public class System_ISpanFormattable /* System.ISpanFormattable */: DNObject {
 	public override class var typeName: String { get {
 		"ISpanFormattable"
@@ -13228,6 +13314,7 @@ public class System_ISpanFormattable /* System.ISpanFormattable */: DNObject {
 }
 
 
+/// Provides functionality to format the value of an object into a string representation.
 public class System_IFormattable /* System.IFormattable */: DNObject {
 	public override class var typeName: String { get {
 		"IFormattable"
@@ -13273,6 +13360,7 @@ public class System_IFormattable /* System.IFormattable */: DNObject {
 }
 
 
+/// Represents text as a sequence of UTF-16 code units.
 public class System_String /* System.String */: System_Object {
 	public override class var typeName: String { get {
 		"String"
@@ -16380,6 +16468,8 @@ public class System_String /* System.String */: System_Object {
 }
 
 
+/// Exposes the enumerator, which supports a simple iteration over a collection of a specified type.
+/// The type of objects to enumerate.
 public class System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<> */: DNObject {
 	public override class var typeName: String { get {
 		"IEnumerable`1"
@@ -16405,6 +16495,8 @@ public class System_Collections_Generic_IEnumerable_A1 /* System.Collections.Gen
 
 
 
+/// Supports a simple iteration over a generic collection.
+/// The type of objects to enumerate.
 public class System_Collections_Generic_IEnumerator_A1 /* System.Collections.Generic.IEnumerator<> */: DNObject {
 	public override class var typeName: String { get {
 		"IEnumerator`1"
@@ -16450,6 +16542,7 @@ public class System_Collections_Generic_IEnumerator_A1 /* System.Collections.Gen
 }
 
 
+/// Provides a mechanism for releasing unmanaged resources.
 public class System_IDisposable /* System.IDisposable */: DNObject {
 	public override class var typeName: String { get {
 		"IDisposable"
@@ -16493,6 +16586,7 @@ public class System_IDisposable /* System.IDisposable */: DNObject {
 // Type "T" was skipped. Reason: It has no full name.
 
 
+/// Represents a character as a UTF-16 code unit.
 public class System_Char /* System.Char */: System_ValueType {
 	public override class var typeName: String { get {
 		"Char"
@@ -16511,6 +16605,8 @@ public class System_Char /* System.Char */: System_ValueType {
 }
 
 
+/// Defines a generalized comparison method that a value type or class implements to create a type-specific comparison method for ordering or sorting its instances.
+/// The type of object to compare.
 public class System_IComparable_A1 /* System.IComparable<> */: DNObject {
 	public override class var typeName: String { get {
 		"IComparable`1"
@@ -16557,6 +16653,8 @@ public class System_IComparable_A1 /* System.IComparable<> */: DNObject {
 // Type "T" was skipped. Reason: It has no full name.
 
 
+/// Defines a generalized method that a value type or class implements to create a type-specific method for determining equality of instances.
+/// The type of objects to compare.
 public class System_IEquatable_A1 /* System.IEquatable<> */: DNObject {
 	public override class var typeName: String { get {
 		"IEquatable`1"
@@ -16603,6 +16701,8 @@ public class System_IEquatable_A1 /* System.IEquatable<> */: DNObject {
 // Type "T" was skipped. Reason: It has no full name.
 
 
+/// Defines a number that is represented in a base-2 format.
+/// The type that implements the interface.
 public class System_Numerics_IBinaryNumber_A1 /* System.Numerics.IBinaryNumber<> */: DNObject {
 	public override class var typeName: String { get {
 		"IBinaryNumber`1"
@@ -16690,6 +16790,7 @@ public class System_Numerics_IBinaryNumber_A1 /* System.Numerics.IBinaryNumber<>
 }
 
 
+/// Provides functionality to format the string representation of an object into a span as UTF-8.
 public class System_IUtf8SpanFormattable /* System.IUtf8SpanFormattable */: DNObject {
 	public override class var typeName: String { get {
 		"IUtf8SpanFormattable"
@@ -16714,6 +16815,7 @@ public class System_IUtf8SpanFormattable /* System.IUtf8SpanFormattable */: DNOb
 
 
 
+/// Provides a mechanism for retrieving an object to control formatting.
 public class System_IFormatProvider /* System.IFormatProvider */: DNObject {
 	public override class var typeName: String { get {
 		"IFormatProvider"
@@ -16761,6 +16863,10 @@ public class System_IFormatProvider /* System.IFormatProvider */: DNObject {
 // Type "TSelf" was skipped. Reason: It has no full name.
 
 
+/// Defines a mechanism for performing bitwise operations over two values.
+/// The type that implements this interface.
+/// The type that is used in the operation with  .
+/// The type that contains the result of   op  .
 public class System_Numerics_IBitwiseOperators_A3 /* System.Numerics.IBitwiseOperators<,,> */: DNObject {
 	public override class var typeName: String { get {
 		"IBitwiseOperators`3"
@@ -16789,6 +16895,8 @@ public class System_Numerics_IBitwiseOperators_A3 /* System.Numerics.IBitwiseOpe
 // Type "TOther" was skipped. Reason: It has no full name.
 
 
+/// Defines a number type.
+/// The type that implements the interface.
 public class System_Numerics_INumber_A1 /* System.Numerics.INumber<> */: DNObject {
 	public override class var typeName: String { get {
 		"INumber`1"
@@ -16974,6 +17082,10 @@ public class System_Numerics_INumber_A1 /* System.Numerics.INumber<> */: DNObjec
 // Type "TSelf" was skipped. Reason: It has no full name.
 
 
+/// Defines a mechanism for comparing two values to determine relative order.
+/// The type that implements this interface.
+/// The type that will be compared with  .
+/// The type that is returned as a result of the comparison.
 public class System_Numerics_IComparisonOperators_A3 /* System.Numerics.IComparisonOperators<,,> */: DNObject {
 	public override class var typeName: String { get {
 		"IComparisonOperators`3"
@@ -17002,6 +17114,10 @@ public class System_Numerics_IComparisonOperators_A3 /* System.Numerics.ICompari
 // Type "TOther" was skipped. Reason: It has no full name.
 
 
+/// Defines a mechanism for comparing two values to determine equality.
+/// The type that implements this interface.
+/// The type that will be compared with  .
+/// The type that is returned as a result of the comparison.
 public class System_Numerics_IEqualityOperators_A3 /* System.Numerics.IEqualityOperators<,,> */: DNObject {
 	public override class var typeName: String { get {
 		"IEqualityOperators`3"
@@ -17030,6 +17146,10 @@ public class System_Numerics_IEqualityOperators_A3 /* System.Numerics.IEqualityO
 // Type "TOther" was skipped. Reason: It has no full name.
 
 
+/// Defines a mechanism for computing the modulus or remainder of two values.
+/// The type that implements this interface.
+/// The type that will divide  .
+/// The type that contains the modulus or remainder of   and  .
 public class System_Numerics_IModulusOperators_A3 /* System.Numerics.IModulusOperators<,,> */: DNObject {
 	public override class var typeName: String { get {
 		"IModulusOperators`3"
@@ -17058,6 +17178,10 @@ public class System_Numerics_IModulusOperators_A3 /* System.Numerics.IModulusOpe
 // Type "TOther" was skipped. Reason: It has no full name.
 
 
+/// Defines a mechanism for computing the sum of two values.
+/// The type that implements this interface.
+/// The type that will be added to  .
+/// The type that contains the sum of   and  .
 public class System_Numerics_IAdditionOperators_A3 /* System.Numerics.IAdditionOperators<,,> */: DNObject {
 	public override class var typeName: String { get {
 		"IAdditionOperators`3"
@@ -17086,6 +17210,9 @@ public class System_Numerics_IAdditionOperators_A3 /* System.Numerics.IAdditionO
 // Type "TOther" was skipped. Reason: It has no full name.
 
 
+/// Defines a mechanism for getting the additive identity of a given type.
+/// The type that implements this interface.
+/// The type that contains the additive identity of  .
 public class System_Numerics_IAdditiveIdentity_A2 /* System.Numerics.IAdditiveIdentity<,> */: DNObject {
 	public override class var typeName: String { get {
 		"IAdditiveIdentity`2"
@@ -17135,6 +17262,8 @@ public class System_Numerics_IAdditiveIdentity_A2 /* System.Numerics.IAdditiveId
 // Type "TResult" was skipped. Reason: It has no full name.
 
 
+/// Defines a mechanism for decrementing a given value.
+/// The type that implements this interface.
 public class System_Numerics_IDecrementOperators_A1 /* System.Numerics.IDecrementOperators<> */: DNObject {
 	public override class var typeName: String { get {
 		"IDecrementOperators`1"
@@ -17161,6 +17290,10 @@ public class System_Numerics_IDecrementOperators_A1 /* System.Numerics.IDecremen
 // Type "TSelf" was skipped. Reason: It has no full name.
 
 
+/// Defines a mechanism for computing the quotient of two values.
+/// The type that implements this interface.
+/// The type that will divide  .
+/// The type that contains the quotient of   and  .
 public class System_Numerics_IDivisionOperators_A3 /* System.Numerics.IDivisionOperators<,,> */: DNObject {
 	public override class var typeName: String { get {
 		"IDivisionOperators`3"
@@ -17189,6 +17322,8 @@ public class System_Numerics_IDivisionOperators_A3 /* System.Numerics.IDivisionO
 // Type "TOther" was skipped. Reason: It has no full name.
 
 
+/// Defines a mechanism for incrementing a given value.
+/// The type that implements this interface.
 public class System_Numerics_IIncrementOperators_A1 /* System.Numerics.IIncrementOperators<> */: DNObject {
 	public override class var typeName: String { get {
 		"IIncrementOperators`1"
@@ -17215,6 +17350,9 @@ public class System_Numerics_IIncrementOperators_A1 /* System.Numerics.IIncremen
 // Type "TSelf" was skipped. Reason: It has no full name.
 
 
+/// Defines a mechanism for getting the multiplicative identity of a given type.
+/// The type that implements this interface.
+/// The type that contains the multiplicative identity of  .
 public class System_Numerics_IMultiplicativeIdentity_A2 /* System.Numerics.IMultiplicativeIdentity<,> */: DNObject {
 	public override class var typeName: String { get {
 		"IMultiplicativeIdentity`2"
@@ -17264,6 +17402,10 @@ public class System_Numerics_IMultiplicativeIdentity_A2 /* System.Numerics.IMult
 // Type "TResult" was skipped. Reason: It has no full name.
 
 
+/// Defines a mechanism for computing the product of two values.
+/// The type that implements this interface.
+/// The type that will multiply  .
+/// The type that contains the product of   and  .
 public class System_Numerics_IMultiplyOperators_A3 /* System.Numerics.IMultiplyOperators<,,> */: DNObject {
 	public override class var typeName: String { get {
 		"IMultiplyOperators`3"
@@ -17292,6 +17434,8 @@ public class System_Numerics_IMultiplyOperators_A3 /* System.Numerics.IMultiplyO
 // Type "TOther" was skipped. Reason: It has no full name.
 
 
+/// Defines a mechanism for parsing a span of characters to a value.
+/// The type that implements this interface.
 public class System_ISpanParsable_A1 /* System.ISpanParsable<> */: DNObject {
 	public override class var typeName: String { get {
 		"ISpanParsable`1"
@@ -17319,6 +17463,8 @@ public class System_ISpanParsable_A1 /* System.ISpanParsable<> */: DNObject {
 
 
 
+/// Defines a mechanism for parsing a string to a value.
+/// The type that implements this interface.
 public class System_IParsable_A1 /* System.IParsable<> */: DNObject {
 	public override class var typeName: String { get {
 		"IParsable`1"
@@ -17394,6 +17540,10 @@ public class System_IParsable_A1 /* System.IParsable<> */: DNObject {
 
 
 
+/// Defines a mechanism for computing the difference of two values.
+/// The type that implements this interface.
+/// The type that will be subtracted from  .
+/// The type that contains the value of   subtracted from  .
 public class System_Numerics_ISubtractionOperators_A3 /* System.Numerics.ISubtractionOperators<,,> */: DNObject {
 	public override class var typeName: String { get {
 		"ISubtractionOperators`3"
@@ -17422,6 +17572,9 @@ public class System_Numerics_ISubtractionOperators_A3 /* System.Numerics.ISubtra
 // Type "TOther" was skipped. Reason: It has no full name.
 
 
+/// Defines a mechanism for computing the unary plus of a value.
+/// The type that implements this interface.
+/// The type that contains the result of negating  .
 public class System_Numerics_IUnaryPlusOperators_A2 /* System.Numerics.IUnaryPlusOperators<,> */: DNObject {
 	public override class var typeName: String { get {
 		"IUnaryPlusOperators`2"
@@ -17449,6 +17602,9 @@ public class System_Numerics_IUnaryPlusOperators_A2 /* System.Numerics.IUnaryPlu
 // Type "TSelf" was skipped. Reason: It has no full name.
 
 
+/// Defines a mechanism for computing the unary negation of a value.
+/// The type that implements this interface.
+/// The type that contains the result of negating  .
 public class System_Numerics_IUnaryNegationOperators_A2 /* System.Numerics.IUnaryNegationOperators<,> */: DNObject {
 	public override class var typeName: String { get {
 		"IUnaryNegationOperators`2"
@@ -17476,6 +17632,10 @@ public class System_Numerics_IUnaryNegationOperators_A2 /* System.Numerics.IUnar
 // Type "TSelf" was skipped. Reason: It has no full name.
 
 
+/// Defines a mechanism for shifting a value by another value.
+/// The type that implements this interface.
+/// The type used to specify the amount by which   should be shifted.
+/// The type that contains the result of shifting   by  .
 public class System_Numerics_IShiftOperators_A3 /* System.Numerics.IShiftOperators<,,> */: DNObject {
 	public override class var typeName: String { get {
 		"IShiftOperators`3"
@@ -17504,6 +17664,8 @@ public class System_Numerics_IShiftOperators_A3 /* System.Numerics.IShiftOperato
 // Type "TOther" was skipped. Reason: It has no full name.
 
 
+/// Defines a mechanism for getting the minimum and maximum value of a type.
+/// The type that implements this interface.
 public class System_Numerics_IMinMaxValue_A1 /* System.Numerics.IMinMaxValue<> */: DNObject {
 	public override class var typeName: String { get {
 		"IMinMaxValue`1"
@@ -17574,6 +17736,8 @@ public class System_Numerics_IMinMaxValue_A1 /* System.Numerics.IMinMaxValue<> *
 // Type "TSelf" was skipped. Reason: It has no full name.
 
 
+/// Defines a number type that can only represent positive values.
+/// The type that implements the interface.
 public class System_Numerics_IUnsignedNumber_A1 /* System.Numerics.IUnsignedNumber<> */: DNObject {
 	public override class var typeName: String { get {
 		"IUnsignedNumber`1"
@@ -17599,6 +17763,7 @@ public class System_Numerics_IUnsignedNumber_A1 /* System.Numerics.IUnsignedNumb
 
 
 
+/// Provides information about a specific culture (called a locale for unmanaged code development). The information includes the names for the culture, the writing system, the calendar used, the sort order of strings, and formatting for dates and numbers.
 public class System_Globalization_CultureInfo /* System.Globalization.CultureInfo */: System_Object {
 	public override class var typeName: String { get {
 		"CultureInfo"
@@ -18671,6 +18836,7 @@ public class System_Globalization_CultureInfo_Array /* System.Globalization.Cult
 }
 
 
+/// Supports the structural comparison of collection objects.
 public class System_Collections_IStructuralComparable /* System.Collections.IStructuralComparable */: DNObject {
 	public override class var typeName: String { get {
 		"IStructuralComparable"
@@ -18714,6 +18880,7 @@ public class System_Collections_IStructuralComparable /* System.Collections.IStr
 }
 
 
+/// Exposes a method that compares two objects.
 public class System_Collections_IComparer /* System.Collections.IComparer */: DNObject {
 	public override class var typeName: String { get {
 		"IComparer"
@@ -18757,6 +18924,7 @@ public class System_Collections_IComparer /* System.Collections.IComparer */: DN
 }
 
 
+/// Defines methods to support the comparison of objects for structural equality.
 public class System_Collections_IStructuralEquatable /* System.Collections.IStructuralEquatable */: DNObject {
 	public override class var typeName: String { get {
 		"IStructuralEquatable"
@@ -18819,6 +18987,7 @@ public class System_Collections_IStructuralEquatable /* System.Collections.IStru
 }
 
 
+/// Defines methods to support the comparison of objects for equality.
 public class System_Collections_IEqualityComparer /* System.Collections.IEqualityComparer */: DNObject {
 	public override class var typeName: String { get {
 		"IEqualityComparer"
@@ -18881,6 +19050,8 @@ public class System_Collections_IEqualityComparer /* System.Collections.IEqualit
 }
 
 
+/// Represents a collection of objects that can be individually accessed by index.
+/// The type of elements in the list.
 public class System_Collections_Generic_IList_A1 /* System.Collections.Generic.IList<> */: DNObject {
 	public override class var typeName: String { get {
 		"IList`1"
@@ -19004,6 +19175,8 @@ public class System_Collections_Generic_IList_A1 /* System.Collections.Generic.I
 // Type "T" was skipped. Reason: It has no full name.
 
 
+/// Defines methods to manipulate generic collections.
+/// The type of the elements in the collection.
 public class System_Collections_Generic_ICollection_A1 /* System.Collections.Generic.ICollection<> */: DNObject {
 	public override class var typeName: String { get {
 		"ICollection`1"
@@ -19172,6 +19345,8 @@ public class System_Collections_Generic_ICollection_A1 /* System.Collections.Gen
 
 
 
+/// Represents a read-only collection of elements that can be accessed by index.
+/// The type of elements in the read-only list.
 public class System_Collections_Generic_IReadOnlyList_A1 /* System.Collections.Generic.IReadOnlyList<> */: DNObject {
 	public override class var typeName: String { get {
 		"IReadOnlyList`1"
@@ -19220,6 +19395,8 @@ public class System_Collections_Generic_IReadOnlyList_A1 /* System.Collections.G
 // Type "T" was skipped. Reason: It has no full name.
 
 
+/// Represents a strongly-typed, read-only collection of elements.
+/// The type of the elements.
 public class System_Collections_Generic_IReadOnlyCollection_A1 /* System.Collections.Generic.IReadOnlyCollection<> */: DNObject {
 	public override class var typeName: String { get {
 		"IReadOnlyCollection`1"
@@ -19266,6 +19443,7 @@ public class System_Collections_Generic_IReadOnlyCollection_A1 /* System.Collect
 
 
 
+/// Implements a set of methods for culture-sensitive string comparisons.
 public class System_Globalization_CompareInfo /* System.Globalization.CompareInfo */: System_Object {
 	public override class var typeName: String { get {
 		"CompareInfo"
@@ -20308,6 +20486,7 @@ public class System_Globalization_CompareInfo /* System.Globalization.CompareInf
 }
 
 
+/// Indicates that a class is to be notified when deserialization of the entire object graph has been completed. This interface is not called when you deserialize with  .
 public class System_Runtime_Serialization_IDeserializationCallback /* System.Runtime.Serialization.IDeserializationCallback */: DNObject {
 	public override class var typeName: String { get {
 		"IDeserializationCallback"
@@ -20349,6 +20528,7 @@ public class System_Runtime_Serialization_IDeserializationCallback /* System.Run
 }
 
 
+/// Represents an assembly, which is a reusable, versionable, and self-describing building block of a common language runtime application.
 public class System_Reflection_Assembly /* System.Reflection.Assembly */: System_Object {
 	public override class var typeName: String { get {
 		"Assembly"
@@ -21855,6 +22035,7 @@ public class System_Reflection_Assembly /* System.Reflection.Assembly */: System
 }
 
 
+/// Allows an object to control its own serialization and deserialization through binary and XML serialization.
 public class System_Runtime_Serialization_ISerializable /* System.Runtime.Serialization.ISerializable */: DNObject {
 	public override class var typeName: String { get {
 		"ISerializable"
@@ -21897,6 +22078,7 @@ public class System_Runtime_Serialization_ISerializable /* System.Runtime.Serial
 }
 
 
+/// Stores all the data needed to serialize or deserialize an object. This class cannot be inherited.
 public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Serialization.SerializationInfo */: System_Object {
 	public override class var typeName: String { get {
 		"SerializationInfo"
@@ -22761,6 +22943,7 @@ public class System_Runtime_Serialization_SerializationInfo /* System.Runtime.Se
 }
 
 
+/// Provides a formatter-friendly mechanism for parsing the data in  . This class cannot be inherited.
 public class System_Runtime_Serialization_SerializationInfoEnumerator /* System.Runtime.Serialization.SerializationInfoEnumerator */: System_Object {
 	public override class var typeName: String { get {
 		"SerializationInfoEnumerator"
@@ -22903,6 +23086,7 @@ public class System_Runtime_Serialization_SerializationInfoEnumerator /* System.
 }
 
 
+/// Holds the value,  , and name of a serialized object.
 public class System_Runtime_Serialization_SerializationEntry /* System.Runtime.Serialization.SerializationEntry */: System_ValueType {
 	public override class var typeName: String { get {
 		"SerializationEntry"
@@ -23007,6 +23191,7 @@ public class System_Runtime_Serialization_SerializationEntry /* System.Runtime.S
 }
 
 
+/// Represents an 8-bit signed integer.
 public class System_SByte /* System.SByte */: System_ValueType {
 	public override class var typeName: String { get {
 		"SByte"
@@ -23070,6 +23255,8 @@ public class System_SByte /* System.SByte */: System_ValueType {
 
 
 
+/// Defines a number type which can represent both positive and negative values.
+/// The type that implements the interface.
 public class System_Numerics_ISignedNumber_A1 /* System.Numerics.ISignedNumber<> */: DNObject {
 	public override class var typeName: String { get {
 		"ISignedNumber`1"
@@ -23120,6 +23307,7 @@ public class System_Numerics_ISignedNumber_A1 /* System.Numerics.ISignedNumber<>
 
 
 
+/// Represents an 8-bit unsigned integer.
 public class System_Byte /* System.Byte */: System_ValueType {
 	public override class var typeName: String { get {
 		"Byte"
@@ -23216,6 +23404,7 @@ public class System_Byte_Array /* System.Byte[] */: System_Array {
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+/// Represents a 16-bit signed integer.
 public class System_Int16 /* System.Int16 */: System_ValueType {
 	public override class var typeName: String { get {
 		"Int16"
@@ -23284,6 +23473,7 @@ public class System_Int16 /* System.Int16 */: System_ValueType {
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+/// Represents a 16-bit unsigned integer.
 public class System_UInt16 /* System.UInt16 */: System_ValueType {
 	public override class var typeName: String { get {
 		"UInt16"
@@ -23352,6 +23542,7 @@ public class System_UInt16 /* System.UInt16 */: System_ValueType {
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+/// Represents a 32-bit unsigned integer.
 public class System_UInt32 /* System.UInt32 */: System_ValueType {
 	public override class var typeName: String { get {
 		"UInt32"
@@ -23420,6 +23611,7 @@ public class System_UInt32 /* System.UInt32 */: System_ValueType {
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+/// Represents a 64-bit signed integer.
 public class System_Int64 /* System.Int64 */: System_ValueType {
 	public override class var typeName: String { get {
 		"Int64"
@@ -23488,6 +23680,7 @@ public class System_Int64 /* System.Int64 */: System_ValueType {
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+/// Represents a 64-bit unsigned integer.
 public class System_UInt64 /* System.UInt64 */: System_ValueType {
 	public override class var typeName: String { get {
 		"UInt64"
@@ -23556,6 +23749,7 @@ public class System_UInt64 /* System.UInt64 */: System_ValueType {
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+/// Represents a single-precision floating-point number.
 public class System_Single /* System.Single */: System_ValueType {
 	public override class var typeName: String { get {
 		"Single"
@@ -23578,6 +23772,8 @@ public class System_Single /* System.Single */: System_ValueType {
 
 
 
+/// Defines an IEEE 754 floating-point type that is represented in a base-2 format.
+/// The type that implements the interface.
 public class System_Numerics_IBinaryFloatingPointIeee754_A1 /* System.Numerics.IBinaryFloatingPointIeee754<> */: DNObject {
 	public override class var typeName: String { get {
 		"IBinaryFloatingPointIeee754`1"
@@ -23640,6 +23836,8 @@ public class System_Numerics_IBinaryFloatingPointIeee754_A1 /* System.Numerics.I
 
 
 
+/// Defines an IEEE 754 floating-point type.
+/// The type that implements the interface.
 public class System_Numerics_IFloatingPointIeee754_A1 /* System.Numerics.IFloatingPointIeee754<> */: DNObject {
 	public override class var typeName: String { get {
 		"IFloatingPointIeee754`1"
@@ -24023,6 +24221,8 @@ public class System_Numerics_IFloatingPointIeee754_A1 /* System.Numerics.IFloati
 // Type "TSelf" was skipped. Reason: It has no full name.
 
 
+/// Defines support for exponential functions.
+/// The type that implements this interface.
 public class System_Numerics_IExponentialFunctions_A1 /* System.Numerics.IExponentialFunctions<> */: DNObject {
 	public override class var typeName: String { get {
 		"IExponentialFunctions`1"
@@ -24181,6 +24381,8 @@ public class System_Numerics_IExponentialFunctions_A1 /* System.Numerics.IExpone
 // Type "TSelf" was skipped. Reason: It has no full name.
 
 
+/// Defines support for floating-point constants.
+/// The type that implements the interface.
 public class System_Numerics_IFloatingPointConstants_A1 /* System.Numerics.IFloatingPointConstants<> */: DNObject {
 	public override class var typeName: String { get {
 		"IFloatingPointConstants`1"
@@ -24273,6 +24475,8 @@ public class System_Numerics_IFloatingPointConstants_A1 /* System.Numerics.IFloa
 // Type "TSelf" was skipped. Reason: It has no full name.
 
 
+/// Defines a floating-point type.
+/// The type that implements the interface.
 public class System_Numerics_IFloatingPoint_A1 /* System.Numerics.IFloatingPoint<> */: DNObject {
 	public override class var typeName: String { get {
 		"IFloatingPoint`1"
@@ -24693,6 +24897,8 @@ public class System_Numerics_IFloatingPoint_A1 /* System.Numerics.IFloatingPoint
 
 
 
+/// Defines support for hyperbolic functions.
+/// The type that implements this interface.
 public class System_Numerics_IHyperbolicFunctions_A1 /* System.Numerics.IHyperbolicFunctions<> */: DNObject {
 	public override class var typeName: String { get {
 		"IHyperbolicFunctions`1"
@@ -24851,6 +25057,8 @@ public class System_Numerics_IHyperbolicFunctions_A1 /* System.Numerics.IHyperbo
 // Type "TSelf" was skipped. Reason: It has no full name.
 
 
+/// Defines support for logarithmic functions.
+/// The type that implements this interface.
 public class System_Numerics_ILogarithmicFunctions_A1 /* System.Numerics.ILogarithmicFunctions<> */: DNObject {
 	public override class var typeName: String { get {
 		"ILogarithmicFunctions`1"
@@ -25032,6 +25240,8 @@ public class System_Numerics_ILogarithmicFunctions_A1 /* System.Numerics.ILogari
 // Type "TSelf" was skipped. Reason: It has no full name.
 
 
+/// Defines support for power functions.
+/// The type that implements this interface.
 public class System_Numerics_IPowerFunctions_A1 /* System.Numerics.IPowerFunctions<> */: DNObject {
 	public override class var typeName: String { get {
 		"IPowerFunctions`1"
@@ -25081,6 +25291,8 @@ public class System_Numerics_IPowerFunctions_A1 /* System.Numerics.IPowerFunctio
 // Type "TSelf" was skipped. Reason: It has no full name.
 
 
+/// Defines support for root functions.
+/// The type that implements this interface.
 public class System_Numerics_IRootFunctions_A1 /* System.Numerics.IRootFunctions<> */: DNObject {
 	public override class var typeName: String { get {
 		"IRootFunctions`1"
@@ -25196,6 +25408,8 @@ public class System_Numerics_IRootFunctions_A1 /* System.Numerics.IRootFunctions
 // Type "TSelf" was skipped. Reason: It has no full name.
 
 
+/// Defines support for trigonometric functions.
+/// The type that implements this interface.
 public class System_Numerics_ITrigonometricFunctions_A1 /* System.Numerics.ITrigonometricFunctions<> */: DNObject {
 	public override class var typeName: String { get {
 		"ITrigonometricFunctions`1"
@@ -25535,6 +25749,7 @@ public class System_Numerics_ITrigonometricFunctions_A1 /* System.Numerics.ITrig
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+/// Represents a double-precision floating-point number.
 public class System_Double /* System.Double */: System_ValueType {
 	public override class var typeName: String { get {
 		"Double"
@@ -25621,6 +25836,7 @@ public class System_Double /* System.Double */: System_ValueType {
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+/// Represents a decimal floating-point number.
 public class System_Decimal /* System.Decimal */: System_ValueType {
 	public override class var typeName: String { get {
 		"Decimal"
@@ -27357,6 +27573,7 @@ public class System_Int32_Array /* System.Int32[] */: System_Array {
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+/// Represents an instant in time, typically expressed as a date and time of day.
 public class System_DateTime /* System.DateTime */: System_ValueType {
 	public override class var typeName: String { get {
 		"DateTime"
@@ -29337,6 +29554,7 @@ public class System_DateTime /* System.DateTime */: System_ValueType {
 
 
 
+/// Represents a time interval.
 public class System_TimeSpan /* System.TimeSpan */: System_ValueType {
 	public override class var typeName: String { get {
 		"TimeSpan"
@@ -30658,6 +30876,7 @@ public class System_String_Array /* System.String[] */: System_Array {
 
 
 
+/// Represents dates with values ranging from January 1, 0001 Anno Domini (Common Era) through December 31, 9999 A.D. (C.E.) in the Gregorian calendar.
 public class System_DateOnly /* System.DateOnly */: System_ValueType {
 	public override class var typeName: String { get {
 		"DateOnly"
@@ -31612,6 +31831,7 @@ public class System_DateOnly /* System.DateOnly */: System_ValueType {
 
 
 
+/// Represents a time of day, as would be read from a clock, within the range 00:00:00 to 23:59:59.9999999.
 public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 	public override class var typeName: String { get {
 		"TimeOnly"
@@ -32747,6 +32967,7 @@ public class System_TimeOnly /* System.TimeOnly */: System_ValueType {
 
 
 
+/// Represents time in divisions, such as weeks, months, and years.
 public class System_Globalization_Calendar /* System.Globalization.Calendar */: System_Object {
 	public override class var typeName: String { get {
 		"Calendar"
@@ -33650,6 +33871,7 @@ public class System_Globalization_Calendar /* System.Globalization.Calendar */: 
 }
 
 
+/// Provides the connection between an instance of   and the formatter-provided class best suited to parse the data inside the  .
 public class System_Runtime_Serialization_IFormatterConverter /* System.Runtime.Serialization.IFormatterConverter */: DNObject {
 	public override class var typeName: String { get {
 		"IFormatterConverter"
@@ -34010,6 +34232,7 @@ public class System_Runtime_Serialization_IFormatterConverter /* System.Runtime.
 }
 
 
+/// Describes the source and destination of a given serialized stream, and provides an additional caller-defined context.
 public class System_Runtime_Serialization_StreamingContext /* System.Runtime.Serialization.StreamingContext */: System_ValueType {
 	public override class var typeName: String { get {
 		"StreamingContext"
@@ -34169,6 +34392,7 @@ public class System_Runtime_Serialization_StreamingContext /* System.Runtime.Ser
 }
 
 
+/// Describes an assembly's unique identity in full.
 public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */: System_Object {
 	public override class var typeName: String { get {
 		"AssemblyName"
@@ -34883,6 +35107,7 @@ public class System_Reflection_AssemblyName /* System.Reflection.AssemblyName */
 }
 
 
+/// Represents the version number of an assembly, operating system, or the common language runtime. This class cannot be inherited.
 public class System_Version /* System.Version */: System_Object {
 	public override class var typeName: String { get {
 		"Version"
@@ -35314,6 +35539,7 @@ public class System_Version /* System.Version */: System_Object {
 
 
 
+/// Encapsulates access to a public or private key pair used to sign strong name assemblies.
 public class System_Reflection_StrongNameKeyPair /* System.Reflection.StrongNameKeyPair */: System_Object {
 	public override class var typeName: String { get {
 		"StrongNameKeyPair"
@@ -35415,6 +35641,7 @@ public class System_Reflection_StrongNameKeyPair /* System.Reflection.StrongName
 }
 
 
+/// Provides a   for a file, supporting both synchronous and asynchronous read and write operations.
 public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 	public override class var typeName: String { get {
 		"FileStream"
@@ -36317,6 +36544,7 @@ public class System_IO_FileStream /* System.IO.FileStream */: System_IO_Stream {
 }
 
 
+/// Provides a generic view of a sequence of bytes. This is an abstract class.
 public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject {
 	public override class var typeName: String { get {
 		"Stream"
@@ -37142,6 +37370,7 @@ public class System_IO_Stream /* System.IO.Stream */: System_MarshalByRefObject 
 }
 
 
+/// Enables access to objects across application domain boundaries in applications that support remoting.
 public class System_MarshalByRefObject /* System.MarshalByRefObject */: System_Object {
 	public override class var typeName: String { get {
 		"MarshalByRefObject"
@@ -37205,6 +37434,7 @@ public class System_MarshalByRefObject /* System.MarshalByRefObject */: System_O
 }
 
 
+/// Provides a mechanism for releasing unmanaged resources asynchronously.
 public class System_IAsyncDisposable /* System.IAsyncDisposable */: DNObject {
 	public override class var typeName: String { get {
 		"IAsyncDisposable"
@@ -37248,6 +37478,7 @@ public class System_IAsyncDisposable /* System.IAsyncDisposable */: DNObject {
 }
 
 
+/// Provides an awaitable result of an asynchronous operation.
 public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTask */: System_ValueType {
 	public override class var typeName: String { get {
 		"ValueTask"
@@ -37605,6 +37836,7 @@ public class System_Threading_Tasks_ValueTask /* System.Threading.Tasks.ValueTas
 
 
 // Type "TResult" was skipped. Reason: It has no full name.
+/// Propagates notification that operations should be canceled.
 public class System_Threading_CancellationToken /* System.Threading.CancellationToken */: System_ValueType {
 	public override class var typeName: String { get {
 		"CancellationToken"
@@ -37861,6 +38093,7 @@ public class System_Threading_CancellationToken /* System.Threading.Cancellation
 
 
 
+/// Encapsulates operating system-specific objects that wait for exclusive access to shared resources.
 public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: System_MarshalByRefObject {
 	public override class var typeName: String { get {
 		"WaitHandle"
@@ -38348,6 +38581,7 @@ public class System_Threading_WaitHandle /* System.Threading.WaitHandle */: Syst
 }
 
 
+/// Represents a signed integer where the bit-width is the same as a pointer.
 public class System_IntPtr /* System.IntPtr */: System_ValueType {
 	public override class var typeName: String { get {
 		"IntPtr"
@@ -38416,6 +38650,7 @@ public class System_IntPtr /* System.IntPtr */: System_ValueType {
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+/// Represents a wrapper class for a wait handle.
 public class Microsoft_Win32_SafeHandles_SafeWaitHandle /* Microsoft.Win32.SafeHandles.SafeWaitHandle */: Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid {
 	public override class var typeName: String { get {
 		"SafeWaitHandle"
@@ -38475,6 +38710,7 @@ public class Microsoft_Win32_SafeHandles_SafeWaitHandle /* Microsoft.Win32.SafeH
 }
 
 
+/// Provides a base class for Win32 safe handle implementations in which the value of either 0 or -1 indicates an invalid handle.
 public class Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid /* Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid */: System_Runtime_InteropServices_SafeHandle {
 	public override class var typeName: String { get {
 		"SafeHandleZeroOrMinusOneIsInvalid"
@@ -38517,6 +38753,7 @@ public class Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid /* Mi
 }
 
 
+/// Represents a wrapper class for operating system handles. This class must be inherited.
 public class System_Runtime_InteropServices_SafeHandle /* System.Runtime.InteropServices.SafeHandle */: System_Runtime_ConstrainedExecution_CriticalFinalizerObject {
 	public override class var typeName: String { get {
 		"SafeHandle"
@@ -38681,6 +38918,7 @@ public class System_Runtime_InteropServices_SafeHandle /* System.Runtime.Interop
 }
 
 
+/// Ensures that all finalization code in derived classes is marked as critical.
 public class System_Runtime_ConstrainedExecution_CriticalFinalizerObject /* System.Runtime.ConstrainedExecution.CriticalFinalizerObject */: System_Object {
 	public override class var typeName: String { get {
 		"CriticalFinalizerObject"
@@ -38731,6 +38969,7 @@ public class System_Threading_WaitHandle_Array /* System.Threading.WaitHandle[] 
 
 
 
+/// Represents a callback delegate that has been registered with a  .
 public class System_Threading_CancellationTokenRegistration /* System.Threading.CancellationTokenRegistration */: System_ValueType {
 	public override class var typeName: String { get {
 		"CancellationTokenRegistration"
@@ -38906,6 +39145,7 @@ public class System_Threading_CancellationTokenRegistration /* System.Threading.
 
 
 
+/// Represents errors that occur during application execution.
 public class System_Exception /* System.Exception */: System_Object {
 	public override class var typeName: String { get {
 		"Exception"
@@ -39281,6 +39521,7 @@ public class System_Exception /* System.Exception */: System_Object {
 }
 
 
+/// Provides information about methods and constructors.
 public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: System_Reflection_MemberInfo {
 	public override class var typeName: String { get {
 		"MethodBase"
@@ -39995,6 +40236,7 @@ public class System_Reflection_MethodBase /* System.Reflection.MethodBase */: Sy
 }
 
 
+/// is a handle to the internal metadata representation of a method.
 public class System_RuntimeMethodHandle /* System.RuntimeMethodHandle */: System_ValueType {
 	public override class var typeName: String { get {
 		"RuntimeMethodHandle"
@@ -40189,6 +40431,7 @@ public class System_RuntimeMethodHandle /* System.RuntimeMethodHandle */: System
 
 
 
+/// Represents a type using an internal metadata token.
 public class System_RuntimeTypeHandle /* System.RuntimeTypeHandle */: System_ValueType {
 	public override class var typeName: String { get {
 		"RuntimeTypeHandle"
@@ -40385,6 +40628,7 @@ public class System_RuntimeTypeHandle /* System.RuntimeTypeHandle */: System_Val
 
 
 
+/// Represents a runtime handle for a module.
 public class System_ModuleHandle /* System.ModuleHandle */: System_ValueType {
 	public override class var typeName: String { get {
 		"ModuleHandle"
@@ -40727,6 +40971,7 @@ public class System_RuntimeTypeHandle_Array /* System.RuntimeTypeHandle[] */: Sy
 
 
 
+/// Represents a field using an internal metadata token.
 public class System_RuntimeFieldHandle /* System.RuntimeFieldHandle */: System_ValueType {
 	public override class var typeName: String { get {
 		"RuntimeFieldHandle"
@@ -40924,6 +41169,7 @@ public class System_Reflection_ParameterInfo_Array /* System.Reflection.Paramete
 
 
 
+/// Discovers the attributes of a parameter and provides access to parameter metadata.
 public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo */: System_Object {
 	public override class var typeName: String { get {
 		"ParameterInfo"
@@ -41427,6 +41673,7 @@ public class System_Reflection_ParameterInfo /* System.Reflection.ParameterInfo 
 }
 
 
+/// Indicates that the current interface implementer is a reference to another object.
 public class System_Runtime_Serialization_IObjectReference /* System.Runtime.Serialization.IObjectReference */: DNObject {
 	public override class var typeName: String { get {
 		"IObjectReference"
@@ -41475,6 +41722,7 @@ public class System_Runtime_Serialization_IObjectReference /* System.Runtime.Ser
 
 
 
+/// Provides access to custom attribute data for assemblies, modules, types, members and parameters that are loaded into the reflection-only context.
 public class System_Reflection_CustomAttributeData /* System.Reflection.CustomAttributeData */: System_Object {
 	public override class var typeName: String { get {
 		"CustomAttributeData"
@@ -41745,6 +41993,7 @@ public class System_Reflection_CustomAttributeData_Array /* System.Reflection.Cu
 
 
 
+/// Performs reflection on a module.
 public class System_Reflection_Module /* System.Reflection.Module */: System_Object {
 	public override class var typeName: String { get {
 		"Module"
@@ -42682,6 +42931,7 @@ public class System_Reflection_Module /* System.Reflection.Module */: System_Obj
 }
 
 
+/// Represents a globally unique identifier (GUID).
 public class System_Guid /* System.Guid */: System_ValueType {
 	public override class var typeName: String { get {
 		"Guid"
@@ -43230,6 +43480,7 @@ public class System_Guid /* System.Guid */: System_ValueType {
 
 
 
+/// Discovers the attributes of a method and provides access to method metadata.
 public class System_Reflection_MethodInfo /* System.Reflection.MethodInfo */: System_Reflection_MethodBase {
 	public override class var typeName: String { get {
 		"MethodInfo"
@@ -43567,6 +43818,7 @@ public class System_Type_Array /* System.Type[] */: System_Array {
 
 
 
+/// Selects a member from a list of candidates, and performs type conversion from actual argument type to formal argument type.
 public class System_Reflection_Binder /* System.Reflection.Binder */: System_Object {
 	public override class var typeName: String { get {
 		"Binder"
@@ -43740,6 +43992,7 @@ public class System_Reflection_Binder /* System.Reflection.Binder */: System_Obj
 }
 
 
+/// Discovers the attributes of a field and provides access to field metadata.
 public class System_Reflection_FieldInfo /* System.Reflection.FieldInfo */: System_Reflection_MemberInfo {
 	public override class var typeName: String { get {
 		"FieldInfo"
@@ -44428,6 +44681,7 @@ public class System_Reflection_ParameterModifier_Array /* System.Reflection.Para
 
 
 
+/// Attaches a modifier to parameters so that binding can work with parameter signatures in which the types have been modified.
 public class System_Reflection_ParameterModifier /* System.Reflection.ParameterModifier */: System_ValueType {
 	public override class var typeName: String { get {
 		"ParameterModifier"
@@ -44528,6 +44782,7 @@ public class System_Reflection_ParameterModifier /* System.Reflection.ParameterM
 
 
 
+/// Discovers the attributes of a property and provides access to property metadata.
 public class System_Reflection_PropertyInfo /* System.Reflection.PropertyInfo */: System_Reflection_MemberInfo {
 	public override class var typeName: String { get {
 		"PropertyInfo"
@@ -45172,6 +45427,7 @@ public class System_Reflection_PropertyInfo_Array /* System.Reflection.PropertyI
 
 
 
+/// Discovers the attributes of a class constructor and provides access to constructor metadata.
 public class System_Reflection_ConstructorInfo /* System.Reflection.ConstructorInfo */: System_Reflection_MethodBase {
 	public override class var typeName: String { get {
 		"ConstructorInfo"
@@ -45330,6 +45586,7 @@ public class System_Reflection_ConstructorInfo /* System.Reflection.ConstructorI
 
 
 
+/// Represents an argument of a custom attribute in the reflection-only context, or an element of an array argument.
 public class System_Reflection_CustomAttributeTypedArgument /* System.Reflection.CustomAttributeTypedArgument */: System_ValueType {
 	public override class var typeName: String { get {
 		"CustomAttributeTypedArgument"
@@ -45556,6 +45813,7 @@ public class System_Reflection_CustomAttributeTypedArgument_Array /* System.Refl
 
 
 
+/// Represents a named argument of a custom attribute in the reflection-only context.
 public class System_Reflection_CustomAttributeNamedArgument /* System.Reflection.CustomAttributeNamedArgument */: System_ValueType {
 	public override class var typeName: String { get {
 		"CustomAttributeNamedArgument"
@@ -45820,6 +46078,7 @@ public class System_Reflection_CustomAttributeNamedArgument_Array /* System.Refl
 
 
 
+/// Provides access to the metadata and MSIL for the body of a method.
 public class System_Reflection_MethodBody /* System.Reflection.MethodBody */: System_Object {
 	public override class var typeName: String { get {
 		"MethodBody"
@@ -45970,6 +46229,7 @@ public class System_Reflection_MethodBody /* System.Reflection.MethodBody */: Sy
 
 
 
+/// Discovers the attributes of a local variable and provides access to local variable metadata.
 public class System_Reflection_LocalVariableInfo /* System.Reflection.LocalVariableInfo */: System_Object {
 	public override class var typeName: String { get {
 		"LocalVariableInfo"
@@ -46098,6 +46358,7 @@ public class System_Reflection_LocalVariableInfo_Array /* System.Reflection.Loca
 
 
 
+/// Represents a clause in a structured exception-handling block.
 public class System_Reflection_ExceptionHandlingClause /* System.Reflection.ExceptionHandlingClause */: System_Object {
 	public override class var typeName: String { get {
 		"ExceptionHandlingClause"
@@ -46296,6 +46557,7 @@ public class System_Reflection_ExceptionHandlingClause_Array /* System.Reflectio
 
 
 
+/// Represents a nongeneric collection of key/value pairs.
 public class System_Collections_IDictionary /* System.Collections.IDictionary */: DNObject {
 	public override class var typeName: String { get {
 		"IDictionary"
@@ -46532,6 +46794,7 @@ public class System_Collections_IDictionary /* System.Collections.IDictionary */
 }
 
 
+/// Enumerates the elements of a nongeneric dictionary.
 public class System_Collections_IDictionaryEnumerator /* System.Collections.IDictionaryEnumerator */: DNObject {
 	public override class var typeName: String { get {
 		"IDictionaryEnumerator"
@@ -46618,6 +46881,7 @@ public class System_Collections_IDictionaryEnumerator /* System.Collections.IDic
 }
 
 
+/// Defines a dictionary key/value pair that can be set or retrieved.
 public class System_Collections_DictionaryEntry /* System.Collections.DictionaryEntry */: System_ValueType {
 	public override class var typeName: String { get {
 		"DictionaryEntry"
@@ -46799,6 +47063,7 @@ public class System_Collections_DictionaryEntry /* System.Collections.Dictionary
 }
 
 
+/// Represents an asynchronous operation.
 public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: System_Object {
 	public override class var typeName: String { get {
 		"Task"
@@ -48025,6 +48290,7 @@ public class System_Threading_Tasks_Task /* System.Threading.Tasks.Task */: Syst
 }
 
 
+/// Represents the status of an asynchronous operation.
 public class System_IAsyncResult /* System.IAsyncResult */: DNObject {
 	public override class var typeName: String { get {
 		"IAsyncResult"
@@ -48128,6 +48394,7 @@ public class System_IAsyncResult /* System.IAsyncResult */: DNObject {
 }
 
 
+/// Represents an object that handles the low-level work of queuing tasks onto threads.
 public class System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.TaskScheduler */: System_Object {
 	public override class var typeName: String { get {
 		"TaskScheduler"
@@ -48251,6 +48518,7 @@ public class System_Threading_Tasks_TaskScheduler /* System.Threading.Tasks.Task
 }
 
 
+/// Represents one or more errors that occur during application execution.
 public class System_AggregateException /* System.AggregateException */: System_Exception {
 	public override class var typeName: String { get {
 		"AggregateException"
@@ -48530,6 +48798,8 @@ public class System_AggregateException /* System.AggregateException */: System_E
 }
 
 
+/// Provides the base class for a generic read-only collection.
+/// The type of elements in the collection.
 public class System_Collections_ObjectModel_ReadOnlyCollection_A1 /* System.Collections.ObjectModel.ReadOnlyCollection<> */: System_Object {
 	public override class var typeName: String { get {
 		"ReadOnlyCollection`1"
@@ -48707,6 +48977,7 @@ public class System_Exception_Array /* System.Exception[] */: System_Array {
 
 
 
+/// Provides support for creating and scheduling   objects.
 public class System_Threading_Tasks_TaskFactory /* System.Threading.Tasks.TaskFactory */: System_Object {
 	public override class var typeName: String { get {
 		"TaskFactory"
@@ -49051,6 +49322,7 @@ public class System_Threading_Tasks_Task_Array /* System.Threading.Tasks.Task[] 
 
 
 
+/// Provides an object that waits for the completion of an asynchronous task.
 public class System_Runtime_CompilerServices_TaskAwaiter /* System.Runtime.CompilerServices.TaskAwaiter */: System_ValueType {
 	public override class var typeName: String { get {
 		"TaskAwaiter"
@@ -49164,6 +49436,7 @@ public class System_Runtime_CompilerServices_TaskAwaiter /* System.Runtime.Compi
 }
 
 
+/// Represents an awaiter that schedules continuations when an await operation completes.
 public class System_Runtime_CompilerServices_ICriticalNotifyCompletion /* System.Runtime.CompilerServices.ICriticalNotifyCompletion */: DNObject {
 	public override class var typeName: String { get {
 		"ICriticalNotifyCompletion"
@@ -49205,6 +49478,7 @@ public class System_Runtime_CompilerServices_ICriticalNotifyCompletion /* System
 }
 
 
+/// Represents an operation that schedules continuations when it completes.
 public class System_Runtime_CompilerServices_INotifyCompletion /* System.Runtime.CompilerServices.INotifyCompletion */: DNObject {
 	public override class var typeName: String { get {
 		"INotifyCompletion"
@@ -49246,6 +49520,7 @@ public class System_Runtime_CompilerServices_INotifyCompletion /* System.Runtime
 }
 
 
+/// Provides an awaitable object that enables configured awaits on a task.
 public class System_Runtime_CompilerServices_ConfiguredTaskAwaitable /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable */: System_ValueType {
 	public override class var typeName: String { get {
 		"ConfiguredTaskAwaitable"
@@ -49420,6 +49695,7 @@ public class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredT
 }
 
 
+/// Provides the context for waiting when asynchronously switching into a target environment.
 public class System_Runtime_CompilerServices_YieldAwaitable /* System.Runtime.CompilerServices.YieldAwaitable */: System_ValueType {
 	public override class var typeName: String { get {
 		"YieldAwaitable"
@@ -49594,6 +49870,7 @@ public class System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter /* Syst
 }
 
 
+/// Provides an abstraction for time.
 public class System_TimeProvider /* System.TimeProvider */: System_Object {
 	public override class var typeName: String { get {
 		"TimeProvider"
@@ -49800,6 +50077,7 @@ public class System_TimeProvider /* System.TimeProvider */: System_Object {
 }
 
 
+/// Represents a point in time, typically expressed as a date and time of day, relative to Coordinated Universal Time (UTC).
 public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType {
 	public override class var typeName: String { get {
 		"DateTimeOffset"
@@ -51422,6 +51700,7 @@ public class System_DateTimeOffset /* System.DateTimeOffset */: System_ValueType
 
 
 
+/// Represents any time zone in the world.
 public class System_TimeZoneInfo /* System.TimeZoneInfo */: System_Object {
 	public override class var typeName: String { get {
 		"TimeZoneInfo"
@@ -53010,6 +53289,7 @@ public class System_TimeZoneInfo_TransitionTime /* System.TimeZoneInfo.Transitio
 
 
 
+/// Represents a timer that can have its due time and period changed.
 public class System_Threading_ITimer /* System.Threading.ITimer */: DNObject {
 	public override class var typeName: String { get {
 		"ITimer"
@@ -53054,6 +53334,8 @@ public class System_Threading_ITimer /* System.Threading.ITimer */: DNObject {
 
 
 // Type "TResult" was skipped. Reason: It has no full name.
+/// Represents an asynchronous operation that can return a value.
+/// The type of the result produced by this  .
 public class System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<> */: System_Threading_Tasks_Task {
 	public override class var typeName: String { get {
 		"Task`1"
@@ -53218,6 +53500,8 @@ public class System_Threading_Tasks_Task_A1 /* System.Threading.Tasks.Task<> */:
 // Type "TResult[]" was skipped. Reason: It has no full name.
 // Type "TResult" was skipped. Reason: It has no full name.
 
+/// Provides support for creating and scheduling   objects.
+/// The return value of the   objects that the methods of this class create.
 public class System_Threading_Tasks_TaskFactory_A1 /* System.Threading.Tasks.TaskFactory<> */: System_Object {
 	public override class var typeName: String { get {
 		"TaskFactory`1"
@@ -53445,6 +53729,8 @@ public class System_Threading_Tasks_TaskFactory_A1 /* System.Threading.Tasks.Tas
 // Type "TArg2" was skipped. Reason: It has no full name.
 // Type "TArg3" was skipped. Reason: It has no full name.
 // Type "TaskFactory`1" was skipped. Reason: It has no full name.
+/// Represents an object that waits for the completion of an asynchronous task and provides a parameter for the result.
+/// The result for the task.
 public class System_Runtime_CompilerServices_TaskAwaiter_A1 /* System.Runtime.CompilerServices.TaskAwaiter<> */: System_ValueType {
 	public override class var typeName: String { get {
 		"TaskAwaiter`1"
@@ -53568,6 +53854,8 @@ public class System_Runtime_CompilerServices_TaskAwaiter_A1 /* System.Runtime.Co
 
 // Type "TResult" was skipped. Reason: It has no full name.
 // Type "TaskAwaiter`1" was skipped. Reason: It has no full name.
+/// Provides an awaitable object that enables configured awaits on a task.
+/// The type of the result produced by this  .
 public class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1 /* System.Runtime.CompilerServices.ConfiguredTaskAwaitable<> */: System_ValueType {
 	public override class var typeName: String { get {
 		"ConfiguredTaskAwaitable`1"
@@ -53626,6 +53914,7 @@ public class System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1 /* Syste
 
 
 
+/// Provides an awaiter for a  .
 public class System_Runtime_CompilerServices_ValueTaskAwaiter /* System.Runtime.CompilerServices.ValueTaskAwaiter */: System_ValueType {
 	public override class var typeName: String { get {
 		"ValueTaskAwaiter"
@@ -53739,6 +54028,7 @@ public class System_Runtime_CompilerServices_ValueTaskAwaiter /* System.Runtime.
 }
 
 
+/// Provides an awaitable type that enables configured awaits on a  .
 public class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable /* System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable */: System_ValueType {
 	public override class var typeName: String { get {
 		"ConfiguredValueTaskAwaitable"
@@ -53913,6 +54203,7 @@ public class System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_Config
 }
 
 
+/// Represents an object that can be wrapped by a  .
 public class System_Threading_Tasks_Sources_IValueTaskSource /* System.Threading.Tasks.Sources.IValueTaskSource */: DNObject {
 	public override class var typeName: String { get {
 		"IValueTaskSource"
@@ -53981,6 +54272,7 @@ public class System_Threading_Tasks_Sources_IValueTaskSource /* System.Threading
 
 
 
+/// Represents a wrapper class for a file handle.
 public class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHandles.SafeFileHandle */: Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid {
 	public override class var typeName: String { get {
 		"SafeFileHandle"
@@ -54078,6 +54370,7 @@ public class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeH
 }
 
 
+/// Defines a variety of configuration options for  .
 public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: System_Object {
 	public override class var typeName: String { get {
 		"FileStreamOptions"
@@ -54345,6 +54638,7 @@ public class System_IO_FileStreamOptions /* System.IO.FileStreamOptions */: Syst
 
 
 
+/// Represents type declarations for class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.
 public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System_Type {
 	public override class var typeName: String { get {
 		"TypeInfo"
@@ -54722,6 +55016,7 @@ public class System_Reflection_TypeInfo /* System.Reflection.TypeInfo */: System
 }
 
 
+/// Interoperates with the IDispatch interface.
 public class System_Reflection_IReflect /* System.Reflection.IReflect */: DNObject {
 	public override class var typeName: String { get {
 		"IReflect"
@@ -55043,6 +55338,7 @@ public class System_Reflection_MemberInfo_Array /* System.Reflection.MemberInfo[
 
 
 
+/// Represents a type that you can reflect over.
 public class System_Reflection_IReflectableType /* System.Reflection.IReflectableType */: DNObject {
 	public override class var typeName: String { get {
 		"IReflectableType"
@@ -55086,6 +55382,7 @@ public class System_Reflection_IReflectableType /* System.Reflection.IReflectabl
 }
 
 
+/// Discovers the attributes of an event and provides access to event metadata.
 public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: System_Reflection_MemberInfo {
 	public override class var typeName: String { get {
 		"EventInfo"
@@ -55516,6 +55813,7 @@ public class System_Reflection_EventInfo /* System.Reflection.EventInfo */: Syst
 
 
 
+/// Provides access to manifest resources, which are XML files that describe application dependencies.
 public class System_Reflection_ManifestResourceInfo /* System.Reflection.ManifestResourceInfo */: System_Object {
 	public override class var typeName: String { get {
 		"ManifestResourceInfo"
@@ -55623,6 +55921,7 @@ public class System_Reflection_ManifestResourceInfo /* System.Reflection.Manifes
 }
 
 
+/// Provides data for loader resolution events, such as the  ,  ,  , and   events.
 public class System_ResolveEventArgs /* System.ResolveEventArgs */: System_EventArgs {
 	public override class var typeName: String { get {
 		"ResolveEventArgs"
@@ -55727,6 +56026,7 @@ public class System_ResolveEventArgs /* System.ResolveEventArgs */: System_Event
 }
 
 
+/// Represents the base class for classes that contain event data, and provides a value to use for events that do not include event data.
 public class System_EventArgs /* System.EventArgs */: System_Object {
 	public override class var typeName: String { get {
 		"EventArgs"
@@ -55858,6 +56158,7 @@ public class System_IO_FileStream_Array /* System.IO.FileStream[] */: System_Arr
 
 
 
+/// Represents a Unicode scalar value ([ U+0000..U+D7FF ], inclusive; or [ U+E000..U+10FFFF ], inclusive).
 public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 	public override class var typeName: String { get {
 		"Rune"
@@ -56765,6 +57066,7 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType {
 
 
 
+/// Represents the result of mapping a string to its sort key.
 public class System_Globalization_SortKey /* System.Globalization.SortKey */: System_Object {
 	public override class var typeName: String { get {
 		"SortKey"
@@ -56907,6 +57209,7 @@ public class System_Globalization_SortKey /* System.Globalization.SortKey */: Sy
 }
 
 
+/// Provides information about the version of Unicode used to compare and order strings.
 public class System_Globalization_SortVersion /* System.Globalization.SortVersion */: System_Object {
 	public override class var typeName: String { get {
 		"SortVersion"
@@ -57047,6 +57350,7 @@ public class System_Globalization_SortVersion /* System.Globalization.SortVersio
 
 
 
+/// Defines text properties and behaviors, such as casing, that are specific to a writing system.
 public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: System_Object {
 	public override class var typeName: String { get {
 		"TextInfo"
@@ -57465,6 +57769,7 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 }
 
 
+/// Provides culture-specific information for formatting and parsing numeric values.
 public class System_Globalization_NumberFormatInfo /* System.Globalization.NumberFormatInfo */: System_Object {
 	public override class var typeName: String { get {
 		"NumberFormatInfo"
@@ -58652,6 +58957,7 @@ public class System_Globalization_NumberFormatInfo /* System.Globalization.Numbe
 }
 
 
+/// Provides culture-specific information about the format of date and time values.
 public class System_Globalization_DateTimeFormatInfo /* System.Globalization.DateTimeFormatInfo */: System_Object {
 	public override class var typeName: String { get {
 		"DateTimeFormatInfo"
@@ -59997,6 +60303,7 @@ public class System_Char_Array /* System.Char[] */: System_Array {
 
 
 
+/// Supports iterating over a   object and reading its individual characters. This class cannot be inherited.
 public class System_CharEnumerator /* System.CharEnumerator */: System_Object {
 	public override class var typeName: String { get {
 		"CharEnumerator"
@@ -60113,6 +60420,7 @@ public class System_CharEnumerator /* System.CharEnumerator */: System_Object {
 }
 
 
+/// Provides an enumerator for the   values represented by a string.
 public class System_Text_StringRuneEnumerator /* System.Text.StringRuneEnumerator */: System_ValueType {
 	public override class var typeName: String { get {
 		"StringRuneEnumerator"
@@ -60217,6 +60525,7 @@ public class System_Text_StringRuneEnumerator /* System.Text.StringRuneEnumerato
 
 
 
+/// Represents a parsed composite format string.
 public class System_Text_CompositeFormat /* System.Text.CompositeFormat */: System_Object {
 	public override class var typeName: String { get {
 		"CompositeFormat"
@@ -60307,6 +60616,7 @@ public class System_Text_CompositeFormat /* System.Text.CompositeFormat */: Syst
 // Type "TArg0" was skipped. Reason: It has no full name.
 // Type "TArg1" was skipped. Reason: It has no full name.
 // Type "TArg2" was skipped. Reason: It has no full name.
+/// Represents a character encoding.
 public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 	public override class var typeName: String { get {
 		"Encoding"
@@ -61596,6 +61906,7 @@ public class System_Text_Encoding /* System.Text.Encoding */: System_Object {
 }
 
 
+/// Provides the base class for an encoding provider, which supplies encodings that are unavailable on a particular platform.
 public class System_Text_EncodingProvider /* System.Text.EncodingProvider */: System_Object {
 	public override class var typeName: String { get {
 		"EncodingProvider"
@@ -61725,6 +62036,7 @@ public class System_Text_EncodingProvider /* System.Text.EncodingProvider */: Sy
 }
 
 
+/// Provides a failure-handling mechanism, called a fallback, for an input character that cannot be converted to an encoded output byte sequence.
 public class System_Text_EncoderFallback /* System.Text.EncoderFallback */: System_Object {
 	public override class var typeName: String { get {
 		"EncoderFallback"
@@ -61829,6 +62141,7 @@ public class System_Text_EncoderFallback /* System.Text.EncoderFallback */: Syst
 }
 
 
+/// Provides a buffer that allows a fallback handler to return an alternate string to an encoder when it cannot encode an input character.
 public class System_Text_EncoderFallbackBuffer /* System.Text.EncoderFallbackBuffer */: System_Object {
 	public override class var typeName: String { get {
 		"EncoderFallbackBuffer"
@@ -61965,6 +62278,7 @@ public class System_Text_EncoderFallbackBuffer /* System.Text.EncoderFallbackBuf
 }
 
 
+/// Provides a failure-handling mechanism, called a fallback, for an encoded input byte sequence that cannot be converted to an output character.
 public class System_Text_DecoderFallback /* System.Text.DecoderFallback */: System_Object {
 	public override class var typeName: String { get {
 		"DecoderFallback"
@@ -62069,6 +62383,7 @@ public class System_Text_DecoderFallback /* System.Text.DecoderFallback */: Syst
 }
 
 
+/// Provides a buffer that allows a fallback handler to return an alternate string to a decoder when it cannot decode an input byte sequence.
 public class System_Text_DecoderFallbackBuffer /* System.Text.DecoderFallbackBuffer */: System_Object {
 	public override class var typeName: String { get {
 		"DecoderFallbackBuffer"
@@ -62189,6 +62504,7 @@ public class System_Text_DecoderFallbackBuffer /* System.Text.DecoderFallbackBuf
 
 
 
+/// Provides basic information about an encoding.
 public class System_Text_EncodingInfo /* System.Text.EncodingInfo */: System_Object {
 	public override class var typeName: String { get {
 		"EncodingInfo"
@@ -62373,6 +62689,7 @@ public class System_Text_EncodingInfo_Array /* System.Text.EncodingInfo[] */: Sy
 
 
 
+/// Converts a sequence of encoded bytes into a set of characters.
 public class System_Text_Decoder /* System.Text.Decoder */: System_Object {
 	public override class var typeName: String { get {
 		"Decoder"
@@ -62588,6 +62905,7 @@ public class System_Text_Decoder /* System.Text.Decoder */: System_Object {
 }
 
 
+/// Converts a set of characters into a sequence of bytes.
 public class System_Text_Encoder /* System.Text.Encoder */: System_Object {
 	public override class var typeName: String { get {
 		"Encoder"
@@ -62990,6 +63308,7 @@ public class System_Int64_Array /* System.Int64[] */: System_Array {
 
 
 
+/// Lets you control the physical layout of the data fields of a class or structure in memory.
 public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runtime.InteropServices.StructLayoutAttribute */: System_Attribute {
 	public override class var typeName: String { get {
 		"StructLayoutAttribute"
@@ -63125,6 +63444,7 @@ public class System_Runtime_InteropServices_StructLayoutAttribute /* System.Runt
 }
 
 
+/// Represents the base class for custom attributes.
 public class System_Attribute /* System.Attribute */: System_Object {
 	public override class var typeName: String { get {
 		"Attribute"
@@ -63993,6 +64313,7 @@ public class System_Reflection_EventInfo_Array /* System.Reflection.EventInfo[] 
 
 
 
+/// Retrieves the mapping of an interface into the actual methods on a class that implements that interface.
 public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMapping */: System_ValueType {
 	public override class var typeName: String { get {
 		"InterfaceMapping"
@@ -64114,6 +64435,7 @@ public class System_Reflection_InterfaceMapping /* System.Reflection.InterfaceMa
 }
 
 
+/// Provides a collection of methods for allocating unmanaged memory, copying unmanaged memory blocks, and converting managed to unmanaged types, as well as other miscellaneous methods used when interacting with unmanaged code.
 public class System_Runtime_InteropServices_Marshal /* System.Runtime.InteropServices.Marshal */: System_Object {
 	public override class var typeName: String { get {
 		"Marshal"
@@ -67161,6 +67483,7 @@ public class System_IntPtr_Array /* System.IntPtr[] */: System_Array {
 // Type "T" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
+/// Represents text that should be kept confidential, such as by deleting it from computer memory when no longer needed. This class cannot be inherited.
 public class System_Security_SecureString /* System.Security.SecureString */: System_Object {
 	public override class var typeName: String { get {
 		"SecureString"
@@ -67392,6 +67715,7 @@ public class System_Security_SecureString /* System.Security.SecureString */: Sy
 // Type "T[]" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
 
+/// The exception that is thrown when there is an attempt to dereference a null object reference.
 public class System_NullReferenceException /* System.NullReferenceException */: System_SystemException {
 	public override class var typeName: String { get {
 		"NullReferenceException"
@@ -67472,6 +67796,7 @@ public class System_NullReferenceException /* System.NullReferenceException */: 
 }
 
 
+/// Serves as the base class for system exceptions namespace.
 public class System_SystemException /* System.SystemException */: System_Exception {
 	public override class var typeName: String { get {
 		"SystemException"
@@ -67552,6 +67877,7 @@ public class System_SystemException /* System.SystemException */: System_Excepti
 }
 
 
+/// The exception that is thrown when a feature does not run on a particular platform.
 public class System_PlatformNotSupportedException /* System.PlatformNotSupportedException */: System_NotSupportedException {
 	public override class var typeName: String { get {
 		"PlatformNotSupportedException"
@@ -67632,6 +67958,7 @@ public class System_PlatformNotSupportedException /* System.PlatformNotSupported
 }
 
 
+/// The exception that is thrown when an invoked method is not supported, or when there is an attempt to read, seek, or write to a stream that does not support the invoked functionality.
 public class System_NotSupportedException /* System.NotSupportedException */: System_SystemException {
 	public override class var typeName: String { get {
 		"NotSupportedException"
@@ -67712,6 +68039,7 @@ public class System_NotSupportedException /* System.NotSupportedException */: Sy
 }
 
 
+/// Represents an unsigned integer where the bit-width is the same as a pointer.
 public class System_UIntPtr /* System.UIntPtr */: System_ValueType {
 	public override class var typeName: String { get {
 		"UIntPtr"
@@ -67780,6 +68108,7 @@ public class System_UIntPtr /* System.UIntPtr */: System_ValueType {
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+/// Provides members for setting and retrieving data about an application's context.
 public class System_AppContext /* System.AppContext */: System_Object {
 	public override class var typeName: String { get {
 		"AppContext"
@@ -67922,6 +68251,7 @@ public class System_AppContext /* System.AppContext */: System_Object {
 }
 
 
+/// Provides a way to access a managed object from unmanaged memory.
 public class System_Runtime_InteropServices_GCHandle /* System.Runtime.InteropServices.GCHandle */: System_ValueType {
 	public override class var typeName: String { get {
 		"GCHandle"
@@ -68195,6 +68525,7 @@ public class System_Runtime_InteropServices_GCHandle /* System.Runtime.InteropSe
 
 
 
+/// Controls the system garbage collector, a service that automatically reclaims unused memory.
 public class System_GC /* System.GC */: System_Object {
 	public override class var typeName: String { get {
 		"GC"
@@ -68943,6 +69274,7 @@ public class System_GC /* System.GC */: System_Object {
 }
 
 
+/// Provides a set of APIs that can be used to retrieve garbage collection information.
 public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 	public override class var typeName: String { get {
 		"GCMemoryInfo"
@@ -69250,6 +69582,7 @@ public class System_GCMemoryInfo /* System.GCMemoryInfo */: System_ValueType {
 }
 
 
+/// Represents a weak reference, which references an object while still allowing that object to be reclaimed by garbage collection.
 public class System_WeakReference /* System.WeakReference */: System_Object {
 	public override class var typeName: String { get {
 		"WeakReference"
@@ -69412,6 +69745,9 @@ public class System_WeakReference /* System.WeakReference */: System_Object {
 // Type "T[]" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
 
+/// Represents a generic read-only collection of key/value pairs.
+/// The type of keys in the read-only dictionary.
+/// The type of values in the read-only dictionary.
 public class System_Collections_Generic_IReadOnlyDictionary_A2 /* System.Collections.Generic.IReadOnlyDictionary<,> */: DNObject {
 	public override class var typeName: String { get {
 		"IReadOnlyDictionary`2"
@@ -69516,6 +69852,9 @@ public class System_Collections_Generic_IReadOnlyDictionary_A2 /* System.Collect
 
 
 
+/// Defines a key/value pair that can be set or retrieved.
+/// The type of the key.
+/// The type of the value.
 public class System_Collections_Generic_KeyValuePair_A2 /* System.Collections.Generic.KeyValuePair<,> */: System_ValueType {
 	public override class var typeName: String { get {
 		"KeyValuePair`2"
@@ -69681,6 +70020,7 @@ public class System_Collections_Generic_KeyValuePair_A2 /* System.Collections.Ge
 
 
 
+/// Provides constants and static methods for trigonometric, logarithmic, and other common mathematical functions.
 public class System_Math /* System.Math */: System_Object {
 	public override class var typeName: String { get {
 		"Math"
@@ -71684,6 +72024,7 @@ public class System_Math /* System.Math */: System_Object {
 }
 
 
+/// Converts a base data type to another base data type.
 public class System_Convert /* System.Convert */: System_Object {
 	public override class var typeName: String { get {
 		"Convert"
@@ -77792,6 +78133,7 @@ public class System_Convert /* System.Convert */: System_Object {
 }
 
 
+/// Creates and controls a thread, sets its priority, and gets its status.
 public class System_Threading_Thread /* System.Threading.Thread */: System_Runtime_ConstrainedExecution_CriticalFinalizerObject {
 	public override class var typeName: String { get {
 		"Thread"
@@ -79428,6 +79770,7 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 }
 
 
+/// Defines the basic functionality of a principal object.
 public class System_Security_Principal_IPrincipal /* System.Security.Principal.IPrincipal */: DNObject {
 	public override class var typeName: String { get {
 		"IPrincipal"
@@ -79491,6 +79834,7 @@ public class System_Security_Principal_IPrincipal /* System.Security.Principal.I
 }
 
 
+/// Defines the basic functionality of an identity object.
 public class System_Security_Principal_IIdentity /* System.Security.Principal.IIdentity */: DNObject {
 	public override class var typeName: String { get {
 		"IIdentity"
@@ -79575,6 +79919,7 @@ public class System_Security_Principal_IIdentity /* System.Security.Principal.II
 }
 
 
+/// Manages the execution context for the current thread. This class cannot be inherited.
 public class System_Threading_ExecutionContext /* System.Threading.ExecutionContext */: System_Object {
 	public override class var typeName: String { get {
 		"ExecutionContext"
@@ -79767,6 +80112,7 @@ public class System_Threading_ExecutionContext /* System.Threading.ExecutionCont
 }
 
 
+/// Provides the functionality to restore the migration, or flow, of the execution context between threads.
 public class System_Threading_AsyncFlowControl /* System.Threading.AsyncFlowControl */: System_ValueType {
 	public override class var typeName: String { get {
 		"AsyncFlowControl"
@@ -79900,6 +80246,7 @@ public class System_Threading_AsyncFlowControl /* System.Threading.AsyncFlowCont
 
 
 
+/// Encapsulates a memory slot to store local data. This class cannot be inherited.
 public class System_LocalDataStoreSlot /* System.LocalDataStoreSlot */: System_Object {
 	public override class var typeName: String { get {
 		"LocalDataStoreSlot"
@@ -79923,6 +80270,7 @@ public class System_LocalDataStoreSlot /* System.LocalDataStoreSlot */: System_O
 }
 
 
+/// Provides methods for setting and capturing the compressed stack on the current thread. This class cannot be inherited.
 public class System_Threading_CompressedStack /* System.Threading.CompressedStack */: System_Object {
 	public override class var typeName: String { get {
 		"CompressedStack"
@@ -80045,6 +80393,7 @@ public class System_Threading_CompressedStack /* System.Threading.CompressedStac
 }
 
 
+/// Represents an application domain, which is an isolated environment where applications execute. This class cannot be inherited.
 public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject {
 	public override class var typeName: String { get {
 		"AppDomain"
@@ -81414,6 +81763,7 @@ public class System_AppDomain /* System.AppDomain */: System_MarshalByRefObject 
 }
 
 
+/// Represents assembly binding information that can be added to an instance of  .
 public class System_AppDomainSetup /* System.AppDomainSetup */: System_Object {
 	public override class var typeName: String { get {
 		"AppDomainSetup"
@@ -81479,6 +81829,7 @@ public class System_AppDomainSetup /* System.AppDomainSetup */: System_Object {
 }
 
 
+/// Represents a collection that can contain many different types of permissions.
 public class System_Security_PermissionSet /* System.Security.PermissionSet */: System_Object {
 	public override class var typeName: String { get {
 		"PermissionSet"
@@ -82078,6 +82429,7 @@ public class System_Security_PermissionSet /* System.Security.PermissionSet */: 
 }
 
 
+/// Defines the methods that convert permission object state to and from XML element representation.
 public class System_Security_ISecurityEncodable /* System.Security.ISecurityEncodable */: DNObject {
 	public override class var typeName: String { get {
 		"ISecurityEncodable"
@@ -82139,6 +82491,7 @@ public class System_Security_ISecurityEncodable /* System.Security.ISecurityEnco
 }
 
 
+/// Represents the XML object model for encoding security objects. This class cannot be inherited.
 public class System_Security_SecurityElement /* System.Security.SecurityElement */: System_Object {
 	public override class var typeName: String { get {
 		"SecurityElement"
@@ -82630,6 +82983,7 @@ public class System_Security_SecurityElement /* System.Security.SecurityElement 
 }
 
 
+/// Represents a collection of key/value pairs that are organized based on the hash code of the key.
 public class System_Collections_Hashtable /* System.Collections.Hashtable */: System_Object {
 	public override class var typeName: String { get {
 		"Hashtable"
@@ -83350,6 +83704,7 @@ public class System_Collections_Hashtable /* System.Collections.Hashtable */: Sy
 }
 
 
+/// Supplies a hash code for an object, using a custom hash function.
 public class System_Collections_IHashCodeProvider /* System.Collections.IHashCodeProvider */: DNObject {
 	public override class var typeName: String { get {
 		"IHashCodeProvider"
@@ -83392,6 +83747,7 @@ public class System_Collections_IHashCodeProvider /* System.Collections.IHashCod
 }
 
 
+/// Implements the   interface using an array whose size is dynamically increased as required.
 public class System_Collections_ArrayList /* System.Collections.ArrayList */: System_Object {
 	public override class var typeName: String { get {
 		"ArrayList"
@@ -84439,6 +84795,7 @@ public class System_Collections_ArrayList /* System.Collections.ArrayList */: Sy
 }
 
 
+/// Manages the stack walk that determines whether all callers in the call stack have the required permissions to access a protected resource.
 public class System_Security_IStackWalk /* System.Security.IStackWalk */: DNObject {
 	public override class var typeName: String { get {
 		"IStackWalk"
@@ -84530,6 +84887,7 @@ public class System_Security_IStackWalk /* System.Security.IStackWalk */: DNObje
 }
 
 
+/// Defines methods implemented by permission types.
 public class System_Security_IPermission /* System.Security.IPermission */: DNObject {
 	public override class var typeName: String { get {
 		"IPermission"
@@ -84651,6 +85009,7 @@ public class System_Security_IPermission /* System.Security.IPermission */: DNOb
 }
 
 
+/// Provides data for the event that is raised when there is an exception that is not handled in any application domain.
 public class System_UnhandledExceptionEventArgs /* System.UnhandledExceptionEventArgs */: System_EventArgs {
 	public override class var typeName: String { get {
 		"UnhandledExceptionEventArgs"
@@ -84759,6 +85118,7 @@ public class System_Reflection_Assembly_Array /* System.Reflection.Assembly[] */
 
 
 
+/// Provides data for the   event.
 public class System_AssemblyLoadEventArgs /* System.AssemblyLoadEventArgs */: System_EventArgs {
 	public override class var typeName: String { get {
 		"AssemblyLoadEventArgs"
@@ -84822,6 +85182,7 @@ public class System_AssemblyLoadEventArgs /* System.AssemblyLoadEventArgs */: Sy
 }
 
 
+/// Wraps marshal-by-value object references, allowing them to be returned through an indirection.
 public class System_Runtime_Remoting_ObjectHandle /* System.Runtime.Remoting.ObjectHandle */: System_MarshalByRefObject {
 	public override class var typeName: String { get {
 		"ObjectHandle"
@@ -84884,6 +85245,7 @@ public class System_Runtime_Remoting_ObjectHandle /* System.Runtime.Remoting.Obj
 }
 
 
+/// Provides a mechanism for executing a method on a thread pool thread at specified intervals. This class cannot be inherited.
 public class System_Threading_Timer /* System.Threading.Timer */: System_MarshalByRefObject {
 	public override class var typeName: String { get {
 		"Timer"
@@ -85157,6 +85519,7 @@ public class System_Threading_Timer /* System.Threading.Timer */: System_Marshal
 }
 
 
+/// Signals to a   that it should be canceled.
 public class System_Threading_CancellationTokenSource /* System.Threading.CancellationTokenSource */: System_Object {
 	public override class var typeName: String { get {
 		"CancellationTokenSource"
@@ -85509,6 +85872,7 @@ public class System_Threading_CancellationToken_Array /* System.Threading.Cancel
 
 
 
+/// Represents a pseudo-random number generator, which is an algorithm that produces a sequence of numbers that meet certain statistical requirements for randomness.
 public class System_Random /* System.Random */: System_Object {
 	public override class var typeName: String { get {
 		"Random"
@@ -85801,6 +86165,7 @@ public class System_Random /* System.Random */: System_Object {
 // Type "T[]" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
 
+/// Represents a mutable string of characters. This class cannot be inherited.
 public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_Object {
 	public override class var typeName: String { get {
 		"StringBuilder"
@@ -87938,6 +88303,7 @@ public class System_Text_StringBuilder_AppendInterpolatedStringHandler /* System
 // Type "TArg0" was skipped. Reason: It has no full name.
 // Type "TArg1" was skipped. Reason: It has no full name.
 // Type "TArg2" was skipped. Reason: It has no full name.
+/// Performs operations on   instances that contain file or directory path information. These operations are performed in a cross-platform manner.
 public class System_IO_Path /* System.IO.Path */: System_Object {
 	public override class var typeName: String { get {
 		"Path"
@@ -88609,6 +88975,7 @@ public class System_IO_Path /* System.IO.Path */: System_Object {
 }
 
 
+/// Provides static methods for the creation, copying, deletion, moving, and opening of a single file, and aids in the creation of   objects.
 public class System_IO_File /* System.IO.File */: System_Object {
 	public override class var typeName: String { get {
 		"File"
@@ -90521,6 +90888,7 @@ public class System_IO_File /* System.IO.File */: System_Object {
 }
 
 
+/// Implements a   that reads characters from a byte stream in a particular encoding.
 public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_TextReader {
 	public override class var typeName: String { get {
 		"StreamReader"
@@ -91125,6 +91493,7 @@ public class System_IO_StreamReader /* System.IO.StreamReader */: System_IO_Text
 }
 
 
+/// Represents a reader that can read a sequential series of characters.
 public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRefObject {
 	public override class var typeName: String { get {
 		"TextReader"
@@ -91440,6 +91809,7 @@ public class System_IO_TextReader /* System.IO.TextReader */: System_MarshalByRe
 
 
 
+/// Implements a   for writing characters to a stream in a particular encoding.
 public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_TextWriter {
 	public override class var typeName: String { get {
 		"StreamWriter"
@@ -92239,6 +92609,7 @@ public class System_IO_StreamWriter /* System.IO.StreamWriter */: System_IO_Text
 }
 
 
+/// Represents a writer that can write a sequential series of characters. This class is abstract.
 public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRefObject {
 	public override class var typeName: String { get {
 		"TextWriter"
@@ -93384,6 +93755,8 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 }
 
 
+/// Exposes an enumerator that provides asynchronous iteration over values of a specified type.
+/// The type of the elements in the collection.
 public class System_Collections_Generic_IAsyncEnumerable_A1 /* System.Collections.Generic.IAsyncEnumerable<> */: DNObject {
 	public override class var typeName: String { get {
 		"IAsyncEnumerable`1"
@@ -93409,6 +93782,8 @@ public class System_Collections_Generic_IAsyncEnumerable_A1 /* System.Collection
 
 
 
+/// Supports a simple asynchronous iteration over a generic collection.
+/// The type of the elements in the collection.
 public class System_Collections_Generic_IAsyncEnumerator_A1 /* System.Collections.Generic.IAsyncEnumerator<> */: DNObject {
 	public override class var typeName: String { get {
 		"IAsyncEnumerator`1"
@@ -93473,6 +93848,7 @@ public class System_Collections_Generic_IAsyncEnumerator_A1 /* System.Collection
 
 
 
+/// Provides the base class for both   and   objects.
 public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_MarshalByRefObject {
 	public override class var typeName: String { get {
 		"FileSystemInfo"
@@ -94014,6 +94390,7 @@ public class System_IO_FileSystemInfo /* System.IO.FileSystemInfo */: System_Mar
 }
 
 
+/// Provides properties and instance methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of   objects. This class cannot be inherited.
 public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemInfo {
 	public override class var typeName: String { get {
 		"FileInfo"
@@ -94572,6 +94949,7 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 }
 
 
+/// Exposes instance methods for creating, moving, and enumerating through directories and subdirectories. This class cannot be inherited.
 public class System_IO_DirectoryInfo /* System.IO.DirectoryInfo */: System_IO_FileSystemInfo {
 	public override class var typeName: String { get {
 		"DirectoryInfo"
@@ -95322,6 +95700,7 @@ public class System_IO_FileInfo_Array /* System.IO.FileInfo[] */: System_Array {
 
 
 
+/// Provides file and directory enumeration options.
 public class System_IO_EnumerationOptions /* System.IO.EnumerationOptions */: System_Object {
 	public override class var typeName: String { get {
 		"EnumerationOptions"
@@ -95704,6 +96083,7 @@ public class System_IO_DirectoryInfo_Array /* System.IO.DirectoryInfo[] */: Syst
 
 
 
+/// Exposes static methods for creating, moving, and enumerating through directories and subdirectories. This class cannot be inherited.
 public class System_IO_Directory /* System.IO.Directory */: System_Object {
 	public override class var typeName: String { get {
 		"Directory"
@@ -96782,6 +97162,7 @@ public class System_IO_Directory /* System.IO.Directory */: System_Object {
 }
 
 
+/// Reads bytes as primitives with specific endianness.
 public class System_Buffers_Binary_BinaryPrimitives /* System.Buffers.Binary.BinaryPrimitives */: System_Object {
 	public override class var typeName: String { get {
 		"BinaryPrimitives"
@@ -98051,6 +98432,7 @@ public class System_Buffers_Binary_BinaryPrimitives /* System.Buffers.Binary.Bin
 }
 
 
+/// Represents a half-precision floating-point number.
 public class System_Half /* System.Half */: System_ValueType {
 	public override class var typeName: String { get {
 		"Half"
@@ -100685,6 +101067,7 @@ public class System_Half /* System.Half */: System_ValueType {
 
 
 
+/// Represents a 128-bit signed integer.
 public class System_Int128 /* System.Int128 */: System_ValueType {
 	public override class var typeName: String { get {
 		"Int128"
@@ -101811,6 +102194,7 @@ public class System_Int128 /* System.Int128 */: System_ValueType {
 
 
 
+/// Represents a 128-bit unsigned integer.
 public class System_UInt128 /* System.UInt128 */: System_ValueType {
 	public override class var typeName: String { get {
 		"UInt128"
@@ -102800,6 +103184,8 @@ public class System_UInt128 /* System.UInt128 */: System_ValueType {
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+/// Represents a typed weak reference, which references an object while still allowing that object to be reclaimed by garbage collection.
+/// The type of the object referenced.
 public class System_WeakReference_A1 /* System.WeakReference<> */: System_Object {
 	public override class var typeName: String { get {
 		"WeakReference`1"
@@ -102927,6 +103313,9 @@ public class System_WeakReference_A1 /* System.WeakReference<> */: System_Object
 
 // Type "T" was skipped. Reason: It has no full name.
 
+/// Enables compilers to dynamically attach object fields to managed objects.
+/// The reference type to which the field is attached.
+/// The field's type. This must be a reference type.
 public class System_Runtime_CompilerServices_ConditionalWeakTable_A2 /* System.Runtime.CompilerServices.ConditionalWeakTable<,> */: System_Object {
 	public override class var typeName: String { get {
 		"ConditionalWeakTable`2"
@@ -103125,6 +103514,8 @@ public class System_Runtime_CompilerServices_ConditionalWeakTable_A2 /* System.R
 // Type "TKey" was skipped. Reason: It has no full name.
 // Type "TValue" was skipped. Reason: It has no full name.
 
+/// Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.
+/// The type of elements in the list.
 public class System_Collections_Generic_List_A1 /* System.Collections.Generic.List<> */: System_Object {
 	public override class var typeName: String { get {
 		"List`1"
@@ -103769,6 +104160,9 @@ public class System_Collections_Generic_List_A1 /* System.Collections.Generic.Li
 // Type "T" was skipped. Reason: It has no full name.
 // Type "T[]" was skipped. Reason: It has no full name.
 
+/// Represents a collection of keys and values.
+/// The type of the keys in the dictionary.
+/// The type of the values in the dictionary.
 public class System_Collections_Generic_Dictionary_A2 /* System.Collections.Generic.Dictionary<,> */: System_Object {
 	public override class var typeName: String { get {
 		"Dictionary`2"
@@ -104174,6 +104568,9 @@ public class System_Collections_Generic_Dictionary_A2 /* System.Collections.Gene
 // Type "TValue" was skipped. Reason: It has no full name.
 // Type "TKey" was skipped. Reason: It has no full name.
 
+/// Represents a generic collection of key/value pairs.
+/// The type of keys in the dictionary.
+/// The type of values in the dictionary.
 public class System_Collections_Generic_IDictionary_A2 /* System.Collections.Generic.IDictionary<,> */: DNObject {
 	public override class var typeName: String { get {
 		"IDictionary`2"
@@ -104332,6 +104729,8 @@ public class System_Collections_Generic_IDictionary_A2 /* System.Collections.Gen
 // Type "TValue" was skipped. Reason: It has no full name.
 // Type "TKey" was skipped. Reason: It has no full name.
 
+/// Represents a 1-tuple, or singleton.
+/// The type of the tuple's only component.
 public class System_Tuple_A1 /* System.Tuple<> */: System_Object {
 	public override class var typeName: String { get {
 		"Tuple`1"
@@ -104457,6 +104856,7 @@ public class System_Tuple_A1 /* System.Tuple<> */: System_Object {
 }
 
 
+/// Defines a general-purpose Tuple implementation that allows access to Tuple instance members without knowing the underlying Tuple type.
 public class System_Runtime_CompilerServices_ITuple /* System.Runtime.CompilerServices.ITuple */: DNObject {
 	public override class var typeName: String { get {
 		"ITuple"
@@ -104521,6 +104921,9 @@ public class System_Runtime_CompilerServices_ITuple /* System.Runtime.CompilerSe
 
 
 // Type "T1" was skipped. Reason: It has no full name.
+/// Represents a 2-tuple, or pair.
+/// The type of the tuple's first component.
+/// The type of the tuple's second component.
 public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
 	public override class var typeName: String { get {
 		"Tuple`2"
@@ -104677,6 +105080,10 @@ public class System_Tuple_A2 /* System.Tuple<,> */: System_Object {
 
 // Type "T1" was skipped. Reason: It has no full name.
 // Type "T2" was skipped. Reason: It has no full name.
+/// Represents a 3-tuple, or triple.
+/// The type of the tuple's first component.
+/// The type of the tuple's second component.
+/// The type of the tuple's third component.
 public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
 	public override class var typeName: String { get {
 		"Tuple`3"
@@ -104865,6 +105272,11 @@ public class System_Tuple_A3 /* System.Tuple<,,> */: System_Object {
 // Type "T1" was skipped. Reason: It has no full name.
 // Type "T2" was skipped. Reason: It has no full name.
 // Type "T3" was skipped. Reason: It has no full name.
+/// Represents a 4-tuple, or quadruple.
+/// The type of the tuple's first component.
+/// The type of the tuple's second component.
+/// The type of the tuple's third component.
+/// The type of the tuple's fourth component.
 public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
 	public override class var typeName: String { get {
 		"Tuple`4"
@@ -105087,6 +105499,12 @@ public class System_Tuple_A4 /* System.Tuple<,,,> */: System_Object {
 // Type "T2" was skipped. Reason: It has no full name.
 // Type "T3" was skipped. Reason: It has no full name.
 // Type "T4" was skipped. Reason: It has no full name.
+/// Represents a 5-tuple, or quintuple.
+/// The type of the tuple's first component.
+/// The type of the tuple's second component.
+/// The type of the tuple's third component.
+/// The type of the tuple's fourth component.
+/// The type of the tuple's fifth component.
 public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 	public override class var typeName: String { get {
 		"Tuple`5"
@@ -105345,6 +105763,13 @@ public class System_Tuple_A5 /* System.Tuple<,,,,> */: System_Object {
 // Type "T3" was skipped. Reason: It has no full name.
 // Type "T4" was skipped. Reason: It has no full name.
 // Type "T5" was skipped. Reason: It has no full name.
+/// Represents a 6-tuple, or sextuple.
+/// The type of the tuple's first component.
+/// The type of the tuple's second component.
+/// The type of the tuple's third component.
+/// The type of the tuple's fourth component.
+/// The type of the tuple's fifth component.
+/// The type of the tuple's sixth component.
 public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 	public override class var typeName: String { get {
 		"Tuple`6"
@@ -105641,6 +106066,14 @@ public class System_Tuple_A6 /* System.Tuple<,,,,,> */: System_Object {
 // Type "T4" was skipped. Reason: It has no full name.
 // Type "T5" was skipped. Reason: It has no full name.
 // Type "T6" was skipped. Reason: It has no full name.
+/// Represents a 7-tuple, or septuple.
+/// The type of the tuple's first component.
+/// The type of the tuple's second component.
+/// The type of the tuple's third component.
+/// The type of the tuple's fourth component.
+/// The type of the tuple's fifth component.
+/// The type of the tuple's sixth component.
+/// The type of the tuple's seventh component.
 public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 	public override class var typeName: String { get {
 		"Tuple`7"
@@ -105977,6 +106410,15 @@ public class System_Tuple_A7 /* System.Tuple<,,,,,,> */: System_Object {
 // Type "T5" was skipped. Reason: It has no full name.
 // Type "T6" was skipped. Reason: It has no full name.
 // Type "T7" was skipped. Reason: It has no full name.
+/// Represents an n-tuple, where n is 8 or greater.
+/// The type of the tuple's first component.
+/// The type of the tuple's second component.
+/// The type of the tuple's third component.
+/// The type of the tuple's fourth component.
+/// The type of the tuple's fifth component.
+/// The type of the tuple's sixth component.
+/// The type of the tuple's seventh component.
+/// Any generic   object that defines the types of the tuple's remaining components.
 public class System_Tuple_A8 /* System.Tuple<,,,,,,,> */: System_Object {
 	public override class var typeName: String { get {
 		"Tuple`8"
@@ -107964,6 +108406,8 @@ public class Beyond_NET_Sample_GenericTests /* Beyond.NET.Sample.GenericTests */
 
 
 
+/// Defines a method that a type implements to compare two objects.
+/// The type of objects to compare.
 public class System_Collections_Generic_IComparer_A1 /* System.Collections.Generic.IComparer<> */: DNObject {
 	public override class var typeName: String { get {
 		"IComparer`1"
@@ -108027,6 +108471,8 @@ public class System_Collections_Generic_IComparer_A1 /* System.Collections.Gener
 
 
 
+/// Defines methods to support the comparison of objects for equality.
+/// The type of objects to compare.
 public class System_Collections_Generic_IEqualityComparer_A1 /* System.Collections.Generic.IEqualityComparer<> */: DNObject {
 	public override class var typeName: String { get {
 		"IEqualityComparer`1"
@@ -112509,6 +112955,7 @@ public class Beyond_NET_Sample_Transformer_BuiltInTransformers /* Beyond.NET.Sam
 }
 
 
+/// Encapsulates a method that has no parameters and does not return a value.
 public class System_Action /* System.Action */: System_MulticastDelegate {
 	public override class var typeName: String { get {
 		"System.Action"
@@ -112589,6 +113036,8 @@ public class System_Action /* System.Action */: System_MulticastDelegate {
 	
 }
 
+
+/// Represents a multicast delegate; that is, a delegate that can have more than one element in its invocation list.
 public class System_MulticastDelegate /* System.MulticastDelegate */: System_Delegate {
 	public override class var typeName: String { get {
 		"System.MulticastDelegate"
@@ -112651,6 +113100,8 @@ public class System_MulticastDelegate /* System.MulticastDelegate */: System_Del
 	
 }
 
+
+/// Represents a delegate, which is a data structure that refers to a static method or to a class instance and an instance method of that class.
 public class System_Delegate /* System.Delegate */: System_Object {
 	public override class var typeName: String { get {
 		"System.Delegate"
@@ -112713,8 +113164,13 @@ public class System_Delegate /* System.Delegate */: System_Object {
 	
 }
 
+
 // Type "T" was skipped. Reason: It has no full name.
 // Type "T" was skipped. Reason: It has no full name.
+/// Filters the classes represented in an array of   objects.
+/// The   object to which the filter is applied.
+/// An arbitrary object used to filter the list.
+/// to include the   in the filtered list; otherwise  .
 public class System_Reflection_TypeFilter /* System.Reflection.TypeFilter */: System_MulticastDelegate {
 	public override class var typeName: String { get {
 		"System.Reflection.TypeFilter"
@@ -112801,6 +113257,9 @@ public class System_Reflection_TypeFilter /* System.Reflection.TypeFilter */: Sy
 	
 }
 
+
+/// Represents the method that handles calls from a  .
+/// An object containing application-specific information relevant to the method invoked by this delegate, or  .
 public class System_Threading_TimerCallback /* System.Threading.TimerCallback */: System_MulticastDelegate {
 	public override class var typeName: String { get {
 		"System.Threading.TimerCallback"
@@ -112883,6 +113342,9 @@ public class System_Threading_TimerCallback /* System.Threading.TimerCallback */
 	
 }
 
+
+/// References a method to be called when a corresponding asynchronous operation completes.
+/// The result of the asynchronous operation.
 public class System_AsyncCallback /* System.AsyncCallback */: System_MulticastDelegate {
 	public override class var typeName: String { get {
 		"System.AsyncCallback"
@@ -112965,6 +113427,11 @@ public class System_AsyncCallback /* System.AsyncCallback */: System_MulticastDe
 	
 }
 
+
+/// Represents the method that will handle the   event of an  .
+/// The assembly that was the source of the event.
+/// The arguments supplied by the object describing the event.
+/// The module that satisfies the request.
 public class System_Reflection_ModuleResolveEventHandler /* System.Reflection.ModuleResolveEventHandler */: System_MulticastDelegate {
 	public override class var typeName: String { get {
 		"System.Reflection.ModuleResolveEventHandler"
@@ -113056,6 +113523,11 @@ public class System_Reflection_ModuleResolveEventHandler /* System.Reflection.Mo
 	
 }
 
+
+/// Represents a delegate that is used to filter a list of members represented in an array of   objects.
+/// The   object to which the filter is applied.
+/// An arbitrary object used to filter the list.
+/// to include the member in the filtered list; otherwise  .
 public class System_Reflection_MemberFilter /* System.Reflection.MemberFilter */: System_MulticastDelegate {
 	public override class var typeName: String { get {
 		"System.Reflection.MemberFilter"
@@ -113142,6 +113614,9 @@ public class System_Reflection_MemberFilter /* System.Reflection.MemberFilter */
 	
 }
 
+
+/// Represents a method to be called within a new context.
+/// An object containing information to be used by the callback method each time it executes.
 public class System_Threading_ContextCallback /* System.Threading.ContextCallback */: System_MulticastDelegate {
 	public override class var typeName: String { get {
 		"System.Threading.ContextCallback"
@@ -113224,6 +113699,10 @@ public class System_Threading_ContextCallback /* System.Threading.ContextCallbac
 	
 }
 
+
+/// Represents the method that will handle the event raised by an exception that is not handled by the application domain.
+/// The source of the unhandled exception event.
+/// An  UnhandledExceptionEventArgs  that contains the event data.
 public class System_UnhandledExceptionEventHandler /* System.UnhandledExceptionEventHandler */: System_MulticastDelegate {
 	public override class var typeName: String { get {
 		"System.UnhandledExceptionEventHandler"
@@ -113308,6 +113787,10 @@ public class System_UnhandledExceptionEventHandler /* System.UnhandledExceptionE
 	
 }
 
+
+/// Represents the method that will handle an event that has no event data.
+/// The source of the event.
+/// An object that contains no event data.
 public class System_EventHandler /* System.EventHandler */: System_MulticastDelegate {
 	public override class var typeName: String { get {
 		"System.EventHandler"
@@ -113392,6 +113875,10 @@ public class System_EventHandler /* System.EventHandler */: System_MulticastDele
 	
 }
 
+
+/// Represents the method that handles the   event of an  .
+/// The source of the event.
+/// An   that contains the event data.
 public class System_AssemblyLoadEventHandler /* System.AssemblyLoadEventHandler */: System_MulticastDelegate {
 	public override class var typeName: String { get {
 		"System.AssemblyLoadEventHandler"
@@ -113476,6 +113963,11 @@ public class System_AssemblyLoadEventHandler /* System.AssemblyLoadEventHandler 
 	
 }
 
+
+/// Represents a method that handles the  ,  , or   event of an  .
+/// The source of the event.
+/// The event data.
+/// The assembly that resolves the type, assembly, or resource; or   if the assembly cannot be resolved.
 public class System_ResolveEventHandler /* System.ResolveEventHandler */: System_MulticastDelegate {
 	public override class var typeName: String { get {
 		"System.ResolveEventHandler"
@@ -113567,6 +114059,8 @@ public class System_ResolveEventHandler /* System.ResolveEventHandler */: System
 	
 }
 
+
+/// Represents the method that executes on a  .
 public class System_Threading_ThreadStart /* System.Threading.ThreadStart */: System_MulticastDelegate {
 	public override class var typeName: String { get {
 		"System.Threading.ThreadStart"
@@ -113647,6 +114141,9 @@ public class System_Threading_ThreadStart /* System.Threading.ThreadStart */: Sy
 	
 }
 
+
+/// Represents the method that executes on a  .
+/// An object that contains data for the thread procedure.
 public class System_Threading_ParameterizedThreadStart /* System.Threading.ParameterizedThreadStart */: System_MulticastDelegate {
 	public override class var typeName: String { get {
 		"System.Threading.ParameterizedThreadStart"
@@ -113728,6 +114225,7 @@ public class System_Threading_ParameterizedThreadStart /* System.Threading.Param
 	
 	
 }
+
 
 /// A delegate that returns a new Address.
 public class Beyond_NET_Sample_MoveDelegate /* Beyond.NET.Sample.MoveDelegate */: System_MulticastDelegate {
@@ -114965,119 +115463,243 @@ extension Beyond_NET_Sample_Person {
 // MARK: - BEGIN Namespaces
 
 public struct System {
+	/// Specifies the type of an object.
 	public typealias TypeCode = System_TypeCode
+	/// Specifies the strategy that mathematical rounding methods should use to round a number.
 	public typealias MidpointRounding = System_MidpointRounding
+	/// Specifies whether a   object represents a local time, a Coordinated Universal Time (UTC), or is not specified as either local time or UTC.
 	public typealias DateTimeKind = System_DateTimeKind
+	/// Specifies the day of the week.
 	public typealias DayOfWeek = System_DayOfWeek
+	/// Specifies the culture, case, and sort rules to be used by certain overloads of the   and   methods.
 	public typealias StringComparison = System_StringComparison
+	/// Specifies options for applicable   method overloads, such as whether to omit empty substrings from the returned array or trim whitespace from substrings.
 	public typealias StringSplitOptions = System_StringSplitOptions
+	/// Specifies the kind of a garbage collection.
 	public typealias GCKind = System_GCKind
+	/// Specifies the behavior for a forced garbage collection.
 	public typealias GCCollectionMode = System_GCCollectionMode
+	/// Provides information about the current registration for notification of the next full garbage collection.
 	public typealias GCNotificationStatus = System_GCNotificationStatus
+	/// Specifies whether relevant   and   methods insert line breaks in their output.
 	public typealias Base64FormattingOptions = System_Base64FormattingOptions
+	
 	public typealias UriHostNameType = System_UriHostNameType
+	
 	public typealias UriPartial = System_UriPartial
+	
 	public typealias UriKind = System_UriKind
+	
 	public typealias UriComponents = System_UriComponents
+	
 	public typealias UriFormat = System_UriFormat
+	/// Supports all classes in the .NET class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all .NET classes; it is the root of the type hierarchy.
 	public typealias Object = System_Object
+	/// Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.
 	public typealias `Type` = System_Type
+	
 	public typealias Object_Array = System_Object_Array
+	/// Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays in the common language runtime.
 	public typealias Array = System_Array
+	/// Supports cloning, which creates a new instance of a class with the same value as an existing instance.
 	public typealias ICloneable = System_ICloneable
+	/// Represents a Boolean (  or  ) value.
 	public typealias Boolean = System_Boolean
+	/// Provides the base class for value types.
 	public typealias ValueType = System_ValueType
+	/// Represents a 32-bit signed integer.
 	public typealias Int32 = System_Int32
+	/// Defines a generalized type-specific comparison method that a value type or class implements to order or sort its instances.
 	public typealias IComparable = System_IComparable
+	/// Defines methods that convert the value of the implementing reference or value type to a common language runtime type that has an equivalent value.
 	public typealias IConvertible = System_IConvertible
+	/// Provides the base class for enumerations.
 	public typealias Enum = System_Enum
+	/// Provides functionality to format the string representation of an object into a span.
 	public typealias ISpanFormattable = System_ISpanFormattable
+	/// Provides functionality to format the value of an object into a string representation.
 	public typealias IFormattable = System_IFormattable
+	/// Represents text as a sequence of UTF-16 code units.
 	public typealias String = System_String
+	/// Provides a mechanism for releasing unmanaged resources.
 	public typealias IDisposable = System_IDisposable
+	/// Represents a character as a UTF-16 code unit.
 	public typealias Char = System_Char
+	/// Provides functionality to format the string representation of an object into a span as UTF-8.
 	public typealias IUtf8SpanFormattable = System_IUtf8SpanFormattable
+	/// Provides a mechanism for retrieving an object to control formatting.
 	public typealias IFormatProvider = System_IFormatProvider
+	/// Represents an 8-bit signed integer.
 	public typealias SByte = System_SByte
+	/// Represents an 8-bit unsigned integer.
 	public typealias Byte = System_Byte
+	
 	public typealias Byte_Array = System_Byte_Array
+	/// Represents a 16-bit signed integer.
 	public typealias Int16 = System_Int16
+	/// Represents a 16-bit unsigned integer.
 	public typealias UInt16 = System_UInt16
+	/// Represents a 32-bit unsigned integer.
 	public typealias UInt32 = System_UInt32
+	/// Represents a 64-bit signed integer.
 	public typealias Int64 = System_Int64
+	/// Represents a 64-bit unsigned integer.
 	public typealias UInt64 = System_UInt64
+	/// Represents a single-precision floating-point number.
 	public typealias Single = System_Single
+	/// Represents a double-precision floating-point number.
 	public typealias Double = System_Double
+	/// Represents a decimal floating-point number.
 	public typealias Decimal = System_Decimal
+	
 	public typealias Int32_Array = System_Int32_Array
+	/// Represents an instant in time, typically expressed as a date and time of day.
 	public typealias DateTime = System_DateTime
+	/// Represents a time interval.
 	public typealias TimeSpan = System_TimeSpan
+	
 	public typealias String_Array = System_String_Array
+	/// Represents dates with values ranging from January 1, 0001 Anno Domini (Common Era) through December 31, 9999 A.D. (C.E.) in the Gregorian calendar.
 	public typealias DateOnly = System_DateOnly
+	/// Represents a time of day, as would be read from a clock, within the range 00:00:00 to 23:59:59.9999999.
 	public typealias TimeOnly = System_TimeOnly
+	/// Represents the version number of an assembly, operating system, or the common language runtime. This class cannot be inherited.
 	public typealias Version = System_Version
+	/// Enables access to objects across application domain boundaries in applications that support remoting.
 	public typealias MarshalByRefObject = System_MarshalByRefObject
+	/// Provides a mechanism for releasing unmanaged resources asynchronously.
 	public typealias IAsyncDisposable = System_IAsyncDisposable
+	/// Represents a signed integer where the bit-width is the same as a pointer.
 	public typealias IntPtr = System_IntPtr
+	/// Represents errors that occur during application execution.
 	public typealias Exception = System_Exception
+	/// is a handle to the internal metadata representation of a method.
 	public typealias RuntimeMethodHandle = System_RuntimeMethodHandle
+	/// Represents a type using an internal metadata token.
 	public typealias RuntimeTypeHandle = System_RuntimeTypeHandle
+	/// Represents a runtime handle for a module.
 	public typealias ModuleHandle = System_ModuleHandle
+	
 	public typealias RuntimeTypeHandle_Array = System_RuntimeTypeHandle_Array
+	/// Represents a field using an internal metadata token.
 	public typealias RuntimeFieldHandle = System_RuntimeFieldHandle
+	/// Represents a globally unique identifier (GUID).
 	public typealias Guid = System_Guid
+	
 	public typealias Type_Array = System_Type_Array
+	/// Represents the status of an asynchronous operation.
 	public typealias IAsyncResult = System_IAsyncResult
+	/// Represents one or more errors that occur during application execution.
 	public typealias AggregateException = System_AggregateException
+	
 	public typealias Exception_Array = System_Exception_Array
+	/// Provides an abstraction for time.
 	public typealias TimeProvider = System_TimeProvider
+	/// Represents a point in time, typically expressed as a date and time of day, relative to Coordinated Universal Time (UTC).
 	public typealias DateTimeOffset = System_DateTimeOffset
+	/// Represents any time zone in the world.
 	public typealias TimeZoneInfo = System_TimeZoneInfo
+	
 	public typealias TimeSpan_Array = System_TimeSpan_Array
+	
 	public typealias TimeZoneInfo_Array = System_TimeZoneInfo_Array
+	
 	public typealias TimeZoneInfo_AdjustmentRule_Array = System_TimeZoneInfo_AdjustmentRule_Array
+	
 	public typealias TimeZoneInfo_AdjustmentRule = System_TimeZoneInfo_AdjustmentRule
+	
 	public typealias TimeZoneInfo_TransitionTime = System_TimeZoneInfo_TransitionTime
+	/// Provides data for loader resolution events, such as the  ,  ,  , and   events.
 	public typealias ResolveEventArgs = System_ResolveEventArgs
+	/// Represents the base class for classes that contain event data, and provides a value to use for events that do not include event data.
 	public typealias EventArgs = System_EventArgs
+	
 	public typealias Char_Array = System_Char_Array
+	/// Supports iterating over a   object and reading its individual characters. This class cannot be inherited.
 	public typealias CharEnumerator = System_CharEnumerator
+	
 	public typealias Int64_Array = System_Int64_Array
+	/// Represents the base class for custom attributes.
 	public typealias Attribute = System_Attribute
+	
 	public typealias Attribute_Array = System_Attribute_Array
+	
 	public typealias Int16_Array = System_Int16_Array
+	
 	public typealias Single_Array = System_Single_Array
+	
 	public typealias Double_Array = System_Double_Array
+	
 	public typealias IntPtr_Array = System_IntPtr_Array
+	/// The exception that is thrown when there is an attempt to dereference a null object reference.
 	public typealias NullReferenceException = System_NullReferenceException
+	/// Serves as the base class for system exceptions namespace.
 	public typealias SystemException = System_SystemException
+	/// The exception that is thrown when a feature does not run on a particular platform.
 	public typealias PlatformNotSupportedException = System_PlatformNotSupportedException
+	/// The exception that is thrown when an invoked method is not supported, or when there is an attempt to read, seek, or write to a stream that does not support the invoked functionality.
 	public typealias NotSupportedException = System_NotSupportedException
+	/// Represents an unsigned integer where the bit-width is the same as a pointer.
 	public typealias UIntPtr = System_UIntPtr
+	/// Provides members for setting and retrieving data about an application's context.
 	public typealias AppContext = System_AppContext
+	/// Controls the system garbage collector, a service that automatically reclaims unused memory.
 	public typealias GC = System_GC
+	/// Provides a set of APIs that can be used to retrieve garbage collection information.
 	public typealias GCMemoryInfo = System_GCMemoryInfo
+	/// Represents a weak reference, which references an object while still allowing that object to be reclaimed by garbage collection.
 	public typealias WeakReference = System_WeakReference
+	/// Provides constants and static methods for trigonometric, logarithmic, and other common mathematical functions.
 	public typealias Math = System_Math
+	/// Converts a base data type to another base data type.
 	public typealias Convert = System_Convert
+	/// Encapsulates a memory slot to store local data. This class cannot be inherited.
 	public typealias LocalDataStoreSlot = System_LocalDataStoreSlot
+	/// Represents an application domain, which is an isolated environment where applications execute. This class cannot be inherited.
 	public typealias AppDomain = System_AppDomain
+	/// Represents assembly binding information that can be added to an instance of  .
 	public typealias AppDomainSetup = System_AppDomainSetup
+	/// Provides data for the event that is raised when there is an exception that is not handled in any application domain.
 	public typealias UnhandledExceptionEventArgs = System_UnhandledExceptionEventArgs
+	/// Provides data for the   event.
 	public typealias AssemblyLoadEventArgs = System_AssemblyLoadEventArgs
+	/// Represents a pseudo-random number generator, which is an algorithm that produces a sequence of numbers that meet certain statistical requirements for randomness.
 	public typealias Random = System_Random
+	/// Represents a half-precision floating-point number.
 	public typealias Half = System_Half
+	/// Represents a 128-bit signed integer.
 	public typealias Int128 = System_Int128
+	/// Represents a 128-bit unsigned integer.
 	public typealias UInt128 = System_UInt128
+	
 	public typealias Uri = System_Uri
+	
 	public typealias UriCreationOptions = System_UriCreationOptions
+	/// Encapsulates a method that has no parameters and does not return a value.
 	public typealias Action = System_Action
+	/// Represents a multicast delegate; that is, a delegate that can have more than one element in its invocation list.
 	public typealias MulticastDelegate = System_MulticastDelegate
+	/// Represents a delegate, which is a data structure that refers to a static method or to a class instance and an instance method of that class.
 	public typealias Delegate = System_Delegate
+	/// References a method to be called when a corresponding asynchronous operation completes.
+	/// The result of the asynchronous operation.
 	public typealias AsyncCallback = System_AsyncCallback
+	/// Represents the method that will handle the event raised by an exception that is not handled by the application domain.
+	/// The source of the unhandled exception event.
+	/// An  UnhandledExceptionEventArgs  that contains the event data.
 	public typealias UnhandledExceptionEventHandler = System_UnhandledExceptionEventHandler
+	/// Represents the method that will handle an event that has no event data.
+	/// The source of the event.
+	/// An object that contains no event data.
 	public typealias EventHandler = System_EventHandler
+	/// Represents the method that handles the   event of an  .
+	/// The source of the event.
+	/// An   that contains the event data.
 	public typealias AssemblyLoadEventHandler = System_AssemblyLoadEventHandler
+	/// Represents a method that handles the  ,  , or   event of an  .
+	/// The source of the event.
+	/// The event data.
+	/// The assembly that resolves the type, assembly, or resource; or   if the assembly cannot be resolved.
 	public typealias ResolveEventHandler = System_ResolveEventHandler
 	
 }
@@ -115085,24 +115707,43 @@ public struct System {
 
 public extension System {
     struct Globalization {
+		/// Defines the types of culture lists that can be retrieved using the   method.
 		public typealias CultureTypes = System_Globalization_CultureTypes
+		/// Determines the styles permitted in numeric string arguments that are passed to the   and   methods of the integral and floating-point numeric types.
 		public typealias NumberStyles = System_Globalization_NumberStyles
+		/// Defines the formatting options that customize string parsing for the   and   methods.
 		public typealias TimeSpanStyles = System_Globalization_TimeSpanStyles
+		/// Defines the formatting options that customize string parsing for some date and time parsing methods.
 		public typealias DateTimeStyles = System_Globalization_DateTimeStyles
+		/// Specifies whether a calendar is solar-based, lunar-based, or lunisolar-based.
 		public typealias CalendarAlgorithmType = System_Globalization_CalendarAlgorithmType
+		/// Defines different rules for determining the first week of the year.
 		public typealias CalendarWeekRule = System_Globalization_CalendarWeekRule
+		/// Defines the Unicode category of a character.
 		public typealias UnicodeCategory = System_Globalization_UnicodeCategory
+		/// Defines the string comparison options to use with  .
 		public typealias CompareOptions = System_Globalization_CompareOptions
+		/// Specifies the culture-specific display of digits.
 		public typealias DigitShapes = System_Globalization_DigitShapes
+		/// Provides information about a specific culture (called a locale for unmanaged code development). The information includes the names for the culture, the writing system, the calendar used, the sort order of strings, and formatting for dates and numbers.
 		public typealias CultureInfo = System_Globalization_CultureInfo
+		
 		public typealias CultureInfo_Array = System_Globalization_CultureInfo_Array
+		/// Implements a set of methods for culture-sensitive string comparisons.
 		public typealias CompareInfo = System_Globalization_CompareInfo
+		/// Represents time in divisions, such as weeks, months, and years.
 		public typealias Calendar = System_Globalization_Calendar
+		/// Represents the result of mapping a string to its sort key.
 		public typealias SortKey = System_Globalization_SortKey
+		/// Provides information about the version of Unicode used to compare and order strings.
 		public typealias SortVersion = System_Globalization_SortVersion
+		/// Defines text properties and behaviors, such as casing, that are specific to a writing system.
 		public typealias TextInfo = System_Globalization_TextInfo
+		/// Provides culture-specific information for formatting and parsing numeric values.
 		public typealias NumberFormatInfo = System_Globalization_NumberFormatInfo
+		/// Provides culture-specific information about the format of date and time values.
 		public typealias DateTimeFormatInfo = System_Globalization_DateTimeFormatInfo
+		
 		public typealias Calendar_Array = System_Globalization_Calendar_Array
 		
     }
@@ -115119,14 +115760,23 @@ public extension System {
 
 public extension System.Runtime {
     struct Serialization {
+		/// Defines a set of flags that specifies the source or destination context for the stream during serialization.
 		public typealias StreamingContextStates = System_Runtime_Serialization_StreamingContextStates
+		/// Indicates that a class is to be notified when deserialization of the entire object graph has been completed. This interface is not called when you deserialize with  .
 		public typealias IDeserializationCallback = System_Runtime_Serialization_IDeserializationCallback
+		/// Allows an object to control its own serialization and deserialization through binary and XML serialization.
 		public typealias ISerializable = System_Runtime_Serialization_ISerializable
+		/// Stores all the data needed to serialize or deserialize an object. This class cannot be inherited.
 		public typealias SerializationInfo = System_Runtime_Serialization_SerializationInfo
+		/// Provides a formatter-friendly mechanism for parsing the data in  . This class cannot be inherited.
 		public typealias SerializationInfoEnumerator = System_Runtime_Serialization_SerializationInfoEnumerator
+		/// Holds the value,  , and name of a serialized object.
 		public typealias SerializationEntry = System_Runtime_Serialization_SerializationEntry
+		/// Provides the connection between an instance of   and the formatter-provided class best suited to parse the data inside the  .
 		public typealias IFormatterConverter = System_Runtime_Serialization_IFormatterConverter
+		/// Describes the source and destination of a given serialized stream, and provides an additional caller-defined context.
 		public typealias StreamingContext = System_Runtime_Serialization_StreamingContext
+		/// Indicates that the current interface implementer is a reference to another object.
 		public typealias IObjectReference = System_Runtime_Serialization_IObjectReference
 		
     }
@@ -115136,13 +115786,21 @@ public extension System.Runtime {
 
 public extension System.Runtime {
     struct InteropServices {
+		/// Controls the layout of an object when exported to unmanaged code.
 		public typealias LayoutKind = System_Runtime_InteropServices_LayoutKind
+		/// Dictates which character set marshaled strings should use.
 		public typealias CharSet = System_Runtime_InteropServices_CharSet
+		/// Indicates whether the   method's IUnknown::QueryInterface calls can use the   interface.
 		public typealias CustomQueryInterfaceMode = System_Runtime_InteropServices_CustomQueryInterfaceMode
+		/// Represents the types of handles the   type can allocate.
 		public typealias GCHandleType = System_Runtime_InteropServices_GCHandleType
+		/// Represents a wrapper class for operating system handles. This class must be inherited.
 		public typealias SafeHandle = System_Runtime_InteropServices_SafeHandle
+		/// Lets you control the physical layout of the data fields of a class or structure in memory.
 		public typealias StructLayoutAttribute = System_Runtime_InteropServices_StructLayoutAttribute
+		/// Provides a collection of methods for allocating unmanaged memory, copying unmanaged memory blocks, and converting managed to unmanaged types, as well as other miscellaneous methods used when interacting with unmanaged code.
 		public typealias Marshal = System_Runtime_InteropServices_Marshal
+		/// Provides a way to access a managed object from unmanaged memory.
 		public typealias GCHandle = System_Runtime_InteropServices_GCHandle
 		
     }
@@ -115152,6 +115810,7 @@ public extension System.Runtime {
 
 public extension System.Runtime {
     struct ConstrainedExecution {
+		/// Ensures that all finalization code in derived classes is marked as critical.
 		public typealias CriticalFinalizerObject = System_Runtime_ConstrainedExecution_CriticalFinalizerObject
 		
     }
@@ -115161,16 +115820,27 @@ public extension System.Runtime {
 
 public extension System.Runtime {
     struct CompilerServices {
+		/// Provides an object that waits for the completion of an asynchronous task.
 		public typealias TaskAwaiter = System_Runtime_CompilerServices_TaskAwaiter
+		/// Represents an awaiter that schedules continuations when an await operation completes.
 		public typealias ICriticalNotifyCompletion = System_Runtime_CompilerServices_ICriticalNotifyCompletion
+		/// Represents an operation that schedules continuations when it completes.
 		public typealias INotifyCompletion = System_Runtime_CompilerServices_INotifyCompletion
+		/// Provides an awaitable object that enables configured awaits on a task.
 		public typealias ConfiguredTaskAwaitable = System_Runtime_CompilerServices_ConfiguredTaskAwaitable
+		
 		public typealias ConfiguredTaskAwaitable_ConfiguredTaskAwaiter = System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter
+		/// Provides the context for waiting when asynchronously switching into a target environment.
 		public typealias YieldAwaitable = System_Runtime_CompilerServices_YieldAwaitable
+		
 		public typealias YieldAwaitable_YieldAwaiter = System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter
+		/// Provides an awaiter for a  .
 		public typealias ValueTaskAwaiter = System_Runtime_CompilerServices_ValueTaskAwaiter
+		/// Provides an awaitable type that enables configured awaits on a  .
 		public typealias ConfiguredValueTaskAwaitable = System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable
+		
 		public typealias ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter = System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter
+		/// Defines a general-purpose Tuple implementation that allows access to Tuple instance members without knowing the underlying Tuple type.
 		public typealias ITuple = System_Runtime_CompilerServices_ITuple
 		
     }
@@ -115180,6 +115850,7 @@ public extension System.Runtime {
 
 public extension System.Runtime {
     struct Remoting {
+		/// Wraps marshal-by-value object references, allowing them to be returned through an indirection.
 		public typealias ObjectHandle = System_Runtime_Remoting_ObjectHandle
 		
     }
@@ -115190,69 +115861,142 @@ public extension System.Runtime {
 
 public extension System {
     struct Reflection {
+		/// Identifies the processor and bits-per-word of the platform targeted by an executable.
 		public typealias ProcessorArchitecture = System_Reflection_ProcessorArchitecture
+		/// Provides information about the type of code contained in an assembly.
 		public typealias AssemblyContentType = System_Reflection_AssemblyContentType
+		/// Provides information about an   reference.
 		public typealias AssemblyNameFlags = System_Reflection_AssemblyNameFlags
+		/// Defines the attributes that can be associated with a parameter. These are defined in CorHdr.h.
 		public typealias ParameterAttributes = System_Reflection_ParameterAttributes
+		/// Identifies the nature of the code in an executable file.
 		public typealias PortableExecutableKinds = System_Reflection_PortableExecutableKinds
+		/// Identifies the platform targeted by an executable.
 		public typealias ImageFileMachine = System_Reflection_ImageFileMachine
+		/// Marks each type of member that is defined as a derived class of  .
 		public typealias MemberTypes = System_Reflection_MemberTypes
+		/// Specifies flags that control binding and the way in which the search for members and types is conducted by reflection.
 		public typealias BindingFlags = System_Reflection_BindingFlags
+		/// Specifies flags that describe the attributes of a field.
 		public typealias FieldAttributes = System_Reflection_FieldAttributes
+		/// Defines the attributes that can be associated with a property. These attribute values are defined in corhdr.h.
 		public typealias PropertyAttributes = System_Reflection_PropertyAttributes
+		/// Defines the valid calling conventions for a method.
 		public typealias CallingConventions = System_Reflection_CallingConventions
+		/// Specifies flags for method attributes. These flags are defined in the corhdr.h file.
 		public typealias MethodAttributes = System_Reflection_MethodAttributes
+		/// Specifies flags for the attributes of a method implementation.
 		public typealias MethodImplAttributes = System_Reflection_MethodImplAttributes
+		/// Identifies kinds of exception-handling clauses.
 		public typealias ExceptionHandlingClauseOptions = System_Reflection_ExceptionHandlingClauseOptions
+		/// Specifies the attributes of an event.
 		public typealias EventAttributes = System_Reflection_EventAttributes
+		/// Specifies the resource location.
 		public typealias ResourceLocation = System_Reflection_ResourceLocation
+		/// Describes the constraints on a generic type parameter of a generic type or method.
 		public typealias GenericParameterAttributes = System_Reflection_GenericParameterAttributes
+		/// Specifies type attributes.
 		public typealias TypeAttributes = System_Reflection_TypeAttributes
+		/// Obtains information about the attributes of a member and provides access to member metadata.
 		public typealias MemberInfo = System_Reflection_MemberInfo
+		/// Provides custom attributes for reflection objects that support them.
 		public typealias ICustomAttributeProvider = System_Reflection_ICustomAttributeProvider
+		/// Represents an assembly, which is a reusable, versionable, and self-describing building block of a common language runtime application.
 		public typealias Assembly = System_Reflection_Assembly
+		/// Describes an assembly's unique identity in full.
 		public typealias AssemblyName = System_Reflection_AssemblyName
+		/// Encapsulates access to a public or private key pair used to sign strong name assemblies.
 		public typealias StrongNameKeyPair = System_Reflection_StrongNameKeyPair
+		/// Provides information about methods and constructors.
 		public typealias MethodBase = System_Reflection_MethodBase
+		
 		public typealias ParameterInfo_Array = System_Reflection_ParameterInfo_Array
+		/// Discovers the attributes of a parameter and provides access to parameter metadata.
 		public typealias ParameterInfo = System_Reflection_ParameterInfo
+		/// Provides access to custom attribute data for assemblies, modules, types, members and parameters that are loaded into the reflection-only context.
 		public typealias CustomAttributeData = System_Reflection_CustomAttributeData
+		
 		public typealias CustomAttributeData_Array = System_Reflection_CustomAttributeData_Array
+		/// Performs reflection on a module.
 		public typealias Module = System_Reflection_Module
+		/// Discovers the attributes of a method and provides access to method metadata.
 		public typealias MethodInfo = System_Reflection_MethodInfo
+		/// Selects a member from a list of candidates, and performs type conversion from actual argument type to formal argument type.
 		public typealias Binder = System_Reflection_Binder
+		/// Discovers the attributes of a field and provides access to field metadata.
 		public typealias FieldInfo = System_Reflection_FieldInfo
+		
 		public typealias FieldInfo_Array = System_Reflection_FieldInfo_Array
+		
 		public typealias MethodBase_Array = System_Reflection_MethodBase_Array
+		
 		public typealias ParameterModifier_Array = System_Reflection_ParameterModifier_Array
+		/// Attaches a modifier to parameters so that binding can work with parameter signatures in which the types have been modified.
 		public typealias ParameterModifier = System_Reflection_ParameterModifier
+		/// Discovers the attributes of a property and provides access to property metadata.
 		public typealias PropertyInfo = System_Reflection_PropertyInfo
+		
 		public typealias MethodInfo_Array = System_Reflection_MethodInfo_Array
+		
 		public typealias PropertyInfo_Array = System_Reflection_PropertyInfo_Array
+		/// Discovers the attributes of a class constructor and provides access to constructor metadata.
 		public typealias ConstructorInfo = System_Reflection_ConstructorInfo
+		/// Represents an argument of a custom attribute in the reflection-only context, or an element of an array argument.
 		public typealias CustomAttributeTypedArgument = System_Reflection_CustomAttributeTypedArgument
+		
 		public typealias CustomAttributeTypedArgument_Array = System_Reflection_CustomAttributeTypedArgument_Array
+		/// Represents a named argument of a custom attribute in the reflection-only context.
 		public typealias CustomAttributeNamedArgument = System_Reflection_CustomAttributeNamedArgument
+		
 		public typealias CustomAttributeNamedArgument_Array = System_Reflection_CustomAttributeNamedArgument_Array
+		/// Provides access to the metadata and MSIL for the body of a method.
 		public typealias MethodBody = System_Reflection_MethodBody
+		/// Discovers the attributes of a local variable and provides access to local variable metadata.
 		public typealias LocalVariableInfo = System_Reflection_LocalVariableInfo
+		
 		public typealias LocalVariableInfo_Array = System_Reflection_LocalVariableInfo_Array
+		/// Represents a clause in a structured exception-handling block.
 		public typealias ExceptionHandlingClause = System_Reflection_ExceptionHandlingClause
+		
 		public typealias ExceptionHandlingClause_Array = System_Reflection_ExceptionHandlingClause_Array
+		/// Represents type declarations for class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.
 		public typealias TypeInfo = System_Reflection_TypeInfo
+		/// Interoperates with the IDispatch interface.
 		public typealias IReflect = System_Reflection_IReflect
+		
 		public typealias MemberInfo_Array = System_Reflection_MemberInfo_Array
+		/// Represents a type that you can reflect over.
 		public typealias IReflectableType = System_Reflection_IReflectableType
+		/// Discovers the attributes of an event and provides access to event metadata.
 		public typealias EventInfo = System_Reflection_EventInfo
+		/// Provides access to manifest resources, which are XML files that describe application dependencies.
 		public typealias ManifestResourceInfo = System_Reflection_ManifestResourceInfo
+		
 		public typealias Module_Array = System_Reflection_Module_Array
+		
 		public typealias AssemblyName_Array = System_Reflection_AssemblyName_Array
+		
 		public typealias ConstructorInfo_Array = System_Reflection_ConstructorInfo_Array
+		
 		public typealias EventInfo_Array = System_Reflection_EventInfo_Array
+		/// Retrieves the mapping of an interface into the actual methods on a class that implements that interface.
 		public typealias InterfaceMapping = System_Reflection_InterfaceMapping
+		
 		public typealias Assembly_Array = System_Reflection_Assembly_Array
+		/// Filters the classes represented in an array of   objects.
+		/// The   object to which the filter is applied.
+		/// An arbitrary object used to filter the list.
+		/// to include the   in the filtered list; otherwise  .
 		public typealias TypeFilter = System_Reflection_TypeFilter
+		/// Represents the method that will handle the   event of an  .
+		/// The assembly that was the source of the event.
+		/// The arguments supplied by the object describing the event.
+		/// The module that satisfies the request.
 		public typealias ModuleResolveEventHandler = System_Reflection_ModuleResolveEventHandler
+		/// Represents a delegate that is used to filter a list of members represented in an array of   objects.
+		/// The   object to which the filter is applied.
+		/// An arbitrary object used to filter the list.
+		/// to include the member in the filtered list; otherwise  .
 		public typealias MemberFilter = System_Reflection_MemberFilter
 		
     }
@@ -115269,7 +116013,9 @@ public extension System {
 
 public extension System.Configuration {
     struct Assemblies {
+		/// Specifies all the hash algorithms used for hashing files and for generating the strong name.
 		public typealias AssemblyHashAlgorithm = System_Configuration_Assemblies_AssemblyHashAlgorithm
+		/// Defines the different types of assembly version compatibility.
 		public typealias AssemblyVersionCompatibility = System_Configuration_Assemblies_AssemblyVersionCompatibility
 		
     }
@@ -115280,24 +116026,46 @@ public extension System.Configuration {
 
 public extension System {
     struct Threading {
+		/// Specifies the scheduling priority of a  .
 		public typealias ThreadPriority = System_Threading_ThreadPriority
+		/// Specifies the execution states of a  .
 		public typealias ThreadState = System_Threading_ThreadState
+		/// Specifies the apartment state of a  .
 		public typealias ApartmentState = System_Threading_ApartmentState
+		/// Propagates notification that operations should be canceled.
 		public typealias CancellationToken = System_Threading_CancellationToken
+		/// Encapsulates operating system-specific objects that wait for exclusive access to shared resources.
 		public typealias WaitHandle = System_Threading_WaitHandle
+		
 		public typealias WaitHandle_Array = System_Threading_WaitHandle_Array
+		/// Represents a callback delegate that has been registered with a  .
 		public typealias CancellationTokenRegistration = System_Threading_CancellationTokenRegistration
+		/// Represents a timer that can have its due time and period changed.
 		public typealias ITimer = System_Threading_ITimer
+		/// Creates and controls a thread, sets its priority, and gets its status.
 		public typealias Thread = System_Threading_Thread
+		/// Manages the execution context for the current thread. This class cannot be inherited.
 		public typealias ExecutionContext = System_Threading_ExecutionContext
+		/// Provides the functionality to restore the migration, or flow, of the execution context between threads.
 		public typealias AsyncFlowControl = System_Threading_AsyncFlowControl
+		/// Provides methods for setting and capturing the compressed stack on the current thread. This class cannot be inherited.
 		public typealias CompressedStack = System_Threading_CompressedStack
+		/// Provides a mechanism for executing a method on a thread pool thread at specified intervals. This class cannot be inherited.
 		public typealias Timer = System_Threading_Timer
+		/// Signals to a   that it should be canceled.
 		public typealias CancellationTokenSource = System_Threading_CancellationTokenSource
+		
 		public typealias CancellationToken_Array = System_Threading_CancellationToken_Array
+		/// Represents the method that handles calls from a  .
+		/// An object containing application-specific information relevant to the method invoked by this delegate, or  .
 		public typealias TimerCallback = System_Threading_TimerCallback
+		/// Represents a method to be called within a new context.
+		/// An object containing information to be used by the callback method each time it executes.
 		public typealias ContextCallback = System_Threading_ContextCallback
+		/// Represents the method that executes on a  .
 		public typealias ThreadStart = System_Threading_ThreadStart
+		/// Represents the method that executes on a  .
+		/// An object that contains data for the thread procedure.
 		public typealias ParameterizedThreadStart = System_Threading_ParameterizedThreadStart
 		
     }
@@ -115306,14 +116074,23 @@ public extension System {
 
 public extension System.Threading {
     struct Tasks {
+		/// Represents the current stage in the lifecycle of a  .
 		public typealias TaskStatus = System_Threading_Tasks_TaskStatus
+		/// Specifies flags that control optional behavior for the creation and execution of tasks.
 		public typealias TaskCreationOptions = System_Threading_Tasks_TaskCreationOptions
+		/// Specifies the behavior for a task that is created by using the   or   method.
 		public typealias TaskContinuationOptions = System_Threading_Tasks_TaskContinuationOptions
+		/// Options to control behavior when awaiting.
 		public typealias ConfigureAwaitOptions = System_Threading_Tasks_ConfigureAwaitOptions
+		/// Provides an awaitable result of an asynchronous operation.
 		public typealias ValueTask = System_Threading_Tasks_ValueTask
+		/// Represents an asynchronous operation.
 		public typealias Task = System_Threading_Tasks_Task
+		/// Represents an object that handles the low-level work of queuing tasks onto threads.
 		public typealias TaskScheduler = System_Threading_Tasks_TaskScheduler
+		/// Provides support for creating and scheduling   objects.
 		public typealias TaskFactory = System_Threading_Tasks_TaskFactory
+		
 		public typealias Task_Array = System_Threading_Tasks_Task_Array
 		
     }
@@ -115322,8 +116099,11 @@ public extension System.Threading {
 
 public extension System.Threading.Tasks {
     struct Sources {
+		/// Indicates the status of an   or  .
 		public typealias ValueTaskSourceStatus = System_Threading_Tasks_Sources_ValueTaskSourceStatus
+		/// Provides flags passed from   and   to the   method to control the behavior of a continuation.
 		public typealias ValueTaskSourceOnCompletedFlags = System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags
+		/// Represents an object that can be wrapped by a  .
 		public typealias IValueTaskSource = System_Threading_Tasks_Sources_IValueTaskSource
 		
     }
@@ -115335,33 +116115,62 @@ public extension System.Threading.Tasks {
 
 public extension System {
     struct IO {
+		/// Specifies the position in a stream to use for seeking.
 		public typealias SeekOrigin = System_IO_SeekOrigin
+		/// Defines constants for read, write, or read/write access to a file.
 		public typealias FileAccess = System_IO_FileAccess
+		/// Specifies how the operating system should open a file.
 		public typealias FileMode = System_IO_FileMode
+		/// Contains constants for controlling the kind of access other operations can have to the same file.
 		public typealias FileShare = System_IO_FileShare
+		/// Represents advanced options for creating a   object.
 		public typealias FileOptions = System_IO_FileOptions
+		/// Provides attributes for files and directories.
 		public typealias FileAttributes = System_IO_FileAttributes
+		/// Represents the Unix filesystem permissions.
+		/// This enumeration supports a bitwise combination of its member values.
 		public typealias UnixFileMode = System_IO_UnixFileMode
+		/// Specifies whether to search the current directory, or the current directory and all subdirectories.
 		public typealias SearchOption = System_IO_SearchOption
+		/// Specifies the type of wildcard matching to use.
 		public typealias MatchType = System_IO_MatchType
+		/// Specifies the type of character casing to match.
 		public typealias MatchCasing = System_IO_MatchCasing
+		/// Provides a   for a file, supporting both synchronous and asynchronous read and write operations.
 		public typealias FileStream = System_IO_FileStream
+		/// Provides a generic view of a sequence of bytes. This is an abstract class.
 		public typealias Stream = System_IO_Stream
+		/// Defines a variety of configuration options for  .
 		public typealias FileStreamOptions = System_IO_FileStreamOptions
+		
 		public typealias FileStream_Array = System_IO_FileStream_Array
+		/// Performs operations on   instances that contain file or directory path information. These operations are performed in a cross-platform manner.
 		public typealias Path = System_IO_Path
+		/// Provides static methods for the creation, copying, deletion, moving, and opening of a single file, and aids in the creation of   objects.
 		public typealias File = System_IO_File
+		/// Implements a   that reads characters from a byte stream in a particular encoding.
 		public typealias StreamReader = System_IO_StreamReader
+		/// Represents a reader that can read a sequential series of characters.
 		public typealias TextReader = System_IO_TextReader
+		/// Implements a   for writing characters to a stream in a particular encoding.
 		public typealias StreamWriter = System_IO_StreamWriter
+		/// Represents a writer that can write a sequential series of characters. This class is abstract.
 		public typealias TextWriter = System_IO_TextWriter
+		/// Provides the base class for both   and   objects.
 		public typealias FileSystemInfo = System_IO_FileSystemInfo
+		/// Provides properties and instance methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of   objects. This class cannot be inherited.
 		public typealias FileInfo = System_IO_FileInfo
+		/// Exposes instance methods for creating, moving, and enumerating through directories and subdirectories. This class cannot be inherited.
 		public typealias DirectoryInfo = System_IO_DirectoryInfo
+		
 		public typealias FileInfo_Array = System_IO_FileInfo_Array
+		/// Provides file and directory enumeration options.
 		public typealias EnumerationOptions = System_IO_EnumerationOptions
+		
 		public typealias FileSystemInfo_Array = System_IO_FileSystemInfo_Array
+		
 		public typealias DirectoryInfo_Array = System_IO_DirectoryInfo_Array
+		/// Exposes static methods for creating, moving, and enumerating through directories and subdirectories. This class cannot be inherited.
 		public typealias Directory = System_IO_Directory
 		
     }
@@ -115371,12 +116180,19 @@ public extension System {
 
 public extension System {
     struct Security {
+		/// Identifies the set of security rules the common language runtime should enforce for an assembly.
 		public typealias SecurityRuleSet = System_Security_SecurityRuleSet
+		/// Represents text that should be kept confidential, such as by deleting it from computer memory when no longer needed. This class cannot be inherited.
 		public typealias SecureString = System_Security_SecureString
+		/// Represents a collection that can contain many different types of permissions.
 		public typealias PermissionSet = System_Security_PermissionSet
+		/// Defines the methods that convert permission object state to and from XML element representation.
 		public typealias ISecurityEncodable = System_Security_ISecurityEncodable
+		/// Represents the XML object model for encoding security objects. This class cannot be inherited.
 		public typealias SecurityElement = System_Security_SecurityElement
+		/// Manages the stack walk that determines whether all callers in the call stack have the required permissions to access a protected resource.
 		public typealias IStackWalk = System_Security_IStackWalk
+		/// Defines methods implemented by permission types.
 		public typealias IPermission = System_Security_IPermission
 		
     }
@@ -115385,6 +116201,7 @@ public extension System {
 
 public extension System.Security {
     struct Permissions {
+		/// Specifies whether a permission should have all or no access to resources at creation.
 		public typealias PermissionState = System_Security_Permissions_PermissionState
 		
     }
@@ -115394,8 +116211,11 @@ public extension System.Security {
 
 public extension System.Security {
     struct Principal {
+		/// Specifies how principal and identity objects should be created for an application domain. The default is  .
 		public typealias PrincipalPolicy = System_Security_Principal_PrincipalPolicy
+		/// Defines the basic functionality of a principal object.
 		public typealias IPrincipal = System_Security_Principal_IPrincipal
+		/// Defines the basic functionality of an identity object.
 		public typealias IIdentity = System_Security_Principal_IIdentity
 		
     }
@@ -115406,6 +116226,7 @@ public extension System.Security {
 
 public extension System {
     struct Buffers {
+		/// Defines the values that can be returned from span-based operations that support processing of input contained in multiple discontiguous buffers.
 		public typealias OperationStatus = System_Buffers_OperationStatus
 		
     }
@@ -115414,6 +116235,7 @@ public extension System {
 
 public extension System.Buffers {
     struct Binary {
+		/// Reads bytes as primitives with specific endianness.
 		public typealias BinaryPrimitives = System_Buffers_Binary_BinaryPrimitives
 		
     }
@@ -115424,22 +116246,39 @@ public extension System.Buffers {
 
 public extension System {
     struct Text {
+		/// Defines the type of normalization to perform.
 		public typealias NormalizationForm = System_Text_NormalizationForm
+		/// Represents a Unicode scalar value ([ U+0000..U+D7FF ], inclusive; or [ U+E000..U+10FFFF ], inclusive).
 		public typealias Rune = System_Text_Rune
+		/// Provides an enumerator for the   values represented by a string.
 		public typealias StringRuneEnumerator = System_Text_StringRuneEnumerator
+		/// Represents a parsed composite format string.
 		public typealias CompositeFormat = System_Text_CompositeFormat
+		/// Represents a character encoding.
 		public typealias Encoding = System_Text_Encoding
+		/// Provides the base class for an encoding provider, which supplies encodings that are unavailable on a particular platform.
 		public typealias EncodingProvider = System_Text_EncodingProvider
+		/// Provides a failure-handling mechanism, called a fallback, for an input character that cannot be converted to an encoded output byte sequence.
 		public typealias EncoderFallback = System_Text_EncoderFallback
+		/// Provides a buffer that allows a fallback handler to return an alternate string to an encoder when it cannot encode an input character.
 		public typealias EncoderFallbackBuffer = System_Text_EncoderFallbackBuffer
+		/// Provides a failure-handling mechanism, called a fallback, for an encoded input byte sequence that cannot be converted to an output character.
 		public typealias DecoderFallback = System_Text_DecoderFallback
+		/// Provides a buffer that allows a fallback handler to return an alternate string to a decoder when it cannot decode an input byte sequence.
 		public typealias DecoderFallbackBuffer = System_Text_DecoderFallbackBuffer
+		/// Provides basic information about an encoding.
 		public typealias EncodingInfo = System_Text_EncodingInfo
+		
 		public typealias EncodingInfo_Array = System_Text_EncodingInfo_Array
+		/// Converts a sequence of encoded bytes into a set of characters.
 		public typealias Decoder = System_Text_Decoder
+		/// Converts a set of characters into a sequence of bytes.
 		public typealias Encoder = System_Text_Encoder
+		/// Represents a mutable string of characters. This class cannot be inherited.
 		public typealias StringBuilder = System_Text_StringBuilder
+		
 		public typealias StringBuilder_ChunkEnumerator = System_Text_StringBuilder_ChunkEnumerator
+		
 		public typealias StringBuilder_AppendInterpolatedStringHandler = System_Text_StringBuilder_AppendInterpolatedStringHandler
 		
     }
@@ -115449,19 +116288,33 @@ public extension System {
 
 public extension System {
     struct Collections {
+		/// Represents a non-generic collection of objects that can be individually accessed by index.
 		public typealias IList = System_Collections_IList
+		/// Defines size, enumerators, and synchronization methods for all nongeneric collections.
 		public typealias ICollection = System_Collections_ICollection
+		/// Exposes an enumerator, which supports a simple iteration over a non-generic collection.
 		public typealias IEnumerable = System_Collections_IEnumerable
+		/// Supports a simple iteration over a non-generic collection.
 		public typealias IEnumerator = System_Collections_IEnumerator
+		/// Supports the structural comparison of collection objects.
 		public typealias IStructuralComparable = System_Collections_IStructuralComparable
+		/// Exposes a method that compares two objects.
 		public typealias IComparer = System_Collections_IComparer
+		/// Defines methods to support the comparison of objects for structural equality.
 		public typealias IStructuralEquatable = System_Collections_IStructuralEquatable
+		/// Defines methods to support the comparison of objects for equality.
 		public typealias IEqualityComparer = System_Collections_IEqualityComparer
+		/// Represents a nongeneric collection of key/value pairs.
 		public typealias IDictionary = System_Collections_IDictionary
+		/// Enumerates the elements of a nongeneric dictionary.
 		public typealias IDictionaryEnumerator = System_Collections_IDictionaryEnumerator
+		/// Defines a dictionary key/value pair that can be set or retrieved.
 		public typealias DictionaryEntry = System_Collections_DictionaryEntry
+		/// Represents a collection of key/value pairs that are organized based on the hash code of the key.
 		public typealias Hashtable = System_Collections_Hashtable
+		/// Supplies a hash code for an object, using a custom hash function.
 		public typealias IHashCodeProvider = System_Collections_IHashCodeProvider
+		/// Implements the   interface using an array whose size is dynamically increased as required.
 		public typealias ArrayList = System_Collections_ArrayList
 		
     }
@@ -115508,51 +116361,98 @@ public extension Beyond {
 
 public extension Beyond.NET {
     struct Sample {
+		/// Describes how nice one can be.
+		/// Ordered from not nice, to very nice.
 		public typealias NiceLevels = Beyond_NET_Sample_NiceLevels
+		
 		public typealias TestEnum = Beyond_NET_Sample_TestEnum
+		/// Describes an Address.
 		public typealias Address = Beyond_NET_Sample_Address
+		
 		public typealias IAnimal = Beyond_NET_Sample_IAnimal
+		
 		public typealias AnimalFactory = Beyond_NET_Sample_AnimalFactory
+		
 		public typealias BaseAnimal = Beyond_NET_Sample_BaseAnimal
+		
 		public typealias Cat = Beyond_NET_Sample_Cat
+		
 		public typealias Dog = Beyond_NET_Sample_Dog
+		
 		public typealias GenericAnimal = Beyond_NET_Sample_GenericAnimal
+		
 		public typealias Labrador = Beyond_NET_Sample_Labrador
+		
 		public typealias AsyncTests = Beyond_NET_Sample_AsyncTests
+		
 		public typealias Point = Beyond_NET_Sample_Point
+		
 		public typealias DelegatesTest = Beyond_NET_Sample_DelegatesTest
+		
 		public typealias EventTests = Beyond_NET_Sample_EventTests
+		
 		public typealias GenericTests = Beyond_NET_Sample_GenericTests
+		
 		public typealias GenericTests_SimpleKeyValuePair = Beyond_NET_Sample_GenericTests_SimpleKeyValuePair
+		
 		public typealias IndexerTests = Beyond_NET_Sample_IndexerTests
+		
 		public typealias NullabilityTests = Beyond_NET_Sample_NullabilityTests
+		
 		public typealias OverloadTests = Beyond_NET_Sample_OverloadTests
+		
 		public typealias Person = Beyond_NET_Sample_Person
+		
 		public typealias Person_Array = Beyond_NET_Sample_Person_Array
+		
 		public typealias Person_Extensions = Beyond_NET_Sample_Person_Extensions
+		
 		public typealias PropertyTests = Beyond_NET_Sample_PropertyTests
+		
 		public typealias SpanTest = Beyond_NET_Sample_SpanTest
+		
 		public typealias StructTest = Beyond_NET_Sample_StructTest
+		
 		public typealias Book = Beyond_NET_Sample_Book
+		
 		public typealias TestClass = Beyond_NET_Sample_TestClass
+		
 		public typealias TestRecord = Beyond_NET_Sample_TestRecord
+		
 		public typealias TestRecordStruct = Beyond_NET_Sample_TestRecordStruct
+		
 		public typealias TestReadOnlyRecordStruct = Beyond_NET_Sample_TestReadOnlyRecordStruct
+		
 		public typealias Transformer = Beyond_NET_Sample_Transformer
+		
 		public typealias Transformer_BuiltInTransformers = Beyond_NET_Sample_Transformer_BuiltInTransformers
+		/// A delegate that returns a new Address.
 		public typealias MoveDelegate = Beyond_NET_Sample_MoveDelegate
+		
 		public typealias AnimalCreatorDelegate = Beyond_NET_Sample_AnimalCreatorDelegate
+		
 		public typealias AsyncTests_TransformerDelegate = Beyond_NET_Sample_AsyncTests_TransformerDelegate
+		
 		public typealias DelegatesTest_TransformIntDelegate = Beyond_NET_Sample_DelegatesTest_TransformIntDelegate
+		
 		public typealias DelegatesTest_PointTransformDelegate = Beyond_NET_Sample_DelegatesTest_PointTransformDelegate
+		
 		public typealias EventTests_ValueChangedDelegate = Beyond_NET_Sample_EventTests_ValueChangedDelegate
+		
 		public typealias Person_NumberOfChildrenChangedDelegate = Beyond_NET_Sample_Person_NumberOfChildrenChangedDelegate
+		
 		public typealias Person_NewAgeProviderDelegate = Beyond_NET_Sample_Person_NewAgeProviderDelegate
+		
 		public typealias SpanTest_ByteArrayToSpanDelegate = Beyond_NET_Sample_SpanTest_ByteArrayToSpanDelegate
+		
 		public typealias SpanTest_SpanToByteArrayDelegate = Beyond_NET_Sample_SpanTest_SpanToByteArrayDelegate
+		
 		public typealias CharReturnerDelegate = Beyond_NET_Sample_CharReturnerDelegate
+		
 		public typealias Transformer_StringTransformerDelegate = Beyond_NET_Sample_Transformer_StringTransformerDelegate
+		
 		public typealias Transformer_DoublesTransformerDelegate = Beyond_NET_Sample_Transformer_DoublesTransformerDelegate
+		
 		public typealias Transformer_StringGetterDelegate = Beyond_NET_Sample_Transformer_StringGetterDelegate
 		
     }
@@ -115561,7 +116461,9 @@ public extension Beyond.NET {
 
 public extension Beyond.NET.Sample {
     struct SubclassingTests {
+		
 		public typealias MyBaseClass = Beyond_NET_Sample_SubclassingTests_MyBaseClass
+		
 		public typealias MySubClass = Beyond_NET_Sample_SubclassingTests_MySubClass
 		
     }
@@ -115586,8 +116488,11 @@ public extension Microsoft {
 
 public extension Microsoft.Win32 {
     struct SafeHandles {
+		/// Represents a wrapper class for a wait handle.
 		public typealias SafeWaitHandle = Microsoft_Win32_SafeHandles_SafeWaitHandle
+		/// Provides a base class for Win32 safe handle implementations in which the value of either 0 or -1 indicates an invalid handle.
 		public typealias SafeHandleZeroOrMinusOneIsInvalid = Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid
+		/// Represents a wrapper class for a file handle.
 		public typealias SafeFileHandle = Microsoft_Win32_SafeHandles_SafeFileHandle
 		
     }

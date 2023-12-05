@@ -40,6 +40,7 @@ public struct XmlDocumentationContent
             string xmlRemovedLine;
 
             if (removeXmlTags) {
+                // TODO: This is not good enough ;)
                 xmlRemovedLine = Regex.Replace(
                     line,
                     "<[^>]+>",
