@@ -60,10 +60,14 @@ internal class XmlDocumentationStore
         );
 
         if (File.Exists(xmlFilePath)) {
+            // Console.WriteLine($"TODO: XML Documentation found for Assembly named {assembly.GetName().Name} at {xmlFilePath}");
+            
             string[] xmlFilePaths = new [] { xmlFilePath };
 
             return xmlFilePaths;   
         } else {
+            // Console.WriteLine($"TODO: No XML Documentation file found for Assembly named {assembly.GetName().Name}");
+            
             bool isSystemPrivateCoreLib = assembly.GetName().Name == "System.Private.CoreLib" &&
                                           assembly.ExportedTypes.Contains(typeof(object));
 
