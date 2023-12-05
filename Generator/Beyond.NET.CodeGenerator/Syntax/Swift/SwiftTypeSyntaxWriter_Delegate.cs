@@ -278,8 +278,7 @@ public partial class SwiftTypeSyntaxWriter
             .Implementation(sb.ToString())
             .ToString();
         
-        var typeDocumentationComment = Settings.XmlDocumentation?
-            .GetTypeDocumentation(type)
+        var typeDocumentationComment = type.GetDocumentation()
             ?.GetFormattedDocumentationComment();
 
         StringBuilder sbFinal;

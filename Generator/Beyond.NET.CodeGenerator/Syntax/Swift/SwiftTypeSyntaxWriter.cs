@@ -142,8 +142,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         
         bool isFlagsEnum = type.IsDefined(typeof(FlagsAttribute), false);
         
-        var typeDocumentationComment = Settings.XmlDocumentation?
-            .GetTypeDocumentation(type)
+        var typeDocumentationComment = type.GetDocumentation()
             ?.GetFormattedDocumentationComment();
 
         if (isFlagsEnum) {
@@ -414,8 +413,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
                     .ToString();
             }
             
-            var typeDocumentationComment = Settings.XmlDocumentation?
-                .GetTypeDocumentation(type)
+            var typeDocumentationComment = type.GetDocumentation()
                 ?.GetFormattedDocumentationComment();
             
             if (!string.IsNullOrEmpty(typeDocumentationComment)) {

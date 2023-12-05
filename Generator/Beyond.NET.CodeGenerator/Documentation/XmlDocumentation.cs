@@ -1,6 +1,28 @@
+using System.Reflection;
 using System.Xml;
 
 namespace Beyond.NET.CodeGenerator;
+
+internal class XmlDocumentationStore
+{
+    private static readonly XmlDocumentationStore m_shared = new();
+    internal static XmlDocumentationStore Shared { get; } = m_shared;
+
+    private Dictionary<Assembly, XmlDocumentation?> AssemblyDocumentations { get; } = new();
+
+    internal XmlDocumentation? GetDocumentation(Assembly assembly)
+    {
+        if (AssemblyDocumentations.TryGetValue(assembly, out XmlDocumentation? existingDocumentation)) {
+            return existingDocumentation;
+        }
+
+        var newDocumentation = XmlDocumentation.FromAssembly(assembly);
+
+        AssemblyDocumentations[assembly] = newDocumentation;
+
+        return newDocumentation;
+    }
+}
 
 // TODO: Right now this only gets documentation from the targeted assembly but we must also make it so it's able to add documentation from multiple Assemblies when they are loaded by the AssemblyLoader's AppDomain_OnAssemblyResolve method.
 public class XmlDocumentation
@@ -13,10 +35,37 @@ public class XmlDocumentation
     }
 
     #region Parsing
-    public static XmlDocumentation? FromAssemblyPath(string assemblyPath)
+    internal static XmlDocumentation? FromAssembly(Assembly assembly)
     {
-        var assemblyName = Path.GetFileNameWithoutExtension(assemblyPath);
-        var assemblyDir = Path.GetDirectoryName(assemblyPath);
+        string assemblyFilePath = assembly.Location;
+
+        var docu = FromAssemblyPath(assemblyFilePath);
+
+        return docu;
+    }
+    
+    internal static XmlDocumentation? FromAssemblyPath(string assemblyFilePath)
+    {
+        if (!File.Exists(assemblyFilePath)) {
+            return null;
+        }
+        
+        var xmlFilePath = GetXmlDocumentationFilePath(assemblyFilePath);
+        
+        if (!File.Exists(xmlFilePath)) {
+            return null;
+        }
+
+        var content = File.ReadAllText(xmlFilePath);
+        var docu = ParseXmlDocumentation(content);
+
+        return docu;
+    }
+    
+    private static string? GetXmlDocumentationFilePath(string assemblyFilePath)
+    {
+        var assemblyName = Path.GetFileNameWithoutExtension(assemblyFilePath);
+        var assemblyDir = Path.GetDirectoryName(assemblyFilePath);
 
         if (string.IsNullOrEmpty(assemblyDir)) {
             return null;
@@ -28,15 +77,8 @@ public class XmlDocumentation
             assemblyDir,
             xmlFileName
         );
-        
-        if (!File.Exists(xmlFilePath)) {
-            return null;
-        }
 
-        var content = File.ReadAllText(xmlFilePath);
-        var docu = ParseXmlDocumentation(content);
-
-        return docu;
+        return xmlFilePath;
     }
 
     private static XmlDocumentation ParseXmlDocumentation(string xmlDocumentationContent)
@@ -69,7 +111,7 @@ public class XmlDocumentation
     #endregion Parsing
 
     #region Extracting
-    public XmlDocumentationContent? GetTypeDocumentation(Type type)
+    internal XmlDocumentationContent? GetTypeDocumentation(Type type)
     {
         var rawName = $"T:{type.FullName}";
         var identifier = new XmlDocumentationMemberIdentifier(rawName);
@@ -81,4 +123,15 @@ public class XmlDocumentation
         }
     }
     #endregion Extracting
+}
+
+public static class XmlDocumentation_Extensions
+{
+    public static XmlDocumentationContent? GetDocumentation(this Type type)
+    {
+        var docu = XmlDocumentationStore.Shared.GetDocumentation(type.Assembly);
+        var typeDocu = docu?.GetTypeDocumentation(type);
+
+        return typeDocu;
+    }
 }

@@ -37,11 +37,7 @@ internal class AssemblyLoader: IDisposable
         AppDomain.CurrentDomain.AssemblyResolve += AppDomain_OnAssemblyResolve;
     }
 
-    internal Assembly LoadFrom(
-        string assemblyPath,
-        bool getXmlDocumentation,
-        out XmlDocumentation? xmlDocumentation 
-    )
+    internal Assembly LoadFrom(string assemblyPath)
     {
         string? assemblyDirectoryPath = Path.GetDirectoryName(assemblyPath);
 
@@ -51,10 +47,6 @@ internal class AssemblyLoader: IDisposable
         }
         
         Assembly assembly = Assembly.LoadFrom(assemblyPath);
-
-        xmlDocumentation = getXmlDocumentation
-            ? XmlDocumentation.FromAssemblyPath(assemblyPath)
-            : null;
 
         return assembly;
     }
