@@ -4,7 +4,7 @@ namespace Beyond.NET.CodeGenerator;
 
 public struct XmlDocumentationMember
 {
-    public XmlNode Node { get; }
+    private XmlNode Node { get; }
     
     public XmlDocumentationMember(XmlNode xmlNode)
     {
