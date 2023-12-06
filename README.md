@@ -213,6 +213,7 @@ The generator currently uses a configuration file where all of its options are s
   "GenerateTypeCheckedDestroyMethods": false,
   "EnableGenericsSupport": false,
   "DoNotGenerateSwiftNestedTypeAliases": false,
+  "DoNotGenerateDocumentation": false,
   "DoNotDeleteTemporaryDirectories": false,
 
   "IncludedTypeNames": [
@@ -249,6 +250,7 @@ The generator currently uses a configuration file where all of its options are s
 - **`GenerateTypeCheckedDestroyMethods`** (Boolean; `false` by default): If enabled (`true`), the generated `*_Destroy` methods will check the type of the passed in object. If the type does not match, an unhandled(!) exception will be thrown. Use this to detect memory management bugs in your code. Since it introduces overhead, it's disabled by default. Also, there's no need for manual memory management in higher level languages like Swift so this is unnecessary.
 - **`EnableGenericsSupport`** (Boolean; `false` by default): Generics support is currently experimental and disabled by default. If you want to test the current state though or work on improving generics support, enable this by setting it to `true`.
 - **`DoNotGenerateSwiftNestedTypeAliases`** (Boolean; `false` by default): If set to `true`, no typealiases matching the .NET namespaces of the generated types will be emitted. That means, for example that instead of `System.String.empty` you'd have to use `System_String.empty`.
+- **`DoNotGenerateDocumentation`** (Boolean; `false` by default): If set to `true`, no documentation is extracted from .NET XML documentation files and no documentation is generated in the resulting bindings.
 - **`DoNotDeleteTemporaryDirectories`** (Boolean; `false` by default): If set to `true`, any temporary directories created during the generation or build process are not deleted automatically.
 - **`IncludedTypeNames`** (Array of Strings): Use this to provide a list of types that should be included even if they are not used by the target assembly.
 - **`ExcludedTypeNames`** (Array of Strings): Use this to provide a list of types that should be excluded.
