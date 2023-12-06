@@ -59,6 +59,45 @@ internal struct XmlDocumentationNode
             return str;
         }
     }
+
+    public string[] ParamsAsPlainText
+    {
+        get {
+            var nodes = ParamNodes;
+
+            if (nodes is null ||
+                nodes.Count <= 0) {
+                return Array.Empty<string>();
+            }
+
+            List<string> paramStrings = new();
+
+            foreach (XmlNode node in nodes) {
+                var paramName = node.Attributes?["name"]?.Value;
+
+                if (string.IsNullOrEmpty(paramName)) {
+                    continue;
+                }
+                
+                var str = ConvertNodeToPlainText(node)
+                    .Replace("\r\n", Environment.NewLine)
+                    .Trim(NEW_LINES);
+
+                if (string.IsNullOrEmpty(str)) {
+                    continue;
+                }
+                
+                var strSplit = str.Split(NEW_LINES, StringSplitOptions.RemoveEmptyEntries);
+                var strJoined = string.Join(' ', strSplit);
+
+                var paramStr = $"{paramName}: {strJoined}";
+                
+                paramStrings.Add(paramStr);
+            }
+
+            return paramStrings.ToArray();
+        }
+    }
     #endregion Public Accessors
 
     #region Node -> Plain Text
@@ -103,8 +142,8 @@ internal struct XmlDocumentationNode
                 sb.Append(ConvertPNodeToPlainText(child));
             } else {
                 // throw new NotImplementedException();
+                // Console.WriteLine($"Unknown node type: {child.Name}");
                 
-                Console.WriteLine($"Unknown node type: {child.Name}");
                 sb.Append(ConvertNodeToPlainText(child));
             }
         }

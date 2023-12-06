@@ -22,11 +22,6 @@ public struct XmlDocumentationMember
         char[] newLines = new char[] { '\r', '\n' };
         char[] newLinesAndBlanks = new char[] { '\r', '\n', ' ' };
         
-        // var returnsNode = Node.ReturnsNode;
-        // var returnsText = returnsNode?.InnerXml.Trim(newLinesAndBlanks);
-        // var returnsLines = returnsText?.Split(newLines, StringSplitOptions.RemoveEmptyEntries);
-
-        var paramNodes = Node.ParamNodes;
         var exceptionNodes = Node.ExceptionNodes;
 
         List<string> lines = new();
@@ -39,37 +34,10 @@ public struct XmlDocumentationMember
             lines.Add(summaryLine);
         }
 
-        if (paramNodes is not null &&
-            paramNodes.Count > 0) {
-            bool isFirstParam = true;
-            
-            foreach (XmlNode paramNode in paramNodes) {
-                var paramName = paramNode.Attributes?["name"]?.Value;
+        var paramStrings = Node.ParamsAsPlainText;
 
-                if (string.IsNullOrEmpty(paramName)) {
-                    continue;
-                }
-                
-                var paramNodeText = paramNode.InnerXml.Trim(newLinesAndBlanks);
-                var paramNodeLines = paramNodeText.Split(newLines, StringSplitOptions.RemoveEmptyEntries);
-
-                if (paramNodeLines.Length <= 0) {
-                    continue;
-                }
-
-                var paramNodeLinesJoined = string.Join("; ", paramNodeLines);
-
-                if (!string.IsNullOrEmpty(paramNodeLinesJoined)) {
-                    if (isFirstParam &&
-                        lines.Count > 0) {
-                        lines.Add(commentPrefix);
-                    }
-                    
-                    lines.Add($"{commentPrefix}- Parameter {paramName}: {paramNodeLinesJoined}");
-
-                    isFirstParam = false;
-                }
-            }
+        foreach (var paramString in paramStrings) {
+            lines.Add($"{commentPrefix}- Parameter {paramString}");
         }
         
         if (exceptionNodes is not null &&
