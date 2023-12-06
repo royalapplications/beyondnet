@@ -2,11 +2,11 @@ using System.Xml;
 
 namespace Beyond.NET.CodeGenerator;
 
-public struct XmlDocumentationContent
+public struct XmlDocumentationMember
 {
     public XmlNode Node { get; }
     
-    public XmlDocumentationContent(XmlNode xmlNode)
+    public XmlDocumentationMember(XmlNode xmlNode)
     {
         Node = xmlNode;
     }

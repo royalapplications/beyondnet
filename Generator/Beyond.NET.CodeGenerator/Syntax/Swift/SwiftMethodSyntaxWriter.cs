@@ -456,7 +456,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         }
         #endregion Func Declaration
 
-        XmlDocumentationContent? xmlDocumentationContent;
+        XmlDocumentationMember? xmlDocumentationContent;
         
         if (originatingMemberInfo is FieldInfo originatingFieldInfo) {
             xmlDocumentationContent = originatingFieldInfo.GetDocumentation();

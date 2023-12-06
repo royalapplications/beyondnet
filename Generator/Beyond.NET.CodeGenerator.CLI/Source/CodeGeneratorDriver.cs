@@ -153,7 +153,7 @@ internal class CodeGeneratorDriver
             #endregion Configuration
 
             #region Add System Documentation
-            // TODO
+            XmlDocumentationStore.Shared.ParseSystemDocumentation();
             #endregion Add System Documentation
     
             #region Load Assembly

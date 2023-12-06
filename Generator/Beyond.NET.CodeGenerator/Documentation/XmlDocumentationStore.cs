@@ -54,6 +54,13 @@ public class XmlDocumentationStore
             ParseDocumentation(xmlDocumentationFilePath);
         }
     }
+
+    public void ParseSystemDocumentation()
+    {
+        var xmlDocumentationFilePaths = GetSystemXmlDocumentationFilePaths();
+
+        ParseDocumentation(xmlDocumentationFilePaths);
+    }
     
     private static string? GetXmlDocumentationFilePath(string assemblyFilePath)
     {
@@ -78,7 +85,7 @@ public class XmlDocumentationStore
         return xmlFilePath;
     }
 
-    internal static IEnumerable<string> GetSystemXmlDocumentationFilePaths()
+    private static IEnumerable<string> GetSystemXmlDocumentationFilePaths()
     {
         // var name = systemPrivateCoreLibAssembly.GetName();
         // var version = name.Version;

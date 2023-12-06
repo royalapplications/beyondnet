@@ -5,7 +5,7 @@ namespace Beyond.NET.CodeGenerator;
 
 public class XmlDocumentation
 {
-    private readonly Dictionary<XmlDocumentationMemberIdentifier, XmlDocumentationContent> m_members;
+    private readonly Dictionary<XmlDocumentationMemberIdentifier, XmlDocumentationMember> m_members;
     
     internal XmlDocumentation()
     {
@@ -23,9 +23,9 @@ public class XmlDocumentation
         }
     }
 
-    private static Dictionary<XmlDocumentationMemberIdentifier, XmlDocumentationContent> GetXmlDocumentationMembers(string xmlDocumentationContent)
+    private static Dictionary<XmlDocumentationMemberIdentifier, XmlDocumentationMember> GetXmlDocumentationMembers(string xmlDocumentationContent)
     {
-        Dictionary<XmlDocumentationMemberIdentifier, XmlDocumentationContent> members = new();
+        Dictionary<XmlDocumentationMemberIdentifier, XmlDocumentationMember> members = new();
 
         try {
             XmlDocument doc = new();
@@ -44,7 +44,7 @@ public class XmlDocumentation
                     
                     var memberType = new XmlDocumentationMemberIdentifier(rawName);
                     
-                    var memberContent = new XmlDocumentationContent(memberNode);
+                    var memberContent = new XmlDocumentationMember(memberNode);
                     
                     members[memberType] = memberContent;
                 }
@@ -59,13 +59,13 @@ public class XmlDocumentation
     #endregion Parsing
 
     #region Extracting
-    internal XmlDocumentationContent? GetDocumentation(XmlDocumentationMemberIdentifier memberIdentifier)
+    internal XmlDocumentationMember? GetDocumentation(XmlDocumentationMemberIdentifier memberIdentifier)
     {
         if (!memberIdentifier.IsValid) {
             return null;
         }
 
-        if (m_members.TryGetValue(memberIdentifier, out XmlDocumentationContent content)) {
+        if (m_members.TryGetValue(memberIdentifier, out XmlDocumentationMember content)) {
             return content;
         } else {
             return null;
@@ -76,7 +76,7 @@ public class XmlDocumentation
 
 public static class XmlDocumentation_Extensions
 {
-    public static XmlDocumentationContent? GetDocumentation(this Type type)
+    public static XmlDocumentationMember? GetDocumentation(this Type type)
     {
         foreach (var documentation in XmlDocumentationStore.Shared.Documentations) {
             var typeDocu = documentation.GetDocumentation(new(type));
@@ -89,7 +89,7 @@ public static class XmlDocumentation_Extensions
         return null;
     }
     
-    public static XmlDocumentationContent? GetDocumentation(this FieldInfo fieldInfo)
+    public static XmlDocumentationMember? GetDocumentation(this FieldInfo fieldInfo)
     {
         foreach (var documentation in XmlDocumentationStore.Shared.Documentations) {
             var typeDocu = documentation.GetDocumentation(new(fieldInfo));
@@ -102,7 +102,7 @@ public static class XmlDocumentation_Extensions
         return null;
     }
     
-    public static XmlDocumentationContent? GetDocumentation(this PropertyInfo propertyInfo)
+    public static XmlDocumentationMember? GetDocumentation(this PropertyInfo propertyInfo)
     {
         foreach (var documentation in XmlDocumentationStore.Shared.Documentations) {
             var typeDocu = documentation.GetDocumentation(new(propertyInfo));
@@ -115,7 +115,7 @@ public static class XmlDocumentation_Extensions
         return null;
     }
     
-    public static XmlDocumentationContent? GetDocumentation(this EventInfo eventInfo)
+    public static XmlDocumentationMember? GetDocumentation(this EventInfo eventInfo)
     {
         foreach (var documentation in XmlDocumentationStore.Shared.Documentations) {
             var typeDocu = documentation.GetDocumentation(new(eventInfo));
@@ -128,7 +128,7 @@ public static class XmlDocumentation_Extensions
         return null;
     }
     
-    public static XmlDocumentationContent? GetDocumentation(this MethodInfo methodInfo)
+    public static XmlDocumentationMember? GetDocumentation(this MethodInfo methodInfo)
     {
         foreach (var documentation in XmlDocumentationStore.Shared.Documentations) {
             var typeDocu = documentation.GetDocumentation(new(methodInfo));
@@ -141,7 +141,7 @@ public static class XmlDocumentation_Extensions
         return null;
     }
     
-    public static XmlDocumentationContent? GetDocumentation(this ConstructorInfo constructorInfo)
+    public static XmlDocumentationMember? GetDocumentation(this ConstructorInfo constructorInfo)
     {
         foreach (var documentation in XmlDocumentationStore.Shared.Documentations) {
             var typeDocu = documentation.GetDocumentation(new(constructorInfo));
