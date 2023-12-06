@@ -4,16 +4,16 @@ namespace Beyond.NET.CodeGenerator;
 
 public struct XmlDocumentationMember
 {
-    private XmlNode Node { get; }
-    
-    public XmlDocumentationMember(XmlNode xmlNode)
+    private XmlDocumentationNode Node { get; }
+
+    internal XmlDocumentationMember(XmlNode xmlMemberNode)
     {
-        Node = xmlNode;
+        Node = new(xmlMemberNode);
     }
 
     public override string ToString()
     {
-        return Node.InnerXml;
+        return Node.ToString();
     }
 
     public string GetFormattedDocumentationComment(string commentPrefix = "/// ")
@@ -21,16 +21,16 @@ public struct XmlDocumentationMember
         char[] newLines = new char[] { '\r', '\n' };
         char[] newLinesAndBlanks = new char[] { '\r', '\n', ' ' };
         
-        var summaryNode = Node.SelectSingleNode(".//summary");
+        var summaryNode = Node.SummaryNode;
         var summaryText = summaryNode?.InnerXml.Trim(newLinesAndBlanks);
         var summaryLines = summaryText?.Split(newLines, StringSplitOptions.RemoveEmptyEntries);
         
-        var returnsNode = Node.SelectSingleNode(".//returns");
+        var returnsNode = Node.ReturnsNode;
         var returnsText = returnsNode?.InnerXml.Trim(newLinesAndBlanks);
         var returnsLines = returnsText?.Split(newLines, StringSplitOptions.RemoveEmptyEntries);
 
-        var paramNodes = Node.SelectNodes(".//param");
-        var exceptionNodes = Node.SelectNodes(".//exception");
+        var paramNodes = Node.ParamNodes;
+        var exceptionNodes = Node.ExceptionNodes;
 
         List<string> lines = new();
 
