@@ -77,7 +77,16 @@ public struct XmlDocumentationMember
             bool isFirstEx = true;
             
             foreach (XmlNode exceptionNode in exceptionNodes) {
-                var exceptionType = exceptionNode.Attributes?["cref"]?.Value ?? "N/A";
+                string exceptionType;
+
+                var crefValue = exceptionNode.Attributes?["cref"]?.Value;
+
+                if (!string.IsNullOrEmpty(crefValue)) {
+                    exceptionType = new XmlDocumentationMemberIdentifier(crefValue)
+                        .ToStringWithoutIdentifier();
+                } else {
+                    exceptionType = "N/A";
+                }
 
                 foreach (var identifier in XmlDocumentationMemberIdentifier.Identifiers) {
                     var identifierPrefix = $"{identifier}:";

@@ -279,4 +279,26 @@ internal struct XmlDocumentationMemberIdentifier
     {
         return m_key;
     }
+
+    public string ToStringWithoutIdentifier()
+    {
+	    var key = m_key;
+
+	    if (string.IsNullOrEmpty(key)) {
+		    return key;
+	    }
+	    
+	    foreach (var identifier in Identifiers) {
+		    var identifierPrefix = $"{identifier}:";
+                    
+		    if (!key.StartsWith(identifierPrefix) ||
+		        key.Length <= identifierPrefix.Length) {
+			    continue;
+		    }
+
+		    key = key.Substring(identifierPrefix.Length);
+	    }
+
+	    return key;
+    }
 }
