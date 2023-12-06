@@ -4,12 +4,12 @@ using Beyond.NET.Core;
 
 namespace Beyond.NET.CodeGenerator.CLI;
 
-internal class AssemblyResolvedEventArgs: EventArgs
+internal class AssemblyEventArgs: EventArgs
 {
     internal Assembly Assembly { get; }
     internal string AssemblyPath { get; }
 
-    internal AssemblyResolvedEventArgs(
+    internal AssemblyEventArgs(
         Assembly assembly,
         string assemblyPath
     )
@@ -26,7 +26,8 @@ internal class AssemblyLoader: IDisposable
 {
     private readonly List<string> m_searchPaths = new();
 
-    internal event EventHandler<AssemblyResolvedEventArgs>? AssemblyResolved;
+    internal event EventHandler<AssemblyEventArgs>? GetDocumentation; 
+    internal event EventHandler<AssemblyEventArgs>? AssemblyResolved;
 
     internal AssemblyLoader() : this(Array.Empty<string>()) { }
     
@@ -48,7 +49,7 @@ internal class AssemblyLoader: IDisposable
         
         Assembly assembly = Assembly.LoadFrom(assemblyPath);
         
-        XmlDocumentationStore.Shared.ParseDocumentation(assembly);
+        GetDocumentation?.Invoke(this, new(assembly, assemblyPath));
 
         return assembly;
     }
@@ -91,7 +92,7 @@ internal class AssemblyLoader: IDisposable
         try {
             Assembly assembly = Assembly.LoadFrom(assemblyName);
             
-            XmlDocumentationStore.Shared.ParseDocumentation(assembly);
+            GetDocumentation?.Invoke(this, new(assembly, assemblyName));
 
             return assembly;
         } catch {
@@ -104,10 +105,8 @@ internal class AssemblyLoader: IDisposable
                 try {
                     Assembly assembly = Assembly.LoadFrom(potentialAssemblyPath);
                     
-                    AssemblyResolved?.Invoke(this, new(
-                        assembly,
-                        potentialAssemblyPath
-                    ));
+                    AssemblyResolved?.Invoke(this, new(assembly, potentialAssemblyPath));
+                    GetDocumentation?.Invoke(this, new(assembly, potentialAssemblyPath));
 
                     return assembly;
                 } catch {

@@ -30,6 +30,7 @@ internal class CodeGeneratorDriver
                 loader = new(assemblySearchPaths);
                 
                 loader.AssemblyResolved += AssemblyLoader_OnAssemblyResolved;
+                loader.GetDocumentation += AssemblyLoader_OnGetDocumentation;
                 
                 m_assemblyLoader = loader;
             }
@@ -60,6 +61,7 @@ internal class CodeGeneratorDriver
             bool generateTypeCheckedDestroyMethods = Configuration.GenerateTypeCheckedDestroyMethods ?? false;
             bool enableGenericsSupport = Configuration.EnableGenericsSupport ?? false;
             bool doNotGenerateSwiftNestedTypeAliases = Configuration.DoNotGenerateSwiftNestedTypeAliases ?? false;
+            bool doNotGenerateDocumentation = Configuration.DoNotGenerateDocumentation ?? false;
     
             BuildConfiguration? buildConfig = Configuration.Build;
     
@@ -153,7 +155,9 @@ internal class CodeGeneratorDriver
             #endregion Configuration
 
             #region Add System Documentation
-            XmlDocumentationStore.Shared.ParseSystemDocumentation();
+            if (!doNotGenerateDocumentation) {
+                XmlDocumentationStore.Shared.ParseSystemDocumentation();
+            }
             #endregion Add System Documentation
     
             #region Load Assembly
@@ -640,11 +644,25 @@ internal class CodeGeneratorDriver
     
     private void AssemblyLoader_OnAssemblyResolved(
         object? sender,
-        AssemblyResolvedEventArgs e
+        AssemblyEventArgs e
     )
     {
         m_resolvedAssemblyPaths[e.Assembly] = e.AssemblyPath;
         
         Logger.LogDebug($"Assembly \"{e.Assembly.GetName().FullName}\" resolved at path \"{e.AssemblyPath}\"");
+    }
+    
+    private void AssemblyLoader_OnGetDocumentation(
+        object? sender,
+        AssemblyEventArgs e
+    )
+    {
+        bool doNotGenerateDocumentation = Configuration.DoNotGenerateDocumentation ?? false;
+        
+        if (doNotGenerateDocumentation) {
+            return;
+        }
+        
+        XmlDocumentationStore.Shared.ParseDocumentation(e.Assembly);
     }
 }

@@ -13,6 +13,7 @@ public record Configuration(
     bool? GenerateTypeCheckedDestroyMethods,
     bool? EnableGenericsSupport,
     bool? DoNotGenerateSwiftNestedTypeAliases,
+    bool? DoNotGenerateDocumentation,
     bool? DoNotDeleteTemporaryDirectories,
     
     string[]? IncludedTypeNames,
