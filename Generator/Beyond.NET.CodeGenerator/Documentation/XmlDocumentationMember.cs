@@ -22,9 +22,9 @@ public struct XmlDocumentationMember
         char[] newLines = new char[] { '\r', '\n' };
         char[] newLinesAndBlanks = new char[] { '\r', '\n', ' ' };
         
-        var returnsNode = Node.ReturnsNode;
-        var returnsText = returnsNode?.InnerXml.Trim(newLinesAndBlanks);
-        var returnsLines = returnsText?.Split(newLines, StringSplitOptions.RemoveEmptyEntries);
+        // var returnsNode = Node.ReturnsNode;
+        // var returnsText = returnsNode?.InnerXml.Trim(newLinesAndBlanks);
+        // var returnsLines = returnsText?.Split(newLines, StringSplitOptions.RemoveEmptyEntries);
 
         var paramNodes = Node.ParamNodes;
         var exceptionNodes = Node.ExceptionNodes;
@@ -121,17 +121,11 @@ public struct XmlDocumentationMember
             }
         }
         
-        if (returnsLines is not null &&
-            returnsLines.Length > 0) {
-            var returnsLinesJoined = string.Join("; ", returnsLines);
+        var returns = Node.ReturnsAsPlainText;
+        var returnsAsSingleLine = string.Join(' ', returns.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries));
 
-            if (!string.IsNullOrEmpty(returnsLinesJoined)) {
-                if (lines.Count > 0) {
-                    lines.Add(commentPrefix);
-                }
-                    
-                lines.Add($"{commentPrefix}- Returns: {returnsLinesJoined}");
-            }
+        if (!string.IsNullOrEmpty(returnsAsSingleLine)) {
+            lines.Add($"{commentPrefix}- Returns: {returnsAsSingleLine}");
         }
 
         if (lines.Count <= 0) {

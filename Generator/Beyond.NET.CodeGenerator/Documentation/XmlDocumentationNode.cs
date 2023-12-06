@@ -6,8 +6,8 @@ namespace Beyond.NET.CodeGenerator;
 internal struct XmlDocumentationNode
 {
     private XmlNode MemberNode { get; }
-    
-    internal XmlNode? SummaryNode => MemberNode.SelectSingleNode(".//summary");
+
+    private XmlNode? SummaryNode => MemberNode.SelectSingleNode(".//summary");
     internal XmlNode? ReturnsNode => MemberNode.SelectSingleNode(".//returns");
     internal XmlNodeList? ParamNodes => MemberNode.SelectNodes(".//param");
     internal XmlNodeList? ExceptionNodes => MemberNode.SelectNodes(".//exception");
@@ -25,6 +25,43 @@ internal struct XmlDocumentationNode
         return MemberNode.InnerXml;
     }
 
+    #region Public Accessors
+    public string SummaryAsPlainText
+    {
+        get {
+            var node = SummaryNode;
+
+            if (node is null) {
+                return string.Empty;
+            }
+            
+            var str = ConvertNodeToPlainText(node)
+                .Replace("\r\n", Environment.NewLine)
+                .Trim(NEW_LINES);
+
+            return str;
+        }
+    }
+
+    public string ReturnsAsPlainText
+    {
+        get {
+            var node = ReturnsNode;
+
+            if (node is null) {
+                return string.Empty;
+            }
+            
+            var str = ConvertNodeToPlainText(node)
+                .Replace("\r\n", Environment.NewLine)
+                .Trim(NEW_LINES);
+
+            return str;
+        }
+    }
+    #endregion Public Accessors
+
+    #region Node -> Plain Text
     private static string ConvertNodeToPlainText(XmlNode node)
     {
         var childs = node.ChildNodes;
@@ -40,14 +77,35 @@ internal struct XmlDocumentationNode
                 sb.Append(ConvertParaNodeToPlainText(child));
             } else if (child.Name == TAG_PARAMREF) {
                 sb.Append(ConvertParamRefNodeToPlainText(child));
+            } else if (child.Name == TAG_TYPEPARAMREF) {
+                sb.Append(ConvertTypeParamRefNodeToPlainText(child));
             } else if (child.Name == TAG_C) {
                 sb.Append(ConvertCNodeToPlainText(child));
             } else if (child.Name == TAG_CODE) {
                 sb.Append(ConvertCodeNodeToPlainText(child));
             } else if (child.Name == TAG_XREF) {
                 sb.Append(ConvertXrefNodeToPlainText(child));
+            } else if (child.Name == TAG_LIST) {
+                sb.Append(ConvertListNodeToPlainText(child));
+            } else if (child.Name == TAG_LISTHEADER) {
+                sb.Append(ConvertListHeaderNodeToPlainText(child));
+            } else if (child.Name == TAG_ITEM) {
+                sb.Append(ConvertItemNodeToPlainText(child));
+            } else if (child.Name == TAG_TERM) {
+                sb.Append(ConvertTermNodeToPlainText(child));
+            } else if (child.Name == TAG_DESCRIPTION) {
+                sb.Append(ConvertDescriptionNodeToPlainText(child));
+            } else if (child.Name == TAG_TABLE) {
+                sb.Append(ConvertTableNodeToPlainText(child));
+            } else if (child.Name == TAG_BR) {
+                sb.Append(ConvertBrNodeToPlainText(child));
+            } else if (child.Name == TAG_P) {
+                sb.Append(ConvertPNodeToPlainText(child));
             } else {
-                throw new NotImplementedException();
+                // throw new NotImplementedException();
+                
+                Console.WriteLine($"Unknown node type: {child.Name}");
+                sb.Append(ConvertNodeToPlainText(child));
             }
         }
 
@@ -66,13 +124,21 @@ internal struct XmlDocumentationNode
     private const string TAG_SEE = "see";
     private static string ConvertSeeNodeToPlainText(XmlNode node)
     {
-        var attr = node.Attributes?["cref"];
+        var crefAttr = node.Attributes?["cref"];
+        var langwordAttr = node.Attributes?["langword"];
+        var hrefAttr = node.Attributes?["href"];
 
-        if (attr is null) {
-            return string.Empty;
+        string? value;
+        
+        if (crefAttr is not null) {
+            value = crefAttr.Value;
+        } else if (langwordAttr is not null) {
+            value = langwordAttr.Value;
+        } else if (hrefAttr is not null) {
+            value = hrefAttr.Value;
+        } else {
+            value = null;
         }
-
-        var value = attr.Value;
 
         if (string.IsNullOrEmpty(value)) {
             return string.Empty;
@@ -86,6 +152,24 @@ internal struct XmlDocumentationNode
     
     private const string TAG_PARAMREF = "paramref";
     private static string ConvertParamRefNodeToPlainText(XmlNode node)
+    {
+        var attr = node.Attributes?["name"];
+
+        if (attr is null) {
+            return string.Empty;
+        }
+
+        var value = attr.Value;
+
+        if (string.IsNullOrEmpty(value)) {
+            return string.Empty;
+        }
+
+        return value;
+    }
+    
+    private const string TAG_TYPEPARAMREF = "typeparamref";
+    private static string ConvertTypeParamRefNodeToPlainText(XmlNode node)
     {
         var attr = node.Attributes?["name"];
 
@@ -138,19 +222,52 @@ internal struct XmlDocumentationNode
         return value;
     }
 
-    public string SummaryAsPlainText
+    private const string TAG_LIST = "list";
+    private static string ConvertListNodeToPlainText(XmlNode node)
     {
-        get {
-            var node = SummaryNode;
-
-            if (node is null) {
-                return string.Empty;
-            }
-            
-            var str = ConvertNodeToPlainText(node)
-                .Trim(NEW_LINES);
-
-            return str;
-        }
+        return ConvertNodeToPlainText(node);
     }
+    
+    private const string TAG_LISTHEADER = "listheader";
+    private static string ConvertListHeaderNodeToPlainText(XmlNode node)
+    {
+        return ConvertNodeToPlainText(node);
+    }
+    
+    private const string TAG_ITEM = "item";
+    private static string ConvertItemNodeToPlainText(XmlNode node)
+    {
+        return ConvertNodeToPlainText(node);
+    }
+    
+    private const string TAG_TERM = "term";
+    private static string ConvertTermNodeToPlainText(XmlNode node)
+    {
+        return ConvertNodeToPlainText(node);
+    }
+    
+    private const string TAG_DESCRIPTION = "description";
+    private static string ConvertDescriptionNodeToPlainText(XmlNode node)
+    {
+        return ConvertNodeToPlainText(node);
+    }
+    
+    private const string TAG_TABLE = "table";
+    private static string ConvertTableNodeToPlainText(XmlNode node)
+    {
+        return ConvertNodeToPlainText(node);
+    }
+    
+    private const string TAG_BR = "br";
+    private static string ConvertBrNodeToPlainText(XmlNode node)
+    {
+        return Environment.NewLine;
+    }
+    
+    private const string TAG_P = "p";
+    private static string ConvertPNodeToPlainText(XmlNode node)
+    {
+        return node.InnerText;
+    }
+    #endregion Node -> Plain Text
 }
