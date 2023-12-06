@@ -1,4 +1,5 @@
 using System.Xml;
+using Beyond.NET.Core;
 
 namespace Beyond.NET.CodeGenerator;
 
@@ -21,10 +22,6 @@ public struct XmlDocumentationMember
         char[] newLines = new char[] { '\r', '\n' };
         char[] newLinesAndBlanks = new char[] { '\r', '\n', ' ' };
         
-        var summaryNode = Node.SummaryNode;
-        var summaryText = summaryNode?.InnerXml.Trim(newLinesAndBlanks);
-        var summaryLines = summaryText?.Split(newLines, StringSplitOptions.RemoveEmptyEntries);
-        
         var returnsNode = Node.ReturnsNode;
         var returnsText = returnsNode?.InnerXml.Trim(newLinesAndBlanks);
         var returnsLines = returnsText?.Split(newLines, StringSplitOptions.RemoveEmptyEntries);
@@ -34,17 +31,12 @@ public struct XmlDocumentationMember
 
         List<string> lines = new();
 
-        if (summaryLines is not null &&
-            summaryLines.Length > 0) {
-            foreach (var summaryLine in summaryLines) {
-                var trimmedSummaryLine = summaryLine.Trim();
+        var summary = Node.SummaryAsPlainText
+            .PrefixAllLines(commentPrefix);
+        var summaryLines = summary.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
 
-                if (string.IsNullOrEmpty(trimmedSummaryLine)) {
-                    continue;
-                }
-                
-                lines.Add($"{commentPrefix}{trimmedSummaryLine}");
-            }
+        foreach (var summaryLine in summaryLines) {
+            lines.Add(summaryLine);
         }
 
         if (paramNodes is not null &&

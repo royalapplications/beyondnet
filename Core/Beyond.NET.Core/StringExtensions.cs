@@ -80,4 +80,27 @@ public static class StringExtensions
 
         return indentedText;
     }
+    
+    public static string PrefixAllLines(this string text, string prefixText)
+    {
+        if (string.IsNullOrEmpty(prefixText) ||
+            string.IsNullOrEmpty(text)) {
+            return text;
+        }
+        
+        string newLine = Environment.NewLine;
+        
+        var lines = text.Split(newLine);
+        List<string> prefixedLines = new();
+
+        foreach (var line in lines) {
+            string prefixedLine = prefixText + line;
+            
+            prefixedLines.Add(prefixedLine);
+        }
+
+        string prefixedText = string.Join(newLine, prefixedLines);
+
+        return prefixedText;
+    }
 }
