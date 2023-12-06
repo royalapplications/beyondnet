@@ -15,10 +15,6 @@ public class XmlDocumentationStore
     private readonly HashSet<Assembly> m_assemblies = new();
     private readonly Dictionary<XmlDocumentationMemberIdentifier, XmlDocumentationMember> m_members = new();
 
-    // TODO: How to get this dynamically and in a platform-specific way?!
-    private string SystemReferenceAssembliesDirectoryPath
-        => "/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.0/ref/net8.0";
-
     #region Parse Entry Points
     public void ParseDocumentation(Assembly assembly)
     {
@@ -53,9 +49,9 @@ public class XmlDocumentationStore
         ParseDocumentation(xmlDocumentationFilePath);
     }
     
-    public void ParseSystemDocumentation()
+    public void ParseSystemDocumentation(string systemXmlDocumentationDirectoryPath)
     {
-        var xmlDocumentationFilePaths = GetSystemXmlDocumentationFilePaths();
+        var xmlDocumentationFilePaths = GetSystemXmlDocumentationFilePaths(systemXmlDocumentationDirectoryPath);
 
         ParseDocumentation(xmlDocumentationFilePaths);
     }
@@ -158,16 +154,15 @@ public class XmlDocumentationStore
         return xmlFilePath;
     }
 
-    private IEnumerable<string> GetSystemXmlDocumentationFilePaths()
+    private IEnumerable<string> GetSystemXmlDocumentationFilePaths(string systemXmlDocumentationDirectoryPath)
     {
-        var refPath = SystemReferenceAssembliesDirectoryPath;
-
-        if (!Directory.Exists(refPath)) {
+        if (string.IsNullOrEmpty(systemXmlDocumentationDirectoryPath) ||
+            !Directory.Exists(systemXmlDocumentationDirectoryPath)) {
             return Array.Empty<string>();
         }
 
         var xmlFilePaths = Directory.GetFiles(
-            refPath,
+            systemXmlDocumentationDirectoryPath,
             "*.xml",
             SearchOption.AllDirectories
         );

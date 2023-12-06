@@ -154,9 +154,50 @@ internal class CodeGeneratorDriver
             }
             #endregion Configuration
 
+            #region Gather System Information
+            var dotNetVersion = Builder.DotNET.Version.GetMajorAndMinorVersion();
+            var dotNetTargetFramework = $"net{dotNetVersion}";
+            #endregion Gather System Information
+
             #region Add System Documentation
             if (!doNotGenerateDocumentation) {
-                XmlDocumentationStore.Shared.ParseSystemDocumentation();
+                // TODO: This way of finding where the .NET reference assemblies are stored is not very "sophisticated" 
+                
+                var dotNetRuntimeVersion = Environment.Version;
+                
+                var runtimes = Builder.DotNET.Runtime.GetRuntimes();
+                
+                var appRuntimePath = runtimes.FirstOrDefault(
+                    r => 
+                        r.Name == Builder.DotNET.Runtime.RUNTIME_NAME_MICROSOFT_NETCORE_APP &&
+                        r.Version == dotNetRuntimeVersion.ToString()
+                )?.Path;
+
+                string systemReferenceAssembliesDirectoryPath = string.Empty;
+
+                if (!string.IsNullOrEmpty(appRuntimePath)) {
+                    systemReferenceAssembliesDirectoryPath = appRuntimePath.Replace(
+                        $"shared/{Builder.DotNET.Runtime.RUNTIME_NAME_MICROSOFT_NETCORE_APP}",
+                        $"packs/{Builder.DotNET.Runtime.RUNTIME_NAME_MICROSOFT_NETCORE_APP}.Ref/{dotNetRuntimeVersion}/ref/{dotNetTargetFramework}"
+                    );
+                }
+
+                if (string.IsNullOrEmpty(systemReferenceAssembliesDirectoryPath) ||
+                    !Directory.Exists(systemReferenceAssembliesDirectoryPath)) {
+                    // Fall back to hard coded path
+                    systemReferenceAssembliesDirectoryPath = $"/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/{dotNetRuntimeVersion}/ref/{dotNetTargetFramework}";
+
+                    if (!Directory.Exists(systemReferenceAssembliesDirectoryPath)) {
+                        // Fall back to "even more" hard coded path
+                        systemReferenceAssembliesDirectoryPath = $"/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.0/ref/net8.0";
+                    }
+                    
+                    Logger.LogWarning($"Failed to gather path to system reference assemblies - falling back to hard coded path \"{systemReferenceAssembliesDirectoryPath}\"");
+                } else {
+                    Logger.LogInformation($"Found path to system reference assemblies at \"{systemReferenceAssembliesDirectoryPath}\"");
+                }
+                
+                XmlDocumentationStore.Shared.ParseSystemDocumentation(systemReferenceAssembliesDirectoryPath);
             }
             #endregion Add System Documentation
     
@@ -351,9 +392,6 @@ internal class CodeGeneratorDriver
                 tempDirPaths.Add(swiftBuildResult.OutputRootPath);
             
                 Logger.LogInformation($"Swift bindings built at \"{swiftBuildResult.OutputRootPath}\"");
-
-                string dnVersion = Builder.DotNET.Version.GetMajorAndMinorVersion();
-                string targetFramework = $"net{dnVersion}";
             
                 Logger.LogInformation("Building .NET Native stuff");
 
@@ -363,7 +401,7 @@ internal class CodeGeneratorDriver
 
                 var dnNativeBuilder = new DotNETNativeBuilder(
                     builderBuildTargets,
-                    targetFramework,
+                    dotNetTargetFramework,
                     buildProductName,
                     buildProductBundleIdentifier,
                     assemblyPath,
