@@ -2,54 +2,66 @@ using System.Reflection;
 
 namespace Beyond.NET.CodeGenerator;
 
-internal class XmlDocumentationStore
+public class XmlDocumentationStore
 {
     private static readonly XmlDocumentationStore m_shared = new();
-    internal static XmlDocumentationStore Shared { get; } = m_shared;
+    public static XmlDocumentationStore Shared { get; } = m_shared;
 
-    private Dictionary<Assembly, XmlDocumentation?> AssemblyDocumentations { get; } = new();
+    private readonly HashSet<Assembly> m_assemblies = new();
+    private readonly HashSet<XmlDocumentation> m_documentations = new();
 
-    internal XmlDocumentation? GetDocumentation(Assembly assembly)
+    internal HashSet<XmlDocumentation> Documentations => m_documentations;
+
+    public void ParseDocumentation(Assembly assembly)
     {
-        if (AssemblyDocumentations.TryGetValue(assembly, out XmlDocumentation? existingDocumentation)) {
-            return existingDocumentation;
+        if (!m_assemblies.Add(assembly)) {
+            return;
         }
         
         var assemblyFilePath = assembly.Location;
 
-        XmlDocumentation? newDocumentation = null;
-        
-        if (File.Exists(assemblyFilePath)) {
-            var xmlDocumentationFilePaths = GetXmlDocumentationFilePaths(
-                assembly,
-                assemblyFilePath
-            );
-
-            foreach (var xmlDocumentationFilePath in xmlDocumentationFilePaths) {
-                if (!File.Exists(xmlDocumentationFilePath)) {
-                    continue;
-                }
-                
-                newDocumentation ??= new XmlDocumentation();
-                newDocumentation.PopulateMembersFromXmlDocumentationPath(xmlDocumentationFilePath);
-            }
+        if (!File.Exists(assemblyFilePath)) {
+            return;
         }
 
-        AssemblyDocumentations[assembly] = newDocumentation;
+        var xmlDocumentationFilePath = GetXmlDocumentationFilePath(assemblyFilePath);
 
-        return newDocumentation;
+        if (string.IsNullOrEmpty(xmlDocumentationFilePath)) {
+            return;
+        }
+
+        var documentation = new XmlDocumentation();
+        documentation.PopulateMembersFromXmlDocumentationPath(xmlDocumentationFilePath);
+
+        m_documentations.Add(documentation);
     }
     
-    private static IEnumerable<string> GetXmlDocumentationFilePaths(
-        Assembly assembly,
-        string assemblyFilePath
-    )
+    public void ParseDocumentation(string xmlDocumentationFilePath)
+    {
+        if (string.IsNullOrEmpty(xmlDocumentationFilePath)) {
+            return;
+        }
+
+        var documentation = new XmlDocumentation();
+        documentation.PopulateMembersFromXmlDocumentationPath(xmlDocumentationFilePath);
+
+        m_documentations.Add(documentation);
+    }
+    
+    public void ParseDocumentation(IEnumerable<string> xmlDocumentationFilePaths)
+    {
+        foreach (var xmlDocumentationFilePath in xmlDocumentationFilePaths) {
+            ParseDocumentation(xmlDocumentationFilePath);
+        }
+    }
+    
+    private static string? GetXmlDocumentationFilePath(string assemblyFilePath)
     {
         var assemblyName = Path.GetFileNameWithoutExtension(assemblyFilePath);
         var assemblyDir = Path.GetDirectoryName(assemblyFilePath);
 
         if (string.IsNullOrEmpty(assemblyDir)) {
-            return Array.Empty<string>();
+            return null;
         }
         
         var xmlFileName = assemblyName + ".xml"; 
@@ -59,33 +71,14 @@ internal class XmlDocumentationStore
             xmlFileName
         );
 
-        if (File.Exists(xmlFilePath)) {
-            // Console.WriteLine($"TODO: XML Documentation found for Assembly named {assembly.GetName().Name} at {xmlFilePath}");
-            
-            string[] xmlFilePaths = new [] { xmlFilePath };
-
-            return xmlFilePaths;   
-        } else {
-            // Console.WriteLine($"TODO: No XML Documentation file found for Assembly named {assembly.GetName().Name}");
-            
-            bool isSystemPrivateCoreLib = assembly.GetName().Name == "System.Private.CoreLib" &&
-                                          assembly.ExportedTypes.Contains(typeof(object));
-
-            if (isSystemPrivateCoreLib) {
-                return GetSystemXmlDocumentationFilePaths(
-                    assembly,
-                    assemblyFilePath
-                );
-            } else {
-                return Array.Empty<string>();
-            }
+        if (!File.Exists(xmlFilePath)) {
+            return null;
         }
+
+        return xmlFilePath;
     }
 
-    private static IEnumerable<string> GetSystemXmlDocumentationFilePaths(
-        Assembly systemPrivateCoreLibAssembly,
-        string assemblyFilePath
-    )
+    internal static IEnumerable<string> GetSystemXmlDocumentationFilePaths()
     {
         // var name = systemPrivateCoreLibAssembly.GetName();
         // var version = name.Version;

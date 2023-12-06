@@ -47,6 +47,8 @@ internal class AssemblyLoader: IDisposable
         }
         
         Assembly assembly = Assembly.LoadFrom(assemblyPath);
+        
+        XmlDocumentationStore.Shared.ParseDocumentation(assembly);
 
         return assembly;
     }
@@ -88,6 +90,8 @@ internal class AssemblyLoader: IDisposable
         
         try {
             Assembly assembly = Assembly.LoadFrom(assemblyName);
+            
+            XmlDocumentationStore.Shared.ParseDocumentation(assembly);
 
             return assembly;
         } catch {

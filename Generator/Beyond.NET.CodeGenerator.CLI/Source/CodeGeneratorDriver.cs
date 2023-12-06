@@ -151,6 +151,10 @@ internal class CodeGeneratorDriver
                 disableStripDotNETSymbols = buildConfig.DisableStripDotNETSymbols;
             }
             #endregion Configuration
+
+            #region Add System Documentation
+            // TODO
+            #endregion Add System Documentation
     
             #region Load Assembly
             Logger.LogInformation($"Loading assembly from \"{assemblyPath}\"");
