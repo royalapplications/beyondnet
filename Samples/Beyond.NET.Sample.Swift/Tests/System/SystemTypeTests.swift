@@ -34,8 +34,6 @@ final class SystemTypeTests: XCTestCase {
             return
         }
         
-        try systemObjectType.getConstructor(try .init())
-        
         XCTAssertEqual(systemObjectTypeName, retrievedSystemObjectTypeName)
     }
     

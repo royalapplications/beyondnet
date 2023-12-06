@@ -19,11 +19,6 @@ public struct XmlDocumentationMember
 
     public string GetFormattedDocumentationComment(string commentPrefix = "/// ")
     {
-        char[] newLines = new char[] { '\r', '\n' };
-        char[] newLinesAndBlanks = new char[] { '\r', '\n', ' ' };
-        
-        var exceptionNodes = Node.ExceptionNodes;
-
         List<string> lines = new();
 
         var summary = Node.SummaryAsPlainText
@@ -40,53 +35,10 @@ public struct XmlDocumentationMember
             lines.Add($"{commentPrefix}- Parameter {paramString}");
         }
         
-        if (exceptionNodes is not null &&
-            exceptionNodes.Count > 0) {
-            bool isFirstEx = true;
-            
-            foreach (XmlNode exceptionNode in exceptionNodes) {
-                string exceptionType;
+        var exceptionStrings = Node.ExceptionsAsPlainText;
 
-                var crefValue = exceptionNode.Attributes?["cref"]?.Value;
-
-                if (!string.IsNullOrEmpty(crefValue)) {
-                    exceptionType = new XmlDocumentationMemberIdentifier(crefValue)
-                        .ToStringWithoutIdentifier();
-                } else {
-                    exceptionType = "N/A";
-                }
-
-                foreach (var identifier in XmlDocumentationMemberIdentifier.Identifiers) {
-                    var identifierPrefix = $"{identifier}:";
-                    
-                    if (!exceptionType.StartsWith(identifierPrefix) ||
-                        exceptionType.Length <= identifierPrefix.Length) {
-                        continue;
-                    }
-
-                    exceptionType = exceptionType.Substring(identifierPrefix.Length);
-                }
-
-                var exceptionNodeText = exceptionNode.InnerXml.Trim(newLinesAndBlanks);
-                var exceptionNodeLines = exceptionNodeText.Split(newLines, StringSplitOptions.RemoveEmptyEntries);
-
-                if (exceptionNodeLines.Length <= 0) {
-                    continue;
-                }
-
-                var exceptionNodeLinesJoined = string.Join("; ", exceptionNodeLines);
-
-                if (!string.IsNullOrEmpty(exceptionNodeLinesJoined)) {
-                    if (isFirstEx &&
-                        lines.Count > 0) {
-                        lines.Add(commentPrefix);
-                    }
-                    
-                    lines.Add($"{commentPrefix}- Throws: {exceptionType} - {exceptionNodeLinesJoined}");
-
-                    isFirstEx = false;
-                }
-            }
+        foreach (var exceptionString in exceptionStrings) {
+            lines.Add($"{commentPrefix}- Throws: {exceptionString}");
         }
         
         var returns = Node.ReturnsAsPlainText;

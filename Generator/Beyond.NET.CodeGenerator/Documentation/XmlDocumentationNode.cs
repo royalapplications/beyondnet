@@ -8,12 +8,11 @@ internal struct XmlDocumentationNode
     private XmlNode MemberNode { get; }
 
     private XmlNode? SummaryNode => MemberNode.SelectSingleNode(".//summary");
-    internal XmlNode? ReturnsNode => MemberNode.SelectSingleNode(".//returns");
-    internal XmlNodeList? ParamNodes => MemberNode.SelectNodes(".//param");
-    internal XmlNodeList? ExceptionNodes => MemberNode.SelectNodes(".//exception");
+    private XmlNode? ReturnsNode => MemberNode.SelectSingleNode(".//returns");
+    private XmlNodeList? ParamNodes => MemberNode.SelectNodes(".//param");
+    private XmlNodeList? ExceptionNodes => MemberNode.SelectNodes(".//exception");
     
     private static readonly char[] NEW_LINES = new char[] { '\r', '\n' };
-    private static readonly char[] NEW_LINES_AND_BLANKS = new char[] { '\r', '\n', ' ' };
     
     internal XmlDocumentationNode(XmlNode xmlMemberNode)
     {
@@ -96,6 +95,50 @@ internal struct XmlDocumentationNode
             }
 
             return paramStrings.ToArray();
+        }
+    }
+    
+    public string[] ExceptionsAsPlainText
+    {
+        get {
+            var nodes = ExceptionNodes;
+
+            if (nodes is null ||
+                nodes.Count <= 0) {
+                return Array.Empty<string>();
+            }
+
+            List<string> exceptionStrings = new();
+
+            foreach (XmlNode node in nodes) {
+                string exceptionType;
+
+                var crefValue = node.Attributes?["cref"]?.Value;
+
+                if (!string.IsNullOrEmpty(crefValue)) {
+                    exceptionType = new XmlDocumentationMemberIdentifier(crefValue)
+                        .ToStringWithoutIdentifier();
+                } else {
+                    exceptionType = "N/A";
+                }
+                
+                var str = ConvertNodeToPlainText(node)
+                    .Replace("\r\n", Environment.NewLine)
+                    .Trim(NEW_LINES);
+
+                if (string.IsNullOrEmpty(str)) {
+                    continue;
+                }
+                
+                var strSplit = str.Split(NEW_LINES, StringSplitOptions.RemoveEmptyEntries);
+                var strJoined = string.Join(' ', strSplit);
+
+                var paramStr = $"{exceptionType}: {strJoined}";
+                
+                exceptionStrings.Add(paramStr);
+            }
+
+            return exceptionStrings.ToArray();
         }
     }
     #endregion Public Accessors
