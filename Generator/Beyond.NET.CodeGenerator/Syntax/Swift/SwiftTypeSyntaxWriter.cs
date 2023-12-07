@@ -594,7 +594,8 @@ self.init(handle: emptyArrayC)
 
         string? codeForOptional;
         
-        if (!extendedType.IsEnum) {
+        if (!extendedType.IsEnum &&
+            !extendedType.IsStruct()) {
             codeForOptional = GetTypeExtensionsCode(
                 extendedType,
                 true,
