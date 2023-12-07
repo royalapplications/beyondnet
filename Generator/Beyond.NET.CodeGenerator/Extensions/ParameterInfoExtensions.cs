@@ -47,6 +47,9 @@ public static class ParameterInfoExtensions
 
         return isUnknown && isOtherNullable ||
                isNullable && isOtherUnknown ||
-               (isNotNull && isOtherNullable);
+               (
+                   isNotNull && isOtherNullable ||
+                   isNullable && isOtherNotNull
+                );
     }
 }

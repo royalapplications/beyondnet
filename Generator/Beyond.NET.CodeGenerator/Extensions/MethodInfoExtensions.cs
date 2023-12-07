@@ -1,5 +1,4 @@
 using System.Reflection;
-using System.Reflection.Metadata;
 
 namespace Beyond.NET.CodeGenerator.Extensions;
 
