@@ -341,6 +341,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
 
         // bool isInterface = type.IsInterface;
         bool isPrimitive = type.IsPrimitive;
+        bool isArray = type.IsArray;
         
         StringBuilder sb = new();
 
@@ -442,6 +443,69 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
                 
                 sb.AppendLine(fullTypeNameDecl);
                 sb.AppendLine();
+                
+                if (isArray) {
+                    var elementType = type.GetElementType();
+
+                    if (elementType is not null) {
+                        string swiftElementTypeName;
+        
+                        if (elementType.IsPrimitive) {
+                            swiftElementTypeName = elementType.CTypeName();            
+                        } else {
+                            TypeDescriptor typeDescriptor = elementType.GetTypeDescriptor(typeDescriptorRegistry);
+                            swiftElementTypeName = typeDescriptor.GetTypeName(CodeLanguage.Swift, false);
+                        }
+                        
+                        string elementTypeDecl = Builder.GetOnlyProperty("elementType", "System_Type")
+                            .Public()
+                            .Class()
+                            .Implementation($"{swiftElementTypeName}.typeOf")
+                            .ToIndentedString(1);
+                        
+                        sb.AppendLine("/// The element type of the System.Array".IndentAllLines(1));
+                        sb.AppendLine(elementTypeDecl);
+                        sb.AppendLine();
+
+                        string createEmptyFuncImpl = $$"""
+do {
+    return try createEmpty(elementType: elementType).castTo()
+} catch {
+    fatalError("An exception was thrown while casting System.Array to {{type.GetFullNameOrName()}}: \(error.localizedDescription)")
+}
+""";
+
+                        string createEmptyFuncDecl = Builder.Func("createEmpty")
+                            .Public()
+                            .Class()
+                            .ReturnTypeName(swiftTypeName)
+                            .Implementation(createEmptyFuncImpl)
+                            .ToIndentedString(1);
+                        
+                        sb.AppendLine($"/// Creates an empty {type.GetFullNameOrName()}".IndentAllLines(1));
+                        sb.AppendLine(createEmptyFuncDecl);
+                        sb.AppendLine();
+                        
+                        string arrayInitializerImpl = $$"""
+let elementType = {{swiftTypeName}}.elementType
+let elementTypeC = elementType.__handle
+
+let emptyArrayC = DNCreateEmptyArray(elementTypeC)
+
+self.init(handle: emptyArrayC)          
+""";
+                        
+                        string arrayInitializer = Builder.Initializer()
+                            .Public()
+                            .Convenience()
+                            .Implementation(arrayInitializerImpl)
+                            .ToIndentedString(1);
+
+                        sb.AppendLine($"/// Creates an empty {type.GetFullNameOrName()}".IndentAllLines(1));
+                        sb.AppendLine(arrayInitializer);
+                        sb.AppendLine();
+                    }
+                }
             }
         }
 

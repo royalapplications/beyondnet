@@ -196,6 +196,9 @@ DNObjectFromUInt64(uint64_t number);
 
 void*
 DNGetPinnedPointerToByteArray(_Nonnull System_Byte_Array_t byteArray, _Nullable System_Runtime_InteropServices_GCHandle_t* outGCHandle, _Nullable System_Exception_t* outException);
+
+_Nonnull System_Array_t
+DNCreateEmptyArray(_Nonnull System_Type_t elementType);
 """;
     }
 

@@ -1138,5 +1138,14 @@ extension System_Array: MutableCollection {
         i - 1
     }
 }
+
+public extension System_Array {
+    static func createEmpty(elementType: System_Type) -> System_Array {
+        let emptyArrayC = DNCreateEmptyArray(elementType.__handle)
+        let emptyArray = System_Array(handle: emptyArrayC)
+        
+        return emptyArray        
+    }
+}
 """;
 }

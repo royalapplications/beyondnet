@@ -717,6 +717,17 @@ internal static unsafe class InteropUtils
         }
     }
     #endregion Byte Conversions
+    
+    #region Empty Arrays
+    [UnmanagedCallersOnly(EntryPoint = "DNCreateEmptyArray")]
+    internal static void* /* System.Array */ DNCreateEmptyArray(void* /* System.Type */ elementType)
+    {
+        System.Type elementTypeConverted = InteropUtils.GetInstance<System.Type>(elementType);
+        System.Array emptyArray = System.Array.CreateInstance(elementTypeConverted, 0);
+        
+        return emptyArray.AllocateGCHandleAndGetAddress();
+    }
+    #endregion Empty Arrays
 }
 
 #region DNReadOnlySpanOfByte

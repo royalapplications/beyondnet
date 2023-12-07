@@ -52,6 +52,72 @@ final class SystemArrayTests: XCTestCase {
 		XCTAssertTrue(equals)
 	}
     
+    func testEmptyArrayWithExtensionExplicitElementType() throws {
+        let systemStringType = System_String.typeOf
+        
+        let emptyArrayOfStrings = System_Array.createEmpty(elementType: systemStringType)
+        
+        let length = try emptyArrayOfStrings.length
+        XCTAssertEqual(0, .init(length))
+
+        let arrayType = try emptyArrayOfStrings.getType()
+
+        let isArray = try arrayType.isArray
+        XCTAssertTrue(isArray)
+
+        let arrayElementType = try arrayType.getElementType()
+
+        let arrayElementTypeIsSystemString = arrayElementType == systemStringType
+        XCTAssertTrue(arrayElementTypeIsSystemString)
+        
+        let systemStringArray = try emptyArrayOfStrings.castTo(System_String_Array.self)
+        XCTAssertEqual(systemStringArray, emptyArrayOfStrings)
+    }
+    
+    func testEmptyArrayWithExtensionOnExplicitArrayType() throws {
+        let systemStringType = System_String.typeOf
+        
+        let emptyArrayOfStrings = System_String_Array.createEmpty()
+        
+        let length = try emptyArrayOfStrings.length
+        XCTAssertEqual(0, .init(length))
+
+        let arrayType = try emptyArrayOfStrings.getType()
+
+        let isArray = try arrayType.isArray
+        XCTAssertTrue(isArray)
+
+        let arrayElementType = try arrayType.getElementType()
+
+        let arrayElementTypeIsSystemString = arrayElementType == systemStringType
+        XCTAssertTrue(arrayElementTypeIsSystemString)
+        
+        let systemStringArray = try emptyArrayOfStrings.castTo(System_String_Array.self)
+        XCTAssertEqual(systemStringArray, emptyArrayOfStrings)
+    }
+    
+    func testEmptyArrayWithInitializerOnExplicitArrayType() throws {
+        let systemStringType = System_String.typeOf
+        
+        let emptyArrayOfStrings = System_String_Array()
+        
+        let length = try emptyArrayOfStrings.length
+        XCTAssertEqual(0, .init(length))
+
+        let arrayType = try emptyArrayOfStrings.getType()
+
+        let isArray = try arrayType.isArray
+        XCTAssertTrue(isArray)
+
+        let arrayElementType = try arrayType.getElementType()
+
+        let arrayElementTypeIsSystemString = arrayElementType == systemStringType
+        XCTAssertTrue(arrayElementTypeIsSystemString)
+        
+        let systemStringArray = try emptyArrayOfStrings.castTo(System_String_Array.self)
+        XCTAssertEqual(systemStringArray, emptyArrayOfStrings)
+    }
+    
     func testEmptyArrayWithGenerics() throws {
         let systemStringType = System_String.typeOf
 
