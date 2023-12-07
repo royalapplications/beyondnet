@@ -93,6 +93,12 @@ final class StructTestTests: XCTestCase {
         XCTAssertTrue(nullRef == ret)
         
         
+        let retNonRef = try Beyond_NET_Sample_StructTest.getNullableStructReturnValueOfParameter(nullRef)
+        
+        XCTAssertNil(retNonRef)
+        XCTAssertTrue(nullRef == retNonRef)
+        
+        
         let origName = "test"
         var structRef: Beyond_NET_Sample_StructTest? = try Beyond_NET_Sample_StructTest(origName.dotNETString())
         
@@ -105,8 +111,20 @@ final class StructTestTests: XCTestCase {
         }
         
         XCTAssertTrue(structRef == ret2)
-        
         XCTAssertEqual(try ret2.name?.string(), origName)
+        
+        
+        let retNonRef2 = try Beyond_NET_Sample_StructTest.getNullableStructReturnValueOfParameter(structRef)
+        
+        guard let retNonRef2 else {
+            XCTFail("StructTest.GetNullableStructReturnValueOfParameter should not be nil")
+            
+            return
+        }
+        
+        XCTAssertTrue(structRef == retNonRef2)
+        XCTAssertEqual(try ret2.name?.string(), origName)
+        
         
         let newName4 = "NotTest"
         try ret2.name_set(newName4.dotNETString())

@@ -1,5 +1,5 @@
 // Number of generated types: 1757
-// Number of generated members: 5664
+// Number of generated members: 5665
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -46350,6 +46350,12 @@ void /* System.Void */
 Beyond_NET_Sample_StructTest_GetNullableStructReturnValueInOutParameter(
 	bool /* System.Boolean */ returnNull,
 	Beyond_NET_Sample_StructTest_t _Nullable* _Nullable /* System.Nullable<Beyond.NET.Sample.StructTest> */ returnValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_StructTest_t _Nullable* _Nullable /* Beyond.NET.Sample.StructTest */
+Beyond_NET_Sample_StructTest_GetNullableStructReturnValueOfParameter(
+	Beyond_NET_Sample_StructTest_t _Nullable /* System.Nullable<Beyond.NET.Sample.StructTest> */ returnValue,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 

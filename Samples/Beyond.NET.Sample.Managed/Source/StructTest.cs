@@ -15,6 +15,8 @@ public struct StructTest
     // private static StructTest? NonNullInstanceField = new StructTest("Test");
     public static StructTest? NonNullInstanceProperty => new StructTest("Test");
 
+    // public static StructTest? NullableStructPropertyWithGetterAndSetter { get; set; } = null;
+
     public static StructTest? GetNullableStructReturnValue(bool returnNull)
     {
         if (returnNull) {
@@ -34,6 +36,11 @@ public struct StructTest
         } else {
             returnValue = new StructTest("Test");
         }
+    }
+    
+    public static StructTest? GetNullableStructReturnValueOfParameter(StructTest? returnValue)
+    {
+        return returnValue;
     }
     
     public static StructTest? GetNullableStructReturnValueOfRefParameter(ref StructTest? returnValue)
