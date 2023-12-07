@@ -1,5 +1,5 @@
-// Number of generated types: 1758
-// Number of generated members: 5673
+// Number of generated types: 1796
+// Number of generated members: 6051
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1973,6 +1973,7 @@ typedef struct DNReadOnlySpanOfByte {
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "System.Span`1[[System.Byte, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
 // Unsupported Type "System.Nullable`1": Excluded
+// Unsupported Type "System.ArraySegment`1[[System.Byte, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
 
 #pragma mark - END Unsupported Types
 
@@ -2814,6 +2815,70 @@ typedef enum __attribute__((enum_extensibility(open))): int32_t {
 	Beyond_NET_Sample_TestEnum_FirstCase = 0,
 	Beyond_NET_Sample_TestEnum_SecondCase = 1
 } Beyond_NET_Sample_TestEnum_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Security_Cryptography_CryptoStreamMode_Read = 0,
+	System_Security_Cryptography_CryptoStreamMode_Write = 1
+} System_Security_Cryptography_CryptoStreamMode_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Security_Cryptography_CipherMode_CBC = 1,
+	System_Security_Cryptography_CipherMode_ECB = 2,
+	System_Security_Cryptography_CipherMode_OFB = 3,
+	System_Security_Cryptography_CipherMode_CFB = 4,
+	System_Security_Cryptography_CipherMode_CTS = 5
+} System_Security_Cryptography_CipherMode_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Security_Cryptography_PaddingMode_None = 1,
+	System_Security_Cryptography_PaddingMode_PKCS7 = 2,
+	System_Security_Cryptography_PaddingMode_Zeros = 3,
+	System_Security_Cryptography_PaddingMode_ANSIX923 = 4,
+	System_Security_Cryptography_PaddingMode_ISO10126 = 5
+} System_Security_Cryptography_PaddingMode_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Security_Cryptography_PbeEncryptionAlgorithm_Unknown = 0,
+	System_Security_Cryptography_PbeEncryptionAlgorithm_Aes128Cbc = 1,
+	System_Security_Cryptography_PbeEncryptionAlgorithm_Aes192Cbc = 2,
+	System_Security_Cryptography_PbeEncryptionAlgorithm_Aes256Cbc = 3,
+	System_Security_Cryptography_PbeEncryptionAlgorithm_TripleDes3KeyPkcs12 = 4
+} System_Security_Cryptography_PbeEncryptionAlgorithm_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Security_Cryptography_DSASignatureFormat_IeeeP1363FixedFieldConcatenation = 0,
+	System_Security_Cryptography_DSASignatureFormat_Rfc3279DerSequence = 1
+} System_Security_Cryptography_DSASignatureFormat_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Security_Cryptography_OidGroup_All = 0,
+	System_Security_Cryptography_OidGroup_HashAlgorithm = 1,
+	System_Security_Cryptography_OidGroup_EncryptionAlgorithm = 2,
+	System_Security_Cryptography_OidGroup_PublicKeyAlgorithm = 3,
+	System_Security_Cryptography_OidGroup_SignatureAlgorithm = 4,
+	System_Security_Cryptography_OidGroup_Attribute = 5,
+	System_Security_Cryptography_OidGroup_ExtensionOrAttribute = 6,
+	System_Security_Cryptography_OidGroup_EnhancedKeyUsage = 7,
+	System_Security_Cryptography_OidGroup_Policy = 8,
+	System_Security_Cryptography_OidGroup_Template = 9,
+	System_Security_Cryptography_OidGroup_KeyDerivationFunction = 10
+} System_Security_Cryptography_OidGroup_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Security_Cryptography_ECCurve_ECCurveType_Implicit = 0,
+	System_Security_Cryptography_ECCurve_ECCurveType_PrimeShortWeierstrass = 1,
+	System_Security_Cryptography_ECCurve_ECCurveType_PrimeTwistedEdwards = 2,
+	System_Security_Cryptography_ECCurve_ECCurveType_PrimeMontgomery = 3,
+	System_Security_Cryptography_ECCurve_ECCurveType_Characteristic2 = 4,
+	System_Security_Cryptography_ECCurve_ECCurveType_Named = 5
+} System_Security_Cryptography_ECCurve_ECCurveType_t;
 
 
 typedef void* System_Object_t;
@@ -5582,6 +5647,65 @@ typedef void* Beyond_NET_Sample_SubclassingTests_MyBaseClass_t;
 
 typedef void* Beyond_NET_Sample_SubclassingTests_MySubClass_t;
 
+typedef void* Beyond_NET_Sample_Source_DontStrip_t;
+
+typedef void* System_Security_Cryptography_CryptoStream_t;
+
+typedef void* System_Security_Cryptography_ICryptoTransform_t;
+
+typedef void* System_IO_MemoryStream_t;
+
+typedef void* System_Security_Cryptography_Aes_t;
+
+typedef void* System_Security_Cryptography_SymmetricAlgorithm_t;
+
+typedef void* System_Security_Cryptography_KeySizes_Array_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Collections_Generic_ICollection_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Security_Cryptography_KeySizes_t;
+
+typedef void* System_Collections_Generic_IReadOnlyList_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
+
+
+typedef void* System_Security_Cryptography_DSA_t;
+
+typedef void* System_Security_Cryptography_AsymmetricAlgorithm_t;
+
+typedef void* System_Security_Cryptography_PbeParameters_t;
+
+typedef void* System_Security_Cryptography_HashAlgorithmName_t;
+
+typedef void* System_IEquatable_A1_t;
+
+
+typedef void* System_Security_Cryptography_DSAParameters_t;
+
+typedef void* System_Security_Cryptography_ECDsa_t;
+
+typedef void* System_Security_Cryptography_ECAlgorithm_t;
+
+typedef void* System_Security_Cryptography_ECParameters_t;
+
+typedef void* System_Security_Cryptography_ECPoint_t;
+
+typedef void* System_Security_Cryptography_ECCurve_t;
+
+typedef void* System_Security_Cryptography_Oid_t;
+
+
+typedef void* System_Security_Cryptography_ECDiffieHellman_t;
+
+typedef void* System_Security_Cryptography_ECDiffieHellmanPublicKey_t;
+
 typedef void* Beyond_NET_Sample_Transformer_BuiltInTransformers_t;
 
 typedef void* System_Action_t;
@@ -6459,6 +6583,62 @@ Beyond_NET_Sample_TestEnum_TypeOf(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.TestEnum
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.CryptoStreamMode
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_CryptoStreamMode_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.CryptoStreamMode
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.CipherMode
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_CipherMode_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.CipherMode
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.PaddingMode
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_PaddingMode_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.PaddingMode
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.PbeEncryptionAlgorithm
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_PbeEncryptionAlgorithm_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.PbeEncryptionAlgorithm
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.DSASignatureFormat
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_DSASignatureFormat_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.DSASignatureFormat
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.OidGroup
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_OidGroup_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.OidGroup
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.ECCurve.ECCurveType
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_ECCurve_ECCurveType_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.ECCurve.ECCurveType
 
 #pragma mark - BEGIN APIs of System.Object
 System_Type_t _Nonnull /* System.Type */
@@ -46945,6 +47125,2656 @@ Beyond_NET_Sample_SubclassingTests_MySubClass_Destroy(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.SubclassingTests.MySubClass
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.DontStrip
+System_Security_Cryptography_CryptoStream_t _Nonnull /* System.Security.Cryptography.CryptoStream */
+Beyond_NET_Sample_Source_DontStrip_CryptoStream_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
+Beyond_NET_Sample_Source_DontStrip_MemoryStream_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_IO_StreamWriter_t _Nonnull /* System.IO.StreamWriter */
+Beyond_NET_Sample_Source_DontStrip_StreamWriter_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_IO_StreamReader_t _Nonnull /* System.IO.StreamReader */
+Beyond_NET_Sample_Source_DontStrip_StreamReader_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_Aes_t _Nonnull /* System.Security.Cryptography.Aes */
+Beyond_NET_Sample_Source_DontStrip_AES_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_DSA_t _Nonnull /* System.Security.Cryptography.DSA */
+Beyond_NET_Sample_Source_DontStrip_DSA_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_ECDsa_t _Nonnull /* System.Security.Cryptography.ECDsa */
+Beyond_NET_Sample_Source_DontStrip_ECDsa_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_ECDiffieHellman_t _Nonnull /* System.Security.Cryptography.ECDiffieHellman */
+Beyond_NET_Sample_Source_DontStrip_ECDiffieHellman_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_Source_DontStrip_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_DontStrip_Destroy(
+	Beyond_NET_Sample_Source_DontStrip_t _Nullable /* Beyond.NET.Sample.Source.DontStrip */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.Source.DontStrip
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.CryptoStream
+void /* System.Void */
+System_Security_Cryptography_CryptoStream_FlushFinalBlock(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_ValueTask_t _Nonnull /* System.Threading.Tasks.ValueTask */
+System_Security_Cryptography_CryptoStream_FlushFinalBlockAsync(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_CryptoStream_Flush_1(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Security_Cryptography_CryptoStream_FlushAsync(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Security_Cryptography_CryptoStream_Seek(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	int64_t /* System.Int64 */ offset,
+	System_IO_SeekOrigin_t /* System.IO.SeekOrigin */ origin,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_CryptoStream_SetLength(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	int64_t /* System.Int64 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.Int32> */
+System_Security_Cryptography_CryptoStream_ReadAsync(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_IAsyncResult_t _Nonnull /* System.IAsyncResult */
+System_Security_Cryptography_CryptoStream_BeginRead(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_AsyncCallback_t _Nullable /* System.AsyncCallback */ callback,
+	System_Object_t _Nullable /* System.Object */ state,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_CryptoStream_EndRead(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_IAsyncResult_t _Nonnull /* System.IAsyncResult */ asyncResult,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_CryptoStream_ReadByte(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_CryptoStream_WriteByte(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	uint8_t /* System.Byte */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_CryptoStream_Read_1(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Security_Cryptography_CryptoStream_WriteAsync(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_IAsyncResult_t _Nonnull /* System.IAsyncResult */
+System_Security_Cryptography_CryptoStream_BeginWrite(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_AsyncCallback_t _Nullable /* System.AsyncCallback */ callback,
+	System_Object_t _Nullable /* System.Object */ state,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_CryptoStream_EndWrite(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_IAsyncResult_t _Nonnull /* System.IAsyncResult */ asyncResult,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_CryptoStream_Write_1(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_CryptoStream_Write_2(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ buffer,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_CryptoStream_CopyTo(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ destination,
+	int32_t /* System.Int32 */ bufferSize,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Security_Cryptography_CryptoStream_CopyToAsync(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ destination,
+	int32_t /* System.Int32 */ bufferSize,
+	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_CryptoStream_Clear(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_ValueTask_t _Nonnull /* System.Threading.Tasks.ValueTask */
+System_Security_Cryptography_CryptoStream_DisposeAsync(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_CryptoStream_t _Nonnull /* System.Security.Cryptography.CryptoStream */
+System_Security_Cryptography_CryptoStream_Create(
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
+	System_Security_Cryptography_ICryptoTransform_t _Nonnull /* System.Security.Cryptography.ICryptoTransform */ transform,
+	System_Security_Cryptography_CryptoStreamMode_t /* System.Security.Cryptography.CryptoStreamMode */ mode,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_CryptoStream_t _Nonnull /* System.Security.Cryptography.CryptoStream */
+System_Security_Cryptography_CryptoStream_Create_1(
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
+	System_Security_Cryptography_ICryptoTransform_t _Nonnull /* System.Security.Cryptography.ICryptoTransform */ transform,
+	System_Security_Cryptography_CryptoStreamMode_t /* System.Security.Cryptography.CryptoStreamMode */ mode,
+	bool /* System.Boolean */ leaveOpen,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_CryptoStream_CanRead_Get(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Security_Cryptography_CryptoStream_CanSeek_Get(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Security_Cryptography_CryptoStream_CanWrite_Get(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_Security_Cryptography_CryptoStream_Length_Get(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_Security_Cryptography_CryptoStream_Position_Get(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_CryptoStream_Position_Set(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	int64_t /* System.Int64 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Security_Cryptography_CryptoStream_HasFlushedFinalBlock_Get(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_CryptoStream_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_CryptoStream_Destroy(
+	System_Security_Cryptography_CryptoStream_t _Nullable /* System.Security.Cryptography.CryptoStream */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.CryptoStream
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.ICryptoTransform
+int32_t /* System.Int32 */
+System_Security_Cryptography_ICryptoTransform_TransformBlock(
+	System_Security_Cryptography_ICryptoTransform_t _Nullable /* System.Security.Cryptography.ICryptoTransform */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ inputBuffer,
+	int32_t /* System.Int32 */ inputOffset,
+	int32_t /* System.Int32 */ inputCount,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ outputBuffer,
+	int32_t /* System.Int32 */ outputOffset,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ICryptoTransform_TransformFinalBlock(
+	System_Security_Cryptography_ICryptoTransform_t _Nullable /* System.Security.Cryptography.ICryptoTransform */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ inputBuffer,
+	int32_t /* System.Int32 */ inputOffset,
+	int32_t /* System.Int32 */ inputCount,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_ICryptoTransform_InputBlockSize_Get(
+	System_Security_Cryptography_ICryptoTransform_t _Nullable /* System.Security.Cryptography.ICryptoTransform */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_ICryptoTransform_OutputBlockSize_Get(
+	System_Security_Cryptography_ICryptoTransform_t _Nullable /* System.Security.Cryptography.ICryptoTransform */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Security_Cryptography_ICryptoTransform_CanTransformMultipleBlocks_Get(
+	System_Security_Cryptography_ICryptoTransform_t _Nullable /* System.Security.Cryptography.ICryptoTransform */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Security_Cryptography_ICryptoTransform_CanReuseTransform_Get(
+	System_Security_Cryptography_ICryptoTransform_t _Nullable /* System.Security.Cryptography.ICryptoTransform */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_ICryptoTransform_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_ICryptoTransform_Destroy(
+	System_Security_Cryptography_ICryptoTransform_t _Nullable /* System.Security.Cryptography.ICryptoTransform */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.ICryptoTransform
+
+#pragma mark - BEGIN APIs of System.IO.MemoryStream
+void /* System.Void */
+System_IO_MemoryStream_Flush(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_IO_MemoryStream_FlushAsync(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_IO_MemoryStream_GetBuffer(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_IO_MemoryStream_Read(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.Int32> */
+System_IO_MemoryStream_ReadAsync(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_IO_MemoryStream_ReadByte(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_MemoryStream_CopyTo(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ destination,
+	int32_t /* System.Int32 */ bufferSize,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_IO_MemoryStream_CopyToAsync(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ destination,
+	int32_t /* System.Int32 */ bufferSize,
+	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_IO_MemoryStream_Seek(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	int64_t /* System.Int64 */ offset,
+	System_IO_SeekOrigin_t /* System.IO.SeekOrigin */ loc,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_MemoryStream_SetLength(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	int64_t /* System.Int64 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_IO_MemoryStream_ToArray(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_MemoryStream_Write(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_MemoryStream_Write_1(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ buffer,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_IO_MemoryStream_WriteAsync(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_MemoryStream_WriteByte(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	uint8_t /* System.Byte */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_MemoryStream_WriteTo(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
+System_IO_MemoryStream_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
+System_IO_MemoryStream_Create_1(
+	int32_t /* System.Int32 */ capacity,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
+System_IO_MemoryStream_Create_2(
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
+System_IO_MemoryStream_Create_3(
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	bool /* System.Boolean */ writable,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
+System_IO_MemoryStream_Create_4(
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
+System_IO_MemoryStream_Create_5(
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	bool /* System.Boolean */ writable,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
+System_IO_MemoryStream_Create_6(
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	bool /* System.Boolean */ writable,
+	bool /* System.Boolean */ publiclyVisible,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_IO_MemoryStream_CanRead_Get(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_IO_MemoryStream_CanSeek_Get(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_IO_MemoryStream_CanWrite_Get(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_IO_MemoryStream_Capacity_Get(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_MemoryStream_Capacity_Set(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_IO_MemoryStream_Length_Get(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_IO_MemoryStream_Position_Get(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_MemoryStream_Position_Set(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	int64_t /* System.Int64 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_IO_MemoryStream_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_IO_MemoryStream_Destroy(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self
+);
+
+#pragma mark - END APIs of System.IO.MemoryStream
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.Aes
+System_Security_Cryptography_Aes_t _Nonnull /* System.Security.Cryptography.Aes */
+System_Security_Cryptography_Aes_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_Aes_t _Nullable /* System.Security.Cryptography.Aes */
+System_Security_Cryptography_Aes_Create_1(
+	System_String_t _Nonnull /* System.String */ algorithmName,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_Aes_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_Aes_Destroy(
+	System_Security_Cryptography_Aes_t _Nullable /* System.Security.Cryptography.Aes */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.Aes
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.SymmetricAlgorithm
+System_Security_Cryptography_SymmetricAlgorithm_t _Nonnull /* System.Security.Cryptography.SymmetricAlgorithm */
+System_Security_Cryptography_SymmetricAlgorithm_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */
+System_Security_Cryptography_SymmetricAlgorithm_Create_1(
+	System_String_t _Nonnull /* System.String */ algName,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_ICryptoTransform_t _Nonnull /* System.Security.Cryptography.ICryptoTransform */
+System_Security_Cryptography_SymmetricAlgorithm_CreateDecryptor(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_ICryptoTransform_t _Nonnull /* System.Security.Cryptography.ICryptoTransform */
+System_Security_Cryptography_SymmetricAlgorithm_CreateDecryptor_1(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ rgbKey,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ rgbIV,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_ICryptoTransform_t _Nonnull /* System.Security.Cryptography.ICryptoTransform */
+System_Security_Cryptography_SymmetricAlgorithm_CreateEncryptor(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_ICryptoTransform_t _Nonnull /* System.Security.Cryptography.ICryptoTransform */
+System_Security_Cryptography_SymmetricAlgorithm_CreateEncryptor_1(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ rgbKey,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ rgbIV,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_SymmetricAlgorithm_Dispose(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_SymmetricAlgorithm_Clear(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_SymmetricAlgorithm_GenerateIV(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_SymmetricAlgorithm_GenerateKey(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_SymmetricAlgorithm_ValidKeySize(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	int32_t /* System.Int32 */ bitLength,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_SymmetricAlgorithm_GetCiphertextLengthEcb(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	int32_t /* System.Int32 */ plaintextLength,
+	System_Security_Cryptography_PaddingMode_t /* System.Security.Cryptography.PaddingMode */ paddingMode,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_SymmetricAlgorithm_GetCiphertextLengthCbc(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	int32_t /* System.Int32 */ plaintextLength,
+	System_Security_Cryptography_PaddingMode_t /* System.Security.Cryptography.PaddingMode */ paddingMode,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_SymmetricAlgorithm_GetCiphertextLengthCfb(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	int32_t /* System.Int32 */ plaintextLength,
+	System_Security_Cryptography_PaddingMode_t /* System.Security.Cryptography.PaddingMode */ paddingMode,
+	int32_t /* System.Int32 */ feedbackSizeInBits,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_SymmetricAlgorithm_DecryptEcb(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ ciphertext,
+	System_Security_Cryptography_PaddingMode_t /* System.Security.Cryptography.PaddingMode */ paddingMode,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_SymmetricAlgorithm_DecryptEcb_1(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ ciphertext,
+	System_Security_Cryptography_PaddingMode_t /* System.Security.Cryptography.PaddingMode */ paddingMode,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_SymmetricAlgorithm_EncryptEcb(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ plaintext,
+	System_Security_Cryptography_PaddingMode_t /* System.Security.Cryptography.PaddingMode */ paddingMode,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_SymmetricAlgorithm_EncryptEcb_1(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ plaintext,
+	System_Security_Cryptography_PaddingMode_t /* System.Security.Cryptography.PaddingMode */ paddingMode,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_SymmetricAlgorithm_DecryptCbc(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ ciphertext,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ iv,
+	System_Security_Cryptography_PaddingMode_t /* System.Security.Cryptography.PaddingMode */ paddingMode,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_SymmetricAlgorithm_DecryptCbc_1(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ ciphertext,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ iv,
+	System_Security_Cryptography_PaddingMode_t /* System.Security.Cryptography.PaddingMode */ paddingMode,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_SymmetricAlgorithm_EncryptCbc(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ plaintext,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ iv,
+	System_Security_Cryptography_PaddingMode_t /* System.Security.Cryptography.PaddingMode */ paddingMode,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_SymmetricAlgorithm_EncryptCbc_1(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ plaintext,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ iv,
+	System_Security_Cryptography_PaddingMode_t /* System.Security.Cryptography.PaddingMode */ paddingMode,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_SymmetricAlgorithm_DecryptCfb(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ ciphertext,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ iv,
+	System_Security_Cryptography_PaddingMode_t /* System.Security.Cryptography.PaddingMode */ paddingMode,
+	int32_t /* System.Int32 */ feedbackSizeInBits,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_SymmetricAlgorithm_DecryptCfb_1(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ ciphertext,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ iv,
+	System_Security_Cryptography_PaddingMode_t /* System.Security.Cryptography.PaddingMode */ paddingMode,
+	int32_t /* System.Int32 */ feedbackSizeInBits,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_SymmetricAlgorithm_EncryptCfb(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ plaintext,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ iv,
+	System_Security_Cryptography_PaddingMode_t /* System.Security.Cryptography.PaddingMode */ paddingMode,
+	int32_t /* System.Int32 */ feedbackSizeInBits,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_SymmetricAlgorithm_EncryptCfb_1(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ plaintext,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ iv,
+	System_Security_Cryptography_PaddingMode_t /* System.Security.Cryptography.PaddingMode */ paddingMode,
+	int32_t /* System.Int32 */ feedbackSizeInBits,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_SymmetricAlgorithm_FeedbackSize_Get(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_SymmetricAlgorithm_FeedbackSize_Set(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_SymmetricAlgorithm_BlockSize_Get(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_SymmetricAlgorithm_BlockSize_Set(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_SymmetricAlgorithm_IV_Get(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_SymmetricAlgorithm_IV_Set(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_SymmetricAlgorithm_Key_Get(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_SymmetricAlgorithm_Key_Set(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_SymmetricAlgorithm_KeySize_Get(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_SymmetricAlgorithm_KeySize_Set(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_KeySizes_Array_t _Nonnull /* System.Security.Cryptography.KeySizes[] */
+System_Security_Cryptography_SymmetricAlgorithm_LegalBlockSizes_Get(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_KeySizes_Array_t _Nonnull /* System.Security.Cryptography.KeySizes[] */
+System_Security_Cryptography_SymmetricAlgorithm_LegalKeySizes_Get(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_CipherMode_t /* System.Security.Cryptography.CipherMode */
+System_Security_Cryptography_SymmetricAlgorithm_Mode_Get(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_SymmetricAlgorithm_Mode_Set(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Security_Cryptography_CipherMode_t /* System.Security.Cryptography.CipherMode */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_PaddingMode_t /* System.Security.Cryptography.PaddingMode */
+System_Security_Cryptography_SymmetricAlgorithm_Padding_Get(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_SymmetricAlgorithm_Padding_Set(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
+	System_Security_Cryptography_PaddingMode_t /* System.Security.Cryptography.PaddingMode */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_SymmetricAlgorithm_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_SymmetricAlgorithm_Destroy(
+	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.SymmetricAlgorithm
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.KeySizes[]
+#pragma mark - END APIs of System.Security.Cryptography.KeySizes[]
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.KeySizes
+System_Security_Cryptography_KeySizes_t _Nonnull /* System.Security.Cryptography.KeySizes */
+System_Security_Cryptography_KeySizes_Create(
+	int32_t /* System.Int32 */ minSize,
+	int32_t /* System.Int32 */ maxSize,
+	int32_t /* System.Int32 */ skipSize,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_KeySizes_MinSize_Get(
+	System_Security_Cryptography_KeySizes_t _Nullable /* System.Security.Cryptography.KeySizes */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_KeySizes_MaxSize_Get(
+	System_Security_Cryptography_KeySizes_t _Nullable /* System.Security.Cryptography.KeySizes */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_KeySizes_SkipSize_Get(
+	System_Security_Cryptography_KeySizes_t _Nullable /* System.Security.Cryptography.KeySizes */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_KeySizes_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_KeySizes_Destroy(
+	System_Security_Cryptography_KeySizes_t _Nullable /* System.Security.Cryptography.KeySizes */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.KeySizes
+
+
+
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.DSA
+System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */
+System_Security_Cryptography_DSA_ExportParameters(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	bool /* System.Boolean */ includePrivateParameters,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_DSA_ImportParameters(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */ parameters,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */
+System_Security_Cryptography_DSA_Create(
+	System_String_t _Nonnull /* System.String */ algName,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_DSA_t _Nonnull /* System.Security.Cryptography.DSA */
+System_Security_Cryptography_DSA_Create_1(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_DSA_t _Nonnull /* System.Security.Cryptography.DSA */
+System_Security_Cryptography_DSA_Create_2(
+	int32_t /* System.Int32 */ keySizeInBits,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_DSA_t _Nonnull /* System.Security.Cryptography.DSA */
+System_Security_Cryptography_DSA_Create_3(
+	System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */ parameters,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_DSA_CreateSignature(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ rgbHash,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_DSA_VerifySignature(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ rgbHash,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ rgbSignature,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_DSA_SignData(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ data,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_DSA_SignData_1(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ data,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_DSA_SignData_2(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ data,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_DSA_SignData_3(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ data,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_DSA_SignData_4(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ data,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_DSA_SignData_5(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ data,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_DSA_VerifyData(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ data,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ signature,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_DSA_VerifyData_1(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ data,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ signature,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_DSA_VerifyData_2(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ data,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ signature,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_DSA_VerifyData_3(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ data,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ signature,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_DSA_CreateSignature_1(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ rgbHash,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_DSA_VerifyData_4(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ data,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ signature,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_DSA_VerifyData_5(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ data,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ signature,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_DSA_VerifyData_6(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ data,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ signature,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_DSA_VerifyData_7(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ data,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ signature,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_DSA_VerifySignature_1(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ rgbHash,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ rgbSignature,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_DSA_VerifySignature_2(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ hash,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ signature,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_DSA_VerifySignature_3(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ hash,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ signature,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_DSA_ImportEncryptedPkcs8PrivateKey(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ passwordBytes,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source,
+	int32_t* /* System.Int32 */ bytesRead,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_DSA_ImportPkcs8PrivateKey(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source,
+	int32_t* /* System.Int32 */ bytesRead,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_DSA_ImportSubjectPublicKeyInfo(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source,
+	int32_t* /* System.Int32 */ bytesRead,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_DSA_GetMaxSignatureSize(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_DSA_FromXmlString(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	System_String_t _Nonnull /* System.String */ xmlString,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Security_Cryptography_DSA_ToXmlString(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self,
+	bool /* System.Boolean */ includePrivateParameters,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_DSA_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_DSA_Destroy(
+	System_Security_Cryptography_DSA_t _Nullable /* System.Security.Cryptography.DSA */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.DSA
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.AsymmetricAlgorithm
+System_Security_Cryptography_AsymmetricAlgorithm_t _Nonnull /* System.Security.Cryptography.AsymmetricAlgorithm */
+System_Security_Cryptography_AsymmetricAlgorithm_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */
+System_Security_Cryptography_AsymmetricAlgorithm_Create_1(
+	System_String_t _Nonnull /* System.String */ algName,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_AsymmetricAlgorithm_FromXmlString(
+	System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */ self,
+	System_String_t _Nonnull /* System.String */ xmlString,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Security_Cryptography_AsymmetricAlgorithm_ToXmlString(
+	System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */ self,
+	bool /* System.Boolean */ includePrivateParameters,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_AsymmetricAlgorithm_Clear(
+	System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_AsymmetricAlgorithm_Dispose(
+	System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_AsymmetricAlgorithm_ImportEncryptedPkcs8PrivateKey(
+	System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ passwordBytes,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source,
+	int32_t* /* System.Int32 */ bytesRead,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_AsymmetricAlgorithm_ImportPkcs8PrivateKey(
+	System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source,
+	int32_t* /* System.Int32 */ bytesRead,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_AsymmetricAlgorithm_ImportSubjectPublicKeyInfo(
+	System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source,
+	int32_t* /* System.Int32 */ bytesRead,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_AsymmetricAlgorithm_ExportEncryptedPkcs8PrivateKey(
+	System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ passwordBytes,
+	System_Security_Cryptography_PbeParameters_t _Nonnull /* System.Security.Cryptography.PbeParameters */ pbeParameters,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_AsymmetricAlgorithm_ExportPkcs8PrivateKey(
+	System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_AsymmetricAlgorithm_ExportSubjectPublicKeyInfo(
+	System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Security_Cryptography_AsymmetricAlgorithm_ExportPkcs8PrivateKeyPem(
+	System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Security_Cryptography_AsymmetricAlgorithm_ExportEncryptedPkcs8PrivateKeyPem(
+	System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ passwordBytes,
+	System_Security_Cryptography_PbeParameters_t _Nonnull /* System.Security.Cryptography.PbeParameters */ pbeParameters,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Security_Cryptography_AsymmetricAlgorithm_ExportSubjectPublicKeyInfoPem(
+	System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_AsymmetricAlgorithm_KeySize_Get(
+	System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_AsymmetricAlgorithm_KeySize_Set(
+	System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_KeySizes_Array_t _Nonnull /* System.Security.Cryptography.KeySizes[] */
+System_Security_Cryptography_AsymmetricAlgorithm_LegalKeySizes_Get(
+	System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Security_Cryptography_AsymmetricAlgorithm_SignatureAlgorithm_Get(
+	System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Security_Cryptography_AsymmetricAlgorithm_KeyExchangeAlgorithm_Get(
+	System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_AsymmetricAlgorithm_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_AsymmetricAlgorithm_Destroy(
+	System_Security_Cryptography_AsymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.AsymmetricAlgorithm */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.AsymmetricAlgorithm
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.PbeParameters
+System_Security_Cryptography_PbeParameters_t _Nonnull /* System.Security.Cryptography.PbeParameters */
+System_Security_Cryptography_PbeParameters_Create(
+	System_Security_Cryptography_PbeEncryptionAlgorithm_t /* System.Security.Cryptography.PbeEncryptionAlgorithm */ encryptionAlgorithm,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	int32_t /* System.Int32 */ iterationCount,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_PbeEncryptionAlgorithm_t /* System.Security.Cryptography.PbeEncryptionAlgorithm */
+System_Security_Cryptography_PbeParameters_EncryptionAlgorithm_Get(
+	System_Security_Cryptography_PbeParameters_t _Nullable /* System.Security.Cryptography.PbeParameters */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */
+System_Security_Cryptography_PbeParameters_HashAlgorithm_Get(
+	System_Security_Cryptography_PbeParameters_t _Nullable /* System.Security.Cryptography.PbeParameters */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_PbeParameters_IterationCount_Get(
+	System_Security_Cryptography_PbeParameters_t _Nullable /* System.Security.Cryptography.PbeParameters */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_PbeParameters_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_PbeParameters_Destroy(
+	System_Security_Cryptography_PbeParameters_t _Nullable /* System.Security.Cryptography.PbeParameters */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.PbeParameters
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.HashAlgorithmName
+System_String_t _Nonnull /* System.String */
+System_Security_Cryptography_HashAlgorithmName_ToString(
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_HashAlgorithmName_Equals(
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ self,
+	System_Object_t _Nullable /* System.Object */ obj,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_HashAlgorithmName_Equals_1(
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ self,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ other,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_HashAlgorithmName_GetHashCode(
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_HashAlgorithmName_TryFromOid(
+	System_String_t _Nonnull /* System.String */ oidValue,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull* _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */
+System_Security_Cryptography_HashAlgorithmName_FromOid(
+	System_String_t _Nonnull /* System.String */ oidValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */
+System_Security_Cryptography_HashAlgorithmName_Create(
+	System_String_t _Nullable /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */
+System_Security_Cryptography_HashAlgorithmName_MD5_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */
+System_Security_Cryptography_HashAlgorithmName_SHA1_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */
+System_Security_Cryptography_HashAlgorithmName_SHA256_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */
+System_Security_Cryptography_HashAlgorithmName_SHA384_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */
+System_Security_Cryptography_HashAlgorithmName_SHA512_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */
+System_Security_Cryptography_HashAlgorithmName_SHA3_256_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */
+System_Security_Cryptography_HashAlgorithmName_SHA3_384_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */
+System_Security_Cryptography_HashAlgorithmName_SHA3_512_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Security_Cryptography_HashAlgorithmName_Name_Get(
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */
+System_Security_Cryptography_HashAlgorithmName_Create_1(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_HashAlgorithmName_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_HashAlgorithmName_Destroy(
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.HashAlgorithmName
+
+
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.DSAParameters
+System_Byte_Array_t _Nullable /* System.Byte[] */
+System_Security_Cryptography_DSAParameters_P_Get(
+	System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_DSAParameters_P_Set(
+	System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */ self,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ value
+);
+
+
+System_Byte_Array_t _Nullable /* System.Byte[] */
+System_Security_Cryptography_DSAParameters_Q_Get(
+	System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_DSAParameters_Q_Set(
+	System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */ self,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ value
+);
+
+
+System_Byte_Array_t _Nullable /* System.Byte[] */
+System_Security_Cryptography_DSAParameters_G_Get(
+	System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_DSAParameters_G_Set(
+	System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */ self,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ value
+);
+
+
+System_Byte_Array_t _Nullable /* System.Byte[] */
+System_Security_Cryptography_DSAParameters_Y_Get(
+	System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_DSAParameters_Y_Set(
+	System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */ self,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ value
+);
+
+
+System_Byte_Array_t _Nullable /* System.Byte[] */
+System_Security_Cryptography_DSAParameters_J_Get(
+	System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_DSAParameters_J_Set(
+	System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */ self,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ value
+);
+
+
+System_Byte_Array_t _Nullable /* System.Byte[] */
+System_Security_Cryptography_DSAParameters_X_Get(
+	System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_DSAParameters_X_Set(
+	System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */ self,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ value
+);
+
+
+System_Byte_Array_t _Nullable /* System.Byte[] */
+System_Security_Cryptography_DSAParameters_Seed_Get(
+	System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_DSAParameters_Seed_Set(
+	System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */ self,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ value
+);
+
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_DSAParameters_Counter_Get(
+	System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_DSAParameters_Counter_Set(
+	System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */ self,
+	int32_t /* System.Int32 */ value
+);
+
+
+System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */
+System_Security_Cryptography_DSAParameters_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_DSAParameters_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_DSAParameters_Destroy(
+	System_Security_Cryptography_DSAParameters_t _Nonnull /* System.Security.Cryptography.DSAParameters */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.DSAParameters
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.ECDsa
+System_Security_Cryptography_ECDsa_t _Nonnull /* System.Security.Cryptography.ECDsa */
+System_Security_Cryptography_ECDsa_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_ECDsa_t _Nonnull /* System.Security.Cryptography.ECDsa */
+System_Security_Cryptography_ECDsa_Create_1(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ curve,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_ECDsa_t _Nonnull /* System.Security.Cryptography.ECDsa */
+System_Security_Cryptography_ECDsa_Create_2(
+	System_Security_Cryptography_ECParameters_t _Nonnull /* System.Security.Cryptography.ECParameters */ parameters,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */
+System_Security_Cryptography_ECDsa_Create_3(
+	System_String_t _Nonnull /* System.String */ algorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDsa_SignData(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ data,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDsa_SignData_1(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ data,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDsa_SignData_2(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ data,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDsa_SignData_3(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ data,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDsa_SignData_4(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ data,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDsa_SignHash(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ hash,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDsa_SignHash_1(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ hash,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDsa_SignHash_2(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ hash,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDsa_SignData_5(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ data,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDsa_SignData_6(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ data,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDsa_SignData_7(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ data,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_ECDsa_VerifyData(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ data,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ signature,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_ECDsa_VerifyData_1(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ data,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ signature,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_ECDsa_VerifyData_2(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ data,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ signature,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_ECDsa_VerifyData_3(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ data,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ signature,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_ECDsa_VerifyData_4(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ data,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ signature,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_ECDsa_VerifyData_5(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ data,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ signature,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_ECDsa_VerifyData_6(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ data,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ signature,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_ECDsa_VerifyData_7(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ data,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ signature,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDsa_SignHash_3(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ hash,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_ECDsa_VerifyHash(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ hash,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ signature,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_ECDsa_VerifyHash_1(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ hash,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ signature,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_ECDsa_VerifyHash_2(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ hash,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ signature,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_ECDsa_VerifyHash_3(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ hash,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ signature,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_ECDsa_GetMaxSignatureSize(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_Security_Cryptography_DSASignatureFormat_t /* System.Security.Cryptography.DSASignatureFormat */ signatureFormat,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECDsa_FromXmlString(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_String_t _Nonnull /* System.String */ xmlString,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Security_Cryptography_ECDsa_ToXmlString(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	bool /* System.Boolean */ includePrivateParameters,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Security_Cryptography_ECDsa_KeyExchangeAlgorithm_Get(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Security_Cryptography_ECDsa_SignatureAlgorithm_Get(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_ECDsa_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECDsa_Destroy(
+	System_Security_Cryptography_ECDsa_t _Nullable /* System.Security.Cryptography.ECDsa */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.ECDsa
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.ECAlgorithm
+System_Security_Cryptography_ECParameters_t _Nonnull /* System.Security.Cryptography.ECParameters */
+System_Security_Cryptography_ECAlgorithm_ExportParameters(
+	System_Security_Cryptography_ECAlgorithm_t _Nullable /* System.Security.Cryptography.ECAlgorithm */ self,
+	bool /* System.Boolean */ includePrivateParameters,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_ECParameters_t _Nonnull /* System.Security.Cryptography.ECParameters */
+System_Security_Cryptography_ECAlgorithm_ExportExplicitParameters(
+	System_Security_Cryptography_ECAlgorithm_t _Nullable /* System.Security.Cryptography.ECAlgorithm */ self,
+	bool /* System.Boolean */ includePrivateParameters,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECAlgorithm_ImportParameters(
+	System_Security_Cryptography_ECAlgorithm_t _Nullable /* System.Security.Cryptography.ECAlgorithm */ self,
+	System_Security_Cryptography_ECParameters_t _Nonnull /* System.Security.Cryptography.ECParameters */ parameters,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECAlgorithm_GenerateKey(
+	System_Security_Cryptography_ECAlgorithm_t _Nullable /* System.Security.Cryptography.ECAlgorithm */ self,
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ curve,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECAlgorithm_ImportEncryptedPkcs8PrivateKey(
+	System_Security_Cryptography_ECAlgorithm_t _Nullable /* System.Security.Cryptography.ECAlgorithm */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ passwordBytes,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source,
+	int32_t* /* System.Int32 */ bytesRead,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECAlgorithm_ImportPkcs8PrivateKey(
+	System_Security_Cryptography_ECAlgorithm_t _Nullable /* System.Security.Cryptography.ECAlgorithm */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source,
+	int32_t* /* System.Int32 */ bytesRead,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECAlgorithm_ImportSubjectPublicKeyInfo(
+	System_Security_Cryptography_ECAlgorithm_t _Nullable /* System.Security.Cryptography.ECAlgorithm */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source,
+	int32_t* /* System.Int32 */ bytesRead,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECAlgorithm_ImportECPrivateKey(
+	System_Security_Cryptography_ECAlgorithm_t _Nullable /* System.Security.Cryptography.ECAlgorithm */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source,
+	int32_t* /* System.Int32 */ bytesRead,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECAlgorithm_ExportECPrivateKey(
+	System_Security_Cryptography_ECAlgorithm_t _Nullable /* System.Security.Cryptography.ECAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Security_Cryptography_ECAlgorithm_ExportECPrivateKeyPem(
+	System_Security_Cryptography_ECAlgorithm_t _Nullable /* System.Security.Cryptography.ECAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_ECAlgorithm_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECAlgorithm_Destroy(
+	System_Security_Cryptography_ECAlgorithm_t _Nullable /* System.Security.Cryptography.ECAlgorithm */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.ECAlgorithm
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.ECParameters
+void /* System.Void */
+System_Security_Cryptography_ECParameters_Validate(
+	System_Security_Cryptography_ECParameters_t _Nonnull /* System.Security.Cryptography.ECParameters */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_ECPoint_t _Nonnull /* System.Security.Cryptography.ECPoint */
+System_Security_Cryptography_ECParameters_Q_Get(
+	System_Security_Cryptography_ECParameters_t _Nonnull /* System.Security.Cryptography.ECParameters */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECParameters_Q_Set(
+	System_Security_Cryptography_ECParameters_t _Nonnull /* System.Security.Cryptography.ECParameters */ self,
+	System_Security_Cryptography_ECPoint_t _Nonnull /* System.Security.Cryptography.ECPoint */ value
+);
+
+
+System_Byte_Array_t _Nullable /* System.Byte[] */
+System_Security_Cryptography_ECParameters_D_Get(
+	System_Security_Cryptography_ECParameters_t _Nonnull /* System.Security.Cryptography.ECParameters */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECParameters_D_Set(
+	System_Security_Cryptography_ECParameters_t _Nonnull /* System.Security.Cryptography.ECParameters */ self,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ value
+);
+
+
+System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */
+System_Security_Cryptography_ECParameters_Curve_Get(
+	System_Security_Cryptography_ECParameters_t _Nonnull /* System.Security.Cryptography.ECParameters */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECParameters_Curve_Set(
+	System_Security_Cryptography_ECParameters_t _Nonnull /* System.Security.Cryptography.ECParameters */ self,
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ value
+);
+
+
+System_Security_Cryptography_ECParameters_t _Nonnull /* System.Security.Cryptography.ECParameters */
+System_Security_Cryptography_ECParameters_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_ECParameters_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECParameters_Destroy(
+	System_Security_Cryptography_ECParameters_t _Nonnull /* System.Security.Cryptography.ECParameters */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.ECParameters
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.ECPoint
+System_Byte_Array_t _Nullable /* System.Byte[] */
+System_Security_Cryptography_ECPoint_X_Get(
+	System_Security_Cryptography_ECPoint_t _Nonnull /* System.Security.Cryptography.ECPoint */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECPoint_X_Set(
+	System_Security_Cryptography_ECPoint_t _Nonnull /* System.Security.Cryptography.ECPoint */ self,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ value
+);
+
+
+System_Byte_Array_t _Nullable /* System.Byte[] */
+System_Security_Cryptography_ECPoint_Y_Get(
+	System_Security_Cryptography_ECPoint_t _Nonnull /* System.Security.Cryptography.ECPoint */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECPoint_Y_Set(
+	System_Security_Cryptography_ECPoint_t _Nonnull /* System.Security.Cryptography.ECPoint */ self,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ value
+);
+
+
+System_Security_Cryptography_ECPoint_t _Nonnull /* System.Security.Cryptography.ECPoint */
+System_Security_Cryptography_ECPoint_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_ECPoint_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECPoint_Destroy(
+	System_Security_Cryptography_ECPoint_t _Nonnull /* System.Security.Cryptography.ECPoint */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.ECPoint
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.ECCurve
+System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */
+System_Security_Cryptography_ECCurve_CreateFromOid(
+	System_Security_Cryptography_Oid_t _Nonnull /* System.Security.Cryptography.Oid */ curveOid,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */
+System_Security_Cryptography_ECCurve_CreateFromFriendlyName(
+	System_String_t _Nonnull /* System.String */ oidFriendlyName,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */
+System_Security_Cryptography_ECCurve_CreateFromValue(
+	System_String_t _Nonnull /* System.String */ oidValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECCurve_Validate(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_Oid_t _Nonnull /* System.Security.Cryptography.Oid */
+System_Security_Cryptography_ECCurve_Oid_Get(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Security_Cryptography_ECCurve_IsPrime_Get(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Security_Cryptography_ECCurve_IsCharacteristic2_Get(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Security_Cryptography_ECCurve_IsExplicit_Get(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Security_Cryptography_ECCurve_IsNamed_Get(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Byte_Array_t _Nullable /* System.Byte[] */
+System_Security_Cryptography_ECCurve_A_Get(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECCurve_A_Set(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ value
+);
+
+
+System_Byte_Array_t _Nullable /* System.Byte[] */
+System_Security_Cryptography_ECCurve_B_Get(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECCurve_B_Set(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ value
+);
+
+
+System_Security_Cryptography_ECPoint_t _Nonnull /* System.Security.Cryptography.ECPoint */
+System_Security_Cryptography_ECCurve_G_Get(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECCurve_G_Set(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self,
+	System_Security_Cryptography_ECPoint_t _Nonnull /* System.Security.Cryptography.ECPoint */ value
+);
+
+
+System_Byte_Array_t _Nullable /* System.Byte[] */
+System_Security_Cryptography_ECCurve_Order_Get(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECCurve_Order_Set(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ value
+);
+
+
+System_Byte_Array_t _Nullable /* System.Byte[] */
+System_Security_Cryptography_ECCurve_Cofactor_Get(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECCurve_Cofactor_Set(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ value
+);
+
+
+System_Byte_Array_t _Nullable /* System.Byte[] */
+System_Security_Cryptography_ECCurve_Seed_Get(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECCurve_Seed_Set(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ value
+);
+
+
+System_Security_Cryptography_ECCurve_ECCurveType_t /* System.Security.Cryptography.ECCurve.ECCurveType */
+System_Security_Cryptography_ECCurve_CurveType_Get(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECCurve_CurveType_Set(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self,
+	System_Security_Cryptography_ECCurve_ECCurveType_t /* System.Security.Cryptography.ECCurve.ECCurveType */ value
+);
+
+
+System_Security_Cryptography_HashAlgorithmName_t _Nullable* _Nullable /* System.Security.Cryptography.HashAlgorithmName */
+System_Security_Cryptography_ECCurve_Hash_Get(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECCurve_Hash_Set(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self,
+	System_Security_Cryptography_HashAlgorithmName_t _Nullable /* System.Security.Cryptography.HashAlgorithmName */ value
+);
+
+
+System_Byte_Array_t _Nullable /* System.Byte[] */
+System_Security_Cryptography_ECCurve_Polynomial_Get(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECCurve_Polynomial_Set(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ value
+);
+
+
+System_Byte_Array_t _Nullable /* System.Byte[] */
+System_Security_Cryptography_ECCurve_Prime_Get(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECCurve_Prime_Set(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ value
+);
+
+
+System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */
+System_Security_Cryptography_ECCurve_Create_1(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_ECCurve_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECCurve_Destroy(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.ECCurve
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.Oid
+System_Security_Cryptography_Oid_t _Nonnull /* System.Security.Cryptography.Oid */
+System_Security_Cryptography_Oid_FromFriendlyName(
+	System_String_t _Nonnull /* System.String */ friendlyName,
+	System_Security_Cryptography_OidGroup_t /* System.Security.Cryptography.OidGroup */ group,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_Oid_t _Nonnull /* System.Security.Cryptography.Oid */
+System_Security_Cryptography_Oid_FromOidValue(
+	System_String_t _Nonnull /* System.String */ oidValue,
+	System_Security_Cryptography_OidGroup_t /* System.Security.Cryptography.OidGroup */ group,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_Oid_t _Nonnull /* System.Security.Cryptography.Oid */
+System_Security_Cryptography_Oid_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_Oid_t _Nonnull /* System.Security.Cryptography.Oid */
+System_Security_Cryptography_Oid_Create_1(
+	System_String_t _Nonnull /* System.String */ oid,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_Oid_t _Nonnull /* System.Security.Cryptography.Oid */
+System_Security_Cryptography_Oid_Create_2(
+	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nullable /* System.String */ friendlyName,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_Oid_t _Nonnull /* System.Security.Cryptography.Oid */
+System_Security_Cryptography_Oid_Create_3(
+	System_Security_Cryptography_Oid_t _Nonnull /* System.Security.Cryptography.Oid */ oid,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Security_Cryptography_Oid_Value_Get(
+	System_Security_Cryptography_Oid_t _Nullable /* System.Security.Cryptography.Oid */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_Oid_Value_Set(
+	System_Security_Cryptography_Oid_t _Nullable /* System.Security.Cryptography.Oid */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Security_Cryptography_Oid_FriendlyName_Get(
+	System_Security_Cryptography_Oid_t _Nullable /* System.Security.Cryptography.Oid */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_Oid_FriendlyName_Set(
+	System_Security_Cryptography_Oid_t _Nullable /* System.Security.Cryptography.Oid */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_Oid_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_Oid_Destroy(
+	System_Security_Cryptography_Oid_t _Nullable /* System.Security.Cryptography.Oid */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.Oid
+
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.ECDiffieHellman
+System_Security_Cryptography_ECDiffieHellman_t _Nonnull /* System.Security.Cryptography.ECDiffieHellman */
+System_Security_Cryptography_ECDiffieHellman_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_ECDiffieHellman_t _Nonnull /* System.Security.Cryptography.ECDiffieHellman */
+System_Security_Cryptography_ECDiffieHellman_Create_1(
+	System_Security_Cryptography_ECCurve_t _Nonnull /* System.Security.Cryptography.ECCurve */ curve,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_ECDiffieHellman_t _Nonnull /* System.Security.Cryptography.ECDiffieHellman */
+System_Security_Cryptography_ECDiffieHellman_Create_2(
+	System_Security_Cryptography_ECParameters_t _Nonnull /* System.Security.Cryptography.ECParameters */ parameters,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_ECDiffieHellman_t _Nullable /* System.Security.Cryptography.ECDiffieHellman */
+System_Security_Cryptography_ECDiffieHellman_Create_3(
+	System_String_t _Nonnull /* System.String */ algorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDiffieHellman_DeriveKeyMaterial(
+	System_Security_Cryptography_ECDiffieHellman_t _Nullable /* System.Security.Cryptography.ECDiffieHellman */ self,
+	System_Security_Cryptography_ECDiffieHellmanPublicKey_t _Nonnull /* System.Security.Cryptography.ECDiffieHellmanPublicKey */ otherPartyPublicKey,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDiffieHellman_DeriveKeyFromHash(
+	System_Security_Cryptography_ECDiffieHellman_t _Nullable /* System.Security.Cryptography.ECDiffieHellman */ self,
+	System_Security_Cryptography_ECDiffieHellmanPublicKey_t _Nonnull /* System.Security.Cryptography.ECDiffieHellmanPublicKey */ otherPartyPublicKey,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDiffieHellman_DeriveKeyFromHash_1(
+	System_Security_Cryptography_ECDiffieHellman_t _Nullable /* System.Security.Cryptography.ECDiffieHellman */ self,
+	System_Security_Cryptography_ECDiffieHellmanPublicKey_t _Nonnull /* System.Security.Cryptography.ECDiffieHellmanPublicKey */ otherPartyPublicKey,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ secretPrepend,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ secretAppend,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDiffieHellman_DeriveKeyFromHmac(
+	System_Security_Cryptography_ECDiffieHellman_t _Nullable /* System.Security.Cryptography.ECDiffieHellman */ self,
+	System_Security_Cryptography_ECDiffieHellmanPublicKey_t _Nonnull /* System.Security.Cryptography.ECDiffieHellmanPublicKey */ otherPartyPublicKey,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ hmacKey,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDiffieHellman_DeriveKeyFromHmac_1(
+	System_Security_Cryptography_ECDiffieHellman_t _Nullable /* System.Security.Cryptography.ECDiffieHellman */ self,
+	System_Security_Cryptography_ECDiffieHellmanPublicKey_t _Nonnull /* System.Security.Cryptography.ECDiffieHellmanPublicKey */ otherPartyPublicKey,
+	System_Security_Cryptography_HashAlgorithmName_t _Nonnull /* System.Security.Cryptography.HashAlgorithmName */ hashAlgorithm,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ hmacKey,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ secretPrepend,
+	System_Byte_Array_t _Nullable /* System.Byte[] */ secretAppend,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDiffieHellman_DeriveKeyTls(
+	System_Security_Cryptography_ECDiffieHellman_t _Nullable /* System.Security.Cryptography.ECDiffieHellman */ self,
+	System_Security_Cryptography_ECDiffieHellmanPublicKey_t _Nonnull /* System.Security.Cryptography.ECDiffieHellmanPublicKey */ otherPartyPublicKey,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ prfLabel,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ prfSeed,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDiffieHellman_DeriveRawSecretAgreement(
+	System_Security_Cryptography_ECDiffieHellman_t _Nullable /* System.Security.Cryptography.ECDiffieHellman */ self,
+	System_Security_Cryptography_ECDiffieHellmanPublicKey_t _Nonnull /* System.Security.Cryptography.ECDiffieHellmanPublicKey */ otherPartyPublicKey,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECDiffieHellman_FromXmlString(
+	System_Security_Cryptography_ECDiffieHellman_t _Nullable /* System.Security.Cryptography.ECDiffieHellman */ self,
+	System_String_t _Nonnull /* System.String */ xmlString,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Security_Cryptography_ECDiffieHellman_ToXmlString(
+	System_Security_Cryptography_ECDiffieHellman_t _Nullable /* System.Security.Cryptography.ECDiffieHellman */ self,
+	bool /* System.Boolean */ includePrivateParameters,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Security_Cryptography_ECDiffieHellman_KeyExchangeAlgorithm_Get(
+	System_Security_Cryptography_ECDiffieHellman_t _Nullable /* System.Security.Cryptography.ECDiffieHellman */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Security_Cryptography_ECDiffieHellman_SignatureAlgorithm_Get(
+	System_Security_Cryptography_ECDiffieHellman_t _Nullable /* System.Security.Cryptography.ECDiffieHellman */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_ECDiffieHellmanPublicKey_t _Nonnull /* System.Security.Cryptography.ECDiffieHellmanPublicKey */
+System_Security_Cryptography_ECDiffieHellman_PublicKey_Get(
+	System_Security_Cryptography_ECDiffieHellman_t _Nullable /* System.Security.Cryptography.ECDiffieHellman */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_ECDiffieHellman_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECDiffieHellman_Destroy(
+	System_Security_Cryptography_ECDiffieHellman_t _Nullable /* System.Security.Cryptography.ECDiffieHellman */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.ECDiffieHellman
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.ECDiffieHellmanPublicKey
+void /* System.Void */
+System_Security_Cryptography_ECDiffieHellmanPublicKey_Dispose(
+	System_Security_Cryptography_ECDiffieHellmanPublicKey_t _Nullable /* System.Security.Cryptography.ECDiffieHellmanPublicKey */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDiffieHellmanPublicKey_ToByteArray(
+	System_Security_Cryptography_ECDiffieHellmanPublicKey_t _Nullable /* System.Security.Cryptography.ECDiffieHellmanPublicKey */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Security_Cryptography_ECDiffieHellmanPublicKey_ToXmlString(
+	System_Security_Cryptography_ECDiffieHellmanPublicKey_t _Nullable /* System.Security.Cryptography.ECDiffieHellmanPublicKey */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_ECParameters_t _Nonnull /* System.Security.Cryptography.ECParameters */
+System_Security_Cryptography_ECDiffieHellmanPublicKey_ExportParameters(
+	System_Security_Cryptography_ECDiffieHellmanPublicKey_t _Nullable /* System.Security.Cryptography.ECDiffieHellmanPublicKey */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_ECParameters_t _Nonnull /* System.Security.Cryptography.ECParameters */
+System_Security_Cryptography_ECDiffieHellmanPublicKey_ExportExplicitParameters(
+	System_Security_Cryptography_ECDiffieHellmanPublicKey_t _Nullable /* System.Security.Cryptography.ECDiffieHellmanPublicKey */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_ECDiffieHellmanPublicKey_ExportSubjectPublicKeyInfo(
+	System_Security_Cryptography_ECDiffieHellmanPublicKey_t _Nullable /* System.Security.Cryptography.ECDiffieHellmanPublicKey */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_ECDiffieHellmanPublicKey_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_ECDiffieHellmanPublicKey_Destroy(
+	System_Security_Cryptography_ECDiffieHellmanPublicKey_t _Nullable /* System.Security.Cryptography.ECDiffieHellmanPublicKey */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.ECDiffieHellmanPublicKey
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Transformer.BuiltInTransformers
 Beyond_NET_Sample_Transformer_StringTransformerDelegate_t _Nonnull /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */
