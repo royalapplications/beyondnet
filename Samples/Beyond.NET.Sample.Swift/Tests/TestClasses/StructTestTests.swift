@@ -130,4 +130,57 @@ final class StructTestTests: XCTestCase {
         try ret2.name_set(newName4.dotNETString())
         XCTAssertEqual(try ret2.name?.string(), newName4)
     }
+    
+    func testNullableValueTypes_readOnlyNullInstanceField() throws {
+        let testClass = try Beyond_NET_Sample_StructTestClass()
+        let value = testClass.readOnlyNullInstanceField
+        
+        XCTAssertNil(value)
+    }
+    
+    func testNullableValueTypes_nonNullInstanceField() throws {
+        let origName = "Test"
+        let newName = "New Test"
+        
+        let testClass = try Beyond_NET_Sample_StructTestClass()
+        let origValue = testClass.nonNullInstanceField
+        
+        XCTAssertNotNil(origValue)
+        XCTAssertEqual(try origValue?.name?.string(), origName)
+        
+        let newValue = try Beyond_NET_Sample_StructTest(newName.dotNETString())
+        testClass.nonNullInstanceField_set(newValue)
+    
+        let newValueRet = testClass.nonNullInstanceField
+        
+        XCTAssertNotNil(newValueRet)
+        XCTAssertEqual(try newValueRet?.name?.string(), newName)
+        
+        testClass.nonNullInstanceField_set(nil)
+        
+        let nilValueRet = testClass.nonNullInstanceField
+        
+        XCTAssertNil(nilValueRet)
+    }
+    
+    func testNullableValueTypes_nullableStructPropertyWithGetterAndSetter() throws {
+        let testClass = try Beyond_NET_Sample_StructTestClass()
+        
+        let origValue = try testClass.nullableStructPropertyWithGetterAndSetter
+        XCTAssertNil(origValue)
+        
+        let newName = "Test"
+        let newValue = try Beyond_NET_Sample_StructTest(newName.dotNETString())
+        
+        try testClass.nullableStructPropertyWithGetterAndSetter_set(newValue)
+        
+        let newValueRet = try testClass.nullableStructPropertyWithGetterAndSetter
+        XCTAssertEqual(newValueRet, newValue)
+        XCTAssertNotNil(newValueRet)
+        XCTAssertEqual(try newValueRet?.name?.string(), newName)
+        
+        try testClass.nullableStructPropertyWithGetterAndSetter_set(nil)
+        let nilValueRet = try testClass.nullableStructPropertyWithGetterAndSetter
+        XCTAssertNil(nilValueRet)
+    }
 }

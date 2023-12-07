@@ -1,5 +1,12 @@
 namespace Beyond.NET.Sample;
 
+public class StructTestClass
+{
+    public readonly StructTest? ReadOnlyNullInstanceField = null;
+    public StructTest? NonNullInstanceField = new StructTest("Test");
+    public StructTest? NullableStructPropertyWithGetterAndSetter { get; set; } = null;
+}
+
 public struct StructTest
 {
     public string? Name { get; set; }
@@ -9,12 +16,16 @@ public struct StructTest
         Name = name;
     }
 
-    // private static StructTest? NullInstanceField = null;
+    // TODO: Uncommenting this makes Assembly.ExportedTypes throw
+    // public static readonly StructTest? ReadOnlyNullInstanceField = null;
     public static StructTest? NullInstanceProperty => null;
-
-    // private static StructTest? NonNullInstanceField = new StructTest("Test");
+    
+    // TODO: Uncommenting this makes Assembly.ExportedTypes throw
+    // public static StructTest? NonNullInstanceField = new StructTest("Test");
+    
     public static StructTest? NonNullInstanceProperty => new StructTest("Test");
-
+    
+    // TODO: Uncommenting this makes Assembly.ExportedTypes throw
     // public static StructTest? NullableStructPropertyWithGetterAndSetter { get; set; } = null;
 
     public static StructTest? GetNullableStructReturnValue(bool returnNull)

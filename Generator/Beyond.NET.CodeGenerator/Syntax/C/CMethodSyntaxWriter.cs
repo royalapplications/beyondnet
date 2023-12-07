@@ -299,6 +299,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         string methodSignatureParameters = WriteParameters(
             memberKind,
             setterType,
+            isNullableValueTypeReturnType ? Nullability.Nullable : Nullability.NotSpecified,
             mayThrow,
             isStaticMethod,
             declaringType,
@@ -324,6 +325,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
     internal static string WriteParameters(
         MemberKind memberKind,
         Type? setterOrEventHandlerType,
+        Nullability setterOrEventHandlerTypeNullability,
         bool mayThrow,
         bool isStatic,
         Type declaringType,
@@ -436,7 +438,11 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             
             TypeDescriptor setterOrEventHandlerTypeDescriptor = setterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
             
-            string cSetterOrEventHandlerTypeName = setterOrEventHandlerTypeDescriptor.GetTypeName(CodeLanguage.C, true);
+            string cSetterOrEventHandlerTypeName = setterOrEventHandlerTypeDescriptor.GetTypeName(
+                CodeLanguage.C,
+                true,
+                setterOrEventHandlerTypeNullability
+            );
     
             string parameterString = $"{cSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */ value";
             parameterList.Add(parameterString);

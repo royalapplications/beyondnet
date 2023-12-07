@@ -456,6 +456,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         string parameters = CMethodSyntaxWriter.WriteParameters(
             MemberKind.Automatic,
             null,
+            Nullability.NotSpecified,
             false,
             true,
             type,

@@ -1,5 +1,5 @@
-// Number of generated types: 1757
-// Number of generated members: 5665
+// Number of generated types: 1758
+// Number of generated members: 5673
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -5552,8 +5552,10 @@ typedef void* Beyond_NET_Sample_PropertyTests_t;
 typedef void* Beyond_NET_Sample_SpanTest_t;
 
 
-typedef void* Beyond_NET_Sample_StructTest_t;
+typedef void* Beyond_NET_Sample_StructTestClass_t;
 
+
+typedef void* Beyond_NET_Sample_StructTest_t;
 
 
 typedef void* Beyond_NET_Sample_Book_t;
@@ -46339,6 +46341,57 @@ Beyond_NET_Sample_SpanTest_Destroy(
 #pragma mark - END APIs of Beyond.NET.Sample.SpanTest
 
 
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.StructTestClass
+Beyond_NET_Sample_StructTestClass_t _Nonnull /* Beyond.NET.Sample.StructTestClass */
+Beyond_NET_Sample_StructTestClass_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_StructTest_t _Nullable* _Nullable /* Beyond.NET.Sample.StructTest */
+Beyond_NET_Sample_StructTestClass_NullableStructPropertyWithGetterAndSetter_Get(
+	Beyond_NET_Sample_StructTestClass_t _Nullable /* Beyond.NET.Sample.StructTestClass */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_StructTestClass_NullableStructPropertyWithGetterAndSetter_Set(
+	Beyond_NET_Sample_StructTestClass_t _Nullable /* Beyond.NET.Sample.StructTestClass */ self,
+	Beyond_NET_Sample_StructTest_t _Nullable /* Beyond.NET.Sample.StructTest */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+Beyond_NET_Sample_StructTest_t _Nullable* _Nullable /* Beyond.NET.Sample.StructTest */
+Beyond_NET_Sample_StructTestClass_ReadOnlyNullInstanceField_Get(
+	Beyond_NET_Sample_StructTestClass_t _Nullable /* Beyond.NET.Sample.StructTestClass */ self
+);
+
+
+Beyond_NET_Sample_StructTest_t _Nullable* _Nullable /* Beyond.NET.Sample.StructTest */
+Beyond_NET_Sample_StructTestClass_NonNullInstanceField_Get(
+	Beyond_NET_Sample_StructTestClass_t _Nullable /* Beyond.NET.Sample.StructTestClass */ self
+);
+
+void /* System.Void */
+Beyond_NET_Sample_StructTestClass_NonNullInstanceField_Set(
+	Beyond_NET_Sample_StructTestClass_t _Nullable /* Beyond.NET.Sample.StructTestClass */ self,
+	Beyond_NET_Sample_StructTest_t _Nullable /* Beyond.NET.Sample.StructTest */ value
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_StructTestClass_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_StructTestClass_Destroy(
+	Beyond_NET_Sample_StructTestClass_t _Nullable /* Beyond.NET.Sample.StructTestClass */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.StructTestClass
+
+
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.StructTest
 Beyond_NET_Sample_StructTest_t _Nullable* _Nullable /* Beyond.NET.Sample.StructTest */
 Beyond_NET_Sample_StructTest_GetNullableStructReturnValue(
@@ -46413,7 +46466,6 @@ Beyond_NET_Sample_StructTest_Destroy(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.StructTest
-
 
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Book
