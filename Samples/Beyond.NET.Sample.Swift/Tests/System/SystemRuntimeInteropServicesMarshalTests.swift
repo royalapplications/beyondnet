@@ -47,7 +47,7 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
             return
         }
         
-        let systemByteArray = try System_Byte_Array(length: dataCount)
+        let systemByteArray = try DNArray<System_Byte>(length: dataCount)
         
         data.withUnsafeBytes {
             guard let unsafeBytesPointer = $0.baseAddress else {
@@ -96,7 +96,7 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
             return
         }
         
-        var systemByteArray: System_Byte_Array?
+        var systemByteArray: DNArray<System_Byte>?
         
         measure {
             systemByteArray = try? data.dotNETByteArray()
@@ -237,7 +237,7 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
     }
     
     func testEmptySystemByteArrayToSwiftDataWithExtension() throws {
-        let systemByteArray = try System_Byte_Array(length: 0)
+        let systemByteArray = try DNArray<System_Byte>(length: 0)
         
         let copiedData = try systemByteArray.data()
         
@@ -252,7 +252,7 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
 }
 
 private extension SystemRuntimeInteropServicesMarshalTests {
-    func validateSystemByteArray(_ systemByteArray: System_Byte_Array,
+    func validateSystemByteArray(_ systemByteArray: DNArray<System_Byte>,
                                  matchesData data: Data) {
         guard let systemByteArrayLength = try? systemByteArray.length else {
             XCTFail("System.Array.Length should not throw and return an integer")
@@ -289,14 +289,14 @@ private extension SystemRuntimeInteropServicesMarshalTests {
         }
     }
     
-    func randomSystemByteArray(count: Int) throws -> System_Byte_Array? {
+    func randomSystemByteArray(count: Int) throws -> DNArray<System_Byte>? {
         guard let random = try? System.Random() else {
             XCTFail("System.Random ctor should not throw and return an instance")
             
             return nil
         }
         
-        let systemByteArray = try System_Byte_Array(length: .init(count))
+        let systemByteArray = try DNArray<System_Byte>(length: .init(count))
         
         do {
             try random.nextBytes(systemByteArray)

@@ -48,7 +48,8 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         }
         
         if (type.IsPointer ||
-            type.IsByRef) {
+            type.IsByRef ||
+            type.IsArray) {
             // No need to generate Swift code for those kinds of types
 
             return string.Empty;

@@ -22,13 +22,13 @@ private extension PerformanceView {
         iterate(array)
     }
     
-    func createArray() -> System.Object_Array {
+    func createArray() -> DNArray<System.Object> {
         do {
             let count: Int32 = 1_000_000
             
             var values = [System.Object]()
             
-            let systemObjectArray = try System_Object_Array(length: count)
+            let systemObjectArray = try DNArray<System.Object>(length: count)
             
             for idx in 0..<count {
                 let obj = try System.Object()
@@ -43,7 +43,7 @@ private extension PerformanceView {
         }
     }
     
-    func iterate(_ systemObjectArray: System.Object_Array) {
+    func iterate(_ systemObjectArray: DNArray<System.Object>) {
         for obj in systemObjectArray {
             // Aka PleaseDontOptimizeThisOut
             let _ = obj

@@ -318,7 +318,7 @@ final class PersonTests: XCTestCase {
         
         XCTAssertEqual(1, numberOfChildrenBeforeDaugther)
         
-        let newChildren = try Beyond_NET_Sample_Person_Array(length: 2)
+        let newChildren = try DNArray<Beyond_NET_Sample_Person>(length: 2)
         
         try System_Array.copy(originalChildren,
                               newChildren,

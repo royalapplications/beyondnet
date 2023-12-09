@@ -217,7 +217,15 @@ public class SwiftCodeGenerator: ICodeGenerator
         Dictionary<string, Tuple<Type, string>> typeAliases = new();
 
         foreach (var type in typesInNamespace) {
+            if (type.IsArray) {
+                continue;
+            }
+            
             Type nonByRefType = type.GetNonByRefType();
+
+            if (nonByRefType.IsArray) {
+                continue;
+            }
 
             if (nonByRefType.IsGenericType || 
                 nonByRefType.IsConstructedGenericType ||

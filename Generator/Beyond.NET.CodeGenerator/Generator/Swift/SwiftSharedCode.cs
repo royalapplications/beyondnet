@@ -53,6 +53,80 @@ public class DNObject {
 	}
 }
 
+public class DNArray<T>: System_Array, MutableCollection where T: System_Object {
+    public typealias Element = T?
+    public typealias Index = Int32
+    
+    public override class var typeName: String {
+        "\(T.typeName)[]"
+    }
+    
+    public override class var fullTypeName: String {
+        "\(T.fullTypeName)[]"
+    }
+    
+    public convenience init() throws {
+        let elementType = T.typeOf
+        let elementTypeC = elementType.__handle
+        
+        var __exceptionC: System_Exception_t?
+        
+        let newArrayC = System_Array_CreateInstance(elementTypeC, 0, &__exceptionC)
+        
+        if let __exceptionC {
+            let __exception = System_Exception(handle: __exceptionC)
+            let __error = __exception.error
+            
+            throw __error
+        }
+        
+        self.init(handle: newArrayC)
+    }
+    
+    public convenience init(length: Index) throws {
+        let elementType = T.typeOf
+        let elementTypeC = elementType.__handle
+        
+        var __exceptionC: System_Exception_t?
+        
+        let newArrayC = System_Array_CreateInstance(elementTypeC, length, &__exceptionC)
+        
+        if let __exceptionC {
+            let __exception = System_Exception(handle: __exceptionC)
+            let __error = __exception.error
+            
+            throw __error
+        }
+        
+        self.init(handle: newArrayC)
+    }
+    
+    public subscript(position: Index) -> Element {
+        get {
+            assert(position >= startIndex && position < endIndex, "Out of bounds")
+            
+            do {
+                guard let element = try getValue(position) else {
+                    return nil
+                }
+                
+                return try element.castTo()
+            } catch {
+                fatalError("An exception was thrown while calling System.Array.GetValue: \(error.localizedDescription)")
+            }
+        }
+        set {
+            assert(position >= startIndex && position < endIndex, "Out of bounds")
+
+            do {
+                try setValue(newValue, position)
+            } catch {
+                fatalError("An exception was thrown while calling System.Array.SetValue: \(error.localizedDescription)")
+            }
+        }
+    }
+}
+
 // MARK: - Type Conversion Extensions
 public extension DNObject {
     func `is`(_ type: System_Type) -> Bool {
@@ -501,9 +575,8 @@ public extension System_String {
 
 public extension [String] {
     /// Converts a Swift String Array into a .NET System.String Array
-    func dotNETStringArray() throws -> System_String_Array {
-        let arr = try System_String_Array.createInstance(System_String.typeOf,
-                                                         .init(count))
+    func dotNETStringArray() throws -> DNArray<System_String> {
+        let arr = try DNArray<System_String>(length: .init(count))
         
         for (idx, el) in self.enumerated() {
             let elDN = el.dotNETString()
@@ -511,13 +584,11 @@ public extension [String] {
             try arr.setValue(elDN, Int32(idx))
         }
         
-        let strArr: System_String_Array = try arr.castTo()
-        
-        return strArr
+        return arr
     }
 }
 
-public extension System_String_Array {
+public extension DNArray<System_String> {
     /// Converts a .NET System.String Array into a Swift String Array
     func array() throws -> [String] {
         let len = try self.length
@@ -801,12 +872,10 @@ extension Date {
 
 public extension Data {
     /// Creates a .NET byte array by copying the data from the Swift Data object
-    func dotNETByteArray() throws -> System_Byte_Array {
+    func dotNETByteArray() throws -> DNArray<System_Byte> {
         let bytesCount = Int32(self.count)
         
-        let systemArray = try System_Array.createInstance(System_Byte.typeOf, bytesCount)
-        
-        let systemByteArray: System_Byte_Array = try systemArray.castTo()
+        let systemByteArray = try DNArray<System_Byte>(length: bytesCount)
         
         guard bytesCount > 0 else {
             return systemByteArray
@@ -827,7 +896,7 @@ public extension Data {
     }
 }
 
-public extension System_Byte_Array {
+public extension DNArray<System_Byte> {
     /// Creates a Swift Data object by either copying the data from the .NET byte array or getting a pinned pointer to the underlying data in .NET which is freed as soon as the Swift Data object is deallocated. 
     func data(noCopy: Bool = false) throws -> Data {
         let bytesCount = try self.length

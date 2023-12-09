@@ -66,7 +66,7 @@ final class IndexerTestsTests: XCTestCase {
 		
 		let aGuid = try System_Guid.newGuid()
 		
-		let array = try System_Object_Array(length: 3)
+        let array = try DNArray<System_Object>(length: 3)
 		
 		try array.setValue(aStringDN, 0 as Int32)
 		try array.setValue(DNObject.fromInt32(aNumber), 1 as Int32)

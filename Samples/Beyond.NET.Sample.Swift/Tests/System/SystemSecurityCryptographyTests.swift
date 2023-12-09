@@ -32,8 +32,8 @@ final class SystemSecurityCryptographyTests: XCTestCase {
 
 fileprivate extension SystemSecurityCryptographyTests {
     func encrypt(data: String) throws -> (encryptedData: String, 
-                                          iv: System.Byte_Array,
-                                          key: System.Byte_Array) {
+                                          iv: DNArray<System.Byte>,
+                                          key: DNArray<System.Byte>) {
         let aes = try System.Security.Cryptography.Aes.create()
         
         try aes.generateIV()
@@ -71,8 +71,8 @@ fileprivate extension SystemSecurityCryptographyTests {
     }
     
     func decrypt(data: String,
-                 iv: System.Byte_Array,
-                 key: System.Byte_Array) throws -> String {
+                 iv: DNArray<System.Byte>,
+                 key: DNArray<System.Byte>) throws -> String {
         let buffer = try System.Convert.fromBase64String(data.dotNETString())
         
         let aes = try System.Security.Cryptography.Aes.create()

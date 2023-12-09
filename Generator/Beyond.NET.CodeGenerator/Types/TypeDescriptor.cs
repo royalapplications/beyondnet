@@ -261,7 +261,23 @@ public class TypeDescriptor
 
                 return constructedCTypeName;
             case CodeLanguage.Swift:
-                string swiftTypeName = ManagedType.CTypeName();
+                bool isArray = ManagedType.IsArray;
+                
+                Type? elementType = isArray
+                    ? ManagedType.GetElementType()
+                    : null;
+
+                string swiftTypeName;
+                
+                if (isArray &&
+                    elementType is not null) {
+                    // TODO: Shouldn't this go through TypeDescriptor?
+                    var swiftElementTypeName = elementType.CTypeName();
+
+                    swiftTypeName = $"DNArray<{swiftElementTypeName}>";
+                } else {
+                    swiftTypeName = ManagedType.CTypeName();
+                }
                 
                 return swiftTypeName;
             default:
