@@ -273,7 +273,7 @@ private extension SystemRuntimeInteropServicesMarshalTests {
             
             let dataByte = data[idx]
             
-            guard let systemByteObject = try? systemByteArray.getValue(idxAsInt32) else {
+            guard let systemByteObject = systemByteArray[idxAsInt32] else {
                 XCTFail("System.Array.GetValue should not throw and return an instance")
                 
                 return

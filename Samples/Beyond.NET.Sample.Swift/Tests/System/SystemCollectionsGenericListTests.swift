@@ -26,7 +26,7 @@ final class SystemCollectionsGenericListTests: XCTestCase {
         let numberOfGenericArguments = try genericArguments.length
         XCTAssertEqual(1, numberOfGenericArguments)
         
-        guard let genericArgument = try? genericArguments.getValue(0 as Int32) else {
+        guard let genericArgument = genericArguments[0] else {
             XCTFail("System.Array.GetValue should not throw and return an instance")
             
             return

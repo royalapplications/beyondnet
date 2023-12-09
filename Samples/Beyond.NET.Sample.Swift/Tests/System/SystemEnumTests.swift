@@ -21,15 +21,15 @@ final class SystemEnumTests: XCTestCase {
         XCTAssertEqual(3, namesCount)
 
         var names = [String]()
-
-        for idx in 0..<namesCount {
-            guard let stringElement = try? enumNames.getValue(idx)?.castAs(System_String.self)?.string() else {
+        
+        for enumNameDN in enumNames {
+            guard let enumName = enumNameDN?.string() else {
                 XCTFail("System.Array.GetValue should not throw and return an instance")
 
                 return
             }
 
-            names.append(stringElement)
+            names.append(enumName)
         }
 
         let unspecified = "Unspecified"
