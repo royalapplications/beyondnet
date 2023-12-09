@@ -175,10 +175,8 @@ final class SystemArrayTests: XCTestCase {
         let length = try arrayOfString.length
         XCTAssertEqual(numberOfElements, length)
 
-        for idx in 0..<length {
-            let stringElement = try arrayOfString.getValue(idx)?.castAs(System_String.self)?.string()
-
-            XCTAssertEqual(string, stringElement)
+        for stringElement in arrayOfString {
+            XCTAssertEqual(string, stringElement?.string())
         }
     }
     
@@ -197,7 +195,7 @@ final class SystemArrayTests: XCTestCase {
         for (idx, string) in strings.enumerated() {
             let stringDN = string.dotNETString()
             
-            try arrayOfString.setValue(stringDN, Int32(idx))
+            arrayOfString[Int32(idx)] = stringDN
         }
         
         try System_Array.reverse(T: systemStringType,
@@ -223,9 +221,11 @@ final class SystemArrayTests: XCTestCase {
 		
 		for idx in 0..<length {
 			let randomInt32 = Int32.random(in: Int32.min..<Int32.max)
-			let randomInt32Obj = randomInt32.dotNETObject()
+            
+            // TODO: This can certainly be improved, right?
+            let randomInt32Obj: System.Int32 = try randomInt32.dotNETObject().castTo()
 			
-			try arrayOfInt32.setValue(randomInt32Obj, idx)
+            arrayOfInt32[idx] = randomInt32Obj
 			
 			int32s.append(randomInt32)
 		}
@@ -321,7 +321,7 @@ final class SystemArrayTests: XCTestCase {
             let obj = try System.Object()
             
             values.append(obj)
-            try systemArray.setValue(obj, idx)
+            systemArray[idx] = obj
         }
         
         XCTAssertEqual(systemArray.count, values.count)
