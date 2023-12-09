@@ -229,8 +229,7 @@ final class GenericTestsTests: XCTestCase {
 		
 		let stringType = System_String.typeOf
 
-		let arrayOfStrings = try System_Array.createInstance(stringType,
-                                                             numberOfElements)
+		let arrayOfStrings = try System_String_Array(length: numberOfElements)
 
 		var dnStrings = [System_String]()
 		var strings = [String]()
@@ -260,13 +259,11 @@ final class GenericTestsTests: XCTestCase {
 		let listOfStrings = try genericTests.listOfStrings
         
 		let listType = System_Collections_Generic_List_A1.typeOf
-		let systemTypeType = System_Type.typeOf
 		let systemStringType = System_String.typeOf
 		
-		let typeArguments = try System_Array.createInstance(systemTypeType,
-                                                            1)
-		
-		try typeArguments.setValue(systemStringType, 0 as Int32)
+		let typeArguments = try System_Type_Array(length: 1)
+        
+        typeArguments[0] = systemStringType
 		
         let listOfStringType = try listType.makeGenericType(typeArguments.castTo(System_Type_Array.self))
 		XCTAssertTrue(listOfStrings.is(listOfStringType))

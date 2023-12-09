@@ -47,13 +47,7 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
             return
         }
         
-        let systemArray = try System.Array.createInstance(System.Byte.typeOf, dataCount)
-        
-        guard let systemByteArray: System_Byte_Array = systemArray.castAs() else {
-            XCTFail("System.Array should be possible to cast to byte[]")
-            
-            return
-        }
+        let systemByteArray = try System_Byte_Array(length: dataCount)
         
         data.withUnsafeBytes {
             guard let unsafeBytesPointer = $0.baseAddress else {
@@ -135,7 +129,7 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
     func testSystemByteArrayToSwiftData() throws {
         let bytesCount = correctnessTestsByteCount
         
-        guard let systemByteArray = randomSystemByteArray(count: bytesCount) else {
+        guard let systemByteArray = try randomSystemByteArray(count: bytesCount) else {
             XCTFail("System.Array should be possible to cast to byte[]")
             
             return
@@ -173,7 +167,7 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
     func testSystemByteArrayToSwiftDataWithExtension() throws {
         let bytesCount = correctnessTestsByteCount
         
-        guard let systemByteArray = randomSystemByteArray(count: bytesCount) else {
+        guard let systemByteArray = try randomSystemByteArray(count: bytesCount) else {
             XCTFail("System.Array should be possible to cast to byte[]")
             
             return
@@ -193,7 +187,7 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
     func testPerformanceOfSystemByteArrayToSwiftDataWithExtension() throws {
         let bytesCount = performanceTestsByteCount
         
-        guard let systemByteArray = randomSystemByteArray(count: bytesCount) else {
+        guard let systemByteArray = try randomSystemByteArray(count: bytesCount) else {
             XCTFail("Failed to create random byte[]")
             
             return
@@ -219,7 +213,7 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
     func testPerformanceOfSystemByteArrayToSwiftDataWithExtensionNoCopy() throws {
         let bytesCount = performanceTestsByteCount
         
-        guard let systemByteArray = randomSystemByteArray(count: bytesCount) else {
+        guard let systemByteArray = try randomSystemByteArray(count: bytesCount) else {
             XCTFail("Failed to create random byte[]")
             
             return
@@ -243,13 +237,7 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
     }
     
     func testEmptySystemByteArrayToSwiftDataWithExtension() throws {
-        let systemArray = try System.Array.createInstance(System.Byte.typeOf, 0)
-        
-        guard let systemByteArray: System_Byte_Array = systemArray.castAs() else {
-            XCTFail("System.Array should be possible to cast to byte[]")
-            
-            return
-        }
+        let systemByteArray = try System_Byte_Array(length: 0)
         
         let copiedData = try systemByteArray.data()
         
@@ -301,24 +289,14 @@ private extension SystemRuntimeInteropServicesMarshalTests {
         }
     }
     
-    func randomSystemByteArray(count: Int) -> System_Byte_Array? {
+    func randomSystemByteArray(count: Int) throws -> System_Byte_Array? {
         guard let random = try? System.Random() else {
             XCTFail("System.Random ctor should not throw and return an instance")
             
             return nil
         }
         
-        guard let systemArray = try? System.Array.createInstance(System.Byte.typeOf, .init(count)) else {
-            XCTFail("System.Array.CreateInstance should not throw and return an instance")
-            
-            return nil
-        }
-        
-        guard let systemByteArray: System_Byte_Array = systemArray.castAs() else {
-            XCTFail("System.Array should be possible to cast to byte[]")
-            
-            return nil
-        }
+        let systemByteArray = try System_Byte_Array(length: .init(count))
         
         do {
             try random.nextBytes(systemByteArray)

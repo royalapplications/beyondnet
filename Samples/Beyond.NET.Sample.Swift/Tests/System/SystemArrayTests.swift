@@ -1,6 +1,86 @@
 import XCTest
 import BeyondDotNETSampleKit
 
+public class DNArray<T>: /* System_Array, */ MutableCollection where T: System_Object {
+    public typealias Element = T?
+    public typealias Index = Int32
+    
+    public let systemArray: System_Array
+    
+    init(systemArray: System_Array) {
+        self.systemArray = systemArray
+    }
+    
+    public convenience init() throws {
+        let elementType = T.typeOf
+        let arr = try System_Array.createInstance(elementType, 0)
+        
+        self.init(systemArray: arr)
+    }
+    
+    public convenience init(length: Index) throws {
+        let elementType = T.typeOf
+        
+        let arr = try System_Array.createInstance(elementType,
+                                                  length)
+        
+        self.init(systemArray: arr)
+    }
+    
+    public var startIndex: Index {
+        0
+    }
+    
+    public var endIndex: Index {
+        let length: Int32
+        
+        do {
+            length = try systemArray.length
+        } catch {
+            fatalError("An exception was thrown while calling System.Array.Length: \(error.localizedDescription)")
+        }
+        
+        guard length > 0 else {
+            return 0
+        }
+        
+        return length
+    }
+    
+    public func index(after i: Index) -> Index {
+        i + 1
+    }
+    
+    public func index(before i: Index) -> Index {
+        i - 1
+    }
+    
+    public subscript(position: Index) -> Element {
+        get {
+            assert(position >= startIndex && position < endIndex, "Out of bounds")
+            
+            do {
+                guard let element = try systemArray.getValue(position) else {
+                    return nil
+                }
+                
+                return try element.castTo()
+            } catch {
+                fatalError("An exception was thrown while calling System.Array.GetValue: \(error.localizedDescription)")
+            }
+        }
+        set {
+            assert(position >= startIndex && position < endIndex, "Out of bounds")
+
+            do {
+                try systemArray.setValue(newValue, position)
+            } catch {
+                fatalError("An exception was thrown while calling System.Array.SetValue: \(error.localizedDescription)")
+            }
+        }
+    }
+}
+
 final class SystemArrayTests: XCTestCase {
     @MainActor
     override class func setUp() {
@@ -10,6 +90,20 @@ final class SystemArrayTests: XCTestCase {
     @MainActor
     override class func tearDown() {
         Self.sharedTearDown()
+    }
+    
+    func testGenericArray() throws {
+        let now = try System_DateTime.now
+        
+        let arrayOfDateTime = try DNArray<System_DateTime>(length: 1)
+        
+        let index: Int32 = 0
+        
+        arrayOfDateTime[index] = now
+        let retrievedNow = arrayOfDateTime[index]
+        
+        let equals = now == retrievedNow
+        XCTAssertTrue(equals)
     }
     
     func testSystemArray() throws {
@@ -55,7 +149,7 @@ final class SystemArrayTests: XCTestCase {
     func testEmptyArrayWithExtensionExplicitElementType() throws {
         let systemStringType = System_String.typeOf
         
-        let emptyArrayOfStrings = System_Array.createEmpty(elementType: systemStringType)
+        let emptyArrayOfStrings = try System_String_Array(length: 0)
         
         let length = try emptyArrayOfStrings.length
         XCTAssertEqual(0, .init(length))
@@ -77,7 +171,7 @@ final class SystemArrayTests: XCTestCase {
     func testEmptyArrayWithExtensionOnExplicitArrayType() throws {
         let systemStringType = System_String.typeOf
         
-        let emptyArrayOfStrings = System_String_Array.createEmpty()
+        let emptyArrayOfStrings = try System_String_Array()
         
         let length = try emptyArrayOfStrings.length
         XCTAssertEqual(0, .init(length))
@@ -99,7 +193,7 @@ final class SystemArrayTests: XCTestCase {
     func testEmptyArrayWithInitializerOnExplicitArrayType() throws {
         let systemStringType = System_String.typeOf
         
-        let emptyArrayOfStrings = System_String_Array()
+        let emptyArrayOfStrings = try System_String_Array()
         
         let length = try emptyArrayOfStrings.length
         XCTAssertEqual(0, .init(length))
@@ -142,8 +236,7 @@ final class SystemArrayTests: XCTestCase {
 
         let numberOfElements: Int32 = 5
 
-        let arrayOfString = try System_Array.createInstance(systemStringType,
-                                                            numberOfElements)
+        let arrayOfString = try System_String_Array(length: numberOfElements)
 
         let string = "Abc"
         let stringDN = string.dotNETString()
@@ -172,8 +265,7 @@ final class SystemArrayTests: XCTestCase {
 
         let numberOfElements: Int32 = .init(strings.count)
 
-        let arrayOfString = try System_Array.createInstance(systemStringType,
-                                                            numberOfElements)
+        let arrayOfString = try System_String_Array(length: numberOfElements)
 
         for (idx, string) in strings.enumerated() {
             let stringDN = string.dotNETString()
@@ -187,7 +279,7 @@ final class SystemArrayTests: XCTestCase {
         let reversedStrings = [String](strings.reversed())
 
         for idx in 0..<numberOfElements {
-            let stringElement = try arrayOfString.getValue(idx)?.castAs(System_String.self)?.string()
+            let stringElement = arrayOfString[idx]?.string()
 
             let expectedString = reversedStrings[.init(idx)]
 
@@ -198,14 +290,7 @@ final class SystemArrayTests: XCTestCase {
 	func testSystemArrayIterator() throws {
 		let length: Int32 = 10
 		
-		guard let int32Type = try? System_Type.getType("System.Int32".dotNETString()) else {
-			XCTFail("System.Type.GetType should not throw and return an instance")
-			
-			return
-		}
-		
-		let arrayOfInt32 = try System_Array.createInstance(int32Type,
-                                                           length)
+        let arrayOfInt32 = try System_Int32_Array(length: length)
 		
 		var int32s = [Int32]()
 		
@@ -217,7 +302,7 @@ final class SystemArrayTests: XCTestCase {
 			
 			int32s.append(randomInt32)
 		}
-		
+        
 		for (idx, int32Obj) in arrayOfInt32.enumerated() {
 			guard let int32Obj else {
 				XCTFail("Failed to retrieve object from array")
@@ -236,16 +321,13 @@ final class SystemArrayTests: XCTestCase {
 	}
 	
 	func testSystemArraySubscript() throws {
-		let systemStringType = System_String.typeOf
-		
 		let strings = [
 			"Hello",
 			"World"
 		]
 		
-		let arrayOfString = try System_Array.createInstance(systemStringType,
-                                                            Int32(strings.count))
-		
+        let arrayOfString = try System_String_Array(length: .init(strings.count))
+        
 		for (idx, string) in strings.enumerated() {
 			try arrayOfString.setValue(string.dotNETString(), Int32(idx))
 		}
@@ -270,23 +352,19 @@ final class SystemArrayTests: XCTestCase {
 	}
     
     func testMutatingSystemArray() throws {
-        let systemStringType = System_String.typeOf
-        
         let strings = [
             "Hello",
             "World"
         ]
         
-        let arrayOfString = try System_Array.createInstance(systemStringType,
-                                                            Int32(strings.count))
+        let arrayOfString = try System.String_Array(length: .init(strings.count))
         
         for (idx, string) in strings.enumerated() {
             arrayOfString[.init(idx)] = string.dotNETString()
         }
         
-        for (idx, objDN) in arrayOfString.enumerated() {
-            guard let objDN,
-                  let stringDN = objDN.castAs(System.String.self) else {
+        for (idx, stringDN) in arrayOfString.enumerated() {
+            guard let stringDN else {
                 XCTFail("Failed to get .NET String from Array")
                 
                 return
@@ -306,13 +384,11 @@ final class SystemArrayTests: XCTestCase {
     }
     
     func testIteratingArrayPerformance() throws {
-        let systemObjectType = System.Object.typeOf
         let count: Int32 = 10_000
         
         var values = [System.Object]()
         
-        let systemArray = try System_Array.createInstance(systemObjectType,
-                                                          count)
+        let systemArray = try System.Object_Array(length: count)
         
         for idx in 0..<count {
             let obj = try System.Object()

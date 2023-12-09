@@ -357,6 +357,8 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             swiftTypeName = typeDescriptor.GetTypeName(CodeLanguage.Swift, false);
         }
 
+        string? arrayMutableCollectionExtension = null;
+
         if (writeTypeDefinition) {
             Type? baseType = type.BaseType;
             TypeDescriptor? baseTypeDescriptor = baseType?.GetTypeDescriptor(typeDescriptorRegistry);
@@ -466,44 +468,99 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
                         sb.AppendLine("/// The element type of the System.Array".IndentAllLines(1));
                         sb.AppendLine(elementTypeDecl);
                         sb.AppendLine();
-
-                        string createEmptyFuncImpl = $$"""
-do {
-    return try createEmpty(elementType: elementType).castTo()
-} catch {
-    fatalError("An exception was thrown while casting System.Array to {{type.GetFullNameOrName()}}: \(error.localizedDescription)")
-}
-""";
-
-                        string createEmptyFuncDecl = Builder.Func("createEmpty")
-                            .Public()
-                            .Class()
-                            .ReturnTypeName(swiftTypeName)
-                            .Implementation(createEmptyFuncImpl)
-                            .ToIndentedString(1);
                         
-                        sb.AppendLine($"/// Creates an empty {type.GetFullNameOrName()}".IndentAllLines(1));
-                        sb.AppendLine(createEmptyFuncDecl);
-                        sb.AppendLine();
-                        
-                        string arrayInitializerImpl = $$"""
+                        string emptyArrayInitializerImpl = $$"""
 let elementType = {{swiftTypeName}}.elementType
 let elementTypeC = elementType.__handle
 
-let emptyArrayC = DNCreateEmptyArray(elementTypeC)
+var __exceptionC: System_Exception_t?
 
-self.init(handle: emptyArrayC)          
+let newArrayC = System_Array_CreateInstance(elementTypeC, 0, &__exceptionC)
+
+if let __exceptionC {
+    let __exception = System_Exception(handle: __exceptionC)
+    let __error = __exception.error
+    
+    throw __error
+}
+
+self.init(handle: newArrayC)
 """;
+                        
+                        string emptyArrayInitializer = Builder.Initializer()
+                            .Public()
+                            .Convenience()
+                            .Throws()
+                            .Implementation(emptyArrayInitializerImpl)
+                            .ToIndentedString(1);
+
+                        sb.AppendLine($"/// Creates an empty {type.GetFullNameOrName()}".IndentAllLines(1));
+                        sb.AppendLine(emptyArrayInitializer);
+                        sb.AppendLine();
+                        
+                        string arrayInitializerImpl = $$"""
+ let elementType = {{swiftTypeName}}.elementType
+ let elementTypeC = elementType.__handle
+
+ var __exceptionC: System_Exception_t?
+ 
+ let newArrayC = System_Array_CreateInstance(elementTypeC, length, &__exceptionC)
+ 
+ if let __exceptionC {
+     let __exception = System_Exception(handle: __exceptionC)
+     let __error = __exception.error
+     
+     throw __error
+ }
+
+ self.init(handle: newArrayC)
+ """;
                         
                         string arrayInitializer = Builder.Initializer()
                             .Public()
                             .Convenience()
+                            .Throws()
+                            .Parameters("length: Int32")
                             .Implementation(arrayInitializerImpl)
                             .ToIndentedString(1);
 
-                        sb.AppendLine($"/// Creates an empty {type.GetFullNameOrName()}".IndentAllLines(1));
+                        sb.AppendLine($"/// Creates an {type.GetFullNameOrName()} with the specified length".IndentAllLines(1));
                         sb.AppendLine(arrayInitializer);
                         sb.AppendLine();
+                        
+                        string arrayMutableCollectionConformanceImpl = $$"""
+public typealias Element = {{swiftElementTypeName}}?
+
+public subscript(position: Index) -> Element {
+    get {
+        assert(position >= startIndex && position < endIndex, "Out of bounds")
+        
+        do {
+            guard let element = try self.getValue(position) else {
+                return nil
+            }
+            
+            return try element.castTo()
+        } catch {
+            fatalError("An exception was thrown while calling System.Array.GetValue: \(error.localizedDescription)")
+        }
+    }
+    set {
+        assert(position >= startIndex && position < endIndex, "Out of bounds")
+
+        do {
+            try self.setValue(newValue, position)
+        } catch {
+            fatalError("An exception was thrown while calling System.Array.SetValue: \(error.localizedDescription)")
+        }
+    }
+}
+""";
+
+                        arrayMutableCollectionExtension = Builder.Extension(swiftTypeName)
+                            .ProtocolConformance("MutableCollection")
+                            .Implementation(arrayMutableCollectionConformanceImpl)
+                            .ToString();
                     }
                 }
             }
@@ -580,6 +637,11 @@ self.init(handle: emptyArrayC)
 
         if (writeTypeDefinition) {
             sb.AppendLine("}");
+        }
+
+        if (!string.IsNullOrEmpty(arrayMutableCollectionExtension)) {
+            sb.AppendLine();
+            sb.AppendLine(arrayMutableCollectionExtension);
         }
 
         return sb.ToString();

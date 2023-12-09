@@ -22,31 +22,29 @@ private extension PerformanceView {
         iterate(array)
     }
     
-    func createArray() -> System.Array {
+    func createArray() -> System.Object_Array {
         do {
-            let systemObjectType = System.Object.typeOf
             let count: Int32 = 1_000_000
             
             var values = [System.Object]()
             
-            let systemArray = try System_Array.createInstance(systemObjectType,
-                                                              count)
+            let systemObjectArray = try System_Object_Array(length: count)
             
             for idx in 0..<count {
                 let obj = try System.Object()
                 
                 values.append(obj)
-                try systemArray.setValue(obj, idx)
+                systemObjectArray[idx] = obj
             }
             
-            return systemArray
+            return systemObjectArray
         } catch {
             fatalError("Error: \(error.localizedDescription)")
         }
     }
     
-    func iterate(_ systemArray: System.Array) {
-        for obj in systemArray {
+    func iterate(_ systemObjectArray: System.Object_Array) {
+        for obj in systemObjectArray {
             // Aka PleaseDontOptimizeThisOut
             let _ = obj
         }

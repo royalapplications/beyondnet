@@ -318,14 +318,7 @@ final class PersonTests: XCTestCase {
         
         XCTAssertEqual(1, numberOfChildrenBeforeDaugther)
         
-        let personType = Beyond_NET_Sample_Person.typeOf
-        
-        guard let newChildren = try? System_Array.createInstance(personType,
-                                                                 2).castAs(Beyond_NET_Sample_Person_Array.self) else {
-            XCTFail("System.Array.CreateInstance should not throw and return an instance")
-            
-            return
-        }
+        let newChildren = try Beyond_NET_Sample_Person_Array(length: 2)
         
         try System_Array.copy(originalChildren,
                               newChildren,

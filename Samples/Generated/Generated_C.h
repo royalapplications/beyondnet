@@ -5649,11 +5649,11 @@ typedef void* Beyond_NET_Sample_SubclassingTests_MySubClass_t;
 
 typedef void* Beyond_NET_Sample_Source_DontStrip_t;
 
+typedef void* System_IO_MemoryStream_t;
+
 typedef void* System_Security_Cryptography_CryptoStream_t;
 
 typedef void* System_Security_Cryptography_ICryptoTransform_t;
-
-typedef void* System_IO_MemoryStream_t;
 
 typedef void* System_Security_Cryptography_Aes_t;
 
@@ -47127,12 +47127,6 @@ Beyond_NET_Sample_SubclassingTests_MySubClass_Destroy(
 #pragma mark - END APIs of Beyond.NET.Sample.SubclassingTests.MySubClass
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.DontStrip
-System_Security_Cryptography_CryptoStream_t _Nonnull /* System.Security.Cryptography.CryptoStream */
-Beyond_NET_Sample_Source_DontStrip_CryptoStream_Get(
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-
 System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
 Beyond_NET_Sample_Source_DontStrip_MemoryStream_Get(
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -47147,6 +47141,12 @@ Beyond_NET_Sample_Source_DontStrip_StreamWriter_Get(
 
 System_IO_StreamReader_t _Nonnull /* System.IO.StreamReader */
 Beyond_NET_Sample_Source_DontStrip_StreamReader_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_CryptoStream_t _Nonnull /* System.Security.Cryptography.CryptoStream */
+Beyond_NET_Sample_Source_DontStrip_CryptoStream_Get(
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -47186,6 +47186,248 @@ Beyond_NET_Sample_Source_DontStrip_Destroy(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.Source.DontStrip
+
+#pragma mark - BEGIN APIs of System.IO.MemoryStream
+void /* System.Void */
+System_IO_MemoryStream_Flush(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_IO_MemoryStream_FlushAsync(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_IO_MemoryStream_GetBuffer(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_IO_MemoryStream_Read(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.Int32> */
+System_IO_MemoryStream_ReadAsync(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_IO_MemoryStream_ReadByte(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_MemoryStream_CopyTo(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ destination,
+	int32_t /* System.Int32 */ bufferSize,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_IO_MemoryStream_CopyToAsync(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ destination,
+	int32_t /* System.Int32 */ bufferSize,
+	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_IO_MemoryStream_Seek(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	int64_t /* System.Int64 */ offset,
+	System_IO_SeekOrigin_t /* System.IO.SeekOrigin */ loc,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_MemoryStream_SetLength(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	int64_t /* System.Int64 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_IO_MemoryStream_ToArray(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_MemoryStream_Write(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_MemoryStream_Write_1(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ buffer,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_IO_MemoryStream_WriteAsync(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_MemoryStream_WriteByte(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	uint8_t /* System.Byte */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_MemoryStream_WriteTo(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
+System_IO_MemoryStream_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
+System_IO_MemoryStream_Create_1(
+	int32_t /* System.Int32 */ capacity,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
+System_IO_MemoryStream_Create_2(
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
+System_IO_MemoryStream_Create_3(
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	bool /* System.Boolean */ writable,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
+System_IO_MemoryStream_Create_4(
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
+System_IO_MemoryStream_Create_5(
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	bool /* System.Boolean */ writable,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
+System_IO_MemoryStream_Create_6(
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	bool /* System.Boolean */ writable,
+	bool /* System.Boolean */ publiclyVisible,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_IO_MemoryStream_CanRead_Get(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_IO_MemoryStream_CanSeek_Get(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_IO_MemoryStream_CanWrite_Get(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_IO_MemoryStream_Capacity_Get(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_MemoryStream_Capacity_Set(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_IO_MemoryStream_Length_Get(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_IO_MemoryStream_Position_Get(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_IO_MemoryStream_Position_Set(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
+	int64_t /* System.Int64 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_IO_MemoryStream_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_IO_MemoryStream_Destroy(
+	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self
+);
+
+#pragma mark - END APIs of System.IO.MemoryStream
 
 #pragma mark - BEGIN APIs of System.Security.Cryptography.CryptoStream
 void /* System.Void */
@@ -47490,248 +47732,6 @@ System_Security_Cryptography_ICryptoTransform_Destroy(
 );
 
 #pragma mark - END APIs of System.Security.Cryptography.ICryptoTransform
-
-#pragma mark - BEGIN APIs of System.IO.MemoryStream
-void /* System.Void */
-System_IO_MemoryStream_Flush(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
-System_IO_MemoryStream_FlushAsync(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_Byte_Array_t _Nonnull /* System.Byte[] */
-System_IO_MemoryStream_GetBuffer(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_IO_MemoryStream_Read(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
-	int32_t /* System.Int32 */ offset,
-	int32_t /* System.Int32 */ count,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.Int32> */
-System_IO_MemoryStream_ReadAsync(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
-	int32_t /* System.Int32 */ offset,
-	int32_t /* System.Int32 */ count,
-	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-int32_t /* System.Int32 */
-System_IO_MemoryStream_ReadByte(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_MemoryStream_CopyTo(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	System_IO_Stream_t _Nonnull /* System.IO.Stream */ destination,
-	int32_t /* System.Int32 */ bufferSize,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
-System_IO_MemoryStream_CopyToAsync(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	System_IO_Stream_t _Nonnull /* System.IO.Stream */ destination,
-	int32_t /* System.Int32 */ bufferSize,
-	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-int64_t /* System.Int64 */
-System_IO_MemoryStream_Seek(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	int64_t /* System.Int64 */ offset,
-	System_IO_SeekOrigin_t /* System.IO.SeekOrigin */ loc,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_MemoryStream_SetLength(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	int64_t /* System.Int64 */ value,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_Byte_Array_t _Nonnull /* System.Byte[] */
-System_IO_MemoryStream_ToArray(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_MemoryStream_Write(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
-	int32_t /* System.Int32 */ offset,
-	int32_t /* System.Int32 */ count,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_MemoryStream_Write_1(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ buffer,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
-System_IO_MemoryStream_WriteAsync(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
-	int32_t /* System.Int32 */ offset,
-	int32_t /* System.Int32 */ count,
-	System_Threading_CancellationToken_t _Nonnull /* System.Threading.CancellationToken */ cancellationToken,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_MemoryStream_WriteByte(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	uint8_t /* System.Byte */ value,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_MemoryStream_WriteTo(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
-System_IO_MemoryStream_Create(
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
-System_IO_MemoryStream_Create_1(
-	int32_t /* System.Int32 */ capacity,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
-System_IO_MemoryStream_Create_2(
-	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
-System_IO_MemoryStream_Create_3(
-	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
-	bool /* System.Boolean */ writable,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
-System_IO_MemoryStream_Create_4(
-	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
-	int32_t /* System.Int32 */ index,
-	int32_t /* System.Int32 */ count,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
-System_IO_MemoryStream_Create_5(
-	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
-	int32_t /* System.Int32 */ index,
-	int32_t /* System.Int32 */ count,
-	bool /* System.Boolean */ writable,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
-System_IO_MemoryStream_Create_6(
-	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
-	int32_t /* System.Int32 */ index,
-	int32_t /* System.Int32 */ count,
-	bool /* System.Boolean */ writable,
-	bool /* System.Boolean */ publiclyVisible,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-bool /* System.Boolean */
-System_IO_MemoryStream_CanRead_Get(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-
-bool /* System.Boolean */
-System_IO_MemoryStream_CanSeek_Get(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-
-bool /* System.Boolean */
-System_IO_MemoryStream_CanWrite_Get(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-
-int32_t /* System.Int32 */
-System_IO_MemoryStream_Capacity_Get(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_MemoryStream_Capacity_Set(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	int32_t /* System.Int32 */ value,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-
-int64_t /* System.Int64 */
-System_IO_MemoryStream_Length_Get(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-
-int64_t /* System.Int64 */
-System_IO_MemoryStream_Position_Get(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_IO_MemoryStream_Position_Set(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self,
-	int64_t /* System.Int64 */ value,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-
-System_Type_t _Nonnull /* System.Type */
-System_IO_MemoryStream_TypeOf(
-	void
-);
-
-void /* System.Void */
-System_IO_MemoryStream_Destroy(
-	System_IO_MemoryStream_t _Nullable /* System.IO.MemoryStream */ self
-);
-
-#pragma mark - END APIs of System.IO.MemoryStream
 
 #pragma mark - BEGIN APIs of System.Security.Cryptography.Aes
 System_Security_Cryptography_Aes_t _Nonnull /* System.Security.Cryptography.Aes */
@@ -51073,9 +51073,6 @@ DNObjectFromUInt64(uint64_t number);
 
 void*
 DNGetPinnedPointerToByteArray(_Nonnull System_Byte_Array_t byteArray, _Nullable System_Runtime_InteropServices_GCHandle_t* outGCHandle, _Nullable System_Exception_t* outException);
-
-_Nonnull System_Array_t
-DNCreateEmptyArray(_Nonnull System_Type_t elementType);
 
 #pragma mark - END Utils
 

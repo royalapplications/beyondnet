@@ -1081,9 +1081,8 @@ extension System_Guid {
 """;
     
     public const string ArrayExtensions = """
-extension System_Array: MutableCollection {
+extension System_Array {
     public typealias Index = Int32
-    public typealias Element = System_Object?
     
     public var startIndex: Index {
         0
@@ -1105,46 +1104,12 @@ extension System_Array: MutableCollection {
         return length
     }
     
-    public subscript(position: Index) -> Element {
-        get {
-            assert(position >= startIndex && position < endIndex, "Out of bounds")
-            
-            do {
-                guard let element = try self.getValue(position) else {
-                    return nil
-                }
-                
-                return element
-            } catch {
-                fatalError("An exception was thrown while calling System.Array.GetValue: \(error.localizedDescription)")
-            }
-        }
-        set {
-            assert(position >= startIndex && position < endIndex, "Out of bounds")
-
-            do {
-                try self.setValue(newValue, position)
-            } catch {
-                fatalError("An exception was thrown while calling System.Array.SetValue: \(error.localizedDescription)")
-            }
-        }
-    }
-    
     public func index(after i: Index) -> Index {
         i + 1
     }
     
     public func index(before i: Index) -> Index {
         i - 1
-    }
-}
-
-public extension System_Array {
-    static func createEmpty(elementType: System_Type) -> System_Array {
-        let emptyArrayC = DNCreateEmptyArray(elementType.__handle)
-        let emptyArray = System_Array(handle: emptyArrayC)
-        
-        return emptyArray        
     }
 }
 """;
