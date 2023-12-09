@@ -76,6 +76,10 @@ public class DNArray<T>: System_Array, MutableCollection where T: System_Object 
         "\(T.fullTypeName)[]"
     }
     
+    public static var empty: DNArray<T> { get throws {
+        try DNArray<T>.init()
+    }}
+    
     public convenience init() throws {
         let elementType = T.typeOf
         let elementTypeC = elementType.__handle

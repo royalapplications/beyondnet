@@ -34,6 +34,8 @@ final class SystemArrayTests: XCTestCase {
         
         let equals = now == retrievedNow
         XCTAssertTrue(equals)
+        
+        XCTAssertThrowsError(try arrayOfDateTime.setValue("A System.String is not a System.DateTime".dotNETString(), index))
     }
     
     func testSystemArray() throws {
@@ -79,7 +81,7 @@ final class SystemArrayTests: XCTestCase {
     func testEmptyArrayWithExtensionExplicitElementType() throws {
         let systemStringType = System_String.typeOf
         
-        let emptyArrayOfStrings = try DNArray<System_String>(length: 0)
+        let emptyArrayOfStrings = try DNArray<System_String>.empty
         
         let expectedType = DNArray<System_String>.typeOf
         let type = try emptyArrayOfStrings.getType()
@@ -102,7 +104,7 @@ final class SystemArrayTests: XCTestCase {
     func testEmptyArrayWithExtensionOnExplicitArrayType() throws {
         let systemStringType = System_String.typeOf
         
-        let emptyArrayOfStrings = try DNArray<System_String>()
+        let emptyArrayOfStrings = try DNArray<System_String>.empty
         
         let length = try emptyArrayOfStrings.length
         XCTAssertEqual(0, .init(length))
@@ -121,7 +123,7 @@ final class SystemArrayTests: XCTestCase {
     func testEmptyArrayWithInitializerOnExplicitArrayType() throws {
         let systemStringType = System_String.typeOf
         
-        let emptyArrayOfStrings = try DNArray<System_String>()
+        let emptyArrayOfStrings = try DNArray<System_String>.empty
         
         let length = try emptyArrayOfStrings.length
         XCTAssertEqual(0, .init(length))
