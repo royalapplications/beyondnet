@@ -57,6 +57,17 @@ public class DNArray<T>: System_Array, MutableCollection where T: System_Object 
     public typealias Element = T?
     public typealias Index = Int32
     
+    public override class var typeOf: System_Type /* System.Type */ {
+        do {
+            let elementType = T.typeOf
+            let arrayType = try elementType.makeArrayType()
+            
+            return arrayType
+        } catch {
+            return super.typeOf
+        }
+    }
+    
     public override class var typeName: String {
         "\(T.typeName)[]"
     }

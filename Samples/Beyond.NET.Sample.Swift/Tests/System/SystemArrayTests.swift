@@ -1,19 +1,6 @@
 import XCTest
 import BeyondDotNETSampleKit
 
-//public class DNTest<T> /* : System_Array, MutableCollection */ where T: System_Object {
-//    public typealias Element = T?
-//    public typealias Index = Int32
-//    
-//    public override class var typeName: String {
-//        "\(T.typeName)[]"
-//    }
-//    
-//    public override class var fullTypeName: String {
-//        "\(T.fullTypeName)[]"
-//    }
-//}
-
 final class SystemArrayTests: XCTestCase {
     @MainActor
     override class func setUp() {
@@ -30,11 +17,9 @@ final class SystemArrayTests: XCTestCase {
         
         let arrayOfDateTime = try DNArray<System_DateTime>(length: 1)
         
-        // TODO
-//        let expectedType = DNArray<System_DateTime>.typeOf
-//        let type = try arrayOfDateTime.getType()
-//        
-//        XCTAssertEqual(type, expectedType)
+        let expectedType = DNArray<System_DateTime>.typeOf
+        let type = try arrayOfDateTime.getType()
+        XCTAssertEqual(type, expectedType)
         
         let typeName = DNArray<System_DateTime>.typeName
         XCTAssertEqual(typeName, "DateTime[]")
@@ -95,6 +80,10 @@ final class SystemArrayTests: XCTestCase {
         let systemStringType = System_String.typeOf
         
         let emptyArrayOfStrings = try DNArray<System_String>(length: 0)
+        
+        let expectedType = DNArray<System_String>.typeOf
+        let type = try emptyArrayOfStrings.getType()
+        XCTAssertEqual(type, expectedType)
         
         let length = try emptyArrayOfStrings.length
         XCTAssertEqual(0, .init(length))
