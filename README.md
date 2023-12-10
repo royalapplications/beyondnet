@@ -372,7 +372,7 @@ Direct casts are exposed through the `DNObjectCastTo` method. It works the same 
 In the Swift bindings, we have extension methods on `DNObject` (the base type for all generated class and struct bindings) which makes type checking/casting much easier:
 
 ```swift
-let string = System.String.empty!
+let string = System.String.empty
 
 if string.is(System.String.typeOf) {
     print("Hooray, it's a System.String.")
@@ -426,8 +426,8 @@ In Swift, we fortunately can do overloads just like in C# and so the Swift signa
 
 ```swift
 class func print(_ value: Int32) throws
-class func print(_ value: System_DateTime?) throws
-class func print(_ value: System_String?) throws
+class func print(_ value: System_DateTime) throws
+class func print(_ value: System_String) throws
 ```
 
 The same rules apply to shadowed members.
@@ -585,7 +585,7 @@ That includes strings, dates, byte arrays (Swift `Data` objects), etc.
 Here's an example that converts a `System.String` to a Swift `String` and back again:
 
 ```swift
-let systemString = System.String.empty!
+let systemString = System.String.empty
 let swiftString = systemString.string()
 let systemStringRet = swiftString.dotNETString()
 ```
