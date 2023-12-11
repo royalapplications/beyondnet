@@ -94,17 +94,28 @@ internal static class TypeExtensions
             .Replace(".", "_")
             .Replace("+", "_")
             .Replace("&", string.Empty)
-            .Replace("[]", "_Array")
-            .Replace("[,]", "_Array_D2") // TODO: Yes, this can be improved ;-)
-            .Replace("[,,]", "_Array_D3")
-            .Replace("[,,,]", "_Array_D4")
-            .Replace("[,,,,]", "_Array_D5")
-            .Replace("[,,,,,]", "_Array_D6")
-            .Replace("[,,,,,,]", "_Array_D7")
-            .Replace("[,,,,,,,]", "_Array_D8")
-            .Replace("[,,,,,,,,]", "_Array_D9")
-            .Replace("[,,,,,,,,,]", "_Array_D10")
-        ;
+            .Replace("[]", "_Array");
+
+        if (cTypeName.Contains("[") &&
+            cTypeName.Contains("]") &&
+            cTypeName.Contains(",")) { // Multi-dimensional array
+            var arrayStartIdx = cTypeName.IndexOf('[');
+            var arrayEndIdx = cTypeName.LastIndexOf(']');
+
+            var arrayDimensionsString = cTypeName.Substring(
+                arrayStartIdx + 1,
+                arrayEndIdx - arrayStartIdx - 1
+            );
+
+            if (arrayDimensionsString.Any(s => s != ',')) {
+                throw new Exception("Failed to parse array type's dimensions");
+            }
+
+            var arrayDimensions = arrayDimensionsString.Length + 1;
+
+            cTypeName = cTypeName
+                .Replace($"[{arrayDimensionsString}]", $"_Array_D{arrayDimensions}");
+        }
 
         bool isGeneric = type.IsGenericType ||
                          type.IsGenericTypeDefinition;
