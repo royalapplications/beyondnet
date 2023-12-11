@@ -1,8 +1,8 @@
 namespace Beyond.NET.CodeGenerator.Generator.Swift;
 
-public class SwiftSharedCode
+internal static class SwiftSharedCode
 {
-    public const string SharedCode = """
+    internal const string SharedCode = """
 public struct DNChar: Equatable {
     public let cValue: wchar_t
 
