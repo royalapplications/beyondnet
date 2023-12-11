@@ -158,39 +158,59 @@ internal class CodeGeneratorDriver
             var dotNetVersion = Builder.DotNET.Version.GetMajorAndMinorVersion();
             var dotNetTargetFramework = $"net{dotNetVersion}";
             #endregion Gather System Information
-
+            
+            #region Load Assembly
+            Logger.LogInformation($"Loading assembly from \"{assemblyPath}\"");
+            
+            Assembly assembly = AssemblyLoader.LoadFrom(assemblyPath);
+            #endregion Load Assembly
+            
             #region Add System Documentation
             if (!doNotGenerateDocumentation) {
-                // TODO: This way of finding where the .NET reference assemblies are stored is not very "sophisticated" 
+                var systemReferenceAssembliesDirectoryPath = string.Empty;
                 
-                var dotNetRuntimeVersion = Environment.Version;
-                
-                var runtimes = Builder.DotNET.Runtime.GetRuntimes();
-                
-                var appRuntimePath = runtimes.FirstOrDefault(
-                    r => 
-                        r.Name == Builder.DotNET.Runtime.RUNTIME_NAME_MICROSOFT_NETCORE_APP &&
-                        r.Version == dotNetRuntimeVersion.ToString()
-                )?.Path;
+                try {
+                    var dotnetDir = DotNETUtils.GetDotnetGlobalInstallLocation();
 
-                string systemReferenceAssembliesDirectoryPath = string.Empty;
+                    if (string.IsNullOrWhiteSpace(dotnetDir)) {
+                        throw new Exception("Cannot determine .NET root directory");
+                    }
+                    
+                    Logger.LogDebug($".NET Core root directory: \"{dotnetDir}\"");
+                    
+                    var tfm = DotNETUtils.GetTargetFrameworkName(assemblyPath);
 
-                if (!string.IsNullOrEmpty(appRuntimePath)) {
-                    systemReferenceAssembliesDirectoryPath = appRuntimePath.Replace(
-                        $"shared/{Builder.DotNET.Runtime.RUNTIME_NAME_MICROSOFT_NETCORE_APP}",
-                        $"packs/{Builder.DotNET.Runtime.RUNTIME_NAME_MICROSOFT_NETCORE_APP}.Ref/{dotNetRuntimeVersion}/ref/{dotNetTargetFramework}"
-                    );
+                    if (string.IsNullOrWhiteSpace(tfm)) {
+                        throw new Exception($"Cannot determine TFM for \"{assemblyPath}\"");
+                    }
+                    
+                    Logger.LogDebug($"TFM for \"{assemblyPath}\": {tfm}");
+        
+                    var version = DotNETUtils.GetDotNetCoreVersion(tfm);
+
+                    if (version <= 0) {
+                        throw new Exception($"Cannot determine .NET version for \"{assemblyPath}\"");
+                    }
+                    
+                    Logger.LogDebug($".NET Core version for \"{assemblyPath}\": {version}");
+
+                    var latestRefDir = DotNETUtils.GetLatestRefPack(dotnetDir, version);
+
+                    if (string.IsNullOrWhiteSpace(latestRefDir)) {
+                        throw new Exception($"Cannot find latest reference pack for .NET {version}.x at \"{latestRefDir}\"");
+                    }
+                    
+                    Logger.LogDebug($"Reference pack for .NET {version}.x found at \"{latestRefDir}\"");
+
+                    systemReferenceAssembliesDirectoryPath = latestRefDir;
+                } catch (Exception ex) {
+                    Logger.LogError($"An error occurred while trying to locate the latest .NET Core Reference Pack: {ex}");
                 }
-
+                
                 if (string.IsNullOrEmpty(systemReferenceAssembliesDirectoryPath) ||
                     !Directory.Exists(systemReferenceAssembliesDirectoryPath)) {
                     // Fall back to hard coded path
-                    systemReferenceAssembliesDirectoryPath = $"/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/{dotNetRuntimeVersion}/ref/{dotNetTargetFramework}";
-
-                    if (!Directory.Exists(systemReferenceAssembliesDirectoryPath)) {
-                        // Fall back to "even more" hard coded path
-                        systemReferenceAssembliesDirectoryPath = $"/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.0/ref/net8.0";
-                    }
+                    systemReferenceAssembliesDirectoryPath = $"/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.0/ref/net8.0";
                     
                     Logger.LogWarning($"Failed to gather path to system reference assemblies - falling back to hard coded path \"{systemReferenceAssembliesDirectoryPath}\"");
                 } else {
@@ -200,12 +220,6 @@ internal class CodeGeneratorDriver
                 XmlDocumentationStore.Shared.ParseSystemDocumentation(systemReferenceAssembliesDirectoryPath);
             }
             #endregion Add System Documentation
-    
-            #region Load Assembly
-            Logger.LogInformation($"Loading assembly from \"{assemblyPath}\"");
-            
-            Assembly assembly = AssemblyLoader.LoadFrom(assemblyPath);
-            #endregion Load Assembly
     
             #region Collect Types
             Type[] includedTypes = TypesFromTypeNames(
