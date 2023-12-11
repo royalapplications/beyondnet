@@ -497,8 +497,8 @@ let inputString = "Hello World".dotNETString()
 // - Initializing an instance of Beyond_NET_Sample_Transformer_StringTransformerDelegate by passing it a closure that matches the .NET delegate as its sole parameter
 let outputString = try! Beyond.NET.Sample.Transformer.transformString(inputString, .init({ stringToTransform in
     // Take the string that should be transformed, call System.String.ToUpper on it and return it
-    return try! stringToTransform!.toUpper()
-}))!.string() // Convert the returned System.String to a Swift String
+    return try! stringToTransform.toUpper()
+})).string() // Convert the returned System.String to a Swift String
 
 // Prints "HELLO WORLD!"
 print(outputString)
@@ -546,7 +546,7 @@ In Swift, this is how we can consume that event:
 
 ```swift
 // Create an instance of Beyond.NET.Sample.EventTests
-let eventTest = try! Beyond.NET.Sample.EventTests()!
+let eventTest = try! Beyond.NET.Sample.EventTests()
 
 // Create a variable that will hold the last value passed in to our event handler
 var lastValuePassedIntoEventHandler: Int32 = 0
