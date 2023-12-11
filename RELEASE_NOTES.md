@@ -4,6 +4,7 @@
 - XML Documentation is now extracted and applied to generated Swift bindings
 - Arrays are now exposed to Swift as `DNArray<T> where T: System_Object`
 - Arrays conform to Swift's `MutableCollection` protocol now
+- More type-safe way to do boxing/unboxing of primitives in Swift
 - Bugfixes related to nullability
 - Bugfixes related to detecting overridden/shadowed members when generating Swift bindings
 
