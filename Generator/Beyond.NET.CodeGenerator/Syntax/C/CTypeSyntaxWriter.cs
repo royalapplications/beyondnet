@@ -59,9 +59,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
 
         StringBuilder sb = new();
 
-        if (type.IsPrimitive) {
-            // Nothing to do
-        } else if (type.IsEnum) {
+        if (type.IsEnum) {
             string enumdefCode = WriteEnumDef(
                 type,
                 cTypeName,

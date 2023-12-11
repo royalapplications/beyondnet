@@ -221,9 +221,7 @@ final class SystemArrayTests: XCTestCase {
 		
 		for idx in 0..<length {
 			let randomInt32 = Int32.random(in: Int32.min..<Int32.max)
-            
-            // TODO: This can certainly be improved, right?
-            let randomInt32Obj: System.Int32 = try randomInt32.dotNETObject().castTo()
+            let randomInt32Obj = randomInt32.dotNETObject()
 			
             arrayOfInt32[idx] = randomInt32Obj
 			

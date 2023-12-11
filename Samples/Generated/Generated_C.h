@@ -2903,9 +2903,11 @@ typedef void* System_Collections_IEnumerable_t;
 
 typedef void* System_Collections_IEnumerator_t;
 
+typedef void* System_Boolean_t;
 
 typedef void* System_ValueType_t;
 
+typedef void* System_Int32_t;
 
 typedef void* System_IComparable_t;
 
@@ -2930,6 +2932,7 @@ typedef void* System_IDisposable_t;
 // Type "T" was skipped. Reason: It has no full name.
 typedef void* System_Collections_Generic_IEnumerator_A1_t;
 
+typedef void* System_Char_t;
 
 typedef void* System_IComparable_A1_t;
 
@@ -3124,6 +3127,7 @@ typedef void* System_Runtime_Serialization_SerializationInfoEnumerator_t;
 
 typedef void* System_Runtime_Serialization_SerializationEntry_t;
 
+typedef void* System_SByte_t;
 
 typedef void* System_IComparable_A1_t;
 
@@ -3177,6 +3181,7 @@ typedef void* System_Numerics_ISignedNumber_A1_t;
 
 typedef void* System_ReadOnlySpan_A1_t;
 
+typedef void* System_Byte_t;
 
 typedef void* System_IComparable_A1_t;
 
@@ -3245,6 +3250,7 @@ typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+typedef void* System_Int16_t;
 
 typedef void* System_IComparable_A1_t;
 
@@ -3296,6 +3302,7 @@ typedef void* System_Numerics_ISignedNumber_A1_t;
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+typedef void* System_UInt16_t;
 
 typedef void* System_IComparable_A1_t;
 
@@ -3347,6 +3354,7 @@ typedef void* System_Numerics_IUnsignedNumber_A1_t;
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+typedef void* System_UInt32_t;
 
 typedef void* System_IComparable_A1_t;
 
@@ -3398,6 +3406,7 @@ typedef void* System_Numerics_IUnsignedNumber_A1_t;
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+typedef void* System_Int64_t;
 
 typedef void* System_IComparable_A1_t;
 
@@ -3449,6 +3458,7 @@ typedef void* System_Numerics_ISignedNumber_A1_t;
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+typedef void* System_UInt64_t;
 
 typedef void* System_IComparable_A1_t;
 
@@ -3500,6 +3510,7 @@ typedef void* System_Numerics_IUnsignedNumber_A1_t;
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+typedef void* System_Single_t;
 
 typedef void* System_IComparable_A1_t;
 
@@ -3598,6 +3609,7 @@ typedef void* System_Numerics_IMinMaxValue_A1_t;
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
 // Type "TOther" was skipped. Reason: It has no full name.
+typedef void* System_Double_t;
 
 typedef void* System_IComparable_A1_t;
 
@@ -3826,6 +3838,7 @@ typedef void* System_IEquatable_A1_t;
 
 typedef void* System_Threading_WaitHandle_t;
 
+typedef void* System_IntPtr_t;
 
 typedef void* System_IEquatable_A1_t;
 
@@ -4949,6 +4962,7 @@ typedef void* System_PlatformNotSupportedException_t;
 
 typedef void* System_NotSupportedException_t;
 
+typedef void* System_UIntPtr_t;
 
 typedef void* System_IEquatable_A1_t;
 
@@ -51008,67 +51022,67 @@ DNObjectIs(_Nonnull System_Object_t object, _Nonnull System_Type_t type);
 bool
 DNObjectCastToBool(_Nonnull System_Object_t object, _Nullable System_Exception_t* outException);
 
-_Nonnull System_Object_t
+_Nonnull System_Boolean_t
 DNObjectFromBool(bool value);
 
 float
 DNObjectCastToFloat(_Nonnull System_Object_t object, _Nullable System_Exception_t* outException);
 
-_Nonnull System_Object_t
+_Nonnull System_Single_t
 DNObjectFromFloat(float value);
 
 double
 DNObjectCastToDouble(_Nonnull System_Object_t object, _Nullable System_Exception_t* outException);
 
-_Nonnull System_Object_t
+_Nonnull System_Double_t
 DNObjectFromDouble(double value);
 
 int8_t
 DNObjectCastToInt8(_Nonnull System_Object_t object, _Nullable System_Exception_t* outException);
 
-_Nonnull System_Object_t
+_Nonnull System_SByte_t
 DNObjectFromInt8(int8_t number);
 
 uint8_t
 DNObjectCastToUInt8(_Nonnull System_Object_t object, _Nullable System_Exception_t* outException);
 
-_Nonnull System_Object_t
+_Nonnull System_Byte_t
 DNObjectFromUInt8(uint8_t number);
 
 int16_t
 DNObjectCastToInt16(_Nonnull System_Object_t object, _Nullable System_Exception_t* outException);
 
-_Nonnull System_Object_t
+_Nonnull System_Int16_t
 DNObjectFromInt16(int16_t number);
 
 uint16_t
 DNObjectCastToUInt16(_Nonnull System_Object_t object, _Nullable System_Exception_t* outException);
 
-_Nonnull System_Object_t
+_Nonnull System_UInt16_t
 DNObjectFromUInt16(uint16_t number);
 
 int32_t
 DNObjectCastToInt32(_Nonnull System_Object_t object, _Nullable System_Exception_t* outException);
 
-_Nonnull System_Object_t
+_Nonnull System_Int32_t
 DNObjectFromInt32(int32_t number);
 
 uint32_t
 DNObjectCastToUInt32(_Nonnull System_Object_t object, _Nullable System_Exception_t* outException);
 
-_Nonnull System_Object_t
+_Nonnull System_UInt32_t
 DNObjectFromUInt32(uint32_t number);
 
 int64_t
 DNObjectCastToInt64(_Nonnull System_Object_t object, _Nullable System_Exception_t* outException);
 
-_Nonnull System_Object_t
+_Nonnull System_Int64_t
 DNObjectFromInt64(int64_t number);
 
 uint64_t
 DNObjectCastToUInt64(_Nonnull System_Object_t object, _Nullable System_Exception_t* outException);
 
-_Nonnull System_Object_t
+_Nonnull System_UInt64_t
 DNObjectFromUInt64(uint64_t number);
 
 void*

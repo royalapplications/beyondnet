@@ -225,11 +225,10 @@ public extension DNObject {
         return castedValue 
     }
 
-    static func fromBool(_ boolValue: Bool) -> System_Object {
+    static func fromBool(_ boolValue: Bool) -> System_Boolean {
         let castedObjectC = DNObjectFromBool(boolValue)
-		let castedObject = System_Object(handle: castedObjectC)
-
-        return castedObject
+		
+		return .init(handle: castedObjectC)
 	}
 
     func castToFloat() throws -> Float {
@@ -247,11 +246,10 @@ public extension DNObject {
         return castedValue 
     }
 
-    static func fromFloat(_ floatValue: Float) -> System_Object {
+    static func fromFloat(_ floatValue: Float) -> System_Single {
         let castedObjectC = DNObjectFromFloat(floatValue)
-		let castedObject = System_Object(handle: castedObjectC)
-
-        return castedObject
+        
+		return .init(handle: castedObjectC)
 	}
 
     func castToDouble() throws -> Double {
@@ -269,11 +267,10 @@ public extension DNObject {
         return castedValue 
     }
 
-    static func fromDouble(_ doubleValue: Double) -> System_Object {
+    static func fromDouble(_ doubleValue: Double) -> System_Double {
         let castedObjectC = DNObjectFromDouble(doubleValue)
-		let castedObject = System_Object(handle: castedObjectC)
-
-        return castedObject
+		
+		return .init(handle: castedObjectC)
 	}
 
     func castToInt8() throws -> Int8 {
@@ -291,11 +288,10 @@ public extension DNObject {
         return castedValue 
     }
 
-    static func fromInt8(_ int8Value: Int8) -> System_Object {
+    static func fromInt8(_ int8Value: Int8) -> System_SByte {
         let castedObjectC = DNObjectFromInt8(int8Value)
-        let castedObject = System_Object(handle: castedObjectC)
-
-        return castedObject
+        
+        return .init(handle: castedObjectC)
     }
 
     func castToUInt8() throws -> UInt8 {
@@ -313,11 +309,10 @@ public extension DNObject {
         return castedValue 
     }
 
-    static func fromUInt8(_ uint8Value: UInt8) -> System_Object {
+    static func fromUInt8(_ uint8Value: UInt8) -> System_Byte {
         let castedObjectC = DNObjectFromUInt8(uint8Value)
-        let castedObject = System_Object(handle: castedObjectC)
-
-        return castedObject
+        
+        return .init(handle: castedObjectC)
     }
 
     func castToInt16() throws -> Int16 {
@@ -335,11 +330,10 @@ public extension DNObject {
         return castedValue 
     }
 
-    static func fromInt16(_ int16Value: Int16) -> System_Object {
+    static func fromInt16(_ int16Value: Int16) -> System_Int16 {
         let castedObjectC = DNObjectFromInt16(int16Value)
-        let castedObject = System_Object(handle: castedObjectC)
-
-        return castedObject
+        
+        return .init(handle: castedObjectC)
     }
 
     func castToUInt16() throws -> UInt16 {
@@ -357,11 +351,10 @@ public extension DNObject {
         return castedValue 
     }
 
-    static func fromUInt16(_ uint16Value: UInt16) -> System_Object {
+    static func fromUInt16(_ uint16Value: UInt16) -> System_UInt16 {
         let castedObjectC = DNObjectFromUInt16(uint16Value)
-        let castedObject = System_Object(handle: castedObjectC)
-
-        return castedObject
+        
+        return .init(handle: castedObjectC)
     }
 
     func castToInt32() throws -> Int32 {
@@ -379,11 +372,10 @@ public extension DNObject {
         return castedValue 
     }
 
-    static func fromInt32(_ int32Value: Int32) -> System_Object {
+    static func fromInt32(_ int32Value: Int32) -> System_Int32 {
         let castedObjectC = DNObjectFromInt32(int32Value)
-        let castedObject = System_Object(handle: castedObjectC)
-
-        return castedObject
+        
+        return .init(handle: castedObjectC)
     }
 
     func castToUInt32() throws -> UInt32 {
@@ -401,11 +393,10 @@ public extension DNObject {
         return castedValue 
     }
 
-    static func fromUInt32(_ uint32Value: UInt32) -> System_Object {
+    static func fromUInt32(_ uint32Value: UInt32) -> System_UInt32 {
         let castedObjectC = DNObjectFromUInt32(uint32Value)
-        let castedObject = System_Object(handle: castedObjectC)
-
-        return castedObject
+        
+        return .init(handle: castedObjectC)
     }
 
     func castToInt64() throws -> Int64 {
@@ -423,11 +414,10 @@ public extension DNObject {
         return castedValue 
     }
 
-    static func fromInt64(_ int64Value: Int64) -> System_Object {
+    static func fromInt64(_ int64Value: Int64) -> System_Int64 {
         let castedObjectC = DNObjectFromInt64(int64Value)
-        let castedObject = System_Object(handle: castedObjectC)
-
-        return castedObject
+        
+        return .init(handle: castedObjectC)
     }
 
     func castToUInt64() throws -> UInt64 {
@@ -445,77 +435,76 @@ public extension DNObject {
         return castedValue 
     }
 
-    static func fromUInt64(_ uint64Value: UInt64) -> System_Object {
+    static func fromUInt64(_ uint64Value: UInt64) -> System_UInt64 {
         let castedObjectC = DNObjectFromUInt64(uint64Value)
-        let castedObject = System_Object(handle: castedObjectC)
-
-        return castedObject
+        
+        return .init(handle: castedObjectC)
     }
 }
 
 extension Bool {
-    public func dotNETObject() -> System_Object {
-        return System_Object.fromBool(self)
+    public func dotNETObject() -> System_Boolean {
+        return .fromBool(self)
     }
 }
 
 extension Float {
-    public func dotNETObject() -> System_Object {
-        return System_Object.fromFloat(self)
+    public func dotNETObject() -> System_Single {
+        return .fromFloat(self)
     }
 }
 
 extension Double {
-    public func dotNETObject() -> System_Object {
-        return System_Object.fromDouble(self)
+    public func dotNETObject() -> System_Double {
+        return .fromDouble(self)
     }
 }
 
 extension Int8 {
-    public func dotNETObject() -> System_Object {
-        return System_Object.fromInt8(self)
+    public func dotNETObject() -> System_SByte {
+        return .fromInt8(self)
     }
 }
 
 extension UInt8 {
-    public func dotNETObject() -> System_Object {
-        return System_Object.fromUInt8(self)
+    public func dotNETObject() -> System_Byte {
+        return .fromUInt8(self)
     }
 }
 
 extension Int16 {
-    public func dotNETObject() -> System_Object {
-        return System_Object.fromInt16(self)
+    public func dotNETObject() -> System_Int16 {
+        return .fromInt16(self)
     }
 }
 
 extension UInt16 {
-    public func dotNETObject() -> System_Object {
-        return System_Object.fromUInt16(self)
+    public func dotNETObject() -> System_UInt16 {
+        return .fromUInt16(self)
     }
 }
 
 extension Int32 {
-    public func dotNETObject() -> System_Object {
-        return System_Object.fromInt32(self)
+    public func dotNETObject() -> System_Int32 {
+        return .fromInt32(self)
     }
 }
 
 extension UInt32 {
-    public func dotNETObject() -> System_Object {
-        return System_Object.fromUInt32(self)
+    public func dotNETObject() -> System_UInt32 {
+        return .fromUInt32(self)
     }
 }
 
 extension Int64 {
-    public func dotNETObject() -> System_Object {
-        return System_Object.fromInt64(self)
+    public func dotNETObject() -> System_Int64 {
+        return .fromInt64(self)
     }
 }
 
 extension UInt64 {
-    public func dotNETObject() -> System_Object {
-        return System_Object.fromUInt64(self)
+    public func dotNETObject() -> System_UInt64 {
+        return .fromUInt64(self)
     }
 }
 
