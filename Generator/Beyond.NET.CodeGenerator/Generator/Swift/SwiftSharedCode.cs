@@ -15,12 +15,26 @@ public struct DNChar: Equatable {
     }
 }
 
+/// This is an "abstract" base class for all .NET types
+/// It's not inteneded to be used directly.
+/// Instead, use one of the derived types, like `System_Object`.
 public class DNObject {
     let __handle: UnsafeMutableRawPointer
     var __skipDestroy = false
 
+    /// The .NET type name of this type.
+    /// - Returns: The equivalent of calling `typeof(ADotNETType).Name` in C#.
     public class var typeName: String { "" }
+    
+    /// The .NET full type name of this type.
+    /// - Returns: The equivalent of calling `typeof(ADotNETType).FullName` in C#.
     public class var fullTypeName: String { "" }
+    
+    /// The .NET System.Type of this type.
+    /// - Returns: The equivalent of calling `typeof(ADotNETType)` in C#. 
+    public class var typeOf: System_Type /* System.Type */ {
+        fatalError("Override in subclass")
+    }
 
     required init(handle: UnsafeMutableRawPointer) {
 		self.__handle = handle
@@ -31,11 +45,7 @@ public class DNObject {
 
 		self.init(handle: handle)
 	}
-
-    public class var typeOf: System_Type /* System.Type */ {
-        fatalError("Override in subclass")
-    }
-
+	
     internal func destroy() {
         // Override in subclass
     }
@@ -53,6 +63,8 @@ public class DNObject {
 	}
 }
 
+/// This is a generic base class for all .NET array types.
+/// The element type of the array is specified as the first and only generic type argument.
 public class DNArray<T>: System_Array, MutableCollection where T: System_Object {
     public typealias Element = T?
     public typealias Index = Int32
@@ -76,10 +88,12 @@ public class DNArray<T>: System_Array, MutableCollection where T: System_Object 
         "\(T.fullTypeName)[]"
     }
     
+    /// - Returns: An empty .NET array of the specified type.
     public static var empty: DNArray<T> { get throws {
         try DNArray<T>.init()
     }}
     
+    /// Creates and initializes an empty .NET array of the specified type.
     public convenience init() throws {
         let elementType = T.typeOf
         let elementTypeC = elementType.__handle
@@ -98,6 +112,7 @@ public class DNArray<T>: System_Array, MutableCollection where T: System_Object 
         self.init(handle: newArrayC)
     }
     
+    /// Creates and initializes a .NET array of the specified type and length.
     public convenience init(length: Index) throws {
         let elementType = T.typeOf
         let elementTypeC = elementType.__handle
@@ -116,6 +131,8 @@ public class DNArray<T>: System_Array, MutableCollection where T: System_Object 
         self.init(handle: newArrayC)
     }
     
+    /// Get or set and element of this .NET array at the specified position/index.
+    /// If an exception is raised on the .NET side while indexing into the array, a fatalError will be raised on the Swift side of things.
     public subscript(position: Index) -> Element {
         get {
             assert(position >= startIndex && position < endIndex, "Out of bounds")
@@ -210,6 +227,9 @@ public extension DNObject {
 
 // MARK: - Primitive Conversion Extensions
 public extension DNObject {
+    /// Cast the targeted .NET object to a Bool.
+    /// - Returns: A Bool value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown. 
     func castToBool() throws -> Bool {
         var exceptionC: System_Exception_t?
         
@@ -225,12 +245,17 @@ public extension DNObject {
         return castedValue 
     }
 
+    /// Boxes the specified Bool value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     static func fromBool(_ boolValue: Bool) -> System_Boolean {
         let castedObjectC = DNObjectFromBool(boolValue)
 		
 		return .init(handle: castedObjectC)
 	}
 
+    /// Cast the targeted .NET object to a Float.
+    /// - Returns: A Float value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     func castToFloat() throws -> Float {
         var exceptionC: System_Exception_t?
         
@@ -246,12 +271,17 @@ public extension DNObject {
         return castedValue 
     }
 
+    /// Boxes the specified Float value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     static func fromFloat(_ floatValue: Float) -> System_Single {
         let castedObjectC = DNObjectFromFloat(floatValue)
         
 		return .init(handle: castedObjectC)
 	}
 
+    /// Cast the targeted .NET object to a Double.
+    /// - Returns: A Double value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     func castToDouble() throws -> Double {
         var exceptionC: System_Exception_t?
         
@@ -267,12 +297,17 @@ public extension DNObject {
         return castedValue 
     }
 
+    /// Boxes the specified Double value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     static func fromDouble(_ doubleValue: Double) -> System_Double {
         let castedObjectC = DNObjectFromDouble(doubleValue)
 		
 		return .init(handle: castedObjectC)
 	}
 
+    /// Cast the targeted .NET object to an Int8.
+    /// - Returns: An Int8 value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     func castToInt8() throws -> Int8 {
         var exceptionC: System_Exception_t?
         
@@ -288,12 +323,17 @@ public extension DNObject {
         return castedValue 
     }
 
+    /// Boxes the specified Int8 value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     static func fromInt8(_ int8Value: Int8) -> System_SByte {
         let castedObjectC = DNObjectFromInt8(int8Value)
         
         return .init(handle: castedObjectC)
     }
 
+    /// Cast the targeted .NET object to an UInt8.
+    /// - Returns: An UInt8 value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     func castToUInt8() throws -> UInt8 {
         var exceptionC: System_Exception_t?
         
@@ -309,12 +349,17 @@ public extension DNObject {
         return castedValue 
     }
 
+    /// Boxes the specified UInt8 value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     static func fromUInt8(_ uint8Value: UInt8) -> System_Byte {
         let castedObjectC = DNObjectFromUInt8(uint8Value)
         
         return .init(handle: castedObjectC)
     }
 
+    /// Cast the targeted .NET object to an Int16.
+    /// - Returns: An Int16 value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     func castToInt16() throws -> Int16 {
         var exceptionC: System_Exception_t?
         
@@ -330,12 +375,17 @@ public extension DNObject {
         return castedValue 
     }
 
+    /// Boxes the specified Int16 value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     static func fromInt16(_ int16Value: Int16) -> System_Int16 {
         let castedObjectC = DNObjectFromInt16(int16Value)
         
         return .init(handle: castedObjectC)
     }
 
+    /// Cast the targeted .NET object to an UInt16.
+    /// - Returns: An UInt16 value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     func castToUInt16() throws -> UInt16 {
         var exceptionC: System_Exception_t?
         
@@ -351,12 +401,17 @@ public extension DNObject {
         return castedValue 
     }
 
+    /// Boxes the specified UInt16 value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     static func fromUInt16(_ uint16Value: UInt16) -> System_UInt16 {
         let castedObjectC = DNObjectFromUInt16(uint16Value)
         
         return .init(handle: castedObjectC)
     }
 
+    /// Cast the targeted .NET object to an Int32.
+    /// - Returns: An Int32 value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     func castToInt32() throws -> Int32 {
         var exceptionC: System_Exception_t?
         
@@ -372,12 +427,17 @@ public extension DNObject {
         return castedValue 
     }
 
+    /// Boxes the specified Int32 value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     static func fromInt32(_ int32Value: Int32) -> System_Int32 {
         let castedObjectC = DNObjectFromInt32(int32Value)
         
         return .init(handle: castedObjectC)
     }
 
+    /// Cast the targeted .NET object to an UInt32.
+    /// - Returns: An UInt32 value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     func castToUInt32() throws -> UInt32 {
         var exceptionC: System_Exception_t?
         
@@ -393,12 +453,17 @@ public extension DNObject {
         return castedValue 
     }
 
+    /// Boxes the specified UInt32 value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     static func fromUInt32(_ uint32Value: UInt32) -> System_UInt32 {
         let castedObjectC = DNObjectFromUInt32(uint32Value)
         
         return .init(handle: castedObjectC)
     }
 
+    /// Cast the targeted .NET object to an Int64.
+    /// - Returns: An Int64 value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     func castToInt64() throws -> Int64 {
         var exceptionC: System_Exception_t?
         
@@ -414,12 +479,17 @@ public extension DNObject {
         return castedValue 
     }
 
+    /// Boxes the specified Int64 value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     static func fromInt64(_ int64Value: Int64) -> System_Int64 {
         let castedObjectC = DNObjectFromInt64(int64Value)
         
         return .init(handle: castedObjectC)
     }
 
+    /// Cast the targeted .NET object to an UInt64.
+    /// - Returns: An UInt64 value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     func castToUInt64() throws -> UInt64 {
         var exceptionC: System_Exception_t?
         
@@ -435,6 +505,8 @@ public extension DNObject {
         return castedValue 
     }
 
+    /// Boxes the specified UInt64 value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     static func fromUInt64(_ uint64Value: UInt64) -> System_UInt64 {
         let castedObjectC = DNObjectFromUInt64(uint64Value)
         
@@ -443,144 +515,203 @@ public extension DNObject {
 }
 
 extension Bool {
+    /// Boxes the targeted Bool value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     public func dotNETObject() -> System_Boolean {
         return .fromBool(self)
     }
 }
 
 extension System_Boolean {
+    /// Cast the targeted .NET object to a Bool.
+    /// - Returns: A Bool value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     public var value: Bool { get throws {
         try castToBool()
     }}
 }
 
 extension Float {
+    /// Boxes the targeted Float value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     public func dotNETObject() -> System_Single {
         return .fromFloat(self)
     }
 }
 
 extension System_Single {
+    /// Cast the targeted .NET object to a Float.
+    /// - Returns: A Float value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     public var value: Float { get throws {
         try castToFloat()
     }}
 }
 
 extension Double {
+    /// Boxes the targeted Double value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     public func dotNETObject() -> System_Double {
         return .fromDouble(self)
     }
 }
 
 extension System_Double {
+    /// Cast the targeted .NET object to a Double.
+    /// - Returns: A Double value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     public var value: Double { get throws {
         try castToDouble()
     }}
 }
 
 extension Int8 {
+    /// Boxes the targeted Int8 value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     public func dotNETObject() -> System_SByte {
         return .fromInt8(self)
     }
 }
 
 extension System_SByte {
+    /// Cast the targeted .NET object to an Int8.
+    /// - Returns: An Int8 value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     public var value: Int8 { get throws {
         try castToInt8()
     }}
 }
 
 extension UInt8 {
+    /// Boxes the targeted UInt8 value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     public func dotNETObject() -> System_Byte {
         return .fromUInt8(self)
     }
 }
 
 extension System_Byte {
+    /// Cast the targeted .NET object to an UInt8.
+    /// - Returns: An UInt8 value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     public var value: UInt8 { get throws {
         try castToUInt8()
     }}
 }
 
 extension Int16 {
+    /// Boxes the targeted Int16 value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     public func dotNETObject() -> System_Int16 {
         return .fromInt16(self)
     }
 }
 
 extension System_Int16 {
+    /// Cast the targeted .NET object to an Int16.
+    /// - Returns: An Int16 value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     public var value: Int16 { get throws {
         try castToInt16()
     }}
 }
 
 extension UInt16 {
+    /// Boxes the targeted UInt16 value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     public func dotNETObject() -> System_UInt16 {
         return .fromUInt16(self)
     }
 }
 
 extension System_UInt16 {
+    /// Cast the targeted .NET object to an UInt16.
+    /// - Returns: An UInt16 value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     public var value: UInt16 { get throws {
         try castToUInt16()
     }}
 }
 
 extension Int32 {
+    /// Boxes the targeted Int32 value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     public func dotNETObject() -> System_Int32 {
         return .fromInt32(self)
     }
 }
 
 extension System_Int32 {
+    /// Cast the targeted .NET object to an Int32.
+    /// - Returns: An Int32 value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     public var value: Int32 { get throws {
         try castToInt32()
     }}
 }
 
 extension UInt32 {
+    /// Boxes the targeted UInt32 value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     public func dotNETObject() -> System_UInt32 {
         return .fromUInt32(self)
     }
 }
 
 extension System_UInt32 {
+    /// Cast the targeted .NET object to an UInt32.
+    /// - Returns: An UInt32 value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     public var value: UInt32 { get throws {
         try castToUInt32()
     }}
 }
 
 extension Int64 {
+    /// Boxes the targeted Int64 value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     public func dotNETObject() -> System_Int64 {
         return .fromInt64(self)
     }
 }
 
 extension System_Int64 {
+    /// Cast the targeted .NET object to an Int64.
+    /// - Returns: An Int64 value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     public var value: Int64 { get throws {
         try castToInt64()
     }}
 }
 
 extension UInt64 {
+    /// Boxes the targeted UInt64 value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
     public func dotNETObject() -> System_UInt64 {
         return .fromUInt64(self)
     }
 }
 
 extension System_UInt64 {
+    /// Cast the targeted .NET object to an UInt64.
+    /// - Returns: An UInt64 value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
     public var value: UInt64 { get throws {
         try castToUInt64()
     }}
 }
 
+/// A Swift error type that wraps a .NET `System.Exception` object.
 public class DNError: LocalizedError {
+    /// The underlying .NET `System.Exception` object.
     public let exception: System_Exception
     
+    /// Initializes an `DNError` with a .NET `System.Exception` object.
     public init(exception: System_Exception) {
         self.exception = exception
     }
     
+    /// - Returns: The stack trace of the wrapped .NET `System.Exception` object. 
     public func stackTrace() -> String? {
         do {
             return try String(dotNETString: exception.stackTrace)
@@ -598,8 +729,9 @@ public class DNError: LocalizedError {
     }
 }
 
-public extension System_Exception {
-    var error: DNError {
+extension System_Exception {
+    /// Converts the targeted .NET `System.Exception` object to an `DNError` instance.
+    public var error: DNError {
         return DNError(exception: self)
     }
 }
@@ -616,6 +748,7 @@ public enum DNSystemError: LocalizedError {
 }
 
 public extension String {
+    /// Converts the targeted Swift `String` to a .NET `System.String`.
 	func dotNETString() -> System_String {
 		let dotNetStringHandle = DNStringFromC(self)
 		
@@ -638,13 +771,14 @@ public extension String {
 }
 
 public extension System_String {
+    /// Converts the targeted .NET `System.String` to a Swift `String` instance.
     func string() -> String {
         return String(dotNETString: self)
     }
 }
 
 public extension [String] {
-    /// Converts a Swift String Array into a .NET System.String Array
+    /// Converts a Swift String Array into a .NET `System.String` Array (`System.String[]`).
     func dotNETStringArray() throws -> DNArray<System_String> {
         let arr = try DNArray<System_String>(length: .init(count))
         
@@ -659,7 +793,7 @@ public extension [String] {
 }
 
 public extension DNArray<System_String> {
-    /// Converts a .NET System.String Array into a Swift String Array
+    /// Converts a .NET `System.String` Array (`System.String[]`) into a Swift String Array
     func array() throws -> [String] {
         let len = try self.length
         
@@ -804,6 +938,7 @@ extension System_DateTime {
         return dateComponents
     }
     
+    /// Converts the targeted .NET `System.DateTime` to a Swift `Date` instance.
     public func swiftDate() throws -> Date {
         let dateTimeKind = try self.kind
         
@@ -845,6 +980,7 @@ extension Date {
         }
     }
 
+    /// Converts the targeted Swift `Date` instance to a .NET `System.DateTime` object.
     public func dotNETDateTime() throws -> System_DateTime {
         let nanoSecsPerTick = 100
         let nanoSecsPerMicrosec = 1000
@@ -941,7 +1077,7 @@ extension Date {
 }
 
 public extension Data {
-    /// Creates a .NET byte array by copying the data from the Swift Data object
+    /// Creates a .NET byte array (`System.Byte[]`) by copying the data from the Swift `Data` object.
     func dotNETByteArray() throws -> DNArray<System_Byte> {
         let bytesCount = Int32(self.count)
         
@@ -967,7 +1103,7 @@ public extension Data {
 }
 
 public extension DNArray<System_Byte> {
-    /// Creates a Swift Data object by either copying the data from the .NET byte array or getting a pinned pointer to the underlying data in .NET which is freed as soon as the Swift Data object is deallocated. 
+    /// Creates a Swift `Data` object by either copying the data from the .NET byte array (`System.Byte[]`) or getting a pinned pointer to the underlying data in .NET which is freed as soon as the Swift `Data` object is deallocated. 
     func data(noCopy: Bool = false) throws -> Data {
         let bytesCount = try self.length
         
@@ -1187,6 +1323,8 @@ public extension NativeBox {
     
     public const string GuidExtensions = """
 extension UUID {
+    /// Tries to convert the targeted Swift `UUID` object to a .NET `System.Guid`.
+    /// - Returns: nil if the conversion fails or an instance of `System.Guid` if it succeeds.
     public func dotNETGuid() -> System_Guid? {
         let guidString = self.uuidString
         let guidStringDN = guidString.dotNETString()
@@ -1213,6 +1351,8 @@ extension UUID {
 }
 
 extension System_Guid {
+    /// Tries to convert the targeted .NET `System.Guid` to a Swift `UUID` object.
+    /// - Returns: nil if the conversion fails or an instance of `UUID` if it succeeds.
     public func uuid() -> UUID? {
         return UUID(dotNETGuid: self)
     }
