@@ -1,5 +1,5 @@
-// Number of generated types: 1796
-// Number of generated members: 6051
+// Number of generated types: 1799
+// Number of generated members: 6058
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -5531,6 +5531,12 @@ typedef void* Beyond_NET_Sample_Dog_t;
 typedef void* Beyond_NET_Sample_GenericAnimal_t;
 
 typedef void* Beyond_NET_Sample_Labrador_t;
+
+typedef void* Beyond_NET_Sample_ArrayTests_t;
+
+typedef void* System_Boolean_Array_D2_t;
+
+typedef void* System_Int32_Array_D3_t;
 
 typedef void* Beyond_NET_Sample_AsyncTests_t;
 
@@ -44894,6 +44900,54 @@ Beyond_NET_Sample_Labrador_Destroy(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.Labrador
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.ArrayTests
+Beyond_NET_Sample_ArrayTests_t _Nonnull /* Beyond.NET.Sample.ArrayTests */
+Beyond_NET_Sample_ArrayTests_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Boolean_Array_D2_t _Nonnull /* System.Boolean[,] */
+Beyond_NET_Sample_ArrayTests_TwoDimensionalArrayOfBool_Get(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self
+);
+
+void /* System.Void */
+Beyond_NET_Sample_ArrayTests_TwoDimensionalArrayOfBool_Set(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_Boolean_Array_D2_t _Nullable /* System.Boolean[,] */ value
+);
+
+
+System_Int32_Array_D3_t _Nonnull /* System.Int32[,,] */
+Beyond_NET_Sample_ArrayTests_ThreeDimensionalArrayOfInt32_Get(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self
+);
+
+void /* System.Void */
+Beyond_NET_Sample_ArrayTests_ThreeDimensionalArrayOfInt32_Set(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_Int32_Array_D3_t _Nullable /* System.Int32[,,] */ value
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_ArrayTests_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_ArrayTests_Destroy(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.ArrayTests
+
+#pragma mark - BEGIN APIs of System.Boolean[,]
+#pragma mark - END APIs of System.Boolean[,]
+
+#pragma mark - BEGIN APIs of System.Int32[,,]
+#pragma mark - END APIs of System.Int32[,,]
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.AsyncTests
 System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.Int32> */

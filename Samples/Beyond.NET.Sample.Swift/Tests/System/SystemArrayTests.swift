@@ -27,6 +27,9 @@ final class SystemArrayTests: XCTestCase {
         let fullTypeName = DNArray<System_DateTime>.fullTypeName
         XCTAssertEqual(fullTypeName, "System.DateTime[]")
         
+        let rank = try arrayOfDateTime.rank
+        XCTAssertEqual(rank, 1)
+        
         let index: Int32 = 0
         
         arrayOfDateTime[index] = now
@@ -46,6 +49,9 @@ final class SystemArrayTests: XCTestCase {
         
         let arrayOfDateTime = try System_Array.createInstance(dateTimeType,
                                                               arrayLength)
+        
+        let rank = try arrayOfDateTime.rank
+        XCTAssertEqual(rank, 1)
         
         let index: Int32 = 0
         
@@ -99,6 +105,9 @@ final class SystemArrayTests: XCTestCase {
 
         let arrayElementTypeIsSystemString = arrayElementType == systemStringType
         XCTAssertTrue(arrayElementTypeIsSystemString)
+        
+        let rank = try emptyArrayOfStrings.rank
+        XCTAssertEqual(rank, 1)
     }
     
     func testEmptyArrayWithExtensionOnExplicitArrayType() throws {

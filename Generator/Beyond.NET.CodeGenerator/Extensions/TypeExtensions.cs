@@ -94,7 +94,17 @@ internal static class TypeExtensions
             .Replace(".", "_")
             .Replace("+", "_")
             .Replace("&", string.Empty)
-            .Replace("[]", "_Array");
+            .Replace("[]", "_Array")
+            .Replace("[,]", "_Array_D2") // TODO: Yes, this can be improved ;-)
+            .Replace("[,,]", "_Array_D3")
+            .Replace("[,,,]", "_Array_D4")
+            .Replace("[,,,,]", "_Array_D5")
+            .Replace("[,,,,,]", "_Array_D6")
+            .Replace("[,,,,,,]", "_Array_D7")
+            .Replace("[,,,,,,,]", "_Array_D8")
+            .Replace("[,,,,,,,,]", "_Array_D9")
+            .Replace("[,,,,,,,,,]", "_Array_D10")
+        ;
 
         bool isGeneric = type.IsGenericType ||
                          type.IsGenericTypeDefinition;
