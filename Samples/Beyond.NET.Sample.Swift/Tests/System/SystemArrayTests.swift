@@ -235,7 +235,7 @@ final class SystemArrayTests: XCTestCase {
 				return
 			}
 			
-			guard let int32 = try? int32Obj.castToInt32() else {
+			guard let int32 = try? int32Obj.value else {
 				XCTFail("Object in array is not a Int32")
 				
 				return

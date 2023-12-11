@@ -279,7 +279,7 @@ private extension SystemRuntimeInteropServicesMarshalTests {
                 return
             }
             
-            guard let systemByte = try? systemByteObject.castToUInt8() else {
+            guard let systemByte = try? systemByteObject.value else {
                 XCTFail("Should get a byte/UInt8 but failed to cast")
                 
                 return

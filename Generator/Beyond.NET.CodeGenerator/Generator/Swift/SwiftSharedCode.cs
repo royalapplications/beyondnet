@@ -448,10 +448,22 @@ extension Bool {
     }
 }
 
+extension System_Boolean {
+    public var value: Bool { get throws {
+        try castToBool()
+    }}
+}
+
 extension Float {
     public func dotNETObject() -> System_Single {
         return .fromFloat(self)
     }
+}
+
+extension System_Single {
+    public var value: Float { get throws {
+        try castToFloat()
+    }}
 }
 
 extension Double {
@@ -460,10 +472,22 @@ extension Double {
     }
 }
 
+extension System_Double {
+    public var value: Double { get throws {
+        try castToDouble()
+    }}
+}
+
 extension Int8 {
     public func dotNETObject() -> System_SByte {
         return .fromInt8(self)
     }
+}
+
+extension System_SByte {
+    public var value: Int8 { get throws {
+        try castToInt8()
+    }}
 }
 
 extension UInt8 {
@@ -472,10 +496,22 @@ extension UInt8 {
     }
 }
 
+extension System_Byte {
+    public var value: UInt8 { get throws {
+        try castToUInt8()
+    }}
+}
+
 extension Int16 {
     public func dotNETObject() -> System_Int16 {
         return .fromInt16(self)
     }
+}
+
+extension System_Int16 {
+    public var value: Int16 { get throws {
+        try castToInt16()
+    }}
 }
 
 extension UInt16 {
@@ -484,10 +520,22 @@ extension UInt16 {
     }
 }
 
+extension System_UInt16 {
+    public var value: UInt16 { get throws {
+        try castToUInt16()
+    }}
+}
+
 extension Int32 {
     public func dotNETObject() -> System_Int32 {
         return .fromInt32(self)
     }
+}
+
+extension System_Int32 {
+    public var value: Int32 { get throws {
+        try castToInt32()
+    }}
 }
 
 extension UInt32 {
@@ -496,16 +544,34 @@ extension UInt32 {
     }
 }
 
+extension System_UInt32 {
+    public var value: UInt32 { get throws {
+        try castToUInt32()
+    }}
+}
+
 extension Int64 {
     public func dotNETObject() -> System_Int64 {
         return .fromInt64(self)
     }
 }
 
+extension System_Int64 {
+    public var value: Int64 { get throws {
+        try castToInt64()
+    }}
+}
+
 extension UInt64 {
     public func dotNETObject() -> System_UInt64 {
         return .fromUInt64(self)
     }
+}
+
+extension System_UInt64 {
+    public var value: UInt64 { get throws {
+        try castToUInt64()
+    }}
 }
 
 public class DNError: LocalizedError {
