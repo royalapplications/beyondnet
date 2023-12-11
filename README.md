@@ -452,7 +452,7 @@ In Swift we provide extension methods to convert back and forth between primitiv
 ```swift
 let number: Int32 = 5
 let numberObj = number.dotNETObject()
-let numberRet = try numberObj.castToInt32()
+let numberRet = try numberObj.value // Or: try numberObj.castToInt32()
 ```
 
 
