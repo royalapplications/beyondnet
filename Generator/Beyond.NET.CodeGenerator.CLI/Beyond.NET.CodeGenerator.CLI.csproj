@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <AssemblyName>beyondnetgen</AssemblyName>
-    <AssemblyVersion>0.3</AssemblyVersion>
+    <AssemblyVersion>0.4</AssemblyVersion>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
