@@ -48,6 +48,7 @@ public class TypeDescriptor
     public bool IsValueType => ManagedType.IsValueType || IsReadOnlyStructOfByte;
     public bool IsEnum => ManagedType.IsEnum;
     public bool IsBool => ManagedType.IsBoolean();
+    public bool IsArray => ManagedType.IsArray;
     public bool IsVoid => ManagedType.IsVoid();
     public bool IsDelegate => ManagedType.IsDelegate();
     public bool IsManagedPointer => ManagedType.IsPointer;
@@ -131,8 +132,13 @@ public class TypeDescriptor
     )
     {
         string typeName;
+
+        bool isAllowedToCache = !(language == CodeLanguage.Swift &&
+                                  IsArray);
         
-        if (m_typeNames.TryGetValue(language, out string? tempTypeName)) {
+        // Cannot cache array types because of element nullability
+        if (isAllowedToCache &&
+            m_typeNames.TryGetValue(language, out string? tempTypeName)) {
             typeName = tempTypeName;
         } else {
             typeName = GenerateTypeName(
@@ -140,7 +146,9 @@ public class TypeDescriptor
                 arrayElementNullability
             );
 
-            m_typeNames[language] = typeName;
+            if (isAllowedToCache) {
+                m_typeNames[language] = typeName;
+            }
         }
 
         if (includeModifiers) {
@@ -313,20 +321,35 @@ public class TypeDescriptor
 
     public string? GetTypeConversion(
         CodeLanguage sourceLanguage,
-        CodeLanguage targetLanguage
+        CodeLanguage targetLanguage,
+        Nullability arrayElementNullability = Nullability.NotSpecified
     )
     {
         LanguagePair languagePair = new(sourceLanguage, targetLanguage);
         
-        m_typeConversions.TryGetValue(
-            languagePair,
-            out string? typeConversion
-        );
+        bool isAllowedToCache = !((sourceLanguage == CodeLanguage.Swift || targetLanguage == CodeLanguage.Swift) &&
+                                  IsArray);
 
-        if (typeConversion == null) {
-            typeConversion = GenerateTypeConversion(sourceLanguage, targetLanguage);
+        string? typeConversion;
 
-            if (typeConversion != null) {
+        if (isAllowedToCache) {
+            m_typeConversions.TryGetValue(
+                languagePair,
+                out typeConversion
+            );
+        } else {
+            typeConversion = null;
+        }
+
+        if (typeConversion is null) {
+            typeConversion = GenerateTypeConversion(
+                sourceLanguage,
+                targetLanguage,
+                arrayElementNullability
+            );
+
+            if (isAllowedToCache &&
+                typeConversion is not null) {
                 m_typeConversions[languagePair] = typeConversion;
             }
         }
@@ -336,7 +359,8 @@ public class TypeDescriptor
     
     private string? GenerateTypeConversion(
         CodeLanguage sourceLanguage,
-        CodeLanguage targetLanguage
+        CodeLanguage targetLanguage,
+        Nullability arrayElementNullability
     )
     {
         Type type = ManagedType;
@@ -385,7 +409,9 @@ public class TypeDescriptor
                    targetLanguage == CodeLanguage.Swift) {
             string swiftTypeName = GetTypeName(
                 CodeLanguage.Swift,
-                false
+                false,
+                Nullability.NotSpecified,
+                arrayElementNullability
             );
 
             if (IsEnum) {

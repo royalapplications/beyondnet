@@ -58,7 +58,7 @@ final class SpanTestTests: XCTestCase {
         verifySpanTest(test, matchesData: hugoConvertedData)
         
         guard let hugoConvertedByteArray = try? test.convertSpanToByteArray(hugoConvertedData, .init({ span in
-            try? span?.dotNETByteArray()
+            try? span?.dotNETByteArray().nullable()
         })) else {
             XCTFail("SpanTest.ConvertSpanToByteArray should not throw and return an instance")
             

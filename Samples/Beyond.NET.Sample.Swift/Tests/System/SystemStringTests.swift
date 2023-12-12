@@ -154,7 +154,7 @@ final class SystemStringTests: XCTestCase {
         }
         
         let joinedRet = try? System_String.join(separatorDN,
-                                                split).string()
+                                                split.nullable()).string()
         
         XCTAssertEqual(cleanedJoined, joinedRet)
     }

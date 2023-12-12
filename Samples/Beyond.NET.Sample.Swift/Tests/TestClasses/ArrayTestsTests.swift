@@ -15,7 +15,7 @@ final class ArrayTestsTests: XCTestCase {
     func testTwoDimensionalArrayOfBool() throws {
         let tests = try Beyond.NET.Sample.ArrayTests()
         
-        let array = tests.twoDimensionalArrayOfBool
+        let array = try tests.twoDimensionalArrayOfBool
         let rank = try array.rank
         
         XCTAssertEqual(rank, 2)
@@ -67,9 +67,9 @@ final class ArrayTestsTests: XCTestCase {
         newArray[[1, 0]] = false.dotNETObject()
         newArray[[1, 1]] = true.dotNETObject()
         
-        tests.twoDimensionalArrayOfBool_set(newArray)
+        try tests.twoDimensionalArrayOfBool_set(newArray)
         
-        let array = tests.twoDimensionalArrayOfBool
+        let array = try tests.twoDimensionalArrayOfBool
         
         // Check state
         XCTAssertEqual(try array.getValue(Int32(0), Int32(0))?.castToBool(), true)
@@ -88,7 +88,7 @@ final class ArrayTestsTests: XCTestCase {
     func testThreeDimensionalArrayOfInt32() throws {
         let tests = try Beyond.NET.Sample.ArrayTests()
         
-        let array = tests.threeDimensionalArrayOfInt32
+        let array = try tests.threeDimensionalArrayOfInt32
         let rank = try array.rank
         
         XCTAssertEqual(rank, 3)
@@ -190,9 +190,9 @@ final class ArrayTestsTests: XCTestCase {
         newArray[[1, 1, 1]] = Int32(2).dotNETObject()
         newArray[[1, 1, 2]] = Int32(1).dotNETObject()
         
-        tests.threeDimensionalArrayOfInt32_set(newArray)
+        try tests.threeDimensionalArrayOfInt32_set(newArray)
         
-        let array = tests.threeDimensionalArrayOfInt32
+        let array = try tests.threeDimensionalArrayOfInt32
         
         // Check state
         XCTAssertEqual(try array[[0, 0, 0]].castToInt32(), 12)
@@ -210,5 +210,32 @@ final class ArrayTestsTests: XCTestCase {
         XCTAssertEqual(try array[[1, 1, 0]].castToInt32(), 3)
         XCTAssertEqual(try array[[1, 1, 1]].castToInt32(), 2)
         XCTAssertEqual(try array[[1, 1, 2]].castToInt32(), 1)
+    }
+    
+    func testArrayOfNullableString() throws {
+        let tests = try Beyond.NET.Sample.ArrayTests()
+        
+        let array = try tests.arrayOfNullableString
+        let rank = try array.rank
+        
+        XCTAssertEqual(rank, 1)
+        
+        // Check initial state
+        XCTAssertNil(array[0])
+        XCTAssertEqual(array[1]?.string(), "a")
+        XCTAssertEqual(array[2]?.string(), "b")
+        XCTAssertEqual(array[3]?.string(), "c")
+        
+        // Modify it
+        array[3] = nil
+        try tests.arrayOfNullableString_set(array)
+        
+        let newArray = try tests.arrayOfNullableString
+        
+        // Check modified state
+        XCTAssertNil(newArray[0])
+        XCTAssertEqual(newArray[1]?.string(), "a")
+        XCTAssertEqual(newArray[2]?.string(), "b")
+        XCTAssertNil(newArray[3])
     }
 }

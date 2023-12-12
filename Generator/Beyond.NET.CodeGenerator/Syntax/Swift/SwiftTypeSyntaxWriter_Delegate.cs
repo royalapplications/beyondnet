@@ -333,6 +333,8 @@ public partial class SwiftTypeSyntaxWriter
         string swiftFuncParameters = SwiftMethodSyntaxWriter.WriteParameters(
             MemberKind.Method,
             null,
+            Nullability.NotSpecified,
+            Nullability.NotSpecified,
             false,
             type,
             parameterInfos,
@@ -378,6 +380,8 @@ public partial class SwiftTypeSyntaxWriter
         string cFunctionParameters = SwiftMethodSyntaxWriter.WriteParameters(
             MemberKind.Method,
             null,
+            Nullability.NotSpecified,
+            Nullability.NotSpecified,
             false,
             type,
             parameterInfos,
@@ -423,6 +427,8 @@ public partial class SwiftTypeSyntaxWriter
             CodeLanguage.Swift,
             MemberKind.Method,
             null,
+            Nullability.NotSpecified,
+            Nullability.NotSpecified,
             parameterInfos,
             false,
             Array.Empty<Type>(),
@@ -466,7 +472,8 @@ public partial class SwiftTypeSyntaxWriter
         if (isReturning) {
             string? returnTypeConversion = returnTypeDescriptor.GetTypeConversion(
                 CodeLanguage.Swift,
-                CodeLanguage.C
+                CodeLanguage.C,
+                Nullability.NotSpecified // TODO
             );
     
             if (!string.IsNullOrEmpty(returnTypeConversion)) {
@@ -600,6 +607,8 @@ public partial class SwiftTypeSyntaxWriter
         string swiftFuncParameters = SwiftMethodSyntaxWriter.WriteParameters(
             MemberKind.Method,
             null,
+            Nullability.NotSpecified,
+            Nullability.NotSpecified,
             false,
             typeInfo.Type,
             typeInfo.ParameterInfos,
@@ -643,6 +652,8 @@ public partial class SwiftTypeSyntaxWriter
             CodeLanguage.C,
             MemberKind.Method,
             null,
+            Nullability.NotSpecified,
+            Nullability.NotSpecified,
             typeInfo.ParameterInfos,
             false,
             Array.Empty<Type>(),
@@ -681,7 +692,8 @@ public partial class SwiftTypeSyntaxWriter
         if (typeInfo.IsReturning) {
             string? returnTypeConversion = typeInfo.ReturnTypeDescriptor.GetTypeConversion(
                 CodeLanguage.C,
-                CodeLanguage.Swift
+                CodeLanguage.Swift,
+                Nullability.NotSpecified // TODO
             );
         
             if (!string.IsNullOrEmpty(returnTypeConversion)) {

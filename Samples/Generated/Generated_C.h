@@ -1,5 +1,5 @@
 // Number of generated types: 1799
-// Number of generated members: 6058
+// Number of generated members: 6060
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1947,6 +1947,7 @@ typedef struct DNReadOnlySpanOfByte {
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "System.ITupleInternal": Is Not Visible (public)
+// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
 // Unsupported Type "Converter`2": Is Generic Delegate Type
 // Unsupported Type "System.Predicate`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "System.Action`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
@@ -11486,7 +11487,7 @@ System_Globalization_CultureInfo_CurrentCulture_Get(
 
 void /* System.Void */
 System_Globalization_CultureInfo_CurrentCulture_Set(
-	System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */ value,
+	System_Globalization_CultureInfo_t _Nonnull /* System.Globalization.CultureInfo */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -11498,7 +11499,7 @@ System_Globalization_CultureInfo_CurrentUICulture_Get(
 
 void /* System.Void */
 System_Globalization_CultureInfo_CurrentUICulture_Set(
-	System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */ value,
+	System_Globalization_CultureInfo_t _Nonnull /* System.Globalization.CultureInfo */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -11653,7 +11654,7 @@ System_Globalization_CultureInfo_NumberFormat_Get(
 void /* System.Void */
 System_Globalization_CultureInfo_NumberFormat_Set(
 	System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */ self,
-	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ value,
+	System_Globalization_NumberFormatInfo_t _Nonnull /* System.Globalization.NumberFormatInfo */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -11667,7 +11668,7 @@ System_Globalization_CultureInfo_DateTimeFormat_Get(
 void /* System.Void */
 System_Globalization_CultureInfo_DateTimeFormat_Set(
 	System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */ self,
-	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ value,
+	System_Globalization_DateTimeFormatInfo_t _Nonnull /* System.Globalization.DateTimeFormatInfo */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -13274,7 +13275,7 @@ System_Runtime_Serialization_SerializationInfo_FullTypeName_Get(
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_FullTypeName_Set(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -13288,7 +13289,7 @@ System_Runtime_Serialization_SerializationInfo_AssemblyName_Get(
 void /* System.Void */
 System_Runtime_Serialization_SerializationInfo_AssemblyName_Set(
 	System_Runtime_Serialization_SerializationInfo_t _Nullable /* System.Runtime.Serialization.SerializationInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -22393,7 +22394,7 @@ System_Collections_DictionaryEntry_Key_Get(
 void /* System.Void */
 System_Collections_DictionaryEntry_Key_Set(
 	System_Collections_DictionaryEntry_t _Nonnull /* System.Collections.DictionaryEntry */ self,
-	System_Object_t _Nullable /* System.Object */ value,
+	System_Object_t _Nonnull /* System.Object */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26382,7 +26383,7 @@ System_Globalization_TextInfo_ListSeparator_Get(
 void /* System.Void */
 System_Globalization_TextInfo_ListSeparator_Set(
 	System_Globalization_TextInfo_t _Nullable /* System.Globalization.TextInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26466,7 +26467,7 @@ System_Globalization_NumberFormatInfo_CurrencyDecimalSeparator_Get(
 void /* System.Void */
 System_Globalization_NumberFormatInfo_CurrencyDecimalSeparator_Set(
 	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26487,7 +26488,7 @@ System_Globalization_NumberFormatInfo_CurrencyGroupSizes_Get(
 void /* System.Void */
 System_Globalization_NumberFormatInfo_CurrencyGroupSizes_Set(
 	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ self,
-	System_Int32_Array_t _Nullable /* System.Int32[] */ value,
+	System_Int32_Array_t _Nonnull /* System.Int32[] */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26501,7 +26502,7 @@ System_Globalization_NumberFormatInfo_NumberGroupSizes_Get(
 void /* System.Void */
 System_Globalization_NumberFormatInfo_NumberGroupSizes_Set(
 	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ self,
-	System_Int32_Array_t _Nullable /* System.Int32[] */ value,
+	System_Int32_Array_t _Nonnull /* System.Int32[] */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26515,7 +26516,7 @@ System_Globalization_NumberFormatInfo_PercentGroupSizes_Get(
 void /* System.Void */
 System_Globalization_NumberFormatInfo_PercentGroupSizes_Set(
 	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ self,
-	System_Int32_Array_t _Nullable /* System.Int32[] */ value,
+	System_Int32_Array_t _Nonnull /* System.Int32[] */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26529,7 +26530,7 @@ System_Globalization_NumberFormatInfo_CurrencyGroupSeparator_Get(
 void /* System.Void */
 System_Globalization_NumberFormatInfo_CurrencyGroupSeparator_Set(
 	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26543,7 +26544,7 @@ System_Globalization_NumberFormatInfo_CurrencySymbol_Get(
 void /* System.Void */
 System_Globalization_NumberFormatInfo_CurrencySymbol_Set(
 	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26563,7 +26564,7 @@ System_Globalization_NumberFormatInfo_NaNSymbol_Get(
 void /* System.Void */
 System_Globalization_NumberFormatInfo_NaNSymbol_Set(
 	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26633,7 +26634,7 @@ System_Globalization_NumberFormatInfo_NegativeInfinitySymbol_Get(
 void /* System.Void */
 System_Globalization_NumberFormatInfo_NegativeInfinitySymbol_Set(
 	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26647,7 +26648,7 @@ System_Globalization_NumberFormatInfo_NegativeSign_Get(
 void /* System.Void */
 System_Globalization_NumberFormatInfo_NegativeSign_Set(
 	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26675,7 +26676,7 @@ System_Globalization_NumberFormatInfo_NumberDecimalSeparator_Get(
 void /* System.Void */
 System_Globalization_NumberFormatInfo_NumberDecimalSeparator_Set(
 	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26689,7 +26690,7 @@ System_Globalization_NumberFormatInfo_NumberGroupSeparator_Get(
 void /* System.Void */
 System_Globalization_NumberFormatInfo_NumberGroupSeparator_Set(
 	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26717,7 +26718,7 @@ System_Globalization_NumberFormatInfo_PositiveInfinitySymbol_Get(
 void /* System.Void */
 System_Globalization_NumberFormatInfo_PositiveInfinitySymbol_Set(
 	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26731,7 +26732,7 @@ System_Globalization_NumberFormatInfo_PositiveSign_Get(
 void /* System.Void */
 System_Globalization_NumberFormatInfo_PositiveSign_Set(
 	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26759,7 +26760,7 @@ System_Globalization_NumberFormatInfo_PercentDecimalSeparator_Get(
 void /* System.Void */
 System_Globalization_NumberFormatInfo_PercentDecimalSeparator_Set(
 	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26773,7 +26774,7 @@ System_Globalization_NumberFormatInfo_PercentGroupSeparator_Get(
 void /* System.Void */
 System_Globalization_NumberFormatInfo_PercentGroupSeparator_Set(
 	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26787,7 +26788,7 @@ System_Globalization_NumberFormatInfo_PercentSymbol_Get(
 void /* System.Void */
 System_Globalization_NumberFormatInfo_PercentSymbol_Set(
 	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26801,7 +26802,7 @@ System_Globalization_NumberFormatInfo_PerMilleSymbol_Get(
 void /* System.Void */
 System_Globalization_NumberFormatInfo_PerMilleSymbol_Set(
 	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26815,7 +26816,7 @@ System_Globalization_NumberFormatInfo_NativeDigits_Get(
 void /* System.Void */
 System_Globalization_NumberFormatInfo_NativeDigits_Set(
 	System_Globalization_NumberFormatInfo_t _Nullable /* System.Globalization.NumberFormatInfo */ self,
-	System_String_Array_t _Nullable /* System.String[] */ value,
+	System_String_Array_t _Nonnull /* System.String[] */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26975,7 +26976,7 @@ System_Globalization_DateTimeFormatInfo_AMDesignator_Get(
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_AMDesignator_Set(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -26989,7 +26990,7 @@ System_Globalization_DateTimeFormatInfo_Calendar_Get(
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_Calendar_Set(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_Globalization_Calendar_t _Nullable /* System.Globalization.Calendar */ value,
+	System_Globalization_Calendar_t _Nonnull /* System.Globalization.Calendar */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27003,7 +27004,7 @@ System_Globalization_DateTimeFormatInfo_DateSeparator_Get(
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_DateSeparator_Set(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27045,7 +27046,7 @@ System_Globalization_DateTimeFormatInfo_FullDateTimePattern_Get(
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_FullDateTimePattern_Set(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27059,7 +27060,7 @@ System_Globalization_DateTimeFormatInfo_LongDatePattern_Get(
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_LongDatePattern_Set(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27073,7 +27074,7 @@ System_Globalization_DateTimeFormatInfo_LongTimePattern_Get(
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_LongTimePattern_Set(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27087,7 +27088,7 @@ System_Globalization_DateTimeFormatInfo_MonthDayPattern_Get(
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_MonthDayPattern_Set(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27101,7 +27102,7 @@ System_Globalization_DateTimeFormatInfo_PMDesignator_Get(
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_PMDesignator_Set(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27122,7 +27123,7 @@ System_Globalization_DateTimeFormatInfo_ShortDatePattern_Get(
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_ShortDatePattern_Set(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27136,7 +27137,7 @@ System_Globalization_DateTimeFormatInfo_ShortTimePattern_Get(
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_ShortTimePattern_Set(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27157,7 +27158,7 @@ System_Globalization_DateTimeFormatInfo_TimeSeparator_Get(
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_TimeSeparator_Set(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27178,7 +27179,7 @@ System_Globalization_DateTimeFormatInfo_YearMonthPattern_Get(
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_YearMonthPattern_Set(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27192,7 +27193,7 @@ System_Globalization_DateTimeFormatInfo_AbbreviatedDayNames_Get(
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_AbbreviatedDayNames_Set(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_Array_t _Nullable /* System.String[] */ value,
+	System_String_Array_t _Nonnull /* System.String[] */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27206,7 +27207,7 @@ System_Globalization_DateTimeFormatInfo_ShortestDayNames_Get(
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_ShortestDayNames_Set(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_Array_t _Nullable /* System.String[] */ value,
+	System_String_Array_t _Nonnull /* System.String[] */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27220,7 +27221,7 @@ System_Globalization_DateTimeFormatInfo_DayNames_Get(
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_DayNames_Set(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_Array_t _Nullable /* System.String[] */ value,
+	System_String_Array_t _Nonnull /* System.String[] */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27234,7 +27235,7 @@ System_Globalization_DateTimeFormatInfo_AbbreviatedMonthNames_Get(
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_AbbreviatedMonthNames_Set(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_Array_t _Nullable /* System.String[] */ value,
+	System_String_Array_t _Nonnull /* System.String[] */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27248,7 +27249,7 @@ System_Globalization_DateTimeFormatInfo_MonthNames_Get(
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_MonthNames_Set(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_Array_t _Nullable /* System.String[] */ value,
+	System_String_Array_t _Nonnull /* System.String[] */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27276,7 +27277,7 @@ System_Globalization_DateTimeFormatInfo_AbbreviatedMonthGenitiveNames_Get(
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_AbbreviatedMonthGenitiveNames_Set(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_Array_t _Nullable /* System.String[] */ value,
+	System_String_Array_t _Nonnull /* System.String[] */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27290,7 +27291,7 @@ System_Globalization_DateTimeFormatInfo_MonthGenitiveNames_Get(
 void /* System.Void */
 System_Globalization_DateTimeFormatInfo_MonthGenitiveNames_Set(
 	System_Globalization_DateTimeFormatInfo_t _Nullable /* System.Globalization.DateTimeFormatInfo */ self,
-	System_String_Array_t _Nullable /* System.String[] */ value,
+	System_String_Array_t _Nonnull /* System.String[] */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27833,7 +27834,7 @@ System_Text_Encoding_EncoderFallback_Get(
 void /* System.Void */
 System_Text_Encoding_EncoderFallback_Set(
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ self,
-	System_Text_EncoderFallback_t _Nullable /* System.Text.EncoderFallback */ value,
+	System_Text_EncoderFallback_t _Nonnull /* System.Text.EncoderFallback */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -27847,7 +27848,7 @@ System_Text_Encoding_DecoderFallback_Get(
 void /* System.Void */
 System_Text_Encoding_DecoderFallback_Set(
 	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ self,
-	System_Text_DecoderFallback_t _Nullable /* System.Text.DecoderFallback */ value,
+	System_Text_DecoderFallback_t _Nonnull /* System.Text.DecoderFallback */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -29071,7 +29072,7 @@ System_Reflection_InterfaceMapping_TargetType_Get(
 void /* System.Void */
 System_Reflection_InterfaceMapping_TargetType_Set(
 	System_Reflection_InterfaceMapping_t _Nonnull /* System.Reflection.InterfaceMapping */ self,
-	System_Type_t _Nullable /* System.Type */ value
+	System_Type_t _Nonnull /* System.Type */ value
 );
 
 
@@ -29083,7 +29084,7 @@ System_Reflection_InterfaceMapping_InterfaceType_Get(
 void /* System.Void */
 System_Reflection_InterfaceMapping_InterfaceType_Set(
 	System_Reflection_InterfaceMapping_t _Nonnull /* System.Reflection.InterfaceMapping */ self,
-	System_Type_t _Nullable /* System.Type */ value
+	System_Type_t _Nonnull /* System.Type */ value
 );
 
 
@@ -29095,7 +29096,7 @@ System_Reflection_InterfaceMapping_TargetMethods_Get(
 void /* System.Void */
 System_Reflection_InterfaceMapping_TargetMethods_Set(
 	System_Reflection_InterfaceMapping_t _Nonnull /* System.Reflection.InterfaceMapping */ self,
-	System_Reflection_MethodInfo_Array_t _Nullable /* System.Reflection.MethodInfo[] */ value
+	System_Reflection_MethodInfo_Array_t _Nonnull /* System.Reflection.MethodInfo[] */ value
 );
 
 
@@ -29107,7 +29108,7 @@ System_Reflection_InterfaceMapping_InterfaceMethods_Get(
 void /* System.Void */
 System_Reflection_InterfaceMapping_InterfaceMethods_Set(
 	System_Reflection_InterfaceMapping_t _Nonnull /* System.Reflection.InterfaceMapping */ self,
-	System_Reflection_MethodInfo_Array_t _Nullable /* System.Reflection.MethodInfo[] */ value
+	System_Reflection_MethodInfo_Array_t _Nonnull /* System.Reflection.MethodInfo[] */ value
 );
 
 
@@ -34435,7 +34436,7 @@ System_Threading_Thread_CurrentCulture_Get(
 void /* System.Void */
 System_Threading_Thread_CurrentCulture_Set(
 	System_Threading_Thread_t _Nullable /* System.Threading.Thread */ self,
-	System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */ value,
+	System_Globalization_CultureInfo_t _Nonnull /* System.Globalization.CultureInfo */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -34449,7 +34450,7 @@ System_Threading_Thread_CurrentUICulture_Get(
 void /* System.Void */
 System_Threading_Thread_CurrentUICulture_Set(
 	System_Threading_Thread_t _Nullable /* System.Threading.Thread */ self,
-	System_Globalization_CultureInfo_t _Nullable /* System.Globalization.CultureInfo */ value,
+	System_Globalization_CultureInfo_t _Nonnull /* System.Globalization.CultureInfo */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -35694,7 +35695,7 @@ System_Security_SecurityElement_Tag_Get(
 void /* System.Void */
 System_Security_SecurityElement_Tag_Set(
 	System_Security_SecurityElement_t _Nullable /* System.Security.SecurityElement */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -44909,25 +44910,43 @@ Beyond_NET_Sample_ArrayTests_Create(
 
 System_Boolean_Array_D2_t _Nonnull /* System.Boolean[,] */
 Beyond_NET_Sample_ArrayTests_TwoDimensionalArrayOfBool_Get(
-	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 Beyond_NET_Sample_ArrayTests_TwoDimensionalArrayOfBool_Set(
 	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
-	System_Boolean_Array_D2_t _Nullable /* System.Boolean[,] */ value
+	System_Boolean_Array_D2_t _Nonnull /* System.Boolean[,] */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 
 System_Int32_Array_D3_t _Nonnull /* System.Int32[,,] */
 Beyond_NET_Sample_ArrayTests_ThreeDimensionalArrayOfInt32_Get(
-	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 void /* System.Void */
 Beyond_NET_Sample_ArrayTests_ThreeDimensionalArrayOfInt32_Set(
 	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
-	System_Int32_Array_D3_t _Nullable /* System.Int32[,,] */ value
+	System_Int32_Array_D3_t _Nonnull /* System.Int32[,,] */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_Array_t _Nonnull /* System.String[] */
+Beyond_NET_Sample_ArrayTests_ArrayOfNullableString_Get(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_ArrayTests_ArrayOfNullableString_Set(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_String_Array_t _Nonnull /* System.String[] */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 
@@ -45340,7 +45359,7 @@ Beyond_NET_Sample_GenericTests_ListOfStrings_Get(
 void /* System.Void */
 Beyond_NET_Sample_GenericTests_ListOfStrings_Set(
 	Beyond_NET_Sample_GenericTests_t _Nullable /* Beyond.NET.Sample.GenericTests */ self,
-	System_Collections_Generic_List_A1_t _Nullable /* System.Collections.Generic.List<System.String> */ value,
+	System_Collections_Generic_List_A1_t _Nonnull /* System.Collections.Generic.List<System.String> */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -45354,7 +45373,7 @@ Beyond_NET_Sample_GenericTests_DictionaryOfStringKeysAndExceptionValues_Get(
 void /* System.Void */
 Beyond_NET_Sample_GenericTests_DictionaryOfStringKeysAndExceptionValues_Set(
 	Beyond_NET_Sample_GenericTests_t _Nullable /* Beyond.NET.Sample.GenericTests */ self,
-	System_Collections_Generic_Dictionary_A2_t _Nullable /* System.Collections.Generic.Dictionary<System.String,System.Exception> */ value,
+	System_Collections_Generic_Dictionary_A2_t _Nonnull /* System.Collections.Generic.Dictionary<System.String,System.Exception> */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -45543,7 +45562,7 @@ Beyond_NET_Sample_IndexerTests_Item_Set(
 	System_String_t _Nonnull /* System.String */ aString,
 	int32_t /* System.Int32 */ aNumber,
 	System_Guid_t _Nonnull /* System.Guid */ aGuid,
-	System_Object_Array_t _Nullable /* System.Object[] */ value,
+	System_Object_Array_t _Nonnull /* System.Object[] */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -45614,7 +45633,7 @@ Beyond_NET_Sample_NullabilityTests_NonNullableStringProperty_Get(
 void /* System.Void */
 Beyond_NET_Sample_NullabilityTests_NonNullableStringProperty_Set(
 	Beyond_NET_Sample_NullabilityTests_t _Nullable /* Beyond.NET.Sample.NullabilityTests */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -45641,7 +45660,7 @@ Beyond_NET_Sample_NullabilityTests_NonNullableStringField_Get(
 void /* System.Void */
 Beyond_NET_Sample_NullabilityTests_NonNullableStringField_Set(
 	Beyond_NET_Sample_NullabilityTests_t _Nullable /* Beyond.NET.Sample.NullabilityTests */ self,
-	System_String_t _Nullable /* System.String */ value
+	System_String_t _Nonnull /* System.String */ value
 );
 
 
@@ -45772,7 +45791,7 @@ Beyond_NET_Sample_Person_FirstName_Get(
 void /* System.Void */
 Beyond_NET_Sample_Person_FirstName_Set(
 	Beyond_NET_Sample_Person_t _Nullable /* Beyond.NET.Sample.Person */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -45786,7 +45805,7 @@ Beyond_NET_Sample_Person_LastName_Get(
 void /* System.Void */
 Beyond_NET_Sample_Person_LastName_Set(
 	Beyond_NET_Sample_Person_t _Nullable /* Beyond.NET.Sample.Person */ self,
-	System_String_t _Nullable /* System.String */ value,
+	System_String_t _Nonnull /* System.String */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -45842,7 +45861,7 @@ Beyond_NET_Sample_Person_Children_Get(
 void /* System.Void */
 Beyond_NET_Sample_Person_Children_Set(
 	Beyond_NET_Sample_Person_t _Nullable /* Beyond.NET.Sample.Person */ self,
-	Beyond_NET_Sample_Person_Array_t _Nullable /* Beyond.NET.Sample.Person[] */ value,
+	Beyond_NET_Sample_Person_Array_t _Nonnull /* Beyond.NET.Sample.Person[] */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -46864,7 +46883,7 @@ Beyond_NET_Sample_TestClass_CurrentBook_Get(
 void /* System.Void */
 Beyond_NET_Sample_TestClass_CurrentBook_Set(
 	Beyond_NET_Sample_TestClass_t _Nullable /* Beyond.NET.Sample.TestClass */ self,
-	Beyond_NET_Sample_Book_t _Nullable /* Beyond.NET.Sample.Book */ value
+	Beyond_NET_Sample_Book_t _Nonnull /* Beyond.NET.Sample.Book */ value
 );
 
 
@@ -47023,7 +47042,7 @@ Beyond_NET_Sample_TestRecordStruct_AStringField_Get(
 void /* System.Void */
 Beyond_NET_Sample_TestRecordStruct_AStringField_Set(
 	Beyond_NET_Sample_TestRecordStruct_t _Nonnull /* Beyond.NET.Sample.TestRecordStruct */ self,
-	System_String_t _Nullable /* System.String */ value
+	System_String_t _Nonnull /* System.String */ value
 );
 
 
@@ -48066,7 +48085,7 @@ System_Security_Cryptography_SymmetricAlgorithm_IV_Get(
 void /* System.Void */
 System_Security_Cryptography_SymmetricAlgorithm_IV_Set(
 	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ value,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -48080,7 +48099,7 @@ System_Security_Cryptography_SymmetricAlgorithm_Key_Get(
 void /* System.Void */
 System_Security_Cryptography_SymmetricAlgorithm_Key_Set(
 	System_Security_Cryptography_SymmetricAlgorithm_t _Nullable /* System.Security.Cryptography.SymmetricAlgorithm */ self,
-	System_Byte_Array_t _Nullable /* System.Byte[] */ value,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -49852,7 +49871,7 @@ Beyond_NET_Sample_Transformer_BuiltInTransformers_UppercaseStringTransformer_Get
 
 void /* System.Void */
 Beyond_NET_Sample_Transformer_BuiltInTransformers_UppercaseStringTransformer_Set(
-	Beyond_NET_Sample_Transformer_StringTransformerDelegate_t _Nullable /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */ value,
+	Beyond_NET_Sample_Transformer_StringTransformerDelegate_t _Nonnull /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 

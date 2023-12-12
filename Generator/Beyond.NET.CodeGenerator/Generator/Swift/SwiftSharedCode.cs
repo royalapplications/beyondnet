@@ -168,6 +168,10 @@ public class DNNullableArray<T>: System_Array, MutableCollection where T: System
             }
         }
     }
+    
+    public func nonNullable() throws -> DNArray<T> {
+        try self.castTo()
+    }
 }
 
 /// This is a generic base class for all single-dimensional .NET array types with non-null element types.
@@ -275,6 +279,10 @@ public class DNArray<T>: System_Array, MutableCollection where T: System_Object 
             }
         }
     }
+    
+    public func nullable() throws -> DNNullableArray<T> {
+        try self.castTo()
+    }
 }
 
 /// This is a generic base class for all multidimensional .NET array types with nullable element types.
@@ -341,6 +349,10 @@ public class DNNullableMultidimensionalArray<T>: System_Array where T: System_Ob
 
         return indicesDN
     }
+    
+    public func nonNullable() throws -> DNMultidimensionalArray<T> {
+        try self.castTo()
+    }
 }
 
 /// This is a generic base class for all multidimensional .NET array types with non-null element types.
@@ -406,6 +418,10 @@ public class DNMultidimensionalArray<T>: System_Array where T: System_Object {
         }
 
         return indicesDN
+    }
+    
+    public func nullable() throws -> DNNullableMultidimensionalArray<T> {
+        try self.castTo()
     }
 }
 

@@ -209,8 +209,17 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                    !returnOrSetterOrEventHandlerType.IsByRefValueType(out bool nonByRefTypeIsStruct) &&
                    !nonByRefTypeIsStruct) {
             if (memberInfo is MethodInfo methodInfo) {
-                var returnParameter = methodInfo.ReturnParameter;
-                var nullabilityInfo = nullabilityInfoContext.Create(returnParameter);
+                ParameterInfo returnOrSetterValueParameter;
+
+                if (memberKind == MemberKind.PropertySetter ||
+                    memberKind == MemberKind.EventHandlerAdder ||
+                    memberKind == MemberKind.EventHandlerRemover) {
+                    returnOrSetterValueParameter = methodInfo.GetParameters().LastOrDefault() ?? methodInfo.ReturnParameter;
+                } else {
+                    returnOrSetterValueParameter = methodInfo.ReturnParameter;
+                }
+                
+                var nullabilityInfo = nullabilityInfoContext.Create(returnOrSetterValueParameter);
 
                 if (memberKind == MemberKind.PropertyGetter) {
                     returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
@@ -296,11 +305,21 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             cReturnOrSetterTypeNameWithComment = $"{cReturnOrSetterTypeName} /* {returnOrSetterOrEventHandlerType.GetFullNameOrName()} */";
             setterType = null;
         }
-        
+
+        Nullability finalSetterOrEventHandlerTypeNullability;
+
+        if (isNullableValueTypeReturnType) {
+            finalSetterOrEventHandlerTypeNullability = Nullability.Nullable;
+        } else if (returnOrSetterTypeNullability == Nullability.NonNullable) {
+            finalSetterOrEventHandlerTypeNullability = Nullability.NonNullable;
+        } else {
+            finalSetterOrEventHandlerTypeNullability = Nullability.NotSpecified;
+        }
+
         string methodSignatureParameters = WriteParameters(
             memberKind,
             setterType,
-            isNullableValueTypeReturnType ? Nullability.Nullable : Nullability.NotSpecified,
+            finalSetterOrEventHandlerTypeNullability,
             mayThrow,
             isStaticMethod,
             declaringType,

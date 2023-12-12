@@ -267,8 +267,17 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                    !returnOrSetterOrEventHandlerType.IsByRefValueType(out bool nonByRefTypeIsStruct) &&
                    !nonByRefTypeIsStruct) {
             if (methodInfo is not null) {
-                var returnParameter = methodInfo.ReturnParameter;
-                var nullabilityInfo = nullabilityInfoContext.Create(returnParameter);
+                ParameterInfo returnOrSetterValueParameter;
+
+                if (memberKind == MemberKind.PropertySetter ||
+                    memberKind == MemberKind.EventHandlerAdder ||
+                    memberKind == MemberKind.EventHandlerRemover) {
+                    returnOrSetterValueParameter = methodInfo.GetParameters().LastOrDefault() ?? methodInfo.ReturnParameter;
+                } else {
+                    returnOrSetterValueParameter = methodInfo.ReturnParameter;
+                }
+                
+                var nullabilityInfo = nullabilityInfoContext.Create(returnOrSetterValueParameter);
 
                 if (memberKind == MemberKind.PropertyGetter) {
                     returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
@@ -395,6 +404,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 mayThrow,
                 declaringType,
                 returnOrSetterOrEventHandlerType,
+                returnOrSetterTypeNullability,
+                returnOrSetterTypeArrayElementNullability,
                 returnOrSetterTypeDescriptor,
                 parameters,
                 genericTypeArguments,
@@ -407,6 +418,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         string methodSignatureParameters = WriteParameters(
             memberKind,
             setterType,
+            returnOrSetterTypeNullability,
+            returnOrSetterTypeArrayElementNullability,
             isStaticMethod,
             declaringType,
             parameters,
@@ -545,6 +558,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         bool mayThrow,
         Type declaringType,
         Type returnOrSetterOrEventHandlerType,
+        Nullability returnOrSetterOrEventHandlerNullability,
+        Nullability returnOrSetterOrEventHandlerArrayElementNullability,
         TypeDescriptor returnOrSetterTypeDescriptor,
         IEnumerable<ParameterInfo> parameters,
         IEnumerable<Type> genericTypeArguments,
@@ -566,7 +581,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             
             string returnTypeConversion = returnOrSetterTypeDescriptor.GetTypeConversion(
                 CodeLanguage.C, 
-                CodeLanguage.Swift
+                CodeLanguage.Swift,
+                returnOrSetterOrEventHandlerArrayElementNullability
             ) ?? "{0}";
 
             string invocation = string.Format(returnTypeConversion, $"{cMethodName}()");
@@ -580,6 +596,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 CodeLanguage.C,
                 memberKind,
                 returnOrSetterOrEventHandlerType,
+                returnOrSetterOrEventHandlerNullability,
+                returnOrSetterOrEventHandlerArrayElementNullability,
                 parameters,
                 isGeneric,
                 genericTypeArguments,
@@ -644,7 +662,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 } else {
                     string? returnTypeConversion = returnOrSetterTypeDescriptor.GetTypeConversion(
                         CodeLanguage.C,
-                        CodeLanguage.Swift
+                        CodeLanguage.Swift,
+                        returnOrSetterOrEventHandlerArrayElementNullability
                     );
     
                     if (!string.IsNullOrEmpty(returnTypeConversion)) {
@@ -691,9 +710,24 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
 
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
 
+                var nullabilityInfoContext = new NullabilityInfoContext();
+                var parameterNullability = nullabilityInfoContext.Create(parameter);
+                var parameterArrayElementNullabilityState = parameterNullability.ElementType;
+                Nullability parameterArrayElementNullability;
+
+                if (parameterArrayElementNullabilityState is not null &&
+                    parameterArrayElementNullabilityState.ReadState == parameterArrayElementNullabilityState.WriteState) {
+                    parameterArrayElementNullability = parameterArrayElementNullabilityState.ReadState == NullabilityState.NotNull
+                        ? Nullability.NonNullable
+                        : Nullability.NotSpecified;
+                } else {
+                    parameterArrayElementNullability = Nullability.NotSpecified;
+                }
+
                 string? parameterTypeConversion = parameterTypeDescriptor.GetTypeConversion(
                     CodeLanguage.C,
-                    CodeLanguage.Swift
+                    CodeLanguage.Swift,
+                    parameterArrayElementNullability
                 );
 
                 if (string.IsNullOrEmpty(parameterTypeConversion)) {
@@ -800,6 +834,8 @@ if let __exceptionC {
         string parametersString = WriteParameters(
             swiftGeneratedMember.MemberKind,
             null,
+            Nullability.NotSpecified,
+            Nullability.NotSpecified,
             false,
             typeWhereExtensionIsDeclared,
             parameters,
@@ -849,6 +885,8 @@ if let __exceptionC {
         string invocationParametersString = WriteParameters(
             swiftGeneratedMember.MemberKind,
             null,
+            Nullability.NotSpecified,
+            Nullability.NotSpecified,
             false,
             typeWhereExtensionIsDeclared,
             parameters,
@@ -898,6 +936,8 @@ if let __exceptionC {
     internal static string WriteParameters(
         MemberKind memberKind,
         Type? setterOrEventHandlerType,
+        Nullability setterOrEventHandlerTypeNullability,
+        Nullability setterOrEventHandlerTypeArrayElementNullability,
         bool isStatic,
         Type declaringType,
         IEnumerable<ParameterInfo> parameters,
@@ -1032,7 +1072,9 @@ if let __exceptionC {
             
             string cSetterOrEventHandlerTypeName = setterOrEventHandlerTypeDescriptor.GetTypeName(
                 CodeLanguage.Swift,
-                true
+                true,
+                setterOrEventHandlerTypeNullability,
+                setterOrEventHandlerTypeArrayElementNullability
             );
 
             const string parameterName = "value";
@@ -1054,6 +1096,8 @@ if let __exceptionC {
         CodeLanguage targetLanguage,
         MemberKind memberKind,
         Type? setterOrEventHandlerType,
+        Nullability setterOrEventHandlerTypeNullability,
+        Nullability setterOrEventHandlerTypeArrayElementNullability,
         IEnumerable<ParameterInfo> parameters,
         bool isGeneric,
         IEnumerable<Type> genericTypeArguments,
@@ -1091,7 +1135,8 @@ if let __exceptionC {
             
             string systemTypeTypeConversion = systemTypeTypeDescriptor.GetTypeConversion(
                 sourceLanguage,
-                targetLanguage
+                targetLanguage,
+                Nullability.NotSpecified
             )!;
     
             foreach (var genericArgumentType in genericTypeArguments) {
@@ -1143,6 +1188,7 @@ if let __exceptionC {
                 sourceLanguage,
                 targetLanguage,
                 parameter,
+                Nullability.NotSpecified,
                 parameterName,
                 parameterType,
                 isOutParameter,
@@ -1178,6 +1224,7 @@ if let __exceptionC {
                 sourceLanguage,
                 targetLanguage,
                 null, // TODO
+                setterOrEventHandlerTypeNullability,
                 parameterName,
                 parameterType,
                 isOutParameter,
@@ -1207,6 +1254,7 @@ if let __exceptionC {
         CodeLanguage sourceLanguage,
         CodeLanguage targetLanguage,
         ParameterInfo? parameterInfo,
+        Nullability parameterNullability,
         string parameterName,
         Type parameterType,
         bool isOutParameter,
@@ -1264,9 +1312,29 @@ if let __exceptionC {
         
         TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
 
+        Nullability parameterArrayElementNullability;
+        
+        if (parameterInfo is not null) {
+            var nullabilityInfoContext = new NullabilityInfoContext();
+            var parameterNullabilityA = nullabilityInfoContext.Create(parameterInfo);
+            var parameterArrayElementNullabilityState = parameterNullabilityA.ElementType;
+
+            if (parameterArrayElementNullabilityState is not null &&
+                parameterArrayElementNullabilityState.ReadState == parameterArrayElementNullabilityState.WriteState) {
+                parameterArrayElementNullability = parameterArrayElementNullabilityState.ReadState == NullabilityState.NotNull
+                    ? Nullability.NonNullable
+                    : Nullability.NotSpecified;
+            } else {
+                parameterArrayElementNullability = Nullability.NotSpecified;
+            }
+        } else {
+            parameterArrayElementNullability = Nullability.NotSpecified;
+        }
+
         string? typeConversion = parameterTypeDescriptor.GetTypeConversion(
             sourceLanguage,
-            targetLanguage
+            targetLanguage,
+            parameterArrayElementNullability
         );
         
         if (typeConversion != null) {
@@ -1294,11 +1362,15 @@ if let __exceptionC {
                     if (parameterNullabilityInfo.ReadState == parameterNullabilityInfo.WriteState) {
                         isNotNull = parameterNullabilityInfo.ReadState == NullabilityState.NotNull;
                     }
+                    
+                    parameterNullability = isNotNull
+                        ? Nullability.NonNullable
+                        : parameterTypeDescriptor.Nullability;   
                 }
 
-                Nullability parameterNullability = isNotNull
-                    ? Nullability.NonNullable
-                    : parameterTypeDescriptor.Nullability;
+                if (parameterNullability == Nullability.NotSpecified) {
+                    parameterNullability = parameterTypeDescriptor.Nullability;
+                }
                 
                 optionalString = parameterNullability.GetSwiftOptionalitySpecifier();
             } else {
