@@ -190,6 +190,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
                 CodeLanguage.C,
                 true,
                 parameterNullability,
+                Nullability.NotSpecified,
                 isOutParameter,
                 isByRefParameter,
                 isInParameter

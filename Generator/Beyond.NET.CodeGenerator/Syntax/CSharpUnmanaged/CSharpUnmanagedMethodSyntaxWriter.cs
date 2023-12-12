@@ -280,6 +280,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             CodeLanguage.CSharpUnmanaged,
             true,
             Nullability.Nullable,
+            Nullability.NotSpecified,
             false,
             isReturnOrSetterOrEventHandlerTypeByRef,
             false
@@ -381,6 +382,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 CodeLanguage.CSharp,
                 true,
                 Nullability.Nullable,
+                Nullability.NotSpecified,
                 false,
                 isReturnOrSetterOrEventHandlerTypeByRef,
                 false
@@ -1077,6 +1079,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                     targetLanguage,
                     true,
                     Nullability.Nullable,
+                    Nullability.NotSpecified,
                     isOutParameter,
                     isByRefParameter,
                     isInParameter
@@ -1110,6 +1113,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 targetLanguage,
                 true,
                 Nullability.Nullable,
+                Nullability.NotSpecified,
                 true,
                 true,
                 false
@@ -1289,6 +1293,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                             CodeLanguage.CSharpUnmanaged,
                             true,
                             Nullability.Nullable,
+                            Nullability.NotSpecified,
                             isOutParameter,
                             true,
                             isInParameter
@@ -1300,6 +1305,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                             CodeLanguage.CSharpUnmanaged,
                             true,
                             Nullability.Nullable,
+                            Nullability.NotSpecified,
                             isOutParameter,
                             true,
                             isInParameter
@@ -1365,6 +1371,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                     targetLanguage,
                     true,
                     Nullability.Nullable,
+                    Nullability.NotSpecified,
                     isOutParameter,
                     isByRefParameter,
                     isInParameter

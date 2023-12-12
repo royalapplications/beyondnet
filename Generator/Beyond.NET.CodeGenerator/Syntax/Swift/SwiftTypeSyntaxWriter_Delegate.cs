@@ -75,6 +75,7 @@ public partial class SwiftTypeSyntaxWriter
                 CodeLanguage.Swift,
                 true,
                 ReturnTypeIsOptional ? Nullability.Nullable : Nullability.NonNullable,
+                Nullability.NotSpecified, // TODO
                 false,
                 false,
                 false

@@ -124,6 +124,7 @@ public class TypeDescriptor
         CodeLanguage language,
         bool includeModifiers,
         Nullability nullability = Nullability.NotSpecified,
+        Nullability arrayElementNullability = Nullability.NotSpecified,
         bool isOutParameter = false,
         bool isByRefParameter = false,
         bool isInParameter = false
@@ -134,7 +135,10 @@ public class TypeDescriptor
         if (m_typeNames.TryGetValue(language, out string? tempTypeName)) {
             typeName = tempTypeName;
         } else {
-            typeName = GenerateTypeName(language);
+            typeName = GenerateTypeName(
+                language,
+                arrayElementNullability
+            );
 
             m_typeNames[language] = typeName;
         }
@@ -237,7 +241,10 @@ public class TypeDescriptor
         return typeNameWithModifiers;
     }
 
-    private string GenerateTypeName(CodeLanguage language)
+    private string GenerateTypeName(
+        CodeLanguage language,
+        Nullability arrayElementNullability
+    )
     {
         switch (language) {
             case CodeLanguage.CSharpUnmanaged:
@@ -274,14 +281,26 @@ public class TypeDescriptor
                     // TODO: Shouldn't this go through TypeDescriptor?
                     var swiftElementTypeName = elementType.CTypeName();
                     var rank = ManagedType.GetArrayRank();
+                    
+                    if (arrayElementNullability == Nullability.NotSpecified) {
+                        arrayElementNullability = Nullability.Nullable;
+                    }
+
+                    string arrayTypeName;
 
                     if (rank == 1) { // Single-dimensional array
-                        swiftTypeName = $"DNArray<{swiftElementTypeName}>";
+                        arrayTypeName = arrayElementNullability == Nullability.NonNullable
+                            ? "DNArray"
+                            : "DNNullableArray";
                     } else if (rank > 1) { // Multidimensional array
-                        swiftTypeName = $"DNMultidimensionalArray<{swiftElementTypeName}>";
+                        arrayTypeName = arrayElementNullability == Nullability.NonNullable
+                            ? "DNMultidimensionalArray"
+                            : "DNNullableMultidimensionalArray";
                     } else {
                         throw new Exception($"An array rank of {rank} doesn't really make sense, right?");
                     }
+
+                    swiftTypeName = $"{arrayTypeName}<{swiftElementTypeName}>";
                 } else {
                     swiftTypeName = ManagedType.CTypeName();
                 }

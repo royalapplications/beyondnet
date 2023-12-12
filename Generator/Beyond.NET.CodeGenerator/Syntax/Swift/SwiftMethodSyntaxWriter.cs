@@ -256,7 +256,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
         
         var nullabilityInfoContext = new NullabilityInfoContext();
-        Nullability returnOrSetterTypeNullability = Nullability.NotSpecified;
+        var returnOrSetterTypeNullability = Nullability.NotSpecified;
+        var returnOrSetterTypeArrayElementNullability = Nullability.NotSpecified; 
         
         if (memberKind == MemberKind.TypeOf) {
             returnOrSetterTypeNullability = Nullability.NonNullable;
@@ -273,8 +274,16 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                     returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
+
+                    returnOrSetterTypeArrayElementNullability = nullabilityInfo.ElementType?.ReadState == NullabilityState.NotNull
+                        ? Nullability.NonNullable
+                        : Nullability.NotSpecified;
                 } else if (memberKind == MemberKind.PropertySetter) {
                     returnOrSetterTypeNullability = nullabilityInfo.WriteState == NullabilityState.NotNull
+                        ? Nullability.NonNullable
+                        : Nullability.NotSpecified;
+                    
+                    returnOrSetterTypeArrayElementNullability = nullabilityInfo.ElementType?.WriteState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
                 } else if (memberKind == MemberKind.EventHandlerAdder ||
@@ -290,6 +299,15 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                             ? Nullability.NonNullable
                             : Nullability.NotSpecified;
                     }
+
+                    var elementTypeNullabilityInfo = nullabilityInfo.ElementType;
+
+                    if (elementTypeNullabilityInfo is not null &&
+                        elementTypeNullabilityInfo.ReadState == elementTypeNullabilityInfo.WriteState) {
+                        returnOrSetterTypeArrayElementNullability = elementTypeNullabilityInfo.ReadState == NullabilityState.NotNull
+                            ? Nullability.NonNullable
+                            : Nullability.NotSpecified;
+                    }
                 }
             } else if (memberInfo is ConstructorInfo) {
                 // Constructors in C# are never expected to return null
@@ -301,13 +319,30 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                     returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
+                    
+                    returnOrSetterTypeArrayElementNullability = nullabilityInfo.ElementType?.ReadState == NullabilityState.NotNull
+                        ? Nullability.NonNullable
+                        : Nullability.NotSpecified;
                 } else if (memberKind == MemberKind.FieldSetter) {
                     returnOrSetterTypeNullability = nullabilityInfo.WriteState == NullabilityState.NotNull
+                        ? Nullability.NonNullable
+                        : Nullability.NotSpecified;
+                    
+                    returnOrSetterTypeArrayElementNullability = nullabilityInfo.ElementType?.WriteState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
                 } else { // Hmm, not sure this can ever happen
                     if (nullabilityInfo.ReadState == nullabilityInfo.WriteState) {
                         returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
+                            ? Nullability.NonNullable
+                            : Nullability.NotSpecified;
+                    }
+                    
+                    var elementTypeNullabilityInfo = nullabilityInfo.ElementType;
+
+                    if (elementTypeNullabilityInfo is not null &&
+                        elementTypeNullabilityInfo.ReadState == elementTypeNullabilityInfo.WriteState) {
+                        returnOrSetterTypeArrayElementNullability = elementTypeNullabilityInfo.ReadState == NullabilityState.NotNull
                             ? Nullability.NonNullable
                             : Nullability.NotSpecified;
                     }
@@ -320,6 +355,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             CodeLanguage.Swift,
             true,
             returnOrSetterTypeNullability,
+            returnOrSetterTypeArrayElementNullability,
             false,
             returnOrSetterOrEventHandlerTypeIsByRef,
             false
@@ -793,6 +829,7 @@ if let __exceptionC {
             CodeLanguage.Swift,
             true,
             Nullability.NotSpecified,
+            Nullability.NotSpecified,
             false,
             returnTypeIsByRef,
             false
@@ -929,6 +966,7 @@ if let __exceptionC {
             }
             
             bool isNotNull = false;
+            bool isArrayElementNotNull = false;
 
             if (!isGeneric &&
                 !isGenericParameterType &&
@@ -939,6 +977,13 @@ if let __exceptionC {
                 if (parameterNullability.ReadState == parameterNullability.WriteState) {
                     isNotNull = parameterNullability.ReadState == NullabilityState.NotNull;
                 }
+
+                var parameterElementTypeNullability = parameterNullability.ElementType;
+
+                if (parameterElementTypeNullability is not null &&
+                    parameterElementTypeNullability.ReadState == parameterElementTypeNullability.WriteState) {
+                    isArrayElementNotNull = parameterElementTypeNullability.ReadState == NullabilityState.NotNull;
+                }
             }
             
             TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
@@ -947,6 +992,7 @@ if let __exceptionC {
                 CodeLanguage.Swift,
                 true,
                 isNotNull ? Nullability.NonNullable : Nullability.NotSpecified,
+                isArrayElementNotNull ? Nullability.NonNullable : Nullability.NotSpecified,
                 isOutParameter,
                 isByRefParameter,
                 isInParameter

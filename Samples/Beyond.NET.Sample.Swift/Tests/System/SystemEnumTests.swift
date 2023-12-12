@@ -23,11 +23,7 @@ final class SystemEnumTests: XCTestCase {
         var names = [String]()
         
         for enumNameDN in enumNames {
-            guard let enumName = enumNameDN?.string() else {
-                XCTFail("System.Array.GetValue should not throw and return an instance")
-
-                return
-            }
+            let enumName = enumNameDN.string()
 
             names.append(enumName)
         }

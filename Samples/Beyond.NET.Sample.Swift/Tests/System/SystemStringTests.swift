@@ -136,11 +136,7 @@ final class SystemStringTests: XCTestCase {
         XCTAssertEqual(cleanedComponents.count, .init(length))
         
         for (idx, component) in cleanedComponents.enumerated() {
-            guard let componentRetObj = split[Int32(idx)] else {
-                XCTFail("System.Array.GetValue should not throw and return an instance")
-                
-                return
-            }
+            let componentRetObj = split[Int32(idx)]
             
             let componentRetDN: System_String
             

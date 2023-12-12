@@ -191,7 +191,7 @@ final class SystemArrayTests: XCTestCase {
         XCTAssertEqual(numberOfElements, length)
 
         for stringElement in arrayOfString {
-            XCTAssertEqual(string, stringElement?.string())
+            XCTAssertEqual(string, stringElement.string())
         }
     }
     
@@ -219,7 +219,7 @@ final class SystemArrayTests: XCTestCase {
         let reversedStrings = [String](strings.reversed())
 
         for idx in 0..<numberOfElements {
-            let stringElement = arrayOfString[idx]?.string()
+            let stringElement = arrayOfString[idx].string()
 
             let expectedString = reversedStrings[.init(idx)]
 
@@ -244,12 +244,6 @@ final class SystemArrayTests: XCTestCase {
 		}
         
 		for (idx, int32Obj) in arrayOfInt32.enumerated() {
-			guard let int32Obj else {
-				XCTFail("Failed to retrieve object from array")
-				
-				return
-			}
-			
 			guard let int32 = try? int32Obj.value else {
 				XCTFail("Object in array is not a Int32")
 				
@@ -271,9 +265,10 @@ final class SystemArrayTests: XCTestCase {
 		for (idx, string) in strings.enumerated() {
 			try arrayOfString.setValue(string.dotNETString(), Int32(idx))
 		}
+        
+        let firstObject = arrayOfString[0]
 		
-		guard let firstObject = arrayOfString[0],
-			  let firstString = firstObject.castAs(System_String.self)?.string() else {
+		guard let firstString = firstObject.castAs(System_String.self)?.string() else {
 			XCTFail("Failed to retrieve first object or cast as string")
 			
 			return
@@ -281,8 +276,9 @@ final class SystemArrayTests: XCTestCase {
 		
 		XCTAssertEqual(strings[0], firstString)
 		
-		guard let secondObject = arrayOfString[1],
-			  let secondString = secondObject.castAs(System_String.self)?.string() else {
+        let secondObject = arrayOfString[1]
+        
+		guard let secondString = secondObject.castAs(System_String.self)?.string() else {
 			XCTFail("Failed to retrieve second object or cast as string")
 			
 			return
@@ -304,12 +300,6 @@ final class SystemArrayTests: XCTestCase {
         }
         
         for (idx, stringDN) in arrayOfString.enumerated() {
-            guard let stringDN else {
-                XCTFail("Failed to get .NET String from Array")
-                
-                return
-            }
-            
             let convertedString = stringDN.string()
             let originalString = strings[idx]
             
@@ -320,7 +310,7 @@ final class SystemArrayTests: XCTestCase {
         
         arrayOfString[1] = newStringAtIdxOne.dotNETString()
         
-        XCTAssertEqual(arrayOfString[1]?.castAs(System.String.self)?.string(), newStringAtIdxOne)
+        XCTAssertEqual(arrayOfString[1].castAs(System.String.self)?.string(), newStringAtIdxOne)
     }
     
     func testIteratingArrayPerformance() throws {

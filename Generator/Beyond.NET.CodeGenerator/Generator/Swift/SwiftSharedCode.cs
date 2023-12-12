@@ -63,10 +63,117 @@ public class DNObject {
 	}
 }
 
-/// This is a generic base class for all single-dimensional .NET array types.
+/// This is a generic base class for all single-dimensional .NET array types with nullable element types.
+/// The element type of the array is specified as the first and only generic type argument.
+public class DNNullableArray<T>: System_Array, MutableCollection where T: System_Object {
+    public typealias Element = T?
+    public typealias Index = Int32
+    
+    public override class var typeOf: System_Type /* System.Type */ {
+        let elementType = T.typeOf
+        
+        if let arrayType = try? elementType.makeArrayType() {
+            return arrayType
+        }
+        
+        return super.typeOf
+    }
+    
+    public override class var typeName: String {
+        let type = typeOf
+        
+        if let name = try? type.name.string() {
+            return name
+        }
+        
+        return "\(T.typeName)[]"
+    }
+    
+    public override class var fullTypeName: String {
+        let type = typeOf
+        
+        if let name = try? type.fullName?.string() {
+            return name
+        }
+        
+        return "\(T.fullTypeName)[]"
+    }
+    
+    /// - Returns: An empty .NET array of the specified type.
+    public static var empty: DNNullableArray<T> { get throws {
+        try DNNullableArray<T>.init()
+    }}
+    
+    /// Creates and initializes an empty .NET array of the specified type.
+    public convenience init() throws {
+        let elementType = T.typeOf
+        let elementTypeC = elementType.__handle
+        
+        var __exceptionC: System_Exception_t?
+        
+        let newArrayC = System_Array_CreateInstance(elementTypeC, 0, &__exceptionC)
+        
+        if let __exceptionC {
+            let __exception = System_Exception(handle: __exceptionC)
+            let __error = __exception.error
+            
+            throw __error
+        }
+        
+        self.init(handle: newArrayC)
+    }
+    
+    /// Creates and initializes a .NET array of the specified type and length.
+    public convenience init(length: Index) throws {
+        let elementType = T.typeOf
+        let elementTypeC = elementType.__handle
+        
+        var __exceptionC: System_Exception_t?
+        
+        let newArrayC = System_Array_CreateInstance(elementTypeC, length, &__exceptionC)
+        
+        if let __exceptionC {
+            let __exception = System_Exception(handle: __exceptionC)
+            let __error = __exception.error
+            
+            throw __error
+        }
+        
+        self.init(handle: newArrayC)
+    }
+    
+    /// Get or set and element of this .NET array at the specified position/index.
+    /// If an exception is raised on the .NET side while indexing into the array, a fatalError will be raised on the Swift side of things.
+    public subscript(position: Index) -> Element {
+        get {
+            assert(position >= startIndex && position < endIndex, "Out of bounds")
+            
+            do {
+                guard let element = try getValue(position) else {
+                    return nil
+                }
+                
+                return try element.castTo()
+            } catch {
+                fatalError("An exception was thrown while calling System.Array.GetValue: \(error.localizedDescription)")
+            }
+        }
+        set {
+            assert(position >= startIndex && position < endIndex, "Out of bounds")
+
+            do {
+                try setValue(newValue, position)
+            } catch {
+                fatalError("An exception was thrown while calling System.Array.SetValue: \(error.localizedDescription)")
+            }
+        }
+    }
+}
+
+/// This is a generic base class for all single-dimensional .NET array types with non-null element types.
 /// The element type of the array is specified as the first and only generic type argument.
 public class DNArray<T>: System_Array, MutableCollection where T: System_Object {
-    public typealias Element = T?
+    public typealias Element = T
     public typealias Index = Int32
     
     public override class var typeOf: System_Type /* System.Type */ {
@@ -150,7 +257,7 @@ public class DNArray<T>: System_Array, MutableCollection where T: System_Object 
             
             do {
                 guard let element = try getValue(position) else {
-                    return nil
+                    throw DNSystemError.unexpectedNull
                 }
                 
                 return try element.castTo()
@@ -170,9 +277,9 @@ public class DNArray<T>: System_Array, MutableCollection where T: System_Object 
     }
 }
 
-/// This is a generic base class for all multidimensional .NET array types.
+/// This is a generic base class for all multidimensional .NET array types with nullable element types.
 /// The element type of the array is specified as the first and only generic type argument.
-public class DNMultidimensionalArray<T>: System_Array where T: System_Object {
+public class DNNullableMultidimensionalArray<T>: System_Array where T: System_Object {
     public typealias Element = T?
     public typealias Indices = [Int32]
     
@@ -206,6 +313,72 @@ public class DNMultidimensionalArray<T>: System_Array where T: System_Object {
                 
                 guard let element = try getValue(indices) else {
                     return nil
+                }
+                
+                return try element.castTo()
+            } catch {
+                fatalError("An exception was thrown while calling System.Array.GetValue: \(error.localizedDescription)")
+            }
+        }
+        set {
+            do {
+                let indices = try Self.indicesToDN(position)
+
+                try setValue(newValue, indices)
+            } catch {
+                fatalError("An exception was thrown while calling System.Array.SetValue: \(error.localizedDescription)")
+            }
+        }
+    }
+
+    private static func indicesToDN(_ indices: Indices) throws -> DNArray<System_Int32> {
+        let count = Int32(indices.count)
+        let indicesDN = try DNArray<System_Int32>(length: count)
+        
+        for (idx, index) in indices.enumerated() {
+            indicesDN[Int32(idx)] = index.dotNETObject()
+        }
+
+        return indicesDN
+    }
+}
+
+/// This is a generic base class for all multidimensional .NET array types with non-null element types.
+/// The element type of the array is specified as the first and only generic type argument.
+public class DNMultidimensionalArray<T>: System_Array where T: System_Object {
+    public typealias Element = T
+    public typealias Indices = [Int32]
+    
+    /// Creates and initializes a multidimensional .NET array of the specified type and lengths.
+    public convenience init(lengths: Indices) throws {
+        let elementType = T.typeOf
+        let elementTypeC = elementType.__handle
+        let lengthsDN = try Self.indicesToDN(lengths)
+        let lengthsDNC = lengthsDN.__handle
+        
+        var __exceptionC: System_Exception_t?
+        
+        let newArrayC = System_Array_CreateInstance_3(elementTypeC, lengthsDNC, &__exceptionC)
+        
+        if let __exceptionC {
+            let __exception = System_Exception(handle: __exceptionC)
+            let __error = __exception.error
+            
+            throw __error
+        }
+        
+        self.init(handle: newArrayC)
+    }
+    
+    /// Get or set and element of this multidimensional .NET array at the specified indices.
+    /// If an exception is raised on the .NET side while indexing into the array, a fatalError will be raised on the Swift side of things.
+    public subscript(position: Indices) -> Element {
+        get {
+            do {
+                let indices = try Self.indicesToDN(position)
+                
+                guard let element = try getValue(indices) else {
+                    throw DNSystemError.unexpectedNull
                 }
                 
                 return try element.castTo()
@@ -869,6 +1042,21 @@ public extension [String] {
     }
 }
 
+public extension [String?] {
+    /// Converts a Swift String? Array into a .NET `System.String?` Array (`System.String?[]`).
+    func dotNETStringArray() throws -> DNNullableArray<System_String> {
+        let arr = try DNNullableArray<System_String>(length: .init(count))
+        
+        for (idx, el) in self.enumerated() {
+            let elDN = el?.dotNETString()
+            
+            try arr.setValue(elDN, Int32(idx))
+        }
+        
+        return arr
+    }
+}
+
 public extension DNArray<System_String> {
     /// Converts a .NET `System.String` Array (`System.String[]`) into a Swift String Array
     func array() throws -> [String] {
@@ -880,15 +1068,31 @@ public extension DNArray<System_String> {
         
         var arr = [String]()
         
-        for idx in 0..<len {
-            guard let el = try self.getValue(idx) else {
-                throw DNSystemError.unexpectedNull
-            }
+        for strDN in self {
+            let str = strDN.string()
             
-            let elDNStr: System_String = try el.castTo()
-            let elStr = elDNStr.string()
+            arr.append(str)
+        }
+        
+        return arr
+    }
+}
+
+public extension DNNullableArray<System_String> {
+    /// Converts a .NET `System.String?` Array (`System.String?[]`) into a Swift String? Array
+    func array() throws -> [String?] {
+        let len = try self.length
+        
+        guard len > 0 else {
+            return .init()
+        }
+        
+        var arr = [String?]()
+        
+        for strDN in self {
+            let str = strDN?.string()
             
-            arr.append(elStr)
+            arr.append(str)
         }
         
         return arr

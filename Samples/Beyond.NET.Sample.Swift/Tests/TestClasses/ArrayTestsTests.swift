@@ -22,16 +22,16 @@ final class ArrayTestsTests: XCTestCase {
         
         // Check initial state
         XCTAssertEqual(try array.getValue(Int32(0), Int32(0))?.castToBool(), false)
-        XCTAssertEqual(try array[[0, 0]]?.castToBool(), false)
+        XCTAssertEqual(try array[[0, 0]].castToBool(), false)
         
         XCTAssertEqual(try array.getValue(Int32(0), Int32(1))?.castToBool(), true)
-        XCTAssertEqual(try array[[0, 1]]?.castToBool(), true)
+        XCTAssertEqual(try array[[0, 1]].castToBool(), true)
         
         XCTAssertEqual(try array.getValue(Int32(1), Int32(0))?.castToBool(), true)
-        XCTAssertEqual(try array[[1, 0]]?.castToBool(), true)
+        XCTAssertEqual(try array[[1, 0]].castToBool(), true)
         
         XCTAssertEqual(try array.getValue(Int32(1), Int32(1))?.castToBool(), false)
-        XCTAssertEqual(try array[[1, 1]]?.castToBool(), false)
+        XCTAssertEqual(try array[[1, 1]].castToBool(), false)
         
         // Modify it
         array[[0, 0]] = true.dotNETObject()
@@ -41,16 +41,16 @@ final class ArrayTestsTests: XCTestCase {
         
         // Check modified state
         XCTAssertEqual(try array.getValue(Int32(0), Int32(0))?.castToBool(), true)
-        XCTAssertEqual(try array[[0, 0]]?.castToBool(), true)
+        XCTAssertEqual(try array[[0, 0]].castToBool(), true)
         
         XCTAssertEqual(try array.getValue(Int32(0), Int32(1))?.castToBool(), false)
-        XCTAssertEqual(try array[[0, 1]]?.castToBool(), false)
+        XCTAssertEqual(try array[[0, 1]].castToBool(), false)
         
         XCTAssertEqual(try array.getValue(Int32(1), Int32(0))?.castToBool(), false)
-        XCTAssertEqual(try array[[1, 0]]?.castToBool(), false)
+        XCTAssertEqual(try array[[1, 0]].castToBool(), false)
         
         XCTAssertEqual(try array.getValue(Int32(1), Int32(1))?.castToBool(), true)
-        XCTAssertEqual(try array[[1, 1]]?.castToBool(), true)
+        XCTAssertEqual(try array[[1, 1]].castToBool(), true)
     }
     
     func testCreatingTwoDimensionalArrayOfBool() throws {
@@ -73,16 +73,16 @@ final class ArrayTestsTests: XCTestCase {
         
         // Check state
         XCTAssertEqual(try array.getValue(Int32(0), Int32(0))?.castToBool(), true)
-        XCTAssertEqual(try array[[0, 0]]?.castToBool(), true)
+        XCTAssertEqual(try array[[0, 0]].castToBool(), true)
         
         XCTAssertEqual(try array.getValue(Int32(0), Int32(1))?.castToBool(), false)
-        XCTAssertEqual(try array[[0, 1]]?.castToBool(), false)
+        XCTAssertEqual(try array[[0, 1]].castToBool(), false)
         
         XCTAssertEqual(try array.getValue(Int32(1), Int32(0))?.castToBool(), false)
-        XCTAssertEqual(try array[[1, 0]]?.castToBool(), false)
+        XCTAssertEqual(try array[[1, 0]].castToBool(), false)
         
         XCTAssertEqual(try array.getValue(Int32(1), Int32(1))?.castToBool(), true)
-        XCTAssertEqual(try array[[1, 1]]?.castToBool(), true)
+        XCTAssertEqual(try array[[1, 1]].castToBool(), true)
     }
     
     func testThreeDimensionalArrayOfInt32() throws {
@@ -95,40 +95,40 @@ final class ArrayTestsTests: XCTestCase {
         
         // Check initial state
         XCTAssertEqual(try array.getValue(Int32(0), Int32(0), Int32(0))?.castToInt32(), 1)
-        XCTAssertEqual(try array[[0, 0, 0]]?.castToInt32(), 1)
+        XCTAssertEqual(try array[[0, 0, 0]].castToInt32(), 1)
         
         XCTAssertEqual(try array.getValue(Int32(0), Int32(0), Int32(1))?.castToInt32(), 2)
-        XCTAssertEqual(try array[[0, 0, 1]]?.castToInt32(), 2)
+        XCTAssertEqual(try array[[0, 0, 1]].castToInt32(), 2)
         
         XCTAssertEqual(try array.getValue(Int32(0), Int32(0), Int32(2))?.castToInt32(), 3)
-        XCTAssertEqual(try array[[0, 0, 2]]?.castToInt32(), 3)
+        XCTAssertEqual(try array[[0, 0, 2]].castToInt32(), 3)
         
         XCTAssertEqual(try array.getValue(Int32(0), Int32(1), Int32(0))?.castToInt32(), 4)
-        XCTAssertEqual(try array[[0, 1, 0]]?.castToInt32(), 4)
+        XCTAssertEqual(try array[[0, 1, 0]].castToInt32(), 4)
         
         XCTAssertEqual(try array.getValue(Int32(0), Int32(1), Int32(1))?.castToInt32(), 5)
-        XCTAssertEqual(try array[[0, 1, 1]]?.castToInt32(), 5)
+        XCTAssertEqual(try array[[0, 1, 1]].castToInt32(), 5)
         
         XCTAssertEqual(try array.getValue(Int32(0), Int32(1), Int32(2))?.castToInt32(), 6)
-        XCTAssertEqual(try array[[0, 1, 2]]?.castToInt32(), 6)
+        XCTAssertEqual(try array[[0, 1, 2]].castToInt32(), 6)
         
         XCTAssertEqual(try array.getValue(Int32(1), Int32(0), Int32(0))?.castToInt32(), 7)
-        XCTAssertEqual(try array[[1, 0, 0]]?.castToInt32(), 7)
+        XCTAssertEqual(try array[[1, 0, 0]].castToInt32(), 7)
         
         XCTAssertEqual(try array.getValue(Int32(1), Int32(0), Int32(1))?.castToInt32(), 8)
-        XCTAssertEqual(try array[[1, 0, 1]]?.castToInt32(), 8)
+        XCTAssertEqual(try array[[1, 0, 1]].castToInt32(), 8)
         
         XCTAssertEqual(try array.getValue(Int32(1), Int32(0), Int32(2))?.castToInt32(), 9)
-        XCTAssertEqual(try array[[1, 0, 2]]?.castToInt32(), 9)
+        XCTAssertEqual(try array[[1, 0, 2]].castToInt32(), 9)
         
         XCTAssertEqual(try array.getValue(Int32(1), Int32(1), Int32(0))?.castToInt32(), 10)
-        XCTAssertEqual(try array[[1, 1, 0]]?.castToInt32(), 10)
+        XCTAssertEqual(try array[[1, 1, 0]].castToInt32(), 10)
         
         XCTAssertEqual(try array.getValue(Int32(1), Int32(1), Int32(1))?.castToInt32(), 11)
-        XCTAssertEqual(try array[[1, 1, 1]]?.castToInt32(), 11)
+        XCTAssertEqual(try array[[1, 1, 1]].castToInt32(), 11)
         
         XCTAssertEqual(try array.getValue(Int32(1), Int32(1), Int32(2))?.castToInt32(), 12)
-        XCTAssertEqual(try array[[1, 1, 2]]?.castToInt32(), 12)
+        XCTAssertEqual(try array[[1, 1, 2]].castToInt32(), 12)
         
         // Modify it
         array[[0, 0, 0]] = Int32(12).dotNETObject()
@@ -148,21 +148,21 @@ final class ArrayTestsTests: XCTestCase {
         array[[1, 1, 2]] = Int32(1).dotNETObject()
         
         // Check modified state
-        XCTAssertEqual(try array[[0, 0, 0]]?.castToInt32(), 12)
-        XCTAssertEqual(try array[[0, 0, 1]]?.castToInt32(), 11)
-        XCTAssertEqual(try array[[0, 0, 2]]?.castToInt32(), 10)
+        XCTAssertEqual(try array[[0, 0, 0]].castToInt32(), 12)
+        XCTAssertEqual(try array[[0, 0, 1]].castToInt32(), 11)
+        XCTAssertEqual(try array[[0, 0, 2]].castToInt32(), 10)
         
-        XCTAssertEqual(try array[[0, 1, 0]]?.castToInt32(), 9)
-        XCTAssertEqual(try array[[0, 1, 1]]?.castToInt32(), 8)
-        XCTAssertEqual(try array[[0, 1, 2]]?.castToInt32(), 7)
+        XCTAssertEqual(try array[[0, 1, 0]].castToInt32(), 9)
+        XCTAssertEqual(try array[[0, 1, 1]].castToInt32(), 8)
+        XCTAssertEqual(try array[[0, 1, 2]].castToInt32(), 7)
         
-        XCTAssertEqual(try array[[1, 0, 0]]?.castToInt32(), 6)
-        XCTAssertEqual(try array[[1, 0, 1]]?.castToInt32(), 5)
-        XCTAssertEqual(try array[[1, 0, 2]]?.castToInt32(), 4)
+        XCTAssertEqual(try array[[1, 0, 0]].castToInt32(), 6)
+        XCTAssertEqual(try array[[1, 0, 1]].castToInt32(), 5)
+        XCTAssertEqual(try array[[1, 0, 2]].castToInt32(), 4)
         
-        XCTAssertEqual(try array[[1, 1, 0]]?.castToInt32(), 3)
-        XCTAssertEqual(try array[[1, 1, 1]]?.castToInt32(), 2)
-        XCTAssertEqual(try array[[1, 1, 2]]?.castToInt32(), 1)
+        XCTAssertEqual(try array[[1, 1, 0]].castToInt32(), 3)
+        XCTAssertEqual(try array[[1, 1, 1]].castToInt32(), 2)
+        XCTAssertEqual(try array[[1, 1, 2]].castToInt32(), 1)
     }
     
     func testCreatingThreeDimensionalArrayOfInt32() throws {
@@ -195,20 +195,20 @@ final class ArrayTestsTests: XCTestCase {
         let array = tests.threeDimensionalArrayOfInt32
         
         // Check state
-        XCTAssertEqual(try array[[0, 0, 0]]?.castToInt32(), 12)
-        XCTAssertEqual(try array[[0, 0, 1]]?.castToInt32(), 11)
-        XCTAssertEqual(try array[[0, 0, 2]]?.castToInt32(), 10)
+        XCTAssertEqual(try array[[0, 0, 0]].castToInt32(), 12)
+        XCTAssertEqual(try array[[0, 0, 1]].castToInt32(), 11)
+        XCTAssertEqual(try array[[0, 0, 2]].castToInt32(), 10)
         
-        XCTAssertEqual(try array[[0, 1, 0]]?.castToInt32(), 9)
-        XCTAssertEqual(try array[[0, 1, 1]]?.castToInt32(), 8)
-        XCTAssertEqual(try array[[0, 1, 2]]?.castToInt32(), 7)
+        XCTAssertEqual(try array[[0, 1, 0]].castToInt32(), 9)
+        XCTAssertEqual(try array[[0, 1, 1]].castToInt32(), 8)
+        XCTAssertEqual(try array[[0, 1, 2]].castToInt32(), 7)
         
-        XCTAssertEqual(try array[[1, 0, 0]]?.castToInt32(), 6)
-        XCTAssertEqual(try array[[1, 0, 1]]?.castToInt32(), 5)
-        XCTAssertEqual(try array[[1, 0, 2]]?.castToInt32(), 4)
+        XCTAssertEqual(try array[[1, 0, 0]].castToInt32(), 6)
+        XCTAssertEqual(try array[[1, 0, 1]].castToInt32(), 5)
+        XCTAssertEqual(try array[[1, 0, 2]].castToInt32(), 4)
         
-        XCTAssertEqual(try array[[1, 1, 0]]?.castToInt32(), 3)
-        XCTAssertEqual(try array[[1, 1, 1]]?.castToInt32(), 2)
-        XCTAssertEqual(try array[[1, 1, 2]]?.castToInt32(), 1)
+        XCTAssertEqual(try array[[1, 1, 0]].castToInt32(), 3)
+        XCTAssertEqual(try array[[1, 1, 1]].castToInt32(), 2)
+        XCTAssertEqual(try array[[1, 1, 2]].castToInt32(), 1)
     }
 }

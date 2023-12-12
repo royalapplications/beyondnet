@@ -277,6 +277,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             CodeLanguage.C, 
             true,
             returnOrSetterTypeNullability,
+            Nullability.NotSpecified,
             false,
             returnOrSetterOrEventHandlerTypeIsByRef,
             false
@@ -419,6 +420,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                 CodeLanguage.C,
                 true,
                 parameterNullability,
+                Nullability.NotSpecified,
                 isOutParameter,
                 isByRefParameter,
                 isInParameter
@@ -455,6 +457,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(
                 CodeLanguage.C,
                 true,
+                Nullability.NotSpecified,
                 Nullability.NotSpecified,
                 true,
                 true,
