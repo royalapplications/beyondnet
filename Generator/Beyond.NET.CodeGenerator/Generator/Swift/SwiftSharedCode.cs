@@ -63,29 +63,40 @@ public class DNObject {
 	}
 }
 
-/// This is a generic base class for all .NET array types.
+/// This is a generic base class for all single-dimensional .NET array types.
 /// The element type of the array is specified as the first and only generic type argument.
 public class DNArray<T>: System_Array, MutableCollection where T: System_Object {
     public typealias Element = T?
     public typealias Index = Int32
     
     public override class var typeOf: System_Type /* System.Type */ {
-        do {
-            let elementType = T.typeOf
-            let arrayType = try elementType.makeArrayType()
-            
+        let elementType = T.typeOf
+        
+        if let arrayType = try? elementType.makeArrayType() {
             return arrayType
-        } catch {
-            return super.typeOf
         }
+        
+        return super.typeOf
     }
     
     public override class var typeName: String {
-        "\(T.typeName)[]"
+        let type = typeOf
+        
+        if let name = try? type.name.string() {
+            return name
+        }
+        
+        return "\(T.typeName)[]"
     }
     
     public override class var fullTypeName: String {
-        "\(T.fullTypeName)[]"
+        let type = typeOf
+        
+        if let name = try? type.fullName?.string() {
+            return name
+        }
+        
+        return "\(T.fullTypeName)[]"
     }
     
     /// - Returns: An empty .NET array of the specified type.

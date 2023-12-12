@@ -93,6 +93,12 @@ final class SystemArrayTests: XCTestCase {
         let type = try emptyArrayOfStrings.getType()
         XCTAssertEqual(type, expectedType)
         
+        let typeName = DNArray<System_String>.typeName
+        XCTAssertEqual(typeName, "String[]")
+        
+        let fullTypeName = DNArray<System_String>.fullTypeName
+        XCTAssertEqual(fullTypeName, "System.String[]")
+        
         let length = try emptyArrayOfStrings.length
         XCTAssertEqual(0, .init(length))
 
