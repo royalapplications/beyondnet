@@ -29,4 +29,8 @@ public class ArrayTests
     public Guid[] ArrayOfGuids { get; set; } = {
         Guid.Empty, Guid.NewGuid()
     };
+    
+    public char[] ArrayOfCharacters { get; set; } = {
+        'a', 'b', 'c'
+    };
 }

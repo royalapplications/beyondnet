@@ -264,4 +264,36 @@ final class ArrayTestsTests: XCTestCase {
         XCTAssertNotEqual(newArray[0], emptyGuid)
         XCTAssertEqual(newArray[1], emptyGuid)
     }
+    
+    // TODO
+    /*
+    func testArrayOfCharacters() throws {
+        let tests = try Beyond.NET.Sample.ArrayTests()
+        
+        let array = try tests.arrayOfCharacters
+        let rank = try array.rank
+        
+        XCTAssertEqual(rank, 1)
+        
+        let aChar = DNChar(cValue: 0)
+        let bChar = DNChar(cValue: 1)
+        let cChar = DNChar(cValue: 2)
+        
+        // Check initial state
+        XCTAssertEqual(array[0], aChar)
+        XCTAssertNotEqual(array[1], bChar)
+        XCTAssertNotEqual(array[1], cChar)
+        
+        // Modify it
+//        array[0] = try System.Guid.newGuid()
+//        array[1] = emptyGuid
+//        
+//        try tests.arrayOfGuids_set(array)
+//        let newArray = try tests.arrayOfGuids
+//        
+//        // Check modified state
+//        XCTAssertNotEqual(newArray[0], emptyGuid)
+//        XCTAssertEqual(newArray[1], emptyGuid)
+    }
+     */
 }

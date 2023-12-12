@@ -1,5 +1,5 @@
 // Number of generated types: 1806
-// Number of generated members: 6062
+// Number of generated members: 6064
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -44975,6 +44975,20 @@ void /* System.Void */
 Beyond_NET_Sample_ArrayTests_ArrayOfGuids_Set(
 	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
 	System_Guid_Array_t _Nonnull /* System.Guid[] */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Char_Array_t _Nonnull /* System.Char[] */
+Beyond_NET_Sample_ArrayTests_ArrayOfCharacters_Get(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_ArrayTests_ArrayOfCharacters_Set(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_Char_Array_t _Nonnull /* System.Char[] */ value,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
