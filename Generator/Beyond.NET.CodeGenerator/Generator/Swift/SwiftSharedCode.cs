@@ -170,6 +170,72 @@ public class DNArray<T>: System_Array, MutableCollection where T: System_Object 
     }
 }
 
+/// This is a generic base class for all multidimensional .NET array types.
+/// The element type of the array is specified as the first and only generic type argument.
+public class DNMultidimensionalArray<T>: System_Array where T: System_Object {
+    public typealias Element = T?
+    public typealias Indices = [Int32]
+    
+    /// Creates and initializes a multidimensional .NET array of the specified type and lengths.
+    public convenience init(lengths: Indices) throws {
+        let elementType = T.typeOf
+        let elementTypeC = elementType.__handle
+        let lengthsDN = try Self.indicesToDN(lengths)
+        let lengthsDNC = lengthsDN.__handle
+        
+        var __exceptionC: System_Exception_t?
+        
+        let newArrayC = System_Array_CreateInstance_3(elementTypeC, lengthsDNC, &__exceptionC)
+        
+        if let __exceptionC {
+            let __exception = System_Exception(handle: __exceptionC)
+            let __error = __exception.error
+            
+            throw __error
+        }
+        
+        self.init(handle: newArrayC)
+    }
+    
+    /// Get or set and element of this multidimensional .NET array at the specified indices.
+    /// If an exception is raised on the .NET side while indexing into the array, a fatalError will be raised on the Swift side of things.
+    public subscript(position: Indices) -> Element {
+        get {
+            do {
+                let indices = try Self.indicesToDN(position)
+                
+                guard let element = try getValue(indices) else {
+                    return nil
+                }
+                
+                return try element.castTo()
+            } catch {
+                fatalError("An exception was thrown while calling System.Array.GetValue: \(error.localizedDescription)")
+            }
+        }
+        set {
+            do {
+                let indices = try Self.indicesToDN(position)
+
+                try setValue(newValue, indices)
+            } catch {
+                fatalError("An exception was thrown while calling System.Array.SetValue: \(error.localizedDescription)")
+            }
+        }
+    }
+
+    private static func indicesToDN(_ indices: Indices) throws -> DNArray<System_Int32> {
+        let count = Int32(indices.count)
+        let indicesDN = try DNArray<System_Int32>(length: count)
+        
+        for (idx, index) in indices.enumerated() {
+            indicesDN[Int32(idx)] = index.dotNETObject()
+        }
+
+        return indicesDN
+    }
+}
+
 // MARK: - Type Conversion Extensions
 public extension DNObject {
     func `is`(_ type: System_Type) -> Bool {

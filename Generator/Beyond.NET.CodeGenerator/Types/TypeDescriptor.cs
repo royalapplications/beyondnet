@@ -273,8 +273,15 @@ public class TypeDescriptor
                     elementType is not null) {
                     // TODO: Shouldn't this go through TypeDescriptor?
                     var swiftElementTypeName = elementType.CTypeName();
+                    var rank = ManagedType.GetArrayRank();
 
-                    swiftTypeName = $"DNArray<{swiftElementTypeName}>";
+                    if (rank == 1) { // Single-dimensional array
+                        swiftTypeName = $"DNArray<{swiftElementTypeName}>";
+                    } else if (rank > 1) { // Multidimensional array
+                        swiftTypeName = $"DNMultidimensionalArray<{swiftElementTypeName}>";
+                    } else {
+                        throw new Exception($"An array rank of {rank} doesn't really make sense, right?");
+                    }
                 } else {
                     swiftTypeName = ManagedType.CTypeName();
                 }
