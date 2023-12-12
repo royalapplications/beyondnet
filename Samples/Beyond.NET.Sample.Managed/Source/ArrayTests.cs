@@ -16,7 +16,17 @@ public class ArrayTests
         null, "a", "b", "c"
     };
     
+    // TODO: Unsupported at the moment
     public int?[] ArrayOfNullableInt32 { get; set; } = {
         null, 1, 2, 3
+    };
+    
+    // TODO: Unsupported at the moment
+    public Guid?[] ArrayOfNullableGuids { get; set; } = {
+        null, Guid.Empty, Guid.NewGuid()
+    };
+    
+    public Guid[] ArrayOfGuids { get; set; } = {
+        Guid.Empty, Guid.NewGuid()
     };
 }

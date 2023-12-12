@@ -1,5 +1,5 @@
-// Number of generated types: 1799
-// Number of generated members: 6060
+// Number of generated types: 1806
+// Number of generated members: 6062
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1948,6 +1948,7 @@ typedef struct DNReadOnlySpanOfByte {
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "System.ITupleInternal": Is Not Visible (public)
 // Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
+// Unsupported Type "System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
 // Unsupported Type "Converter`2": Is Generic Delegate Type
 // Unsupported Type "System.Predicate`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "System.Action`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
@@ -5538,6 +5539,20 @@ typedef void* Beyond_NET_Sample_ArrayTests_t;
 typedef void* System_Boolean_Array_D2_t;
 
 typedef void* System_Int32_Array_D3_t;
+
+typedef void* System_Guid_Array_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Collections_Generic_ICollection_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyList_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
 
 typedef void* Beyond_NET_Sample_AsyncTests_t;
 
@@ -44950,6 +44965,20 @@ Beyond_NET_Sample_ArrayTests_ArrayOfNullableString_Set(
 );
 
 
+System_Guid_Array_t _Nonnull /* System.Guid[] */
+Beyond_NET_Sample_ArrayTests_ArrayOfGuids_Get(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_ArrayTests_ArrayOfGuids_Set(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_Guid_Array_t _Nonnull /* System.Guid[] */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
 System_Type_t _Nonnull /* System.Type */
 Beyond_NET_Sample_ArrayTests_TypeOf(
 	void
@@ -44967,6 +44996,15 @@ Beyond_NET_Sample_ArrayTests_Destroy(
 
 #pragma mark - BEGIN APIs of System.Int32[,,]
 #pragma mark - END APIs of System.Int32[,,]
+
+#pragma mark - BEGIN APIs of System.Guid[]
+#pragma mark - END APIs of System.Guid[]
+
+
+
+
+
+
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.AsyncTests
 System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.Int32> */

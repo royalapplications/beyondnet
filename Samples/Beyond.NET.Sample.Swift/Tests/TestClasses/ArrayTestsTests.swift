@@ -228,8 +228,8 @@ final class ArrayTestsTests: XCTestCase {
         
         // Modify it
         array[3] = nil
-        try tests.arrayOfNullableString_set(array)
         
+        try tests.arrayOfNullableString_set(array)
         let newArray = try tests.arrayOfNullableString
         
         // Check modified state
@@ -237,5 +237,31 @@ final class ArrayTestsTests: XCTestCase {
         XCTAssertEqual(newArray[1]?.string(), "a")
         XCTAssertEqual(newArray[2]?.string(), "b")
         XCTAssertNil(newArray[3])
+    }
+    
+    func testArrayOfGuids() throws {
+        let tests = try Beyond.NET.Sample.ArrayTests()
+        
+        let array = try tests.arrayOfGuids
+        let rank = try array.rank
+        
+        XCTAssertEqual(rank, 1)
+        
+        let emptyGuid = System.Guid.empty
+        
+        // Check initial state
+        XCTAssertEqual(array[0], emptyGuid)
+        XCTAssertNotEqual(array[1], emptyGuid)
+        
+        // Modify it
+        array[0] = try System.Guid.newGuid()
+        array[1] = emptyGuid
+        
+        try tests.arrayOfGuids_set(array)
+        let newArray = try tests.arrayOfGuids
+        
+        // Check modified state
+        XCTAssertNotEqual(newArray[0], emptyGuid)
+        XCTAssertEqual(newArray[1], emptyGuid)
     }
 }
