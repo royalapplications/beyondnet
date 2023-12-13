@@ -86,7 +86,7 @@ public class DNObject {
 
 /// This is a generic base class for all single-dimensional .NET array types with nullable element types.
 /// The element type of the array is specified as the first and only generic type argument.
-public class DNNullableArray<T>: System_Array, MutableCollection where T: System_Object {
+public class DNNullableArray<T: System_Object>: System_Array, MutableCollection {
     public typealias Element = T?
     public typealias Index = Int32
     
@@ -197,7 +197,7 @@ public class DNNullableArray<T>: System_Array, MutableCollection where T: System
 
 /// This is a generic base class for all single-dimensional .NET array types with non-null element types.
 /// The element type of the array is specified as the first and only generic type argument.
-public class DNArray<T>: System_Array, MutableCollection where T: System_Object {
+public class DNArray<T: System_Object>: System_Array, MutableCollection {
     public typealias Element = T
     public typealias Index = Int32
     
@@ -308,7 +308,7 @@ public class DNArray<T>: System_Array, MutableCollection where T: System_Object 
 
 /// This is a generic base class for all multidimensional .NET array types with nullable element types.
 /// The element type of the array is specified as the first and only generic type argument.
-public class DNNullableMultidimensionalArray<T>: System_Array where T: System_Object {
+public class DNNullableMultidimensionalArray<T: System_Object>: System_Array {
     public typealias Element = T?
     public typealias Indices = [Int32]
     
@@ -378,7 +378,7 @@ public class DNNullableMultidimensionalArray<T>: System_Array where T: System_Ob
 
 /// This is a generic base class for all multidimensional .NET array types with non-null element types.
 /// The element type of the array is specified as the first and only generic type argument.
-public class DNMultidimensionalArray<T>: System_Array where T: System_Object {
+public class DNMultidimensionalArray<T: System_Object>: System_Array {
     public typealias Element = T
     public typealias Indices = [Int32]
     
