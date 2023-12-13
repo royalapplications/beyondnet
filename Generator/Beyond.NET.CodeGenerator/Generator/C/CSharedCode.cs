@@ -46,6 +46,12 @@ DNObjectCastToBool(_Nonnull System_Object_t object, _Nullable System_Exception_t
 _Nonnull System_Boolean_t
 DNObjectFromBool(bool value);
 
+wchar_t
+DNObjectCastToChar(_Nonnull System_Object_t object, _Nullable System_Exception_t* outException);
+
+_Nonnull System_Char_t
+DNObjectFromChar(wchar_t value);
+
 float
 DNObjectCastToFloat(_Nonnull System_Object_t object, _Nullable System_Exception_t* outException);
 

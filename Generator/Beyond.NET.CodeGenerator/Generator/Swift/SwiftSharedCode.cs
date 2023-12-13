@@ -9,6 +9,27 @@ public struct DNChar: Equatable {
     public init(cValue: wchar_t) {
         self.cValue = cValue
     }
+    
+    public init?(character: Character) {
+        guard let unicodeScalar = character.unicodeScalars.first else {
+            return nil
+        }
+        
+        let unicodeScalarValue = unicodeScalar.value
+        let wcharValue = wchar_t(unicodeScalarValue)
+        
+        self.init(cValue: wcharValue)
+    }
+    
+    public var character: Character? {
+        guard let unicodeScalarValue = UnicodeScalar(UInt32(cValue)) else {
+            return nil
+        }
+        
+        let character = Character(unicodeScalarValue)
+        
+        return character
+    }
 
     public static func == (lhs: DNChar, rhs: DNChar) -> Bool {
         lhs.cValue == rhs.cValue
@@ -518,7 +539,35 @@ public extension DNObject {
 		
 		return .init(handle: castedObjectC)
 	}
+	
+	/// Cast the targeted .NET object to a Char.
+    /// - Returns: A Char value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown. 
+    func castToChar() throws -> DNChar {
+        var exceptionC: System_Exception_t?
+        
+        let castedValueC = DNObjectCastToChar(self.__handle, &exceptionC)
+        
+        if let exceptionC {
+            let exception = System_Exception(handle: exceptionC)
+            let exceptionError = exception.error
+            
+            throw exceptionError
+        }
+        
+        let castedValue = DNChar(cValue: castedValueC)
+        
+        return castedValue 
+    }
 
+    /// Boxes the specified Char value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
+    static func fromChar(_ charValue: DNChar) -> System_Char {
+        let castedObjectC = DNObjectFromChar(charValue.cValue)
+		
+		return .init(handle: castedObjectC)
+	}
+	
     /// Cast the targeted .NET object to a Float.
     /// - Returns: A Float value if the cast succeeded.
     /// - Throws: If the cast fails, an error is thrown.
@@ -794,6 +843,23 @@ extension System_Boolean {
     /// - Throws: If the cast fails, an error is thrown.
     public var value: Bool { get throws {
         try castToBool()
+    }}
+}
+
+extension DNChar {
+    /// Boxes the targeted Char value in an .NET object.
+    /// - Returns: An .NET object containing the boxed value.
+    public func dotNETObject() -> System_Char {
+        return .fromChar(self)
+    }
+}
+
+extension System_Char {
+    /// Cast the targeted .NET object to a Char.
+    /// - Returns: A Char value if the cast succeeded.
+    /// - Throws: If the cast fails, an error is thrown.
+    public var value: DNChar { get throws {
+        try castToChar()
     }}
 }
 

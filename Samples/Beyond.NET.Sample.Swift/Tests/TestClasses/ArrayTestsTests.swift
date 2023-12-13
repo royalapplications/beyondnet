@@ -382,8 +382,6 @@ final class ArrayTestsTests: XCTestCase {
         XCTAssertEqual(newArray[1], emptyGuid)
     }
     
-    // TODO
-    /*
     func testArrayOfCharacters() throws {
         let tests = try Beyond.NET.Sample.ArrayTests()
         
@@ -392,25 +390,37 @@ final class ArrayTestsTests: XCTestCase {
         
         XCTAssertEqual(rank, 1)
         
-        let aChar = DNChar(cValue: 0)
-        let bChar = DNChar(cValue: 1)
-        let cChar = DNChar(cValue: 2)
+        let aCharSwift = "a" as Character
+        let aChar = try XCTUnwrap(DNChar(character: aCharSwift))
+        let aCharSwiftRet = try XCTUnwrap(aChar.character)
+        XCTAssertEqual(aCharSwiftRet, aCharSwift)
+        
+        let bCharSwift = "b" as Character
+        let bChar = try XCTUnwrap(DNChar(character: bCharSwift))
+        let bCharSwiftRet = try XCTUnwrap(bChar.character)
+        XCTAssertEqual(bCharSwiftRet, bCharSwift)
+        
+        let cCharSwift = "c" as Character
+        let cChar = try XCTUnwrap(DNChar(character: cCharSwift))
+        let cCharSwiftRet = try XCTUnwrap(cChar.character)
+        XCTAssertEqual(cCharSwiftRet, cCharSwift)
         
         // Check initial state
-        XCTAssertEqual(array[0], aChar)
-        XCTAssertNotEqual(array[1], bChar)
-        XCTAssertNotEqual(array[1], cChar)
+        XCTAssertEqual(try array[0].castToChar(), aChar)
+        XCTAssertEqual(try array[1].castToChar(), bChar)
+        XCTAssertEqual(try array[2].castToChar(), cChar)
         
         // Modify it
-//        array[0] = try System.Guid.newGuid()
-//        array[1] = emptyGuid
-//        
-//        try tests.arrayOfGuids_set(array)
-//        let newArray = try tests.arrayOfGuids
-//        
-//        // Check modified state
-//        XCTAssertNotEqual(newArray[0], emptyGuid)
-//        XCTAssertEqual(newArray[1], emptyGuid)
+        array[0] = cChar.dotNETObject()
+        array[1] = aChar.dotNETObject()
+        array[2] = bChar.dotNETObject()
+        
+        try tests.arrayOfCharacters_set(array)
+        let newArray = try tests.arrayOfCharacters
+        
+        // Check modified state
+        XCTAssertEqual(try newArray[0].castToChar(), cChar)
+        XCTAssertEqual(try newArray[1].castToChar(), aChar)
+        XCTAssertEqual(try newArray[2].castToChar(), bChar)
     }
-     */
 }

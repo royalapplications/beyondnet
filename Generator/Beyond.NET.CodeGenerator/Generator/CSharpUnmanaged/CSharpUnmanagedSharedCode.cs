@@ -332,6 +332,38 @@ internal static unsafe class InteropUtils
     }
     #endregion Bool
     
+    #region Char
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToChar")]
+    internal static char DNObjectCastToChar(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
+    {
+        System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
+    
+        try {
+            char returnValue = (char)objectConverted;
+    
+            if (outException is not null) {
+                *outException = null;
+            }
+    
+            return returnValue;
+        } catch (Exception exception) {
+            if (outException is not null) {
+                void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
+                    
+                *outException = exceptionHandleAddress;
+            }
+    
+            return default(char);
+        }
+    }
+    
+    [UnmanagedCallersOnly(EntryPoint = "DNObjectFromChar")]
+    internal static void* /* System.Object */ DNObjectFromChar(char value)
+    {
+        return ((System.Object)value).AllocateGCHandleAndGetAddress();
+    }
+    #endregion Char
+    
     #region Float
     [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToFloat")]
     internal static float DNObjectCastToFloat(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
