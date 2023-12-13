@@ -1,5 +1,5 @@
-// Number of generated types: 1806
-// Number of generated members: 6064
+// Number of generated types: 1808
+// Number of generated members: 6072
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -5538,7 +5538,9 @@ typedef void* Beyond_NET_Sample_ArrayTests_t;
 
 typedef void* System_Boolean_Array_D2_t;
 
+
 typedef void* System_Int32_Array_D3_t;
+
 
 typedef void* System_Guid_Array_t;
 
@@ -44918,6 +44920,60 @@ Beyond_NET_Sample_Labrador_Destroy(
 #pragma mark - END APIs of Beyond.NET.Sample.Labrador
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.ArrayTests
+System_Boolean_Array_D2_t _Nonnull /* System.Boolean[,] */
+Beyond_NET_Sample_ArrayTests_TwoDimensionalArrayOfBoolAsReturn(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_ArrayTests_SetTwoDimensionalArrayOfBoolWithParameter(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_Boolean_Array_D2_t _Nonnull /* System.Boolean[,] */ twoDimensionalArrayOfBool,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_ArrayTests_TwoDimensionalArrayOfBoolAsOut(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_Boolean_Array_D2_t _Nonnull* _Nonnull /* System.Boolean[,] */ twoDimensionalArrayOfBool,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_ArrayTests_TwoDimensionalArrayOfBoolAsRef(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_Boolean_Array_D2_t _Nonnull* _Nonnull /* System.Boolean[,] */ twoDimensionalArrayOfBool,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_Array_t _Nonnull /* System.String[] */
+Beyond_NET_Sample_ArrayTests_ArrayOfNullableStringAsReturn(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_ArrayTests_SetArrayOfNullableStringWithParameter(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_String_Array_t _Nonnull /* System.String[] */ arrayOfNullableString,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_ArrayTests_ArrayOfNullableStringAsOut(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_String_Array_t _Nonnull* _Nonnull /* System.String[] */ arrayOfNullableString,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_ArrayTests_ArrayOfNullableStringAsRef(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_String_Array_t _Nonnull* _Nonnull /* System.String[] */ arrayOfNullableString,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
 Beyond_NET_Sample_ArrayTests_t _Nonnull /* Beyond.NET.Sample.ArrayTests */
 Beyond_NET_Sample_ArrayTests_Create(
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
@@ -45008,8 +45064,10 @@ Beyond_NET_Sample_ArrayTests_Destroy(
 #pragma mark - BEGIN APIs of System.Boolean[,]
 #pragma mark - END APIs of System.Boolean[,]
 
+
 #pragma mark - BEGIN APIs of System.Int32[,,]
 #pragma mark - END APIs of System.Int32[,,]
+
 
 #pragma mark - BEGIN APIs of System.Guid[]
 #pragma mark - END APIs of System.Guid[]

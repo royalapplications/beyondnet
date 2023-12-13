@@ -16,22 +16,9 @@ final class ArrayTestsTests: XCTestCase {
         let tests = try Beyond.NET.Sample.ArrayTests()
         
         let array = try tests.twoDimensionalArrayOfBool
-        let rank = try array.rank
-        
-        XCTAssertEqual(rank, 2)
         
         // Check initial state
-        XCTAssertEqual(try array.getValue(Int32(0), Int32(0))?.castToBool(), false)
-        XCTAssertEqual(try array[[0, 0]].castToBool(), false)
-        
-        XCTAssertEqual(try array.getValue(Int32(0), Int32(1))?.castToBool(), true)
-        XCTAssertEqual(try array[[0, 1]].castToBool(), true)
-        
-        XCTAssertEqual(try array.getValue(Int32(1), Int32(0))?.castToBool(), true)
-        XCTAssertEqual(try array[[1, 0]].castToBool(), true)
-        
-        XCTAssertEqual(try array.getValue(Int32(1), Int32(1))?.castToBool(), false)
-        XCTAssertEqual(try array[[1, 1]].castToBool(), false)
+        try verifyTwoDimensionalArrayOfBoolInitialState(array)
         
         // Modify it
         array[[0, 0]] = true.dotNETObject()
@@ -70,6 +57,7 @@ final class ArrayTestsTests: XCTestCase {
         try tests.twoDimensionalArrayOfBool_set(newArray)
         
         let array = try tests.twoDimensionalArrayOfBool
+        XCTAssertEqual(try array.rank, 2)
         
         // Check state
         XCTAssertEqual(try array.getValue(Int32(0), Int32(0))?.castToBool(), true)
@@ -83,6 +71,80 @@ final class ArrayTestsTests: XCTestCase {
         
         XCTAssertEqual(try array.getValue(Int32(1), Int32(1))?.castToBool(), true)
         XCTAssertEqual(try array[[1, 1]].castToBool(), true)
+    }
+    
+    func testTwoDimensionalArrayOfBoolAsReturn() throws {
+        let tests = try Beyond.NET.Sample.ArrayTests()
+        let array = try tests.twoDimensionalArrayOfBoolAsReturn()
+        
+        try verifyTwoDimensionalArrayOfBoolInitialState(array)
+    }
+    
+    func testSetTwoDimensionalArrayOfBoolWithParameter() throws {
+        let tests = try Beyond.NET.Sample.ArrayTests()
+        
+        let newArray = try DNMultidimensionalArray<System.Boolean>(lengths: [2, 2])
+        let rank = try newArray.rank
+        
+        XCTAssertEqual(rank, 2)
+        
+        // Set values
+        newArray[[0, 0]] = true.dotNETObject()
+        newArray[[0, 1]] = false.dotNETObject()
+        newArray[[1, 0]] = false.dotNETObject()
+        newArray[[1, 1]] = true.dotNETObject()
+        
+        try tests.setTwoDimensionalArrayOfBoolWithParameter(newArray)
+        
+        let array = try tests.twoDimensionalArrayOfBool
+        XCTAssertEqual(try array.rank, 2)
+        
+        // Check state
+        XCTAssertEqual(try array.getValue(Int32(0), Int32(0))?.castToBool(), true)
+        XCTAssertEqual(try array[[0, 0]].castToBool(), true)
+        
+        XCTAssertEqual(try array.getValue(Int32(0), Int32(1))?.castToBool(), false)
+        XCTAssertEqual(try array[[0, 1]].castToBool(), false)
+        
+        XCTAssertEqual(try array.getValue(Int32(1), Int32(0))?.castToBool(), false)
+        XCTAssertEqual(try array[[1, 0]].castToBool(), false)
+        
+        XCTAssertEqual(try array.getValue(Int32(1), Int32(1))?.castToBool(), true)
+        XCTAssertEqual(try array[[1, 1]].castToBool(), true)
+    }
+    
+    func testTwoDimensionalArrayOfBoolAsOut() throws {
+        let tests = try Beyond.NET.Sample.ArrayTests()
+        
+        var array: DNMultidimensionalArray<System.Boolean> = try .init(lengths: [ 1, 1 ])
+        try tests.twoDimensionalArrayOfBoolAsOut(&array)
+        
+        try verifyTwoDimensionalArrayOfBoolInitialState(array)
+    }
+    
+    func testTwoDimensionalArrayOfBoolAsRef() throws {
+        let tests = try Beyond.NET.Sample.ArrayTests()
+        
+        var array: DNMultidimensionalArray<System.Boolean> = try .init(lengths: [ 1, 1 ])
+        try tests.twoDimensionalArrayOfBoolAsRef(&array)
+        
+        try verifyTwoDimensionalArrayOfBoolInitialState(array)
+    }
+    
+    func verifyTwoDimensionalArrayOfBoolInitialState(_ array: DNMultidimensionalArray<System.Boolean>) throws {
+        XCTAssertEqual(try array.rank, 2)
+        
+        XCTAssertEqual(try array.getValue(Int32(0), Int32(0))?.castToBool(), false)
+        XCTAssertEqual(try array[[0, 0]].castToBool(), false)
+        
+        XCTAssertEqual(try array.getValue(Int32(0), Int32(1))?.castToBool(), true)
+        XCTAssertEqual(try array[[0, 1]].castToBool(), true)
+        
+        XCTAssertEqual(try array.getValue(Int32(1), Int32(0))?.castToBool(), true)
+        XCTAssertEqual(try array[[1, 0]].castToBool(), true)
+        
+        XCTAssertEqual(try array.getValue(Int32(1), Int32(1))?.castToBool(), false)
+        XCTAssertEqual(try array[[1, 1]].castToBool(), false)
     }
     
     func testThreeDimensionalArrayOfInt32() throws {
@@ -216,15 +278,9 @@ final class ArrayTestsTests: XCTestCase {
         let tests = try Beyond.NET.Sample.ArrayTests()
         
         let array = try tests.arrayOfNullableString
-        let rank = try array.rank
-        
-        XCTAssertEqual(rank, 1)
         
         // Check initial state
-        XCTAssertNil(array[0])
-        XCTAssertEqual(array[1]?.string(), "a")
-        XCTAssertEqual(array[2]?.string(), "b")
-        XCTAssertEqual(array[3]?.string(), "c")
+        try verifyArrayOfNullableStringInitialState(array)
         
         // Modify it
         array[3] = nil
@@ -237,6 +293,67 @@ final class ArrayTestsTests: XCTestCase {
         XCTAssertEqual(newArray[1]?.string(), "a")
         XCTAssertEqual(newArray[2]?.string(), "b")
         XCTAssertNil(newArray[3])
+    }
+    
+    func testArrayOfNullableStringAsReturn() throws {
+        let tests = try Beyond.NET.Sample.ArrayTests()
+        let array = try tests.arrayOfNullableStringAsReturn()
+        
+        try verifyArrayOfNullableStringInitialState(array)
+    }
+    
+    func testSetArrayOfNullableStringWithParameter() throws {
+        let tests = try Beyond.NET.Sample.ArrayTests()
+        
+        let newArray = try DNNullableArray<System.String>(length: 3)
+        XCTAssertEqual(try newArray.rank, 1)
+        
+        // Set values
+        newArray[0] = "z".dotNETString()
+        newArray[1] = "y".dotNETString()
+        newArray[2] = "x".dotNETString()
+        
+        try tests.setArrayOfNullableStringWithParameter(newArray)
+        
+        let array = try tests.arrayOfNullableString
+        XCTAssertEqual(try array.rank, 1)
+        
+        // Check state
+        XCTAssertEqual(try array.getValue(Int32(0))?.castTo(System.String.self).string(), "z")
+        XCTAssertEqual(array[0]?.string(), "z")
+        
+        XCTAssertEqual(try array.getValue(Int32(1))?.castTo(System.String.self).string(), "y")
+        XCTAssertEqual(array[1]?.string(), "y")
+        
+        XCTAssertEqual(try array.getValue(Int32(2))?.castTo(System.String.self).string(), "x")
+        XCTAssertEqual(array[2]?.string(), "x")
+    }
+    
+    func testArrayOfNullableStringAsOut() throws {
+        let tests = try Beyond.NET.Sample.ArrayTests()
+        
+        var array: DNNullableArray<System.String> = try .empty
+        try tests.arrayOfNullableStringAsOut(&array)
+        
+        try verifyArrayOfNullableStringInitialState(array)
+    }
+    
+    func testArrayOfNullableStringAsRef() throws {
+        let tests = try Beyond.NET.Sample.ArrayTests()
+        
+        var array: DNNullableArray<System.String> = try .empty
+        try tests.arrayOfNullableStringAsRef(&array)
+        
+        try verifyArrayOfNullableStringInitialState(array)
+    }
+    
+    func verifyArrayOfNullableStringInitialState(_ array: DNNullableArray<System.String>) throws {
+        XCTAssertEqual(try array.rank, 1)
+        
+        XCTAssertNil(array[0])
+        XCTAssertEqual(array[1]?.string(), "a")
+        XCTAssertEqual(array[2]?.string(), "b")
+        XCTAssertEqual(array[3]?.string(), "c")
     }
     
     func testArrayOfGuids() throws {
