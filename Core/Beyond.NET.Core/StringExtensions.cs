@@ -26,23 +26,36 @@ public static class StringExtensions
     }
 
     /// <summary>
-    /// This calls [NSString stringByResolvingSymlinksInPath] under the hood which is only available on Apple platforms.
-    /// It's not used at the moment but could be used by Beyond.NET.Builder.Apple.
+    /// This calls [NSString stringByResolvingSymlinksInPath] and [NSURL getResourceValue:forKey:error:] under the hood which is only available on Apple platforms.
     /// </summary>
-    public static string ResolveSymlinks_AppleOnly(this string path)
+    public static string ResolveSymlinksAndGetCanonicalPath_AppleOnly(this string path)
     {
-        string resolvedPath;
+        string? resolvedPath = null;
 		
         using (NSString unresolvedPathNS = new(path)) {
             using (NSString? resolvedPathNS = unresolvedPathNS.StringByResolvingSymlinksInPath) {
-                if (resolvedPathNS is null) {
-                    throw new Exception("Failed to resolve path");
+                if (resolvedPathNS is not null) {
+                    using (NSURL url = new(resolvedPathNS)) {
+                        using (var canonicalPathKey = NSURL.NSURLCanonicalPathKey) {
+                            var canonicalPathKeyStr = canonicalPathKey.UTF8String;
+    
+                            if (!string.IsNullOrEmpty(canonicalPathKeyStr)) {
+                                using (NSString? canonicalPath = url.GetResourceValue(canonicalPathKey)) {
+                                    if (canonicalPath is not null) {
+                                        resolvedPath = canonicalPath.UTF8String;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-
-                resolvedPath = resolvedPathNS.UTF8String ?? string.Empty;
             }
         }
 
+        if (string.IsNullOrEmpty(resolvedPath)) {
+            resolvedPath = path;
+        }
+        
         return resolvedPath;
     }
     

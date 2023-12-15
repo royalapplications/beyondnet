@@ -1,3 +1,5 @@
+using Beyond.NET.Core;
+
 namespace Beyond.NET.Builder.Apple.Xcodebuild;
 
 public class CreateXCFramework
@@ -89,16 +91,45 @@ public class CreateXCFramework
    
     private static string Temp_XcodeBuild_15_ResolveVarSymlink(string path)
     {
-        if (string.IsNullOrEmpty(path) || !path.StartsWith("/var/", StringComparison.Ordinal)) {
+        if (string.IsNullOrEmpty(path)) {
             return path;
         }
         
-        FileSystemInfo? linkTarget = Directory.ResolveLinkTarget("/var", returnFinalTarget: true);
-        
-        if (linkTarget is not null) {
-            return linkTarget.FullName + path.Substring("/var".Length);
+        // Console.WriteLine($"ORIGINAL PATH: {path}");
+
+        var resolvedPath = path.ResolveSymlinksAndGetCanonicalPath_AppleOnly();
+
+        if (string.IsNullOrEmpty(resolvedPath)) {
+            return path;
         }
         
-        return path;
+        // Console.WriteLine($"RESOLVED PATH: {resolvedPath}");
+
+        return resolvedPath;
     }
+    
+    // private static string Temp_XcodeBuild_15_ResolveVarSymlink(string path)
+    // {
+    //     if (string.IsNullOrEmpty(path)) {
+    //         return path;
+    //     }
+    //     
+    //     Console.WriteLine($"ORIGINAL PATH: {path}");
+    //     
+    //     if (!path.StartsWith("/var/", StringComparison.Ordinal)) {
+    //         return path;
+    //     }
+    //     
+    //     FileSystemInfo? linkTarget = Directory.ResolveLinkTarget("/var", returnFinalTarget: true);
+    //     
+    //     if (linkTarget is not null) {
+    //         var resolvedPath = linkTarget.FullName + path.Substring("/var".Length);
+    //          
+    //         Console.WriteLine($"RESOLVED PATH: {resolvedPath}");
+    //         
+    //         return resolvedPath;
+    //     }
+    //     
+    //     return path;
+    // }
 }

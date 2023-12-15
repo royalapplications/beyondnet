@@ -2,70 +2,53 @@ using System.Runtime.InteropServices;
 
 namespace Beyond.NET.Core;
 
-public class NSString: IDisposable
+public class NSString: NSObject
 {
-    private IntPtr m_instance;
+    private static nint CLASS => ObjCInterop.objc_getClass("NSString");
     
-    private static IntPtr CLASS_NSSTRING => ObjCInterop.objc_getClass("NSString");
-    
-    private static IntPtr SELECTOR_ALLOC => ObjCInterop.sel_registerName("alloc");
-    private static IntPtr SELECTOR_INITWITHUTF8STRING => ObjCInterop.sel_registerName("initWithUTF8String:");
-    private static IntPtr SELECTOR_RETAIN => ObjCInterop.sel_registerName("retain");
-    private static IntPtr SELECTOR_RELEASE => ObjCInterop.sel_registerName("release");
-    private static IntPtr SELECTOR_UTF8STRING => ObjCInterop.sel_registerName("UTF8String");
-    private static IntPtr SELECTOR_STRINGBYRESOLVINGSYMLINKSINPATH = ObjCInterop.sel_registerName("stringByResolvingSymlinksInPath");
+    private static nint SELECTOR_INITWITHUTF8STRING => ObjCInterop.sel_registerName("initWithUTF8String:");
+    private static nint SELECTOR_UTF8STRING => ObjCInterop.sel_registerName("UTF8String");
+    private static nint SELECTOR_STRINGBYRESOLVINGSYMLINKSINPATH = ObjCInterop.sel_registerName("stringByResolvingSymlinksInPath");
 
-    private NSString(IntPtr instance)
+    internal NSString(nint instance) : base(instance)
     {
-        if (instance == IntPtr.Zero) {
-            throw new Exception("Passed in NSString reference is null");
-        }
-        
-        m_instance = instance;
     }
-
+    
     public NSString(string str)
     {
-        IntPtr allocedNSString = ObjCInterop.objc_msgSend_RetPtr(
-            CLASS_NSSTRING,
-            SELECTOR_ALLOC
-        );
+        var allocedNSString = Alloc(CLASS);
 
-        if (allocedNSString == IntPtr.Zero) {
-            throw new Exception("Failed to allocate NSString");
-        }
-
-        IntPtr cString = IntPtr.Zero;
+        var cString = nint.Zero;
         
         try {
             cString = Marshal.StringToHGlobalAuto(str);
 
-            if (cString == IntPtr.Zero) {
+            if (cString == nint.Zero) {
                 throw new Exception("Failed to convert System.String to C String");
             }
             
-            IntPtr initedNSString = ObjCInterop.objc_msgSend_RetPtr_1ArgPtr(
+            var initedNSString = ObjCInterop.objc_msgSend_RetPtr_1ArgPtr(
                 allocedNSString,
                 SELECTOR_INITWITHUTF8STRING,
                 cString
             );
 
-            if (initedNSString == IntPtr.Zero) {
+            if (initedNSString == nint.Zero) {
                 ObjCInterop.objc_msgSend_RetNone(
                     allocedNSString,
                     SELECTOR_RELEASE
                 );
 
-                allocedNSString = IntPtr.Zero;
+                allocedNSString = nint.Zero;
 
-                throw new Exception("Failed to initialize NSString with C String");
+                throw new Exception($"Failed to initialize {nameof(NSString)} with C String");
             }
 
             m_instance = initedNSString;
         } finally {
-            if (cString != IntPtr.Zero) {
+            if (cString != nint.Zero) {
                 Marshal.FreeHGlobal(cString); 
-                cString = IntPtr.Zero;
+                cString = nint.Zero;
             }
         }
     }
@@ -73,29 +56,29 @@ public class NSString: IDisposable
     public NSString? StringByResolvingSymlinksInPath
     {
         get {
-            if (m_instance == IntPtr.Zero) {
-                throw new Exception("NSString is null");
+            if (m_instance == nint.Zero) {
+                throw new Exception($"{nameof(NSString)} is null");
             }
 
-            IntPtr resolvedNSStringInstance = ObjCInterop.objc_msgSend_RetPtr(
+            var resolvedNSStringInstance = ObjCInterop.objc_msgSend_RetPtr(
                 m_instance,
                 SELECTOR_STRINGBYRESOLVINGSYMLINKSINPATH
             );
 
-            if (resolvedNSStringInstance == IntPtr.Zero) {
+            if (resolvedNSStringInstance == nint.Zero) {
                 return null;
             }
 
-            IntPtr retainedResolvedNSString = ObjCInterop.objc_msgSend_RetPtr(
+            var retainedResolvedNSString = ObjCInterop.objc_msgSend_RetPtr(
                 resolvedNSStringInstance,
                 SELECTOR_RETAIN
             );
             
-            if (retainedResolvedNSString == IntPtr.Zero) {
+            if (retainedResolvedNSString == nint.Zero) {
                 return null;
             }
 
-            NSString resolvedNSString = new(retainedResolvedNSString);
+            var resolvedNSString = new NSString(retainedResolvedNSString);
 
             return resolvedNSString;
         }
@@ -104,16 +87,16 @@ public class NSString: IDisposable
     public string? UTF8String
     {
         get {
-            if (m_instance == IntPtr.Zero) {
-                throw new Exception("NSString is null");
+            if (m_instance == nint.Zero) {
+                throw new Exception($"{nameof(NSString)} is null");
             }
 
-            IntPtr utf8String = ObjCInterop.objc_msgSend_RetPtr(
+            nint utf8String = ObjCInterop.objc_msgSend_RetPtr(
                 m_instance,
                 SELECTOR_UTF8STRING
             );
 
-            if (utf8String == IntPtr.Zero) {
+            if (utf8String == nint.Zero) {
                 return null;
             }
 
@@ -121,20 +104,5 @@ public class NSString: IDisposable
 
             return csString;
         }
-    }
-    
-    public void Dispose()
-    {
-        var instance = m_instance;
-        m_instance = IntPtr.Zero;
-        
-        if (instance == IntPtr.Zero) {
-            return;
-        }
-        
-        ObjCInterop.objc_msgSend_RetNone(
-            instance,
-            SELECTOR_RELEASE
-        );
     }
 }

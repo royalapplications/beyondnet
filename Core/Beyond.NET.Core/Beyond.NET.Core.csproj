@@ -7,8 +7,4 @@
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="Apple\" />
-    </ItemGroup>
-
 </Project>
