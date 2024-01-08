@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+cp -f ../Generated/BeyondDotNETSampleKit.xcframework/macos-arm64_x86_64/BeyondDotNETSampleKit.framework/Versions/A/BeyondDotNETSampleKit "libBeyondDotNETSampleKit.dylib"
+install_name_tool -id "libBeyondDotNETSampleKit.dylib" "libBeyondDotNETSampleKit.dylib"
+
+go clean
+go build -o gobeyond
