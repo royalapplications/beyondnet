@@ -16,7 +16,7 @@ internal static class CSharedCode
 """;
 
     internal const string CommonTypesCode = """
-typedef const char* CString;
+typedef const char* DNCString;
 
 typedef struct DNReadOnlySpanOfByte {
     const void* dataPointer;
@@ -25,11 +25,11 @@ typedef struct DNReadOnlySpanOfByte {
 """;
     
     internal const string UtilsCode = """
-_Nonnull CString
+_Nonnull DNCString
 DNStringToC(_Nonnull System_String_t systemString);
 
 _Nonnull System_String_t
-DNStringFromC(_Nonnull CString cString);
+DNStringFromC(_Nonnull DNCString cString);
 
 _Nullable System_Object_t
 DNObjectCastTo(_Nonnull System_Object_t object, _Nonnull System_Type_t type, _Nullable System_Exception_t* outException);

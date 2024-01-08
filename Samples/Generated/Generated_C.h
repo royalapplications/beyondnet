@@ -16,7 +16,7 @@
 #pragma mark - END Header
 
 #pragma mark - BEGIN Common Types
-typedef const char* CString;
+typedef const char* DNCString;
 
 typedef struct DNReadOnlySpanOfByte {
     const void* dataPointer;
@@ -51187,11 +51187,11 @@ Beyond_NET_Sample_Transformer_StringGetterDelegate_Destroy(
 #pragma mark - END APIs
 
 #pragma mark - BEGIN Utils
-_Nonnull CString
+_Nonnull DNCString
 DNStringToC(_Nonnull System_String_t systemString);
 
 _Nonnull System_String_t
-DNStringFromC(_Nonnull CString cString);
+DNStringFromC(_Nonnull DNCString cString);
 
 _Nullable System_Object_t
 DNObjectCastTo(_Nonnull System_Object_t object, _Nonnull System_Type_t type, _Nullable System_Exception_t* outException);
