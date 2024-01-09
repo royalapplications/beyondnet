@@ -29,7 +29,7 @@ mkdir -p "${BUILD_DIR}"
 
 OUTPUT_FILE_PATH_X64="${OUTPUT_PRODUCT_NAME}"
 
-./build_dependencies_linux_x64
+# ./build_dependencies_linux_x64
 
 rm -f "${LIBRARY_FILE_NAME}"
 ln -s "../Beyond.NET.Sample.Native/bin/Release/${DOTNET_TARGET_FRAMEWORK}/linux-x64/publish/${LIBRARY_FILE_NAME}" "${LIBRARY_FILE_NAME}"

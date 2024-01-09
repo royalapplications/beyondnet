@@ -2,7 +2,8 @@ package main
 
 /*
 #cgo CFLAGS: -g -Wall
-#cgo LDFLAGS: -L. -lBeyondDotNETSampleNative -Wl,-rpath=\$ORIGIN
+#cgo LDFLAGS: -L. -lBeyondDotNETSampleNative
+#cgo linux LDFLAGS: -Wl,-rpath=\$ORIGIN
 */
 import "C"
 
