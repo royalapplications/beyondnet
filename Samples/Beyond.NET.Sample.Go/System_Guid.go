@@ -5,6 +5,10 @@ package main
 */
 import "C"
 
+import (
+	"runtime"
+)
+
 type System_Guid struct {
 	ptr C.System_Guid_t
 }
@@ -14,11 +18,27 @@ func Wrap_System_Guid(ptr C.System_Guid_t) *System_Guid {
 		return nil
 	}
 
-	inst := System_Guid{
+	inst := &System_Guid{
 		ptr: ptr,
 	}
 
-	return &inst
+	runtime.SetFinalizer(inst, System_Guid_Destroy)
+
+	return inst
+}
+
+func System_Guid_Destroy(self *System_Guid) {
+	self.Destroy()
+}
+
+func (self *System_Guid) Destroy() {
+	if self == nil {
+		return
+	}
+
+	runtime.SetFinalizer(self, nil)
+
+	C.System_Guid_Destroy(self.ptr)
 }
 
 func System_Guid_NewGuid(exception *System_Exception) *System_Guid {
@@ -45,15 +65,9 @@ func System_Guid_Parse(str *System_String) (*System_Guid, error) {
 	return Wrap_System_Guid(ptr), nil
 }
 
-func (self *System_Guid) Destroy() {
-	if self == nil {
-		return
-	}
-
-	C.System_Guid_Destroy(self.ptr)
-}
-
 func (self *System_Guid) ToString() *System_String {
+	defer runtime.KeepAlive(self)
+
 	strDNPtr := C.System_Guid_ToString(self.ptr, nil)
 
 	return Wrap_System_String(strDNPtr)
