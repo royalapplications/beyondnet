@@ -8,6 +8,9 @@ export CGO_ENABLED
 GOOS=linux
 export GOOS
 
+CC=clang
+export CC
+
 go clean -modcache
 
 OUTPUT_PRODUCT_NAME="gobeyond"
