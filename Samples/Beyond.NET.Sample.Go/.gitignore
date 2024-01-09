@@ -1,4 +1,4 @@
 gobeyond
-libBeyondDotNETSampleKit.dylib
-libBeyondDotNETSampleKit.so
+libBeyondDotNETSampleNative.dylib
+libBeyondDotNETSampleNative.so
 bin/*
