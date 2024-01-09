@@ -2,7 +2,7 @@ package main
 
 /*
 #cgo CFLAGS: -g -Wall
-#cgo LDFLAGS: -L. -lBeyondDotNETSampleKit
+#cgo LDFLAGS: -L. -lBeyondDotNETSampleNative
 */
 import "C"
 

@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+set -e
+
+CGO_ENABLED=1
+export CGO_ENABLED
+
+GOOS=darwin
+export GOOS
+
+go clean -modcache
+
+OUTPUT_PRODUCT_NAME="gobeyond"
+LIBRARY_NAME="BeyondDotNETSampleNative"
+LIBRARY_FILE_NAME="lib${LIBRARY_NAME}.dylib"
+
+BUILD_DIR="bin"
+
+DOTNET_PATH=`which dotnet`
+DOTNET_VERSION=`${DOTNET_PATH} --version`
+DOTNET_VERSION_MAJOR_AND_MINOR=${DOTNET_VERSION:0:3}
+DOTNET_TARGET_FRAMEWORK="net${DOTNET_VERSION_MAJOR_AND_MINOR}"
+
+echo "Making directory for ${OUTPUT_PRODUCT_NAME} build"
+mkdir -p "${BUILD_DIR}"
+
+OUTPUT_FILE_PATH_X64=".${OUTPUT_PRODUCT_NAME}_x64"
+OUTPUT_FILE_PATH_ARM64=".${OUTPUT_PRODUCT_NAME}_ARM64"
+OUTPUT_FILE_PATH_UNIVERSAL="${OUTPUT_PRODUCT_NAME}"
+
+./build_dependencies_macos_universal
+
+rm -f "${LIBRARY_FILE_NAME}"
+ln -s "../Beyond.NET.Sample.Native/bin/Release/${DOTNET_TARGET_FRAMEWORK}/osx-universal/publish/${LIBRARY_FILE_NAME}" "${LIBRARY_FILE_NAME}"
+
+cd "${BUILD_DIR}"
+
+echo "Copying native library"
+cp "../../Beyond.NET.Sample.Native/bin/Release/${DOTNET_TARGET_FRAMEWORK}/osx-universal/publish/${LIBRARY_FILE_NAME}" "${LIBRARY_FILE_NAME}"
+
+echo "Building ${OUTPUT_PRODUCT_NAME} for x64"
+GOARCH=amd64 go build -o "${OUTPUT_FILE_PATH_X64}" ../
+
+echo "Building ${OUTPUT_PRODUCT_NAME} for ARM64"
+GOARCH=arm64 go build -o "${OUTPUT_FILE_PATH_ARM64}" ../
+
+echo "Making universal ${OUTPUT_PRODUCT_NAME} build"
+lipo -create "${OUTPUT_FILE_PATH_X64}" "${OUTPUT_FILE_PATH_ARM64}" -output "${OUTPUT_FILE_PATH_UNIVERSAL}"
+
+echo "Deleting ${OUTPUT_PRODUCT_NAME} x64 build"
+rm "${OUTPUT_FILE_PATH_X64}"
+
+echo "Deleting ${OUTPUT_PRODUCT_NAME} ARM64 build"
+rm "${OUTPUT_FILE_PATH_ARM64}"
