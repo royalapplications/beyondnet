@@ -1,6 +1,6 @@
 using System.Reflection;
 using System.Text;
-
+using Beyond.NET.CodeGenerator.Collectors;
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.Generator;
 using Beyond.NET.CodeGenerator.Syntax.Swift.Declaration;
@@ -513,6 +513,8 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             xmlDocumentationContent = originatingPropertyInfo.GetDocumentation();
         } else if (originatingMemberInfo is EventInfo originatingEventInfo) {
             xmlDocumentationContent = originatingEventInfo.GetDocumentation();
+        } else if (originatingMemberInfo is ParameterlessStructConstructorInfo) {
+            xmlDocumentationContent = null;
         } else if (originatingMemberInfo is ConstructorInfo originatingConstructorInfo) {
             xmlDocumentationContent = originatingConstructorInfo.GetDocumentation();
         } else if (originatingMemberInfo is MethodInfo originatingMethodInfo) {
@@ -523,7 +525,12 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         
         var declarationComment = xmlDocumentationContent
             ?.GetFormattedDocumentationComment();
-        
+
+        if (declarationComment is null &&
+            originatingMemberInfo is ParameterlessStructConstructorInfo) {
+            declarationComment = $"/// Initializes a new instance of the {declaringType.GetFullNameOrName()} struct.";
+        }
+
         string declarationWithComment;
 
         if (!string.IsNullOrEmpty(declarationComment)) {

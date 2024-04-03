@@ -39,6 +39,18 @@ final class SystemGuidTests: XCTestCase {
         XCTAssertEqual("00000000-0000-0000-0000-000000000000", emptyGuidString)
     }
     
+    func testSystemGuidParameterlessConstructor() throws {
+        let guid = try System_Guid()
+        let emptyGuid = System_Guid.empty
+        
+        XCTAssertTrue(guid == emptyGuid)
+        
+        let guidString = try guid.toString().string()
+        let emptyGuidString = try emptyGuid.toString().string()
+        
+        XCTAssertEqual(guidString.lowercased(), emptyGuidString.lowercased())
+    }
+    
     func testSystemGuidParsing() throws {
         let uuid = UUID()
         
