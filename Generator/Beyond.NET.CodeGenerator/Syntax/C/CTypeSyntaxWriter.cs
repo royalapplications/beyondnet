@@ -88,8 +88,8 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
 
     private string WriteTypeDef(string cTypeName)
     {
-        // TODO
-        return $"typedef void* {cTypeName}_t;";
+        return Builder.TypeAliasTypeDef($"{cTypeName}_t", "void*")
+            .ToString();
     }
 
     private string WriteDelegateTypeDefs(
@@ -147,7 +147,6 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         string cFunctionTypeName = $"{cTypeName}_CFunction_t";
         string cDestructorFunctionTypeName = $"{cTypeName}_CDestructorFunction_t";
         
-        // TODO
         sb.AppendLine($"typedef void (*{cDestructorFunctionTypeName})({contextTypeName} context);");
         sb.AppendLine();
 
@@ -160,7 +159,6 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
             cReturnTypeName = returnTypeDescriptor.GetTypeName(CodeLanguage.C, true);            
         }
 
-        // TODO
         sb.AppendLine($"typedef {cReturnTypeName} (*{cFunctionTypeName})(");
 
         List<string> parameters = new();

@@ -13,4 +13,16 @@ public struct Builder
             comment
         );
     }
+    
+    public static Builders.TypeAliasTypeDef TypeAliasTypeDef
+    (
+        string aliasTypeName,
+        string originalTypeName
+    )
+    {
+        return new(
+            aliasTypeName,
+            originalTypeName
+        );
+    }
 }
