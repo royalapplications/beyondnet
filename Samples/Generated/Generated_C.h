@@ -1,5 +1,5 @@
-// Number of generated types: 1808
-// Number of generated members: 6072
+// Number of generated types: 1812
+// Number of generated members: 6091
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -5619,6 +5619,14 @@ typedef void* Beyond_NET_Sample_GenericTests_SimpleKeyValuePair_t;
 // Type "T" was skipped. Reason: It has no full name.
 
 typedef void* Beyond_NET_Sample_IndexerTests_t;
+
+typedef void* Beyond_NET_Sample_IInterface1_t;
+
+typedef void* Beyond_NET_Sample_IInterface2_t;
+
+typedef void* Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces_t;
+
+typedef void* Beyond_NET_Sample_TypeThatUsesInterfaces_t;
 
 typedef void* Beyond_NET_Sample_NullabilityTests_t;
 
@@ -45688,6 +45696,130 @@ Beyond_NET_Sample_IndexerTests_Destroy(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.IndexerTests
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.IInterface1
+void /* System.Void */
+Beyond_NET_Sample_IInterface1_MethodInIInterface1(
+	Beyond_NET_Sample_IInterface1_t _Nullable /* Beyond.NET.Sample.IInterface1 */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_IInterface1_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_IInterface1_Destroy(
+	Beyond_NET_Sample_IInterface1_t _Nullable /* Beyond.NET.Sample.IInterface1 */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.IInterface1
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.IInterface2
+int32_t /* System.Int32 */
+Beyond_NET_Sample_IInterface2_PropertyInIInterface2_Get(
+	Beyond_NET_Sample_IInterface2_t _Nullable /* Beyond.NET.Sample.IInterface2 */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_IInterface2_PropertyInIInterface2_Set(
+	Beyond_NET_Sample_IInterface2_t _Nullable /* Beyond.NET.Sample.IInterface2 */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_IInterface2_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_IInterface2_Destroy(
+	Beyond_NET_Sample_IInterface2_t _Nullable /* Beyond.NET.Sample.IInterface2 */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.IInterface2
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.TypeThatImplementsMultipleInterfaces
+void /* System.Void */
+Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces_MethodInIInterface1(
+	Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatImplementsMultipleInterfaces */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces_t _Nonnull /* Beyond.NET.Sample.TypeThatImplementsMultipleInterfaces */
+Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces_PropertyInIInterface2_Get(
+	Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatImplementsMultipleInterfaces */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces_PropertyInIInterface2_Set(
+	Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatImplementsMultipleInterfaces */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces_Destroy(
+	Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatImplementsMultipleInterfaces */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.TypeThatImplementsMultipleInterfaces
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.TypeThatUsesInterfaces
+void /* System.Void */
+Beyond_NET_Sample_TypeThatUsesInterfaces_CallMethod1InIInterface1(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatUsesInterfaces */ self,
+	Beyond_NET_Sample_IInterface1_t _Nonnull /* Beyond.NET.Sample.IInterface1 */ interface1,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_TypeThatUsesInterfaces_SetPropertyInIInterface2(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatUsesInterfaces */ self,
+	Beyond_NET_Sample_IInterface2_t _Nonnull /* Beyond.NET.Sample.IInterface2 */ interface2,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+Beyond_NET_Sample_TypeThatUsesInterfaces_GetPropertyInIInterface2(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatUsesInterfaces */ self,
+	Beyond_NET_Sample_IInterface2_t _Nonnull /* Beyond.NET.Sample.IInterface2 */ interface2,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_TypeThatUsesInterfaces_t _Nonnull /* Beyond.NET.Sample.TypeThatUsesInterfaces */
+Beyond_NET_Sample_TypeThatUsesInterfaces_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_TypeThatUsesInterfaces_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_TypeThatUsesInterfaces_Destroy(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatUsesInterfaces */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.TypeThatUsesInterfaces
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.NullabilityTests
 System_String_t _Nonnull /* System.String */
