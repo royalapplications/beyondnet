@@ -10,7 +10,12 @@ public interface IInterface2
     int PropertyInIInterface2 { get; set; }
 }
 
-public class TypeThatImplementsMultipleInterfaces: IInterface1, IInterface2
+public interface IInterface3 : IInterface1, IInterface2
+{
+    void MethodInIInterface3();
+}
+
+public class TypeThatImplementsMultipleInterfaces: IInterface1, IInterface2, IInterface3
 {
     public void MethodInIInterface1()
     {
@@ -33,6 +38,11 @@ public class TypeThatImplementsMultipleInterfaces: IInterface1, IInterface2
             _propertyInIInterface2 = value;
         }
     }
+
+    public void MethodInIInterface3()
+    {
+        Console.WriteLine($"{nameof(MethodInIInterface3)} called through {nameof(TypeThatImplementsMultipleInterfaces)}");
+    }
 }
 
 public class TypeThatUsesInterfaces
@@ -50,5 +60,10 @@ public class TypeThatUsesInterfaces
     public int GetPropertyInIInterface2(IInterface2 interface2)
     {
         return interface2.PropertyInIInterface2;
+    }
+    
+    public void CallMethod1InIInterface3(IInterface3 interface3)
+    {
+        interface3.MethodInIInterface3();
     }
 }

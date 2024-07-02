@@ -1,5 +1,5 @@
-// Number of generated types: 1812
-// Number of generated members: 6091
+// Number of generated types: 1813
+// Number of generated members: 6096
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -5623,6 +5623,8 @@ typedef void* Beyond_NET_Sample_IndexerTests_t;
 typedef void* Beyond_NET_Sample_IInterface1_t;
 
 typedef void* Beyond_NET_Sample_IInterface2_t;
+
+typedef void* Beyond_NET_Sample_IInterface3_t;
 
 typedef void* Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces_t;
 
@@ -45743,9 +45745,34 @@ Beyond_NET_Sample_IInterface2_Destroy(
 
 #pragma mark - END APIs of Beyond.NET.Sample.IInterface2
 
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.IInterface3
+void /* System.Void */
+Beyond_NET_Sample_IInterface3_MethodInIInterface3(
+	Beyond_NET_Sample_IInterface3_t _Nullable /* Beyond.NET.Sample.IInterface3 */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_IInterface3_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_IInterface3_Destroy(
+	Beyond_NET_Sample_IInterface3_t _Nullable /* Beyond.NET.Sample.IInterface3 */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.IInterface3
+
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.TypeThatImplementsMultipleInterfaces
 void /* System.Void */
 Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces_MethodInIInterface1(
+	Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatImplementsMultipleInterfaces */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces_MethodInIInterface3(
 	Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatImplementsMultipleInterfaces */ self,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
@@ -45801,6 +45828,13 @@ int32_t /* System.Int32 */
 Beyond_NET_Sample_TypeThatUsesInterfaces_GetPropertyInIInterface2(
 	Beyond_NET_Sample_TypeThatUsesInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatUsesInterfaces */ self,
 	Beyond_NET_Sample_IInterface2_t _Nonnull /* Beyond.NET.Sample.IInterface2 */ interface2,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_TypeThatUsesInterfaces_CallMethod1InIInterface3(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatUsesInterfaces */ self,
+	Beyond_NET_Sample_IInterface3_t _Nonnull /* Beyond.NET.Sample.IInterface3 */ interface3,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
