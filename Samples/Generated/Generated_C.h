@@ -1,5 +1,5 @@
-// Number of generated types: 1813
-// Number of generated members: 6096
+// Number of generated types: 1815
+// Number of generated members: 6102
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -5622,6 +5622,8 @@ typedef void* Beyond_NET_Sample_IndexerTests_t;
 
 typedef void* Beyond_NET_Sample_IInterface1_t;
 
+typedef void* Beyond_NET_Sample_IInterface1_DelegateAdapter_t;
+
 typedef void* Beyond_NET_Sample_IInterface2_t;
 
 typedef void* Beyond_NET_Sample_IInterface3_t;
@@ -5950,6 +5952,14 @@ typedef void (*Beyond_NET_Sample_EventTests_ValueChangedDelegate_CFunction_t)(
 	void* context,
 	System_Object_t _Nonnull sender,
 	int32_t newValue
+);
+
+
+typedef void* Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_t;
+typedef void (*Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_CDestructorFunction_t)(void* context);
+
+typedef void (*Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_CFunction_t)(
+	void* context
 );
 
 
@@ -45718,6 +45728,31 @@ Beyond_NET_Sample_IInterface1_Destroy(
 
 #pragma mark - END APIs of Beyond.NET.Sample.IInterface1
 
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.IInterface1_DelegateAdapter
+void /* System.Void */
+Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1(
+	Beyond_NET_Sample_IInterface1_DelegateAdapter_t _Nullable /* Beyond.NET.Sample.IInterface1_DelegateAdapter */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_IInterface1_DelegateAdapter_t _Nonnull /* Beyond.NET.Sample.IInterface1_DelegateAdapter */
+Beyond_NET_Sample_IInterface1_DelegateAdapter_Create(
+	Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_t _Nonnull /* Beyond.NET.Sample.IInterface1_DelegateAdapter.MethodInIInterface1_Delegate */ methodInIInterface1_Adapter,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_IInterface1_DelegateAdapter_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_IInterface1_DelegateAdapter_Destroy(
+	Beyond_NET_Sample_IInterface1_DelegateAdapter_t _Nullable /* Beyond.NET.Sample.IInterface1_DelegateAdapter */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.IInterface1_DelegateAdapter
+
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.IInterface2
 int32_t /* System.Int32 */
 Beyond_NET_Sample_IInterface2_PropertyInIInterface2_Get(
@@ -51015,6 +51050,46 @@ Beyond_NET_Sample_EventTests_ValueChangedDelegate_Destroy(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.EventTests.ValueChangedDelegate
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.IInterface1_DelegateAdapter.MethodInIInterface1_Delegate
+Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_t _Nonnull /* Beyond.NET.Sample.IInterface1_DelegateAdapter.MethodInIInterface1_Delegate */
+Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_Create(
+	const void* context,
+	Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_CFunction_t function,
+	Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_CDestructorFunction_t destructorFunction
+);
+
+void
+Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_Invoke(
+	Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_t /* Beyond.NET.Sample.IInterface1_DelegateAdapter.MethodInIInterface1_Delegate */ self, System_Exception_t* /* System.Exception */ outException
+);
+
+const void*
+Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_Context_Get(
+	Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_t /* Beyond.NET.Sample.IInterface1_DelegateAdapter.MethodInIInterface1_Delegate */ self
+);
+
+Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_CFunction_t
+Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_CFunction_Get(
+	Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_t /* Beyond.NET.Sample.IInterface1_DelegateAdapter.MethodInIInterface1_Delegate */ self
+);
+
+Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_CDestructorFunction_t
+Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_CDestructorFunction_Get(
+	Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_t /* Beyond.NET.Sample.IInterface1_DelegateAdapter.MethodInIInterface1_Delegate */ self
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_Destroy(
+	Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_t _Nullable /* Beyond.NET.Sample.IInterface1_DelegateAdapter.MethodInIInterface1_Delegate */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.IInterface1_DelegateAdapter.MethodInIInterface1_Delegate
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Person.NumberOfChildrenChangedDelegate
 Beyond_NET_Sample_Person_NumberOfChildrenChangedDelegate_t _Nonnull /* Beyond.NET.Sample.Person.NumberOfChildrenChangedDelegate */

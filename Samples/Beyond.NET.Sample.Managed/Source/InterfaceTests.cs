@@ -1,8 +1,26 @@
 namespace Beyond.NET.Sample;
 
+// This is declared by the user.
 public interface IInterface1
 {
     void MethodInIInterface1();
+}
+
+// This should be auto-generated to allow Swift to provide implementations for .NET interfaces.
+public class IInterface1_DelegateAdapter : IInterface1
+{
+    public delegate void MethodInIInterface1_Delegate();
+    private MethodInIInterface1_Delegate _MethodInIInterface1_Adapter;
+
+    public IInterface1_DelegateAdapter(MethodInIInterface1_Delegate methodInIInterface1_Adapter)
+    {
+        _MethodInIInterface1_Adapter = methodInIInterface1_Adapter;
+    }
+    
+    public void MethodInIInterface1()
+    {
+        _MethodInIInterface1_Adapter();
+    }
 }
 
 public interface IInterface2
@@ -45,6 +63,7 @@ public class TypeThatImplementsMultipleInterfaces: IInterface1, IInterface2, IIn
     }
 }
 
+// This is declared by the user.
 public class TypeThatUsesInterfaces
 {
     public void CallMethod1InIInterface1(IInterface1 interface1)
