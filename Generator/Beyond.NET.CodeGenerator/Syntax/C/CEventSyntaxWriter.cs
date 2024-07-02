@@ -42,7 +42,8 @@ public class CEventSyntaxWriter: CMethodSyntaxWriter, IEventSyntaxWriter
         Type? eventHandlerType = @event.EventHandlerType;
         
         if (eventHandlerType is null) {
-            return $"// TODO: {eventName} - Event without Event Handler Type";
+            return Builder.SingleLineComment($"TODO: {eventName} - Event without Event Handler Type")
+                .ToString();
         }
 
         MethodInfo? adderMethod = @event.GetAddMethod(false);

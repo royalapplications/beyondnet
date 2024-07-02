@@ -43,11 +43,15 @@ public class CCodeGenerator: ICodeGenerator
                 string reason = kvp.Value;
     
                 string typeName = type.FullName ?? type.Name;
-    
-                unsupportedTypesSection.Code.AppendLine($"// Unsupported Type \"{typeName}\": {reason}");
+
+                unsupportedTypesSection.Code.AppendLine(
+                    Builder.SingleLineComment($"Unsupported Type \"{typeName}\": {reason}").ToString()
+                );
             }
         } else {
-            unsupportedTypesSection.Code.AppendLine("// Omitted due to settings");
+            unsupportedTypesSection.Code.AppendLine(
+                Builder.SingleLineComment("Omitted due to settings").ToString()
+            );
         }
 
         CTypeSyntaxWriter typeSyntaxWriter = new(Settings);

@@ -138,7 +138,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                     if (nonByRefParameterType.IsArray) {
                         generatedName = string.Empty;
                         
-                        return "// TODO: Generic Methods with out/in/ref parameters that are arrays are not supported";    
+                        return Builder.SingleLineComment("TODO: Generic Methods with out/in/ref parameters that are arrays are not supported").ToString();    
                     }
                 }
             }
