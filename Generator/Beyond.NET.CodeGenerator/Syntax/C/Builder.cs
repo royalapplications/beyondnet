@@ -1,10 +1,10 @@
-using Beyond.NET.CodeGenerator.Syntax.C.Declaration;
+using Beyond.NET.CodeGenerator.Syntax.C.Builders;
 
 namespace Beyond.NET.CodeGenerator.Syntax.C;
 
 public struct Builder
 {
-    public static Builders.SingleLineComment SingleLineComment
+    public static SingleLineComment SingleLineComment
     (
         string comment
     )
@@ -14,7 +14,7 @@ public struct Builder
         );
     }
     
-    public static Builders.TypeAliasTypeDef TypeAliasTypeDef
+    public static TypeAliasTypeDef TypeAliasTypeDef
     (
         string aliasTypeName,
         string originalTypeName
@@ -24,5 +24,10 @@ public struct Builder
             aliasTypeName,
             originalTypeName
         );
+    }
+
+    public static PragmaMark PragmaMark()
+    {
+        return new();
     }
 }

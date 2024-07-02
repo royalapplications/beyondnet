@@ -308,7 +308,12 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
 
         bool isDelegate = type.IsDelegate();
 
-        sb.AppendLine($"#pragma mark - BEGIN APIs of {fullTypeName}");
+        sb.AppendLine(
+            Builder.PragmaMark()
+                .Separator()
+                .Comment($"BEGIN APIs of {fullTypeName}")
+                .ToString()
+        );
 
         if (isDelegate) {
             TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
@@ -375,7 +380,12 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
             }
         }
 
-        sb.AppendLine($"#pragma mark - END APIs of {fullTypeName}");
+        sb.AppendLine(
+            Builder.PragmaMark()
+                .Separator()
+                .Comment($"END APIs of {fullTypeName}")
+                .ToString()
+        );
 
         return sb.ToString();
     }
