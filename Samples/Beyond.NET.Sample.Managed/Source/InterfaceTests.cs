@@ -7,14 +7,15 @@ public interface IInterface1
 }
 
 // This should be auto-generated to allow Swift to provide implementations for .NET interfaces.
-public class IInterface1_DelegateAdapter : IInterface1
+// NOTE: Right now, every struct gets an auto-generated parameterless constructor. For these special interface delegate adapters we should omit that to prevent misuse.
+public readonly struct IInterface1_DelegateAdapter : IInterface1
 {
     public delegate void MethodInIInterface1_Delegate();
-    private MethodInIInterface1_Delegate _MethodInIInterface1_Adapter;
+    private readonly MethodInIInterface1_Delegate _MethodInIInterface1_Adapter;
 
     public IInterface1_DelegateAdapter(MethodInIInterface1_Delegate methodInIInterface1_Adapter)
     {
-        _MethodInIInterface1_Adapter = methodInIInterface1_Adapter;
+        _MethodInIInterface1_Adapter = methodInIInterface1_Adapter ?? throw new ArgumentNullException(nameof(methodInIInterface1_Adapter));
     }
     
     public void MethodInIInterface1()

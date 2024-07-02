@@ -1,5 +1,5 @@
 // Number of generated types: 1815
-// Number of generated members: 6102
+// Number of generated members: 6103
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -45731,13 +45731,18 @@ Beyond_NET_Sample_IInterface1_Destroy(
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.IInterface1_DelegateAdapter
 void /* System.Void */
 Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1(
-	Beyond_NET_Sample_IInterface1_DelegateAdapter_t _Nullable /* Beyond.NET.Sample.IInterface1_DelegateAdapter */ self,
+	Beyond_NET_Sample_IInterface1_DelegateAdapter_t _Nonnull /* Beyond.NET.Sample.IInterface1_DelegateAdapter */ self,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 Beyond_NET_Sample_IInterface1_DelegateAdapter_t _Nonnull /* Beyond.NET.Sample.IInterface1_DelegateAdapter */
 Beyond_NET_Sample_IInterface1_DelegateAdapter_Create(
 	Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_t _Nonnull /* Beyond.NET.Sample.IInterface1_DelegateAdapter.MethodInIInterface1_Delegate */ methodInIInterface1_Adapter,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_IInterface1_DelegateAdapter_t _Nonnull /* Beyond.NET.Sample.IInterface1_DelegateAdapter */
+Beyond_NET_Sample_IInterface1_DelegateAdapter_Create_1(
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -45748,7 +45753,7 @@ Beyond_NET_Sample_IInterface1_DelegateAdapter_TypeOf(
 
 void /* System.Void */
 Beyond_NET_Sample_IInterface1_DelegateAdapter_Destroy(
-	Beyond_NET_Sample_IInterface1_DelegateAdapter_t _Nullable /* Beyond.NET.Sample.IInterface1_DelegateAdapter */ self
+	Beyond_NET_Sample_IInterface1_DelegateAdapter_t _Nonnull /* Beyond.NET.Sample.IInterface1_DelegateAdapter */ self
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.IInterface1_DelegateAdapter
