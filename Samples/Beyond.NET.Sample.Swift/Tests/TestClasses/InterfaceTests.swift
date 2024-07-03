@@ -12,20 +12,33 @@ final class InterfaceTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testInterfaces() throws {
+    func testPassingInInterfaces() throws {
         let typeThatImplementsMultipleInterfaces = try Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces()
         let typeThatUsesInterfaces = try Beyond_NET_Sample_TypeThatUsesInterfaces()
         
-        let interface1: Beyond_NET_Sample_IInterface1 = try typeThatImplementsMultipleInterfaces.castTo()
-        let interface2: Beyond_NET_Sample_IInterface2 = try typeThatImplementsMultipleInterfaces.castTo()
-        let interface3: Beyond_NET_Sample_IInterface3 = try typeThatImplementsMultipleInterfaces.castTo()
-        
         let val: Int32 = 5
-        try typeThatUsesInterfaces.callMethod1InIInterface1(interface1)
-        try typeThatUsesInterfaces.setPropertyInIInterface2(interface2, val)
-        let retVal = try typeThatUsesInterfaces.getPropertyInIInterface2(interface2)
+        try typeThatUsesInterfaces.callMethod1InIInterface1(typeThatImplementsMultipleInterfaces)
+        try typeThatUsesInterfaces.setPropertyInIInterface2(typeThatImplementsMultipleInterfaces, val)
+        let retVal = try typeThatUsesInterfaces.getPropertyInIInterface2(typeThatImplementsMultipleInterfaces)
         XCTAssertEqual(val, retVal)
-        try typeThatUsesInterfaces.callMethod1InIInterface3(interface3)
+        try typeThatUsesInterfaces.callMethod1InIInterface3(typeThatImplementsMultipleInterfaces)
+    }
+    
+    func testRetrievingInterfaces() throws {
+        let typeThatUsesInterfaces = try Beyond_NET_Sample_TypeThatUsesInterfaces()
+        
+        let interface1 = try typeThatUsesInterfaces.getTypeThatImplementsIInterface1()
+        try interface1.methodInIInterface1()
+        
+        let interface2 = try typeThatUsesInterfaces.getTypeThatImplementsIInterface2()
+        try interface2.propertyInIInterface2_set(42)
+        
+        let interface3 = try typeThatUsesInterfaces.getTypeThatImplementsIInterface3()
+        try interface3.methodInIInterface3()
+        
+        XCTAssertTrue(interface1.is(Beyond_NET_Sample_IInterface1_DNInterface.typeOf))
+        XCTAssertTrue(interface2.is(Beyond_NET_Sample_IInterface2_DNInterface.typeOf))
+        XCTAssertTrue(interface3.is(Beyond_NET_Sample_IInterface3_DNInterface.typeOf))
     }
     
     func testInterfaceAdapter() throws {
@@ -41,7 +54,7 @@ final class InterfaceTests: XCTestCase {
             methodInIInterface1CalledExpectation.fulfill()
         }))
         
-        try typeThatUsesInterfaces.callMethod1InIInterface1(try interface1Adapter.castTo())
+        try typeThatUsesInterfaces.callMethod1InIInterface1(interface1Adapter)
         
         wait(for: [ methodInIInterface1CalledExpectation ])
     }

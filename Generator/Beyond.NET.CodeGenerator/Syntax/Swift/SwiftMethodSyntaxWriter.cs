@@ -1,5 +1,6 @@
 using System.Reflection;
 using System.Text;
+
 using Beyond.NET.CodeGenerator.Collectors;
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.Generator;
@@ -88,7 +89,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         }
         #endregion TODO: Unsupported Stuff
 
-        bool onlyWriteSignatureForProtocol = (syntaxWriterConfiguration as SwiftSyntaxWriterConfiguration)?.OnlyWriteSignatureForProtocol ?? false;
+        var interfaceGenerationPhase = (syntaxWriterConfiguration as SwiftSyntaxWriterConfiguration)?.InterfaceGenerationPhase ?? SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.NoInterface;
         
         MethodBase? methodBase = memberInfo as MethodBase;
         MethodInfo? methodInfo = methodBase as MethodInfo;
@@ -389,8 +390,18 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
 
         #region Func Declaration
         string? memberImpl;
+
+        bool needImpl;
+
+        if (interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.Protocol ||
+            interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ImplementationClass) {
+            needImpl = memberKind == MemberKind.Destructor ||
+                       memberKind == MemberKind.TypeOf;
+        } else {
+            needImpl = true;
+        }
         
-        if (onlyWriteSignatureForProtocol) {
+        if (!needImpl) {
             memberImpl = null;
         } else {
             memberImpl = WriteMethodImplementation(
@@ -432,21 +443,29 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
 
         string declaration;
 
+        SwiftVisibilities memberVisibility;
+
+        if (interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.Protocol) {
+            memberVisibility = SwiftVisibilities.None;
+        } else {
+            if (memberKind == MemberKind.Destructor) {
+                memberVisibility = SwiftVisibilities.Internal;
+            } else {
+                memberVisibility = SwiftVisibilities.Public;
+            }
+        }
+
         if (memberKind == MemberKind.Constructor) {
             declaration = Builder.Initializer()
                 .Convenience()
-                .Visibility(onlyWriteSignatureForProtocol 
-                    ? SwiftVisibilities.None
-                    : SwiftVisibilities.Public)
+                .Visibility(memberVisibility)
                 .Parameters(methodSignatureParameters)
                 .Throws(mayThrow)
                 .Implementation(memberImpl)
                 .ToString();
         } else if (memberKind == MemberKind.Destructor) {
             declaration = Builder.Func(methodNameSwift)
-                .Visibility(onlyWriteSignatureForProtocol
-                    ? SwiftVisibilities.None
-                    : SwiftVisibilities.Internal)
+                .Visibility(memberVisibility)
                 .Override()
                 .Parameters(methodSignatureParameters)
                 .Throws(mayThrow)
@@ -460,9 +479,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 : throw new Exception("A property must have a return type");
 
             declaration = Builder.GetOnlyProperty(methodNameSwift, propTypeName)
-                .Visibility(onlyWriteSignatureForProtocol 
-                    ? SwiftVisibilities.None
-                    : SwiftVisibilities.Public)
+                .Visibility(memberVisibility)
                 .TypeAttachmentKind(isEnum 
                     ? SwiftTypeAttachmentKinds.Static
                     : SwiftTypeAttachmentKinds.Class)
@@ -476,11 +493,9 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 : throw new Exception("A property must have a return type");
 
             declaration = Builder.GetOnlyProperty(methodNameSwift, propTypeName)
-                .Visibility(onlyWriteSignatureForProtocol
-                    ? SwiftVisibilities.None
-                    : SwiftVisibilities.Public)
+                .Visibility(memberVisibility)
                 .TypeAttachmentKind(isStaticMethod
-                    ? SwiftTypeAttachmentKinds.Class
+                    ? interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.Protocol || interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ProtocolExtensionForDefaultImplementations ? SwiftTypeAttachmentKinds.Static : SwiftTypeAttachmentKinds.Class
                     : SwiftTypeAttachmentKinds.Instance)
                 .Override(treatAsOverridden)
                 .Throws(mayThrow)
@@ -488,11 +503,9 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 .ToString();
         } else {
             declaration = Builder.Func(methodNameSwift)
-                .Visibility(onlyWriteSignatureForProtocol 
-                    ? SwiftVisibilities.None
-                    : SwiftVisibilities.Public)
+                .Visibility(memberVisibility)
                 .TypeAttachmentKind(isStaticMethod 
-                    ? SwiftTypeAttachmentKinds.Class
+                    ? interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.Protocol || interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ProtocolExtensionForDefaultImplementations ? SwiftTypeAttachmentKinds.Static : SwiftTypeAttachmentKinds.Class
                     : SwiftTypeAttachmentKinds.Instance)
                 .Override(treatAsOverridden)
                 .Parameters(methodSignatureParameters)

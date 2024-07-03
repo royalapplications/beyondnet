@@ -40,12 +40,15 @@ public static class Nullability_Extensions
 
 public class TypeDescriptor
 {
+    public static string SwiftDotNETInterfaceImplementationSuffix = "_DNInterface";
+    
     public Type ManagedType { get; }
 
     public bool IsPrimitive => ManagedType.IsPrimitive;
     public bool IsReferenceType => ManagedType.IsReferenceType() && !IsReadOnlyStructOfByte;
     public bool IsStruct => ManagedType.IsStruct() || IsReadOnlyStructOfByte;
     public bool IsValueType => ManagedType.IsValueType || IsReadOnlyStructOfByte;
+    public bool IsInterface => ManagedType.IsInterface;
     public bool IsEnum => ManagedType.IsEnum;
     public bool IsBool => ManagedType.IsBoolean();
     public bool IsArray => ManagedType.IsArray;
@@ -417,7 +420,11 @@ public class TypeDescriptor
             if (IsEnum) {
                 return $"{swiftTypeName}(cValue: {{0}})";
             } else if (RequiresNativePointer) {
-                return $"{swiftTypeName}(handle: {{0}})";
+                var suffix = IsInterface 
+                    ? SwiftDotNETInterfaceImplementationSuffix
+                    : string.Empty;
+                
+                return $"{swiftTypeName}{suffix}(handle: {{0}})";
             } else {
                 return null;
             }

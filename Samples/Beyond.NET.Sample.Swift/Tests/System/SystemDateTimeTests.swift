@@ -80,16 +80,10 @@ final class SystemDateTimeTests: XCTestCase {
         let dateString = "\(expectedMonth)/\(expectedDay)/\(expectedYear) \(expectedHour):\(expectedMinute):\(expectedSecond)"
         let dateStringDN = dateString.dotNETString()
         
-        guard let enUSCultureAsIFormatProvider = enUSCulture.castAs(System_IFormatProvider.self) else {
-            XCTFail("System.Globalization.CultureInfo should be convertible to System.IFormatProvider")
-            
-            return
-        }
-        
         var nowDotNet = System_DateTime.minValue
         
         guard try System_DateTime.tryParse(dateStringDN,
-                                           enUSCultureAsIFormatProvider,
+                                           enUSCulture,
                                            &nowDotNet) else {
             XCTFail("System.DateTime.TryParse should return true, an instance as out parameter and not throw")
             

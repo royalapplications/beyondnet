@@ -86,4 +86,19 @@ public class TypeThatUsesInterfaces
     {
         interface3.MethodInIInterface3();
     }
+
+    public IInterface1 GetTypeThatImplementsIInterface1()
+    {
+        return new TypeThatImplementsMultipleInterfaces();
+    }
+    
+    public IInterface2 GetTypeThatImplementsIInterface2()
+    {
+        return new TypeThatImplementsMultipleInterfaces();
+    }
+    
+    public IInterface3 GetTypeThatImplementsIInterface3()
+    {
+        return new TypeThatImplementsMultipleInterfaces();
+    }
 }

@@ -34,7 +34,7 @@ public class SwiftCodeGenerator: ICodeGenerator
         SourceCodeWriter writer
     )
     {
-        SwiftSyntaxWriterConfiguration syntaxWriterConfiguration = new();
+        SwiftSyntaxWriterConfiguration defaultSyntaxWriterConfiguration = new();
         
         SourceCodeSection headerSection = writer.AddSection("Header");
         SourceCodeSection utilsSection = writer.AddSection("Utils");
@@ -78,18 +78,41 @@ public class SwiftCodeGenerator: ICodeGenerator
         Dictionary<Type, List<GeneratedMember>> typeExtensionMembers = new();
 
         foreach (Type type in orderedTypes) {
-            // bool isInterface = type.IsInterface;
-            // syntaxWriterConfiguration.OnlyWriteSignatureForProtocol = isInterface;
+            bool isInterface = type.IsInterface;
             
             Syntax.State state = new(CSharpUnmanagedResult, CResult);
             
             string typeCode = typeSyntaxWriter.Write(
                 type,
                 state,
-                syntaxWriterConfiguration
+                isInterface ? new SwiftSyntaxWriterConfiguration {
+                    InterfaceGenerationPhase = SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.Protocol
+                } : defaultSyntaxWriterConfiguration
             );
             
             apisSection.Code.AppendLine(typeCode);
+            
+            if (isInterface) {
+                string protocolExtensionCode = typeSyntaxWriter.Write(
+                    type,
+                    state,
+                    new SwiftSyntaxWriterConfiguration {
+                        InterfaceGenerationPhase = SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ProtocolExtensionForDefaultImplementations
+                    }
+                );
+                
+                apisSection.Code.AppendLine(protocolExtensionCode);
+                
+                string implementationClassCode = typeSyntaxWriter.Write(
+                    type,
+                    state,
+                    new SwiftSyntaxWriterConfiguration {
+                        InterfaceGenerationPhase = SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ImplementationClass
+                    }
+                );
+                
+                apisSection.Code.AppendLine(implementationClassCode);
+            }
 
             if (state.SkippedTypes.Contains(type)) {
                 continue;

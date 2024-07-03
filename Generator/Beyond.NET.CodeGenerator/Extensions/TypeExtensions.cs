@@ -295,4 +295,27 @@ internal static class TypeExtensions
 
         return hasIt;
     }
+    
+    internal static bool DoesAnyBaseTypeImplementInterface(
+        this Type derivedType,
+        Type interfaceType
+    )
+    {
+        if (!interfaceType.IsInterface) {
+            throw new ArgumentException("The provided type is not an interface.", nameof(interfaceType));
+        }
+
+        // Iterate through the base types
+        Type? currentType = derivedType.BaseType;
+        
+        while (currentType is not null) {
+            if (currentType.GetInterfaces().Contains(interfaceType)) {
+                return true;
+            }
+            
+            currentType = currentType.BaseType;
+        }
+
+        return false;
+    }
 }

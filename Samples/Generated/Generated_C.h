@@ -1,5 +1,5 @@
 // Number of generated types: 1815
-// Number of generated members: 6103
+// Number of generated members: 6106
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -45875,6 +45875,24 @@ void /* System.Void */
 Beyond_NET_Sample_TypeThatUsesInterfaces_CallMethod1InIInterface3(
 	Beyond_NET_Sample_TypeThatUsesInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatUsesInterfaces */ self,
 	Beyond_NET_Sample_IInterface3_t _Nonnull /* Beyond.NET.Sample.IInterface3 */ interface3,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_IInterface1_t _Nonnull /* Beyond.NET.Sample.IInterface1 */
+Beyond_NET_Sample_TypeThatUsesInterfaces_GetTypeThatImplementsIInterface1(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatUsesInterfaces */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_IInterface2_t _Nonnull /* Beyond.NET.Sample.IInterface2 */
+Beyond_NET_Sample_TypeThatUsesInterfaces_GetTypeThatImplementsIInterface2(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatUsesInterfaces */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_IInterface3_t _Nonnull /* Beyond.NET.Sample.IInterface3 */
+Beyond_NET_Sample_TypeThatUsesInterfaces_GetTypeThatImplementsIInterface3(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatUsesInterfaces */ self,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 

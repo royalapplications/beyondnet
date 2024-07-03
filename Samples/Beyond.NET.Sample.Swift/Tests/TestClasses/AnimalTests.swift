@@ -56,14 +56,13 @@ final class AnimalTests: XCTestCase {
 	
 	func testCustomAnimalCreator() throws {
 		let creatorFunc: Beyond_NET_Sample_AnimalCreatorDelegate.ClosureType = { innerAnimalName in
-			guard let animal = try? Beyond_NET_Sample_GenericAnimal(innerAnimalName),
-				  let animalAsIAnimal = try? animal.castTo(Beyond_NET_Sample_IAnimal.self) else {
+			guard let animal = try? Beyond_NET_Sample_GenericAnimal(innerAnimalName) else {
 				XCTFail("GenericAnimal ctor should not throw and return an instance")
 
 				return nil
 			}
 			
-			return animalAsIAnimal
+			return animal
 		}
 
 		let creatorDelegate = Beyond_NET_Sample_AnimalCreatorDelegate(creatorFunc)
