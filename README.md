@@ -592,6 +592,13 @@ let systemStringRet = swiftString.dotNETString()
 
 
 
+## Interfaces
+
+In Swift, .NET interfaces are exposed as protocols and .NET types that implement interfaces are generated as protocol conforming types.
+Since Swift doesn't allow extending protocol metatypes, if you want to get the .NET type of a particular interface, you'll have to use `IInterfaceName_DNInterface.typeOf` instead of just `IInterfaceName.typeOf`. Apart from that, the Swift bindings for .NET interfaces should act and feel very much like native Swift protocols.
+
+
+
 ## A word (or two) about generics
 
 .NET generics are a wonderful feature. If you're not trying to expose it to other languages, that is.
