@@ -307,6 +307,16 @@ public class SwiftCodeGenerator: ICodeGenerator
 
             sbTypeAliases.AppendLine(typeDocumentationComment);
             sbTypeAliases.AppendLine(typeAlias);
+
+            if (type.IsInterface) {
+                var interfaceImplTypeAlias = Builder.TypeAlias($"{swiftTypeNameWithoutNamespace}{TypeDescriptor.SwiftDotNETInterfaceImplementationSuffix}", $"{swiftTypeName}{TypeDescriptor.SwiftDotNETInterfaceImplementationSuffix}")
+                    .Public()
+                    .Build()
+                    .ToString();
+            
+                sbTypeAliases.AppendLine(typeDocumentationComment);
+                sbTypeAliases.AppendLine(interfaceImplTypeAlias);
+            }
         }
 
         string typeAliasesCode = sbTypeAliases.ToString();

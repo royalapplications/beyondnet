@@ -13,8 +13,8 @@ final class InterfaceTests: XCTestCase {
     }
     
     func testPassingInInterfaces() throws {
-        let typeThatImplementsMultipleInterfaces = try Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces()
-        let typeThatUsesInterfaces = try Beyond_NET_Sample_TypeThatUsesInterfaces()
+        let typeThatImplementsMultipleInterfaces = try Beyond.NET.Sample.TypeThatImplementsMultipleInterfaces()
+        let typeThatUsesInterfaces = try Beyond.NET.Sample.TypeThatUsesInterfaces()
         
         let val: Int32 = 5
         try typeThatUsesInterfaces.callMethod1InIInterface1(typeThatImplementsMultipleInterfaces)
@@ -25,7 +25,7 @@ final class InterfaceTests: XCTestCase {
     }
     
     func testRetrievingInterfaces() throws {
-        let typeThatUsesInterfaces = try Beyond_NET_Sample_TypeThatUsesInterfaces()
+        let typeThatUsesInterfaces = try Beyond.NET.Sample.TypeThatUsesInterfaces()
         
         let interface1 = try typeThatUsesInterfaces.getTypeThatImplementsIInterface1()
         try interface1.methodInIInterface1()
@@ -36,19 +36,19 @@ final class InterfaceTests: XCTestCase {
         let interface3 = try typeThatUsesInterfaces.getTypeThatImplementsIInterface3()
         try interface3.methodInIInterface3()
         
-        XCTAssertTrue(interface1.is(Beyond_NET_Sample_IInterface1_DNInterface.typeOf))
-        XCTAssertTrue(interface2.is(Beyond_NET_Sample_IInterface2_DNInterface.typeOf))
-        XCTAssertTrue(interface3.is(Beyond_NET_Sample_IInterface3_DNInterface.typeOf))
+        XCTAssertTrue(interface1.is(Beyond.NET.Sample.IInterface1_DNInterface.typeOf))
+        XCTAssertTrue(interface2.is(Beyond.NET.Sample.IInterface2_DNInterface.typeOf))
+        XCTAssertTrue(interface3.is(Beyond.NET.Sample.IInterface3_DNInterface.typeOf))
     }
     
     func testInterfaceAdapter() throws {
-        let typeThatUsesInterfaces = try Beyond_NET_Sample_TypeThatUsesInterfaces()
+        let typeThatUsesInterfaces = try Beyond.NET.Sample.TypeThatUsesInterfaces()
         
         let methodInIInterface1CalledExpectation = expectation(description: "IInterface1.MethodInIInterface1 called in Swift")
         
         // Compiler ensures we provide all interface requirements.
         // Ideally, we'd have an auto-generated Swift wrapper type that sets up all the delegate -> closure callbacks and allows us to just override the members required to satisfy the interface/protocol requirements.
-        let interface1Adapter = try Beyond_NET_Sample_IInterface1_DelegateAdapter(.init({
+        let interface1Adapter = try Beyond.NET.Sample.IInterface1_DelegateAdapter(.init({
             print("IInterface1.MethodInIInterface1 called in Swift")
             
             methodInIInterface1CalledExpectation.fulfill()
