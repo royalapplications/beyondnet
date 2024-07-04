@@ -82,12 +82,9 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             writeTypeDefinition = false;
             writeMembers = false;
             
-            var delegateInvokeMethod = type.GetDelegateInvokeMethod();
-
             string delegateTypedefCode = WriteDelegateTypeDefs(
                 configuration,
                 type,
-                delegateInvokeMethod,
                 state
             );
     

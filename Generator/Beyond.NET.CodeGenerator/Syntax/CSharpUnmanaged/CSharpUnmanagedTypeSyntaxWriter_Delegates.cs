@@ -19,13 +19,37 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         State state
     )
     {
+        var parameterInfos = invokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
+        var returnType = invokeMethod?.ReturnType ?? typeof(void);
+        
+        WriteDelegateType(
+            configuration,
+            type,
+            fullTypeName,
+            cTypeName,
+            parameterInfos,
+            returnType,
+            sb,
+            state
+        );
+    }
+    
+    private void WriteDelegateType(
+        ISyntaxWriterConfiguration? configuration,
+        Type type,
+        string fullTypeName,
+        string cTypeName,
+        ParameterInfo[] parameterInfos,
+        Type returnType,
+        StringBuilder sb,
+        State state
+    )
+    {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
 
         // TODO: Duh...
         fullTypeName = fullTypeName.Replace("+", ".");
-
-        var parameterInfos = invokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
-
+        
         foreach (var parameter in parameterInfos) {
             if (parameter.IsOut) {
                 sb.AppendLine("\t// TODO: Unsupported delegate type. Reason: Has out parameters");
@@ -108,8 +132,6 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         if (!string.IsNullOrEmpty(unmanagedParametersForInvocation)) {
             unmanagedParametersForInvocation = ", " + unmanagedParametersForInvocation;
         }
-
-        var returnType = invokeMethod?.ReturnType ?? typeof(void);
         
         if (returnType.IsByRef) {
             sb.AppendLine("\t// TODO: Unsupported delegate type. Reason: Has by ref return type");

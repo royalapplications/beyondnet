@@ -400,15 +400,63 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
+        var invokeMethod = typeDescriptor.ManagedType.GetDelegateInvokeMethod();
+
+        WriteDelegateTypeMembers(
+            typeDescriptor,
+            fullTypeName,
+            cTypeName,
+            cMemberNamePrefix,
+            invokeMethod,
+            sb,
+            state,
+            typeDescriptorRegistry
+        );
+    }
+
+    private void WriteDelegateTypeMembers(
+        TypeDescriptor typeDescriptor,
+        string fullTypeName,
+        string cTypeName,
+        string cMemberNamePrefix,
+        MethodInfo? invokeMethod,
+        StringBuilder sb,
+        State state,
+        TypeDescriptorRegistry typeDescriptorRegistry
+    )
+    {
+        var parameterInfos = invokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
+        var returnType = invokeMethod?.ReturnType ?? typeof(void);
+        
+        WriteDelegateTypeMembers(
+            typeDescriptor,
+            fullTypeName,
+            cTypeName,
+            cMemberNamePrefix,
+            parameterInfos,
+            returnType,
+            sb,
+            state,
+            typeDescriptorRegistry
+        );
+    }
+    
+    private void WriteDelegateTypeMembers(
+        TypeDescriptor typeDescriptor,
+        string fullTypeName,
+        string cTypeName,
+        string cMemberNamePrefix,
+        ParameterInfo[] parameterInfos,
+        Type returnType,
+        StringBuilder sb,
+        State state,
+        TypeDescriptorRegistry typeDescriptorRegistry
+    )
+    {
         // TODO: Generics
         
         Type type = typeDescriptor.ManagedType;
-        
-        MethodInfo? invokeMethod = typeDescriptor.ManagedType.GetDelegateInvokeMethod();
-        Type returnType = invokeMethod?.ReturnType ?? typeof(void);
         TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
-        
-        var parameterInfos = invokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
 
         if (returnType.IsByRef) {
             sb.AppendLine(Builder.SingleLineComment($"TODO: ({cTypeName}) Unsupported delegate type. Reason: Has by ref return type").ToString());

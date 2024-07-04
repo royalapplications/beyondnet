@@ -38,6 +38,22 @@ public partial class SwiftTypeSyntaxWriter
             Type type,
             MethodInfo? delegateInvokeMethod,
             TypeDescriptorRegistry typeDescriptorRegistry
+        ) : this(
+            type,
+            delegateInvokeMethod,
+            delegateInvokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>(),
+            delegateInvokeMethod?.ReturnType ?? typeof(void),
+            typeDescriptorRegistry
+        )
+        {
+        }
+        
+        internal DelegateTypeInfo(
+            Type type,
+            MethodInfo? delegateInvokeMethod,
+            ParameterInfo[] parameterInfos,
+            Type returnType,
+            TypeDescriptorRegistry typeDescriptorRegistry
         )
         {
             DelegateInvokeMethod = delegateInvokeMethod;
@@ -56,7 +72,7 @@ public partial class SwiftTypeSyntaxWriter
             CTypeName = type.CTypeName();
             SwiftTypeName = TypeDescriptor.GetTypeName(CodeLanguage.Swift, false);
             
-            ReturnType = delegateInvokeMethod?.ReturnType ?? typeof(void);
+            ReturnType = returnType;
     
             if (ReturnType.IsByRef) {
                 throw new Exception($"// TODO: ({SwiftTypeName}) Unsupported delegate type. Reason: Has by ref return type");
@@ -80,8 +96,6 @@ public partial class SwiftTypeSyntaxWriter
                 false,
                 false
             );
-            
-            var parameterInfos = delegateInvokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
             
             foreach (var parameter in parameterInfos) {
                 if (parameter.IsOut) {
@@ -144,10 +158,11 @@ public partial class SwiftTypeSyntaxWriter
     private string WriteDelegateTypeDefs(
         ISyntaxWriterConfiguration? configuration,
         Type type,
-        MethodInfo? delegateInvokeMethod,
         State state
     )
     {
+        var delegateInvokeMethod = type.GetDelegateInvokeMethod();
+        
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
 
         if (state.CSharpUnmanagedResult is null) {
