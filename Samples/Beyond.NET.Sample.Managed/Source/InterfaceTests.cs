@@ -105,6 +105,11 @@ public class TypeThatUsesInterfaces
         return new TypeThatImplementsMultipleInterfaces();
     }
     
+    public void GetTypeThatImplementsIInterface1AsOutParam(out IInterface1 interface1)
+    {
+        interface1 = new TypeThatImplementsMultipleInterfaces();
+    }
+    
     public IInterface2 GetTypeThatImplementsIInterface2()
     {
         return new TypeThatImplementsMultipleInterfaces();

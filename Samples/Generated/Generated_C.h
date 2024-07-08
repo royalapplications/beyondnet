@@ -1,5 +1,5 @@
-// Number of generated types: 1817
-// Number of generated members: 6112
+// Number of generated types: 1818
+// Number of generated members: 6113
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -5631,6 +5631,7 @@ typedef void* Beyond_NET_Sample_IInterface3_t;
 typedef void* Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces_t;
 
 typedef void* Beyond_NET_Sample_TypeThatUsesInterfaces_t;
+
 
 typedef void* Beyond_NET_Sample_NullabilityTests_t;
 
@@ -45916,6 +45917,13 @@ Beyond_NET_Sample_TypeThatUsesInterfaces_GetTypeThatImplementsIInterface1(
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
+void /* System.Void */
+Beyond_NET_Sample_TypeThatUsesInterfaces_GetTypeThatImplementsIInterface1AsOutParam(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatUsesInterfaces */ self,
+	Beyond_NET_Sample_IInterface1_t _Nonnull* _Nonnull /* Beyond.NET.Sample.IInterface1 */ interface1,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
 Beyond_NET_Sample_IInterface2_t _Nonnull /* Beyond.NET.Sample.IInterface2 */
 Beyond_NET_Sample_TypeThatUsesInterfaces_GetTypeThatImplementsIInterface2(
 	Beyond_NET_Sample_TypeThatUsesInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatUsesInterfaces */ self,
@@ -45944,6 +45952,7 @@ Beyond_NET_Sample_TypeThatUsesInterfaces_Destroy(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.TypeThatUsesInterfaces
+
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.NullabilityTests
 System_String_t _Nonnull /* System.String */

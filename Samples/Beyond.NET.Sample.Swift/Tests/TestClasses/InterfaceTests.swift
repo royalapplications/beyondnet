@@ -30,6 +30,9 @@ final class InterfaceTests: XCTestCase {
         let interface1 = try typeThatUsesInterfaces.getTypeThatImplementsIInterface1()
         try interface1.methodInIInterface1()
         
+        var interface1AsOutParam = interface1
+        try typeThatUsesInterfaces.getTypeThatImplementsIInterface1AsOutParam(&interface1AsOutParam)
+        
         let interface2 = try typeThatUsesInterfaces.getTypeThatImplementsIInterface2()
         try interface2.propertyInIInterface2_set(42)
         
@@ -37,6 +40,8 @@ final class InterfaceTests: XCTestCase {
         try interface3.methodInIInterface3()
         
         XCTAssertTrue(interface1.is(Beyond.NET.Sample.IInterface1_DNInterface.typeOf))
+        XCTAssertTrue(interface1AsOutParam.is(Beyond.NET.Sample.IInterface1_DNInterface.typeOf))
+        XCTAssertFalse(interface1 === interface1AsOutParam)
         XCTAssertTrue(interface2.is(Beyond.NET.Sample.IInterface2_DNInterface.typeOf))
         XCTAssertTrue(interface3.is(Beyond.NET.Sample.IInterface3_DNInterface.typeOf))
     }
