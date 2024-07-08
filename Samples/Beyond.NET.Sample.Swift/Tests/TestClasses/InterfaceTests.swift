@@ -58,4 +58,35 @@ final class InterfaceTests: XCTestCase {
         
         wait(for: [ methodInIInterface1CalledExpectation ])
     }
+    
+    func testDelegateThatReceivesInterface() throws {
+        let typeThatUsesInterfaces = try Beyond.NET.Sample.TypeThatUsesInterfaces()
+        let typeThatImplementsInterface = try Beyond.NET.Sample.TypeThatImplementsMultipleInterfaces()
+        
+        try typeThatUsesInterfaces.delegateThatReceivesInterfaceTest(.init({ interface1 in
+            do {
+                try interface1.methodInIInterface1()
+            } catch {
+                XCTFail("Should not throw")
+            }
+        }), typeThatImplementsInterface)
+    }
+    
+    func testDelegateThatReturnsInterface() throws {
+        let typeThatUsesInterfaces = try Beyond.NET.Sample.TypeThatUsesInterfaces()
+        
+        let returnedInterface = try typeThatUsesInterfaces.delegateThatReturnsInterfaceTest(.init({
+            do {
+                let typeThatImplementsInterface = try Beyond.NET.Sample.TypeThatImplementsMultipleInterfaces()
+                
+                return typeThatImplementsInterface
+            } catch {
+                XCTFail("Should not throw")
+                
+                return nil
+            }
+        }))
+        
+        try returnedInterface.methodInIInterface1()
+    }
 }

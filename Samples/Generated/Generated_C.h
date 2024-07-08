@@ -1,5 +1,5 @@
-// Number of generated types: 1815
-// Number of generated members: 6106
+// Number of generated types: 1817
+// Number of generated members: 6112
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -5959,6 +5959,23 @@ typedef void* Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_
 typedef void (*Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_CDestructorFunction_t)(void* context);
 
 typedef void (*Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_CFunction_t)(
+	void* context
+);
+
+
+typedef void* Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_t;
+typedef void (*Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_CDestructorFunction_t)(void* context);
+
+typedef void (*Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_CFunction_t)(
+	void* context,
+	Beyond_NET_Sample_IInterface1_t _Nonnull interface1
+);
+
+
+typedef void* Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_t;
+typedef void (*Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_CDestructorFunction_t)(void* context);
+
+typedef Beyond_NET_Sample_IInterface1_t _Nullable (*Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_CFunction_t)(
 	void* context
 );
 
@@ -45857,6 +45874,21 @@ Beyond_NET_Sample_TypeThatUsesInterfaces_CallMethod1InIInterface1(
 );
 
 void /* System.Void */
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesInterfaceTest(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatUsesInterfaces */ self,
+	Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_t _Nonnull /* Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReceivesIInterface1 */ del,
+	Beyond_NET_Sample_IInterface1_t _Nonnull /* Beyond.NET.Sample.IInterface1 */ interface1,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_IInterface1_t _Nonnull /* Beyond.NET.Sample.IInterface1 */
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsInterfaceTest(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatUsesInterfaces */ self,
+	Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_t _Nonnull /* Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReturnsIInterface1 */ del,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
 Beyond_NET_Sample_TypeThatUsesInterfaces_SetPropertyInIInterface2(
 	Beyond_NET_Sample_TypeThatUsesInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatUsesInterfaces */ self,
 	Beyond_NET_Sample_IInterface2_t _Nonnull /* Beyond.NET.Sample.IInterface2 */ interface2,
@@ -51113,6 +51145,86 @@ Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate_Destr
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.IInterface1_DelegateAdapter.MethodInIInterface1_Delegate
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReceivesIInterface1
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_t _Nonnull /* Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReceivesIInterface1 */
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_Create(
+	const void* context,
+	Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_CFunction_t function,
+	Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_CDestructorFunction_t destructorFunction
+);
+
+void
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_Invoke(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_t /* Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReceivesIInterface1 */ self, Beyond_NET_Sample_IInterface1_t _Nonnull /* Beyond.NET.Sample.IInterface1 */ interface1, System_Exception_t* /* System.Exception */ outException
+);
+
+const void*
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_Context_Get(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_t /* Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReceivesIInterface1 */ self
+);
+
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_CFunction_t
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_CFunction_Get(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_t /* Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReceivesIInterface1 */ self
+);
+
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_CDestructorFunction_t
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_CDestructorFunction_Get(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_t /* Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReceivesIInterface1 */ self
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_Destroy(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1_t _Nullable /* Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReceivesIInterface1 */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReceivesIInterface1
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReturnsIInterface1
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_t _Nonnull /* Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReturnsIInterface1 */
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_Create(
+	const void* context,
+	Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_CFunction_t function,
+	Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_CDestructorFunction_t destructorFunction
+);
+
+Beyond_NET_Sample_IInterface1_t _Nullable
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_Invoke(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_t /* Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReturnsIInterface1 */ self, System_Exception_t* /* System.Exception */ outException
+);
+
+const void*
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_Context_Get(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_t /* Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReturnsIInterface1 */ self
+);
+
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_CFunction_t
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_CFunction_Get(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_t /* Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReturnsIInterface1 */ self
+);
+
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_CDestructorFunction_t
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_CDestructorFunction_Get(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_t /* Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReturnsIInterface1 */ self
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_Destroy(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1_t _Nullable /* Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReturnsIInterface1 */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReturnsIInterface1
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Person.NumberOfChildrenChangedDelegate
 Beyond_NET_Sample_Person_NumberOfChildrenChangedDelegate_t _Nonnull /* Beyond.NET.Sample.Person.NumberOfChildrenChangedDelegate */

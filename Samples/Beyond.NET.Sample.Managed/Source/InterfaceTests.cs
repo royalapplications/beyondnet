@@ -67,9 +67,22 @@ public class TypeThatImplementsMultipleInterfaces: IInterface1, IInterface2, IIn
 // This is declared by the user.
 public class TypeThatUsesInterfaces
 {
+    public delegate void DelegateThatReceivesIInterface1(IInterface1 interface1);
+    public delegate IInterface1 DelegateThatReturnsIInterface1();
+    
     public void CallMethod1InIInterface1(IInterface1 interface1)
     {
         interface1.MethodInIInterface1();
+    }
+    
+    public void DelegateThatReceivesInterfaceTest(DelegateThatReceivesIInterface1 del, IInterface1 interface1)
+    {
+        del(interface1);
+    }
+    
+    public IInterface1 DelegateThatReturnsInterfaceTest(DelegateThatReturnsIInterface1 del)
+    {
+        return del();
     }
     
     public void SetPropertyInIInterface2(IInterface2 interface2, int value)
