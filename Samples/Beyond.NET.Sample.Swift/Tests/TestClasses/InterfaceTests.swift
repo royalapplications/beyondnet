@@ -30,8 +30,20 @@ final class InterfaceTests: XCTestCase {
         let interface1 = try typeThatUsesInterfaces.getTypeThatImplementsIInterface1()
         try interface1.methodInIInterface1()
         
-        var interface1AsOutParam = interface1
+        // Use an out parameter placeholder of the correct type here so that we don't have to provide a default value.
+        var interface1AsOutParam: Beyond_NET_Sample_IInterface1 = Beyond_NET_Sample_IInterface1_DNInterface.outParameterPlaceholder
+        XCTAssertTrue(interface1AsOutParam.isOutParameterPlaceholder)
+        
+        // This would crash because an out parameter placeholder is NOT a valid object!
+//        try interface1AsOutParam.methodInIInterface1()
+        
         try typeThatUsesInterfaces.getTypeThatImplementsIInterface1AsOutParam(&interface1AsOutParam)
+        XCTAssertFalse(interface1AsOutParam.isOutParameterPlaceholder)
+        
+        // This is unnecessary for APIs that return an optional out parameter. In this case we can just use regular Swift syntax.
+//        var interface2AsOutParam: Beyond_NET_Sample_IInterface2? = Beyond_NET_Sample_IInterface2_DNInterface.outParameterPlaceholder
+        var interface2AsOutParam: Beyond_NET_Sample_IInterface2?
+        try typeThatUsesInterfaces.getTypeThatMaybeImplementsIInterface2AsOutParam(&interface2AsOutParam)
         
         let interface2 = try typeThatUsesInterfaces.getTypeThatImplementsIInterface2()
         try interface2.propertyInIInterface2_set(42)
@@ -44,6 +56,7 @@ final class InterfaceTests: XCTestCase {
         XCTAssertFalse(interface1 === interface1AsOutParam)
         XCTAssertTrue(interface2.is(Beyond.NET.Sample.IInterface2_DNInterface.typeOf))
         XCTAssertTrue(interface3.is(Beyond.NET.Sample.IInterface3_DNInterface.typeOf))
+        XCTAssertNil(interface2AsOutParam)
     }
     
     func testInterfaceAdapter() throws {

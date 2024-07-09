@@ -115,6 +115,11 @@ public class TypeThatUsesInterfaces
         return new TypeThatImplementsMultipleInterfaces();
     }
     
+    public void GetTypeThatMaybeImplementsIInterface2AsOutParam(out IInterface2? interface2)
+    {
+        interface2 = null;
+    }
+    
     public IInterface3 GetTypeThatImplementsIInterface3()
     {
         return new TypeThatImplementsMultipleInterfaces();

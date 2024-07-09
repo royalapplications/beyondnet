@@ -1,5 +1,5 @@
-// Number of generated types: 1818
-// Number of generated members: 6113
+// Number of generated types: 1824
+// Number of generated members: 6128
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1976,6 +1976,8 @@ typedef struct DNReadOnlySpanOfByte {
 // Unsupported Type "System.Span`1[[System.Byte, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
 // Unsupported Type "System.Nullable`1": Excluded
 // Unsupported Type "System.ArraySegment`1[[System.Byte, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
+// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.Int32?)
+// Unsupported Type "System.Nullable`1[[System.DateTimeKind, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.DateTimeKind?)
 
 #pragma mark - END Unsupported Types
 
@@ -5633,6 +5635,7 @@ typedef void* Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces_t;
 typedef void* Beyond_NET_Sample_TypeThatUsesInterfaces_t;
 
 
+
 typedef void* Beyond_NET_Sample_NullabilityTests_t;
 
 typedef void* Beyond_NET_Sample_OverloadTests_t;
@@ -5756,6 +5759,12 @@ typedef void* System_Security_Cryptography_Oid_t;
 typedef void* System_Security_Cryptography_ECDiffieHellman_t;
 
 typedef void* System_Security_Cryptography_ECDiffieHellmanPublicKey_t;
+
+typedef void* Beyond_NET_Sample_Source_OutParameterTests_t;
+
+
+
+
 
 typedef void* Beyond_NET_Sample_Transformer_BuiltInTransformers_t;
 
@@ -45930,6 +45939,13 @@ Beyond_NET_Sample_TypeThatUsesInterfaces_GetTypeThatImplementsIInterface2(
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
+void /* System.Void */
+Beyond_NET_Sample_TypeThatUsesInterfaces_GetTypeThatMaybeImplementsIInterface2AsOutParam(
+	Beyond_NET_Sample_TypeThatUsesInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatUsesInterfaces */ self,
+	Beyond_NET_Sample_IInterface2_t _Nullable* _Nullable /* Beyond.NET.Sample.IInterface2 */ interface2,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
 Beyond_NET_Sample_IInterface3_t _Nonnull /* Beyond.NET.Sample.IInterface3 */
 Beyond_NET_Sample_TypeThatUsesInterfaces_GetTypeThatImplementsIInterface3(
 	Beyond_NET_Sample_TypeThatUsesInterfaces_t _Nullable /* Beyond.NET.Sample.TypeThatUsesInterfaces */ self,
@@ -45952,6 +45968,7 @@ Beyond_NET_Sample_TypeThatUsesInterfaces_Destroy(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.TypeThatUsesInterfaces
+
 
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.NullabilityTests
@@ -50237,6 +50254,105 @@ System_Security_Cryptography_ECDiffieHellmanPublicKey_Destroy(
 );
 
 #pragma mark - END APIs of System.Security.Cryptography.ECDiffieHellmanPublicKey
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.OutParameterTests
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_Int_1_NonOptional(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	int32_t* /* System.Int32 */ returnValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_DateTimeKind_Utc_NonOptional(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	System_DateTimeKind_t* /* System.DateTimeKind */ returnValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_DateTime_MaxValue_NonOptional(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	System_DateTime_t _Nonnull* _Nonnull /* System.DateTime */ returnValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_DateTime_MaxValue_Optional(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	System_DateTime_t _Nullable* _Nullable /* System.Nullable<System.DateTime> */ returnValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_DateTime_Null(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	System_DateTime_t _Nullable* _Nullable /* System.Nullable<System.DateTime> */ returnValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_String_Abc_NonOptional(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	System_String_t _Nonnull* _Nonnull /* System.String */ returnValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_String_Abc_Optional(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	System_String_t _Nullable* _Nullable /* System.String */ returnValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_String_Null(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	System_String_t _Nullable* _Nullable /* System.String */ returnValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_IEnumerable_String_Abc_NonOptional(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	System_Collections_IEnumerable_t _Nonnull* _Nonnull /* System.Collections.IEnumerable */ returnValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_IEnumerable_String_Abc_Optional(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	System_Collections_IEnumerable_t _Nullable* _Nullable /* System.Collections.IEnumerable */ returnValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_IEnumerable_Null(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	System_Collections_IEnumerable_t _Nullable* _Nullable /* System.Collections.IEnumerable */ returnValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_Source_OutParameterTests_t _Nonnull /* Beyond.NET.Sample.Source.OutParameterTests */
+Beyond_NET_Sample_Source_OutParameterTests_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_Source_OutParameterTests_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Destroy(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.Source.OutParameterTests
+
+
+
+
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Transformer.BuiltInTransformers
 Beyond_NET_Sample_Transformer_StringTransformerDelegate_t _Nonnull /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */

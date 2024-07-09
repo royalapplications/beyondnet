@@ -20,9 +20,7 @@ final class TestRecordTests: XCTestCase {
         let retString = try aRecord.aString.string()
         XCTAssertEqual(expectedString, retString)
         
-        let emptyStringDN = System.String.empty
-        
-        var deconstructedStringDN = emptyStringDN
+        var deconstructedStringDN = System.String.outParameterPlaceholder
         
         try aRecord.deconstruct(&deconstructedStringDN)
         

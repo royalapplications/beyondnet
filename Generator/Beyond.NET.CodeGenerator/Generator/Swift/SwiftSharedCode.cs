@@ -40,8 +40,16 @@ public struct DNChar: Equatable {
 /// It's not inteneded to be used directly.
 /// Instead, use one of the derived types, like `System_Object`.
 public class DNObject {
+    enum DestroyMode {
+        case normal
+        case deallocateHandle
+        case skip
+    }
+    
     let __handle: UnsafeMutableRawPointer
-    var __skipDestroy = false
+    var __destroyMode = DestroyMode.normal
+    
+    public private(set) var isOutParameterPlaceholder = false
 
     /// The .NET type name of this type.
     /// - Returns: The equivalent of calling `typeof(ADotNETType).Name` in C#.
@@ -58,6 +66,9 @@ public class DNObject {
     }
 
     required init(handle: UnsafeMutableRawPointer) {
+        // Enable for debugging
+        // print("[DEBUG] Initializing \(Self.fullTypeName) with handle \(handle)")
+        
 		self.__handle = handle
 	}
 
@@ -67,20 +78,56 @@ public class DNObject {
 		self.init(handle: handle)
 	}
 	
+	/// This returns a "placeholder" object for calling .NET APIs that return a non-optional value as `out` parameter. In this case, you can either provide a proper default value (which will never be used) or you can get an out parameter placeholder using this function.
+	/// Because Swift does not support `out` parameters like .NET does, you might run into situations where you need to provide a default value to satisfy the compiler but you don't want to or simply can't create an object of the `out` parameter's type.
+	/// Do NOT(!) call any APIs on this "placeholder" object as it will crash the program! Use it ONLY(!) to provide a "fake" default value for .NET APIs that receive a value via an `out` parameter. 
+	/// Do NOT(!) use this to pass a default value to .NET APIs that receive an optional(!) value as `out` parameter! In this case, just use a regular Swift optional. 
+	public static var outParameterPlaceholder: Self {
+        let byteCount = MemoryLayout<AnyObject>.stride
+        let alignment = MemoryLayout<AnyObject>.alignment
+        
+        let handle = UnsafeMutableRawPointer.allocate(byteCount: byteCount,
+                                                      alignment: alignment)
+        
+        handle.initializeMemory(as: Int.self, to: 0)
+        
+        let inst = self.init(handle: handle)
+        
+        // Mark this instance as being an out parameter placeholder. Makes debugging easier in case something goes wrong.
+        inst.isOutParameterPlaceholder = true
+        
+        inst.__destroyMode = .deallocateHandle
+        
+        return inst
+    }
+	
     internal func destroy() {
         // Override in subclass
     }
 
     deinit {
-        guard !__skipDestroy else { return }
+        switch __destroyMode {
+            case .normal:
+                // Enable for debugging
+                // print("[DEBUG] Will destroy \(Self.fullTypeName) with handle \(self.__handle)")
         
-        // Enable for debugging
-        // print("[DEBUG] Will destroy \(Self.fullTypeName)")
-
-		destroy()
-
-        // Enable for debugging
-        // print("[DEBUG] Did destroy \(Self.fullTypeName)")
+                destroy()
+        
+                // Enable for debugging
+                // print("[DEBUG] Did destroy \(Self.fullTypeName) with handle \(self.__handle)")
+            case .deallocateHandle:
+                // Enable for debugging
+                // print("[DEBUG] Will deallocate \(Self.fullTypeName) with handle \(self.__handle)")
+                
+                self.__handle.deallocate()
+                
+                // Enable for debugging
+                // print("[DEBUG] Did deallocate \(Self.fullTypeName) with handle \(self.__handle)")
+            case .skip:
+                // Enable for debugging
+                // print("[DEBUG] Skipping deallocate for \(Self.fullTypeName) with handle \(self.__handle)")
+                return
+        }
 	}
 }
 

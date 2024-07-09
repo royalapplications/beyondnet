@@ -592,10 +592,74 @@ let systemStringRet = swiftString.dotNETString()
 
 
 
-## Interfaces
+## .NET Interfaces in Swift
 
 In Swift, .NET interfaces are exposed as protocols and .NET types that implement interfaces are generated as protocol conforming types.
 Since Swift doesn't allow extending protocol metatypes, if you want to get the .NET type of a particular interface, you'll have to use `IInterfaceName_DNInterface.typeOf` instead of just `IInterfaceName.typeOf`. Apart from that, the Swift bindings for .NET interfaces should act and feel very much like native Swift protocols.
+
+
+
+## C# `out` parameters in Swift
+
+C# methods that include parameters marked with the `out` keyword are converted to Swift functions with parameters marked with the `inout` keyword.
+
+This C# code...
+```csharp
+void ReturnIntAsOut(out int returnValue);
+```
+
+... is imported like this into Swift:
+```swift
+func returnIntAsOut(_ returnValue: inout Int32) throws
+```
+
+And to use it in Swift you'd do something like this:
+
+```swift
+var returnValue: Int32 = 0
+try target.returnIntAsOut(&returnValue)
+// returnValue now contains the value returned by .NET
+```
+
+The same concept applies to functions that return classes, structs, enums or any other type via C# `out` parameters.
+
+Unfortunately, there's a major difference between .NET's `out` and Swift's `inout` keywords. The difference is that, as the name implies a value goes in and another value might(!) come out of a function which includes Swift's `inout` parameters. In C# however, no value enters a function with `out` parameters. This in turn means that for non-optional values, a default value has to be provided in Swift to satisfy the compiler. In many cases this is not a big deal (ie. no harm in specifying an unused default value for primitives) but there are cases where it's undesirable or flat out impossible to provide a default value. Think about a function that returns an .NET interface via an `out` parameter. You could only provide a default value if you did have access to an implementation of that interface which might not be the case. Even if you had access to such an implementation, you might not want to create an instance because it's costly.
+
+Fortunately we can work around the limitation by letting you create "placeholder" objects explicitly for passing a temporary default value from Swift to .NET.
+
+Consider the following C# method:
+
+```csharp
+void ReturnIEnumerableAsOut(out IEnumerable returnValue) {
+    returnValue = "Abc";
+}
+```
+
+It's imported like this into Swift:
+
+```swift
+func returnIEnumerableAsOut(_ returnValue: inout System.Collections.IEnumerable) throws
+```
+
+To use it you would have to specify a default value that conforms to the `System.Collections.IEnumerable` protocol/interface like so:
+
+```swift
+// System.String implements System.Collections.IEnumerable
+var returnValue: System.Collections.IEnumerable = System.String.empty
+try target.returnIEnumerableAsOut(&returnValue)
+// returnValue now contains a .NET string with the following content: "Abc"
+```
+
+With out parameter placeholders however you can rewrite the code like this:
+
+```swift
+var returnValue = System.Collections.IEnumerable_DNInterface.outParameterPlaceholder
+try target.returnIEnumerableAsOut(&returnValue)
+```
+
+Please note that the **only** valid use case for out parameter placeholders is to pass them to .NET functions with `out` parameters.
+- **Do not(!)** call any APIs on the placeholder object as it will crash the program!
+- **Do not(!)** use out parameter placeholders to pass a default value to .NET APIs that receive an optional(!) value as `out` parameter! In this case, just use a regular Swift optional.
 
 
 

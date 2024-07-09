@@ -116,7 +116,7 @@ final class ArrayTestsTests: XCTestCase {
     func testTwoDimensionalArrayOfBoolAsOut() throws {
         let tests = try Beyond.NET.Sample.ArrayTests()
         
-        var array: DNMultidimensionalArray<System.Boolean> = try .init(lengths: [ 1, 1 ])
+        var array = DNMultidimensionalArray<System.Boolean>.outParameterPlaceholder
         try tests.twoDimensionalArrayOfBoolAsOut(&array)
         
         try verifyTwoDimensionalArrayOfBoolInitialState(array)

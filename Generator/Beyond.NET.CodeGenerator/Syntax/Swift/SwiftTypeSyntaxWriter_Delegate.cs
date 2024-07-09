@@ -510,7 +510,7 @@ public partial class SwiftTypeSyntaxWriter
                         ? "?"
                         : string.Empty;
                     
-                    sb.AppendLine($"\t{returnValueName}{nullabilitySpecifier}.__skipDestroy = true // Will be destroyed by .NET");
+                    sb.AppendLine($"\t{returnValueName}{nullabilitySpecifier}.__destroyMode = .skip // Will be destroyed by .NET");
                 }
                 
                 sb.AppendLine();
