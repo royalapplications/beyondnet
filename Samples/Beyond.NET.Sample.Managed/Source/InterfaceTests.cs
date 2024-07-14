@@ -125,3 +125,19 @@ public class TypeThatUsesInterfaces
         return new TypeThatImplementsMultipleInterfaces();
     }
 }
+
+public interface IInterfaceWithStaticMembers
+{
+    void RegularMethod();
+    bool RegularProperty { get; }
+    static abstract void StaticMethod();
+    static abstract int StaticProperty { get; }
+}
+
+public class ClassWithStaticMembers : IInterfaceWithStaticMembers
+{
+    public void RegularMethod() {}
+    public bool RegularProperty => true;
+    public static void StaticMethod() {}
+    public static int StaticProperty => 42;
+}
