@@ -182,13 +182,6 @@ public class TypeCollector
         Type[] interfaceTypes = type.GetInterfaces();
 
         foreach (var interfaceType in interfaceTypes) {
-            if (interfaceType.GetMethods().Any(m => m.IsStatic)
-                || interfaceType.GetProperties().Any(p => p.GetMethod is {IsStatic: true} || p.GetSetMethod() is {IsStatic: true}))
-            {
-                unsupportedTypes[interfaceType] = "Excluded (static members in interface)";
-                continue;
-            }
-
             CollectType(
                 interfaceType,
                 collectedTypes,
@@ -449,6 +442,13 @@ public class TypeCollector
             return false;
         }
 
+        if (type.IsInterface && (
+                type.GetMethods().Any(m => m.IsStatic) || 
+                type.GetProperties().Any(p => p.GetMethod is {IsStatic: true} || p.GetSetMethod() is {IsStatic: true}))) {
+            unsupportedReason = "Static members in interface";
+            return false;
+        }
+        
         if (m_excludedTypes.Contains(type)) {
             unsupportedReason = "Is unsupported Type";
             return false;
