@@ -182,6 +182,13 @@ public class TypeCollector
         Type[] interfaceTypes = type.GetInterfaces();
 
         foreach (var interfaceType in interfaceTypes) {
+            if (interfaceType.GetMethods().Any(m => m.IsStatic)
+                || interfaceType.GetProperties().Any(p => p.GetMethod is {IsStatic: true} || p.GetSetMethod() is {IsStatic: true}))
+            {
+                unsupportedTypes[interfaceType] = "Excluded (static members in interface)";
+                continue;
+            }
+
             CollectType(
                 interfaceType,
                 collectedTypes,
