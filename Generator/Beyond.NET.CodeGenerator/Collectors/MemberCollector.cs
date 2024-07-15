@@ -45,6 +45,7 @@ public class MemberCollector
 
         if (m_typeCollector.IsSupportedType(m_type)) {
             bool isStruct = m_type.IsStruct();
+            bool isInterface = m_type.IsInterface;
             bool foundParameterlessStructConstructor = false;
             
             BindingFlags flags = BindingFlags.Public | 
@@ -74,6 +75,25 @@ public class MemberCollector
                     unsupportedMembers[memberInfo] = "Virtual Record Clone Method";
                     
                     continue;
+                }
+
+                if (isInterface)
+                {
+                    if (memberInfo is MethodInfo { IsAbstract: true, IsStatic: true })
+                    {
+                        unsupportedMembers[memberInfo] = "Static abstract method in interface";
+                        
+                        continue;
+                    }
+
+                    if (memberInfo is PropertyInfo propertyInfo &&
+                        (propertyInfo.GetMethod is { IsAbstract: true, IsStatic: true } ||
+                         propertyInfo.SetMethod is { IsAbstract: true, IsStatic: true }))
+                    {
+                        unsupportedMembers[memberInfo] = "Static abstract property in interface";
+
+                        continue;
+                    }
                 }
                 
                 CollectMember(

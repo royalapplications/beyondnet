@@ -442,13 +442,15 @@ public class TypeCollector
             return false;
         }
 
-        if (type.IsInterface && (
-                type.GetMethods().Any(m => m.IsStatic) || 
-                type.GetProperties().Any(p => p.GetMethod is {IsStatic: true} || p.GetSetMethod() is {IsStatic: true}))) {
-            unsupportedReason = "Static members in interface";
-            return false;
+        if (type.IsInterface) {
+            if (type.GetMethods().Any(m => m is { IsAbstract: true, IsStatic: true })
+                || type.GetProperties().Any(p => p.GetMethod is { IsAbstract: true, IsStatic: true } ||
+                                                 p.SetMethod is { IsAbstract: true, IsStatic: true })) {
+                unsupportedReason = "Static abstract members in interface";
+                return false;
+            }
         }
-        
+            
         if (m_excludedTypes.Contains(type)) {
             unsupportedReason = "Is unsupported Type";
             return false;

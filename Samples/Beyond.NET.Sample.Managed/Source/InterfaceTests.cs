@@ -126,18 +126,49 @@ public class TypeThatUsesInterfaces
     }
 }
 
-public interface IInterfaceWithStaticMembers
+public interface IRegistrationData
 {
-    void RegularMethod();
-    bool RegularProperty { get; }
-    static abstract void StaticMethod();
-    static abstract int StaticProperty { get; }
+    DataType DataType { get; }
+    static abstract DataType RegisteredDataType { get; }
+    static abstract void RegisterDataType();
 }
 
-public class ClassWithStaticMembers : IInterfaceWithStaticMembers
+public abstract class BaseRegistrationData
 {
-    public void RegularMethod() {}
-    public bool RegularProperty => true;
-    public static void StaticMethod() {}
-    public static int StaticProperty => 42;
+    public DataType DataType { get; }
+
+    protected BaseRegistrationData(DataType dataType)
+    {
+        DataType = dataType;
+    }
+}
+
+public sealed class RegistrationData1 : BaseRegistrationData, IRegistrationData  
+{
+    public static DataType RegisteredDataType { get; } = default;
+
+    public static void RegisterDataType() {}
+
+    public RegistrationData1()
+        : base(RegisteredDataType)
+    { }
+}
+
+public sealed class RegistrationData2 : BaseRegistrationData, IRegistrationData  
+{
+    public static DataType RegisteredDataType { get; } = default;
+
+    public static void RegisterDataType() {}
+
+    public RegistrationData2()
+        : base(RegisteredDataType)
+    { }
+}
+
+public readonly struct DataType;
+
+public interface INotImplementedInterfaceWithStaticAbstractMembers
+{
+    static abstract DataType RegisteredDataType { get; }
+    static abstract void RegisterDataType();
 }
