@@ -125,3 +125,50 @@ public class TypeThatUsesInterfaces
         return new TypeThatImplementsMultipleInterfaces();
     }
 }
+
+public interface IRegistrationData
+{
+    DataType DataType { get; }
+    static abstract DataType RegisteredDataType { get; }
+    static abstract void RegisterDataType();
+}
+
+public abstract class BaseRegistrationData
+{
+    public DataType DataType { get; }
+
+    protected BaseRegistrationData(DataType dataType)
+    {
+        DataType = dataType;
+    }
+}
+
+public sealed class RegistrationData1 : BaseRegistrationData, IRegistrationData  
+{
+    public static DataType RegisteredDataType { get; } = default;
+
+    public static void RegisterDataType() {}
+
+    public RegistrationData1()
+        : base(RegisteredDataType)
+    { }
+}
+
+public sealed class RegistrationData2 : BaseRegistrationData, IRegistrationData  
+{
+    public static DataType RegisteredDataType { get; } = default;
+
+    public static void RegisterDataType() {}
+
+    public RegistrationData2()
+        : base(RegisteredDataType)
+    { }
+}
+
+public readonly struct DataType;
+
+public interface INotImplementedInterfaceWithStaticAbstractMembers
+{
+    static abstract DataType RegisteredDataType { get; }
+    static abstract void RegisterDataType();
+}
