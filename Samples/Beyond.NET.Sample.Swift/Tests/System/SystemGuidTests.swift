@@ -152,4 +152,42 @@ final class SystemGuidTests: XCTestCase {
 			XCTAssertEqual(newUUIDString.lowercased(), guidRetString.lowercased())
 		}
 	}
+    
+    // MARK: - Performance Tests
+//    private func makeGuidString() throws -> String {
+//        let guid = try System.Guid.newGuid()
+//        let guidStrDN = try guid.toString()
+//        let guidStr = guidStrDN.string()
+//        
+//        return guidStr
+//    }
+//    
+//    private func makeUUIDString() -> String {
+//        let uuid = UUID()
+//        let uuidStr = uuid.uuidString
+//        
+//        return uuidStr
+//    }
+//    
+//    private let numberOfIDs = 100_000
+//    
+//    func testSystemGuidPerformance() throws {
+//        let numberOfIDs = self.numberOfIDs
+//        
+//        measure {
+//            for _ in 0..<numberOfIDs {
+//                _ = try? makeGuidString()
+//            }
+//        }
+//    }
+//    
+//    func testUUIDPerformance() throws {
+//        let numberOfIDs = self.numberOfIDs
+//        
+//        measure {
+//            for _ in 0..<numberOfIDs {
+//                _ = makeUUIDString()
+//            }
+//        }
+//    }
 }
