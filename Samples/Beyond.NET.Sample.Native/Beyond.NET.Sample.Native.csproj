@@ -112,6 +112,11 @@
     </When>
   </Choose>
 
+  <!-- TODO: Temporary workarounds for Android support -->
+  <ItemGroup Condition="$(RuntimeIdentifier.StartsWith('linux-bionic'))">
+    <LinkerArg Include="-Wl,--undefined-version" />
+  </ItemGroup>
+
   <!-- Strip Symbols in Release Builds -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <StripSymbols>true</StripSymbols>
