@@ -1,6 +1,7 @@
 # Beyond.NET Release Notes
 
 ## Version 0.4 (Alpha)
+- Rudimentary Kotlin/JNA support
 - XML Documentation is now extracted and applied to generated Swift bindings
 - Arrays are now exposed to Swift as `DNArray<T> where T: System_Object`
 - Arrays conform to Swift's `MutableCollection` protocol now
