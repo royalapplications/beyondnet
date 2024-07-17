@@ -11,7 +11,9 @@ public partial class BuiltInTypeDescriptors
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "uint" },
                     { CodeLanguage.C, "uint32_t" },
-                    { CodeLanguage.Swift, "UInt32" }
+                    { CodeLanguage.Swift, "UInt32" },
+                    { CodeLanguage.Kotlin, "UInt" },
+                    { CodeLanguage.KotlinJNA, "Int" }
                 }
             );
         

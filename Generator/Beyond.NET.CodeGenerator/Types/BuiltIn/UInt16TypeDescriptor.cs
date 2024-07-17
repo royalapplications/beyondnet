@@ -11,7 +11,9 @@ public partial class BuiltInTypeDescriptors
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "ushort" },
                     { CodeLanguage.C, "uint16_t" },
-                    { CodeLanguage.Swift, "UInt16" }
+                    { CodeLanguage.Swift, "UInt16" },
+                    { CodeLanguage.Kotlin, "UShort" },
+                    { CodeLanguage.KotlinJNA, "Short" }
                 }
             );
         

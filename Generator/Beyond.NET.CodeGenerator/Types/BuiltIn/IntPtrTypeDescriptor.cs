@@ -11,7 +11,9 @@ public partial class BuiltInTypeDescriptors
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "nint" },
                     { CodeLanguage.C, "void*" },
-                    { CodeLanguage.Swift, "UnsafeMutableRawPointer?" }
+                    { CodeLanguage.Swift, "UnsafeMutableRawPointer?" },
+                    { CodeLanguage.Kotlin, "Pointer" },
+                    { CodeLanguage.KotlinJNA, "Pointer" }
                 }
             );
         

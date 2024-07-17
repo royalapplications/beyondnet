@@ -12,9 +12,9 @@ public enum SwiftVisibilities
 
 public static class SwiftVisibilities_Extensions
 {
-    public static string ToSwiftSyntaxString(this SwiftVisibilities swiftVisibility)
+    public static string ToSwiftSyntaxString(this SwiftVisibilities visibilty)
     {
-        switch (swiftVisibility) {
+        switch (visibilty) {
             case SwiftVisibilities.None:
                 return string.Empty;
             case SwiftVisibilities.Private:
@@ -29,6 +29,6 @@ public static class SwiftVisibilities_Extensions
                 return "open";
         }
 
-        throw new Exception($"Unknown Swift Visibility: {swiftVisibility}");
+        throw new Exception($"Unknown Swift Visibility: {visibilty}");
     }
 }

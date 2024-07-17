@@ -11,7 +11,9 @@ public partial class BuiltInTypeDescriptors
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "void" },
                     { CodeLanguage.C, "void" },
-                    { CodeLanguage.Swift, "Void" }
+                    { CodeLanguage.Swift, "Void" },
+                    { CodeLanguage.Kotlin, "void" },
+                    { CodeLanguage.KotlinJNA, "void" }
                 }
             );
         

@@ -11,7 +11,9 @@ public partial class BuiltInTypeDescriptors
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "char" },
                     { CodeLanguage.C, "wchar_t" }, // TODO: Is this correct?
-                    { CodeLanguage.Swift, "DNChar" } // TODO: Is this correct?
+                    { CodeLanguage.Swift, "DNChar" }, // TODO: Is this correct?
+                    { CodeLanguage.Kotlin, "Char" },
+                    { CodeLanguage.KotlinJNA, "Char" }
                 },
                 new() {
                     { new LanguagePair(CodeLanguage.C, CodeLanguage.Swift), "DNChar(cValue: {0})" },

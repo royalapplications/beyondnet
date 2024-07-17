@@ -11,7 +11,9 @@ public partial class BuiltInTypeDescriptors
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "ulong" },
                     { CodeLanguage.C, "uint64_t" },
-                    { CodeLanguage.Swift, "UInt64" }
+                    { CodeLanguage.Swift, "UInt64" },
+                    { CodeLanguage.Kotlin, "ULong" },
+                    { CodeLanguage.KotlinJNA, "Long" }
                 }
             );
         

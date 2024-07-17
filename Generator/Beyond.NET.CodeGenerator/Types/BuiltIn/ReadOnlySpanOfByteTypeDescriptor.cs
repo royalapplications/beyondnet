@@ -12,6 +12,7 @@ public partial class BuiltInTypeDescriptors
                     { CodeLanguage.CSharpUnmanaged, "DNReadOnlySpanOfByte" },
                     { CodeLanguage.C, "DNReadOnlySpanOfByte" },
                     { CodeLanguage.Swift, "Data?" }
+                    // TODO: Kotlin
                 },
                 new() {
                     {

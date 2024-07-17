@@ -11,7 +11,9 @@ public partial class BuiltInTypeDescriptors
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "byte" },
                     { CodeLanguage.C, "bool" },
-                    { CodeLanguage.Swift, "Bool" }
+                    { CodeLanguage.Swift, "Bool" },
+                    { CodeLanguage.KotlinJNA, "Boolean" },
+                    { CodeLanguage.Kotlin, "Boolean" }
                 },
                 new() {
                     { 

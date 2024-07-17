@@ -5,7 +5,7 @@ using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.SourceCode;
 using Beyond.NET.CodeGenerator.Syntax;
 using Beyond.NET.CodeGenerator.Syntax.Kotlin;
-// using Builder = Beyond.NET.CodeGenerator.Syntax.Kotlin.Builder;
+using Beyond.NET.CodeGenerator.Syntax.Kotlin.Builders;
 using Beyond.NET.CodeGenerator.Types;
 using Beyond.NET.Core;
 
@@ -34,18 +34,24 @@ public class KotlinCodeGenerator: ICodeGenerator
         SourceCodeWriter writer
     )
     {
-        KotlinSyntaxWriterConfiguration defaultSyntaxWriterConfiguration = new();
+        KotlinSyntaxWriterConfiguration syntaxWriterConfiguration = new() {
+            GenerationPhase = KotlinSyntaxWriterConfiguration.GenerationPhases.KotlinBindings
+        };
         
         SourceCodeSection headerSection = writer.AddSection("Header");
         SourceCodeSection utilsSection = writer.AddSection("Utils");
         SourceCodeSection commonTypesSection = writer.AddSection("Common Types");
         SourceCodeSection unsupportedTypesSection = writer.AddSection("Unsupported Types");
-        SourceCodeSection apisSection = writer.AddSection("APIs");
+        SourceCodeSection kotlinSection = writer.AddSection("Kotlin");
+        SourceCodeSection jnaSection = writer.AddSection("JNA");
         SourceCodeSection extensionsSection = writer.AddSection("API Extensions");
         SourceCodeSection namespacesSection = writer.AddSection("Namespaces");
         SourceCodeSection footerSection = writer.AddSection("Footer");
+
+        // TODO
+        var package = "com.example.jnatest.BeyondDotNETSampleNative";
         
-        string header = GetHeaderCode();
+        string header = GetHeaderCode(package);
         headerSection.Code.AppendLine(header);
         
         string utilsCode = GetUtilsCode(types.ToArray());
@@ -71,12 +77,71 @@ public class KotlinCodeGenerator: ICodeGenerator
 
         Result result = new();
 
+        Generate(
+            syntaxWriterConfiguration,
+            kotlinSection,
+            unsupportedTypes,
+            types,
+            typeSyntaxWriter,
+            result
+        );
+        
+        syntaxWriterConfiguration = new KotlinSyntaxWriterConfiguration
+        {
+            GenerationPhase = KotlinSyntaxWriterConfiguration.GenerationPhases.JNA
+        };
+
+        // TODO: Replace libName, class name
+        var jnaStart = """
+object BeyondDotNETSampleNative {
+    init {
+        val libName = "BeyondDotNETSampleNative"
+        Native.register(BeyondDotNETSampleNative::class.java, libName)
+    }
+    
+    external fun DNStringFromC(cString: String): Pointer
+    external fun DNStringToC(systemString: Pointer): Pointer
+                                     
+""";
+
+        jnaSection.Code.AppendLine(jnaStart);
+        
+        Generate(
+            syntaxWriterConfiguration,
+            jnaSection,
+            unsupportedTypes,
+            types,
+            typeSyntaxWriter,
+            result
+        );
+        
+        var jnaEnd = """
+}                 
+""";
+
+        jnaSection.Code.AppendLine(jnaEnd);
+
+        string footerCode = GetFooterCode();
+        footerSection.Code.AppendLine(footerCode);
+
+        return result;
+    }
+
+    private void Generate(
+        KotlinSyntaxWriterConfiguration syntaxWriterConfiguration,
+        SourceCodeSection section,
+        Dictionary<Type, string> unsupportedTypes,
+        IEnumerable<Type> types,
+        ITypeSyntaxWriter typeSyntaxWriter,
+        Result result
+    )
+    {
         var orderedTypes = types
             .OrderByDescending(t => t.IsEnum)
             .ThenByDescending(t => !t.IsDelegate());
 
         Dictionary<Type, List<GeneratedMember>> typeExtensionMembers = new();
-
+        
         foreach (Type type in orderedTypes) {
             bool isInterface = type.IsInterface;
             
@@ -85,10 +150,16 @@ public class KotlinCodeGenerator: ICodeGenerator
             string typeCode = typeSyntaxWriter.Write(
                 type,
                 state,
-                defaultSyntaxWriterConfiguration
+                syntaxWriterConfiguration
             );
-            
-            apisSection.Code.AppendLine(typeCode);
+
+            var fullTypeName = type.GetFullNameOrName();
+
+            section.Code.AppendLine();
+            section.Code.AppendLine(new SingleLineComment($"MARK: - BEGIN {fullTypeName}").ToString().IndentAllLines(1));
+            section.Code.AppendLine(typeCode);
+            section.Code.AppendLine(new SingleLineComment($"MARK: - END {fullTypeName}").ToString().IndentAllLines(1));
+            section.Code.AppendLine();
             
             if (state.SkippedTypes.Contains(type)) {
                 continue;
@@ -142,16 +213,13 @@ public class KotlinCodeGenerator: ICodeGenerator
         //
         //     extensionsSection.Code.AppendLine(code);
         // }
-
-        string footerCode = GetFooterCode();
-        footerSection.Code.AppendLine(footerCode);
-
-        return result;
     }
 
-    private string GetHeaderCode()
+    private string GetHeaderCode(string package)
     {
-        return """
+        return $"""
+package {package}
+
 import com.sun.jna.*
 import com.sun.jna.ptr.*
 """;

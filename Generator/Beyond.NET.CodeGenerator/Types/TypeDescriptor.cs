@@ -36,11 +36,22 @@ public static class Nullability_Extensions
                 return string.Empty; 
         }
     }
+    
+    public static string GetKotlinOptionalitySpecifier(this Nullability nullability)
+    {
+        switch (nullability) {
+            case Nullability.Nullable:
+                return "?";
+            default:
+                return string.Empty; 
+        }
+    }
 }
 
 public class TypeDescriptor
 {
     public static string SwiftDotNETInterfaceImplementationSuffix = "_DNInterface";
+    public static string KotlinDotNETInterfaceImplementationSuffix = "_DNInterface";
     
     public Type ManagedType { get; }
 
@@ -245,6 +256,20 @@ public class TypeDescriptor
                 }
                 
                 break;
+            case CodeLanguage.KotlinJNA:
+                if (isOutParameter || isByRefParameter || isInParameter) {
+                    typeNameWithModifiers = "PointerByReference";
+                } else {
+                    typeNameWithModifiers = $"{typeName}";
+                }
+
+                string kotlinNullabilitySpecifier = nullability.GetKotlinOptionalitySpecifier();
+
+                if (!string.IsNullOrEmpty(kotlinNullabilitySpecifier)) {
+                    typeNameWithModifiers += kotlinNullabilitySpecifier;
+                }
+                
+                break;
             default:
                 throw new NotImplementedException();
         }
@@ -278,45 +303,78 @@ public class TypeDescriptor
                 }
 
                 return constructedCTypeName;
-            case CodeLanguage.Swift:
+            case CodeLanguage.Swift: {
                 bool isArray = ManagedType.IsArray;
-                
+
                 Type? elementType = isArray
                     ? ManagedType.GetElementType()
                     : null;
 
                 string swiftTypeName;
-                
+
                 if (isArray &&
-                    elementType is not null) {
+                    elementType is not null)
+                {
                     // TODO: Shouldn't this go through TypeDescriptor?
                     var swiftElementTypeName = elementType.CTypeName();
                     var rank = ManagedType.GetArrayRank();
-                    
-                    if (arrayElementNullability == Nullability.NotSpecified) {
+
+                    if (arrayElementNullability == Nullability.NotSpecified)
+                    {
                         arrayElementNullability = Nullability.Nullable;
                     }
 
                     string arrayTypeName;
 
-                    if (rank == 1) { // Single-dimensional array
+                    if (rank == 1)
+                    {
+                        // Single-dimensional array
                         arrayTypeName = arrayElementNullability == Nullability.NonNullable
                             ? "DNArray"
                             : "DNNullableArray";
-                    } else if (rank > 1) { // Multidimensional array
+                    }
+                    else if (rank > 1)
+                    {
+                        // Multidimensional array
                         arrayTypeName = arrayElementNullability == Nullability.NonNullable
                             ? "DNMultidimensionalArray"
                             : "DNNullableMultidimensionalArray";
-                    } else {
+                    }
+                    else
+                    {
                         throw new Exception($"An array rank of {rank} doesn't really make sense, right?");
                     }
 
                     swiftTypeName = $"{arrayTypeName}<{swiftElementTypeName}>";
-                } else {
+                }
+                else
+                {
                     swiftTypeName = ManagedType.CTypeName();
                 }
-                
+
                 return swiftTypeName;
+            }
+            case CodeLanguage.KotlinJNA: {
+                if (RequiresNativePointer || IsReadOnlyStructOfByte)
+                {
+                    return "Pointer";
+                }
+                else if (IsEnum)
+                {
+                    var enumUnderlyingType = ManagedType.GetEnumUnderlyingType();
+                    var enumUnderlyingTypeDescriptor = enumUnderlyingType.GetTypeDescriptor(TypeDescriptorRegistry.Shared);
+                    var enumUnderlyingTypeName = enumUnderlyingTypeDescriptor.GetTypeName(CodeLanguage.KotlinJNA, false);
+
+                    return enumUnderlyingTypeName;
+                }
+                else
+                {
+                    return ManagedType.CTypeName();
+                }
+            }
+            case CodeLanguage.Kotlin: {
+                return ManagedType.CTypeName();
+            }
             default:
                 throw new NotImplementedException();
         }
@@ -425,6 +483,26 @@ public class TypeDescriptor
                     : string.Empty;
                 
                 return $"{swiftTypeName}{suffix}(handle: {{0}})";
+            } else {
+                return null;
+            }
+        } else if (sourceLanguage == CodeLanguage.C &&
+                   targetLanguage == CodeLanguage.KotlinJNA) {
+            string kotlinTypeName = GetTypeName(
+                CodeLanguage.KotlinJNA,
+                false,
+                Nullability.NotSpecified,
+                arrayElementNullability
+            );
+
+            if (IsEnum) {
+                return $"{kotlinTypeName}({{0}})";
+            } else if (RequiresNativePointer) {
+                var suffix = IsInterface 
+                    ? KotlinDotNETInterfaceImplementationSuffix
+                    : string.Empty;
+                
+                return $"{kotlinTypeName}{suffix}({{0}})";
             } else {
                 return null;
             }

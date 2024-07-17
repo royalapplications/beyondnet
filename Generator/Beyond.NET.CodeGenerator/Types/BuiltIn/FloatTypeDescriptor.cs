@@ -11,7 +11,9 @@ public partial class BuiltInTypeDescriptors
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "float" },
                     { CodeLanguage.C, "float" },
-                    { CodeLanguage.Swift, "Float" }
+                    { CodeLanguage.Swift, "Float" },
+                    { CodeLanguage.Kotlin, "Float" },
+                    { CodeLanguage.KotlinJNA, "Float" }
                 }
             );
         

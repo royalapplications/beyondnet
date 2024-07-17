@@ -11,7 +11,9 @@ public partial class BuiltInTypeDescriptors
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "byte" },
                     { CodeLanguage.C, "uint8_t" },
-                    { CodeLanguage.Swift, "UInt8" }
+                    { CodeLanguage.Swift, "UInt8" },
+                    { CodeLanguage.Kotlin, "UByte" },
+                    { CodeLanguage.KotlinJNA, "Byte" }
                 }
             );
         

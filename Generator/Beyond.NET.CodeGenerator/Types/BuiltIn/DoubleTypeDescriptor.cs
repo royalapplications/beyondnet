@@ -11,7 +11,9 @@ public partial class BuiltInTypeDescriptors
                 new() {
                     { CodeLanguage.CSharpUnmanaged, "double" },
                     { CodeLanguage.C, "double" },
-                    { CodeLanguage.Swift, "Double" }
+                    { CodeLanguage.Swift, "Double" },
+                    { CodeLanguage.Kotlin, "Double" },
+                    { CodeLanguage.KotlinJNA, "Double" }
                 }
             );
         
