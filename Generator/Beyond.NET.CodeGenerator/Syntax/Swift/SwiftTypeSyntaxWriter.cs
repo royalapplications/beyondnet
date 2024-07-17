@@ -3,7 +3,6 @@ using System.Text;
 
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.Generator;
-using Beyond.NET.CodeGenerator.Syntax.Swift.Declaration;
 using Beyond.NET.CodeGenerator.Types;
 using Beyond.NET.Core;
 

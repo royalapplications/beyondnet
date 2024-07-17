@@ -5,5 +5,6 @@ public enum CodeLanguage
     CSharp,
     CSharpUnmanaged,
     C,
-    Swift
+    Swift,
+    Kotlin
 }

@@ -6,6 +6,7 @@ using Beyond.NET.CodeGenerator.Collectors;
 using Beyond.NET.CodeGenerator.Generator;
 using Beyond.NET.CodeGenerator.Generator.C;
 using Beyond.NET.CodeGenerator.Generator.CSharpUnmanaged;
+using Beyond.NET.CodeGenerator.Generator.Kotlin;
 using Beyond.NET.CodeGenerator.Generator.Swift;
 using Beyond.NET.CodeGenerator.SourceCode;
 using Beyond.NET.Core;
@@ -297,6 +298,22 @@ internal class CodeGeneratorDriver
             var swiftResult = swiftResultObject.Result;
             var swiftCode = swiftResultObject.GeneratedCode;
             #endregion Swift
+
+            #region Kotlin
+            Logger.LogInformation("Generating Kotlin Code");
+            
+            var kotlinResultObject = GenerateKotlinCode(
+                types,
+                unsupportedTypes,
+                cSharpUnmanagedResult,
+                cResult,
+                emitUnsupported,
+                typeCollectorSettings
+            );
+    
+            var kotlinResult = kotlinResultObject.Result;
+            var kotlinCode = kotlinResultObject.GeneratedCode;
+            #endregion Kotlin
             #endregion Generate Code
             
             #region Write Generated Code Output to Files
@@ -309,9 +326,13 @@ internal class CodeGeneratorDriver
             string? swiftOutputPath = Configuration.SwiftOutputPath?
                 .ExpandTildeAndGetAbsolutePath();
             
+            string? kotlinOutputPath = Configuration.KotlinOutputPath?
+                .ExpandTildeAndGetAbsolutePath();
+            
             // If the user doesn't provide output paths for generated code files but build is enabled, we can use temporary paths
             string? temporaryGeneratedCodeDirPath = null;
     
+            // TODO: This assumes that we're always building for Apple platforms
             if (buildEnabled &&
                 !string.IsNullOrEmpty(buildProductName) &&
                 (string.IsNullOrEmpty(cSharpUnmanagedOutputPath) ||
@@ -335,6 +356,10 @@ internal class CodeGeneratorDriver
                 if (string.IsNullOrEmpty(swiftOutputPath)) {
                     swiftOutputPath = Path.Combine(temporaryGeneratedCodeDirPath, "Generated_Swift.swift");
                 }
+                
+                if (string.IsNullOrEmpty(kotlinOutputPath)) {
+                    kotlinOutputPath = Path.Combine(temporaryGeneratedCodeDirPath, "Generated_Kotlin.kt");
+                }
             }
      
             WriteCodeToFileOrPrintToConsole(
@@ -354,10 +379,17 @@ internal class CodeGeneratorDriver
                 swiftCode,
                 swiftOutputPath
             );
+            
+            WriteCodeToFileOrPrintToConsole(
+                "Kotlin",
+                kotlinCode,
+                kotlinOutputPath
+            );
             #endregion Write Generated Code Output to Files
     
             #region Build
             if (buildEnabled) {
+                // TODO: This assumes that we're always building for Apple platforms
                 if (string.IsNullOrEmpty(buildProductName) ||
                     string.IsNullOrEmpty(buildProductBundleIdentifier) ||
                     string.IsNullOrEmpty(buildProductOutputPath) ||
@@ -660,6 +692,57 @@ internal class CodeGeneratorDriver
         };
         
         SwiftCodeGenerator codeGenerator = new(
+            settings,
+            cSharpUnmanagedResult,
+            cResult
+        );
+        
+        Result result = codeGenerator.Generate(
+            types,
+            unsupportedTypes,
+            writer
+        );
+        
+        StringBuilder sb = new();
+
+        int generatedTypesCount = result.GeneratedTypes.Count;
+        int generatedMembersCount = 0;
+
+        foreach (var generatedMembers in result.GeneratedTypes.Values) {
+            generatedMembersCount += generatedMembers.Count();
+        }
+
+        sb.AppendLine($"// Number of generated types: {generatedTypesCount}");
+        sb.AppendLine($"// Number of generated members: {generatedMembersCount}");
+        sb.AppendLine();
+
+        foreach (var section in writer.Sections) {
+            sb.AppendLine($"// MARK: - BEGIN {section.Name}");
+            sb.AppendLine(section.Code.ToString());
+            sb.AppendLine($"// MARK: - END {section.Name}");
+            sb.AppendLine();
+        }
+
+        return new(result, sb.ToString());
+    }
+    
+    private static CodeGeneratorResult GenerateKotlinCode(
+        HashSet<Type> types,
+        Dictionary<Type, string> unsupportedTypes,
+        Result cSharpUnmanagedResult,
+        Result cResult,
+        bool emitUnsupported,
+        TypeCollectorSettings typeCollectorSettings
+    )
+    {
+        SourceCodeWriter writer = new();
+        
+        Generator.Kotlin.Settings settings = new() {
+            EmitUnsupported = emitUnsupported,
+            TypeCollectorSettings = typeCollectorSettings
+        };
+        
+        KotlinCodeGenerator codeGenerator = new(
             settings,
             cSharpUnmanagedResult,
             cResult

@@ -8,6 +8,7 @@ public record Configuration(
     string? CSharpUnmanagedOutputPath,
     string? COutputPath,
     string? SwiftOutputPath,
+    string? KotlinOutputPath,
     
     bool? EmitUnsupported,
     bool? GenerateTypeCheckedDestroyMethods,

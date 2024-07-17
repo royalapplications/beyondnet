@@ -11,6 +11,7 @@
 	"CSharpUnmanagedOutputPath": "Generated/Generated_CS.cs",
 	"COutputPath": "Generated/Generated_C.h",
 	"SwiftOutputPath": "Generated/Generated_Swift.swift",
+	"KotlinOutputPath": "Generated/Generated_Kotlin.kt",
 	
 	"EmitUnsupported": true,
 	"GenerateTypeCheckedDestroyMethods": false,
