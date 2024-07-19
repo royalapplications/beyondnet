@@ -263,7 +263,16 @@ public class TypeDescriptor
                     typeNameWithModifiers = $"{typeName}";
                 }
 
-                string kotlinNullabilitySpecifier = nullability.GetKotlinOptionalitySpecifier();
+                string kotlinNullabilitySpecifier;
+
+                if (RequiresNativePointer || IsReadOnlyStructOfByte)
+                {
+                    kotlinNullabilitySpecifier = string.Empty;
+                }
+                else
+                {
+                    kotlinNullabilitySpecifier = nullability.GetKotlinOptionalitySpecifier();
+                }
 
                 if (!string.IsNullOrEmpty(kotlinNullabilitySpecifier)) {
                     typeNameWithModifiers += kotlinNullabilitySpecifier;
