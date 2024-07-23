@@ -2167,7 +2167,6 @@ public enum class System_TypeCode(val rawValue: Int) {
 	String(18)
 }
 
-
 	// MARK: - END System.TypeCode
 
 
@@ -2182,7 +2181,6 @@ public enum class System_Globalization_CultureTypes(val rawValue: Int) {
 	WindowsOnlyCultures(32),
 	FrameworkCultures(64)
 }
-
 
 	// MARK: - END System.Globalization.CultureTypes
 
@@ -2210,7 +2208,6 @@ public enum class System_Globalization_NumberStyles(val rawValue: Int) {
 	BinaryNumber(1027)
 }
 
-
 	// MARK: - END System.Globalization.NumberStyles
 
 
@@ -2223,7 +2220,6 @@ public enum class System_MidpointRounding(val rawValue: Int) {
 	ToPositiveInfinity(4)
 }
 
-
 	// MARK: - END System.MidpointRounding
 
 
@@ -2232,7 +2228,6 @@ public enum class System_Globalization_TimeSpanStyles(val rawValue: Int) {
 	None(0),
 	AssumeNegative(1)
 }
-
 
 	// MARK: - END System.Globalization.TimeSpanStyles
 
@@ -2243,7 +2238,6 @@ public enum class System_DateTimeKind(val rawValue: Int) {
 	Utc(1),
 	Local(2)
 }
-
 
 	// MARK: - END System.DateTimeKind
 
@@ -2258,7 +2252,6 @@ public enum class System_DayOfWeek(val rawValue: Int) {
 	Friday(5),
 	Saturday(6)
 }
-
 
 	// MARK: - END System.DayOfWeek
 
@@ -2277,7 +2270,6 @@ public enum class System_Globalization_DateTimeStyles(val rawValue: Int) {
 	RoundtripKind(128)
 }
 
-
 	// MARK: - END System.Globalization.DateTimeStyles
 
 
@@ -2289,7 +2281,6 @@ public enum class System_Globalization_CalendarAlgorithmType(val rawValue: Int) 
 	LunisolarCalendar(3)
 }
 
-
 	// MARK: - END System.Globalization.CalendarAlgorithmType
 
 
@@ -2299,7 +2290,6 @@ public enum class System_Globalization_CalendarWeekRule(val rawValue: Int) {
 	FirstFullWeek(1),
 	FirstFourDayWeek(2)
 }
-
 
 	// MARK: - END System.Globalization.CalendarWeekRule
 
@@ -2317,7 +2307,6 @@ public enum class System_Runtime_Serialization_StreamingContextStates(val rawVal
 	All(255)
 }
 
-
 	// MARK: - END System.Runtime.Serialization.StreamingContextStates
 
 
@@ -2331,7 +2320,6 @@ public enum class System_Reflection_ProcessorArchitecture(val rawValue: Int) {
 	Arm(5)
 }
 
-
 	// MARK: - END System.Reflection.ProcessorArchitecture
 
 
@@ -2340,7 +2328,6 @@ public enum class System_Reflection_AssemblyContentType(val rawValue: Int) {
 	Default(0),
 	WindowsRuntime(1)
 }
-
 
 	// MARK: - END System.Reflection.AssemblyContentType
 
@@ -2353,7 +2340,6 @@ public enum class System_Reflection_AssemblyNameFlags(val rawValue: Int) {
 	EnableJITcompileOptimizer(16384),
 	EnableJITcompileTracking(32768)
 }
-
 
 	// MARK: - END System.Reflection.AssemblyNameFlags
 
@@ -2368,7 +2354,6 @@ public enum class System_Configuration_Assemblies_AssemblyHashAlgorithm(val rawV
 	SHA512(32782)
 }
 
-
 	// MARK: - END System.Configuration.Assemblies.AssemblyHashAlgorithm
 
 
@@ -2378,7 +2363,6 @@ public enum class System_Configuration_Assemblies_AssemblyVersionCompatibility(v
 	SameProcess(2),
 	SameDomain(3)
 }
-
 
 	// MARK: - END System.Configuration.Assemblies.AssemblyVersionCompatibility
 
@@ -2398,7 +2382,6 @@ public enum class System_Reflection_ParameterAttributes(val rawValue: Int) {
 	ReservedMask(61440)
 }
 
-
 	// MARK: - END System.Reflection.ParameterAttributes
 
 
@@ -2412,7 +2395,6 @@ public enum class System_Reflection_PortableExecutableKinds(val rawValue: Int) {
 	Preferred32Bit(16)
 }
 
-
 	// MARK: - END System.Reflection.PortableExecutableKinds
 
 
@@ -2423,7 +2405,6 @@ public enum class System_Reflection_ImageFileMachine(val rawValue: Int) {
 	IA64(512),
 	AMD64(34404)
 }
-
 
 	// MARK: - END System.Reflection.ImageFileMachine
 
@@ -2440,7 +2421,6 @@ public enum class System_Reflection_MemberTypes(val rawValue: Int) {
 	NestedType(128),
 	All(191)
 }
-
 
 	// MARK: - END System.Reflection.MemberTypes
 
@@ -2470,7 +2450,6 @@ public enum class System_Reflection_BindingFlags(val rawValue: Int) {
 	DoNotWrapExceptions(33554432)
 }
 
-
 	// MARK: - END System.Reflection.BindingFlags
 
 
@@ -2497,7 +2476,6 @@ public enum class System_Reflection_FieldAttributes(val rawValue: Int) {
 	ReservedMask(38144)
 }
 
-
 	// MARK: - END System.Reflection.FieldAttributes
 
 
@@ -2513,7 +2491,6 @@ public enum class System_Reflection_PropertyAttributes(val rawValue: Int) {
 	ReservedMask(62464)
 }
 
-
 	// MARK: - END System.Reflection.PropertyAttributes
 
 
@@ -2525,7 +2502,6 @@ public enum class System_Reflection_CallingConventions(val rawValue: Int) {
 	HasThis(32),
 	ExplicitThis(64)
 }
-
 
 	// MARK: - END System.Reflection.CallingConventions
 
@@ -2558,7 +2534,6 @@ public enum class System_Reflection_MethodAttributes(val rawValue: Int) {
 	ReservedMask(53248)
 }
 
-
 	// MARK: - END System.Reflection.MethodAttributes
 
 
@@ -2583,7 +2558,6 @@ public enum class System_Reflection_MethodImplAttributes(val rawValue: Int) {
 	MaxMethodImplVal(65535)
 }
 
-
 	// MARK: - END System.Reflection.MethodImplAttributes
 
 
@@ -2594,7 +2568,6 @@ public enum class System_Reflection_ExceptionHandlingClauseOptions(val rawValue:
 	Finally(2),
 	Fault(4)
 }
-
 
 	// MARK: - END System.Reflection.ExceptionHandlingClauseOptions
 
@@ -2611,7 +2584,6 @@ public enum class System_Threading_Tasks_TaskStatus(val rawValue: Int) {
 	Faulted(7)
 }
 
-
 	// MARK: - END System.Threading.Tasks.TaskStatus
 
 
@@ -2625,7 +2597,6 @@ public enum class System_Threading_Tasks_TaskCreationOptions(val rawValue: Int) 
 	HideScheduler(16),
 	RunContinuationsAsynchronously(64)
 }
-
 
 	// MARK: - END System.Threading.Tasks.TaskCreationOptions
 
@@ -2649,7 +2620,6 @@ public enum class System_Threading_Tasks_TaskContinuationOptions(val rawValue: I
 	ExecuteSynchronously(524288)
 }
 
-
 	// MARK: - END System.Threading.Tasks.TaskContinuationOptions
 
 
@@ -2660,7 +2630,6 @@ public enum class System_Threading_Tasks_ConfigureAwaitOptions(val rawValue: Int
 	SuppressThrowing(2),
 	ForceYielding(4)
 }
-
 
 	// MARK: - END System.Threading.Tasks.ConfigureAwaitOptions
 
@@ -2673,7 +2642,6 @@ public enum class System_Threading_Tasks_Sources_ValueTaskSourceStatus(val rawVa
 	Canceled(3)
 }
 
-
 	// MARK: - END System.Threading.Tasks.Sources.ValueTaskSourceStatus
 
 
@@ -2683,7 +2651,6 @@ public enum class System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags
 	UseSchedulingContext(1),
 	FlowExecutionContext(2)
 }
-
 
 	// MARK: - END System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags
 
@@ -2695,7 +2662,6 @@ public enum class System_IO_SeekOrigin(val rawValue: Int) {
 	End(2)
 }
 
-
 	// MARK: - END System.IO.SeekOrigin
 
 
@@ -2705,7 +2671,6 @@ public enum class System_IO_FileAccess(val rawValue: Int) {
 	Write(2),
 	ReadWrite(3)
 }
-
 
 	// MARK: - END System.IO.FileAccess
 
@@ -2720,7 +2685,6 @@ public enum class System_IO_FileMode(val rawValue: Int) {
 	Append(6)
 }
 
-
 	// MARK: - END System.IO.FileMode
 
 
@@ -2733,7 +2697,6 @@ public enum class System_IO_FileShare(val rawValue: Int) {
 	Delete(4),
 	Inheritable(16)
 }
-
 
 	// MARK: - END System.IO.FileShare
 
@@ -2749,7 +2712,6 @@ public enum class System_IO_FileOptions(val rawValue: Int) {
 	WriteThrough(-2147483648)
 }
 
-
 	// MARK: - END System.IO.FileOptions
 
 
@@ -2761,7 +2723,6 @@ public enum class System_Reflection_EventAttributes(val rawValue: Int) {
 	ReservedMask(1024)
 }
 
-
 	// MARK: - END System.Reflection.EventAttributes
 
 
@@ -2771,7 +2732,6 @@ public enum class System_Reflection_ResourceLocation(val rawValue: Int) {
 	ContainedInAnotherAssembly(2),
 	ContainedInManifestFile(4)
 }
-
 
 	// MARK: - END System.Reflection.ResourceLocation
 
@@ -2783,7 +2743,6 @@ public enum class System_Security_SecurityRuleSet(val rawValue: Byte) {
 	Level2(2)
 }
 
-
 	// MARK: - END System.Security.SecurityRuleSet
 
 
@@ -2794,7 +2753,6 @@ public enum class System_Buffers_OperationStatus(val rawValue: Int) {
 	NeedMoreData(2),
 	InvalidData(3)
 }
-
 
 	// MARK: - END System.Buffers.OperationStatus
 
@@ -2833,7 +2791,6 @@ public enum class System_Globalization_UnicodeCategory(val rawValue: Int) {
 	OtherNotAssigned(29)
 }
 
-
 	// MARK: - END System.Globalization.UnicodeCategory
 
 
@@ -2850,7 +2807,6 @@ public enum class System_Globalization_CompareOptions(val rawValue: Int) {
 	Ordinal(1073741824)
 }
 
-
 	// MARK: - END System.Globalization.CompareOptions
 
 
@@ -2860,7 +2816,6 @@ public enum class System_Globalization_DigitShapes(val rawValue: Int) {
 	None(1),
 	NativeNational(2)
 }
-
 
 	// MARK: - END System.Globalization.DigitShapes
 
@@ -2875,7 +2830,6 @@ public enum class System_StringComparison(val rawValue: Int) {
 	OrdinalIgnoreCase(5)
 }
 
-
 	// MARK: - END System.StringComparison
 
 
@@ -2887,7 +2841,6 @@ public enum class System_Text_NormalizationForm(val rawValue: Int) {
 	FormKD(6)
 }
 
-
 	// MARK: - END System.Text.NormalizationForm
 
 
@@ -2897,7 +2850,6 @@ public enum class System_StringSplitOptions(val rawValue: Int) {
 	RemoveEmptyEntries(1),
 	TrimEntries(2)
 }
-
 
 	// MARK: - END System.StringSplitOptions
 
@@ -2913,7 +2865,6 @@ public enum class System_Reflection_GenericParameterAttributes(val rawValue: Int
 	DefaultConstructorConstraint(16),
 	SpecialConstraintMask(28)
 }
-
 
 	// MARK: - END System.Reflection.GenericParameterAttributes
 
@@ -2954,7 +2905,6 @@ public enum class System_Reflection_TypeAttributes(val rawValue: Int) {
 	CustomFormatMask(12582912)
 }
 
-
 	// MARK: - END System.Reflection.TypeAttributes
 
 
@@ -2964,7 +2914,6 @@ public enum class System_Runtime_InteropServices_LayoutKind(val rawValue: Int) {
 	Explicit(2),
 	Auto(3)
 }
-
 
 	// MARK: - END System.Runtime.InteropServices.LayoutKind
 
@@ -2977,7 +2926,6 @@ public enum class System_Runtime_InteropServices_CharSet(val rawValue: Int) {
 	Auto(4)
 }
 
-
 	// MARK: - END System.Runtime.InteropServices.CharSet
 
 
@@ -2986,7 +2934,6 @@ public enum class System_Runtime_InteropServices_CustomQueryInterfaceMode(val ra
 	Ignore(0),
 	Allow(1)
 }
-
 
 	// MARK: - END System.Runtime.InteropServices.CustomQueryInterfaceMode
 
@@ -2999,7 +2946,6 @@ public enum class System_Runtime_InteropServices_GCHandleType(val rawValue: Int)
 	Pinned(3)
 }
 
-
 	// MARK: - END System.Runtime.InteropServices.GCHandleType
 
 
@@ -3011,7 +2957,6 @@ public enum class System_GCKind(val rawValue: Int) {
 	Background(3)
 }
 
-
 	// MARK: - END System.GCKind
 
 
@@ -3022,7 +2967,6 @@ public enum class System_GCCollectionMode(val rawValue: Int) {
 	Optimized(2),
 	Aggressive(3)
 }
-
 
 	// MARK: - END System.GCCollectionMode
 
@@ -3036,7 +2980,6 @@ public enum class System_GCNotificationStatus(val rawValue: Int) {
 	NotApplicable(4)
 }
 
-
 	// MARK: - END System.GCNotificationStatus
 
 
@@ -3045,7 +2988,6 @@ public enum class System_Base64FormattingOptions(val rawValue: Int) {
 	None(0),
 	InsertLineBreaks(1)
 }
-
 
 	// MARK: - END System.Base64FormattingOptions
 
@@ -3058,7 +3000,6 @@ public enum class System_Threading_ThreadPriority(val rawValue: Int) {
 	AboveNormal(3),
 	Highest(4)
 }
-
 
 	// MARK: - END System.Threading.ThreadPriority
 
@@ -3077,7 +3018,6 @@ public enum class System_Threading_ThreadState(val rawValue: Int) {
 	Aborted(256)
 }
 
-
 	// MARK: - END System.Threading.ThreadState
 
 
@@ -3088,7 +3028,6 @@ public enum class System_Threading_ApartmentState(val rawValue: Int) {
 	Unknown(2)
 }
 
-
 	// MARK: - END System.Threading.ApartmentState
 
 
@@ -3097,7 +3036,6 @@ public enum class System_Security_Permissions_PermissionState(val rawValue: Int)
 	None(0),
 	Unrestricted(1)
 }
-
 
 	// MARK: - END System.Security.Permissions.PermissionState
 
@@ -3108,7 +3046,6 @@ public enum class System_Security_Principal_PrincipalPolicy(val rawValue: Int) {
 	NoPrincipal(1),
 	WindowsPrincipal(2)
 }
-
 
 	// MARK: - END System.Security.Principal.PrincipalPolicy
 
@@ -3134,7 +3071,6 @@ public enum class System_IO_FileAttributes(val rawValue: Int) {
 	NoScrubData(131072)
 }
 
-
 	// MARK: - END System.IO.FileAttributes
 
 
@@ -3155,7 +3091,6 @@ public enum class System_IO_UnixFileMode(val rawValue: Int) {
 	SetUser(2048)
 }
 
-
 	// MARK: - END System.IO.UnixFileMode
 
 
@@ -3165,7 +3100,6 @@ public enum class System_IO_SearchOption(val rawValue: Int) {
 	AllDirectories(1)
 }
 
-
 	// MARK: - END System.IO.SearchOption
 
 
@@ -3174,7 +3108,6 @@ public enum class System_IO_MatchType(val rawValue: Int) {
 	Simple(0),
 	Win32(1)
 }
-
 
 	// MARK: - END System.IO.MatchType
 
@@ -3186,7 +3119,6 @@ public enum class System_IO_MatchCasing(val rawValue: Int) {
 	CaseInsensitive(2)
 }
 
-
 	// MARK: - END System.IO.MatchCasing
 
 
@@ -3197,7 +3129,6 @@ public enum class Beyond_NET_Sample_NiceLevels(val rawValue: Int) {
 	Nice(2),
 	VeryNice(3)
 }
-
 
 	// MARK: - END Beyond.NET.Sample.NiceLevels
 
@@ -3211,7 +3142,6 @@ public enum class System_UriHostNameType(val rawValue: Int) {
 	IPv6(4)
 }
 
-
 	// MARK: - END System.UriHostNameType
 
 
@@ -3223,7 +3153,6 @@ public enum class System_UriPartial(val rawValue: Int) {
 	Query(3)
 }
 
-
 	// MARK: - END System.UriPartial
 
 
@@ -3233,7 +3162,6 @@ public enum class System_UriKind(val rawValue: Int) {
 	Absolute(1),
 	Relative(2)
 }
-
 
 	// MARK: - END System.UriKind
 
@@ -3259,7 +3187,6 @@ public enum class System_UriComponents(val rawValue: Int) {
 	SerializationInfoString(-2147483648)
 }
 
-
 	// MARK: - END System.UriComponents
 
 
@@ -3270,7 +3197,6 @@ public enum class System_UriFormat(val rawValue: Int) {
 	SafeUnescaped(3)
 }
 
-
 	// MARK: - END System.UriFormat
 
 
@@ -3280,7 +3206,6 @@ public enum class Beyond_NET_Sample_TestEnum(val rawValue: Int) {
 	SecondCase(1)
 }
 
-
 	// MARK: - END Beyond.NET.Sample.TestEnum
 
 
@@ -3289,7 +3214,6 @@ public enum class System_Security_Cryptography_CryptoStreamMode(val rawValue: In
 	Read(0),
 	Write(1)
 }
-
 
 	// MARK: - END System.Security.Cryptography.CryptoStreamMode
 
@@ -3303,7 +3227,6 @@ public enum class System_Security_Cryptography_CipherMode(val rawValue: Int) {
 	CTS(5)
 }
 
-
 	// MARK: - END System.Security.Cryptography.CipherMode
 
 
@@ -3315,7 +3238,6 @@ public enum class System_Security_Cryptography_PaddingMode(val rawValue: Int) {
 	ANSIX923(4),
 	ISO10126(5)
 }
-
 
 	// MARK: - END System.Security.Cryptography.PaddingMode
 
@@ -3329,7 +3251,6 @@ public enum class System_Security_Cryptography_PbeEncryptionAlgorithm(val rawVal
 	TripleDes3KeyPkcs12(4)
 }
 
-
 	// MARK: - END System.Security.Cryptography.PbeEncryptionAlgorithm
 
 
@@ -3338,7 +3259,6 @@ public enum class System_Security_Cryptography_DSASignatureFormat(val rawValue: 
 	IeeeP1363FixedFieldConcatenation(0),
 	Rfc3279DerSequence(1)
 }
-
 
 	// MARK: - END System.Security.Cryptography.DSASignatureFormat
 
@@ -3358,7 +3278,6 @@ public enum class System_Security_Cryptography_OidGroup(val rawValue: Int) {
 	KeyDerivationFunction(10)
 }
 
-
 	// MARK: - END System.Security.Cryptography.OidGroup
 
 
@@ -3371,7 +3290,6 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 	Characteristic2(4),
 	Named(5)
 }
-
 
 	// MARK: - END System.Security.Cryptography.ECCurve.ECCurveType
 

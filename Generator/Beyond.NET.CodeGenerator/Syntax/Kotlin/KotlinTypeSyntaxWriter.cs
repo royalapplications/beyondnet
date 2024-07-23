@@ -3,6 +3,7 @@ using System.Text;
 
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.Generator;
+using Beyond.NET.CodeGenerator.Syntax.Kotlin.Declaration;
 using Beyond.NET.CodeGenerator.Types;
 using Beyond.NET.Core;
 
@@ -107,11 +108,7 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
 
         string underlyingTypeName = underlyingTypeDescriptor.GetTypeName(CodeLanguage.KotlinJNA, false);
         
-        bool isFlagsEnum = type.IsDefined(typeof(FlagsAttribute), false);
-        
-        StringBuilder sb = new();
-
-        sb.AppendLine($"public enum class {kotlinEnumTypeName}(val rawValue: {underlyingTypeName}) {{");
+        // bool isFlagsEnum = type.IsDefined(typeof(FlagsAttribute), false);
         
         var caseNames = type.GetEnumNames();
         var values = type.GetEnumValuesAsUnderlyingType() ?? throw new Exception("No enum values");
@@ -120,7 +117,7 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
             throw new Exception("The number of case names in an enum must match the number of values");
         }
 
-        List<string> enumCases = new();
+        List<KotlinEnumClassCase> enumCases = new();
 
         for (int i = 0; i < caseNames.Length; i++) {
             string caseName = caseNames[i];
@@ -132,28 +129,34 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
                 valueType == typeof(byte) ||
                 valueType == typeof(ushort) ||
                 valueType == typeof(uint) ||
-                valueType == typeof(ulong))
-                enumCases.Add($"\t{caseName}({value})");
+                valueType == typeof(ulong)) {
+                enumCases.Add(new KotlinEnumClassCase(caseName, value.ToString()!));
             // else if (valueType == typeof(byte) ||
             //          valueType == typeof(ushort) ||
             //          valueType == typeof(uint) ||
             //          valueType == typeof(ulong))
-            //     enumCases.Add($"\t{caseName}({value}u)");
-            else if (valueType == typeof(double))
-                enumCases.Add($"\t{caseName}({value}.toDouble())");
-            else if (valueType == typeof(float))
-                enumCases.Add($"\t{caseName}({value}.toFloat())");
-            else
+            //     enumCases.Add($"{caseName}({value}u)");
+            } else if (valueType == typeof(double)) {
+                enumCases.Add(new KotlinEnumClassCase(caseName, $"{value}.toDouble()"));
+            } else if (valueType == typeof(float)) {
+                enumCases.Add(new KotlinEnumClassCase(caseName, $"{value}.toFloat()"));
+            } else {
                 throw new Exception($"Unknown underlying enum type: {underlyingType}");
+            }
         }
 
-        string enumCasesString = string.Join(",\n", enumCases);
+        string enumCasesString = KotlinEnumClassCase.CasesToString(enumCases);
 
-        sb.AppendLine(enumCasesString);
+        var enumClassDef = new KotlinEnumClassDeclaration(
+            kotlinEnumTypeName,
+            KotlinVisibilities.Public,
+            underlyingTypeName,
+            enumCasesString
+        );
 
-        sb.AppendLine("}");
+        var enumClassDefStr = enumClassDef.ToString();
 
-        return sb.ToString();
+        return enumClassDefStr;
     }
 
     private string WriteJNAType(
