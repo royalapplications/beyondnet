@@ -1,21 +1,19 @@
-namespace Beyond.NET.CodeGenerator.Syntax.Swift.Declaration;
+namespace Beyond.NET.CodeGenerator.Syntax.Kotlin.Declaration;
 
-public struct SwiftVariableDeclaration
+public struct KotlinVariableDeclaration
 {
-    public SwiftVariableKinds VariableKind { get; }
+    public KotlinVariableKinds VariableKind { get; }
     public string Name { get; }
     public string? TypeName { get; } = null;
     public string? Value { get; } = null;
-    public SwiftVisibilities Visibility { get; } = SwiftVisibilities.None;
-    public SwiftTypeAttachmentKinds TypeAttachmentKind { get; } = SwiftTypeAttachmentKinds.Instance;
+    public KotlinVisibilities Visibility { get; } = KotlinVisibilities.None;
 
-    public SwiftVariableDeclaration(
-        SwiftVariableKinds variableKind,
+    public KotlinVariableDeclaration(
+        KotlinVariableKinds variableKind,
         string name,
         string? typeName,
         string? value,
-        SwiftVisibilities visibility,
-        SwiftTypeAttachmentKinds typeAttachmentKind
+        KotlinVisibilities visibility
     )
     {
         VariableKind = variableKind;
@@ -23,7 +21,6 @@ public struct SwiftVariableDeclaration
         TypeName = typeName;
         Value = value;
         Visibility = visibility;
-        TypeAttachmentKind = typeAttachmentKind;
 
         if (string.IsNullOrEmpty(Value) &&
             string.IsNullOrEmpty(TypeName)) {
@@ -36,18 +33,17 @@ public struct SwiftVariableDeclaration
         string variableKindString;
 
         switch (VariableKind) {
-            case SwiftVariableKinds.Constant:
-                variableKindString = "let";
+            case KotlinVariableKinds.Constant:
+                variableKindString = "val";
                 break;
-            case SwiftVariableKinds.Variable:
+            case KotlinVariableKinds.Variable:
                 variableKindString = "var";
                 break;
             default:
                 throw new Exception("Unknown Variable Kind");
         }
         
-        string visibilityString = Visibility.ToSwiftSyntaxString();
-        string typeAttachmentKindString = TypeAttachmentKind.ToSwiftSyntaxString();
+        string visibilityString = Visibility.ToKotlinSyntaxString();
 
         string nameAndTypeName = Name;
 
@@ -61,13 +57,12 @@ public struct SwiftVariableDeclaration
         
         string[] signatureComponents = [
             visibilityString,
-            typeAttachmentKindString,
             variableKindString,
             nameAndTypeName,
             valueAssignment
         ];
 
-        string decl = SwiftFuncSignatureComponents.ComponentsToString(signatureComponents);
+        string decl = KotlinFunSignatureComponents.ComponentsToString(signatureComponents);
         
         return decl;
     }

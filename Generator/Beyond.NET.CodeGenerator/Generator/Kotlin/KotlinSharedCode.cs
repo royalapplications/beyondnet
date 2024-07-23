@@ -9,19 +9,19 @@ open class DNObject(handle: Pointer) {
        Skip
    }
 
-   val handle: Pointer
-   var destroyMode: DestroyMode = DestroyMode.Normal
+   val __handle: Pointer
+   var __destroyMode: DestroyMode = DestroyMode.Normal
 
    init {
        require(handle !== Pointer.NULL) {
            "Cannot initialize DNObject with a null pointer"
        }
 
-       this.handle = handle
+       this.__handle = handle
    }
 
    protected fun finalize() {
-       when (destroyMode) {
+       when (__destroyMode) {
            DestroyMode.Normal -> destroy()
            DestroyMode.Skip -> {}
        }

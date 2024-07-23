@@ -41,7 +41,7 @@ public struct SwiftClassDeclaration
                 : $": {ProtocolConformance}";
         }
         
-        string[] signatureComponents = new[] {
+        string[] signatureComponents = {
             visibilityString,
             @class,
             $"{Name}{baseTypeAndProtocolConformanceDecl}"

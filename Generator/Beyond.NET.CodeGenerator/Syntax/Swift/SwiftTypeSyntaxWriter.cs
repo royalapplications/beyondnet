@@ -122,6 +122,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         return sb.ToString();
     }
 
+    #region Enum
     private string WriteEnumDef(
         Type type,
         TypeDescriptorRegistry typeDescriptorRegistry
@@ -306,7 +307,9 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         
         return sb.ToString();
     }
+    #endregion Enum
 
+    #region Members
     public string WriteMembers(
         ISyntaxWriterConfiguration? configuration,
         Type type,
@@ -670,7 +673,9 @@ public subscript(position: Index) -> Element {
 
         return sb.ToString();
     }
+    #endregion Members
 
+    #region Type Extensions
     public string WriteTypeExtensionMethods(
         Type extendedType,
         List<GeneratedMember> generatedMembers
@@ -750,7 +755,9 @@ public subscript(position: Index) -> Element {
         
         return code;
     }
+    #endregion Type Extensions
 
+    #region Syntax Writers
     private ISwiftSyntaxWriter? GetSyntaxWriter(
         MemberKind memberKind,
         MemberTypes memberType
@@ -769,4 +776,5 @@ public subscript(position: Index) -> Element {
 
         return syntaxWriter;
     }
+    #endregion Syntax Writers
 }

@@ -4,7 +4,8 @@ public enum KotlinVisibilities
 {
     None,
     Private,
-    Public
+    Public,
+    Open
 }
 
 public static class KotlinVisibilities_Extensions
@@ -18,6 +19,8 @@ public static class KotlinVisibilities_Extensions
                 return "private";
             case KotlinVisibilities.Public:
                 return "public";
+            case KotlinVisibilities.Open:
+                return "open";
         }
 
         throw new Exception($"Unknown Kotlin Visibility: {visibilty}");

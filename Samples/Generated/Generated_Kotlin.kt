@@ -16,19 +16,19 @@ open class DNObject(handle: Pointer) {
        Skip
    }
 
-   val handle: Pointer
-   var destroyMode: DestroyMode = DestroyMode.Normal
+   val __handle: Pointer
+   var __destroyMode: DestroyMode = DestroyMode.Normal
 
    init {
        require(handle !== Pointer.NULL) {
            "Cannot initialize DNObject with a null pointer"
        }
 
-       this.handle = handle
+       this.__handle = handle
    }
 
    protected fun finalize() {
-       when (destroyMode) {
+       when (__destroyMode) {
            DestroyMode.Normal -> destroy()
            DestroyMode.Skip -> {}
        }
@@ -3322,101 +3322,121 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Object
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Object
 
 
 	// MARK: - BEGIN System.Type
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Type
 
 
 	// MARK: - BEGIN System.Reflection.MemberInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.MemberInfo
 
 
 	// MARK: - BEGIN System.Reflection.ICustomAttributeProvider
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.ICustomAttributeProvider
 
 
 	// MARK: - BEGIN System.Object[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Object[]
 
 
 	// MARK: - BEGIN System.Array
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Array
 
 
 	// MARK: - BEGIN System.ICloneable
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.ICloneable
 
 
 	// MARK: - BEGIN System.Collections.IList
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Collections.IList
 
 
 	// MARK: - BEGIN System.Collections.ICollection
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Collections.ICollection
 
 
 	// MARK: - BEGIN System.Collections.IEnumerable
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Collections.IEnumerable
 
 
 	// MARK: - BEGIN System.Collections.IEnumerator
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Collections.IEnumerator
 
 
 	// MARK: - BEGIN System.Boolean
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Boolean
 
 
 	// MARK: - BEGIN System.ValueType
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.ValueType
 
 
 	// MARK: - BEGIN System.Int32
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Int32
 
 
 	// MARK: - BEGIN System.IComparable
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IComparable
 
 
 	// MARK: - BEGIN System.IConvertible
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IConvertible
 
 
 	// MARK: - BEGIN System.Enum
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Enum
 
 
 	// MARK: - BEGIN System.ISpanFormattable
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.ISpanFormattable
 
 
 	// MARK: - BEGIN System.IFormattable
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IFormattable
 
 
 	// MARK: - BEGIN System.String
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.String
 
@@ -3437,6 +3457,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.IDisposable
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IDisposable
 
@@ -3452,6 +3473,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Char
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Char
 
@@ -3492,16 +3514,19 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.IUtf8SpanFormattable
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IUtf8SpanFormattable
 
 
 	// MARK: - BEGIN System.Int32&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Int32&
 
 
 	// MARK: - BEGIN System.IFormatProvider
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IFormatProvider
 
@@ -3527,31 +3552,37 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Globalization.CultureInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Globalization.CultureInfo
 
 
 	// MARK: - BEGIN System.Globalization.CultureInfo[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Globalization.CultureInfo[]
 
 
 	// MARK: - BEGIN System.Collections.IStructuralComparable
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Collections.IStructuralComparable
 
 
 	// MARK: - BEGIN System.Collections.IComparer
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Collections.IComparer
 
 
 	// MARK: - BEGIN System.Collections.IStructuralEquatable
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Collections.IStructuralEquatable
 
 
 	// MARK: - BEGIN System.Collections.IEqualityComparer
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Collections.IEqualityComparer
 
@@ -3632,46 +3663,55 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Globalization.CultureInfo&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Globalization.CultureInfo&
 
 
 	// MARK: - BEGIN System.Globalization.CompareInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Globalization.CompareInfo
 
 
 	// MARK: - BEGIN System.Runtime.Serialization.IDeserializationCallback
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.Serialization.IDeserializationCallback
 
 
 	// MARK: - BEGIN System.Reflection.Assembly
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.Assembly
 
 
 	// MARK: - BEGIN System.Runtime.Serialization.ISerializable
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.Serialization.ISerializable
 
 
 	// MARK: - BEGIN System.Runtime.Serialization.SerializationInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.Serialization.SerializationInfo
 
 
 	// MARK: - BEGIN System.Runtime.Serialization.SerializationInfoEnumerator
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.Serialization.SerializationInfoEnumerator
 
 
 	// MARK: - BEGIN System.Runtime.Serialization.SerializationEntry
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.Serialization.SerializationEntry
 
 
 	// MARK: - BEGIN System.SByte
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.SByte
 
@@ -3692,6 +3732,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.SByte&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.SByte&
 
@@ -3702,6 +3743,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Byte
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Byte
 
@@ -3727,6 +3769,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Byte&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Byte&
 
@@ -3747,6 +3790,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Byte[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Byte[]
 
@@ -3797,6 +3841,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Int16
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Int16
 
@@ -3817,6 +3862,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Int16&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Int16&
 
@@ -3837,6 +3883,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.UInt16
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.UInt16
 
@@ -3862,6 +3909,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.UInt16&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.UInt16&
 
@@ -3882,6 +3930,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.UInt32
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.UInt32
 
@@ -3907,6 +3956,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.UInt32&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.UInt32&
 
@@ -3927,6 +3977,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Int64
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Int64
 
@@ -3947,6 +3998,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Int64&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Int64&
 
@@ -3967,6 +4019,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.UInt64
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.UInt64
 
@@ -3992,6 +4045,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.UInt64&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.UInt64&
 
@@ -4012,6 +4066,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Single
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Single
 
@@ -4042,6 +4097,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Single&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Single&
 
@@ -4062,6 +4118,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Double
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Double
 
@@ -4087,6 +4144,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Double&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Double&
 
@@ -4107,6 +4165,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Decimal
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Decimal
 
@@ -4127,11 +4186,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Decimal&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Decimal&
 
 
 	// MARK: - BEGIN System.Int32[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Int32[]
 
@@ -4182,6 +4243,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.DateTime
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.DateTime
 
@@ -4197,6 +4259,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.TimeSpan
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.TimeSpan
 
@@ -4212,6 +4275,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.String[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.String[]
 
@@ -4247,21 +4311,25 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.String&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.String&
 
 
 	// MARK: - BEGIN System.TimeSpan&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.TimeSpan&
 
 
 	// MARK: - BEGIN System.DateTime&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.DateTime&
 
 
 	// MARK: - BEGIN System.DateOnly
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.DateOnly
 
@@ -4277,6 +4345,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.TimeOnly
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.TimeOnly
 
@@ -4292,36 +4361,43 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.TimeOnly&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.TimeOnly&
 
 
 	// MARK: - BEGIN System.DateOnly&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.DateOnly&
 
 
 	// MARK: - BEGIN System.Globalization.Calendar
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Globalization.Calendar
 
 
 	// MARK: - BEGIN System.Runtime.Serialization.IFormatterConverter
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.Serialization.IFormatterConverter
 
 
 	// MARK: - BEGIN System.Runtime.Serialization.StreamingContext
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.Serialization.StreamingContext
 
 
 	// MARK: - BEGIN System.Reflection.AssemblyName
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.AssemblyName
 
 
 	// MARK: - BEGIN System.Version
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Version
 
@@ -4337,36 +4413,43 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Version&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Version&
 
 
 	// MARK: - BEGIN System.Reflection.StrongNameKeyPair
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.StrongNameKeyPair
 
 
 	// MARK: - BEGIN System.IO.FileStream
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.FileStream
 
 
 	// MARK: - BEGIN System.IO.Stream
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.Stream
 
 
 	// MARK: - BEGIN System.MarshalByRefObject
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.MarshalByRefObject
 
 
 	// MARK: - BEGIN System.IAsyncDisposable
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IAsyncDisposable
 
 
 	// MARK: - BEGIN System.Threading.Tasks.ValueTask
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.Tasks.ValueTask
 
@@ -4382,6 +4465,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Threading.CancellationToken
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.CancellationToken
 
@@ -4392,11 +4476,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Threading.WaitHandle
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.WaitHandle
 
 
 	// MARK: - BEGIN System.IntPtr
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IntPtr
 
@@ -4417,6 +4503,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.IntPtr&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IntPtr&
 
@@ -4437,31 +4524,37 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN Microsoft.Win32.SafeHandles.SafeWaitHandle
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Microsoft.Win32.SafeHandles.SafeWaitHandle
 
 
 	// MARK: - BEGIN Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid
 
 
 	// MARK: - BEGIN System.Runtime.InteropServices.SafeHandle
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.InteropServices.SafeHandle
 
 
 	// MARK: - BEGIN System.Runtime.ConstrainedExecution.CriticalFinalizerObject
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.ConstrainedExecution.CriticalFinalizerObject
 
 
 	// MARK: - BEGIN System.Boolean&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Boolean&
 
 
 	// MARK: - BEGIN System.Threading.WaitHandle[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.WaitHandle[]
 
@@ -4497,11 +4590,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Threading.WaitHandle&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.WaitHandle&
 
 
 	// MARK: - BEGIN System.Threading.CancellationTokenRegistration
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.CancellationTokenRegistration
 
@@ -4512,16 +4607,19 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Exception
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Exception
 
 
 	// MARK: - BEGIN System.Reflection.MethodBase
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.MethodBase
 
 
 	// MARK: - BEGIN System.RuntimeMethodHandle
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.RuntimeMethodHandle
 
@@ -4532,6 +4630,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.RuntimeTypeHandle
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.RuntimeTypeHandle
 
@@ -4542,6 +4641,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.ModuleHandle
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.ModuleHandle
 
@@ -4552,6 +4652,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.RuntimeTypeHandle[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.RuntimeTypeHandle[]
 
@@ -4587,11 +4688,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.RuntimeTypeHandle&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.RuntimeTypeHandle&
 
 
 	// MARK: - BEGIN System.RuntimeFieldHandle
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.RuntimeFieldHandle
 
@@ -4602,6 +4705,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.ParameterInfo[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.ParameterInfo[]
 
@@ -4627,11 +4731,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.ParameterInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.ParameterInfo
 
 
 	// MARK: - BEGIN System.Runtime.Serialization.IObjectReference
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.Serialization.IObjectReference
 
@@ -4647,6 +4753,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.CustomAttributeData
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.CustomAttributeData
 
@@ -4662,6 +4769,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.CustomAttributeData[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.CustomAttributeData[]
 
@@ -4677,16 +4785,19 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.CustomAttributeData&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.CustomAttributeData&
 
 
 	// MARK: - BEGIN System.Reflection.Module
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.Module
 
 
 	// MARK: - BEGIN System.Guid
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Guid
 
@@ -4702,26 +4813,31 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Guid&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Guid&
 
 
 	// MARK: - BEGIN System.Reflection.PortableExecutableKinds&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.PortableExecutableKinds&
 
 
 	// MARK: - BEGIN System.Reflection.ImageFileMachine&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.ImageFileMachine&
 
 
 	// MARK: - BEGIN System.Reflection.MethodInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.MethodInfo
 
 
 	// MARK: - BEGIN System.Type[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Type[]
 
@@ -4757,21 +4873,25 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Type&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Type&
 
 
 	// MARK: - BEGIN System.Reflection.Binder
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.Binder
 
 
 	// MARK: - BEGIN System.Reflection.FieldInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.FieldInfo
 
 
 	// MARK: - BEGIN System.Reflection.FieldInfo[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.FieldInfo[]
 
@@ -4807,11 +4927,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.FieldInfo&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.FieldInfo&
 
 
 	// MARK: - BEGIN System.Reflection.MethodBase[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.MethodBase[]
 
@@ -4847,16 +4969,19 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.MethodBase&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.MethodBase&
 
 
 	// MARK: - BEGIN System.Object[]&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Object[]&
 
 
 	// MARK: - BEGIN System.Reflection.ParameterModifier[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.ParameterModifier[]
 
@@ -4882,6 +5007,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.ParameterModifier
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.ParameterModifier
 
@@ -4897,21 +5023,25 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.ParameterModifier&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.ParameterModifier&
 
 
 	// MARK: - BEGIN System.Object&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Object&
 
 
 	// MARK: - BEGIN System.Reflection.PropertyInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.PropertyInfo
 
 
 	// MARK: - BEGIN System.Reflection.MethodInfo[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.MethodInfo[]
 
@@ -4947,11 +5077,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.MethodInfo&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.MethodInfo&
 
 
 	// MARK: - BEGIN System.Reflection.PropertyInfo[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.PropertyInfo[]
 
@@ -4987,11 +5119,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.PropertyInfo&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.PropertyInfo&
 
 
 	// MARK: - BEGIN System.Reflection.ConstructorInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.ConstructorInfo
 
@@ -5017,6 +5151,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.CustomAttributeTypedArgument
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.CustomAttributeTypedArgument
 
@@ -5027,6 +5162,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.CustomAttributeTypedArgument[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.CustomAttributeTypedArgument[]
 
@@ -5042,6 +5178,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.CustomAttributeTypedArgument&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.CustomAttributeTypedArgument&
 
@@ -5067,6 +5204,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.CustomAttributeNamedArgument
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.CustomAttributeNamedArgument
 
@@ -5077,6 +5215,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.CustomAttributeNamedArgument[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.CustomAttributeNamedArgument[]
 
@@ -5092,6 +5231,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.CustomAttributeNamedArgument&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.CustomAttributeNamedArgument&
 
@@ -5107,11 +5247,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.ParameterInfo&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.ParameterInfo&
 
 
 	// MARK: - BEGIN System.Reflection.MethodBody
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.MethodBody
 
@@ -5137,11 +5279,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.LocalVariableInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.LocalVariableInfo
 
 
 	// MARK: - BEGIN System.Reflection.LocalVariableInfo[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.LocalVariableInfo[]
 
@@ -5157,6 +5301,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.LocalVariableInfo&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.LocalVariableInfo&
 
@@ -5182,11 +5327,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.ExceptionHandlingClause
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.ExceptionHandlingClause
 
 
 	// MARK: - BEGIN System.Reflection.ExceptionHandlingClause[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.ExceptionHandlingClause[]
 
@@ -5202,41 +5349,49 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.ExceptionHandlingClause&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.ExceptionHandlingClause&
 
 
 	// MARK: - BEGIN System.Collections.IDictionary
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Collections.IDictionary
 
 
 	// MARK: - BEGIN System.Collections.IDictionaryEnumerator
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Collections.IDictionaryEnumerator
 
 
 	// MARK: - BEGIN System.Collections.DictionaryEntry
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Collections.DictionaryEntry
 
 
 	// MARK: - BEGIN System.Threading.Tasks.Task
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.Tasks.Task
 
 
 	// MARK: - BEGIN System.IAsyncResult
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IAsyncResult
 
 
 	// MARK: - BEGIN System.Threading.Tasks.TaskScheduler
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.Tasks.TaskScheduler
 
 
 	// MARK: - BEGIN System.AggregateException
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.AggregateException
 
@@ -5287,6 +5442,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Exception[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Exception[]
 
@@ -5302,11 +5458,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Exception&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Exception&
 
 
 	// MARK: - BEGIN System.Threading.Tasks.TaskFactory
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.Tasks.TaskFactory
 
@@ -5432,6 +5590,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Threading.Tasks.Task[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.Tasks.Task[]
 
@@ -5467,51 +5626,61 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Threading.Tasks.Task&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.Tasks.Task&
 
 
 	// MARK: - BEGIN System.Runtime.CompilerServices.TaskAwaiter
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.CompilerServices.TaskAwaiter
 
 
 	// MARK: - BEGIN System.Runtime.CompilerServices.ICriticalNotifyCompletion
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.CompilerServices.ICriticalNotifyCompletion
 
 
 	// MARK: - BEGIN System.Runtime.CompilerServices.INotifyCompletion
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.CompilerServices.INotifyCompletion
 
 
 	// MARK: - BEGIN System.Runtime.CompilerServices.ConfiguredTaskAwaitable
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.CompilerServices.ConfiguredTaskAwaitable
 
 
 	// MARK: - BEGIN System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter
 
 
 	// MARK: - BEGIN System.Runtime.CompilerServices.YieldAwaitable
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.CompilerServices.YieldAwaitable
 
 
 	// MARK: - BEGIN System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.CompilerServices.YieldAwaitable.YieldAwaiter
 
 
 	// MARK: - BEGIN System.TimeProvider
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.TimeProvider
 
 
 	// MARK: - BEGIN System.DateTimeOffset
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.DateTimeOffset
 
@@ -5527,11 +5696,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.DateTimeOffset&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.DateTimeOffset&
 
 
 	// MARK: - BEGIN System.TimeZoneInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.TimeZoneInfo
 
@@ -5542,6 +5713,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.TimeSpan[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.TimeSpan[]
 
@@ -5577,6 +5749,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.TimeZoneInfo&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.TimeZoneInfo&
 
@@ -5607,6 +5780,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.TimeZoneInfo[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.TimeZoneInfo[]
 
@@ -5622,6 +5796,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.TimeZoneInfo.AdjustmentRule[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.TimeZoneInfo.AdjustmentRule[]
 
@@ -5647,6 +5822,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.TimeZoneInfo.AdjustmentRule
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.TimeZoneInfo.AdjustmentRule
 
@@ -5657,6 +5833,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.TimeZoneInfo.TransitionTime
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.TimeZoneInfo.TransitionTime
 
@@ -5677,11 +5854,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.TimeZoneInfo.AdjustmentRule&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.TimeZoneInfo.AdjustmentRule&
 
 
 	// MARK: - BEGIN System.Threading.ITimer
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.ITimer
 
@@ -5872,21 +6051,25 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Runtime.CompilerServices.ValueTaskAwaiter
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.CompilerServices.ValueTaskAwaiter
 
 
 	// MARK: - BEGIN System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable
 
 
 	// MARK: - BEGIN System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter
 
 
 	// MARK: - BEGIN System.Threading.Tasks.Sources.IValueTaskSource
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.Tasks.Sources.IValueTaskSource
 
@@ -5912,11 +6095,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN Microsoft.Win32.SafeHandles.SafeFileHandle
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Microsoft.Win32.SafeHandles.SafeFileHandle
 
 
 	// MARK: - BEGIN System.IO.FileStreamOptions
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.FileStreamOptions
 
@@ -5932,16 +6117,19 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.TypeInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.TypeInfo
 
 
 	// MARK: - BEGIN System.Reflection.IReflect
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.IReflect
 
 
 	// MARK: - BEGIN System.Reflection.MemberInfo[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.MemberInfo[]
 
@@ -5977,16 +6165,19 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.MemberInfo&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.MemberInfo&
 
 
 	// MARK: - BEGIN System.Reflection.IReflectableType
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.IReflectableType
 
 
 	// MARK: - BEGIN System.Reflection.EventInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.EventInfo
 
@@ -6012,21 +6203,25 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.ManifestResourceInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.ManifestResourceInfo
 
 
 	// MARK: - BEGIN System.ResolveEventArgs
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.ResolveEventArgs
 
 
 	// MARK: - BEGIN System.EventArgs
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.EventArgs
 
 
 	// MARK: - BEGIN System.Reflection.Module[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.Module[]
 
@@ -6062,11 +6257,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.Module&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.Module&
 
 
 	// MARK: - BEGIN System.Reflection.AssemblyName[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.AssemblyName[]
 
@@ -6102,11 +6299,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.AssemblyName&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.AssemblyName&
 
 
 	// MARK: - BEGIN System.IO.FileStream[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.FileStream[]
 
@@ -6142,11 +6341,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.IO.FileStream&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.FileStream&
 
 
 	// MARK: - BEGIN System.Text.Rune
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Text.Rune
 
@@ -6162,16 +6363,19 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Text.Rune&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Text.Rune&
 
 
 	// MARK: - BEGIN System.Globalization.SortKey
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Globalization.SortKey
 
 
 	// MARK: - BEGIN System.Globalization.SortVersion
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Globalization.SortVersion
 
@@ -6182,21 +6386,25 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Globalization.TextInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Globalization.TextInfo
 
 
 	// MARK: - BEGIN System.Globalization.NumberFormatInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Globalization.NumberFormatInfo
 
 
 	// MARK: - BEGIN System.Globalization.DateTimeFormatInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Globalization.DateTimeFormatInfo
 
 
 	// MARK: - BEGIN System.Globalization.Calendar[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Globalization.Calendar[]
 
@@ -6232,6 +6440,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Globalization.Calendar&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Globalization.Calendar&
 
@@ -6252,6 +6461,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Char[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Char[]
 
@@ -6277,11 +6487,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.CharEnumerator
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.CharEnumerator
 
 
 	// MARK: - BEGIN System.Text.StringRuneEnumerator
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Text.StringRuneEnumerator
 
@@ -6297,6 +6509,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Text.CompositeFormat
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Text.CompositeFormat
 
@@ -6332,31 +6545,37 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Text.Encoding
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Text.Encoding
 
 
 	// MARK: - BEGIN System.Text.EncodingProvider
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Text.EncodingProvider
 
 
 	// MARK: - BEGIN System.Text.EncoderFallback
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Text.EncoderFallback
 
 
 	// MARK: - BEGIN System.Text.EncoderFallbackBuffer
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Text.EncoderFallbackBuffer
 
 
 	// MARK: - BEGIN System.Text.DecoderFallback
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Text.DecoderFallback
 
 
 	// MARK: - BEGIN System.Text.DecoderFallbackBuffer
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Text.DecoderFallbackBuffer
 
@@ -6372,11 +6591,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Text.EncodingInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Text.EncodingInfo
 
 
 	// MARK: - BEGIN System.Text.EncodingInfo[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Text.EncodingInfo[]
 
@@ -6402,16 +6623,19 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Text.EncodingInfo&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Text.EncodingInfo&
 
 
 	// MARK: - BEGIN System.Text.Decoder
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Text.Decoder
 
 
 	// MARK: - BEGIN System.Text.Encoder
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Text.Encoder
 
@@ -6582,6 +6806,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Int64[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Int64[]
 
@@ -7277,16 +7502,19 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Runtime.InteropServices.StructLayoutAttribute
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.InteropServices.StructLayoutAttribute
 
 
 	// MARK: - BEGIN System.Attribute
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Attribute
 
 
 	// MARK: - BEGIN System.Attribute[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Attribute[]
 
@@ -7322,11 +7550,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Attribute&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Attribute&
 
 
 	// MARK: - BEGIN System.Reflection.ConstructorInfo[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.ConstructorInfo[]
 
@@ -7352,11 +7582,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.ConstructorInfo&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.ConstructorInfo&
 
 
 	// MARK: - BEGIN System.Reflection.EventInfo[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.EventInfo[]
 
@@ -7382,16 +7614,19 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.EventInfo&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.EventInfo&
 
 
 	// MARK: - BEGIN System.Reflection.InterfaceMapping
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.InterfaceMapping
 
 
 	// MARK: - BEGIN System.Runtime.InteropServices.Marshal
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.InteropServices.Marshal
 
@@ -7417,6 +7652,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Int16[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Int16[]
 
@@ -7452,6 +7688,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Single[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Single[]
 
@@ -7487,6 +7724,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Double[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Double[]
 
@@ -7522,6 +7760,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.IntPtr[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IntPtr[]
 
@@ -7572,6 +7811,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Security.SecureString
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.SecureString
 
@@ -7632,26 +7872,31 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.NullReferenceException
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.NullReferenceException
 
 
 	// MARK: - BEGIN System.SystemException
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.SystemException
 
 
 	// MARK: - BEGIN System.PlatformNotSupportedException
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.PlatformNotSupportedException
 
 
 	// MARK: - BEGIN System.NotSupportedException
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.NotSupportedException
 
 
 	// MARK: - BEGIN System.UIntPtr
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.UIntPtr
 
@@ -7677,6 +7922,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.UIntPtr&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.UIntPtr&
 
@@ -7697,11 +7943,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.AppContext
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.AppContext
 
 
 	// MARK: - BEGIN System.Runtime.InteropServices.GCHandle
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.InteropServices.GCHandle
 
@@ -7712,16 +7960,19 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.GC
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.GC
 
 
 	// MARK: - BEGIN System.GCMemoryInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.GCMemoryInfo
 
 
 	// MARK: - BEGIN System.WeakReference
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.WeakReference
 
@@ -7827,36 +8078,43 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Math
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Math
 
 
 	// MARK: - BEGIN System.Convert
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Convert
 
 
 	// MARK: - BEGIN System.Threading.Thread
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.Thread
 
 
 	// MARK: - BEGIN System.Security.Principal.IPrincipal
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Principal.IPrincipal
 
 
 	// MARK: - BEGIN System.Security.Principal.IIdentity
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Principal.IIdentity
 
 
 	// MARK: - BEGIN System.Threading.ExecutionContext
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.ExecutionContext
 
 
 	// MARK: - BEGIN System.Threading.AsyncFlowControl
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.AsyncFlowControl
 
@@ -7867,71 +8125,85 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.LocalDataStoreSlot
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.LocalDataStoreSlot
 
 
 	// MARK: - BEGIN System.Threading.CompressedStack
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.CompressedStack
 
 
 	// MARK: - BEGIN System.AppDomain
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.AppDomain
 
 
 	// MARK: - BEGIN System.AppDomainSetup
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.AppDomainSetup
 
 
 	// MARK: - BEGIN System.Security.PermissionSet
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.PermissionSet
 
 
 	// MARK: - BEGIN System.Security.ISecurityEncodable
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.ISecurityEncodable
 
 
 	// MARK: - BEGIN System.Security.SecurityElement
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.SecurityElement
 
 
 	// MARK: - BEGIN System.Collections.Hashtable
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Collections.Hashtable
 
 
 	// MARK: - BEGIN System.Collections.IHashCodeProvider
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Collections.IHashCodeProvider
 
 
 	// MARK: - BEGIN System.Collections.ArrayList
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Collections.ArrayList
 
 
 	// MARK: - BEGIN System.Security.IStackWalk
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.IStackWalk
 
 
 	// MARK: - BEGIN System.Security.IPermission
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.IPermission
 
 
 	// MARK: - BEGIN System.UnhandledExceptionEventArgs
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.UnhandledExceptionEventArgs
 
 
 	// MARK: - BEGIN System.Reflection.Assembly[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.Assembly[]
 
@@ -7967,31 +8239,37 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.Assembly&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.Assembly&
 
 
 	// MARK: - BEGIN System.AssemblyLoadEventArgs
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.AssemblyLoadEventArgs
 
 
 	// MARK: - BEGIN System.Runtime.Remoting.ObjectHandle
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.Remoting.ObjectHandle
 
 
 	// MARK: - BEGIN System.Threading.Timer
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.Timer
 
 
 	// MARK: - BEGIN System.Threading.CancellationTokenSource
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.CancellationTokenSource
 
 
 	// MARK: - BEGIN System.Threading.CancellationToken[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.CancellationToken[]
 
@@ -8027,11 +8305,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Threading.CancellationToken&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.CancellationToken&
 
 
 	// MARK: - BEGIN System.Random
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Random
 
@@ -8082,16 +8362,19 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Text.StringBuilder
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Text.StringBuilder
 
 
 	// MARK: - BEGIN System.Text.StringBuilder.ChunkEnumerator
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Text.StringBuilder.ChunkEnumerator
 
 
 	// MARK: - BEGIN System.Text.StringBuilder.AppendInterpolatedStringHandler
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Text.StringBuilder.AppendInterpolatedStringHandler
 
@@ -8117,6 +8400,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Text.StringBuilder.AppendInterpolatedStringHandler&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Text.StringBuilder.AppendInterpolatedStringHandler&
 
@@ -8152,21 +8436,25 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.IO.Path
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.Path
 
 
 	// MARK: - BEGIN System.IO.File
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.File
 
 
 	// MARK: - BEGIN System.IO.StreamReader
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.StreamReader
 
 
 	// MARK: - BEGIN System.IO.TextReader
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.TextReader
 
@@ -8192,11 +8480,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.IO.StreamWriter
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.StreamWriter
 
 
 	// MARK: - BEGIN System.IO.TextWriter
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.TextWriter
 
@@ -8267,21 +8557,25 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.IO.FileSystemInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.FileSystemInfo
 
 
 	// MARK: - BEGIN System.IO.FileInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.FileInfo
 
 
 	// MARK: - BEGIN System.IO.DirectoryInfo
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.DirectoryInfo
 
 
 	// MARK: - BEGIN System.IO.FileInfo[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.FileInfo[]
 
@@ -8317,16 +8611,19 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.IO.FileInfo&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.FileInfo&
 
 
 	// MARK: - BEGIN System.IO.EnumerationOptions
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.EnumerationOptions
 
 
 	// MARK: - BEGIN System.IO.FileSystemInfo[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.FileSystemInfo[]
 
@@ -8362,11 +8659,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.IO.FileSystemInfo&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.FileSystemInfo&
 
 
 	// MARK: - BEGIN System.IO.DirectoryInfo[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.DirectoryInfo[]
 
@@ -8402,21 +8701,25 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.IO.DirectoryInfo&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.DirectoryInfo&
 
 
 	// MARK: - BEGIN System.IO.Directory
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.Directory
 
 
 	// MARK: - BEGIN System.Buffers.Binary.BinaryPrimitives
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Buffers.Binary.BinaryPrimitives
 
 
 	// MARK: - BEGIN System.Half
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Half
 
@@ -8442,11 +8745,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Half&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Half&
 
 
 	// MARK: - BEGIN System.Int128
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Int128
 
@@ -8467,11 +8772,13 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Int128&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Int128&
 
 
 	// MARK: - BEGIN System.UInt128
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.UInt128
 
@@ -8497,6 +8804,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.UInt128&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.UInt128&
 
@@ -8647,6 +8955,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Runtime.CompilerServices.ITuple
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Runtime.CompilerServices.ITuple
 
@@ -8867,16 +9176,19 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Address
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Address
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.IAnimal
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.IAnimal
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.AnimalFactory
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.AnimalFactory
 
@@ -8887,56 +9199,67 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.BaseAnimal
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.BaseAnimal
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Cat
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Cat
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Dog
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Dog
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.GenericAnimal
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.GenericAnimal
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Labrador
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Labrador
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.ArrayTests
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.ArrayTests
 
 
 	// MARK: - BEGIN System.Boolean[,]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Boolean[,]
 
 
 	// MARK: - BEGIN System.Boolean[,]&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Boolean[,]&
 
 
 	// MARK: - BEGIN System.Int32[,,]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Int32[,,]
 
 
 	// MARK: - BEGIN System.String[]&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.String[]&
 
 
 	// MARK: - BEGIN System.Guid[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Guid[]
 
@@ -8972,21 +9295,25 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.AsyncTests
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.AsyncTests
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Point
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Point
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.DelegatesTest
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.DelegatesTest
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.EventTests
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.EventTests
 
@@ -9022,6 +9349,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.GenericTests
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.GenericTests
 
@@ -9107,6 +9435,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.GenericTests.SimpleKeyValuePair
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.GenericTests.SimpleKeyValuePair
 
@@ -9172,106 +9501,127 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.IndexerTests
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.IndexerTests
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.IInterface1
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.IInterface1
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.IInterface1_DelegateAdapter
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.IInterface1_DelegateAdapter
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.IInterface2
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.IInterface2
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.IInterface3
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.IInterface3
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.TypeThatImplementsMultipleInterfaces
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.TypeThatImplementsMultipleInterfaces
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.TypeThatUsesInterfaces
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.TypeThatUsesInterfaces
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.IInterface1&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.IInterface1&
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.IInterface2&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.IInterface2&
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.BaseRegistrationData
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.BaseRegistrationData
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.DataType
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.DataType
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.RegistrationData1
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.RegistrationData1
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.RegistrationData2
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.RegistrationData2
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.NullabilityTests
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.NullabilityTests
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.OverloadTests
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.OverloadTests
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Person
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Person
 
 
 	// MARK: - BEGIN System.Uri
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Uri
 
 
 	// MARK: - BEGIN System.Uri&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Uri&
 
 
 	// MARK: - BEGIN System.UriCreationOptions
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.UriCreationOptions
 
 
 	// MARK: - BEGIN System.UriCreationOptions&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.UriCreationOptions&
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Person[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Person[]
 
@@ -9307,36 +9657,43 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Person&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Person&
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Person_Extensions
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Person_Extensions
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Address&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Address&
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.PropertyTests
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.PropertyTests
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.SpanTest
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.SpanTest
 
 
 	// MARK: - BEGIN System.ReadOnlySpan`1[[System.Byte, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.ReadOnlySpan`1[[System.Byte, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.StructTestClass
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.StructTestClass
 
@@ -9347,36 +9704,43 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.StructTest
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.StructTest
 
 
 	// MARK: - BEGIN System.Nullable`1[[Beyond.NET.Sample.StructTest, Beyond.NET.Sample.Managed, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Nullable`1[[Beyond.NET.Sample.StructTest, Beyond.NET.Sample.Managed, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]&
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Book
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Book
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.TestClass
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.TestClass
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.TestEnum&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.TestEnum&
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Book&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Book&
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.TestRecord
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.TestRecord
 
@@ -9387,6 +9751,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.TestRecordStruct
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.TestRecordStruct
 
@@ -9397,6 +9762,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.TestReadOnlyRecordStruct
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.TestReadOnlyRecordStruct
 
@@ -9407,51 +9773,61 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Transformer
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Transformer
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.SubclassingTests.MyBaseClass
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.SubclassingTests.MyBaseClass
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.SubclassingTests.MySubClass
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.SubclassingTests.MySubClass
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Source.DontStrip
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Source.DontStrip
 
 
 	// MARK: - BEGIN System.IO.MemoryStream
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.IO.MemoryStream
 
 
 	// MARK: - BEGIN System.Security.Cryptography.CryptoStream
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.CryptoStream
 
 
 	// MARK: - BEGIN System.Security.Cryptography.ICryptoTransform
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.ICryptoTransform
 
 
 	// MARK: - BEGIN System.Security.Cryptography.Aes
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.Aes
 
 
 	// MARK: - BEGIN System.Security.Cryptography.SymmetricAlgorithm
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.SymmetricAlgorithm
 
 
 	// MARK: - BEGIN System.Security.Cryptography.KeySizes[]
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.KeySizes[]
 
@@ -9477,6 +9853,7 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Security.Cryptography.KeySizes
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.KeySizes
 
@@ -9492,26 +9869,31 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Security.Cryptography.KeySizes&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.KeySizes&
 
 
 	// MARK: - BEGIN System.Security.Cryptography.DSA
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.DSA
 
 
 	// MARK: - BEGIN System.Security.Cryptography.AsymmetricAlgorithm
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.AsymmetricAlgorithm
 
 
 	// MARK: - BEGIN System.Security.Cryptography.PbeParameters
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.PbeParameters
 
 
 	// MARK: - BEGIN System.Security.Cryptography.HashAlgorithmName
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.HashAlgorithmName
 
@@ -9522,41 +9904,49 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Security.Cryptography.HashAlgorithmName&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.HashAlgorithmName&
 
 
 	// MARK: - BEGIN System.Security.Cryptography.DSAParameters
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.DSAParameters
 
 
 	// MARK: - BEGIN System.Security.Cryptography.ECDsa
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.ECDsa
 
 
 	// MARK: - BEGIN System.Security.Cryptography.ECAlgorithm
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.ECAlgorithm
 
 
 	// MARK: - BEGIN System.Security.Cryptography.ECParameters
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.ECParameters
 
 
 	// MARK: - BEGIN System.Security.Cryptography.ECPoint
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.ECPoint
 
 
 	// MARK: - BEGIN System.Security.Cryptography.ECCurve
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.ECCurve
 
 
 	// MARK: - BEGIN System.Security.Cryptography.Oid
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.Oid
 
@@ -9567,21 +9957,25 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Security.Cryptography.ECDiffieHellman
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.ECDiffieHellman
 
 
 	// MARK: - BEGIN System.Security.Cryptography.ECDiffieHellmanPublicKey
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Security.Cryptography.ECDiffieHellmanPublicKey
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Source.OutParameterTests
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Source.OutParameterTests
 
 
 	// MARK: - BEGIN System.DateTimeKind&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.DateTimeKind&
 
@@ -9592,31 +9986,37 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
 
 
 	// MARK: - BEGIN System.Collections.IEnumerable&
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Collections.IEnumerable&
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Transformer.BuiltInTransformers
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Transformer.BuiltInTransformers
 
 
 	// MARK: - BEGIN System.Action
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Action
 
 
 	// MARK: - BEGIN System.MulticastDelegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.MulticastDelegate
 
 
 	// MARK: - BEGIN System.Delegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Delegate
 
@@ -9632,161 +10032,193 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 
 
 	// MARK: - BEGIN System.Reflection.TypeFilter
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.TypeFilter
 
 
 	// MARK: - BEGIN System.Threading.TimerCallback
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.TimerCallback
 
 
 	// MARK: - BEGIN System.AsyncCallback
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.AsyncCallback
 
 
 	// MARK: - BEGIN System.Reflection.ModuleResolveEventHandler
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.ModuleResolveEventHandler
 
 
 	// MARK: - BEGIN System.Reflection.MemberFilter
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Reflection.MemberFilter
 
 
 	// MARK: - BEGIN System.Threading.ContextCallback
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.ContextCallback
 
 
 	// MARK: - BEGIN System.UnhandledExceptionEventHandler
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.UnhandledExceptionEventHandler
 
 
 	// MARK: - BEGIN System.EventHandler
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.EventHandler
 
 
 	// MARK: - BEGIN System.AssemblyLoadEventHandler
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.AssemblyLoadEventHandler
 
 
 	// MARK: - BEGIN System.ResolveEventHandler
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.ResolveEventHandler
 
 
 	// MARK: - BEGIN System.Threading.ThreadStart
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.ThreadStart
 
 
 	// MARK: - BEGIN System.Threading.ParameterizedThreadStart
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Threading.ParameterizedThreadStart
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.MoveDelegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.MoveDelegate
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.AnimalCreatorDelegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.AnimalCreatorDelegate
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.AsyncTests.TransformerDelegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.AsyncTests.TransformerDelegate
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.DelegatesTest.TransformIntDelegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.DelegatesTest.TransformIntDelegate
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.DelegatesTest.PointTransformDelegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.DelegatesTest.PointTransformDelegate
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.EventTests.ValueChangedDelegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.EventTests.ValueChangedDelegate
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.IInterface1_DelegateAdapter.MethodInIInterface1_Delegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.IInterface1_DelegateAdapter.MethodInIInterface1_Delegate
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReceivesIInterface1
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReceivesIInterface1
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReturnsIInterface1
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.TypeThatUsesInterfaces.DelegateThatReturnsIInterface1
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Person.NumberOfChildrenChangedDelegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Person.NumberOfChildrenChangedDelegate
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Person.NewAgeProviderDelegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Person.NewAgeProviderDelegate
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.SpanTest.ByteArrayToSpanDelegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.SpanTest.ByteArrayToSpanDelegate
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.SpanTest.SpanToByteArrayDelegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.SpanTest.SpanToByteArrayDelegate
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.ByRefReturnValueDelegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.ByRefReturnValueDelegate
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.ByRefParametersDelegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.ByRefParametersDelegate
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.OutParametersDelegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.OutParametersDelegate
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.CharReturnerDelegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.CharReturnerDelegate
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Transformer.StringTransformerDelegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Transformer.StringTransformerDelegate
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Transformer.DoublesTransformerDelegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Transformer.DoublesTransformerDelegate
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Transformer.StringGetterDelegate
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END Beyond.NET.Sample.Transformer.StringGetterDelegate
 

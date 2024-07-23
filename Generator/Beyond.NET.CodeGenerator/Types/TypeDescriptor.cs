@@ -203,6 +203,7 @@ public class TypeDescriptor
 
         switch (language) {
             case CodeLanguage.CSharp:
+            {
                 if (isOutParameter) {
                     return $"out {typeName}";
                 } else if (isInParameter) {
@@ -212,37 +213,43 @@ public class TypeDescriptor
                 } else {
                     return typeName;
                 }
+            }
             case CodeLanguage.CSharpUnmanaged:
-                if (RequiresNativePointer && 
+            {
+                if (RequiresNativePointer &&
                     (isOutParameter || isByRefParameter || isInParameter)) {
                     typeNameWithModifiers = $"{typeName}**";
                 } else {
                     typeNameWithModifiers = $"{typeName}*";
                 }
-                
+
                 break;
+            }
             case CodeLanguage.C:
+            {
                 string cNullabilitySpecifier = nullability.GetClangAttribute();
-                
+
                 if (isOutParameter || isByRefParameter || isInParameter) {
                     string innerTypeName = typeName;
-                    
+
                     if (!string.IsNullOrEmpty(cNullabilitySpecifier) &&
                         !IsReadOnlyStructOfByte) {
                         innerTypeName += " " + cNullabilitySpecifier;
                     }
-                    
+
                     typeNameWithModifiers = $"{innerTypeName}*";
                 } else {
                     typeNameWithModifiers = $"{typeName}";
                 }
-                
+
                 if (!string.IsNullOrEmpty(cNullabilitySpecifier)) {
                     typeNameWithModifiers += " " + cNullabilitySpecifier;
                 }
-                
+
                 break;
+            }
             case CodeLanguage.Swift:
+            {
                 if (isOutParameter || isByRefParameter || isInParameter) {
                     typeNameWithModifiers = $"inout {typeName}";
                 } else {
@@ -254,9 +261,11 @@ public class TypeDescriptor
                 if (!string.IsNullOrEmpty(swiftNullabilitySpecifier)) {
                     typeNameWithModifiers += swiftNullabilitySpecifier;
                 }
-                
+
                 break;
+            }
             case CodeLanguage.KotlinJNA:
+            {
                 if (isOutParameter || isByRefParameter || isInParameter) {
                     typeNameWithModifiers = "PointerByReference";
                 } else {
@@ -265,20 +274,35 @@ public class TypeDescriptor
 
                 string kotlinNullabilitySpecifier;
 
-                if (RequiresNativePointer || IsReadOnlyStructOfByte)
-                {
+                if (RequiresNativePointer || IsReadOnlyStructOfByte) {
                     kotlinNullabilitySpecifier = string.Empty;
-                }
-                else
-                {
+                } else {
                     kotlinNullabilitySpecifier = nullability.GetKotlinOptionalitySpecifier();
                 }
 
                 if (!string.IsNullOrEmpty(kotlinNullabilitySpecifier)) {
                     typeNameWithModifiers += kotlinNullabilitySpecifier;
                 }
-                
+
                 break;
+            }
+            case CodeLanguage.Kotlin:
+            {
+                if (isOutParameter || isByRefParameter || isInParameter) {
+                    // TODO
+                    typeNameWithModifiers = $"inout {typeName}";
+                } else {
+                    typeNameWithModifiers = $"{typeName}";
+                }
+
+                string kotlinNullabilitySpecifier = nullability.GetKotlinOptionalitySpecifier();
+
+                if (!string.IsNullOrEmpty(kotlinNullabilitySpecifier)) {
+                    typeNameWithModifiers += kotlinNullabilitySpecifier;
+                }
+
+                break;
+            }
             default:
                 throw new NotImplementedException();
         }
@@ -495,6 +519,15 @@ public class TypeDescriptor
             } else {
                 return null;
             }
+        } else if (sourceLanguage == CodeLanguage.Swift &&
+                   targetLanguage == CodeLanguage.C) {
+            if (IsEnum) {
+                return "{0}.cValue";
+            } else if (RequiresNativePointer) {
+                return "{0}.__handle";
+            } else {
+                return null;
+            }
         } else if (sourceLanguage == CodeLanguage.C &&
                    targetLanguage == CodeLanguage.KotlinJNA) {
             string kotlinTypeName = GetTypeName(
@@ -515,10 +548,30 @@ public class TypeDescriptor
             } else {
                 return null;
             }
-        } else if (sourceLanguage == CodeLanguage.Swift &&
-                   targetLanguage == CodeLanguage.C) {
+        } else if (sourceLanguage == CodeLanguage.KotlinJNA &&
+                   targetLanguage == CodeLanguage.Kotlin) {
+            string kotlinTypeName = GetTypeName(
+                CodeLanguage.Kotlin,
+                false,
+                Nullability.NotSpecified,
+                arrayElementNullability
+            );
+
             if (IsEnum) {
-                return "{0}.cValue";
+                return kotlinTypeName + ".entries.first {{ it.rawValue == {0} }}";
+            } else if (RequiresNativePointer) {
+                var suffix = IsInterface 
+                    ? KotlinDotNETInterfaceImplementationSuffix
+                    : string.Empty;
+                
+                return $"{kotlinTypeName}{suffix}({{0}})";
+            } else {
+                return null;
+            }
+        } else if (sourceLanguage == CodeLanguage.Kotlin &&
+                   targetLanguage == CodeLanguage.KotlinJNA) {
+            if (IsEnum) {
+                return "{0}.rawValue";
             } else if (RequiresNativePointer) {
                 return "{0}.__handle";
             } else {

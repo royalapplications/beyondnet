@@ -86,17 +86,17 @@ public struct Builder
     //         name
     //     );
     // }
-    //
-    // public static Builders.Func Func
-    // (
-    //     string name
-    // )
-    // {
-    //     return new(
-    //         name
-    //     );
-    // }
-    //
+    
+    public static Builders.Fun Fun
+    (
+        string name
+    )
+    {
+        return new(
+            name
+        );
+    }
+    
     // public static Builders.Initializer Initializer()
     // {
     //     return new();
@@ -106,69 +106,55 @@ public struct Builder
     // {
     //     return new();
     // }
-    //
-    // public static Builders.FuncSignatureParameter FuncSignatureParameter
-    // (
-    //     string label,
-    //     string? name,
-    //     string typeName
-    // )
-    // {
-    //     return new(
-    //         label,
-    //         name,
-    //         typeName
-    //     );
-    // }
-    //
-    // public static Builders.FuncSignatureParameter FuncSignatureParameter
-    // (
-    //     string label,
-    //     string typeName
-    // )
-    // {
-    //     return new(
-    //         label,
-    //         typeName
-    //     );
-    // }
-    //
-    // public static Builders.FuncSignatureParameters FuncSignatureParameters()
-    // {
-    //     return new();
-    // }
-    //
-    // public static Builders.Variable Variable
-    // (
-    //     SwiftVariableKinds variableKind,
-    //     string name
-    // )
-    // {
-    //     return new(
-    //         variableKind,
-    //         name
-    //     );
-    // }
-    //
-    // public static Builders.Variable Let
-    // (
-    //     string name
-    // )
-    // {
-    //     return Variable(
-    //         SwiftVariableKinds.Constant,
-    //         name
-    //     );
-    // }
-    //
-    // public static Builders.Variable Var
-    // (
-    //     string name
-    // )
-    // {
-    //     return Variable(
-    //         SwiftVariableKinds.Variable,
-    //         name
-    //     );
-    // }
+    
+    public static Builders.FunSignatureParameter FunSignatureParameter
+    (
+        string label,
+        string typeName
+    )
+    {
+        return new(
+            label,
+            typeName
+        );
+    }
+    
+    public static Builders.FunSignatureParameters FunSignatureParameters()
+    {
+        return new();
+    }
+    
+    public static Builders.Variable Variable
+    (
+        KotlinVariableKinds variableKind,
+        string name
+    )
+    {
+        return new(
+            variableKind,
+            name
+        );
+    }
+    
+    public static Builders.Variable Val
+    (
+        string name
+    )
+    {
+        return Variable(
+            KotlinVariableKinds.Constant,
+            name
+        );
+    }
+    
+    public static Builders.Variable Var
+    (
+        string name
+    )
+    {
+        return Variable(
+            KotlinVariableKinds.Variable,
+            name
+        );
+    }
 }
