@@ -1,7 +1,7 @@
 using System.Reflection;
-using System.Text;
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.Generator;
+using Beyond.NET.CodeGenerator.Generator.Swift;
 using Beyond.NET.CodeGenerator.Types;
 
 namespace Beyond.NET.CodeGenerator.Syntax.Swift;
@@ -45,7 +45,7 @@ public class SwiftPropertySyntaxWriter: SwiftMethodSyntaxWriter, IPropertySyntax
 
         IEnumerable<ParameterInfo> parameters = property.GetIndexParameters();
 
-        StringBuilder sb = new();
+        SwiftCodeBuilder sb = new();
 
         Type propertyType = property.PropertyType;
 

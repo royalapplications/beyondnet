@@ -1,7 +1,7 @@
 using System.Reflection;
-using System.Text;
 
 using Beyond.NET.CodeGenerator.Extensions;
+using Beyond.NET.CodeGenerator.Generator.CSharpUnmanaged;
 using Beyond.NET.CodeGenerator.Types;
 using Beyond.NET.Core;
 
@@ -297,7 +297,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             unmanagedReturnOrSetterOrEventHandlerTypeNameWithComment = $"{unmanagedReturnOrSetterOrEventHandlerTypeName} /* {returnOrSetterOrEventHandlerType.GetFullNameOrName()} */";
         }
         
-        StringBuilder sb = new();
+        CSharpCodeBuilder sb = new();
         
         sb.AppendLine($"[UnmanagedCallersOnly(EntryPoint = \"{methodNameC}\")]");
         sb.AppendLine($"internal static {unmanagedReturnOrSetterOrEventHandlerTypeNameWithComment} {methodNameC}({methodSignatureParameters})");
@@ -953,7 +953,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             return string.Empty;
         }
         
-        StringBuilder sb = new();
+        CSharpCodeBuilder sb = new();
 
         sb.AppendLine($"if ({parameterName} is not null) {{");
         sb.AppendLine($"\tInteropUtils.ReplaceInstance({parameterName}, {convertedParameterName});");
@@ -981,7 +981,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         string parameterName = "__self";
         convertedSelfParameterName = parameterName;
 
-        StringBuilder sb = new();
+        CSharpCodeBuilder sb = new();
                 
         string? typeConversion = typeDescriptor.GetTypeConversion(
             CodeLanguage.CSharpUnmanaged, 
@@ -1144,7 +1144,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         out List<string> convertedTypeDestructors // Only used in delegates at the moment
     )
     {
-        StringBuilder sb = new();
+        CSharpCodeBuilder sb = new();
         
         convertedParameterNames = new();
         convertedGenericTypeArgumentNames = new();
@@ -1314,7 +1314,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                         var typeConversionFormat = string.Format(typeConversion, parameterName);
                         sb.AppendLine($"\t{convertedParameterTypeName} {convertedParameterName} = ({convertedParameterTypeName}){typeConversionFormat};");
 
-                        StringBuilder sbDestructor = new();
+                        CSharpCodeBuilder sbDestructor = new();
 
                         var retrieverFormat = parameterTypeDescriptor.GetTypeConversion(
                             CodeLanguage.CSharpUnmanaged,

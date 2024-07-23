@@ -1,7 +1,7 @@
 using System.Reflection;
-using System.Text;
 
 using Beyond.NET.CodeGenerator.Generator;
+using Beyond.NET.CodeGenerator.Generator.C;
 using Beyond.NET.CodeGenerator.Types;
 
 namespace Beyond.NET.CodeGenerator.Syntax.C;
@@ -34,7 +34,7 @@ public class CFieldSyntaxWriter: CMethodSyntaxWriter, IFieldSyntaxWriter
         IEnumerable<ParameterInfo> parameters = Array.Empty<ParameterInfo>();
         Type fieldType = field.FieldType;
 
-        StringBuilder sb = new();
+        CCodeBuilder sb = new();
 
         if (generatedGetterMember is not null) {
             bool mayThrow = generatedGetterMember.MayThrow;

@@ -1,7 +1,7 @@
 using System.Reflection;
-using System.Text;
 
 using Beyond.NET.CodeGenerator.Extensions;
+using Beyond.NET.CodeGenerator.Generator.CSharpUnmanaged;
 using Beyond.NET.CodeGenerator.Types;
 using Beyond.NET.Core;
 
@@ -15,7 +15,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         string fullTypeName,
         string cTypeName,
         MethodInfo? invokeMethod,
-        StringBuilder sb,
+        CSharpCodeBuilder sb,
         State state
     )
     {
@@ -41,7 +41,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         string cTypeName,
         ParameterInfo[] parameterInfos,
         Type returnType,
-        StringBuilder sb,
+        CSharpCodeBuilder sb,
         State state
     )
     {

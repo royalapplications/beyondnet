@@ -1,8 +1,8 @@
 using System.Reflection;
-using System.Text;
 
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.Generator;
+using Beyond.NET.CodeGenerator.Generator.Swift;
 using Beyond.NET.CodeGenerator.Types;
 using Beyond.NET.Core;
 
@@ -61,7 +61,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             return Builder.SingleLineComment($"Type \"{type.Name}\" was skipped. Reason: It has no full name.").ToString();
         }
         
-        StringBuilder sb = new();
+        SwiftCodeBuilder sb = new();
 
         bool writeMembers = true;
         bool writeTypeDefinition = true;
@@ -128,7 +128,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
-        StringBuilder sb = new();
+        SwiftCodeBuilder sb = new();
 
         TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
 
@@ -344,7 +344,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         bool isPrimitive = type.IsPrimitive;
         bool isArray = type.IsArray;
         
-        StringBuilder sb = new();
+        SwiftCodeBuilder sb = new();
 
         string typeName = type.Name;
         string fullTypeName = type.GetFullNameOrName();
@@ -589,7 +589,7 @@ public subscript(position: Index) -> Element {
 
         HashSet<MemberInfo> generatedMembers = new();
 
-        StringBuilder sbMembers = new();
+        SwiftCodeBuilder sbMembers = new();
 
         foreach (var cSharpMember in cSharpMembers) {
             var member = cSharpMember.Member;
@@ -704,7 +704,7 @@ public subscript(position: Index) -> Element {
             typeDescriptorRegistry
         );
 
-        StringBuilder sb = new();
+        SwiftCodeBuilder sb = new();
 
         if (codeForOptional is not null) {
             sb.AppendLine(codeForOptional);
@@ -736,7 +736,7 @@ public subscript(position: Index) -> Element {
             ? "?"
             : string.Empty;
 
-        StringBuilder sbMembers = new();
+        SwiftCodeBuilder sbMembers = new();
         
         foreach (GeneratedMember swiftGeneratedMember in generatedMembers) {
             string extensionMethod = SwiftMethodSyntaxWriter.WriteExtensionMethod(

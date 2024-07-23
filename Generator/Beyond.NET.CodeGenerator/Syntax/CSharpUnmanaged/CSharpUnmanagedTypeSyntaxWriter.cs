@@ -1,5 +1,4 @@
 using System.Reflection;
-using System.Text;
 
 using Beyond.NET.CodeGenerator.Collectors;
 using Beyond.NET.CodeGenerator.Extensions;
@@ -58,7 +57,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
             ? type.GetDelegateInvokeMethod()
             : null;
         
-        StringBuilder sb = new();
+        CSharpCodeBuilder sb = new();
         
         sb.AppendLine($"internal unsafe class {cTypeName}");
         sb.AppendLine("{");
@@ -105,7 +104,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
     private void WriteRegularType(
         ISyntaxWriterConfiguration? configuration,
         Type type,
-        StringBuilder sb,
+        CSharpCodeBuilder sb,
         State state
     )
     {
@@ -171,7 +170,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
     private void WriteEnumType(
         ISyntaxWriterConfiguration? configuration,
         Type type,
-        StringBuilder sb,
+        CSharpCodeBuilder sb,
         State state
     )
     {
@@ -186,7 +185,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
     private void WritePrimitiveType(
         ISyntaxWriterConfiguration? configuration,
         Type type,
-        StringBuilder sb,
+        CSharpCodeBuilder sb,
         State state
     )
     {
@@ -201,7 +200,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
     private void WriteTypeOf(
         ISyntaxWriterConfiguration? configuration,
         Type type,
-        StringBuilder sb,
+        CSharpCodeBuilder sb,
         State state
     )
     {
@@ -223,7 +222,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
     private void WriteDestructor(
         ISyntaxWriterConfiguration? configuration,
         Type type,
-        StringBuilder sb,
+        CSharpCodeBuilder sb,
         State state
     )
     {

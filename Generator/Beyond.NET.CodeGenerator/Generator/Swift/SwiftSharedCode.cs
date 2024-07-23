@@ -2,7 +2,7 @@ namespace Beyond.NET.CodeGenerator.Generator.Swift;
 
 internal static class SwiftSharedCode
 {
-    internal const string SharedCode = """
+    internal const string SharedCode = /*lang=Swift*/"""
 public struct DNChar: Equatable {
     public let cValue: wchar_t
 
@@ -1731,7 +1731,7 @@ public extension NativeBox {
 }
 """;
     
-    public const string GuidExtensions = """
+    public const string GuidExtensions = /*lang=Swift*/"""
 extension UUID {
     /// Tries to convert the targeted Swift `UUID` object to a .NET `System.Guid`.
     /// - Returns: nil if the conversion fails or an instance of `System.Guid` if it succeeds.
@@ -1769,7 +1769,7 @@ extension System_Guid {
 }
 """;
     
-    public const string ArrayExtensions = """
+    public const string ArrayExtensions = /*lang=Swift*/"""
 extension System_Array {
     public typealias Index = Int32
     

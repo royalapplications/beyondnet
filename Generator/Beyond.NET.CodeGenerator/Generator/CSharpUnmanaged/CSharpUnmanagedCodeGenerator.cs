@@ -68,7 +68,7 @@ public class CSharpUnmanagedCodeGenerator: ICodeGenerator
 
     private string GetHeaderCode()
     {
-        return $"""
+        return /*lang=C#*/$"""
 using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;

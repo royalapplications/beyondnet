@@ -1,7 +1,7 @@
 using System.Reflection;
-using System.Text;
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.Generator;
+using Beyond.NET.CodeGenerator.Generator.Kotlin;
 using Beyond.NET.CodeGenerator.Types;
 
 namespace Beyond.NET.CodeGenerator.Syntax.Kotlin;
@@ -45,7 +45,7 @@ public class KotlinPropertySyntaxWriter: KotlinMethodSyntaxWriter, IPropertySynt
 
         IEnumerable<ParameterInfo> parameters = property.GetIndexParameters();
 
-        StringBuilder sb = new();
+        KotlinCodeBuilder sb = new();
 
         Type propertyType = property.PropertyType;
 

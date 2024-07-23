@@ -1,8 +1,8 @@
 using System.Reflection;
-using System.Text;
 
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.Generator;
+using Beyond.NET.CodeGenerator.Generator.C;
 using Beyond.NET.CodeGenerator.Types;
 
 namespace Beyond.NET.CodeGenerator.Syntax.C;
@@ -329,7 +329,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             typeDescriptorRegistry
         );
         
-        StringBuilder sb = new();
+        CCodeBuilder sb = new();
 
         if (string.IsNullOrEmpty(methodSignatureParameters)) {
             methodSignatureParameters = "void";

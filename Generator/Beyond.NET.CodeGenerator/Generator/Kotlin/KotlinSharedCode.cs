@@ -2,7 +2,7 @@ namespace Beyond.NET.CodeGenerator.Generator.Kotlin;
 
 internal static class KotlinSharedCode
 {
-    internal const string SharedCode = """
+    internal const string SharedCode = /*lang=Kt*/"""
 open class DNObject(handle: Pointer) {
     enum class DestroyMode {
       Normal,

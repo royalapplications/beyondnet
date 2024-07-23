@@ -1,7 +1,7 @@
 using System.Reflection;
-using System.Text;
 
 using Beyond.NET.CodeGenerator.Generator;
+using Beyond.NET.CodeGenerator.Generator.Swift;
 using Beyond.NET.CodeGenerator.Types;
 
 namespace Beyond.NET.CodeGenerator.Syntax.Swift;
@@ -47,7 +47,7 @@ public class SwiftEventSyntaxWriter: SwiftMethodSyntaxWriter, IEventSyntaxWriter
 
         IEnumerable<ParameterInfo> parameters = Array.Empty<ParameterInfo>();
 
-        StringBuilder sb = new();
+        SwiftCodeBuilder sb = new();
 
         Type? eventHandlerType = @event.EventHandlerType;
         

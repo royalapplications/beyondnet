@@ -1,7 +1,7 @@
 using System.Reflection;
-using System.Text;
 
 using Beyond.NET.CodeGenerator.Generator;
+using Beyond.NET.CodeGenerator.Generator.Kotlin;
 using Beyond.NET.CodeGenerator.Types;
 
 namespace Beyond.NET.CodeGenerator.Syntax.Kotlin;
@@ -47,7 +47,7 @@ public class KotlinEventSyntaxWriter: KotlinMethodSyntaxWriter, IEventSyntaxWrit
 
         IEnumerable<ParameterInfo> parameters = Array.Empty<ParameterInfo>();
 
-        StringBuilder sb = new();
+        KotlinCodeBuilder sb = new();
 
         Type? eventHandlerType = @event.EventHandlerType;
         

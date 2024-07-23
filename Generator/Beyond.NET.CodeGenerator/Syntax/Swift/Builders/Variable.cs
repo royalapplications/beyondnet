@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Beyond.NET.CodeGenerator.Syntax.Swift.Declaration;
 using Beyond.NET.Core;
 
@@ -23,7 +24,7 @@ public struct Variable
     }
 
     #region TypeName
-    public Variable TypeName(string? typeName)
+    public Variable TypeName([StringSyntax("Swift")] string? typeName)
     {
         m_typeName = typeName;
 
@@ -32,7 +33,7 @@ public struct Variable
     #endregion TypeName
     
     #region Value
-    public Variable Value(string? value)
+    public Variable Value([StringSyntax("Swift")]string? value)
     {
         m_value = value;
 

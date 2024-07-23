@@ -1,4 +1,4 @@
-using System.Text;
+using Beyond.NET.CodeGenerator.Generator.C;
 
 namespace Beyond.NET.CodeGenerator.Syntax.C.Declaration;
 
@@ -18,7 +18,7 @@ public struct CPragmaMarkDeclaration
     
     public override string ToString()
     {
-        var sb = new StringBuilder("#pragma mark");
+        var sb = new CCodeBuilder("#pragma mark");
 
         if (IsSeparator) {
             sb.Append(" -");

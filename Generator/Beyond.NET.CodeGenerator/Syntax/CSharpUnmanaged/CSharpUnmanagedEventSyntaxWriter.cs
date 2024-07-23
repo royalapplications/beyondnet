@@ -1,6 +1,5 @@
 using System.Reflection;
-using System.Text;
-
+using Beyond.NET.CodeGenerator.Generator.CSharpUnmanaged;
 using Beyond.NET.CodeGenerator.Types;
 
 namespace Beyond.NET.CodeGenerator.Syntax.CSharpUnmanaged;
@@ -25,7 +24,7 @@ public class CSharpUnmanagedEventSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter
 
         IEnumerable<ParameterInfo> parameters = Array.Empty<ParameterInfo>();
 
-        StringBuilder sb = new();
+        CSharpCodeBuilder sb = new();
 
         Type? eventHandlerType = @event.EventHandlerType;
 

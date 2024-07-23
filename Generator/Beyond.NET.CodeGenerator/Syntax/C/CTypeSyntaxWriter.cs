@@ -1,8 +1,8 @@
 using System.Reflection;
-using System.Text;
 
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.Generator;
+using Beyond.NET.CodeGenerator.Generator.C;
 using Beyond.NET.CodeGenerator.Types;
 using Beyond.NET.Core;
 
@@ -58,7 +58,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         
         string cTypeName = type.CTypeName();
 
-        StringBuilder sb = new();
+        CCodeBuilder sb = new();
 
         if (type.IsEnum) {
             string enumdefCode = WriteEnumDef(
@@ -139,7 +139,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
             }
         }
 
-        StringBuilder sb = new();
+        CCodeBuilder sb = new();
         
         sb.AppendLine(WriteTypeDef(cTypeName));
 
@@ -233,7 +233,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
-        StringBuilder sb = new();
+        CCodeBuilder sb = new();
 
         TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
 
@@ -302,7 +302,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         
         var cSharpMembers = cSharpUnmanagedResult.GeneratedTypes[type];
 
-        StringBuilder sb = new();
+        CCodeBuilder sb = new();
 
         string fullTypeName = type.GetFullNameOrName();
 
@@ -395,7 +395,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         string fullTypeName,
         string cTypeName,
         string cMemberNamePrefix,
-        StringBuilder sb,
+        CCodeBuilder sb,
         State state,
         TypeDescriptorRegistry typeDescriptorRegistry
     )
@@ -420,7 +420,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         string cTypeName,
         string cMemberNamePrefix,
         MethodInfo? invokeMethod,
-        StringBuilder sb,
+        CCodeBuilder sb,
         State state,
         TypeDescriptorRegistry typeDescriptorRegistry
     )
@@ -448,7 +448,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         string cMemberNamePrefix,
         ParameterInfo[] parameterInfos,
         Type returnType,
-        StringBuilder sb,
+        CCodeBuilder sb,
         State state,
         TypeDescriptorRegistry typeDescriptorRegistry
     )

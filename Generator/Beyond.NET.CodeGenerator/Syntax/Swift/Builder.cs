@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Beyond.NET.CodeGenerator.Syntax.Swift.Declaration;
 
 namespace Beyond.NET.CodeGenerator.Syntax.Swift;
@@ -29,7 +30,7 @@ public struct Builder
 
     public static Builders.SingleLineComment SingleLineComment
     (
-        string comment
+        [StringSyntax("Swift")] string comment
     )
     {
         return new(

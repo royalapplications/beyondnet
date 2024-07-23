@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Beyond.NET.CodeGenerator.Syntax.Swift.Declaration;
 using Beyond.NET.Core;
 
@@ -85,7 +86,7 @@ public struct Initializer
     #endregion Throws
     
     #region Implementation
-    public Initializer Implementation(string? implementation = null)
+    public Initializer Implementation([StringSyntax("Swift")] string? implementation = null)
     {
         m_implementation = implementation;
 

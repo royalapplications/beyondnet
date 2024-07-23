@@ -1,9 +1,9 @@
 using System.Reflection;
-using System.Text;
 
 using Beyond.NET.CodeGenerator.Collectors;
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.Generator;
+using Beyond.NET.CodeGenerator.Generator.Swift;
 using Beyond.NET.CodeGenerator.Syntax.Swift.Declaration;
 using Beyond.NET.CodeGenerator.Types;
 
@@ -588,7 +588,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
-        StringBuilder sbImpl = new();
+        SwiftCodeBuilder sbImpl = new();
 
         bool needsRegularImpl = true;
 
@@ -703,7 +703,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 }
             }
 
-            StringBuilder sbByRefParameters = new();
+            SwiftCodeBuilder sbByRefParameters = new();
 
             foreach (var parameter in parameters) {
                 Type parameterType = parameter.ParameterType;
@@ -1141,7 +1141,7 @@ if let __exceptionC {
             throw new Exception("Unknown language pair");
         }
         
-        StringBuilder sb = new();
+        SwiftCodeBuilder sb = new();
         
         convertedParameterNames = new();
         convertedGenericTypeArgumentNames = new();

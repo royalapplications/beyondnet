@@ -1,6 +1,5 @@
 using System.Reflection;
-using System.Text;
-
+using Beyond.NET.CodeGenerator.Generator.CSharpUnmanaged;
 using Beyond.NET.CodeGenerator.Types;
 
 namespace Beyond.NET.CodeGenerator.Syntax.CSharpUnmanaged;
@@ -29,7 +28,7 @@ public class CSharpUnmanagedFieldSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter
         
         string fieldName = field.Name;
 
-        StringBuilder sb = new();
+        CSharpCodeBuilder sb = new();
 
         string fieldGetterCode = WriteMethod(
             field,

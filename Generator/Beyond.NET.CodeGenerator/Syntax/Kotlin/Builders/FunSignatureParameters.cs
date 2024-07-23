@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Beyond.NET.CodeGenerator.Syntax.Kotlin.Declaration;
 
 namespace Beyond.NET.CodeGenerator.Syntax.Kotlin.Builders;
@@ -18,7 +19,7 @@ public struct FunSignatureParameters
     
     public FunSignatureParameters AddParameter(
         string name,
-        string typeName
+        [StringSyntax("Kt")] string typeName
     )
     {
         return AddParameter(new FunSignatureParameter(

@@ -2,7 +2,7 @@ namespace Beyond.NET.CodeGenerator.Generator.CSharpUnmanaged;
 
 internal static class CSharpUnmanagedSharedCode
 {
-    internal const string SharedCode = """
+    internal const string SharedCode = /*lang=C#*/"""
 internal class __BeyondNETNativeModuleInitializer
 {
     [System.Runtime.CompilerServices.ModuleInitializer]

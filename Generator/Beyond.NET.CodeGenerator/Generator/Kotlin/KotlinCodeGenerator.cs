@@ -217,7 +217,7 @@ object BeyondDotNETSampleNative {
 
     private string GetHeaderCode(string package)
     {
-        return $"""
+        return /*lang=Kt*/$"""
 package {package}
 
 import com.sun.jna.*
@@ -227,7 +227,7 @@ import com.sun.jna.ptr.*
     
     private string GetUtilsCode(Type[] types)
     {
-        StringBuilder sb = new();
+        KotlinCodeBuilder sb = new();
         
         sb.AppendLine(KotlinSharedCode.SharedCode);
         sb.AppendLine();

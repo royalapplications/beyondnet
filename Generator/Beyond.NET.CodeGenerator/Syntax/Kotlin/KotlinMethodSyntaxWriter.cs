@@ -1,9 +1,9 @@
 using System.Reflection;
-using System.Text;
 
 using Beyond.NET.CodeGenerator.Collectors;
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.Generator;
+using Beyond.NET.CodeGenerator.Generator.Kotlin;
 using Beyond.NET.CodeGenerator.Syntax.Kotlin.Declaration;
 using Beyond.NET.CodeGenerator.Types;
 
@@ -415,7 +415,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             CodeLanguage.KotlinJNA
         );
         
-        StringBuilder sb = new();
+        KotlinCodeBuilder sb = new();
 
         // if (string.IsNullOrEmpty(methodSignatureParameters)) {
         //     methodSignatureParameters = "void";
@@ -1148,7 +1148,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
     {
         // TODO: This was copied from the Swift version of the same method and modified
         
-        StringBuilder sbImpl = new();
+        KotlinCodeBuilder sbImpl = new();
 
         bool needsRegularImpl = true;
 
@@ -1282,7 +1282,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 }
             }
 
-            StringBuilder sbByRefParameters = new();
+            KotlinCodeBuilder sbByRefParameters = new();
 
             foreach (var parameter in parameters) {
                 Type parameterType = parameter.ParameterType;
@@ -1569,7 +1569,7 @@ if (__exceptionC.value !== Pointer.NULL) {
             throw new Exception("Unknown language pair");
         }
         
-        StringBuilder sb = new();
+        KotlinCodeBuilder sb = new();
         
         convertedParameterNames = new();
         convertedGenericTypeArgumentNames = new();

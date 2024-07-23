@@ -1,5 +1,4 @@
 using System.Reflection;
-using System.Text;
 
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.SourceCode;
@@ -200,7 +199,7 @@ public class SwiftCodeGenerator: ICodeGenerator
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
-        StringBuilder sb = new();
+        SwiftCodeBuilder sb = new();
         
         var namespaceTree = result.GetNamespaceTreeOfGeneratedTypes();
         
@@ -229,7 +228,7 @@ public class SwiftCodeGenerator: ICodeGenerator
             return string.Empty;
         }
 
-        StringBuilder sb = new();
+        SwiftCodeBuilder sb = new();
         
         string name = namespaceNode.Name;
         
@@ -290,7 +289,7 @@ public class SwiftCodeGenerator: ICodeGenerator
             typeAliases[swiftTypeName] = new(nonByRefType, swiftTypeNameWithoutNamespace);
         }
 
-        StringBuilder sbTypeAliases = new();
+        SwiftCodeBuilder sbTypeAliases = new();
 
         foreach (var kvp in typeAliases) {
             var swiftTypeName = kvp.Key;
@@ -358,14 +357,14 @@ public extension {parentNames} {{
 
     private string GetHeaderCode()
     {
-        return """
+        return /*lang=Swift*/"""
 import Foundation
 """;
     }
     
     private string GetUtilsCode(Type[] types)
     {
-        StringBuilder sb = new();
+        SwiftCodeBuilder sb = new();
         
         sb.AppendLine(SwiftSharedCode.SharedCode);
         sb.AppendLine();

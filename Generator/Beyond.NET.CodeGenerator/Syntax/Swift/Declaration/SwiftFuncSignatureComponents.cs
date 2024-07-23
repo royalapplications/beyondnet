@@ -1,4 +1,4 @@
-using System.Text;
+using Beyond.NET.CodeGenerator.Generator.Swift;
 
 namespace Beyond.NET.CodeGenerator.Syntax.Swift.Declaration;
 
@@ -8,7 +8,7 @@ public struct SwiftFuncSignatureComponents
     {
         const string space = " ";
 
-        StringBuilder sb = new();
+        SwiftCodeBuilder sb = new();
 
         foreach (string component in components) {
             if (string.IsNullOrEmpty(component)) {

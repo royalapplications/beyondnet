@@ -1,8 +1,8 @@
 using System.Reflection;
-using System.Text;
 
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.Generator;
+using Beyond.NET.CodeGenerator.Generator.Kotlin;
 using Beyond.NET.CodeGenerator.Syntax.Kotlin.Declaration;
 using Beyond.NET.CodeGenerator.Types;
 using Beyond.NET.Core;
@@ -68,7 +68,7 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
             return Builder.SingleLineComment($"Type \"{type.Name}\" was skipped. Reason: It is generic somehow.").ToString();
         }
         
-        StringBuilder sb = new();
+        KotlinCodeBuilder sb = new();
 
         string typeCode;
         
@@ -211,7 +211,7 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
         
         HashSet<MemberInfo> generatedMembers = new();
         
-        StringBuilder sbMembers = new();
+        KotlinCodeBuilder sbMembers = new();
 
         foreach (var cSharpMember in cSharpMembers) {
             var member = cSharpMember.Member;
@@ -329,7 +329,7 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
         bool isPrimitive = type.IsPrimitive;
         bool isArray = type.IsArray;
         
-        StringBuilder sb = new();
+        KotlinCodeBuilder sb = new();
 
         string typeName = type.Name;
         string fullTypeName = type.GetFullNameOrName();
@@ -588,8 +588,8 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
 
         HashSet<MemberInfo> generatedMembers = new();
 
-        StringBuilder sbInstanceMembers = new();
-        StringBuilder sbStaticMembers = new();
+        KotlinCodeBuilder sbInstanceMembers = new();
+        KotlinCodeBuilder sbStaticMembers = new();
 
         foreach (var cSharpMember in cSharpMembers) {
             var member = cSharpMember.Member;

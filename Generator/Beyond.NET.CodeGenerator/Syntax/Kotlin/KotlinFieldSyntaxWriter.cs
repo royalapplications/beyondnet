@@ -1,7 +1,7 @@
 using System.Reflection;
-using System.Text;
 
 using Beyond.NET.CodeGenerator.Generator;
+using Beyond.NET.CodeGenerator.Generator.Kotlin;
 using Beyond.NET.CodeGenerator.Types;
 
 namespace Beyond.NET.CodeGenerator.Syntax.Kotlin;
@@ -43,7 +43,7 @@ public class KotlinFieldSyntaxWriter: KotlinMethodSyntaxWriter, IFieldSyntaxWrit
         IEnumerable<ParameterInfo> parameters = Array.Empty<ParameterInfo>();
         Type fieldType = field.FieldType;
 
-        StringBuilder sb = new();
+        KotlinCodeBuilder sb = new();
 
         if (cSharpGeneratedGetterMember is not null &&
             cGeneratedGetterMember is not null) {

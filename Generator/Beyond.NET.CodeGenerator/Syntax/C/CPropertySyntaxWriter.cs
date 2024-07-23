@@ -1,7 +1,7 @@
 using System.Reflection;
-using System.Text;
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.Generator;
+using Beyond.NET.CodeGenerator.Generator.C;
 using Beyond.NET.CodeGenerator.Types;
 
 namespace Beyond.NET.CodeGenerator.Syntax.C;
@@ -35,7 +35,7 @@ public class CPropertySyntaxWriter: CMethodSyntaxWriter, IPropertySyntaxWriter
 
         IEnumerable<ParameterInfo> parameters = property.GetIndexParameters();
 
-        StringBuilder sb = new();
+        CCodeBuilder sb = new();
 
         Type propertyType = property.PropertyType;
 

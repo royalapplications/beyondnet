@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Beyond.NET.CodeGenerator.Syntax.Kotlin.Declaration;
 
 namespace Beyond.NET.CodeGenerator.Syntax.Kotlin;
@@ -29,7 +30,7 @@ public struct Builder
 
     public static Builders.SingleLineComment SingleLineComment
     (
-        string comment
+        [StringSyntax("Kt")] string comment
     )
     {
         return new(

@@ -1,6 +1,6 @@
 using System.Reflection;
-using System.Text;
 using Beyond.NET.CodeGenerator.Extensions;
+using Beyond.NET.CodeGenerator.Generator.CSharpUnmanaged;
 using Beyond.NET.CodeGenerator.Types;
 
 namespace Beyond.NET.CodeGenerator.Syntax.CSharpUnmanaged;
@@ -25,7 +25,7 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
 
         IEnumerable<ParameterInfo> parameters = property.GetIndexParameters();
 
-        StringBuilder sb = new();
+        CSharpCodeBuilder sb = new();
 
         Type propertyType = property.PropertyType;
 

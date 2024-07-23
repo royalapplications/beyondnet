@@ -2,7 +2,7 @@ namespace Beyond.NET.CodeGenerator.Generator.C;
 
 internal static class CSharedCode
 {
-    internal const string HeaderCode = """
+    internal const string HeaderCode = /*lang=C*/"""
 #ifndef TypeDefinitions_h
 #define TypeDefinitions_h
 
@@ -15,7 +15,7 @@ internal static class CSharedCode
 #pragma clang diagnostic ignored "-Wflag-enum"
 """;
 
-    internal const string CommonTypesCode = """
+    internal const string CommonTypesCode = /*lang=C*/"""
 typedef const char* DNCString;
 
 typedef struct DNReadOnlySpanOfByte {
@@ -24,7 +24,7 @@ typedef struct DNReadOnlySpanOfByte {
 } DNReadOnlySpanOfByte;
 """;
     
-    internal const string UtilsCode = """
+    internal const string UtilsCode = /*lang=C*/"""
 _Nonnull DNCString
 DNStringToC(_Nonnull System_String_t systemString);
 
@@ -116,7 +116,7 @@ void*
 DNGetPinnedPointerToByteArray(_Nonnull System_Byte_Array_t byteArray, _Nullable System_Runtime_InteropServices_GCHandle_t* outGCHandle, _Nullable System_Exception_t* outException);
 """;
     
-        internal const string FooterCode = """
+        internal const string FooterCode = /*lang=C*/"""
 #pragma clang diagnostic pop
 
 #endif /* TypeDefinitions_h */

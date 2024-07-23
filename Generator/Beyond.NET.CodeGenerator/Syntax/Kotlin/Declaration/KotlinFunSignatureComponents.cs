@@ -1,4 +1,4 @@
-using System.Text;
+using Beyond.NET.CodeGenerator.Generator.Kotlin;
 
 namespace Beyond.NET.CodeGenerator.Syntax.Kotlin.Declaration;
 
@@ -8,7 +8,7 @@ public struct KotlinFunSignatureComponents
     {
         const string space = " ";
 
-        StringBuilder sb = new();
+        KotlinCodeBuilder sb = new();
 
         foreach (string component in components) {
             if (string.IsNullOrEmpty(component)) {

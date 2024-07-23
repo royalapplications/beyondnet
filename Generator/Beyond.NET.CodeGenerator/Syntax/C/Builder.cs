@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Beyond.NET.CodeGenerator.Syntax.C.Builders;
 
 namespace Beyond.NET.CodeGenerator.Syntax.C;
@@ -6,7 +7,7 @@ public struct Builder
 {
     public static SingleLineComment SingleLineComment
     (
-        string comment
+        [StringSyntax("C")] string comment
     )
     {
         return new(
