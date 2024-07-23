@@ -573,7 +573,7 @@ public class TypeDescriptor
             if (IsEnum) {
                 return "{0}.rawValue";
             } else if (RequiresNativePointer) {
-                return "{0}.__handle";
+                return "{0}.getHandleOrNullPointer()";
             } else {
                 return null;
             }

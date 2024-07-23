@@ -33,4 +33,21 @@ public static class MemberInfoExtensions
 
         return isIt;
     }
+
+    public static bool IsStatic(this MemberInfo memberInfo)
+    {
+        if (memberInfo is MethodBase methodBase) {
+            return methodBase.IsStatic;
+        } else if (memberInfo is ConstructorInfo constructorInfo) {
+            return constructorInfo.IsStatic;
+        } else if (memberInfo is EventInfo eventInfo) {
+            return (eventInfo.AddMethod?.IsStatic ?? false) || (eventInfo.RemoveMethod?.IsStatic ?? false);
+        } else if (memberInfo is PropertyInfo propertyInfo) {
+            return (propertyInfo.GetMethod?.IsStatic ?? false) || (propertyInfo.SetMethod?.IsStatic ?? false);
+        } else if (memberInfo is FieldInfo fieldInfo) {
+            return fieldInfo.IsStatic;
+        }
+
+        return false;
+    }
 }

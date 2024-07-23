@@ -321,7 +321,7 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
 
             return string.Empty;
         }
-        
+
         var cSharpMembers = cSharpUnmanagedResult.GeneratedTypes[type];
         var cMembers = cResult.GeneratedTypes[type];
         
@@ -588,7 +588,8 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
 
         HashSet<MemberInfo> generatedMembers = new();
 
-        StringBuilder sbMembers = new();
+        StringBuilder sbInstanceMembers = new();
+        StringBuilder sbStaticMembers = new();
 
         foreach (var cSharpMember in cSharpMembers) {
             var member = cSharpMember.Member;
@@ -608,7 +609,7 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
             
             if (syntaxWriter == null) {
                 if (Settings.EmitUnsupported) {
-                    sbMembers.AppendLine(Builder.SingleLineComment($"TODO: Unsupported Member Type \"{memberType}\"").ToString());
+                    sbInstanceMembers.AppendLine(Builder.SingleLineComment($"TODO: Unsupported Member Type \"{memberType}\"").ToString());
                 }
                     
                 continue;
@@ -646,16 +647,34 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
                 state,
                 configuration
             );
+            
+            bool isStatic = cSharpMember.MemberKind == MemberKind.TypeOf || 
+                            cSharpMember.MemberKind == MemberKind.Constructor ||
+                            (cSharpMember.Member?.IsStatic() ?? false);
+
+            var sbMembers = isStatic 
+                ? sbStaticMembers
+                : sbInstanceMembers;
 
             sbMembers.AppendLine(memberCode);
-            sbMembers.AppendLine();
 
             if (member is not null) {
                 generatedMembers.Add(member);
             }
         }
 
-        string membersCode = sbMembers.ToString();
+        var instanceMembersCode = sbInstanceMembers.ToString();
+        var staticMembersCode = sbStaticMembers.ToString();
+
+        string companionObjectCode;
+        
+        if (!string.IsNullOrEmpty(staticMembersCode)) {
+            companionObjectCode = "companion object {\n" + staticMembersCode.IndentAllLines(1) + "\n}";
+        } else {
+            companionObjectCode = string.Empty;
+        }
+        
+        string membersCode = companionObjectCode + "\n\n" + instanceMembersCode;
 
         if (writeTypeDefinition) {
             membersCode = membersCode.IndentAllLines(1);

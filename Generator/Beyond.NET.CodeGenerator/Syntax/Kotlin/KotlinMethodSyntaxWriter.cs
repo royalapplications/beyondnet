@@ -709,6 +709,9 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         }
         
         string cMethodName = cSharpGeneratedMember.GetGeneratedName(CodeLanguage.CSharpUnmanaged) ?? throw new Exception("No native name");
+
+        // TODO
+        cMethodName = $"BeyondDotNETSampleNative.{cMethodName}";
         
         // string methodNameKotlin = state.UniqueGeneratedName(
         //     memberKind.KotlinName(memberInfo),
@@ -1193,10 +1196,10 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 string cExceptionVarName = "__exceptionC";
                 
                 // TODO
-                convertedParameterNames.Add($"&{cExceptionVarName}");
+                convertedParameterNames.Add(cExceptionVarName);
                 
-                sbImpl.AppendLine(Builder.Var(cExceptionVarName)
-                    .TypeName("System_Exception_t?")
+                sbImpl.AppendLine(Builder.Val(cExceptionVarName)
+                    .Value("PointerByReference()")
                     .ToString());
                 
                 sbImpl.AppendLine();
@@ -1247,9 +1250,26 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
     
                     if (!string.IsNullOrEmpty(returnTypeConversion)) {
                         string newReturnValueName = "__returnValue";
+                        var conv = string.Format(returnTypeConversion, returnValueName);
+
+                        string prefix;
+                        string suffix;
+
+                        Nullability actualNullability = returnOrSetterOrEventHandlerArrayElementNullability != Nullability.NotSpecified
+                                ? returnOrSetterOrEventHandlerArrayElementNullability
+                                : returnOrSetterTypeDescriptor.Nullability;
+                        
+                        if (returnOrSetterTypeDescriptor.RequiresNativePointer &&
+                            actualNullability != Nullability.NonNullable) {
+                            prefix = $"if ({returnValueName}.value !== Pointer.NULL) ";
+                            suffix = " else null";
+                        } else {
+                            prefix = string.Empty;
+                            suffix = string.Empty;
+                        }
 
                         string fullReturnTypeConversion = Builder.Val(newReturnValueName)
-                            .Value(string.Format(returnTypeConversion, returnValueName))
+                            .Value($"{prefix}{conv}{suffix}")
                             .ToString();
     
                         sbImpl.AppendLine(fullReturnTypeConversion);
@@ -1336,11 +1356,10 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             if (mayThrow) {
                 // TODO
                 sbImpl.AppendLine("""
-if let __exceptionC {
-    let __exception = System_Exception(handle: __exceptionC)
-    let __error = __exception.error
-    
-    throw __error
+if (__exceptionC.value !== Pointer.NULL) {
+    // TODO
+    // throw System_Exception(__exceptionC).toKException()
+    throw Exception("TODO: Convert System.Exception to Kotlin Exception")
 }
 """);
 
@@ -1481,7 +1500,7 @@ if let __exceptionC {
                     parameterString = parameterName;
                 }
             } else {
-                parameterString = $"_ {parameterName}: {unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */";    
+                parameterString = $"{parameterName}: {unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */";    
             }
             
             parameterList.Add(parameterString);
@@ -1508,7 +1527,7 @@ if let __exceptionC {
 
             string parameterString = onlyWriteParameterNames
                 ? parameterName
-                : $"_ {parameterName}: {cSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */";
+                : $"{parameterName}: {cSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */";
             
             parameterList.Add(parameterString);
         }
@@ -1782,22 +1801,28 @@ if let __exceptionC {
             
             if (sourceLanguage == CodeLanguage.Kotlin &&
                 targetLanguage == CodeLanguage.KotlinJNA) {
-                bool isNotNull = false;
+                // bool isNotNull = false;
 
-                if (parameterInfo is not null &&
-                    !isGeneric &&
-                    !isGenericParameterType &&
-                    parameterType.IsReferenceType()) {
-                    var parameterNullabilityInfo = nullabilityContext.Create(parameterInfo);
-
-                    if (parameterNullabilityInfo.ReadState == parameterNullabilityInfo.WriteState) {
-                        isNotNull = parameterNullabilityInfo.ReadState == NullabilityState.NotNull;
-                    }
-                    
-                    parameterNullability = isNotNull
-                        ? Nullability.NonNullable
-                        : parameterTypeDescriptor.Nullability;   
+                if ((typeDescriptorRegistry.GetTypeDescriptor(parameterType)?.RequiresNativePointer ?? false)) {
+                    parameterNullability = Nullability.NonNullable;
                 }
+
+                // if (parameterInfo is not null &&
+                //     !isGeneric &&
+                //     !isGenericParameterType &&
+                //     parameterType.IsReferenceType()) {
+                //     bool isNotNull = false;
+                //     
+                //     var parameterNullabilityInfo = nullabilityContext.Create(parameterInfo);
+                //     
+                //     if (parameterNullabilityInfo.ReadState == parameterNullabilityInfo.WriteState) {
+                //         isNotNull = parameterNullabilityInfo.ReadState == NullabilityState.NotNull;
+                //     }
+                //     
+                //     parameterNullability = isNotNull
+                //         ? Nullability.NonNullable
+                //         : parameterTypeDescriptor.Nullability;
+                // }
 
                 if (parameterNullability == Nullability.NotSpecified) {
                     parameterNullability = parameterTypeDescriptor.Nullability;
@@ -1810,11 +1835,7 @@ if let __exceptionC {
 
             string fullTypeConversion = string.Format(typeConversion, $"{parameterName}{optionalString}");
 
-            KotlinVariableKinds variableKind = isInOut
-                ? KotlinVariableKinds.Variable
-                : KotlinVariableKinds.Constant;
-
-            typeConversionCode = Builder.Variable(variableKind, convertedParameterName)
+            typeConversionCode = Builder.Val(convertedParameterName)
                 .Value(fullTypeConversion)
                 .ToString();
             
