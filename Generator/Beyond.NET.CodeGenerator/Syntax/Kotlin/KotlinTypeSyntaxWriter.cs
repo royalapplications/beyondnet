@@ -13,7 +13,7 @@ namespace Beyond.NET.CodeGenerator.Syntax.Kotlin;
 
 public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWriter
 {
-    private const bool ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR = false;
+    private static readonly bool ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR = false;
     
     public Settings Settings { get; }
     
