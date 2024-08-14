@@ -103,7 +103,8 @@ internal class CodeGeneratorDriver
                 buildProductName = productName
                     .Replace('.', '_');
 
-                if (buildProductName == assemblyName) {
+                if (buildProductName == assemblyName &&
+                    !buildProductName.EndsWith("Kit")) {
                     // If the product name matches the assembly name, suffix it with "Kit"
                     buildProductName = $"{buildProductName}Kit";
                 }
