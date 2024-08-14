@@ -12,9 +12,17 @@ public class MemberCollector
     private readonly bool m_enableGenericsSupport;
 
     private static readonly Dictionary<Type, string[]> TYPES_TO_UNSUPPORTED_MEMBER_NAMES_MAPPING = new() {
-        { typeof(System.Runtime.InteropServices.Marshal), new [] {
-            "WriteInt16"
-        } }
+        {
+            typeof(System.Runtime.InteropServices.Marshal), [
+                "WriteInt16"
+            ]
+        },
+        {
+            typeof(System.Reflection.Assembly), [
+                // TODO: There's a bug in .NET 8.0.400 where Assembly.SetEntryAssembly seems to be exposed in the reference assemblies but not in the implementation assemblies. For now, we just exclude that method. 
+                "SetEntryAssembly"
+            ]
+        }
     };
 
     private readonly string[]? m_excludedMemberNames;
