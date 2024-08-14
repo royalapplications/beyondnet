@@ -1,5 +1,5 @@
-// Number of generated types: 1376
-// Number of generated members: 6000
+// Number of generated types: 1380
+// Number of generated members: 6017
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -5086,6 +5086,14 @@ typedef void* Beyond_NET_Sample_Source_OutParameterTests_t;
 
 
 
+
+typedef void* Beyond_NET_Sample_Source_IOverrideTestsInterface_t;
+
+typedef void* Beyond_NET_Sample_Source_OverrideTestsInterfaceImpl_t;
+
+typedef void* Beyond_NET_Sample_Source_OverrideTestsBaseClass_t;
+
+typedef void* Beyond_NET_Sample_Source_OverrideTestsDerivedClass_t;
 
 typedef void* Beyond_NET_Sample_Transformer_BuiltInTransformers_t;
 
@@ -48335,6 +48343,109 @@ Beyond_NET_Sample_Source_OutParameterTests_Destroy(
 
 
 
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.IOverrideTestsInterface
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_Source_IOverrideTestsInterface_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_IOverrideTestsInterface_Destroy(
+	Beyond_NET_Sample_Source_IOverrideTestsInterface_t _Nullable /* Beyond.NET.Sample.Source.IOverrideTestsInterface */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.Source.IOverrideTestsInterface
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.OverrideTestsInterfaceImpl
+Beyond_NET_Sample_Source_OverrideTestsInterfaceImpl_t _Nonnull /* Beyond.NET.Sample.Source.OverrideTestsInterfaceImpl */
+Beyond_NET_Sample_Source_OverrideTestsInterfaceImpl_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_Source_OverrideTestsInterfaceImpl_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OverrideTestsInterfaceImpl_Destroy(
+	Beyond_NET_Sample_Source_OverrideTestsInterfaceImpl_t _Nullable /* Beyond.NET.Sample.Source.OverrideTestsInterfaceImpl */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.Source.OverrideTestsInterfaceImpl
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.OverrideTestsBaseClass
+Beyond_NET_Sample_Source_IOverrideTestsInterface_t _Nullable /* Beyond.NET.Sample.Source.IOverrideTestsInterface */
+Beyond_NET_Sample_Source_OverrideTestsBaseClass_ReturnInterfaceOrImpl(
+	Beyond_NET_Sample_Source_OverrideTestsBaseClass_t _Nullable /* Beyond.NET.Sample.Source.OverrideTestsBaseClass */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_Source_IOverrideTestsInterface_t _Nullable /* Beyond.NET.Sample.Source.IOverrideTestsInterface */
+Beyond_NET_Sample_Source_OverrideTestsBaseClass_ReturnInterface_1(
+	Beyond_NET_Sample_Source_OverrideTestsBaseClass_t _Nullable /* Beyond.NET.Sample.Source.OverrideTestsBaseClass */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+Beyond_NET_Sample_Source_OverrideTestsBaseClass_GetInt(
+	Beyond_NET_Sample_Source_OverrideTestsBaseClass_t _Nullable /* Beyond.NET.Sample.Source.OverrideTestsBaseClass */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_Source_OverrideTestsBaseClass_t _Nonnull /* Beyond.NET.Sample.Source.OverrideTestsBaseClass */
+Beyond_NET_Sample_Source_OverrideTestsBaseClass_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_Source_OverrideTestsBaseClass_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OverrideTestsBaseClass_Destroy(
+	Beyond_NET_Sample_Source_OverrideTestsBaseClass_t _Nullable /* Beyond.NET.Sample.Source.OverrideTestsBaseClass */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.Source.OverrideTestsBaseClass
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.OverrideTestsDerivedClass
+Beyond_NET_Sample_Source_OverrideTestsInterfaceImpl_t _Nullable /* Beyond.NET.Sample.Source.OverrideTestsInterfaceImpl */
+Beyond_NET_Sample_Source_OverrideTestsDerivedClass_ReturnInterfaceOrImpl(
+	Beyond_NET_Sample_Source_OverrideTestsDerivedClass_t _Nullable /* Beyond.NET.Sample.Source.OverrideTestsDerivedClass */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_Source_IOverrideTestsInterface_t _Nullable /* Beyond.NET.Sample.Source.IOverrideTestsInterface */
+Beyond_NET_Sample_Source_OverrideTestsDerivedClass_ReturnInterface_1(
+	Beyond_NET_Sample_Source_OverrideTestsDerivedClass_t _Nullable /* Beyond.NET.Sample.Source.OverrideTestsDerivedClass */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+Beyond_NET_Sample_Source_OverrideTestsDerivedClass_GetInt(
+	Beyond_NET_Sample_Source_OverrideTestsDerivedClass_t _Nullable /* Beyond.NET.Sample.Source.OverrideTestsDerivedClass */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_Source_OverrideTestsDerivedClass_t _Nonnull /* Beyond.NET.Sample.Source.OverrideTestsDerivedClass */
+Beyond_NET_Sample_Source_OverrideTestsDerivedClass_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_Source_OverrideTestsDerivedClass_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OverrideTestsDerivedClass_Destroy(
+	Beyond_NET_Sample_Source_OverrideTestsDerivedClass_t _Nullable /* Beyond.NET.Sample.Source.OverrideTestsDerivedClass */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.Source.OverrideTestsDerivedClass
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Transformer.BuiltInTransformers
 Beyond_NET_Sample_Transformer_StringTransformerDelegate_t _Nonnull /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */

@@ -1,5 +1,5 @@
-// Number of generated types: 1376
-// Number of generated members: 5710
+// Number of generated types: 1380
+// Number of generated members: 5727
 
 // MARK: - BEGIN Header
 package com.example.jnatest.BeyondDotNETSampleNative
@@ -10012,6 +10012,30 @@ public enum class System_Security_Cryptography_ECCurve_ECCurveType(val rawValue:
 // TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
 
 	// MARK: - END System.Collections.IEnumerable&
+
+
+	// MARK: - BEGIN Beyond.NET.Sample.Source.IOverrideTestsInterface
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
+
+	// MARK: - END Beyond.NET.Sample.Source.IOverrideTestsInterface
+
+
+	// MARK: - BEGIN Beyond.NET.Sample.Source.OverrideTestsInterfaceImpl
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
+
+	// MARK: - END Beyond.NET.Sample.Source.OverrideTestsInterfaceImpl
+
+
+	// MARK: - BEGIN Beyond.NET.Sample.Source.OverrideTestsBaseClass
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
+
+	// MARK: - END Beyond.NET.Sample.Source.OverrideTestsBaseClass
+
+
+	// MARK: - BEGIN Beyond.NET.Sample.Source.OverrideTestsDerivedClass
+// TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false
+
+	// MARK: - END Beyond.NET.Sample.Source.OverrideTestsDerivedClass
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Transformer.BuiltInTransformers
@@ -29751,6 +29775,64 @@ object BeyondDotNETSampleNative {
 
 
 	// MARK: - END System.Collections.IEnumerable&
+
+
+	// MARK: - BEGIN Beyond.NET.Sample.Source.IOverrideTestsInterface
+	external fun Beyond_NET_Sample_Source_IOverrideTestsInterface_TypeOf() : Pointer /* System.Type */
+	
+	external fun Beyond_NET_Sample_Source_IOverrideTestsInterface_Destroy(self: Pointer /* Beyond.NET.Sample.Source.IOverrideTestsInterface */)
+	
+	
+
+	// MARK: - END Beyond.NET.Sample.Source.IOverrideTestsInterface
+
+
+	// MARK: - BEGIN Beyond.NET.Sample.Source.OverrideTestsInterfaceImpl
+	external fun Beyond_NET_Sample_Source_OverrideTestsInterfaceImpl_Create(outException: PointerByReference /* System.Exception */) : Pointer /* Beyond.NET.Sample.Source.OverrideTestsInterfaceImpl */
+	
+	external fun Beyond_NET_Sample_Source_OverrideTestsInterfaceImpl_TypeOf() : Pointer /* System.Type */
+	
+	external fun Beyond_NET_Sample_Source_OverrideTestsInterfaceImpl_Destroy(self: Pointer /* Beyond.NET.Sample.Source.OverrideTestsInterfaceImpl */)
+	
+	
+
+	// MARK: - END Beyond.NET.Sample.Source.OverrideTestsInterfaceImpl
+
+
+	// MARK: - BEGIN Beyond.NET.Sample.Source.OverrideTestsBaseClass
+	external fun Beyond_NET_Sample_Source_OverrideTestsBaseClass_ReturnInterfaceOrImpl(self: Pointer /* Beyond.NET.Sample.Source.OverrideTestsBaseClass */, outException: PointerByReference /* System.Exception */) : Pointer /* Beyond.NET.Sample.Source.IOverrideTestsInterface */
+	
+	external fun Beyond_NET_Sample_Source_OverrideTestsBaseClass_ReturnInterface_1(self: Pointer /* Beyond.NET.Sample.Source.OverrideTestsBaseClass */, outException: PointerByReference /* System.Exception */) : Pointer /* Beyond.NET.Sample.Source.IOverrideTestsInterface */
+	
+	external fun Beyond_NET_Sample_Source_OverrideTestsBaseClass_GetInt(self: Pointer /* Beyond.NET.Sample.Source.OverrideTestsBaseClass */, outException: PointerByReference /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun Beyond_NET_Sample_Source_OverrideTestsBaseClass_Create(outException: PointerByReference /* System.Exception */) : Pointer /* Beyond.NET.Sample.Source.OverrideTestsBaseClass */
+	
+	external fun Beyond_NET_Sample_Source_OverrideTestsBaseClass_TypeOf() : Pointer /* System.Type */
+	
+	external fun Beyond_NET_Sample_Source_OverrideTestsBaseClass_Destroy(self: Pointer /* Beyond.NET.Sample.Source.OverrideTestsBaseClass */)
+	
+	
+
+	// MARK: - END Beyond.NET.Sample.Source.OverrideTestsBaseClass
+
+
+	// MARK: - BEGIN Beyond.NET.Sample.Source.OverrideTestsDerivedClass
+	external fun Beyond_NET_Sample_Source_OverrideTestsDerivedClass_ReturnInterfaceOrImpl(self: Pointer /* Beyond.NET.Sample.Source.OverrideTestsDerivedClass */, outException: PointerByReference /* System.Exception */) : Pointer /* Beyond.NET.Sample.Source.OverrideTestsInterfaceImpl */
+	
+	external fun Beyond_NET_Sample_Source_OverrideTestsDerivedClass_ReturnInterface_1(self: Pointer /* Beyond.NET.Sample.Source.OverrideTestsDerivedClass */, outException: PointerByReference /* System.Exception */) : Pointer /* Beyond.NET.Sample.Source.IOverrideTestsInterface */
+	
+	external fun Beyond_NET_Sample_Source_OverrideTestsDerivedClass_GetInt(self: Pointer /* Beyond.NET.Sample.Source.OverrideTestsDerivedClass */, outException: PointerByReference /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun Beyond_NET_Sample_Source_OverrideTestsDerivedClass_Create(outException: PointerByReference /* System.Exception */) : Pointer /* Beyond.NET.Sample.Source.OverrideTestsDerivedClass */
+	
+	external fun Beyond_NET_Sample_Source_OverrideTestsDerivedClass_TypeOf() : Pointer /* System.Type */
+	
+	external fun Beyond_NET_Sample_Source_OverrideTestsDerivedClass_Destroy(self: Pointer /* Beyond.NET.Sample.Source.OverrideTestsDerivedClass */)
+	
+	
+
+	// MARK: - END Beyond.NET.Sample.Source.OverrideTestsDerivedClass
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.Transformer.BuiltInTransformers

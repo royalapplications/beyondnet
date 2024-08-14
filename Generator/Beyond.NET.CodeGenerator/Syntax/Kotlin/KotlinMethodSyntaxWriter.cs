@@ -730,7 +730,11 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                     treatAsOverridden = true;
                 }
             } else {
-                bool isShadowed = methodInfo.IsShadowed(out bool shadowNullabilityIsCompatible);
+                // TODO: Is this really Kotlin or Kotlin JNA?!
+                bool isShadowed = methodInfo.IsShadowed(
+                    CodeLanguage.Kotlin,
+                    out bool shadowNullabilityIsCompatible
+                );
 
                 if (isShadowed) {
                     if (shadowNullabilityIsCompatible) {

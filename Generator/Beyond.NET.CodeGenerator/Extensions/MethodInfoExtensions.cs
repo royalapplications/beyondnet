@@ -66,7 +66,8 @@ public static class MethodInfoExtensions
     }
 
     public static bool IsShadowed(
-        this MethodInfo methodInfo, 
+        this MethodInfo methodInfo,
+        CodeLanguage targetLanguage,
         out bool nullabilityIsCompatible
     )
     {
@@ -111,6 +112,8 @@ public static class MethodInfoExtensions
 
             MemberInfo[] baseMembers = baseType.GetMember(name, flags);
 
+            var returnType = methodInfo.ReturnType;
+
             foreach (var baseMember in baseMembers) {
                 if (baseMember is not MethodInfo baseBaseMethodInfo) {
                     continue;
@@ -123,8 +126,14 @@ public static class MethodInfoExtensions
                 }
 
                 var baseReturnType = baseBaseMethodInfo.ReturnType;
+                
+                if (!returnType.IsAssignableTo(baseReturnType)) {
+                    continue;
+                }
 
-                if (!methodInfo.ReturnType.IsAssignableTo(baseReturnType)) {
+                if (targetLanguage == CodeLanguage.Swift &&
+                    baseReturnType.IsInterface &&
+                    !returnType.IsInterface) {
                     continue;
                 }
 

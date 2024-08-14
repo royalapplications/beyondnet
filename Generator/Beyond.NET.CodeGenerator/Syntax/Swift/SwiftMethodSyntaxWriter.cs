@@ -186,7 +186,10 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                     treatAsOverridden = true;
                 }
             } else {
-                bool isShadowed = methodInfo.IsShadowed(out bool shadowNullabilityIsCompatible);
+                bool isShadowed = methodInfo.IsShadowed(
+                    CodeLanguage.Swift,
+                    out bool shadowNullabilityIsCompatible
+                );
 
                 if (isShadowed) {
                     if (shadowNullabilityIsCompatible) {
