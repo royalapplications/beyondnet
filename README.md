@@ -33,7 +33,7 @@ The generated C# code can then be compiled with .NET NativeAOT which allows the 
 ### Generator Executable
 
 - Either clone the Beyond.NET repository or [download](https://github.com/royalapplications/beyondnet/releases/latest) one of the pre-built generator executables for your platform.
-- If you do not have a pre-compiled executable of the generator, compile it by either running `dotnet publish` within its directory or use one of our provided publish scripts like `publish_macos_universal` for compiling a universal macOS binary.
+- If you do not have a pre-compiled executable of the generator, compile it by either running `dotnet publish` within its [directory](https://github.com/royalapplications/beyondnet/tree/main/Generator/Beyond.NET.CodeGenerator.CLI) or use one of our provided publish scripts like `publish_macos_universal` for compiling a universal macOS binary.
 - Open a terminal, switch to the directory containing the built executable and execute the generator (`./beyondnetgen` or just `beyondnetgen` if you have it on your path).
 - Since you've provided no arguments, the generator should show its usage screen.
 - Optionally, symlink the generator executable to be somewhere on your path (ie. `ln -s ~/Path/To/beyondnetgen /usr/local/bin/beyondnetgen`) if you're not using a pre-built executable.
