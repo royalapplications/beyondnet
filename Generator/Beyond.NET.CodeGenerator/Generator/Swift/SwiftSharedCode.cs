@@ -1081,7 +1081,7 @@ extension System_UInt64 {
 }
 
 /// A Swift error type that wraps a .NET `System.Exception` object.
-public class DNError: LocalizedError {
+public class DNError: LocalizedError, CustomDebugStringConvertible {
     /// The underlying .NET `System.Exception` object.
     public let exception: System_Exception
     
@@ -1104,6 +1104,14 @@ public class DNError: LocalizedError {
             return try String(dotNETString: exception.message)
         } catch {
             return nil
+        }
+    }
+    
+    public var debugDescription: String {
+        do {
+            return try String(dotNETString: exception.toString())
+        } catch {
+            return errorDescription ?? localizedDescription
         }
     }
 }
