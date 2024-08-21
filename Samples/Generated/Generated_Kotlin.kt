@@ -2,7 +2,7 @@
 // Number of generated members: 5727
 
 // MARK: - BEGIN Header
-package com.example.jnatest.BeyondDotNETSampleNative
+package com.example.beyondnetsampleandroid.dn
 
 import com.sun.jna.*
 import com.sun.jna.ptr.*

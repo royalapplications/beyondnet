@@ -49,7 +49,7 @@ public class KotlinCodeGenerator: ICodeGenerator
         SourceCodeSection footerSection = writer.AddSection("Footer");
 
         // TODO
-        var package = "com.example.jnatest.BeyondDotNETSampleNative";
+        var package = "com.example.beyondnetsampleandroid.dn";
         
         string header = GetHeaderCode(package);
         headerSection.Code.AppendLine(header);
