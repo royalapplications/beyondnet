@@ -1,9 +1,6 @@
 namespace Beyond.NET.CodeGenerator.Generator.Kotlin;
 
-public class Settings: Generator.Settings
+public class Settings(string kotlinPackageName) : Generator.Settings
 {
-    public Settings()
-    {
-        
-    }
+    public string KotlinPackageName { get; init; } = kotlinPackageName;
 }

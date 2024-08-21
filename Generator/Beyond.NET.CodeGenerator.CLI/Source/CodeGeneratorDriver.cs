@@ -57,6 +57,8 @@ internal class CodeGeneratorDriver
             #region Configuration
             string assemblyPath = Configuration.AssemblyPath
                 .ExpandTildeAndGetAbsolutePath();
+
+            string? kotlinPackageName = Configuration.KotlinPackageName;
             
             bool emitUnsupported = Configuration.EmitUnsupported ?? false;
             bool generateTypeCheckedDestroyMethods = Configuration.GenerateTypeCheckedDestroyMethods ?? false;
@@ -303,13 +305,22 @@ internal class CodeGeneratorDriver
             #region Kotlin
             Logger.LogInformation("Generating Kotlin Code");
             
+            if (string.IsNullOrEmpty(kotlinPackageName)) {
+                // In case no kotlin package name is specified, generate one
+                string assemblyName = Path.GetFileNameWithoutExtension(assemblyPath)
+                    .Replace('.', '_');
+                
+                kotlinPackageName = $"com.mycompany.{assemblyName.ToLower()}";
+            }
+            
             var kotlinResultObject = GenerateKotlinCode(
                 types,
                 unsupportedTypes,
                 cSharpUnmanagedResult,
                 cResult,
                 emitUnsupported,
-                typeCollectorSettings
+                typeCollectorSettings,
+                kotlinPackageName
             );
     
             var kotlinResult = kotlinResultObject.Result;
@@ -733,12 +744,13 @@ internal class CodeGeneratorDriver
         Result cSharpUnmanagedResult,
         Result cResult,
         bool emitUnsupported,
-        TypeCollectorSettings typeCollectorSettings
+        TypeCollectorSettings typeCollectorSettings,
+        string kotlinPackageName
     )
     {
         SourceCodeWriter writer = new();
         
-        Generator.Kotlin.Settings settings = new() {
+        Generator.Kotlin.Settings settings = new(kotlinPackageName) {
             EmitUnsupported = emitUnsupported,
             TypeCollectorSettings = typeCollectorSettings
         };

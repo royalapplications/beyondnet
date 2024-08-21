@@ -5,6 +5,8 @@
 	"COutputPath": "Generated/Generated_C.h",
 	"SwiftOutputPath": "Generated/Generated_Swift.swift",
 	"KotlinOutputPath": "Generated/Generated_Kotlin.kt",
+
+	"KotlinPackageName": "com.example.beyondnetsampleandroid.dn",
 	
 	"EmitUnsupported": true,
 	"GenerateTypeCheckedDestroyMethods": false,

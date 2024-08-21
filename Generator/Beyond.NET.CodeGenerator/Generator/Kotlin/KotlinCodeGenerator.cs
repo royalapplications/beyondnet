@@ -48,8 +48,7 @@ public class KotlinCodeGenerator: ICodeGenerator
         SourceCodeSection namespacesSection = writer.AddSection("Namespaces");
         SourceCodeSection footerSection = writer.AddSection("Footer");
 
-        // TODO
-        var package = "com.example.beyondnetsampleandroid.dn";
+        var package = Settings.KotlinPackageName;
         
         string header = GetHeaderCode(package);
         headerSection.Code.AppendLine(header);

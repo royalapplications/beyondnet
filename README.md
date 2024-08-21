@@ -210,6 +210,8 @@ The generator currently uses a configuration file where all of its options are s
   "SwiftOutputPath": "/Path/To/Generated/Swift/Output_Swift.swift",
   "KotlinOutputPath": "/Path/To/Generated/Kotlin/Output_Kotlin.kt",
 
+  "KotlinPackageName": "com.mycompany.mypackagename",
+
   "EmitUnsupported": false,
   "GenerateTypeCheckedDestroyMethods": false,
   "EnableGenericsSupport": false,
@@ -248,6 +250,7 @@ The generator currently uses a configuration file where all of its options are s
 - **`COutputPath`**: The generator will use this path to write the generated C bindings header file. (Required if `Build` is disabled; Optional if `Build` is enabled)
 - **`SwiftOutputPath`**: The generator will use this path to write the generated Swift bindings file. (Optional)
 - **`KotlinOutputPath`**: The generator will use this path to write the generated Kotlin bindings file. (Optional)
+- **`KotlinPackageName`**: When generating Kotlin code, this will be used as the package name for the generated code. (Optional, but highly recommended when targeting Kotlin. If not provided, a package name will be generated based on the assembly name)
 - **`EmitUnsupported`** (Boolean; `false` by default): If enabled (`true`), comments will be generated in the output files explaining why a binding for a certain type or API was not generated.
 - **`GenerateTypeCheckedDestroyMethods`** (Boolean; `false` by default): If enabled (`true`), the generated `*_Destroy` methods will check the type of the passed in object. If the type does not match, an unhandled(!) exception will be thrown. Use this to detect memory management bugs in your code. Since it introduces overhead, it's disabled by default. Also, there's no need for manual memory management in higher level languages like Swift so this is unnecessary.
 - **`EnableGenericsSupport`** (Boolean; `false` by default): Generics support is currently experimental and disabled by default. If you want to test the current state though or work on improving generics support, enable this by setting it to `true`.

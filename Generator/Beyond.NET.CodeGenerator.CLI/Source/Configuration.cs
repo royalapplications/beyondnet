@@ -10,6 +10,8 @@ public record Configuration(
     string? SwiftOutputPath,
     string? KotlinOutputPath,
     
+    string? KotlinPackageName,
+    
     bool? EmitUnsupported,
     bool? GenerateTypeCheckedDestroyMethods,
     bool? EnableGenericsSupport,
