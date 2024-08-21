@@ -4,15 +4,30 @@
 
 set -e
 
-# Replace the next two values to match your Android NDK installation 
-ANDROID_NDK_PATH="/Applications/AndroidNDK11579264.app/Contents/NDK"
-ANDROID_OS_ARCH="darwin-x86_64"
+# Make sure the "ANDROID_NDK_HOME" enviroment variable is set and pointing to your Android NDK installation.
+if [ ! -d "${ANDROID_NDK_HOME}" ] ; then
+  echo "Error: ANDROID_NDK_HOME enviroment variable is not set or directory does not exist"
+  exit 1
+fi
 
-ANDROID_NDK_BIN_PATH="${ANDROID_NDK_PATH}/toolchains/llvm/prebuilt/${ANDROID_OS_ARCH}/bin"
+echo "Android NDK Home: ${ANDROID_NDK_HOME}"
 
-echo "Android NDK Bin Path: ${ANDROID_NDK_BIN_PATH}"
+# ndk_bin_common.sh sets the "HOST_TAG" environment variable to the NDK's toolchain platform
+source "${ANDROID_NDK_HOME}/build/tools/ndk_bin_common.sh"
+echo "Android Host Tag: ${HOST_TAG}"
+
+ANDROID_NDK_BIN_PATH="${ANDROID_NDK_HOME}/toolchains/llvm/prebuilt/${HOST_TAG}/bin"
+
+if [ ! -d "${ANDROID_NDK_BIN_PATH}" ] ; then
+  echo "Error: Android NDK bin Path not found at ${ANDROID_NDK_BIN_PATH}"
+  exit 1
+fi
+
+echo "Android NDK bin Path: ${ANDROID_NDK_BIN_PATH}"
 
 export PATH=${ANDROID_NDK_BIN_PATH}:$PATH
+
+echo ""
 
 OUTPUT_PRODUCT_NAME="libBeyondDotNETSampleNative"
 BUILD_CONFIGURATION="Release"
