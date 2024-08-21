@@ -1,25 +1,41 @@
 package com.example.beyondnetsampleandroid
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
-import com.example.beyondnetsampleandroid.ui.theme.BeyondNETSampleAndroidTheme
-import com.example.beyondnetsampleandroid.dn.BeyondDotNETSampleNative
-import com.example.beyondnetsampleandroid.dn.value
-import com.sun.jna.Native
-import com.sun.jna.Pointer
-import com.sun.jna.ptr.PointerByReference
+import java.util.*
+import kotlin.time.*
+
+import com.sun.jna.ptr.*
+
+import com.example.beyondnetsampleandroid.ui.theme.*
+import com.example.beyondnetsampleandroid.dn.*
 
 class MainActivity : ComponentActivity() {
+    private var _guidStr: String = ""
+    private var guidText = mutableStateOf(_guidStr)
+
+    private val numberOfIDs = 10_000
+
+    private var _guidTime = Duration.ZERO
+    private var guidTime = mutableStateOf(_guidTime)
+
+    private var _uuidTime = Duration.ZERO
+    private var uuidTime = mutableStateOf(_uuidTime)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -27,38 +43,138 @@ class MainActivity : ComponentActivity() {
         System.setProperty("jna.debug_load", "true")
         System.setProperty("jna.debug_jna_load", "true")
 
-        val ex = PointerByReference()
-
-        val guid = BeyondDotNETSampleNative.System_Guid_NewGuid(ex)
-        require(ex.value == Pointer.NULL)
-        require(guid.value != Pointer.NULL)
-
-        val guidStrDN = BeyondDotNETSampleNative.System_Guid_ToString(guid, ex)
-        require(ex.value == Pointer.NULL)
-        require(guidStrDN.value != Pointer.NULL)
-
-        val guidStrC = BeyondDotNETSampleNative.DNStringToC(guidStrDN)
-        require(guidStrC.value != Pointer.NULL)
-
-        val guidStr = guidStrC.getString(0)
-
-        val guidStrCPtrVal = Pointer.nativeValue(guidStrC)
-        Native.free(guidStrCPtrVal)
-
-        BeyondDotNETSampleNative.System_Guid_Destroy(guid)
-
         enableEdgeToEdge()
+
+        updateGuid()
+
+        val emptyGuid = System_Guid.empty
+        val emptyGuidWithCtor = System_Guid()
+        require(emptyGuid.dn_toString().toKString() == emptyGuidWithCtor.dn_toString().toKString())
+
+        val exRef = PointerByReference()
+        require(
+            BeyondDotNETSampleNative.System_Object_Equals(
+                emptyGuid.__handle,
+                emptyGuidWithCtor.__handle,
+                exRef
+            )
+        )
+
+        val emptyStringDN = System_String.empty
+
+        var exceptionString = "ERROR: We should run into an exception here"
+
+        try {
+            System_Guid(emptyStringDN)
+        } catch (e: Exception) {
+            Log.d("JNATest", "We caught an expected exception in System_Guid constructor: $e")
+
+            exceptionString = e.toString()
+        }
+
+//        measureGuidPerformances()
+
+//        val memBeforeCollect = System_GC.getTotalMemory(true)
+//        System_GC.collect()
+//        val memAfterCollect = System_GC.getTotalMemory(true)
+
+        val johnDoe = Beyond_NET_Sample_Person(
+            "John".toDotNETString(),
+            "Doe".toDotNETString(),
+            50
+        )
+
+        val johnDoeName = johnDoe.fullName.toKString()
+        val johnDoeAge = johnDoe.age
+        johnDoe.niceLevel = Beyond_NET_Sample_NiceLevels.LittleBitNice
+        val johnDoeNiceLevel = johnDoe.niceLevel
+        val welcomeMessage = johnDoe.welcomeMessage.toKString()
+
+        require(johnDoeNiceLevel == Beyond_NET_Sample_NiceLevels.LittleBitNice)
+
+//        val stringCompareResult = System_String.compare("B".toDotNETString(), "A".toDotNETString(), System_StringComparison.InvariantCulture)
 
         setContent {
             BeyondNETSampleAndroidTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Text(
-                        text = "New Guid: $guidStr",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    Column(modifier = Modifier.padding(innerPadding)) {
+                        Text("Hello, ${johnDoeName}! You're $johnDoeAge years old.")
+                        Text(welcomeMessage)
+
+                        Text("Here's a new System.Guid for you: ${guidText.value}")
+
+                        Button(onClick = { updateGuid() }) {
+                            Text("New Guid")
+                        }
+
+                        Button(onClick = { measureGuidPerformances() }) {
+                            Text("Measure Guid Performance")
+                        }
+
+                        Text("It took ${durationToString(guidTime.value)} to create $numberOfIDs System.Guids")
+                        Text("It took ${durationToString(uuidTime.value)} to create $numberOfIDs Java UUIDs")
+
+                        Text("We caught an expected exception in System_Guid_Create_6: $exceptionString")
+                    }
                 }
             }
         }
+    }
+
+    private fun measureGuidPerformances() {
+        guidTime.value = measureGuidPerformance(numberOfIDs)
+        uuidTime.value = measureUUIDPerformance(numberOfIDs)
+    }
+
+    private fun measureGuidPerformance(numberOfIDs: Int): Duration {
+        System.gc()
+        System_GC.collect()
+
+        val t = measureTime {
+            for (i in 0..numberOfIDs)
+                makeGuidString()
+        }
+
+        System.gc()
+        System_GC.collect()
+
+        return t
+    }
+
+    private fun measureUUIDPerformance(numberOfIDs: Int): Duration {
+        System.gc()
+
+        val t = measureTime {
+            for (i in 0..numberOfIDs)
+                makeUUIDString()
+        }
+
+        System.gc()
+
+        return t
+    }
+
+    private fun durationToString(duration: Duration): String {
+        return duration.toString(DurationUnit.SECONDS, 3)
+    }
+
+    private fun makeGuidString(): String {
+        val guid = System_Guid.newGuid()
+        val guidStrDN = guid.dn_toString()
+        val guidStr = guidStrDN.toKString()
+
+        return guidStr
+    }
+
+    private fun makeUUIDString(): String {
+        val uuid = UUID.randomUUID()
+        val uuidStr = uuid.toString()
+
+        return uuidStr
+    }
+
+    private fun updateGuid() {
+        guidText.value = makeGuidString()
     }
 }
 
