@@ -7,8 +7,11 @@ import org.junit.runner.RunWith
 
 import org.junit.Assert.*
 
-import com.example.beyondnetsampleandroid.dn.*
+import com.sun.jna.*
+import com.sun.jna.ptr.*
 import java.util.UUID
+
+import com.example.beyondnetsampleandroid.dn.*
 
 @RunWith(AndroidJUnit4::class)
 class SystemGuidTests {
@@ -23,5 +26,23 @@ class SystemGuidTests {
         val guidStr = guidStrDN.toKString()
 
         assertEquals(inputUUIDStr.lowercase(), guidStr.lowercase())
+    }
+
+    @Test
+    fun testComparingSystemGuids() {
+        val emptyGuid = System_Guid.empty
+        val emptyGuidWithCtor = System_Guid()
+
+        val exRef = PointerByReference()
+
+        val areEqual = BeyondDotNETSampleNative.System_Object_Equals(
+            emptyGuid.__handle,
+            emptyGuidWithCtor.__handle,
+            exRef
+        )
+
+        assertTrue(exRef.value == Pointer.NULL)
+
+        assertTrue(areEqual)
     }
 }
