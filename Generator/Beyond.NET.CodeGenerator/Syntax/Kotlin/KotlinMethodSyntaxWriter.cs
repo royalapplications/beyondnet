@@ -627,6 +627,31 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             
             return $"// TODO: Method with by ref return or setter or event handler type ({cMember.GetGeneratedName(CodeLanguage.C)})";
         }
+        
+        if (returnOrSetterOrEventHandlerType.IsGenericInAnyWay(true)) {
+            generatedName = string.Empty;
+            
+            return $"// TODO: Method with generic return or setter or event handler type ({cMember.GetGeneratedName(CodeLanguage.C)})";
+        }
+
+        // TODO: Out/by ref value type parameters are currently not supported
+        foreach (var parameter in parameters) {
+            if (parameter.ParameterType.IsGenericInAnyWay(true)) {
+                generatedName = string.Empty;
+                
+                return $"// TODO: Method with generic parameter ({cMember.GetGeneratedName(CodeLanguage.C)})";
+            }
+            
+            if (parameter.IsOut ||
+                parameter.IsIn ||
+                parameter.ParameterType.IsByRef ||
+                parameter.ParameterType.IsByRefLike ||
+                parameter.ParameterType.IsByRefValueType(out _)) {
+                generatedName = string.Empty;
+                
+                return $"// TODO: Method with out or in or by ref type parameter ({cMember.GetGeneratedName(CodeLanguage.C)})";
+            }
+        }
         #endregion TODO: Unsupported Stuff
 
         // TODO: Interfaces
@@ -1002,7 +1027,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             // if (memberKind == MemberKind.Destructor) {
             //     memberVisibility = KotlinVisibilities.Internal;
             // } else {
-                memberVisibility = KotlinVisibilities.Public;
+                memberVisibility = KotlinVisibilities.Open;
             // }
         // }
 
@@ -1261,7 +1286,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
                         Nullability actualNullability = returnOrSetterOrEventHandlerArrayElementNullability != Nullability.NotSpecified
                                 ? returnOrSetterOrEventHandlerArrayElementNullability
-                                : returnOrSetterTypeDescriptor.Nullability;
+                                : returnOrSetterOrEventHandlerNullability != Nullability.NotSpecified ? returnOrSetterOrEventHandlerNullability : returnOrSetterTypeDescriptor.Nullability;
                         
                         if (returnOrSetterTypeDescriptor.RequiresNativePointer &&
                             actualNullability != Nullability.NonNullable) {

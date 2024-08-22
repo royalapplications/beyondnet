@@ -1,6 +1,6 @@
 namespace Beyond.NET.CodeGenerator.Types;
 
-public struct LanguagePair
+public record struct LanguagePair
 {
     public CodeLanguage SourceLanguage { get; }
     public CodeLanguage TargetLanguage { get; }

@@ -14,6 +14,15 @@ public partial class BuiltInTypeDescriptors
                     { CodeLanguage.Swift, "UInt32" },
                     { CodeLanguage.Kotlin, "UInt" },
                     { CodeLanguage.KotlinJNA, "Int" }
+                }, new Dictionary<LanguagePair, string>() {
+                    {
+                        new (CodeLanguage.KotlinJNA, CodeLanguage.Kotlin),
+                        "{0}.toUInt()"
+                    },
+                    {
+                        new (CodeLanguage.Kotlin, CodeLanguage.KotlinJNA),
+                        "{0}.toInt()"
+                    }
                 }
             );
         

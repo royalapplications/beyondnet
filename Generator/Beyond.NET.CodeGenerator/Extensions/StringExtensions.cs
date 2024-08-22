@@ -74,7 +74,8 @@ internal static class StringExtensions
     };
     
     private static readonly string[] KOTLIN_KEYWORDS = new[] {
-        "val"
+        "val",
+        "do"
     };
 
     private static readonly string[] SWIFT_RESERVED_TYPE_NAMES = new[] {
