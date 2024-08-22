@@ -11,10 +11,8 @@ using Settings = Beyond.NET.CodeGenerator.Generator.Kotlin.Settings;
 
 namespace Beyond.NET.CodeGenerator.Syntax.Kotlin;
 
-public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWriter
+public class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWriter
 {
-    private static readonly bool ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR = false;
-    
     public Settings Settings { get; }
     
     private readonly Dictionary<MemberTypes, IKotlinSyntaxWriter> m_syntaxWriters = new() {
@@ -78,7 +76,7 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
                     type,
                     typeDescriptorRegistry
                 );   
-            } else if (ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR) {
+            } else if (ExperimentalFeatureFlags.EnableKotlinTypeGenerator) {
                 typeCode = WriteKotlinType(
                     type,
                     state,
@@ -88,7 +86,7 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
                 typeCode = Builder.SingleLineComment("TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false").ToString();
             }
         } else if (generationPhase == KotlinSyntaxWriterConfiguration.GenerationPhases.JNA) {
-            typeCode = WriteJNAType(
+            typeCode = WriteJnaType(
                 type,
                 state,
                 kotlinConfiguration
@@ -171,29 +169,29 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
     #endregion Enum
 
     #region JNA
-    private string WriteJNAType(
+    private string WriteJnaType(
         Type type,
         State state,
         KotlinSyntaxWriterConfiguration configuration
     )
     {
-        return WriteJNAMembers(
+        return WriteJnaMembers(
             type,
             state,
             configuration
         );
     }
 
-    private string WriteJNAMembers(
+    private string WriteJnaMembers(
         Type type,
         State state,
         KotlinSyntaxWriterConfiguration configuration
     )
     {
-        TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
+        // TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
-        Result cResult = state.CResult ?? throw new Exception("No CResult provided");
+        // Result cResult = state.CResult ?? throw new Exception("No CResult provided");
         
         if (type.IsPointer ||
             type.IsByRef ||
@@ -207,7 +205,7 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
         }
         
         var cSharpMembers = cSharpUnmanagedResult.GeneratedTypes[type];
-        var cMembers = cResult.GeneratedTypes[type];
+        // var cMembers = cResult.GeneratedTypes[type];
         
         HashSet<MemberInfo> generatedMembers = new();
         
@@ -309,7 +307,7 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
-        Result cResult = state.CResult ?? throw new Exception("No CResult provided");
+        // Result cResult = state.CResult ?? throw new Exception("No CResult provided");
         
         if (type.IsPointer ||
             type.IsByRef ||
@@ -323,15 +321,15 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
         }
 
         var cSharpMembers = cSharpUnmanagedResult.GeneratedTypes[type];
-        var cMembers = cResult.GeneratedTypes[type];
+        // var cMembers = cResult.GeneratedTypes[type];
         
-        bool isInterface = type.IsInterface;
+        // bool isInterface = type.IsInterface;
         bool isPrimitive = type.IsPrimitive;
-        bool isArray = type.IsArray;
+        // bool isArray = type.IsArray;
         
         KotlinCodeBuilder sb = new();
 
-        string typeName = type.Name;
+        // string typeName = type.Name;
         string fullTypeName = type.GetFullNameOrName();
 
         string kotlinTypeName;

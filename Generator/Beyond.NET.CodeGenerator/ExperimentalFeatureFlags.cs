@@ -3,5 +3,7 @@ namespace Beyond.NET.CodeGenerator;
 internal static class ExperimentalFeatureFlags
 {
     // TODO: Delegates with ref parameters
-    internal const bool EnableByRefParametersInDelegates = false;
+    internal static readonly bool EnableByRefParametersInDelegates = false;
+
+    internal static readonly bool EnableKotlinTypeGenerator = false;
 }
