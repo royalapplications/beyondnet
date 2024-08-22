@@ -197,7 +197,13 @@ public static class MemberKindExtensions
             isSetter = true;
         }
 
-        string? kotlinName = originalName?.FirstCharToLower();
+        string? kotlinName;
+        
+        if (originalName == "ToString") {
+            kotlinName = "dnToString";
+        } else {
+            kotlinName = originalName?.FirstCharToLower();
+        }
 
         bool needsEscaping = true;
 

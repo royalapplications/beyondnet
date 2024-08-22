@@ -620,8 +620,17 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             memberKind != MemberKind.TypeOf) {
             throw new Exception("memberInfo may only be null when memberKind is Destructor");
         }
+        
+        MethodBase? methodBase = memberInfo as MethodBase;
+        MethodInfo? methodInfo = methodBase as MethodInfo;
 
         #region TODO: Unsupported Stuff
+        if (returnOrSetterOrEventHandlerType.IsInterface) {
+            generatedName = string.Empty;
+            
+            return $"// TODO: Method with interface return or setter or event handler type ({cMember.GetGeneratedName(CodeLanguage.C)})";
+        }
+        
         if (returnOrSetterOrEventHandlerType.IsByRef) {
             generatedName = string.Empty;
             
@@ -632,6 +641,12 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             generatedName = string.Empty;
             
             return $"// TODO: Method with generic return or setter or event handler type ({cMember.GetGeneratedName(CodeLanguage.C)})";
+        }
+
+        if (methodInfo?.ContainsGenericParameters ?? false) {
+            generatedName = string.Empty;
+            
+            return $"// TODO: Method with generic parameters ({cMember.GetGeneratedName(CodeLanguage.C)})";
         }
 
         // TODO: Out/by ref value type parameters are currently not supported
@@ -656,9 +671,6 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
         // TODO: Interfaces
         // var interfaceGenerationPhase = (syntaxWriterConfiguration as SwiftSyntaxWriterConfiguration)?.InterfaceGenerationPhase ?? SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.NoInterface;
-        
-        MethodBase? methodBase = memberInfo as MethodBase;
-        MethodInfo? methodInfo = methodBase as MethodInfo;
 
         bool isGenericType = declaringType.IsGenericType ||
                              declaringType.IsGenericTypeDefinition;
