@@ -51,9 +51,8 @@ class MainActivity : ComponentActivity() {
         val emptyGuidWithCtor = System_Guid()
         require(emptyGuid.dnToString().toKString() == emptyGuidWithCtor.dnToString().toKString())
 
-        require(
-            System_Object.equals(emptyGuid, emptyGuidWithCtor)
-        )
+        require(System_Object.equals(emptyGuid, emptyGuidWithCtor))
+        require(System_Object.equals(System_Guid.typeOf(), emptyGuid.getType()))
 
         val emptyStringDN = System_String.empty_get()
 

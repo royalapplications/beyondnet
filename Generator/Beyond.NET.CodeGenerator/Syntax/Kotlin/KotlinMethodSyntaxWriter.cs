@@ -1059,14 +1059,6 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                     : null)
                 .Implementation(memberImpl)
                 .ToString();
-            
-            // declaration = Builder.Initializer()
-            //     .Convenience()
-            //     .Visibility(memberVisibility)
-            //     .Parameters(methodSignatureParameters)
-            //     .Throws(mayThrow)
-            //     .Implementation(memberImpl)
-            //     .ToString();
         } else if (memberKind == MemberKind.Destructor) {
             declaration = Builder.Fun(methodNameKotlin)
                 .Visibility(memberVisibility)
@@ -1075,43 +1067,45 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 .Implementation(memberImpl)
                 .ToString();
         } else if (memberKind == MemberKind.TypeOf) {
-            // TODO
-            declaration = Builder.SingleLineComment("TODO: TypeOf").ToString();
-            // bool isEnum = declaringType.IsEnum;
-            //
-            // string propTypeName = !returnOrSetterOrEventHandlerType.IsVoid()
-            //     ? kotlinReturnOrSetterTypeNameWithComment
-            //     : throw new Exception("A property must have a return type");
-            //
-            // declaration = Builder.GetOnlyProperty(methodNameKotlin, propTypeName)
-            //     .Visibility(memberVisibility)
-            //     .TypeAttachmentKind(isEnum 
-            //         ? SwiftTypeAttachmentKinds.Static
-            //         : SwiftTypeAttachmentKinds.Class)
-            //     .Override(!isEnum)
-            //     .Throws(mayThrow)
-            //     .Implementation(memberImpl)
-            //     .ToString();
-        // TODO: Properties
-        /* } else if (CanBeGeneratedAsGetOnlyProperty(memberKind, isGeneric, parameters.Any())) {
-            // string propTypeName = !returnOrSetterOrEventHandlerType.IsVoid()
-            //     ? kotlinReturnOrSetterTypeNameWithComment
-            //     : throw new Exception("A property must have a return type");
-            //
-            // declaration = Builder.GetOnlyProperty(methodNameKotlin, propTypeName)
-            //     .Visibility(memberVisibility)
-            //     .TypeAttachmentKind(isStaticMethod
-            //         ? interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.Protocol || interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ProtocolExtensionForDefaultImplementations ? SwiftTypeAttachmentKinds.Static : SwiftTypeAttachmentKinds.Class
-            //         : SwiftTypeAttachmentKinds.Instance)
-            //     .Override(treatAsOverridden)
-            //     .Throws(mayThrow)
-            //     .Implementation(memberImpl)
-            //     .ToString();
-        } else if (memberKind == MemberKind.FieldGetter ||
-                   memberKind == MemberKind.FieldSetter ||
-                   memberKind == MemberKind.PropertyGetter ||
-                   memberKind == MemberKind.PropertySetter) {
-        */
+            // TODO: Enums
+            bool isEnum = declaringType.IsEnum;
+
+            if (isEnum) {
+                return "// TODO: typeOf for enums";
+            }
+            
+            string typeOfTypeName = !returnOrSetterOrEventHandlerType.IsVoid()
+                ? kotlinReturnOrSetterTypeNameWithComment
+                : throw new Exception("A typeof declaration must have a return type");
+
+            // TODO: Render as get-only property
+            declaration = Builder.Fun("typeOf")
+                .Visibility(KotlinVisibilities.Public)
+                //     .Throws(mayThrow)
+                .ReturnTypeName(typeOfTypeName)
+                .Implementation(memberImpl)
+                .ToString();
+            
+            // TODO: Properties
+            /* } else if (CanBeGeneratedAsGetOnlyProperty(memberKind, isGeneric, parameters.Any())) {
+                // string propTypeName = !returnOrSetterOrEventHandlerType.IsVoid()
+                //     ? kotlinReturnOrSetterTypeNameWithComment
+                //     : throw new Exception("A property must have a return type");
+                //
+                // declaration = Builder.GetOnlyProperty(methodNameKotlin, propTypeName)
+                //     .Visibility(memberVisibility)
+                //     .TypeAttachmentKind(isStaticMethod
+                //         ? interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.Protocol || interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ProtocolExtensionForDefaultImplementations ? SwiftTypeAttachmentKinds.Static : SwiftTypeAttachmentKinds.Class
+                //         : SwiftTypeAttachmentKinds.Instance)
+                //     .Override(treatAsOverridden)
+                //     .Throws(mayThrow)
+                //     .Implementation(memberImpl)
+                //     .ToString();
+            } else if (memberKind == MemberKind.FieldGetter ||
+                       memberKind == MemberKind.FieldSetter ||
+                       memberKind == MemberKind.PropertyGetter ||
+                       memberKind == MemberKind.PropertySetter) {
+            */
         } else {
             // TODO: Static?
             // TODO: Throws?
