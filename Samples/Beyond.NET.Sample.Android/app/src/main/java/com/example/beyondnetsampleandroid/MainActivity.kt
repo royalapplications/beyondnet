@@ -48,13 +48,11 @@ class MainActivity : ComponentActivity() {
         updateGuid()
 
         val emptyGuid = System_Guid.empty_get()
-
-        // TODO: Replace with System_Guid constructor once supported
-        val emptyGuidWithParse = System_Guid.parse("00000000-0000-0000-0000-000000000000".toDotNETString())
-        require(emptyGuid.dnToString().toKString() == emptyGuidWithParse.dnToString().toKString())
+        val emptyGuidWithCtor = System_Guid()
+        require(emptyGuid.dnToString().toKString() == emptyGuidWithCtor.dnToString().toKString())
 
         require(
-            System_Object.equals(emptyGuid, emptyGuidWithParse)
+            System_Object.equals(emptyGuid, emptyGuidWithCtor)
         )
 
         val emptyStringDN = System_String.empty_get()
@@ -68,8 +66,12 @@ class MainActivity : ComponentActivity() {
 
             exceptionString = e.toString()
         }
-        
-        val johnDoe = Beyond_NET_Sample_Person.makeJohnDoe()
+
+        val johnDoe = Beyond_NET_Sample_Person(
+            "John".toDotNETString(),
+            "Doe".toDotNETString(),
+            50
+        )
 
         val johnDoeName = johnDoe.fullName_get().toKString()
         val johnDoeAge = johnDoe.age_get()

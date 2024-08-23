@@ -8,6 +8,7 @@ public struct KotlinFunDeclaration
     public KotlinVisibilities Visibility { get; }
     public bool IsExternal { get; }
     public bool IsOverride { get; }
+    public bool IsOperator { get; }
     public string Parameters { get; }
     public string? ReturnTypeName { get; }
     public string? Implementation { get; }
@@ -17,6 +18,7 @@ public struct KotlinFunDeclaration
         KotlinVisibilities visibility,
         bool isExternal,
         bool isOverride,
+        bool isOperator,
         string parameters,
         string? returnTypeName,
         string? implementation
@@ -29,6 +31,7 @@ public struct KotlinFunDeclaration
         Visibility = visibility;
         IsExternal = isExternal;
         IsOverride = isOverride;
+        IsOperator = isOperator;
         Parameters = parameters;
 
         ReturnTypeName = !string.IsNullOrEmpty(returnTypeName)
@@ -53,12 +56,17 @@ public struct KotlinFunDeclaration
         string overrideString = IsOverride
             ? "override"
             : string.Empty;
+        
+        string operatorString = IsOperator
+            ? "operator"
+            : string.Empty;
 
         string returnString = !string.IsNullOrEmpty(ReturnTypeName)
             ? $": {ReturnTypeName}"
             : string.Empty;
 
         string[] signatureComponents = [
+            operatorString,
             visibilityString,
             externalString,
             overrideString,

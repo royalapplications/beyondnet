@@ -31,10 +31,9 @@ class SystemGuidTests {
     @Test
     fun testComparingSystemGuids() {
         val emptyGuid = System_Guid.empty_get()
-        // TODO: Replace with System_Guid constructor once supported
-        val emptyGuidWithParse = System_Guid.parse("00000000-0000-0000-0000-000000000000".toDotNETString())
+        val emptyGuidWithCtor = System_Guid()
 
-        val areEqual = System_Object.equals(emptyGuid, emptyGuidWithParse)
+        val areEqual = System_Object.equals(emptyGuid, emptyGuidWithCtor)
 
         assertTrue(areEqual)
     }

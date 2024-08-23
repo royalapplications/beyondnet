@@ -10,6 +10,7 @@ public struct Fun
     private KotlinVisibilities m_visibility = KotlinVisibilities.None;
     private bool m_external = false;
     private bool m_override = false;
+    private bool m_operator = false;
     private string? m_parameters = null;
     private string? m_returnTypeName = null;
     private string? m_implementation = null;
@@ -70,6 +71,15 @@ public struct Fun
     }
     #endregion Override
 
+    #region Operator
+    public Fun Operator(bool isOperator = true)
+    {
+        m_operator = isOperator;
+
+        return this;
+    }
+    #endregion
+
     #region Parameters
     public Fun Parameters(string? parameters = null)
     {
@@ -105,6 +115,7 @@ public struct Fun
             m_visibility,
             m_external,
             m_override,
+            m_operator,
             m_parameters ?? string.Empty,
             m_returnTypeName,
             m_implementation

@@ -1049,8 +1049,17 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         // }
 
         if (memberKind == MemberKind.Constructor) {
-            // TODO
-            declaration = Builder.SingleLineComment("TODO: Constructor").ToString();
+            declaration = Builder.Fun("invoke")
+                .Visibility(KotlinVisibilities.Public)
+                .Operator()
+                .Parameters(methodSignatureParameters)
+                // .Throws(mayThrow)
+                .ReturnTypeName(!returnOrSetterOrEventHandlerType.IsVoid()
+                    ? kotlinReturnOrSetterTypeNameWithComment
+                    : null)
+                .Implementation(memberImpl)
+                .ToString();
+            
             // declaration = Builder.Initializer()
             //     .Convenience()
             //     .Visibility(memberVisibility)
@@ -1298,8 +1307,10 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
             if (isReturning) {
                 if (memberKind == MemberKind.Constructor) {
-                    // TODO
-                    returnCode = $"this.init(handle: {returnValueName})";
+                    TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
+                    string declaringTypeName = declaringTypeDescriptor.GetTypeName(CodeLanguage.Kotlin, false);
+                    
+                    returnCode = $"return {declaringTypeName}({returnValueName})";
                 } else {
                     string? returnTypeConversion = returnOrSetterTypeDescriptor.GetTypeConversion(
                         CodeLanguage.KotlinJNA,
