@@ -7,8 +7,6 @@ import org.junit.runner.RunWith
 
 import org.junit.Assert.*
 
-import java.util.*
-
 import com.example.beyondnetsampleandroid.dn.*
 
 @RunWith(AndroidJUnit4::class)
