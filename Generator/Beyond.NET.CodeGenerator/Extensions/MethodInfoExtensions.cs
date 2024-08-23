@@ -131,7 +131,8 @@ public static class MethodInfoExtensions
                     continue;
                 }
 
-                if (targetLanguage == CodeLanguage.Swift &&
+                // TODO: Not sure if this applies to Kotlin as well
+                if ((targetLanguage == CodeLanguage.Swift || targetLanguage == CodeLanguage.Kotlin) &&
                     baseReturnType.IsInterface &&
                     !returnType.IsInterface) {
                     continue;

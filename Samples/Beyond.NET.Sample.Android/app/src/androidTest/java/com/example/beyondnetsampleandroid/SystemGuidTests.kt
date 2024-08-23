@@ -22,13 +22,14 @@ class SystemGuidTests {
         val inputUUIDStrDN = inputUUIDStr.toDotNETString()
 
         val guid = System_Guid.parse(inputUUIDStrDN)
-        val guidStrDN = guid.dn_toString()
+        val guidStrDN = guid.dnToString()
         val guidStr = guidStrDN.toKString()
 
         assertEquals(inputUUIDStr.lowercase(), guidStr.lowercase())
     }
 
-    @Test
+    // TODO: Bring back once the generator supports properties and constructors
+    /* @Test
     fun testComparingSystemGuids() {
         val emptyGuid = System_Guid.empty
         val emptyGuidWithCtor = System_Guid()
@@ -44,5 +45,5 @@ class SystemGuidTests {
         assertTrue(exRef.value == Pointer.NULL)
 
         assertTrue(areEqual)
-    }
+    } */
 }

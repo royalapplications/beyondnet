@@ -759,7 +759,8 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
         bool treatAsOverridden = false;
 
-        if (methodInfo is not null) {
+        if (methodInfo is not null &&
+            !methodInfo.IsStatic) {
             bool isActuallyOverridden = methodInfo.IsOverridden(out bool overrideNullabilityIsCompatible);
 
             if (isActuallyOverridden) {
@@ -767,7 +768,6 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                     treatAsOverridden = true;
                 }
             } else {
-                // TODO: Is this really Kotlin or Kotlin JNA?!
                 bool isShadowed = methodInfo.IsShadowed(
                     CodeLanguage.Kotlin,
                     out bool shadowNullabilityIsCompatible
@@ -779,7 +779,8 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                     }
                 }
             }
-        } else if (memberInfo is FieldInfo fieldInfo) {
+        } else if (memberInfo is FieldInfo fieldInfo &&
+                   !fieldInfo.IsStatic) {
             bool isShadowed = fieldInfo.IsShadowed();
 
             if (isShadowed) {
@@ -1039,7 +1040,11 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             // if (memberKind == MemberKind.Destructor) {
             //     memberVisibility = KotlinVisibilities.Internal;
             // } else {
+            if (memberInfo?.IsStatic() ?? false) {
+                memberVisibility = KotlinVisibilities.Public;
+            } else {
                 memberVisibility = KotlinVisibilities.Open;
+            }
             // }
         // }
 
@@ -1275,6 +1280,18 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             
             sbImpl.AppendLine(invocation);
             sbImpl.AppendLine();
+            
+            if (mayThrow) {
+                sbImpl.AppendLine("""
+                                  val __exceptionCHandle = __exceptionC.value
+                                   
+                                  if (__exceptionCHandle !== Pointer.NULL) {
+                                      throw System_Exception(__exceptionCHandle).toKException()
+                                  }
+                                  """);
+
+                sbImpl.AppendLine();
+            }
 
             string returnCode = string.Empty;
 
@@ -1392,19 +1409,6 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
             if (!string.IsNullOrEmpty(byRefParamtersCode)) {
                 sbImpl.AppendLine(byRefParamtersCode);
-            }
-
-            if (mayThrow) {
-                // TODO
-                sbImpl.AppendLine("""
-if (__exceptionC.value !== Pointer.NULL) {
-    // TODO
-    // throw System_Exception(__exceptionC).toKException()
-    throw Exception("TODO: Convert System.Exception to Kotlin Exception")
-}
-""");
-
-                sbImpl.AppendLine();
             }
 
             if (isReturning) {

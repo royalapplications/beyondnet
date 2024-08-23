@@ -199,8 +199,11 @@ public static class MemberKindExtensions
 
         string? kotlinName;
         
+        // TODO: Refactor
         if (originalName == "ToString") {
             kotlinName = "dnToString";
+        } else if (originalName == "Wait") { 
+            kotlinName = "dnWait";
         } else {
             kotlinName = originalName?.FirstCharToLower();
         }

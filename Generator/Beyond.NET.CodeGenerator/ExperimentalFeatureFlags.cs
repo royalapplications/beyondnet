@@ -5,5 +5,5 @@ internal static class ExperimentalFeatureFlags
     // TODO: Delegates with ref parameters
     internal static readonly bool EnableByRefParametersInDelegates = false;
 
-    internal static readonly bool EnableKotlinTypeGenerator = false;
+    internal static readonly bool EnableKotlinTypeGenerator = true;
 }

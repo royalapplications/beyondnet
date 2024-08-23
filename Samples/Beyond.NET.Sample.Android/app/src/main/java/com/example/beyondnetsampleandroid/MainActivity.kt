@@ -19,8 +19,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import java.util.*
 import kotlin.time.*
 
-import com.sun.jna.ptr.*
-
 import com.example.beyondnetsampleandroid.ui.theme.*
 import com.example.beyondnetsampleandroid.dn.*
 
@@ -47,27 +45,28 @@ class MainActivity : ComponentActivity() {
 
         updateGuid()
 
-        val emptyGuid = System_Guid.empty
-        val emptyGuidWithCtor = System_Guid()
-        require(emptyGuid.dn_toString().toKString() == emptyGuidWithCtor.dn_toString().toKString())
+        // TODO: Bring back once the generator supports properties and constructors
+//        val emptyGuid = System_Guid.empty
+//        val emptyGuidWithCtor = System_Guid()
+//        require(emptyGuid.dn_toString().toKString() == emptyGuidWithCtor.dn_toString().toKString())
+//
+//        val exRef = PointerByReference()
+//        require(
+//            BeyondDotNETSampleNative.System_Object_Equals(
+//                emptyGuid.__handle,
+//                emptyGuidWithCtor.__handle,
+//                exRef
+//            )
+//        )
 
-        val exRef = PointerByReference()
-        require(
-            BeyondDotNETSampleNative.System_Object_Equals(
-                emptyGuid.__handle,
-                emptyGuidWithCtor.__handle,
-                exRef
-            )
-        )
-
-        val emptyStringDN = System_String.empty
+        val emptyStringDN = "".toDotNETString()
 
         var exceptionString = "ERROR: We should run into an exception here"
 
         try {
-            System_Guid(emptyStringDN)
+            System_Guid.parse(emptyStringDN)
         } catch (e: Exception) {
-            Log.d("JNATest", "We caught an expected exception in System_Guid constructor: $e")
+            Log.d("JNATest", "We caught an expected exception in System_Guid.parse: $e")
 
             exceptionString = e.toString()
         }
@@ -78,19 +77,20 @@ class MainActivity : ComponentActivity() {
 //        System_GC.collect()
 //        val memAfterCollect = System_GC.getTotalMemory(true)
 
-        val johnDoe = Beyond_NET_Sample_Person(
-            "John".toDotNETString(),
-            "Doe".toDotNETString(),
-            50
-        )
+        // TODO: Bring back once the generator supports properties and constructors
+//        val johnDoe = Beyond_NET_Sample_Person(
+//            "John".toDotNETString(),
+//            "Doe".toDotNETString(),
+//            50
+//        )
 
-        val johnDoeName = johnDoe.fullName.toKString()
-        val johnDoeAge = johnDoe.age
-        johnDoe.niceLevel = Beyond_NET_Sample_NiceLevels.LittleBitNice
-        val johnDoeNiceLevel = johnDoe.niceLevel
-        val welcomeMessage = johnDoe.welcomeMessage.toKString()
-
-        require(johnDoeNiceLevel == Beyond_NET_Sample_NiceLevels.LittleBitNice)
+//        val johnDoeName = johnDoe.fullName.toKString()
+//        val johnDoeAge = johnDoe.age
+//        johnDoe.niceLevel = Beyond_NET_Sample_NiceLevels.LittleBitNice
+//        val johnDoeNiceLevel = johnDoe.niceLevel
+//        val welcomeMessage = johnDoe.welcomeMessage.toKString()
+//
+//        require(johnDoeNiceLevel == Beyond_NET_Sample_NiceLevels.LittleBitNice)
 
 //        val stringCompareResult = System_String.compare("B".toDotNETString(), "A".toDotNETString(), System_StringComparison.InvariantCulture)
 
@@ -98,8 +98,9 @@ class MainActivity : ComponentActivity() {
             BeyondNETSampleAndroidTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Column(modifier = Modifier.padding(innerPadding)) {
-                        Text("Hello, ${johnDoeName}! You're $johnDoeAge years old.")
-                        Text(welcomeMessage)
+                        // TODO: Bring back once the generator supports properties and constructors
+//                        Text("Hello, ${johnDoeName}! You're $johnDoeAge years old.")
+//                        Text(welcomeMessage)
 
                         Text("Here's a new System.Guid for you: ${guidText.value}")
 
@@ -114,7 +115,8 @@ class MainActivity : ComponentActivity() {
                         Text("It took ${durationToString(guidTime.value)} to create $numberOfIDs System.Guids")
                         Text("It took ${durationToString(uuidTime.value)} to create $numberOfIDs Java UUIDs")
 
-                        Text("We caught an expected exception in System_Guid_Create_6: $exceptionString")
+                        Text("Did we catch a .NET exception?")
+                        Text(exceptionString)
                     }
                 }
             }
@@ -160,7 +162,7 @@ class MainActivity : ComponentActivity() {
 
     private fun makeGuidString(): String {
         val guid = System_Guid.newGuid()
-        val guidStrDN = guid.dn_toString()
+        val guidStrDN = guid.dnToString()
         val guidStr = guidStrDN.toKString()
 
         return guidStr

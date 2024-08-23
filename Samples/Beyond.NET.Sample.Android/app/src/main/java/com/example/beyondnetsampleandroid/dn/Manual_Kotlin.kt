@@ -1,9 +1,10 @@
+// MARK: - Manually curated bindings: Can be used as reference material
+
+/*
 package com.example.beyondnetsampleandroid.dn
 
 import com.sun.jna.*
 import com.sun.jna.ptr.*
-
-// MARK: - Manually curated
 
 // MARK: - BEGIN System.Object
 /// Supports all classes in the .NET class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all .NET classes; it is the root of the type hierarchy.
@@ -979,29 +980,4 @@ class Beyond_NET_Sample_Person(handle: Pointer): DNObject(handle) {
             }
         }
 }
-
-// Extensions
-fun System_String.toKString(): String {
-    val cString = BeyondDotNETSampleNative.DNStringToC(getHandleOrNullPointer())
-    val string = cString.getString(0)
-
-    val ptrVal = Pointer.nativeValue(cString)
-    Native.free(ptrVal)
-
-    return string
-}
-
-fun String.toDotNETString(): System_String {
-    val dnStringHandle = BeyondDotNETSampleNative.DNStringFromC(this)
-    val dnString = System_String(dnStringHandle)
-
-    return dnString
-}
-
-fun System_Exception.toKException(): Exception {
-    val exStrDN = dn_toString() // Should be message instead of toString
-    val exStr = exStrDN.toKString()
-    val ex = Exception(exStr)
-
-    return ex
-}
+*/

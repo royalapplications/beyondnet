@@ -91,11 +91,14 @@ public class KotlinCodeGenerator: ICodeGenerator
         };
 
         // TODO: Replace libName, class name
-        var jnaStart = """
-object BeyondDotNETSampleNative {
+        var dnClassName = "BeyondDotNETSampleNative";
+        var libName = "BeyondDotNETSampleNative";
+        
+        var jnaStart = $$"""
+object {{dnClassName}} {
     init {
-        val libName = "BeyondDotNETSampleNative"
-        Native.register(BeyondDotNETSampleNative::class.java, libName)
+        val libName = "{{libName}}"
+        Native.register({{dnClassName}}::class.java, libName)
     }
     
     external fun DNStringFromC(cString: String): Pointer
@@ -122,6 +125,10 @@ object BeyondDotNETSampleNative {
 
         string footerCode = GetFooterCode();
         footerSection.Code.AppendLine(footerCode);
+
+        var sharedExtensionsCode = KotlinSharedCode.GetExtensions(dnClassName);
+
+        extensionsSection.Code.AppendLine(sharedExtensionsCode);
 
         return result;
     }
