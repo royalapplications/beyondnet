@@ -153,13 +153,55 @@ public class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWriter
             }
         }
 
+        enumCases.Add(new("DN_CUSTOM", $"{underlyingTypeName}.MAX_VALUE"));
+
         string enumCasesString = KotlinEnumClassCase.CasesToString(enumCases);
+
+        var additionalEnumCode = $$"""
+companion object {
+    public operator fun invoke(underlyingValue: {{underlyingTypeName}}): {{kotlinEnumTypeName}} {
+        val foundCase = {{kotlinEnumTypeName}}.entries.firstOrNull {
+            it.rawValue == underlyingValue
+        }
+
+        foundCase?.let {
+            return foundCase
+        }
+
+        return DN_CUSTOM.apply {
+            _dnCustomValue = underlyingValue
+        }
+    }
+}
+
+infix fun or(other: {{kotlinEnumTypeName}}): {{kotlinEnumTypeName}} {
+    val newRawValue = this.value or other.value
+    val customEnumCase = {{kotlinEnumTypeName}}.invoke(newRawValue)
+
+    return customEnumCase
+}
+
+private var _dnCustomValue: {{underlyingTypeName}}? = null
+
+public val value: {{underlyingTypeName}}
+    get() {
+        val dnCustomValue = _dnCustomValue
+
+        dnCustomValue?.let {
+            return dnCustomValue
+        }
+
+        return rawValue
+    }
+""";
+
+        var implementation = $"{enumCasesString}\n\n{additionalEnumCode}";
 
         var enumClassDef = new KotlinEnumClassDeclaration(
             kotlinEnumTypeName,
             KotlinVisibilities.Public,
             underlyingTypeName,
-            enumCasesString
+            implementation
         );
 
         var enumClassDefStr = enumClassDef.ToString();

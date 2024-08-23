@@ -558,7 +558,7 @@ public class TypeDescriptor
             );
 
             if (IsEnum) {
-                return kotlinTypeName + ".entries.first {{ it.rawValue == {0} }}";
+                return kotlinTypeName + "({0})";
             } else if (RequiresNativePointer) {
                 var suffix = IsInterface 
                     ? KotlinDotNETInterfaceImplementationSuffix
@@ -571,7 +571,7 @@ public class TypeDescriptor
         } else if (sourceLanguage == CodeLanguage.Kotlin &&
                    targetLanguage == CodeLanguage.KotlinJNA) {
             if (IsEnum) {
-                return "{0}.rawValue";
+                return "{0}.value";
             } else if (RequiresNativePointer) {
                 return "{0}.getHandleOrNullPointer()";
             } else {

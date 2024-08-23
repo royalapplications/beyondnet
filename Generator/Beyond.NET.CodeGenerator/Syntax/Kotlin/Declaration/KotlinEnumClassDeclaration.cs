@@ -7,13 +7,13 @@ public struct KotlinEnumClassDeclaration
     public string Name { get; }
     public KotlinVisibilities Visibility { get; }
     public string UnderlyingTypeName { get; }
-    public string? Cases { get; }
+    public string? Implementation { get; }
 
     public KotlinEnumClassDeclaration(
         string name,
         KotlinVisibilities visibility,
         string underlyingTypeName,
-        string? cases
+        string? implementation
     )
     {
         Name = !string.IsNullOrEmpty(name)
@@ -26,7 +26,7 @@ public struct KotlinEnumClassDeclaration
             ? underlyingTypeName 
             : throw new ArgumentOutOfRangeException(nameof(underlyingTypeName));
 
-        Cases = cases;
+        Implementation = implementation;
     }
     
     public override string ToString()
@@ -47,10 +47,10 @@ public struct KotlinEnumClassDeclaration
 
         string fullFunc;
         
-        if (!string.IsNullOrEmpty(Cases)) {
-            string indentedCases = Cases.IndentAllLines(1);
+        if (!string.IsNullOrEmpty(Implementation)) {
+            string indentedImplementation = Implementation.IndentAllLines(1);
             
-            fullFunc = $"{signature} {{\n{indentedCases}\n}}";
+            fullFunc = $"{signature} {{\n{indentedImplementation}\n}}";
         } else {
             fullFunc = signature;
         }

@@ -30,6 +30,10 @@ public struct KotlinEnumClassCase
     {
         string str = string.Join(",\n", cases);
 
+        if (!string.IsNullOrEmpty(str)) {
+            str += ";";
+        }
+
         return str;
     }
 }
