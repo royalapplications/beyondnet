@@ -1,5 +1,5 @@
-// Number of generated types: 1380
-// Number of generated members: 6018
+// Number of generated types: 1381
+// Number of generated members: 6044
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -4986,6 +4986,8 @@ typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
 
 typedef void* Beyond_NET_Sample_Person_Extensions_t;
 
+
+typedef void* Beyond_NET_Sample_PrimitiveTests_t;
 
 typedef void* Beyond_NET_Sample_PropertyTests_t;
 
@@ -44879,6 +44881,163 @@ Beyond_NET_Sample_Person_Extensions_Destroy(
 
 #pragma mark - END APIs of Beyond.NET.Sample.Person_Extensions
 
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.PrimitiveTests
+int8_t /* System.SByte */
+Beyond_NET_Sample_PrimitiveTests_SByteMin_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int8_t /* System.SByte */
+Beyond_NET_Sample_PrimitiveTests_SByteMax_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int16_t /* System.Int16 */
+Beyond_NET_Sample_PrimitiveTests_ShortMin_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int16_t /* System.Int16 */
+Beyond_NET_Sample_PrimitiveTests_ShortMax_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+Beyond_NET_Sample_PrimitiveTests_IntMin_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+Beyond_NET_Sample_PrimitiveTests_IntMax_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+Beyond_NET_Sample_PrimitiveTests_LongMin_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+Beyond_NET_Sample_PrimitiveTests_LongMax_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+void* /* System.IntPtr */
+Beyond_NET_Sample_PrimitiveTests_NIntMin_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+void* /* System.IntPtr */
+Beyond_NET_Sample_PrimitiveTests_NIntMax_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+uint8_t /* System.Byte */
+Beyond_NET_Sample_PrimitiveTests_ByteMin_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+uint8_t /* System.Byte */
+Beyond_NET_Sample_PrimitiveTests_ByteMax_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+uint16_t /* System.UInt16 */
+Beyond_NET_Sample_PrimitiveTests_UShortMin_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+uint16_t /* System.UInt16 */
+Beyond_NET_Sample_PrimitiveTests_UShortMax_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+uint32_t /* System.UInt32 */
+Beyond_NET_Sample_PrimitiveTests_UIntMin_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+uint32_t /* System.UInt32 */
+Beyond_NET_Sample_PrimitiveTests_UIntMax_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+uint64_t /* System.UInt64 */
+Beyond_NET_Sample_PrimitiveTests_ULongMin_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+uint64_t /* System.UInt64 */
+Beyond_NET_Sample_PrimitiveTests_ULongMax_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+uintptr_t /* System.UIntPtr */
+Beyond_NET_Sample_PrimitiveTests_NUIntMin_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+uintptr_t /* System.UIntPtr */
+Beyond_NET_Sample_PrimitiveTests_NUIntMax_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+float /* System.Single */
+Beyond_NET_Sample_PrimitiveTests_FloatMin_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+float /* System.Single */
+Beyond_NET_Sample_PrimitiveTests_FloatMax_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+double /* System.Double */
+Beyond_NET_Sample_PrimitiveTests_DoubleMin_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+double /* System.Double */
+Beyond_NET_Sample_PrimitiveTests_DoubleMax_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_PrimitiveTests_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_PrimitiveTests_Destroy(
+	Beyond_NET_Sample_PrimitiveTests_t _Nullable /* Beyond.NET.Sample.PrimitiveTests */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.PrimitiveTests
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.PropertyTests
 Beyond_NET_Sample_PropertyTests_t _Nonnull /* Beyond.NET.Sample.PropertyTests */
