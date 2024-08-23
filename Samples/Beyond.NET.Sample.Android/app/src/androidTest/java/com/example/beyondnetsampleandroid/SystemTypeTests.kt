@@ -12,6 +12,29 @@ import com.example.beyondnetsampleandroid.dn.*
 @RunWith(AndroidJUnit4::class)
 class SystemTypeTests {
     @Test
+    fun testInvalidType() {
+        val invalidTypeName = "! This.Type.Surely.Does.Not.Exist !"
+
+        var invalidType: System_Type? = null
+
+        try {
+            invalidType = System_Type.getType(invalidTypeName.toDotNETString(), true)
+
+            fail("System.Type.GetType should throw")
+        } catch (e: Exception) {
+            assertNull(invalidType)
+
+            val exMessage = e.message
+
+            assertNotNull(exMessage)
+
+            if (exMessage != null) {
+                assertTrue(exMessage.contains("The type '$invalidTypeName' cannot be found"))
+            }
+        }
+    }
+
+    @Test
     fun testSystemTypeComparison() {
         val staticSystemGuidType = System_Guid.typeOf()
         val systemGuidType = System_Guid.empty_get().getType()
