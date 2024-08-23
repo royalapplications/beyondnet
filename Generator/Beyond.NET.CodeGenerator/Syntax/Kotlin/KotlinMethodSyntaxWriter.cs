@@ -1083,9 +1083,8 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             //     .Throws(mayThrow)
             //     .Implementation(memberImpl)
             //     .ToString();
-        } else if (CanBeGeneratedAsGetOnlyProperty(memberKind, isGeneric, parameters.Any())) {
-            // TODO
-            declaration = Builder.SingleLineComment("TODO: Get Only Property").ToString();
+        // TODO: Properties
+        /* } else if (CanBeGeneratedAsGetOnlyProperty(memberKind, isGeneric, parameters.Any())) {
             // string propTypeName = !returnOrSetterOrEventHandlerType.IsVoid()
             //     ? kotlinReturnOrSetterTypeNameWithComment
             //     : throw new Exception("A property must have a return type");
@@ -1099,6 +1098,11 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             //     .Throws(mayThrow)
             //     .Implementation(memberImpl)
             //     .ToString();
+        } else if (memberKind == MemberKind.FieldGetter ||
+                   memberKind == MemberKind.FieldSetter ||
+                   memberKind == MemberKind.PropertyGetter ||
+                   memberKind == MemberKind.PropertySetter) {
+        */
         } else {
             // TODO: Static?
             // TODO: Throws?

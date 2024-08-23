@@ -19,6 +19,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import java.util.*
 import kotlin.time.*
 
+import com.sun.jna.ptr.*
+
 import com.example.beyondnetsampleandroid.ui.theme.*
 import com.example.beyondnetsampleandroid.dn.*
 
@@ -45,21 +47,17 @@ class MainActivity : ComponentActivity() {
 
         updateGuid()
 
-        // TODO: Bring back once the generator supports properties and constructors
-//        val emptyGuid = System_Guid.empty
-//        val emptyGuidWithCtor = System_Guid()
-//        require(emptyGuid.dn_toString().toKString() == emptyGuidWithCtor.dn_toString().toKString())
-//
-//        val exRef = PointerByReference()
-//        require(
-//            BeyondDotNETSampleNative.System_Object_Equals(
-//                emptyGuid.__handle,
-//                emptyGuidWithCtor.__handle,
-//                exRef
-//            )
-//        )
+        val emptyGuid = System_Guid.empty_get()
 
-        val emptyStringDN = "".toDotNETString()
+        // TODO: Replace with System_Guid constructor once supported
+        val emptyGuidWithParse = System_Guid.parse("00000000-0000-0000-0000-000000000000".toDotNETString())
+        require(emptyGuid.dnToString().toKString() == emptyGuidWithParse.dnToString().toKString())
+
+        require(
+            System_Object.equals(emptyGuid, emptyGuidWithParse)
+        )
+
+        val emptyStringDN = System_String.empty_get()
 
         var exceptionString = "ERROR: We should run into an exception here"
 
@@ -70,37 +68,23 @@ class MainActivity : ComponentActivity() {
 
             exceptionString = e.toString()
         }
+        
+        val johnDoe = Beyond_NET_Sample_Person.makeJohnDoe()
 
-//        measureGuidPerformances()
+        val johnDoeName = johnDoe.fullName_get().toKString()
+        val johnDoeAge = johnDoe.age_get()
+        johnDoe.niceLevel_set(Beyond_NET_Sample_NiceLevels.LittleBitNice)
+        val johnDoeNiceLevel = johnDoe.niceLevel_get()
+        val welcomeMessage = johnDoe.getWelcomeMessage().toKString()
 
-//        val memBeforeCollect = System_GC.getTotalMemory(true)
-//        System_GC.collect()
-//        val memAfterCollect = System_GC.getTotalMemory(true)
-
-        // TODO: Bring back once the generator supports properties and constructors
-//        val johnDoe = Beyond_NET_Sample_Person(
-//            "John".toDotNETString(),
-//            "Doe".toDotNETString(),
-//            50
-//        )
-
-//        val johnDoeName = johnDoe.fullName.toKString()
-//        val johnDoeAge = johnDoe.age
-//        johnDoe.niceLevel = Beyond_NET_Sample_NiceLevels.LittleBitNice
-//        val johnDoeNiceLevel = johnDoe.niceLevel
-//        val welcomeMessage = johnDoe.welcomeMessage.toKString()
-//
-//        require(johnDoeNiceLevel == Beyond_NET_Sample_NiceLevels.LittleBitNice)
-
-//        val stringCompareResult = System_String.compare("B".toDotNETString(), "A".toDotNETString(), System_StringComparison.InvariantCulture)
+        require(johnDoeNiceLevel == Beyond_NET_Sample_NiceLevels.LittleBitNice)
 
         setContent {
             BeyondNETSampleAndroidTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Column(modifier = Modifier.padding(innerPadding)) {
-                        // TODO: Bring back once the generator supports properties and constructors
-//                        Text("Hello, ${johnDoeName}! You're $johnDoeAge years old.")
-//                        Text(welcomeMessage)
+                        Text("Hello, ${johnDoeName}! You're $johnDoeAge years old.")
+                        Text(welcomeMessage)
 
                         Text("Here's a new System.Guid for you: ${guidText.value}")
 

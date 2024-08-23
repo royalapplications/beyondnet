@@ -87,13 +87,13 @@ public static class MemberKindExtensions
         bool needsEscaping = true;
 
         if (isGetter) {
-            swiftName = swiftName + getterSuffix;
+            swiftName += getterSuffix;
         } else if (isSetter) {
-            swiftName = swiftName + setterSuffix;
+            swiftName += setterSuffix;
         } else if (isAdder) {
-            swiftName = swiftName + adderSuffix;
+            swiftName += adderSuffix;
         } else if (isRemover) {
-            swiftName = swiftName + removerSuffix;
+            swiftName += removerSuffix;
         } else {
             if (memberKind == MemberKind.Constructor) {
                 needsEscaping = false;
@@ -126,7 +126,7 @@ public static class MemberKindExtensions
     {
         // TODO: This was copied from the Swift version of the same method and modified
         const string getterPrefix = "get_";
-        const string getterSuffix = "";
+        const string getterSuffix = "_get";
         
         const string setterPrefix = "set_";
         const string setterSuffix = "_set";
@@ -211,13 +211,13 @@ public static class MemberKindExtensions
         bool needsEscaping = true;
 
         if (isGetter) {
-            kotlinName = kotlinName + getterSuffix;
+            kotlinName += getterSuffix;
         } else if (isSetter) {
-            kotlinName = kotlinName + setterSuffix;
+            kotlinName += setterSuffix;
         } else if (isAdder) {
-            kotlinName = kotlinName + adderSuffix;
+            kotlinName += adderSuffix;
         } else if (isRemover) {
-            kotlinName = kotlinName + removerSuffix;
+            kotlinName += removerSuffix;
         } else {
             if (memberKind == MemberKind.Constructor) {
                 needsEscaping = false;

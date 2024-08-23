@@ -64,6 +64,8 @@ public class Person
     #endregion Constructors
 
     #region Methods
+    public static Person MakeJohnDoe() => new("John", "Doe", 50);
+    
     public string GetNiceLevelString()
     {
         switch (NiceLevel) {

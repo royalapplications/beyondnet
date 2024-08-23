@@ -28,22 +28,14 @@ class SystemGuidTests {
         assertEquals(inputUUIDStr.lowercase(), guidStr.lowercase())
     }
 
-    // TODO: Bring back once the generator supports properties and constructors
-    /* @Test
+    @Test
     fun testComparingSystemGuids() {
-        val emptyGuid = System_Guid.empty
-        val emptyGuidWithCtor = System_Guid()
+        val emptyGuid = System_Guid.empty_get()
+        // TODO: Replace with System_Guid constructor once supported
+        val emptyGuidWithParse = System_Guid.parse("00000000-0000-0000-0000-000000000000".toDotNETString())
 
-        val exRef = PointerByReference()
-
-        val areEqual = BeyondDotNETSampleNative.System_Object_Equals(
-            emptyGuid.__handle,
-            emptyGuidWithCtor.__handle,
-            exRef
-        )
-
-        assertTrue(exRef.value == Pointer.NULL)
+        val areEqual = System_Object.equals(emptyGuid, emptyGuidWithParse)
 
         assertTrue(areEqual)
-    } */
+    }
 }

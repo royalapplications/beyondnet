@@ -1,5 +1,5 @@
 // Number of generated types: 1380
-// Number of generated members: 6017
+// Number of generated members: 6018
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -44102,6 +44102,11 @@ Beyond_NET_Sample_OverloadTests_Destroy(
 #pragma mark - END APIs of Beyond.NET.Sample.OverloadTests
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Person
+Beyond_NET_Sample_Person_t _Nonnull /* Beyond.NET.Sample.Person */
+Beyond_NET_Sample_Person_MakeJohnDoe(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
 System_String_t _Nonnull /* System.String */
 Beyond_NET_Sample_Person_GetNiceLevelString(
 	Beyond_NET_Sample_Person_t _Nullable /* Beyond.NET.Sample.Person */ self,
