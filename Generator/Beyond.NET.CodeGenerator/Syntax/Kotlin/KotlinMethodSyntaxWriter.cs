@@ -1059,15 +1059,12 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             //     .Implementation(memberImpl)
             //     .ToString();
         } else if (memberKind == MemberKind.Destructor) {
-            // TODO
-            declaration = Builder.SingleLineComment("TODO: Destructor").ToString();
-            // declaration = Builder.Func(methodNameKotlin)
-            //     .Visibility(memberVisibility)
-            //     .Override()
-            //     .Parameters(methodSignatureParameters)
-            //     .Throws(mayThrow)
-            //     .Implementation(memberImpl)
-            //     .ToString();
+            declaration = Builder.Fun(methodNameKotlin)
+                .Visibility(memberVisibility)
+                .Override()
+                .Parameters(methodSignatureParameters)
+                .Implementation(memberImpl)
+                .ToString();
         } else if (memberKind == MemberKind.TypeOf) {
             // TODO
             declaration = Builder.SingleLineComment("TODO: TypeOf").ToString();
