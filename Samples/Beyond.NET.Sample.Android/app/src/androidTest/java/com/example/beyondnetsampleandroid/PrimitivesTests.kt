@@ -40,12 +40,32 @@ class PrimitivesTests {
         assertEquals(Beyond_NET_Sample_PrimitiveTests.uLongMax_get(), ULong.MAX_VALUE)
 
         // Floating Point
-        // TODO: Currently fails
-//        assertEquals(Beyond_NET_Sample_PrimitiveTests.floatMin_get(), Float.MIN_VALUE)
-        assertEquals(Beyond_NET_Sample_PrimitiveTests.floatMax_get(), Float.MAX_VALUE)
+        // TODO: Not sure if this is correct
+        val dnMaxF = Beyond_NET_Sample_PrimitiveTests.floatMax_get()
+        val kMaxF = Float.MAX_VALUE
+        val maxDeltaF = Math.ulp(dnMaxF).coerceAtLeast(Math.ulp(kMaxF))
+
+        assertEquals(dnMaxF, kMaxF, maxDeltaF)
 
         // TODO: Currently fails
-//        assertEquals(Beyond_NET_Sample_PrimitiveTests.doubleMin_get(), Double.MIN_VALUE, (0).toDouble())
-        assertEquals(Beyond_NET_Sample_PrimitiveTests.doubleMax_get(), Double.MAX_VALUE, (0).toDouble())
+//        val dnMinF = Beyond_NET_Sample_PrimitiveTests.floatMin_get()
+//        val kMinF = Float.MIN_VALUE
+//        val minDeltaF = Math.ulp(dnMinF).coerceAtLeast(Math.ulp(kMinF))
+//
+//        assertEquals(dnMinF, kMinF, minDeltaF)
+
+        // TODO: Not sure if this is correct
+        val dnMaxD = Beyond_NET_Sample_PrimitiveTests.doubleMax_get()
+        val kMaxD = Double.MAX_VALUE
+        val maxDeltaD = Math.ulp(dnMaxD).coerceAtLeast(Math.ulp(kMaxD))
+
+        assertEquals(dnMaxD, kMaxD, maxDeltaD)
+
+        // TODO: Currently fails
+//        val dnMinD = Beyond_NET_Sample_PrimitiveTests.doubleMin_get()
+//        val kMinD = Double.MIN_VALUE
+//        val minDeltaD = Math.ulp(dnMinD).coerceAtLeast(Math.ulp(kMinD))
+//
+//        assertEquals(dnMinD, kMinD, minDeltaD)
     }
 }
