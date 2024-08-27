@@ -112,7 +112,39 @@ object {{jnaClassName}} {
     external fun DNObjectCastToBool(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Boolean
     external fun DNObjectFromBool(value: Boolean): Pointer /* System_Boolean_t */
     
-    // TODO: More...
+    // TODO: Char
+    
+    external fun DNObjectCastToFloat(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Float
+    external fun DNObjectFromFloat(value: Float): Pointer /* System_Single_t */
+
+    external fun DNObjectCastToDouble(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Double
+    external fun DNObjectFromDouble(value: Double): Pointer /* System_Double_t */
+
+    external fun DNObjectCastToInt8(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Byte
+    external fun DNObjectFromInt8(value: Byte): Pointer /* System_SByte_t */
+
+    external fun DNObjectCastToUInt8(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Byte
+    external fun DNObjectFromUInt8(value: Byte): Pointer /* System_Byte_t */
+
+    external fun DNObjectCastToInt16(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Short
+    external fun DNObjectFromInt16(value: Short): Pointer /* System_Int16_t */
+    
+    external fun DNObjectCastToUInt16(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Short
+    external fun DNObjectFromUInt16(value: Short): Pointer /* System_UInt16_t */
+
+    external fun DNObjectCastToInt32(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Int
+    external fun DNObjectFromInt32(value: Int): Pointer /* System_Int32_t */
+    
+    external fun DNObjectCastToUInt32(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Int
+    external fun DNObjectFromUInt32(value: Int): Pointer /* System_UInt32_t */
+
+    external fun DNObjectCastToInt64(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Long
+    external fun DNObjectFromInt64(value: Long): Pointer /* System_Int64_t */
+    
+    external fun DNObjectCastToUInt64(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Long
+    external fun DNObjectFromUInt64(value: Long): Pointer /* System_UInt64_t */
+    
+    // TODO: DNGetPinnedPointerToByteArray
                                      
 """;
 
