@@ -16,42 +16,50 @@ class PrimitivesTests {
         // Signed
         // SByte
         assertEquals(Beyond_NET_Sample_PrimitiveTests.sByteMin_get(), Byte.MIN_VALUE)
+        assertEquals(Beyond_NET_Sample_PrimitiveTests.returnSByte(Byte.MIN_VALUE), Byte.MIN_VALUE)
         assertEquals(Beyond_NET_Sample_PrimitiveTests.sByteMax_get(), Byte.MAX_VALUE)
         assertEquals(Beyond_NET_Sample_PrimitiveTests.returnSByte(Byte.MAX_VALUE), Byte.MAX_VALUE)
 
         // Short
         assertEquals(Beyond_NET_Sample_PrimitiveTests.shortMin_get(), Short.MIN_VALUE)
+        assertEquals(Beyond_NET_Sample_PrimitiveTests.returnShort(Short.MIN_VALUE), Short.MIN_VALUE)
         assertEquals(Beyond_NET_Sample_PrimitiveTests.shortMax_get(), Short.MAX_VALUE)
         assertEquals(Beyond_NET_Sample_PrimitiveTests.returnShort(Short.MAX_VALUE), Short.MAX_VALUE)
 
         // Int
         assertEquals(Beyond_NET_Sample_PrimitiveTests.intMin_get(), Int.MIN_VALUE)
+        assertEquals(Beyond_NET_Sample_PrimitiveTests.returnInt(Int.MIN_VALUE), Int.MIN_VALUE)
         assertEquals(Beyond_NET_Sample_PrimitiveTests.intMax_get(), Int.MAX_VALUE)
         assertEquals(Beyond_NET_Sample_PrimitiveTests.returnInt(Int.MAX_VALUE), Int.MAX_VALUE)
 
         // Long
         assertEquals(Beyond_NET_Sample_PrimitiveTests.longMin_get(), Long.MIN_VALUE)
+        assertEquals(Beyond_NET_Sample_PrimitiveTests.returnLong(Long.MIN_VALUE), Long.MIN_VALUE)
         assertEquals(Beyond_NET_Sample_PrimitiveTests.longMax_get(), Long.MAX_VALUE)
         assertEquals(Beyond_NET_Sample_PrimitiveTests.returnLong(Long.MAX_VALUE), Long.MAX_VALUE)
 
         // Unsigned
         // Byte
         assertEquals(Beyond_NET_Sample_PrimitiveTests.byteMin_get(), UByte.MIN_VALUE)
+        assertEquals(Beyond_NET_Sample_PrimitiveTests.returnByte(UByte.MIN_VALUE), UByte.MIN_VALUE)
         assertEquals(Beyond_NET_Sample_PrimitiveTests.byteMax_get(), UByte.MAX_VALUE)
         assertEquals(Beyond_NET_Sample_PrimitiveTests.returnByte(UByte.MAX_VALUE), UByte.MAX_VALUE)
 
         // UShort
         assertEquals(Beyond_NET_Sample_PrimitiveTests.uShortMin_get(), UShort.MIN_VALUE)
+        assertEquals(Beyond_NET_Sample_PrimitiveTests.returnUShort(UShort.MIN_VALUE), UShort.MIN_VALUE)
         assertEquals(Beyond_NET_Sample_PrimitiveTests.uShortMax_get(), UShort.MAX_VALUE)
         assertEquals(Beyond_NET_Sample_PrimitiveTests.returnUShort(UShort.MAX_VALUE), UShort.MAX_VALUE)
 
         // UInt
         assertEquals(Beyond_NET_Sample_PrimitiveTests.uIntMin_get(), UInt.MIN_VALUE)
+        assertEquals(Beyond_NET_Sample_PrimitiveTests.returnUInt(UInt.MIN_VALUE), UInt.MIN_VALUE)
         assertEquals(Beyond_NET_Sample_PrimitiveTests.uIntMax_get(), UInt.MAX_VALUE)
         assertEquals(Beyond_NET_Sample_PrimitiveTests.returnUInt(UInt.MAX_VALUE), UInt.MAX_VALUE)
 
         // ULong
         assertEquals(Beyond_NET_Sample_PrimitiveTests.uLongMin_get(), ULong.MIN_VALUE)
+        assertEquals(Beyond_NET_Sample_PrimitiveTests.returnULong(ULong.MIN_VALUE), ULong.MIN_VALUE)
         assertEquals(Beyond_NET_Sample_PrimitiveTests.uLongMax_get(), ULong.MAX_VALUE)
         assertEquals(Beyond_NET_Sample_PrimitiveTests.returnULong(ULong.MAX_VALUE), ULong.MAX_VALUE)
 
@@ -61,6 +69,7 @@ class PrimitivesTests {
         val kMaxF = Float.MAX_VALUE
         val maxDeltaF = Math.ulp(dnMaxF).coerceAtLeast(Math.ulp(kMaxF))
 
+        assertEquals(Beyond_NET_Sample_PrimitiveTests.returnFloat(kMaxF), kMaxF, maxDeltaF)
         assertEquals(dnMaxF, kMaxF, maxDeltaF)
 
         val dnMinF = Beyond_NET_Sample_PrimitiveTests.floatMin_get()
@@ -68,8 +77,7 @@ class PrimitivesTests {
         val minDeltaF = Math.ulp(dnMinF).coerceAtLeast(Math.ulp(kMinF))
 
         assertEquals(dnMinF, kMinF, minDeltaF)
-
-        assertEquals(Beyond_NET_Sample_PrimitiveTests.returnFloat(kMaxF), kMaxF, maxDeltaF)
+        assertEquals(Beyond_NET_Sample_PrimitiveTests.returnFloat(kMinF), kMinF, minDeltaF)
 
         // Double
         val dnMaxD = Beyond_NET_Sample_PrimitiveTests.doubleMax_get()
@@ -77,13 +85,13 @@ class PrimitivesTests {
         val maxDeltaD = Math.ulp(dnMaxD).coerceAtLeast(Math.ulp(kMaxD))
 
         assertEquals(dnMaxD, kMaxD, maxDeltaD)
+        assertEquals(Beyond_NET_Sample_PrimitiveTests.returnDouble(kMaxD), kMaxD, maxDeltaD)
 
         val dnMinD = Beyond_NET_Sample_PrimitiveTests.doubleMin_get()
         val kMinD = -Double.MAX_VALUE
         val minDeltaD = Math.ulp(dnMinD).coerceAtLeast(Math.ulp(kMinD))
 
         assertEquals(dnMinD, kMinD, minDeltaD)
-
-        assertEquals(Beyond_NET_Sample_PrimitiveTests.returnDouble(kMaxD), kMaxD, maxDeltaD)
+        assertEquals(Beyond_NET_Sample_PrimitiveTests.returnDouble(kMinD), kMinD, minDeltaD)
     }
 }

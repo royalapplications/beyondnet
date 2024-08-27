@@ -19,8 +19,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.beyondnetsampleandroid.dn.*
 import com.example.beyondnetsampleandroid.ui.theme.BeyondNETSampleAndroidTheme
 
-import com.sun.jna.IntegerType
-
 import java.util.UUID
 import kotlin.time.Duration
 import kotlin.time.DurationUnit
