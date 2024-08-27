@@ -13,6 +13,8 @@ namespace Beyond.NET.CodeGenerator.Syntax.Kotlin;
 
 public class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWriter
 {
+    public const string JNA_CLASS_NAME = "CAPI";
+    
     public Settings Settings { get; }
     
     private readonly Dictionary<MemberTypes, IKotlinSyntaxWriter> m_syntaxWriters = new() {

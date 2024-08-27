@@ -90,15 +90,16 @@ public class KotlinCodeGenerator: ICodeGenerator
             GenerationPhase = KotlinSyntaxWriterConfiguration.GenerationPhases.JNA
         };
 
-        // TODO: Replace libName, class name
-        var dnClassName = "BeyondDotNETSampleNative";
+        const string jnaClassName = KotlinTypeSyntaxWriter.JNA_CLASS_NAME;
+        
+        // TODO: Get libName from config!
         var libName = "BeyondDotNETSampleNative";
         
         var jnaStart = $$"""
-object {{dnClassName}} {
+object {{jnaClassName}} {
     init {
         val libName = "{{libName}}"
-        Native.register({{dnClassName}}::class.java, libName)
+        Native.register({{jnaClassName}}::class.java, libName)
     }
     
     external fun DNStringFromC(cString: String): Pointer
@@ -126,7 +127,7 @@ object {{dnClassName}} {
         string footerCode = GetFooterCode();
         footerSection.Code.AppendLine(footerCode);
 
-        var sharedExtensionsCode = KotlinSharedCode.GetExtensions(dnClassName);
+        var sharedExtensionsCode = KotlinSharedCode.GetExtensions(jnaClassName);
 
         extensionsSection.Code.AppendLine(sharedExtensionsCode);
 

@@ -745,11 +745,10 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             }
         }
         
-        string cMethodName = cSharpGeneratedMember.GetGeneratedName(CodeLanguage.CSharpUnmanaged) ?? throw new Exception("No native name");
-
-        // TODO
-        cMethodName = $"BeyondDotNETSampleNative.{cMethodName}";
+        const string jnaClassName = KotlinTypeSyntaxWriter.JNA_CLASS_NAME;
         
+        string cMethodName = $"{jnaClassName}.{cSharpGeneratedMember.GetGeneratedName(CodeLanguage.CSharpUnmanaged)}" ?? throw new Exception("No native name");
+
         // string methodNameKotlin = state.UniqueGeneratedName(
         //     memberKind.KotlinName(memberInfo),
         //     CodeLanguage.Kotlin
