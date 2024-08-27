@@ -11,6 +11,7 @@ public struct KotlinFunDeclaration
     public bool IsOperator { get; }
     public string Parameters { get; }
     public string? ReturnTypeName { get; }
+    public HashSet<string>? Attributes { get; }
     public string? Implementation { get; }
     
     public KotlinFunDeclaration(
@@ -21,6 +22,7 @@ public struct KotlinFunDeclaration
         bool isOperator,
         string parameters,
         string? returnTypeName,
+        HashSet<string>? attributes,
         string? implementation
     )
     {
@@ -37,6 +39,8 @@ public struct KotlinFunDeclaration
         ReturnTypeName = !string.IsNullOrEmpty(returnTypeName)
             ? returnTypeName
             : null;
+
+        Attributes = attributes;
         
         Implementation = !string.IsNullOrEmpty(implementation)
             ? implementation
@@ -65,7 +69,16 @@ public struct KotlinFunDeclaration
             ? $": {ReturnTypeName}"
             : string.Empty;
 
+        string attributesString;
+
+        if (Attributes is not null) {
+            attributesString = string.Join(" ", Attributes);
+        } else {
+            attributesString = string.Empty;
+        }
+
         string[] signatureComponents = [
+            attributesString,
             operatorString,
             visibilityString,
             externalString,

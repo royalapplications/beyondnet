@@ -102,8 +102,17 @@ object {{jnaClassName}} {
         Native.register({{jnaClassName}}::class.java, libName)
     }
     
-    external fun DNStringFromC(cString: String): Pointer
-    external fun DNStringToC(systemString: Pointer): Pointer
+    external fun DNStringToC(systemString: Pointer /* System_String_t */): Pointer /* const char* */
+    external fun DNStringFromC(cString: String /* const char* */): Pointer /* System_String_t */
+    
+    external fun DNObjectCastTo(`object`: Pointer /* System_Object_t */, type: Pointer /* System_Type_t */, outException: PointerByReference /* System_Exception_t* */): Pointer /* System_Object_t */;
+    external fun DNObjectCastAs(`object`: Pointer /* System_Object_t */, type: Pointer /* System_Type_t */): Pointer /* System_Object_t */
+    external fun DNObjectIs(`object`: Pointer /* System_Object_t */, type: Pointer /* System_Type_t */): Boolean
+    
+    external fun DNObjectCastToBool(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Boolean
+    external fun DNObjectFromBool(value: Boolean): Pointer /* System_Boolean_t */
+    
+    // TODO: More...
                                      
 """;
 

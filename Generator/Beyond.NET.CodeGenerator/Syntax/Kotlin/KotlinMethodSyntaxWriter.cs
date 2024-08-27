@@ -1079,6 +1079,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
             // TODO: Render as get-only property
             declaration = Builder.Fun("typeOf")
+                .Attribute("@JvmStatic")
                 .Visibility(KotlinVisibilities.Public)
                 //     .Throws(mayThrow)
                 .ReturnTypeName(typeOfTypeName)

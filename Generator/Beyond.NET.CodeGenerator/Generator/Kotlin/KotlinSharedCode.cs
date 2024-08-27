@@ -66,11 +66,75 @@ fun Pointer.toUPointer(): UPointer {
 }
 """;
 
-    internal static string GetExtensions(string dnClassName)
+    internal static string GetExtensions(string jnaClassName)
     {
         return $$"""
+fun DNObject.castTo(type: System_Type): System_Object? {
+    val __exceptionC = PointerByReference()
+    
+    val __returnValueC = {{jnaClassName}}.DNObjectCastTo(this.__handle, type.__handle, __exceptionC)
+    
+    val __exceptionCHandle = __exceptionC.value
+    
+    if (__exceptionCHandle !== Pointer.NULL) {
+        throw System_Exception(__exceptionCHandle).toKException()
+    }
+    
+    if (__returnValueC == Pointer.NULL) {
+        return null
+    }
+    
+    val __returnValue = System_Object(__returnValueC)
+
+    return __returnValue
+}
+
+// TODO: This uses reflection - no good
+inline fun <reified T> DNObject.castTo(): T where T : System_Object {
+    val tClass = T::class.java
+    val tClassTypeOfMethod = tClass.getMethod("typeOf")
+    val tClassTypeOf = tClassTypeOfMethod.invoke(null) as System_Type
+    val tClassConstructor = tClass.getDeclaredConstructor(Pointer::class.java)
+
+    val __exceptionC = PointerByReference()
+
+    val __returnValueC = CAPI.DNObjectCastTo(this.__handle, tClassTypeOf.__handle, __exceptionC)
+
+    val __exceptionCHandle = __exceptionC.value
+
+    if (__exceptionCHandle !== Pointer.NULL) {
+        throw System_Exception(__exceptionCHandle).toKException()
+    }
+
+    val __returnValue = tClassConstructor.newInstance(__returnValueC)
+
+    return __returnValue
+}
+
+// TODO: This uses reflection - no good
+inline fun <reified T> DNObject.castAs(): T? where T : System_Object {
+    val tClass = T::class.java
+    val tClassTypeOfMethod = tClass.getMethod("typeOf")
+    val tClassTypeOf = tClassTypeOfMethod.invoke(null) as System_Type
+    val tClassConstructor = tClass.getDeclaredConstructor(Pointer::class.java)
+
+    val __returnValueC = CAPI.DNObjectCastAs(this.__handle, tClassTypeOf.__handle)
+
+    if (__returnValueC == Pointer.NULL) {
+        return null
+    }
+
+    val __returnValue = tClassConstructor.newInstance(__returnValueC)
+
+    return __returnValue
+}
+
+fun DNObject.`is`(type: System_Type): Boolean {
+    return {{jnaClassName}}.DNObjectIs(this.__handle, type.__handle)
+}
+
 fun System_String.toKString(): String {
-    val cString = {{dnClassName}}.DNStringToC(getHandleOrNullPointer())
+    val cString = {{jnaClassName}}.DNStringToC(getHandleOrNullPointer())
     val string = cString.getString(0)
 
     val ptrVal = Pointer.nativeValue(cString)
@@ -80,7 +144,7 @@ fun System_String.toKString(): String {
 }
 
 fun String.toDotNETString(): System_String {
-    val dnStringHandle = {{dnClassName}}.DNStringFromC(this)
+    val dnStringHandle = {{jnaClassName}}.DNStringFromC(this)
     val dnString = System_String(dnStringHandle)
 
     return dnString

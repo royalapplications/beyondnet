@@ -14,6 +14,7 @@ public struct Fun
     private string? m_parameters = null;
     private string? m_returnTypeName = null;
     private string? m_implementation = null;
+    private HashSet<string> m_attributes = new();
 
     public Fun
     (
@@ -97,6 +98,15 @@ public struct Fun
         return this;
     }
     #endregion ReturnTypeName
+
+    #region Attribute
+    public Fun Attribute(string attribute)
+    {
+        m_attributes.Add(attribute);
+
+        return this;
+    }
+    #endregion Attribute
     
     #region Implementation
     public Fun Implementation(string? implementation = null)
@@ -118,6 +128,7 @@ public struct Fun
             m_operator,
             m_parameters ?? string.Empty,
             m_returnTypeName,
+            m_attributes,
             m_implementation
         );
     }

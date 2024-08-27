@@ -20,6 +20,7 @@ import com.example.beyondnetsampleandroid.dn.*
 import com.example.beyondnetsampleandroid.ui.theme.BeyondNETSampleAndroidTheme
 
 import java.util.UUID
+
 import kotlin.time.Duration
 import kotlin.time.DurationUnit
 import kotlin.time.measureTime
@@ -48,6 +49,8 @@ class MainActivity : ComponentActivity() {
         updateGuid()
 
         val emptyGuid = System_Guid.empty_get()
+        require(emptyGuid.`is`(System_Guid.typeOf()))
+
         val emptyGuidWithCtor = System_Guid()
         require(emptyGuid.dnToString().toKString() == emptyGuidWithCtor.dnToString().toKString())
 
