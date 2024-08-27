@@ -1,5 +1,5 @@
 // Number of generated types: 1381
-// Number of generated members: 6044
+// Number of generated members: 6056
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -44883,6 +44883,78 @@ Beyond_NET_Sample_Person_Extensions_Destroy(
 
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.PrimitiveTests
+int8_t /* System.SByte */
+Beyond_NET_Sample_PrimitiveTests_ReturnSByte(
+	int8_t /* System.SByte */ input,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int16_t /* System.Int16 */
+Beyond_NET_Sample_PrimitiveTests_ReturnShort(
+	int16_t /* System.Int16 */ input,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+Beyond_NET_Sample_PrimitiveTests_ReturnInt(
+	int32_t /* System.Int32 */ input,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+Beyond_NET_Sample_PrimitiveTests_ReturnLong(
+	int64_t /* System.Int64 */ input,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void* /* System.IntPtr */
+Beyond_NET_Sample_PrimitiveTests_ReturnNInt(
+	void* /* System.IntPtr */ input,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+uint8_t /* System.Byte */
+Beyond_NET_Sample_PrimitiveTests_ReturnByte(
+	uint8_t /* System.Byte */ input,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+uint16_t /* System.UInt16 */
+Beyond_NET_Sample_PrimitiveTests_ReturnUShort(
+	uint16_t /* System.UInt16 */ input,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+uint32_t /* System.UInt32 */
+Beyond_NET_Sample_PrimitiveTests_ReturnUInt(
+	uint32_t /* System.UInt32 */ input,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+uint64_t /* System.UInt64 */
+Beyond_NET_Sample_PrimitiveTests_ReturnULong(
+	uint64_t /* System.UInt64 */ input,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+uintptr_t /* System.UIntPtr */
+Beyond_NET_Sample_PrimitiveTests_ReturnNUInt(
+	uintptr_t /* System.UIntPtr */ input,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+float /* System.Single */
+Beyond_NET_Sample_PrimitiveTests_ReturnFloat(
+	float /* System.Single */ input,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+double /* System.Double */
+Beyond_NET_Sample_PrimitiveTests_ReturnDouble(
+	double /* System.Double */ input,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
 int8_t /* System.SByte */
 Beyond_NET_Sample_PrimitiveTests_SByteMin_Get(
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException

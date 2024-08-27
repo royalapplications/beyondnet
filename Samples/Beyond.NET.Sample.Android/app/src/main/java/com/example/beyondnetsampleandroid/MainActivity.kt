@@ -16,13 +16,15 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
-import java.util.*
-import kotlin.time.*
-
-import com.sun.jna.ptr.*
-
-import com.example.beyondnetsampleandroid.ui.theme.*
 import com.example.beyondnetsampleandroid.dn.*
+import com.example.beyondnetsampleandroid.ui.theme.BeyondNETSampleAndroidTheme
+
+import com.sun.jna.IntegerType
+
+import java.util.UUID
+import kotlin.time.Duration
+import kotlin.time.DurationUnit
+import kotlin.time.measureTime
 
 class MainActivity : ComponentActivity() {
     private var _guidStr: String = ""
