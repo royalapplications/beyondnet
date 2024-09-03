@@ -21,7 +21,16 @@ class EqualityTests {
         val helloCustomString = "Hello World".toDotNETString().replace(" World".toDotNETString(), emptyString)
 
         assertEquals(emptyString, emptyStringFromK)
+        assertFalse(emptyString === emptyStringFromK) // NOTE: This returns false right now because Kotlin doesn't support overriding the identity check operators. If we happen to find a way to do that in the future, this should return true, just like `System.Object.ReferenceEquals` would.
         assertNotEquals(emptyString, helloString)
         assertEquals(helloString, helloCustomString)
+
+        val emptyGuid = System_Guid.empty_get()
+        val newGuid = System_Guid.newGuid()
+        val newGuidConverted = System_Guid.parse(newGuid.dnToString())
+
+        assertNotEquals(emptyGuid, newGuid)
+        assertEquals(newGuid, newGuidConverted)
+        assertFalse(newGuid === newGuidConverted)
     }
 }
