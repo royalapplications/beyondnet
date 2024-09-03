@@ -705,6 +705,41 @@ public val value: {{underlyingTypeName}}
             }
         }
 
+        #region Equals Function Override
+        // TODO: We want this for interfaces as well, but only once they're fully supported
+        if (!type.IsInterface) {
+            // NOTE: As per https://kotlinlang.org/docs/operator-overloading.html#equality-and-inequality-operators identity checks (ie. === and !===) cannot be overridden so we can only implement equals here. 
+            var equalsFunParameters = Builder.FunSignatureParameters()
+                .AddParameter(new("other", "Any?"))
+                .Build()
+                .ToString();
+    
+            var equalsFunImpl = /*lang=Kt*/"""
+    val otherSystemObject = other as? System_Object
+    
+    try {
+        otherSystemObject?.let {
+            return System_Object.equals(this, otherSystemObject)
+        }
+    } catch (e: Exception) {
+        return false
+    }
+    
+    return false
+    """;
+    
+            var equalsFun = Builder.Fun("equals")
+                .Override()
+                .ReturnTypeName("Boolean")
+                .Parameters(equalsFunParameters)
+                .Implementation(equalsFunImpl)
+                .Build()
+                .ToString();
+    
+            sbInstanceMembers.AppendLine(equalsFun);
+        }
+        #endregion Equals Function Override
+
         var instanceMembersCode = sbInstanceMembers.ToString();
         var staticMembersCode = sbStaticMembers.ToString();
 
