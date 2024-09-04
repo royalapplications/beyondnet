@@ -870,8 +870,10 @@ if let __exceptionC {
         );
 
         Type returnType = typeof(void);
+        
+        MethodInfo? methodInfo = methodBase as MethodInfo;
 
-        if (methodBase is MethodInfo methodInfo) {
+        if (methodInfo is not null) {
             returnType = methodInfo.ReturnType;
         }
         
@@ -883,12 +885,76 @@ if let __exceptionC {
         
         TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
         
+        var nullabilityInfoContext = new NullabilityInfoContext();
+        var returnTypeNullability = Nullability.NotSpecified;
+        var returnTypeArrayElementNullability = Nullability.NotSpecified; 
+        
+        if (returnType.IsNullableValueType(out _)) {
+            returnTypeNullability = Nullability.Nullable;
+        } else if (returnType.IsReferenceType() &&
+                   !returnType.IsByRefValueType(out bool nonByRefTypeIsStruct) &&
+                   !nonByRefTypeIsStruct) {
+            if (methodInfo is not null) {
+                ParameterInfo returnOrSetterValueParameter;
+
+                if (memberKind == MemberKind.PropertySetter ||
+                    memberKind == MemberKind.EventHandlerAdder ||
+                    memberKind == MemberKind.EventHandlerRemover) {
+                    returnOrSetterValueParameter = methodInfo.GetParameters().LastOrDefault() ?? methodInfo.ReturnParameter;
+                } else {
+                    returnOrSetterValueParameter = methodInfo.ReturnParameter;
+                }
+                
+                var nullabilityInfo = nullabilityInfoContext.Create(returnOrSetterValueParameter);
+
+                if (memberKind == MemberKind.PropertyGetter) {
+                    returnTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
+                        ? Nullability.NonNullable
+                        : Nullability.NotSpecified;
+
+                    returnTypeArrayElementNullability = nullabilityInfo.ElementType?.ReadState == NullabilityState.NotNull
+                        ? Nullability.NonNullable
+                        : Nullability.NotSpecified;
+                } else if (memberKind == MemberKind.PropertySetter) {
+                    returnTypeNullability = nullabilityInfo.WriteState == NullabilityState.NotNull
+                        ? Nullability.NonNullable
+                        : Nullability.NotSpecified;
+                    
+                    returnTypeArrayElementNullability = nullabilityInfo.ElementType?.WriteState == NullabilityState.NotNull
+                        ? Nullability.NonNullable
+                        : Nullability.NotSpecified;
+                } else if (memberKind == MemberKind.EventHandlerAdder ||
+                           memberKind == MemberKind.EventHandlerRemover) {
+                    if (nullabilityInfo.ReadState == nullabilityInfo.WriteState) {
+                        returnTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
+                            ? Nullability.NonNullable
+                            : Nullability.NotSpecified;
+                    }
+                } else { // Method
+                    if (nullabilityInfo.ReadState == nullabilityInfo.WriteState) {
+                        returnTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
+                            ? Nullability.NonNullable
+                            : Nullability.NotSpecified;
+                    }
+
+                    var elementTypeNullabilityInfo = nullabilityInfo.ElementType;
+
+                    if (elementTypeNullabilityInfo is not null &&
+                        elementTypeNullabilityInfo.ReadState == elementTypeNullabilityInfo.WriteState) {
+                        returnTypeArrayElementNullability = elementTypeNullabilityInfo.ReadState == NullabilityState.NotNull
+                            ? Nullability.NonNullable
+                            : Nullability.NotSpecified;
+                    }
+                }
+            }
+        }
+        
         // TODO: This generates inout TypeName if the return type is by ref
         string swiftReturnTypeName = returnTypeDescriptor.GetTypeName(
             CodeLanguage.Swift,
             true,
-            Nullability.NotSpecified,
-            Nullability.NotSpecified,
+            returnTypeNullability,
+            returnTypeArrayElementNullability,
             false,
             returnTypeIsByRef,
             false
