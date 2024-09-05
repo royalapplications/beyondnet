@@ -1744,27 +1744,67 @@ extension UUID {
     /// Tries to convert the targeted Swift `UUID` object to a .NET `System.Guid`.
     /// - Returns: nil if the conversion fails or an instance of `System.Guid` if it succeeds.
     public func dotNETGuid() -> System_Guid? {
-        let guidString = self.uuidString
-        let guidStringDN = guidString.dotNETString()
+        let uuidByteTuple = self.uuid
         
-        var guid = System_Guid.empty
+        let a: UInt32 = (UInt32(uuidByteTuple.0) << 24) | (UInt32(uuidByteTuple.1) << 16) | (UInt32(uuidByteTuple.2) << 8)  | UInt32(uuidByteTuple.3)
+        let b: UInt16 = (UInt16(uuidByteTuple.4) << 8) | UInt16(uuidByteTuple.5)
+        let c: UInt16 = (UInt16(uuidByteTuple.6) << 8) | UInt16(uuidByteTuple.7)
+        let d: UInt8 = uuidByteTuple.8
+        let e: UInt8 = uuidByteTuple.9
+        let f: UInt8 = uuidByteTuple.10
+        let g: UInt8 = uuidByteTuple.11
+        let h: UInt8 = uuidByteTuple.12
+        let i: UInt8 = uuidByteTuple.13
+        let j: UInt8 = uuidByteTuple.14
+        let k: UInt8 = uuidByteTuple.15
         
-        guard (try? System_Guid.tryParse(guidStringDN,
-                                         &guid)) ?? false else {
+        guard let systemGuid = try? System_Guid(a, b, c, d, e, f, g, h, i, j, k) else {
+            assertionFailure("System.Guid.ctor(uint, ushort, ushort, byte, byte, byte, byte, byte, byte, byte, byte) either threw an exception or returned null")
+            
             return nil
         }
         
-        return guid
+        return systemGuid
     }
     
     public init?(dotNETGuid: System_Guid) {
-        guard let uuidStringDN = try? dotNETGuid.toString() else {
+        // NOTE: See https://en.wikipedia.org/wiki/Universally_unique_identifier#Endianess
+        let bigEndian = true
+        
+        guard let uuidByteArray = try? dotNETGuid.toByteArray(bigEndian) else {
+            assertionFailure("System.Guid.ToByteArray either threw an error or returned null")
+            
             return nil
         }
         
-        let uuidString = uuidStringDN.string()
+        guard let uuidData = try? uuidByteArray.data(noCopy: true) else {
+            assertionFailure("Failed to convert .NET byte[] to Swift Data")
+            
+            return nil
+        }
         
-        self.init(uuidString: uuidString)
+        assert(uuidData.count == 16, "System.Guid.ToByteArray returned a byte array of length \(uuidData.count) (should be 16)")
+        
+        let cUUID: uuid_t = (
+            uuidData[0],
+            uuidData[1],
+            uuidData[2],
+            uuidData[3],
+            uuidData[4],
+            uuidData[5],
+            uuidData[6],
+            uuidData[7],
+            uuidData[8],
+            uuidData[9],
+            uuidData[10],
+            uuidData[11],
+            uuidData[12],
+            uuidData[13],
+            uuidData[14],
+            uuidData[15]
+        )
+        
+        self.init(uuid: cUUID)
     }
 }
 

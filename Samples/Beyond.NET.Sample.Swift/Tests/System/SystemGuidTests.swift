@@ -154,6 +154,8 @@ final class SystemGuidTests: XCTestCase {
 	}
     
     // MARK: - Performance Tests
+//    private let numberOfIDs = 100_000
+//
 //    private func makeGuidString() throws -> String {
 //        let guid = try System.Guid.newGuid()
 //        let guidStrDN = try guid.toString()
@@ -168,8 +170,7 @@ final class SystemGuidTests: XCTestCase {
 //        
 //        return uuidStr
 //    }
-//    
-//    private let numberOfIDs = 100_000
+//
 //
 //    func testSystemGuidPerformance() throws {
 //        let numberOfIDs = self.numberOfIDs
@@ -190,7 +191,7 @@ final class SystemGuidTests: XCTestCase {
 //            }
 //        }
 //    }
-    
+//    
 //    func testGuidToUUIDPerformance() throws {
 //        let numberOfIDs = self.numberOfIDs
 //        
@@ -208,40 +209,20 @@ final class SystemGuidTests: XCTestCase {
 //        }
 //    }
 //    
-//    func testGuidToUUIDPerformanceWithByteArray() throws {
+//    func testUUIDToGuidPerformance() throws {
 //        let numberOfIDs = self.numberOfIDs
 //        
-//        var guids = [System.Guid]()
+//        var uuids = [UUID]()
 //        
 //        for _ in 0..<numberOfIDs {
-//            let newGuid = try System.Guid.newGuid()
-//            guids.append(newGuid)
+//            let newUUID = UUID()
+//            uuids.append(newUUID)
 //        }
 //        
 //        measure {
-//            for guid in guids {
-//                _ = guid.uuidWithByteArray()
+//            for uuid in uuids {
+//                _ = uuid.dotNETGuid()
 //            }
 //        }
 //    }
-}
-
-extension System_Guid {
-    func uuidWithByteArray() -> UUID? {
-        // TODO: But why?!
-        let bigEndian = true
-        
-        do {
-            let byteArray = try self.toByteArray(bigEndian)
-            let data = try byteArray.data(noCopy: true)
-            
-            let swiftUUID = data.withUnsafeBytes {
-                $0.load(as: UUID.self)
-            }
-            
-            return swiftUUID
-        } catch {
-            return nil
-        }
-    }
 }
