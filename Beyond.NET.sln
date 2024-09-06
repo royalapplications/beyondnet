@@ -28,6 +28,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beyond.NET.Builder.Apple", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beyond.NET.Builder.DotNET", "Builder\Beyond.NET.Builder.DotNET\Beyond.NET.Builder.DotNET.csproj", "{6518E2AA-1638-4F5E-8465-2934D6724126}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{053BEEF4-DB00-4A44-BD6D-08A335C3FE36}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README_MANUAL_BUILD.md = README_MANUAL_BUILD.md
+		README.md = README.md
+		RELEASE_NOTES.md = RELEASE_NOTES.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
