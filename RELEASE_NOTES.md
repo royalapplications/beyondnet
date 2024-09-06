@@ -1,14 +1,17 @@
 # Beyond.NET Release Notes
 
 ## Version 0.4 (Alpha)
-- Rudimentary Kotlin/JNA support
-- XML Documentation is now extracted and applied to generated Swift bindings
-- Arrays are now exposed to Swift as `DNArray<T> where T: System_Object`
-- Arrays conform to Swift's `MutableCollection` protocol now
-- More type-safe way to do boxing/unboxing of primitives in Swift
-- Support for generating interfaces as protocols in Swift
+- Kotlin: Rudimentary Kotlin/JNA support (see [Building the sample for Android on Linux](https://github.com/royalapplications/beyondnet/issues/80) and [Kotlin To-Do's](https://github.com/royalapplications/beyondnet/issues/81))
+- Swift: XML Documentation is now extracted and applied to generated bindings
+- Swift: Support for generating interfaces as protocols
+- Swift: Arrays are now exposed to Swift as `DNArray<T> where T: System_Object`
+- Swift: Arrays conform to Swift's `MutableCollection` protocol now
+- Swift: More type-safe way to do boxing/unboxing of primitives
+- Swift: Support for `out` parameter placeholders (see [C# out parameters in Swift](https://github.com/royalapplications/beyondnet?tab=readme-ov-file#c-out-parameters-in-swift))
+- Swift: Performance improvements when converting to/from `System.Guid` and Swift `UUID`
+- Swift: Bugfixes related to detecting overridden/shadowed members when generating Swift bindings
+- Swift: Additional tests
 - Bugfixes related to nullability
-- Bugfixes related to detecting overridden/shadowed members when generating Swift bindings
 
 ## Version 0.3 (Alpha)
 - Support for Xcode 15
