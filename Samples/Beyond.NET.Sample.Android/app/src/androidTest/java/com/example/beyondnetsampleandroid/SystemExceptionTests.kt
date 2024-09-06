@@ -20,4 +20,6 @@ class SystemExceptionTests {
 
         assertEquals(exceptionMessage, retrievedExceptionMessage)
     }
+
+    // TODO: Add tests for throwing/catching exceptions that occur within .NET
 }
