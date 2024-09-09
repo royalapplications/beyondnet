@@ -26,6 +26,8 @@ import kotlin.time.DurationUnit
 import kotlin.time.measureTime
 
 class MainActivity : ComponentActivity() {
+    private val LOG_TAG = "Beyond.NET.Sample.Android"
+
     private var _guidStr: String = ""
     private var guidText = mutableStateOf(_guidStr)
 
@@ -46,6 +48,19 @@ class MainActivity : ComponentActivity() {
 
         enableEdgeToEdge()
 
+        val staticDogName = Beyond_NET_Sample_Dog.dogName_get()
+        require(staticDogName.toKString() == "Dog")
+
+        val dogAsIAnimal = Beyond_NET_Sample_AnimalFactory.createAnimal("Dog".toDotNETString())
+
+        dogAsIAnimal?.let {
+            val dogName = dogAsIAnimal.name_get()
+
+            require(dogName == staticDogName)
+        }
+
+//        require(labradorAsIAnimal.`is`())
+
         updateGuid()
 
         val emptyGuid = System_Guid.empty_get()
@@ -64,7 +79,7 @@ class MainActivity : ComponentActivity() {
         try {
             System_Guid.parse(emptyStringDN)
         } catch (e: Exception) {
-            Log.d("JNATest", "We caught an expected exception in System_Guid.parse: $e")
+            Log.d(LOG_TAG, "We caught an expected exception in System_Guid.parse: $e")
 
             exceptionString = e.toString()
         }

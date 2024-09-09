@@ -351,7 +351,7 @@ public val value: {{underlyingTypeName}}
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
-        // Result cResult = state.CResult ?? throw new Exception("No CResult provided");
+        Result cResult = state.CResult ?? throw new Exception("No CResult provided");
         
         if (type.IsPointer ||
             type.IsByRef ||
@@ -367,7 +367,7 @@ public val value: {{underlyingTypeName}}
         var cSharpMembers = cSharpUnmanagedResult.GeneratedTypes[type];
         // var cMembers = cResult.GeneratedTypes[type];
         
-        // bool isInterface = type.IsInterface;
+        bool isInterface = type.IsInterface;
         bool isPrimitive = type.IsPrimitive;
         // bool isArray = type.IsArray;
         
@@ -386,50 +386,58 @@ public val value: {{underlyingTypeName}}
         }
 
         string? arrayMutableCollectionExtension = null;
+        string? interfaceImplTypeDecl = null;
 
         if (writeTypeDefinition) {
             Type? baseType = type.BaseType;
             TypeDescriptor? baseTypeDescriptor = baseType?.GetTypeDescriptor(typeDescriptorRegistry);
 
-            string kotlinBaseTypeName = baseTypeDescriptor?.GetTypeName(CodeLanguage.Kotlin, false)
-                                       ?? "DNObject";
+            string? kotlinBaseTypeName = baseTypeDescriptor?.GetTypeName(CodeLanguage.Kotlin, false);
 
-            // TODO: Interfaces
-            // List<Type> interfaceTypes = new();
-            // 
-            // if (isInterface &&
-            //     interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ImplementationClass) {
-            //     interfaceTypes.Add(type);
-            // }
-            //
-            // interfaceTypes.AddRange(type.GetInterfaces());
-            //
-            // List<string> kotlinInterfaceTypeNames = new();
-            //
-            // foreach (var interfaceType in interfaceTypes) {
-            //     if (!cSharpUnmanagedResult.GeneratedTypes.ContainsKey(interfaceType) ||
-            //         !cResult.GeneratedTypes.ContainsKey(interfaceType)) {
-            //         continue;
-            //     }
-            //
-            //     if (!type.IsInterface) {
-            //         if (type.DoesAnyBaseTypeImplementInterface(interfaceType)) {
-            //             continue;
-            //         }
-            //     }
-            //     
-            //     TypeDescriptor interfaceTypeDescriptor = interfaceType.GetTypeDescriptor(typeDescriptorRegistry);
-            //
-            //     string swiftProtocolTypeName = interfaceTypeDescriptor.GetTypeName(
-            //         CodeLanguage.Swift, 
-            //         false
-            //     );
-            //     
-            //     kotlinInterfaceTypeNames.Add(swiftProtocolTypeName);
-            // }
-            //
-            // string protocolConformancesString = string.Join(", ", kotlinInterfaceTypeNames);
-            string interfaceConformancesString = string.Empty;
+            List<Type> interfaceTypes = new();
+            
+            if (isInterface) {
+                interfaceTypes.Add(type);
+            }
+            
+            interfaceTypes.AddRange(type.GetInterfaces());
+            
+            List<string> kotlinInterfaceTypeNames = new();
+            List<string> kotlinInterfaceTypeNamesForInterfaceImpl = new();
+            
+            foreach (var interfaceType in interfaceTypes) {
+                if (!cSharpUnmanagedResult.GeneratedTypes.ContainsKey(interfaceType) ||
+                    !cResult.GeneratedTypes.ContainsKey(interfaceType)) {
+                    continue;
+                }
+            
+                if (!type.IsInterface) {
+                    if (type.DoesAnyBaseTypeImplementInterface(interfaceType)) {
+                        continue;
+                    }
+                }
+                
+                // TODO: Generics
+                if (interfaceType.IsGenericInAnyWay(true)) {
+                    continue;
+                }
+                
+                TypeDescriptor interfaceTypeDescriptor = interfaceType.GetTypeDescriptor(typeDescriptorRegistry);
+            
+                string kotlinInterfaceTypeName = interfaceTypeDescriptor.GetTypeName(
+                    CodeLanguage.Kotlin,
+                    false
+                );
+                
+                if (interfaceType != type) {
+                    kotlinInterfaceTypeNames.Add(kotlinInterfaceTypeName);
+                }
+                
+                kotlinInterfaceTypeNamesForInterfaceImpl.Add(kotlinInterfaceTypeName);
+            }
+            
+            string interfaceConformancesString = string.Join(", ", kotlinInterfaceTypeNames);
+            string interfaceConformancesStringForInterfaceImpl = string.Join(", ", kotlinInterfaceTypeNamesForInterfaceImpl);
 
             string typeDecl;
 
@@ -457,21 +465,47 @@ public val value: {{underlyingTypeName}}
             //     typeDecl = Builder.Extension(fullSwiftTypeName)
             //         .ToString();
             // } else {
-                string fullKotlinTypeName = $"{kotlinTypeName} /* {fullTypeName} */";
-
-                typeDecl = new KotlinClassDeclaration(
+            string fullKotlinTypeName = $"{kotlinTypeName} /* {fullTypeName} */";
+            
+            if (isInterface) {
+                typeDecl = new KotlinInterfaceDeclaration(
                     fullKotlinTypeName,
-                    kotlinBaseTypeName,
+                    kotlinBaseTypeName ?? "IDNObject",
                     interfaceConformancesString,
-                    KotlinVisibilities.Open,
-                    new KotlinFunSignatureParameters(new [] {
-                        new KotlinFunSignatureParameter("handle", "Pointer")
-                    }),
-                    new [] {
-                        "handle"
-                    },
+                    KotlinVisibilities.Public,
                     null
                 ).ToString();
+                
+                string fullKotlinInterfaceImplTypeName = $"{kotlinTypeName}_DNInterface /* {fullTypeName} */";
+                
+                interfaceImplTypeDecl = new KotlinClassDeclaration(
+                    fullKotlinInterfaceImplTypeName,
+                    kotlinBaseTypeName ?? "DNObject",
+                    interfaceConformancesStringForInterfaceImpl,
+                    KotlinVisibilities.Open,
+                    new KotlinFunSignatureParameters([
+                        new KotlinFunSignatureParameter("handle", "Pointer")
+                    ]),
+                    [
+                        "handle"
+                    ],
+                    null
+                ).ToString(); 
+            } else {
+                typeDecl = new KotlinClassDeclaration(
+                    fullKotlinTypeName,
+                    kotlinBaseTypeName ?? "DNObject",
+                    interfaceConformancesString,
+                    KotlinVisibilities.Open,
+                    new KotlinFunSignatureParameters([
+                        new KotlinFunSignatureParameter("handle", "Pointer")
+                    ]),
+                    [
+                        "handle"
+                    ],
+                    null
+                ).ToString();
+            }
             // }
             
             var typeDocumentationComment = type.GetDocumentation()
@@ -633,6 +667,8 @@ public val value: {{underlyingTypeName}}
         KotlinCodeBuilder sbInstanceMembers = new();
         KotlinCodeBuilder sbStaticMembers = new();
 
+        string? destructorCodeForInterfaceImpl = null;
+
         foreach (var cSharpMember in cSharpMembers) {
             var member = cSharpMember.Member;
 
@@ -671,24 +707,18 @@ public val value: {{underlyingTypeName}}
                 throw new Exception("No target");
             }
 
-            // TODO: Interfaces
-            // if ((interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.Protocol || interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ProtocolExtensionForDefaultImplementations) &&
-            //     (syntaxWriter is IDestructorSyntaxWriter || syntaxWriter is ITypeOfSyntaxWriter)) {
-            //     continue;
-            // }
-
-            // TODO: Interfaces
-            // if (interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ImplementationClass &&
-            //     syntaxWriter is not IDestructorSyntaxWriter &&
-            //     syntaxWriter is not ITypeOfSyntaxWriter) {
-            //     continue;
-            // }
-
             string memberCode = syntaxWriter.Write(
                 target,
                 state,
                 configuration
             );
+            
+            if (isInterface &&
+                syntaxWriter is IDestructorSyntaxWriter) {
+                destructorCodeForInterfaceImpl = memberCode;
+                
+                continue;
+            }
             
             bool isStatic = cSharpMember.MemberKind == MemberKind.TypeOf || 
                             cSharpMember.MemberKind == MemberKind.Constructor ||
@@ -761,6 +791,17 @@ public val value: {{underlyingTypeName}}
 
         if (writeTypeDefinition) {
             sb.AppendLine("}");
+
+            if (isInterface &&
+                !string.IsNullOrEmpty(interfaceImplTypeDecl)) {
+                sb.AppendLine(interfaceImplTypeDecl + "{");
+
+                if (!string.IsNullOrEmpty(destructorCodeForInterfaceImpl)) {
+                    sb.AppendLine(destructorCodeForInterfaceImpl.IndentAllLines(1));
+                }
+                
+                sb.AppendLine("}");
+            }
         }
 
         if (!string.IsNullOrEmpty(arrayMutableCollectionExtension)) {

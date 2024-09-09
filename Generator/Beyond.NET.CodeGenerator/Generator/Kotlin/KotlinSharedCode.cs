@@ -3,13 +3,19 @@ namespace Beyond.NET.CodeGenerator.Generator.Kotlin;
 internal static class KotlinSharedCode
 {
     internal const string SharedCode = /*lang=Kt*/"""
-open class DNObject(handle: Pointer) {
+interface IDNObject {
+    val __handle: Pointer
+
+    fun destroy()
+}
+
+open class DNObject(handle: Pointer): IDNObject {
     enum class DestroyMode {
         Normal,
         Skip
     }
     
-    val __handle: Pointer
+    override val __handle: Pointer
     var __destroyMode: DestroyMode = DestroyMode.Normal
     
     init {
@@ -31,7 +37,7 @@ open class DNObject(handle: Pointer) {
         }
     }
     
-    protected open fun destroy() {
+    override fun destroy() {
         // Override in subclass
     }
 }
@@ -73,7 +79,7 @@ val com.sun.jna.Pointer.value: Pointer
 
 // Extensions
 @JvmName("getHandleOrNullPointer_optional")
-fun DNObject?.getHandleOrNullPointer(): Pointer {
+fun IDNObject?.getHandleOrNullPointer(): Pointer {
     if (this === null) {
         return Pointer.NULL
     }
@@ -82,7 +88,7 @@ fun DNObject?.getHandleOrNullPointer(): Pointer {
 }
 
 @JvmName("getHandleOrNullPointer_non_optional")
-fun DNObject.getHandleOrNullPointer(): Pointer {
+fun IDNObject.getHandleOrNullPointer(): Pointer {
     return this.__handle
 }
 
@@ -94,7 +100,7 @@ fun Pointer.toUPointer(): UPointer {
     internal static string GetExtensions(string jnaClassName)
     {
         return /*lang=Kt*/$$"""
-fun DNObject.castTo(type: System_Type): System_Object? {
+fun IDNObject.castTo(type: System_Type): System_Object? {
     val __exceptionC = PointerByReference()
     
     val __returnValueC = {{jnaClassName}}.DNObjectCastTo(this.__handle, type.__handle, __exceptionC)
@@ -115,7 +121,7 @@ fun DNObject.castTo(type: System_Type): System_Object? {
 }
 
 // TODO: This uses reflection - no good
-inline fun <reified T> DNObject.castTo(): T where T : System_Object {
+inline fun <reified T> IDNObject.castTo(): T where T : System_Object {
     val tClass = T::class.java
     val tClassTypeOfMethod = tClass.getMethod("typeOf")
     val tClassTypeOf = tClassTypeOfMethod.invoke(null) as System_Type
@@ -137,7 +143,7 @@ inline fun <reified T> DNObject.castTo(): T where T : System_Object {
 }
 
 // TODO: This uses reflection - no good
-inline fun <reified T> DNObject.castAs(): T? where T : System_Object {
+inline fun <reified T> IDNObject.castAs(): T? where T : System_Object {
     val tClass = T::class.java
     val tClassTypeOfMethod = tClass.getMethod("typeOf")
     val tClassTypeOf = tClassTypeOfMethod.invoke(null) as System_Type
@@ -154,14 +160,14 @@ inline fun <reified T> DNObject.castAs(): T? where T : System_Object {
     return __returnValue
 }
 
-fun DNObject.`is`(type: System_Type): Boolean {
+fun IDNObject.`is`(type: System_Type): Boolean {
     return {{jnaClassName}}.DNObjectIs(this.__handle, type.__handle)
 }
 
 /// Cast the targeted .NET object to a Bool.
 /// - Returns: A Bool value if the cast succeeded.
 /// - Throws: If the cast fails, an exception is thrown.
-fun DNObject.castToBool(): Boolean {
+fun IDNObject.castToBool(): Boolean {
     val __exceptionC = PointerByReference()
     
     val __returnValueC = CAPI.DNObjectCastToBool(this.__handle, __exceptionC)
@@ -186,7 +192,7 @@ fun Boolean.toDotNETObject(): System_Boolean {
 /// Cast the targeted .NET object to a Float.
 /// - Returns: A Float value if the cast succeeded.
 /// - Throws: If the cast fails, an exception is thrown.
-fun DNObject.castToFloat(): Float {
+fun IDNObject.castToFloat(): Float {
     val __exceptionC = PointerByReference()
     
     val __returnValueC = CAPI.DNObjectCastToFloat(this.__handle, __exceptionC)
@@ -211,7 +217,7 @@ fun Float.toDotNETObject(): System_Single {
 /// Cast the targeted .NET object to a Double.
 /// - Returns: A Double value if the cast succeeded.
 /// - Throws: If the cast fails, an exception is thrown.
-fun DNObject.castToDouble(): Double {
+fun IDNObject.castToDouble(): Double {
     val __exceptionC = PointerByReference()
     
     val __returnValueC = CAPI.DNObjectCastToDouble(this.__handle, __exceptionC)
@@ -236,7 +242,7 @@ fun Double.toDotNETObject(): System_Double {
 /// Cast the targeted .NET object to a Byte.
 /// - Returns: A Byte value if the cast succeeded.
 /// - Throws: If the cast fails, an exception is thrown.
-fun DNObject.castToByte(): Byte {
+fun IDNObject.castToByte(): Byte {
     val __exceptionC = PointerByReference()
     
     val __returnValueC = CAPI.DNObjectCastToInt8(this.__handle, __exceptionC)
@@ -261,7 +267,7 @@ fun Byte.toDotNETObject(): System_SByte {
 /// Cast the targeted .NET object to a UByte.
 /// - Returns: A UByte value if the cast succeeded.
 /// - Throws: If the cast fails, an exception is thrown.
-fun DNObject.castToUByte(): UByte {
+fun IDNObject.castToUByte(): UByte {
     val __exceptionC = PointerByReference()
     
     val __returnValueC = CAPI.DNObjectCastToUInt8(this.__handle, __exceptionC)
@@ -286,7 +292,7 @@ fun UByte.toDotNETObject(): System_Byte {
 /// Cast the targeted .NET object to a Short.
 /// - Returns: A Short value if the cast succeeded.
 /// - Throws: If the cast fails, an exception is thrown.
-fun DNObject.castToShort(): Short {
+fun IDNObject.castToShort(): Short {
     val __exceptionC = PointerByReference()
     
     val __returnValueC = CAPI.DNObjectCastToInt16(this.__handle, __exceptionC)
@@ -311,7 +317,7 @@ fun Short.toDotNETObject(): System_Int16 {
 /// Cast the targeted .NET object to a UShort.
 /// - Returns: A UShort value if the cast succeeded.
 /// - Throws: If the cast fails, an exception is thrown.
-fun DNObject.castToUShort(): UShort {
+fun IDNObject.castToUShort(): UShort {
     val __exceptionC = PointerByReference()
     
     val __returnValueC = CAPI.DNObjectCastToUInt16(this.__handle, __exceptionC)
@@ -336,7 +342,7 @@ fun UShort.toDotNETObject(): System_UInt16 {
 /// Cast the targeted .NET object to an Int.
 /// - Returns: An Int value if the cast succeeded.
 /// - Throws: If the cast fails, an exception is thrown.
-fun DNObject.castToInt(): Int {
+fun IDNObject.castToInt(): Int {
     val __exceptionC = PointerByReference()
     
     val __returnValueC = CAPI.DNObjectCastToInt32(this.__handle, __exceptionC)
@@ -361,7 +367,7 @@ fun Int.toDotNETObject(): System_Int32 {
 /// Cast the targeted .NET object to an UInt.
 /// - Returns: An UInt value if the cast succeeded.
 /// - Throws: If the cast fails, an exception is thrown.
-fun DNObject.castToUInt(): UInt {
+fun IDNObject.castToUInt(): UInt {
     val __exceptionC = PointerByReference()
     
     val __returnValueC = CAPI.DNObjectCastToUInt32(this.__handle, __exceptionC)
@@ -386,7 +392,7 @@ fun UInt.toDotNETObject(): System_UInt32 {
 /// Cast the targeted .NET object to a Long.
 /// - Returns: A Long value if the cast succeeded.
 /// - Throws: If the cast fails, an exception is thrown.
-fun DNObject.castToLong(): Long {
+fun IDNObject.castToLong(): Long {
     val __exceptionC = PointerByReference()
     
     val __returnValueC = CAPI.DNObjectCastToInt64(this.__handle, __exceptionC)
@@ -411,7 +417,7 @@ fun Long.toDotNETObject(): System_Int64 {
 /// Cast the targeted .NET object to a ULong.
 /// - Returns: A ULong value if the cast succeeded.
 /// - Throws: If the cast fails, an exception is thrown.
-fun DNObject.castToULong(): ULong {
+fun IDNObject.castToULong(): ULong {
     val __exceptionC = PointerByReference()
     
     val __returnValueC = CAPI.DNObjectCastToUInt64(this.__handle, __exceptionC)

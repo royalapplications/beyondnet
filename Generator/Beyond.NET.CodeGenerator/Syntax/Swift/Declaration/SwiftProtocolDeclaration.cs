@@ -41,11 +41,11 @@ public struct SwiftProtocolDeclaration
                 : $": {ProtocolConformance}";
         } 
         
-        string[] signatureComponents = new[] {
+        string[] signatureComponents = [
             visibilityString,
             protocol,
             $"{Name}{baseTypeAndProtocolConformanceDecl}"
-        };
+        ];
 
         string signature = SwiftFuncSignatureComponents.ComponentsToString(signatureComponents);
 

@@ -625,10 +625,12 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         MethodInfo? methodInfo = methodBase as MethodInfo;
 
         #region TODO: Unsupported Stuff
-        if (returnOrSetterOrEventHandlerType.IsInterface) {
+        if (declaringType == typeof(System.CharEnumerator) &&
+            methodBase is not null &&
+            methodBase.Name == "get_Current") {
             generatedName = string.Empty;
             
-            return $"// TODO: Method with interface return or setter or event handler type ({cMember.GetGeneratedName(CodeLanguage.C)})";
+            return "// TODO: System.CharEnumerator.Current getter causes issues in Kotlin's type system because it overrides the method with the same name in System.Collections.IEnumerator which has a return value of System.Object. But this one here has a return value of char which is a primitive and not an System.Object as far as Kotlin is concerned.";
         }
         
         if (returnOrSetterOrEventHandlerType.IsByRef) {
@@ -668,9 +670,6 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             }
         }
         #endregion TODO: Unsupported Stuff
-
-        // TODO: Interfaces
-        // var interfaceGenerationPhase = (syntaxWriterConfiguration as SwiftSyntaxWriterConfiguration)?.InterfaceGenerationPhase ?? SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.NoInterface;
 
         bool isGenericType = declaringType.IsGenericType ||
                              declaringType.IsGenericTypeDefinition;
@@ -760,22 +759,24 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
         if (methodInfo is not null &&
             !methodInfo.IsStatic) {
-            bool isActuallyOverridden = methodInfo.IsOverridden(out bool overrideNullabilityIsCompatible);
+            // Kotlin doesn't seem to care about nullability in overrides
+            bool isActuallyOverridden = methodInfo.IsOverridden(out _ /* bool overrideNullabilityIsCompatible */);
 
             if (isActuallyOverridden) {
-                if (overrideNullabilityIsCompatible) {
+                // if (overrideNullabilityIsCompatible) {
                     treatAsOverridden = true;
-                }
+                // }
             } else {
+                // Kotlin doesn't seem to care about nullability in overrides
                 bool isShadowed = methodInfo.IsShadowed(
                     CodeLanguage.Kotlin,
-                    out bool shadowNullabilityIsCompatible
+                    out bool _ /* shadowNullabilityIsCompatible */
                 );
 
                 if (isShadowed) {
-                    if (shadowNullabilityIsCompatible) {
+                    // if (shadowNullabilityIsCompatible) {
                         treatAsOverridden = true;
-                    }
+                    // }
                 }
             }
         } else if (memberInfo is FieldInfo fieldInfo &&
@@ -976,41 +977,26 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         #region Func Declaration
         string? memberImpl;
 
-        bool needImpl;
-
-        // TODO: Interfaces
-        // if (interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.Protocol ||
-        //     interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ImplementationClass) {
-        //     needImpl = memberKind == MemberKind.Destructor ||
-        //                memberKind == MemberKind.TypeOf;
-        // } else {
-            needImpl = true;
-        // }
-        
-        if (!needImpl) {
-            memberImpl = null;
-        } else {
-            memberImpl = WriteMethodImplementation(
-                cSharpGeneratedMember,
-                cMember,
-                memberInfo,
-                memberKind,
-                cMethodName,
-                isGeneric,
-                isStaticMethod,
-                mayThrow,
-                declaringType,
-                returnOrSetterOrEventHandlerType,
-                returnOrSetterTypeNullability,
-                returnOrSetterTypeArrayElementNullability,
-                returnOrSetterTypeDescriptor,
-                parameters,
-                genericTypeArguments,
-                genericMethodArguments,
-                syntaxWriterConfiguration,
-                typeDescriptorRegistry
-            );   
-        }
+        memberImpl = WriteMethodImplementation(
+            cSharpGeneratedMember,
+            cMember,
+            memberInfo,
+            memberKind,
+            cMethodName,
+            isGeneric,
+            isStaticMethod,
+            mayThrow,
+            declaringType,
+            returnOrSetterOrEventHandlerType,
+            returnOrSetterTypeNullability,
+            returnOrSetterTypeArrayElementNullability,
+            returnOrSetterTypeDescriptor,
+            parameters,
+            genericTypeArguments,
+            genericMethodArguments,
+            syntaxWriterConfiguration,
+            typeDescriptorRegistry
+        );   
         
         string methodSignatureParameters = WriteParameters(
             memberKind,
@@ -1031,21 +1017,15 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
         KotlinVisibilities memberVisibility;
 
-        // TODO: Interfaces
-        // if (interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.Protocol) {
-        //     memberVisibility = SwiftVisibilities.None;
+        // TODO: Internal?
+        // if (memberKind == MemberKind.Destructor) {
+        //     memberVisibility = KotlinVisibilities.Internal;
         // } else {
-            // TODO: Internal?
-            // if (memberKind == MemberKind.Destructor) {
-            //     memberVisibility = KotlinVisibilities.Internal;
-            // } else {
-            if (memberInfo?.IsStatic() ?? false) {
-                memberVisibility = KotlinVisibilities.Public;
-            } else {
-                memberVisibility = KotlinVisibilities.Open;
-            }
-            // }
-        // }
+        if (memberInfo?.IsStatic() ?? false) {
+            memberVisibility = KotlinVisibilities.Public;
+        } else {
+            memberVisibility = KotlinVisibilities.Open;
+        }
 
         if (memberKind == MemberKind.Constructor) {
             declaration = Builder.Fun("invoke")

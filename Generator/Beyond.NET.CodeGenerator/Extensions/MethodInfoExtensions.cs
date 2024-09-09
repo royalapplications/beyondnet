@@ -78,106 +78,148 @@ public static class MethodInfoExtensions
         if (declaringType is null) {
             return false;
         }
-        
+
         Type? baseType = declaringType.BaseType;
 
         if (baseType is not null) {
-            bool declaringTypeIsGeneric = declaringType.IsGenericType ||
-                                          declaringType.IsGenericTypeDefinition;
-            
-            bool baseTypeIsGeneric = baseType.IsGenericType ||
-                                     baseType.IsGenericTypeDefinition;
+            var isShadowedByBaseType = IsShadowed(
+                methodInfo,
+                declaringType,
+                baseType,
+                targetLanguage,
+                out nullabilityIsCompatible
+            );
 
-            if (declaringTypeIsGeneric != baseTypeIsGeneric) {
-                return false;
+            if (isShadowedByBaseType) {
+                return true;
+            }
+        }
+
+        if (targetLanguage == CodeLanguage.Kotlin) {
+            var interfaceTypes = declaringType.GetInterfaces();
+
+            foreach (var interfaceType in interfaceTypes) {
+                var isShadowedByInterface = IsShadowed(
+                    methodInfo,
+                    declaringType,
+                    interfaceType,
+                    targetLanguage,
+                    out nullabilityIsCompatible
+                );
+
+                if (isShadowedByInterface) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    private static bool IsShadowed(
+        this MethodInfo methodInfo,
+        Type declaringType,
+        Type targetType,
+        CodeLanguage targetLanguage,
+        out bool nullabilityIsCompatible
+    )
+    {
+        nullabilityIsCompatible = true;
+        
+        bool declaringTypeIsGeneric = declaringType.IsGenericType ||
+                                      declaringType.IsGenericTypeDefinition;
+
+        bool baseTypeIsGeneric = targetType.IsGenericType ||
+                                 targetType.IsGenericTypeDefinition;
+
+        if (declaringTypeIsGeneric != baseTypeIsGeneric) {
+            return false;
+        }
+
+        string name = methodInfo.Name;
+        bool isStatic = methodInfo.IsStatic;
+        bool isPublic = methodInfo.IsPublic;
+
+        BindingFlags flags = BindingFlags.FlattenHierarchy;
+
+        if (isStatic) {
+            flags |= BindingFlags.Static;
+        } else {
+            flags |= BindingFlags.Instance;
+        }
+
+        if (isPublic) {
+            flags |= BindingFlags.Public;
+        } else {
+            flags |= BindingFlags.NonPublic;
+        }
+
+        MemberInfo[] baseMembers = targetType.GetMember(name, flags);
+
+        var returnType = methodInfo.ReturnType;
+
+        foreach (var baseMember in baseMembers) {
+            if (baseMember is not MethodInfo baseBaseMethodInfo) {
+                continue;
             }
 
-            string name = methodInfo.Name;
-            bool isStatic = methodInfo.IsStatic;
-            bool isPublic = methodInfo.IsPublic;
+            Type? baseBaseDeclaringType = baseBaseMethodInfo.DeclaringType;
 
-            BindingFlags flags = BindingFlags.FlattenHierarchy;
-
-            if (isStatic) {
-                flags |= BindingFlags.Static;
-            } else {
-                flags |= BindingFlags.Instance;
+            if (baseBaseDeclaringType == declaringType) {
+                continue;
             }
 
-            if (isPublic) {
-                flags |= BindingFlags.Public;
-            } else {
-                flags |= BindingFlags.NonPublic;
+            var baseReturnType = baseBaseMethodInfo.ReturnType;
+
+            if (!returnType.IsAssignableTo(baseReturnType)) {
+                continue;
             }
 
-            MemberInfo[] baseMembers = baseType.GetMember(name, flags);
+            if ((targetLanguage == CodeLanguage.Swift) &&
+                baseReturnType.IsInterface &&
+                !returnType.IsInterface) {
+                continue;
+            }
 
-            var returnType = methodInfo.ReturnType;
+            var returnParameter = methodInfo.ReturnParameter;
+            var baseReturnParameter = baseBaseMethodInfo.ReturnParameter;
 
-            foreach (var baseMember in baseMembers) {
-                if (baseMember is not MethodInfo baseBaseMethodInfo) {
-                    continue;
+            if (!returnParameter.IsNullabilityInfoCompatible(baseReturnParameter)) {
+                nullabilityIsCompatible = false;
+            }
+
+            var parameters = methodInfo.GetParameters();
+            var baseParameters = baseBaseMethodInfo.GetParameters();
+
+            if (parameters.Length != baseParameters.Length) {
+                continue;
+            }
+
+            bool parameterTypesMatch = true;
+            int parameterIdx = 0;
+
+            foreach (var parameter in parameters) {
+                var baseParameter = baseParameters[parameterIdx];
+
+                // if (!parameter.ParameterType.IsAssignableTo(baseParameter.ParameterType)) {
+                //     parameterTypesMatch = false;
+                //     break;
+                // }
+
+                if (parameter.ParameterType != baseParameter.ParameterType) {
+                    parameterTypesMatch = false;
+                    break;
                 }
 
-                Type? baseBaseDeclaringType = baseBaseMethodInfo.DeclaringType;
-                
-                if (baseBaseDeclaringType == declaringType) {
-                    continue;
-                }
-
-                var baseReturnType = baseBaseMethodInfo.ReturnType;
-                
-                if (!returnType.IsAssignableTo(baseReturnType)) {
-                    continue;
-                }
-
-                // TODO: Not sure if this applies to Kotlin as well
-                if ((targetLanguage == CodeLanguage.Swift || targetLanguage == CodeLanguage.Kotlin) &&
-                    baseReturnType.IsInterface &&
-                    !returnType.IsInterface) {
-                    continue;
-                }
-
-                var returnParameter = methodInfo.ReturnParameter;
-                var baseReturnParameter = baseBaseMethodInfo.ReturnParameter;
-
-                if (!returnParameter.IsNullabilityInfoCompatible(baseReturnParameter)) {
+                if (!parameter.IsNullabilityInfoCompatible(baseParameter)) {
                     nullabilityIsCompatible = false;
                 }
 
-                var parameters = methodInfo.GetParameters();
-                var baseParameters = baseBaseMethodInfo.GetParameters();
+                parameterIdx++;
+            }
 
-                if (parameters.Length != baseParameters.Length) {
-                    continue;
-                }
-                
-                bool parameterTypesMatch = true;
-                int parameterIdx = 0;
-
-                foreach (var parameter in parameters) {
-                    var baseParameter = baseParameters[parameterIdx];
-                    
-                    // if (!parameter.ParameterType.IsAssignableTo(baseParameter.ParameterType)) {
-                    //     parameterTypesMatch = false;
-                    //     break;
-                    // }
-
-                    if (parameter.ParameterType != baseParameter.ParameterType) {
-                        parameterTypesMatch = false;
-                        break;
-                    }
-
-                    if (!parameter.IsNullabilityInfoCompatible(baseParameter)) {
-                        nullabilityIsCompatible = false;
-                    }
-                
-                    parameterIdx++;
-                }
-
-                if (parameterTypesMatch) {
-                    return true;
-                }
+            if (parameterTypesMatch) {
+                return true;
             }
         }
 
