@@ -13,6 +13,11 @@ public class NullabilityTests
             throw new Exception("Expected Exception");
         }
     }
+
+    public static NullabilityTests CreateInstance(bool throwAnException)
+    {
+        return new NullabilityTests(throwAnException);
+    }
     
     public string NonNullableStringProperty { get; set; } = "Hello";
     public string NonNullableStringField = "Hello";

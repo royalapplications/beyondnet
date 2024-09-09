@@ -1,5 +1,5 @@
 // Number of generated types: 1381
-// Number of generated members: 6056
+// Number of generated members: 6057
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -43964,6 +43964,12 @@ Beyond_NET_Sample_RegistrationData2_Destroy(
 #pragma mark - END APIs of Beyond.NET.Sample.RegistrationData2
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.NullabilityTests
+Beyond_NET_Sample_NullabilityTests_t _Nonnull /* Beyond.NET.Sample.NullabilityTests */
+Beyond_NET_Sample_NullabilityTests_CreateInstance(
+	bool /* System.Boolean */ throwAnException,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
 System_String_t _Nonnull /* System.String */
 Beyond_NET_Sample_NullabilityTests_MethodWithNonNullableStringReturnValue(
 	Beyond_NET_Sample_NullabilityTests_t _Nullable /* Beyond.NET.Sample.NullabilityTests */ self,
@@ -43998,12 +44004,12 @@ Beyond_NET_Sample_NullabilityTests_MethodWithNullableStringParameter(
 );
 
 Beyond_NET_Sample_NullabilityTests_t _Nonnull /* Beyond.NET.Sample.NullabilityTests */
-Beyond_NET_Sample_NullabilityTests_Create(
+Beyond_NET_Sample_NullabilityTests_Create_1(
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
 Beyond_NET_Sample_NullabilityTests_t _Nonnull /* Beyond.NET.Sample.NullabilityTests */
-Beyond_NET_Sample_NullabilityTests_Create_1(
+Beyond_NET_Sample_NullabilityTests_Create_2(
 	bool /* System.Boolean */ throwAnException,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
