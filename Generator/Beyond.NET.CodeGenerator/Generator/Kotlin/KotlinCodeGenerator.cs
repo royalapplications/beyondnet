@@ -272,6 +272,8 @@ package {package}
 import com.sun.jna.*
 import com.sun.jna.ptr.*
 
+import java.util.*
+
 import kotlin.experimental.or
 """;
     }
