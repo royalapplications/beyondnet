@@ -484,6 +484,26 @@ fun String.toDotNETString(): System_String {
 fun System_Exception.toKException(): Exception {
     return DNException(this)
 }
+
+// TODO: This can be optimized (see Swift impl)
+fun System_Guid.toUUID(): UUID {
+    val guidStrDN = this.dnToString()
+    val guidStr = guidStrDN.toKString()
+
+    val uuid = UUID.fromString(guidStr)
+
+    return uuid
+}
+
+// TODO: This can be optimized (see Swift impl)
+fun UUID.toDotNETGuid(): System_Guid {
+    val uuidStr = this.toString()
+    val uuidStrDN = uuidStr.toDotNETString()
+
+    val guid = System_Guid(uuidStrDN)
+
+    return guid
+}
 """;
     }
 }

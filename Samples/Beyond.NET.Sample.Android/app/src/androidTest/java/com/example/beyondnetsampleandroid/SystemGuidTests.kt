@@ -35,4 +35,20 @@ class SystemGuidTests {
 
         assertTrue(areEqual)
     }
+
+    @Test
+    fun testGuidToUUIDConversion() {
+        val guid = System_Guid.newGuid()
+        val uuid = guid.toUUID()
+
+        assertEquals(guid.dnToString().toKString().lowercase(), uuid.toString().lowercase())
+    }
+
+    @Test
+    fun testUUIDToGuidConversion() {
+        val uuid = UUID.randomUUID()
+        val guid = uuid.toDotNETGuid()
+
+        assertEquals(uuid.toString().lowercase(), guid.dnToString().toKString().lowercase())
+    }
 }
