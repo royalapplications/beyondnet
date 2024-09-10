@@ -2,7 +2,8 @@ namespace Beyond.NET.Sample;
 
 public class Labrador: Dog
 {
-    public const string LabradorName = "Labrador";
+    public new const string StaticName = "Labrador";
+    public const string LabradorName = StaticName;
     
     public override string Name => LabradorName;
     

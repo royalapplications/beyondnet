@@ -58,4 +58,18 @@ class AnimalTests {
         val expectedEat = "$catName is eating $food."
         assertEquals(expectedEat, eat)
     }
+
+    @Test
+    fun testStaticMemberShadowing() {
+        val dogNameDN = Beyond_NET_Sample_Dog.staticName_get()
+        val dogName = dogNameDN.toKString()
+
+        val labradorNameDN = Beyond_NET_Sample_Labrador.staticName_get()
+        val labradorName = labradorNameDN.toKString()
+
+        assertEquals(dogName, "Dog")
+        assertEquals(labradorName, "Labrador")
+
+        assertNotEquals(dogName, labradorName)
+    }
 }

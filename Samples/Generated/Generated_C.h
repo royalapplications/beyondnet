@@ -1,5 +1,5 @@
 // Number of generated types: 1382
-// Number of generated members: 6067
+// Number of generated members: 6069
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -42790,6 +42790,12 @@ Beyond_NET_Sample_Dog_Name_Get(
 
 
 System_String_t _Nonnull /* System.String */
+Beyond_NET_Sample_Dog_StaticName_Get(
+	void
+);
+
+
+System_String_t _Nonnull /* System.String */
 Beyond_NET_Sample_Dog_DogName_Get(
 	void
 );
@@ -42843,6 +42849,12 @@ System_String_t _Nonnull /* System.String */
 Beyond_NET_Sample_Labrador_Name_Get(
 	Beyond_NET_Sample_Labrador_t _Nullable /* Beyond.NET.Sample.Labrador */ self,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+Beyond_NET_Sample_Labrador_StaticName_Get(
+	void
 );
 
 

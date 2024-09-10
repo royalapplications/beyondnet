@@ -138,4 +138,17 @@ final class AnimalTests: XCTestCase {
 			XCTAssertTrue(error.localizedDescription.contains("violates the constraint"))
 		}
 	}
+    
+    func testStaticMemberShadowing() {
+        let dogNameDN = Beyond_NET_Sample_Dog.staticName
+        let dogName = dogNameDN.string()
+
+        let labradorNameDN = Beyond_NET_Sample_Labrador.staticName
+        let labradorName = labradorNameDN.string()
+
+        XCTAssertEqual(dogName, "Dog")
+        XCTAssertEqual(labradorName, "Labrador")
+        
+        XCTAssertNotEqual(dogName, labradorName)
+    }
 }
