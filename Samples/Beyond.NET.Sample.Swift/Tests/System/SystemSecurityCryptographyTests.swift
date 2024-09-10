@@ -13,9 +13,9 @@ final class SystemSecurityCryptographyTests: XCTestCase {
     }
     
     func testAES() throws {
-        let unecryptedData = "Hello 🌎!"
+        let unencryptedData = "Hello 🌎!"
         
-        let encryptResult = try encrypt(data: unecryptedData)
+        let encryptResult = try encrypt(data: unencryptedData)
         let encryptedData = encryptResult.encryptedData
         let iv = encryptResult.iv
         let key = encryptResult.key
@@ -26,7 +26,7 @@ final class SystemSecurityCryptographyTests: XCTestCase {
                                         iv: iv,
                                         key: key)
         
-        XCTAssertEqual(decryptedData, unecryptedData)
+        XCTAssertEqual(decryptedData, unencryptedData)
     }
 }
 
