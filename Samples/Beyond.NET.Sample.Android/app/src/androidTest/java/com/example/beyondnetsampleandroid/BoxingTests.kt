@@ -27,6 +27,15 @@ class BoxingTests {
     }
 
     @Test
+    fun testChar() {
+        val origVal = 'Ä'
+        val systemVal = origVal.toDotNETObject()
+        val backVal = systemVal.castToChar()
+
+        assertEquals(origVal, backVal)
+    }
+
+    @Test
     fun testFloat() {
         val origVal = Float.MAX_VALUE
         val systemVal = origVal.toDotNETObject()

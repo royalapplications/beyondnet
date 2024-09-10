@@ -1,5 +1,5 @@
-// Number of generated types: 1381
-// Number of generated members: 6057
+// Number of generated types: 1382
+// Number of generated members: 6067
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -5023,6 +5023,8 @@ typedef void* Beyond_NET_Sample_Transformer_t;
 typedef void* Beyond_NET_Sample_SubclassingTests_MyBaseClass_t;
 
 typedef void* Beyond_NET_Sample_SubclassingTests_MySubClass_t;
+
+typedef void* Beyond_NET_Sample_Source_CharTests_t;
 
 typedef void* Beyond_NET_Sample_Source_DontStrip_t;
 
@@ -45836,6 +45838,67 @@ Beyond_NET_Sample_SubclassingTests_MySubClass_Destroy(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.SubclassingTests.MySubClass
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.CharTests
+void /* System.Void */
+Beyond_NET_Sample_Source_CharTests_PassInLowercaseAOrThrow(
+	wchar_t /* System.Char */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_CharTests_PassInUppercaseAOrThrow(
+	wchar_t /* System.Char */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_CharTests_PassInOneOrThrow(
+	wchar_t /* System.Char */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_CharTests_PassInLowercaseUmlautAOrThrow(
+	wchar_t /* System.Char */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+wchar_t /* System.Char */
+Beyond_NET_Sample_Source_CharTests_LowercaseA_Get(
+	void
+);
+
+
+wchar_t /* System.Char */
+Beyond_NET_Sample_Source_CharTests_UppercaseA_Get(
+	void
+);
+
+
+wchar_t /* System.Char */
+Beyond_NET_Sample_Source_CharTests_One_Get(
+	void
+);
+
+
+wchar_t /* System.Char */
+Beyond_NET_Sample_Source_CharTests_LowercaseUmlautA_Get(
+	void
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_Source_CharTests_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_CharTests_Destroy(
+	Beyond_NET_Sample_Source_CharTests_t _Nullable /* Beyond.NET.Sample.Source.CharTests */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.Source.CharTests
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.DontStrip
 System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */

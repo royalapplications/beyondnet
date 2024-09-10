@@ -189,6 +189,31 @@ fun Boolean.toDotNETObject(): System_Boolean {
     return System_Boolean(castedObjectC)
 }
 
+/// Cast the targeted .NET object to a Char.
+/// - Returns: A Char value if the cast succeeded.
+/// - Throws: If the cast fails, an exception is thrown.
+fun IDNObject.castToChar(): Char {
+    val __exceptionC = PointerByReference()
+    
+    val __returnValueC = CAPI.DNObjectCastToChar(this.__handle, __exceptionC)
+    
+    val __exceptionCHandle = __exceptionC.value
+    
+    if (__exceptionCHandle != null) {
+        throw System_Exception(__exceptionCHandle).toKException()
+    }
+    
+    return __returnValueC
+}
+
+/// Boxes the specified Char value in an .NET object.
+/// - Returns: An .NET object containing the boxed value.
+fun Char.toDotNETObject(): System_Char {
+    val castedObjectC = CAPI.DNObjectFromChar(this)
+    
+    return System_Char(castedObjectC)
+}
+
 /// Cast the targeted .NET object to a Float.
 /// - Returns: A Float value if the cast succeeded.
 /// - Throws: If the cast fails, an exception is thrown.

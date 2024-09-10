@@ -112,7 +112,8 @@ object {{jnaClassName}} {
     external fun DNObjectCastToBool(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Boolean
     external fun DNObjectFromBool(value: Boolean): Pointer /* System_Boolean_t */
     
-    // TODO: Char
+    external fun DNObjectCastToChar(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Char
+    external fun DNObjectFromChar(value: Char): Pointer /* System_Char_t */
     
     external fun DNObjectCastToFloat(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Float
     external fun DNObjectFromFloat(value: Float): Pointer /* System_Single_t */
