@@ -504,6 +504,30 @@ fun UUID.toDotNETGuid(): System_Guid {
 
     return guid
 }
+
+fun System_DateTime.toKDate(): Date {
+    val dateTimeKind = kind_get()
+
+    if (dateTimeKind == System_DateTimeKind.Unspecified) {
+        throw Exception("DateTimeKind.Unspecified cannot be safely converted")
+    }
+
+    val universalDateTime = toUniversalTime()
+    val offset = System_DateTimeOffset(universalDateTime)
+    val unixTime = offset.toUnixTimeMilliseconds()
+
+    val date = Date(unixTime)
+
+    return date
+}
+
+fun Date.toDotNETDateTime(): System_DateTime {
+    val unixTime = this.time
+    val offset = System_DateTimeOffset.fromUnixTimeMilliseconds(unixTime)
+    val dateTime = offset.utcDateTime_get()
+
+    return dateTime
+}
 """;
     }
 }
