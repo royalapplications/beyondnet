@@ -289,8 +289,11 @@ public class TypeDescriptor
             case CodeLanguage.Kotlin:
             {
                 if (isOutParameter || isByRefParameter || isInParameter) {
-                    // TODO
-                    typeNameWithModifiers = $"inout {typeName}";
+                    // TODO: This is very likely not what we want. Instead we want a wrapper for by ref types
+                    var jnaTypeName = GetTypeName(CodeLanguage.KotlinJNA, false);
+                    
+                    // typeNameWithModifiers = $"inout {typeName}";
+                    typeNameWithModifiers = $"{jnaTypeName}ByReference";
                 } else {
                     typeNameWithModifiers = $"{typeName}";
                 }

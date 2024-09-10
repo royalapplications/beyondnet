@@ -16,25 +16,17 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
 
-class Ref<T>(var value: T) {
-    val __handle = PointerByReference()
+class Ref<T> {
+    val value: T?
 
-    init {
-//        __handle.value = value
+    constructor(value: T) {
+        this.value = value
     }
 
-    protected fun finalize() {
-        // TODO: What to do here?
-//        val ptrVal = Pointer.nativeValue(__handle.value)
-//        Native.free(ptrVal)
+    constructor() {
+        this.value = null
     }
 }
-
-//class NullableRef<T>(var value: T) {
-//    fun getHandleOrNull(): PointerByReference? {
-//        return null
-//    }
-//}
 
 @RunWith(AndroidJUnit4::class)
 class ByRefTests {
@@ -103,25 +95,5 @@ class ByRefTests {
         val retOut = System_String(retOutPtr)
 
         assertEquals(retOut.toKString(), "Abc")
-    }
-
-    @Test
-    fun testByRef() {
-        val origValue = 0
-        val newValue = 1
-
-        val ref = Ref<Int>(origValue)
-        assertEquals(ref.value, origValue)
-
-        modifyInt(ref, newValue)
-        assertEquals(ref.value, newValue)
-    }
-
-    private fun modifyInt(ref: Ref<Int>, newValue: Int) {
-        ref.value = newValue
-    }
-
-    private fun modifyOptional(ref: Ref<Int>?, newValue: Int) {
-        ref?.value = newValue
     }
 }
