@@ -274,11 +274,11 @@ public class TypeDescriptor
 
                 string kotlinNullabilitySpecifier;
 
-                if (RequiresNativePointer || IsReadOnlyStructOfByte) {
-                    kotlinNullabilitySpecifier = string.Empty;
-                } else {
+                // if (RequiresNativePointer || IsReadOnlyStructOfByte) {
+                //     kotlinNullabilitySpecifier = string.Empty;
+                // } else {
                     kotlinNullabilitySpecifier = nullability.GetKotlinOptionalitySpecifier();
-                }
+                // }
 
                 if (!string.IsNullOrEmpty(kotlinNullabilitySpecifier)) {
                     typeNameWithModifiers += kotlinNullabilitySpecifier;
@@ -573,7 +573,7 @@ public class TypeDescriptor
             if (IsEnum) {
                 return "{0}.value";
             } else if (RequiresNativePointer) {
-                return "{0}.getHandleOrNullPointer()";
+                return "{0}.getHandleOrNull()";
             } else {
                 return null;
             }

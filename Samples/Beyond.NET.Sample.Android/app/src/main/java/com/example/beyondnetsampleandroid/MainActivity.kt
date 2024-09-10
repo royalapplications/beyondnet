@@ -48,19 +48,6 @@ class MainActivity : ComponentActivity() {
 
         enableEdgeToEdge()
 
-        val staticDogName = Beyond_NET_Sample_Dog.dogName_get()
-        require(staticDogName.toKString() == "Dog")
-
-        val dogAsIAnimal = Beyond_NET_Sample_AnimalFactory.createAnimal("Dog".toDotNETString())
-
-        dogAsIAnimal?.let {
-            val dogName = dogAsIAnimal.name_get()
-
-            require(dogName == staticDogName)
-        }
-
-//        require(labradorAsIAnimal.`is`())
-
         updateGuid()
 
         val emptyGuid = System_Guid.empty_get()

@@ -19,7 +19,7 @@ open class DNObject(handle: Pointer): IDNObject {
     var __destroyMode: DestroyMode = DestroyMode.Normal
     
     init {
-        require(handle !== Pointer.NULL) {
+        require(handle != null) {
             "Cannot initialize DNObject with a null pointer"
         }
     
@@ -27,7 +27,7 @@ open class DNObject(handle: Pointer): IDNObject {
     }
     
     protected fun finalize() {
-        if (__handle == Pointer.NULL) {
+        if (__handle == null) {
             return
         }
         
@@ -78,17 +78,17 @@ val com.sun.jna.Pointer.value: Pointer
     get() = this
 
 // Extensions
-@JvmName("getHandleOrNullPointer_optional")
-fun IDNObject?.getHandleOrNullPointer(): Pointer {
-    if (this === null) {
-        return Pointer.NULL
+@JvmName("getHandleOrNull_optional")
+fun IDNObject?.getHandleOrNull(): Pointer? {
+    this?.let {
+        return this.__handle
     }
-
-    return this.__handle
+    
+    return null
 }
 
-@JvmName("getHandleOrNullPointer_non_optional")
-fun IDNObject.getHandleOrNullPointer(): Pointer {
+@JvmName("getHandleOrNull_non_optional")
+fun IDNObject.getHandleOrNull(): Pointer {
     return this.__handle
 }
 
@@ -107,11 +107,11 @@ fun IDNObject.castTo(type: System_Type): System_Object? {
     
     val __exceptionCHandle = __exceptionC.value
     
-    if (__exceptionCHandle !== Pointer.NULL) {
+    if (__exceptionCHandle != null) {
         throw System_Exception(__exceptionCHandle).toKException()
     }
     
-    if (__returnValueC == Pointer.NULL) {
+    if (__returnValueC == null) {
         return null
     }
     
@@ -133,7 +133,7 @@ inline fun <reified T> IDNObject.castTo(): T where T : System_Object {
 
     val __exceptionCHandle = __exceptionC.value
 
-    if (__exceptionCHandle !== Pointer.NULL) {
+    if (__exceptionCHandle != null) {
         throw System_Exception(__exceptionCHandle).toKException()
     }
 
@@ -151,7 +151,7 @@ inline fun <reified T> IDNObject.castAs(): T? where T : System_Object {
 
     val __returnValueC = CAPI.DNObjectCastAs(this.__handle, tClassTypeOf.__handle)
 
-    if (__returnValueC == Pointer.NULL) {
+    if (__returnValueC == null) {
         return null
     }
 
@@ -174,7 +174,7 @@ fun IDNObject.castToBool(): Boolean {
     
     val __exceptionCHandle = __exceptionC.value
     
-    if (__exceptionCHandle !== Pointer.NULL) {
+    if (__exceptionCHandle != null) {
         throw System_Exception(__exceptionCHandle).toKException()
     }
     
@@ -199,7 +199,7 @@ fun IDNObject.castToFloat(): Float {
     
     val __exceptionCHandle = __exceptionC.value
     
-    if (__exceptionCHandle !== Pointer.NULL) {
+    if (__exceptionCHandle != null) {
         throw System_Exception(__exceptionCHandle).toKException()
     }
     
@@ -224,7 +224,7 @@ fun IDNObject.castToDouble(): Double {
     
     val __exceptionCHandle = __exceptionC.value
     
-    if (__exceptionCHandle !== Pointer.NULL) {
+    if (__exceptionCHandle != null) {
         throw System_Exception(__exceptionCHandle).toKException()
     }
     
@@ -249,7 +249,7 @@ fun IDNObject.castToByte(): Byte {
     
     val __exceptionCHandle = __exceptionC.value
     
-    if (__exceptionCHandle !== Pointer.NULL) {
+    if (__exceptionCHandle != null) {
         throw System_Exception(__exceptionCHandle).toKException()
     }
     
@@ -274,7 +274,7 @@ fun IDNObject.castToUByte(): UByte {
     
     val __exceptionCHandle = __exceptionC.value
     
-    if (__exceptionCHandle !== Pointer.NULL) {
+    if (__exceptionCHandle != null) {
         throw System_Exception(__exceptionCHandle).toKException()
     }
     
@@ -299,7 +299,7 @@ fun IDNObject.castToShort(): Short {
     
     val __exceptionCHandle = __exceptionC.value
     
-    if (__exceptionCHandle !== Pointer.NULL) {
+    if (__exceptionCHandle != null) {
         throw System_Exception(__exceptionCHandle).toKException()
     }
     
@@ -324,7 +324,7 @@ fun IDNObject.castToUShort(): UShort {
     
     val __exceptionCHandle = __exceptionC.value
     
-    if (__exceptionCHandle !== Pointer.NULL) {
+    if (__exceptionCHandle != null) {
         throw System_Exception(__exceptionCHandle).toKException()
     }
     
@@ -349,7 +349,7 @@ fun IDNObject.castToInt(): Int {
     
     val __exceptionCHandle = __exceptionC.value
     
-    if (__exceptionCHandle !== Pointer.NULL) {
+    if (__exceptionCHandle != null) {
         throw System_Exception(__exceptionCHandle).toKException()
     }
     
@@ -374,7 +374,7 @@ fun IDNObject.castToUInt(): UInt {
     
     val __exceptionCHandle = __exceptionC.value
     
-    if (__exceptionCHandle !== Pointer.NULL) {
+    if (__exceptionCHandle != null) {
         throw System_Exception(__exceptionCHandle).toKException()
     }
     
@@ -399,7 +399,7 @@ fun IDNObject.castToLong(): Long {
     
     val __exceptionCHandle = __exceptionC.value
     
-    if (__exceptionCHandle !== Pointer.NULL) {
+    if (__exceptionCHandle != null) {
         throw System_Exception(__exceptionCHandle).toKException()
     }
     
@@ -424,7 +424,7 @@ fun IDNObject.castToULong(): ULong {
     
     val __exceptionCHandle = __exceptionC.value
     
-    if (__exceptionCHandle !== Pointer.NULL) {
+    if (__exceptionCHandle != null) {
         throw System_Exception(__exceptionCHandle).toKException()
     }
     
@@ -440,7 +440,7 @@ fun ULong.toDotNETObject(): System_UInt64 {
 }
 
 fun System_String.toKString(): String {
-    val cString = {{jnaClassName}}.DNStringToC(getHandleOrNullPointer())
+    val cString = {{jnaClassName}}.DNStringToC(getHandleOrNull())
     val string = cString.getString(0)
 
     val ptrVal = Pointer.nativeValue(cString)

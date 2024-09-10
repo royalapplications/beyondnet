@@ -946,6 +946,9 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             }
         }
         
+        // TODO: Currently, we don't have fancy bindings for arrays, so we need to ignore array element nullability and use the regular return type nullability instead
+        returnOrSetterTypeArrayElementNullability = returnOrSetterTypeNullability;
+        
         // TODO: This generates inout TypeName if the return type is by ref
         string kotlinReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(
             CodeLanguage.Kotlin,
@@ -1269,7 +1272,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 sbImpl.AppendLine("""
                                   val __exceptionCHandle = __exceptionC.value
                                    
-                                  if (__exceptionCHandle !== Pointer.NULL) {
+                                  if (__exceptionCHandle != null) {
                                       throw System_Exception(__exceptionCHandle).toKException()
                                   }
                                   """);
@@ -1305,7 +1308,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                         
                         if (returnOrSetterTypeDescriptor.RequiresNativePointer &&
                             actualNullability != Nullability.NonNullable) {
-                            prefix = $"if ({returnValueName}.value !== Pointer.NULL) ";
+                            prefix = $"if ({returnValueName} != null) ";
                             suffix = " else null";
                         } else {
                             prefix = string.Empty;
