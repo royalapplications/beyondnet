@@ -267,7 +267,7 @@ public class TypeDescriptor
             case CodeLanguage.KotlinJNA:
             {
                 if (isOutParameter || isByRefParameter || isInParameter) {
-                    typeNameWithModifiers = "PointerByReference";
+                    typeNameWithModifiers = $"{typeName}ByReference";
                 } else {
                     typeNameWithModifiers = $"{typeName}";
                 }

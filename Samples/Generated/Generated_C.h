@@ -1,5 +1,5 @@
 // Number of generated types: 1382
-// Number of generated members: 6069
+// Number of generated members: 6070
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -48567,6 +48567,13 @@ void /* System.Void */
 Beyond_NET_Sample_Source_OutParameterTests_Return_Int_1_NonOptional(
 	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
 	int32_t* /* System.Int32 */ returnValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_Bool_true_NonOptional(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	bool* /* System.Boolean */ returnValue,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 

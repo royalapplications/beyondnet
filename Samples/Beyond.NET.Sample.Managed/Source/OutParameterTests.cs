@@ -19,6 +19,17 @@ public class OutParameterTests
     {
         returnValue = null;
     }
+    
+    public void Return_Bool_true_NonOptional(out bool returnValue)
+    {
+        returnValue = true;
+    }
+    
+    // TODO: Currently not supported by Beyond.NET
+    public void Return_Char_a_NonOptional(out char returnValue)
+    {
+        returnValue = 'a';
+    }
     #endregion Primitives
 
     #region Enums

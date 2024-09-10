@@ -95,6 +95,31 @@ fun IDNObject.getHandleOrNull(): Pointer {
 fun Pointer.toUPointer(): UPointer {
     return UPointer(Pointer.nativeValue(this))
 }
+
+public class BooleanByReference : ByReference {
+    constructor(value: Boolean) : super(1) {
+        this.value = value
+    }
+
+    constructor() : super(1) {
+        this.value = false
+    }
+
+    public var value: Boolean
+        get() {
+            val valueByte = pointer.getByte(0)
+
+            val byteOne: Byte = 1
+            val valueBoolean: Boolean = valueByte == byteOne
+
+            return valueBoolean
+        }
+        set(value) {
+            val valueByte: Byte = if (value) 1 else 0
+
+            pointer.setByte(0, valueByte)
+        }
+}
 """;
 
     internal static string GetExtensions(string jnaClassName)
