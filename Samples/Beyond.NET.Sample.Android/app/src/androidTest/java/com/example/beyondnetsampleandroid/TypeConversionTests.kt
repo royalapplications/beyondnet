@@ -85,10 +85,10 @@ class TypeConversionTests {
         val systemNullReferenceException = System_NullReferenceException()
 
         assertNotNull(systemObject.castTo<System_Object>())
-        assertThrows(Exception::class.java) { systemObject.castTo<System_Guid>() }
+        assertThrows(DNException::class.java) { systemObject.castTo<System_Guid>() }
         assertNotNull(systemGuid.castTo<System_Guid>())
         assertNotNull(systemGuid.castTo<System_Object>())
-        assertThrows(Exception::class.java) { systemException.castTo<System_NullReferenceException>() }
+        assertThrows(DNException::class.java) { systemException.castTo<System_NullReferenceException>() }
         assertNotNull(systemNullReferenceException.castTo<System_Exception>())
     }
 }
