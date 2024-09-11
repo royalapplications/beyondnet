@@ -1,5 +1,5 @@
 {
-	"AssemblyPath": "Beyond.NET.Sample.Managed/bin/Release/net8.0/publish/Beyond.NET.Sample.Managed.dll",
+	"AssemblyPath": "Beyond.NET.Sample.Managed/bin/Release/net9.0/publish/Beyond.NET.Sample.Managed.dll",
 	
 	"CSharpUnmanagedOutputPath": "Generated/Generated_CS.cs",
 	"COutputPath": "Generated/Generated_C.h",
