@@ -172,6 +172,8 @@ internal class CodeGeneratorDriver
             #region Add System Documentation
             if (!doNotGenerateDocumentation) {
                 var systemReferenceAssembliesDirectoryPath = string.Empty;
+
+                string? dotnetInstallLocation = null;
                 
                 try {
                     var dotnetDir = DotNETUtils.GetDotnetGlobalInstallLocation();
@@ -181,7 +183,10 @@ internal class CodeGeneratorDriver
                     }
                     
                     Logger.LogDebug($".NET Core root directory: \"{dotnetDir}\"");
-                    
+                    if (Directory.Exists(dotnetDir)) {
+                        dotnetInstallLocation = dotnetDir;
+                    }
+
                     var tfm = DotNETUtils.GetTargetFrameworkName(assemblyPath);
 
                     if (string.IsNullOrWhiteSpace(tfm)) {
@@ -213,11 +218,28 @@ internal class CodeGeneratorDriver
                 
                 if (string.IsNullOrEmpty(systemReferenceAssembliesDirectoryPath) ||
                     !Directory.Exists(systemReferenceAssembliesDirectoryPath)) {
-                    // Fall back to hard coded path
-                    // TODO: update for 9.0 RC2 and then RTM
-                    systemReferenceAssembliesDirectoryPath = $"/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.0-rc.1.24431.7/ref/net9.0";
                     
-                    Logger.LogWarning($"Failed to gather path to system reference assemblies - falling back to hard coded path \"{systemReferenceAssembliesDirectoryPath}\"");
+                    // TODO: update this for 9.0 RC2, then RTM, then remove this comment.
+                    const string fallbackRefPackPath = "packs/Microsoft.NETCore.App.Ref/9.0.0-rc.1.24431.7/ref/net9.0";
+
+                    // Fall back to relative path from where `dotnet` is installed
+                    if (!string.IsNullOrEmpty(dotnetInstallLocation)) {
+                        string candidatePath = Path.Join(dotnetInstallLocation, fallbackRefPackPath);
+
+                        if (Directory.Exists(candidatePath)) {
+                            Logger.LogWarning($"Failed to gather path to system reference assemblies - falling back to \"{candidatePath}\"");
+                            systemReferenceAssembliesDirectoryPath = candidatePath;
+                        }
+                    }
+
+                    // Fall back to hard coded path if all else failed
+                    if (string.IsNullOrEmpty(systemReferenceAssembliesDirectoryPath) ||
+                        !Directory.Exists(systemReferenceAssembliesDirectoryPath)) {
+
+                        systemReferenceAssembliesDirectoryPath = Path.Join("/usr/local/share/dotnet", fallbackRefPackPath);
+
+                        Logger.LogWarning($"Failed to gather path to system reference assemblies - falling back to hard coded path \"{systemReferenceAssembliesDirectoryPath}\"");
+                    }
                 } else {
                     Logger.LogInformation($"Found path to system reference assemblies at \"{systemReferenceAssembliesDirectoryPath}\"");
                 }
