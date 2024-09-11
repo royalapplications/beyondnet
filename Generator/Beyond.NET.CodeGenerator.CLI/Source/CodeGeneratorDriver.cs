@@ -214,6 +214,7 @@ internal class CodeGeneratorDriver
                 if (string.IsNullOrEmpty(systemReferenceAssembliesDirectoryPath) ||
                     !Directory.Exists(systemReferenceAssembliesDirectoryPath)) {
                     // Fall back to hard coded path
+                    // TODO: update to `net9.0` after RTM
                     systemReferenceAssembliesDirectoryPath = $"/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.0/ref/net8.0";
                     
                     Logger.LogWarning($"Failed to gather path to system reference assemblies - falling back to hard coded path \"{systemReferenceAssembliesDirectoryPath}\"");
