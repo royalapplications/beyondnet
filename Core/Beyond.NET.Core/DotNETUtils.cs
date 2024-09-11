@@ -66,17 +66,17 @@ public class DotNETUtils
         string latestRefDir = Path.Join(refDir, latestVersion.ToString());
 
         if (!Directory.Exists(latestRefDir)) {
-            throw new Exception("Found latest ref dir but it does not exist");
+            throw new Exception($"Found latest ref dir but it does not exist: \"{latestRefDir}\"");
         }
         
         latestRefDir = Path.Join(latestRefDir, refSubdir);
         
         if (!Directory.Exists(latestRefDir)) {
-            throw new Exception("Found latest ref dir but it does not exist");
+            throw new Exception($"Found latest ref dir but it does not exist: \"{latestRefDir}\"");
         }
 
         if (!Directory.EnumerateFiles(latestRefDir, "*.xml").Any()) {
-            throw new Exception("Found latest ref dir but it has no xml files");
+            throw new Exception($"Found latest ref dir but it has no xml files: \"{latestRefDir}\"");
         }
         
         return latestRefDir;
