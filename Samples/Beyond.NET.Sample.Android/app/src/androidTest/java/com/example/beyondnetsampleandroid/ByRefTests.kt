@@ -16,20 +16,36 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
 
-class Ref<T> {
-    val value: T?
-
-    constructor(value: T) {
-        this.value = value
+class IntRef(var value: Int) {
+    fun makeByRef(): IntByReference {
+        return IntByReference(value)
     }
+}
 
-    constructor() {
-        this.value = null
-    }
+fun Int.makeRef(): IntRef {
+    return IntRef(this)
 }
 
 @RunWith(AndroidJUnit4::class)
 class ByRefTests {
+    @Test
+    fun testRefCall() {
+        val origValue = 5
+        val newValue = 2
+
+        val ref = origValue.makeRef()
+
+        returnInt1NonOptional(ref, newValue)
+
+        val result = ref.value
+
+        assertEquals(result, newValue)
+    }
+
+    private fun returnInt1NonOptional(returnValue: IntRef, newValue: Int) {
+        returnValue.value = newValue
+    }
+
     @Test
     fun testManualOutParameterBinding_Int() {
         val inst = Beyond_NET_Sample_Source_OutParameterTests()
