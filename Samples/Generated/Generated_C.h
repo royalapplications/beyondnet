@@ -1,5 +1,5 @@
-// Number of generated types: 1408
-// Number of generated members: 6125
+// Number of generated types: 1409
+// Number of generated members: 6129
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -5361,6 +5361,8 @@ typedef void* System_Security_Cryptography_Oid_t;
 typedef void* System_Security_Cryptography_ECDiffieHellman_t;
 
 typedef void* System_Security_Cryptography_ECDiffieHellmanPublicKey_t;
+
+typedef void* Beyond_NET_Sample_Source_ManagedUnhandledExceptionHandler_t;
 
 typedef void* Beyond_NET_Sample_Source_OutParameterTests_t;
 
@@ -49243,6 +49245,29 @@ System_Security_Cryptography_ECDiffieHellmanPublicKey_Destroy(
 );
 
 #pragma mark - END APIs of System.Security.Cryptography.ECDiffieHellmanPublicKey
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.ManagedUnhandledExceptionHandler
+void /* System.Void */
+Beyond_NET_Sample_Source_ManagedUnhandledExceptionHandler_Install(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_ManagedUnhandledExceptionHandler_Uninstall(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_Source_ManagedUnhandledExceptionHandler_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_ManagedUnhandledExceptionHandler_Destroy(
+	Beyond_NET_Sample_Source_ManagedUnhandledExceptionHandler_t _Nullable /* Beyond.NET.Sample.Source.ManagedUnhandledExceptionHandler */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.Source.ManagedUnhandledExceptionHandler
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.OutParameterTests
 void /* System.Void */
