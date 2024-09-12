@@ -10,172 +10,128 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
 
-public class UByteByReference : ByReference {
-    constructor(value: UByte) : super(UByte.SIZE_BYTES) {
-        this.value = value
-    }
-
-    constructor() : super(UByte.SIZE_BYTES) {
-        this.value = 0u
-    }
-
-    // TODO: Is this correct?
-    public var value: UByte
-        get() {
-            val valueByte = pointer.getByte(0)
-            val valueUByte = valueByte.toUByte()
-
-            return valueUByte
-        }
-        set(value) {
-            val valueByte = value.toByte()
-
-            pointer.setByte(0, valueByte)
-        }
+public interface IRef {
+    fun toJNARef(): ByReference
 }
 
-public class UShortByReference : ByReference {
-    constructor(value: UShort) : super(UShort.SIZE_BYTES) {
-        this.value = value
-    }
-
-    constructor() : super(UShort.SIZE_BYTES) {
-        this.value = 0u
-    }
-
-    // TODO: Is this correct?
-    public var value: UShort
-        get() {
-            val valueShort = pointer.getShort(0)
-            val valueUShort = valueShort.toUShort()
-
-            return valueUShort
-        }
-        set(value) {
-            val valueShort = value.toShort()
-
-            pointer.setShort(0, valueShort)
-        }
-}
-
-public class UIntByReference : ByReference {
-    constructor(value: UInt) : super(UInt.SIZE_BYTES) {
-        this.value = value
-    }
-
-    constructor() : super(UInt.SIZE_BYTES) {
-        this.value = 0u
-    }
-
-    // TODO: Is this correct?
-    public var value: UInt
-        get() {
-            val valueInt = pointer.getInt(0)
-            val valueUInt = valueInt.toUInt()
-
-            return valueUInt
-        }
-        set(value) {
-            val valueInt = value.toInt()
-
-            pointer.setInt(0, valueInt)
-        }
-}
-
-public class ULongByReference : ByReference {
-    constructor(value: ULong) : super(ULong.SIZE_BYTES) {
-        this.value = value
-    }
-
-    constructor() : super(ULong.SIZE_BYTES) {
-        this.value = 0u
-    }
-
-    // TODO: Is this correct?
-    public var value: ULong
-        get() {
-            val valueLong = pointer.getLong(0)
-            val valueULong = valueLong.toULong()
-
-            return valueULong
-        }
-        set(value) {
-            val valueLong = value.toLong()
-
-            pointer.setLong(0, valueLong)
-        }
-}
-
-class ObjectRef<T>(var value: T) where T: IDNObject {
-    fun makeJNARef(): PointerByReference {
+public class ObjectRef<T>(var value: T): IRef where T: IDNObject {
+    override fun toJNARef(): PointerByReference {
         return PointerByReference(value.getHandleOrNull())
     }
 }
 
-class BooleanRef(var value: Boolean) {
-    fun makeJNARef(): BooleanByReference {
+fun IDNObject.toRef(): IRef /* TODO: Maybe there's a way to express this using Kotlin generics. If not, we can generate a toRef method for every .NET type to make it type-safe. */ {
+    return ObjectRef(this)
+}
+
+public class BooleanRef(var value: Boolean): IRef {
+    override fun toJNARef(): BooleanByReference {
         return BooleanByReference(value)
     }
 }
 
-class ByteRef(var value: Byte) {
-    fun makeJNARef(): ByteByReference {
+fun Boolean.toRef(): BooleanRef {
+    return BooleanRef(this)
+}
+
+public class ByteRef(var value: Byte): IRef {
+    override fun toJNARef(): ByteByReference {
         return ByteByReference(value)
     }
 }
 
-class UByteRef(var value: UByte) {
-    fun makeJNARef(): UByteByReference {
+fun Byte.toRef(): ByteRef {
+    return ByteRef(this)
+}
+
+public class UByteRef(var value: UByte): IRef {
+    override fun toJNARef(): UByteByReference {
         return UByteByReference(value)
     }
 }
 
-class ShortRef(var value: Short) {
-    fun makeJNARef(): ShortByReference {
+fun UByte.toRef(): UByteRef {
+    return UByteRef(this)
+}
+
+public class ShortRef(var value: Short): IRef {
+    override fun toJNARef(): ShortByReference {
         return ShortByReference(value)
     }
 }
 
-class UShortRef(var value: UShort) {
-    fun makeJNARef(): UShortByReference {
+fun Short.toRef(): ShortRef {
+    return ShortRef(this)
+}
+
+public class UShortRef(var value: UShort): IRef {
+    override fun toJNARef(): UShortByReference {
         return UShortByReference(value)
     }
 }
 
-class IntRef(var value: Int) {
-    fun makeJNARef(): IntByReference {
+fun UShort.toRef(): UShortRef {
+    return UShortRef(this)
+}
+
+public class IntRef(var value: Int): IRef {
+    override fun toJNARef(): IntByReference {
         return IntByReference(value)
     }
 }
 
-class UIntRef(var value: UInt) {
-    fun makeJNARef(): UIntByReference {
+fun Int.toRef(): IntRef {
+    return IntRef(this)
+}
+
+public class UIntRef(var value: UInt): IRef {
+    override fun toJNARef(): UIntByReference {
         return UIntByReference(value)
     }
 }
 
-class LongRef(var value: Long) {
-    fun makeJNARef(): LongByReference {
+fun UInt.toRef(): UIntRef {
+    return UIntRef(this)
+}
+
+public class LongRef(var value: Long): IRef {
+    override fun toJNARef(): LongByReference {
         return LongByReference(value)
     }
 }
 
-class ULongRef(var value: ULong) {
-    fun makeJNARef(): ULongByReference {
+fun Long.toRef(): LongRef {
+    return LongRef(this)
+}
+
+public class ULongRef(var value: ULong): IRef {
+    override fun toJNARef(): ULongByReference {
         return ULongByReference(value)
     }
 }
 
-class FloatRef(var value: Float) {
-    fun makeJNARef(): FloatByReference {
+fun ULong.toRef(): ULongRef {
+    return ULongRef(this)
+}
+
+public class FloatRef(var value: Float): IRef {
+    override fun toJNARef(): FloatByReference {
         return FloatByReference(value)
     }
 }
 
-class DoubleRef(var value: Double) {
-    fun makeJNARef(): DoubleByReference {
+fun Float.toRef(): FloatRef {
+    return FloatRef(this)
+}
+
+public class DoubleRef(var value: Double): IRef {
+    override fun toJNARef(): DoubleByReference {
         return DoubleByReference(value)
     }
+}
+
+fun Double.toRef(): DoubleRef {
+    return DoubleRef(this)
 }
 
 @RunWith(AndroidJUnit4::class)
@@ -185,7 +141,7 @@ class ByRefTests {
         val origValue = 5
         val newValue = 2
 
-        val ref = IntRef(origValue)
+        val ref = origValue.toRef()
 
         modifyIntRef(ref, newValue)
 
@@ -195,7 +151,7 @@ class ByRefTests {
     }
 
     private fun modifyIntRef(returnValue: IntRef, newValue: Int) {
-        val returnValueCRef = returnValue.makeJNARef()
+        val returnValueCRef = returnValue.toJNARef()
 
         modifyIntRefC(returnValueCRef, newValue)
 
@@ -221,7 +177,7 @@ class ByRefTests {
     }
 
     private fun modifyStringRef(returnValue: ObjectRef<System_String>, newValue: System_String) {
-        val returnValueCRef = returnValue.makeJNARef()
+        val returnValueCRef = returnValue.toJNARef()
 
         modifyStringRefC(returnValueCRef, newValue)
 
@@ -233,7 +189,7 @@ class ByRefTests {
     }
 
     private fun returnInt1NonOptional(returnValue: IntRef, newValue: Int) {
-        val returnValueCRef = returnValue.makeJNARef()
+        val returnValueCRef = returnValue.toJNARef()
 
         returnInt1NonOptionalC(returnValueCRef, newValue)
 

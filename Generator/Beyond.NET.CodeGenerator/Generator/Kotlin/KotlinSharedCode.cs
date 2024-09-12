@@ -120,6 +120,102 @@ public class BooleanByReference : ByReference {
             pointer.setByte(0, valueByte)
         }
 }
+
+public class UByteByReference : ByReference {
+    constructor(value: UByte) : super(UByte.SIZE_BYTES) {
+        this.value = value
+    }
+
+    constructor() : super(UByte.SIZE_BYTES) {
+        this.value = 0u
+    }
+
+    // TODO: Is this correct?
+    public var value: UByte
+        get() {
+            val valueByte = pointer.getByte(0)
+            val valueUByte = valueByte.toUByte()
+
+            return valueUByte
+        }
+        set(value) {
+            val valueByte = value.toByte()
+
+            pointer.setByte(0, valueByte)
+        }
+}
+
+public class UShortByReference : ByReference {
+    constructor(value: UShort) : super(UShort.SIZE_BYTES) {
+        this.value = value
+    }
+
+    constructor() : super(UShort.SIZE_BYTES) {
+        this.value = 0u
+    }
+
+    // TODO: Is this correct?
+    public var value: UShort
+        get() {
+            val valueShort = pointer.getShort(0)
+            val valueUShort = valueShort.toUShort()
+
+            return valueUShort
+        }
+        set(value) {
+            val valueShort = value.toShort()
+
+            pointer.setShort(0, valueShort)
+        }
+}
+
+public class UIntByReference : ByReference {
+    constructor(value: UInt) : super(UInt.SIZE_BYTES) {
+        this.value = value
+    }
+
+    constructor() : super(UInt.SIZE_BYTES) {
+        this.value = 0u
+    }
+
+    // TODO: Is this correct?
+    public var value: UInt
+        get() {
+            val valueInt = pointer.getInt(0)
+            val valueUInt = valueInt.toUInt()
+
+            return valueUInt
+        }
+        set(value) {
+            val valueInt = value.toInt()
+
+            pointer.setInt(0, valueInt)
+        }
+}
+
+public class ULongByReference : ByReference {
+    constructor(value: ULong) : super(ULong.SIZE_BYTES) {
+        this.value = value
+    }
+
+    constructor() : super(ULong.SIZE_BYTES) {
+        this.value = 0u
+    }
+
+    // TODO: Is this correct?
+    public var value: ULong
+        get() {
+            val valueLong = pointer.getLong(0)
+            val valueULong = valueLong.toULong()
+
+            return valueULong
+        }
+        set(value) {
+            val valueLong = value.toLong()
+
+            pointer.setLong(0, valueLong)
+        }
+}
 """;
 
     internal static string GetExtensions(string jnaClassName)
