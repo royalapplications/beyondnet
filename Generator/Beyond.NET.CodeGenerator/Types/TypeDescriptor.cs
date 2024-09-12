@@ -289,11 +289,19 @@ public class TypeDescriptor
             case CodeLanguage.Kotlin:
             {
                 if (isOutParameter || isByRefParameter || isInParameter) {
-                    // TODO: This is very likely not what we want. Instead we want a wrapper for by ref types
-                    var jnaTypeName = GetTypeName(CodeLanguage.KotlinJNA, false);
-                    
-                    // typeNameWithModifiers = $"inout {typeName}";
-                    typeNameWithModifiers = $"{jnaTypeName}ByReference";
+                    var kotlinTypeName = GetTypeName(CodeLanguage.Kotlin, false);
+                    string refTypeName;
+
+                    if (IsPrimitive || IsEnum)
+                    {
+                        refTypeName = $"{kotlinTypeName}Ref";
+                    }
+                    else
+                    {
+                        refTypeName = $"ObjectRef<{kotlinTypeName}>";
+                    }
+
+                    typeNameWithModifiers = refTypeName;
                 } else {
                     typeNameWithModifiers = $"{typeName}";
                 }
