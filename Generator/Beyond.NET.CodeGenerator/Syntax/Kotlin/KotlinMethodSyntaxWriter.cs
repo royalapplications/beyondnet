@@ -658,15 +658,30 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 
                 return $"// TODO: Method with generic parameter ({cMember.GetGeneratedName(CodeLanguage.C)})";
             }
+
+            var isByRefParameter = parameter.IsOut ||
+                                   parameter.IsIn ||
+                                   parameter.ParameterType.IsByRef ||
+                                   parameter.ParameterType.IsByRefLike ||
+                                   parameter.ParameterType.IsByRefValueType(out _); 
             
-            if (parameter.IsOut ||
-                parameter.IsIn ||
-                parameter.ParameterType.IsByRef ||
-                parameter.ParameterType.IsByRefLike ||
-                parameter.ParameterType.IsByRefValueType(out _)) {
+            // if (isByRefParameter) {
+            //     generatedName = string.Empty;
+            //     
+            //     return $"// TODO: Method with out or in or by ref type parameter ({cMember.GetGeneratedName(CodeLanguage.C)})";
+            // }
+            
+            if (isByRefParameter &&
+                (
+                    parameter.ParameterType.GetNonByRefType().IsEnum ||
+                    parameter.ParameterType.GetNonByRefType().IsPointer ||
+                    parameter.ParameterType.GetNonByRefType() == typeof(IntPtr) ||
+                    parameter.ParameterType.GetNonByRefType() == typeof(UIntPtr) ||
+                    parameter.ParameterType.GetNonByRefType().IsGenericInAnyWay(true) // TODO: This also removes optional structs
+                )) {
                 generatedName = string.Empty;
                 
-                return $"// TODO: Method with out or in or by ref type parameter ({cMember.GetGeneratedName(CodeLanguage.C)})";
+                return $"// TODO: Method with out or in or by ref enum/IntPtr/UIntPtr or generic type parameter ({cMember.GetGeneratedName(CodeLanguage.C)})";
             }
         }
         #endregion TODO: Unsupported Stuff
@@ -1219,7 +1234,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 out List<string> convertedParameterNames,
                 out List<string> convertedGenericTypeArgumentNames,
                 out List<string> convertedGenericMethodArgumentNames,
-                out _
+                out List<string> parameterBackConversions
             );
 
             sbImpl.AppendLine(parameterConversions);
@@ -1337,28 +1352,29 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 bool isOutParameter = parameter.IsOut;
                 bool isInParameter = parameter.IsIn;
                 bool isByRefParameter = parameterType.IsByRef;
+
+                var isInOutParameter = isOutParameter || isInParameter || isByRefParameter;
                 
-                if (!isOutParameter &&
-                    !isInParameter &&
-                    !isByRefParameter) {
+                if (!isInOutParameter) {
                     continue;
                 }
 
+                bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
+                
                 parameterType = parameterType.GetNonByRefType();
 
-                if (parameterType.IsGenericParameter ||
-                    parameterType.IsGenericMethodParameter) {
+                if (isGenericParameterType) {
                     parameterType = typeof(object);
                 }
                 
                 string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
-                string convertedParameterName = $"{parameterName}C";
+                string convertedParameterName = $"__{parameterName}JNAByRef";
 
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
 
                 var nullabilityInfoContext = new NullabilityInfoContext();
-                var parameterNullability = nullabilityInfoContext.Create(parameter);
-                var parameterArrayElementNullabilityState = parameterNullability.ElementType;
+                var paraNullability = nullabilityInfoContext.Create(parameter);
+                var parameterArrayElementNullabilityState = paraNullability.ElementType;
                 Nullability parameterArrayElementNullability;
 
                 if (parameterArrayElementNullabilityState is not null &&
@@ -1370,27 +1386,60 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                     parameterArrayElementNullability = Nullability.NotSpecified;
                 }
 
+                Nullability parameterNullability = Nullability.NotSpecified; 
+                
+                if (!isGeneric &&
+                    !isGenericParameterType &&
+                    parameterType.IsReferenceType()) {
+                    bool isNotNull = false;
+                        
+                    var parameterNullabilityInfo = nullabilityInfoContext.Create(parameter);
+                        
+                    if (parameterNullabilityInfo.ReadState == parameterNullabilityInfo.WriteState) {
+                        isNotNull = parameterNullabilityInfo.ReadState == NullabilityState.NotNull;
+                    }
+                        
+                    parameterNullability = isNotNull
+                        ? Nullability.NonNullable
+                        : parameterTypeDescriptor.Nullability;
+                }
+    
+                if (parameterNullability == Nullability.NotSpecified) {
+                    parameterNullability = parameterTypeDescriptor.Nullability;
+                }
+                
                 string? parameterTypeConversion = parameterTypeDescriptor.GetTypeConversion(
                     CodeLanguage.KotlinJNA,
                     CodeLanguage.Kotlin,
                     parameterArrayElementNullability
                 );
 
-                if (string.IsNullOrEmpty(parameterTypeConversion)) {
-                    continue;
-                }
-
-                if (!convertedParameterNames.Contains($"&{convertedParameterName}")) {
+                // TODO
+                if (!convertedParameterNames.Contains(convertedParameterName)) {
                     convertedParameterName = parameterName;
                 }
 
+                string refValueGetter = $"{convertedParameterName}.value";
+
                 if (string.IsNullOrEmpty(parameterTypeConversion)) {
-                    parameterTypeConversion = convertedParameterName;
+                    parameterTypeConversion = refValueGetter;
                 } else {
-                    parameterTypeConversion = string.Format(parameterTypeConversion, convertedParameterName);
+                    var resolvedConversion = string.Format(parameterTypeConversion, refValueGetter);
+
+                    if (parameterNullability != Nullability.Nullable &&
+                        (parameterType.IsPrimitive || parameterType.IsEnum)) {
+                        // TODO: This is a bad hack
+                        parameterNullability = Nullability.NonNullable;
+                    }
+                    
+                    if (parameterNullability == Nullability.NonNullable) {
+                        parameterTypeConversion = resolvedConversion;
+                    } else {
+                        parameterTypeConversion = $"if ({refValueGetter} != null) {resolvedConversion} else null";
+                    }
                 }
-                
-                sbByRefParameters.AppendLine($"{parameterName} = {parameterTypeConversion}");
+
+                sbByRefParameters.AppendLine($"{parameterName}.value = {parameterTypeConversion}");
                 sbByRefParameters.AppendLine();
             }
 
@@ -1529,7 +1578,8 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             if (onlyWriteParameterNames) {
                 if (writeModifiersForInvocation) {
                     // TODO
-                    parameterString = $"{(isByRefParameter || isOutParameter ? "&" : string.Empty)}{parameterName}";
+                    parameterString = parameterName;
+                    // parameterString = $"{(isByRefParameter || isOutParameter ? "&" : string.Empty)}{parameterName}";
                 } else {
                     parameterString = parameterName;
                 }
@@ -1814,92 +1864,76 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         } else {
             parameterArrayElementNullability = Nullability.NotSpecified;
         }
-
+        
+        string parameterNameForConversion = parameterName;
+            
+        if (parameterName.StartsWith("`") &&
+            parameterName.EndsWith("`")) {
+            parameterNameForConversion = parameterName.Trim('`');
+        }
+        
         string? typeConversion = parameterTypeDescriptor.GetTypeConversion(
             sourceLanguage,
             targetLanguage,
             parameterArrayElementNullability
         );
         
-        if (typeConversion != null) {
-            string parameterNameForConversion = parameterName;
-            
-            if (parameterName.StartsWith("`") &&
-                parameterName.EndsWith("`")) {
-                parameterNameForConversion = parameterName.Trim('`');
-            }
-            
-            convertedParameterName = $"{parameterNameForConversion}{convertedParameterNameSuffix}";
-
-            string optionalString;
-            
-            if (sourceLanguage == CodeLanguage.Kotlin &&
-                targetLanguage == CodeLanguage.KotlinJNA) {
-                // bool isNotNull = false;
-
-                if ((typeDescriptorRegistry.GetTypeDescriptor(parameterType)?.RequiresNativePointer ?? false)) {
-                    parameterNullability = Nullability.NonNullable;
-                }
-
-                // if (parameterInfo is not null &&
-                //     !isGeneric &&
-                //     !isGenericParameterType &&
-                //     parameterType.IsReferenceType()) {
-                //     bool isNotNull = false;
-                //     
-                //     var parameterNullabilityInfo = nullabilityContext.Create(parameterInfo);
-                //     
-                //     if (parameterNullabilityInfo.ReadState == parameterNullabilityInfo.WriteState) {
-                //         isNotNull = parameterNullabilityInfo.ReadState == NullabilityState.NotNull;
-                //     }
-                //     
-                //     parameterNullability = isNotNull
-                //         ? Nullability.NonNullable
-                //         : parameterTypeDescriptor.Nullability;
-                // }
-
-                if (parameterNullability == Nullability.NotSpecified) {
-                    parameterNullability = parameterTypeDescriptor.Nullability;
-                }
+        string optionalString;
                 
-                optionalString = parameterNullability.GetKotlinOptionalitySpecifier();
-            } else {
-                optionalString = string.Empty;
+        if (sourceLanguage == CodeLanguage.Kotlin &&
+            targetLanguage == CodeLanguage.KotlinJNA) {
+            // bool isNotNull = false;
+    
+            if ((typeDescriptorRegistry.GetTypeDescriptor(parameterType)?.RequiresNativePointer ?? false)) {
+                parameterNullability = Nullability.NonNullable;
             }
-
-            string fullTypeConversion = string.Format(typeConversion, $"{parameterName}{optionalString}");
-
-            typeConversionCode = Builder.Val(convertedParameterName)
-                .Value(fullTypeConversion)
-                .ToString();
-            
-            if (isInOut) {
-                // TODO
-                convertedParameterName = $"&{convertedParameterName}";
+    
+            if (parameterInfo is not null &&
+                !isGeneric &&
+                !isGenericParameterType &&
+                parameterType.IsReferenceType()) {
+                bool isNotNull = false;
+                        
+                var parameterNullabilityInfo = nullabilityContext.Create(parameterInfo);
+                        
+                if (parameterNullabilityInfo.ReadState == parameterNullabilityInfo.WriteState) {
+                    isNotNull = parameterNullabilityInfo.ReadState == NullabilityState.NotNull;
+                }
+                        
+                parameterNullability = isNotNull
+                    ? Nullability.NonNullable
+                    : parameterTypeDescriptor.Nullability;
             }
+    
+            if (parameterNullability == Nullability.NotSpecified) {
+                parameterNullability = parameterTypeDescriptor.Nullability;
+            }
+                    
+            optionalString = parameterNullability.GetKotlinOptionalitySpecifier();
+        } else {
+            optionalString = string.Empty;
+        }
 
+        if (isInOut) {
+            convertedParameterName = $"__{parameterName}JNAByRef";
+            typeConversionCode = $"val {convertedParameterName} = {parameterName}.toJNARef()";
             typeBackConversionCode = null;
         } else {
-            if (sourceLanguage == CodeLanguage.KotlinJNA &&
-                targetLanguage == CodeLanguage.Kotlin &&
-                isInOut) {
-                string kotlinParameterName = $"__{parameterName}Kotlin";
+            if (typeConversion != null) {
+                convertedParameterName = $"{parameterNameForConversion}{convertedParameterNameSuffix}";
+    
+                string fullTypeConversion = string.Format(typeConversion, $"{parameterName}{optionalString}");
+    
+                typeConversionCode = Builder.Val(convertedParameterName)
+                    .Value(fullTypeConversion)
+                    .ToString();
                 
-                // TODO
-                typeConversionCode = $"val {kotlinParameterName} = {parameterName}?.pointee ?? .init()";
-                typeBackConversionCode = $"{parameterName}?.pointee = {kotlinParameterName}";
-                
-                convertedParameterName = $"&{kotlinParameterName}";
+                typeBackConversionCode = null;
             } else {
                 typeConversionCode = null;
                 typeBackConversionCode = null;
-                
-                if (isInOut) {
-                    // TODO
-                    convertedParameterName = $"&{parameterName}";
-                } else {
-                    convertedParameterName = parameterName;
-                }
+
+                convertedParameterName = parameterName;
             }
         }
     }

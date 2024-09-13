@@ -20,6 +20,31 @@ public class OutParameterTests
         returnValue = null;
     }
     
+    public void Return_Byte_1_NonOptional(out byte returnValue)
+    {
+        returnValue = 1;
+    }
+    
+    public void Return_SByte_1_NonOptional(out sbyte returnValue)
+    {
+        returnValue = 1;
+    }
+    
+    public void Return_UShort_1_NonOptional(out ushort returnValue)
+    {
+        returnValue = 1;
+    }
+    
+    public void Return_UInt_1_NonOptional(out uint returnValue)
+    {
+        returnValue = 1;
+    }
+    
+    public void Return_ULong_1_NonOptional(out ulong returnValue)
+    {
+        returnValue = 1;
+    }
+    
     public void Return_Bool_true_NonOptional(out bool returnValue)
     {
         returnValue = true;

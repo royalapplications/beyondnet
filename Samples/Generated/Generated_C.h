@@ -1,5 +1,5 @@
 // Number of generated types: 1409
-// Number of generated members: 6129
+// Number of generated members: 6134
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -49274,6 +49274,41 @@ void /* System.Void */
 Beyond_NET_Sample_Source_OutParameterTests_Return_Int_1_NonOptional(
 	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
 	int32_t* /* System.Int32 */ returnValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_Byte_1_NonOptional(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	uint8_t* /* System.Byte */ returnValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_SByte_1_NonOptional(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	int8_t* /* System.SByte */ returnValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_UShort_1_NonOptional(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	uint16_t* /* System.UInt16 */ returnValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_UInt_1_NonOptional(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	uint32_t* /* System.UInt32 */ returnValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_ULong_1_NonOptional(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	uint64_t* /* System.UInt64 */ returnValue,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 

@@ -267,7 +267,17 @@ public class TypeDescriptor
             case CodeLanguage.KotlinJNA:
             {
                 if (isOutParameter || isByRefParameter || isInParameter) {
-                    typeNameWithModifiers = $"{typeName}ByReference";
+                    string nonByRefTypeName;
+
+                    var nonByRefTypeDescriptor = ManagedType.GetNonByRefType().GetTypeDescriptor();
+
+                    if (nonByRefTypeDescriptor.IsPrimitive) {
+                        nonByRefTypeName = nonByRefTypeDescriptor.GetTypeName(CodeLanguage.Kotlin, false);                        
+                    } else {
+                        nonByRefTypeName = typeName;
+                    }
+                    
+                    typeNameWithModifiers = $"{nonByRefTypeName}ByReference";
                 } else {
                     typeNameWithModifiers = $"{typeName}";
                 }
@@ -288,28 +298,25 @@ public class TypeDescriptor
             }
             case CodeLanguage.Kotlin:
             {
+                string kotlinNullabilitySpecifier = nullability.GetKotlinOptionalitySpecifier();
+                
                 if (isOutParameter || isByRefParameter || isInParameter) {
                     var kotlinTypeName = GetTypeName(CodeLanguage.Kotlin, false);
                     string refTypeName;
 
-                    if (IsPrimitive || IsEnum)
-                    {
-                        refTypeName = $"{kotlinTypeName}Ref";
-                    }
-                    else
-                    {
-                        refTypeName = $"ObjectRef<{kotlinTypeName}>";
+                    if (IsPrimitive) {
+                        if (IsEnum) {
+                            throw new NotSupportedException("By ref enums are currently not supported when generating Kotlin code");
+                        } else {
+                            refTypeName = $"{kotlinTypeName}Ref";
+                        }
+                    } else {
+                        refTypeName = $"ObjectRef<{kotlinTypeName}{kotlinNullabilitySpecifier}>";
                     }
 
                     typeNameWithModifiers = refTypeName;
                 } else {
-                    typeNameWithModifiers = $"{typeName}";
-                }
-
-                string kotlinNullabilitySpecifier = nullability.GetKotlinOptionalitySpecifier();
-
-                if (!string.IsNullOrEmpty(kotlinNullabilitySpecifier)) {
-                    typeNameWithModifiers += kotlinNullabilitySpecifier;
+                    typeNameWithModifiers = $"{typeName}{kotlinNullabilitySpecifier}";
                 }
 
                 break;

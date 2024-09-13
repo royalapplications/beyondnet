@@ -1440,12 +1440,12 @@ if let __exceptionC {
             
             if (sourceLanguage == CodeLanguage.Swift &&
                 targetLanguage == CodeLanguage.C) {
-                bool isNotNull = false;
-
                 if (parameterInfo is not null &&
                     !isGeneric &&
                     !isGenericParameterType &&
                     parameterType.IsReferenceType()) {
+                    bool isNotNull = false;
+                    
                     var parameterNullabilityInfo = nullabilityContext.Create(parameterInfo);
 
                     if (parameterNullabilityInfo.ReadState == parameterNullabilityInfo.WriteState) {

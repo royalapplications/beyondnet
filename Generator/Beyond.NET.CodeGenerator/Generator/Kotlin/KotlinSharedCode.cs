@@ -96,6 +96,17 @@ fun Pointer.toUPointer(): UPointer {
     return UPointer(Pointer.nativeValue(this))
 }
 
+// TODO: Is this correct? Unlikely
+public class UPointerByReference : PointerByReference {
+    constructor(value: UPointer) : super(value.toPointer()) {
+        
+    }
+
+    constructor() : super() {
+        
+    }
+}
+
 public class BooleanByReference : ByReference {
     constructor(value: Boolean) : super(1) {
         this.value = value
@@ -221,15 +232,16 @@ public interface IRef {
     fun toJNARef(): ByReference
 }
 
-public class ObjectRef<T>(var value: T): IRef where T: IDNObject {
+public class ObjectRef<T>(var value: T): IRef where T: IDNObject? {
     override fun toJNARef(): PointerByReference {
         return PointerByReference(value.getHandleOrNull())
     }
 }
 
-fun IDNObject.toRef(): IRef /* TODO: Maybe there's a way to express this using Kotlin generics. If not, we can generate a toRef method for every .NET type to make it type-safe. */ {
-    return ObjectRef(this)
-}
+// TODO: Maybe there's a way to express this using Kotlin generics. If not, we can generate a toRef method for every .NET type to make it type-safe.
+// fun IDNObject.toRef(): IRef {
+//     return ObjectRef(this)
+// }
 
 public class BooleanRef(var value: Boolean): IRef {
     override fun toJNARef(): BooleanByReference {

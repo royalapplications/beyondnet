@@ -18,6 +18,8 @@ import androidx.compose.ui.tooling.preview.Preview
 
 import com.example.beyondnetsampleandroid.dn.*
 import com.example.beyondnetsampleandroid.ui.theme.BeyondNETSampleAndroidTheme
+import com.sun.jna.Pointer
+import com.sun.jna.ptr.PointerByReference
 
 import java.util.UUID
 

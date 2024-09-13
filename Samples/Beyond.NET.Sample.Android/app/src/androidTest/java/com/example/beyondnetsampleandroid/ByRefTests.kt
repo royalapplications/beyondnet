@@ -4,8 +4,6 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 
 import com.example.beyondnetsampleandroid.dn.*
 
-import com.sun.jna.ptr.*
-
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -13,133 +11,145 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class ByRefTests {
     @Test
-    fun testIntRefCall() {
-        val origValue = 5
-        val newValue = 2
+    fun testInt() {
+        val inst = Beyond_NET_Sample_Source_OutParameterTests()
 
-        val ref = origValue.toRef()
+        val origValue = 0
+        val expectedValue = 1
+        val valueRef = origValue.toRef()
 
-        modifyIntRef(ref, newValue)
+        inst.return_Int_1_NonOptional(valueRef)
 
-        val result = ref.value
-
-        assertEquals(result, newValue)
-    }
-
-    private fun modifyIntRef(returnValue: IntRef, newValue: Int) {
-        val returnValueCRef = returnValue.toJNARef()
-
-        modifyIntRefC(returnValueCRef, newValue)
-
-        returnValue.value = returnValueCRef.value
-    }
-
-    private fun modifyIntRefC(returnValue: IntByReference, newValue: Int) {
-        returnValue.value = newValue
+        assertEquals(valueRef.value, expectedValue)
     }
 
     @Test
-    fun testStringRefCall() {
+    fun testByte() {
+        val inst = Beyond_NET_Sample_Source_OutParameterTests()
+
+        val origValue: Byte = 0
+        val expectedValue: Byte = 1
+        val valueRef = origValue.toRef()
+
+        inst.return_SByte_1_NonOptional(valueRef)
+
+        assertEquals(valueRef.value, expectedValue)
+    }
+
+    @Test
+    fun testUByte() {
+        val inst = Beyond_NET_Sample_Source_OutParameterTests()
+
+        val origValue: UByte = 0u
+        val expectedValue: UByte = 1u
+        val valueRef = origValue.toRef()
+
+        inst.return_Byte_1_NonOptional(valueRef)
+
+        assertEquals(valueRef.value, expectedValue)
+    }
+
+    @Test
+    fun testUShort() {
+        val inst = Beyond_NET_Sample_Source_OutParameterTests()
+
+        val origValue: UShort = 0u
+        val expectedValue: UShort = 1u
+        val valueRef = origValue.toRef()
+
+        inst.return_UShort_1_NonOptional(valueRef)
+
+        assertEquals(valueRef.value, expectedValue)
+    }
+
+    @Test
+    fun testUInt() {
+        val inst = Beyond_NET_Sample_Source_OutParameterTests()
+
+        val origValue: UInt = 0u
+        val expectedValue: UInt = 1u
+        val valueRef = origValue.toRef()
+
+        inst.return_UInt_1_NonOptional(valueRef)
+
+        assertEquals(valueRef.value, expectedValue)
+    }
+
+    @Test
+    fun testULong() {
+        val inst = Beyond_NET_Sample_Source_OutParameterTests()
+
+        val origValue: ULong = 0u
+        val expectedValue: ULong = 1u
+        val valueRef = origValue.toRef()
+
+        inst.return_ULong_1_NonOptional(valueRef)
+
+        assertEquals(valueRef.value, expectedValue)
+    }
+
+    @Test
+    fun testBool() {
+        val inst = Beyond_NET_Sample_Source_OutParameterTests()
+
+        val origValue = false
+        val expectedValue = true
+        val valueRef = origValue.toRef()
+
+        inst.return_Bool_true_NonOptional(valueRef)
+
+        assertEquals(valueRef.value, expectedValue)
+    }
+
+    @Test
+    fun testNonOptionalStruct() {
+        val inst = Beyond_NET_Sample_Source_OutParameterTests()
+
+        val origValue = System_DateTime.minValue_get()
+        val expectedValue = System_DateTime.maxValue_get()
+        val valueRef = ObjectRef(origValue)
+
+        inst.return_DateTime_MaxValue_NonOptional(valueRef)
+
+        assertEquals(valueRef.value, expectedValue)
+    }
+
+    @Test
+    fun testNonOptionalClass() {
+        val inst = Beyond_NET_Sample_Source_OutParameterTests()
+
         val origValue = System_String.empty_get()
-        val newValue = "Abc".toDotNETString()
+        val expectedValue = "Abc".toDotNETString()
+        val valueRef = ObjectRef(origValue)
 
-        val ref = ObjectRef(origValue)
+        inst.return_String_Abc_NonOptional(valueRef)
 
-        modifyStringRef(ref, newValue)
-
-        val result = ref.value
-
-        assertEquals(result, newValue)
-    }
-
-    private fun modifyStringRef(returnValue: ObjectRef<System_String>, newValue: System_String) {
-        val returnValueCRef = returnValue.toJNARef()
-
-        modifyStringRefC(returnValueCRef, newValue)
-
-        returnValue.value = System_String(returnValueCRef.value)
-    }
-
-    private fun modifyStringRefC(returnValue: PointerByReference, newValue: System_String) {
-        returnValue.value = newValue.getHandleOrNull()
-    }
-
-    private fun returnInt1NonOptional(returnValue: IntRef, newValue: Int) {
-        val returnValueCRef = returnValue.toJNARef()
-
-        returnInt1NonOptionalC(returnValueCRef, newValue)
-
-        returnValue.value = returnValueCRef.value
-    }
-
-    private fun returnInt1NonOptionalC(returnValue: IntByReference, newValue: Int) {
-        returnValue.value = newValue
+        assertEquals(valueRef.value, expectedValue)
     }
 
     @Test
-    fun testManualOutParameterBinding_Int() {
+    fun testOptionalClass() {
         val inst = Beyond_NET_Sample_Source_OutParameterTests()
-        val instPtr = inst.getHandleOrNull()
 
-        val retOutRef = IntByReference(-1)
+        val origValue: System_String? = null
+        val expectedValue = "Abc".toDotNETString()
+        val valueRef = ObjectRef(origValue)
 
-        val __exceptionC = PointerByReference()
+        inst.return_String_Abc_Optional(valueRef)
 
-        CAPI.Beyond_NET_Sample_Source_OutParameterTests_Return_Int_1_NonOptional(instPtr, retOutRef, __exceptionC)
-
-        val __exceptionCHandle = __exceptionC.value
-
-        if (__exceptionCHandle != null) {
-            throw System_Exception(__exceptionCHandle).toKException()
-        }
-
-        val retOut = retOutRef.value
-
-        assertEquals(retOut, 1)
+        assertEquals(valueRef.value, expectedValue)
     }
 
     @Test
-    fun testManualOutParameterBinding_Bool() {
+    fun testOptionalClassReturningNull() {
         val inst = Beyond_NET_Sample_Source_OutParameterTests()
-        val instPtr = inst.getHandleOrNull()
 
-        val retOutRef = BooleanByReference(false)
+        val origValue = System_String.empty_get()
+        val expectedValue: System_String? = null
+        val valueRef = ObjectRef<System_String?>(origValue)
 
-        val __exceptionC = PointerByReference()
+        inst.return_String_Null(valueRef)
 
-        CAPI.Beyond_NET_Sample_Source_OutParameterTests_Return_Bool_true_NonOptional(instPtr, retOutRef, __exceptionC)
-
-        val __exceptionCHandle = __exceptionC.value
-
-        if (__exceptionCHandle != null) {
-            throw System_Exception(__exceptionCHandle).toKException()
-        }
-
-        val retOut = retOutRef.value
-
-        assertEquals(retOut, true)
-    }
-
-    @Test
-    fun testManualOutParameterBinding_String() {
-        val inst = Beyond_NET_Sample_Source_OutParameterTests()
-        val instPtr = inst.getHandleOrNull()
-
-        val retOutRef = PointerByReference()
-
-        val __exceptionC = PointerByReference()
-
-        CAPI.Beyond_NET_Sample_Source_OutParameterTests_Return_String_Abc_NonOptional(instPtr, retOutRef, __exceptionC)
-
-        val __exceptionCHandle = __exceptionC.value
-
-        if (__exceptionCHandle != null) {
-            throw System_Exception(__exceptionCHandle).toKException()
-        }
-
-        val retOutPtr = retOutRef.value
-        val retOut = System_String(retOutPtr)
-
-        assertEquals(retOut.toKString(), "Abc")
+        assertEquals(valueRef.value, expectedValue)
     }
 }
