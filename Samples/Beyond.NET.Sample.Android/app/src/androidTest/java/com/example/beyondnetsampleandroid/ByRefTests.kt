@@ -107,7 +107,7 @@ class ByRefTests {
 
         val origValue = System_DateTime.minValue_get()
         val expectedValue = System_DateTime.maxValue_get()
-        val valueRef = ObjectRef(origValue)
+        val valueRef = origValue.toRef()
 
         inst.return_DateTime_MaxValue_NonOptional(valueRef)
 
@@ -120,7 +120,7 @@ class ByRefTests {
 
         val origValue = System_DateTime.minValue_get()
         val expectedValue = System_DateTime.maxValue_get()
-        val valueRef = ObjectRef<System_DateTime?>(origValue)
+        val valueRef = origValue.toOptionalRef()
 
         inst.return_DateTime_MaxValue_Optional(valueRef)
 
@@ -133,7 +133,7 @@ class ByRefTests {
 
         val origValue = System_DateTime.minValue_get()
         val expectedValue: System_DateTime? = null
-        val valueRef = ObjectRef<System_DateTime?>(origValue)
+        val valueRef = origValue.toOptionalRef()
 
         inst.return_DateTime_Null(valueRef)
 
@@ -146,7 +146,7 @@ class ByRefTests {
 
         val origValue = System_String.empty_get()
         val expectedValue = "Abc".toDotNETString()
-        val valueRef = ObjectRef(origValue)
+        val valueRef = origValue.toRef()
 
         inst.return_String_Abc_NonOptional(valueRef)
 
@@ -159,7 +159,7 @@ class ByRefTests {
 
         val origValue: System_String? = null
         val expectedValue = "Abc".toDotNETString()
-        val valueRef = ObjectRef(origValue)
+        val valueRef = origValue.toOptionalRef()
 
         inst.return_String_Abc_Optional(valueRef)
 
@@ -172,7 +172,7 @@ class ByRefTests {
 
         val origValue = System_String.empty_get()
         val expectedValue: System_String? = null
-        val valueRef = ObjectRef<System_String?>(origValue)
+        val valueRef = origValue.toOptionalRef()
 
         inst.return_String_Null(valueRef)
 
@@ -185,7 +185,7 @@ class ByRefTests {
 
         val origValue: System_Collections_IEnumerable = System_String.empty_get()
         val expectedValue = "Abc".toDotNETString()
-        val valueRef = ObjectRef(origValue)
+        val valueRef = origValue.toRef()
 
         inst.return_IEnumerable_String_Abc_NonOptional(valueRef)
 
@@ -198,7 +198,7 @@ class ByRefTests {
 
         val origValue: System_Collections_IEnumerable = System_String.empty_get()
         val expectedValue = "Abc".toDotNETString()
-        val valueRef = ObjectRef<System_Collections_IEnumerable?>(origValue)
+        val valueRef = origValue.toOptionalRef()
 
         inst.return_IEnumerable_String_Abc_Optional(valueRef)
 
@@ -211,7 +211,7 @@ class ByRefTests {
 
         val origValue: System_Collections_IEnumerable = System_String.empty_get()
         val expectedValue: System_Collections_IEnumerable? = null
-        val valueRef = ObjectRef<System_Collections_IEnumerable?>(origValue)
+        val valueRef = origValue.toOptionalRef()
 
         inst.return_IEnumerable_Null(valueRef)
 

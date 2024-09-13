@@ -238,10 +238,13 @@ public class ObjectRef<T>(var value: T): IRef where T: IDNObject? {
     }
 }
 
-// TODO: Maybe there's a way to express this using Kotlin generics. If not, we can generate a toRef method for every .NET type to make it type-safe.
-// fun IDNObject.toRef(): IRef {
-//     return ObjectRef(this)
-// }
+inline fun <reified T> T.toRef(): ObjectRef<T> where T: IDNObject? {
+    return ObjectRef(this)
+}
+
+inline fun <reified T> T?.toOptionalRef(): ObjectRef<T?> where T: IDNObject? {
+    return ObjectRef(this)
+}
 
 public class BooleanRef(var value: Boolean): IRef {
     override fun toJNARef(): BooleanByReference {
