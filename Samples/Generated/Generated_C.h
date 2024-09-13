@@ -1,5 +1,5 @@
 // Number of generated types: 1409
-// Number of generated members: 6134
+// Number of generated members: 6135
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -44842,6 +44842,14 @@ Beyond_NET_Sample_Person_t _Nonnull /* Beyond.NET.Sample.Person */
 Beyond_NET_Sample_Person_ChildAt(
 	Beyond_NET_Sample_Person_t _Nullable /* Beyond.NET.Sample.Person */ self,
 	int32_t /* System.Int32 */ index,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+Beyond_NET_Sample_Person_TryGetChildAt(
+	Beyond_NET_Sample_Person_t _Nullable /* Beyond.NET.Sample.Person */ self,
+	int32_t /* System.Int32 */ index,
+	Beyond_NET_Sample_Person_t _Nullable* _Nullable /* Beyond.NET.Sample.Person */ child,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
