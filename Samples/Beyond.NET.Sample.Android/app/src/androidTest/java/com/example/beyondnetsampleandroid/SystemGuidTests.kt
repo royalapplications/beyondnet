@@ -27,6 +27,25 @@ class SystemGuidTests {
     }
 
     @Test
+    fun testSystemGuidTryParse() {
+        val inputUUID = UUID.randomUUID()
+        val inputUUIDStr = inputUUID.toString()
+        val inputUUIDStrDN = inputUUIDStr.toDotNETString()
+
+        val guidRef = ObjectRef(System_Guid.empty_get())
+        val result = System_Guid.tryParse(inputUUIDStrDN, guidRef)
+
+        assertTrue(result)
+
+        val guid = guidRef.value
+
+        val guidStrDN = guid.dnToString()
+        val guidStr = guidStrDN.toKString()
+
+        assertEquals(inputUUIDStr.lowercase(), guidStr.lowercase())
+    }
+
+    @Test
     fun testComparingSystemGuids() {
         val emptyGuid = System_Guid.empty_get()
         val emptyGuidWithCtor = System_Guid()

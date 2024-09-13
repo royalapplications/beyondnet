@@ -115,6 +115,32 @@ class ByRefTests {
     }
 
     @Test
+    fun testOptionalStruct() {
+        val inst = Beyond_NET_Sample_Source_OutParameterTests()
+
+        val origValue = System_DateTime.minValue_get()
+        val expectedValue = System_DateTime.maxValue_get()
+        val valueRef = ObjectRef<System_DateTime?>(origValue)
+
+        inst.return_DateTime_MaxValue_Optional(valueRef)
+
+        assertEquals(valueRef.value, expectedValue)
+    }
+
+    @Test
+    fun testOptionalStructReturningNull() {
+        val inst = Beyond_NET_Sample_Source_OutParameterTests()
+
+        val origValue = System_DateTime.minValue_get()
+        val expectedValue: System_DateTime? = null
+        val valueRef = ObjectRef<System_DateTime?>(origValue)
+
+        inst.return_DateTime_Null(valueRef)
+
+        assertEquals(valueRef.value, expectedValue)
+    }
+
+    @Test
     fun testNonOptionalClass() {
         val inst = Beyond_NET_Sample_Source_OutParameterTests()
 
@@ -151,5 +177,44 @@ class ByRefTests {
         inst.return_String_Null(valueRef)
 
         assertEquals(valueRef.value, expectedValue)
+    }
+
+    @Test
+    fun testNonOptionalInterface() {
+        val inst = Beyond_NET_Sample_Source_OutParameterTests()
+
+        val origValue: System_Collections_IEnumerable = System_String.empty_get()
+        val expectedValue = "Abc".toDotNETString()
+        val valueRef = ObjectRef(origValue)
+
+        inst.return_IEnumerable_String_Abc_NonOptional(valueRef)
+
+        assertEquals(valueRef.value.castTo(System_String.typeOf()), expectedValue)
+    }
+
+    @Test
+    fun testOptionalInterface() {
+        val inst = Beyond_NET_Sample_Source_OutParameterTests()
+
+        val origValue: System_Collections_IEnumerable = System_String.empty_get()
+        val expectedValue = "Abc".toDotNETString()
+        val valueRef = ObjectRef<System_Collections_IEnumerable?>(origValue)
+
+        inst.return_IEnumerable_String_Abc_Optional(valueRef)
+
+        assertEquals(valueRef.value?.castTo(System_String.typeOf()), expectedValue)
+    }
+
+    @Test
+    fun testOptionalInterfaceReturningNull() {
+        val inst = Beyond_NET_Sample_Source_OutParameterTests()
+
+        val origValue: System_Collections_IEnumerable = System_String.empty_get()
+        val expectedValue: System_Collections_IEnumerable? = null
+        val valueRef = ObjectRef<System_Collections_IEnumerable?>(origValue)
+
+        inst.return_IEnumerable_Null(valueRef)
+
+        assertEquals(valueRef.value?.castTo(System_String.typeOf()), expectedValue)
     }
 }

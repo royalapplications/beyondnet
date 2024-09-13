@@ -653,7 +653,9 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
         // TODO: Out/by ref value type parameters are currently not supported
         foreach (var parameter in parameters) {
-            if (parameter.ParameterType.IsGenericInAnyWay(true)) {
+            var parameterType = parameter.ParameterType;
+            
+            if (parameterType.IsGenericInAnyWay(true)) {
                 generatedName = string.Empty;
                 
                 return $"// TODO: Method with generic parameter ({cMember.GetGeneratedName(CodeLanguage.C)})";
@@ -661,27 +663,34 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
             var isByRefParameter = parameter.IsOut ||
                                    parameter.IsIn ||
-                                   parameter.ParameterType.IsByRef ||
-                                   parameter.ParameterType.IsByRefLike ||
-                                   parameter.ParameterType.IsByRefValueType(out _); 
+                                   parameterType.IsByRef ||
+                                   parameterType.IsByRefLike ||
+                                   parameterType.IsByRefValueType(out _); 
             
-            // if (isByRefParameter) {
-            //     generatedName = string.Empty;
-            //     
-            //     return $"// TODO: Method with out or in or by ref type parameter ({cMember.GetGeneratedName(CodeLanguage.C)})";
-            // }
-            
-            if (isByRefParameter &&
-                (
-                    parameter.ParameterType.GetNonByRefType().IsEnum ||
-                    parameter.ParameterType.GetNonByRefType().IsPointer ||
-                    parameter.ParameterType.GetNonByRefType() == typeof(IntPtr) ||
-                    parameter.ParameterType.GetNonByRefType() == typeof(UIntPtr) ||
-                    parameter.ParameterType.GetNonByRefType().IsGenericInAnyWay(true) // TODO: This also removes optional structs
-                )) {
-                generatedName = string.Empty;
+            if (isByRefParameter) {
+                var nonByRefType = parameterType.GetNonByRefType();
                 
-                return $"// TODO: Method with out or in or by ref enum/IntPtr/UIntPtr or generic type parameter ({cMember.GetGeneratedName(CodeLanguage.C)})";
+                if (nonByRefType.IsEnum ||
+                    nonByRefType.IsPointer ||
+                    nonByRefType == typeof(IntPtr) ||
+                    nonByRefType == typeof(UIntPtr)) {
+                    generatedName = string.Empty;
+                    
+                    return $"// TODO: Method with out or in or by ref enum/IntPtr/UIntPtr/Pointer type parameter ({cMember.GetGeneratedName(CodeLanguage.C)})";
+                }
+                
+                bool isNullableValueType = nonByRefType.IsNullableValueType(out Type? nullableValueType);
+
+                // Only nullable structs, not primitives or enums are currently supported
+                bool isNullableStruct = isNullableValueType &&
+                                        (nullableValueType?.IsStruct() ?? false);
+
+                if (nonByRefType.IsGenericInAnyWay(true) &&
+                    !isNullableStruct) {
+                    generatedName = string.Empty;
+                    
+                    return $"// TODO: Method with out or in or by ref generic type parameter ({cMember.GetGeneratedName(CodeLanguage.C)})";
+                }
             }
         }
         #endregion TODO: Unsupported Stuff
