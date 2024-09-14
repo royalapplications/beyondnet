@@ -816,29 +816,36 @@ public val value: {{underlyingTypeName}}
     #region Type Extensions
     public string WriteTypeExtensionMethods(
         Type extendedType,
+        State state,
+        KotlinSyntaxWriterConfiguration configuration,
         List<GeneratedMember> generatedMembers
     )
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
 
-        string? codeForOptional;
+        // TODO: Make optional extension methods work
+        string? codeForOptional = null;
         
-        if (!extendedType.IsEnum &&
+        /* if (!extendedType.IsEnum &&
             !extendedType.IsStruct()) {
             codeForOptional = GetTypeExtensionsCode(
                 extendedType,
                 true,
                 generatedMembers,
+                state,
+                configuration,
                 typeDescriptorRegistry
             );
         } else {
             codeForOptional = null;
-        }
+        } */
             
         string codeForNonOptional = GetTypeExtensionsCode(
             extendedType,
             false,
             generatedMembers,
+            state,
+            configuration,
             typeDescriptorRegistry
         );
 
@@ -860,12 +867,20 @@ public val value: {{underlyingTypeName}}
         Type extendedType,
         bool isExtendedTypeOptional,
         List<GeneratedMember> generatedMembers,
+        State state,
+        KotlinSyntaxWriterConfiguration configuration,
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
         if (generatedMembers.Count <= 0) {
             return string.Empty;
         }
+
+        configuration.ExtensionMethodKind = isExtendedTypeOptional
+            ? KotlinSyntaxWriterConfiguration.ExtensionMethodKinds.Optional
+            : KotlinSyntaxWriterConfiguration.ExtensionMethodKinds.NonOptional;
+
+        configuration.ExtensionMethodType = extendedType;
         
         TypeDescriptor extendedTypeDescriptor = extendedType.GetTypeDescriptor(typeDescriptorRegistry);
         string extendedTypeKotlinName = extendedTypeDescriptor.GetTypeName(CodeLanguage.Kotlin, false);
@@ -877,7 +892,31 @@ public val value: {{underlyingTypeName}}
         KotlinCodeBuilder sbMembers = new();
         
         foreach (GeneratedMember kotlinGeneratedMember in generatedMembers) {
+            var methodInfo = kotlinGeneratedMember.Member as MethodInfo;
+
+            if (methodInfo is null) {
+                continue;
+            }
+            
             var extendedTypeName = $"{extendedTypeKotlinName}{extendedTypeOptionality}";
+            
+            var methodSyntaxWriter = GetSyntaxWriter(
+                kotlinGeneratedMember.MemberKind,
+                MemberTypes.Method
+            ) as IMethodSyntaxWriter;
+
+            if (methodSyntaxWriter is null) {
+                continue;
+            }
+
+            var extensionMethodCode = methodSyntaxWriter.Write(
+                methodInfo,
+                state,
+                configuration
+            );
+
+            sbMembers.AppendLine(extensionMethodCode);
+            sbMembers.AppendLine();
             
             // TODO
             // string extensionMethod = KotlinMethodSyntaxWriter.WriteExtensionMethod(
@@ -889,7 +928,7 @@ public val value: {{underlyingTypeName}}
             // sbMembers.AppendLine(extensionMethod);
             // sbMembers.AppendLine();
 
-            sbMembers.AppendLine($"// TODO: Extension method {extendedTypeName}.{kotlinGeneratedMember.GetGeneratedName(CodeLanguage.Kotlin)}");
+            // sbMembers.AppendLine($"// TODO: Extension method {extendedTypeName}.{kotlinGeneratedMember.GetGeneratedName(CodeLanguage.Kotlin)}");
         }
         
         // string code = Builder.Extension($"{extendedTypeKotlinName}{extendedTypeOptionality}")

@@ -250,17 +250,23 @@ object {{jnaClassName}} {
             }
         }
 
-        foreach (var kvp in typeExtensionMembers) {
-            Type extendedType = kvp.Key;
-            List<GeneratedMember> members = kvp.Value;
-        
-            string code = typeSyntaxWriter.WriteTypeExtensionMethods(
-                extendedType,
-                members
-            );
-        
-            // TODO: Shouldn't this be in it's own section? Like in Swift?
-            section.Code.AppendLine(code);
+        if (syntaxWriterConfiguration.GenerationPhase == KotlinSyntaxWriterConfiguration.GenerationPhases.KotlinBindings) {
+            foreach (var kvp in typeExtensionMembers) {
+                Type extendedType = kvp.Key;
+                List<GeneratedMember> members = kvp.Value;
+                
+                Syntax.State state = new(CSharpUnmanagedResult, CResult);
+            
+                string code = typeSyntaxWriter.WriteTypeExtensionMethods(
+                    extendedType,
+                    state,
+                    syntaxWriterConfiguration,
+                    members
+                );
+            
+                // TODO: Shouldn't this be in it's own section? Like in Swift?
+                section.Code.AppendLine(code);
+            }
         }
     }
 

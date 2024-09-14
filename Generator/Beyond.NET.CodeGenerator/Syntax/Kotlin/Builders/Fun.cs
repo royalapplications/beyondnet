@@ -11,6 +11,7 @@ public struct Fun
     private bool m_external = false;
     private bool m_override = false;
     private bool m_operator = false;
+    private string? m_extendedTypeName = null;
     private string? m_parameters = null;
     private string? m_returnTypeName = null;
     private string? m_implementation = null;
@@ -81,6 +82,15 @@ public struct Fun
     }
     #endregion
 
+    #region ExtendedTypeName
+    public Fun ExtendedTypeName(string? extendedTypeName = null)
+    {
+        m_extendedTypeName = extendedTypeName;
+
+        return this;
+    }
+    #endregion ExtendedTypeName
+
     #region Parameters
     public Fun Parameters(string? parameters = null)
     {
@@ -126,6 +136,7 @@ public struct Fun
             m_external,
             m_override,
             m_operator,
+            m_extendedTypeName,
             m_parameters ?? string.Empty,
             m_returnTypeName,
             m_attributes,

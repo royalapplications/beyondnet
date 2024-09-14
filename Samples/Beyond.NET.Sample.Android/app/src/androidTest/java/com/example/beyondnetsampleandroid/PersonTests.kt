@@ -20,10 +20,18 @@ class PersonTests {
         assertEquals(johnDoe.niceLevel_get(), Beyond_NET_Sample_NiceLevels.Nice)
         assertEquals(johnDoe.numberOfChildren_get(), 0)
 
+        johnDoe.increaseAge(2)
+
+        assertEquals(johnDoe.age_get(), 52)
+
         val address = Beyond_NET_Sample_Address("Homestreet".toDotNETString(), "Hometwon".toDotNETString())
         johnDoe.address_set(address)
 
-        assertEquals(johnDoe.address_get(), address)
+        val addressRetRef = ObjectRef<Beyond_NET_Sample_Address?>(null)
+        val getAddressSuccess = johnDoe.tryGetAddress(addressRetRef)
+
+        assertTrue(getAddressSuccess)
+        assertEquals(addressRetRef.value, address)
 
         val babyJohn = Beyond_NET_Sample_Person("John".toDotNETString(), "Doe Junior".toDotNETString(), 0)
         johnDoe.addChild(babyJohn)

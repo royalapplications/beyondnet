@@ -1037,6 +1037,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             combinedGenericArguments,
             false,
             false,
+            syntaxWriterConfiguration,
             typeDescriptorRegistry
         );
 
@@ -1117,6 +1118,23 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             // TODO: Static?
             // TODO: Throws?
             
+            var extensionMethodType = syntaxWriterConfiguration.ExtensionMethodType;
+            string? extensionMethodTypeName;
+
+            if (extensionMethodType is not null) {
+                var kind = syntaxWriterConfiguration.ExtensionMethodKind;
+                var descr = extensionMethodType.GetTypeDescriptor(typeDescriptorRegistry);
+                var name = descr.GetTypeName(CodeLanguage.Kotlin, false);
+
+                if (kind == KotlinSyntaxWriterConfiguration.ExtensionMethodKinds.Optional) {
+                    name += "?";
+                }
+
+                extensionMethodTypeName = name;
+            }else {
+                extensionMethodTypeName = null;
+            }
+            
             declaration = Builder.Fun(methodNameKotlin)
                 .Visibility(memberVisibility)
                 // .TypeAttachmentKind(isStaticMethod 
@@ -1125,6 +1143,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 .Override(treatAsOverridden)
                 .Parameters(methodSignatureParameters)
                 // .Throws(mayThrow)
+                .ExtendedTypeName(extensionMethodTypeName)
                 .ReturnTypeName(!returnOrSetterOrEventHandlerType.IsVoid()
                     ? kotlinReturnOrSetterTypeNameWithComment
                     : null)
@@ -1199,7 +1218,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         IEnumerable<ParameterInfo> parameters,
         IEnumerable<Type> genericTypeArguments,
         IEnumerable<Type> genericMethodArguments,
-        ISyntaxWriterConfiguration? syntaxWriterConfiguration,
+        KotlinSyntaxWriterConfiguration? syntaxWriterConfiguration,
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
@@ -1239,6 +1258,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 isGeneric,
                 genericTypeArguments,
                 genericMethodArguments,
+                syntaxWriterConfiguration,
                 typeDescriptorRegistry,
                 out List<string> convertedParameterNames,
                 out List<string> convertedGenericTypeArgumentNames,
@@ -1480,6 +1500,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         IEnumerable<Type> genericArguments,
         bool onlyWriteParameterNames,
         bool writeModifiersForInvocation,
+        KotlinSyntaxWriterConfiguration? syntaxWriterConfiguration,
         TypeDescriptorRegistry typeDescriptorRegistry
     )
     {
@@ -1510,8 +1531,19 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 parameterList.Add(parameterString);
             }
         }
+
+        var isExtensionMethod = syntaxWriterConfiguration?.IsExtensionMethod ?? false;
+        var firstParameter = true;
         
         foreach (var parameter in parameters) {
+            if (firstParameter) {
+                firstParameter = false;
+            
+                if (isExtensionMethod) {
+                    continue;
+                }
+            }
+            
             bool isOutParameter = parameter.IsOut;
             bool isInParameter = parameter.IsIn;
             
@@ -1575,8 +1607,9 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 isInParameter
             );
 
-            string? parameterName = parameter.Name
-                ?.EscapedKotlinName();
+            string? parameterName = parameter.Name;
+
+            parameterName = parameterName?.EscapedKotlinName();
 
             if (parameterName is null) {
                 throw new Exception("Parameter without a name");
@@ -1641,6 +1674,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         bool isGeneric,
         IEnumerable<Type> genericTypeArguments,
         IEnumerable<Type> genericMethodArguments,
+        KotlinSyntaxWriterConfiguration? syntaxWriterConfiguration,
         TypeDescriptorRegistry typeDescriptorRegistry,
         out List<string> convertedParameterNames,
         out List<string> convertedGenericTypeArgumentNames,
@@ -1712,10 +1746,24 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 convertedGenericMethodArgumentNames.Add(convertedGenericArgumentName);
             }
         }
+        
+        var isExtensionMethod = syntaxWriterConfiguration?.IsExtensionMethod ?? false;
+        var isFirstParameter = true;
 
         foreach (var parameter in parameters) {
-            string? parameterName = parameter.Name
-                ?.EscapedKotlinName();
+            string extensionMethodTargetParameter = string.Empty;
+            
+            if (isFirstParameter) {
+                isFirstParameter = false;
+
+                if (isExtensionMethod) {
+                    extensionMethodTargetParameter = "this";
+                }
+            }
+            
+            string? parameterName = !string.IsNullOrEmpty(extensionMethodTargetParameter) 
+                ? extensionMethodTargetParameter 
+                : parameter.Name?.EscapedKotlinName();
             
             if (parameterName is null) {
                 throw new Exception("Parameter without a name");

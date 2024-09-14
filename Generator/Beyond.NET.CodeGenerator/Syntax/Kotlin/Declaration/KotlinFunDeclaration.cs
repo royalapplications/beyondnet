@@ -9,6 +9,7 @@ public struct KotlinFunDeclaration
     public bool IsExternal { get; }
     public bool IsOverride { get; }
     public bool IsOperator { get; }
+    public string? ExtendedTypeName { get; }
     public string Parameters { get; }
     public string? ReturnTypeName { get; }
     public HashSet<string>? Attributes { get; }
@@ -20,6 +21,7 @@ public struct KotlinFunDeclaration
         bool isExternal,
         bool isOverride,
         bool isOperator,
+        string? extendedTypeName,
         string parameters,
         string? returnTypeName,
         HashSet<string>? attributes,
@@ -34,6 +36,11 @@ public struct KotlinFunDeclaration
         IsExternal = isExternal;
         IsOverride = isOverride;
         IsOperator = isOperator;
+        
+        ExtendedTypeName = !string.IsNullOrEmpty(extendedTypeName)
+            ? extendedTypeName
+            : null;
+        
         Parameters = parameters;
 
         ReturnTypeName = !string.IsNullOrEmpty(returnTypeName)
@@ -65,6 +72,10 @@ public struct KotlinFunDeclaration
             ? "operator"
             : string.Empty;
 
+        string extendedTypeNameString = !string.IsNullOrEmpty(ExtendedTypeName)
+            ? $"{ExtendedTypeName}."
+            : string.Empty;
+        
         string returnString = !string.IsNullOrEmpty(ReturnTypeName)
             ? $": {ReturnTypeName}"
             : string.Empty;
@@ -84,7 +95,7 @@ public struct KotlinFunDeclaration
             externalString,
             overrideString,
             fun,
-            $"{Name}({Parameters})",
+            $"{extendedTypeNameString}{Name}({Parameters})",
             returnString
         ];
 
