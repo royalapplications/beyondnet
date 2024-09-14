@@ -181,7 +181,7 @@ object {{jnaClassName}} {
         SourceCodeSection section,
         Dictionary<Type, string> unsupportedTypes,
         IEnumerable<Type> types,
-        ITypeSyntaxWriter typeSyntaxWriter,
+        KotlinTypeSyntaxWriter typeSyntaxWriter,
         Result result
     )
     {
@@ -250,18 +250,18 @@ object {{jnaClassName}} {
             }
         }
 
-        // TODO
-        // foreach (var kvp in typeExtensionMembers) {
-        //     Type extendedType = kvp.Key;
-        //     List<GeneratedMember> members = kvp.Value;
-        //
-        //     string code = typeSyntaxWriter.WriteTypeExtensionMethods(
-        //         extendedType,
-        //         members
-        //     );
-        //
-        //     extensionsSection.Code.AppendLine(code);
-        // }
+        foreach (var kvp in typeExtensionMembers) {
+            Type extendedType = kvp.Key;
+            List<GeneratedMember> members = kvp.Value;
+        
+            string code = typeSyntaxWriter.WriteTypeExtensionMethods(
+                extendedType,
+                members
+            );
+        
+            // TODO: Shouldn't this be in it's own section? Like in Swift?
+            section.Code.AppendLine(code);
+        }
     }
 
     private string GetHeaderCode(string package)

@@ -812,6 +812,93 @@ public val value: {{underlyingTypeName}}
         return sb.ToString();
     }
     #endregion Kotlin
+    
+    #region Type Extensions
+    public string WriteTypeExtensionMethods(
+        Type extendedType,
+        List<GeneratedMember> generatedMembers
+    )
+    {
+        TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
+
+        string? codeForOptional;
+        
+        if (!extendedType.IsEnum &&
+            !extendedType.IsStruct()) {
+            codeForOptional = GetTypeExtensionsCode(
+                extendedType,
+                true,
+                generatedMembers,
+                typeDescriptorRegistry
+            );
+        } else {
+            codeForOptional = null;
+        }
+            
+        string codeForNonOptional = GetTypeExtensionsCode(
+            extendedType,
+            false,
+            generatedMembers,
+            typeDescriptorRegistry
+        );
+
+        KotlinCodeBuilder sb = new();
+
+        if (codeForOptional is not null) {
+            sb.AppendLine(codeForOptional);
+            sb.AppendLine();
+        }
+        
+        sb.AppendLine(codeForNonOptional);
+
+        string code = sb.ToString();
+
+        return code;
+    }
+    
+    private string GetTypeExtensionsCode(
+        Type extendedType,
+        bool isExtendedTypeOptional,
+        List<GeneratedMember> generatedMembers,
+        TypeDescriptorRegistry typeDescriptorRegistry
+    )
+    {
+        if (generatedMembers.Count <= 0) {
+            return string.Empty;
+        }
+        
+        TypeDescriptor extendedTypeDescriptor = extendedType.GetTypeDescriptor(typeDescriptorRegistry);
+        string extendedTypeKotlinName = extendedTypeDescriptor.GetTypeName(CodeLanguage.Kotlin, false);
+
+        string extendedTypeOptionality = isExtendedTypeOptional
+            ? "?"
+            : string.Empty;
+
+        KotlinCodeBuilder sbMembers = new();
+        
+        foreach (GeneratedMember kotlinGeneratedMember in generatedMembers) {
+            var extendedTypeName = $"{extendedTypeKotlinName}{extendedTypeOptionality}";
+            
+            // TODO
+            // string extensionMethod = KotlinMethodSyntaxWriter.WriteExtensionMethod(
+            //     kotlinGeneratedMember,
+            //     isExtendedTypeOptional,
+            //     typeDescriptorRegistry
+            // );
+            //
+            // sbMembers.AppendLine(extensionMethod);
+            // sbMembers.AppendLine();
+
+            sbMembers.AppendLine($"// TODO: Extension method {extendedTypeName}.{kotlinGeneratedMember.GetGeneratedName(CodeLanguage.Kotlin)}");
+        }
+        
+        // string code = Builder.Extension($"{extendedTypeKotlinName}{extendedTypeOptionality}")
+        //     .Implementation(sbMembers.ToString())
+        //     .ToString();
+        
+        return sbMembers.ToString();
+    }
+    #endregion Type Extensions
 
     #region Syntax Writers
     private IKotlinSyntaxWriter? GetSyntaxWriter(
