@@ -53,21 +53,6 @@
     </When>
   </Choose>
 
-  <!-- Culture stuff for iOS Support -->
-  <Choose>
-    <When Condition="$(RuntimeIdentifier.Contains('ios'))">
-      <!-- If globalization is not required, you can enable this instead of providing an icudt.dat file on iOS -->
-      <!-- <PropertyGroup>
-        <InvariantGlobalization>true</InvariantGlobalization>
-      </PropertyGroup> -->
-
-      <!-- When this is set, an icudt.dat must be placed in the resulting bundle -->
-      <ItemGroup>
-        <RuntimeHostConfigurationOption Include="ICU_DAT_FILE_PATH" Value="icudt.dat" />
-      </ItemGroup>
-    </When>
-  </Choose>
-
   <Choose>
     <When Condition="$(RuntimeIdentifier.Contains('ios'))">
       <ItemGroup>

@@ -51,8 +51,6 @@ public class NativeCsProj
         // TODO: Disabled for now to get faster build times
         const string nullable = "disable";
         
-        const string icudtFileName = "icudt.dat";
-
         string iOSSDKPath = AppleSettings?.iOSSDKPath ?? string.Empty;
         string iOSSimulatorSDKPath = AppleSettings?.iOSSimulatorSDKPath ?? string.Empty;
 
@@ -101,7 +99,6 @@ public class NativeCsProj
             .Replace(TOKEN_SWIFT_LIBRARY_FILE_PATH, swiftLibraryFilePath)
             .Replace(TOKEN_SYMBOLS_FILE_PATH, symbolsFilePath)
             .Replace(TOKEN_MODULE_MAP_FILE_PATH, moduleMapFilePath)
-            .Replace(TOKEN_ICUDT_FILE_PATH, icudtFileName)
             .Replace(TOKEN_IOS_SDK_PATH, iOSSDKPath)
             .Replace(TOKEN_IOS_SIMULATOR_SDK_PATH, iOSSimulatorSDKPath)
           ;
@@ -124,7 +121,6 @@ public class NativeCsProj
     private const string TOKEN_SWIFT_LIBRARY_FILE_PATH = $"{TOKEN}SwiftLibraryFilePath{TOKEN}";
     private const string TOKEN_SYMBOLS_FILE_PATH = $"{TOKEN}SymbolsFilePath{TOKEN}";
     private const string TOKEN_MODULE_MAP_FILE_PATH = $"{TOKEN}ModuleMapFilePath{TOKEN}";
-    private const string TOKEN_ICUDT_FILE_PATH = $"{TOKEN}IcudtFilePath{TOKEN}";
     
     private const string TOKEN_IOS_SDK_PATH = $"{TOKEN}iOSSDKFilePath{TOKEN}";
     private const string TOKEN_IOS_SIMULATOR_SDK_PATH = $"{TOKEN}iOSSimulatorSDKFilePath{TOKEN}";
@@ -183,21 +179,6 @@ public class NativeCsProj
     <When Condition="$(RuntimeIdentifier.Contains('osx'))">
       <ItemGroup>
         <LinkerArg Include="-mmacosx-version-min=$(MacOSMinVersion)" />
-      </ItemGroup>
-    </When>
-  </Choose>
-
-  <!-- Culture stuff for iOS Support -->
-  <Choose>
-    <When Condition="$(RuntimeIdentifier.Contains('ios'))">
-      <!-- If globalization is not required, you can enable this instead of providing an icudt.dat file on iOS -->
-      <!-- <PropertyGroup>
-        <InvariantGlobalization>true</InvariantGlobalization>
-      </PropertyGroup> -->
-
-      <!-- When this is set, an icudt.dat must be placed in the resulting bundle -->
-      <ItemGroup>
-        <RuntimeHostConfigurationOption Include="ICU_DAT_FILE_PATH" Value="{TOKEN_ICUDT_FILE_PATH}" />
       </ItemGroup>
     </When>
   </Choose>

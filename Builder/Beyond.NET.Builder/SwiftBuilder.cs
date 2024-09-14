@@ -481,11 +481,6 @@ public class SwiftBuilder
             string objectOutputFilePath = Path.Combine(outputPath, $"{outputProductName}.o");
             string libraryOutputFilePath = Path.Combine(outputPath, $"{outputProductName}.a");
 
-            string libraryInitFileName = $"libraryinit_{outputProductName}";
-
-            string libraryInitCFilePath = Path.Combine(workingDirectory, $"{libraryInitFileName}.c");
-            string libraryInitObjectOutputFilePath = Path.Combine(outputPath, $"{libraryInitFileName}.o");
-
             string moduleInterfaceOutputFilePath = Path.Combine(outputPath, $"{targetDouble}.{Apple.XCRun.SwiftC.FileExtensions.SwiftInterface}");
             string moduleOutputFilePath = Path.Combine(outputPath, $"{targetDouble}.{Apple.XCRun.SwiftC.FileExtensions.SwiftModule}");
 
@@ -536,41 +531,11 @@ public class SwiftBuilder
                 swiftABIOutputFilePath = null;
             }
             
-            Logger.LogDebug("Generating Library Init C File Contents");
-
-            string libraryInitCFileContents = GetLibraryInitCFileContents(
-                cHeaderFileName,
-                bundleIdentifier, 
-                Apple.Icu.Icudt.FILE_NAME,
-                Apple.Icu.Icudt.FILE_TYPE
-            );
+            Logger.LogDebug($"Creating static library at \"{libraryOutputFilePath}\" using compiled Swift object file at \"{objectOutputFilePath}\"");
             
-            Logger.LogDebug($"Writing Library Init C File to \"{libraryInitCFilePath}\"");
-            
-            File.WriteAllText(
-                libraryInitCFilePath,
-                libraryInitCFileContents
-            );
-            
-            Logger.LogDebug("Compiling Library Init C code");
-
-            string libraryInitClangStandardOutput = Apple.Clang.App.Compile(
-                workingDirectory,
-                targetTriple,
-                sdk,
-                true,
-                libraryInitCFilePath,
-                libraryInitObjectOutputFilePath
-            );
-            
-            Logger.LogDebug($"Merging compiled Swift object file at \"{objectOutputFilePath}\" and compiled C Library Init object file at \"{libraryInitObjectOutputFilePath}\" to static library at \"{libraryOutputFilePath}\"");
-
             string libToolStandardOutput = Apple.XCRun.Libtool.StaticMerge(
                 workingDirectory,
-                new [] {
-                    objectOutputFilePath,
-                    libraryInitObjectOutputFilePath
-                },
+                [ objectOutputFilePath ],
                 libraryOutputFilePath,
                 true // No warning for no symbols
             );
@@ -597,165 +562,4 @@ public class SwiftBuilder
             return result;
         }
     }
-
-    private static string GetLibraryInitCFileContents(
-        string generatedCHeaderFileName,
-        string bundleIdentifier,
-        string icuFileName,
-        string icuFileType
-    )
-    {
-        const string dnLibraryInitFuncName = "_DNLibraryInit";
-        
-        string extendedTemplate = LIBRARY_INIT_C_TEMPLATE
-            .Replace(TOKEN_LIBRARY_INIT_FUNC_NAME, dnLibraryInitFuncName)
-            .Replace(TOKEN_GENERATED_C_HEADER_FILE_NAME, generatedCHeaderFileName)
-            .Replace(TOKEN_BUNDLE_IDENTIFIER, bundleIdentifier)
-            .Replace(TOKEN_ICU_FILE_NAME, icuFileName)
-            .Replace(TOKEN_ICU_FILE_TYPE, icuFileType);
-
-        return extendedTemplate;
-    }
-    
-    private const string TOKEN = "$__BEYOND_TOKEN__$";
-
-    private const string TOKEN_LIBRARY_INIT_FUNC_NAME = $"{TOKEN}LibraryInitFuncName{TOKEN}";
-    private const string TOKEN_GENERATED_C_HEADER_FILE_NAME = $"{TOKEN}GeneratedCHeaderFileName{TOKEN}";
-    private const string TOKEN_BUNDLE_IDENTIFIER = $"{TOKEN}BundleIdentifier{TOKEN}";
-    private const string TOKEN_ICU_FILE_NAME = $"{TOKEN}IcuFileName{TOKEN}";
-    private const string TOKEN_ICU_FILE_TYPE = $"{TOKEN}IcuFileType{TOKEN}";
-
-    private static string LIBRARY_INIT_C_TEMPLATE = $$"""
-#import <CoreFoundation/CoreFoundation.h>
-#import <TargetConditionals.h>
-
-#import "{{TOKEN_GENERATED_C_HEADER_FILE_NAME}}"
-
-void {{TOKEN_LIBRARY_INIT_FUNC_NAME}}(void) {
-    const char* bundleIdentifier = "{{TOKEN_BUNDLE_IDENTIFIER}}";
-
-    printf("Initializing .NET-based library \"%s\"\n",
-        bundleIdentifier);
-
-#if TARGET_OS_IOS // iOS/iOS Simulator
-    const char* icuFileName = "{{TOKEN_ICU_FILE_NAME}}";
-    const char* icuFileType = "{{TOKEN_ICU_FILE_TYPE}}";
-
-    const char* appContextIcuDatFilePathKey = "ICU_DAT_FILE_PATH";
-    
-    const CFStringEncoding stringEncoding = kCFStringEncodingUTF8;
-    
-    CFStringRef bundleIdentifierCF = CFStringCreateWithCString(kCFAllocatorDefault,
-                                                               bundleIdentifier,
-                                                               stringEncoding);
-    
-    if (!bundleIdentifierCF) {
-        return;
-    }
-    
-    CFBundleRef bundle = CFBundleGetBundleWithIdentifier(bundleIdentifierCF);
-
-    CFRelease(bundleIdentifierCF); bundleIdentifierCF = NULL;
-    
-    if (!bundle) {
-        return;
-    }
-    
-    const char* resourceName = icuFileName;
-    CFStringRef resourceNameCF = CFStringCreateWithCString(kCFAllocatorDefault,
-                                                           resourceName,
-                                                           stringEncoding);
-
-    if (!resourceNameCF) {
-        return;
-    }
-    
-    const char* resourceType = icuFileType;
-    CFStringRef resourceTypeCF = CFStringCreateWithCString(kCFAllocatorDefault,
-                                                           resourceType,
-                                                           stringEncoding);
-
-    if (!resourceTypeCF) {
-        CFRelease(resourceName); resourceName = NULL;
-        
-        return;
-    }
-    
-    CFURLRef resourceURL = CFBundleCopyResourceURL(bundle,
-                                                   resourceNameCF,
-                                                   resourceTypeCF,
-                                                   NULL);
-
-    CFRelease(resourceNameCF); resourceNameCF = NULL;
-    CFRelease(resourceTypeCF); resourceTypeCF = NULL;
-    
-    if (!resourceURL) {
-        return;
-    }
-    
-    CFStringRef resourcePathCF = CFURLCopyFileSystemPath(resourceURL,
-                                                         kCFURLPOSIXPathStyle);
-    
-    CFRelease(resourceURL); resourceURL = NULL;
-    
-    if (!resourcePathCF) {
-        return;
-    }
-
-    CFIndex resourcePathLength = CFStringGetLength(resourcePathCF);
-    CFIndex resourcePathMaxSize = CFStringGetMaximumSizeForEncoding(resourcePathLength, stringEncoding) + 1;
-    char* resourcePath = (char *)malloc(resourcePathMaxSize);
-    
-    if (!resourcePath) {
-        CFRelease(resourcePathCF); resourcePathCF = NULL;
-        
-        return;
-    }
-
-    if (!CFStringGetCString(resourcePathCF,
-                            resourcePath,
-                            resourcePathMaxSize,
-                            stringEncoding)) {
-        free(resourcePath); resourcePath = NULL;
-        CFRelease(resourcePathCF); resourcePathCF = NULL;
-        
-        return;
-    }
-    
-    CFRelease(resourcePathCF); resourcePathCF = NULL;
-
-    System_String_t icuPathDN = DNStringFromC(resourcePath);
-
-    System_Exception_t ex = NULL;
-    System_String_t name = DNStringFromC(appContextIcuDatFilePathKey);
-
-    if (!name) {
-        free(resourcePath); resourcePath = NULL;
-        
-        return;
-    }
-    
-    printf("Setting AppContext key \"%s\" to \"%s\"\n",
-           appContextIcuDatFilePathKey,
-           resourcePath);
-    
-    free(resourcePath); resourcePath = NULL;
-    
-    System_AppContext_SetData(name,
-                              icuPathDN,
-                              &ex);
-    
-    System_String_Destroy(name);
-    System_String_Destroy(icuPathDN);
-
-    if (ex) {
-        printf("Error: Setting %s.%s path failed\n",
-               icuFileName,
-               icuFileType);
-    }
-#elif TARGET_OS_MAC && !TARGET_OS_IPHONE // macOS
-#else // Other platform
-#endif
-}
-""";
 }

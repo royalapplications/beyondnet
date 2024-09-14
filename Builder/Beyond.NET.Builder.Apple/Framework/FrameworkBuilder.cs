@@ -1,4 +1,3 @@
-using Beyond.NET.Builder.Apple.Icu;
 using Beyond.NET.Builder.Apple.XCRun.SwiftC;
 using Beyond.NET.Core;
 
@@ -96,9 +95,6 @@ public record FrameworkBuilder
 			newFrameworkLibraryID = $"@rpath/{bundleName}/{libraryName}";
         }
 
-        // Only relevant for iOS
-        string icudtFilePath = Path.Combine(outputBundlePath, Icudt.FULL_FILENAME);
-        
         Logger.LogDebug("Creating Framework Directory Structure");
         
         Directory.CreateDirectory(outputBundlePath);
@@ -114,13 +110,6 @@ public record FrameworkBuilder
 	        Directory.CreateSymbolicLink(resourcesLinkDirectoryPath, $"{versionsDirName}/{versionsCurrentDirName}/{resourcesDirName}");   
         } else { // iOS-like
 	        Directory.CreateDirectory(modulesDirectoryPath);
-        }
-
-        if (!BuildForMacOS) { // iOS-like
-	        Logger.LogDebug($"Copying \"{Icudt.FULL_FILENAME}\" to Framework");
-	        var icudtContent = Icudt.GetContent();
-	        
-	        File.WriteAllBytes(icudtFilePath, icudtContent);
         }
 
         Logger.LogDebug("Creating Framework Info.plist");
