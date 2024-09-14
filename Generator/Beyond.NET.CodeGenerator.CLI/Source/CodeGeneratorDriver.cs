@@ -59,6 +59,7 @@ internal class CodeGeneratorDriver
                 .ExpandTildeAndGetAbsolutePath();
 
             string? kotlinPackageName = Configuration.KotlinPackageName;
+            string? kotlinNativeLibraryName = Configuration.KotlinNativeLibraryName;
             
             bool emitUnsupported = Configuration.EmitUnsupported ?? false;
             bool generateTypeCheckedDestroyMethods = Configuration.GenerateTypeCheckedDestroyMethods ?? false;
@@ -313,6 +314,14 @@ internal class CodeGeneratorDriver
                 
                 kotlinPackageName = $"com.mycompany.{assemblyName.ToLower()}";
             }
+
+            if (string.IsNullOrEmpty(kotlinNativeLibraryName)) {
+                var fallback = "BeyondDotNETSampleNative";
+                
+                Logger.LogWarning($"Kotlin native library name is empty, using fallback \"{fallback}\" instead. This is very likely not what you want when targeting Kotlin!");
+                
+                kotlinNativeLibraryName = fallback;
+            }
             
             var kotlinResultObject = GenerateKotlinCode(
                 types,
@@ -321,7 +330,8 @@ internal class CodeGeneratorDriver
                 cResult,
                 emitUnsupported,
                 typeCollectorSettings,
-                kotlinPackageName
+                kotlinPackageName,
+                kotlinNativeLibraryName
             );
     
             var kotlinResult = kotlinResultObject.Result;
@@ -746,12 +756,13 @@ internal class CodeGeneratorDriver
         Result cResult,
         bool emitUnsupported,
         TypeCollectorSettings typeCollectorSettings,
-        string kotlinPackageName
+        string kotlinPackageName,
+        string kotlinNativeLibraryName
     )
     {
         SourceCodeWriter writer = new();
         
-        Generator.Kotlin.Settings settings = new(kotlinPackageName) {
+        Generator.Kotlin.Settings settings = new(kotlinPackageName, kotlinNativeLibraryName) {
             EmitUnsupported = emitUnsupported,
             TypeCollectorSettings = typeCollectorSettings
         };

@@ -14,6 +14,7 @@
 	"KotlinOutputPath": "Generated/Generated_Kotlin.kt",
 	
 	"KotlinPackageName": "com.example.beyondnetsampleandroid.dn",
+	"KotlinNativeLibraryName": "BeyondDotNETSampleNative",
 	
 	"EmitUnsupported": true,
 	"GenerateTypeCheckedDestroyMethods": false,

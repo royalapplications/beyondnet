@@ -49,6 +49,7 @@ public class KotlinCodeGenerator: ICodeGenerator
         SourceCodeSection footerSection = writer.AddSection("Footer");
 
         var package = Settings.KotlinPackageName;
+        var nativeLibraryName = Settings.KotlinNativeLibraryName;
         
         string header = GetHeaderCode(package);
         headerSection.Code.AppendLine(header);
@@ -92,14 +93,11 @@ public class KotlinCodeGenerator: ICodeGenerator
 
         const string jnaClassName = KotlinTypeSyntaxWriter.JNA_CLASS_NAME;
         
-        // TODO: Get libName from config!
-        var libName = "BeyondDotNETSampleNative";
-        
         var jnaStart = $$"""
 object {{jnaClassName}} {
     init {
-        val libName = "{{libName}}"
-        Native.register({{jnaClassName}}::class.java, libName)
+        val nativeLibName = "{{nativeLibraryName}}"
+        Native.register({{jnaClassName}}::class.java, nativeLibName)
     }
     
     external fun DNStringToC(systemString: Pointer /* System_String_t */): Pointer /* const char* */

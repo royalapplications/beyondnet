@@ -11,6 +11,7 @@ public record Configuration(
     string? KotlinOutputPath,
     
     string? KotlinPackageName,
+    string? KotlinNativeLibraryName,
     
     bool? EmitUnsupported,
     bool? GenerateTypeCheckedDestroyMethods,
