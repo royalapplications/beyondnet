@@ -11,6 +11,19 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class ByRefTests {
     @Test
+    fun testOutParameterPlaceholder() {
+        val inst = Beyond_NET_Sample_Source_OutParameterTests()
+
+        val origValue = DNOutParameter.createPlaceholder(::System_DateTime)
+        val expectedValue = System_DateTime.maxValue_get()
+        val valueRef = ObjectRef(origValue)
+
+        inst.return_DateTime_MaxValue_NonOptional(valueRef)
+
+        assertEquals(valueRef.value, expectedValue)
+    }
+
+    @Test
     fun testInt() {
         val inst = Beyond_NET_Sample_Source_OutParameterTests()
 
@@ -118,9 +131,8 @@ class ByRefTests {
     fun testOptionalStruct() {
         val inst = Beyond_NET_Sample_Source_OutParameterTests()
 
-        val origValue = System_DateTime.minValue_get()
         val expectedValue = System_DateTime.maxValue_get()
-        val valueRef = origValue.toOptionalRef()
+        val valueRef = ObjectRef<System_DateTime?>(null)
 
         inst.return_DateTime_MaxValue_Optional(valueRef)
 
@@ -131,9 +143,8 @@ class ByRefTests {
     fun testOptionalStructReturningNull() {
         val inst = Beyond_NET_Sample_Source_OutParameterTests()
 
-        val origValue = System_DateTime.minValue_get()
         val expectedValue: System_DateTime? = null
-        val valueRef = origValue.toOptionalRef()
+        val valueRef = ObjectRef<System_DateTime?>(null)
 
         inst.return_DateTime_Null(valueRef)
 
@@ -157,9 +168,8 @@ class ByRefTests {
     fun testOptionalClass() {
         val inst = Beyond_NET_Sample_Source_OutParameterTests()
 
-        val origValue: System_String? = null
         val expectedValue = "Abc".toDotNETString()
-        val valueRef = origValue.toOptionalRef()
+        val valueRef = ObjectRef<System_String?>(null)
 
         inst.return_String_Abc_Optional(valueRef)
 
@@ -170,9 +180,8 @@ class ByRefTests {
     fun testOptionalClassReturningNull() {
         val inst = Beyond_NET_Sample_Source_OutParameterTests()
 
-        val origValue = System_String.empty_get()
         val expectedValue: System_String? = null
-        val valueRef = origValue.toOptionalRef()
+        val valueRef = ObjectRef<System_String?>(null)
 
         inst.return_String_Null(valueRef)
 
@@ -196,9 +205,8 @@ class ByRefTests {
     fun testOptionalInterface() {
         val inst = Beyond_NET_Sample_Source_OutParameterTests()
 
-        val origValue: System_Collections_IEnumerable = System_String.empty_get()
         val expectedValue = "Abc".toDotNETString()
-        val valueRef = origValue.toOptionalRef()
+        val valueRef = ObjectRef<System_Collections_IEnumerable?>(null)
 
         inst.return_IEnumerable_String_Abc_Optional(valueRef)
 
@@ -209,9 +217,8 @@ class ByRefTests {
     fun testOptionalInterfaceReturningNull() {
         val inst = Beyond_NET_Sample_Source_OutParameterTests()
 
-        val origValue: System_Collections_IEnumerable = System_String.empty_get()
         val expectedValue: System_Collections_IEnumerable? = null
-        val valueRef = origValue.toOptionalRef()
+        val valueRef = ObjectRef<System_Collections_IEnumerable?>(null)
 
         inst.return_IEnumerable_Null(valueRef)
 
