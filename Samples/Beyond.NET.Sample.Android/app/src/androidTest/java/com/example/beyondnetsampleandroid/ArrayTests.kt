@@ -241,3 +241,12 @@ class ArrayTests {
         assertEquals(array[3]?.toKString(), "c")
     }
 }
+
+@OptIn(ExperimentalUnsignedTypes::class)
+fun UByteArray.toDotNETByteArray(): DNArray<System_Byte> {
+    throw NotImplementedError()
+}
+
+fun ByteArray.toDotNETSByteArray(): DNArray<System_SByte> {
+    throw NotImplementedError()
+}
