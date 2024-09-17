@@ -973,35 +973,74 @@ fun Date.toDotNETDateTime(): System_DateTime {
     return dateTime
 }
 
-// TODO: This is very slow! Use something like `System.Runtime.InteropServices.Marshal.Copy` instead
 @OptIn(ExperimentalUnsignedTypes::class)
 fun DNArray<System_Byte>.toKUByteArray(): UByteArray {
     val len = this.length_get()
-    val arr = UByteArray(len)
 
-    for (idx in 0..<len) {
-        val el = this[idx]
-        val uByte = el.castToUByte()
-
-        arr[idx] = uByte
+    if (len <= 0) {
+        return UByteArray(0)
     }
 
-    return arr
+    val mem = Memory(len.toLong())
+
+    try {
+        val __exceptionC = PointerByReference()
+
+        CAPI.System_Runtime_InteropServices_Marshal_Copy_6(
+            this.__handle,
+            0,
+            mem,
+            len,
+            __exceptionC
+        )
+
+        val __exceptionCHandle = __exceptionC.value
+
+        if (__exceptionCHandle != null) {
+            throw System_Exception(__exceptionCHandle).toKException()
+        }
+
+        val byteArray = mem.getByteArray(0, len)
+        val uByteArray = byteArray.toUByteArray()
+
+        return uByteArray
+    } finally {
+        mem.close()
+    }
 }
 
-// TODO: This is very slow! Use something like `System.Runtime.InteropServices.Marshal.Copy` instead
 fun DNArray<System_SByte>.toKByteArray(): ByteArray {
     val len = this.length_get()
-    val arr = ByteArray(len)
 
-    for (idx in 0..<len) {
-        val el = this[idx]
-        val byte = el.castToByte()
-
-        arr[idx] = byte
+    if (len <= 0) {
+        return ByteArray(0)
     }
 
-    return arr
+    val mem = Memory(len.toLong())
+
+    try {
+        val __exceptionC = PointerByReference()
+
+        CAPI.System_Runtime_InteropServices_Marshal_Copy_6(
+            this.__handle,
+            0,
+            mem,
+            len,
+            __exceptionC
+        )
+
+        val __exceptionCHandle = __exceptionC.value
+
+        if (__exceptionCHandle != null) {
+            throw System_Exception(__exceptionCHandle).toKException()
+        }
+
+        val byteArray = mem.getByteArray(0, len)
+
+        return byteArray
+    } finally {
+        mem.close()
+    }
 }
 """;
     }
