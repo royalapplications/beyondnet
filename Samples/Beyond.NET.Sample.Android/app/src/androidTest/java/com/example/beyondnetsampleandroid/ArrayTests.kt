@@ -148,6 +148,25 @@ class ArrayTests {
         assertEquals(newArray[2].castToChar(), bChar)
     }
 
+    @Test
+    fun testArrayOfBytes() {
+        val tests = Beyond_NET_Sample_ArrayTests()
+        val array = tests.arrayOfBytes_get()
+        val rank = array.rank_get()
+
+        assertEquals(rank, 1)
+
+        val zero: UByte = 0u
+        val one: UByte = 1u
+        val two: UByte = 2u
+        val three: UByte = 3u
+
+        assertEquals(array[0].castToUByte(), zero)
+        assertEquals(array[1].castToUByte(), one)
+        assertEquals(array[2].castToUByte(), two)
+        assertEquals(array[3].castToUByte(), three)
+    }
+
     private fun verifyArrayOfNullableStringInitialState(array: DNNullableArray<System_String>) {
         assertEquals(array.rank_get(), 1)
         assertNull(array[0])
