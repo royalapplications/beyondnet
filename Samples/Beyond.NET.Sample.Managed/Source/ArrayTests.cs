@@ -74,11 +74,11 @@ public class ArrayTests
 
     #region ArrayOfBytes
     public byte[] ArrayOfBytes { get; set; } = [
-        0, 1, 2, 3
+        byte.MinValue, 1, 2, byte.MaxValue
     ];
     
     public sbyte[] ArrayOfSBytes { get; set; } = [
-        0, 1, 2, 3
+        SByte.MinValue, 1, 2, sbyte.MaxValue
     ];
     #endregion ArrayOfBytes
 }

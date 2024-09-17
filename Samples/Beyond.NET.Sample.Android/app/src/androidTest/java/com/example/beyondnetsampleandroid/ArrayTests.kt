@@ -156,15 +156,15 @@ class ArrayTests {
 
         assertEquals(rank, 1)
 
-        val zero: UByte = 0u
+        val min: UByte = UByte.MIN_VALUE
         val one: UByte = 1u
         val two: UByte = 2u
-        val three: UByte = 3u
+        val max: UByte = UByte.MAX_VALUE
 
-        assertEquals(array[0].castToUByte(), zero)
+        assertEquals(array[0].castToUByte(), min)
         assertEquals(array[1].castToUByte(), one)
         assertEquals(array[2].castToUByte(), two)
-        assertEquals(array[3].castToUByte(), three)
+        assertEquals(array[3].castToUByte(), max)
     }
 
     @OptIn(ExperimentalUnsignedTypes::class)
@@ -176,19 +176,19 @@ class ArrayTests {
 
         assertEquals(rank, 1)
 
-        val zero: UByte = 0u
+        val min: UByte = UByte.MIN_VALUE
         val one: UByte = 1u
         val two: UByte = 2u
-        val three: UByte = 3u
+        val max: UByte = UByte.MAX_VALUE
 
         val arrayOfUBytes = array.toKUByteArray()
 
         assertEquals(arrayOfUBytes.count(), 4)
 
-        assertEquals(arrayOfUBytes[0], zero)
+        assertEquals(arrayOfUBytes[0], min)
         assertEquals(arrayOfUBytes[1], one)
         assertEquals(arrayOfUBytes[2], two)
-        assertEquals(arrayOfUBytes[3], three)
+        assertEquals(arrayOfUBytes[3], max)
     }
 
     @Test
@@ -199,15 +199,15 @@ class ArrayTests {
 
         assertEquals(rank, 1)
 
-        val zero: Byte = 0
+        val min: Byte = Byte.MIN_VALUE
         val one: Byte = 1
         val two: Byte = 2
-        val three: Byte = 3
+        val max: Byte = Byte.MAX_VALUE
 
-        assertEquals(array[0].castToByte(), zero)
+        assertEquals(array[0].castToByte(), min)
         assertEquals(array[1].castToByte(), one)
         assertEquals(array[2].castToByte(), two)
-        assertEquals(array[3].castToByte(), three)
+        assertEquals(array[3].castToByte(), max)
     }
 
     @Test
@@ -218,19 +218,19 @@ class ArrayTests {
 
         assertEquals(rank, 1)
 
-        val zero: Byte = 0
+        val min: Byte = Byte.MIN_VALUE
         val one: Byte = 1
         val two: Byte = 2
-        val three: Byte = 3
+        val max: Byte = Byte.MAX_VALUE
 
         val arrayOfBytes = array.toKByteArray()
 
         assertEquals(arrayOfBytes.count(), 4)
 
-        assertEquals(arrayOfBytes[0], zero)
+        assertEquals(arrayOfBytes[0], min)
         assertEquals(arrayOfBytes[1], one)
         assertEquals(arrayOfBytes[2], two)
-        assertEquals(arrayOfBytes[3], three)
+        assertEquals(arrayOfBytes[3], max)
     }
 
     private fun verifyArrayOfNullableStringInitialState(array: DNNullableArray<System_String>) {
