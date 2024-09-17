@@ -8,8 +8,6 @@ import org.junit.runner.RunWith
 import org.junit.Assert.*
 
 import com.example.beyondnetsampleandroid.dn.*
-import com.sun.jna.Memory
-import com.sun.jna.ptr.PointerByReference
 
 @RunWith(AndroidJUnit4::class)
 class ArrayTests {
@@ -296,70 +294,5 @@ class ArrayTests {
         assertEquals(array[1]?.toKString(), "a")
         assertEquals(array[2]?.toKString(), "b")
         assertEquals(array[3]?.toKString(), "c")
-    }
-}
-
-// TODO: This should be moved to Beyond.NET
-@OptIn(ExperimentalUnsignedTypes::class)
-fun UByteArray.toDotNETByteArray(): DNArray<System_Byte> {
-    val len = this.count()
-    val mem = Memory(len.toLong())
-
-    try {
-        mem.write(0, this.toByteArray(), 0, len)
-
-        val byteArray = DNArray<System_Byte>(len)
-
-        val __exceptionC = PointerByReference()
-
-        CAPI.System_Runtime_InteropServices_Marshal_Copy_14(
-            mem,
-            byteArray.__handle,
-            0,
-            len,
-            __exceptionC
-        )
-
-        val __exceptionCHandle = __exceptionC.value
-
-        if (__exceptionCHandle != null) {
-            throw System_Exception(__exceptionCHandle).toKException()
-        }
-
-        return byteArray
-    } finally {
-        mem.close()
-    }
-}
-
-// TODO: This should be moved to Beyond.NET
-fun ByteArray.toDotNETSByteArray(): DNArray<System_SByte> {
-    val len = this.count()
-    val mem = Memory(len.toLong())
-
-    try {
-        mem.write(0, this, 0, len)
-
-        val sByteArray = DNArray<System_SByte>(len)
-
-        val __exceptionC = PointerByReference()
-
-        CAPI.System_Runtime_InteropServices_Marshal_Copy_14(
-            mem,
-            sByteArray.__handle,
-            0,
-            len,
-            __exceptionC
-        )
-
-        val __exceptionCHandle = __exceptionC.value
-
-        if (__exceptionCHandle != null) {
-            throw System_Exception(__exceptionCHandle).toKException()
-        }
-
-        return sByteArray
-    } finally {
-        mem.close()
     }
 }
