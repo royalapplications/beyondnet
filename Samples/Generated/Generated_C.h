@@ -1,5 +1,5 @@
-// Number of generated types: 1409
-// Number of generated members: 6137
+// Number of generated types: 1416
+// Number of generated members: 6139
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -5133,6 +5133,20 @@ typedef void* System_Int32_Array_D3_t;
 
 
 typedef void* System_Guid_Array_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Collections_Generic_ICollection_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyList_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
+
+typedef void* System_SByte_Array_t;
 
 typedef void* System_Collections_Generic_IList_A1_t;
 
@@ -43696,6 +43710,20 @@ Beyond_NET_Sample_ArrayTests_ArrayOfBytes_Set(
 );
 
 
+System_SByte_Array_t _Nonnull /* System.SByte[] */
+Beyond_NET_Sample_ArrayTests_ArrayOfSBytes_Get(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_ArrayTests_ArrayOfSBytes_Set(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_SByte_Array_t _Nonnull /* System.SByte[] */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
 System_Type_t _Nonnull /* System.Type */
 Beyond_NET_Sample_ArrayTests_TypeOf(
 	void
@@ -43718,6 +43746,15 @@ Beyond_NET_Sample_ArrayTests_Destroy(
 
 #pragma mark - BEGIN APIs of System.Guid[]
 #pragma mark - END APIs of System.Guid[]
+
+
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.SByte[]
+#pragma mark - END APIs of System.SByte[]
 
 
 

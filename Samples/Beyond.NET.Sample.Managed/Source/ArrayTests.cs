@@ -76,5 +76,9 @@ public class ArrayTests
     public byte[] ArrayOfBytes { get; set; } = [
         0, 1, 2, 3
     ];
+    
+    public sbyte[] ArrayOfSBytes { get; set; } = [
+        0, 1, 2, 3
+    ];
     #endregion ArrayOfBytes
 }

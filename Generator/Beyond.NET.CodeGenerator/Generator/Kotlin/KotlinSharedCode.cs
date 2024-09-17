@@ -972,6 +972,37 @@ fun Date.toDotNETDateTime(): System_DateTime {
 
     return dateTime
 }
+
+// TODO: This is very slow! Use something like `System.Runtime.InteropServices.Marshal.Copy` instead
+@OptIn(ExperimentalUnsignedTypes::class)
+fun DNArray<System_Byte>.toKUByteArray(): UByteArray {
+    val len = this.length_get()
+    val arr = UByteArray(len)
+
+    for (idx in 0..<len) {
+        val el = this[idx]
+        val uByte = el.castToUByte()
+
+        arr[idx] = uByte
+    }
+
+    return arr
+}
+
+// TODO: This is very slow! Use something like `System.Runtime.InteropServices.Marshal.Copy` instead
+fun DNArray<System_SByte>.toKByteArray(): ByteArray {
+    val len = this.length_get()
+    val arr = ByteArray(len)
+
+    for (idx in 0..<len) {
+        val el = this[idx]
+        val byte = el.castToByte()
+
+        arr[idx] = byte
+    }
+
+    return arr
+}
 """;
     }
 }

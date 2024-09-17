@@ -167,6 +167,72 @@ class ArrayTests {
         assertEquals(array[3].castToUByte(), three)
     }
 
+    @OptIn(ExperimentalUnsignedTypes::class)
+    @Test
+    fun testArrayOfBytesConversion() {
+        val tests = Beyond_NET_Sample_ArrayTests()
+        val array = tests.arrayOfBytes_get()
+        val rank = array.rank_get()
+
+        assertEquals(rank, 1)
+
+        val zero: UByte = 0u
+        val one: UByte = 1u
+        val two: UByte = 2u
+        val three: UByte = 3u
+
+        val arrayOfUBytes = array.toKUByteArray()
+
+        assertEquals(arrayOfUBytes.count(), 4)
+
+        assertEquals(arrayOfUBytes[0], zero)
+        assertEquals(arrayOfUBytes[1], one)
+        assertEquals(arrayOfUBytes[2], two)
+        assertEquals(arrayOfUBytes[3], three)
+    }
+
+    @Test
+    fun testArrayOfSBytes() {
+        val tests = Beyond_NET_Sample_ArrayTests()
+        val array = tests.arrayOfSBytes_get()
+        val rank = array.rank_get()
+
+        assertEquals(rank, 1)
+
+        val zero: Byte = 0
+        val one: Byte = 1
+        val two: Byte = 2
+        val three: Byte = 3
+
+        assertEquals(array[0].castToByte(), zero)
+        assertEquals(array[1].castToByte(), one)
+        assertEquals(array[2].castToByte(), two)
+        assertEquals(array[3].castToByte(), three)
+    }
+
+    @Test
+    fun testArrayOfSBytesConversion() {
+        val tests = Beyond_NET_Sample_ArrayTests()
+        val array = tests.arrayOfSBytes_get()
+        val rank = array.rank_get()
+
+        assertEquals(rank, 1)
+
+        val zero: Byte = 0
+        val one: Byte = 1
+        val two: Byte = 2
+        val three: Byte = 3
+
+        val arrayOfBytes = array.toKByteArray()
+
+        assertEquals(arrayOfBytes.count(), 4)
+
+        assertEquals(arrayOfBytes[0], zero)
+        assertEquals(arrayOfBytes[1], one)
+        assertEquals(arrayOfBytes[2], two)
+        assertEquals(arrayOfBytes[3], three)
+    }
+
     private fun verifyArrayOfNullableStringInitialState(array: DNNullableArray<System_String>) {
         assertEquals(array.rank_get(), 1)
         assertNull(array[0])
