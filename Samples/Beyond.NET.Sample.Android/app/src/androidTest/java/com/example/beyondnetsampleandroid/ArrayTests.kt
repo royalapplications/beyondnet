@@ -9,7 +9,6 @@ import org.junit.Assert.*
 
 import com.example.beyondnetsampleandroid.dn.*
 import com.sun.jna.Memory
-import com.sun.jna.Pointer
 import com.sun.jna.ptr.PointerByReference
 
 @RunWith(AndroidJUnit4::class)
@@ -236,6 +235,61 @@ class ArrayTests {
         assertEquals(arrayOfBytes[3], max)
     }
 
+    @OptIn(ExperimentalUnsignedTypes::class)
+    @Test
+    fun testUByteToDotNETByteArrayConversion() {
+        val uByteArray = UByteArray(4)
+
+        val min = UByte.MIN_VALUE
+        val one: UByte = 1u
+        val two: UByte = 2u
+        val max = UByte.MAX_VALUE
+
+        uByteArray[0] = min
+        uByteArray[1] = one
+        uByteArray[2] = two
+        uByteArray[3] = max
+
+        val dnByteArray = uByteArray.toDotNETByteArray()
+
+        val rank = dnByteArray.rank_get()
+        assertEquals(rank, 1)
+
+        assertEquals(dnByteArray.count(), 4)
+
+        assertEquals(dnByteArray[0].castToUByte(), min)
+        assertEquals(dnByteArray[1].castToUByte(), one)
+        assertEquals(dnByteArray[2].castToUByte(), two)
+        assertEquals(dnByteArray[3].castToUByte(), max)
+    }
+
+    @Test
+    fun testByteToDotNETSByteArrayConversion() {
+        val byteArray = ByteArray(4)
+
+        val min = Byte.MIN_VALUE
+        val one: Byte = 1
+        val two: Byte = 2
+        val max = Byte.MAX_VALUE
+
+        byteArray[0] = min
+        byteArray[1] = one
+        byteArray[2] = two
+        byteArray[3] = max
+
+        val dnSByteArray = byteArray.toDotNETSByteArray()
+
+        val rank = dnSByteArray.rank_get()
+        assertEquals(rank, 1)
+
+        assertEquals(dnSByteArray.count(), 4)
+
+        assertEquals(dnSByteArray[0].castToByte(), min)
+        assertEquals(dnSByteArray[1].castToByte(), one)
+        assertEquals(dnSByteArray[2].castToByte(), two)
+        assertEquals(dnSByteArray[3].castToByte(), max)
+    }
+
     private fun verifyArrayOfNullableStringInitialState(array: DNNullableArray<System_String>) {
         assertEquals(array.rank_get(), 1)
         assertNull(array[0])
@@ -245,7 +299,7 @@ class ArrayTests {
     }
 }
 
-// TODO: Untested!
+// TODO: This should be moved to Beyond.NET
 @OptIn(ExperimentalUnsignedTypes::class)
 fun UByteArray.toDotNETByteArray(): DNArray<System_Byte> {
     val len = this.count()
@@ -278,6 +332,34 @@ fun UByteArray.toDotNETByteArray(): DNArray<System_Byte> {
     }
 }
 
+// TODO: This should be moved to Beyond.NET
 fun ByteArray.toDotNETSByteArray(): DNArray<System_SByte> {
-    throw NotImplementedError()
+    val len = this.count()
+    val mem = Memory(len.toLong())
+
+    try {
+        mem.write(0, this, 0, len)
+
+        val sByteArray = DNArray<System_SByte>(len)
+
+        val __exceptionC = PointerByReference()
+
+        CAPI.System_Runtime_InteropServices_Marshal_Copy_14(
+            mem,
+            sByteArray.__handle,
+            0,
+            len,
+            __exceptionC
+        )
+
+        val __exceptionCHandle = __exceptionC.value
+
+        if (__exceptionCHandle != null) {
+            throw System_Exception(__exceptionCHandle).toKException()
+        }
+
+        return sByteArray
+    } finally {
+        mem.close()
+    }
 }
