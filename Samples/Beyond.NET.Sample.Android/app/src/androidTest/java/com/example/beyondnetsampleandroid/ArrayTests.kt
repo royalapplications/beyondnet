@@ -8,6 +8,9 @@ import org.junit.runner.RunWith
 import org.junit.Assert.*
 
 import com.example.beyondnetsampleandroid.dn.*
+import com.sun.jna.Memory
+import com.sun.jna.Pointer
+import com.sun.jna.ptr.PointerByReference
 
 @RunWith(AndroidJUnit4::class)
 class ArrayTests {
@@ -242,9 +245,37 @@ class ArrayTests {
     }
 }
 
+// TODO: Untested!
 @OptIn(ExperimentalUnsignedTypes::class)
 fun UByteArray.toDotNETByteArray(): DNArray<System_Byte> {
-    throw NotImplementedError()
+    val len = this.count()
+    val mem = Memory(len.toLong())
+
+    try {
+        mem.write(0, this.toByteArray(), 0, len)
+
+        val byteArray = DNArray<System_Byte>(len)
+
+        val __exceptionC = PointerByReference()
+
+        CAPI.System_Runtime_InteropServices_Marshal_Copy_14(
+            mem,
+            byteArray.__handle,
+            0,
+            len,
+            __exceptionC
+        )
+
+        val __exceptionCHandle = __exceptionC.value
+
+        if (__exceptionCHandle != null) {
+            throw System_Exception(__exceptionCHandle).toKException()
+        }
+
+        return byteArray
+    } finally {
+        mem.close()
+    }
 }
 
 fun ByteArray.toDotNETSByteArray(): DNArray<System_SByte> {
