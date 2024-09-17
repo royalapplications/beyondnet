@@ -147,7 +147,10 @@ public class TypeDescriptor
     {
         string typeName;
 
-        bool isAllowedToCache = !(language == CodeLanguage.Swift &&
+        bool isSwift = language == CodeLanguage.Swift;
+        bool isKotlin = language == CodeLanguage.Kotlin;
+
+        bool isAllowedToCache = !((isSwift || isKotlin) &&
                                   IsArray);
         
         // Cannot cache array types because of element nullability
@@ -424,7 +427,58 @@ public class TypeDescriptor
                 }
             }
             case CodeLanguage.Kotlin: {
-                return ManagedType.CTypeName();
+                bool isArray = ManagedType.IsArray;
+
+                Type? elementType = isArray
+                    ? ManagedType.GetElementType()
+                    : null;
+                
+                string kotlinTypeName;
+
+                if (isArray &&
+                    elementType is not null)
+                {
+                    // TODO: Shouldn't this go through TypeDescriptor?
+                    var kotlinElementTypeName = elementType.CTypeName();
+                    var rank = ManagedType.GetArrayRank();
+
+                    if (arrayElementNullability == Nullability.NotSpecified)
+                    {
+                        arrayElementNullability = Nullability.Nullable;
+                    }
+
+                    string arrayTypeName;
+
+                    if (rank == 1)
+                    {
+                        // Single-dimensional array
+                        arrayTypeName = arrayElementNullability == Nullability.NonNullable
+                            ? "DNArray"
+                            : "DNNullableArray";
+                    }
+                    else if (rank > 1)
+                    {
+                        // Multidimensional array
+                        // TODO: Support multi-dimensional arrays
+                        return ManagedType.CTypeName();
+                        
+                        // arrayTypeName = arrayElementNullability == Nullability.NonNullable
+                        //     ? "DNMultidimensionalArray"
+                        //     : "DNNullableMultidimensionalArray";
+                    }
+                    else
+                    {
+                        throw new Exception($"An array rank of {rank} doesn't really make sense, right?");
+                    }
+
+                    kotlinTypeName = $"{arrayTypeName}<{kotlinElementTypeName}>";
+                }
+                else
+                {
+                    kotlinTypeName = ManagedType.CTypeName();
+                }
+
+                return kotlinTypeName;
             }
             default:
                 throw new NotImplementedException();
@@ -439,7 +493,10 @@ public class TypeDescriptor
     {
         LanguagePair languagePair = new(sourceLanguage, targetLanguage);
         
-        bool isAllowedToCache = !((sourceLanguage == CodeLanguage.Swift || targetLanguage == CodeLanguage.Swift) &&
+        bool isSwift = sourceLanguage == CodeLanguage.Swift || targetLanguage == CodeLanguage.Swift;
+        bool isKotlin = sourceLanguage == CodeLanguage.Kotlin || targetLanguage == CodeLanguage.Kotlin;
+        
+        bool isAllowedToCache = !((isSwift || isKotlin) &&
                                   IsArray);
 
         string? typeConversion;
@@ -574,9 +631,27 @@ public class TypeDescriptor
                 Nullability.NotSpecified,
                 arrayElementNullability
             );
+            
+            bool isArray = ManagedType.IsArray;
+
+            Type? elementType = isArray
+                ? ManagedType.GetElementType()
+                : null;
+
+            int arrayRank = isArray
+                ? ManagedType.GetArrayRank() 
+                : 0;
 
             if (IsEnum) {
                 return kotlinTypeName + "({0})";
+            } else if (isArray &&
+                       elementType is not null &&
+                       arrayRank == 1 /* Single dimensional array */) {
+                // TODO: Support multi-dimensional arrays
+                // TODO: Shouldn't this go through TypeDescriptor?
+                var kotlinElementTypeName = elementType.CTypeName();
+                
+                return $"{kotlinTypeName}({{0}}, {kotlinElementTypeName}::class.java)";
             } else if (RequiresNativePointer) {
                 var suffix = IsInterface 
                     ? KotlinDotNETInterfaceImplementationSuffix

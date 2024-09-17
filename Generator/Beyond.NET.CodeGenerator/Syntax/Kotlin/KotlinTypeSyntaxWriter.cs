@@ -33,6 +33,55 @@ public class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWriter
         Settings = settings ?? throw new ArgumentNullException(nameof(settings));
     }
     
+    static IEnumerable<(MethodInfo overload1, MethodInfo overload2, int[] arrayConflictIndices)>
+        GetKotlinArrayParameterOverloadConflicts(List<MethodInfo> methods)
+    {
+        // var publicMethods = type.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public).ToList();
+        methods.Sort(static (a, b) =>
+        {
+            int c = StringComparer.Ordinal.Compare(a.Name, b.Name);
+            if (c is 0) c = a.GetParameters().Length.CompareTo(b.GetParameters().Length);
+            return c;
+        });
+        
+        var overloadSets = methods.GroupBy(static m => m.Name).Where(static g => g.Any()).ToList();
+        foreach (var set in overloadSets)
+        {
+            List<int> conflictIndices = new();
+            
+            var candidates = set.ToArray();
+            
+            for (var i = 0; i < candidates.Length; i++) {
+                var method1 = candidates[i];
+                var params1 = method1.GetParameters();
+                
+                for (var j = i + 1; j < candidates.Length; j++) {
+                    var method2 = candidates[j];
+                    var params2 = method2.GetParameters();
+                    
+                    if (params1.Length != params2.Length) 
+                        continue;
+
+                    conflictIndices.Clear();
+                    
+                    for (var p = 0; p < params1.Length; p++) {
+                        var p1 = params1[p].ParameterType;
+                        var p2 = params2[p].ParameterType;
+
+                        if (p1 is { IsArray: true, HasElementType: true }
+                            && p2 is { IsArray: true, HasElementType: true }
+                            && p1.GetElementType() != p2.GetElementType()) {
+                            conflictIndices.Add(p);
+                        }
+                    }
+
+                    if (conflictIndices.Count > 0)
+                        yield return (method1, method2, conflictIndices.ToArray());
+                }
+            }
+        }
+    }
+    
     public string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
         return Write((Type)@object, state, configuration);
@@ -364,6 +413,17 @@ public val value: {{underlyingTypeName}}
             return string.Empty;
         }
 
+        var isArray = type.IsArray;
+        var arrayRank = isArray ? type.GetArrayRank() : 0;
+
+        if (isArray &&
+            arrayRank < 2) // TODO: For multi-dimensional arrays we currently don't use DNArray
+        {
+            // No need to generate Kotlin code for single-dimensional arrays
+            
+            return string.Empty;
+        }
+
         var cSharpMembers = cSharpUnmanagedResult.GeneratedTypes[type];
         // var cMembers = cResult.GeneratedTypes[type];
         
@@ -668,12 +728,34 @@ public val value: {{underlyingTypeName}}
         KotlinCodeBuilder sbStaticMembers = new();
 
         string? destructorCodeForInterfaceImpl = null;
+        
+        // Find members that are overloads that only differ by array element type. Kotlin uses type erasure on generic types so if we don't filter out such methods, we end up with conflicting overloads.
+        // key: overloads to ignore; value: overload that 'won' the overload conflict race
+        var overloadMethodsToIgnore = new Dictionary<MethodInfo, MethodInfo>();
+
+        var methodInfos = cSharpMembers
+            .Select(m => m.Member as MethodInfo)
+            .OfType<MethodInfo>()
+            .ToList();
+
+        var methodsWithArrayOverloadConflicts = GetKotlinArrayParameterOverloadConflicts(methodInfos);
+
+        foreach (var (m1, m2, _) in methodsWithArrayOverloadConflicts) {
+            overloadMethodsToIgnore.TryAdd(m2, m1);
+        }
 
         foreach (var cSharpMember in cSharpMembers) {
             var member = cSharpMember.Member;
 
             if (member is not null &&
                 generatedMembers.Contains(member)) {
+                continue;
+            }
+            
+            if (member is MethodInfo methodInfo &&
+                overloadMethodsToIgnore.ContainsKey(methodInfo)) {
+                sbInstanceMembers.AppendLine(Builder.SingleLineComment($"TODO: Conflicting overload that differs only by array element type was ignored \"{methodInfo.ToString() ?? methodInfo.Name}\"").ToString());
+                
                 continue;
             }
             

@@ -373,6 +373,172 @@ public class DoubleRef(var value: Double): IRef {
 fun Double.toRef(): DoubleRef {
     return DoubleRef(this)
 }
+
+// TODO: This uses reflection - no good
+open class DNArray<T: System_Object>(handle: Pointer, klassOfT: Class<T>)
+    : System_Array(handle), Iterable<T> {
+    //    private val systemTypeOfT = klassOfT.getMethod("typeOf").invoke(null) as System_Type
+    private val constructorOfT = klassOfT.getDeclaredConstructor(Pointer::class.java)
+
+    companion object {
+        // Constructor that creates an empty array
+        public inline fun <reified T: System_Object> empty(): DNArray<T> {
+            return invoke<T>(0)
+        }
+
+        // Constructor with optional length parameter
+        public inline operator fun <reified T: System_Object> invoke(length: Int = 0): DNArray<T> {
+            val klassOfT = T::class.java
+            val systemTypeOfT = klassOfT.getMethod("typeOf").invoke(null) as System_Type
+
+            val __exceptionC = PointerByReference()
+
+            val systemArrayHandle = CAPI.System_Array_CreateInstance(systemTypeOfT.__handle, length, __exceptionC)
+
+            val __exceptionCHandle = __exceptionC.value
+
+            if (__exceptionCHandle != null) {
+                throw System_Exception(__exceptionCHandle).toKException()
+            }
+
+            val dnArray = DNArray(systemArrayHandle, klassOfT)
+
+            return dnArray
+        }
+    }
+
+    // Subscript getter
+    public operator fun get(index: Int): T {
+        val __exceptionC = PointerByReference()
+
+        val valueHandle = CAPI.System_Array_GetValue_1(__handle, index, __exceptionC)
+            ?: throw NullPointerException()
+
+        val __exceptionCHandle = __exceptionC.value
+
+        if (__exceptionCHandle != null) {
+            throw System_Exception(__exceptionCHandle).toKException()
+        }
+
+        val castedValue = constructorOfT.newInstance(valueHandle)
+
+        return castedValue
+    }
+
+    // Subscript setter
+    public operator fun set(index: Int, value: T) {
+        setValue(value, index)
+    }
+
+    // Iterator/foreach loop support
+    override fun iterator() = object: Iterator<T> {
+        private val count = this@DNArray.count_get()
+        private var currentIndex: Int = -1
+
+        override fun hasNext(): Boolean {
+            if (count <= 0) {
+                return false
+            }
+
+            val idx = currentIndex
+            val hasIt = idx < count - 1
+
+            return hasIt
+        }
+
+        override fun next(): T {
+            currentIndex += 1
+
+            return this@DNArray[currentIndex]
+        }
+    }
+}
+
+// TODO: This uses reflection - no good
+open class DNNullableArray<T: System_Object?>(handle: Pointer, klassOfT: Class<T>)
+    : System_Array(handle), Iterable<T?> {
+//    private val systemTypeOfT = klassOfT.getMethod("typeOf").invoke(null) as System_Type
+    private val constructorOfT = klassOfT.getDeclaredConstructor(Pointer::class.java)
+
+    companion object {
+        // Constructor that creates an empty nullable array
+        public inline fun <reified T: System_Object?> empty(): DNNullableArray<T> {
+            return invoke<T>(0)
+        }
+
+        // Constructor with optional length parameter
+        public inline operator fun <reified T: System_Object?> invoke(length: Int = 0): DNNullableArray<T> {
+            val klassOfT = T::class.java
+            val systemTypeOfT = klassOfT.getMethod("typeOf").invoke(null) as System_Type
+
+            val __exceptionC = PointerByReference()
+
+            val systemArrayHandle = CAPI.System_Array_CreateInstance(systemTypeOfT.__handle, length, __exceptionC)
+
+            val __exceptionCHandle = __exceptionC.value
+
+            if (__exceptionCHandle != null) {
+                throw System_Exception(__exceptionCHandle).toKException()
+            }
+
+            val dnNullableArray = DNNullableArray(systemArrayHandle, klassOfT)
+
+            return dnNullableArray
+        }
+    }
+
+    // Subscript getter, returns nullable type
+    public operator fun get(index: Int): T? {
+        val __exceptionC = PointerByReference()
+
+        val valueHandle = CAPI.System_Array_GetValue_1(__handle, index, __exceptionC)
+
+        val __exceptionCHandle = __exceptionC.value
+
+        if (__exceptionCHandle != null) {
+            throw System_Exception(__exceptionCHandle).toKException()
+        }
+
+        // If valueHandle is null, return null
+        if (valueHandle == null) {
+            return null
+        }
+
+        // Otherwise, construct the casted object
+        val castedValue = constructorOfT.newInstance(valueHandle)
+
+        return castedValue
+    }
+
+    // Subscript setter, can set nullable value
+    public operator fun set(index: Int, value: T?) {
+        setValue(value, index)
+    }
+
+    // Iterator/foreach loop support, works with nullable types
+    override fun iterator() = object : Iterator<T?> {
+        private val count = this@DNNullableArray.count_get()
+        private var currentIndex: Int = -1
+
+        override fun hasNext(): Boolean {
+            if (count <= 0) {
+                return false
+            }
+
+            val idx = currentIndex
+            val hasIt = idx < count - 1
+
+            return hasIt
+        }
+
+        override fun next(): T? {
+            currentIndex += 1
+
+            // Handle nullable types properly
+            return this@DNNullableArray[currentIndex]
+        }
+    }
+}
 """;
 
     internal static string GetExtensions(string jnaClassName)

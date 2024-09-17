@@ -273,48 +273,71 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         }
 
         var nullabilityInfoContext = new NullabilityInfoContext();
-        Nullability returnOrSetterTypeNullability = Nullability.NotSpecified;
+        var returnOrSetterTypeNullability = Nullability.NotSpecified;
+        var returnOrSetterTypeArrayElementNullability = Nullability.NotSpecified;
 
         if (memberKind == MemberKind.TypeOf) {
             returnOrSetterTypeNullability = Nullability.NonNullable;
-        } else if (isNullableValueTypeReturnType) {
+        } else if (returnOrSetterOrEventHandlerType.IsNullableValueType(out _)) {
             returnOrSetterTypeNullability = Nullability.Nullable;
         } else if (returnOrSetterOrEventHandlerType.IsReferenceType() &&
-                   !returnOrSetterOrEventHandlerType.IsByRefValueType(out bool nonByRefTypeIsStruct) &&
-                   !nonByRefTypeIsStruct) {
+                  !returnOrSetterOrEventHandlerType.IsByRefValueType(out bool nonByRefTypeIsStruct) &&
+                  !nonByRefTypeIsStruct) {
             if (memberInfo is MethodInfo methodInfo) {
                 ParameterInfo returnOrSetterValueParameter;
 
                 if (memberKind == MemberKind.PropertySetter ||
                     memberKind == MemberKind.EventHandlerAdder ||
                     memberKind == MemberKind.EventHandlerRemover) {
-                    returnOrSetterValueParameter = methodInfo.GetParameters().LastOrDefault() ?? methodInfo.ReturnParameter;
+                    returnOrSetterValueParameter =
+                        methodInfo.GetParameters().LastOrDefault() ?? methodInfo.ReturnParameter;
                 } else {
                     returnOrSetterValueParameter = methodInfo.ReturnParameter;
                 }
-                
+
                 var nullabilityInfo = nullabilityInfoContext.Create(returnOrSetterValueParameter);
 
                 if (memberKind == MemberKind.PropertyGetter) {
                     returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
+
+                    returnOrSetterTypeArrayElementNullability =
+                        nullabilityInfo.ElementType?.ReadState == NullabilityState.NotNull
+                            ? Nullability.NonNullable
+                            : Nullability.NotSpecified;
                 } else if (memberKind == MemberKind.PropertySetter) {
                     returnOrSetterTypeNullability = nullabilityInfo.WriteState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
+
+                    returnOrSetterTypeArrayElementNullability =
+                        nullabilityInfo.ElementType?.WriteState == NullabilityState.NotNull
+                            ? Nullability.NonNullable
+                            : Nullability.NotSpecified;
                 } else if (memberKind == MemberKind.EventHandlerAdder ||
-                           memberKind == MemberKind.EventHandlerRemover) {
+                          memberKind == MemberKind.EventHandlerRemover) {
                     if (nullabilityInfo.ReadState == nullabilityInfo.WriteState) {
                         returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
                             ? Nullability.NonNullable
                             : Nullability.NotSpecified;
                     }
-                } else { // Method
+                } else {
+                    // Method
                     if (nullabilityInfo.ReadState == nullabilityInfo.WriteState) {
                         returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
                             ? Nullability.NonNullable
                             : Nullability.NotSpecified;
+                    }
+
+                    var elementTypeNullabilityInfo = nullabilityInfo.ElementType;
+
+                    if (elementTypeNullabilityInfo is not null &&
+                        elementTypeNullabilityInfo.ReadState == elementTypeNullabilityInfo.WriteState) {
+                        returnOrSetterTypeArrayElementNullability =
+                            elementTypeNullabilityInfo.ReadState == NullabilityState.NotNull
+                                ? Nullability.NonNullable
+                                : Nullability.NotSpecified;
                     }
                 }
             } else if (memberInfo is ConstructorInfo) {
@@ -327,15 +350,36 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                     returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
+
+                    returnOrSetterTypeArrayElementNullability =
+                        nullabilityInfo.ElementType?.ReadState == NullabilityState.NotNull
+                            ? Nullability.NonNullable
+                            : Nullability.NotSpecified;
                 } else if (memberKind == MemberKind.FieldSetter) {
                     returnOrSetterTypeNullability = nullabilityInfo.WriteState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
-                } else { // Hmm, not sure this can ever happen
+
+                    returnOrSetterTypeArrayElementNullability =
+                        nullabilityInfo.ElementType?.WriteState == NullabilityState.NotNull
+                            ? Nullability.NonNullable
+                            : Nullability.NotSpecified;
+                } else {
+                    // Hmm, not sure this can ever happen
                     if (nullabilityInfo.ReadState == nullabilityInfo.WriteState) {
                         returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
                             ? Nullability.NonNullable
                             : Nullability.NotSpecified;
+                    }
+
+                    var elementTypeNullabilityInfo = nullabilityInfo.ElementType;
+
+                    if (elementTypeNullabilityInfo is not null &&
+                        elementTypeNullabilityInfo.ReadState == elementTypeNullabilityInfo.WriteState) {
+                        returnOrSetterTypeArrayElementNullability =
+                            elementTypeNullabilityInfo.ReadState == NullabilityState.NotNull
+                                ? Nullability.NonNullable
+                                : Nullability.NotSpecified;
                     }
                 }
             }
@@ -365,7 +409,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 CodeLanguage.KotlinJNA, 
                 true,
                 returnOrSetterTypeNullability,
-                Nullability.NotSpecified,
+                returnOrSetterTypeArrayElementNullability,
                 false,
                 returnOrSetterOrEventHandlerTypeIsByRef,
                 false
@@ -970,9 +1014,6 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             }
         }
         
-        // TODO: Currently, we don't have fancy bindings for arrays, so we need to ignore array element nullability and use the regular return type nullability instead
-        returnOrSetterTypeArrayElementNullability = returnOrSetterTypeNullability;
-        
         // TODO: This generates inout TypeName if the return type is by ref
         string kotlinReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(
             CodeLanguage.Kotlin,
@@ -1346,9 +1387,9 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                         string prefix;
                         string suffix;
 
-                        Nullability actualNullability = returnOrSetterOrEventHandlerArrayElementNullability != Nullability.NotSpecified
-                                ? returnOrSetterOrEventHandlerArrayElementNullability
-                                : returnOrSetterOrEventHandlerNullability != Nullability.NotSpecified ? returnOrSetterOrEventHandlerNullability : returnOrSetterTypeDescriptor.Nullability;
+                        Nullability actualNullability = returnOrSetterOrEventHandlerNullability != Nullability.NotSpecified
+                                ? returnOrSetterOrEventHandlerNullability
+                                : returnOrSetterTypeDescriptor.Nullability;
                         
                         if (returnOrSetterTypeDescriptor.RequiresNativePointer &&
                             actualNullability != Nullability.NonNullable) {
