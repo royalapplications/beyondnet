@@ -19,9 +19,11 @@ struct TimerView: View {
 }
 
 private extension TimerView {
-    class TimerModel: ObservableObject {
+    // TODO: Get rid of @unchecked
+    final class TimerModel: ObservableObject, @unchecked Sendable {
         @Published
-        var guidsString = ""
+        @MainActor
+        private(set) var guidsString = ""
         
         private var timer: System.Threading.Timer?
         
@@ -30,7 +32,7 @@ private extension TimerView {
         }
         
         deinit {
-            stopTimer()
+            try? timer?.dispose()
         }
         
         private func startTimer(interval: TimeInterval) {
@@ -51,11 +53,6 @@ private extension TimerView {
             self.timer = timer
         }
         
-        private func stopTimer() {
-            try? self.timer?.dispose()
-            self.timer = nil
-        }
-        
         private func addNewGuid() {
             guard let newGuid = try? System.Guid.newGuid() else {
                 fatalError("Failed to create new System.Guid")
@@ -69,8 +66,10 @@ private extension TimerView {
                 fatalError("Failed to convert System.Guid to string")
             }
             
-            DispatchQueue.main.async { [weak self] in
-                self?.guidsString += "\(guidString)\n"
+            Task.detached { [weak self] in
+                await MainActor.run { [weak self] in
+                    self?.guidsString += "\(guidString)\n"
+                }
             }
         }
     }
