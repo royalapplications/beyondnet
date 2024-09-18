@@ -2,11 +2,10 @@ import XCTest
 import BeyondDotNETSampleKit
 
 fileprivate class UnhandledExceptionHandlerStorage {
-	static var unhandledExceptionHandler: System.UnhandledExceptionEventHandler?
+    nonisolated(unsafe) static var unhandledExceptionHandler: System.UnhandledExceptionEventHandler?
 }
 
 extension XCTestCase {
-	@MainActor
 	class func sharedSetUp() {
 		if UnhandledExceptionHandlerStorage.unhandledExceptionHandler == nil {
 			UnhandledExceptionHandlerStorage.unhandledExceptionHandler = addUnhandledExceptionHandler()
@@ -15,19 +14,16 @@ extension XCTestCase {
 		gcCollect()
 	}
 	
-	@MainActor
 	class func sharedTearDown() {
 		gcCollect()
 	}
 }
 
 private extension XCTestCase {
-	@MainActor
 	class func gcCollect() {
         XCTAssertNoThrow(try System.GC.collect())
 	}
 	
-	@MainActor
 	class func addUnhandledExceptionHandler() -> System.UnhandledExceptionEventHandler? {
         guard let appDomain = try? System.AppDomain.currentDomain else {
 			XCTFail("System.AppDomain.CurrentDomain getter should not throw and return an instance")
@@ -58,7 +54,6 @@ private extension XCTestCase {
 		return handler
 	}
 	
-	@MainActor
 	class func removeUnhandledExceptionHandler(_ handler: System.UnhandledExceptionEventHandler?) {
 		guard let handler else { return }
         

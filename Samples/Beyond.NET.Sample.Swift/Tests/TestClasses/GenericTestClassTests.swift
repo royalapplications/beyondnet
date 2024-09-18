@@ -3,12 +3,10 @@ import BeyondDotNETSampleKit
 
 // TODO
 final class GenericTestClassTests: XCTestCase {
-	@MainActor
 	override class func setUp() {
 		Self.sharedSetUp()
 	}
 	
-	@MainActor
 	override class func tearDown() {
 		Self.sharedTearDown()
 	}

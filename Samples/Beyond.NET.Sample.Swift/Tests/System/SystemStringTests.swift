@@ -17,12 +17,10 @@ final class SystemStringTests: XCTestCase {
         return strings
     }()
     
-    @MainActor
     override class func setUp() {
         Self.sharedSetUp()
     }
     
-    @MainActor
     override class func tearDown() {
         Self.sharedTearDown()
     }

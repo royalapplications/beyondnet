@@ -2,12 +2,10 @@ import XCTest
 import BeyondDotNETSampleKit
 
 final class SystemExceptionTests: XCTestCase {
-    @MainActor
     override class func setUp() {
         Self.sharedSetUp()
     }
     
-    @MainActor
     override class func tearDown() {
         Self.sharedTearDown()
     }

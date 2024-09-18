@@ -28,12 +28,10 @@ final class SystemRuntimeInteropServicesMarshalTests: XCTestCase {
     // Feel free to increase the byte count but don't forget to tell lldb to ignore SIGUSR1 before running the tests (`process handle SIGUSR1 -n true -p true -s false`).
     private let performanceTestsByteCount = Bytes.kb500
     
-    @MainActor
     override class func setUp() {
         Self.sharedSetUp()
     }
     
-    @MainActor
     override class func tearDown() {
         Self.sharedTearDown()
     }
