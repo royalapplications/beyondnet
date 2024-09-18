@@ -15,4 +15,9 @@ public static class DontStrip
     public static System.Security.Cryptography.ECDsa ECDsa => null!;
     public static System.Security.Cryptography.ECDiffieHellman ECDiffieHellman => null!;
     #endregion System.Security.Cryptography
+    
+    #region System.Net
+    // TODO: This causes override errors in Kotlin
+    // public static System.Net.NetworkCredential NetworkCredential => null!;
+    #endregion System.Net
 }
