@@ -19,5 +19,14 @@ public static class DontStrip
     #region System.Net
     // TODO: This causes override errors in Kotlin
     // public static System.Net.NetworkCredential NetworkCredential => null!;
+    //
+    // private static void TestNetworkCredential()
+    // {
+    //     var c = (System.Net.ICredentialsByHost)null!;
+    //     c.GetCredential(null, 0, null);
+    //     
+    //     var nc = (System.Net.NetworkCredential)null!;
+    //     nc.GetCredential(null, 0, null);
+    // }
     #endregion System.Net
 }
