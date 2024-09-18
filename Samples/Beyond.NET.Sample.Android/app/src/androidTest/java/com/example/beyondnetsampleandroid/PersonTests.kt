@@ -17,7 +17,7 @@ class PersonTests {
 
         assertEquals(johnDoe.fullName_get().toKString(), "John Doe")
         assertEquals(johnDoe.age_get(), 50)
-        assertEquals(johnDoe.niceLevel_get(), Beyond_NET_Sample_NiceLevels.Nice)
+        assertEquals(johnDoe.niceLevel_get(), Beyond_NET_Sample_NiceLevels.NICE)
         assertEquals(johnDoe.numberOfChildren_get(), 0)
 
         johnDoe.increaseAge(2)
@@ -46,7 +46,7 @@ class PersonTests {
 
         val websiteStr = "https://royalapps.com"
         val websiteUriRef = ObjectRef<System_Uri?>(null)
-        val uriCreateSuccess = System_Uri.tryCreate(websiteStr.toDotNETString(), System_UriKind.Absolute, websiteUriRef)
+        val uriCreateSuccess = System_Uri.tryCreate(websiteStr.toDotNETString(), System_UriKind.ABSOLUTE, websiteUriRef)
         assertTrue(uriCreateSuccess)
 
         val websiteUri = websiteUriRef.value

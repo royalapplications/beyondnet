@@ -179,7 +179,9 @@ public class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWriter
         List<KotlinEnumClassCase> enumCases = new();
 
         for (int i = 0; i < caseNames.Length; i++) {
-            string caseName = caseNames[i];
+            string caseName = caseNames[i]
+                .ToUpper();
+            
             var value = values.GetValue(i) ?? throw new Exception("No enum value for case");
             var valueType = value.GetType();
 

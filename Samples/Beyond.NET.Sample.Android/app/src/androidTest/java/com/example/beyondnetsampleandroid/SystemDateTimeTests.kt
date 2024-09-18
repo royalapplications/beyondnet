@@ -81,7 +81,7 @@ class SystemDateTimeTests {
     @Test
     fun testDateConversion() {
         val referenceKDate = Date(0)
-        val dateTime = System_DateTime(1970, 1, 1, 0, 0, 0, 0, 0, System_DateTimeKind.Utc)
+        val dateTime = System_DateTime(1970, 1, 1, 0, 0, 0, 0, 0, System_DateTimeKind.UTC)
 
         val dateTimeMinValue = System_DateTime.minValue_get()
 

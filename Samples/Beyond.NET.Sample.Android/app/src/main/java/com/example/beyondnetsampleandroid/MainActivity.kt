@@ -81,11 +81,11 @@ class MainActivity : ComponentActivity() {
 
         val johnDoeName = johnDoe.fullName_get().toKString()
         val johnDoeAge = johnDoe.age_get()
-        johnDoe.niceLevel_set(Beyond_NET_Sample_NiceLevels.LittleBitNice)
+        johnDoe.niceLevel_set(Beyond_NET_Sample_NiceLevels.LITTLEBITNICE)
         val johnDoeNiceLevel = johnDoe.niceLevel_get()
         val welcomeMessage = johnDoe.getWelcomeMessage().toKString()
 
-        require(johnDoeNiceLevel == Beyond_NET_Sample_NiceLevels.LittleBitNice)
+        require(johnDoeNiceLevel == Beyond_NET_Sample_NiceLevels.LITTLEBITNICE)
 
         setContent {
             BeyondNETSampleAndroidTheme {

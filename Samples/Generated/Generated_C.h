@@ -1,5 +1,5 @@
-// Number of generated types: 1416
-// Number of generated members: 6139
+// Number of generated types: 1418
+// Number of generated members: 6144
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -3292,6 +3292,14 @@ typedef enum __attribute__((enum_extensibility(open))): int32_t {
 } System_Security_Cryptography_ECCurve_ECCurveType_t;
 
 
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	Beyond_NET_Sample_Source_EnumWithUnfavorableNames_Int = 0,
+	Beyond_NET_Sample_Source_EnumWithUnfavorableNames_UInt = 1,
+	Beyond_NET_Sample_Source_EnumWithUnfavorableNames_String = 2,
+	Beyond_NET_Sample_Source_EnumWithUnfavorableNames_System = 3
+} Beyond_NET_Sample_Source_EnumWithUnfavorableNames_t;
+
+
 typedef void* System_Object_t;
 
 typedef void* System_Type_t;
@@ -5376,6 +5384,8 @@ typedef void* System_Security_Cryptography_ECDiffieHellman_t;
 
 typedef void* System_Security_Cryptography_ECDiffieHellmanPublicKey_t;
 
+typedef void* Beyond_NET_Sample_Source_EnumTests_t;
+
 typedef void* Beyond_NET_Sample_Source_ManagedUnhandledExceptionHandler_t;
 
 typedef void* Beyond_NET_Sample_Source_OutParameterTests_t;
@@ -6350,6 +6360,14 @@ System_Security_Cryptography_ECCurve_ECCurveType_TypeOf(
 );
 
 #pragma mark - END APIs of System.Security.Cryptography.ECCurve.ECCurveType
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.EnumWithUnfavorableNames
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_Source_EnumWithUnfavorableNames_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.Source.EnumWithUnfavorableNames
 
 #pragma mark - BEGIN APIs of System.Object
 System_Type_t _Nonnull /* System.Type */
@@ -49304,6 +49322,31 @@ System_Security_Cryptography_ECDiffieHellmanPublicKey_Destroy(
 );
 
 #pragma mark - END APIs of System.Security.Cryptography.ECDiffieHellmanPublicKey
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.EnumTests
+System_String_t _Nonnull /* System.String */
+Beyond_NET_Sample_Source_EnumTests_GetEnumName(
+	Beyond_NET_Sample_Source_EnumTests_t _Nullable /* Beyond.NET.Sample.Source.EnumTests */ self,
+	Beyond_NET_Sample_Source_EnumWithUnfavorableNames_t /* Beyond.NET.Sample.Source.EnumWithUnfavorableNames */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_Source_EnumTests_t _Nonnull /* Beyond.NET.Sample.Source.EnumTests */
+Beyond_NET_Sample_Source_EnumTests_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_Source_EnumTests_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_EnumTests_Destroy(
+	Beyond_NET_Sample_Source_EnumTests_t _Nullable /* Beyond.NET.Sample.Source.EnumTests */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.Source.EnumTests
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.ManagedUnhandledExceptionHandler
 void /* System.Void */

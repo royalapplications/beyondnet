@@ -952,7 +952,7 @@ fun UUID.toDotNETGuid(): System_Guid {
 fun System_DateTime.toKDate(): Date {
     val dateTimeKind = kind_get()
 
-    if (dateTimeKind == System_DateTimeKind.Unspecified) {
+    if (dateTimeKind == System_DateTimeKind.UNSPECIFIED) {
         throw Exception("DateTimeKind.Unspecified cannot be safely converted")
     }
 
