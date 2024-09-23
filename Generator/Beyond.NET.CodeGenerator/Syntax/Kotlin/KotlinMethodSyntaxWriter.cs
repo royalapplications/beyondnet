@@ -861,7 +861,8 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 out _
             );
 
-            if (isInterfaceImplementation) {
+            if (isInterfaceImplementation &&
+                implementedInterfaceType is not null) {
                 var isUnsupportedInterface = KotlinSharedSettings.IsUnsupportedInterface(implementedInterfaceType);
 
                 treatAsOverridden = !isUnsupportedInterface;
