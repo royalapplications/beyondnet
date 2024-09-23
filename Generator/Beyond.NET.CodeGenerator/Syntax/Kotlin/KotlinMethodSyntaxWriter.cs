@@ -735,6 +735,12 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                     
                     return $"// TODO: Method with out or in or by ref generic type parameter ({cMember.GetGeneratedName(CodeLanguage.C)})";
                 }
+
+                if (KotlinSharedSettings.IsUnsupportedTypeOrDerivedByUnsupportedType(nonByRefType)) {
+                    generatedName = string.Empty;
+
+                    return $"// TODO: Method with unsupported parameter type or derived by unsupported type";
+                }
             }
         }
         #endregion TODO: Unsupported Stuff
@@ -847,6 +853,19 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                     // }
                 }
             }
+
+            var isInterfaceImplementation = methodInfo.IsInterfaceImplementation
+            (
+                CodeLanguage.Kotlin,
+                out Type? implementedInterfaceType,
+                out _
+            );
+
+            if (isInterfaceImplementation) {
+                var isUnsupportedInterface = KotlinSharedSettings.IsUnsupportedInterface(implementedInterfaceType);
+
+                treatAsOverridden = !isUnsupportedInterface;
+            }
         } else if (memberInfo is FieldInfo fieldInfo &&
                    !fieldInfo.IsStatic) {
             bool isShadowed = fieldInfo.IsShadowed();
@@ -906,6 +925,12 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
         if (returnOrSetterOrEventHandlerTypeIsByRef) {
             returnOrSetterOrEventHandlerType = returnOrSetterOrEventHandlerType.GetNonByRefType();
+        }
+
+        if (KotlinSharedSettings.IsUnsupportedTypeOrDerivedByUnsupportedType(returnOrSetterOrEventHandlerType)) {
+            generatedName = string.Empty;
+
+            return "// TODO: Unsupported because of unsupported return type or derived by unsupported type";
         }
         
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);

@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
 namespace Beyond.NET.CodeGenerator.Extensions;
@@ -65,6 +66,43 @@ public static class MethodInfoExtensions
         return isOverridden;
     }
 
+    public static bool IsInterfaceImplementation(
+        this MethodInfo methodInfo,
+        CodeLanguage targetLanguage,
+        [MaybeNullWhen(false)] out Type implementedInterfaceType,
+        out bool nullabilityIsCompatible
+    )
+    {
+        nullabilityIsCompatible = true;
+        implementedInterfaceType = null;
+        
+        Type? declaringType = methodInfo.DeclaringType;
+
+        if (declaringType is null) {
+            return false;
+        }
+        
+        var interfaceTypes = declaringType.GetInterfaces();
+
+        foreach (var interfaceType in interfaceTypes) {
+            var isShadowedByInterface = IsShadowed(
+                methodInfo,
+                declaringType,
+                interfaceType,
+                targetLanguage,
+                out nullabilityIsCompatible
+            );
+
+            if (isShadowedByInterface) {
+                implementedInterfaceType = interfaceType;
+                
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public static bool IsShadowed(
         this MethodInfo methodInfo,
         CodeLanguage targetLanguage,
@@ -92,24 +130,6 @@ public static class MethodInfoExtensions
 
             if (isShadowedByBaseType) {
                 return true;
-            }
-        }
-
-        if (targetLanguage == CodeLanguage.Kotlin) {
-            var interfaceTypes = declaringType.GetInterfaces();
-
-            foreach (var interfaceType in interfaceTypes) {
-                var isShadowedByInterface = IsShadowed(
-                    methodInfo,
-                    declaringType,
-                    interfaceType,
-                    targetLanguage,
-                    out nullabilityIsCompatible
-                );
-
-                if (isShadowedByInterface) {
-                    return true;
-                }
             }
         }
 

@@ -426,6 +426,12 @@ public val value: {{underlyingTypeName}}
             return string.Empty;
         }
 
+        if (KotlinSharedSettings.IsUnsupportedTypeOrDerivedByUnsupportedType(type)) {
+            // No need to generate Kotlin code for single-dimensional arrays
+            
+            return "// TODO: Unsupported type or derived type of unsupported type";
+        }
+
         var cSharpMembers = cSharpUnmanagedResult.GeneratedTypes[type];
         // var cMembers = cResult.GeneratedTypes[type];
         
@@ -463,6 +469,9 @@ public val value: {{underlyingTypeName}}
             }
             
             interfaceTypes.AddRange(type.GetInterfaces());
+
+            // Remove all unsupported interfaces
+            interfaceTypes.RemoveAll(t => KotlinSharedSettings.IsUnsupportedInterface(t));
             
             List<string> kotlinInterfaceTypeNames = new();
             List<string> kotlinInterfaceTypeNamesForInterfaceImpl = new();

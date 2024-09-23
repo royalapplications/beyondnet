@@ -17,16 +17,12 @@ public static class DontStrip
     #endregion System.Security.Cryptography
     
     #region System.Net
-    // TODO: This causes override errors in Kotlin
-    // public static System.Net.NetworkCredential NetworkCredential => null!;
-    //
-    // private static void TestNetworkCredential()
-    // {
-    //     var c = (System.Net.ICredentialsByHost)null!;
-    //     c.GetCredential(null, 0, null);
-    //     
-    //     var nc = (System.Net.NetworkCredential)null!;
-    //     nc.GetCredential(null, 0, null);
-    // }
+    public static System.Net.NetworkCredential NetworkCredential => null!;
     #endregion System.Net
+
+    #region System.XML
+    // TODO: This causes Kotlin override errors
+    // Problem is: System.Xml.XmlNode innerText_set has value System.String but the impl in System.Xml.XmlDocument and System.Xml.XmlProcessingInstruction have nullable strings
+    public static System.Xml.Serialization.XmlSerializer XmlSerializer => null!;
+    #endregion System.XML
 }

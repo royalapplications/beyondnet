@@ -1,5 +1,5 @@
-// Number of generated types: 1418
-// Number of generated members: 6144
+// Number of generated types: 1631
+// Number of generated members: 7723
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -2382,6 +2382,85 @@ typedef struct DNReadOnlySpanOfByte {
 // Unsupported Type "System.Span`1[[System.Byte, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
 // Unsupported Type "System.Nullable`1": Excluded
 // Unsupported Type "System.ArraySegment`1[[System.Byte, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
+// Unsupported Type "System.Func`1[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
+// Unsupported Type "System.Func`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "System.Func`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Xml.XmlNodeType, System.Private.Xml, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.Int32?)
 // Unsupported Type "System.Nullable`1[[System.DateTimeKind, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.DateTimeKind?)
 
@@ -3290,6 +3369,321 @@ typedef enum __attribute__((enum_extensibility(open))): int32_t {
 	System_Security_Cryptography_ECCurve_ECCurveType_Characteristic2 = 4,
 	System_Security_Cryptography_ECCurve_ECCurveType_Named = 5
 } System_Security_Cryptography_ECCurve_ECCurveType_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_NewLineHandling_Replace = 0,
+	System_Xml_NewLineHandling_Entitize = 1,
+	System_Xml_NewLineHandling_None = 2
+} System_Xml_NewLineHandling_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_ConformanceLevel_Auto = 0,
+	System_Xml_ConformanceLevel_Fragment = 1,
+	System_Xml_ConformanceLevel_Document = 2
+} System_Xml_ConformanceLevel_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))) __attribute__((flag_enum)): int32_t {
+	System_Xml_NamespaceHandling_Default = 0,
+	System_Xml_NamespaceHandling_OmitDuplicates = 1
+} System_Xml_NamespaceHandling_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_XmlOutputMethod_Xml = 0,
+	System_Xml_XmlOutputMethod_Html = 1,
+	System_Xml_XmlOutputMethod_Text = 2,
+	System_Xml_XmlOutputMethod_AutoDetect = 3
+} System_Xml_XmlOutputMethod_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_WriteState_Start = 0,
+	System_Xml_WriteState_Prolog = 1,
+	System_Xml_WriteState_Element = 2,
+	System_Xml_WriteState_Attribute = 3,
+	System_Xml_WriteState_Content = 4,
+	System_Xml_WriteState_Closed = 5,
+	System_Xml_WriteState_Error = 6
+} System_Xml_WriteState_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_XmlSpace_None = 0,
+	System_Xml_XmlSpace_Default = 1,
+	System_Xml_XmlSpace_Preserve = 2
+} System_Xml_XmlSpace_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_DtdProcessing_Prohibit = 0,
+	System_Xml_DtdProcessing_Ignore = 1,
+	System_Xml_DtdProcessing_Parse = 2
+} System_Xml_DtdProcessing_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_ValidationType_None = 0,
+	System_Xml_ValidationType_Auto = 1,
+	System_Xml_ValidationType_DTD = 2,
+	System_Xml_ValidationType_XDR = 3,
+	System_Xml_ValidationType_Schema = 4
+} System_Xml_ValidationType_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))) __attribute__((flag_enum)): int32_t {
+	System_Xml_Schema_XmlSchemaValidationFlags_None = 0,
+	System_Xml_Schema_XmlSchemaValidationFlags_ProcessInlineSchema = 1,
+	System_Xml_Schema_XmlSchemaValidationFlags_ProcessSchemaLocation = 2,
+	System_Xml_Schema_XmlSchemaValidationFlags_ReportValidationWarnings = 4,
+	System_Xml_Schema_XmlSchemaValidationFlags_ProcessIdentityConstraints = 8,
+	System_Xml_Schema_XmlSchemaValidationFlags_AllowXmlAttributes = 16
+} System_Xml_Schema_XmlSchemaValidationFlags_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_Schema_XmlSeverityType_Error = 0,
+	System_Xml_Schema_XmlSeverityType_Warning = 1
+} System_Xml_Schema_XmlSeverityType_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_XmlNamespaceScope_All = 0,
+	System_Xml_XmlNamespaceScope_ExcludeXml = 1,
+	System_Xml_XmlNamespaceScope_Local = 2
+} System_Xml_XmlNamespaceScope_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_Schema_XmlSchemaForm_None = 0,
+	System_Xml_Schema_XmlSchemaForm_Qualified = 1,
+	System_Xml_Schema_XmlSchemaForm_Unqualified = 2
+} System_Xml_Schema_XmlSchemaForm_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))) __attribute__((flag_enum)): int32_t {
+	System_Xml_Schema_XmlSchemaDerivationMethod_Empty = 0,
+	System_Xml_Schema_XmlSchemaDerivationMethod_Substitution = 1,
+	System_Xml_Schema_XmlSchemaDerivationMethod_Extension = 2,
+	System_Xml_Schema_XmlSchemaDerivationMethod_Restriction = 4,
+	System_Xml_Schema_XmlSchemaDerivationMethod_List = 8,
+	System_Xml_Schema_XmlSchemaDerivationMethod_Union = 16,
+	System_Xml_Schema_XmlSchemaDerivationMethod_All = 255,
+	System_Xml_Schema_XmlSchemaDerivationMethod_None = 256
+} System_Xml_Schema_XmlSchemaDerivationMethod_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_Schema_XmlTypeCode_None = 0,
+	System_Xml_Schema_XmlTypeCode_Item = 1,
+	System_Xml_Schema_XmlTypeCode_Node = 2,
+	System_Xml_Schema_XmlTypeCode_Document = 3,
+	System_Xml_Schema_XmlTypeCode_Element = 4,
+	System_Xml_Schema_XmlTypeCode_Attribute = 5,
+	System_Xml_Schema_XmlTypeCode_Namespace = 6,
+	System_Xml_Schema_XmlTypeCode_ProcessingInstruction = 7,
+	System_Xml_Schema_XmlTypeCode_Comment = 8,
+	System_Xml_Schema_XmlTypeCode_Text = 9,
+	System_Xml_Schema_XmlTypeCode_AnyAtomicType = 10,
+	System_Xml_Schema_XmlTypeCode_UntypedAtomic = 11,
+	System_Xml_Schema_XmlTypeCode_String = 12,
+	System_Xml_Schema_XmlTypeCode_Boolean = 13,
+	System_Xml_Schema_XmlTypeCode_Decimal = 14,
+	System_Xml_Schema_XmlTypeCode_Float = 15,
+	System_Xml_Schema_XmlTypeCode_Double = 16,
+	System_Xml_Schema_XmlTypeCode_Duration = 17,
+	System_Xml_Schema_XmlTypeCode_DateTime = 18,
+	System_Xml_Schema_XmlTypeCode_Time = 19,
+	System_Xml_Schema_XmlTypeCode_Date = 20,
+	System_Xml_Schema_XmlTypeCode_GYearMonth = 21,
+	System_Xml_Schema_XmlTypeCode_GYear = 22,
+	System_Xml_Schema_XmlTypeCode_GMonthDay = 23,
+	System_Xml_Schema_XmlTypeCode_GDay = 24,
+	System_Xml_Schema_XmlTypeCode_GMonth = 25,
+	System_Xml_Schema_XmlTypeCode_HexBinary = 26,
+	System_Xml_Schema_XmlTypeCode_Base64Binary = 27,
+	System_Xml_Schema_XmlTypeCode_AnyUri = 28,
+	System_Xml_Schema_XmlTypeCode_QName = 29,
+	System_Xml_Schema_XmlTypeCode_Notation = 30,
+	System_Xml_Schema_XmlTypeCode_NormalizedString = 31,
+	System_Xml_Schema_XmlTypeCode_Token = 32,
+	System_Xml_Schema_XmlTypeCode_Language = 33,
+	System_Xml_Schema_XmlTypeCode_NmToken = 34,
+	System_Xml_Schema_XmlTypeCode_Name = 35,
+	System_Xml_Schema_XmlTypeCode_NCName = 36,
+	System_Xml_Schema_XmlTypeCode_Id = 37,
+	System_Xml_Schema_XmlTypeCode_Idref = 38,
+	System_Xml_Schema_XmlTypeCode_Entity = 39,
+	System_Xml_Schema_XmlTypeCode_Integer = 40,
+	System_Xml_Schema_XmlTypeCode_NonPositiveInteger = 41,
+	System_Xml_Schema_XmlTypeCode_NegativeInteger = 42,
+	System_Xml_Schema_XmlTypeCode_Long = 43,
+	System_Xml_Schema_XmlTypeCode_Int = 44,
+	System_Xml_Schema_XmlTypeCode_Short = 45,
+	System_Xml_Schema_XmlTypeCode_Byte = 46,
+	System_Xml_Schema_XmlTypeCode_NonNegativeInteger = 47,
+	System_Xml_Schema_XmlTypeCode_UnsignedLong = 48,
+	System_Xml_Schema_XmlTypeCode_UnsignedInt = 49,
+	System_Xml_Schema_XmlTypeCode_UnsignedShort = 50,
+	System_Xml_Schema_XmlTypeCode_UnsignedByte = 51,
+	System_Xml_Schema_XmlTypeCode_PositiveInteger = 52,
+	System_Xml_Schema_XmlTypeCode_YearMonthDuration = 53,
+	System_Xml_Schema_XmlTypeCode_DayTimeDuration = 54
+} System_Xml_Schema_XmlTypeCode_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_Schema_XmlSchemaContentProcessing_None = 0,
+	System_Xml_Schema_XmlSchemaContentProcessing_Skip = 1,
+	System_Xml_Schema_XmlSchemaContentProcessing_Lax = 2,
+	System_Xml_Schema_XmlSchemaContentProcessing_Strict = 3
+} System_Xml_Schema_XmlSchemaContentProcessing_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_Schema_XmlSchemaContentType_TextOnly = 0,
+	System_Xml_Schema_XmlSchemaContentType_Empty = 1,
+	System_Xml_Schema_XmlSchemaContentType_ElementOnly = 2,
+	System_Xml_Schema_XmlSchemaContentType_Mixed = 3
+} System_Xml_Schema_XmlSchemaContentType_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_XmlTokenizedType_CDATA = 0,
+	System_Xml_XmlTokenizedType_ID = 1,
+	System_Xml_XmlTokenizedType_IDREF = 2,
+	System_Xml_XmlTokenizedType_IDREFS = 3,
+	System_Xml_XmlTokenizedType_ENTITY = 4,
+	System_Xml_XmlTokenizedType_ENTITIES = 5,
+	System_Xml_XmlTokenizedType_NMTOKEN = 6,
+	System_Xml_XmlTokenizedType_NMTOKENS = 7,
+	System_Xml_XmlTokenizedType_NOTATION = 8,
+	System_Xml_XmlTokenizedType_ENUMERATION = 9,
+	System_Xml_XmlTokenizedType_QName = 10,
+	System_Xml_XmlTokenizedType_NCName = 11,
+	System_Xml_XmlTokenizedType_None = 12
+} System_Xml_XmlTokenizedType_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_Schema_XmlSchemaDatatypeVariety_Atomic = 0,
+	System_Xml_Schema_XmlSchemaDatatypeVariety_List = 1,
+	System_Xml_Schema_XmlSchemaDatatypeVariety_Union = 2
+} System_Xml_Schema_XmlSchemaDatatypeVariety_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_XPath_XPathNodeType_Root = 0,
+	System_Xml_XPath_XPathNodeType_Element = 1,
+	System_Xml_XPath_XPathNodeType_Attribute = 2,
+	System_Xml_XPath_XPathNodeType_Namespace = 3,
+	System_Xml_XPath_XPathNodeType_Text = 4,
+	System_Xml_XPath_XPathNodeType_SignificantWhitespace = 5,
+	System_Xml_XPath_XPathNodeType_Whitespace = 6,
+	System_Xml_XPath_XPathNodeType_ProcessingInstruction = 7,
+	System_Xml_XPath_XPathNodeType_Comment = 8,
+	System_Xml_XPath_XPathNodeType_All = 9
+} System_Xml_XPath_XPathNodeType_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_XPath_XPathNamespaceScope_All = 0,
+	System_Xml_XPath_XPathNamespaceScope_ExcludeXml = 1,
+	System_Xml_XPath_XPathNamespaceScope_Local = 2
+} System_Xml_XPath_XPathNamespaceScope_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_XmlNodeOrder_Before = 0,
+	System_Xml_XmlNodeOrder_After = 1,
+	System_Xml_XmlNodeOrder_Same = 2,
+	System_Xml_XmlNodeOrder_Unknown = 3
+} System_Xml_XmlNodeOrder_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_Schema_XmlSchemaValidity_NotKnown = 0,
+	System_Xml_Schema_XmlSchemaValidity_Valid = 1,
+	System_Xml_Schema_XmlSchemaValidity_Invalid = 2
+} System_Xml_Schema_XmlSchemaValidity_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_Schema_XmlSchemaUse_None = 0,
+	System_Xml_Schema_XmlSchemaUse_Optional = 1,
+	System_Xml_Schema_XmlSchemaUse_Prohibited = 2,
+	System_Xml_Schema_XmlSchemaUse_Required = 3
+} System_Xml_Schema_XmlSchemaUse_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_XPath_XmlSortOrder_Ascending = 1,
+	System_Xml_XPath_XmlSortOrder_Descending = 2
+} System_Xml_XPath_XmlSortOrder_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_XPath_XmlCaseOrder_None = 0,
+	System_Xml_XPath_XmlCaseOrder_UpperFirst = 1,
+	System_Xml_XPath_XmlCaseOrder_LowerFirst = 2
+} System_Xml_XPath_XmlCaseOrder_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_XPath_XmlDataType_Text = 1,
+	System_Xml_XPath_XmlDataType_Number = 2
+} System_Xml_XPath_XmlDataType_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_XPath_XPathResultType_Number = 0,
+	System_Xml_XPath_XPathResultType_String = 1,
+	System_Xml_XPath_XPathResultType_Navigator = 1,
+	System_Xml_XPath_XPathResultType_Boolean = 2,
+	System_Xml_XPath_XPathResultType_NodeSet = 3,
+	System_Xml_XPath_XPathResultType_Any = 5,
+	System_Xml_XPath_XPathResultType_Error = 6
+} System_Xml_XPath_XPathResultType_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_XmlNodeType_None = 0,
+	System_Xml_XmlNodeType_Element = 1,
+	System_Xml_XmlNodeType_Attribute = 2,
+	System_Xml_XmlNodeType_Text = 3,
+	System_Xml_XmlNodeType_CDATA = 4,
+	System_Xml_XmlNodeType_EntityReference = 5,
+	System_Xml_XmlNodeType_Entity = 6,
+	System_Xml_XmlNodeType_ProcessingInstruction = 7,
+	System_Xml_XmlNodeType_Comment = 8,
+	System_Xml_XmlNodeType_Document = 9,
+	System_Xml_XmlNodeType_DocumentType = 10,
+	System_Xml_XmlNodeType_DocumentFragment = 11,
+	System_Xml_XmlNodeType_Notation = 12,
+	System_Xml_XmlNodeType_Whitespace = 13,
+	System_Xml_XmlNodeType_SignificantWhitespace = 14,
+	System_Xml_XmlNodeType_EndElement = 15,
+	System_Xml_XmlNodeType_EndEntity = 16,
+	System_Xml_XmlNodeType_XmlDeclaration = 17
+} System_Xml_XmlNodeType_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_XmlNodeChangedAction_Insert = 0,
+	System_Xml_XmlNodeChangedAction_Remove = 1,
+	System_Xml_XmlNodeChangedAction_Change = 2
+} System_Xml_XmlNodeChangedAction_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	System_Xml_ReadState_Initial = 0,
+	System_Xml_ReadState_Interactive = 1,
+	System_Xml_ReadState_Error = 2,
+	System_Xml_ReadState_EndOfFile = 3,
+	System_Xml_ReadState_Closed = 4
+} System_Xml_ReadState_t;
 
 
 typedef enum __attribute__((enum_extensibility(open))): int32_t {
@@ -5384,6 +5778,351 @@ typedef void* System_Security_Cryptography_ECDiffieHellman_t;
 
 typedef void* System_Security_Cryptography_ECDiffieHellmanPublicKey_t;
 
+typedef void* System_Net_NetworkCredential_t;
+
+typedef void* System_Net_ICredentials_t;
+
+typedef void* System_Net_ICredentialsByHost_t;
+
+typedef void* System_Xml_Serialization_XmlSerializer_t;
+
+typedef void* System_Xml_Serialization_XmlSerializerNamespaces_t;
+
+typedef void* System_Xml_XmlQualifiedName_Array_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Collections_Generic_ICollection_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Xml_XmlQualifiedName_t;
+
+typedef void* System_Collections_Generic_IReadOnlyList_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
+
+
+typedef void* System_Xml_XmlWriter_t;
+
+typedef void* System_Xml_XmlWriterSettings_t;
+
+typedef void* System_Xml_XmlReader_t;
+
+typedef void* System_Xml_XmlReaderSettings_t;
+
+typedef void* System_Xml_XmlNameTable_t;
+
+typedef void* System_Xml_XmlResolver_t;
+
+typedef void* System_Threading_Tasks_Task_A1_t;
+
+typedef void* System_Threading_Tasks_TaskFactory_A1_t;
+
+typedef void* System_Runtime_CompilerServices_TaskAwaiter_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
+
+typedef void* System_Xml_Schema_XmlSchemaSet_t;
+
+typedef void* System_Xml_Schema_ValidationEventArgs_t;
+
+typedef void* System_Xml_Schema_XmlSchemaException_t;
+
+typedef void* System_Xml_Schema_XmlSchemaObject_t;
+
+typedef void* System_Xml_Schema_XmlSchemaCompilationSettings_t;
+
+typedef void* System_Xml_Schema_XmlSchemaObjectTable_t;
+
+typedef void* System_Xml_Schema_XmlSchema_t;
+
+typedef void* System_Xml_XmlNamespaceManager_t;
+
+typedef void* System_Xml_IXmlNamespaceResolver_t;
+
+typedef void* System_Collections_Generic_IDictionary_A2_t;
+
+typedef void* System_Collections_Generic_ICollection_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Collections_Generic_KeyValuePair_A2_t;
+
+typedef void* System_Xml_Schema_XmlSchemaObjectCollection_t;
+
+typedef void* System_Collections_CollectionBase_t;
+
+typedef void* System_Xml_Schema_XmlSchemaObjectEnumerator_t;
+
+typedef void* System_Xml_Schema_XmlSchemaObject_Array_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Collections_Generic_ICollection_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyList_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
+
+
+typedef void* System_Xml_XmlAttribute_Array_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Collections_Generic_ICollection_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Xml_XmlAttribute_t;
+
+typedef void* System_Xml_XmlNode_t;
+
+typedef void* System_Xml_XPath_IXPathNavigable_t;
+
+typedef void* System_Xml_XPath_XPathNavigator_t;
+
+typedef void* System_Xml_XPath_XPathItem_t;
+
+typedef void* System_Xml_Schema_XmlSchemaType_t;
+
+typedef void* System_Xml_Schema_XmlSchemaAnnotated_t;
+
+typedef void* System_Xml_Schema_XmlSchemaAnnotation_t;
+
+typedef void* System_Xml_Schema_XmlSchemaSimpleType_t;
+
+typedef void* System_Xml_Schema_XmlSchemaSimpleTypeContent_t;
+
+typedef void* System_Xml_Schema_XmlSchemaComplexType_t;
+
+typedef void* System_Xml_Schema_XmlSchemaContentModel_t;
+
+typedef void* System_Xml_Schema_XmlSchemaContent_t;
+
+typedef void* System_Xml_Schema_XmlSchemaParticle_t;
+
+typedef void* System_Xml_Schema_XmlSchemaAnyAttribute_t;
+
+typedef void* System_Xml_Schema_XmlSchemaDatatype_t;
+
+typedef void* System_Xml_Schema_IXmlSchemaInfo_t;
+
+typedef void* System_Xml_Schema_XmlSchemaElement_t;
+
+typedef void* System_Xml_Schema_XmlSchemaAttribute_t;
+
+typedef void* System_Xml_XPath_XPathExpression_t;
+
+typedef void* System_Xml_XPath_XPathNodeIterator_t;
+
+typedef void* System_Xml_XmlNodeList_t;
+
+typedef void* System_Xml_XmlAttributeCollection_t;
+
+typedef void* System_Xml_XmlNamedNodeMap_t;
+
+typedef void* System_Xml_XmlDocument_t;
+
+typedef void* System_Xml_XmlDocumentType_t;
+
+typedef void* System_Xml_XmlLinkedNode_t;
+
+typedef void* System_Xml_XmlImplementation_t;
+
+typedef void* System_Xml_XmlElement_t;
+
+typedef void* System_Xml_XmlCDataSection_t;
+
+typedef void* System_Xml_XmlCharacterData_t;
+
+typedef void* System_Xml_XmlComment_t;
+
+typedef void* System_Xml_XmlDocumentFragment_t;
+
+typedef void* System_Xml_XmlEntityReference_t;
+
+typedef void* System_Xml_XmlProcessingInstruction_t;
+
+typedef void* System_Xml_XmlDeclaration_t;
+
+typedef void* System_Xml_XmlText_t;
+
+typedef void* System_Xml_XmlSignificantWhitespace_t;
+
+typedef void* System_Xml_XmlWhitespace_t;
+
+typedef void* System_Xml_XmlNodeChangedEventArgs_t;
+
+typedef void* System_Collections_Generic_IReadOnlyList_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
+
+
+typedef void* System_Xml_Schema_XmlSchema_Array_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Collections_Generic_ICollection_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyList_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
+
+
+typedef void* System_Xml_XmlParserContext_t;
+
+typedef void* System_Threading_Tasks_Task_A1_t;
+
+typedef void* System_Threading_Tasks_TaskFactory_A1_t;
+
+typedef void* System_Runtime_CompilerServices_TaskAwaiter_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
+
+typedef void* System_Threading_Tasks_Task_A1_t;
+
+typedef void* System_Threading_Tasks_TaskFactory_A1_t;
+
+typedef void* System_Runtime_CompilerServices_TaskAwaiter_A1_t;
+
+typedef void* System_Runtime_CompilerServices_ConfiguredTaskAwaitable_A1_t;
+
+typedef void* System_Xml_Serialization_XmlDeserializationEvents_t;
+
+typedef void* System_Xml_Serialization_XmlNodeEventArgs_t;
+
+typedef void* System_Xml_Serialization_XmlAttributeEventArgs_t;
+
+typedef void* System_Xml_Serialization_XmlElementEventArgs_t;
+
+typedef void* System_Xml_Serialization_UnreferencedObjectEventArgs_t;
+
+typedef void* System_Xml_Serialization_XmlSerializer_Array_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Collections_Generic_ICollection_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyList_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
+
+
+typedef void* System_Xml_Serialization_XmlMapping_Array_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Collections_Generic_ICollection_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Xml_Serialization_XmlMapping_t;
+
+typedef void* System_Collections_Generic_IReadOnlyList_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
+
+
+typedef void* System_Xml_Serialization_XmlAttributeOverrides_t;
+
+typedef void* System_Xml_Serialization_XmlAttributes_t;
+
+typedef void* System_Xml_Serialization_XmlElementAttributes_t;
+
+typedef void* System_Xml_Serialization_XmlElementAttribute_t;
+
+typedef void* System_Xml_Serialization_XmlElementAttribute_Array_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Collections_Generic_ICollection_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyList_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
+
+
+typedef void* System_Xml_Serialization_XmlAttributeAttribute_t;
+
+typedef void* System_Xml_Serialization_XmlEnumAttribute_t;
+
+typedef void* System_Xml_Serialization_XmlTextAttribute_t;
+
+typedef void* System_Xml_Serialization_XmlArrayAttribute_t;
+
+typedef void* System_Xml_Serialization_XmlArrayItemAttributes_t;
+
+typedef void* System_Xml_Serialization_XmlArrayItemAttribute_t;
+
+typedef void* System_Xml_Serialization_XmlArrayItemAttribute_Array_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Collections_Generic_ICollection_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyList_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
+
+
+typedef void* System_Xml_Serialization_XmlTypeAttribute_t;
+
+typedef void* System_Xml_Serialization_XmlRootAttribute_t;
+
+typedef void* System_Xml_Serialization_XmlAnyElementAttributes_t;
+
+typedef void* System_Xml_Serialization_XmlAnyElementAttribute_t;
+
+typedef void* System_Xml_Serialization_XmlAnyElementAttribute_Array_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Collections_Generic_ICollection_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyList_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
+
+
+typedef void* System_Xml_Serialization_XmlAnyAttributeAttribute_t;
+
+typedef void* System_Xml_Serialization_XmlChoiceIdentifierAttribute_t;
+
+typedef void* System_Xml_Serialization_XmlTypeMapping_t;
+
 typedef void* Beyond_NET_Sample_Source_EnumTests_t;
 
 typedef void* Beyond_NET_Sample_Source_ManagedUnhandledExceptionHandler_t;
@@ -5698,6 +6437,66 @@ typedef void (*Beyond_NET_Sample_Transformer_StringGetterDelegate_CDestructorFun
 
 typedef System_String_t _Nullable (*Beyond_NET_Sample_Transformer_StringGetterDelegate_CFunction_t)(
 	void* context
+);
+
+
+typedef void* System_Xml_Schema_ValidationEventHandler_t;
+typedef void (*System_Xml_Schema_ValidationEventHandler_CDestructorFunction_t)(void* context);
+
+typedef void (*System_Xml_Schema_ValidationEventHandler_CFunction_t)(
+	void* context,
+	System_Object_t _Nullable sender,
+	System_Xml_Schema_ValidationEventArgs_t _Nonnull e
+);
+
+
+typedef void* System_Xml_XmlNodeChangedEventHandler_t;
+typedef void (*System_Xml_XmlNodeChangedEventHandler_CDestructorFunction_t)(void* context);
+
+typedef void (*System_Xml_XmlNodeChangedEventHandler_CFunction_t)(
+	void* context,
+	System_Object_t _Nonnull sender,
+	System_Xml_XmlNodeChangedEventArgs_t _Nonnull e
+);
+
+
+typedef void* System_Xml_Serialization_XmlNodeEventHandler_t;
+typedef void (*System_Xml_Serialization_XmlNodeEventHandler_CDestructorFunction_t)(void* context);
+
+typedef void (*System_Xml_Serialization_XmlNodeEventHandler_CFunction_t)(
+	void* context,
+	System_Object_t _Nullable sender,
+	System_Xml_Serialization_XmlNodeEventArgs_t _Nonnull e
+);
+
+
+typedef void* System_Xml_Serialization_XmlAttributeEventHandler_t;
+typedef void (*System_Xml_Serialization_XmlAttributeEventHandler_CDestructorFunction_t)(void* context);
+
+typedef void (*System_Xml_Serialization_XmlAttributeEventHandler_CFunction_t)(
+	void* context,
+	System_Object_t _Nullable sender,
+	System_Xml_Serialization_XmlAttributeEventArgs_t _Nonnull e
+);
+
+
+typedef void* System_Xml_Serialization_XmlElementEventHandler_t;
+typedef void (*System_Xml_Serialization_XmlElementEventHandler_CDestructorFunction_t)(void* context);
+
+typedef void (*System_Xml_Serialization_XmlElementEventHandler_CFunction_t)(
+	void* context,
+	System_Object_t _Nullable sender,
+	System_Xml_Serialization_XmlElementEventArgs_t _Nonnull e
+);
+
+
+typedef void* System_Xml_Serialization_UnreferencedObjectEventHandler_t;
+typedef void (*System_Xml_Serialization_UnreferencedObjectEventHandler_CDestructorFunction_t)(void* context);
+
+typedef void (*System_Xml_Serialization_UnreferencedObjectEventHandler_CFunction_t)(
+	void* context,
+	System_Object_t _Nullable sender,
+	System_Xml_Serialization_UnreferencedObjectEventArgs_t _Nonnull e
 );
 
 
@@ -6360,6 +7159,246 @@ System_Security_Cryptography_ECCurve_ECCurveType_TypeOf(
 );
 
 #pragma mark - END APIs of System.Security.Cryptography.ECCurve.ECCurveType
+
+#pragma mark - BEGIN APIs of System.Xml.NewLineHandling
+System_Type_t _Nonnull /* System.Type */
+System_Xml_NewLineHandling_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.NewLineHandling
+
+#pragma mark - BEGIN APIs of System.Xml.ConformanceLevel
+System_Type_t _Nonnull /* System.Type */
+System_Xml_ConformanceLevel_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.ConformanceLevel
+
+#pragma mark - BEGIN APIs of System.Xml.NamespaceHandling
+System_Type_t _Nonnull /* System.Type */
+System_Xml_NamespaceHandling_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.NamespaceHandling
+
+#pragma mark - BEGIN APIs of System.Xml.XmlOutputMethod
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlOutputMethod_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.XmlOutputMethod
+
+#pragma mark - BEGIN APIs of System.Xml.WriteState
+System_Type_t _Nonnull /* System.Type */
+System_Xml_WriteState_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.WriteState
+
+#pragma mark - BEGIN APIs of System.Xml.XmlSpace
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlSpace_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.XmlSpace
+
+#pragma mark - BEGIN APIs of System.Xml.DtdProcessing
+System_Type_t _Nonnull /* System.Type */
+System_Xml_DtdProcessing_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.DtdProcessing
+
+#pragma mark - BEGIN APIs of System.Xml.ValidationType
+System_Type_t _Nonnull /* System.Type */
+System_Xml_ValidationType_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.ValidationType
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaValidationFlags
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaValidationFlags_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaValidationFlags
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSeverityType
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSeverityType_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSeverityType
+
+#pragma mark - BEGIN APIs of System.Xml.XmlNamespaceScope
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlNamespaceScope_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.XmlNamespaceScope
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaForm
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaForm_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaForm
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaDerivationMethod
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaDerivationMethod_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaDerivationMethod
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlTypeCode
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlTypeCode_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlTypeCode
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaContentProcessing
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaContentProcessing_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaContentProcessing
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaContentType
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaContentType_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaContentType
+
+#pragma mark - BEGIN APIs of System.Xml.XmlTokenizedType
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlTokenizedType_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.XmlTokenizedType
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaDatatypeVariety
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaDatatypeVariety_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaDatatypeVariety
+
+#pragma mark - BEGIN APIs of System.Xml.XPath.XPathNodeType
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XPath_XPathNodeType_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.XPath.XPathNodeType
+
+#pragma mark - BEGIN APIs of System.Xml.XPath.XPathNamespaceScope
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XPath_XPathNamespaceScope_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.XPath.XPathNamespaceScope
+
+#pragma mark - BEGIN APIs of System.Xml.XmlNodeOrder
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlNodeOrder_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.XmlNodeOrder
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaValidity
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaValidity_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaValidity
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaUse
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaUse_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaUse
+
+#pragma mark - BEGIN APIs of System.Xml.XPath.XmlSortOrder
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XPath_XmlSortOrder_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.XPath.XmlSortOrder
+
+#pragma mark - BEGIN APIs of System.Xml.XPath.XmlCaseOrder
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XPath_XmlCaseOrder_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.XPath.XmlCaseOrder
+
+#pragma mark - BEGIN APIs of System.Xml.XPath.XmlDataType
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XPath_XmlDataType_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.XPath.XmlDataType
+
+#pragma mark - BEGIN APIs of System.Xml.XPath.XPathResultType
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XPath_XPathResultType_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.XPath.XPathResultType
+
+#pragma mark - BEGIN APIs of System.Xml.XmlNodeType
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlNodeType_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.XmlNodeType
+
+#pragma mark - BEGIN APIs of System.Xml.XmlNodeChangedAction
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlNodeChangedAction_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.XmlNodeChangedAction
+
+#pragma mark - BEGIN APIs of System.Xml.ReadState
+System_Type_t _Nonnull /* System.Type */
+System_Xml_ReadState_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of System.Xml.ReadState
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.EnumWithUnfavorableNames
 System_Type_t _Nonnull /* System.Type */
@@ -46722,6 +47761,18 @@ Beyond_NET_Sample_Source_DontStrip_ECDiffieHellman_Get(
 );
 
 
+System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
+Beyond_NET_Sample_Source_DontStrip_NetworkCredential_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Serialization_XmlSerializer_t _Nonnull /* System.Xml.Serialization.XmlSerializer */
+Beyond_NET_Sample_Source_DontStrip_XmlSerializer_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
 System_Type_t _Nonnull /* System.Type */
 Beyond_NET_Sample_Source_DontStrip_TypeOf(
 	void
@@ -49323,6 +50374,10851 @@ System_Security_Cryptography_ECDiffieHellmanPublicKey_Destroy(
 
 #pragma mark - END APIs of System.Security.Cryptography.ECDiffieHellmanPublicKey
 
+#pragma mark - BEGIN APIs of System.Net.NetworkCredential
+System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
+System_Net_NetworkCredential_GetCredential(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_Uri_t _Nullable /* System.Uri */ uri,
+	System_String_t _Nullable /* System.String */ authenticationType,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
+System_Net_NetworkCredential_GetCredential_1(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_String_t _Nullable /* System.String */ host,
+	int32_t /* System.Int32 */ port,
+	System_String_t _Nullable /* System.String */ authenticationType,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
+System_Net_NetworkCredential_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
+System_Net_NetworkCredential_Create_1(
+	System_String_t _Nullable /* System.String */ userName,
+	System_String_t _Nullable /* System.String */ password,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
+System_Net_NetworkCredential_Create_2(
+	System_String_t _Nullable /* System.String */ userName,
+	System_String_t _Nullable /* System.String */ password,
+	System_String_t _Nullable /* System.String */ domain,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
+System_Net_NetworkCredential_Create_3(
+	System_String_t _Nullable /* System.String */ userName,
+	System_Security_SecureString_t _Nullable /* System.Security.SecureString */ password,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
+System_Net_NetworkCredential_Create_4(
+	System_String_t _Nullable /* System.String */ userName,
+	System_Security_SecureString_t _Nullable /* System.Security.SecureString */ password,
+	System_String_t _Nullable /* System.String */ domain,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Net_NetworkCredential_UserName_Get(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Net_NetworkCredential_UserName_Set(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Net_NetworkCredential_Password_Get(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Net_NetworkCredential_Password_Set(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_SecureString_t _Nonnull /* System.Security.SecureString */
+System_Net_NetworkCredential_SecurePassword_Get(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Net_NetworkCredential_SecurePassword_Set(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_Security_SecureString_t _Nullable /* System.Security.SecureString */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Net_NetworkCredential_Domain_Get(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Net_NetworkCredential_Domain_Set(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Net_NetworkCredential_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Net_NetworkCredential_Destroy(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self
+);
+
+#pragma mark - END APIs of System.Net.NetworkCredential
+
+#pragma mark - BEGIN APIs of System.Net.ICredentials
+System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */
+System_Net_ICredentials_GetCredential(
+	System_Net_ICredentials_t _Nullable /* System.Net.ICredentials */ self,
+	System_Uri_t _Nonnull /* System.Uri */ uri,
+	System_String_t _Nonnull /* System.String */ authType,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Net_ICredentials_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Net_ICredentials_Destroy(
+	System_Net_ICredentials_t _Nullable /* System.Net.ICredentials */ self
+);
+
+#pragma mark - END APIs of System.Net.ICredentials
+
+#pragma mark - BEGIN APIs of System.Net.ICredentialsByHost
+System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */
+System_Net_ICredentialsByHost_GetCredential(
+	System_Net_ICredentialsByHost_t _Nullable /* System.Net.ICredentialsByHost */ self,
+	System_String_t _Nonnull /* System.String */ host,
+	int32_t /* System.Int32 */ port,
+	System_String_t _Nonnull /* System.String */ authenticationType,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Net_ICredentialsByHost_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Net_ICredentialsByHost_Destroy(
+	System_Net_ICredentialsByHost_t _Nullable /* System.Net.ICredentialsByHost */ self
+);
+
+#pragma mark - END APIs of System.Net.ICredentialsByHost
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlSerializer
+void /* System.Void */
+System_Xml_Serialization_XmlSerializer_Serialize(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_IO_TextWriter_t _Nonnull /* System.IO.TextWriter */ textWriter,
+	System_Object_t _Nullable /* System.Object */ o,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlSerializer_Serialize_1(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_IO_TextWriter_t _Nonnull /* System.IO.TextWriter */ textWriter,
+	System_Object_t _Nullable /* System.Object */ o,
+	System_Xml_Serialization_XmlSerializerNamespaces_t _Nullable /* System.Xml.Serialization.XmlSerializerNamespaces */ namespaces,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlSerializer_Serialize_2(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
+	System_Object_t _Nullable /* System.Object */ o,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlSerializer_Serialize_3(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
+	System_Object_t _Nullable /* System.Object */ o,
+	System_Xml_Serialization_XmlSerializerNamespaces_t _Nullable /* System.Xml.Serialization.XmlSerializerNamespaces */ namespaces,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlSerializer_Serialize_4(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ xmlWriter,
+	System_Object_t _Nullable /* System.Object */ o,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlSerializer_Serialize_5(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ xmlWriter,
+	System_Object_t _Nullable /* System.Object */ o,
+	System_Xml_Serialization_XmlSerializerNamespaces_t _Nullable /* System.Xml.Serialization.XmlSerializerNamespaces */ namespaces,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlSerializer_Serialize_6(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ xmlWriter,
+	System_Object_t _Nullable /* System.Object */ o,
+	System_Xml_Serialization_XmlSerializerNamespaces_t _Nullable /* System.Xml.Serialization.XmlSerializerNamespaces */ namespaces,
+	System_String_t _Nullable /* System.String */ encodingStyle,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlSerializer_Serialize_7(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ xmlWriter,
+	System_Object_t _Nullable /* System.Object */ o,
+	System_Xml_Serialization_XmlSerializerNamespaces_t _Nullable /* System.Xml.Serialization.XmlSerializerNamespaces */ namespaces,
+	System_String_t _Nullable /* System.String */ encodingStyle,
+	System_String_t _Nullable /* System.String */ id,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nullable /* System.Object */
+System_Xml_Serialization_XmlSerializer_Deserialize(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nullable /* System.Object */
+System_Xml_Serialization_XmlSerializer_Deserialize_1(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_IO_TextReader_t _Nonnull /* System.IO.TextReader */ textReader,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nullable /* System.Object */
+System_Xml_Serialization_XmlSerializer_Deserialize_2(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */ xmlReader,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nullable /* System.Object */
+System_Xml_Serialization_XmlSerializer_Deserialize_3(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */ xmlReader,
+	System_Xml_Serialization_XmlDeserializationEvents_t _Nonnull /* System.Xml.Serialization.XmlDeserializationEvents */ events,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nullable /* System.Object */
+System_Xml_Serialization_XmlSerializer_Deserialize_4(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */ xmlReader,
+	System_String_t _Nullable /* System.String */ encodingStyle,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nullable /* System.Object */
+System_Xml_Serialization_XmlSerializer_Deserialize_5(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */ xmlReader,
+	System_String_t _Nullable /* System.String */ encodingStyle,
+	System_Xml_Serialization_XmlDeserializationEvents_t _Nonnull /* System.Xml.Serialization.XmlDeserializationEvents */ events,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_Serialization_XmlSerializer_CanDeserialize(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */ xmlReader,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlSerializer_Array_t _Nonnull /* System.Xml.Serialization.XmlSerializer[] */
+System_Xml_Serialization_XmlSerializer_FromMappings(
+	System_Xml_Serialization_XmlMapping_Array_t _Nullable /* System.Xml.Serialization.XmlMapping[] */ mappings,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlSerializer_Array_t _Nonnull /* System.Xml.Serialization.XmlSerializer[] */
+System_Xml_Serialization_XmlSerializer_FromMappings_1(
+	System_Xml_Serialization_XmlMapping_Array_t _Nullable /* System.Xml.Serialization.XmlMapping[] */ mappings,
+	System_Type_t _Nullable /* System.Type */ type,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlSerializer_Array_t _Nonnull /* System.Xml.Serialization.XmlSerializer[] */
+System_Xml_Serialization_XmlSerializer_FromTypes(
+	System_Type_Array_t _Nullable /* System.Type[] */ types,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlSerializer_GetXmlSerializerAssemblyName(
+	System_Type_t _Nonnull /* System.Type */ type,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlSerializer_GetXmlSerializerAssemblyName_1(
+	System_Type_t _Nonnull /* System.Type */ type,
+	System_String_t _Nullable /* System.String */ defaultNamespace,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlSerializer_t _Nonnull /* System.Xml.Serialization.XmlSerializer */
+System_Xml_Serialization_XmlSerializer_Create(
+	System_Type_t _Nonnull /* System.Type */ type,
+	System_Xml_Serialization_XmlAttributeOverrides_t _Nullable /* System.Xml.Serialization.XmlAttributeOverrides */ overrides,
+	System_Type_Array_t _Nullable /* System.Type[] */ extraTypes,
+	System_Xml_Serialization_XmlRootAttribute_t _Nullable /* System.Xml.Serialization.XmlRootAttribute */ root,
+	System_String_t _Nullable /* System.String */ defaultNamespace,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlSerializer_t _Nonnull /* System.Xml.Serialization.XmlSerializer */
+System_Xml_Serialization_XmlSerializer_Create_1(
+	System_Type_t _Nonnull /* System.Type */ type,
+	System_Xml_Serialization_XmlRootAttribute_t _Nullable /* System.Xml.Serialization.XmlRootAttribute */ root,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlSerializer_t _Nonnull /* System.Xml.Serialization.XmlSerializer */
+System_Xml_Serialization_XmlSerializer_Create_2(
+	System_Type_t _Nonnull /* System.Type */ type,
+	System_Type_Array_t _Nullable /* System.Type[] */ extraTypes,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlSerializer_t _Nonnull /* System.Xml.Serialization.XmlSerializer */
+System_Xml_Serialization_XmlSerializer_Create_3(
+	System_Type_t _Nonnull /* System.Type */ type,
+	System_Xml_Serialization_XmlAttributeOverrides_t _Nullable /* System.Xml.Serialization.XmlAttributeOverrides */ overrides,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlSerializer_t _Nonnull /* System.Xml.Serialization.XmlSerializer */
+System_Xml_Serialization_XmlSerializer_Create_4(
+	System_Xml_Serialization_XmlTypeMapping_t _Nonnull /* System.Xml.Serialization.XmlTypeMapping */ xmlTypeMapping,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlSerializer_t _Nonnull /* System.Xml.Serialization.XmlSerializer */
+System_Xml_Serialization_XmlSerializer_Create_5(
+	System_Type_t _Nonnull /* System.Type */ type,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlSerializer_t _Nonnull /* System.Xml.Serialization.XmlSerializer */
+System_Xml_Serialization_XmlSerializer_Create_6(
+	System_Type_t _Nonnull /* System.Type */ type,
+	System_String_t _Nullable /* System.String */ defaultNamespace,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlSerializer_t _Nonnull /* System.Xml.Serialization.XmlSerializer */
+System_Xml_Serialization_XmlSerializer_Create_7(
+	System_Type_t _Nonnull /* System.Type */ type,
+	System_Xml_Serialization_XmlAttributeOverrides_t _Nullable /* System.Xml.Serialization.XmlAttributeOverrides */ overrides,
+	System_Type_Array_t _Nullable /* System.Type[] */ extraTypes,
+	System_Xml_Serialization_XmlRootAttribute_t _Nullable /* System.Xml.Serialization.XmlRootAttribute */ root,
+	System_String_t _Nullable /* System.String */ defaultNamespace,
+	System_String_t _Nullable /* System.String */ location,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlSerializer_UnknownNode_Add(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_Xml_Serialization_XmlNodeEventHandler_t _Nonnull /* System.Xml.Serialization.XmlNodeEventHandler */ value
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlSerializer_UnknownNode_Remove(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_Xml_Serialization_XmlNodeEventHandler_t _Nonnull /* System.Xml.Serialization.XmlNodeEventHandler */ value
+);
+
+
+void /* System.Void */
+System_Xml_Serialization_XmlSerializer_UnknownAttribute_Add(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_Xml_Serialization_XmlAttributeEventHandler_t _Nonnull /* System.Xml.Serialization.XmlAttributeEventHandler */ value
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlSerializer_UnknownAttribute_Remove(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_Xml_Serialization_XmlAttributeEventHandler_t _Nonnull /* System.Xml.Serialization.XmlAttributeEventHandler */ value
+);
+
+
+void /* System.Void */
+System_Xml_Serialization_XmlSerializer_UnknownElement_Add(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_Xml_Serialization_XmlElementEventHandler_t _Nonnull /* System.Xml.Serialization.XmlElementEventHandler */ value
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlSerializer_UnknownElement_Remove(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_Xml_Serialization_XmlElementEventHandler_t _Nonnull /* System.Xml.Serialization.XmlElementEventHandler */ value
+);
+
+
+void /* System.Void */
+System_Xml_Serialization_XmlSerializer_UnreferencedObject_Add(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_Xml_Serialization_UnreferencedObjectEventHandler_t _Nonnull /* System.Xml.Serialization.UnreferencedObjectEventHandler */ value
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlSerializer_UnreferencedObject_Remove(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self,
+	System_Xml_Serialization_UnreferencedObjectEventHandler_t _Nonnull /* System.Xml.Serialization.UnreferencedObjectEventHandler */ value
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlSerializer_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlSerializer_Destroy(
+	System_Xml_Serialization_XmlSerializer_t _Nullable /* System.Xml.Serialization.XmlSerializer */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlSerializer
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlSerializerNamespaces
+void /* System.Void */
+System_Xml_Serialization_XmlSerializerNamespaces_Add(
+	System_Xml_Serialization_XmlSerializerNamespaces_t _Nullable /* System.Xml.Serialization.XmlSerializerNamespaces */ self,
+	System_String_t _Nonnull /* System.String */ prefix,
+	System_String_t _Nullable /* System.String */ ns,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlQualifiedName_Array_t _Nonnull /* System.Xml.XmlQualifiedName[] */
+System_Xml_Serialization_XmlSerializerNamespaces_ToArray(
+	System_Xml_Serialization_XmlSerializerNamespaces_t _Nullable /* System.Xml.Serialization.XmlSerializerNamespaces */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlSerializerNamespaces_t _Nonnull /* System.Xml.Serialization.XmlSerializerNamespaces */
+System_Xml_Serialization_XmlSerializerNamespaces_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlSerializerNamespaces_t _Nonnull /* System.Xml.Serialization.XmlSerializerNamespaces */
+System_Xml_Serialization_XmlSerializerNamespaces_Create_1(
+	System_Xml_Serialization_XmlSerializerNamespaces_t _Nonnull /* System.Xml.Serialization.XmlSerializerNamespaces */ namespaces,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlSerializerNamespaces_t _Nonnull /* System.Xml.Serialization.XmlSerializerNamespaces */
+System_Xml_Serialization_XmlSerializerNamespaces_Create_2(
+	System_Xml_XmlQualifiedName_Array_t _Nonnull /* System.Xml.XmlQualifiedName[] */ namespaces,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Xml_Serialization_XmlSerializerNamespaces_Count_Get(
+	System_Xml_Serialization_XmlSerializerNamespaces_t _Nullable /* System.Xml.Serialization.XmlSerializerNamespaces */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlSerializerNamespaces_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlSerializerNamespaces_Destroy(
+	System_Xml_Serialization_XmlSerializerNamespaces_t _Nullable /* System.Xml.Serialization.XmlSerializerNamespaces */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlSerializerNamespaces
+
+#pragma mark - BEGIN APIs of System.Xml.XmlQualifiedName[]
+#pragma mark - END APIs of System.Xml.XmlQualifiedName[]
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.Xml.XmlQualifiedName
+int32_t /* System.Int32 */
+System_Xml_XmlQualifiedName_GetHashCode(
+	System_Xml_XmlQualifiedName_t _Nullable /* System.Xml.XmlQualifiedName */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlQualifiedName_ToString(
+	System_Xml_XmlQualifiedName_t _Nullable /* System.Xml.XmlQualifiedName */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlQualifiedName_Equals(
+	System_Xml_XmlQualifiedName_t _Nullable /* System.Xml.XmlQualifiedName */ self,
+	System_Object_t _Nullable /* System.Object */ other,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlQualifiedName_ToString_1(
+	System_String_t _Nonnull /* System.String */ name,
+	System_String_t _Nullable /* System.String */ ns,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlQualifiedName_t _Nonnull /* System.Xml.XmlQualifiedName */
+System_Xml_XmlQualifiedName_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlQualifiedName_t _Nonnull /* System.Xml.XmlQualifiedName */
+System_Xml_XmlQualifiedName_Create_1(
+	System_String_t _Nullable /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlQualifiedName_t _Nonnull /* System.Xml.XmlQualifiedName */
+System_Xml_XmlQualifiedName_Create_2(
+	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nullable /* System.String */ ns,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlQualifiedName_Namespace_Get(
+	System_Xml_XmlQualifiedName_t _Nullable /* System.Xml.XmlQualifiedName */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlQualifiedName_Name_Get(
+	System_Xml_XmlQualifiedName_t _Nullable /* System.Xml.XmlQualifiedName */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlQualifiedName_IsEmpty_Get(
+	System_Xml_XmlQualifiedName_t _Nullable /* System.Xml.XmlQualifiedName */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlQualifiedName_t _Nonnull /* System.Xml.XmlQualifiedName */
+System_Xml_XmlQualifiedName_Empty_Get(
+	void
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlQualifiedName_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlQualifiedName_Destroy(
+	System_Xml_XmlQualifiedName_t _Nullable /* System.Xml.XmlQualifiedName */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlQualifiedName
+
+
+
+
+#pragma mark - BEGIN APIs of System.Xml.XmlWriter
+void /* System.Void */
+System_Xml_XmlWriter_WriteStartDocument(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteStartDocument_1(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	bool /* System.Boolean */ standalone,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteEndDocument(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteDocType(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_String_t _Nullable /* System.String */ pubid,
+	System_String_t _Nullable /* System.String */ sysid,
+	System_String_t _Nullable /* System.String */ subset,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteStartElement(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ ns,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteStartElement_1(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nullable /* System.String */ prefix,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ ns,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteStartElement_2(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteEndElement(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteFullEndElement(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteAttributeString(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ ns,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteAttributeString_1(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteAttributeString_2(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nullable /* System.String */ prefix,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ ns,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteStartAttribute(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ ns,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteStartAttribute_1(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nullable /* System.String */ prefix,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ ns,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteStartAttribute_2(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteEndAttribute(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteCData(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nullable /* System.String */ text,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteComment(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nullable /* System.String */ text,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteProcessingInstruction(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_String_t _Nullable /* System.String */ text,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteEntityRef(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteCharEntity(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	wchar_t /* System.Char */ ch,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteWhitespace(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nullable /* System.String */ ws,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteString(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nullable /* System.String */ text,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteSurrogateCharEntity(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	wchar_t /* System.Char */ lowChar,
+	wchar_t /* System.Char */ highChar,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteChars(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteRaw(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteRaw_1(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ data,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteBase64(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteBinHex(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_Close(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_Flush(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlWriter_LookupPrefix(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ ns,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteNmToken(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteName(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteQualifiedName(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ ns,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteValue(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Object_t _Nonnull /* System.Object */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteValue_1(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteValue_2(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteValue_3(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_DateTime_t _Nonnull /* System.DateTime */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteValue_4(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_DateTimeOffset_t _Nonnull /* System.DateTimeOffset */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteValue_5(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	double /* System.Double */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteValue_6(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	float /* System.Single */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteValue_7(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Decimal_t _Nonnull /* System.Decimal */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteValue_8(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteValue_9(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	int64_t /* System.Int64 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteAttributes(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */ reader,
+	bool /* System.Boolean */ defattr,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteNode(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */ reader,
+	bool /* System.Boolean */ defattr,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteNode_1(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Xml_XPath_XPathNavigator_t _Nonnull /* System.Xml.XPath.XPathNavigator */ navigator,
+	bool /* System.Boolean */ defattr,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteElementString(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteElementString_1(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ ns,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_WriteElementString_2(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nullable /* System.String */ prefix,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ ns,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_Dispose(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */
+System_Xml_XmlWriter_Create(
+	System_String_t _Nonnull /* System.String */ outputFileName,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */
+System_Xml_XmlWriter_Create_1(
+	System_String_t _Nonnull /* System.String */ outputFileName,
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ settings,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */
+System_Xml_XmlWriter_Create_2(
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ output,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */
+System_Xml_XmlWriter_Create_3(
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ output,
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ settings,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */
+System_Xml_XmlWriter_Create_4(
+	System_IO_TextWriter_t _Nonnull /* System.IO.TextWriter */ output,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */
+System_Xml_XmlWriter_Create_5(
+	System_IO_TextWriter_t _Nonnull /* System.IO.TextWriter */ output,
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ settings,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */
+System_Xml_XmlWriter_Create_6(
+	System_Text_StringBuilder_t _Nonnull /* System.Text.StringBuilder */ output,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */
+System_Xml_XmlWriter_Create_7(
+	System_Text_StringBuilder_t _Nonnull /* System.Text.StringBuilder */ output,
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ settings,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */
+System_Xml_XmlWriter_Create_8(
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ output,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */
+System_Xml_XmlWriter_Create_9(
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ output,
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ settings,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteStartDocumentAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteStartDocumentAsync_1(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	bool /* System.Boolean */ standalone,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteEndDocumentAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteDocTypeAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_String_t _Nullable /* System.String */ pubid,
+	System_String_t _Nullable /* System.String */ sysid,
+	System_String_t _Nullable /* System.String */ subset,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteStartElementAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nullable /* System.String */ prefix,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ ns,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteEndElementAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteFullEndElementAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteAttributeStringAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nullable /* System.String */ prefix,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ ns,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteCDataAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nullable /* System.String */ text,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteCommentAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nullable /* System.String */ text,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteProcessingInstructionAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_String_t _Nullable /* System.String */ text,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteEntityRefAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteCharEntityAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	wchar_t /* System.Char */ ch,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteWhitespaceAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nullable /* System.String */ ws,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteStringAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nullable /* System.String */ text,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteSurrogateCharEntityAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	wchar_t /* System.Char */ lowChar,
+	wchar_t /* System.Char */ highChar,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteCharsAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteRawAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteRawAsync_1(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ data,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteBase64Async(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteBinHexAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_FlushAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteNmTokenAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteNameAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteQualifiedNameAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ ns,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteAttributesAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */ reader,
+	bool /* System.Boolean */ defattr,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteNodeAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */ reader,
+	bool /* System.Boolean */ defattr,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteNodeAsync_1(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Xml_XPath_XPathNavigator_t _Nonnull /* System.Xml.XPath.XPathNavigator */ navigator,
+	bool /* System.Boolean */ defattr,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlWriter_WriteElementStringAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_String_t _Nullable /* System.String */ prefix,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ ns,
+	System_String_t _Nonnull /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_ValueTask_t _Nonnull /* System.Threading.Tasks.ValueTask */
+System_Xml_XmlWriter_DisposeAsync(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */
+System_Xml_XmlWriter_Settings_Get(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_WriteState_t /* System.Xml.WriteState */
+System_Xml_XmlWriter_WriteState_Get(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlSpace_t /* System.Xml.XmlSpace */
+System_Xml_XmlWriter_XmlSpace_Get(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlWriter_XmlLang_Get(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlWriter_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlWriter_Destroy(
+	System_Xml_XmlWriter_t _Nullable /* System.Xml.XmlWriter */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlWriter
+
+#pragma mark - BEGIN APIs of System.Xml.XmlWriterSettings
+void /* System.Void */
+System_Xml_XmlWriterSettings_Reset(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWriterSettings_t _Nonnull /* System.Xml.XmlWriterSettings */
+System_Xml_XmlWriterSettings_Clone(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWriterSettings_t _Nonnull /* System.Xml.XmlWriterSettings */
+System_Xml_XmlWriterSettings_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlWriterSettings_Async_Get(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriterSettings_Async_Set(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Text_Encoding_t _Nonnull /* System.Text.Encoding */
+System_Xml_XmlWriterSettings_Encoding_Get(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriterSettings_Encoding_Set(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Text_Encoding_t _Nonnull /* System.Text.Encoding */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlWriterSettings_OmitXmlDeclaration_Get(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriterSettings_OmitXmlDeclaration_Set(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_NewLineHandling_t /* System.Xml.NewLineHandling */
+System_Xml_XmlWriterSettings_NewLineHandling_Get(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriterSettings_NewLineHandling_Set(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Xml_NewLineHandling_t /* System.Xml.NewLineHandling */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlWriterSettings_NewLineChars_Get(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriterSettings_NewLineChars_Set(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_String_t _Nonnull /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlWriterSettings_Indent_Get(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriterSettings_Indent_Set(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlWriterSettings_IndentChars_Get(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriterSettings_IndentChars_Set(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_String_t _Nonnull /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlWriterSettings_NewLineOnAttributes_Get(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriterSettings_NewLineOnAttributes_Set(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlWriterSettings_CloseOutput_Get(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriterSettings_CloseOutput_Set(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_ConformanceLevel_t /* System.Xml.ConformanceLevel */
+System_Xml_XmlWriterSettings_ConformanceLevel_Get(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriterSettings_ConformanceLevel_Set(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Xml_ConformanceLevel_t /* System.Xml.ConformanceLevel */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlWriterSettings_CheckCharacters_Get(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriterSettings_CheckCharacters_Set(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_NamespaceHandling_t /* System.Xml.NamespaceHandling */
+System_Xml_XmlWriterSettings_NamespaceHandling_Get(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriterSettings_NamespaceHandling_Set(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Xml_NamespaceHandling_t /* System.Xml.NamespaceHandling */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlWriterSettings_WriteEndDocumentOnClose_Get(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriterSettings_WriteEndDocumentOnClose_Set(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlOutputMethod_t /* System.Xml.XmlOutputMethod */
+System_Xml_XmlWriterSettings_OutputMethod_Get(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlWriterSettings_DoNotEscapeUriAttributes_Get(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWriterSettings_DoNotEscapeUriAttributes_Set(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlWriterSettings_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlWriterSettings_Destroy(
+	System_Xml_XmlWriterSettings_t _Nullable /* System.Xml.XmlWriterSettings */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlWriterSettings
+
+#pragma mark - BEGIN APIs of System.Xml.XmlReader
+System_Object_t _Nonnull /* System.Object */
+System_Xml_XmlReader_ReadContentAsObject(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_ReadContentAsBoolean(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_DateTime_t _Nonnull /* System.DateTime */
+System_Xml_XmlReader_ReadContentAsDateTime(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_DateTimeOffset_t _Nonnull /* System.DateTimeOffset */
+System_Xml_XmlReader_ReadContentAsDateTimeOffset(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Xml_XmlReader_ReadContentAsDouble(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Xml_XmlReader_ReadContentAsFloat(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Decimal_t _Nonnull /* System.Decimal */
+System_Xml_XmlReader_ReadContentAsDecimal(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Xml_XmlReader_ReadContentAsInt(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Xml_XmlReader_ReadContentAsLong(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlReader_ReadContentAsString(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nonnull /* System.Object */
+System_Xml_XmlReader_ReadContentAs_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Type_t _Nonnull /* System.Type */ returnType,
+	System_Xml_IXmlNamespaceResolver_t _Nullable /* System.Xml.IXmlNamespaceResolver */ namespaceResolver,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nonnull /* System.Object */
+System_Xml_XmlReader_ReadElementContentAsObject(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nonnull /* System.Object */
+System_Xml_XmlReader_ReadElementContentAsObject_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_ReadElementContentAsBoolean(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_ReadElementContentAsBoolean_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_DateTime_t _Nonnull /* System.DateTime */
+System_Xml_XmlReader_ReadElementContentAsDateTime(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_DateTime_t _Nonnull /* System.DateTime */
+System_Xml_XmlReader_ReadElementContentAsDateTime_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Xml_XmlReader_ReadElementContentAsDouble(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+double /* System.Double */
+System_Xml_XmlReader_ReadElementContentAsDouble_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Xml_XmlReader_ReadElementContentAsFloat(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+float /* System.Single */
+System_Xml_XmlReader_ReadElementContentAsFloat_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Decimal_t _Nonnull /* System.Decimal */
+System_Xml_XmlReader_ReadElementContentAsDecimal(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Decimal_t _Nonnull /* System.Decimal */
+System_Xml_XmlReader_ReadElementContentAsDecimal_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Xml_XmlReader_ReadElementContentAsInt(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Xml_XmlReader_ReadElementContentAsInt_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Xml_XmlReader_ReadElementContentAsLong(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int64_t /* System.Int64 */
+System_Xml_XmlReader_ReadElementContentAsLong_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlReader_ReadElementContentAsString(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlReader_ReadElementContentAsString_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nonnull /* System.Object */
+System_Xml_XmlReader_ReadElementContentAs_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Type_t _Nonnull /* System.Type */ returnType,
+	System_Xml_IXmlNamespaceResolver_t _Nonnull /* System.Xml.IXmlNamespaceResolver */ namespaceResolver,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nonnull /* System.Object */
+System_Xml_XmlReader_ReadElementContentAs_2(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Type_t _Nonnull /* System.Type */ returnType,
+	System_Xml_IXmlNamespaceResolver_t _Nonnull /* System.Xml.IXmlNamespaceResolver */ namespaceResolver,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlReader_GetAttribute(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlReader_GetAttribute_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlReader_GetAttribute_2(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	int32_t /* System.Int32 */ i,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_MoveToAttribute(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_MoveToAttribute_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_String_t _Nullable /* System.String */ ns,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReader_MoveToAttribute_2(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	int32_t /* System.Int32 */ i,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_MoveToFirstAttribute(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_MoveToNextAttribute(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_MoveToElement(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_ReadAttributeValue(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_Read_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReader_Close(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReader_Skip(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlReader_LookupNamespace(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ prefix,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReader_ResolveEntity(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Xml_XmlReader_ReadContentAsBase64(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Xml_XmlReader_ReadElementContentAsBase64(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Xml_XmlReader_ReadContentAsBinHex(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Xml_XmlReader_ReadElementContentAsBinHex(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Xml_XmlReader_ReadValueChunk(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlReader_ReadString(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNodeType_t /* System.Xml.XmlNodeType */
+System_Xml_XmlReader_MoveToContent(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReader_ReadStartElement(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReader_ReadStartElement_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReader_ReadStartElement_2(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ localname,
+	System_String_t _Nonnull /* System.String */ ns,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlReader_ReadElementString(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlReader_ReadElementString_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlReader_ReadElementString_2(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ localname,
+	System_String_t _Nonnull /* System.String */ ns,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReader_ReadEndElement(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_IsStartElement(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_IsStartElement_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_IsStartElement_2(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ localname,
+	System_String_t _Nonnull /* System.String */ ns,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_ReadToFollowing(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_ReadToFollowing_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_ReadToDescendant(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_ReadToDescendant_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_ReadToNextSibling(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_ReadToNextSibling_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_IsName(
+	System_String_t _Nonnull /* System.String */ str,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReader_IsNameToken(
+	System_String_t _Nonnull /* System.String */ str,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlReader_ReadInnerXml(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlReader_ReadOuterXml(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */
+System_Xml_XmlReader_ReadSubtree(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReader_Dispose(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */
+System_Xml_XmlReader_Create(
+	System_String_t _Nonnull /* System.String */ inputUri,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */
+System_Xml_XmlReader_Create_1(
+	System_String_t _Nonnull /* System.String */ inputUri,
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ settings,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */
+System_Xml_XmlReader_Create_2(
+	System_String_t _Nonnull /* System.String */ inputUri,
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ settings,
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ inputContext,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */
+System_Xml_XmlReader_Create_3(
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ input,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */
+System_Xml_XmlReader_Create_4(
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ input,
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ settings,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */
+System_Xml_XmlReader_Create_5(
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ input,
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ settings,
+	System_String_t _Nullable /* System.String */ baseUri,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */
+System_Xml_XmlReader_Create_6(
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ input,
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ settings,
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ inputContext,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */
+System_Xml_XmlReader_Create_7(
+	System_IO_TextReader_t _Nonnull /* System.IO.TextReader */ input,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */
+System_Xml_XmlReader_Create_8(
+	System_IO_TextReader_t _Nonnull /* System.IO.TextReader */ input,
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ settings,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */
+System_Xml_XmlReader_Create_9(
+	System_IO_TextReader_t _Nonnull /* System.IO.TextReader */ input,
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ settings,
+	System_String_t _Nullable /* System.String */ baseUri,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */
+System_Xml_XmlReader_Create_10(
+	System_IO_TextReader_t _Nonnull /* System.IO.TextReader */ input,
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ settings,
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ inputContext,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */
+System_Xml_XmlReader_Create_11(
+	System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */ reader,
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ settings,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.String> */
+System_Xml_XmlReader_GetValueAsync(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.Object> */
+System_Xml_XmlReader_ReadContentAsObjectAsync(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.String> */
+System_Xml_XmlReader_ReadContentAsStringAsync(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.Object> */
+System_Xml_XmlReader_ReadContentAsAsync(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Type_t _Nonnull /* System.Type */ returnType,
+	System_Xml_IXmlNamespaceResolver_t _Nullable /* System.Xml.IXmlNamespaceResolver */ namespaceResolver,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.Object> */
+System_Xml_XmlReader_ReadElementContentAsObjectAsync(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.String> */
+System_Xml_XmlReader_ReadElementContentAsStringAsync(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.Object> */
+System_Xml_XmlReader_ReadElementContentAsAsync(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Type_t _Nonnull /* System.Type */ returnType,
+	System_Xml_IXmlNamespaceResolver_t _Nonnull /* System.Xml.IXmlNamespaceResolver */ namespaceResolver,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.Boolean> */
+System_Xml_XmlReader_ReadAsync(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_t _Nonnull /* System.Threading.Tasks.Task */
+System_Xml_XmlReader_SkipAsync(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.Int32> */
+System_Xml_XmlReader_ReadContentAsBase64Async(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.Int32> */
+System_Xml_XmlReader_ReadElementContentAsBase64Async(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.Int32> */
+System_Xml_XmlReader_ReadContentAsBinHexAsync(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.Int32> */
+System_Xml_XmlReader_ReadElementContentAsBinHexAsync(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.Int32> */
+System_Xml_XmlReader_ReadValueChunkAsync(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Char_Array_t _Nonnull /* System.Char[] */ buffer,
+	int32_t /* System.Int32 */ index,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.Xml.XmlNodeType> */
+System_Xml_XmlReader_MoveToContentAsync(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.String> */
+System_Xml_XmlReader_ReadInnerXmlAsync(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.String> */
+System_Xml_XmlReader_ReadOuterXmlAsync(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */
+System_Xml_XmlReader_Settings_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNodeType_t /* System.Xml.XmlNodeType */
+System_Xml_XmlReader_NodeType_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlReader_Name_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlReader_LocalName_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlReader_NamespaceURI_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlReader_Prefix_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlReader_HasValue_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlReader_Value_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_XmlReader_Depth_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlReader_BaseURI_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlReader_IsEmptyElement_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlReader_IsDefault_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+wchar_t /* System.Char */
+System_Xml_XmlReader_QuoteChar_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlSpace_t /* System.Xml.XmlSpace */
+System_Xml_XmlReader_XmlSpace_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlReader_XmlLang_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_IXmlSchemaInfo_t _Nullable /* System.Xml.Schema.IXmlSchemaInfo */
+System_Xml_XmlReader_SchemaInfo_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlReader_ValueType_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_XmlReader_AttributeCount_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlReader_Item_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	int32_t /* System.Int32 */ i,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlReader_Item_Get_1(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlReader_Item_Get_2(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlReader_EOF_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_ReadState_t /* System.Xml.ReadState */
+System_Xml_XmlReader_ReadState_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNameTable_t _Nonnull /* System.Xml.XmlNameTable */
+System_Xml_XmlReader_NameTable_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlReader_CanResolveEntity_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlReader_CanReadBinaryContent_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlReader_CanReadValueChunk_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlReader_HasAttributes_Get(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlReader_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlReader_Destroy(
+	System_Xml_XmlReader_t _Nullable /* System.Xml.XmlReader */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlReader
+
+#pragma mark - BEGIN APIs of System.Xml.XmlReaderSettings
+void /* System.Void */
+System_Xml_XmlReaderSettings_Reset(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlReaderSettings_t _Nonnull /* System.Xml.XmlReaderSettings */
+System_Xml_XmlReaderSettings_Clone(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlReaderSettings_t _Nonnull /* System.Xml.XmlReaderSettings */
+System_Xml_XmlReaderSettings_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlReaderSettings_Async_Get(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_Async_Set(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNameTable_t _Nullable /* System.Xml.XmlNameTable */
+System_Xml_XmlReaderSettings_NameTable_Get(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_NameTable_Set(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Xml_XmlNameTable_t _Nullable /* System.Xml.XmlNameTable */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_XmlResolver_Set(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Xml_XmlResolver_t _Nullable /* System.Xml.XmlResolver */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_XmlReaderSettings_LineNumberOffset_Get(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_LineNumberOffset_Set(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_XmlReaderSettings_LinePositionOffset_Get(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_LinePositionOffset_Set(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_ConformanceLevel_t /* System.Xml.ConformanceLevel */
+System_Xml_XmlReaderSettings_ConformanceLevel_Get(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_ConformanceLevel_Set(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Xml_ConformanceLevel_t /* System.Xml.ConformanceLevel */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlReaderSettings_CheckCharacters_Get(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_CheckCharacters_Set(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_Xml_XmlReaderSettings_MaxCharactersInDocument_Get(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_MaxCharactersInDocument_Set(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	int64_t /* System.Int64 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_Xml_XmlReaderSettings_MaxCharactersFromEntities_Get(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_MaxCharactersFromEntities_Set(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	int64_t /* System.Int64 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlReaderSettings_IgnoreWhitespace_Get(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_IgnoreWhitespace_Set(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlReaderSettings_IgnoreProcessingInstructions_Get(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_IgnoreProcessingInstructions_Set(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlReaderSettings_IgnoreComments_Get(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_IgnoreComments_Set(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlReaderSettings_ProhibitDtd_Get(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_ProhibitDtd_Set(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_DtdProcessing_t /* System.Xml.DtdProcessing */
+System_Xml_XmlReaderSettings_DtdProcessing_Get(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_DtdProcessing_Set(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Xml_DtdProcessing_t /* System.Xml.DtdProcessing */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlReaderSettings_CloseInput_Get(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_CloseInput_Set(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_ValidationType_t /* System.Xml.ValidationType */
+System_Xml_XmlReaderSettings_ValidationType_Get(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_ValidationType_Set(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Xml_ValidationType_t /* System.Xml.ValidationType */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaValidationFlags_t /* System.Xml.Schema.XmlSchemaValidationFlags */
+System_Xml_XmlReaderSettings_ValidationFlags_Get(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_ValidationFlags_Set(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Xml_Schema_XmlSchemaValidationFlags_t /* System.Xml.Schema.XmlSchemaValidationFlags */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaSet_t _Nonnull /* System.Xml.Schema.XmlSchemaSet */
+System_Xml_XmlReaderSettings_Schemas_Get(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_Schemas_Set(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Xml_Schema_XmlSchemaSet_t _Nonnull /* System.Xml.Schema.XmlSchemaSet */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_ValidationEventHandler_Add(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Xml_Schema_ValidationEventHandler_t _Nonnull /* System.Xml.Schema.ValidationEventHandler */ value
+);
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_ValidationEventHandler_Remove(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self,
+	System_Xml_Schema_ValidationEventHandler_t _Nonnull /* System.Xml.Schema.ValidationEventHandler */ value
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlReaderSettings_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlReaderSettings_Destroy(
+	System_Xml_XmlReaderSettings_t _Nullable /* System.Xml.XmlReaderSettings */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlReaderSettings
+
+#pragma mark - BEGIN APIs of System.Xml.XmlNameTable
+System_String_t _Nullable /* System.String */
+System_Xml_XmlNameTable_Get(
+	System_Xml_XmlNameTable_t _Nullable /* System.Xml.XmlNameTable */ self,
+	System_Char_Array_t _Nonnull /* System.Char[] */ array,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ length,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlNameTable_Get_1(
+	System_Xml_XmlNameTable_t _Nullable /* System.Xml.XmlNameTable */ self,
+	System_String_t _Nonnull /* System.String */ array,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlNameTable_Add(
+	System_Xml_XmlNameTable_t _Nullable /* System.Xml.XmlNameTable */ self,
+	System_Char_Array_t _Nonnull /* System.Char[] */ array,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ length,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlNameTable_Add_1(
+	System_Xml_XmlNameTable_t _Nullable /* System.Xml.XmlNameTable */ self,
+	System_String_t _Nonnull /* System.String */ array,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlNameTable_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlNameTable_Destroy(
+	System_Xml_XmlNameTable_t _Nullable /* System.Xml.XmlNameTable */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlNameTable
+
+#pragma mark - BEGIN APIs of System.Xml.XmlResolver
+System_Object_t _Nullable /* System.Object */
+System_Xml_XmlResolver_GetEntity(
+	System_Xml_XmlResolver_t _Nullable /* System.Xml.XmlResolver */ self,
+	System_Uri_t _Nonnull /* System.Uri */ absoluteUri,
+	System_String_t _Nullable /* System.String */ role,
+	System_Type_t _Nullable /* System.Type */ ofObjectToReturn,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Threading_Tasks_Task_A1_t _Nonnull /* System.Threading.Tasks.Task<System.Object> */
+System_Xml_XmlResolver_GetEntityAsync(
+	System_Xml_XmlResolver_t _Nullable /* System.Xml.XmlResolver */ self,
+	System_Uri_t _Nonnull /* System.Uri */ absoluteUri,
+	System_String_t _Nullable /* System.String */ role,
+	System_Type_t _Nullable /* System.Type */ ofObjectToReturn,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Uri_t _Nonnull /* System.Uri */
+System_Xml_XmlResolver_ResolveUri(
+	System_Xml_XmlResolver_t _Nullable /* System.Xml.XmlResolver */ self,
+	System_Uri_t _Nullable /* System.Uri */ baseUri,
+	System_String_t _Nullable /* System.String */ relativeUri,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlResolver_SupportsType(
+	System_Xml_XmlResolver_t _Nullable /* System.Xml.XmlResolver */ self,
+	System_Uri_t _Nonnull /* System.Uri */ absoluteUri,
+	System_Type_t _Nullable /* System.Type */ type,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlResolver_Credentials_Set(
+	System_Xml_XmlResolver_t _Nullable /* System.Xml.XmlResolver */ self,
+	System_Net_ICredentials_t _Nonnull /* System.Net.ICredentials */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlResolver_t _Nonnull /* System.Xml.XmlResolver */
+System_Xml_XmlResolver_FileSystemResolver_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlResolver_t _Nonnull /* System.Xml.XmlResolver */
+System_Xml_XmlResolver_ThrowingResolver_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlResolver_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlResolver_Destroy(
+	System_Xml_XmlResolver_t _Nullable /* System.Xml.XmlResolver */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlResolver
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaSet
+System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */
+System_Xml_Schema_XmlSchemaSet_Add(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_String_t _Nullable /* System.String */ targetNamespace,
+	System_String_t _Nonnull /* System.String */ schemaUri,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */
+System_Xml_Schema_XmlSchemaSet_Add_1(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_String_t _Nullable /* System.String */ targetNamespace,
+	System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */ schemaDocument,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaSet_Add_2(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Xml_Schema_XmlSchemaSet_t _Nonnull /* System.Xml.Schema.XmlSchemaSet */ schemas,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */
+System_Xml_Schema_XmlSchemaSet_Add_3(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Xml_Schema_XmlSchema_t _Nonnull /* System.Xml.Schema.XmlSchema */ schema,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */
+System_Xml_Schema_XmlSchemaSet_Remove(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Xml_Schema_XmlSchema_t _Nonnull /* System.Xml.Schema.XmlSchema */ schema,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_Schema_XmlSchemaSet_RemoveRecursive(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Xml_Schema_XmlSchema_t _Nonnull /* System.Xml.Schema.XmlSchema */ schemaToRemove,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_Schema_XmlSchemaSet_Contains(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_String_t _Nullable /* System.String */ targetNamespace,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_Schema_XmlSchemaSet_Contains_1(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Xml_Schema_XmlSchema_t _Nonnull /* System.Xml.Schema.XmlSchema */ schema,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaSet_Compile(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchema_t _Nonnull /* System.Xml.Schema.XmlSchema */
+System_Xml_Schema_XmlSchemaSet_Reprocess(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Xml_Schema_XmlSchema_t _Nonnull /* System.Xml.Schema.XmlSchema */ schema,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaSet_CopyTo(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Xml_Schema_XmlSchema_Array_t _Nonnull /* System.Xml.Schema.XmlSchema[] */ schemas,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Collections_ICollection_t _Nonnull /* System.Collections.ICollection */
+System_Xml_Schema_XmlSchemaSet_Schemas(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Collections_ICollection_t _Nonnull /* System.Collections.ICollection */
+System_Xml_Schema_XmlSchemaSet_Schemas_1(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_String_t _Nullable /* System.String */ targetNamespace,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchemaSet_t _Nonnull /* System.Xml.Schema.XmlSchemaSet */
+System_Xml_Schema_XmlSchemaSet_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchemaSet_t _Nonnull /* System.Xml.Schema.XmlSchemaSet */
+System_Xml_Schema_XmlSchemaSet_Create_1(
+	System_Xml_XmlNameTable_t _Nonnull /* System.Xml.XmlNameTable */ nameTable,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNameTable_t _Nonnull /* System.Xml.XmlNameTable */
+System_Xml_Schema_XmlSchemaSet_NameTable_Get(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_Schema_XmlSchemaSet_IsCompiled_Get(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaSet_XmlResolver_Set(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Xml_XmlResolver_t _Nullable /* System.Xml.XmlResolver */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaCompilationSettings_t _Nonnull /* System.Xml.Schema.XmlSchemaCompilationSettings */
+System_Xml_Schema_XmlSchemaSet_CompilationSettings_Get(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaSet_CompilationSettings_Set(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Xml_Schema_XmlSchemaCompilationSettings_t _Nonnull /* System.Xml.Schema.XmlSchemaCompilationSettings */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_Schema_XmlSchemaSet_Count_Get(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaObjectTable_t _Nonnull /* System.Xml.Schema.XmlSchemaObjectTable */
+System_Xml_Schema_XmlSchemaSet_GlobalElements_Get(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaObjectTable_t _Nonnull /* System.Xml.Schema.XmlSchemaObjectTable */
+System_Xml_Schema_XmlSchemaSet_GlobalAttributes_Get(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaObjectTable_t _Nonnull /* System.Xml.Schema.XmlSchemaObjectTable */
+System_Xml_Schema_XmlSchemaSet_GlobalTypes_Get(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaSet_ValidationEventHandler_Add(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Xml_Schema_ValidationEventHandler_t _Nonnull /* System.Xml.Schema.ValidationEventHandler */ value
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaSet_ValidationEventHandler_Remove(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self,
+	System_Xml_Schema_ValidationEventHandler_t _Nonnull /* System.Xml.Schema.ValidationEventHandler */ value
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaSet_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaSet_Destroy(
+	System_Xml_Schema_XmlSchemaSet_t _Nullable /* System.Xml.Schema.XmlSchemaSet */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaSet
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.ValidationEventArgs
+System_Xml_Schema_XmlSeverityType_t /* System.Xml.Schema.XmlSeverityType */
+System_Xml_Schema_ValidationEventArgs_Severity_Get(
+	System_Xml_Schema_ValidationEventArgs_t _Nullable /* System.Xml.Schema.ValidationEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaException_t _Nonnull /* System.Xml.Schema.XmlSchemaException */
+System_Xml_Schema_ValidationEventArgs_Exception_Get(
+	System_Xml_Schema_ValidationEventArgs_t _Nullable /* System.Xml.Schema.ValidationEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Schema_ValidationEventArgs_Message_Get(
+	System_Xml_Schema_ValidationEventArgs_t _Nullable /* System.Xml.Schema.ValidationEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_ValidationEventArgs_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_ValidationEventArgs_Destroy(
+	System_Xml_Schema_ValidationEventArgs_t _Nullable /* System.Xml.Schema.ValidationEventArgs */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.ValidationEventArgs
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaException
+void /* System.Void */
+System_Xml_Schema_XmlSchemaException_GetObjectData(
+	System_Xml_Schema_XmlSchemaException_t _Nullable /* System.Xml.Schema.XmlSchemaException */ self,
+	System_Runtime_Serialization_SerializationInfo_t _Nonnull /* System.Runtime.Serialization.SerializationInfo */ info,
+	System_Runtime_Serialization_StreamingContext_t _Nonnull /* System.Runtime.Serialization.StreamingContext */ context,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchemaException_t _Nonnull /* System.Xml.Schema.XmlSchemaException */
+System_Xml_Schema_XmlSchemaException_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchemaException_t _Nonnull /* System.Xml.Schema.XmlSchemaException */
+System_Xml_Schema_XmlSchemaException_Create_1(
+	System_String_t _Nullable /* System.String */ message,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchemaException_t _Nonnull /* System.Xml.Schema.XmlSchemaException */
+System_Xml_Schema_XmlSchemaException_Create_2(
+	System_String_t _Nullable /* System.String */ message,
+	System_Exception_t _Nullable /* System.Exception */ innerException,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchemaException_t _Nonnull /* System.Xml.Schema.XmlSchemaException */
+System_Xml_Schema_XmlSchemaException_Create_3(
+	System_String_t _Nullable /* System.String */ message,
+	System_Exception_t _Nullable /* System.Exception */ innerException,
+	int32_t /* System.Int32 */ lineNumber,
+	int32_t /* System.Int32 */ linePosition,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_Schema_XmlSchemaException_SourceUri_Get(
+	System_Xml_Schema_XmlSchemaException_t _Nullable /* System.Xml.Schema.XmlSchemaException */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_Schema_XmlSchemaException_LineNumber_Get(
+	System_Xml_Schema_XmlSchemaException_t _Nullable /* System.Xml.Schema.XmlSchemaException */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_Schema_XmlSchemaException_LinePosition_Get(
+	System_Xml_Schema_XmlSchemaException_t _Nullable /* System.Xml.Schema.XmlSchemaException */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaObject_t _Nullable /* System.Xml.Schema.XmlSchemaObject */
+System_Xml_Schema_XmlSchemaException_SourceSchemaObject_Get(
+	System_Xml_Schema_XmlSchemaException_t _Nullable /* System.Xml.Schema.XmlSchemaException */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Schema_XmlSchemaException_Message_Get(
+	System_Xml_Schema_XmlSchemaException_t _Nullable /* System.Xml.Schema.XmlSchemaException */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaException_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaException_Destroy(
+	System_Xml_Schema_XmlSchemaException_t _Nullable /* System.Xml.Schema.XmlSchemaException */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaException
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaObject
+int32_t /* System.Int32 */
+System_Xml_Schema_XmlSchemaObject_LineNumber_Get(
+	System_Xml_Schema_XmlSchemaObject_t _Nullable /* System.Xml.Schema.XmlSchemaObject */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaObject_LineNumber_Set(
+	System_Xml_Schema_XmlSchemaObject_t _Nullable /* System.Xml.Schema.XmlSchemaObject */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_Schema_XmlSchemaObject_LinePosition_Get(
+	System_Xml_Schema_XmlSchemaObject_t _Nullable /* System.Xml.Schema.XmlSchemaObject */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaObject_LinePosition_Set(
+	System_Xml_Schema_XmlSchemaObject_t _Nullable /* System.Xml.Schema.XmlSchemaObject */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Schema_XmlSchemaObject_SourceUri_Get(
+	System_Xml_Schema_XmlSchemaObject_t _Nullable /* System.Xml.Schema.XmlSchemaObject */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaObject_SourceUri_Set(
+	System_Xml_Schema_XmlSchemaObject_t _Nullable /* System.Xml.Schema.XmlSchemaObject */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaObject_t _Nullable /* System.Xml.Schema.XmlSchemaObject */
+System_Xml_Schema_XmlSchemaObject_Parent_Get(
+	System_Xml_Schema_XmlSchemaObject_t _Nullable /* System.Xml.Schema.XmlSchemaObject */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaObject_Parent_Set(
+	System_Xml_Schema_XmlSchemaObject_t _Nullable /* System.Xml.Schema.XmlSchemaObject */ self,
+	System_Xml_Schema_XmlSchemaObject_t _Nullable /* System.Xml.Schema.XmlSchemaObject */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Serialization_XmlSerializerNamespaces_t _Nonnull /* System.Xml.Serialization.XmlSerializerNamespaces */
+System_Xml_Schema_XmlSchemaObject_Namespaces_Get(
+	System_Xml_Schema_XmlSchemaObject_t _Nullable /* System.Xml.Schema.XmlSchemaObject */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaObject_Namespaces_Set(
+	System_Xml_Schema_XmlSchemaObject_t _Nullable /* System.Xml.Schema.XmlSchemaObject */ self,
+	System_Xml_Serialization_XmlSerializerNamespaces_t _Nonnull /* System.Xml.Serialization.XmlSerializerNamespaces */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaObject_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaObject_Destroy(
+	System_Xml_Schema_XmlSchemaObject_t _Nullable /* System.Xml.Schema.XmlSchemaObject */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaObject
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaCompilationSettings
+System_Xml_Schema_XmlSchemaCompilationSettings_t _Nonnull /* System.Xml.Schema.XmlSchemaCompilationSettings */
+System_Xml_Schema_XmlSchemaCompilationSettings_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_Schema_XmlSchemaCompilationSettings_EnableUpaCheck_Get(
+	System_Xml_Schema_XmlSchemaCompilationSettings_t _Nullable /* System.Xml.Schema.XmlSchemaCompilationSettings */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaCompilationSettings_EnableUpaCheck_Set(
+	System_Xml_Schema_XmlSchemaCompilationSettings_t _Nullable /* System.Xml.Schema.XmlSchemaCompilationSettings */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaCompilationSettings_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaCompilationSettings_Destroy(
+	System_Xml_Schema_XmlSchemaCompilationSettings_t _Nullable /* System.Xml.Schema.XmlSchemaCompilationSettings */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaCompilationSettings
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaObjectTable
+bool /* System.Boolean */
+System_Xml_Schema_XmlSchemaObjectTable_Contains(
+	System_Xml_Schema_XmlSchemaObjectTable_t _Nullable /* System.Xml.Schema.XmlSchemaObjectTable */ self,
+	System_Xml_XmlQualifiedName_t _Nonnull /* System.Xml.XmlQualifiedName */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Collections_IDictionaryEnumerator_t _Nonnull /* System.Collections.IDictionaryEnumerator */
+System_Xml_Schema_XmlSchemaObjectTable_GetEnumerator(
+	System_Xml_Schema_XmlSchemaObjectTable_t _Nullable /* System.Xml.Schema.XmlSchemaObjectTable */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Xml_Schema_XmlSchemaObjectTable_Count_Get(
+	System_Xml_Schema_XmlSchemaObjectTable_t _Nullable /* System.Xml.Schema.XmlSchemaObjectTable */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaObject_t _Nullable /* System.Xml.Schema.XmlSchemaObject */
+System_Xml_Schema_XmlSchemaObjectTable_Item_Get(
+	System_Xml_Schema_XmlSchemaObjectTable_t _Nullable /* System.Xml.Schema.XmlSchemaObjectTable */ self,
+	System_Xml_XmlQualifiedName_t _Nonnull /* System.Xml.XmlQualifiedName */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Collections_ICollection_t _Nonnull /* System.Collections.ICollection */
+System_Xml_Schema_XmlSchemaObjectTable_Names_Get(
+	System_Xml_Schema_XmlSchemaObjectTable_t _Nullable /* System.Xml.Schema.XmlSchemaObjectTable */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Collections_ICollection_t _Nonnull /* System.Collections.ICollection */
+System_Xml_Schema_XmlSchemaObjectTable_Values_Get(
+	System_Xml_Schema_XmlSchemaObjectTable_t _Nullable /* System.Xml.Schema.XmlSchemaObjectTable */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaObjectTable_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaObjectTable_Destroy(
+	System_Xml_Schema_XmlSchemaObjectTable_t _Nullable /* System.Xml.Schema.XmlSchemaObjectTable */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaObjectTable
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchema
+System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */
+System_Xml_Schema_XmlSchema_Read(
+	System_IO_TextReader_t _Nonnull /* System.IO.TextReader */ reader,
+	System_Xml_Schema_ValidationEventHandler_t _Nullable /* System.Xml.Schema.ValidationEventHandler */ validationEventHandler,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */
+System_Xml_Schema_XmlSchema_Read_1(
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
+	System_Xml_Schema_ValidationEventHandler_t _Nullable /* System.Xml.Schema.ValidationEventHandler */ validationEventHandler,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */
+System_Xml_Schema_XmlSchema_Read_2(
+	System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */ reader,
+	System_Xml_Schema_ValidationEventHandler_t _Nullable /* System.Xml.Schema.ValidationEventHandler */ validationEventHandler,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchema_Write(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchema_Write_1(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ stream,
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ namespaceManager,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchema_Write_2(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_IO_TextWriter_t _Nonnull /* System.IO.TextWriter */ writer,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchema_Write_3(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_IO_TextWriter_t _Nonnull /* System.IO.TextWriter */ writer,
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ namespaceManager,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchema_Write_4(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ writer,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchema_Write_5(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ writer,
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ namespaceManager,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchema_Compile(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Xml_Schema_ValidationEventHandler_t _Nullable /* System.Xml.Schema.ValidationEventHandler */ validationEventHandler,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchema_Compile_1(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Xml_Schema_ValidationEventHandler_t _Nullable /* System.Xml.Schema.ValidationEventHandler */ validationEventHandler,
+	System_Xml_XmlResolver_t _Nullable /* System.Xml.XmlResolver */ resolver,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchema_t _Nonnull /* System.Xml.Schema.XmlSchema */
+System_Xml_Schema_XmlSchema_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchemaForm_t /* System.Xml.Schema.XmlSchemaForm */
+System_Xml_Schema_XmlSchema_AttributeFormDefault_Get(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchema_AttributeFormDefault_Set(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Xml_Schema_XmlSchemaForm_t /* System.Xml.Schema.XmlSchemaForm */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaDerivationMethod_t /* System.Xml.Schema.XmlSchemaDerivationMethod */
+System_Xml_Schema_XmlSchema_BlockDefault_Get(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchema_BlockDefault_Set(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Xml_Schema_XmlSchemaDerivationMethod_t /* System.Xml.Schema.XmlSchemaDerivationMethod */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaDerivationMethod_t /* System.Xml.Schema.XmlSchemaDerivationMethod */
+System_Xml_Schema_XmlSchema_FinalDefault_Get(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchema_FinalDefault_Set(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Xml_Schema_XmlSchemaDerivationMethod_t /* System.Xml.Schema.XmlSchemaDerivationMethod */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaForm_t /* System.Xml.Schema.XmlSchemaForm */
+System_Xml_Schema_XmlSchema_ElementFormDefault_Get(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchema_ElementFormDefault_Set(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Xml_Schema_XmlSchemaForm_t /* System.Xml.Schema.XmlSchemaForm */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Schema_XmlSchema_TargetNamespace_Get(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchema_TargetNamespace_Set(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Schema_XmlSchema_Version_Get(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchema_Version_Set(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaObjectCollection_t _Nonnull /* System.Xml.Schema.XmlSchemaObjectCollection */
+System_Xml_Schema_XmlSchema_Includes_Get(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaObjectCollection_t _Nonnull /* System.Xml.Schema.XmlSchemaObjectCollection */
+System_Xml_Schema_XmlSchema_Items_Get(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_Schema_XmlSchema_IsCompiled_Get(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaObjectTable_t _Nonnull /* System.Xml.Schema.XmlSchemaObjectTable */
+System_Xml_Schema_XmlSchema_Attributes_Get(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaObjectTable_t _Nonnull /* System.Xml.Schema.XmlSchemaObjectTable */
+System_Xml_Schema_XmlSchema_AttributeGroups_Get(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaObjectTable_t _Nonnull /* System.Xml.Schema.XmlSchemaObjectTable */
+System_Xml_Schema_XmlSchema_SchemaTypes_Get(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaObjectTable_t _Nonnull /* System.Xml.Schema.XmlSchemaObjectTable */
+System_Xml_Schema_XmlSchema_Elements_Get(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Schema_XmlSchema_Id_Get(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchema_Id_Set(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlAttribute_Array_t _Nullable /* System.Xml.XmlAttribute[] */
+System_Xml_Schema_XmlSchema_UnhandledAttributes_Get(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchema_UnhandledAttributes_Set(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Xml_XmlAttribute_Array_t _Nullable /* System.Xml.XmlAttribute[] */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaObjectTable_t _Nonnull /* System.Xml.Schema.XmlSchemaObjectTable */
+System_Xml_Schema_XmlSchema_Groups_Get(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaObjectTable_t _Nonnull /* System.Xml.Schema.XmlSchemaObjectTable */
+System_Xml_Schema_XmlSchema_Notations_Get(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Schema_XmlSchema_Namespace_Get(
+	void
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Schema_XmlSchema_InstanceNamespace_Get(
+	void
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchema_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchema_Destroy(
+	System_Xml_Schema_XmlSchema_t _Nullable /* System.Xml.Schema.XmlSchema */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchema
+
+#pragma mark - BEGIN APIs of System.Xml.XmlNamespaceManager
+void /* System.Void */
+System_Xml_XmlNamespaceManager_PushScope(
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlNamespaceManager_PopScope(
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlNamespaceManager_AddNamespace(
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ self,
+	System_String_t _Nonnull /* System.String */ prefix,
+	System_String_t _Nonnull /* System.String */ uri,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlNamespaceManager_RemoveNamespace(
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ self,
+	System_String_t _Nonnull /* System.String */ prefix,
+	System_String_t _Nonnull /* System.String */ uri,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Collections_IEnumerator_t _Nonnull /* System.Collections.IEnumerator */
+System_Xml_XmlNamespaceManager_GetEnumerator(
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Collections_Generic_IDictionary_A2_t _Nonnull /* System.Collections.Generic.IDictionary<System.String,System.String> */
+System_Xml_XmlNamespaceManager_GetNamespacesInScope(
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ self,
+	System_Xml_XmlNamespaceScope_t /* System.Xml.XmlNamespaceScope */ scope,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlNamespaceManager_LookupNamespace(
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ self,
+	System_String_t _Nonnull /* System.String */ prefix,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlNamespaceManager_LookupPrefix(
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ self,
+	System_String_t _Nonnull /* System.String */ uri,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlNamespaceManager_HasNamespace(
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ self,
+	System_String_t _Nonnull /* System.String */ prefix,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNamespaceManager_t _Nonnull /* System.Xml.XmlNamespaceManager */
+System_Xml_XmlNamespaceManager_Create(
+	System_Xml_XmlNameTable_t _Nonnull /* System.Xml.XmlNameTable */ nameTable,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNameTable_t _Nullable /* System.Xml.XmlNameTable */
+System_Xml_XmlNamespaceManager_NameTable_Get(
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlNamespaceManager_DefaultNamespace_Get(
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlNamespaceManager_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlNamespaceManager_Destroy(
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlNamespaceManager
+
+#pragma mark - BEGIN APIs of System.Xml.IXmlNamespaceResolver
+System_Collections_Generic_IDictionary_A2_t _Nonnull /* System.Collections.Generic.IDictionary<System.String,System.String> */
+System_Xml_IXmlNamespaceResolver_GetNamespacesInScope(
+	System_Xml_IXmlNamespaceResolver_t _Nullable /* System.Xml.IXmlNamespaceResolver */ self,
+	System_Xml_XmlNamespaceScope_t /* System.Xml.XmlNamespaceScope */ scope,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_IXmlNamespaceResolver_LookupNamespace(
+	System_Xml_IXmlNamespaceResolver_t _Nullable /* System.Xml.IXmlNamespaceResolver */ self,
+	System_String_t _Nonnull /* System.String */ prefix,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_IXmlNamespaceResolver_LookupPrefix(
+	System_Xml_IXmlNamespaceResolver_t _Nullable /* System.Xml.IXmlNamespaceResolver */ self,
+	System_String_t _Nonnull /* System.String */ namespaceName,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_IXmlNamespaceResolver_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_IXmlNamespaceResolver_Destroy(
+	System_Xml_IXmlNamespaceResolver_t _Nullable /* System.Xml.IXmlNamespaceResolver */ self
+);
+
+#pragma mark - END APIs of System.Xml.IXmlNamespaceResolver
+
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaObjectCollection
+System_Xml_Schema_XmlSchemaObjectEnumerator_t _Nonnull /* System.Xml.Schema.XmlSchemaObjectEnumerator */
+System_Xml_Schema_XmlSchemaObjectCollection_GetEnumerator(
+	System_Xml_Schema_XmlSchemaObjectCollection_t _Nullable /* System.Xml.Schema.XmlSchemaObjectCollection */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Xml_Schema_XmlSchemaObjectCollection_Add(
+	System_Xml_Schema_XmlSchemaObjectCollection_t _Nullable /* System.Xml.Schema.XmlSchemaObjectCollection */ self,
+	System_Xml_Schema_XmlSchemaObject_t _Nonnull /* System.Xml.Schema.XmlSchemaObject */ item,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaObjectCollection_Insert(
+	System_Xml_Schema_XmlSchemaObjectCollection_t _Nullable /* System.Xml.Schema.XmlSchemaObjectCollection */ self,
+	int32_t /* System.Int32 */ index,
+	System_Xml_Schema_XmlSchemaObject_t _Nonnull /* System.Xml.Schema.XmlSchemaObject */ item,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Xml_Schema_XmlSchemaObjectCollection_IndexOf(
+	System_Xml_Schema_XmlSchemaObjectCollection_t _Nullable /* System.Xml.Schema.XmlSchemaObjectCollection */ self,
+	System_Xml_Schema_XmlSchemaObject_t _Nonnull /* System.Xml.Schema.XmlSchemaObject */ item,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_Schema_XmlSchemaObjectCollection_Contains(
+	System_Xml_Schema_XmlSchemaObjectCollection_t _Nullable /* System.Xml.Schema.XmlSchemaObjectCollection */ self,
+	System_Xml_Schema_XmlSchemaObject_t _Nonnull /* System.Xml.Schema.XmlSchemaObject */ item,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaObjectCollection_Remove(
+	System_Xml_Schema_XmlSchemaObjectCollection_t _Nullable /* System.Xml.Schema.XmlSchemaObjectCollection */ self,
+	System_Xml_Schema_XmlSchemaObject_t _Nonnull /* System.Xml.Schema.XmlSchemaObject */ item,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaObjectCollection_CopyTo(
+	System_Xml_Schema_XmlSchemaObjectCollection_t _Nullable /* System.Xml.Schema.XmlSchemaObjectCollection */ self,
+	System_Xml_Schema_XmlSchemaObject_Array_t _Nonnull /* System.Xml.Schema.XmlSchemaObject[] */ array,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchemaObjectCollection_t _Nonnull /* System.Xml.Schema.XmlSchemaObjectCollection */
+System_Xml_Schema_XmlSchemaObjectCollection_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchemaObjectCollection_t _Nonnull /* System.Xml.Schema.XmlSchemaObjectCollection */
+System_Xml_Schema_XmlSchemaObjectCollection_Create_1(
+	System_Xml_Schema_XmlSchemaObject_t _Nullable /* System.Xml.Schema.XmlSchemaObject */ parent,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchemaObject_t _Nonnull /* System.Xml.Schema.XmlSchemaObject */
+System_Xml_Schema_XmlSchemaObjectCollection_Item_Get(
+	System_Xml_Schema_XmlSchemaObjectCollection_t _Nullable /* System.Xml.Schema.XmlSchemaObjectCollection */ self,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaObjectCollection_Item_Set(
+	System_Xml_Schema_XmlSchemaObjectCollection_t _Nullable /* System.Xml.Schema.XmlSchemaObjectCollection */ self,
+	int32_t /* System.Int32 */ index,
+	System_Xml_Schema_XmlSchemaObject_t _Nonnull /* System.Xml.Schema.XmlSchemaObject */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaObjectCollection_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaObjectCollection_Destroy(
+	System_Xml_Schema_XmlSchemaObjectCollection_t _Nullable /* System.Xml.Schema.XmlSchemaObjectCollection */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaObjectCollection
+
+#pragma mark - BEGIN APIs of System.Collections.CollectionBase
+void /* System.Void */
+System_Collections_CollectionBase_Clear(
+	System_Collections_CollectionBase_t _Nullable /* System.Collections.CollectionBase */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_CollectionBase_RemoveAt(
+	System_Collections_CollectionBase_t _Nullable /* System.Collections.CollectionBase */ self,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Collections_IEnumerator_t _Nonnull /* System.Collections.IEnumerator */
+System_Collections_CollectionBase_GetEnumerator(
+	System_Collections_CollectionBase_t _Nullable /* System.Collections.CollectionBase */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Collections_CollectionBase_Capacity_Get(
+	System_Collections_CollectionBase_t _Nullable /* System.Collections.CollectionBase */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Collections_CollectionBase_Capacity_Set(
+	System_Collections_CollectionBase_t _Nullable /* System.Collections.CollectionBase */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Collections_CollectionBase_Count_Get(
+	System_Collections_CollectionBase_t _Nullable /* System.Collections.CollectionBase */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Collections_CollectionBase_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Collections_CollectionBase_Destroy(
+	System_Collections_CollectionBase_t _Nullable /* System.Collections.CollectionBase */ self
+);
+
+#pragma mark - END APIs of System.Collections.CollectionBase
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaObjectEnumerator
+void /* System.Void */
+System_Xml_Schema_XmlSchemaObjectEnumerator_Reset(
+	System_Xml_Schema_XmlSchemaObjectEnumerator_t _Nullable /* System.Xml.Schema.XmlSchemaObjectEnumerator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_Schema_XmlSchemaObjectEnumerator_MoveNext(
+	System_Xml_Schema_XmlSchemaObjectEnumerator_t _Nullable /* System.Xml.Schema.XmlSchemaObjectEnumerator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchemaObject_t _Nonnull /* System.Xml.Schema.XmlSchemaObject */
+System_Xml_Schema_XmlSchemaObjectEnumerator_Current_Get(
+	System_Xml_Schema_XmlSchemaObjectEnumerator_t _Nullable /* System.Xml.Schema.XmlSchemaObjectEnumerator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaObjectEnumerator_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaObjectEnumerator_Destroy(
+	System_Xml_Schema_XmlSchemaObjectEnumerator_t _Nullable /* System.Xml.Schema.XmlSchemaObjectEnumerator */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaObjectEnumerator
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaObject[]
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaObject[]
+
+
+
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.Xml.XmlAttribute[]
+#pragma mark - END APIs of System.Xml.XmlAttribute[]
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.Xml.XmlAttribute
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlAttribute_CloneNode(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	bool /* System.Boolean */ deep,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlAttribute_InsertBefore(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */ newChild,
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ refChild,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlAttribute_InsertAfter(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */ newChild,
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ refChild,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlAttribute_ReplaceChild(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */ newChild,
+	System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */ oldChild,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlAttribute_RemoveChild(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */ oldChild,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlAttribute_PrependChild(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */ newChild,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlAttribute_AppendChild(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */ newChild,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlAttribute_WriteTo(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlAttribute_WriteContentTo(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlAttribute_ParentNode_Get(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlAttribute_Name_Get(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlAttribute_LocalName_Get(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlAttribute_NamespaceURI_Get(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlAttribute_Prefix_Get(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlAttribute_Prefix_Set(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNodeType_t /* System.Xml.XmlNodeType */
+System_Xml_XmlAttribute_NodeType_Get(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlDocument_t _Nonnull /* System.Xml.XmlDocument */
+System_Xml_XmlAttribute_OwnerDocument_Get(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlAttribute_Value_Get(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlAttribute_Value_Set(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_IXmlSchemaInfo_t _Nonnull /* System.Xml.Schema.IXmlSchemaInfo */
+System_Xml_XmlAttribute_SchemaInfo_Get(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+void /* System.Void */
+System_Xml_XmlAttribute_InnerText_Set(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_String_t _Nonnull /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlAttribute_Specified_Get(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */
+System_Xml_XmlAttribute_OwnerElement_Get(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+void /* System.Void */
+System_Xml_XmlAttribute_InnerXml_Set(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_String_t _Nonnull /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlAttribute_BaseURI_Get(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlAttribute_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlAttribute_Destroy(
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlAttribute
+
+#pragma mark - BEGIN APIs of System.Xml.XmlNode
+System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */
+System_Xml_XmlNode_CreateNavigator(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNode_SelectSingleNode(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_String_t _Nonnull /* System.String */ xpath,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNode_SelectSingleNode_1(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_String_t _Nonnull /* System.String */ xpath,
+	System_Xml_XmlNamespaceManager_t _Nonnull /* System.Xml.XmlNamespaceManager */ nsmgr,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNodeList_t _Nullable /* System.Xml.XmlNodeList */
+System_Xml_XmlNode_SelectNodes(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_String_t _Nonnull /* System.String */ xpath,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNodeList_t _Nullable /* System.Xml.XmlNodeList */
+System_Xml_XmlNode_SelectNodes_1(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_String_t _Nonnull /* System.String */ xpath,
+	System_Xml_XmlNamespaceManager_t _Nonnull /* System.Xml.XmlNamespaceManager */ nsmgr,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNode_InsertBefore(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */ newChild,
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ refChild,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNode_InsertAfter(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */ newChild,
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ refChild,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlNode_ReplaceChild(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */ newChild,
+	System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */ oldChild,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlNode_RemoveChild(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */ oldChild,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNode_PrependChild(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */ newChild,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNode_AppendChild(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */ newChild,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlNode_CloneNode(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	bool /* System.Boolean */ deep,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlNode_Normalize(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlNode_Supports(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_String_t _Nonnull /* System.String */ feature,
+	System_String_t _Nonnull /* System.String */ version,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlNode_Clone_1(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Collections_IEnumerator_t _Nonnull /* System.Collections.IEnumerator */
+System_Xml_XmlNode_GetEnumerator(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlNode_WriteTo(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlNode_WriteContentTo(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlNode_RemoveAll(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlNode_GetNamespaceOfPrefix(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_String_t _Nonnull /* System.String */ prefix,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlNode_GetPrefixOfNamespace(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlNode_Name_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlNode_Value_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlNode_Value_Set(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNodeType_t /* System.Xml.XmlNodeType */
+System_Xml_XmlNode_NodeType_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNode_ParentNode_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNodeList_t _Nonnull /* System.Xml.XmlNodeList */
+System_Xml_XmlNode_ChildNodes_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNode_PreviousSibling_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNode_NextSibling_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlAttributeCollection_t _Nullable /* System.Xml.XmlAttributeCollection */
+System_Xml_XmlNode_Attributes_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */
+System_Xml_XmlNode_OwnerDocument_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNode_FirstChild_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNode_LastChild_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlNode_HasChildNodes_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlNode_NamespaceURI_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlNode_Prefix_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlNode_Prefix_Set(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlNode_LocalName_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlNode_IsReadOnly_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlNode_InnerText_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlNode_InnerText_Set(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_String_t _Nonnull /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlNode_OuterXml_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlNode_InnerXml_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlNode_InnerXml_Set(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_String_t _Nonnull /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_IXmlSchemaInfo_t _Nonnull /* System.Xml.Schema.IXmlSchemaInfo */
+System_Xml_XmlNode_SchemaInfo_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlNode_BaseURI_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */
+System_Xml_XmlNode_Item_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */
+System_Xml_XmlNode_Item_Get_1(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_String_t _Nonnull /* System.String */ localname,
+	System_String_t _Nonnull /* System.String */ ns,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNode_PreviousText_Get(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlNode_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlNode_Destroy(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlNode
+
+#pragma mark - BEGIN APIs of System.Xml.XPath.IXPathNavigable
+System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */
+System_Xml_XPath_IXPathNavigable_CreateNavigator(
+	System_Xml_XPath_IXPathNavigable_t _Nullable /* System.Xml.XPath.IXPathNavigable */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XPath_IXPathNavigable_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XPath_IXPathNavigable_Destroy(
+	System_Xml_XPath_IXPathNavigable_t _Nullable /* System.Xml.XPath.IXPathNavigable */ self
+);
+
+#pragma mark - END APIs of System.Xml.XPath.IXPathNavigable
+
+#pragma mark - BEGIN APIs of System.Xml.XPath.XPathNavigator
+System_String_t _Nonnull /* System.String */
+System_Xml_XPath_XPathNavigator_ToString(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_SetValue(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_SetTypedValue(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Object_t _Nonnull /* System.Object */ typedValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nonnull /* System.Object */
+System_Xml_XPath_XPathNavigator_ValueAs(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Type_t _Nonnull /* System.Type */ returnType,
+	System_Xml_IXmlNamespaceResolver_t _Nullable /* System.Xml.IXmlNamespaceResolver */ nsResolver,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathNavigator_t _Nonnull /* System.Xml.XPath.XPathNavigator */
+System_Xml_XPath_XPathNavigator_CreateNavigator(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_XPath_XPathNavigator_LookupNamespace(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ prefix,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_XPath_XPathNavigator_LookupPrefix(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Collections_Generic_IDictionary_A2_t _Nonnull /* System.Collections.Generic.IDictionary<System.String,System.String> */
+System_Xml_XPath_XPathNavigator_GetNamespacesInScope(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XmlNamespaceScope_t /* System.Xml.XmlNamespaceScope */ scope,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathNavigator_t _Nonnull /* System.Xml.XPath.XPathNavigator */
+System_Xml_XPath_XPathNavigator_Clone(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */
+System_Xml_XPath_XPathNavigator_ReadSubtree(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_WriteSubtree(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ writer,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XPath_XPathNavigator_GetAttribute(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToAttribute(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToFirstAttribute(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToNextAttribute(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XPath_XPathNavigator_GetNamespace_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToNamespace(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToFirstNamespace(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNamespaceScope_t /* System.Xml.XPath.XPathNamespaceScope */ namespaceScope,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToNextNamespace(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNamespaceScope_t /* System.Xml.XPath.XPathNamespaceScope */ namespaceScope,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToFirstNamespace_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToNextNamespace_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToNext_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToPrevious(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToFirst_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToFirstChild(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToParent(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_MoveToRoot(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveTo_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNavigator_t _Nonnull /* System.Xml.XPath.XPathNavigator */ other,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToId(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ id,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToChild(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToChild_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNodeType_t /* System.Xml.XPath.XPathNodeType */ type,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToFollowing(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToFollowing_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ end,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToFollowing_2(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNodeType_t /* System.Xml.XPath.XPathNodeType */ type,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToFollowing_3(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNodeType_t /* System.Xml.XPath.XPathNodeType */ type,
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ end,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToNext_2(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_MoveToNext_3(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNodeType_t /* System.Xml.XPath.XPathNodeType */ type,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_IsSamePosition(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNavigator_t _Nonnull /* System.Xml.XPath.XPathNavigator */ other,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_IsDescendant(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ nav,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNodeOrder_t /* System.Xml.XmlNodeOrder */
+System_Xml_XPath_XPathNavigator_ComparePosition(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ nav,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_CheckValidity(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_Schema_XmlSchemaSet_t _Nonnull /* System.Xml.Schema.XmlSchemaSet */ schemas,
+	System_Xml_Schema_ValidationEventHandler_t _Nonnull /* System.Xml.Schema.ValidationEventHandler */ validationEventHandler,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathExpression_t _Nonnull /* System.Xml.XPath.XPathExpression */
+System_Xml_XPath_XPathNavigator_Compile(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ xpath,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */
+System_Xml_XPath_XPathNavigator_SelectSingleNode(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ xpath,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */
+System_Xml_XPath_XPathNavigator_SelectSingleNode_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ xpath,
+	System_Xml_IXmlNamespaceResolver_t _Nullable /* System.Xml.IXmlNamespaceResolver */ resolver,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */
+System_Xml_XPath_XPathNavigator_SelectSingleNode_2(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathExpression_t _Nonnull /* System.Xml.XPath.XPathExpression */ expression,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathNodeIterator_t _Nonnull /* System.Xml.XPath.XPathNodeIterator */
+System_Xml_XPath_XPathNavigator_Select_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ xpath,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathNodeIterator_t _Nonnull /* System.Xml.XPath.XPathNodeIterator */
+System_Xml_XPath_XPathNavigator_Select_2(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ xpath,
+	System_Xml_IXmlNamespaceResolver_t _Nullable /* System.Xml.IXmlNamespaceResolver */ resolver,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathNodeIterator_t _Nonnull /* System.Xml.XPath.XPathNodeIterator */
+System_Xml_XPath_XPathNavigator_Select_3(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathExpression_t _Nonnull /* System.Xml.XPath.XPathExpression */ expr,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nonnull /* System.Object */
+System_Xml_XPath_XPathNavigator_Evaluate(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ xpath,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nonnull /* System.Object */
+System_Xml_XPath_XPathNavigator_Evaluate_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ xpath,
+	System_Xml_IXmlNamespaceResolver_t _Nullable /* System.Xml.IXmlNamespaceResolver */ resolver,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nonnull /* System.Object */
+System_Xml_XPath_XPathNavigator_Evaluate_2(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathExpression_t _Nonnull /* System.Xml.XPath.XPathExpression */ expr,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nonnull /* System.Object */
+System_Xml_XPath_XPathNavigator_Evaluate_3(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathExpression_t _Nonnull /* System.Xml.XPath.XPathExpression */ expr,
+	System_Xml_XPath_XPathNodeIterator_t _Nullable /* System.Xml.XPath.XPathNodeIterator */ context,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_Matches(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathExpression_t _Nonnull /* System.Xml.XPath.XPathExpression */ expr,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_Matches_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ xpath,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathNodeIterator_t _Nonnull /* System.Xml.XPath.XPathNodeIterator */
+System_Xml_XPath_XPathNavigator_SelectChildren(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNodeType_t /* System.Xml.XPath.XPathNodeType */ type,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathNodeIterator_t _Nonnull /* System.Xml.XPath.XPathNodeIterator */
+System_Xml_XPath_XPathNavigator_SelectChildren_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathNodeIterator_t _Nonnull /* System.Xml.XPath.XPathNodeIterator */
+System_Xml_XPath_XPathNavigator_SelectAncestors(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNodeType_t /* System.Xml.XPath.XPathNodeType */ type,
+	bool /* System.Boolean */ matchSelf,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathNodeIterator_t _Nonnull /* System.Xml.XPath.XPathNodeIterator */
+System_Xml_XPath_XPathNavigator_SelectAncestors_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	bool /* System.Boolean */ matchSelf,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathNodeIterator_t _Nonnull /* System.Xml.XPath.XPathNodeIterator */
+System_Xml_XPath_XPathNavigator_SelectDescendants(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNodeType_t /* System.Xml.XPath.XPathNodeType */ type,
+	bool /* System.Boolean */ matchSelf,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathNodeIterator_t _Nonnull /* System.Xml.XPath.XPathNodeIterator */
+System_Xml_XPath_XPathNavigator_SelectDescendants_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	bool /* System.Boolean */ matchSelf,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */
+System_Xml_XPath_XPathNavigator_PrependChild(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */
+System_Xml_XPath_XPathNavigator_AppendChild(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */
+System_Xml_XPath_XPathNavigator_InsertAfter(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */
+System_Xml_XPath_XPathNavigator_InsertBefore(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */
+System_Xml_XPath_XPathNavigator_CreateAttributes(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */
+System_Xml_XPath_XPathNavigator_ReplaceRange(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNavigator_t _Nonnull /* System.Xml.XPath.XPathNavigator */ lastSiblingToReplace,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_ReplaceSelf(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ newNode,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_ReplaceSelf_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */ newNode,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_ReplaceSelf_2(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNavigator_t _Nonnull /* System.Xml.XPath.XPathNavigator */ newNode,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_AppendChild_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ newChild,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_AppendChild_2(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */ newChild,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_AppendChild_3(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNavigator_t _Nonnull /* System.Xml.XPath.XPathNavigator */ newChild,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_PrependChild_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ newChild,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_PrependChild_2(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */ newChild,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_PrependChild_3(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNavigator_t _Nonnull /* System.Xml.XPath.XPathNavigator */ newChild,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_InsertBefore_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ newSibling,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_InsertBefore_2(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */ newSibling,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_InsertBefore_3(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNavigator_t _Nonnull /* System.Xml.XPath.XPathNavigator */ newSibling,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_InsertAfter_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ newSibling,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_InsertAfter_2(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */ newSibling,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_InsertAfter_3(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNavigator_t _Nonnull /* System.Xml.XPath.XPathNavigator */ newSibling,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_DeleteRange(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Xml_XPath_XPathNavigator_t _Nonnull /* System.Xml.XPath.XPathNavigator */ lastSiblingToDelete,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_DeleteSelf(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_PrependChildElement(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nullable /* System.String */ prefix,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_AppendChildElement(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nullable /* System.String */ prefix,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_InsertElementBefore(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nullable /* System.String */ prefix,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_InsertElementAfter(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nullable /* System.String */ prefix,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_CreateAttribute_1(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nullable /* System.String */ prefix,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_IsNode_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */
+System_Xml_XPath_XPathNavigator_XmlType_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Object_t _Nonnull /* System.Object */
+System_Xml_XPath_XPathNavigator_TypedValue_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XPath_XPathNavigator_ValueType_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_ValueAsBoolean_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_DateTime_t _Nonnull /* System.DateTime */
+System_Xml_XPath_XPathNavigator_ValueAsDateTime_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+double /* System.Double */
+System_Xml_XPath_XPathNavigator_ValueAsDouble_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_XPath_XPathNavigator_ValueAsInt_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_Xml_XPath_XPathNavigator_ValueAsLong_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNameTable_t _Nonnull /* System.Xml.XmlNameTable */
+System_Xml_XPath_XPathNavigator_NameTable_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Collections_IEqualityComparer_t _Nonnull /* System.Collections.IEqualityComparer */
+System_Xml_XPath_XPathNavigator_NavigatorComparer_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XPath_XPathNodeType_t /* System.Xml.XPath.XPathNodeType */
+System_Xml_XPath_XPathNavigator_NodeType_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XPath_XPathNavigator_LocalName_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XPath_XPathNavigator_Name_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XPath_XPathNavigator_NamespaceURI_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XPath_XPathNavigator_Prefix_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XPath_XPathNavigator_BaseURI_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_IsEmptyElement_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XPath_XPathNavigator_XmlLang_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Object_t _Nullable /* System.Object */
+System_Xml_XPath_XPathNavigator_UnderlyingObject_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_HasAttributes_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_HasChildren_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_IXmlSchemaInfo_t _Nullable /* System.Xml.Schema.IXmlSchemaInfo */
+System_Xml_XPath_XPathNavigator_SchemaInfo_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNavigator_CanEdit_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XPath_XPathNavigator_OuterXml_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_OuterXml_Set(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XPath_XPathNavigator_InnerXml_Get(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_InnerXml_Set(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self,
+	System_String_t _Nonnull /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XPath_XPathNavigator_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNavigator_Destroy(
+	System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */ self
+);
+
+#pragma mark - END APIs of System.Xml.XPath.XPathNavigator
+
+#pragma mark - BEGIN APIs of System.Xml.XPath.XPathItem
+System_Object_t _Nonnull /* System.Object */
+System_Xml_XPath_XPathItem_ValueAs(
+	System_Xml_XPath_XPathItem_t _Nullable /* System.Xml.XPath.XPathItem */ self,
+	System_Type_t _Nonnull /* System.Type */ returnType,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nonnull /* System.Object */
+System_Xml_XPath_XPathItem_ValueAs_1(
+	System_Xml_XPath_XPathItem_t _Nullable /* System.Xml.XPath.XPathItem */ self,
+	System_Type_t _Nonnull /* System.Type */ returnType,
+	System_Xml_IXmlNamespaceResolver_t _Nullable /* System.Xml.IXmlNamespaceResolver */ nsResolver,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathItem_IsNode_Get(
+	System_Xml_XPath_XPathItem_t _Nullable /* System.Xml.XPath.XPathItem */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */
+System_Xml_XPath_XPathItem_XmlType_Get(
+	System_Xml_XPath_XPathItem_t _Nullable /* System.Xml.XPath.XPathItem */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XPath_XPathItem_Value_Get(
+	System_Xml_XPath_XPathItem_t _Nullable /* System.Xml.XPath.XPathItem */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Object_t _Nonnull /* System.Object */
+System_Xml_XPath_XPathItem_TypedValue_Get(
+	System_Xml_XPath_XPathItem_t _Nullable /* System.Xml.XPath.XPathItem */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XPath_XPathItem_ValueType_Get(
+	System_Xml_XPath_XPathItem_t _Nullable /* System.Xml.XPath.XPathItem */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathItem_ValueAsBoolean_Get(
+	System_Xml_XPath_XPathItem_t _Nullable /* System.Xml.XPath.XPathItem */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_DateTime_t _Nonnull /* System.DateTime */
+System_Xml_XPath_XPathItem_ValueAsDateTime_Get(
+	System_Xml_XPath_XPathItem_t _Nullable /* System.Xml.XPath.XPathItem */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+double /* System.Double */
+System_Xml_XPath_XPathItem_ValueAsDouble_Get(
+	System_Xml_XPath_XPathItem_t _Nullable /* System.Xml.XPath.XPathItem */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_XPath_XPathItem_ValueAsInt_Get(
+	System_Xml_XPath_XPathItem_t _Nullable /* System.Xml.XPath.XPathItem */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+System_Xml_XPath_XPathItem_ValueAsLong_Get(
+	System_Xml_XPath_XPathItem_t _Nullable /* System.Xml.XPath.XPathItem */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XPath_XPathItem_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathItem_Destroy(
+	System_Xml_XPath_XPathItem_t _Nullable /* System.Xml.XPath.XPathItem */ self
+);
+
+#pragma mark - END APIs of System.Xml.XPath.XPathItem
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaType
+System_Xml_Schema_XmlSchemaSimpleType_t _Nullable /* System.Xml.Schema.XmlSchemaSimpleType */
+System_Xml_Schema_XmlSchemaType_GetBuiltInSimpleType(
+	System_Xml_XmlQualifiedName_t _Nonnull /* System.Xml.XmlQualifiedName */ qualifiedName,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchemaSimpleType_t _Nonnull /* System.Xml.Schema.XmlSchemaSimpleType */
+System_Xml_Schema_XmlSchemaType_GetBuiltInSimpleType_1(
+	System_Xml_Schema_XmlTypeCode_t /* System.Xml.Schema.XmlTypeCode */ typeCode,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */
+System_Xml_Schema_XmlSchemaType_GetBuiltInComplexType(
+	System_Xml_Schema_XmlTypeCode_t /* System.Xml.Schema.XmlTypeCode */ typeCode,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */
+System_Xml_Schema_XmlSchemaType_GetBuiltInComplexType_1(
+	System_Xml_XmlQualifiedName_t _Nonnull /* System.Xml.XmlQualifiedName */ qualifiedName,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_Schema_XmlSchemaType_IsDerivedFrom(
+	System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */ derivedType,
+	System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */ baseType,
+	System_Xml_Schema_XmlSchemaDerivationMethod_t /* System.Xml.Schema.XmlSchemaDerivationMethod */ except,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchemaType_t _Nonnull /* System.Xml.Schema.XmlSchemaType */
+System_Xml_Schema_XmlSchemaType_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_Schema_XmlSchemaType_Name_Get(
+	System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaType_Name_Set(
+	System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaDerivationMethod_t /* System.Xml.Schema.XmlSchemaDerivationMethod */
+System_Xml_Schema_XmlSchemaType_Final_Get(
+	System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaType_Final_Set(
+	System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */ self,
+	System_Xml_Schema_XmlSchemaDerivationMethod_t /* System.Xml.Schema.XmlSchemaDerivationMethod */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlQualifiedName_t _Nonnull /* System.Xml.XmlQualifiedName */
+System_Xml_Schema_XmlSchemaType_QualifiedName_Get(
+	System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaDerivationMethod_t /* System.Xml.Schema.XmlSchemaDerivationMethod */
+System_Xml_Schema_XmlSchemaType_FinalResolved_Get(
+	System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Object_t _Nullable /* System.Object */
+System_Xml_Schema_XmlSchemaType_BaseSchemaType_Get(
+	System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */
+System_Xml_Schema_XmlSchemaType_BaseXmlSchemaType_Get(
+	System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaDerivationMethod_t /* System.Xml.Schema.XmlSchemaDerivationMethod */
+System_Xml_Schema_XmlSchemaType_DerivedBy_Get(
+	System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaDatatype_t _Nullable /* System.Xml.Schema.XmlSchemaDatatype */
+System_Xml_Schema_XmlSchemaType_Datatype_Get(
+	System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_Schema_XmlSchemaType_IsMixed_Get(
+	System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaType_IsMixed_Set(
+	System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlTypeCode_t /* System.Xml.Schema.XmlTypeCode */
+System_Xml_Schema_XmlSchemaType_TypeCode_Get(
+	System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaType_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaType_Destroy(
+	System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaType
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaAnnotated
+System_Xml_Schema_XmlSchemaAnnotated_t _Nonnull /* System.Xml.Schema.XmlSchemaAnnotated */
+System_Xml_Schema_XmlSchemaAnnotated_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_Schema_XmlSchemaAnnotated_Id_Get(
+	System_Xml_Schema_XmlSchemaAnnotated_t _Nullable /* System.Xml.Schema.XmlSchemaAnnotated */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaAnnotated_Id_Set(
+	System_Xml_Schema_XmlSchemaAnnotated_t _Nullable /* System.Xml.Schema.XmlSchemaAnnotated */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaAnnotation_t _Nullable /* System.Xml.Schema.XmlSchemaAnnotation */
+System_Xml_Schema_XmlSchemaAnnotated_Annotation_Get(
+	System_Xml_Schema_XmlSchemaAnnotated_t _Nullable /* System.Xml.Schema.XmlSchemaAnnotated */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaAnnotated_Annotation_Set(
+	System_Xml_Schema_XmlSchemaAnnotated_t _Nullable /* System.Xml.Schema.XmlSchemaAnnotated */ self,
+	System_Xml_Schema_XmlSchemaAnnotation_t _Nullable /* System.Xml.Schema.XmlSchemaAnnotation */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlAttribute_Array_t _Nullable /* System.Xml.XmlAttribute[] */
+System_Xml_Schema_XmlSchemaAnnotated_UnhandledAttributes_Get(
+	System_Xml_Schema_XmlSchemaAnnotated_t _Nullable /* System.Xml.Schema.XmlSchemaAnnotated */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaAnnotated_UnhandledAttributes_Set(
+	System_Xml_Schema_XmlSchemaAnnotated_t _Nullable /* System.Xml.Schema.XmlSchemaAnnotated */ self,
+	System_Xml_XmlAttribute_Array_t _Nullable /* System.Xml.XmlAttribute[] */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaAnnotated_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaAnnotated_Destroy(
+	System_Xml_Schema_XmlSchemaAnnotated_t _Nullable /* System.Xml.Schema.XmlSchemaAnnotated */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaAnnotated
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaAnnotation
+System_Xml_Schema_XmlSchemaAnnotation_t _Nonnull /* System.Xml.Schema.XmlSchemaAnnotation */
+System_Xml_Schema_XmlSchemaAnnotation_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_Schema_XmlSchemaAnnotation_Id_Get(
+	System_Xml_Schema_XmlSchemaAnnotation_t _Nullable /* System.Xml.Schema.XmlSchemaAnnotation */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaAnnotation_Id_Set(
+	System_Xml_Schema_XmlSchemaAnnotation_t _Nullable /* System.Xml.Schema.XmlSchemaAnnotation */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaObjectCollection_t _Nonnull /* System.Xml.Schema.XmlSchemaObjectCollection */
+System_Xml_Schema_XmlSchemaAnnotation_Items_Get(
+	System_Xml_Schema_XmlSchemaAnnotation_t _Nullable /* System.Xml.Schema.XmlSchemaAnnotation */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlAttribute_Array_t _Nullable /* System.Xml.XmlAttribute[] */
+System_Xml_Schema_XmlSchemaAnnotation_UnhandledAttributes_Get(
+	System_Xml_Schema_XmlSchemaAnnotation_t _Nullable /* System.Xml.Schema.XmlSchemaAnnotation */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaAnnotation_UnhandledAttributes_Set(
+	System_Xml_Schema_XmlSchemaAnnotation_t _Nullable /* System.Xml.Schema.XmlSchemaAnnotation */ self,
+	System_Xml_XmlAttribute_Array_t _Nullable /* System.Xml.XmlAttribute[] */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaAnnotation_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaAnnotation_Destroy(
+	System_Xml_Schema_XmlSchemaAnnotation_t _Nullable /* System.Xml.Schema.XmlSchemaAnnotation */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaAnnotation
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaSimpleType
+System_Xml_Schema_XmlSchemaSimpleType_t _Nonnull /* System.Xml.Schema.XmlSchemaSimpleType */
+System_Xml_Schema_XmlSchemaSimpleType_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Schema_XmlSchemaSimpleTypeContent_t _Nullable /* System.Xml.Schema.XmlSchemaSimpleTypeContent */
+System_Xml_Schema_XmlSchemaSimpleType_Content_Get(
+	System_Xml_Schema_XmlSchemaSimpleType_t _Nullable /* System.Xml.Schema.XmlSchemaSimpleType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaSimpleType_Content_Set(
+	System_Xml_Schema_XmlSchemaSimpleType_t _Nullable /* System.Xml.Schema.XmlSchemaSimpleType */ self,
+	System_Xml_Schema_XmlSchemaSimpleTypeContent_t _Nullable /* System.Xml.Schema.XmlSchemaSimpleTypeContent */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaSimpleType_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaSimpleType_Destroy(
+	System_Xml_Schema_XmlSchemaSimpleType_t _Nullable /* System.Xml.Schema.XmlSchemaSimpleType */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaSimpleType
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaSimpleTypeContent
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaSimpleTypeContent_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaSimpleTypeContent_Destroy(
+	System_Xml_Schema_XmlSchemaSimpleTypeContent_t _Nullable /* System.Xml.Schema.XmlSchemaSimpleTypeContent */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaSimpleTypeContent
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaComplexType
+System_Xml_Schema_XmlSchemaComplexType_t _Nonnull /* System.Xml.Schema.XmlSchemaComplexType */
+System_Xml_Schema_XmlSchemaComplexType_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_Schema_XmlSchemaComplexType_IsAbstract_Get(
+	System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaComplexType_IsAbstract_Set(
+	System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaDerivationMethod_t /* System.Xml.Schema.XmlSchemaDerivationMethod */
+System_Xml_Schema_XmlSchemaComplexType_Block_Get(
+	System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaComplexType_Block_Set(
+	System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */ self,
+	System_Xml_Schema_XmlSchemaDerivationMethod_t /* System.Xml.Schema.XmlSchemaDerivationMethod */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_Schema_XmlSchemaComplexType_IsMixed_Get(
+	System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaComplexType_IsMixed_Set(
+	System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaContentModel_t _Nullable /* System.Xml.Schema.XmlSchemaContentModel */
+System_Xml_Schema_XmlSchemaComplexType_ContentModel_Get(
+	System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaComplexType_ContentModel_Set(
+	System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */ self,
+	System_Xml_Schema_XmlSchemaContentModel_t _Nullable /* System.Xml.Schema.XmlSchemaContentModel */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaParticle_t _Nullable /* System.Xml.Schema.XmlSchemaParticle */
+System_Xml_Schema_XmlSchemaComplexType_Particle_Get(
+	System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaComplexType_Particle_Set(
+	System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */ self,
+	System_Xml_Schema_XmlSchemaParticle_t _Nullable /* System.Xml.Schema.XmlSchemaParticle */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaObjectCollection_t _Nonnull /* System.Xml.Schema.XmlSchemaObjectCollection */
+System_Xml_Schema_XmlSchemaComplexType_Attributes_Get(
+	System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaAnyAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAnyAttribute */
+System_Xml_Schema_XmlSchemaComplexType_AnyAttribute_Get(
+	System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaComplexType_AnyAttribute_Set(
+	System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */ self,
+	System_Xml_Schema_XmlSchemaAnyAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAnyAttribute */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaContentType_t /* System.Xml.Schema.XmlSchemaContentType */
+System_Xml_Schema_XmlSchemaComplexType_ContentType_Get(
+	System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaParticle_t _Nonnull /* System.Xml.Schema.XmlSchemaParticle */
+System_Xml_Schema_XmlSchemaComplexType_ContentTypeParticle_Get(
+	System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaDerivationMethod_t /* System.Xml.Schema.XmlSchemaDerivationMethod */
+System_Xml_Schema_XmlSchemaComplexType_BlockResolved_Get(
+	System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaObjectTable_t _Nonnull /* System.Xml.Schema.XmlSchemaObjectTable */
+System_Xml_Schema_XmlSchemaComplexType_AttributeUses_Get(
+	System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaAnyAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAnyAttribute */
+System_Xml_Schema_XmlSchemaComplexType_AttributeWildcard_Get(
+	System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaComplexType_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaComplexType_Destroy(
+	System_Xml_Schema_XmlSchemaComplexType_t _Nullable /* System.Xml.Schema.XmlSchemaComplexType */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaComplexType
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaContentModel
+System_Xml_Schema_XmlSchemaContent_t _Nullable /* System.Xml.Schema.XmlSchemaContent */
+System_Xml_Schema_XmlSchemaContentModel_Content_Get(
+	System_Xml_Schema_XmlSchemaContentModel_t _Nullable /* System.Xml.Schema.XmlSchemaContentModel */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaContentModel_Content_Set(
+	System_Xml_Schema_XmlSchemaContentModel_t _Nullable /* System.Xml.Schema.XmlSchemaContentModel */ self,
+	System_Xml_Schema_XmlSchemaContent_t _Nullable /* System.Xml.Schema.XmlSchemaContent */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaContentModel_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaContentModel_Destroy(
+	System_Xml_Schema_XmlSchemaContentModel_t _Nullable /* System.Xml.Schema.XmlSchemaContentModel */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaContentModel
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaContent
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaContent_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaContent_Destroy(
+	System_Xml_Schema_XmlSchemaContent_t _Nullable /* System.Xml.Schema.XmlSchemaContent */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaContent
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaParticle
+System_String_t _Nullable /* System.String */
+System_Xml_Schema_XmlSchemaParticle_MinOccursString_Get(
+	System_Xml_Schema_XmlSchemaParticle_t _Nullable /* System.Xml.Schema.XmlSchemaParticle */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaParticle_MinOccursString_Set(
+	System_Xml_Schema_XmlSchemaParticle_t _Nullable /* System.Xml.Schema.XmlSchemaParticle */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Schema_XmlSchemaParticle_MaxOccursString_Get(
+	System_Xml_Schema_XmlSchemaParticle_t _Nullable /* System.Xml.Schema.XmlSchemaParticle */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaParticle_MaxOccursString_Set(
+	System_Xml_Schema_XmlSchemaParticle_t _Nullable /* System.Xml.Schema.XmlSchemaParticle */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Decimal_t _Nonnull /* System.Decimal */
+System_Xml_Schema_XmlSchemaParticle_MinOccurs_Get(
+	System_Xml_Schema_XmlSchemaParticle_t _Nullable /* System.Xml.Schema.XmlSchemaParticle */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaParticle_MinOccurs_Set(
+	System_Xml_Schema_XmlSchemaParticle_t _Nullable /* System.Xml.Schema.XmlSchemaParticle */ self,
+	System_Decimal_t _Nonnull /* System.Decimal */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Decimal_t _Nonnull /* System.Decimal */
+System_Xml_Schema_XmlSchemaParticle_MaxOccurs_Get(
+	System_Xml_Schema_XmlSchemaParticle_t _Nullable /* System.Xml.Schema.XmlSchemaParticle */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaParticle_MaxOccurs_Set(
+	System_Xml_Schema_XmlSchemaParticle_t _Nullable /* System.Xml.Schema.XmlSchemaParticle */ self,
+	System_Decimal_t _Nonnull /* System.Decimal */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaParticle_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaParticle_Destroy(
+	System_Xml_Schema_XmlSchemaParticle_t _Nullable /* System.Xml.Schema.XmlSchemaParticle */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaParticle
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaAnyAttribute
+System_Xml_Schema_XmlSchemaAnyAttribute_t _Nonnull /* System.Xml.Schema.XmlSchemaAnyAttribute */
+System_Xml_Schema_XmlSchemaAnyAttribute_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_Schema_XmlSchemaAnyAttribute_Namespace_Get(
+	System_Xml_Schema_XmlSchemaAnyAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAnyAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaAnyAttribute_Namespace_Set(
+	System_Xml_Schema_XmlSchemaAnyAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAnyAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaContentProcessing_t /* System.Xml.Schema.XmlSchemaContentProcessing */
+System_Xml_Schema_XmlSchemaAnyAttribute_ProcessContents_Get(
+	System_Xml_Schema_XmlSchemaAnyAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAnyAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaAnyAttribute_ProcessContents_Set(
+	System_Xml_Schema_XmlSchemaAnyAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAnyAttribute */ self,
+	System_Xml_Schema_XmlSchemaContentProcessing_t /* System.Xml.Schema.XmlSchemaContentProcessing */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaAnyAttribute_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaAnyAttribute_Destroy(
+	System_Xml_Schema_XmlSchemaAnyAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAnyAttribute */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaAnyAttribute
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaDatatype
+System_Object_t _Nonnull /* System.Object */
+System_Xml_Schema_XmlSchemaDatatype_ParseValue(
+	System_Xml_Schema_XmlSchemaDatatype_t _Nullable /* System.Xml.Schema.XmlSchemaDatatype */ self,
+	System_String_t _Nonnull /* System.String */ s,
+	System_Xml_XmlNameTable_t _Nullable /* System.Xml.XmlNameTable */ nameTable,
+	System_Xml_IXmlNamespaceResolver_t _Nullable /* System.Xml.IXmlNamespaceResolver */ nsmgr,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nonnull /* System.Object */
+System_Xml_Schema_XmlSchemaDatatype_ChangeType(
+	System_Xml_Schema_XmlSchemaDatatype_t _Nullable /* System.Xml.Schema.XmlSchemaDatatype */ self,
+	System_Object_t _Nonnull /* System.Object */ value,
+	System_Type_t _Nonnull /* System.Type */ targetType,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nonnull /* System.Object */
+System_Xml_Schema_XmlSchemaDatatype_ChangeType_1(
+	System_Xml_Schema_XmlSchemaDatatype_t _Nullable /* System.Xml.Schema.XmlSchemaDatatype */ self,
+	System_Object_t _Nonnull /* System.Object */ value,
+	System_Type_t _Nonnull /* System.Type */ targetType,
+	System_Xml_IXmlNamespaceResolver_t _Nonnull /* System.Xml.IXmlNamespaceResolver */ namespaceResolver,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_Schema_XmlSchemaDatatype_IsDerivedFrom(
+	System_Xml_Schema_XmlSchemaDatatype_t _Nullable /* System.Xml.Schema.XmlSchemaDatatype */ self,
+	System_Xml_Schema_XmlSchemaDatatype_t _Nonnull /* System.Xml.Schema.XmlSchemaDatatype */ datatype,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaDatatype_ValueType_Get(
+	System_Xml_Schema_XmlSchemaDatatype_t _Nullable /* System.Xml.Schema.XmlSchemaDatatype */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlTokenizedType_t /* System.Xml.XmlTokenizedType */
+System_Xml_Schema_XmlSchemaDatatype_TokenizedType_Get(
+	System_Xml_Schema_XmlSchemaDatatype_t _Nullable /* System.Xml.Schema.XmlSchemaDatatype */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaDatatypeVariety_t /* System.Xml.Schema.XmlSchemaDatatypeVariety */
+System_Xml_Schema_XmlSchemaDatatype_Variety_Get(
+	System_Xml_Schema_XmlSchemaDatatype_t _Nullable /* System.Xml.Schema.XmlSchemaDatatype */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlTypeCode_t /* System.Xml.Schema.XmlTypeCode */
+System_Xml_Schema_XmlSchemaDatatype_TypeCode_Get(
+	System_Xml_Schema_XmlSchemaDatatype_t _Nullable /* System.Xml.Schema.XmlSchemaDatatype */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaDatatype_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaDatatype_Destroy(
+	System_Xml_Schema_XmlSchemaDatatype_t _Nullable /* System.Xml.Schema.XmlSchemaDatatype */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaDatatype
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.IXmlSchemaInfo
+System_Xml_Schema_XmlSchemaValidity_t /* System.Xml.Schema.XmlSchemaValidity */
+System_Xml_Schema_IXmlSchemaInfo_Validity_Get(
+	System_Xml_Schema_IXmlSchemaInfo_t _Nullable /* System.Xml.Schema.IXmlSchemaInfo */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_Schema_IXmlSchemaInfo_IsDefault_Get(
+	System_Xml_Schema_IXmlSchemaInfo_t _Nullable /* System.Xml.Schema.IXmlSchemaInfo */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_Schema_IXmlSchemaInfo_IsNil_Get(
+	System_Xml_Schema_IXmlSchemaInfo_t _Nullable /* System.Xml.Schema.IXmlSchemaInfo */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaSimpleType_t _Nullable /* System.Xml.Schema.XmlSchemaSimpleType */
+System_Xml_Schema_IXmlSchemaInfo_MemberType_Get(
+	System_Xml_Schema_IXmlSchemaInfo_t _Nullable /* System.Xml.Schema.IXmlSchemaInfo */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */
+System_Xml_Schema_IXmlSchemaInfo_SchemaType_Get(
+	System_Xml_Schema_IXmlSchemaInfo_t _Nullable /* System.Xml.Schema.IXmlSchemaInfo */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */
+System_Xml_Schema_IXmlSchemaInfo_SchemaElement_Get(
+	System_Xml_Schema_IXmlSchemaInfo_t _Nullable /* System.Xml.Schema.IXmlSchemaInfo */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */
+System_Xml_Schema_IXmlSchemaInfo_SchemaAttribute_Get(
+	System_Xml_Schema_IXmlSchemaInfo_t _Nullable /* System.Xml.Schema.IXmlSchemaInfo */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_IXmlSchemaInfo_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_IXmlSchemaInfo_Destroy(
+	System_Xml_Schema_IXmlSchemaInfo_t _Nullable /* System.Xml.Schema.IXmlSchemaInfo */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.IXmlSchemaInfo
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaElement
+System_Xml_Schema_XmlSchemaElement_t _Nonnull /* System.Xml.Schema.XmlSchemaElement */
+System_Xml_Schema_XmlSchemaElement_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_Schema_XmlSchemaElement_IsAbstract_Get(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaElement_IsAbstract_Set(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaDerivationMethod_t /* System.Xml.Schema.XmlSchemaDerivationMethod */
+System_Xml_Schema_XmlSchemaElement_Block_Get(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaElement_Block_Set(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Xml_Schema_XmlSchemaDerivationMethod_t /* System.Xml.Schema.XmlSchemaDerivationMethod */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Schema_XmlSchemaElement_DefaultValue_Get(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaElement_DefaultValue_Set(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaDerivationMethod_t /* System.Xml.Schema.XmlSchemaDerivationMethod */
+System_Xml_Schema_XmlSchemaElement_Final_Get(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaElement_Final_Set(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Xml_Schema_XmlSchemaDerivationMethod_t /* System.Xml.Schema.XmlSchemaDerivationMethod */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Schema_XmlSchemaElement_FixedValue_Get(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaElement_FixedValue_Set(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaForm_t /* System.Xml.Schema.XmlSchemaForm */
+System_Xml_Schema_XmlSchemaElement_Form_Get(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaElement_Form_Set(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Xml_Schema_XmlSchemaForm_t /* System.Xml.Schema.XmlSchemaForm */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Schema_XmlSchemaElement_Name_Get(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaElement_Name_Set(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_Schema_XmlSchemaElement_IsNillable_Get(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaElement_IsNillable_Set(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlQualifiedName_t _Nonnull /* System.Xml.XmlQualifiedName */
+System_Xml_Schema_XmlSchemaElement_RefName_Get(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaElement_RefName_Set(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Xml_XmlQualifiedName_t _Nullable /* System.Xml.XmlQualifiedName */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlQualifiedName_t _Nonnull /* System.Xml.XmlQualifiedName */
+System_Xml_Schema_XmlSchemaElement_SubstitutionGroup_Get(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaElement_SubstitutionGroup_Set(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Xml_XmlQualifiedName_t _Nullable /* System.Xml.XmlQualifiedName */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlQualifiedName_t _Nonnull /* System.Xml.XmlQualifiedName */
+System_Xml_Schema_XmlSchemaElement_SchemaTypeName_Get(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaElement_SchemaTypeName_Set(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Xml_XmlQualifiedName_t _Nullable /* System.Xml.XmlQualifiedName */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */
+System_Xml_Schema_XmlSchemaElement_SchemaType_Get(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaElement_SchemaType_Set(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaObjectCollection_t _Nonnull /* System.Xml.Schema.XmlSchemaObjectCollection */
+System_Xml_Schema_XmlSchemaElement_Constraints_Get(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlQualifiedName_t _Nonnull /* System.Xml.XmlQualifiedName */
+System_Xml_Schema_XmlSchemaElement_QualifiedName_Get(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Object_t _Nullable /* System.Object */
+System_Xml_Schema_XmlSchemaElement_ElementType_Get(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaType_t _Nullable /* System.Xml.Schema.XmlSchemaType */
+System_Xml_Schema_XmlSchemaElement_ElementSchemaType_Get(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaDerivationMethod_t /* System.Xml.Schema.XmlSchemaDerivationMethod */
+System_Xml_Schema_XmlSchemaElement_BlockResolved_Get(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaDerivationMethod_t /* System.Xml.Schema.XmlSchemaDerivationMethod */
+System_Xml_Schema_XmlSchemaElement_FinalResolved_Get(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaElement_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaElement_Destroy(
+	System_Xml_Schema_XmlSchemaElement_t _Nullable /* System.Xml.Schema.XmlSchemaElement */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaElement
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchemaAttribute
+System_Xml_Schema_XmlSchemaAttribute_t _Nonnull /* System.Xml.Schema.XmlSchemaAttribute */
+System_Xml_Schema_XmlSchemaAttribute_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_Schema_XmlSchemaAttribute_DefaultValue_Get(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaAttribute_DefaultValue_Set(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Schema_XmlSchemaAttribute_FixedValue_Get(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaAttribute_FixedValue_Set(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaForm_t /* System.Xml.Schema.XmlSchemaForm */
+System_Xml_Schema_XmlSchemaAttribute_Form_Get(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaAttribute_Form_Set(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self,
+	System_Xml_Schema_XmlSchemaForm_t /* System.Xml.Schema.XmlSchemaForm */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Schema_XmlSchemaAttribute_Name_Get(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaAttribute_Name_Set(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlQualifiedName_t _Nonnull /* System.Xml.XmlQualifiedName */
+System_Xml_Schema_XmlSchemaAttribute_RefName_Get(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaAttribute_RefName_Set(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self,
+	System_Xml_XmlQualifiedName_t _Nonnull /* System.Xml.XmlQualifiedName */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlQualifiedName_t _Nonnull /* System.Xml.XmlQualifiedName */
+System_Xml_Schema_XmlSchemaAttribute_SchemaTypeName_Get(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaAttribute_SchemaTypeName_Set(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self,
+	System_Xml_XmlQualifiedName_t _Nonnull /* System.Xml.XmlQualifiedName */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaSimpleType_t _Nullable /* System.Xml.Schema.XmlSchemaSimpleType */
+System_Xml_Schema_XmlSchemaAttribute_SchemaType_Get(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaAttribute_SchemaType_Set(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self,
+	System_Xml_Schema_XmlSchemaSimpleType_t _Nullable /* System.Xml.Schema.XmlSchemaSimpleType */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaUse_t /* System.Xml.Schema.XmlSchemaUse */
+System_Xml_Schema_XmlSchemaAttribute_Use_Get(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaAttribute_Use_Set(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self,
+	System_Xml_Schema_XmlSchemaUse_t /* System.Xml.Schema.XmlSchemaUse */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlQualifiedName_t _Nonnull /* System.Xml.XmlQualifiedName */
+System_Xml_Schema_XmlSchemaAttribute_QualifiedName_Get(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Object_t _Nullable /* System.Object */
+System_Xml_Schema_XmlSchemaAttribute_AttributeType_Get(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaSimpleType_t _Nullable /* System.Xml.Schema.XmlSchemaSimpleType */
+System_Xml_Schema_XmlSchemaAttribute_AttributeSchemaType_Get(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_XmlSchemaAttribute_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_XmlSchemaAttribute_Destroy(
+	System_Xml_Schema_XmlSchemaAttribute_t _Nullable /* System.Xml.Schema.XmlSchemaAttribute */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.XmlSchemaAttribute
+
+#pragma mark - BEGIN APIs of System.Xml.XPath.XPathExpression
+void /* System.Void */
+System_Xml_XPath_XPathExpression_AddSort(
+	System_Xml_XPath_XPathExpression_t _Nullable /* System.Xml.XPath.XPathExpression */ self,
+	System_Object_t _Nonnull /* System.Object */ expr,
+	System_Collections_IComparer_t _Nonnull /* System.Collections.IComparer */ comparer,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathExpression_AddSort_1(
+	System_Xml_XPath_XPathExpression_t _Nullable /* System.Xml.XPath.XPathExpression */ self,
+	System_Object_t _Nonnull /* System.Object */ expr,
+	System_Xml_XPath_XmlSortOrder_t /* System.Xml.XPath.XmlSortOrder */ order,
+	System_Xml_XPath_XmlCaseOrder_t /* System.Xml.XPath.XmlCaseOrder */ caseOrder,
+	System_String_t _Nonnull /* System.String */ lang,
+	System_Xml_XPath_XmlDataType_t /* System.Xml.XPath.XmlDataType */ dataType,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathExpression_t _Nonnull /* System.Xml.XPath.XPathExpression */
+System_Xml_XPath_XPathExpression_Clone(
+	System_Xml_XPath_XPathExpression_t _Nullable /* System.Xml.XPath.XPathExpression */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathExpression_SetContext(
+	System_Xml_XPath_XPathExpression_t _Nullable /* System.Xml.XPath.XPathExpression */ self,
+	System_Xml_XmlNamespaceManager_t _Nonnull /* System.Xml.XmlNamespaceManager */ nsManager,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathExpression_SetContext_1(
+	System_Xml_XPath_XPathExpression_t _Nullable /* System.Xml.XPath.XPathExpression */ self,
+	System_Xml_IXmlNamespaceResolver_t _Nullable /* System.Xml.IXmlNamespaceResolver */ nsResolver,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathExpression_t _Nonnull /* System.Xml.XPath.XPathExpression */
+System_Xml_XPath_XPathExpression_Compile(
+	System_String_t _Nonnull /* System.String */ xpath,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathExpression_t _Nonnull /* System.Xml.XPath.XPathExpression */
+System_Xml_XPath_XPathExpression_Compile_1(
+	System_String_t _Nonnull /* System.String */ xpath,
+	System_Xml_IXmlNamespaceResolver_t _Nullable /* System.Xml.IXmlNamespaceResolver */ nsResolver,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XPath_XPathExpression_Expression_Get(
+	System_Xml_XPath_XPathExpression_t _Nullable /* System.Xml.XPath.XPathExpression */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XPath_XPathResultType_t /* System.Xml.XPath.XPathResultType */
+System_Xml_XPath_XPathExpression_ReturnType_Get(
+	System_Xml_XPath_XPathExpression_t _Nullable /* System.Xml.XPath.XPathExpression */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XPath_XPathExpression_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathExpression_Destroy(
+	System_Xml_XPath_XPathExpression_t _Nullable /* System.Xml.XPath.XPathExpression */ self
+);
+
+#pragma mark - END APIs of System.Xml.XPath.XPathExpression
+
+#pragma mark - BEGIN APIs of System.Xml.XPath.XPathNodeIterator
+System_Xml_XPath_XPathNodeIterator_t _Nonnull /* System.Xml.XPath.XPathNodeIterator */
+System_Xml_XPath_XPathNodeIterator_Clone(
+	System_Xml_XPath_XPathNodeIterator_t _Nullable /* System.Xml.XPath.XPathNodeIterator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XPath_XPathNodeIterator_MoveNext(
+	System_Xml_XPath_XPathNodeIterator_t _Nullable /* System.Xml.XPath.XPathNodeIterator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Collections_IEnumerator_t _Nonnull /* System.Collections.IEnumerator */
+System_Xml_XPath_XPathNodeIterator_GetEnumerator(
+	System_Xml_XPath_XPathNodeIterator_t _Nullable /* System.Xml.XPath.XPathNodeIterator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */
+System_Xml_XPath_XPathNodeIterator_Current_Get(
+	System_Xml_XPath_XPathNodeIterator_t _Nullable /* System.Xml.XPath.XPathNodeIterator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_XPath_XPathNodeIterator_CurrentPosition_Get(
+	System_Xml_XPath_XPathNodeIterator_t _Nullable /* System.Xml.XPath.XPathNodeIterator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_XPath_XPathNodeIterator_Count_Get(
+	System_Xml_XPath_XPathNodeIterator_t _Nullable /* System.Xml.XPath.XPathNodeIterator */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XPath_XPathNodeIterator_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XPath_XPathNodeIterator_Destroy(
+	System_Xml_XPath_XPathNodeIterator_t _Nullable /* System.Xml.XPath.XPathNodeIterator */ self
+);
+
+#pragma mark - END APIs of System.Xml.XPath.XPathNodeIterator
+
+#pragma mark - BEGIN APIs of System.Xml.XmlNodeList
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNodeList_Item(
+	System_Xml_XmlNodeList_t _Nullable /* System.Xml.XmlNodeList */ self,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Collections_IEnumerator_t _Nonnull /* System.Collections.IEnumerator */
+System_Xml_XmlNodeList_GetEnumerator(
+	System_Xml_XmlNodeList_t _Nullable /* System.Xml.XmlNodeList */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Xml_XmlNodeList_Count_Get(
+	System_Xml_XmlNodeList_t _Nullable /* System.Xml.XmlNodeList */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNodeList_ItemOf_Get(
+	System_Xml_XmlNodeList_t _Nullable /* System.Xml.XmlNodeList */ self,
+	int32_t /* System.Int32 */ i,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlNodeList_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlNodeList_Destroy(
+	System_Xml_XmlNodeList_t _Nullable /* System.Xml.XmlNodeList */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlNodeList
+
+#pragma mark - BEGIN APIs of System.Xml.XmlAttributeCollection
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlAttributeCollection_SetNamedItem(
+	System_Xml_XmlAttributeCollection_t _Nullable /* System.Xml.XmlAttributeCollection */ self,
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ node,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlAttribute_t _Nonnull /* System.Xml.XmlAttribute */
+System_Xml_XmlAttributeCollection_Prepend(
+	System_Xml_XmlAttributeCollection_t _Nullable /* System.Xml.XmlAttributeCollection */ self,
+	System_Xml_XmlAttribute_t _Nonnull /* System.Xml.XmlAttribute */ node,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlAttribute_t _Nonnull /* System.Xml.XmlAttribute */
+System_Xml_XmlAttributeCollection_Append(
+	System_Xml_XmlAttributeCollection_t _Nullable /* System.Xml.XmlAttributeCollection */ self,
+	System_Xml_XmlAttribute_t _Nonnull /* System.Xml.XmlAttribute */ node,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlAttribute_t _Nonnull /* System.Xml.XmlAttribute */
+System_Xml_XmlAttributeCollection_InsertBefore(
+	System_Xml_XmlAttributeCollection_t _Nullable /* System.Xml.XmlAttributeCollection */ self,
+	System_Xml_XmlAttribute_t _Nonnull /* System.Xml.XmlAttribute */ newNode,
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ refNode,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlAttribute_t _Nonnull /* System.Xml.XmlAttribute */
+System_Xml_XmlAttributeCollection_InsertAfter(
+	System_Xml_XmlAttributeCollection_t _Nullable /* System.Xml.XmlAttributeCollection */ self,
+	System_Xml_XmlAttribute_t _Nonnull /* System.Xml.XmlAttribute */ newNode,
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ refNode,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */
+System_Xml_XmlAttributeCollection_Remove(
+	System_Xml_XmlAttributeCollection_t _Nullable /* System.Xml.XmlAttributeCollection */ self,
+	System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */ node,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */
+System_Xml_XmlAttributeCollection_RemoveAt(
+	System_Xml_XmlAttributeCollection_t _Nullable /* System.Xml.XmlAttributeCollection */ self,
+	int32_t /* System.Int32 */ i,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlAttributeCollection_RemoveAll(
+	System_Xml_XmlAttributeCollection_t _Nullable /* System.Xml.XmlAttributeCollection */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlAttributeCollection_CopyTo(
+	System_Xml_XmlAttributeCollection_t _Nullable /* System.Xml.XmlAttributeCollection */ self,
+	System_Xml_XmlAttribute_Array_t _Nonnull /* System.Xml.XmlAttribute[] */ array,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlAttribute_t _Nonnull /* System.Xml.XmlAttribute */
+System_Xml_XmlAttributeCollection_ItemOf_Get(
+	System_Xml_XmlAttributeCollection_t _Nullable /* System.Xml.XmlAttributeCollection */ self,
+	int32_t /* System.Int32 */ i,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */
+System_Xml_XmlAttributeCollection_ItemOf_Get_1(
+	System_Xml_XmlAttributeCollection_t _Nullable /* System.Xml.XmlAttributeCollection */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */
+System_Xml_XmlAttributeCollection_ItemOf_Get_2(
+	System_Xml_XmlAttributeCollection_t _Nullable /* System.Xml.XmlAttributeCollection */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlAttributeCollection_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlAttributeCollection_Destroy(
+	System_Xml_XmlAttributeCollection_t _Nullable /* System.Xml.XmlAttributeCollection */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlAttributeCollection
+
+#pragma mark - BEGIN APIs of System.Xml.XmlNamedNodeMap
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNamedNodeMap_GetNamedItem(
+	System_Xml_XmlNamedNodeMap_t _Nullable /* System.Xml.XmlNamedNodeMap */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNamedNodeMap_SetNamedItem(
+	System_Xml_XmlNamedNodeMap_t _Nullable /* System.Xml.XmlNamedNodeMap */ self,
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ node,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNamedNodeMap_RemoveNamedItem(
+	System_Xml_XmlNamedNodeMap_t _Nullable /* System.Xml.XmlNamedNodeMap */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNamedNodeMap_Item(
+	System_Xml_XmlNamedNodeMap_t _Nullable /* System.Xml.XmlNamedNodeMap */ self,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNamedNodeMap_GetNamedItem_1(
+	System_Xml_XmlNamedNodeMap_t _Nullable /* System.Xml.XmlNamedNodeMap */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNamedNodeMap_RemoveNamedItem_1(
+	System_Xml_XmlNamedNodeMap_t _Nullable /* System.Xml.XmlNamedNodeMap */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Collections_IEnumerator_t _Nonnull /* System.Collections.IEnumerator */
+System_Xml_XmlNamedNodeMap_GetEnumerator(
+	System_Xml_XmlNamedNodeMap_t _Nullable /* System.Xml.XmlNamedNodeMap */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Xml_XmlNamedNodeMap_Count_Get(
+	System_Xml_XmlNamedNodeMap_t _Nullable /* System.Xml.XmlNamedNodeMap */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlNamedNodeMap_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlNamedNodeMap_Destroy(
+	System_Xml_XmlNamedNodeMap_t _Nullable /* System.Xml.XmlNamedNodeMap */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlNamedNodeMap
+
+#pragma mark - BEGIN APIs of System.Xml.XmlDocument
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlDocument_CloneNode(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	bool /* System.Boolean */ deep,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlAttribute_t _Nonnull /* System.Xml.XmlAttribute */
+System_Xml_XmlDocument_CreateAttribute(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlCDataSection_t _Nonnull /* System.Xml.XmlCDataSection */
+System_Xml_XmlDocument_CreateCDataSection(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nullable /* System.String */ data,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlComment_t _Nonnull /* System.Xml.XmlComment */
+System_Xml_XmlDocument_CreateComment(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nullable /* System.String */ data,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlDocumentType_t _Nonnull /* System.Xml.XmlDocumentType */
+System_Xml_XmlDocument_CreateDocumentType(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_String_t _Nullable /* System.String */ publicId,
+	System_String_t _Nullable /* System.String */ systemId,
+	System_String_t _Nullable /* System.String */ internalSubset,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlDocumentFragment_t _Nonnull /* System.Xml.XmlDocumentFragment */
+System_Xml_XmlDocument_CreateDocumentFragment(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlElement_t _Nonnull /* System.Xml.XmlElement */
+System_Xml_XmlDocument_CreateElement(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlEntityReference_t _Nonnull /* System.Xml.XmlEntityReference */
+System_Xml_XmlDocument_CreateEntityReference(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlProcessingInstruction_t _Nonnull /* System.Xml.XmlProcessingInstruction */
+System_Xml_XmlDocument_CreateProcessingInstruction(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nonnull /* System.String */ target,
+	System_String_t _Nullable /* System.String */ data,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlDeclaration_t _Nonnull /* System.Xml.XmlDeclaration */
+System_Xml_XmlDocument_CreateXmlDeclaration(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nonnull /* System.String */ version,
+	System_String_t _Nullable /* System.String */ encoding,
+	System_String_t _Nullable /* System.String */ standalone,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlText_t _Nonnull /* System.Xml.XmlText */
+System_Xml_XmlDocument_CreateTextNode(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nullable /* System.String */ text,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlSignificantWhitespace_t _Nonnull /* System.Xml.XmlSignificantWhitespace */
+System_Xml_XmlDocument_CreateSignificantWhitespace(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nullable /* System.String */ text,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XPath_XPathNavigator_t _Nullable /* System.Xml.XPath.XPathNavigator */
+System_Xml_XmlDocument_CreateNavigator(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlWhitespace_t _Nonnull /* System.Xml.XmlWhitespace */
+System_Xml_XmlDocument_CreateWhitespace(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nullable /* System.String */ text,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNodeList_t _Nonnull /* System.Xml.XmlNodeList */
+System_Xml_XmlDocument_GetElementsByTagName(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlAttribute_t _Nonnull /* System.Xml.XmlAttribute */
+System_Xml_XmlDocument_CreateAttribute_1(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nonnull /* System.String */ qualifiedName,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlElement_t _Nonnull /* System.Xml.XmlElement */
+System_Xml_XmlDocument_CreateElement_1(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nonnull /* System.String */ qualifiedName,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNodeList_t _Nonnull /* System.Xml.XmlNodeList */
+System_Xml_XmlDocument_GetElementsByTagName_1(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */
+System_Xml_XmlDocument_GetElementById(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nonnull /* System.String */ elementId,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlDocument_ImportNode(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */ node,
+	bool /* System.Boolean */ deep,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlAttribute_t _Nonnull /* System.Xml.XmlAttribute */
+System_Xml_XmlDocument_CreateAttribute_2(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nullable /* System.String */ prefix,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlElement_t _Nonnull /* System.Xml.XmlElement */
+System_Xml_XmlDocument_CreateElement_2(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nullable /* System.String */ prefix,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlDocument_CreateNode(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlNodeType_t /* System.Xml.XmlNodeType */ type,
+	System_String_t _Nullable /* System.String */ prefix,
+	System_String_t _Nonnull /* System.String */ name,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlDocument_CreateNode_1(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nonnull /* System.String */ nodeTypeString,
+	System_String_t _Nonnull /* System.String */ name,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlDocument_CreateNode_2(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlNodeType_t /* System.Xml.XmlNodeType */ type,
+	System_String_t _Nonnull /* System.String */ name,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlDocument_ReadNode(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */ reader,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_Load(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nonnull /* System.String */ filename,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_Load_1(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ inStream,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_Load_2(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_IO_TextReader_t _Nonnull /* System.IO.TextReader */ txtReader,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_Load_3(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlReader_t _Nonnull /* System.Xml.XmlReader */ reader,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_LoadXml(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nonnull /* System.String */ xml,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_Save(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nonnull /* System.String */ filename,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_Save_1(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_IO_Stream_t _Nonnull /* System.IO.Stream */ outStream,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_Save_2(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_IO_TextWriter_t _Nonnull /* System.IO.TextWriter */ writer,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_Save_3(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_WriteTo(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_WriteContentTo(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ xw,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_Validate(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_Schema_ValidationEventHandler_t _Nullable /* System.Xml.Schema.ValidationEventHandler */ validationEventHandler,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_Validate_1(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_Schema_ValidationEventHandler_t _Nullable /* System.Xml.Schema.ValidationEventHandler */ validationEventHandler,
+	System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */ nodeToValidate,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlDocument_t _Nonnull /* System.Xml.XmlDocument */
+System_Xml_XmlDocument_Create_1(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlDocument_t _Nonnull /* System.Xml.XmlDocument */
+System_Xml_XmlDocument_Create_2(
+	System_Xml_XmlNameTable_t _Nonnull /* System.Xml.XmlNameTable */ nt,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNodeType_t /* System.Xml.XmlNodeType */
+System_Xml_XmlDocument_NodeType_Get(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlDocument_ParentNode_Get(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlDocumentType_t _Nullable /* System.Xml.XmlDocumentType */
+System_Xml_XmlDocument_DocumentType_Get(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlImplementation_t _Nonnull /* System.Xml.XmlImplementation */
+System_Xml_XmlDocument_Implementation_Get(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlDocument_Name_Get(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlDocument_LocalName_Get(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */
+System_Xml_XmlDocument_DocumentElement_Get(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */
+System_Xml_XmlDocument_OwnerDocument_Get(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaSet_t _Nonnull /* System.Xml.Schema.XmlSchemaSet */
+System_Xml_XmlDocument_Schemas_Get(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_Schemas_Set(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_Schema_XmlSchemaSet_t _Nonnull /* System.Xml.Schema.XmlSchemaSet */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+void /* System.Void */
+System_Xml_XmlDocument_XmlResolver_Set(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlResolver_t _Nullable /* System.Xml.XmlResolver */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNameTable_t _Nonnull /* System.Xml.XmlNameTable */
+System_Xml_XmlDocument_NameTable_Get(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlDocument_PreserveWhitespace_Get(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_PreserveWhitespace_Set(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlDocument_IsReadOnly_Get(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+void /* System.Void */
+System_Xml_XmlDocument_InnerText_Set(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlDocument_InnerXml_Get(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_InnerXml_Set(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_String_t _Nonnull /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_IXmlSchemaInfo_t _Nonnull /* System.Xml.Schema.IXmlSchemaInfo */
+System_Xml_XmlDocument_SchemaInfo_Get(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlDocument_BaseURI_Get(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+void /* System.Void */
+System_Xml_XmlDocument_NodeInserting_Add(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlNodeChangedEventHandler_t _Nonnull /* System.Xml.XmlNodeChangedEventHandler */ value
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_NodeInserting_Remove(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlNodeChangedEventHandler_t _Nonnull /* System.Xml.XmlNodeChangedEventHandler */ value
+);
+
+
+void /* System.Void */
+System_Xml_XmlDocument_NodeInserted_Add(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlNodeChangedEventHandler_t _Nonnull /* System.Xml.XmlNodeChangedEventHandler */ value
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_NodeInserted_Remove(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlNodeChangedEventHandler_t _Nonnull /* System.Xml.XmlNodeChangedEventHandler */ value
+);
+
+
+void /* System.Void */
+System_Xml_XmlDocument_NodeRemoving_Add(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlNodeChangedEventHandler_t _Nonnull /* System.Xml.XmlNodeChangedEventHandler */ value
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_NodeRemoving_Remove(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlNodeChangedEventHandler_t _Nonnull /* System.Xml.XmlNodeChangedEventHandler */ value
+);
+
+
+void /* System.Void */
+System_Xml_XmlDocument_NodeRemoved_Add(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlNodeChangedEventHandler_t _Nonnull /* System.Xml.XmlNodeChangedEventHandler */ value
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_NodeRemoved_Remove(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlNodeChangedEventHandler_t _Nonnull /* System.Xml.XmlNodeChangedEventHandler */ value
+);
+
+
+void /* System.Void */
+System_Xml_XmlDocument_NodeChanging_Add(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlNodeChangedEventHandler_t _Nonnull /* System.Xml.XmlNodeChangedEventHandler */ value
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_NodeChanging_Remove(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlNodeChangedEventHandler_t _Nonnull /* System.Xml.XmlNodeChangedEventHandler */ value
+);
+
+
+void /* System.Void */
+System_Xml_XmlDocument_NodeChanged_Add(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlNodeChangedEventHandler_t _Nonnull /* System.Xml.XmlNodeChangedEventHandler */ value
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_NodeChanged_Remove(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self,
+	System_Xml_XmlNodeChangedEventHandler_t _Nonnull /* System.Xml.XmlNodeChangedEventHandler */ value
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlDocument_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlDocument_Destroy(
+	System_Xml_XmlDocument_t _Nullable /* System.Xml.XmlDocument */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlDocument
+
+#pragma mark - BEGIN APIs of System.Xml.XmlDocumentType
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlDocumentType_CloneNode(
+	System_Xml_XmlDocumentType_t _Nullable /* System.Xml.XmlDocumentType */ self,
+	bool /* System.Boolean */ deep,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocumentType_WriteTo(
+	System_Xml_XmlDocumentType_t _Nullable /* System.Xml.XmlDocumentType */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocumentType_WriteContentTo(
+	System_Xml_XmlDocumentType_t _Nullable /* System.Xml.XmlDocumentType */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlDocumentType_Name_Get(
+	System_Xml_XmlDocumentType_t _Nullable /* System.Xml.XmlDocumentType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlDocumentType_LocalName_Get(
+	System_Xml_XmlDocumentType_t _Nullable /* System.Xml.XmlDocumentType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNodeType_t /* System.Xml.XmlNodeType */
+System_Xml_XmlDocumentType_NodeType_Get(
+	System_Xml_XmlDocumentType_t _Nullable /* System.Xml.XmlDocumentType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlDocumentType_IsReadOnly_Get(
+	System_Xml_XmlDocumentType_t _Nullable /* System.Xml.XmlDocumentType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNamedNodeMap_t _Nonnull /* System.Xml.XmlNamedNodeMap */
+System_Xml_XmlDocumentType_Entities_Get(
+	System_Xml_XmlDocumentType_t _Nullable /* System.Xml.XmlDocumentType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNamedNodeMap_t _Nonnull /* System.Xml.XmlNamedNodeMap */
+System_Xml_XmlDocumentType_Notations_Get(
+	System_Xml_XmlDocumentType_t _Nullable /* System.Xml.XmlDocumentType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlDocumentType_PublicId_Get(
+	System_Xml_XmlDocumentType_t _Nullable /* System.Xml.XmlDocumentType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlDocumentType_SystemId_Get(
+	System_Xml_XmlDocumentType_t _Nullable /* System.Xml.XmlDocumentType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlDocumentType_InternalSubset_Get(
+	System_Xml_XmlDocumentType_t _Nullable /* System.Xml.XmlDocumentType */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlDocumentType_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlDocumentType_Destroy(
+	System_Xml_XmlDocumentType_t _Nullable /* System.Xml.XmlDocumentType */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlDocumentType
+
+#pragma mark - BEGIN APIs of System.Xml.XmlLinkedNode
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlLinkedNode_PreviousSibling_Get(
+	System_Xml_XmlLinkedNode_t _Nullable /* System.Xml.XmlLinkedNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlLinkedNode_NextSibling_Get(
+	System_Xml_XmlLinkedNode_t _Nullable /* System.Xml.XmlLinkedNode */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlLinkedNode_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlLinkedNode_Destroy(
+	System_Xml_XmlLinkedNode_t _Nullable /* System.Xml.XmlLinkedNode */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlLinkedNode
+
+#pragma mark - BEGIN APIs of System.Xml.XmlImplementation
+bool /* System.Boolean */
+System_Xml_XmlImplementation_HasFeature(
+	System_Xml_XmlImplementation_t _Nullable /* System.Xml.XmlImplementation */ self,
+	System_String_t _Nonnull /* System.String */ strFeature,
+	System_String_t _Nonnull /* System.String */ strVersion,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlDocument_t _Nonnull /* System.Xml.XmlDocument */
+System_Xml_XmlImplementation_CreateDocument(
+	System_Xml_XmlImplementation_t _Nullable /* System.Xml.XmlImplementation */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlImplementation_t _Nonnull /* System.Xml.XmlImplementation */
+System_Xml_XmlImplementation_Create_1(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlImplementation_t _Nonnull /* System.Xml.XmlImplementation */
+System_Xml_XmlImplementation_Create_2(
+	System_Xml_XmlNameTable_t _Nonnull /* System.Xml.XmlNameTable */ nt,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlImplementation_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlImplementation_Destroy(
+	System_Xml_XmlImplementation_t _Nullable /* System.Xml.XmlImplementation */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlImplementation
+
+#pragma mark - BEGIN APIs of System.Xml.XmlElement
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlElement_CloneNode(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	bool /* System.Boolean */ deep,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlElement_GetAttribute(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlElement_SetAttribute(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlElement_RemoveAttribute(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */
+System_Xml_XmlElement_GetAttributeNode(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */
+System_Xml_XmlElement_SetAttributeNode(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Xml_XmlAttribute_t _Nonnull /* System.Xml.XmlAttribute */ newAttr,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */
+System_Xml_XmlElement_RemoveAttributeNode(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Xml_XmlAttribute_t _Nonnull /* System.Xml.XmlAttribute */ oldAttr,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNodeList_t _Nonnull /* System.Xml.XmlNodeList */
+System_Xml_XmlElement_GetElementsByTagName(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlElement_GetAttribute_1(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlElement_SetAttribute_1(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlElement_RemoveAttribute_1(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */
+System_Xml_XmlElement_GetAttributeNode_1(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlAttribute_t _Nonnull /* System.Xml.XmlAttribute */
+System_Xml_XmlElement_SetAttributeNode_1(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlAttribute_t _Nullable /* System.Xml.XmlAttribute */
+System_Xml_XmlElement_RemoveAttributeNode_1(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNodeList_t _Nonnull /* System.Xml.XmlNodeList */
+System_Xml_XmlElement_GetElementsByTagName_1(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nonnull /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlElement_HasAttribute(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_String_t _Nonnull /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_XmlElement_HasAttribute_1(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_String_t _Nonnull /* System.String */ localName,
+	System_String_t _Nullable /* System.String */ namespaceURI,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlElement_WriteTo(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlElement_WriteContentTo(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlElement_RemoveAttributeAt(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	int32_t /* System.Int32 */ i,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlElement_RemoveAllAttributes(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlElement_RemoveAll_1(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlElement_Name_Get(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlElement_LocalName_Get(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlElement_NamespaceURI_Get(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlElement_Prefix_Get(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlElement_Prefix_Set(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNodeType_t /* System.Xml.XmlNodeType */
+System_Xml_XmlElement_NodeType_Get(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlElement_ParentNode_Get(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlDocument_t _Nonnull /* System.Xml.XmlDocument */
+System_Xml_XmlElement_OwnerDocument_Get(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlElement_IsEmpty_Get(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlElement_IsEmpty_Set(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlAttributeCollection_t _Nonnull /* System.Xml.XmlAttributeCollection */
+System_Xml_XmlElement_Attributes_Get(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlElement_HasAttributes_Get(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_IXmlSchemaInfo_t _Nonnull /* System.Xml.Schema.IXmlSchemaInfo */
+System_Xml_XmlElement_SchemaInfo_Get(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlElement_InnerXml_Get(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlElement_InnerXml_Set(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_String_t _Nonnull /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlElement_InnerText_Get(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlElement_InnerText_Set(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_String_t _Nonnull /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlElement_NextSibling_Get(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlElement_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlElement_Destroy(
+	System_Xml_XmlElement_t _Nullable /* System.Xml.XmlElement */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlElement
+
+#pragma mark - BEGIN APIs of System.Xml.XmlCDataSection
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlCDataSection_CloneNode(
+	System_Xml_XmlCDataSection_t _Nullable /* System.Xml.XmlCDataSection */ self,
+	bool /* System.Boolean */ deep,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlCDataSection_WriteTo(
+	System_Xml_XmlCDataSection_t _Nullable /* System.Xml.XmlCDataSection */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlCDataSection_WriteContentTo(
+	System_Xml_XmlCDataSection_t _Nullable /* System.Xml.XmlCDataSection */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlCDataSection_Name_Get(
+	System_Xml_XmlCDataSection_t _Nullable /* System.Xml.XmlCDataSection */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlCDataSection_LocalName_Get(
+	System_Xml_XmlCDataSection_t _Nullable /* System.Xml.XmlCDataSection */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNodeType_t /* System.Xml.XmlNodeType */
+System_Xml_XmlCDataSection_NodeType_Get(
+	System_Xml_XmlCDataSection_t _Nullable /* System.Xml.XmlCDataSection */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlCDataSection_ParentNode_Get(
+	System_Xml_XmlCDataSection_t _Nullable /* System.Xml.XmlCDataSection */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlCDataSection_PreviousText_Get(
+	System_Xml_XmlCDataSection_t _Nullable /* System.Xml.XmlCDataSection */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlCDataSection_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlCDataSection_Destroy(
+	System_Xml_XmlCDataSection_t _Nullable /* System.Xml.XmlCDataSection */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlCDataSection
+
+#pragma mark - BEGIN APIs of System.Xml.XmlCharacterData
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlCharacterData_Substring(
+	System_Xml_XmlCharacterData_t _Nullable /* System.Xml.XmlCharacterData */ self,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlCharacterData_AppendData(
+	System_Xml_XmlCharacterData_t _Nullable /* System.Xml.XmlCharacterData */ self,
+	System_String_t _Nullable /* System.String */ strData,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlCharacterData_InsertData(
+	System_Xml_XmlCharacterData_t _Nullable /* System.Xml.XmlCharacterData */ self,
+	int32_t /* System.Int32 */ offset,
+	System_String_t _Nullable /* System.String */ strData,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlCharacterData_DeleteData(
+	System_Xml_XmlCharacterData_t _Nullable /* System.Xml.XmlCharacterData */ self,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlCharacterData_ReplaceData(
+	System_Xml_XmlCharacterData_t _Nullable /* System.Xml.XmlCharacterData */ self,
+	int32_t /* System.Int32 */ offset,
+	int32_t /* System.Int32 */ count,
+	System_String_t _Nullable /* System.String */ strData,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlCharacterData_Value_Get(
+	System_Xml_XmlCharacterData_t _Nullable /* System.Xml.XmlCharacterData */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlCharacterData_Value_Set(
+	System_Xml_XmlCharacterData_t _Nullable /* System.Xml.XmlCharacterData */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlCharacterData_InnerText_Get(
+	System_Xml_XmlCharacterData_t _Nullable /* System.Xml.XmlCharacterData */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlCharacterData_InnerText_Set(
+	System_Xml_XmlCharacterData_t _Nullable /* System.Xml.XmlCharacterData */ self,
+	System_String_t _Nonnull /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlCharacterData_Data_Get(
+	System_Xml_XmlCharacterData_t _Nullable /* System.Xml.XmlCharacterData */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlCharacterData_Data_Set(
+	System_Xml_XmlCharacterData_t _Nullable /* System.Xml.XmlCharacterData */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_XmlCharacterData_Length_Get(
+	System_Xml_XmlCharacterData_t _Nullable /* System.Xml.XmlCharacterData */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlCharacterData_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlCharacterData_Destroy(
+	System_Xml_XmlCharacterData_t _Nullable /* System.Xml.XmlCharacterData */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlCharacterData
+
+#pragma mark - BEGIN APIs of System.Xml.XmlComment
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlComment_CloneNode(
+	System_Xml_XmlComment_t _Nullable /* System.Xml.XmlComment */ self,
+	bool /* System.Boolean */ deep,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlComment_WriteTo(
+	System_Xml_XmlComment_t _Nullable /* System.Xml.XmlComment */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlComment_WriteContentTo(
+	System_Xml_XmlComment_t _Nullable /* System.Xml.XmlComment */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlComment_Name_Get(
+	System_Xml_XmlComment_t _Nullable /* System.Xml.XmlComment */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlComment_LocalName_Get(
+	System_Xml_XmlComment_t _Nullable /* System.Xml.XmlComment */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNodeType_t /* System.Xml.XmlNodeType */
+System_Xml_XmlComment_NodeType_Get(
+	System_Xml_XmlComment_t _Nullable /* System.Xml.XmlComment */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlComment_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlComment_Destroy(
+	System_Xml_XmlComment_t _Nullable /* System.Xml.XmlComment */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlComment
+
+#pragma mark - BEGIN APIs of System.Xml.XmlDocumentFragment
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlDocumentFragment_CloneNode(
+	System_Xml_XmlDocumentFragment_t _Nullable /* System.Xml.XmlDocumentFragment */ self,
+	bool /* System.Boolean */ deep,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocumentFragment_WriteTo(
+	System_Xml_XmlDocumentFragment_t _Nullable /* System.Xml.XmlDocumentFragment */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocumentFragment_WriteContentTo(
+	System_Xml_XmlDocumentFragment_t _Nullable /* System.Xml.XmlDocumentFragment */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlDocumentFragment_Name_Get(
+	System_Xml_XmlDocumentFragment_t _Nullable /* System.Xml.XmlDocumentFragment */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlDocumentFragment_LocalName_Get(
+	System_Xml_XmlDocumentFragment_t _Nullable /* System.Xml.XmlDocumentFragment */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNodeType_t /* System.Xml.XmlNodeType */
+System_Xml_XmlDocumentFragment_NodeType_Get(
+	System_Xml_XmlDocumentFragment_t _Nullable /* System.Xml.XmlDocumentFragment */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlDocumentFragment_ParentNode_Get(
+	System_Xml_XmlDocumentFragment_t _Nullable /* System.Xml.XmlDocumentFragment */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlDocument_t _Nonnull /* System.Xml.XmlDocument */
+System_Xml_XmlDocumentFragment_OwnerDocument_Get(
+	System_Xml_XmlDocumentFragment_t _Nullable /* System.Xml.XmlDocumentFragment */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlDocumentFragment_InnerXml_Get(
+	System_Xml_XmlDocumentFragment_t _Nullable /* System.Xml.XmlDocumentFragment */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDocumentFragment_InnerXml_Set(
+	System_Xml_XmlDocumentFragment_t _Nullable /* System.Xml.XmlDocumentFragment */ self,
+	System_String_t _Nonnull /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlDocumentFragment_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlDocumentFragment_Destroy(
+	System_Xml_XmlDocumentFragment_t _Nullable /* System.Xml.XmlDocumentFragment */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlDocumentFragment
+
+#pragma mark - BEGIN APIs of System.Xml.XmlEntityReference
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlEntityReference_CloneNode(
+	System_Xml_XmlEntityReference_t _Nullable /* System.Xml.XmlEntityReference */ self,
+	bool /* System.Boolean */ deep,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlEntityReference_WriteTo(
+	System_Xml_XmlEntityReference_t _Nullable /* System.Xml.XmlEntityReference */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlEntityReference_WriteContentTo(
+	System_Xml_XmlEntityReference_t _Nullable /* System.Xml.XmlEntityReference */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlEntityReference_Name_Get(
+	System_Xml_XmlEntityReference_t _Nullable /* System.Xml.XmlEntityReference */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlEntityReference_LocalName_Get(
+	System_Xml_XmlEntityReference_t _Nullable /* System.Xml.XmlEntityReference */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlEntityReference_Value_Get(
+	System_Xml_XmlEntityReference_t _Nullable /* System.Xml.XmlEntityReference */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlEntityReference_Value_Set(
+	System_Xml_XmlEntityReference_t _Nullable /* System.Xml.XmlEntityReference */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNodeType_t /* System.Xml.XmlNodeType */
+System_Xml_XmlEntityReference_NodeType_Get(
+	System_Xml_XmlEntityReference_t _Nullable /* System.Xml.XmlEntityReference */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_XmlEntityReference_IsReadOnly_Get(
+	System_Xml_XmlEntityReference_t _Nullable /* System.Xml.XmlEntityReference */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlEntityReference_BaseURI_Get(
+	System_Xml_XmlEntityReference_t _Nullable /* System.Xml.XmlEntityReference */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlEntityReference_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlEntityReference_Destroy(
+	System_Xml_XmlEntityReference_t _Nullable /* System.Xml.XmlEntityReference */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlEntityReference
+
+#pragma mark - BEGIN APIs of System.Xml.XmlProcessingInstruction
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlProcessingInstruction_CloneNode(
+	System_Xml_XmlProcessingInstruction_t _Nullable /* System.Xml.XmlProcessingInstruction */ self,
+	bool /* System.Boolean */ deep,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlProcessingInstruction_WriteTo(
+	System_Xml_XmlProcessingInstruction_t _Nullable /* System.Xml.XmlProcessingInstruction */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlProcessingInstruction_WriteContentTo(
+	System_Xml_XmlProcessingInstruction_t _Nullable /* System.Xml.XmlProcessingInstruction */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlProcessingInstruction_Name_Get(
+	System_Xml_XmlProcessingInstruction_t _Nullable /* System.Xml.XmlProcessingInstruction */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlProcessingInstruction_LocalName_Get(
+	System_Xml_XmlProcessingInstruction_t _Nullable /* System.Xml.XmlProcessingInstruction */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlProcessingInstruction_Value_Get(
+	System_Xml_XmlProcessingInstruction_t _Nullable /* System.Xml.XmlProcessingInstruction */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlProcessingInstruction_Value_Set(
+	System_Xml_XmlProcessingInstruction_t _Nullable /* System.Xml.XmlProcessingInstruction */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlProcessingInstruction_Target_Get(
+	System_Xml_XmlProcessingInstruction_t _Nullable /* System.Xml.XmlProcessingInstruction */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlProcessingInstruction_Data_Get(
+	System_Xml_XmlProcessingInstruction_t _Nullable /* System.Xml.XmlProcessingInstruction */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlProcessingInstruction_Data_Set(
+	System_Xml_XmlProcessingInstruction_t _Nullable /* System.Xml.XmlProcessingInstruction */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlProcessingInstruction_InnerText_Get(
+	System_Xml_XmlProcessingInstruction_t _Nullable /* System.Xml.XmlProcessingInstruction */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlProcessingInstruction_InnerText_Set(
+	System_Xml_XmlProcessingInstruction_t _Nullable /* System.Xml.XmlProcessingInstruction */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNodeType_t /* System.Xml.XmlNodeType */
+System_Xml_XmlProcessingInstruction_NodeType_Get(
+	System_Xml_XmlProcessingInstruction_t _Nullable /* System.Xml.XmlProcessingInstruction */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlProcessingInstruction_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlProcessingInstruction_Destroy(
+	System_Xml_XmlProcessingInstruction_t _Nullable /* System.Xml.XmlProcessingInstruction */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlProcessingInstruction
+
+#pragma mark - BEGIN APIs of System.Xml.XmlDeclaration
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlDeclaration_CloneNode(
+	System_Xml_XmlDeclaration_t _Nullable /* System.Xml.XmlDeclaration */ self,
+	bool /* System.Boolean */ deep,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDeclaration_WriteTo(
+	System_Xml_XmlDeclaration_t _Nullable /* System.Xml.XmlDeclaration */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDeclaration_WriteContentTo(
+	System_Xml_XmlDeclaration_t _Nullable /* System.Xml.XmlDeclaration */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlDeclaration_Version_Get(
+	System_Xml_XmlDeclaration_t _Nullable /* System.Xml.XmlDeclaration */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlDeclaration_Encoding_Get(
+	System_Xml_XmlDeclaration_t _Nullable /* System.Xml.XmlDeclaration */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDeclaration_Encoding_Set(
+	System_Xml_XmlDeclaration_t _Nullable /* System.Xml.XmlDeclaration */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlDeclaration_Standalone_Get(
+	System_Xml_XmlDeclaration_t _Nullable /* System.Xml.XmlDeclaration */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDeclaration_Standalone_Set(
+	System_Xml_XmlDeclaration_t _Nullable /* System.Xml.XmlDeclaration */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlDeclaration_Value_Get(
+	System_Xml_XmlDeclaration_t _Nullable /* System.Xml.XmlDeclaration */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDeclaration_Value_Set(
+	System_Xml_XmlDeclaration_t _Nullable /* System.Xml.XmlDeclaration */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlDeclaration_InnerText_Get(
+	System_Xml_XmlDeclaration_t _Nullable /* System.Xml.XmlDeclaration */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlDeclaration_InnerText_Set(
+	System_Xml_XmlDeclaration_t _Nullable /* System.Xml.XmlDeclaration */ self,
+	System_String_t _Nonnull /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlDeclaration_Name_Get(
+	System_Xml_XmlDeclaration_t _Nullable /* System.Xml.XmlDeclaration */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlDeclaration_LocalName_Get(
+	System_Xml_XmlDeclaration_t _Nullable /* System.Xml.XmlDeclaration */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNodeType_t /* System.Xml.XmlNodeType */
+System_Xml_XmlDeclaration_NodeType_Get(
+	System_Xml_XmlDeclaration_t _Nullable /* System.Xml.XmlDeclaration */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlDeclaration_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlDeclaration_Destroy(
+	System_Xml_XmlDeclaration_t _Nullable /* System.Xml.XmlDeclaration */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlDeclaration
+
+#pragma mark - BEGIN APIs of System.Xml.XmlText
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlText_CloneNode(
+	System_Xml_XmlText_t _Nullable /* System.Xml.XmlText */ self,
+	bool /* System.Boolean */ deep,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlText_t _Nonnull /* System.Xml.XmlText */
+System_Xml_XmlText_SplitText(
+	System_Xml_XmlText_t _Nullable /* System.Xml.XmlText */ self,
+	int32_t /* System.Int32 */ offset,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlText_WriteTo(
+	System_Xml_XmlText_t _Nullable /* System.Xml.XmlText */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlText_WriteContentTo(
+	System_Xml_XmlText_t _Nullable /* System.Xml.XmlText */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlText_Name_Get(
+	System_Xml_XmlText_t _Nullable /* System.Xml.XmlText */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlText_LocalName_Get(
+	System_Xml_XmlText_t _Nullable /* System.Xml.XmlText */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNodeType_t /* System.Xml.XmlNodeType */
+System_Xml_XmlText_NodeType_Get(
+	System_Xml_XmlText_t _Nullable /* System.Xml.XmlText */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlText_ParentNode_Get(
+	System_Xml_XmlText_t _Nullable /* System.Xml.XmlText */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlText_Value_Get(
+	System_Xml_XmlText_t _Nullable /* System.Xml.XmlText */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlText_Value_Set(
+	System_Xml_XmlText_t _Nullable /* System.Xml.XmlText */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlText_PreviousText_Get(
+	System_Xml_XmlText_t _Nullable /* System.Xml.XmlText */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlText_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlText_Destroy(
+	System_Xml_XmlText_t _Nullable /* System.Xml.XmlText */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlText
+
+#pragma mark - BEGIN APIs of System.Xml.XmlSignificantWhitespace
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlSignificantWhitespace_CloneNode(
+	System_Xml_XmlSignificantWhitespace_t _Nullable /* System.Xml.XmlSignificantWhitespace */ self,
+	bool /* System.Boolean */ deep,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlSignificantWhitespace_WriteTo(
+	System_Xml_XmlSignificantWhitespace_t _Nullable /* System.Xml.XmlSignificantWhitespace */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlSignificantWhitespace_WriteContentTo(
+	System_Xml_XmlSignificantWhitespace_t _Nullable /* System.Xml.XmlSignificantWhitespace */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlSignificantWhitespace_Name_Get(
+	System_Xml_XmlSignificantWhitespace_t _Nullable /* System.Xml.XmlSignificantWhitespace */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlSignificantWhitespace_LocalName_Get(
+	System_Xml_XmlSignificantWhitespace_t _Nullable /* System.Xml.XmlSignificantWhitespace */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNodeType_t /* System.Xml.XmlNodeType */
+System_Xml_XmlSignificantWhitespace_NodeType_Get(
+	System_Xml_XmlSignificantWhitespace_t _Nullable /* System.Xml.XmlSignificantWhitespace */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlSignificantWhitespace_ParentNode_Get(
+	System_Xml_XmlSignificantWhitespace_t _Nullable /* System.Xml.XmlSignificantWhitespace */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlSignificantWhitespace_Value_Get(
+	System_Xml_XmlSignificantWhitespace_t _Nullable /* System.Xml.XmlSignificantWhitespace */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlSignificantWhitespace_Value_Set(
+	System_Xml_XmlSignificantWhitespace_t _Nullable /* System.Xml.XmlSignificantWhitespace */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlSignificantWhitespace_PreviousText_Get(
+	System_Xml_XmlSignificantWhitespace_t _Nullable /* System.Xml.XmlSignificantWhitespace */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlSignificantWhitespace_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlSignificantWhitespace_Destroy(
+	System_Xml_XmlSignificantWhitespace_t _Nullable /* System.Xml.XmlSignificantWhitespace */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlSignificantWhitespace
+
+#pragma mark - BEGIN APIs of System.Xml.XmlWhitespace
+System_Xml_XmlNode_t _Nonnull /* System.Xml.XmlNode */
+System_Xml_XmlWhitespace_CloneNode(
+	System_Xml_XmlWhitespace_t _Nullable /* System.Xml.XmlWhitespace */ self,
+	bool /* System.Boolean */ deep,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWhitespace_WriteTo(
+	System_Xml_XmlWhitespace_t _Nullable /* System.Xml.XmlWhitespace */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWhitespace_WriteContentTo(
+	System_Xml_XmlWhitespace_t _Nullable /* System.Xml.XmlWhitespace */ self,
+	System_Xml_XmlWriter_t _Nonnull /* System.Xml.XmlWriter */ w,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlWhitespace_Name_Get(
+	System_Xml_XmlWhitespace_t _Nullable /* System.Xml.XmlWhitespace */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlWhitespace_LocalName_Get(
+	System_Xml_XmlWhitespace_t _Nullable /* System.Xml.XmlWhitespace */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNodeType_t /* System.Xml.XmlNodeType */
+System_Xml_XmlWhitespace_NodeType_Get(
+	System_Xml_XmlWhitespace_t _Nullable /* System.Xml.XmlWhitespace */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlWhitespace_ParentNode_Get(
+	System_Xml_XmlWhitespace_t _Nullable /* System.Xml.XmlWhitespace */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlWhitespace_Value_Get(
+	System_Xml_XmlWhitespace_t _Nullable /* System.Xml.XmlWhitespace */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlWhitespace_Value_Set(
+	System_Xml_XmlWhitespace_t _Nullable /* System.Xml.XmlWhitespace */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlWhitespace_PreviousText_Get(
+	System_Xml_XmlWhitespace_t _Nullable /* System.Xml.XmlWhitespace */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlWhitespace_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlWhitespace_Destroy(
+	System_Xml_XmlWhitespace_t _Nullable /* System.Xml.XmlWhitespace */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlWhitespace
+
+#pragma mark - BEGIN APIs of System.Xml.XmlNodeChangedEventArgs
+System_Xml_XmlNodeChangedEventArgs_t _Nonnull /* System.Xml.XmlNodeChangedEventArgs */
+System_Xml_XmlNodeChangedEventArgs_Create(
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ node,
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ oldParent,
+	System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */ newParent,
+	System_String_t _Nullable /* System.String */ oldValue,
+	System_String_t _Nullable /* System.String */ newValue,
+	System_Xml_XmlNodeChangedAction_t /* System.Xml.XmlNodeChangedAction */ action,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNodeChangedAction_t /* System.Xml.XmlNodeChangedAction */
+System_Xml_XmlNodeChangedEventArgs_Action_Get(
+	System_Xml_XmlNodeChangedEventArgs_t _Nullable /* System.Xml.XmlNodeChangedEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNodeChangedEventArgs_Node_Get(
+	System_Xml_XmlNodeChangedEventArgs_t _Nullable /* System.Xml.XmlNodeChangedEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNodeChangedEventArgs_OldParent_Get(
+	System_Xml_XmlNodeChangedEventArgs_t _Nullable /* System.Xml.XmlNodeChangedEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNode_t _Nullable /* System.Xml.XmlNode */
+System_Xml_XmlNodeChangedEventArgs_NewParent_Get(
+	System_Xml_XmlNodeChangedEventArgs_t _Nullable /* System.Xml.XmlNodeChangedEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlNodeChangedEventArgs_OldValue_Get(
+	System_Xml_XmlNodeChangedEventArgs_t _Nullable /* System.Xml.XmlNodeChangedEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_XmlNodeChangedEventArgs_NewValue_Get(
+	System_Xml_XmlNodeChangedEventArgs_t _Nullable /* System.Xml.XmlNodeChangedEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlNodeChangedEventArgs_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlNodeChangedEventArgs_Destroy(
+	System_Xml_XmlNodeChangedEventArgs_t _Nullable /* System.Xml.XmlNodeChangedEventArgs */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlNodeChangedEventArgs
+
+
+
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.XmlSchema[]
+#pragma mark - END APIs of System.Xml.Schema.XmlSchema[]
+
+
+
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.Xml.XmlParserContext
+System_Xml_XmlParserContext_t _Nonnull /* System.Xml.XmlParserContext */
+System_Xml_XmlParserContext_Create(
+	System_Xml_XmlNameTable_t _Nullable /* System.Xml.XmlNameTable */ nt,
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ nsMgr,
+	System_String_t _Nullable /* System.String */ xmlLang,
+	System_Xml_XmlSpace_t /* System.Xml.XmlSpace */ xmlSpace,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlParserContext_t _Nonnull /* System.Xml.XmlParserContext */
+System_Xml_XmlParserContext_Create_1(
+	System_Xml_XmlNameTable_t _Nullable /* System.Xml.XmlNameTable */ nt,
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ nsMgr,
+	System_String_t _Nullable /* System.String */ xmlLang,
+	System_Xml_XmlSpace_t /* System.Xml.XmlSpace */ xmlSpace,
+	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ enc,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlParserContext_t _Nonnull /* System.Xml.XmlParserContext */
+System_Xml_XmlParserContext_Create_2(
+	System_Xml_XmlNameTable_t _Nullable /* System.Xml.XmlNameTable */ nt,
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ nsMgr,
+	System_String_t _Nullable /* System.String */ docTypeName,
+	System_String_t _Nullable /* System.String */ pubId,
+	System_String_t _Nullable /* System.String */ sysId,
+	System_String_t _Nullable /* System.String */ internalSubset,
+	System_String_t _Nullable /* System.String */ baseURI,
+	System_String_t _Nullable /* System.String */ xmlLang,
+	System_Xml_XmlSpace_t /* System.Xml.XmlSpace */ xmlSpace,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlParserContext_t _Nonnull /* System.Xml.XmlParserContext */
+System_Xml_XmlParserContext_Create_3(
+	System_Xml_XmlNameTable_t _Nullable /* System.Xml.XmlNameTable */ nt,
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ nsMgr,
+	System_String_t _Nullable /* System.String */ docTypeName,
+	System_String_t _Nullable /* System.String */ pubId,
+	System_String_t _Nullable /* System.String */ sysId,
+	System_String_t _Nullable /* System.String */ internalSubset,
+	System_String_t _Nullable /* System.String */ baseURI,
+	System_String_t _Nullable /* System.String */ xmlLang,
+	System_Xml_XmlSpace_t /* System.Xml.XmlSpace */ xmlSpace,
+	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ enc,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_XmlNameTable_t _Nullable /* System.Xml.XmlNameTable */
+System_Xml_XmlParserContext_NameTable_Get(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlParserContext_NameTable_Set(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_Xml_XmlNameTable_t _Nullable /* System.Xml.XmlNameTable */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */
+System_Xml_XmlParserContext_NamespaceManager_Get(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlParserContext_NamespaceManager_Set(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_Xml_XmlNamespaceManager_t _Nullable /* System.Xml.XmlNamespaceManager */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlParserContext_DocTypeName_Get(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlParserContext_DocTypeName_Set(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlParserContext_PublicId_Get(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlParserContext_PublicId_Set(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlParserContext_SystemId_Get(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlParserContext_SystemId_Set(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlParserContext_BaseURI_Get(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlParserContext_BaseURI_Set(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlParserContext_InternalSubset_Get(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlParserContext_InternalSubset_Set(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_XmlParserContext_XmlLang_Get(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlParserContext_XmlLang_Set(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlSpace_t /* System.Xml.XmlSpace */
+System_Xml_XmlParserContext_XmlSpace_Get(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlParserContext_XmlSpace_Set(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_Xml_XmlSpace_t /* System.Xml.XmlSpace */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Text_Encoding_t _Nullable /* System.Text.Encoding */
+System_Xml_XmlParserContext_Encoding_Get(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_XmlParserContext_Encoding_Set(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self,
+	System_Text_Encoding_t _Nullable /* System.Text.Encoding */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlParserContext_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlParserContext_Destroy(
+	System_Xml_XmlParserContext_t _Nullable /* System.Xml.XmlParserContext */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlParserContext
+
+
+
+
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlDeserializationEvents
+System_Xml_Serialization_XmlNodeEventHandler_t _Nullable /* System.Xml.Serialization.XmlNodeEventHandler */
+System_Xml_Serialization_XmlDeserializationEvents_OnUnknownNode_Get(
+	System_Xml_Serialization_XmlDeserializationEvents_t _Nonnull /* System.Xml.Serialization.XmlDeserializationEvents */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlDeserializationEvents_OnUnknownNode_Set(
+	System_Xml_Serialization_XmlDeserializationEvents_t _Nonnull /* System.Xml.Serialization.XmlDeserializationEvents */ self,
+	System_Xml_Serialization_XmlNodeEventHandler_t _Nullable /* System.Xml.Serialization.XmlNodeEventHandler */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Serialization_XmlAttributeEventHandler_t _Nullable /* System.Xml.Serialization.XmlAttributeEventHandler */
+System_Xml_Serialization_XmlDeserializationEvents_OnUnknownAttribute_Get(
+	System_Xml_Serialization_XmlDeserializationEvents_t _Nonnull /* System.Xml.Serialization.XmlDeserializationEvents */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlDeserializationEvents_OnUnknownAttribute_Set(
+	System_Xml_Serialization_XmlDeserializationEvents_t _Nonnull /* System.Xml.Serialization.XmlDeserializationEvents */ self,
+	System_Xml_Serialization_XmlAttributeEventHandler_t _Nullable /* System.Xml.Serialization.XmlAttributeEventHandler */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Serialization_XmlElementEventHandler_t _Nullable /* System.Xml.Serialization.XmlElementEventHandler */
+System_Xml_Serialization_XmlDeserializationEvents_OnUnknownElement_Get(
+	System_Xml_Serialization_XmlDeserializationEvents_t _Nonnull /* System.Xml.Serialization.XmlDeserializationEvents */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlDeserializationEvents_OnUnknownElement_Set(
+	System_Xml_Serialization_XmlDeserializationEvents_t _Nonnull /* System.Xml.Serialization.XmlDeserializationEvents */ self,
+	System_Xml_Serialization_XmlElementEventHandler_t _Nullable /* System.Xml.Serialization.XmlElementEventHandler */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Serialization_UnreferencedObjectEventHandler_t _Nullable /* System.Xml.Serialization.UnreferencedObjectEventHandler */
+System_Xml_Serialization_XmlDeserializationEvents_OnUnreferencedObject_Get(
+	System_Xml_Serialization_XmlDeserializationEvents_t _Nonnull /* System.Xml.Serialization.XmlDeserializationEvents */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlDeserializationEvents_OnUnreferencedObject_Set(
+	System_Xml_Serialization_XmlDeserializationEvents_t _Nonnull /* System.Xml.Serialization.XmlDeserializationEvents */ self,
+	System_Xml_Serialization_UnreferencedObjectEventHandler_t _Nullable /* System.Xml.Serialization.UnreferencedObjectEventHandler */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Serialization_XmlDeserializationEvents_t _Nonnull /* System.Xml.Serialization.XmlDeserializationEvents */
+System_Xml_Serialization_XmlDeserializationEvents_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlDeserializationEvents_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlDeserializationEvents_Destroy(
+	System_Xml_Serialization_XmlDeserializationEvents_t _Nonnull /* System.Xml.Serialization.XmlDeserializationEvents */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlDeserializationEvents
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlNodeEventArgs
+System_Object_t _Nullable /* System.Object */
+System_Xml_Serialization_XmlNodeEventArgs_ObjectBeingDeserialized_Get(
+	System_Xml_Serialization_XmlNodeEventArgs_t _Nullable /* System.Xml.Serialization.XmlNodeEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlNodeType_t /* System.Xml.XmlNodeType */
+System_Xml_Serialization_XmlNodeEventArgs_NodeType_Get(
+	System_Xml_Serialization_XmlNodeEventArgs_t _Nullable /* System.Xml.Serialization.XmlNodeEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlNodeEventArgs_Name_Get(
+	System_Xml_Serialization_XmlNodeEventArgs_t _Nullable /* System.Xml.Serialization.XmlNodeEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlNodeEventArgs_LocalName_Get(
+	System_Xml_Serialization_XmlNodeEventArgs_t _Nullable /* System.Xml.Serialization.XmlNodeEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlNodeEventArgs_NamespaceURI_Get(
+	System_Xml_Serialization_XmlNodeEventArgs_t _Nullable /* System.Xml.Serialization.XmlNodeEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Serialization_XmlNodeEventArgs_Text_Get(
+	System_Xml_Serialization_XmlNodeEventArgs_t _Nullable /* System.Xml.Serialization.XmlNodeEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_Serialization_XmlNodeEventArgs_LineNumber_Get(
+	System_Xml_Serialization_XmlNodeEventArgs_t _Nullable /* System.Xml.Serialization.XmlNodeEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_Serialization_XmlNodeEventArgs_LinePosition_Get(
+	System_Xml_Serialization_XmlNodeEventArgs_t _Nullable /* System.Xml.Serialization.XmlNodeEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlNodeEventArgs_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlNodeEventArgs_Destroy(
+	System_Xml_Serialization_XmlNodeEventArgs_t _Nullable /* System.Xml.Serialization.XmlNodeEventArgs */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlNodeEventArgs
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlAttributeEventArgs
+System_Object_t _Nullable /* System.Object */
+System_Xml_Serialization_XmlAttributeEventArgs_ObjectBeingDeserialized_Get(
+	System_Xml_Serialization_XmlAttributeEventArgs_t _Nullable /* System.Xml.Serialization.XmlAttributeEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlAttribute_t _Nonnull /* System.Xml.XmlAttribute */
+System_Xml_Serialization_XmlAttributeEventArgs_Attr_Get(
+	System_Xml_Serialization_XmlAttributeEventArgs_t _Nullable /* System.Xml.Serialization.XmlAttributeEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_Serialization_XmlAttributeEventArgs_LineNumber_Get(
+	System_Xml_Serialization_XmlAttributeEventArgs_t _Nullable /* System.Xml.Serialization.XmlAttributeEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_Serialization_XmlAttributeEventArgs_LinePosition_Get(
+	System_Xml_Serialization_XmlAttributeEventArgs_t _Nullable /* System.Xml.Serialization.XmlAttributeEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlAttributeEventArgs_ExpectedAttributes_Get(
+	System_Xml_Serialization_XmlAttributeEventArgs_t _Nullable /* System.Xml.Serialization.XmlAttributeEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlAttributeEventArgs_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributeEventArgs_Destroy(
+	System_Xml_Serialization_XmlAttributeEventArgs_t _Nullable /* System.Xml.Serialization.XmlAttributeEventArgs */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlAttributeEventArgs
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlElementEventArgs
+System_Object_t _Nullable /* System.Object */
+System_Xml_Serialization_XmlElementEventArgs_ObjectBeingDeserialized_Get(
+	System_Xml_Serialization_XmlElementEventArgs_t _Nullable /* System.Xml.Serialization.XmlElementEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_XmlElement_t _Nonnull /* System.Xml.XmlElement */
+System_Xml_Serialization_XmlElementEventArgs_Element_Get(
+	System_Xml_Serialization_XmlElementEventArgs_t _Nullable /* System.Xml.Serialization.XmlElementEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_Serialization_XmlElementEventArgs_LineNumber_Get(
+	System_Xml_Serialization_XmlElementEventArgs_t _Nullable /* System.Xml.Serialization.XmlElementEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_Serialization_XmlElementEventArgs_LinePosition_Get(
+	System_Xml_Serialization_XmlElementEventArgs_t _Nullable /* System.Xml.Serialization.XmlElementEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlElementEventArgs_ExpectedElements_Get(
+	System_Xml_Serialization_XmlElementEventArgs_t _Nullable /* System.Xml.Serialization.XmlElementEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlElementEventArgs_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlElementEventArgs_Destroy(
+	System_Xml_Serialization_XmlElementEventArgs_t _Nullable /* System.Xml.Serialization.XmlElementEventArgs */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlElementEventArgs
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.UnreferencedObjectEventArgs
+System_Xml_Serialization_UnreferencedObjectEventArgs_t _Nonnull /* System.Xml.Serialization.UnreferencedObjectEventArgs */
+System_Xml_Serialization_UnreferencedObjectEventArgs_Create(
+	System_Object_t _Nullable /* System.Object */ o,
+	System_String_t _Nullable /* System.String */ id,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Object_t _Nullable /* System.Object */
+System_Xml_Serialization_UnreferencedObjectEventArgs_UnreferencedObject_Get(
+	System_Xml_Serialization_UnreferencedObjectEventArgs_t _Nullable /* System.Xml.Serialization.UnreferencedObjectEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Serialization_UnreferencedObjectEventArgs_UnreferencedId_Get(
+	System_Xml_Serialization_UnreferencedObjectEventArgs_t _Nullable /* System.Xml.Serialization.UnreferencedObjectEventArgs */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_UnreferencedObjectEventArgs_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_UnreferencedObjectEventArgs_Destroy(
+	System_Xml_Serialization_UnreferencedObjectEventArgs_t _Nullable /* System.Xml.Serialization.UnreferencedObjectEventArgs */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.UnreferencedObjectEventArgs
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlSerializer[]
+#pragma mark - END APIs of System.Xml.Serialization.XmlSerializer[]
+
+
+
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlMapping[]
+#pragma mark - END APIs of System.Xml.Serialization.XmlMapping[]
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlMapping
+void /* System.Void */
+System_Xml_Serialization_XmlMapping_SetKey(
+	System_Xml_Serialization_XmlMapping_t _Nullable /* System.Xml.Serialization.XmlMapping */ self,
+	System_String_t _Nullable /* System.String */ key,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlMapping_ElementName_Get(
+	System_Xml_Serialization_XmlMapping_t _Nullable /* System.Xml.Serialization.XmlMapping */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlMapping_XsdElementName_Get(
+	System_Xml_Serialization_XmlMapping_t _Nullable /* System.Xml.Serialization.XmlMapping */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Serialization_XmlMapping_Namespace_Get(
+	System_Xml_Serialization_XmlMapping_t _Nullable /* System.Xml.Serialization.XmlMapping */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlMapping_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlMapping_Destroy(
+	System_Xml_Serialization_XmlMapping_t _Nullable /* System.Xml.Serialization.XmlMapping */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlMapping
+
+
+
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlAttributeOverrides
+void /* System.Void */
+System_Xml_Serialization_XmlAttributeOverrides_Add(
+	System_Xml_Serialization_XmlAttributeOverrides_t _Nullable /* System.Xml.Serialization.XmlAttributeOverrides */ self,
+	System_Type_t _Nonnull /* System.Type */ type,
+	System_Xml_Serialization_XmlAttributes_t _Nonnull /* System.Xml.Serialization.XmlAttributes */ attributes,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributeOverrides_Add_1(
+	System_Xml_Serialization_XmlAttributeOverrides_t _Nullable /* System.Xml.Serialization.XmlAttributeOverrides */ self,
+	System_Type_t _Nonnull /* System.Type */ type,
+	System_String_t _Nonnull /* System.String */ member,
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ attributes,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlAttributeOverrides_t _Nonnull /* System.Xml.Serialization.XmlAttributeOverrides */
+System_Xml_Serialization_XmlAttributeOverrides_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */
+System_Xml_Serialization_XmlAttributeOverrides_Item_Get(
+	System_Xml_Serialization_XmlAttributeOverrides_t _Nullable /* System.Xml.Serialization.XmlAttributeOverrides */ self,
+	System_Type_t _Nonnull /* System.Type */ type,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */
+System_Xml_Serialization_XmlAttributeOverrides_Item_Get_1(
+	System_Xml_Serialization_XmlAttributeOverrides_t _Nullable /* System.Xml.Serialization.XmlAttributeOverrides */ self,
+	System_Type_t _Nonnull /* System.Type */ type,
+	System_String_t _Nonnull /* System.String */ member,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlAttributeOverrides_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributeOverrides_Destroy(
+	System_Xml_Serialization_XmlAttributeOverrides_t _Nullable /* System.Xml.Serialization.XmlAttributeOverrides */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlAttributeOverrides
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlAttributes
+System_Xml_Serialization_XmlAttributes_t _Nonnull /* System.Xml.Serialization.XmlAttributes */
+System_Xml_Serialization_XmlAttributes_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlAttributes_t _Nonnull /* System.Xml.Serialization.XmlAttributes */
+System_Xml_Serialization_XmlAttributes_Create_1(
+	System_Reflection_ICustomAttributeProvider_t _Nonnull /* System.Reflection.ICustomAttributeProvider */ provider,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlElementAttributes_t _Nonnull /* System.Xml.Serialization.XmlElementAttributes */
+System_Xml_Serialization_XmlAttributes_XmlElements_Get(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Serialization_XmlAttributeAttribute_t _Nullable /* System.Xml.Serialization.XmlAttributeAttribute */
+System_Xml_Serialization_XmlAttributes_XmlAttribute_Get(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributes_XmlAttribute_Set(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Xml_Serialization_XmlAttributeAttribute_t _Nullable /* System.Xml.Serialization.XmlAttributeAttribute */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Serialization_XmlEnumAttribute_t _Nullable /* System.Xml.Serialization.XmlEnumAttribute */
+System_Xml_Serialization_XmlAttributes_XmlEnum_Get(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributes_XmlEnum_Set(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Xml_Serialization_XmlEnumAttribute_t _Nullable /* System.Xml.Serialization.XmlEnumAttribute */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Serialization_XmlTextAttribute_t _Nullable /* System.Xml.Serialization.XmlTextAttribute */
+System_Xml_Serialization_XmlAttributes_XmlText_Get(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributes_XmlText_Set(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Xml_Serialization_XmlTextAttribute_t _Nullable /* System.Xml.Serialization.XmlTextAttribute */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Serialization_XmlArrayAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayAttribute */
+System_Xml_Serialization_XmlAttributes_XmlArray_Get(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributes_XmlArray_Set(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Xml_Serialization_XmlArrayAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayAttribute */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Serialization_XmlArrayItemAttributes_t _Nonnull /* System.Xml.Serialization.XmlArrayItemAttributes */
+System_Xml_Serialization_XmlAttributes_XmlArrayItems_Get(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Object_t _Nullable /* System.Object */
+System_Xml_Serialization_XmlAttributes_XmlDefaultValue_Get(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributes_XmlDefaultValue_Set(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Object_t _Nullable /* System.Object */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_Serialization_XmlAttributes_XmlIgnore_Get(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributes_XmlIgnore_Set(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Serialization_XmlTypeAttribute_t _Nullable /* System.Xml.Serialization.XmlTypeAttribute */
+System_Xml_Serialization_XmlAttributes_XmlType_Get(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributes_XmlType_Set(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Xml_Serialization_XmlTypeAttribute_t _Nullable /* System.Xml.Serialization.XmlTypeAttribute */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Serialization_XmlRootAttribute_t _Nullable /* System.Xml.Serialization.XmlRootAttribute */
+System_Xml_Serialization_XmlAttributes_XmlRoot_Get(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributes_XmlRoot_Set(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Xml_Serialization_XmlRootAttribute_t _Nullable /* System.Xml.Serialization.XmlRootAttribute */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Serialization_XmlAnyElementAttributes_t _Nonnull /* System.Xml.Serialization.XmlAnyElementAttributes */
+System_Xml_Serialization_XmlAttributes_XmlAnyElements_Get(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Serialization_XmlAnyAttributeAttribute_t _Nullable /* System.Xml.Serialization.XmlAnyAttributeAttribute */
+System_Xml_Serialization_XmlAttributes_XmlAnyAttribute_Get(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributes_XmlAnyAttribute_Set(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Xml_Serialization_XmlAnyAttributeAttribute_t _Nullable /* System.Xml.Serialization.XmlAnyAttributeAttribute */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Serialization_XmlChoiceIdentifierAttribute_t _Nullable /* System.Xml.Serialization.XmlChoiceIdentifierAttribute */
+System_Xml_Serialization_XmlAttributes_XmlChoiceIdentifier_Get(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_Serialization_XmlAttributes_Xmlns_Get(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributes_Xmlns_Set(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlAttributes_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributes_Destroy(
+	System_Xml_Serialization_XmlAttributes_t _Nullable /* System.Xml.Serialization.XmlAttributes */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlAttributes
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlElementAttributes
+int32_t /* System.Int32 */
+System_Xml_Serialization_XmlElementAttributes_Add(
+	System_Xml_Serialization_XmlElementAttributes_t _Nullable /* System.Xml.Serialization.XmlElementAttributes */ self,
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ attribute,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlElementAttributes_Insert(
+	System_Xml_Serialization_XmlElementAttributes_t _Nullable /* System.Xml.Serialization.XmlElementAttributes */ self,
+	int32_t /* System.Int32 */ index,
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ attribute,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Xml_Serialization_XmlElementAttributes_IndexOf(
+	System_Xml_Serialization_XmlElementAttributes_t _Nullable /* System.Xml.Serialization.XmlElementAttributes */ self,
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ attribute,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_Serialization_XmlElementAttributes_Contains(
+	System_Xml_Serialization_XmlElementAttributes_t _Nullable /* System.Xml.Serialization.XmlElementAttributes */ self,
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ attribute,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlElementAttributes_Remove(
+	System_Xml_Serialization_XmlElementAttributes_t _Nullable /* System.Xml.Serialization.XmlElementAttributes */ self,
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ attribute,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlElementAttributes_CopyTo(
+	System_Xml_Serialization_XmlElementAttributes_t _Nullable /* System.Xml.Serialization.XmlElementAttributes */ self,
+	System_Xml_Serialization_XmlElementAttribute_Array_t _Nonnull /* System.Xml.Serialization.XmlElementAttribute[] */ array,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlElementAttributes_t _Nonnull /* System.Xml.Serialization.XmlElementAttributes */
+System_Xml_Serialization_XmlElementAttributes_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */
+System_Xml_Serialization_XmlElementAttributes_Item_Get(
+	System_Xml_Serialization_XmlElementAttributes_t _Nullable /* System.Xml.Serialization.XmlElementAttributes */ self,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlElementAttributes_Item_Set(
+	System_Xml_Serialization_XmlElementAttributes_t _Nullable /* System.Xml.Serialization.XmlElementAttributes */ self,
+	int32_t /* System.Int32 */ index,
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlElementAttributes_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlElementAttributes_Destroy(
+	System_Xml_Serialization_XmlElementAttributes_t _Nullable /* System.Xml.Serialization.XmlElementAttributes */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlElementAttributes
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlElementAttribute
+System_Xml_Serialization_XmlElementAttribute_t _Nonnull /* System.Xml.Serialization.XmlElementAttribute */
+System_Xml_Serialization_XmlElementAttribute_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlElementAttribute_t _Nonnull /* System.Xml.Serialization.XmlElementAttribute */
+System_Xml_Serialization_XmlElementAttribute_Create_1(
+	System_String_t _Nullable /* System.String */ elementName,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlElementAttribute_t _Nonnull /* System.Xml.Serialization.XmlElementAttribute */
+System_Xml_Serialization_XmlElementAttribute_Create_2(
+	System_Type_t _Nullable /* System.Type */ type,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlElementAttribute_t _Nonnull /* System.Xml.Serialization.XmlElementAttribute */
+System_Xml_Serialization_XmlElementAttribute_Create_3(
+	System_String_t _Nullable /* System.String */ elementName,
+	System_Type_t _Nullable /* System.Type */ type,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nullable /* System.Type */
+System_Xml_Serialization_XmlElementAttribute_Type_Get(
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlElementAttribute_Type_Set(
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ self,
+	System_Type_t _Nullable /* System.Type */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlElementAttribute_ElementName_Get(
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlElementAttribute_ElementName_Set(
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Serialization_XmlElementAttribute_Namespace_Get(
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlElementAttribute_Namespace_Set(
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlElementAttribute_DataType_Get(
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlElementAttribute_DataType_Set(
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_Serialization_XmlElementAttribute_IsNullable_Get(
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlElementAttribute_IsNullable_Set(
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaForm_t /* System.Xml.Schema.XmlSchemaForm */
+System_Xml_Serialization_XmlElementAttribute_Form_Get(
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlElementAttribute_Form_Set(
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ self,
+	System_Xml_Schema_XmlSchemaForm_t /* System.Xml.Schema.XmlSchemaForm */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_Serialization_XmlElementAttribute_Order_Get(
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlElementAttribute_Order_Set(
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlElementAttribute_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlElementAttribute_Destroy(
+	System_Xml_Serialization_XmlElementAttribute_t _Nullable /* System.Xml.Serialization.XmlElementAttribute */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlElementAttribute
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlElementAttribute[]
+#pragma mark - END APIs of System.Xml.Serialization.XmlElementAttribute[]
+
+
+
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlAttributeAttribute
+System_Xml_Serialization_XmlAttributeAttribute_t _Nonnull /* System.Xml.Serialization.XmlAttributeAttribute */
+System_Xml_Serialization_XmlAttributeAttribute_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlAttributeAttribute_t _Nonnull /* System.Xml.Serialization.XmlAttributeAttribute */
+System_Xml_Serialization_XmlAttributeAttribute_Create_1(
+	System_String_t _Nullable /* System.String */ attributeName,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlAttributeAttribute_t _Nonnull /* System.Xml.Serialization.XmlAttributeAttribute */
+System_Xml_Serialization_XmlAttributeAttribute_Create_2(
+	System_Type_t _Nullable /* System.Type */ type,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlAttributeAttribute_t _Nonnull /* System.Xml.Serialization.XmlAttributeAttribute */
+System_Xml_Serialization_XmlAttributeAttribute_Create_3(
+	System_String_t _Nullable /* System.String */ attributeName,
+	System_Type_t _Nullable /* System.Type */ type,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nullable /* System.Type */
+System_Xml_Serialization_XmlAttributeAttribute_Type_Get(
+	System_Xml_Serialization_XmlAttributeAttribute_t _Nullable /* System.Xml.Serialization.XmlAttributeAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributeAttribute_Type_Set(
+	System_Xml_Serialization_XmlAttributeAttribute_t _Nullable /* System.Xml.Serialization.XmlAttributeAttribute */ self,
+	System_Type_t _Nullable /* System.Type */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlAttributeAttribute_AttributeName_Get(
+	System_Xml_Serialization_XmlAttributeAttribute_t _Nullable /* System.Xml.Serialization.XmlAttributeAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributeAttribute_AttributeName_Set(
+	System_Xml_Serialization_XmlAttributeAttribute_t _Nullable /* System.Xml.Serialization.XmlAttributeAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Serialization_XmlAttributeAttribute_Namespace_Get(
+	System_Xml_Serialization_XmlAttributeAttribute_t _Nullable /* System.Xml.Serialization.XmlAttributeAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributeAttribute_Namespace_Set(
+	System_Xml_Serialization_XmlAttributeAttribute_t _Nullable /* System.Xml.Serialization.XmlAttributeAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlAttributeAttribute_DataType_Get(
+	System_Xml_Serialization_XmlAttributeAttribute_t _Nullable /* System.Xml.Serialization.XmlAttributeAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributeAttribute_DataType_Set(
+	System_Xml_Serialization_XmlAttributeAttribute_t _Nullable /* System.Xml.Serialization.XmlAttributeAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaForm_t /* System.Xml.Schema.XmlSchemaForm */
+System_Xml_Serialization_XmlAttributeAttribute_Form_Get(
+	System_Xml_Serialization_XmlAttributeAttribute_t _Nullable /* System.Xml.Serialization.XmlAttributeAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributeAttribute_Form_Set(
+	System_Xml_Serialization_XmlAttributeAttribute_t _Nullable /* System.Xml.Serialization.XmlAttributeAttribute */ self,
+	System_Xml_Schema_XmlSchemaForm_t /* System.Xml.Schema.XmlSchemaForm */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlAttributeAttribute_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributeAttribute_Destroy(
+	System_Xml_Serialization_XmlAttributeAttribute_t _Nullable /* System.Xml.Serialization.XmlAttributeAttribute */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlAttributeAttribute
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlEnumAttribute
+System_Xml_Serialization_XmlEnumAttribute_t _Nonnull /* System.Xml.Serialization.XmlEnumAttribute */
+System_Xml_Serialization_XmlEnumAttribute_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlEnumAttribute_t _Nonnull /* System.Xml.Serialization.XmlEnumAttribute */
+System_Xml_Serialization_XmlEnumAttribute_Create_1(
+	System_String_t _Nullable /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nullable /* System.String */
+System_Xml_Serialization_XmlEnumAttribute_Name_Get(
+	System_Xml_Serialization_XmlEnumAttribute_t _Nullable /* System.Xml.Serialization.XmlEnumAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlEnumAttribute_Name_Set(
+	System_Xml_Serialization_XmlEnumAttribute_t _Nullable /* System.Xml.Serialization.XmlEnumAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlEnumAttribute_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlEnumAttribute_Destroy(
+	System_Xml_Serialization_XmlEnumAttribute_t _Nullable /* System.Xml.Serialization.XmlEnumAttribute */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlEnumAttribute
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlTextAttribute
+System_Xml_Serialization_XmlTextAttribute_t _Nonnull /* System.Xml.Serialization.XmlTextAttribute */
+System_Xml_Serialization_XmlTextAttribute_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlTextAttribute_t _Nonnull /* System.Xml.Serialization.XmlTextAttribute */
+System_Xml_Serialization_XmlTextAttribute_Create_1(
+	System_Type_t _Nullable /* System.Type */ type,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nullable /* System.Type */
+System_Xml_Serialization_XmlTextAttribute_Type_Get(
+	System_Xml_Serialization_XmlTextAttribute_t _Nullable /* System.Xml.Serialization.XmlTextAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlTextAttribute_Type_Set(
+	System_Xml_Serialization_XmlTextAttribute_t _Nullable /* System.Xml.Serialization.XmlTextAttribute */ self,
+	System_Type_t _Nullable /* System.Type */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlTextAttribute_DataType_Get(
+	System_Xml_Serialization_XmlTextAttribute_t _Nullable /* System.Xml.Serialization.XmlTextAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlTextAttribute_DataType_Set(
+	System_Xml_Serialization_XmlTextAttribute_t _Nullable /* System.Xml.Serialization.XmlTextAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlTextAttribute_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlTextAttribute_Destroy(
+	System_Xml_Serialization_XmlTextAttribute_t _Nullable /* System.Xml.Serialization.XmlTextAttribute */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlTextAttribute
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlArrayAttribute
+System_Xml_Serialization_XmlArrayAttribute_t _Nonnull /* System.Xml.Serialization.XmlArrayAttribute */
+System_Xml_Serialization_XmlArrayAttribute_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlArrayAttribute_t _Nonnull /* System.Xml.Serialization.XmlArrayAttribute */
+System_Xml_Serialization_XmlArrayAttribute_Create_1(
+	System_String_t _Nullable /* System.String */ elementName,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlArrayAttribute_ElementName_Get(
+	System_Xml_Serialization_XmlArrayAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlArrayAttribute_ElementName_Set(
+	System_Xml_Serialization_XmlArrayAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Serialization_XmlArrayAttribute_Namespace_Get(
+	System_Xml_Serialization_XmlArrayAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlArrayAttribute_Namespace_Set(
+	System_Xml_Serialization_XmlArrayAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_Serialization_XmlArrayAttribute_IsNullable_Get(
+	System_Xml_Serialization_XmlArrayAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlArrayAttribute_IsNullable_Set(
+	System_Xml_Serialization_XmlArrayAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayAttribute */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaForm_t /* System.Xml.Schema.XmlSchemaForm */
+System_Xml_Serialization_XmlArrayAttribute_Form_Get(
+	System_Xml_Serialization_XmlArrayAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlArrayAttribute_Form_Set(
+	System_Xml_Serialization_XmlArrayAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayAttribute */ self,
+	System_Xml_Schema_XmlSchemaForm_t /* System.Xml.Schema.XmlSchemaForm */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_Serialization_XmlArrayAttribute_Order_Get(
+	System_Xml_Serialization_XmlArrayAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlArrayAttribute_Order_Set(
+	System_Xml_Serialization_XmlArrayAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayAttribute */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlArrayAttribute_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlArrayAttribute_Destroy(
+	System_Xml_Serialization_XmlArrayAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayAttribute */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlArrayAttribute
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlArrayItemAttributes
+int32_t /* System.Int32 */
+System_Xml_Serialization_XmlArrayItemAttributes_Add(
+	System_Xml_Serialization_XmlArrayItemAttributes_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttributes */ self,
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ attribute,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlArrayItemAttributes_Insert(
+	System_Xml_Serialization_XmlArrayItemAttributes_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttributes */ self,
+	int32_t /* System.Int32 */ index,
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ attribute,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Xml_Serialization_XmlArrayItemAttributes_IndexOf(
+	System_Xml_Serialization_XmlArrayItemAttributes_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttributes */ self,
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ attribute,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_Serialization_XmlArrayItemAttributes_Contains(
+	System_Xml_Serialization_XmlArrayItemAttributes_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttributes */ self,
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ attribute,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlArrayItemAttributes_Remove(
+	System_Xml_Serialization_XmlArrayItemAttributes_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttributes */ self,
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ attribute,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlArrayItemAttributes_CopyTo(
+	System_Xml_Serialization_XmlArrayItemAttributes_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttributes */ self,
+	System_Xml_Serialization_XmlArrayItemAttribute_Array_t _Nonnull /* System.Xml.Serialization.XmlArrayItemAttribute[] */ array,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlArrayItemAttributes_t _Nonnull /* System.Xml.Serialization.XmlArrayItemAttributes */
+System_Xml_Serialization_XmlArrayItemAttributes_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */
+System_Xml_Serialization_XmlArrayItemAttributes_Item_Get(
+	System_Xml_Serialization_XmlArrayItemAttributes_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttributes */ self,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlArrayItemAttributes_Item_Set(
+	System_Xml_Serialization_XmlArrayItemAttributes_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttributes */ self,
+	int32_t /* System.Int32 */ index,
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlArrayItemAttributes_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlArrayItemAttributes_Destroy(
+	System_Xml_Serialization_XmlArrayItemAttributes_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttributes */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlArrayItemAttributes
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlArrayItemAttribute
+System_Xml_Serialization_XmlArrayItemAttribute_t _Nonnull /* System.Xml.Serialization.XmlArrayItemAttribute */
+System_Xml_Serialization_XmlArrayItemAttribute_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlArrayItemAttribute_t _Nonnull /* System.Xml.Serialization.XmlArrayItemAttribute */
+System_Xml_Serialization_XmlArrayItemAttribute_Create_1(
+	System_String_t _Nullable /* System.String */ elementName,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlArrayItemAttribute_t _Nonnull /* System.Xml.Serialization.XmlArrayItemAttribute */
+System_Xml_Serialization_XmlArrayItemAttribute_Create_2(
+	System_Type_t _Nullable /* System.Type */ type,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlArrayItemAttribute_t _Nonnull /* System.Xml.Serialization.XmlArrayItemAttribute */
+System_Xml_Serialization_XmlArrayItemAttribute_Create_3(
+	System_String_t _Nullable /* System.String */ elementName,
+	System_Type_t _Nullable /* System.Type */ type,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nullable /* System.Type */
+System_Xml_Serialization_XmlArrayItemAttribute_Type_Get(
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlArrayItemAttribute_Type_Set(
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ self,
+	System_Type_t _Nullable /* System.Type */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlArrayItemAttribute_ElementName_Get(
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlArrayItemAttribute_ElementName_Set(
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Serialization_XmlArrayItemAttribute_Namespace_Get(
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlArrayItemAttribute_Namespace_Set(
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_Serialization_XmlArrayItemAttribute_NestingLevel_Get(
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlArrayItemAttribute_NestingLevel_Set(
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlArrayItemAttribute_DataType_Get(
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlArrayItemAttribute_DataType_Set(
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_Serialization_XmlArrayItemAttribute_IsNullable_Get(
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlArrayItemAttribute_IsNullable_Set(
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Xml_Schema_XmlSchemaForm_t /* System.Xml.Schema.XmlSchemaForm */
+System_Xml_Serialization_XmlArrayItemAttribute_Form_Get(
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlArrayItemAttribute_Form_Set(
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ self,
+	System_Xml_Schema_XmlSchemaForm_t /* System.Xml.Schema.XmlSchemaForm */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlArrayItemAttribute_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlArrayItemAttribute_Destroy(
+	System_Xml_Serialization_XmlArrayItemAttribute_t _Nullable /* System.Xml.Serialization.XmlArrayItemAttribute */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlArrayItemAttribute
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlArrayItemAttribute[]
+#pragma mark - END APIs of System.Xml.Serialization.XmlArrayItemAttribute[]
+
+
+
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlTypeAttribute
+System_Xml_Serialization_XmlTypeAttribute_t _Nonnull /* System.Xml.Serialization.XmlTypeAttribute */
+System_Xml_Serialization_XmlTypeAttribute_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlTypeAttribute_t _Nonnull /* System.Xml.Serialization.XmlTypeAttribute */
+System_Xml_Serialization_XmlTypeAttribute_Create_1(
+	System_String_t _Nullable /* System.String */ typeName,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_Serialization_XmlTypeAttribute_AnonymousType_Get(
+	System_Xml_Serialization_XmlTypeAttribute_t _Nullable /* System.Xml.Serialization.XmlTypeAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlTypeAttribute_AnonymousType_Set(
+	System_Xml_Serialization_XmlTypeAttribute_t _Nullable /* System.Xml.Serialization.XmlTypeAttribute */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_Serialization_XmlTypeAttribute_IncludeInSchema_Get(
+	System_Xml_Serialization_XmlTypeAttribute_t _Nullable /* System.Xml.Serialization.XmlTypeAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlTypeAttribute_IncludeInSchema_Set(
+	System_Xml_Serialization_XmlTypeAttribute_t _Nullable /* System.Xml.Serialization.XmlTypeAttribute */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlTypeAttribute_TypeName_Get(
+	System_Xml_Serialization_XmlTypeAttribute_t _Nullable /* System.Xml.Serialization.XmlTypeAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlTypeAttribute_TypeName_Set(
+	System_Xml_Serialization_XmlTypeAttribute_t _Nullable /* System.Xml.Serialization.XmlTypeAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Serialization_XmlTypeAttribute_Namespace_Get(
+	System_Xml_Serialization_XmlTypeAttribute_t _Nullable /* System.Xml.Serialization.XmlTypeAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlTypeAttribute_Namespace_Set(
+	System_Xml_Serialization_XmlTypeAttribute_t _Nullable /* System.Xml.Serialization.XmlTypeAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlTypeAttribute_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlTypeAttribute_Destroy(
+	System_Xml_Serialization_XmlTypeAttribute_t _Nullable /* System.Xml.Serialization.XmlTypeAttribute */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlTypeAttribute
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlRootAttribute
+System_Xml_Serialization_XmlRootAttribute_t _Nonnull /* System.Xml.Serialization.XmlRootAttribute */
+System_Xml_Serialization_XmlRootAttribute_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlRootAttribute_t _Nonnull /* System.Xml.Serialization.XmlRootAttribute */
+System_Xml_Serialization_XmlRootAttribute_Create_1(
+	System_String_t _Nonnull /* System.String */ elementName,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlRootAttribute_ElementName_Get(
+	System_Xml_Serialization_XmlRootAttribute_t _Nullable /* System.Xml.Serialization.XmlRootAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlRootAttribute_ElementName_Set(
+	System_Xml_Serialization_XmlRootAttribute_t _Nullable /* System.Xml.Serialization.XmlRootAttribute */ self,
+	System_String_t _Nonnull /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Serialization_XmlRootAttribute_Namespace_Get(
+	System_Xml_Serialization_XmlRootAttribute_t _Nullable /* System.Xml.Serialization.XmlRootAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlRootAttribute_Namespace_Set(
+	System_Xml_Serialization_XmlRootAttribute_t _Nullable /* System.Xml.Serialization.XmlRootAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlRootAttribute_DataType_Get(
+	System_Xml_Serialization_XmlRootAttribute_t _Nullable /* System.Xml.Serialization.XmlRootAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlRootAttribute_DataType_Set(
+	System_Xml_Serialization_XmlRootAttribute_t _Nullable /* System.Xml.Serialization.XmlRootAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Xml_Serialization_XmlRootAttribute_IsNullable_Get(
+	System_Xml_Serialization_XmlRootAttribute_t _Nullable /* System.Xml.Serialization.XmlRootAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlRootAttribute_IsNullable_Set(
+	System_Xml_Serialization_XmlRootAttribute_t _Nullable /* System.Xml.Serialization.XmlRootAttribute */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlRootAttribute_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlRootAttribute_Destroy(
+	System_Xml_Serialization_XmlRootAttribute_t _Nullable /* System.Xml.Serialization.XmlRootAttribute */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlRootAttribute
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlAnyElementAttributes
+int32_t /* System.Int32 */
+System_Xml_Serialization_XmlAnyElementAttributes_Add(
+	System_Xml_Serialization_XmlAnyElementAttributes_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttributes */ self,
+	System_Xml_Serialization_XmlAnyElementAttribute_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttribute */ attribute,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAnyElementAttributes_Insert(
+	System_Xml_Serialization_XmlAnyElementAttributes_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttributes */ self,
+	int32_t /* System.Int32 */ index,
+	System_Xml_Serialization_XmlAnyElementAttribute_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttribute */ attribute,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Xml_Serialization_XmlAnyElementAttributes_IndexOf(
+	System_Xml_Serialization_XmlAnyElementAttributes_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttributes */ self,
+	System_Xml_Serialization_XmlAnyElementAttribute_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttribute */ attribute,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Xml_Serialization_XmlAnyElementAttributes_Contains(
+	System_Xml_Serialization_XmlAnyElementAttributes_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttributes */ self,
+	System_Xml_Serialization_XmlAnyElementAttribute_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttribute */ attribute,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAnyElementAttributes_Remove(
+	System_Xml_Serialization_XmlAnyElementAttributes_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttributes */ self,
+	System_Xml_Serialization_XmlAnyElementAttribute_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttribute */ attribute,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAnyElementAttributes_CopyTo(
+	System_Xml_Serialization_XmlAnyElementAttributes_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttributes */ self,
+	System_Xml_Serialization_XmlAnyElementAttribute_Array_t _Nonnull /* System.Xml.Serialization.XmlAnyElementAttribute[] */ array,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlAnyElementAttributes_t _Nonnull /* System.Xml.Serialization.XmlAnyElementAttributes */
+System_Xml_Serialization_XmlAnyElementAttributes_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlAnyElementAttribute_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttribute */
+System_Xml_Serialization_XmlAnyElementAttributes_Item_Get(
+	System_Xml_Serialization_XmlAnyElementAttributes_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttributes */ self,
+	int32_t /* System.Int32 */ index,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAnyElementAttributes_Item_Set(
+	System_Xml_Serialization_XmlAnyElementAttributes_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttributes */ self,
+	int32_t /* System.Int32 */ index,
+	System_Xml_Serialization_XmlAnyElementAttribute_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttribute */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlAnyElementAttributes_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAnyElementAttributes_Destroy(
+	System_Xml_Serialization_XmlAnyElementAttributes_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttributes */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlAnyElementAttributes
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlAnyElementAttribute
+System_Xml_Serialization_XmlAnyElementAttribute_t _Nonnull /* System.Xml.Serialization.XmlAnyElementAttribute */
+System_Xml_Serialization_XmlAnyElementAttribute_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlAnyElementAttribute_t _Nonnull /* System.Xml.Serialization.XmlAnyElementAttribute */
+System_Xml_Serialization_XmlAnyElementAttribute_Create_1(
+	System_String_t _Nullable /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlAnyElementAttribute_t _Nonnull /* System.Xml.Serialization.XmlAnyElementAttribute */
+System_Xml_Serialization_XmlAnyElementAttribute_Create_2(
+	System_String_t _Nullable /* System.String */ name,
+	System_String_t _Nullable /* System.String */ ns,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlAnyElementAttribute_Name_Get(
+	System_Xml_Serialization_XmlAnyElementAttribute_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAnyElementAttribute_Name_Set(
+	System_Xml_Serialization_XmlAnyElementAttribute_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Serialization_XmlAnyElementAttribute_Namespace_Get(
+	System_Xml_Serialization_XmlAnyElementAttribute_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAnyElementAttribute_Namespace_Set(
+	System_Xml_Serialization_XmlAnyElementAttribute_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Xml_Serialization_XmlAnyElementAttribute_Order_Get(
+	System_Xml_Serialization_XmlAnyElementAttribute_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAnyElementAttribute_Order_Set(
+	System_Xml_Serialization_XmlAnyElementAttribute_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttribute */ self,
+	int32_t /* System.Int32 */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlAnyElementAttribute_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAnyElementAttribute_Destroy(
+	System_Xml_Serialization_XmlAnyElementAttribute_t _Nullable /* System.Xml.Serialization.XmlAnyElementAttribute */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlAnyElementAttribute
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlAnyElementAttribute[]
+#pragma mark - END APIs of System.Xml.Serialization.XmlAnyElementAttribute[]
+
+
+
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlAnyAttributeAttribute
+System_Xml_Serialization_XmlAnyAttributeAttribute_t _Nonnull /* System.Xml.Serialization.XmlAnyAttributeAttribute */
+System_Xml_Serialization_XmlAnyAttributeAttribute_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlAnyAttributeAttribute_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAnyAttributeAttribute_Destroy(
+	System_Xml_Serialization_XmlAnyAttributeAttribute_t _Nullable /* System.Xml.Serialization.XmlAnyAttributeAttribute */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlAnyAttributeAttribute
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlChoiceIdentifierAttribute
+System_Xml_Serialization_XmlChoiceIdentifierAttribute_t _Nonnull /* System.Xml.Serialization.XmlChoiceIdentifierAttribute */
+System_Xml_Serialization_XmlChoiceIdentifierAttribute_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Xml_Serialization_XmlChoiceIdentifierAttribute_t _Nonnull /* System.Xml.Serialization.XmlChoiceIdentifierAttribute */
+System_Xml_Serialization_XmlChoiceIdentifierAttribute_Create_1(
+	System_String_t _Nullable /* System.String */ name,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlChoiceIdentifierAttribute_MemberName_Get(
+	System_Xml_Serialization_XmlChoiceIdentifierAttribute_t _Nullable /* System.Xml.Serialization.XmlChoiceIdentifierAttribute */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlChoiceIdentifierAttribute_MemberName_Set(
+	System_Xml_Serialization_XmlChoiceIdentifierAttribute_t _Nullable /* System.Xml.Serialization.XmlChoiceIdentifierAttribute */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlChoiceIdentifierAttribute_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlChoiceIdentifierAttribute_Destroy(
+	System_Xml_Serialization_XmlChoiceIdentifierAttribute_t _Nullable /* System.Xml.Serialization.XmlChoiceIdentifierAttribute */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlChoiceIdentifierAttribute
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlTypeMapping
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlTypeMapping_TypeName_Get(
+	System_Xml_Serialization_XmlTypeMapping_t _Nullable /* System.Xml.Serialization.XmlTypeMapping */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Xml_Serialization_XmlTypeMapping_TypeFullName_Get(
+	System_Xml_Serialization_XmlTypeMapping_t _Nullable /* System.Xml.Serialization.XmlTypeMapping */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Serialization_XmlTypeMapping_XsdTypeName_Get(
+	System_Xml_Serialization_XmlTypeMapping_t _Nullable /* System.Xml.Serialization.XmlTypeMapping */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+System_Xml_Serialization_XmlTypeMapping_XsdTypeNamespace_Get(
+	System_Xml_Serialization_XmlTypeMapping_t _Nullable /* System.Xml.Serialization.XmlTypeMapping */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlTypeMapping_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlTypeMapping_Destroy(
+	System_Xml_Serialization_XmlTypeMapping_t _Nullable /* System.Xml.Serialization.XmlTypeMapping */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlTypeMapping
+
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.EnumTests
 System_String_t _Nonnull /* System.String */
 Beyond_NET_Sample_Source_EnumTests_GetEnumName(
@@ -50944,6 +62840,252 @@ Beyond_NET_Sample_Transformer_StringGetterDelegate_Destroy(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.Transformer.StringGetterDelegate
+
+#pragma mark - BEGIN APIs of System.Xml.Schema.ValidationEventHandler
+System_Xml_Schema_ValidationEventHandler_t _Nonnull /* System.Xml.Schema.ValidationEventHandler */
+System_Xml_Schema_ValidationEventHandler_Create(
+	const void* context,
+	System_Xml_Schema_ValidationEventHandler_CFunction_t function,
+	System_Xml_Schema_ValidationEventHandler_CDestructorFunction_t destructorFunction
+);
+
+void
+System_Xml_Schema_ValidationEventHandler_Invoke(
+	System_Xml_Schema_ValidationEventHandler_t /* System.Xml.Schema.ValidationEventHandler */ self, System_Object_t _Nullable /* System.Object */ sender,
+	System_Xml_Schema_ValidationEventArgs_t _Nonnull /* System.Xml.Schema.ValidationEventArgs */ e, System_Exception_t* /* System.Exception */ outException
+);
+
+const void*
+System_Xml_Schema_ValidationEventHandler_Context_Get(
+	System_Xml_Schema_ValidationEventHandler_t /* System.Xml.Schema.ValidationEventHandler */ self
+);
+
+System_Xml_Schema_ValidationEventHandler_CFunction_t
+System_Xml_Schema_ValidationEventHandler_CFunction_Get(
+	System_Xml_Schema_ValidationEventHandler_t /* System.Xml.Schema.ValidationEventHandler */ self
+);
+
+System_Xml_Schema_ValidationEventHandler_CDestructorFunction_t
+System_Xml_Schema_ValidationEventHandler_CDestructorFunction_Get(
+	System_Xml_Schema_ValidationEventHandler_t /* System.Xml.Schema.ValidationEventHandler */ self
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Schema_ValidationEventHandler_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Schema_ValidationEventHandler_Destroy(
+	System_Xml_Schema_ValidationEventHandler_t _Nullable /* System.Xml.Schema.ValidationEventHandler */ self
+);
+
+#pragma mark - END APIs of System.Xml.Schema.ValidationEventHandler
+
+#pragma mark - BEGIN APIs of System.Xml.XmlNodeChangedEventHandler
+System_Xml_XmlNodeChangedEventHandler_t _Nonnull /* System.Xml.XmlNodeChangedEventHandler */
+System_Xml_XmlNodeChangedEventHandler_Create(
+	const void* context,
+	System_Xml_XmlNodeChangedEventHandler_CFunction_t function,
+	System_Xml_XmlNodeChangedEventHandler_CDestructorFunction_t destructorFunction
+);
+
+void
+System_Xml_XmlNodeChangedEventHandler_Invoke(
+	System_Xml_XmlNodeChangedEventHandler_t /* System.Xml.XmlNodeChangedEventHandler */ self, System_Object_t _Nonnull /* System.Object */ sender,
+	System_Xml_XmlNodeChangedEventArgs_t _Nonnull /* System.Xml.XmlNodeChangedEventArgs */ e, System_Exception_t* /* System.Exception */ outException
+);
+
+const void*
+System_Xml_XmlNodeChangedEventHandler_Context_Get(
+	System_Xml_XmlNodeChangedEventHandler_t /* System.Xml.XmlNodeChangedEventHandler */ self
+);
+
+System_Xml_XmlNodeChangedEventHandler_CFunction_t
+System_Xml_XmlNodeChangedEventHandler_CFunction_Get(
+	System_Xml_XmlNodeChangedEventHandler_t /* System.Xml.XmlNodeChangedEventHandler */ self
+);
+
+System_Xml_XmlNodeChangedEventHandler_CDestructorFunction_t
+System_Xml_XmlNodeChangedEventHandler_CDestructorFunction_Get(
+	System_Xml_XmlNodeChangedEventHandler_t /* System.Xml.XmlNodeChangedEventHandler */ self
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_XmlNodeChangedEventHandler_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_XmlNodeChangedEventHandler_Destroy(
+	System_Xml_XmlNodeChangedEventHandler_t _Nullable /* System.Xml.XmlNodeChangedEventHandler */ self
+);
+
+#pragma mark - END APIs of System.Xml.XmlNodeChangedEventHandler
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlNodeEventHandler
+System_Xml_Serialization_XmlNodeEventHandler_t _Nonnull /* System.Xml.Serialization.XmlNodeEventHandler */
+System_Xml_Serialization_XmlNodeEventHandler_Create(
+	const void* context,
+	System_Xml_Serialization_XmlNodeEventHandler_CFunction_t function,
+	System_Xml_Serialization_XmlNodeEventHandler_CDestructorFunction_t destructorFunction
+);
+
+void
+System_Xml_Serialization_XmlNodeEventHandler_Invoke(
+	System_Xml_Serialization_XmlNodeEventHandler_t /* System.Xml.Serialization.XmlNodeEventHandler */ self, System_Object_t _Nullable /* System.Object */ sender,
+	System_Xml_Serialization_XmlNodeEventArgs_t _Nonnull /* System.Xml.Serialization.XmlNodeEventArgs */ e, System_Exception_t* /* System.Exception */ outException
+);
+
+const void*
+System_Xml_Serialization_XmlNodeEventHandler_Context_Get(
+	System_Xml_Serialization_XmlNodeEventHandler_t /* System.Xml.Serialization.XmlNodeEventHandler */ self
+);
+
+System_Xml_Serialization_XmlNodeEventHandler_CFunction_t
+System_Xml_Serialization_XmlNodeEventHandler_CFunction_Get(
+	System_Xml_Serialization_XmlNodeEventHandler_t /* System.Xml.Serialization.XmlNodeEventHandler */ self
+);
+
+System_Xml_Serialization_XmlNodeEventHandler_CDestructorFunction_t
+System_Xml_Serialization_XmlNodeEventHandler_CDestructorFunction_Get(
+	System_Xml_Serialization_XmlNodeEventHandler_t /* System.Xml.Serialization.XmlNodeEventHandler */ self
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlNodeEventHandler_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlNodeEventHandler_Destroy(
+	System_Xml_Serialization_XmlNodeEventHandler_t _Nullable /* System.Xml.Serialization.XmlNodeEventHandler */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlNodeEventHandler
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlAttributeEventHandler
+System_Xml_Serialization_XmlAttributeEventHandler_t _Nonnull /* System.Xml.Serialization.XmlAttributeEventHandler */
+System_Xml_Serialization_XmlAttributeEventHandler_Create(
+	const void* context,
+	System_Xml_Serialization_XmlAttributeEventHandler_CFunction_t function,
+	System_Xml_Serialization_XmlAttributeEventHandler_CDestructorFunction_t destructorFunction
+);
+
+void
+System_Xml_Serialization_XmlAttributeEventHandler_Invoke(
+	System_Xml_Serialization_XmlAttributeEventHandler_t /* System.Xml.Serialization.XmlAttributeEventHandler */ self, System_Object_t _Nullable /* System.Object */ sender,
+	System_Xml_Serialization_XmlAttributeEventArgs_t _Nonnull /* System.Xml.Serialization.XmlAttributeEventArgs */ e, System_Exception_t* /* System.Exception */ outException
+);
+
+const void*
+System_Xml_Serialization_XmlAttributeEventHandler_Context_Get(
+	System_Xml_Serialization_XmlAttributeEventHandler_t /* System.Xml.Serialization.XmlAttributeEventHandler */ self
+);
+
+System_Xml_Serialization_XmlAttributeEventHandler_CFunction_t
+System_Xml_Serialization_XmlAttributeEventHandler_CFunction_Get(
+	System_Xml_Serialization_XmlAttributeEventHandler_t /* System.Xml.Serialization.XmlAttributeEventHandler */ self
+);
+
+System_Xml_Serialization_XmlAttributeEventHandler_CDestructorFunction_t
+System_Xml_Serialization_XmlAttributeEventHandler_CDestructorFunction_Get(
+	System_Xml_Serialization_XmlAttributeEventHandler_t /* System.Xml.Serialization.XmlAttributeEventHandler */ self
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlAttributeEventHandler_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlAttributeEventHandler_Destroy(
+	System_Xml_Serialization_XmlAttributeEventHandler_t _Nullable /* System.Xml.Serialization.XmlAttributeEventHandler */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlAttributeEventHandler
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.XmlElementEventHandler
+System_Xml_Serialization_XmlElementEventHandler_t _Nonnull /* System.Xml.Serialization.XmlElementEventHandler */
+System_Xml_Serialization_XmlElementEventHandler_Create(
+	const void* context,
+	System_Xml_Serialization_XmlElementEventHandler_CFunction_t function,
+	System_Xml_Serialization_XmlElementEventHandler_CDestructorFunction_t destructorFunction
+);
+
+void
+System_Xml_Serialization_XmlElementEventHandler_Invoke(
+	System_Xml_Serialization_XmlElementEventHandler_t /* System.Xml.Serialization.XmlElementEventHandler */ self, System_Object_t _Nullable /* System.Object */ sender,
+	System_Xml_Serialization_XmlElementEventArgs_t _Nonnull /* System.Xml.Serialization.XmlElementEventArgs */ e, System_Exception_t* /* System.Exception */ outException
+);
+
+const void*
+System_Xml_Serialization_XmlElementEventHandler_Context_Get(
+	System_Xml_Serialization_XmlElementEventHandler_t /* System.Xml.Serialization.XmlElementEventHandler */ self
+);
+
+System_Xml_Serialization_XmlElementEventHandler_CFunction_t
+System_Xml_Serialization_XmlElementEventHandler_CFunction_Get(
+	System_Xml_Serialization_XmlElementEventHandler_t /* System.Xml.Serialization.XmlElementEventHandler */ self
+);
+
+System_Xml_Serialization_XmlElementEventHandler_CDestructorFunction_t
+System_Xml_Serialization_XmlElementEventHandler_CDestructorFunction_Get(
+	System_Xml_Serialization_XmlElementEventHandler_t /* System.Xml.Serialization.XmlElementEventHandler */ self
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_XmlElementEventHandler_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_XmlElementEventHandler_Destroy(
+	System_Xml_Serialization_XmlElementEventHandler_t _Nullable /* System.Xml.Serialization.XmlElementEventHandler */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.XmlElementEventHandler
+
+#pragma mark - BEGIN APIs of System.Xml.Serialization.UnreferencedObjectEventHandler
+System_Xml_Serialization_UnreferencedObjectEventHandler_t _Nonnull /* System.Xml.Serialization.UnreferencedObjectEventHandler */
+System_Xml_Serialization_UnreferencedObjectEventHandler_Create(
+	const void* context,
+	System_Xml_Serialization_UnreferencedObjectEventHandler_CFunction_t function,
+	System_Xml_Serialization_UnreferencedObjectEventHandler_CDestructorFunction_t destructorFunction
+);
+
+void
+System_Xml_Serialization_UnreferencedObjectEventHandler_Invoke(
+	System_Xml_Serialization_UnreferencedObjectEventHandler_t /* System.Xml.Serialization.UnreferencedObjectEventHandler */ self, System_Object_t _Nullable /* System.Object */ sender,
+	System_Xml_Serialization_UnreferencedObjectEventArgs_t _Nonnull /* System.Xml.Serialization.UnreferencedObjectEventArgs */ e, System_Exception_t* /* System.Exception */ outException
+);
+
+const void*
+System_Xml_Serialization_UnreferencedObjectEventHandler_Context_Get(
+	System_Xml_Serialization_UnreferencedObjectEventHandler_t /* System.Xml.Serialization.UnreferencedObjectEventHandler */ self
+);
+
+System_Xml_Serialization_UnreferencedObjectEventHandler_CFunction_t
+System_Xml_Serialization_UnreferencedObjectEventHandler_CFunction_Get(
+	System_Xml_Serialization_UnreferencedObjectEventHandler_t /* System.Xml.Serialization.UnreferencedObjectEventHandler */ self
+);
+
+System_Xml_Serialization_UnreferencedObjectEventHandler_CDestructorFunction_t
+System_Xml_Serialization_UnreferencedObjectEventHandler_CDestructorFunction_Get(
+	System_Xml_Serialization_UnreferencedObjectEventHandler_t /* System.Xml.Serialization.UnreferencedObjectEventHandler */ self
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Xml_Serialization_UnreferencedObjectEventHandler_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Xml_Serialization_UnreferencedObjectEventHandler_Destroy(
+	System_Xml_Serialization_UnreferencedObjectEventHandler_t _Nullable /* System.Xml.Serialization.UnreferencedObjectEventHandler */ self
+);
+
+#pragma mark - END APIs of System.Xml.Serialization.UnreferencedObjectEventHandler
 
 
 #pragma mark - END APIs
