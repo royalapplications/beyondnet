@@ -11,6 +11,7 @@ static class KotlinSharedSettings
         typeof(System.Xml.XmlDocument), // Unsupported because some implementations of this use different nullability
         typeof(System.Xml.XmlProcessingInstruction), // Unsupported because some implementations of this use different nullability
         typeof(System.Xml.XmlAttributeCollection), // Unsupported because some implementations of this use different nullability
+        typeof(System.Security.Cryptography.HashAlgorithm), // Unsupported because some implementations of this use different nullability
     ];
 
     internal static bool IsUnsupportedInterface(this Type interfaceType)
@@ -31,7 +32,7 @@ static class KotlinSharedSettings
         var baseType = type.BaseType;
 
         if (baseType is not null &&
-            IsUnsupportedInterface(baseType)) {
+            IsUnsupportedTypeOrDerivedByUnsupportedType(baseType)) {
             return true;
         }
 
