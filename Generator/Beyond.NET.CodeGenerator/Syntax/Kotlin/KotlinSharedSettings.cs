@@ -5,6 +5,7 @@ static class KotlinSharedSettings
     private static readonly List<Type> UnsupportedInterfaceTypes = [
         typeof(System.Net.ICredentialsByHost), // Unsupported because some implementations of this use different nullability
         typeof(System.Net.ICredentials), // Unsupported because some implementations of this use different nullability
+        typeof(System.ICloneable), // Unsupported because some implementations of this use different nullability
     ];
     
     private static readonly List<Type> UnsupportedTypes = [
