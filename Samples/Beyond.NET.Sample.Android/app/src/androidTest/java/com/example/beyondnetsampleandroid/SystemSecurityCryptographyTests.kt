@@ -1,6 +1,8 @@
-// TODO: This currently crashes in `System_Security_Cryptography_Aes.create()`. Does .NET support AES encryption on Android?
+// NOTE: This requires OpenSSL libraries (.so files).
+// Right now, libcrypto.so and libssl.so included in this repo are sourced from https://github.com/Sharm/Prebuilt-OpenSSL-Android which is ancient.
+// TODO: Find a better way to include OpenSSL
 
-/* package com.example.beyondnetsampleandroid
+package com.example.beyondnetsampleandroid
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 
@@ -29,7 +31,7 @@ class SystemSecurityCryptographyTests {
         assertEquals(decryptedData, unencryptedData)
     }
 
-    class EncryptRet(val encryptedData: String, val iv: System_Byte_Array, val key: System_Byte_Array)
+    class EncryptRet(val encryptedData: String, val iv: DNArray<System_Byte>, val key: DNArray<System_Byte>)
 
     private fun encrypt(data: String): EncryptRet {
         val aes = System_Security_Cryptography_Aes.create()
@@ -43,7 +45,7 @@ class SystemSecurityCryptographyTests {
         val encryptor = aes.createEncryptor()
         val memoryStream = System_IO_MemoryStream()
 
-        val cryptoStream = System_Security_Cryptography_CryptoStream(memoryStream, encryptor, System_Security_Cryptography_CryptoStreamMode.Write)
+        val cryptoStream = System_Security_Cryptography_CryptoStream(memoryStream, encryptor, System_Security_Cryptography_CryptoStreamMode.WRITE)
         val streamWriter = System_IO_StreamWriter(cryptoStream)
 
         streamWriter.write(data.toDotNETString())
@@ -62,7 +64,7 @@ class SystemSecurityCryptographyTests {
         return EncryptRet(base64EncryptedData, iv, key)
     }
 
-    private fun decrypt(data: String, iv: System_Byte_Array, key: System_Byte_Array): String {
+    private fun decrypt(data: String, iv: DNArray<System_Byte>, key: DNArray<System_Byte>): String {
         val buffer = System_Convert.fromBase64String(data.toDotNETString())
 
         val aes = System_Security_Cryptography_Aes.create()
@@ -72,7 +74,7 @@ class SystemSecurityCryptographyTests {
         val decryptor = aes.createDecryptor()
         val memoryStream = System_IO_MemoryStream(buffer)
 
-        val cryptoStream = System_Security_Cryptography_CryptoStream(memoryStream, decryptor, System_Security_Cryptography_CryptoStreamMode.Read)
+        val cryptoStream = System_Security_Cryptography_CryptoStream(memoryStream, decryptor, System_Security_Cryptography_CryptoStreamMode.READ)
         val streamReader = System_IO_StreamReader(cryptoStream)
 
         cryptoStream.flush()
@@ -87,4 +89,4 @@ class SystemSecurityCryptographyTests {
 
         return decryptedData
     }
-} */
+}
