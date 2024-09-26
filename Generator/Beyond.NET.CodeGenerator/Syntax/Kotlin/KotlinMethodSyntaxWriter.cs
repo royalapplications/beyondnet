@@ -388,7 +388,8 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         bool returnOrSetterOrEventHandlerTypeIsByRef;
 
         if (isNullableValueTypeReturnType) {
-            returnOrSetterOrEventHandlerTypeIsByRef = true;
+            // TODO: Is this correct?
+            returnOrSetterOrEventHandlerTypeIsByRef = false;
             returnOrSetterOrEventHandlerType = nullableValueReturnType ?? returnOrSetterOrEventHandlerType;
         } else {
             returnOrSetterOrEventHandlerTypeIsByRef = returnOrSetterOrEventHandlerType.IsByRef;
@@ -683,7 +684,8 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             return $"// TODO: Method with by ref return or setter or event handler type ({cMember.GetGeneratedName(CodeLanguage.C)})";
         }
         
-        if (returnOrSetterOrEventHandlerType.IsGenericInAnyWay(true)) {
+        if (returnOrSetterOrEventHandlerType.IsGenericInAnyWay(true) &&
+            !returnOrSetterOrEventHandlerType.IsNullableValueType(out _)) {
             generatedName = string.Empty;
             
             return $"// TODO: Method with generic return or setter or event handler type ({cMember.GetGeneratedName(CodeLanguage.C)})";
@@ -695,7 +697,6 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             return $"// TODO: Method with generic parameters ({cMember.GetGeneratedName(CodeLanguage.C)})";
         }
 
-        // TODO: Out/by ref value type parameters are currently not supported
         foreach (var parameter in parameters) {
             var parameterType = parameter.ParameterType;
             
