@@ -1,4 +1,4 @@
-﻿namespace Beyond.NET.CodeGenerator.CLI;
+namespace Beyond.NET.CodeGenerator.CLI;
 
 static class Program
 {

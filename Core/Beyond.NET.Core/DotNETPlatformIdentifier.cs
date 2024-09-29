@@ -1,4 +1,4 @@
-﻿namespace Beyond.NET.Core;
+namespace Beyond.NET.Core;
 
 public static class DotNETPlatformIdentifier
 {

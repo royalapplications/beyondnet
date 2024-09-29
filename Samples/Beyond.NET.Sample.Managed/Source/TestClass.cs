@@ -1,4 +1,4 @@
-﻿namespace Beyond.NET.Sample;
+namespace Beyond.NET.Sample;
 
 public enum TestEnum
 {

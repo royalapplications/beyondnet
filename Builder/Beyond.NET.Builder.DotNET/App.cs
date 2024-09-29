@@ -1,4 +1,4 @@
-﻿using Beyond.NET.Core;
+using Beyond.NET.Core;
 
 namespace Beyond.NET.Builder.DotNET;
 
