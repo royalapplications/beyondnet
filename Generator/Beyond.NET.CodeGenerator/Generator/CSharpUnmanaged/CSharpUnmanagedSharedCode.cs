@@ -3,6 +3,7 @@ namespace Beyond.NET.CodeGenerator.Generator.CSharpUnmanaged;
 internal static class CSharpUnmanagedSharedCode
 {
     internal const string SharedCode = /*lang=C#*/"""
+#nullable enable
 internal class __BeyondNETNativeModuleInitializer
 {
     [System.Runtime.CompilerServices.ModuleInitializer]
@@ -830,5 +831,6 @@ internal static class DNReadOnlySpanOfByte_Extensions
     }
 }
 #endregion DNReadOnlySpanOfByte
+#nullable disable
 """;
 }
