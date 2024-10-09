@@ -16,12 +16,6 @@ public class MemberCollector
             typeof(System.Runtime.InteropServices.Marshal), [
                 "WriteInt16"
             ]
-        },
-        {
-            typeof(System.Reflection.Assembly), [
-                // TODO: There's a bug in .NET 8.0.400 where Assembly.SetEntryAssembly seems to be exposed in the reference assemblies but not in the implementation assemblies. For now, we just exclude that method. 
-                "SetEntryAssembly"
-            ]
         }
     };
 
