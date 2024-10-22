@@ -15,15 +15,13 @@ open class DNObject(handle: Pointer): IDNObject {
         Skip
     }
     
-    override val __handle: Pointer
+    override val __handle: Pointer = handle
     var __destroyMode: DestroyMode = DestroyMode.Normal
     
     init {
         require(handle != null) {
             "Cannot initialize DNObject with a null pointer"
         }
-    
-        this.__handle = handle
     }
     
     protected fun finalize() {
