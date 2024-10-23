@@ -15,7 +15,7 @@ open class DNObject(handle: Pointer): IDNObject {
         Skip
     }
     
-    override val __handle: Pointer = handle
+    final override val __handle: Pointer = handle
     var __destroyMode: DestroyMode = DestroyMode.Normal
     
     init {
