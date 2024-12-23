@@ -781,7 +781,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 sbImpl.AppendLine("""
 if let __exceptionC {
     let __exception = System_Exception(handle: __exceptionC)
-    let __error = __exception.error
+    let __error = __exception.swiftError
     
     throw __error
 }

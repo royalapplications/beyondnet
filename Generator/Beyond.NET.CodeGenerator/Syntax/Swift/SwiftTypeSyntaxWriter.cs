@@ -500,7 +500,7 @@ let newArrayC = System_Array_CreateInstance(elementTypeC, 0, &__exceptionC)
 
 if let __exceptionC {
     let __exception = System_Exception(handle: __exceptionC)
-    let __error = __exception.error
+    let __error = __exception.swiftError
     
     throw __error
 }
@@ -529,7 +529,7 @@ self.init(handle: newArrayC)
  
  if let __exceptionC {
      let __exception = System_Exception(handle: __exceptionC)
-     let __error = __exception.error
+     let __error = __exception.swiftError
      
      throw __error
  }

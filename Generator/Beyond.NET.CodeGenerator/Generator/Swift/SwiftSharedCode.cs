@@ -183,7 +183,7 @@ public class DNNullableArray<T: System_Object>: System_Array, MutableCollection 
         
         if let __exceptionC {
             let __exception = System_Exception(handle: __exceptionC)
-            let __error = __exception.error
+            let __error = __exception.swiftError
             
             throw __error
         }
@@ -202,7 +202,7 @@ public class DNNullableArray<T: System_Object>: System_Array, MutableCollection 
         
         if let __exceptionC {
             let __exception = System_Exception(handle: __exceptionC)
-            let __error = __exception.error
+            let __error = __exception.swiftError
             
             throw __error
         }
@@ -294,7 +294,7 @@ public class DNArray<T: System_Object>: System_Array, MutableCollection {
         
         if let __exceptionC {
             let __exception = System_Exception(handle: __exceptionC)
-            let __error = __exception.error
+            let __error = __exception.swiftError
             
             throw __error
         }
@@ -313,7 +313,7 @@ public class DNArray<T: System_Object>: System_Array, MutableCollection {
         
         if let __exceptionC {
             let __exception = System_Exception(handle: __exceptionC)
-            let __error = __exception.error
+            let __error = __exception.swiftError
             
             throw __error
         }
@@ -372,7 +372,7 @@ public class DNNullableMultidimensionalArray<T: System_Object>: System_Array {
         
         if let __exceptionC {
             let __exception = System_Exception(handle: __exceptionC)
-            let __error = __exception.error
+            let __error = __exception.swiftError
             
             throw __error
         }
@@ -442,7 +442,7 @@ public class DNMultidimensionalArray<T: System_Object>: System_Array {
         
         if let __exceptionC {
             let __exception = System_Exception(handle: __exceptionC)
-            let __error = __exception.error
+            let __error = __exception.swiftError
             
             throw __error
         }
@@ -544,7 +544,7 @@ public extension DNObject {
         
         if let exceptionC {
             let exception = System_Exception(handle: exceptionC)
-            let exceptionError = exception.error
+            let exceptionError = exception.swiftError
             
             throw exceptionError
         }
@@ -571,7 +571,7 @@ public extension DNObject {
         
         if let exceptionC {
             let exception = System_Exception(handle: exceptionC)
-            let exceptionError = exception.error
+            let exceptionError = exception.swiftError
             
             throw exceptionError
         }
@@ -597,7 +597,7 @@ public extension DNObject {
         
         if let exceptionC {
             let exception = System_Exception(handle: exceptionC)
-            let exceptionError = exception.error
+            let exceptionError = exception.swiftError
             
             throw exceptionError
         }
@@ -625,7 +625,7 @@ public extension DNObject {
         
         if let exceptionC {
             let exception = System_Exception(handle: exceptionC)
-            let exceptionError = exception.error
+            let exceptionError = exception.swiftError
             
             throw exceptionError
         }
@@ -651,7 +651,7 @@ public extension DNObject {
         
         if let exceptionC {
             let exception = System_Exception(handle: exceptionC)
-            let exceptionError = exception.error
+            let exceptionError = exception.swiftError
             
             throw exceptionError
         }
@@ -677,7 +677,7 @@ public extension DNObject {
         
         if let exceptionC {
             let exception = System_Exception(handle: exceptionC)
-            let exceptionError = exception.error
+            let exceptionError = exception.swiftError
             
             throw exceptionError
         }
@@ -703,7 +703,7 @@ public extension DNObject {
         
         if let exceptionC {
             let exception = System_Exception(handle: exceptionC)
-            let exceptionError = exception.error
+            let exceptionError = exception.swiftError
             
             throw exceptionError
         }
@@ -729,7 +729,7 @@ public extension DNObject {
         
         if let exceptionC {
             let exception = System_Exception(handle: exceptionC)
-            let exceptionError = exception.error
+            let exceptionError = exception.swiftError
             
             throw exceptionError
         }
@@ -755,7 +755,7 @@ public extension DNObject {
         
         if let exceptionC {
             let exception = System_Exception(handle: exceptionC)
-            let exceptionError = exception.error
+            let exceptionError = exception.swiftError
             
             throw exceptionError
         }
@@ -781,7 +781,7 @@ public extension DNObject {
         
         if let exceptionC {
             let exception = System_Exception(handle: exceptionC)
-            let exceptionError = exception.error
+            let exceptionError = exception.swiftError
             
             throw exceptionError
         }
@@ -807,7 +807,7 @@ public extension DNObject {
         
         if let exceptionC {
             let exception = System_Exception(handle: exceptionC)
-            let exceptionError = exception.error
+            let exceptionError = exception.swiftError
             
             throw exceptionError
         }
@@ -833,7 +833,7 @@ public extension DNObject {
         
         if let exceptionC {
             let exception = System_Exception(handle: exceptionC)
-            let exceptionError = exception.error
+            let exceptionError = exception.swiftError
             
             throw exceptionError
         }
@@ -859,7 +859,7 @@ public extension DNObject {
         
         if let exceptionC {
             let exception = System_Exception(handle: exceptionC)
-            let exceptionError = exception.error
+            let exceptionError = exception.swiftError
             
             throw exceptionError
         }
@@ -1118,7 +1118,7 @@ public class DNError: LocalizedError, CustomDebugStringConvertible {
 
 extension System_Exception {
     /// Converts the targeted .NET `System.Exception` object to an `DNError` instance.
-    public var error: DNError {
+    public var swiftError: DNError {
         return DNError(exception: self)
     }
 }
@@ -1539,7 +1539,7 @@ public extension DNArray<System_Byte> {
                                                     
             if let __exceptionC {
                 let __exception = System_Exception(handle: __exceptionC)
-                let __error = __exception.error
+                let __error = __exception.swiftError
                 
                 throw __error
             }
