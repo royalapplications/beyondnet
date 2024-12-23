@@ -20,12 +20,20 @@ public struct Point
     }
 }
 
+public enum StepMode
+{
+    Over,
+    In,
+    Out,
+}
+
 // TODO: Delegates with ref parameters
 public static class DelegatesTest
 {
     public delegate int TransformIntDelegate(int i);
     // public delegate int TransformIntWithRefDelegate(ref int iRef);
-    
+    public delegate StepMode DebugEventHandler(object sender, StepMode stepMode);
+
     public static int TransformInt(
         int i,
         TransformIntDelegate intTransformer
@@ -68,4 +76,9 @@ public static class DelegatesTest
     //
     //     return result;
     // }
+
+    public static StepMode TransformStepMode(StepMode mode)
+    {
+        return mode;
+    }
 }

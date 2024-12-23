@@ -229,7 +229,7 @@ public partial class SwiftTypeSyntaxWriter
             typeInfo.IsReturning,
             typeInfo.ReturnTypeDescriptor,
             typeInfo.ReturnTypeIsOptional,
-            typeInfo.ReturnTypeIsPrimitive,
+            typeInfo.ReturnTypeIsPrimitive || typeInfo.ReturnType.IsEnum,
             typeInfo.ReturnTypeIsReadOnlySpanOfByte,
             typeDescriptorRegistry,
             out string createCFunctionFuncName
@@ -386,7 +386,7 @@ public partial class SwiftTypeSyntaxWriter
         bool isReturning,
         TypeDescriptor returnTypeDescriptor,
         bool returnTypeIsOptional,
-        bool returnTypeIsPrimitive,
+        bool returnTypeIsPrimitiveOrEnum,
         bool returnValueIsReadOnlySpanOfByte,
         TypeDescriptorRegistry typeDescriptorRegistry,
         out string createCFunctionFuncName
@@ -504,7 +504,7 @@ public partial class SwiftTypeSyntaxWriter
     
                 sb.AppendLine(fullReturnTypeConversion);
                 
-                if (!returnTypeIsPrimitive &&
+                if (!returnTypeIsPrimitiveOrEnum &&
                     !returnValueIsReadOnlySpanOfByte) {
                     string nullabilitySpecifier = returnTypeIsOptional
                         ? "?"

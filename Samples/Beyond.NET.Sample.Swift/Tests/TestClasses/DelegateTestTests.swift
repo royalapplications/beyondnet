@@ -24,6 +24,20 @@ final class DelegateTestTests: XCTestCase {
         XCTAssertEqual(result, expectedResult)
     }
     
+    func testTransformStepMode() throws {
+        var original: Beyond.NET.Sample.StepMode = .in
+        var result = try Beyond.NET.Sample.DelegatesTest.transformStepMode(original)
+        XCTAssertEqual(result, original)
+
+        original = .out
+        result = try Beyond.NET.Sample.DelegatesTest.transformStepMode(original)
+        XCTAssertEqual(result, original)
+
+        original = .over
+        result = try Beyond.NET.Sample.DelegatesTest.transformStepMode(original)
+        XCTAssertEqual(result, original)
+    }
+    
     // TODO: Delegates with ref parameters
 //    func testTransformIntWithRef() {
 //        let original: Int32 = 0
