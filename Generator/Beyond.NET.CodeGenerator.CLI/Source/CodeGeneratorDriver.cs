@@ -236,11 +236,19 @@ internal class CodeGeneratorDriver
                 Configuration.ExcludedTypeNames ?? Array.Empty<string>(),
                 assembly
             );
+
+            ParseAssemblyNames(
+                Configuration.ExcludedAssemblyNames ?? Array.Empty<string>(),
+                out HashSet<string> excludedFullAssemblyNames,
+                out HashSet<string> excludedSimpleAssemblyNames
+            );
     
             TypeCollectorSettings typeCollectorSettings = new(
                 enableGenericsSupport,
                 includedTypes,
-                excludedTypes
+                excludedTypes,
+                excludedFullAssemblyNames,
+                excludedSimpleAssemblyNames
             );
             
             Logger.LogInformation($"Collecting types in assembly");
@@ -548,6 +556,32 @@ internal class CodeGeneratorDriver
         }
         
         return types.ToArray();
+    }
+
+    private static void ParseAssemblyNames(
+        IEnumerable<string> assemblyNames,
+        out HashSet<string> excludedFullAssemblyNames,
+        out HashSet<string> excludedSimpleAssemblyNames
+    )
+    {
+        excludedFullAssemblyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        excludedSimpleAssemblyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+        foreach (string name in assemblyNames) {
+            AssemblyName assemblyName;
+            try {
+                assemblyName = new AssemblyName(name);
+            }
+            catch (Exception ex) {
+                throw new InvalidOperationException($"Cannot parse assembly nane '{name}'", ex);
+            }
+
+            if (assemblyName.FullName == assemblyName.Name) {
+                excludedSimpleAssemblyNames.Add(assemblyName.Name);
+            } else {
+                excludedFullAssemblyNames.Add(assemblyName.FullName);
+            }
+        }
     }
     
     private void WriteCodeToFileOrPrintToConsole(

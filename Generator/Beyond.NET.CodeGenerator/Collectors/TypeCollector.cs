@@ -75,6 +75,8 @@ public class TypeCollector
 
     private readonly Type[] m_includedTypes;
     private readonly Type[] m_excludedTypes;
+    private readonly HashSet<string> m_excludedFullAssemblyNames;
+    private readonly HashSet<string> m_excludedSimpleAssemblyNames;
     
     public TypeCollector(
         Assembly? assembly,
@@ -89,6 +91,9 @@ public class TypeCollector
 
         m_includedTypes = whitelist.ToArray();
         m_excludedTypes = blacklist.ToArray();
+
+        m_excludedFullAssemblyNames = settings.ExcludedFullAssemblyNames;
+        m_excludedSimpleAssemblyNames = settings.ExcludedSimpleAssemblyNames;
         
         m_assembly = assembly;
         EnableGenericsSupport = settings.EnableGenericsSupport;
@@ -128,6 +133,18 @@ public class TypeCollector
             !m_includedTypes.Contains(type)) {
             unsupportedTypes[type] = "Excluded";
             
+            return;
+        }
+
+        var assemblyName = type.Assembly.GetName();
+        if (m_excludedFullAssemblyNames.Contains(assemblyName.FullName)) {
+            unsupportedTypes[type] = $"Excluded by assembly name '{assemblyName.FullName}'";
+
+            return;
+        }
+        if (m_excludedSimpleAssemblyNames.Contains(assemblyName.Name)) {
+            unsupportedTypes[type] = $"Excluded by assembly name '{assemblyName.Name}'";
+
             return;
         }
         
