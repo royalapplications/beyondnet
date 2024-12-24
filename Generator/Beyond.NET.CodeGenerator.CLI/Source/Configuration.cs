@@ -23,5 +23,7 @@ public record Configuration(
     string[]? IncludedTypeNames,
     string[]? ExcludedTypeNames,
     
+    string[]? ExcludedAssemblyNames,
+    
     string[]? AssemblySearchPaths
 );
