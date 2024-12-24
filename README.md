@@ -230,6 +230,11 @@ The generator currently uses a configuration file where all of its options are s
       "AnotherExcludedTypeName"
   ],
 
+  "ExcludedAssemblyNames": [
+    "Assembly1, Version=4.2.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed",
+    "Assembly2"
+  ],
+
   "AssemblySearchPaths": [
       "/Path/To/Assemblies",
       "/Another/Path/To/Assemblies"
