@@ -78,12 +78,32 @@ jobs:
         cd Samples/Beyond.NET.Sample.Native
         ./publish_${{ env.SCRIPT_SUFFIX }}
 
-    - name: run Android tests (macOS)
+    - name: build Android native (macOS)
       if: "success() && matrix.env.OS == 'macOS'"
       run: |
-        pushd Samples/Beyond.NET.Sample.Native
+        cd Samples/Beyond.NET.Sample.Native
         ./publish_android_arm64
-        popd
 
-        cd Samples/Beyond.NET.Sample.Android
-        ./test-on-emulator.ps1
+    - name: run Android tests (macOS)
+      if: "success() && matrix.env.OS == 'macOS'"
+      uses: reactivecircus/android-emulator-runner@v2
+      with:
+          api-level: 31
+          arch: arm64-v8a
+          target: google_apis
+          disable-animations: true
+          force-avd-creation: false
+          emulator-boot-timeout: 120
+          emulator-options: -no-audio -no-boot-anim -no-window -no-snapshot-save -gpu off -camera-back none
+          working-directory: Samples/Beyond.NET.Sample.Android
+          script: ./gradlew connectedAndroidTest
+
+    #- name: run Android tests (macOS)
+    #  if: "success() && matrix.env.OS == 'macOS'"
+    #  run: |
+    #    pushd Samples/Beyond.NET.Sample.Native
+    #    ./publish_android_arm64
+    #    popd
+    #
+    #    cd Samples/Beyond.NET.Sample.Android
+    #    ./test-on-emulator.ps1
