@@ -55,29 +55,37 @@ jobs:
 
     - name: build C sample
       run: |
-        Samples/Beyond.NET.Sample.C/build_${{ env.SCRIPT_SUFFIX }}
+        cd Samples/Beyond.NET.Sample.C
+        ./build_${{ env.SCRIPT_SUFFIX }}
 
     - name: build Go sample
       run: |
-        Samples/Beyond.NET.Sample.Go/build_${{ env.SCRIPT_SUFFIX }}
+        cd Samples/Beyond.NET.Sample.Go
+        ./build_${{ env.SCRIPT_SUFFIX }}
 
     - name: build Swift dependencies
       run: |
-        Samples/Beyond.NET.Sample.Swift/build_dependencies
+        cd Samples/Beyond.NET.Sample.Swift
+        ./build_dependencies
 
     - name: run Swift tests (macOS)
       if: "success() && matrix.env.OS == 'macOS'"
       run: |
         sudo xcode-select --switch /Applications/Xcode_16.0.app
+
+        cd Samples/Beyond.NET.Sample.Swift
         xcodebuild -workspace BeyondNETSamplesSwift.xcworkspace -scheme BeyondNETSampleSwift test -destination "name=My Mac"
         xcodebuild -workspace BeyondNETSamplesSwift.xcworkspace -scheme BeyondNETSampleSwift test -destination "platform=iOS Simulator,name=iPhone 16,OS=18.0"
 
     - name: build native sample
       run: |
-        Samples/Beyond.NET.Sample.Native/publish_${{ env.SCRIPT_SUFFIX }}
+        cd Samples/Beyond.NET.Sample.Native
+        ./publish_${{ env.SCRIPT_SUFFIX }}
 
     - name: run Android tests (macOS)
       if: "success() && matrix.env.OS == 'macOS'"
       run: |
-        Samples/Beyond.NET.Sample.Native/publish_android_arm64
+        cd Samples/Beyond.NET.Sample.Native
+        ./publish_android_arm64
+        
         pwsh Samples/Beyond.NET.Sample.Android/test-on-emulator.ps1
