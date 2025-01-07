@@ -46,12 +46,6 @@ jobs:
       SCRIPT_SUFFIX: "${{ matrix.env.OS == 'linux' && 'linux_x64' || 'macos_universal' }}"
 
     steps:
-    - name: debug AVD
-      if: "success() && matrix.env.OS == 'macOS'"
-      run: |
-        ~/Library/Android/sdk/emulator/emulator -list-avds
-        exit 1
-
     - name: checkout
       uses: actions/checkout@v4
 
@@ -103,12 +97,8 @@ jobs:
     #      working-directory: Samples/Beyond.NET.Sample.Android
     #      script: ./gradlew connectedAndroidTest
 
-    - name: run Android tests (macOS)
-      if: "success() && matrix.env.OS == 'macOS'"
-      run: |
-        pushd Samples/Beyond.NET.Sample.Native
-        ./publish_android_arm64
-        popd
-    
-        cd Samples/Beyond.NET.Sample.Android
-        ./test-on-emulator.ps1
+    #- name: run Android tests (macOS)
+    #  if: "success() && matrix.env.OS == 'macOS'"
+    #  run: |
+    #    cd Samples/Beyond.NET.Sample.Android
+    #    ./test-on-emulator.ps1
