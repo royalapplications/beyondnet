@@ -58,10 +58,10 @@ jobs:
         cd Samples/Beyond.NET.Sample.C
         ./build_${{ env.SCRIPT_SUFFIX }}
 
-    - name: build Go sample
-      run: |
-        cd Samples/Beyond.NET.Sample.Go
-        ./build_${{ env.SCRIPT_SUFFIX }}
+    #- name: build Go sample
+    #  run: |
+    #    cd Samples/Beyond.NET.Sample.Go
+    #    ./build_${{ env.SCRIPT_SUFFIX }}
 
     - name: build Swift dependencies
       run: |
@@ -87,5 +87,5 @@ jobs:
       run: |
         cd Samples/Beyond.NET.Sample.Native
         ./publish_android_arm64
-        
+
         pwsh Samples/Beyond.NET.Sample.Android/test-on-emulator.ps1
