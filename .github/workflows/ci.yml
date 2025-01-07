@@ -83,7 +83,8 @@ jobs:
         cd Samples/Beyond.NET.Sample.Native
         ./publish_android_arm64
 
-    - name: run Android tests
+    - name: run Android tests (macOS)
+      if: "success() && matrix.env.OS == 'macOS'"
       uses: reactivecircus/android-emulator-runner@v2
       with:
           api-level: 31
