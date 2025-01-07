@@ -58,22 +58,20 @@ jobs:
         cd Samples/Beyond.NET.Sample.C
         ./build_${{ env.SCRIPT_SUFFIX }}
 
-    #- name: build Go sample
-    #  run: |
-    #    cd Samples/Beyond.NET.Sample.Go
-    #    ./build_${{ env.SCRIPT_SUFFIX }}
-
-    - name: build Swift dependencies
+    - name: build Go sample (Linux)
+      if: "success() && matrix.env.OS == 'linux'"
       run: |
-        cd Samples/Beyond.NET.Sample.Swift
-        ./build_dependencies
+        cd Samples/Beyond.NET.Sample.Go
+        ./build_${{ env.SCRIPT_SUFFIX }}
 
     - name: run Swift tests (macOS)
       if: "success() && matrix.env.OS == 'macOS'"
       run: |
+        cd Samples/Beyond.NET.Sample.Swift
+        ./build_dependencies
+
         sudo xcode-select --switch /Applications/Xcode_16.0.app
 
-        cd Samples/Beyond.NET.Sample.Swift
         xcodebuild -workspace BeyondNETSamplesSwift.xcworkspace -scheme BeyondNETSampleSwift test -destination "name=My Mac"
         xcodebuild -workspace BeyondNETSamplesSwift.xcworkspace -scheme BeyondNETSampleSwift test -destination "platform=iOS Simulator,name=iPhone 16,OS=18.0"
 
