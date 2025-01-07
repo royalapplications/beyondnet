@@ -76,6 +76,8 @@ catch {
     # if there was a failure, it's possible that the `emulator` running in the background
     # encountered an issue -- print its output before terminating
     Receive-Job $job -Keep
+    
+    throw "See emulator output above"
 }
 finally {
     # force kill emulator process
