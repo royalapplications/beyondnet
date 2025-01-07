@@ -72,6 +72,11 @@ try {
     # shut emulator down gracefully
     & $adb -s "emulator-${port}" emu kill
 }
+catch {
+    # if there was a failure, it's possible that the `emulator` running in the background
+    # encountered an issue -- print its output before terminating
+    Receive-Job $job -Keep
+}
 finally {
     # force kill emulator process
     Remove-Job $job -Force
