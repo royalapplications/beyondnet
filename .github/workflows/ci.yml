@@ -29,7 +29,7 @@ jobs:
               OS: "linux"
 
           - name: "macOS ARM64"
-            os: macos-14
+            os: macos-15
             env:
               OS: "macOS"
 
@@ -69,8 +69,6 @@ jobs:
       run: |
         cd Samples/Beyond.NET.Sample.Swift
         ./build_dependencies
-
-        sudo xcode-select --switch /Applications/Xcode_16.0.app
 
         xcodebuild -workspace BeyondNETSamplesSwift.xcworkspace -scheme BeyondNETSampleSwift test -destination "name=My Mac"
         xcodebuild -workspace BeyondNETSamplesSwift.xcworkspace -scheme BeyondNETSampleSwift test -destination "platform=iOS Simulator,name=iPhone 16,OS=18.0"
