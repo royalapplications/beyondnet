@@ -100,9 +100,5 @@ jobs:
     #- name: run Android tests (macOS)
     #  if: "success() && matrix.env.OS == 'macOS'"
     #  run: |
-    #    pushd Samples/Beyond.NET.Sample.Native
-    #    ./publish_android_arm64
-    #    popd
-    #
     #    cd Samples/Beyond.NET.Sample.Android
     #    ./test-on-emulator.ps1
