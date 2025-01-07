@@ -10,6 +10,7 @@
     <PublishAot>true</PublishAot>
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
     <EnablePreviewFeatures>true</EnablePreviewFeatures>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 
     <!-- TODO: Disabled for now to get faster build times -->
     <Nullable>disable</Nullable>

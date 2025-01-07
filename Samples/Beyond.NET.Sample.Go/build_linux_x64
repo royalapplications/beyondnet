@@ -19,11 +19,6 @@ LIBRARY_FILE_NAME="lib${LIBRARY_NAME}.so"
 
 BUILD_DIR="bin"
 
-DOTNET_PATH=`which dotnet`
-DOTNET_VERSION=`${DOTNET_PATH} --version`
-DOTNET_VERSION_MAJOR_AND_MINOR=${DOTNET_VERSION:0:3}
-DOTNET_TARGET_FRAMEWORK="net${DOTNET_VERSION_MAJOR_AND_MINOR}"
-
 echo "Making directory for ${OUTPUT_PRODUCT_NAME} build"
 mkdir -p "${BUILD_DIR}"
 
@@ -32,12 +27,12 @@ OUTPUT_FILE_PATH_X64="${OUTPUT_PRODUCT_NAME}"
 ./build_dependencies_linux_x64
 
 rm -f "${LIBRARY_FILE_NAME}"
-ln -s "../Beyond.NET.Sample.Native/bin/Release/${DOTNET_TARGET_FRAMEWORK}/linux-x64/publish/${LIBRARY_FILE_NAME}" "${LIBRARY_FILE_NAME}"
+ln -s "../Beyond.NET.Sample.Native/bin/Release/linux-x64/publish/${LIBRARY_FILE_NAME}" "${LIBRARY_FILE_NAME}"
 
 cd "${BUILD_DIR}"
 
 echo "Copying native library"
-cp "../../Beyond.NET.Sample.Native/bin/Release/${DOTNET_TARGET_FRAMEWORK}/linux-x64/publish/${LIBRARY_FILE_NAME}" "${LIBRARY_FILE_NAME}"
+cp "../../Beyond.NET.Sample.Native/bin/Release/linux-x64/publish/${LIBRARY_FILE_NAME}" "${LIBRARY_FILE_NAME}"
 
 echo "Building ${OUTPUT_PRODUCT_NAME} for x64"
 GOARCH=amd64 go build -o "${OUTPUT_FILE_PATH_X64}" ../

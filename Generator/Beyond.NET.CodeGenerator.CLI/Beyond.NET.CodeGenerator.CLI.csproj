@@ -10,6 +10,7 @@
     <LangVersion>latest</LangVersion>
     <PublishSelfContained>true</PublishSelfContained>
     <PublishSingleFile>true</PublishSingleFile>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 <!--    <PublishTrimmed>true</PublishTrimmed>-->
   </PropertyGroup>
 

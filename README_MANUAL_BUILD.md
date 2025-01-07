@@ -27,7 +27,7 @@
     - Select "Add other... - Add files..." and select the native dylib (ie. `MyNativeLib.dylib`)
 - Try to build the project. If it fails, you might need to adjust either your header or library search paths in the project settings.
     - If Xcode fails to link the native dylib (the error looks something like this: `Library not found for -lMyNativeLib`) you need to adjust "Build Settings - Library Search Paths" in you project settings to point to the path where the library is located.
-        - For example, if you the native library is located one level below your Xcode project in a folder called "MyLibNative/bin/Release/net9.0/osx-universal/publish" use this: `$(PROJECT_DIR)/../MyLibNative/bin/Release/net9.0/osx-universal/publish`)
+        - For example, if the native library is located one level below your Xcode project in a folder called "MyLibNative/bin/Release/net9.0/osx-universal/publish" use this: `$(PROJECT_DIR)/../MyLibNative/bin/Release/net9.0/osx-universal/publish`)
     - If Xcode complains about being unable to find the generated C header, adjust "Build Settings - Header Search Paths" to point to the path where the generated header is located.
         - For example, if your header is one level below your Xcode project in a folder called "Generated" use this: `$(PROJECT_DIR)/../Generated`
 - You're now ready to call any of the APIs that bindings were generated for.

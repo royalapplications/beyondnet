@@ -13,6 +13,9 @@ PREV_TMPDIR=$TMPDIR
 PREV_USER=$USER
 PREV_PROJECT_DIR=$PROJECT_DIR
 
+DOTNET_PATH=`command -v dotnet`
+DOTNET_PATH=`dirname "${DOTNET_PATH}"`
+
 # Unset all variables
 for ENV in $(env | awk -F "=" '{print $1}'); do unset $ENV; done
 
@@ -27,6 +30,4 @@ export TMPDIR=$PREV_TMPDIR
 export USER=$PREV_USER
 export PROJECT_DIR=$PREV_PROJECT_DIR
 
-# Make sure .NET path is on the PATH
-DOTNET_PATH="/usr/local/share/dotnet"
-export PATH="${DOTNET_PATH}:/usr/local/bin:/usr/bin:/bin:/bin:/usr/sbin:/sbin"
+export PATH="${DOTNET_PATH}:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
