@@ -83,5 +83,4 @@ jobs:
       run: |
         cd Samples/Beyond.NET.Sample.Native
         ./publish_android_arm64
-
-        pwsh Samples/Beyond.NET.Sample.Android/test-on-emulator.ps1
+        ./test-on-emulator.ps1
