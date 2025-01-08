@@ -137,13 +137,20 @@ public class TypeCollector
         }
 
         var assemblyName = type.Assembly.GetName();
-        if (m_excludedFullAssemblyNames.Contains(assemblyName.FullName)) {
-            unsupportedTypes[type] = $"Excluded by assembly name '{assemblyName.FullName}'";
+        
+        var fullNameOfAssemblyName = assemblyName.FullName;
+        
+        if (m_excludedFullAssemblyNames.Contains(fullNameOfAssemblyName)) {
+            unsupportedTypes[type] = $"Excluded by assembly name '{fullNameOfAssemblyName}'";
 
             return;
         }
-        if (m_excludedSimpleAssemblyNames.Contains(assemblyName.Name)) {
-            unsupportedTypes[type] = $"Excluded by assembly name '{assemblyName.Name}'";
+        
+        var nameOfAssemblyName = assemblyName.Name;
+        
+        if (!string.IsNullOrEmpty(nameOfAssemblyName) &&
+            m_excludedSimpleAssemblyNames.Contains(nameOfAssemblyName)) {
+            unsupportedTypes[type] = $"Excluded by assembly name '{nameOfAssemblyName}'";
 
             return;
         }
