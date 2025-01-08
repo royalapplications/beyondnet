@@ -90,14 +90,14 @@ public class Hello
 ```
 
 - Compile the .NET class library: `dotnet publish`.
-- Note the published dll's output path (should be something like this `/Path/To/BeyondDemo/bin/Release/publish/BeyondDemo.dll`).
+- Note the published dll's output path (should be something like this `/Path/To/BeyondDemo/bin/Release/net9.0/publish/BeyondDemo.dll`).
 - Create a config file for Beyond.NET: `touch Config.json`.
 - Open `Config.json` in a text editor.
 - Replace its contents with this:
 
 ```json
 {
-    "AssemblyPath": "bin/Release/publish/BeyondDemo.dll",
+    "AssemblyPath": "bin/Release/net9.0/publish/BeyondDemo.dll",
 
     "Build": {
         "Target": "apple-universal"
@@ -110,8 +110,8 @@ public class Hello
 - Run the generator: `beyondnetgen Config.json`.
 - On a Mac Studio M2 Ultra, this takes a little more than a minute while on an 8-Core Intel Xeon iMac Pro, it takes around 3 minutes. So it might be worth getting some coffee depending on your hardware. (TODO: Outdated info, as now with parallel building support the times are way better)
 - The individual code generation and builds steps are shown in the terminal.
-- The last printed line should include the path where the build output has been written to (ie. `Build Output has been written to "/Path/To/BeyondDemo/bin/Release/publish"`).
-- Check the contents of the build output path: `ls bin/Release/publish`
+- The last printed line should include the path where the build output has been written to (ie. `Build Output has been written to "/Path/To/BeyondDemo/bin/Release/net9.0/publish"`).
+- Check the contents of the build output path: `ls bin/Release/net9.0/publish`
 - It should include an XCFramework bundle called `BeyondDemoKit.xcframework`.
 - Congratulations, you now have a fully functional native version of your .NET library that can be consumed by macOS and iOS Xcode projects.
 
@@ -131,7 +131,7 @@ Now that we have an XCFramework containing binaries for macOS and iOS, we can in
 - Select the `General` tab.
 - Under `Frameworks, Libraries and Embedded Content`, click the `+` button.
 - Select `Add Other... - Add Files...`.
-- Navigate one level up in the file picker, then go to `bin/Release/publish` (depending on your output path).
+- Navigate one level up in the file picker, then go to `bin/Release/net9.0/publish` (depending on your output path).
 - Select `BeyondDemoKit.xcframework`.
 - The XCFramework should now show up and it should already be configured to `Embed & Sign`.
 - Select `ContentView.swift` in the project navigator.
