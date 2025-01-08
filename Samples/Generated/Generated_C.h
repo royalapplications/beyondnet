@@ -1,5 +1,5 @@
-// Number of generated types: 1631
-// Number of generated members: 7723
+// Number of generated types: 1633
+// Number of generated members: 7728
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -3239,6 +3239,13 @@ typedef enum __attribute__((enum_extensibility(open))): int32_t {
 	System_IO_MatchCasing_CaseSensitive = 1,
 	System_IO_MatchCasing_CaseInsensitive = 2
 } System_IO_MatchCasing_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	Beyond_NET_Sample_StepMode_Over = 0,
+	Beyond_NET_Sample_StepMode_In = 1,
+	Beyond_NET_Sample_StepMode_Out = 2
+} Beyond_NET_Sample_StepMode_t;
 
 
 typedef enum __attribute__((enum_extensibility(open))): uint32_t {
@@ -6500,6 +6507,16 @@ typedef void (*System_Xml_Serialization_UnreferencedObjectEventHandler_CFunction
 );
 
 
+typedef void* Beyond_NET_Sample_DelegatesTest_DebugEventHandler_t;
+typedef void (*Beyond_NET_Sample_DelegatesTest_DebugEventHandler_CDestructorFunction_t)(void* context);
+
+typedef Beyond_NET_Sample_StepMode_t (*Beyond_NET_Sample_DelegatesTest_DebugEventHandler_CFunction_t)(
+	void* context,
+	System_Object_t _Nonnull sender,
+	Beyond_NET_Sample_StepMode_t stepMode
+);
+
+
 
 #pragma mark - END Type Definitions
 
@@ -7047,6 +7064,14 @@ System_IO_MatchCasing_TypeOf(
 );
 
 #pragma mark - END APIs of System.IO.MatchCasing
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.StepMode
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_StepMode_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.StepMode
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.NiceLevels
 System_Type_t _Nonnull /* System.Type */
@@ -13145,6 +13170,12 @@ System_Reflection_Assembly_CreateQualifiedName(
 System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */
 System_Reflection_Assembly_GetAssembly(
 	System_Type_t _Nonnull /* System.Type */ type,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Reflection_Assembly_SetEntryAssembly(
+	System_Reflection_Assembly_t _Nullable /* System.Reflection.Assembly */ assembly,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
@@ -44914,6 +44945,12 @@ Beyond_NET_Sample_DelegatesTest_TransformPoint(
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
+Beyond_NET_Sample_StepMode_t /* Beyond.NET.Sample.StepMode */
+Beyond_NET_Sample_DelegatesTest_TransformStepMode(
+	Beyond_NET_Sample_StepMode_t /* Beyond.NET.Sample.StepMode */ mode,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
 System_Type_t _Nonnull /* System.Type */
 Beyond_NET_Sample_DelegatesTest_TypeOf(
 	void
@@ -63086,6 +63123,47 @@ System_Xml_Serialization_UnreferencedObjectEventHandler_Destroy(
 );
 
 #pragma mark - END APIs of System.Xml.Serialization.UnreferencedObjectEventHandler
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.DelegatesTest.DebugEventHandler
+Beyond_NET_Sample_DelegatesTest_DebugEventHandler_t _Nonnull /* Beyond.NET.Sample.DelegatesTest.DebugEventHandler */
+Beyond_NET_Sample_DelegatesTest_DebugEventHandler_Create(
+	const void* context,
+	Beyond_NET_Sample_DelegatesTest_DebugEventHandler_CFunction_t function,
+	Beyond_NET_Sample_DelegatesTest_DebugEventHandler_CDestructorFunction_t destructorFunction
+);
+
+Beyond_NET_Sample_StepMode_t
+Beyond_NET_Sample_DelegatesTest_DebugEventHandler_Invoke(
+	Beyond_NET_Sample_DelegatesTest_DebugEventHandler_t /* Beyond.NET.Sample.DelegatesTest.DebugEventHandler */ self, System_Object_t _Nonnull /* System.Object */ sender,
+	Beyond_NET_Sample_StepMode_t /* Beyond.NET.Sample.StepMode */ stepMode, System_Exception_t* /* System.Exception */ outException
+);
+
+const void*
+Beyond_NET_Sample_DelegatesTest_DebugEventHandler_Context_Get(
+	Beyond_NET_Sample_DelegatesTest_DebugEventHandler_t /* Beyond.NET.Sample.DelegatesTest.DebugEventHandler */ self
+);
+
+Beyond_NET_Sample_DelegatesTest_DebugEventHandler_CFunction_t
+Beyond_NET_Sample_DelegatesTest_DebugEventHandler_CFunction_Get(
+	Beyond_NET_Sample_DelegatesTest_DebugEventHandler_t /* Beyond.NET.Sample.DelegatesTest.DebugEventHandler */ self
+);
+
+Beyond_NET_Sample_DelegatesTest_DebugEventHandler_CDestructorFunction_t
+Beyond_NET_Sample_DelegatesTest_DebugEventHandler_CDestructorFunction_Get(
+	Beyond_NET_Sample_DelegatesTest_DebugEventHandler_t /* Beyond.NET.Sample.DelegatesTest.DebugEventHandler */ self
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_DelegatesTest_DebugEventHandler_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_DelegatesTest_DebugEventHandler_Destroy(
+	Beyond_NET_Sample_DelegatesTest_DebugEventHandler_t _Nullable /* Beyond.NET.Sample.DelegatesTest.DebugEventHandler */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.DelegatesTest.DebugEventHandler
 
 
 #pragma mark - END APIs
