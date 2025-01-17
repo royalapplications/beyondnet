@@ -65,6 +65,11 @@ jobs:
         cd Samples/Beyond.NET.Sample.C
         ./build_${{ matrix.env.SCRIPT_SUFFIX }}
 
+    - name: run C sample
+      run: |
+        cd Samples/Beyond.NET.Sample.C
+        ./bin/transform 'abc123üiı'
+ü
     - name: build Go sample (Linux)
       if: "success() && matrix.env.OS == 'linux'"
       run: |
