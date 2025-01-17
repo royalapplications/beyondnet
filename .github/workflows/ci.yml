@@ -27,11 +27,19 @@ jobs:
             os: ubuntu-latest
             env:
               OS: "linux"
+              SCRIPT_SUFFIX: "linux_arm64"
+
+          - name: "Ubuntu ARM64"
+            os: ubuntu-24-arm64-gh
+            env:
+              OS: "linux"
+              SCRIPT_SUFFIX: "linux_x64"
 
           - name: "macOS ARM64"
             os: macos-15
             env:
               OS: "macOS"
+              SCRIPT_SUFFIX: "macos_universal"
 
     runs-on: "${{ matrix.os }}"
 
@@ -43,7 +51,6 @@ jobs:
       DOTNET_NOLOGO: 1
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
-      SCRIPT_SUFFIX: "${{ matrix.env.OS == 'linux' && 'linux_x64' || 'macos_universal' }}"
 
     steps:
     - name: checkout
@@ -56,13 +63,13 @@ jobs:
     - name: build C sample
       run: |
         cd Samples/Beyond.NET.Sample.C
-        ./build_${{ env.SCRIPT_SUFFIX }}
+        ./build_${{ matrix.env.SCRIPT_SUFFIX }}
 
     - name: build Go sample (Linux)
       if: "success() && matrix.env.OS == 'linux'"
       run: |
         cd Samples/Beyond.NET.Sample.Go
-        ./build_${{ env.SCRIPT_SUFFIX }}
+        ./build_${{ matrix.env.SCRIPT_SUFFIX }}
 
     - name: run Swift tests (macOS)
       if: "success() && matrix.env.OS == 'macOS'"
@@ -76,7 +83,7 @@ jobs:
     - name: build native sample
       run: |
         cd Samples/Beyond.NET.Sample.Native
-        ./publish_${{ env.SCRIPT_SUFFIX }}
+        ./publish_${{ matrix.env.SCRIPT_SUFFIX }}
 
     - name: build Android native
       run: |
