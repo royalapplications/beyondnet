@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -e
+
+cd "../Beyond.NET.Sample.Managed"
+./publish_managed
+
+cd "../../Generator/Beyond.NET.CodeGenerator.CLI"
+./publish_linux_arm64
+
+cd "../../Samples"
+echo "Generating .NET Native Bindings"
+../Generator/Beyond.NET.CodeGenerator.CLI/bin/Release/linux-arm64/publish/beyondnetgen "Beyond.NET.Sample_Config.json"
+
+cd "Beyond.NET.Sample.Native"
+./publish_linux_arm64

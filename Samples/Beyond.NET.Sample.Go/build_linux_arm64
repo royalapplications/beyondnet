@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+set -e
+
+CGO_ENABLED=1
+export CGO_ENABLED
+
+GOOS=linux
+export GOOS
+
+CC=clang
+export CC
+
+go clean -modcache
+
+OUTPUT_PRODUCT_NAME="gobeyond"
+LIBRARY_NAME="BeyondDotNETSampleNative"
+LIBRARY_FILE_NAME="lib${LIBRARY_NAME}.so"
+
+BUILD_DIR="bin"
+
+echo "Making directory for ${OUTPUT_PRODUCT_NAME} build"
+mkdir -p "${BUILD_DIR}"
+
+OUTPUT_FILE_PATH_ARM64="${OUTPUT_PRODUCT_NAME}"
+
+./build_dependencies_linux_arm64
+
+rm -f "${LIBRARY_FILE_NAME}"
+ln -s "../Beyond.NET.Sample.Native/bin/Release/linux-arm64/publish/${LIBRARY_FILE_NAME}" "${LIBRARY_FILE_NAME}"
+
+cd "${BUILD_DIR}"
+
+echo "Copying native library"
+cp "../../Beyond.NET.Sample.Native/bin/Release/linux-arm64/publish/${LIBRARY_FILE_NAME}" "${LIBRARY_FILE_NAME}"
+
+echo "Building ${OUTPUT_PRODUCT_NAME} for ARM64"
+GOARCH=arm64 go build -o "${OUTPUT_FILE_PATH_ARM64}" ../
