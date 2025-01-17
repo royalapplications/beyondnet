@@ -27,13 +27,13 @@ jobs:
             os: ubuntu-latest
             env:
               OS: "linux"
-              SCRIPT_SUFFIX: "linux_arm64"
+              SCRIPT_SUFFIX: "linux_x64"
 
           - name: "Ubuntu ARM64"
             os: ubuntu-24-arm64-gh
             env:
               OS: "linux"
-              SCRIPT_SUFFIX: "linux_x64"
+              SCRIPT_SUFFIX: "linux_arm64"
 
           - name: "macOS ARM64"
             os: macos-15
