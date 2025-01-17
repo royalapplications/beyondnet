@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -e
+
+cd "bin"
+
+output=$(./transform 'abc123üi')
+expected_output=$(echo -e "Original: abc123üi\nTransformed: ABC123ÜI\nDestroying transformer")
+
+if [ "${output}" == "${expected_output}" ]; then
+    echo "Success: Output is as expected."
+    echo "${output}"
+
+    exit 0
+else
+    echo "Error: Output is not as expected."
+    echo ""
+    echo "Expected output:"
+    echo "${expected_output}"
+    echo ""
+    echo "Actual output:"
+    echo "${output}"
+
+    exit 1
+fi
