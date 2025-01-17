@@ -186,6 +186,7 @@ public class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWriter
             var valueType = value.GetType();
 
             if (valueType == typeof(int) ||
+                valueType == typeof(long) ||
                 valueType == typeof(sbyte) ||
                 valueType == typeof(byte) ||
                 valueType == typeof(ushort) ||
