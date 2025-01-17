@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -e
+
+OUTPUT_PRODUCT_NAME="libBeyondDotNETSampleNative"
+BUILD_CONFIGURATION="Release"
+
+OUTPUT_FILE_NAME="${OUTPUT_PRODUCT_NAME}.so"
+
+VERBOSITY_LEVEL="normal"
+
+RUNTIME_IDENTIFIER_ARM64="linux-arm64"
+
+BIN_DIR="bin"
+PUBLISH_DIR="publish"
+
+ARM64_BUILD_DIR="${BIN_DIR}/${BUILD_CONFIGURATION}/${RUNTIME_IDENTIFIER_ARM64}/${PUBLISH_DIR}"
+
+ARM64_FILE_PATH="${ARM64_BUILD_DIR}/${OUTPUT_FILE_NAME}"
+
+echo "Cleaning ${OUTPUT_PRODUCT_NAME}"
+dotnet clean /p:Configuration=Release
+
+echo "Building ${OUTPUT_PRODUCT_NAME} for ARM64"
+dotnet publish -r ${RUNTIME_IDENTIFIER_ARM64} -v "${VERBOSITY_LEVEL}"

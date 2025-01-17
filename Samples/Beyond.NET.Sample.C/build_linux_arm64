@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+set -e
+
+OUTPUT_PRODUCT_NAME="transform"
+LIBRARY_NAME="BeyondDotNETSampleNative"
+LIBRARY_FILE_NAME="lib${LIBRARY_NAME}.so"
+C_FILE_NAME="transform.c"
+
+BUILD_DIR="bin"
+
+echo "Making directory for ${OUTPUT_PRODUCT_NAME} build"
+mkdir -p "${BUILD_DIR}"
+
+OUTPUT_FILE_PATH_ARM64="${OUTPUT_PRODUCT_NAME}"
+
+C_HEADER_FILE_NAME="Generated_C.h"
+
+./build_dependencies_linux_arm64
+
+cd "${BUILD_DIR}"
+
+echo "Copying native library"
+cp "../../Beyond.NET.Sample.Native/bin/Release/linux-arm64/publish/${LIBRARY_FILE_NAME}" "${LIBRARY_FILE_NAME}"
+
+echo "Copying C header file"
+cp "../../Generated/${C_HEADER_FILE_NAME}" "${C_HEADER_FILE_NAME}"
+
+echo "Copying C file"
+cp "../${C_FILE_NAME}" "${C_FILE_NAME}"
+
+echo "Building ${OUTPUT_PRODUCT_NAME} for ARM64"
+clang -Wl,-rpath,. -L. -l${LIBRARY_NAME} -target "arm64-linux-gnu" -o "${OUTPUT_FILE_PATH_ARM64}" "${C_FILE_NAME}"
+
+echo "Deleting ${C_HEADER_FILE_NAME}"
+rm "${C_HEADER_FILE_NAME}"
+
+echo "Deleting ${C_FILE_NAME}"
+rm "${C_FILE_NAME}"
