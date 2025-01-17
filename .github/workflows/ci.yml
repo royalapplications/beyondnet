@@ -30,7 +30,7 @@ jobs:
               SCRIPT_SUFFIX: "linux_x64"
 
           - name: "Ubuntu ARM64"
-            os: ubuntu-24-arm64-gh
+            os: ubuntu-24.04-arm
             env:
               OS: "linux"
               SCRIPT_SUFFIX: "linux_arm64"
