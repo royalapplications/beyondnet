@@ -30,7 +30,7 @@ echo "Copying C file"
 cp "../${C_FILE_NAME}" "${C_FILE_NAME}"
 
 echo "Building ${OUTPUT_PRODUCT_NAME} for x64"
-clang -Wl,-rpath,. -L. -l${LIBRARY_NAME} -arch "x86_64" -o "${OUTPUT_FILE_PATH_X64}" "${C_FILE_NAME}"
+clang -Wl,-rpath,. -L. -l${LIBRARY_NAME} -target "x86_64-linux-gnu" -o "${OUTPUT_FILE_PATH_X64}" "${C_FILE_NAME}"
 
 echo "Deleting ${C_HEADER_FILE_NAME}"
 rm "${C_HEADER_FILE_NAME}"
