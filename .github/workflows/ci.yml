@@ -86,6 +86,7 @@ jobs:
         ./publish_${{ matrix.env.SCRIPT_SUFFIX }}
 
     - name: build Android native
+      if: "success() && matrix.env.SCRIPT_SUFFIX != 'linux_arm64'"
       run: |
         cd Samples/Beyond.NET.Sample.Native
         ./publish_android_arm64
