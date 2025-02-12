@@ -1,0 +1,26 @@
+﻿<Solution>
+  <Folder Name="/Builder/">
+    <Project Path="Builder\Beyond.NET.Builder.Apple\Beyond.NET.Builder.Apple.csproj" />
+    <Project Path="Builder\Beyond.NET.Builder.DotNET\Beyond.NET.Builder.DotNET.csproj" />
+    <Project Path="Builder\Beyond.NET.Builder\Beyond.NET.Builder.csproj" />
+  </Folder>
+  <Folder Name="/Core/">
+    <Project Path="Core\Beyond.NET.Core\Beyond.NET.Core.csproj" />
+  </Folder>
+  <Folder Name="/Generator/">
+    <Project Path="Generator\Beyond.NET.CodeGenerator.CLI\Beyond.NET.CodeGenerator.CLI.csproj" />
+    <Project Path="Generator\Beyond.NET.CodeGenerator\Beyond.NET.CodeGenerator.csproj" />
+  </Folder>
+  <Folder Name="/Resources/">
+    <File Path="LICENSE" />
+    <File Path="README_MANUAL_BUILD.md" />
+    <File Path="README.md" />
+    <File Path="RELEASE_NOTES.md" />
+  </Folder>
+  <Folder Name="/Samples/">
+    <Project Path="Samples\Beyond.NET.Sample.Managed\Beyond.NET.Sample.Managed.csproj" />
+    <Project Path="Samples\Beyond.NET.Sample.Native\Beyond.NET.Sample.Native.csproj" />
+    <File Path="Samples\Beyond.NET.Sample_Config.json" />
+    <File Path="Samples\Beyond.NET.Sample_BuildConfig.json" />
+  </Folder>
+</Solution>
