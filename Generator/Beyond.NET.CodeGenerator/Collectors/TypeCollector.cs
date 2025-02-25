@@ -474,6 +474,28 @@ public class TypeCollector
                 return false;
             }
         }
+
+        if (type.IsDelegate()) {
+            MethodInfo? invokeMethod = type.GetDelegateInvokeMethod();
+
+            if (invokeMethod is not null) {
+                var delegateReturnType = invokeMethod.ReturnType;
+    
+                if (!IsSupportedType(delegateReturnType)) {
+                    unsupportedReason = "Unsupported delegate return type";
+                    return false;
+                }
+                
+                var delegateParameters = invokeMethod.GetParameters();
+    
+                foreach (var delegateParameter in delegateParameters) {
+                    if (!IsSupportedType(delegateParameter.ParameterType)) {
+                        unsupportedReason = "Unsupported delegate paramter type";
+                        return false;        
+                    }
+                }
+            }
+        }
             
         if (m_excludedTypes.Contains(type)) {
             unsupportedReason = "Is unsupported Type";
