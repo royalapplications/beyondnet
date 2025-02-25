@@ -454,10 +454,16 @@ public class TypeCollector
         if (type.IsArray) {
             Type? elementType = type.GetElementType();
 
-            if (elementType is not null &&
-                elementType.IsGenericType) {
-                unsupportedReason = "Is Array of Generic Type";
-                return false;
+            if (elementType is not null) {
+                if (elementType.IsGenericType) {
+                    unsupportedReason = "Is Array of Generic Type";
+                    return false;
+                } else if (elementType.IsInterface) {
+                    // TODO: Skipped for now because of problems with DNArray<T> in Swift (maybe Kotlin as well; C should be fine)
+                    
+                    unsupportedReason = "Is Array of Interface Type";
+                    return false;
+                }
             }
         }
 

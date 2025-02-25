@@ -81,4 +81,16 @@ public class ArrayTests
         SByte.MinValue, 1, 2, sbyte.MaxValue
     ];
     #endregion ArrayOfBytes
+
+    #region ArrayOfInterfaces
+    public IAnimal[] ArrayOfInterfaces { get; set; } = [
+        new Cat(), new Dog()
+    ];
+    #endregion ArrayOfInterfaces
+    
+    #region ArrayOfInterfaces
+    public IAnimal?[] ArrayOfNullableInterfaces { get; set; } = [
+        null, new Dog()
+    ];
+    #endregion ArrayOfInterfaces
 }
