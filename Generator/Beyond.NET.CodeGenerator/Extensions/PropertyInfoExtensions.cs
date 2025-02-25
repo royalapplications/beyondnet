@@ -11,10 +11,20 @@ public static class PropertyInfoExtensions
         if (setterMethod is not null) {
             var isExternalInitType = typeof(System.Runtime.CompilerServices.IsExternalInit);
             var requiredCustomModifiers = setterMethod.ReturnParameter.GetRequiredCustomModifiers();
-            bool isInitOnly = requiredCustomModifiers.Contains(isExternalInitType);
+            bool containsIsExternalInitType = requiredCustomModifiers.Contains(isExternalInitType);
 
-            if (isInitOnly) {
+            if (containsIsExternalInitType) {
                 return null;
+            }
+
+            var isExternalInitTypeFullName = isExternalInitType.FullName;
+
+            foreach (var requiredCustomModifier in requiredCustomModifiers) {
+                var requiredCustomModifierTypeFullName = requiredCustomModifier.FullName;
+
+                if (requiredCustomModifierTypeFullName == isExternalInitTypeFullName) {
+                    return null;
+                }
             }
         }
         
