@@ -161,7 +161,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                     if (nonByRefParameterType.IsArray) {
                         generatedName = string.Empty;
                         
-                        return "// TODO: Generic Methods with out/in/ref parameters that are arrays are not supported";    
+                        return "// TODO: Generic Methods with out/in/ref parameters that are arrays are not supported";
                     }
                 }
             }
@@ -182,7 +182,18 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             bool isActuallyOverridden = methodInfo.IsOverridden(out bool overrideNullabilityIsCompatible);
 
             if (isActuallyOverridden) {
-                if (overrideNullabilityIsCompatible) {
+                if (memberKind == MemberKind.FieldGetter ||
+                    memberKind == MemberKind.FieldSetter ||
+                    memberKind == MemberKind.PropertyGetter ||
+                    memberKind == MemberKind.PropertySetter) {
+                    if (overrideNullabilityIsCompatible) {
+                        treatAsOverridden = true;
+                    } else {
+                        generatedName = string.Empty;
+                        
+                        return "// TODO: Overridden property or field with incompatible nullability";
+                    }
+                } else { // Method
                     treatAsOverridden = true;
                 }
             } else {
