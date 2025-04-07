@@ -1,5 +1,14 @@
 # Beyond.NET Release Notes
 
+## Version 0.5 (Alpha)
+- .NET: Updated to 9.0.202
+- General: Bugfixes related to nullability
+- General: Increase likelyness of detecting init-only properties
+- Configuration: Added `ExcludedAssemblyNames` as a configuration option
+- Swift: Improved enum support in .NET delegates
+- Kotlin: Compatibility with Kotlin 2.0
+- Kotlin: Many improvements and bugfixes
+
 ## Version 0.4 (Alpha)
 - Kotlin: Rudimentary Kotlin/JNA support (see [Building the sample for Android on Linux](https://github.com/royalapplications/beyondnet/issues/80) and [Kotlin To-Do's](https://github.com/royalapplications/beyondnet/issues/81))
 - Swift: XML Documentation is now extracted and applied to generated bindings
