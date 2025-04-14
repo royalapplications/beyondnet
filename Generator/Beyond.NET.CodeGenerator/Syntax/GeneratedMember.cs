@@ -5,7 +5,7 @@ namespace Beyond.NET.CodeGenerator.Syntax;
 public class GeneratedMember
 {
     private Dictionary<CodeLanguage, string> m_generatedNames = new();
-    
+
     public MemberKind MemberKind { get; }
     public MemberInfo? Member { get; }
     public bool MayThrow { get; }
@@ -20,7 +20,7 @@ public class GeneratedMember
             memberKind == MemberKind.Automatic) {
             throw new Exception("Either member must be not null or memberKind must be something other than Automatic");
         }
-        
+
         MemberKind = memberKind;
         Member = member;
         MayThrow = mayThrow;

@@ -16,7 +16,7 @@ public partial class BuiltInTypeDescriptors
                     { CodeLanguage.KotlinJNA, "Pointer" }
                 }
             );
-        
+
             return descriptor;
         }
     }

@@ -147,21 +147,21 @@ struct ContentView: View {
             Text("\(greeting(for: "You"))")
         }
     }
-    
+
     func greeting(for name: String) -> String {
         do {
             // Convert the Swift String into a .NET System.String
             let nameDN = name.dotNETString()
-            
+
             // Create an instance of the .NET class "Hello"
             let hello = try BeyondDemo.Hello(nameDN)
-            
+
             // Get a .NET System.String containing the greeting
             let theGreetingDN = try hello.getGreeting()
-            
+
             // Convert the .NET System.String to a Swift String
             let theGreeting = theGreetingDN.string()
-            
+
             // Return the greeting
             return theGreeting
         } catch {

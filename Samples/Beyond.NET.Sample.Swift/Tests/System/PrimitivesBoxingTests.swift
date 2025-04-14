@@ -5,23 +5,23 @@ final class PrimitivesBoxingTests: XCTestCase {
     override class func setUp() {
         Self.sharedSetUp()
     }
-    
+
     override class func tearDown() {
         Self.sharedTearDown()
     }
-    
+
     func testBool() {
         boxAndUnbox(value: true,
                     expectedTypeName: System.Boolean.fullTypeName,
 					boxFunc: { $0.dotNETObject() },
                     unboxFunc: { try $0.castToBool() })
-        
+
         boxAndUnbox(value: false,
                     expectedTypeName: System.Boolean.fullTypeName,
 					boxFunc: { $0.dotNETObject() },
                     unboxFunc: { try $0.castToBool() })
     }
-    
+
     func testFloat() {
         boxAndUnbox(value: -123.123 as Float,
                     expectedTypeName: System.Single.fullTypeName,
@@ -99,88 +99,88 @@ private extension PrimitivesBoxingTests {
                         boxFunc: (_ input: T) -> System.Object?,
                         unboxFunc: (_ input: System.Object) throws -> T?) where T: Equatable {
         let valueTypeName = expectedTypeName.dotNETString()
-        
+
         guard let valueType = try? System_Type.getType(valueTypeName) else {
             XCTFail("System.Type.GetType should not throw and return an instance")
-            
+
             return
         }
-        
+
         guard let valueObject = boxFunc(value) else {
             XCTFail("Should return an instance")
-            
+
             return
         }
-        
+
         guard let valueObjectType = try? valueObject.getType() else {
             XCTFail("System.Object.GetType should not throw and return an instance")
-            
+
             return
         }
-        
+
         guard let numberObjectTypeName = try? valueObjectType.fullName?.string() else {
             XCTFail("System.Type.FullName getter should not throw and return an instance")
-            
+
             return
         }
-        
+
         XCTAssertEqual(expectedTypeName, numberObjectTypeName)
-        
+
         let valueRet: T?
-        
+
         do {
             valueRet = try unboxFunc(valueObject)
         } catch {
             XCTFail("Should not throw")
-            
+
             return
         }
-        
+
         XCTAssertEqual(value, valueRet)
-        
+
         guard let systemObject = try? System.Object() else {
             XCTFail("System.Object ctor should return an instance")
-            
+
             return
         }
-        
+
         do {
             _ = try unboxFunc(systemObject)
-            
+
             XCTFail("Should throw")
-            
+
             return
         } catch { }
-        
+
         let arrayLength: Int32 = 1
-        
+
         guard let array = try? System.Array.createInstance(valueType,
                                                            arrayLength) else {
             XCTFail("System.Array.CreateInstance should not throw and return an instance")
-            
+
             return
         }
-        
+
         XCTAssertNoThrow(try array.setValue(valueObject,
                                             0 as Int32))
-        
+
         guard let valueObjectRetFromArray = try? array.getValue(0 as Int32) else {
             XCTFail("System.Array.GetValue should not throw and return an instance")
-            
+
             return
         }
-        
+
         let equal = valueObject == valueObjectRetFromArray
-        
+
         XCTAssertTrue(equal)
-        
+
         do {
             let valueRetFromArray = try unboxFunc(valueObjectRetFromArray)
-            
+
             XCTAssertEqual(value, valueRetFromArray)
         } catch {
             XCTFail("Should not throw")
-            
+
             return
         }
     }

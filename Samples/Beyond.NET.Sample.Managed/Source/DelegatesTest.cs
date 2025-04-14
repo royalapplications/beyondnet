@@ -56,17 +56,17 @@ public static class DelegatesTest
 
     public delegate Point PointTransformDelegate(Point point);
     // public delegate Point PointTransformWithRefDelegate(ref Point pointRef);
-    
+
     public static Point TransformPoint(
         Point point,
         PointTransformDelegate pointTransformer
     )
     {
         Point result = pointTransformer(point);
-    
+
         return result;
     }
-    
+
     // public static Point TransformRefPoint(
     //     ref Point pointRef,
     //     PointTransformWithRefDelegate pointTransformer

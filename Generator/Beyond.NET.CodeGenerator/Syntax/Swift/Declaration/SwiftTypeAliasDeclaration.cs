@@ -21,7 +21,7 @@ public struct SwiftTypeAliasDeclaration
     {
         const string typealias = "typealias";
         const string equals = "=";
-        
+
         string visibilityString = Visibility.ToSwiftSyntaxString();
 
         string[] signatureComponents = new[] {

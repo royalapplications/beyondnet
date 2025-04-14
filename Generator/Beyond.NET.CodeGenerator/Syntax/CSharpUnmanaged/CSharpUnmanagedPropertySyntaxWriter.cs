@@ -11,11 +11,11 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
     {
         return Write((PropertyInfo)@object, state, configuration);
     }
-    
+
     public string Write(PropertyInfo property, State state, ISyntaxWriterConfiguration? configuration)
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
-        
+
         const bool mayThrow = true;
         const bool addToState = false;
 
@@ -34,7 +34,7 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
 
         if (getterMethod is not null) {
             bool isStaticMethod = getterMethod.IsStatic;
-            
+
             string getterCode = WriteMethod(
                 getterMethod,
                 MemberKind.PropertyGetter,
@@ -51,7 +51,7 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
             );
 
             sb.AppendLine(getterCode);
-            
+
             state.AddGeneratedMember(
                 MemberKind.PropertyGetter,
                 property,
@@ -60,10 +60,10 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
                 CodeLanguage.CSharpUnmanaged
             );
         }
-        
+
         if (setterMethod is not null) {
             bool isStaticMethod = setterMethod.IsStatic;
-            
+
             string setterCode = WriteMethod(
                 setterMethod,
                 MemberKind.PropertySetter,
@@ -80,7 +80,7 @@ public class CSharpUnmanagedPropertySyntaxWriter: CSharpUnmanagedMethodSyntaxWri
             );
 
             sb.AppendLine(setterCode);
-            
+
             state.AddGeneratedMember(
                 MemberKind.PropertySetter,
                 property,

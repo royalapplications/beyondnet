@@ -8,7 +8,7 @@ namespace Beyond.NET.CodeGenerator;
 public class XmlDocumentationStore
 {
     private ILogger Logger => Services.Shared.LoggerService;
-    
+
     private static readonly Lazy<XmlDocumentationStore> m_shared = new(() => new XmlDocumentationStore());
     public static XmlDocumentationStore Shared => m_shared.Value;
 
@@ -19,20 +19,20 @@ public class XmlDocumentationStore
     public void ParseDocumentation(Assembly assembly)
     {
         var assemblyName = assembly.GetName().Name ?? "N/A";
-        
+
         if (!m_assemblies.Add(assembly)) {
             Logger.LogDebug($"Skipping parsing documentation for assembly \"{assemblyName}\" because it has already been parsed");
-            
+
             return;
         }
-        
+
         var assemblyFilePath = assembly.Location;
-        
+
         Logger.LogDebug($"Going to parse documentation for assembly \"{assemblyName}\" at \"{assemblyFilePath}\"");
 
         if (!File.Exists(assemblyFilePath)) {
             Logger.LogDebug($"Assembly does not exist on disk at \"{assemblyFilePath}\" so we cannot parse documentation");
-            
+
             return;
         }
 
@@ -40,15 +40,15 @@ public class XmlDocumentationStore
 
         if (string.IsNullOrEmpty(xmlDocumentationFilePath)) {
             Logger.LogDebug($"XML documentation file for assembly \"{assemblyName}\" was not found");
-            
+
             return;
         }
-        
+
         Logger.LogDebug($"XML documentation file for assembly \"{assemblyName}\" was found at \"{xmlDocumentationFilePath}\"");
-        
+
         ParseDocumentation(xmlDocumentationFilePath);
     }
-    
+
     public void ParseSystemDocumentation(string systemXmlDocumentationDirectoryPath)
     {
         var xmlDocumentationFilePaths = GetSystemXmlDocumentationFilePaths(systemXmlDocumentationDirectoryPath);
@@ -70,7 +70,7 @@ public class XmlDocumentationStore
         if (string.IsNullOrEmpty(xmlDocumentationFilePath)) {
             return;
         }
-        
+
         Logger.LogInformation($"Parsing XML documentation file at \"{xmlDocumentationFilePath}\"");
 
         var content = File.ReadAllText(xmlDocumentationFilePath);
@@ -87,7 +87,7 @@ public class XmlDocumentationStore
 
         try {
             XmlDocument doc = new();
-            
+
             doc.LoadXml(xmlDocumentationContent);
             var root = doc.DocumentElement;
             var memberNodes = root?.SelectNodes("//doc/members/member");
@@ -99,11 +99,11 @@ public class XmlDocumentationStore
                     if (string.IsNullOrEmpty(rawName)) {
                         continue;
                     }
-                    
+
                     var memberType = new XmlDocumentationMemberIdentifier(rawName);
-                    
+
                     var memberContent = new XmlDocumentationMember(memberNode);
-                    
+
                     members[memberType] = memberContent;
                 }
             }
@@ -114,7 +114,7 @@ public class XmlDocumentationStore
         return members;
     }
     #endregion Parse
-    
+
     #region Extracting
     internal XmlDocumentationMember? GetDocumentation(XmlDocumentationMemberIdentifier memberIdentifier)
     {
@@ -139,9 +139,9 @@ public class XmlDocumentationStore
         if (string.IsNullOrEmpty(assemblyDir)) {
             return null;
         }
-        
-        var xmlFileName = assemblyName + ".xml"; 
-        
+
+        var xmlFileName = assemblyName + ".xml";
+
         var xmlFilePath = Path.Combine(
             assemblyDir,
             xmlFileName

@@ -16,7 +16,7 @@ namespace Beyond.NET.CodeGenerator.CLI;
 internal class CodeGeneratorDriver
 {
     private ILogger Logger => Services.Shared.LoggerService;
-    
+
     internal Configuration Configuration { get; }
 
     private AssemblyLoader? m_assemblyLoader;
@@ -24,15 +24,15 @@ internal class CodeGeneratorDriver
     {
         get {
             var loader = m_assemblyLoader;
-            
+
             if (loader is null) {
                 string[] assemblySearchPaths = Configuration.AssemblySearchPaths ?? Array.Empty<string>();
 
                 loader = new(assemblySearchPaths);
-                
+
                 loader.AssemblyResolved += AssemblyLoader_OnAssemblyResolved;
                 loader.GetDocumentation += AssemblyLoader_OnGetDocumentation;
-                
+
                 m_assemblyLoader = loader;
             }
 
@@ -52,7 +52,7 @@ internal class CodeGeneratorDriver
         HashSet<string> tempDirPaths = new();
 
         string? finalBuildOutputPath = null;
-        
+
         try {
             #region Configuration
             string assemblyPath = Configuration.AssemblyPath
@@ -60,15 +60,15 @@ internal class CodeGeneratorDriver
 
             string? kotlinPackageName = Configuration.KotlinPackageName;
             string? kotlinNativeLibraryName = Configuration.KotlinNativeLibraryName;
-            
+
             bool emitUnsupported = Configuration.EmitUnsupported ?? false;
             bool generateTypeCheckedDestroyMethods = Configuration.GenerateTypeCheckedDestroyMethods ?? false;
             bool enableGenericsSupport = Configuration.EnableGenericsSupport ?? false;
             bool doNotGenerateSwiftNestedTypeAliases = Configuration.DoNotGenerateSwiftNestedTypeAliases ?? false;
             bool doNotGenerateDocumentation = Configuration.DoNotGenerateDocumentation ?? false;
-    
+
             BuildConfiguration? buildConfig = Configuration.Build;
-    
+
             bool buildEnabled = false;
             string? buildTarget = null;
             string? buildProductName = null;
@@ -78,12 +78,12 @@ internal class CodeGeneratorDriver
             string? buildiOSDeploymentTarget = null;
             bool disableParallelBuild = false;
             bool disableStripDotNETSymbols = false;
-    
+
             if (buildConfig is not null) {
                 buildEnabled = true;
-                
+
                 buildTarget = buildConfig.Target;
-                
+
                 if (buildTarget != BuildTargets.APPLE_UNIVERSAL &&
                     buildTarget != BuildTargets.MACOS_UNIVERSAL &&
                     buildTarget != BuildTargets.IOS_UNIVERSAL) {
@@ -92,7 +92,7 @@ internal class CodeGeneratorDriver
 
                 var potentialProductName = buildConfig.ProductName;
                 string productName;
-                
+
                 string assemblyName = Path.GetFileNameWithoutExtension(assemblyPath)
                     .Replace('.', '_');
 
@@ -102,7 +102,7 @@ internal class CodeGeneratorDriver
                 } else {
                     productName = potentialProductName;
                 }
-    
+
                 buildProductName = productName
                     .Replace('.', '_');
 
@@ -111,7 +111,7 @@ internal class CodeGeneratorDriver
                     // If the product name matches the assembly name, suffix it with "Kit"
                     buildProductName = $"{buildProductName}Kit";
                 }
-    
+
                 if (string.IsNullOrEmpty(buildProductName)) {
                     throw new Exception($"A build \"{nameof(BuildConfiguration.ProductName)}\" must be provided");
                 }
@@ -135,21 +135,21 @@ internal class CodeGeneratorDriver
                     outputPath = potentialOutputPath
                         .ExpandTildeAndGetAbsolutePath();
                 }
-    
+
                 buildProductOutputPath = outputPath;
-    
+
                 if (string.IsNullOrEmpty(buildProductOutputPath)) {
                     throw new Exception($"A build \"{nameof(BuildConfiguration.ProductOutputPath)}\" must be provided");
                 }
-    
+
                 buildMacOSDeploymentTarget = buildConfig.MacOSDeploymentTarget;
-    
+
                 if (string.IsNullOrEmpty(buildMacOSDeploymentTarget)) {
                     buildMacOSDeploymentTarget = AppleDeploymentTargets.MACOS_DEFAULT;
                 }
-    
+
                 buildiOSDeploymentTarget = buildConfig.iOSDeploymentTarget;
-    
+
                 if (string.IsNullOrEmpty(buildiOSDeploymentTarget)) {
                     buildiOSDeploymentTarget = AppleDeploymentTargets.IOS_DEFAULT;
                 }
@@ -163,40 +163,40 @@ internal class CodeGeneratorDriver
             var dotNetVersion = Builder.DotNET.Version.GetMajorAndMinorVersion();
             var dotNetTargetFramework = $"net{dotNetVersion}";
             #endregion Gather System Information
-            
+
             #region Load Assembly
             Logger.LogInformation($"Loading assembly from \"{assemblyPath}\"");
-            
+
             Assembly assembly = AssemblyLoader.LoadFrom(assemblyPath);
             #endregion Load Assembly
-            
+
             #region Add System Documentation
             if (!doNotGenerateDocumentation) {
                 var systemReferenceAssembliesDirectoryPath = string.Empty;
-                
+
                 try {
                     var dotnetDir = DotNETUtils.GetDotnetGlobalInstallLocation();
 
                     if (string.IsNullOrWhiteSpace(dotnetDir)) {
                         throw new Exception("Cannot determine .NET root directory");
                     }
-                    
+
                     Logger.LogDebug($".NET Core root directory: \"{dotnetDir}\"");
-                    
+
                     var tfm = DotNETUtils.GetTargetFrameworkName(assemblyPath);
 
                     if (string.IsNullOrWhiteSpace(tfm)) {
                         throw new Exception($"Cannot determine TFM for \"{assemblyPath}\"");
                     }
-                    
+
                     Logger.LogDebug($"TFM for \"{assemblyPath}\": {tfm}");
-        
+
                     var version = DotNETUtils.GetDotNetCoreVersion(tfm);
 
                     if (version <= 0) {
                         throw new Exception($"Cannot determine .NET version for \"{assemblyPath}\"");
                     }
-                    
+
                     Logger.LogDebug($".NET Core version for \"{assemblyPath}\": {version}");
 
                     var latestRefDir = DotNETUtils.GetLatestRefPack(dotnetDir, version);
@@ -204,34 +204,34 @@ internal class CodeGeneratorDriver
                     if (string.IsNullOrWhiteSpace(latestRefDir)) {
                         throw new Exception($"Cannot find latest reference pack for .NET {version}.x at \"{latestRefDir}\"");
                     }
-                    
+
                     Logger.LogDebug($"Reference pack for .NET {version}.x found at \"{latestRefDir}\"");
 
                     systemReferenceAssembliesDirectoryPath = latestRefDir;
                 } catch (Exception ex) {
                     Logger.LogError($"An error occurred while trying to locate the latest .NET Core Reference Pack: {ex}");
                 }
-                
+
                 if (string.IsNullOrEmpty(systemReferenceAssembliesDirectoryPath) ||
                     !Directory.Exists(systemReferenceAssembliesDirectoryPath)) {
                     // Fall back to hard coded path
                     systemReferenceAssembliesDirectoryPath = "/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.0/ref/net9.0";
-                    
+
                     Logger.LogWarning($"Failed to gather path to system reference assemblies - falling back to hard coded path \"{systemReferenceAssembliesDirectoryPath}\"");
                 } else {
                     Logger.LogInformation($"Found path to system reference assemblies at \"{systemReferenceAssembliesDirectoryPath}\"");
                 }
-                
+
                 XmlDocumentationStore.Shared.ParseSystemDocumentation(systemReferenceAssembliesDirectoryPath);
             }
             #endregion Add System Documentation
-    
+
             #region Collect Types
             Type[] includedTypes = TypesFromTypeNames(
                 Configuration.IncludedTypeNames ?? Array.Empty<string>(),
                 assembly
             );
-            
+
             Type[] excludedTypes = TypesFromTypeNames(
                 Configuration.ExcludedTypeNames ?? Array.Empty<string>(),
                 assembly
@@ -242,7 +242,7 @@ internal class CodeGeneratorDriver
                 out HashSet<string> excludedFullAssemblyNames,
                 out HashSet<string> excludedSimpleAssemblyNames
             );
-    
+
             TypeCollectorSettings typeCollectorSettings = new(
                 enableGenericsSupport,
                 includedTypes,
@@ -250,22 +250,22 @@ internal class CodeGeneratorDriver
                 excludedFullAssemblyNames,
                 excludedSimpleAssemblyNames
             );
-            
+
             Logger.LogInformation($"Collecting types in assembly");
-            
+
             var types = CollectTypes(
                 assembly,
                 typeCollectorSettings,
                 out Dictionary<Type, string> unsupportedTypes
             );
             #endregion Collect Types
-    
+
             #region Generate Code
             #region C# Unmanaged
             const string namespaceForCSharpUnamangedCode = "NativeGeneratedCode";
-    
+
             Logger.LogInformation("Generating C# Code");
-            
+
             var cSharpUnmanagedResultObject = GenerateCSharpUnmanagedCode(
                 types,
                 unsupportedTypes,
@@ -274,14 +274,14 @@ internal class CodeGeneratorDriver
                 generateTypeCheckedDestroyMethods,
                 typeCollectorSettings
             );
-    
+
             var cSharpUnmanagedResult = cSharpUnmanagedResultObject.Result;
             var cSharpUnmanagedCode = cSharpUnmanagedResultObject.GeneratedCode;
             #endregion C# Unmanaged
-    
+
             #region C
             Logger.LogInformation("Generating C Code");
-            
+
             var cResultObject = GenerateCCode(
                 types,
                 unsupportedTypes,
@@ -289,14 +289,14 @@ internal class CodeGeneratorDriver
                 emitUnsupported,
                 typeCollectorSettings
             );
-    
+
             var cResult = cResultObject.Result;
             var cCode = cResultObject.GeneratedCode;
             #endregion C
-    
+
             #region Swift
             Logger.LogInformation("Generating Swift Code");
-            
+
             var swiftResultObject = GenerateSwiftCode(
                 types,
                 unsupportedTypes,
@@ -306,30 +306,30 @@ internal class CodeGeneratorDriver
                 doNotGenerateSwiftNestedTypeAliases,
                 typeCollectorSettings
             );
-    
+
             var swiftResult = swiftResultObject.Result;
             var swiftCode = swiftResultObject.GeneratedCode;
             #endregion Swift
 
             #region Kotlin
             Logger.LogInformation("Generating Kotlin Code");
-            
+
             if (string.IsNullOrEmpty(kotlinPackageName)) {
                 // In case no kotlin package name is specified, generate one
                 string assemblyName = Path.GetFileNameWithoutExtension(assemblyPath)
                     .Replace('.', '_');
-                
+
                 kotlinPackageName = $"com.mycompany.{assemblyName.ToLower()}";
             }
 
             if (string.IsNullOrEmpty(kotlinNativeLibraryName)) {
                 var fallback = "BeyondDotNETSampleNative";
-                
+
                 Logger.LogWarning($"Kotlin native library name is empty, using fallback \"{fallback}\" instead. This is very likely not what you want when targeting Kotlin!");
-                
+
                 kotlinNativeLibraryName = fallback;
             }
-            
+
             var kotlinResultObject = GenerateKotlinCode(
                 types,
                 unsupportedTypes,
@@ -340,28 +340,28 @@ internal class CodeGeneratorDriver
                 kotlinPackageName,
                 kotlinNativeLibraryName
             );
-    
+
             var kotlinResult = kotlinResultObject.Result;
             var kotlinCode = kotlinResultObject.GeneratedCode;
             #endregion Kotlin
             #endregion Generate Code
-            
+
             #region Write Generated Code Output to Files
             string? cSharpUnmanagedOutputPath = Configuration.CSharpUnmanagedOutputPath?
                 .ExpandTildeAndGetAbsolutePath();
-            
+
             string? cOutputPath = Configuration.COutputPath?
                 .ExpandTildeAndGetAbsolutePath();
-            
+
             string? swiftOutputPath = Configuration.SwiftOutputPath?
                 .ExpandTildeAndGetAbsolutePath();
-            
+
             string? kotlinOutputPath = Configuration.KotlinOutputPath?
                 .ExpandTildeAndGetAbsolutePath();
-            
+
             // If the user doesn't provide output paths for generated code files but build is enabled, we can use temporary paths
             string? temporaryGeneratedCodeDirPath = null;
-    
+
             // TODO: This assumes that we're always building for Apple platforms
             if (buildEnabled &&
                 !string.IsNullOrEmpty(buildProductName) &&
@@ -370,53 +370,53 @@ internal class CodeGeneratorDriver
                  string.IsNullOrEmpty(swiftOutputPath))) {
                 string sanitizedProductName = buildProductName.SanitizedProductNameForTempDirectory();
                 string tempDirectoryPrefix = $"BeyondNETCodeGenerator_{sanitizedProductName}_";
-    
+
                 temporaryGeneratedCodeDirPath = Directory.CreateTempSubdirectory(tempDirectoryPrefix).FullName;
 
                 tempDirPaths.Add(temporaryGeneratedCodeDirPath);
-    
+
                 if (string.IsNullOrEmpty(cSharpUnmanagedOutputPath)) {
                     cSharpUnmanagedOutputPath = Path.Combine(temporaryGeneratedCodeDirPath, "Generated_CS.cs");
                 }
-                
+
                 if (string.IsNullOrEmpty(cOutputPath)) {
                     cOutputPath = Path.Combine(temporaryGeneratedCodeDirPath, "Generated_C.h");
                 }
-                
+
                 if (string.IsNullOrEmpty(swiftOutputPath)) {
                     swiftOutputPath = Path.Combine(temporaryGeneratedCodeDirPath, "Generated_Swift.swift");
                 }
-                
+
                 if (string.IsNullOrEmpty(kotlinOutputPath)) {
                     kotlinOutputPath = Path.Combine(temporaryGeneratedCodeDirPath, "Generated_Kotlin.kt");
                 }
             }
-     
+
             WriteCodeToFileOrPrintToConsole(
                 "C#",
                 cSharpUnmanagedCode,
                 cSharpUnmanagedOutputPath
             );
-            
+
             WriteCodeToFileOrPrintToConsole(
                 "C",
                 cCode,
                 cOutputPath
             );
-    
+
             WriteCodeToFileOrPrintToConsole(
                 "Swift",
                 swiftCode,
                 swiftOutputPath
             );
-            
+
             WriteCodeToFileOrPrintToConsole(
                 "Kotlin",
                 kotlinCode,
                 kotlinOutputPath
             );
             #endregion Write Generated Code Output to Files
-    
+
             #region Build
             if (buildEnabled) {
                 // TODO: This assumes that we're always building for Apple platforms
@@ -443,7 +443,7 @@ internal class CodeGeneratorDriver
                 } else {
                     throw new Exception($"Build Target \"{buildTarget}\" is not a supported target for the SwiftBuilder");
                 }
-                
+
                 SwiftBuilder.BuilderConfiguration config = new(
                     builderBuildTargets,
                     buildProductName,
@@ -454,21 +454,21 @@ internal class CodeGeneratorDriver
                     buildiOSDeploymentTarget,
                     !disableParallelBuild
                 );
-            
+
                 Logger.LogInformation("Building Swift bindings");
-            
+
                 SwiftBuilder swiftBuilder = new(config);
-            
+
                 var swiftBuildResult = swiftBuilder.Build();
-                
+
                 if (!Directory.Exists(swiftBuildResult.OutputRootPath)) {
                     throw new Exception($"Swift product directory does not exist at \"{swiftBuildResult.OutputRootPath}\"");
                 }
-                
+
                 tempDirPaths.Add(swiftBuildResult.OutputRootPath);
-            
+
                 Logger.LogInformation($"Swift bindings built at \"{swiftBuildResult.OutputRootPath}\"");
-            
+
                 Logger.LogInformation("Building .NET Native stuff");
 
                 string[] assemblyReferences = m_resolvedAssemblyPaths
@@ -487,9 +487,9 @@ internal class CodeGeneratorDriver
                     !disableParallelBuild,
                     swiftBuildResult
                 );
-            
+
                 var result = dnNativeBuilder.Build();
-                
+
                 if (!Directory.Exists(result.OutputDirectoryPath)) {
                     throw new Exception($"Final product directory does not exist at \"{result.OutputDirectoryPath}\"");
                 }
@@ -502,7 +502,7 @@ internal class CodeGeneratorDriver
 
                 Logger.LogInformation($"Final product built at \"{result.OutputDirectoryPath}\"");
                 Logger.LogInformation($"Copying product to \"{buildProductOutputPath}\"");
-                
+
                 FileSystemUtils.CopyDirectoryContents(
                     result.OutputDirectoryPath,
                     buildProductOutputPath,
@@ -513,15 +513,15 @@ internal class CodeGeneratorDriver
             }
             #endregion Build
         } finally {
-            bool doNotDeleteTemporaryDirectories = Configuration.DoNotDeleteTemporaryDirectories ?? false; 
+            bool doNotDeleteTemporaryDirectories = Configuration.DoNotDeleteTemporaryDirectories ?? false;
             bool shouldDeleteTempDirs = !doNotDeleteTemporaryDirectories;
-            
+
             if (shouldDeleteTempDirs) {
                 // Clean up temporary directories
                 foreach (var tempDirPath in tempDirPaths) {
                     if (Directory.Exists(tempDirPath)) {
                         Logger.LogInformation($"Removing temporary directory \"{tempDirPath}\"");
-                    
+
                         Directory.Delete(tempDirPath, true);
                     }
                 }
@@ -543,7 +543,7 @@ internal class CodeGeneratorDriver
 
         foreach (string typeName in typeNames) {
             Type? type;
-            
+
             try {
                 type = assembly.GetType(typeName, true);
             } catch {
@@ -554,7 +554,7 @@ internal class CodeGeneratorDriver
                 types.Add(type);
             }
         }
-        
+
         return types.ToArray();
     }
 
@@ -583,7 +583,7 @@ internal class CodeGeneratorDriver
             }
         }
     }
-    
+
     private void WriteCodeToFileOrPrintToConsole(
         string languageName,
         string code,
@@ -600,12 +600,12 @@ internal class CodeGeneratorDriver
             !Directory.Exists(dirPath)) {
             Directory.CreateDirectory(dirPath);
         }
-        
+
         Logger.LogInformation($"Writing generated {languageName} code to \"{outputPath}\"");
-    
+
         File.WriteAllText(outputPath, code);
     }
-    
+
     private HashSet<Type> CollectTypes(
         Assembly assembly,
         TypeCollectorSettings settings,
@@ -623,7 +623,7 @@ internal class CodeGeneratorDriver
 
         return types;
     }
-    
+
     private struct CodeGeneratorResult
     {
         internal Result Result { get; }
@@ -635,7 +635,7 @@ internal class CodeGeneratorDriver
             GeneratedCode = generatedCode;
         }
     }
-    
+
     private static CodeGeneratorResult GenerateCSharpUnmanagedCode(
         HashSet<Type> types,
         Dictionary<Type, string> unsupportedTypes,
@@ -652,22 +652,22 @@ internal class CodeGeneratorDriver
             GenerateTypeCheckedDestroyMethods = generateTypeCheckedDestroyMethods,
             TypeCollectorSettings = typeCollectorSettings
         };
-        
+
         CSharpUnmanagedCodeGenerator codeGenerator = new(settings);
-        
+
         Result result = codeGenerator.Generate(
             types,
             unsupportedTypes,
             writer
         );
-        
+
         StringBuilder sb = new();
-        
+
         // Mark file contents as auto-generated code.
         // ref. https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/configuration-options#exclude-generated-code
         // ref. https://github.com/dotnet/runtime/issues/64541
         sb.AppendLine("// <auto-generated />");
-        
+
         // TODO: maybe some day
         // Enable nullable annotations (auto-generated C# code is nullable-oblivious by default)
         // ref. https://learn.microsoft.com/en-us/dotnet/csharp/nullable-references#nullable-contexts
@@ -676,7 +676,7 @@ internal class CodeGeneratorDriver
         //   the nullable context is disabled for any source file marked as generated. <**>This means
         //   any APIs in generated files are not annotated.</**>
         // sb.AppendLine("#nullable enable");
-        
+
         sb.AppendLine();
 
         int generatedTypesCount = result.GeneratedTypes.Count;
@@ -698,7 +698,7 @@ internal class CodeGeneratorDriver
 
         return new(result, sb.ToString());
     }
-    
+
     private static CodeGeneratorResult GenerateCCode(
         HashSet<Type> types,
         Dictionary<Type, string> unsupportedTypes,
@@ -708,20 +708,20 @@ internal class CodeGeneratorDriver
     )
     {
         SourceCodeWriter writer = new();
-        
+
         Generator.C.Settings settings = new() {
             EmitUnsupported = emitUnsupported,
             TypeCollectorSettings = typeCollectorSettings
         };
-        
+
         CCodeGenerator codeGenerator = new(settings, cSharpUnmanagedResult);
-        
+
         Result result = codeGenerator.Generate(
             types,
             unsupportedTypes,
             writer
         );
-        
+
         StringBuilder sb = new();
 
         int generatedTypesCount = result.GeneratedTypes.Count;
@@ -744,7 +744,7 @@ internal class CodeGeneratorDriver
 
         return new(result, sb.ToString());
     }
-    
+
     private static CodeGeneratorResult GenerateSwiftCode(
         HashSet<Type> types,
         Dictionary<Type, string> unsupportedTypes,
@@ -756,25 +756,25 @@ internal class CodeGeneratorDriver
     )
     {
         SourceCodeWriter writer = new();
-        
+
         Generator.Swift.Settings settings = new() {
             EmitUnsupported = emitUnsupported,
             TypeCollectorSettings = typeCollectorSettings,
             DoNotGenerateSwiftNestedTypeAliases = doNotGenerateSwiftNestedTypeAliases
         };
-        
+
         SwiftCodeGenerator codeGenerator = new(
             settings,
             cSharpUnmanagedResult,
             cResult
         );
-        
+
         Result result = codeGenerator.Generate(
             types,
             unsupportedTypes,
             writer
         );
-        
+
         StringBuilder sb = new();
 
         int generatedTypesCount = result.GeneratedTypes.Count;
@@ -797,7 +797,7 @@ internal class CodeGeneratorDriver
 
         return new(result, sb.ToString());
     }
-    
+
     private static CodeGeneratorResult GenerateKotlinCode(
         HashSet<Type> types,
         Dictionary<Type, string> unsupportedTypes,
@@ -810,24 +810,24 @@ internal class CodeGeneratorDriver
     )
     {
         SourceCodeWriter writer = new();
-        
+
         Generator.Kotlin.Settings settings = new(kotlinPackageName, kotlinNativeLibraryName) {
             EmitUnsupported = emitUnsupported,
             TypeCollectorSettings = typeCollectorSettings
         };
-        
+
         KotlinCodeGenerator codeGenerator = new(
             settings,
             cSharpUnmanagedResult,
             cResult
         );
-        
+
         Result result = codeGenerator.Generate(
             types,
             unsupportedTypes,
             writer
         );
-        
+
         StringBuilder sb = new();
 
         int generatedTypesCount = result.GeneratedTypes.Count;
@@ -850,28 +850,28 @@ internal class CodeGeneratorDriver
 
         return new(result, sb.ToString());
     }
-    
+
     private void AssemblyLoader_OnAssemblyResolved(
         object? sender,
         AssemblyEventArgs e
     )
     {
         m_resolvedAssemblyPaths[e.Assembly] = e.AssemblyPath;
-        
+
         Logger.LogDebug($"Assembly \"{e.Assembly.GetName().FullName}\" resolved at path \"{e.AssemblyPath}\"");
     }
-    
+
     private void AssemblyLoader_OnGetDocumentation(
         object? sender,
         AssemblyEventArgs e
     )
     {
         bool doNotGenerateDocumentation = Configuration.DoNotGenerateDocumentation ?? false;
-        
+
         if (doNotGenerateDocumentation) {
             return;
         }
-        
+
         XmlDocumentationStore.Shared.ParseDocumentation(e.Assembly);
     }
 }

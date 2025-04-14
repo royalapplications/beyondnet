@@ -5,116 +5,116 @@ final class TestClassesTests: XCTestCase {
     override class func setUp() {
         Self.sharedSetUp()
     }
-    
+
     override class func tearDown() {
         Self.sharedTearDown()
     }
-    
+
     func testTestClass() throws {
         let testClass = try Beyond_NET_Sample_TestClass()
         let testClassType = try testClass.getType()
-        
+
         let systemObjectTypeName = "System.Object"
         let systemObjectTypeNameDN = systemObjectTypeName.dotNETString()
-        
+
         guard let systemObjectType = try System_Type.getType(systemObjectTypeNameDN,
                                                               true,
                                                               false) else {
             XCTFail("System.Type.GetType should not throw and return an instance")
-            
+
             return
         }
-        
+
         let retrievedSystemObjectTypeName = try systemObjectType.toString().string()
         XCTAssertEqual(systemObjectTypeName, retrievedSystemObjectTypeName)
-        
+
         let isTestClassAssignableToSystemObject = try testClassType.isAssignableTo(systemObjectType)
         XCTAssertTrue(isTestClassAssignableToSystemObject)
-        
+
         let isSystemObjectAssignableToTestClass = try systemObjectType.isAssignableTo(testClassType)
         XCTAssertFalse(isSystemObjectAssignableToTestClass)
-        
+
         try testClass.sayHello()
-        
+
         let john = "John"
         let johnDN = john.dotNETString()
-        
+
         try testClass.sayHello(johnDN)
-        
+
         let hello = try testClass.getHello().string()
         XCTAssertEqual("Hello", hello)
-        
+
         let number1: Int32 = 85
         let number2: Int32 = 262
-        
+
         let expectedResult = number1 + number2
-        
+
         let result = try testClass.add(number1, number2)
         XCTAssertEqual(expectedResult, result)
     }
-    
+
     func testEnum() throws {
         let enumValue = Beyond_NET_Sample_TestEnum.secondCase
-        
+
         let enumName = try Beyond_NET_Sample_TestClass.getTestEnumName(enumValue).string()
         XCTAssertEqual("SecondCase", enumName)
     }
-    
+
     func testInt32ByRef() throws {
         let testClass = try Beyond_NET_Sample_TestClass()
-        
+
         let originalValue: Int32 = 5
         var valueToModify: Int32 = originalValue
         let targetValue: Int32 = 10
-        
+
         let originalValueRet = try testClass.modifyByRefValueAndReturnOriginalValue(&valueToModify,
                                                                                     targetValue)
-        
+
         XCTAssertEqual(originalValue, originalValueRet)
         XCTAssertEqual(targetValue, valueToModify)
     }
-    
+
     func testEnumByRef() throws {
         let testClass = try Beyond_NET_Sample_TestClass()
-        
+
         let originalValue = Beyond_NET_Sample_TestEnum.firstCase
         var valueToModify = originalValue
         let expectedValue = Beyond_NET_Sample_TestEnum.secondCase
-        
+
         try testClass.modifyByRefEnum(&valueToModify)
         XCTAssertEqual(expectedValue, valueToModify)
     }
-	
+
 	func testDelegateReturningChar() throws {
 		let testClass = try Beyond_NET_Sample_TestClass()
-		
+
 		let value = DNChar(cValue: 5)
-		
+
 		let charReturnerDelegate = Beyond_NET_Sample_CharReturnerDelegate {
 			value
 		}
-		
+
 		let retVal = try testClass.getChar(charReturnerDelegate)
 		XCTAssertEqual(value, retVal)
 	}
-    
+
     func testBookByRef() throws {
         let testClass = try Beyond_NET_Sample_TestClass()
-        
+
         let originalBook = Beyond_NET_Sample_Book.donQuixote
         let targetBook = Beyond_NET_Sample_Book.theLordOfTheRings
-        
+
         var bookToModify = originalBook
         var originalBookRet = Beyond_NET_Sample_Book.outParameterPlaceholder
-        
+
         try testClass.modifyByRefBookAndReturnOriginalBookAsOutParameter(&bookToModify,
                                                                          targetBook,
                                                                          &originalBookRet)
-        
+
         XCTAssertTrue(originalBook == originalBookRet)
         XCTAssertTrue(targetBook == bookToModify)
     }
-    
+
     // TODO: By Ref return values are not supported in Swift yet
 //    func testGetCurrentBookByRef() {
 //        guard let testClass = try? Beyond_NET_Sample_TestClass() else {
@@ -150,7 +150,7 @@ final class TestClassesTests: XCTestCase {
 //        XCTAssertNil(exception)
 //        XCTAssertTrue(currentBookIsEqualToInitialBook)
 //    }
-    
+
     // TODO: By Ref return values are not supported in Swift yet
 //    func testIncreaseAndGetCurrentIntValueByRef() {
 //        var exception: System_Exception_t?

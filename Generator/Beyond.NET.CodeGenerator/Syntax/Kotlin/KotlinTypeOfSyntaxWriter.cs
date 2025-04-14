@@ -20,10 +20,10 @@ public class KotlinTypeOfSyntaxWriter: KotlinMethodSyntaxWriter, ITypeOfSyntaxWr
         }
 
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
-        
+
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         Result cResult = state.CResult ?? throw new Exception("No CResult provided");
-        
+
         GeneratedMember cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedTypeOf(type) ?? throw new Exception("No C# generated typeOf");
         GeneratedMember cGeneratedMember = cResult.GetGeneratedTypeOf(type) ?? throw new Exception("No C generated typeOf");
 

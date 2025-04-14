@@ -16,7 +16,7 @@ public class CEventSyntaxWriter: CMethodSyntaxWriter, IEventSyntaxWriter
     public string Write(EventInfo @event, State state, ISyntaxWriterConfiguration? configuration)
     {
         const bool addToState = false;
-        
+
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
 
@@ -30,9 +30,9 @@ public class CEventSyntaxWriter: CMethodSyntaxWriter, IEventSyntaxWriter
 
         bool adderMayThrow = generatedAdderMember?.MayThrow ?? true;
         bool removerMayThrow = generatedRemoverMember?.MayThrow ?? true;
-        
+
         string eventName = @event.Name;
-        
+
         Type declaringType = @event.DeclaringType ?? throw new Exception("No declaring type");;
 
         IEnumerable<ParameterInfo> parameters = Array.Empty<ParameterInfo>();
@@ -40,7 +40,7 @@ public class CEventSyntaxWriter: CMethodSyntaxWriter, IEventSyntaxWriter
         CCodeBuilder sb = new();
 
         Type? eventHandlerType = @event.EventHandlerType;
-        
+
         if (eventHandlerType is null) {
             return Builder.SingleLineComment($"TODO: {eventName} - Event without Event Handler Type")
                 .ToString();
@@ -52,7 +52,7 @@ public class CEventSyntaxWriter: CMethodSyntaxWriter, IEventSyntaxWriter
         if (adderMethod is not null &&
             generatedAdderMember is not null) {
             bool isStaticMethod = adderMethod.IsStatic;
-            
+
             string adderCode = WriteMethod(
                 generatedAdderMember,
                 adderMethod,
@@ -69,7 +69,7 @@ public class CEventSyntaxWriter: CMethodSyntaxWriter, IEventSyntaxWriter
             );
 
             sb.AppendLine(adderCode);
-            
+
             state.AddGeneratedMember(
                 MemberKind.EventHandlerAdder,
                 @event,
@@ -78,11 +78,11 @@ public class CEventSyntaxWriter: CMethodSyntaxWriter, IEventSyntaxWriter
                 CodeLanguage.C
             );
         }
-        
+
         if (removerMethod is not null &&
             generatedRemoverMember is not null) {
             bool isStaticMethod = removerMethod.IsStatic;
-            
+
             string removerCode = WriteMethod(
                 generatedRemoverMember,
                 removerMethod,
@@ -99,7 +99,7 @@ public class CEventSyntaxWriter: CMethodSyntaxWriter, IEventSyntaxWriter
             );
 
             sb.AppendLine(removerCode);
-            
+
             state.AddGeneratedMember(
                 MemberKind.EventHandlerRemover,
                 @event,

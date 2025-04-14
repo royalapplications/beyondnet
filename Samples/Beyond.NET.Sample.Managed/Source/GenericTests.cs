@@ -16,7 +16,7 @@ public class GenericTests
     {
         return string.Join(separator, listOfString);
     }
-    
+
     public struct SimpleKeyValuePair
     {
         public object? Key { get; }
@@ -28,22 +28,22 @@ public class GenericTests
             Value = value;
         }
     }
-    
+
     public static Type ReturnGenericType<T>()
     {
         return typeof(T);
     }
-    
+
     public static void ReturnGenericTypeAsOutParameter<T>(out Type typeOfT)
     {
         typeOfT = typeof(T);
     }
-    
+
     public static void ReturnGenericTypeAsRefParameter<T>(ref Type typeOfT)
     {
         typeOfT = typeof(T);
     }
-    
+
     public static Type[] ReturnGenericTypes<T1, T2>()
     {
         return new [] {
@@ -51,7 +51,7 @@ public class GenericTests
             typeof(T2)
         };
     }
-    
+
     public static SimpleKeyValuePair ReturnSimpleKeyValuePair<TKey, TValue>(TKey key, TValue value)
     {
         return new SimpleKeyValuePair(key, value);
@@ -61,19 +61,19 @@ public class GenericTests
     {
         return default;
     }
-    
+
     public static T?[] ReturnArrayOfDefaultValuesOfGenericType<T>(int numberOfElements)
     {
         if (numberOfElements <= 0) {
             return Array.Empty<T>();
         }
-        
+
         List<T?> defaultValues = new();
 
         for (int i = 0; i < numberOfElements; i++) {
             defaultValues.Add(default);
         }
-        
+
         return defaultValues.ToArray();
     }
 
@@ -100,13 +100,13 @@ public class GenericTests
             if (value is null) {
                 continue;
             }
-            
+
             string? stringValue = value.ToString();
 
             if (stringValue is null) {
                 continue;
             }
-            
+
             strings.Add(stringValue);
         }
 

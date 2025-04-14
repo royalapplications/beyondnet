@@ -12,14 +12,14 @@ readonly struct CCodeBuilder
 
     internal CCodeBuilder([StringSyntax("C")] string? value = null) : this(new StringBuilder(value))
     { }
-    
+
     private CCodeBuilder(StringBuilder sb) => m_sb = sb;
 
     internal CCodeBuilder Append(char c) => new(m_sb.Append(c));
-    
+
     internal CCodeBuilder Append([StringSyntax("C")] string value) => new(m_sb.Append(value));
-    
+
     internal CCodeBuilder AppendLine([StringSyntax("C")] string? value = null) => new(m_sb.AppendLine(value));
-    
+
     public override string ToString() => m_sb.ToString();
 }

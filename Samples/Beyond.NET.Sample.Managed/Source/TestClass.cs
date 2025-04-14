@@ -34,12 +34,12 @@ public class TestClass
     {
         return charReturnerDelegate();
     }
-    
+
     public void SayHello()
     {
         Console.WriteLine(GetHello());
     }
-    
+
     public void SayHello(string name)
     {
         Console.WriteLine(GetHello() + " " + name);
@@ -59,7 +59,7 @@ public class TestClass
     {
         return number1 + number2;
     }
-    
+
     public int Divide(int number1, int number2)
     {
         return number1 / number2;
@@ -73,7 +73,7 @@ public class TestClass
     public int ModifyByRefValueAndReturnOriginalValue(ref int valueToModify, int targetValue)
     {
         int originalValue = valueToModify;
-        
+
         valueToModify = targetValue;
 
         return originalValue;
@@ -104,7 +104,7 @@ public class TestClass
     public ref int IncreaseAndGetCurrentIntValueByRef()
     {
         CurrentIntValue += 1;
-        
+
         return ref CurrentIntValue;
     }
 }

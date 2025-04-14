@@ -34,13 +34,13 @@ public struct XmlDocumentationMember
         foreach (var paramString in paramStrings) {
             lines.Add($"{commentPrefix}- Parameter {paramString}");
         }
-        
+
         var exceptionStrings = Node.ExceptionsAsPlainText;
 
         foreach (var exceptionString in exceptionStrings) {
             lines.Add($"{commentPrefix}- Throws: {exceptionString}");
         }
-        
+
         var returns = Node.ReturnsAsPlainText;
         var returnsAsSingleLine = string.Join(' ', returns.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries));
 
@@ -53,7 +53,7 @@ public struct XmlDocumentationMember
         }
 
         var linesJoined = string.Join('\n', lines);
-        
+
         return linesJoined;
     }
 }

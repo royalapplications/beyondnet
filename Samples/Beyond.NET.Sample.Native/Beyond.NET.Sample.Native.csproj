@@ -14,7 +14,7 @@
 
     <!-- TODO: Disabled for now to get faster build times -->
     <Nullable>disable</Nullable>
-    
+
     <!-- Seems to not be required as long as we're providing the RuntimeIdentifier when calling dotnet publish/build -->
     <!-- <RuntimeIdentifiers>osx-x64;osx-arm64;linux-x64;ios-arm64;iossimulator-arm64;iossimulator-x64</RuntimeIdentifiers> -->
 
@@ -26,7 +26,7 @@
     <MacOSMinVersion>13.0</MacOSMinVersion>
     <iOSMinVersion>16.0</iOSMinVersion>
   </PropertyGroup>
-  
+
   <!-- Compiler Customization -->
   <!-- TODO / WIP -->
   <!-- Include pre-compiled Swift stuff -->

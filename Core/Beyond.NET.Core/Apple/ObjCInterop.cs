@@ -9,17 +9,17 @@ internal class ObjCInterop
 
 	[DllImport(PATH_LIBOBJC)]
 	internal static extern IntPtr sel_registerName(string str);
-	
+
 	[DllImport(PATH_LIBOBJC)]
 	internal static extern IntPtr objc_getClass(string name);
-	
+
 	[DllImport(PATH_LIBOBJC, EntryPoint = ENTRYPOINT_OBJC_MSGSEND)]
 	internal static extern IntPtr objc_msgSend_RetPtr_1ArgPtr(
 		IntPtr target,
 		IntPtr selector,
 		IntPtr arg1
 	);
-	
+
 	[DllImport(PATH_LIBOBJC, EntryPoint = ENTRYPOINT_OBJC_MSGSEND)]
 	internal static extern byte objc_msgSend_RetBool_3ArgPtr(
 		IntPtr target,
@@ -28,13 +28,13 @@ internal class ObjCInterop
 		IntPtr arg2,
 		IntPtr arg3
 	);
-	
+
 	[DllImport(PATH_LIBOBJC, EntryPoint = ENTRYPOINT_OBJC_MSGSEND)]
 	internal static extern void objc_msgSend_RetNone(
 		IntPtr target,
 		IntPtr selector
 	);
-	
+
 	[DllImport(PATH_LIBOBJC, EntryPoint = ENTRYPOINT_OBJC_MSGSEND)]
 	internal static extern IntPtr objc_msgSend_RetPtr(
 		IntPtr target,
@@ -47,7 +47,7 @@ internal class ObjCInterop
 
 		if (handle == nint.Zero) {
 			var error = LibSystem.DL.Error;
-			
+
 			throw new Exception($"Failed to load framework at \"{path}\": {error}");
 		}
 

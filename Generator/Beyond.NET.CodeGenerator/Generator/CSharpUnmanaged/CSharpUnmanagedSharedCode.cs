@@ -10,7 +10,7 @@ internal class __BeyondNETNativeModuleInitializer
     internal static unsafe void BeyondNETNativeModuleInitializer()
     {
         // TODO: We could probably remove the native implementation if we port it to C# by using DllImport's for CoreFoundation stuff
-         
+
         const string dnLibraryInitFuncName = "_DNLibraryInit";
 
         var selfHandle = System.Runtime.InteropServices.NativeLibrary.GetMainProgramHandle();
@@ -29,7 +29,7 @@ internal class __BeyondNETNativeModuleInitializer
             dnLibraryInitSymbol == IntPtr.Zero) {
             return;
         }
-    
+
         delegate* unmanaged<void> dnLibraryInitFunc = (delegate* unmanaged<void>)dnLibraryInitSymbol;
 
         dnLibraryInitFunc();
@@ -65,13 +65,13 @@ internal static unsafe class InteropUtils
 
         return handle;
     }
-    
+
     internal static void* AllocateGCHandleAndGetAddress(this object? instance)
     {
         if (instance is null) {
             return null;
         }
-        
+
         GCHandle handle = instance.AllocateGCHandle(GCHandleType.Normal);
         void* handleAddress = handle.ToHandleAddress();
 
@@ -87,7 +87,7 @@ internal static unsafe class InteropUtils
         }
 
         GCHandle? handle = GetGCHandle(handleAddress);
-        
+
         handle?.FreeIfAllocated();
     }
 
@@ -109,10 +109,10 @@ internal static unsafe class InteropUtils
             !(target is T)) {
             throw new Exception("Type of handle is unexpected");
         }
-        
+
         handle?.FreeIfAllocated();
     }
-    
+
     internal static void FreeIfAllocated(this GCHandle handle)
     {
         if (!handle.IsAllocated) {
@@ -136,7 +136,7 @@ internal static unsafe class InteropUtils
         if (handleAddress is null) {
             return null;
         }
-        
+
         GCHandle handle = GCHandle.FromIntPtr((nint)handleAddress);
 
         return handle;
@@ -166,7 +166,7 @@ internal static unsafe class InteropUtils
         }
 
         GCHandle handle = maybeHandle.Value;
-        
+
         handle.Target = newInstance;
     }
     #endregion Handle Address/GCHandle <-> Object Conversion
@@ -177,7 +177,7 @@ internal static unsafe class InteropUtils
     {
         System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
         System.Type typeConverted = InteropUtils.GetInstance<System.Type>(type);
-    
+
         try {
 	        System.Type currentType = objectConverted.GetType();
 	        bool isValidCast = currentType.IsAssignableTo(typeConverted);
@@ -185,19 +185,19 @@ internal static unsafe class InteropUtils
 	        if (!isValidCast) {
 		        throw new InvalidCastException();
 	        }
-    
+
             if (outException is not null) {
                 *outException = null;
             }
-    
+
             return objectConverted.AllocateGCHandleAndGetAddress();
         } catch (Exception exception) {
             if (outException is not null) {
                 void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
-                    
+
                 *outException = exceptionHandleAddress;
             }
-    
+
             return null;
         }
     }
@@ -207,7 +207,7 @@ internal static unsafe class InteropUtils
     {
         System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
         System.Type typeConverted = InteropUtils.GetInstance<System.Type>(type);
-    
+
         try {
 	        System.Type currentType = objectConverted.GetType();
 	        bool isValidCast = currentType.IsAssignableTo(typeConverted);
@@ -215,7 +215,7 @@ internal static unsafe class InteropUtils
 	        if (!isValidCast) {
 		        return null;
 	        }
-    
+
             return objectConverted.AllocateGCHandleAndGetAddress();
         } catch {
             return null;
@@ -227,7 +227,7 @@ internal static unsafe class InteropUtils
     {
         System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
         System.Type typeConverted = InteropUtils.GetInstance<System.Type>(type);
-    
+
         try {
 	        System.Type currentType = objectConverted.GetType();
 	        bool isValidCast = currentType.IsAssignableTo(typeConverted);
@@ -258,7 +258,7 @@ internal static unsafe class InteropUtils
         }
 
         byte* cString = (byte*)Marshal.StringToHGlobalAuto(systemStringConverted);
-        
+
         return cString;
     }
 
@@ -271,13 +271,13 @@ internal static unsafe class InteropUtils
         if (cString is null) {
             return null;
         }
-        
+
         System.String? systemString = Marshal.PtrToStringAuto((nint)cString);
 
         if (systemString is null) {
             return null;
         }
-        
+
         void* systemStringNative = systemString.AllocateGCHandleAndGetAddress();
 
         return systemStringNative;
@@ -306,90 +306,90 @@ internal static unsafe class InteropUtils
     internal static byte DNObjectCastToBool(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
     {
         System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
-    
+
         try {
             bool returnValue = (bool)objectConverted;
-    
+
             if (outException is not null) {
                 *outException = null;
             }
-    
+
             return returnValue.ToCBool();
         } catch (Exception exception) {
             if (outException is not null) {
                 void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
-                    
+
                 *outException = exceptionHandleAddress;
             }
-    
+
             return default(bool).ToCBool();
         }
     }
-    
+
     [UnmanagedCallersOnly(EntryPoint = "DNObjectFromBool")]
     internal static void* /* System.Object */ DNObjectFromBool(byte value)
     {
         return ((System.Object)value.ToBool()).AllocateGCHandleAndGetAddress();
     }
     #endregion Bool
-    
+
     #region Char
     [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToChar")]
     internal static char DNObjectCastToChar(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
     {
         System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
-    
+
         try {
             char returnValue = (char)objectConverted;
-    
+
             if (outException is not null) {
                 *outException = null;
             }
-    
+
             return returnValue;
         } catch (Exception exception) {
             if (outException is not null) {
                 void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
-                    
+
                 *outException = exceptionHandleAddress;
             }
-    
+
             return default(char);
         }
     }
-    
+
     [UnmanagedCallersOnly(EntryPoint = "DNObjectFromChar")]
     internal static void* /* System.Object */ DNObjectFromChar(char value)
     {
         return ((System.Object)value).AllocateGCHandleAndGetAddress();
     }
     #endregion Char
-    
+
     #region Float
     [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToFloat")]
     internal static float DNObjectCastToFloat(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
     {
         System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
-    
+
         try {
             float returnValue = (float)objectConverted;
-    
+
             if (outException is not null) {
                 *outException = null;
             }
-    
+
             return returnValue;
         } catch (Exception exception) {
             if (outException is not null) {
                 void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
-                    
+
                 *outException = exceptionHandleAddress;
             }
-    
+
             return default(float);
         }
     }
-    
+
     [UnmanagedCallersOnly(EntryPoint = "DNObjectFromFloat")]
     internal static void* /* System.Object */ DNObjectFromFloat(float number)
     {
@@ -402,26 +402,26 @@ internal static unsafe class InteropUtils
     internal static double DNObjectCastToDouble(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
     {
         System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
-    
+
         try {
             double returnValue = (double)objectConverted;
-    
+
             if (outException is not null) {
                 *outException = null;
             }
-    
+
             return returnValue;
         } catch (Exception exception) {
             if (outException is not null) {
                 void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
-                    
+
                 *outException = exceptionHandleAddress;
             }
-    
+
             return default(double);
         }
     }
-    
+
     [UnmanagedCallersOnly(EntryPoint = "DNObjectFromDouble")]
     internal static void* /* System.Object */ DNObjectFromDouble(double number)
     {
@@ -434,58 +434,58 @@ internal static unsafe class InteropUtils
     internal static sbyte DNObjectCastToInt8(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
     {
         System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
-    
+
         try {
             sbyte returnValue = (sbyte)objectConverted;
-    
+
             if (outException is not null) {
                 *outException = null;
             }
-    
+
             return returnValue;
         } catch (Exception exception) {
             if (outException is not null) {
                 void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
-                    
+
                 *outException = exceptionHandleAddress;
             }
-    
+
             return default(sbyte);
         }
     }
-    
+
     [UnmanagedCallersOnly(EntryPoint = "DNObjectFromInt8")]
     internal static void* /* System.Object */ DNObjectFromInt8(sbyte number)
     {
         return ((System.Object)number).AllocateGCHandleAndGetAddress();
     }
     #endregion Int8
-    
+
     #region UInt8
     [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToUInt8")]
     internal static byte DNObjectCastToUInt8(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
     {
         System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
-    
+
         try {
             byte returnValue = (byte)objectConverted;
-    
+
             if (outException is not null) {
                 *outException = null;
             }
-    
+
             return returnValue;
         } catch (Exception exception) {
             if (outException is not null) {
                 void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
-                    
+
                 *outException = exceptionHandleAddress;
             }
-    
+
             return default(byte);
         }
     }
-    
+
     [UnmanagedCallersOnly(EntryPoint = "DNObjectFromUInt8")]
     internal static void* /* System.Object */ DNObjectFromUInt8(byte number)
     {
@@ -498,58 +498,58 @@ internal static unsafe class InteropUtils
     internal static Int16 DNObjectCastToInt16(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
     {
         System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
-    
+
         try {
             Int16 returnValue = (Int16)objectConverted;
-    
+
             if (outException is not null) {
                 *outException = null;
             }
-    
+
             return returnValue;
         } catch (Exception exception) {
             if (outException is not null) {
                 void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
-                    
+
                 *outException = exceptionHandleAddress;
             }
-    
+
             return default(Int16);
         }
     }
-    
+
     [UnmanagedCallersOnly(EntryPoint = "DNObjectFromInt16")]
     internal static void* /* System.Object */ DNObjectFromInt16(Int16 number)
     {
         return ((System.Object)number).AllocateGCHandleAndGetAddress();
     }
     #endregion Int16
-    
+
     #region UInt16
     [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToUInt16")]
     internal static UInt16 DNObjectCastToUInt16(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
     {
         System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
-    
+
         try {
             UInt16 returnValue = (UInt16)objectConverted;
-    
+
             if (outException is not null) {
                 *outException = null;
             }
-    
+
             return returnValue;
         } catch (Exception exception) {
             if (outException is not null) {
                 void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
-                    
+
                 *outException = exceptionHandleAddress;
             }
-    
+
             return default(UInt16);
         }
     }
-    
+
     [UnmanagedCallersOnly(EntryPoint = "DNObjectFromUInt16")]
     internal static void* /* System.Object */ DNObjectFromUInt16(UInt16 number)
     {
@@ -562,22 +562,22 @@ internal static unsafe class InteropUtils
     internal static Int32 DNObjectCastToInt32(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
     {
         System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
-    
+
         try {
 	        Int32 returnValue = (Int32)objectConverted;
-    
+
             if (outException is not null) {
                 *outException = null;
             }
-    
+
             return returnValue;
         } catch (Exception exception) {
             if (outException is not null) {
                 void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
-                    
+
                 *outException = exceptionHandleAddress;
             }
-    
+
             return default(Int32);
         }
     }
@@ -588,28 +588,28 @@ internal static unsafe class InteropUtils
         return ((System.Object)number).AllocateGCHandleAndGetAddress();
     }
     #endregion Int32
-    
+
     #region UInt32
     [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToUInt32")]
     internal static UInt32 DNObjectCastToUInt32(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
     {
         System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
-    
+
         try {
 	        UInt32 returnValue = (UInt32)objectConverted;
-    
+
             if (outException is not null) {
                 *outException = null;
             }
-    
+
             return returnValue;
         } catch (Exception exception) {
             if (outException is not null) {
                 void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
-                    
+
                 *outException = exceptionHandleAddress;
             }
-    
+
             return default(UInt32);
         }
     }
@@ -626,22 +626,22 @@ internal static unsafe class InteropUtils
     internal static Int64 DNObjectCastToInt64(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
     {
         System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
-    
+
         try {
             Int64 returnValue = (Int64)objectConverted;
-    
+
             if (outException is not null) {
                 *outException = null;
             }
-    
+
             return returnValue;
         } catch (Exception exception) {
             if (outException is not null) {
                 void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
-                    
+
                 *outException = exceptionHandleAddress;
             }
-    
+
             return default(Int64);
         }
     }
@@ -652,28 +652,28 @@ internal static unsafe class InteropUtils
         return ((System.Object)number).AllocateGCHandleAndGetAddress();
     }
     #endregion Int64
-    
+
     #region UInt64
     [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToUInt64")]
     internal static UInt64 DNObjectCastToUInt64(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
     {
         System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
-    
+
         try {
             UInt64 returnValue = (UInt64)objectConverted;
-    
+
             if (outException is not null) {
                 *outException = null;
             }
-    
+
             return returnValue;
         } catch (Exception exception) {
             if (outException is not null) {
                 void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
-                    
+
                 *outException = exceptionHandleAddress;
             }
-    
+
             return default(UInt64);
         }
     }
@@ -685,7 +685,7 @@ internal static unsafe class InteropUtils
     }
     #endregion UInt64
     #endregion Boxing/Unboxing of primitives
-    
+
     #region Byte Conversions
     [UnmanagedCallersOnly(EntryPoint = "DNGetPinnedPointerToByteArray")]
     internal static void* DNGetPinnedPointerToByteArray(
@@ -695,57 +695,57 @@ internal static unsafe class InteropUtils
     )
     {
         byte[] byteArrayConverted = InteropUtils.GetInstance<byte[]>(byteArray);
-        
+
         if (byteArrayConverted is null) {
             if (outGCHandle is not null) {
                 *outGCHandle = null;
             }
-            
+
             if (outException is not null) {
                 *outException = null;
             }
-            
+
             return null;
         }
-        
+
         try {
             var length = byteArrayConverted.Length;
-            
+
             if (length <= 0) {
                 if (outGCHandle is not null) {
                    *outGCHandle = null;
                 }
-               
+
                 if (outException is not null) {
                     *outException = null;
                 }
-                
+
                 return null;
             }
-            
+
             var gcHandle = System.Runtime.InteropServices.GCHandle.Alloc(byteArrayConverted, GCHandleType.Pinned);
             var byteArrayConvertedPtr = System.Runtime.CompilerServices.Unsafe.AsPointer(ref byteArrayConverted[0]);
-            
+
             if (outGCHandle is not null) {
                 *outGCHandle = gcHandle.AllocateGCHandleAndGetAddress();
             }
-            
+
             if (outException is not null) {
                 *outException = null;
             }
-            
+
             return byteArrayConvertedPtr;
         } catch (Exception exception) {
             if (outException is not null) {
                 void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
-                    
+
                 *outException = exceptionHandleAddress;
             }
-            
+
             if (outGCHandle is not null) {
                 *outGCHandle = null;
             }
-        
+
             return null;
         }
     }
@@ -758,18 +758,18 @@ internal readonly unsafe struct DNReadOnlySpanOfByte
 {
     internal void* DataPointer { get; } = null;
     internal int DataLength { get; } = 0;
-    
+
     internal DNReadOnlySpanOfByte(ReadOnlySpan<byte> span)
     {
         var length = span.Length;
-        
+
         if (length <= 0) {
             DataPointer = null;
             DataLength = 0;
-            
+
             return;
         }
-        
+
         // For a no-copy option see: https://www.answeroverflow.com/m/1042197174982811719
 
         // Console.WriteLine($"[C#] Allocating pointer to buffer of {length} bytes to copy data of ReadOnlySpan<byte> to");
@@ -779,10 +779,10 @@ internal readonly unsafe struct DNReadOnlySpanOfByte
             destinationDataPointer,
             length
         );
-        
+
         // Console.WriteLine($"[C#] Copying ReadOnlySpan<byte> to native pointer at 0x{(nint)destinationDataPointer:X}");
         span.CopyTo(destinationSpan);
-        
+
         DataPointer = destinationDataPointer;
         DataLength = length;
     }
@@ -798,7 +798,7 @@ internal readonly unsafe struct DNReadOnlySpanOfByte
             if (dataLength > 0) {
                 // Console.WriteLine($"[C#] Allocating byte[] of {dataLength} bytes to copy data of native pointer to");
                 var array = new byte[dataLength];
-            
+
                 // Console.WriteLine($"[C#] Copying data of native pointer at 0x{(nint)dataPointer:X} to byte[]");
                 System.Runtime.InteropServices.Marshal.Copy(
                     (nint)dataPointer,
@@ -816,10 +816,10 @@ internal readonly unsafe struct DNReadOnlySpanOfByte
         } else {
             span = ReadOnlySpan<byte>.Empty;
         }
-     
+
         return span;
     }
-    
+
     internal static DNReadOnlySpanOfByte Empty => new();
 }
 

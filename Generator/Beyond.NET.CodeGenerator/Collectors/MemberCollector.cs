@@ -34,10 +34,10 @@ public class MemberCollector
             type,
             out string[]? unsupportedMemberNames
         );
-        
+
         m_excludedMemberNames = unsupportedMemberNames;
     }
-    
+
     public HashSet<MemberInfo> Collect(
         out Dictionary<MemberInfo, string> unsupportedMembers
     )
@@ -49,33 +49,33 @@ public class MemberCollector
             bool isStruct = m_type.IsStruct();
             bool isInterface = m_type.IsInterface;
             bool foundParameterlessStructConstructor = false;
-            
-            BindingFlags flags = BindingFlags.Public | 
+
+            BindingFlags flags = BindingFlags.Public |
                                  BindingFlags.DeclaredOnly |
                                  BindingFlags.Instance |
                                  BindingFlags.Static;
 
             var memberInfos = m_type.GetMembers(flags);
-            
+
             foreach (var memberInfo in memberInfos) {
                 string memberName = memberInfo.Name;
 
                 if (m_excludedMemberNames?.Contains(memberName) ?? false) {
                     unsupportedMembers[memberInfo] = "Excluded";
-                    
+
                     continue;
                 }
 
                 if (memberInfo.IsObsoleteWithError()) {
                     unsupportedMembers[memberInfo] = "Obsolete with Error";
-                    
+
                     continue;
                 }
-                
+
                 // See https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record#nondestructive-mutation
                 if (memberInfo.IsVirtualCloneMethod()) {
                     unsupportedMembers[memberInfo] = "Virtual Record Clone Method";
-                    
+
                     continue;
                 }
 
@@ -84,7 +84,7 @@ public class MemberCollector
                     if (memberInfo is MethodInfo { IsAbstract: true, IsStatic: true })
                     {
                         unsupportedMembers[memberInfo] = "Static abstract method in interface";
-                        
+
                         continue;
                     }
 
@@ -97,7 +97,7 @@ public class MemberCollector
                         continue;
                     }
                 }
-                
+
                 CollectMember(
                     memberInfo,
                     collectedMembers,
@@ -116,7 +116,7 @@ public class MemberCollector
                 // Must create a "fake" parameterless constructor
 
                 var parameterlessStructConstructor = new ParameterlessStructConstructorInfo(m_type);
-                
+
                 CollectMember(
                     parameterlessStructConstructor,
                     collectedMembers,
@@ -129,41 +129,41 @@ public class MemberCollector
     }
 
     private void CollectMember(
-        MemberInfo memberInfo, 
+        MemberInfo memberInfo,
         HashSet<MemberInfo> collectedMembers,
         Dictionary<MemberInfo, string> unsupportedMembers
     )
     {
         var memberType = memberInfo.MemberType;
-        
+
         switch (memberType) {
             case MemberTypes.Constructor:
                 CollectConstructor((ConstructorInfo)memberInfo, collectedMembers, unsupportedMembers);
-                
+
                 break;
             case MemberTypes.Method:
                 CollectMethod((MethodInfo)memberInfo, collectedMembers, unsupportedMembers);
-                
+
                 break;
             case MemberTypes.Property:
                 CollectProperty((PropertyInfo)memberInfo, collectedMembers, unsupportedMembers);
-                
+
                 break;
             case MemberTypes.Field:
                 CollectField((FieldInfo)memberInfo, collectedMembers, unsupportedMembers);
-                
+
                 break;
             case MemberTypes.Event:
                 CollectEvent((EventInfo)memberInfo, collectedMembers, unsupportedMembers);
-                
+
                 break;
             default:
                 unsupportedMembers[memberInfo] = $"Unsupported member type: {memberType}";
-                
+
                 break;
         }
     }
-    
+
     private void CollectConstructor(
         ConstructorInfo constructorInfo,
         HashSet<MemberInfo> collectedMembers,
@@ -175,7 +175,7 @@ public class MemberCollector
             constructorInfo.IsGenericMethodDefinition ||
             constructorInfo.IsConstructedGenericMethod) {
             unsupportedMembers[constructorInfo] = "Is Generic";
-            
+
             return;
         }
 
@@ -184,10 +184,10 @@ public class MemberCollector
         if (declaringType is not null &&
             declaringType.HasRequiredMembers()) {
             unsupportedMembers[constructorInfo] = "Type has required fields or properties";
-            
+
             return;
         }
-            
+
         var parameterInfos = constructorInfo.GetParameters();
 
         bool allParametersSupported = true;
@@ -197,7 +197,7 @@ public class MemberCollector
             if (!ValidateParameter(parameterInfo, out string? unsupportedReason)) {
                 allParametersSupported = false;
                 unsupportedReasons.Add(new(parameterInfo, unsupportedReason));
-                
+
                 break;
             }
         }
@@ -213,7 +213,7 @@ public class MemberCollector
 
                 sb.Append($"{parameterInfo.Name ?? "N/A"}: {reason}; ");
             }
-            
+
             unsupportedMembers[constructorInfo] = sb.ToString();
         }
     }
@@ -227,16 +227,16 @@ public class MemberCollector
         if (!m_enableGenericsSupport &&
             methodInfo.IsGenericMethod) {
             unsupportedMembers[methodInfo] = "Is Generic Method";
-            
+
             return;
         }
-        
+
         // This filters out getters/setters and operator overloading methods
         bool isSpecialName = methodInfo.IsSpecialName;
 
         if (isSpecialName) {
             unsupportedMembers[methodInfo] = "Is Special Name";
-            
+
             return;
         }
 
@@ -244,12 +244,12 @@ public class MemberCollector
 
         if (!m_typeCollector.IsSupportedType(returnType, out string? unsupportedTypeReason)) {
             unsupportedMembers[methodInfo] = $"Has unsupported return type: {unsupportedTypeReason}";
-            
+
             return;
         }
 
         var parameterInfos = methodInfo.GetParameters();
-        
+
         bool allParametersSupported = true;
         List<Tuple<ParameterInfo, string?>> unsupportedReasons = new();
 
@@ -257,11 +257,11 @@ public class MemberCollector
             if (!ValidateParameter(parameterInfo, out string? unsupportedReason)) {
                 allParametersSupported = false;
                 unsupportedReasons.Add(new(parameterInfo, unsupportedReason));
-                
+
                 break;
             }
         }
-        
+
         if (allParametersSupported) {
             collectedMembers.Add(methodInfo);
         } else {
@@ -273,11 +273,11 @@ public class MemberCollector
 
                 sb.Append($"{parameterInfo.Name ?? "N/A"}: {reason}; ");
             }
-            
+
             unsupportedMembers[methodInfo] = sb.ToString();
         }
     }
-    
+
     private void CollectProperty(
         PropertyInfo propertyInfo,
         HashSet<MemberInfo> collectedMembers,
@@ -288,22 +288,22 @@ public class MemberCollector
 
         if (!m_typeCollector.IsSupportedType(propertyType, out string? unsupportedTypeReason)) {
             unsupportedMembers[propertyInfo] = $"Has unsupported type: {unsupportedTypeReason}";
-            
+
             return;
         }
-        
+
         // var indexParameters = propertyInfo.GetIndexParameters();
         // bool hasIndexParameters = indexParameters.Length > 0;
         //
         // if (hasIndexParameters) {
         //     unsupportedMembers[propertyInfo] = "Has index parameter(s)";
-        //     
+        //
         //     return;
         // }
 
         collectedMembers.Add(propertyInfo);
     }
-    
+
     private void CollectField(
         FieldInfo fieldInfo,
         HashSet<MemberInfo> collectedMembers,
@@ -314,13 +314,13 @@ public class MemberCollector
 
         if (!m_typeCollector.IsSupportedType(fieldType, out string? unsupportedReason)) {
             unsupportedMembers[fieldType] = $"Has unsupported type: {unsupportedReason ?? "Unknown Reason"}";
-            
+
             return;
         }
 
         collectedMembers.Add(fieldInfo);
     }
-    
+
     private void CollectEvent(
         EventInfo eventInfo,
         HashSet<MemberInfo> collectedMembers,
@@ -337,9 +337,9 @@ public class MemberCollector
             collectedMembers.Add(eventInfo);
         }
     }
-    
+
     private bool ValidateParameter(
-        ParameterInfo parameterInfo, 
+        ParameterInfo parameterInfo,
         out string? unsupportedReason
     )
     {

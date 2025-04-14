@@ -5,7 +5,7 @@ namespace Beyond.NET.Core;
 public class NSURL: NSObject
 {
     private static nint CLASS => ObjCInterop.objc_getClass("NSURL");
-    
+
     private static nint SELECTOR_FILEURLWITHPATH = ObjCInterop.sel_registerName("fileURLWithPath:");
     private static nint SELECTOR_PATH = ObjCInterop.sel_registerName("path");
     private static nint SELECTOR_GETRESOURCEVALUEFORKEYERROR = ObjCInterop.sel_registerName("getResourceValue:forKey:error:");
@@ -14,7 +14,7 @@ public class NSURL: NSObject
     {
         get {
             nint foundationFrameworkHandle = nint.Zero;
-            
+
             try {
                 foundationFrameworkHandle = ObjCInterop.LoadFramework("/System/Library/Frameworks/Foundation.framework/Foundation");
 
@@ -26,7 +26,7 @@ public class NSURL: NSObject
 
                         if (inst != nint.Zero) {
                             var key = new NSString(inst);
-    
+
                             return key;
                         }
                     }
@@ -40,7 +40,7 @@ public class NSURL: NSObject
             throw new Exception($"Failed to get {nameof(NSURLCanonicalPathKey)}");
         }
     }
-    
+
     internal NSURL(nint instance) : base(instance)
     {
     }
@@ -56,9 +56,9 @@ public class NSURL: NSObject
         if (urlInst == nint.Zero) {
             throw new Exception($"Failed to initialize {nameof(NSURL)} with {nameof(NSString)}");
         }
-        
+
         m_instance = urlInst;
-        
+
         Retain();
     }
 
@@ -68,7 +68,7 @@ public class NSURL: NSObject
             if (m_instance == nint.Zero) {
                 throw new Exception($"{nameof(NSURL)} is null");
             }
-            
+
             var pathInst = ObjCInterop.objc_msgSend_RetPtr(
                 m_instance,
                 SELECTOR_PATH
@@ -87,7 +87,7 @@ public class NSURL: NSObject
     public NSString? GetResourceValue(NSString urlResourceKey)
     {
         var valuePtr = Marshal.AllocHGlobal(nint.Size);
-        
+
         try {
             var success = ObjCInterop.objc_msgSend_RetBool_3ArgPtr(
                 m_instance,

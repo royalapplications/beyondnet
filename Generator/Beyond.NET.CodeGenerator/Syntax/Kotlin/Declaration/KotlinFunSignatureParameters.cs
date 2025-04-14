@@ -8,7 +8,7 @@ public struct KotlinFunSignatureParameters
     {
         Parameters = Array.Empty<KotlinFunSignatureParameter>();
     }
-    
+
     public KotlinFunSignatureParameters(IEnumerable<KotlinFunSignatureParameter> parameters)
     {
         Parameters = parameters;
@@ -21,7 +21,7 @@ public struct KotlinFunSignatureParameters
         foreach (var parameter in Parameters) {
             parameterStrings.Add(parameter.ToString());
         }
-        
+
         string parametersString = string.Join(", ", parameterStrings);
 
         return parametersString;

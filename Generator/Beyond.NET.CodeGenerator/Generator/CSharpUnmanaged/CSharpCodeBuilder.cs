@@ -12,13 +12,13 @@ readonly struct CSharpCodeBuilder
 
     internal CSharpCodeBuilder([StringSyntax("C#")] string? value = null) : this(new StringBuilder(value))
     { }
-    
+
     private CSharpCodeBuilder(StringBuilder sb) => m_sb = sb;
 
     internal CSharpCodeBuilder Append(char c) => new(m_sb.Append(c));
-    
+
     internal CSharpCodeBuilder Append([StringSyntax("C#")] string value) => new(m_sb.Append(value));
-    
+
     internal CSharpCodeBuilder AppendLine([StringSyntax("C#")] string? value = null) => new(m_sb.AppendLine(value));
 
     public override string ToString() => m_sb.ToString();

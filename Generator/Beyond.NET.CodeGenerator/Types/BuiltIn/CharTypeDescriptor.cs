@@ -20,7 +20,7 @@ public partial class BuiltInTypeDescriptors
                     { new LanguagePair(CodeLanguage.Swift, CodeLanguage.C), "{0}.cValue" }
                 }
             );
-        
+
             return descriptor;
         }
     }

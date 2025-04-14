@@ -17,11 +17,11 @@ public partial class SwiftTypeSyntaxWriter
         internal string FullTypeName { get; }
         internal string CTypeName { get; }
         internal string SwiftTypeName { get; }
-        
+
         internal Type? BaseType { get; }
         internal TypeDescriptor? BaseTypeDescriptor { get; }
         internal string SwiftBaseTypeName { get; }
-        
+
         internal Type ReturnType { get; }
         internal TypeDescriptor ReturnTypeDescriptor { get; }
         internal bool IsReturning { get; }
@@ -29,9 +29,9 @@ public partial class SwiftTypeSyntaxWriter
         internal bool ReturnTypeIsOptional { get; }
         internal bool ReturnTypeIsReadOnlySpanOfByte { get; }
         internal string SwiftReturnTypeName { get; }
-        
+
         internal ParameterInfo[] ParameterInfos { get; }
-        
+
         internal MethodInfo? DelegateInvokeMethod { get; }
 
         internal DelegateTypeInfo(
@@ -47,7 +47,7 @@ public partial class SwiftTypeSyntaxWriter
         )
         {
         }
-        
+
         internal DelegateTypeInfo(
             Type type,
             MethodInfo? delegateInvokeMethod,
@@ -57,12 +57,12 @@ public partial class SwiftTypeSyntaxWriter
         )
         {
             DelegateInvokeMethod = delegateInvokeMethod;
-            
+
             Type = type;
             TypeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
 
             string? fullTypeName = type.FullName;
-            
+
             if (string.IsNullOrEmpty(fullTypeName)) {
                 throw new Exception($"// Type \"{type.Name}\" was skipped. Reason: It has no full name.");
             }
@@ -71,21 +71,21 @@ public partial class SwiftTypeSyntaxWriter
             TypeName = type.GetFullNameOrName();
             CTypeName = type.CTypeName();
             SwiftTypeName = TypeDescriptor.GetTypeName(CodeLanguage.Swift, false);
-            
+
             ReturnType = returnType;
-    
+
             if (ReturnType.IsByRef) {
                 throw new Exception($"// TODO: ({SwiftTypeName}) Unsupported delegate type. Reason: Has by ref return type");
             }
-            
+
             IsReturning = !ReturnType.IsVoid();
-    
+
             ReturnTypeDescriptor = ReturnType.GetTypeDescriptor(typeDescriptorRegistry);
-            
+
             ReturnTypeIsPrimitive = ReturnType.IsPrimitive;
             ReturnTypeIsReadOnlySpanOfByte = ReturnType.IsReadOnlySpanOfByte();
             ReturnTypeIsOptional = ReturnTypeDescriptor.Nullability == Nullability.Nullable;
-            
+
             // TODO: This generates inout TypeName if the return type is by ref
             SwiftReturnTypeName = ReturnTypeDescriptor.GetTypeName(
                 CodeLanguage.Swift,
@@ -96,19 +96,19 @@ public partial class SwiftTypeSyntaxWriter
                 false,
                 false
             );
-            
+
             foreach (var parameter in parameterInfos) {
                 if (parameter.IsOut) {
                     throw new Exception($"// TODO: ({SwiftTypeName}) Unsupported delegate type. Reason: Has out parameters");
                 }
-            
+
                 if (parameter.IsIn) {
                     throw new Exception($"// TODO: ({SwiftTypeName}) Unsupported delegate type. Reason: Has in parameters");
                 }
-                
+
                 if (!ExperimentalFeatureFlags.EnableByRefParametersInDelegates) {
                     Type parameterType = parameter.ParameterType;
-                    
+
                     if (parameterType.IsByRef) {
                         throw new Exception($"// TODO: ({SwiftTypeName}) Unsupported delegate type. Reason: Has by ref parameters");
                     }
@@ -116,10 +116,10 @@ public partial class SwiftTypeSyntaxWriter
             }
 
             ParameterInfos = parameterInfos;
-            
+
             BaseType = type.BaseType;
             BaseTypeDescriptor = BaseType?.GetTypeDescriptor(typeDescriptorRegistry);
-    
+
             SwiftBaseTypeName = BaseTypeDescriptor?.GetTypeName(CodeLanguage.Swift, false)
                                 ?? "DNObject";
         }
@@ -154,7 +154,7 @@ public partial class SwiftTypeSyntaxWriter
             return true;
         }
     }
-    
+
     private string WriteDelegateTypeDefs(
         ISyntaxWriterConfiguration? configuration,
         Type type,
@@ -162,7 +162,7 @@ public partial class SwiftTypeSyntaxWriter
     )
     {
         var delegateInvokeMethod = type.GetDelegateInvokeMethod();
-        
+
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
 
         if (state.CSharpUnmanagedResult is null) {
@@ -183,10 +183,10 @@ public partial class SwiftTypeSyntaxWriter
             );
         } catch (Exception ex) {
             state.AddSkippedType(type);
-            
+
             return ex.Message;
         }
-        
+
         Type? baseType = typeInfo.BaseType;
         MethodInfo? baseTypeDelegateInvokeMethod;
 
@@ -204,10 +204,10 @@ public partial class SwiftTypeSyntaxWriter
             typeInfo.TypeName,
             typeInfo.FullTypeName
         );
-        
+
         memberParts.Add(typeNamesCode);
         #endregion Type Names
-        
+
         #region Closure Type Alias
         string closureTypeAliasCode = WriteClosureTypeAlias(
             type,
@@ -266,15 +266,15 @@ public partial class SwiftTypeSyntaxWriter
                 baseTypeDelegateInvokeMethod,
                 typeDescriptorRegistry
             );
-    
+
             memberParts.Add(invokeCode);
         }
         #endregion Invoke
 
         string memberPartsCode = string.Join("\n\n", memberParts);
-        
+
         SwiftCodeBuilder sb = new();
-        
+
         sb.AppendLine(memberPartsCode);
 
         #region Other Members
@@ -284,7 +284,7 @@ public partial class SwiftTypeSyntaxWriter
             state,
             false
         );
-                
+
         sb.AppendLine(membersCode);
         #endregion Other Members
 
@@ -293,12 +293,12 @@ public partial class SwiftTypeSyntaxWriter
             .Public()
             .Implementation(sb.ToString())
             .ToString();
-        
+
         var typeDocumentationComment = type.GetDocumentation()
             ?.GetFormattedDocumentationComment();
 
         SwiftCodeBuilder sbFinal;
-        
+
         if (!string.IsNullOrEmpty(typeDocumentationComment)) {
             sbFinal = new(typeDocumentationComment + "\n");
             sbFinal.AppendLine(typeDecl);
@@ -329,7 +329,7 @@ public partial class SwiftTypeSyntaxWriter
             .Override()
             .Implementation($"\"{fullTypeName}\"")
             .ToString();
-        
+
         string code = $"{typeNameDecl}\n\n{fullTypeNameDecl}";
 
         return code;
@@ -344,7 +344,7 @@ public partial class SwiftTypeSyntaxWriter
     )
     {
         SwiftCodeBuilder sb = new();
-        
+
         string swiftFuncParameters = SwiftMethodSyntaxWriter.WriteParameters(
             MemberKind.Method,
             null,
@@ -416,25 +416,25 @@ public partial class SwiftTypeSyntaxWriter
         }
 
         string fatalErrorMessageIfNoContext = "Context is nil";
-        
+
         string innerSwiftContextVarName = "__innerSwiftContext";
         createCFunctionFuncName = "__createCFunction";
         string innerClosureVarName = "__innerClosure";
 
         SwiftCodeBuilder sb = new();
-        
+
         sb.AppendLine($"return {{ {cFunctionParameters} in");
         sb.AppendLine($"\tguard let {innerContextParameterName} else {{ fatalError(\"{fatalErrorMessageIfNoContext}\") }}");
         sb.AppendLine();
-        
+
         sb.AppendLine(Builder.Let(innerSwiftContextVarName)
             .Value($"NativeBox<{closureTypeTypeAliasName}>.fromPointer({innerContextParameterName})")
             .ToIndentedString(1));
-        
+
         sb.AppendLine(Builder.Let(innerClosureVarName)
             .Value($"{innerSwiftContextVarName}.value")
             .ToIndentedString(1));
-        
+
         sb.AppendLine();
 
         string parameterConversionsToSwift = SwiftMethodSyntaxWriter.WriteParameterConversions(
@@ -457,17 +457,17 @@ public partial class SwiftTypeSyntaxWriter
 
         sb.AppendLine(parameterConversionsToSwift
             .IndentAllLines(1));
-        
+
         string returnValueName = "__returnValueSwift";
-            
+
         string returnValueStorage = isReturning
             ? $"let {returnValueName} = "
             : string.Empty;
-        
+
         string allParameterNamesString = string.Join(", ", convertedParameterNamesToSwift);
-        
+
         string invocation = $"{returnValueStorage}{innerClosureVarName}({allParameterNamesString})";
-        
+
         sb.AppendLine($"\t{invocation}");
         sb.AppendLine();
 
@@ -478,10 +478,10 @@ public partial class SwiftTypeSyntaxWriter
 
                 sb.AppendLine(indentedBackConversionCode);
             }
-            
+
             sb.AppendLine();
         }
-        
+
         string returnCode = string.Empty;
 
         if (isReturning) {
@@ -490,7 +490,7 @@ public partial class SwiftTypeSyntaxWriter
                 CodeLanguage.C,
                 Nullability.NotSpecified // TODO
             );
-    
+
             if (!string.IsNullOrEmpty(returnTypeConversion)) {
                 string newReturnValueName = "__returnValue";
 
@@ -501,30 +501,30 @@ public partial class SwiftTypeSyntaxWriter
                 string fullReturnTypeConversion = Builder.Let(newReturnValueName)
                     .Value(string.Format(returnTypeConversion, $"{returnValueName}{returnTypeOptionalString}"))
                     .ToIndentedString(1);
-    
+
                 sb.AppendLine(fullReturnTypeConversion);
-                
+
                 if (!returnTypeIsPrimitiveOrEnum &&
                     !returnValueIsReadOnlySpanOfByte) {
                     string nullabilitySpecifier = returnTypeIsOptional
                         ? "?"
                         : string.Empty;
-                    
+
                     sb.AppendLine($"\t{returnValueName}{nullabilitySpecifier}.__destroyMode = .skip // Will be destroyed by .NET");
                 }
-                
+
                 sb.AppendLine();
-                        
+
                 returnValueName = newReturnValueName;
             }
-    
+
             returnCode = $"return {returnValueName}";
         }
 
         if (isReturning) {
             sb.AppendLine($"\t{returnCode}");
         }
-        
+
         sb.AppendLine("}");
 
         string code = Builder.Func(createCFunctionFuncName)
@@ -547,7 +547,7 @@ public partial class SwiftTypeSyntaxWriter
 
         string innerContextParameterName = "__innerContext";
         string fatalErrorMessageIfNoContext = "Context is nil";
-        
+
         createCDestructorFunctionFuncName = "__createCDestructorFunction";
 
         sb.AppendLine($"return {{ {innerContextParameterName} in");
@@ -577,24 +577,24 @@ public partial class SwiftTypeSyntaxWriter
 
         sb.AppendLine(Builder.Let("__cFunction")
             .Value($"Self.{createCFunctionFuncName}()").ToString());
-        
+
         sb.AppendLine(Builder.Let("__cDestructorFunction")
             .Value($"Self.{createCDestructorFunctionFuncName}()").ToString());
-        
+
         sb.AppendLine();
-        
+
         sb.AppendLine(Builder.Let("__outerSwiftContext")
             .Value("NativeBox(__closure)").ToString());
-        
+
         sb.AppendLine(Builder.Let("__outerContext")
             .Value("__outerSwiftContext.retainedPointer()").ToString());
-        
+
         sb.AppendLine();
 
         string letDelegateC = Builder.Let("__delegateC")
             .Value($"{cTypeName}_Create(__outerContext, __cFunction, __cDestructorFunction)")
             .ToString();
-        
+
         sb.AppendLine(letDelegateC);
         sb.AppendLine();
         sb.AppendLine("self.init(handle: __delegateC)");
@@ -618,7 +618,7 @@ public partial class SwiftTypeSyntaxWriter
     )
     {
         SwiftCodeBuilder sb = new();
-        
+
         string swiftFuncParameters = SwiftMethodSyntaxWriter.WriteParameters(
             MemberKind.Method,
             null,
@@ -651,7 +651,7 @@ public partial class SwiftTypeSyntaxWriter
         sb.AppendLine(Builder.Var(exceptionCVarName)
             .TypeName("System_Exception_t?")
             .ToIndentedString(1));
-        
+
         sb.AppendLine();
 
         string selfConvertedVarName = "__selfC";
@@ -659,7 +659,7 @@ public partial class SwiftTypeSyntaxWriter
         sb.AppendLine(Builder.Let(selfConvertedVarName)
             .Value("self.__handle")
             .ToIndentedString(1));
-        
+
         sb.AppendLine();
 
         string parameterConversions = SwiftMethodSyntaxWriter.WriteParameterConversions(
@@ -684,64 +684,64 @@ public partial class SwiftTypeSyntaxWriter
         convertedParameterNamesToC.Add($"&{exceptionCVarName}");
 
         string allParameterNamesString = string.Join(", ", convertedParameterNamesToC);
-        
+
         sb.AppendLine(parameterConversions
             .IndentAllLines(1));
-        
+
         string returnValueName = "__returnValueC";
-            
+
         string returnValueStorage = typeInfo.IsReturning
             ? $"let {returnValueName} = "
             : string.Empty;
-        
+
 
         string cInvokeMethodName = $"{typeInfo.CTypeName}_Invoke";
-        
+
         string invocation = $"{returnValueStorage}{cInvokeMethodName}({allParameterNamesString})";
-        
+
         sb.AppendLine($"\t{invocation}");
         sb.AppendLine();
-        
+
         string returnCode = string.Empty;
-        
+
         if (typeInfo.IsReturning) {
             string? returnTypeConversion = typeInfo.ReturnTypeDescriptor.GetTypeConversion(
                 CodeLanguage.C,
                 CodeLanguage.Swift,
                 Nullability.NotSpecified // TODO
             );
-        
+
             if (!string.IsNullOrEmpty(returnTypeConversion)) {
                 string newReturnValueName = "__returnValue";
-        
+
                 string fullReturnTypeConversion = Builder.Let(newReturnValueName)
                     .Value(string.Format(returnTypeConversion, $"{returnValueName}"))
                     .ToIndentedString(1);
-        
+
                 sb.AppendLine(fullReturnTypeConversion);
                 sb.AppendLine();
-                        
+
                 returnValueName = newReturnValueName;
             }
-        
+
             returnCode = $"return {returnValueName}";
         }
-        
+
         sb.AppendLine("""
     if let __exceptionC {
         let __exception = System_Exception(handle: __exceptionC)
         let __error = __exception.swiftError
-        
+
         throw __error
     }
 """);
 
         sb.AppendLine();
-        
+
         if (typeInfo.IsReturning) {
             sb.AppendLine($"\t{returnCode}");
         }
-        
+
         sb.AppendLine("}");
 
         string code = sb.ToString();

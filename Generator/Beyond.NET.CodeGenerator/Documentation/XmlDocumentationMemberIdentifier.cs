@@ -35,36 +35,36 @@ internal struct XmlDocumentationMemberIdentifier
     {
         if (type.IsArray) {
             m_key = string.Empty;
-            
+
             return;
         }
-        
+
         var typeFullName = type.FullName;
 
         if (string.IsNullOrEmpty(typeFullName)) {
             m_key = string.Empty;
-            
+
             return;
         }
-        
+
         m_key = $"{IDENTIFIER_TYPE}:{EncodeKey(typeFullName)}";
     }
-    
+
     internal XmlDocumentationMemberIdentifier(FieldInfo fieldInfo)
     {
         var type = fieldInfo.DeclaringType;
 
         if (type is null) {
             m_key = string.Empty;
-            
+
             return;
         }
-        
+
         var typeFullName = type.FullName;
 
         if (string.IsNullOrEmpty(typeFullName)) {
             m_key = string.Empty;
-            
+
             return;
         }
 
@@ -72,22 +72,22 @@ internal struct XmlDocumentationMemberIdentifier
 
         m_key = $"{IDENTIFIER_FIELD}:{EncodeKey(typeFullName, memberName)}";
     }
-    
+
     internal XmlDocumentationMemberIdentifier(PropertyInfo propertyInfo)
     {
         var type = propertyInfo.DeclaringType;
 
         if (type is null) {
             m_key = string.Empty;
-            
+
             return;
         }
-        
+
         var typeFullName = type.FullName;
 
         if (string.IsNullOrEmpty(typeFullName)) {
             m_key = string.Empty;
-            
+
             return;
         }
 
@@ -95,22 +95,22 @@ internal struct XmlDocumentationMemberIdentifier
 
         m_key = $"{IDENTIFIER_PROPERTY}:{EncodeKey(typeFullName, memberName)}";
     }
-    
+
     internal XmlDocumentationMemberIdentifier(EventInfo eventInfo)
     {
         var type = eventInfo.DeclaringType;
 
         if (type is null) {
             m_key = string.Empty;
-            
+
             return;
         }
-        
+
         var typeFullName = type.FullName;
 
         if (string.IsNullOrEmpty(typeFullName)) {
             m_key = string.Empty;
-            
+
             return;
         }
 
@@ -119,16 +119,16 @@ internal struct XmlDocumentationMemberIdentifier
         m_key = $"{IDENTIFIER_EVENT}:{EncodeKey(typeFullName, memberName)}";
     }
 
-    internal XmlDocumentationMemberIdentifier(MethodInfo methodInfo) 
+    internal XmlDocumentationMemberIdentifier(MethodInfo methodInfo)
 	    : this(methodInfo, false)
     {
     }
-    
-    internal XmlDocumentationMemberIdentifier(ConstructorInfo constructorInfo) 
+
+    internal XmlDocumentationMemberIdentifier(ConstructorInfo constructorInfo)
 	    : this(constructorInfo, true)
     {
     }
-    
+
     private XmlDocumentationMemberIdentifier(
 	    MethodBase methodBase,
 	    bool isConstructor
@@ -138,15 +138,15 @@ internal struct XmlDocumentationMemberIdentifier
 
         if (type is null) {
             m_key = string.Empty;
-            
+
             return;
         }
-        
+
         var typeFullName = type.FullName;
 
         if (string.IsNullOrEmpty(typeFullName)) {
             m_key = string.Empty;
-            
+
             return;
         }
 
@@ -171,27 +171,27 @@ internal struct XmlDocumentationMemberIdentifier
             methodBase.Name is "op_Explicit") {
 			return null;
 		}
-		
+
 		var parameterInfos = methodBase.GetParameters();
 
 		var declarationTypeString = GetXmlDocumenationFormattedString(
 			declaringType,
 			false
 		);
-		
+
 		var memberNameString = isConstructor
-            ? "#ctor" 
+            ? "#ctor"
             : methodBase.Name;
-		
-		string parametersString = parameterInfos.Length > 0 
-			? "(" + string.Join(",", methodBase.GetParameters().Select(x => GetXmlDocumenationFormattedString(x.ParameterType, true))) + ")" 
+
+		string parametersString = parameterInfos.Length > 0
+			? "(" + string.Join(",", methodBase.GetParameters().Select(x => GetXmlDocumenationFormattedString(x.ParameterType, true))) + ")"
 			: string.Empty;
 
 		string methodName = declarationTypeString +
 		                    "." +
 		                    memberNameString +
 		                    parametersString;
-        
+
 		return methodName;
 	}
 
@@ -209,7 +209,7 @@ internal struct XmlDocumentationMemberIdentifier
 			if (elementType is null) {
 				return null;
 			}
-			
+
 			var elementTypeString = GetXmlDocumenationFormattedString(
 				elementType,
 				isMethodParameter
@@ -221,11 +221,11 @@ internal struct XmlDocumentationMemberIdentifier
 				return elementTypeString + "@";
 			} else if (type.IsArray) {
 				int rank = type.GetArrayRank();
-				
+
 				string arrayDimensionsString = rank > 1
 					? "[" + string.Join(",", Enumerable.Repeat("0:", rank)) + "]"
 					: "[]";
-				
+
 				return elementTypeString + arrayDimensionsString;
 			} else {
 				return null;
@@ -234,14 +234,14 @@ internal struct XmlDocumentationMemberIdentifier
 			var isNested = type.IsNested;
 
 			string prefaceString;
-			
+
 			if (isNested) {
 				var declaringType = type.DeclaringType;
 
 				if (declaringType is null) {
 					return null;
 				}
-				
+
 				prefaceString = GetXmlDocumenationFormattedString(
 					declaringType,
 					isMethodParameter
@@ -257,13 +257,13 @@ internal struct XmlDocumentationMemberIdentifier
 			return prefaceString + typeNameString;
 		}
 	}
-    
+
     private static string EncodeKey(
         string fullTypeName,
         string? memberName = null
     ) {
         string key = Regex.Replace(
-            fullTypeName, 
+            fullTypeName,
             @"\[.*\]",
             string.Empty
         ).Replace('+', '.');
@@ -271,7 +271,7 @@ internal struct XmlDocumentationMemberIdentifier
         if (!string.IsNullOrEmpty(memberName)) {
             key += "." + memberName;
         }
-        
+
         return key;
     }
 
@@ -287,10 +287,10 @@ internal struct XmlDocumentationMemberIdentifier
 	    if (string.IsNullOrEmpty(key)) {
 		    return key;
 	    }
-	    
+
 	    foreach (var identifier in Identifiers) {
 		    var identifierPrefix = $"{identifier}:";
-                    
+
 		    if (!key.StartsWith(identifierPrefix) ||
 		        key.Length <= identifierPrefix.Length) {
 			    continue;

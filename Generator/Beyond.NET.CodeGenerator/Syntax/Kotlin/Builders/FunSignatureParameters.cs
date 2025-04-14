@@ -16,7 +16,7 @@ public struct FunSignatureParameters
 
         return this;
     }
-    
+
     public FunSignatureParameters AddParameter(
         string name,
         [StringSyntax("Kt")] string typeName
@@ -28,7 +28,7 @@ public struct FunSignatureParameters
         ));
     }
     #endregion Add Parameter
-    
+
     #region Build
     public KotlinFunSignatureParameters Build()
     {
@@ -36,10 +36,10 @@ public struct FunSignatureParameters
 
         foreach (var parameter in m_parameters) {
             var convertedParameter = parameter.Build();
-            
+
             parameters.Add(convertedParameter);
         }
-        
+
         return new(parameters);
     }
 

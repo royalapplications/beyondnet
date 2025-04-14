@@ -8,7 +8,7 @@ public struct SwiftFuncSignatureParameters
     {
         Parameters = Array.Empty<SwiftFuncSignatureParameter>();
     }
-    
+
     public SwiftFuncSignatureParameters(IEnumerable<SwiftFuncSignatureParameter> parameters)
     {
         Parameters = parameters;
@@ -21,7 +21,7 @@ public struct SwiftFuncSignatureParameters
         foreach (var parameter in Parameters) {
             parameterStrings.Add(parameter.ToString());
         }
-        
+
         string parametersString = string.Join(", ", parameterStrings);
 
         return parametersString;

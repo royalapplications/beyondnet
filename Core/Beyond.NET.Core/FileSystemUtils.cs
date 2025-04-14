@@ -15,7 +15,7 @@ public static class FileSystemUtils
             true
         );
     }
-    
+
     private static void CopyDirectoryContents(
         string sourceDirectoryPath,
         string destinationDirectoryPath,
@@ -25,15 +25,15 @@ public static class FileSystemUtils
     {
         // Get information about the source directory
         var sourceDirectory = new DirectoryInfo(sourceDirectoryPath);
-        
+
         // Check if the source directory exists
         if (!sourceDirectory.Exists) {
             throw new DirectoryNotFoundException($"Source directory not found: {sourceDirectory.FullName}");
         }
-        
+
         // Cache directories before we start copying
         var sourceDirectories = sourceDirectory.GetDirectories();
-        
+
         if (!Directory.Exists(destinationDirectoryPath)) {
             // Destination directory does not exist, create it
             Directory.CreateDirectory(destinationDirectoryPath);
@@ -52,7 +52,7 @@ public static class FileSystemUtils
                     // Target file already exists, delete it
                     targetFile.Delete();
                 }
-                
+
                 // Re-create link
                 targetFile.CreateAsSymbolicLink(linkTarget);
             } else { // Regular file
@@ -68,7 +68,7 @@ public static class FileSystemUtils
         if (recursive) {
             foreach (DirectoryInfo sourceSubDirectory in sourceDirectories) {
                 var destinationSubDirectoryPath = Path.Combine(destinationDirectoryPath, sourceSubDirectory.Name);
-                
+
                 var targetSubDirectory = new DirectoryInfo(destinationSubDirectoryPath);
 
                 var linkTarget = sourceSubDirectory.LinkTarget;
@@ -78,7 +78,7 @@ public static class FileSystemUtils
                         // Target directory already exists, delete it
                         targetSubDirectory.Delete();
                     }
-                
+
                     // Re-create link
                     targetSubDirectory.CreateAsSymbolicLink(linkTarget);
                 } else { // Regular directory
@@ -87,7 +87,7 @@ public static class FileSystemUtils
                         // On the first level, delete any existing directories
                         targetSubDirectory.Delete(true);
                     }
-                    
+
                     // Copy directory
                     CopyDirectoryContents(
                         sourceSubDirectory.FullName,

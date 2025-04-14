@@ -1,21 +1,21 @@
 {
 	"AssemblyPath": "Beyond.NET.Sample.Managed/bin/Release/publish/Beyond.NET.Sample.Managed.dll",
-	
+
 	"Build": {
 		"Target": "apple-universal",
 		"ProductName": "BeyondDotNETSampleKit",
 		"ProductBundleIdentifier": "com.royalapps.beyonddotnetsamplekit",
 		"ProductOutputPath": "Generated"
 	},
-	
+
 	"CSharpUnmanagedOutputPath": "Generated/Generated_CS.cs",
 	"COutputPath": "Generated/Generated_C.h",
 	"SwiftOutputPath": "Generated/Generated_Swift.swift",
 	"KotlinOutputPath": "Generated/Generated_Kotlin.kt",
-	
+
 	"KotlinPackageName": "com.example.beyondnetsampleandroid.dn",
 	"KotlinNativeLibraryName": "BeyondDotNETSampleNative",
-	
+
 	"EmitUnsupported": true,
 	"GenerateTypeCheckedDestroyMethods": false,
 	"EnableGenericsSupport": true,
@@ -45,7 +45,7 @@
 		"System.Security.SecureString",
 		"System.WeakReference",
 		"System.Buffers.Binary.BinaryPrimitives",
-		
+
 		"System.WeakReference`1",
 		"System.Runtime.CompilerServices.ConditionalWeakTable`2",
 		"System.Threading.Tasks.Task`1",

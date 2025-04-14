@@ -12,25 +12,25 @@ public class ParameterlessStructConstructorInfo: ConstructorInfo
         if (!declaringType.IsStruct()) {
             throw new Exception("Declaring Type must be a struct");
         }
-        
+
         DeclaringType = declaringType;
     }
-    
+
     public override Type DeclaringType { get; }
     public override string Name => ".ctor";
     public override ParameterInfo[] GetParameters() => Array.Empty<ParameterInfo>();
-    
-    public override MethodAttributes Attributes => MethodAttributes.FamANDAssem | 
+
+    public override MethodAttributes Attributes => MethodAttributes.FamANDAssem |
                                                    MethodAttributes.Family |
                                                    MethodAttributes.Public |
                                                    MethodAttributes.HideBySig |
                                                    MethodAttributes.SpecialName |
                                                    MethodAttributes.RTSpecialName;
-    
+
     public override object[] GetCustomAttributes(bool inherit) => Array.Empty<object>();
     public override object[] GetCustomAttributes(Type attributeType, bool inherit) => Array.Empty<object>();
     public override bool IsDefined(Type attributeType, bool inherit) => false;
-    
+
     public override Type ReflectedType => throw new NotImplementedException();
     public override MethodImplAttributes GetMethodImplementationFlags() => throw new NotImplementedException();
     public override RuntimeMethodHandle MethodHandle => throw new NotImplementedException();

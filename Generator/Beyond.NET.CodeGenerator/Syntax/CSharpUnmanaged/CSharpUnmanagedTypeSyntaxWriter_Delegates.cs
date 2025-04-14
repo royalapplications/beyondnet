@@ -21,7 +21,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
     {
         var parameterInfos = invokeMethod?.GetParameters() ?? Array.Empty<ParameterInfo>();
         var returnType = invokeMethod?.ReturnType ?? typeof(void);
-        
+
         WriteDelegateType(
             configuration,
             type,
@@ -33,7 +33,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
             state
         );
     }
-    
+
     private void WriteDelegateType(
         ISyntaxWriterConfiguration? configuration,
         Type type,
@@ -49,17 +49,17 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
 
         // TODO: Duh...
         fullTypeName = fullTypeName.Replace("+", ".");
-        
+
         foreach (var parameter in parameterInfos) {
             if (parameter.IsOut) {
                 sb.AppendLine("\t// TODO: Unsupported delegate type. Reason: Has out parameters");
-                
+
                 return;
             }
-            
+
             if (parameter.IsIn) {
                 sb.AppendLine("\t// TODO: Unsupported delegate type. Reason: Has in parameters");
-                
+
                 return;
             }
 
@@ -76,11 +76,11 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
             if (parameterType.IsGenericParameter ||
                 parameterType.IsGenericMethodParameter) {
                 sb.AppendLine("\t// TODO: Unsupported delegate type. Reason: Has generic parameters");
-                
+
                 return;
             }
         }
-        
+
         // TODO: Generics
 
         string managedParmeters = CSharpUnmanagedMethodSyntaxWriter.WriteParameters(
@@ -114,7 +114,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         if (!string.IsNullOrEmpty(unmanagedParameters)) {
             unmanagedParameters += ", ";
         }
-        
+
         string unmanagedParametersForInvocation = CSharpUnmanagedMethodSyntaxWriter.WriteParameters(
             CodeLanguage.CSharpUnmanaged,
             MemberKind.Automatic,
@@ -128,11 +128,11 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
             false,
             typeDescriptorRegistry
         );
-        
+
         if (!string.IsNullOrEmpty(unmanagedParametersForInvocation)) {
             unmanagedParametersForInvocation = ", " + unmanagedParametersForInvocation;
         }
-        
+
         if (returnType.IsByRef) {
             sb.AppendLine("\t// TODO: Unsupported delegate type. Reason: Has by ref return type");
 
@@ -155,7 +155,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         sb.AppendLine($"\tinternal {contextType} Context {{ get; }}");
         sb.AppendLine($"\tinternal {cFunctionSignature} CFunction {{ get; }}");
         sb.AppendLine($"\tinternal {cDestructorFunctionSignature} CDestructorFunction {{ get; }}");
-        
+
         sb.AppendLine();
 
         sb.AppendLine($"\tprivate WeakReference<{fullTypeName}> m_trampoline;");
@@ -179,7 +179,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         sb.AppendLine("\t\t}");
         sb.AppendLine("\t}");
         #endregion Properties
-        
+
         sb.AppendLine();
 
         #region Native Constructor
@@ -194,16 +194,16 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         #endregion Native Constructor
 
         sb.AppendLine();
-        
+
         #region Managed Constructor
         sb.AppendLine($"\tinternal {cTypeName}({fullTypeName} originalDelegate)");
         sb.AppendLine("\t{");
         sb.AppendLine("\t\tm_trampoline = new(originalDelegate);");
         sb.AppendLine("\t}");
         #endregion Managed Constructor
-        
+
         sb.AppendLine();
-        
+
         #region Finalizer
         sb.AppendLine($"\t~{cTypeName}()");
         sb.AppendLine("\t{");
@@ -253,7 +253,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
 
         sb.AppendLine($"\tprivate {managedReturnTypeName} __InvokeByCallingCFunction({managedParmeters})");
         sb.AppendLine("\t{");
-        
+
         // TODO: Generics
 
         string parameterConversions = CSharpUnmanagedMethodSyntaxWriter.WriteParameterConversions(
@@ -284,7 +284,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
 
         bool hasReturnType = !returnType.IsVoid();
 
-        string returnValueName = "__returnValue"; 
+        string returnValueName = "__returnValue";
 
         string invocationPrefix = hasReturnType
             ? $"var {returnValueName} = "
@@ -297,11 +297,11 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         if (managedToNativeConvertedTypeDestructors.Count > 0) {
             sb.AppendLine();
         }
-        
+
         foreach (var typeDestructor in managedToNativeConvertedTypeDestructors) {
             var indentedTypeDestructor = typeDestructor
                 .IndentAllLines(1);
-            
+
             sb.AppendLine(indentedTypeDestructor);
         }
 
@@ -321,7 +321,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
             } else {
                 returnValueDestructor = null;
             }
-    
+
             if (!string.IsNullOrEmpty(returnTypeConversion)) {
                 returnTypeConversion = string.Format(returnTypeConversion, "__returnValue");
                 returnTypeConversion = $"var {convertedReturnValueName} = {returnTypeConversion}";
@@ -340,7 +340,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
                     sb.AppendLine($"\t\t{returnValueDestructor}");
                     sb.AppendLine();
                 }
-                
+
                 sb.AppendLine($"\t\treturn {returnValueName};");
             }
         }
@@ -369,7 +369,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         sb.AppendLine($"\t[UnmanagedCallersOnly(EntryPoint = \"{cTypeName}_Invoke\")]");
         sb.AppendLine($"\tpublic static {unmanagedReturnTypeNameWithComment} Invoke(void* self{unmanagedParametersForInvocation}, void** __outException)");
         sb.AppendLine("\t{");
-        
+
         sb.AppendLine("\t\tif (self is null) {");
         sb.AppendLine("\t\t\tthrow new ArgumentNullException(nameof(self));");
         sb.AppendLine("\t\t}");
@@ -377,7 +377,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         sb.AppendLine("\t\ttry {");
         sb.AppendLine($"\t\t\tvar selfConverted = InteropUtils.GetInstance<{cTypeName}>(self);");
         sb.AppendLine();
-        
+
         string parameterConversionsForInvocation = CSharpUnmanagedMethodSyntaxWriter.WriteParameterConversions(
             CodeLanguage.CSharpUnmanaged,
             CodeLanguage.CSharp,
@@ -408,7 +408,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         } else {
             trampolineInvocationSuffix = string.Empty;
         }
-        
+
         string managedInvocation = $"selfConverted.Trampoline{trampolineInvocationSuffix}({parameterNamesStringForInvocation})";
 
         sb.AppendLine($"\t\t\t{invocationPrefix}{managedInvocation};");
@@ -418,13 +418,13 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
                 CodeLanguage.CSharp,
                 CodeLanguage.CSharpUnmanaged
             );
-        
+
             string convertedReturnValueName = "__returnValueConverted";
-        
+
             if (!string.IsNullOrEmpty(returnTypeConversion)) {
                 returnTypeConversion = string.Format(returnTypeConversion, "__returnValue");
                 returnTypeConversion = $"var {convertedReturnValueName} = {returnTypeConversion}";
-        
+
                 sb.AppendLine($"\t\t\t{returnTypeConversion};");
                 sb.AppendLine();
 
@@ -441,7 +441,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         sb.AppendLine("\t\t\t\t*__outException = __exceptionHandleAddress;");
         sb.AppendLine("\t\t\t}");
         sb.AppendLine();
-        
+
         if (hasReturnType) {
             string returnValue = returnTypeDescriptor.GetDefaultValue()
                                  ?? $"default({returnType.GetFullNameOrName()})";
@@ -452,7 +452,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         sb.AppendLine("\t\t}");
         sb.AppendLine("\t}");
         #endregion Invoke
-        
+
         sb.AppendLine();
 
         #region Context Get
@@ -468,7 +468,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         sb.AppendLine("\t\treturn selfConverted.Context;");
         sb.AppendLine("\t}");
         #endregion Context Get
-        
+
         sb.AppendLine();
 
         #region CFunction Get
@@ -484,7 +484,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         sb.AppendLine("\t\treturn selfConverted.CFunction;");
         sb.AppendLine("\t}");
         #endregion CFunction Get
-        
+
         sb.AppendLine();
 
         #region CDestructorFunction Get
@@ -514,7 +514,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
         #endregion TypeOf
 
         sb.AppendLine();
-        
+
         #region Destructor
         WriteDestructor(
             configuration,
@@ -523,7 +523,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter
             state
         );
         #endregion Destructor
-        
+
         // TODO: Add to State
     }
 }

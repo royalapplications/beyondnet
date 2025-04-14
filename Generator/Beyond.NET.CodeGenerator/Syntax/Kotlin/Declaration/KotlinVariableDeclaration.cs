@@ -42,7 +42,7 @@ public struct KotlinVariableDeclaration
             default:
                 throw new Exception("Unknown Variable Kind");
         }
-        
+
         string visibilityString = Visibility.ToKotlinSyntaxString();
 
         string nameAndTypeName = Name;
@@ -54,7 +54,7 @@ public struct KotlinVariableDeclaration
         string valueAssignment = !string.IsNullOrEmpty(Value)
             ? $"= {Value}"
             : string.Empty;
-        
+
         string[] signatureComponents = [
             visibilityString,
             variableKindString,
@@ -63,7 +63,7 @@ public struct KotlinVariableDeclaration
         ];
 
         string decl = KotlinFunSignatureComponents.ComponentsToString(signatureComponents);
-        
+
         return decl;
     }
 }

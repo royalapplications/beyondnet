@@ -24,15 +24,15 @@ public struct Fun
     {
         m_name = name;
     }
-    
+
     #region Visibility
     public Fun Visibility(KotlinVisibilities visibility)
     {
         m_visibility = visibility;
-        
+
         return this;
     }
-    
+
     public Fun Open()
     {
         return Visibility(KotlinVisibilities.Open);
@@ -42,19 +42,19 @@ public struct Fun
     {
         return Visibility(KotlinVisibilities.Public);
     }
-    
+
     // TODO
     // public Fun Internal()
     // {
     //     return Visibility(KotlinVisibilities.Internal);
     // }
-    
+
     public Fun Private()
     {
         return Visibility(KotlinVisibilities.Private);
     }
     #endregion Visibility
-    
+
     #region External
     public Fun External(bool isExternal = true)
     {
@@ -63,7 +63,7 @@ public struct Fun
         return this;
     }
     #endregion External
-    
+
     #region Override
     public Fun Override(bool isOverride = true)
     {
@@ -99,7 +99,7 @@ public struct Fun
         return this;
     }
     #endregion Parameters
-    
+
     #region ReturnTypeName
     public Fun ReturnTypeName(string? returnTypeName = null)
     {
@@ -117,7 +117,7 @@ public struct Fun
         return this;
     }
     #endregion Attribute
-    
+
     #region Implementation
     public Fun Implementation(string? implementation = null)
     {
@@ -126,7 +126,7 @@ public struct Fun
         return this;
     }
     #endregion Implementation
-    
+
     #region Build
     public KotlinFunDeclaration Build()
     {
@@ -149,7 +149,7 @@ public struct Fun
         return Build()
             .ToString();
     }
-    
+
     public string ToIndentedString(int indentationLevel)
     {
         return Build()

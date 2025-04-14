@@ -20,7 +20,7 @@ public record struct TestRecordStruct(int anInt)
 
     public TestRecordStruct(DateTime dateTime) : this(0)
     {
-        
+
     }
 }
 

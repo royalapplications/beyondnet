@@ -5,7 +5,7 @@ namespace Beyond.NET.Core;
 public class NSString: NSObject
 {
     private static nint CLASS => ObjCInterop.objc_getClass("NSString");
-    
+
     private static nint SELECTOR_INITWITHUTF8STRING => ObjCInterop.sel_registerName("initWithUTF8String:");
     private static nint SELECTOR_UTF8STRING => ObjCInterop.sel_registerName("UTF8String");
     private static nint SELECTOR_STRINGBYRESOLVINGSYMLINKSINPATH = ObjCInterop.sel_registerName("stringByResolvingSymlinksInPath");
@@ -13,20 +13,20 @@ public class NSString: NSObject
     internal NSString(nint instance) : base(instance)
     {
     }
-    
+
     public NSString(string str)
     {
         var allocedNSString = Alloc(CLASS);
 
         var cString = nint.Zero;
-        
+
         try {
             cString = Marshal.StringToHGlobalAuto(str);
 
             if (cString == nint.Zero) {
                 throw new Exception("Failed to convert System.String to C String");
             }
-            
+
             var initedNSString = ObjCInterop.objc_msgSend_RetPtr_1ArgPtr(
                 allocedNSString,
                 SELECTOR_INITWITHUTF8STRING,
@@ -47,7 +47,7 @@ public class NSString: NSObject
             m_instance = initedNSString;
         } finally {
             if (cString != nint.Zero) {
-                Marshal.FreeHGlobal(cString); 
+                Marshal.FreeHGlobal(cString);
                 cString = nint.Zero;
             }
         }
@@ -73,7 +73,7 @@ public class NSString: NSObject
                 resolvedNSStringInstance,
                 SELECTOR_RETAIN
             );
-            
+
             if (retainedResolvedNSString == nint.Zero) {
                 return null;
             }

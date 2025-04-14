@@ -28,7 +28,7 @@ public struct SwiftClassDeclaration
     public override string ToString()
     {
         const string @class = "class";
-        
+
         string visibilityString = Visibility.ToSwiftSyntaxString();
 
         string baseTypeAndProtocolConformanceDecl = !string.IsNullOrEmpty(BaseTypeName)
@@ -40,7 +40,7 @@ public struct SwiftClassDeclaration
                 ? $", {ProtocolConformance}"
                 : $": {ProtocolConformance}";
         }
-        
+
         string[] signatureComponents = {
             visibilityString,
             @class,
@@ -50,10 +50,10 @@ public struct SwiftClassDeclaration
         string signature = SwiftFuncSignatureComponents.ComponentsToString(signatureComponents);
 
         string fullDecl;
-        
+
         if (!string.IsNullOrEmpty(Implementation)) {
             string indentedImpl = Implementation.IndentAllLines(1);
-            
+
             fullDecl = $"{signature} {{\n{indentedImpl}\n}}";
         } else {
             fullDecl = signature;

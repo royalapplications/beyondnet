@@ -25,13 +25,13 @@ public class Person
         }
         set {
             m_children = value;
-            
+
             NumberOfChildrenChanged?.Invoke();
         }
     }
 
     public event NumberOfChildrenChangedDelegate? NumberOfChildrenChanged;
-    
+
     public NiceLevels NiceLevel { get; set; } = NiceLevels.Nice;
 
     public string FullName => $"{FirstName} {LastName}";
@@ -53,7 +53,7 @@ public class Person
         LastName = lastName;
         Age = age;
     }
-    
+
     public Person(
         string firstName,
         string lastName
@@ -67,7 +67,7 @@ public class Person
 
     #region Methods
     public static Person MakeJohnDoe() => new("John", "Doe", 50);
-    
+
     public string GetNiceLevelString()
     {
         switch (NiceLevel) {
@@ -94,31 +94,31 @@ public class Person
         if (Children.Contains(child)) {
             return;
         }
-        
+
         List<Person> children = Children.ToList();
-        
+
         children.Add(child);
 
         Children = children.ToArray();
     }
-    
+
     public void RemoveChild(Person child)
     {
         if (!Children.Contains(child)) {
             return;
         }
-        
+
         List<Person> children = Children.ToList();
-        
+
         children.Remove(child);
 
         Children = children.ToArray();
     }
-    
+
     public void RemoveChildAt(int index)
     {
         List<Person> children = Children.ToList();
-        
+
         children.RemoveAt(index);
 
         Children = children.ToArray();
@@ -140,7 +140,7 @@ public class Person
     {
         if (index < 0 || index >= Children.Length) {
             child = null;
-            
+
             return false;
         }
 
@@ -154,7 +154,7 @@ public class Person
         if (newAgeProvider is null) {
             return;
         }
-        
+
         var newAge = newAgeProvider();
 
         Age = newAge;

@@ -6,18 +6,18 @@ namespace Beyond.NET.CodeGenerator.Extensions;
 public static class MethodInfoExtensions
 {
     public static bool IsOverridden(
-        this MethodInfo methodInfo, 
+        this MethodInfo methodInfo,
         out bool nullabilityIsCompatible
     )
     {
         nullabilityIsCompatible = true;
-        
+
         Type? declaringType = methodInfo.DeclaringType;
 
         if (declaringType is null) {
             return false;
         }
-        
+
         MethodInfo baseMethodInfo = methodInfo.GetBaseDefinition();
         Type? baseMethodDeclaringType = baseMethodInfo.DeclaringType;
 
@@ -35,7 +35,7 @@ public static class MethodInfoExtensions
             return false;
         }
 
-        bool isOverridden = methodInfo != baseMethodInfo || 
+        bool isOverridden = methodInfo != baseMethodInfo ||
                             declaringType != baseMethodDeclaringType ||
                             declaringTypeIsGeneric != baseTypeIsGeneric;
 
@@ -45,7 +45,7 @@ public static class MethodInfoExtensions
 
         if (!methodInfo.ReturnParameter.IsNullabilityInfoCompatible(baseMethodInfo.ReturnParameter)) {
             nullabilityIsCompatible = false;
-            
+
             return isOverridden;
         }
 
@@ -75,13 +75,13 @@ public static class MethodInfoExtensions
     {
         nullabilityIsCompatible = true;
         implementedInterfaceType = null;
-        
+
         Type? declaringType = methodInfo.DeclaringType;
 
         if (declaringType is null) {
             return false;
         }
-        
+
         var interfaceTypes = declaringType.GetInterfaces();
 
         foreach (var interfaceType in interfaceTypes) {
@@ -95,7 +95,7 @@ public static class MethodInfoExtensions
 
             if (isShadowedByInterface) {
                 implementedInterfaceType = interfaceType;
-                
+
                 return true;
             }
         }
@@ -110,7 +110,7 @@ public static class MethodInfoExtensions
     )
     {
         nullabilityIsCompatible = true;
-        
+
         Type? declaringType = methodInfo.DeclaringType;
 
         if (declaringType is null) {
@@ -145,7 +145,7 @@ public static class MethodInfoExtensions
     )
     {
         nullabilityIsCompatible = true;
-        
+
         bool declaringTypeIsGeneric = declaringType.IsGenericType ||
                                       declaringType.IsGenericTypeDefinition;
 

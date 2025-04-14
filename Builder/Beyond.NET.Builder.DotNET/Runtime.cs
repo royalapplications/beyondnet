@@ -3,7 +3,7 @@ namespace Beyond.NET.Builder.DotNET;
 public class Runtime
 {
     public const string RUNTIME_NAME_MICROSOFT_NETCORE_APP = "Microsoft.NETCore.App";
-    
+
     public string Name { get; }
     public string Version { get; }
     public string Path { get; }
@@ -18,7 +18,7 @@ public class Runtime
         Version = version ?? throw new ArgumentNullException(nameof(version));
         Path = path ?? throw new ArgumentNullException(nameof(path));
     }
-    
+
     public static Runtime[] GetRuntimes()
     {
         var result = App.DotNETApp.Launch(new[] {
@@ -41,14 +41,14 @@ public class Runtime
         var split = stdOut.Split('\n', StringSplitOptions.RemoveEmptyEntries);
 
         List<Runtime> runtimes = new();
-        
+
         foreach (var runtimeLine in split) {
             var runtime = WithRuntimeLine(runtimeLine);
 
             if (runtime is null) {
                 continue;
             }
-            
+
             runtimes.Add(runtime);
         }
 
@@ -80,7 +80,7 @@ public class Runtime
             version,
             path
         );
-        
+
         return runtime;
     }
 }

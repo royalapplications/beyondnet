@@ -3,7 +3,7 @@ namespace Beyond.NET.Sample;
 public static class Person_Extensions
 {
     public static void IncreaseAge(
-        this Person person, 
+        this Person person,
         int byYears
     )
     {
@@ -16,7 +16,7 @@ public static class Person_Extensions
     )
     {
         address = person.Address;
-        
+
         return address is not null;
     }
 }

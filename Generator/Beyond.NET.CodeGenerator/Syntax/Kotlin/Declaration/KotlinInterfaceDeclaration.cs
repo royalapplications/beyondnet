@@ -9,7 +9,7 @@ public class KotlinInterfaceDeclaration
     public string? InterfaceConformance { get; }
     public KotlinVisibilities Visibility { get; }
     public string? Implementation { get; }
-    
+
     public KotlinInterfaceDeclaration(
         string name,
         string? baseTypeName,
@@ -24,7 +24,7 @@ public class KotlinInterfaceDeclaration
         Visibility = visibility;
         Implementation = implementation;
     }
-    
+
     public override string ToString()
     {
         const string interfaceKeyword = "interface";
@@ -39,8 +39,8 @@ public class KotlinInterfaceDeclaration
             baseTypeAndInterfaceConformanceDecl += !string.IsNullOrEmpty(baseTypeAndInterfaceConformanceDecl)
                 ? $", {InterfaceConformance}"
                 : $": {InterfaceConformance}";
-        } 
-        
+        }
+
         string[] signatureComponents = [
             visibilityString,
             interfaceKeyword,
@@ -50,10 +50,10 @@ public class KotlinInterfaceDeclaration
         string signature = KotlinFunSignatureComponents.ComponentsToString(signatureComponents);
 
         string fullDecl;
-        
+
         if (!string.IsNullOrEmpty(Implementation)) {
             string indentedImpl = Implementation.IndentAllLines(1);
-            
+
             fullDecl = $"{signature} {{\n{indentedImpl}\n}}";
         } else {
             fullDecl = signature;

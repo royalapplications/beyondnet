@@ -18,7 +18,7 @@ $avd = $env:ANDROID_AVD
 if (-not "$avd") {
     $avd = 'Pixel_Fold_API_35'
     Write-Warning "ANDROID_AVD environment variable not set, falling back to '${avd}'"
-}  
+}
 
 $port = 5566 # [System.Random]::Shared.Next(5555, 5587)
 Write-Host "Using ${emulator} with ${avd}"
@@ -37,12 +37,12 @@ try {
 
     for ($try = 1; $try -le 20; $try++) {
         Write-Host "Checking emulator boot status (attempt #${try})"
-    
+
         $status = & {
             $PSNativeCommandUseErrorActionPreference = $false
             & $adb -s "emulator-${port}" shell getprop sys.boot_completed
         }
-        
+
         $status = "$status".Trim()
         Write-Host "Emulator status: ${status}"
 
@@ -76,7 +76,7 @@ catch {
     # if there was a failure, it's possible that the `emulator` running in the background
     # encountered an issue -- print its output before terminating
     Receive-Job $job -Keep
-    
+
     throw "See emulator output above"
 }
 finally {

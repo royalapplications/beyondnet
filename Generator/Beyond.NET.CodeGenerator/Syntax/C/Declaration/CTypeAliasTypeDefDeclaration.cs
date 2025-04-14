@@ -17,7 +17,7 @@ public struct CTypeAliasTypeDefDeclaration
     public override string ToString()
     {
         const string typedef = "typedef";
-        
+
         string[] components = [
             typedef,
             OriginalTypeName,

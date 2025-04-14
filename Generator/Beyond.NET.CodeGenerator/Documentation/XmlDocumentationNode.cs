@@ -11,9 +11,9 @@ internal struct XmlDocumentationNode
     private XmlNode? ReturnsNode => MemberNode.SelectSingleNode(".//returns");
     private XmlNodeList? ParamNodes => MemberNode.SelectNodes(".//param");
     private XmlNodeList? ExceptionNodes => MemberNode.SelectNodes(".//exception");
-    
+
     private static readonly char[] NEW_LINES = new char[] { '\r', '\n' };
-    
+
     internal XmlDocumentationNode(XmlNode xmlMemberNode)
     {
         MemberNode = xmlMemberNode;
@@ -33,7 +33,7 @@ internal struct XmlDocumentationNode
             if (node is null) {
                 return string.Empty;
             }
-            
+
             var str = ConvertNodeToPlainText(node)
                 .Replace("\r\n", Environment.NewLine)
                 .Trim(NEW_LINES);
@@ -50,7 +50,7 @@ internal struct XmlDocumentationNode
             if (node is null) {
                 return string.Empty;
             }
-            
+
             var str = ConvertNodeToPlainText(node)
                 .Replace("\r\n", Environment.NewLine)
                 .Trim(NEW_LINES);
@@ -77,7 +77,7 @@ internal struct XmlDocumentationNode
                 if (string.IsNullOrEmpty(paramName)) {
                     continue;
                 }
-                
+
                 var str = ConvertNodeToPlainText(node)
                     .Replace("\r\n", Environment.NewLine)
                     .Trim(NEW_LINES);
@@ -85,19 +85,19 @@ internal struct XmlDocumentationNode
                 if (string.IsNullOrEmpty(str)) {
                     continue;
                 }
-                
+
                 var strSplit = str.Split(NEW_LINES, StringSplitOptions.RemoveEmptyEntries);
                 var strJoined = string.Join(' ', strSplit);
 
                 var paramStr = $"{paramName}: {strJoined}";
-                
+
                 paramStrings.Add(paramStr);
             }
 
             return paramStrings.ToArray();
         }
     }
-    
+
     public string[] ExceptionsAsPlainText
     {
         get {
@@ -121,7 +121,7 @@ internal struct XmlDocumentationNode
                 } else {
                     exceptionType = "N/A";
                 }
-                
+
                 var str = ConvertNodeToPlainText(node)
                     .Replace("\r\n", Environment.NewLine)
                     .Trim(NEW_LINES);
@@ -129,12 +129,12 @@ internal struct XmlDocumentationNode
                 if (string.IsNullOrEmpty(str)) {
                     continue;
                 }
-                
+
                 var strSplit = str.Split(NEW_LINES, StringSplitOptions.RemoveEmptyEntries);
                 var strJoined = string.Join(' ', strSplit);
 
                 var paramStr = $"{exceptionType}: {strJoined}";
-                
+
                 exceptionStrings.Add(paramStr);
             }
 
@@ -186,7 +186,7 @@ internal struct XmlDocumentationNode
             } else {
                 // throw new NotImplementedException();
                 // Console.WriteLine($"Unknown node type: {child.Name}");
-                
+
                 sb.Append(ConvertNodeToPlainText(child));
             }
         }
@@ -211,7 +211,7 @@ internal struct XmlDocumentationNode
         var hrefAttr = node.Attributes?["href"];
 
         string? value;
-        
+
         if (crefAttr is not null) {
             value = crefAttr.Value;
         } else if (langwordAttr is not null) {
@@ -231,7 +231,7 @@ internal struct XmlDocumentationNode
 
         return plainText;
     }
-    
+
     private const string TAG_PARAMREF = "paramref";
     private static string ConvertParamRefNodeToPlainText(XmlNode node)
     {
@@ -249,7 +249,7 @@ internal struct XmlDocumentationNode
 
         return value;
     }
-    
+
     private const string TAG_TYPEPARAMREF = "typeparamref";
     private static string ConvertTypeParamRefNodeToPlainText(XmlNode node)
     {
@@ -273,19 +273,19 @@ internal struct XmlDocumentationNode
     {
         return ConvertNodeToPlainText(node);
     }
-    
+
     private const string TAG_C = "c";
     private static string ConvertCNodeToPlainText(XmlNode node)
     {
         return node.InnerText;
     }
-    
+
     private const string TAG_CODE = "code";
     private static string ConvertCodeNodeToPlainText(XmlNode node)
     {
         return node.InnerText;
     }
-    
+
     private const string TAG_XREF = "xref";
     private static string ConvertXrefNodeToPlainText(XmlNode node)
     {
@@ -309,43 +309,43 @@ internal struct XmlDocumentationNode
     {
         return ConvertNodeToPlainText(node);
     }
-    
+
     private const string TAG_LISTHEADER = "listheader";
     private static string ConvertListHeaderNodeToPlainText(XmlNode node)
     {
         return ConvertNodeToPlainText(node);
     }
-    
+
     private const string TAG_ITEM = "item";
     private static string ConvertItemNodeToPlainText(XmlNode node)
     {
         return ConvertNodeToPlainText(node);
     }
-    
+
     private const string TAG_TERM = "term";
     private static string ConvertTermNodeToPlainText(XmlNode node)
     {
         return ConvertNodeToPlainText(node);
     }
-    
+
     private const string TAG_DESCRIPTION = "description";
     private static string ConvertDescriptionNodeToPlainText(XmlNode node)
     {
         return ConvertNodeToPlainText(node);
     }
-    
+
     private const string TAG_TABLE = "table";
     private static string ConvertTableNodeToPlainText(XmlNode node)
     {
         return ConvertNodeToPlainText(node);
     }
-    
+
     private const string TAG_BR = "br";
     private static string ConvertBrNodeToPlainText(XmlNode node)
     {
         return Environment.NewLine;
     }
-    
+
     private const string TAG_P = "p";
     private static string ConvertPNodeToPlainText(XmlNode node)
     {

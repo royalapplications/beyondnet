@@ -18,7 +18,7 @@ public class CSharpUnmanagedDestructorSyntaxWriter: CSharpUnmanagedMethodSyntaxW
             type.IsEnum) {
             return string.Empty;
         }
-        
+
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
 
         const bool mayThrow = false;

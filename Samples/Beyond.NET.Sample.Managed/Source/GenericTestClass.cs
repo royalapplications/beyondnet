@@ -9,7 +9,7 @@ public class GenericTestClass<T>
     {
         return typeof(T);
     }
-    
+
     public static Type[] ReturnGenericClassTypeAndGenericMethodType<TM>()
     {
         return new[] {
@@ -38,7 +38,7 @@ public class GenericTestClass<T1, T2>
 {
     public int AProperty { get; set; } = 0;
     public int AField = 0;
-    
+
     public Type[] ReturnGenericClassTypes()
     {
         return new[] {

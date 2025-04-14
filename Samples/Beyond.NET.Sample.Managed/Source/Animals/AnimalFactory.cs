@@ -14,7 +14,7 @@ public static class AnimalFactory
 
         return null;
     };
-    
+
     public static IAnimal? CreateAnimal(string animalName)
     {
         return CreateAnimal(
@@ -22,7 +22,7 @@ public static class AnimalFactory
             DEFAULT_CREATOR
         );
     }
-    
+
     public static IAnimal? CreateAnimal(
         string animalName,
         AnimalCreatorDelegate creator

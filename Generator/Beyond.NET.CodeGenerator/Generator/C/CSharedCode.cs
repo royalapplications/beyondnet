@@ -23,7 +23,7 @@ typedef struct DNReadOnlySpanOfByte {
     int32_t dataLength;
 } DNReadOnlySpanOfByte;
 """;
-    
+
     internal const string UtilsCode = /*lang=C*/"""
 _Nonnull DNCString
 DNStringToC(_Nonnull System_String_t systemString);
@@ -115,7 +115,7 @@ DNObjectFromUInt64(uint64_t number);
 void*
 DNGetPinnedPointerToByteArray(_Nonnull System_Byte_Array_t byteArray, _Nullable System_Runtime_InteropServices_GCHandle_t* outGCHandle, _Nullable System_Exception_t* outException);
 """;
-    
+
         internal const string FooterCode = /*lang=C*/"""
 #pragma clang diagnostic pop
 

@@ -15,8 +15,8 @@ internal class AssemblyEventArgs: EventArgs
     )
     {
         Assembly = assembly ?? throw new ArgumentNullException(nameof(assembly));
-        
-        AssemblyPath = !string.IsNullOrEmpty(assemblyPath) 
+
+        AssemblyPath = !string.IsNullOrEmpty(assemblyPath)
             ? assemblyPath
             : throw new ArgumentOutOfRangeException(nameof(assemblyPath));
     }
@@ -26,15 +26,15 @@ internal class AssemblyLoader: IDisposable
 {
     private readonly List<string> m_searchPaths = new();
 
-    internal event EventHandler<AssemblyEventArgs>? GetDocumentation; 
+    internal event EventHandler<AssemblyEventArgs>? GetDocumentation;
     internal event EventHandler<AssemblyEventArgs>? AssemblyResolved;
 
     internal AssemblyLoader() : this(Array.Empty<string>()) { }
-    
+
     internal AssemblyLoader(IEnumerable<string> searchPaths)
     {
         m_searchPaths.AddRange(GetAssemblySearchPaths(searchPaths));
-        
+
         AppDomain.CurrentDomain.AssemblyResolve += AppDomain_OnAssemblyResolve;
     }
 
@@ -46,18 +46,18 @@ internal class AssemblyLoader: IDisposable
             !m_searchPaths.Contains(assemblyDirectoryPath)) {
             m_searchPaths.Add(assemblyDirectoryPath);
         }
-        
+
         Assembly assembly = Assembly.LoadFrom(assemblyPath);
-        
+
         GetDocumentation?.Invoke(this, new(assembly, assemblyPath));
 
         return assembly;
     }
-    
+
     /* internal IEnumerable<Assembly> LoadReferences(Assembly assembly)
     {
         HashSet<Assembly> references = new();
-        
+
         var referencedAssemblies = assembly.GetReferencedAssemblies();
 
         foreach (var referencedAssemblyNameObject in referencedAssemblies) {
@@ -74,7 +74,7 @@ internal class AssemblyLoader: IDisposable
 
         return references;
     } */
-    
+
     private Assembly? AppDomain_OnAssemblyResolve(object? sender, ResolveEventArgs args)
     {
         string assemblyFullName = args.Name;
@@ -88,10 +88,10 @@ internal class AssemblyLoader: IDisposable
         if (!assemblyName.EndsWith(".dll", StringComparison.InvariantCultureIgnoreCase)) {
             assemblyName += ".dll";
         }
-        
+
         try {
             Assembly assembly = Assembly.LoadFrom(assemblyName);
-            
+
             GetDocumentation?.Invoke(this, new(assembly, assemblyName));
 
             return assembly;
@@ -104,7 +104,7 @@ internal class AssemblyLoader: IDisposable
 
                 try {
                     Assembly assembly = Assembly.LoadFrom(potentialAssemblyPath);
-                    
+
                     AssemblyResolved?.Invoke(this, new(assembly, potentialAssemblyPath));
                     GetDocumentation?.Invoke(this, new(assembly, potentialAssemblyPath));
 
@@ -117,14 +117,14 @@ internal class AssemblyLoader: IDisposable
 
         return null;
     }
-    
+
     private static IEnumerable<string> GetAssemblySearchPaths(IEnumerable<string> configuredSearchPaths)
     {
         List<string> searchPaths = new();
 
         foreach (string searchPath in configuredSearchPaths) {
             string expandedSearchPath = searchPath.ExpandTildeAndGetAbsolutePath();
-            
+
             searchPaths.Add(expandedSearchPath);
         }
 
@@ -134,7 +134,7 @@ internal class AssemblyLoader: IDisposable
 
         if (!string.IsNullOrEmpty(processPath)) {
             string? processDirectoryPath = Path.GetDirectoryName(processPath);
-    
+
             if (!string.IsNullOrEmpty(processDirectoryPath)) {
                 if (!searchPaths.Contains(processDirectoryPath)) {
                     searchPaths.Add(processDirectoryPath);

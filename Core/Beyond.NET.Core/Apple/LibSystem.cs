@@ -14,11 +14,11 @@ internal class LibSystem
         RTLD_NODELETE 	= 0x80,
         RTLD_FIRST 		= 0x100
     }
-    
+
     internal static class DL
     {
         internal const string LIBRARY_SYSTEM = "/usr/lib/libSystem.dylib";
-        
+
         [DllImport(LIBRARY_SYSTEM)]
         internal static extern int dlclose(IntPtr handle);
 

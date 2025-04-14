@@ -17,7 +17,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
     public string Write(MethodInfo method, State state, ISyntaxWriterConfiguration? configuration)
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
-        
+
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         GeneratedMember cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedMember(method) ?? throw new Exception("No C# generated member");
 
@@ -68,12 +68,12 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             memberKind != MemberKind.TypeOf) {
             throw new Exception("memberInfo may only be null when memberKind is Destructor");
         }
-        
+
         MethodBase? methodBase = memberInfo as MethodBase;
 
         bool isGenericType = declaringType.IsGenericType ||
                              declaringType.IsGenericTypeDefinition;
-        
+
         Type[] genericTypeArguments = Array.Empty<Type>();
         int numberOfGenericTypeArguments = 0;
 
@@ -81,7 +81,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             genericTypeArguments = declaringType.GetGenericArguments();
             numberOfGenericTypeArguments = genericTypeArguments.Length;
         }
-        
+
         bool isGeneric = false;
         Type[] genericMethodArguments = Array.Empty<Type>();
         int numberOfGenericMethodArguments = 0;
@@ -99,7 +99,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                 } catch {
                     genericMethodArguments = Array.Empty<Type>();
                 }
-                
+
                 numberOfGenericMethodArguments = genericMethodArguments.Length;
             }
         } else if (isGenericType &&
@@ -118,9 +118,9 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             numberOfGenericMethodArguments <= 0) {
             throw new Exception("Generic Method without generic arguments");
         }
-        
+
         List<Type> tempCombinedGenericArguments = new();
-        
+
         tempCombinedGenericArguments.AddRange(genericTypeArguments);
         tempCombinedGenericArguments.AddRange(genericMethodArguments);
 
@@ -137,13 +137,13 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
 
                     if (nonByRefParameterType.IsArray) {
                         generatedName = string.Empty;
-                        
-                        return Builder.SingleLineComment("TODO: Generic Methods with out/in/ref parameters that are arrays are not supported").ToString();    
+
+                        return Builder.SingleLineComment("TODO: Generic Methods with out/in/ref parameters that are arrays are not supported").ToString();
                     }
                 }
             }
         }
-        
+
         string methodNameC = cSharpGeneratedMember.GetGeneratedName(CodeLanguage.CSharpUnmanaged) ?? throw new Exception("No native name");
 
         if (addToState) {
@@ -157,7 +157,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         }
 
         bool isNullableValueTypeReturnType = returnOrSetterOrEventHandlerType.IsNullableValueType(out Type? nullableValueReturnType);
-        
+
         bool isGenericReturnType = !isNullableValueTypeReturnType &&
                                    (
                                        returnOrSetterOrEventHandlerType.IsGenericParameter ||
@@ -170,7 +170,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
 
         bool isConstructedGenericReturnType = !isNullableValueTypeReturnType &&
                                               returnOrSetterOrEventHandlerType.IsConstructedGenericType;
-        
+
         bool isGenericArrayReturnType = false;
 
         if (!isGenericReturnType &&
@@ -218,7 +218,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                 } else {
                     returnOrSetterValueParameter = methodInfo.ReturnParameter;
                 }
-                
+
                 var nullabilityInfo = nullabilityInfoContext.Create(returnOrSetterValueParameter);
 
                 if (memberKind == MemberKind.PropertyGetter) {
@@ -277,13 +277,13 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
 
             if (returnOrSetterOrEventHandlerTypeIsByRef) {
                 returnOrSetterOrEventHandlerType = returnOrSetterOrEventHandlerType.GetNonByRefType();
-            }   
+            }
         }
-        
+
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
-        
+
         string cReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(
-            CodeLanguage.C, 
+            CodeLanguage.C,
             true,
             returnOrSetterTypeNullability,
             Nullability.NotSpecified,
@@ -291,10 +291,10 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             returnOrSetterOrEventHandlerTypeIsByRef,
             false
         );
-        
+
         string cReturnOrSetterTypeNameWithComment;
         Type? setterType;
-        
+
         if (memberKind == MemberKind.PropertySetter ||
             memberKind == MemberKind.FieldSetter ||
             memberKind == MemberKind.EventHandlerAdder ||
@@ -328,20 +328,20 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             combinedGenericArguments,
             typeDescriptorRegistry
         );
-        
+
         CCodeBuilder sb = new();
 
         if (string.IsNullOrEmpty(methodSignatureParameters)) {
             methodSignatureParameters = "void";
         }
-        
+
         sb.AppendLine($"{cReturnOrSetterTypeNameWithComment}\n{methodNameC}(\n\t{methodSignatureParameters}\n);");
 
         generatedName = methodNameC;
-        
+
         return sb.ToString();
     }
-    
+
     internal static string WriteParameters(
         MemberKind memberKind,
         Type? setterOrEventHandlerType,
@@ -356,56 +356,56 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
     )
     {
         var nullabilityContext = new NullabilityInfoContext();
-        
+
         List<string> parameterList = new();
 
         if (!isStatic) {
             TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
-            
+
             string declaringTypeName = declaringTypeDescriptor.GetTypeName(CodeLanguage.C, true);
-            
+
             string selfParameterName = "self";
             string parameterString = $"{declaringTypeName} /* {declaringType.GetFullNameOrName()} */ {selfParameterName}";
 
             parameterList.Add(parameterString);
         }
-        
+
         if (isGeneric) {
             Type typeOfSystemType = typeof(Type);
             TypeDescriptor systemTypeTypeDescriptor = typeOfSystemType.GetTypeDescriptor(typeDescriptorRegistry);
             string systemTypeTypeName = typeOfSystemType.GetFullNameOrName();
             string nativeSystemTypeTypeName = systemTypeTypeDescriptor.GetTypeName(CodeLanguage.C, true);
-            
+
             foreach (var genericArgumentType in genericArguments) {
                 string parameterName = genericArgumentType.Name;
-            
+
                 string parameterString = $"{nativeSystemTypeTypeName} /* {systemTypeTypeName} */ {parameterName}";
-            
+
                 parameterList.Add(parameterString);
             }
         }
-        
+
         foreach (var parameter in parameters) {
             bool isOutParameter = parameter.IsOut;
             bool isInParameter = parameter.IsIn;
-                
+
             Type parameterType = parameter.ParameterType;
-                
+
             bool isByRefParameter = parameterType.IsByRef;
 
             if (isByRefParameter) {
                 parameterType = parameterType.GetNonByRefType();
             }
-                
+
             bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
-                
+
             if (isGenericParameterType) {
                 parameterType = typeof(object);
             }
-                
+
             bool isGenericArrayParameterType = false;
             Type? arrayType = parameterType.GetElementType();
-                        
+
             if (parameterType.IsArray &&
                 arrayType is not null &&
                 (arrayType.IsGenericParameter || arrayType.IsGenericMethodParameter)) {
@@ -428,13 +428,13 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                     isNotNull = parameterNullabilityInfo.ReadState == NullabilityState.NotNull;
                 }
             }
-            
+
             Nullability parameterNullability = isNotNull
                 ? Nullability.NonNullable
                 : Nullability.NotSpecified;
-            
+
             TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
-                
+
             string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
                 CodeLanguage.C,
                 true,
@@ -456,15 +456,15 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
             if (setterOrEventHandlerType == null) {
                 throw new Exception("Setter or Event Handler Type may not be null");
             }
-            
+
             TypeDescriptor setterOrEventHandlerTypeDescriptor = setterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
-            
+
             string cSetterOrEventHandlerTypeName = setterOrEventHandlerTypeDescriptor.GetTypeName(
                 CodeLanguage.C,
                 true,
                 setterOrEventHandlerTypeNullability
             );
-    
+
             string parameterString = $"{cSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */ value";
             parameterList.Add(parameterString);
         }
@@ -472,7 +472,7 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
         if (mayThrow) {
             Type exceptionType = typeof(Exception);
             TypeDescriptor outExceptionTypeDescriptor = exceptionType.GetTypeDescriptor(typeDescriptorRegistry);
-            
+
             string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(
                 CodeLanguage.C,
                 true,
@@ -482,10 +482,10 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                 true,
                 false
             );
-            
+
             string outExceptionParameterName = "outException";
 
-            string outExceptionParameterString = $"{outExceptionTypeName} /* {exceptionType.GetFullNameOrName()} */ {outExceptionParameterName}"; 
+            string outExceptionParameterString = $"{outExceptionTypeName} /* {exceptionType.GetFullNameOrName()} */ {outExceptionParameterName}";
             parameterList.Add(outExceptionParameterString);
         }
 

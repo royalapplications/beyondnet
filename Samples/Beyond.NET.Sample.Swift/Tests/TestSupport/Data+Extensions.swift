@@ -9,16 +9,16 @@ extension Data {
         let status = SecRandomCopyBytes(kSecRandomDefault,
                                         count,
                                         &bytes)
-        
+
         // A status of errSecSuccess indicates success
         guard status == errSecSuccess else {
             return nil
         }
-        
+
         // Convert bytes to Data
-        let data = Data(bytes: bytes, 
+        let data = Data(bytes: bytes,
                         count: count)
-        
+
         return data
     }
 }

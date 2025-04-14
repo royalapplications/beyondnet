@@ -14,7 +14,7 @@ public struct Builder
             comment
         );
     }
-    
+
     public static TypeAliasTypeDef TypeAliasTypeDef
     (
         string aliasTypeName,

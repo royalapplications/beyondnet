@@ -13,21 +13,21 @@ public static class CharTests
             throw new ArgumentOutOfRangeException(nameof(value));
         }
     }
-    
+
     public static void PassInUppercaseAOrThrow(char value)
     {
         if (value != UppercaseA) {
             throw new ArgumentOutOfRangeException(nameof(value));
         }
     }
-    
+
     public static void PassInOneOrThrow(char value)
     {
         if (value != One) {
             throw new ArgumentOutOfRangeException(nameof(value));
         }
     }
-    
+
     public static void PassInLowercaseUmlautAOrThrow(char value)
     {
         if (value != LowercaseUmlautA) {

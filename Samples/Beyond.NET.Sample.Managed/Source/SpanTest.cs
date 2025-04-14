@@ -6,7 +6,7 @@ public class SpanTest
     public delegate ReadOnlySpan<byte> ByteArrayToSpanDelegate(byte[] bytes);
     public delegate byte[] SpanToByteArrayDelegate(ReadOnlySpan<byte> span);
     #endregion Delegates
-    
+
     #region Source Data
     public byte[] Data { get; private set; }
     #endregion Source Data
@@ -16,12 +16,12 @@ public class SpanTest
     {
         Data = data ?? throw new ArgumentNullException(nameof(data));
     }
-    
+
     public SpanTest(Span<byte> dataAsSpan)
     {
         Data = dataAsSpan.ToArray();
     }
-    
+
     public SpanTest(ReadOnlySpan<byte> dataAsReadOnlySpan)
     {
         Data = dataAsReadOnlySpan.ToArray();
@@ -31,11 +31,11 @@ public class SpanTest
     #region Span<byte>
     public Span<byte> DataAsSpan => new(Data);
     public Span<byte> GetDataAsSpan() => DataAsSpan;
-    
+
     public bool TryGetDataAsSpan(out Span<byte> dataAsSpan)
     {
         dataAsSpan = DataAsSpan;
-        
+
         return true;
     }
     #endregion Span<byte>
@@ -51,14 +51,14 @@ public class SpanTest
             Data = value.ToArray();
         }
     }
-    
+
     public ReadOnlySpan<byte> GetDataAsReadOnlySpan() => DataAsSpan;
     public void SetDataAsReadOnlySpan(ReadOnlySpan<byte> span) => Data = span.ToArray();
-    
+
     public bool TryGetDataAsReadOnlySpan(out ReadOnlySpan<byte> dataAsReadOnlySpan)
     {
         dataAsReadOnlySpan = DataAsReadOnlySpan;
-        
+
         return true;
     }
 
@@ -69,7 +69,7 @@ public class SpanTest
     {
         return converter(bytes);
     }
-    
+
     public byte[] ConvertSpanToByteArray(
         ReadOnlySpan<byte> span,
         SpanToByteArrayDelegate converter

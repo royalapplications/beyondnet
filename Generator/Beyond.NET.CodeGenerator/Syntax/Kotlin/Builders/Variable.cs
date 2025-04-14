@@ -30,7 +30,7 @@ public struct Variable
         return this;
     }
     #endregion TypeName
-    
+
     #region Value
     public Variable Value([StringSyntax("Kt")]string? value)
     {
@@ -39,15 +39,15 @@ public struct Variable
         return this;
     }
     #endregion Value
-    
+
     #region Visibility
     public Variable Visibility(KotlinVisibilities visibility)
     {
         m_visibility = visibility;
-        
+
         return this;
     }
-    
+
     public Variable Open()
     {
         return Visibility(KotlinVisibilities.Open);
@@ -57,18 +57,18 @@ public struct Variable
     {
         return Visibility(KotlinVisibilities.Public);
     }
-    
+
     // public Variable Internal()
     // {
     //     return Visibility(KotlinVisibilities.Internal);
     // }
-    
+
     public Variable Private()
     {
         return Visibility(KotlinVisibilities.Private);
     }
     #endregion Visibility
-    
+
     #region Build
     public KotlinVariableDeclaration Build()
     {
@@ -86,7 +86,7 @@ public struct Variable
         return Build()
             .ToString();
     }
-    
+
     public string ToIndentedString(int indentationLevel)
     {
         return Build()

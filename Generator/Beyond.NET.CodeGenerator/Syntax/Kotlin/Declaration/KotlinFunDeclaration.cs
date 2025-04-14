@@ -14,7 +14,7 @@ public struct KotlinFunDeclaration
     public string? ReturnTypeName { get; }
     public HashSet<string>? Attributes { get; }
     public string? Implementation { get; }
-    
+
     public KotlinFunDeclaration(
         string name,
         KotlinVisibilities visibility,
@@ -29,18 +29,18 @@ public struct KotlinFunDeclaration
     )
     {
         Name = !string.IsNullOrEmpty(name)
-            ? name 
+            ? name
             : throw new ArgumentOutOfRangeException(nameof(name));
-        
+
         Visibility = visibility;
         IsExternal = isExternal;
         IsOverride = isOverride;
         IsOperator = isOperator;
-        
+
         ExtendedTypeName = !string.IsNullOrEmpty(extendedTypeName)
             ? extendedTypeName
             : null;
-        
+
         Parameters = parameters;
 
         ReturnTypeName = !string.IsNullOrEmpty(returnTypeName)
@@ -48,7 +48,7 @@ public struct KotlinFunDeclaration
             : null;
 
         Attributes = attributes;
-        
+
         Implementation = !string.IsNullOrEmpty(implementation)
             ? implementation
             : null;
@@ -57,17 +57,17 @@ public struct KotlinFunDeclaration
     public override string ToString()
     {
         const string fun = "fun";
-        
+
         string visibilityString = Visibility.ToKotlinSyntaxString();
 
         string externalString = IsExternal
             ? "external"
             : string.Empty;
-        
+
         string overrideString = IsOverride
             ? "override"
             : string.Empty;
-        
+
         string operatorString = IsOperator
             ? "operator"
             : string.Empty;
@@ -75,7 +75,7 @@ public struct KotlinFunDeclaration
         string extendedTypeNameString = !string.IsNullOrEmpty(ExtendedTypeName)
             ? $"{ExtendedTypeName}."
             : string.Empty;
-        
+
         string returnString = !string.IsNullOrEmpty(ReturnTypeName)
             ? $": {ReturnTypeName}"
             : string.Empty;
@@ -102,10 +102,10 @@ public struct KotlinFunDeclaration
         string signature = KotlinFunSignatureComponents.ComponentsToString(signatureComponents);
 
         string fullFunc;
-        
+
         if (!string.IsNullOrEmpty(Implementation)) {
             string indentedImpl = Implementation.IndentAllLines(1);
-            
+
             fullFunc = $"{signature} {{\n{indentedImpl}\n}}";
         } else {
             fullFunc = signature;

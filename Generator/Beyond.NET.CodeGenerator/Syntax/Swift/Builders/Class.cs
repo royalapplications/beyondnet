@@ -11,22 +11,22 @@ public struct Class
     private string? m_protocolConformance = null;
     private SwiftVisibilities m_visibility = SwiftVisibilities.None;
     private string? m_implementation = null;
-    
+
     public Class(
         string name
     )
     {
         m_name = name;
     }
-    
+
     #region Visibility
     public Class Visibility(SwiftVisibilities visibility)
     {
         m_visibility = visibility;
-        
+
         return this;
     }
-    
+
     public Class Open()
     {
         return Visibility(SwiftVisibilities.Open);
@@ -36,17 +36,17 @@ public struct Class
     {
         return Visibility(SwiftVisibilities.Public);
     }
-    
+
     public Class Internal()
     {
         return Visibility(SwiftVisibilities.Internal);
     }
-    
+
     public Class Private()
     {
         return Visibility(SwiftVisibilities.Private);
     }
-    
+
     public Class FilePrivate()
     {
         return Visibility(SwiftVisibilities.FilePrivate);
@@ -61,7 +61,7 @@ public struct Class
         return this;
     }
     #endregion BaseTypeName
-    
+
     #region ProtocolConformance
     public Class ProtocolConformance(string? protocolConformance = null)
     {
@@ -70,7 +70,7 @@ public struct Class
         return this;
     }
     #endregion ProtocolConformance
-    
+
     #region Implementation
     public Class Implementation(string? implementation = null)
     {
@@ -79,7 +79,7 @@ public struct Class
         return this;
     }
     #endregion Implementation
-    
+
     #region Build
     public SwiftClassDeclaration Build()
     {
@@ -97,7 +97,7 @@ public struct Class
         return Build()
             .ToString();
     }
-    
+
     public string ToIndentedString(int indentationLevel)
     {
         return Build()

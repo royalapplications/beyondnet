@@ -26,7 +26,7 @@ public partial class BuiltInTypeDescriptors
                     }
                 }
             );
-        
+
             return descriptor;
         }
     }

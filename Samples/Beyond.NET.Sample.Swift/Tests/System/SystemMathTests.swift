@@ -5,11 +5,11 @@ final class SystemMathTests: XCTestCase {
     override class func setUp() {
         Self.sharedSetUp()
     }
-    
+
     override class func tearDown() {
         Self.sharedTearDown()
     }
-    
+
     func testMath() throws {
         XCTAssertEqual(599, try System_Math.abs(Int64(-599)))
         XCTAssertEqual(599.995, try System_Math.abs(-599.995))

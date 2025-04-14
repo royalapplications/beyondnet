@@ -36,7 +36,7 @@ public class Result
 
         return destructors.FirstOrDefault();
     }
-    
+
     public GeneratedMember? GetGeneratedTypeOf(Type type)
     {
         var typeOfs = GetGeneratedMembers(
@@ -59,7 +59,7 @@ public class Result
         var generatedMembers = m_generatedTypes[type];
 
         List<GeneratedMember> members = new();
-        
+
         foreach (var generatedMember in generatedMembers) {
             if (generatedMember.MemberKind == memberKind) {
                 members.Add(generatedMember);
@@ -68,7 +68,7 @@ public class Result
 
         return members;
     }
-    
+
     public GeneratedMember? GetGeneratedMember(MemberInfo member)
     {
         Type declaringType = member.DeclaringType ?? throw new Exception("No declaring type");
@@ -83,7 +83,7 @@ public class Result
 
         return null;
     }
-    
+
     public GeneratedMember? GetGeneratedMember(
         MemberInfo member,
         MemberKind memberKind

@@ -12,11 +12,11 @@ public class CPropertySyntaxWriter: CMethodSyntaxWriter, IPropertySyntaxWriter
     {
         return Write((PropertyInfo)@object, state, configuration);
     }
-    
+
     public string Write(PropertyInfo property, State state, ISyntaxWriterConfiguration? configuration)
     {
         const bool addToState = false;
-        
+
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
 
@@ -29,8 +29,8 @@ public class CPropertySyntaxWriter: CMethodSyntaxWriter, IPropertySyntaxWriter
         }
 
         bool getterMayThrow = generatedMemberGetter?.MayThrow ?? true;
-        bool setterMayThrow = generatedMemberSetter?.MayThrow ?? true; 
-        
+        bool setterMayThrow = generatedMemberSetter?.MayThrow ?? true;
+
         Type declaringType = property.DeclaringType ?? throw new Exception("No declaring type");
 
         IEnumerable<ParameterInfo> parameters = property.GetIndexParameters();
@@ -45,7 +45,7 @@ public class CPropertySyntaxWriter: CMethodSyntaxWriter, IPropertySyntaxWriter
         if (getterMethod is not null &&
             generatedMemberGetter is not null) {
             bool isStaticMethod = getterMethod.IsStatic;
-            
+
             string getterCode = WriteMethod(
                 generatedMemberGetter,
                 getterMethod,
@@ -62,7 +62,7 @@ public class CPropertySyntaxWriter: CMethodSyntaxWriter, IPropertySyntaxWriter
             );
 
             sb.AppendLine(getterCode);
-            
+
             state.AddGeneratedMember(
                 MemberKind.PropertyGetter,
                 property,
@@ -71,11 +71,11 @@ public class CPropertySyntaxWriter: CMethodSyntaxWriter, IPropertySyntaxWriter
                 CodeLanguage.C
             );
         }
-        
+
         if (setterMethod is not null &&
             generatedMemberSetter is not null) {
             bool isStaticMethod = setterMethod.IsStatic;
-            
+
             string setterCode = WriteMethod(
                 generatedMemberSetter,
                 setterMethod,
@@ -92,7 +92,7 @@ public class CPropertySyntaxWriter: CMethodSyntaxWriter, IPropertySyntaxWriter
             );
 
             sb.AppendLine(setterCode);
-            
+
             state.AddGeneratedMember(
                 MemberKind.PropertySetter,
                 property,

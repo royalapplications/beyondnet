@@ -3,7 +3,7 @@ namespace Beyond.NET.Builder.Apple.XCRun.SwiftC;
 public class App
 {
     private const string COMMAND_SWIFTC = "swiftc";
-    
+
     public const string ARGUMENT_SDK = "-sdk";
     public const string ARGUMENT_TARGET = "-target";
     public const string ARGUMENT_WORKING_DIRECTORY = "-working-directory";
@@ -34,7 +34,7 @@ public class App
     public const string FLAG_EXPERIMENTAL_EMIT_MODULE_SEPARATELY = "-experimental-emit-module-separately";
     public const string FLAG_DISABLE_CROSS_MODULE_OPTIMIZATION = "-disable-cmo";
     public const string ARGUMENT_COMPILE = "-c";
-    
+
     public static string Run(
         string workingDirectory,
         string[] arguments
@@ -43,9 +43,9 @@ public class App
         List<string> finalArguments = new(new[] {
             COMMAND_SWIFTC
         });
-        
+
         finalArguments.AddRange(arguments);
-        
+
         var result = XCRun.App.XCRunApp.Launch(
             finalArguments.ToArray(),
             workingDirectory

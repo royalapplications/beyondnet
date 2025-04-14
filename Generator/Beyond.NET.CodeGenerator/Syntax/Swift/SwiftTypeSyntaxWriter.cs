@@ -13,7 +13,7 @@ namespace Beyond.NET.CodeGenerator.Syntax.Swift;
 public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWriter
 {
     public Settings Settings { get; }
-    
+
     private readonly Dictionary<MemberTypes, ISwiftSyntaxWriter> m_syntaxWriters = new() {
         { MemberTypes.Constructor, new SwiftConstructorSyntaxWriter() },
         { MemberTypes.Property, new SwiftPropertySyntaxWriter() },
@@ -21,15 +21,15 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         { MemberTypes.Field, new SwiftFieldSyntaxWriter() },
         { MemberTypes.Event, new SwiftEventSyntaxWriter() }
     };
-    
+
     private SwiftDestructorSyntaxWriter m_destructorSyntaxWriter = new();
     private SwiftTypeOfSyntaxWriter m_typeOfSyntaxWriter = new();
-    
+
     public SwiftTypeSyntaxWriter(Settings settings)
     {
         Settings = settings ?? throw new ArgumentNullException(nameof(settings));
     }
-    
+
     public string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
         return Write((Type)@object, state, configuration);
@@ -46,7 +46,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         if (state.CResult is null) {
             throw new Exception("No CResult provided");
         }
-        
+
         if (type.IsPointer ||
             type.IsByRef ||
             type.IsArray) {
@@ -60,17 +60,17 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         if (fullTypeName == null) {
             return Builder.SingleLineComment($"Type \"{type.Name}\" was skipped. Reason: It has no full name.").ToString();
         }
-        
+
         SwiftCodeBuilder sb = new();
 
         bool writeMembers = true;
         bool writeTypeDefinition = true;
         bool writeTypeExtension = false;
-        
+
         if (type.IsEnum) {
             writeTypeDefinition = false;
             writeTypeExtension = true;
-            
+
             string enumdefCode = WriteEnumDef(
                 type,
                 typeDescriptorRegistry
@@ -80,13 +80,13 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         } else if (type.IsDelegate()) {
             writeTypeDefinition = false;
             writeMembers = false;
-            
+
             string delegateTypedefCode = WriteDelegateTypeDefs(
                 configuration,
                 type,
                 state
             );
-    
+
             sb.AppendLine(delegateTypedefCode);
         }
 
@@ -111,14 +111,14 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             if (writeTypeExtension) {
                 membersCode = membersCode.IndentAllLines(1);
             }
-                
+
             sb.AppendLine(membersCode);
         }
-        
+
         if (writeTypeExtension) {
             sb.AppendLine("}");
         }
-        
+
         return sb.ToString();
     }
 
@@ -138,9 +138,9 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         string rawSwiftTypeName = underlyingTypeDescriptor.GetTypeName(CodeLanguage.Swift, false);
         string cEnumTypeName = typeDescriptor.GetTypeName(CodeLanguage.C, false);
         string swiftEnumTypeName = typeDescriptor.GetTypeName(CodeLanguage.Swift, false);
-        
+
         bool isFlagsEnum = type.IsDefined(typeof(FlagsAttribute), false);
-        
+
         var typeDocumentationComment = type.GetDocumentation()
             ?.GetFormattedDocumentationComment();
 
@@ -149,11 +149,11 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
                 .ProtocolConformance("OptionSet")
                 .Public()
                 .ToString();
-            
+
             if (!string.IsNullOrEmpty(typeDocumentationComment)) {
                 sb.AppendLine(typeDocumentationComment);
             }
-            
+
             sb.AppendLine($"{structDecl} {{");
 
             const string rawValueTypeAliasVarName = "RawValue";
@@ -161,14 +161,14 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             string rawValueTypeAliasDecl = Builder.TypeAlias(rawValueTypeAliasVarName, rawSwiftTypeName)
                 .Public()
                 .ToIndentedString(1);
-            
+
             sb.AppendLine(rawValueTypeAliasDecl);
-            
+
             sb.AppendLine(Builder.Let("rawValue")
                 .Public()
                 .TypeName(rawValueTypeAliasVarName)
                 .ToIndentedString(1));
-            
+
             sb.AppendLine();
 
             string rawValueParam = Builder.FuncSignatureParameter("rawValue", rawValueTypeAliasVarName)
@@ -179,7 +179,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
                 .Parameters(rawValueParam)
                 .Implementation("self.rawValue = rawValue")
                 .ToIndentedString(1);
-            
+
             sb.AppendLine(initRawValueDecl);
             sb.AppendLine();
         } else {
@@ -187,15 +187,15 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
                 .Public()
                 .RawTypeName(rawSwiftTypeName)
                 .ToString();
-            
+
             if (!string.IsNullOrEmpty(typeDocumentationComment)) {
                 sb.AppendLine(typeDocumentationComment);
             }
-            
+
             sb.AppendLine($"{enumDecl} {{");
         }
 
-        string initUnwrap = isFlagsEnum 
+        string initUnwrap = isFlagsEnum
             ? string.Empty
             : "!";
 
@@ -216,7 +216,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
 
         sb.AppendLine(cValuePropDecl);
         sb.AppendLine();
-        
+
         var caseNames = type.GetEnumNames();
         var values = type.GetEnumValuesAsUnderlyingType() ?? throw new Exception("No enum values");
 
@@ -269,7 +269,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
                     .Static()
                     .Value(swiftEnumTypeName)
                     .ToString();
-                
+
                 if (value.Equals(0) ||
                     value.Equals((uint)0) ||
                     value.Equals((byte)0) ||
@@ -284,19 +284,19 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             } else {
                 if (duplicateCases.TryGetValue(caseName, out string? caseNameWithEquivalentValue)) {
                     string swiftCaseNameWithEquivalentValue = caseNameWithEquivalentValue.ToSwiftEnumCaseName();
-                    
+
                     string caseCodeDecl = Builder.Let(swiftCaseName)
                         .Public()
                         .Static()
                         .Value($"{swiftEnumTypeName}.{swiftCaseNameWithEquivalentValue}")
                         .ToString();
-                    
+
                     caseCode = caseCodeDecl;
                 } else {
                     caseCode = $"case {swiftCaseName} = {value}";
                 }
             }
-            
+
             enumCases.Add($"\t{caseCode}");
         }
 
@@ -304,7 +304,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
 
         sb.AppendLine(enumCasesString);
         sb.AppendLine("}");
-        
+
         return sb.ToString();
     }
     #endregion Enum
@@ -318,7 +318,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
     )
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
-        
+
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         Result cResult = state.CResult ?? throw new Exception("No CResult provided");
 
@@ -332,27 +332,27 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
 
             return string.Empty;
         }
-        
+
         var interfaceGenerationPhase = (configuration as SwiftSyntaxWriterConfiguration)?.InterfaceGenerationPhase ?? SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.NoInterface;
 
         // bool isAbstract = type.IsAbstract;
-        
+
         var cSharpMembers = cSharpUnmanagedResult.GeneratedTypes[type];
         // var cMembers = cResult.GeneratedTypes[type];
 
         bool isInterface = type.IsInterface;
         bool isPrimitive = type.IsPrimitive;
         bool isArray = type.IsArray;
-        
+
         SwiftCodeBuilder sb = new();
 
         string typeName = type.Name;
         string fullTypeName = type.GetFullNameOrName();
 
         string swiftTypeName;
-        
+
         if (isPrimitive) {
-            swiftTypeName = type.CTypeName();            
+            swiftTypeName = type.CTypeName();
         } else {
             TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
             swiftTypeName = typeDescriptor.GetTypeName(CodeLanguage.Swift, false);
@@ -373,9 +373,9 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
                 interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ImplementationClass) {
                 interfaceTypes.Add(type);
             }
-            
+
             interfaceTypes.AddRange(type.GetInterfaces());
-            
+
             List<string> swiftProtocolTypeNames = new();
 
             foreach (var interfaceType in interfaceTypes) {
@@ -389,14 +389,14 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
                         continue;
                     }
                 }
-                
+
                 TypeDescriptor interfaceTypeDescriptor = interfaceType.GetTypeDescriptor(typeDescriptorRegistry);
 
                 string swiftProtocolTypeName = interfaceTypeDescriptor.GetTypeName(
-                    CodeLanguage.Swift, 
+                    CodeLanguage.Swift,
                     false
                 );
-                
+
                 swiftProtocolTypeNames.Add(swiftProtocolTypeName);
             }
 
@@ -415,7 +415,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
                     .ToString();
             } else if (interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ImplementationClass) {
                 string fullSwiftTypeName = $"{swiftTypeName}{TypeDescriptor.SwiftDotNETInterfaceImplementationSuffix} /* {fullTypeName} */";
-                
+
                 typeDecl = Builder.Class(fullSwiftTypeName)
                     .BaseTypeName(swiftBaseTypeName)
                     .ProtocolConformance(protocolConformancesString)
@@ -428,17 +428,17 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
                     .ToString();
             } else {
                 string fullSwiftTypeName = $"{swiftTypeName} /* {fullTypeName} */";
-                
+
                 typeDecl = Builder.Class(fullSwiftTypeName)
                     .BaseTypeName(swiftBaseTypeName)
                     .ProtocolConformance(protocolConformancesString)
                     .Public()
                     .ToString();
             }
-            
+
             var typeDocumentationComment = type.GetDocumentation()
                 ?.GetFormattedDocumentationComment();
-            
+
             if (!string.IsNullOrEmpty(typeDocumentationComment)) {
                 sb.AppendLine(typeDocumentationComment);
             }
@@ -453,43 +453,43 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
                     .Override()
                     .Implementation($"\"{typeName}\"")
                     .ToIndentedString(1);
-    
+
                 string fullTypeNameDecl = Builder.GetOnlyProperty("fullTypeName", "String")
                     .Public()
                     .Class()
                     .Override()
                     .Implementation($"\"{fullTypeName}\"")
                     .ToIndentedString(1);
-                
+
                 sb.AppendLine(typeNameDecl);
                 sb.AppendLine();
-                
+
                 sb.AppendLine(fullTypeNameDecl);
                 sb.AppendLine();
-                
+
                 if (isArray) {
                     var elementType = type.GetElementType();
 
                     if (elementType is not null) {
                         string swiftElementTypeName;
-        
+
                         if (elementType.IsPrimitive) {
-                            swiftElementTypeName = elementType.CTypeName();            
+                            swiftElementTypeName = elementType.CTypeName();
                         } else {
                             TypeDescriptor typeDescriptor = elementType.GetTypeDescriptor(typeDescriptorRegistry);
                             swiftElementTypeName = typeDescriptor.GetTypeName(CodeLanguage.Swift, false);
                         }
-                        
+
                         string elementTypeDecl = Builder.GetOnlyProperty("elementType", "System_Type")
                             .Public()
                             .Class()
                             .Implementation($"{swiftElementTypeName}.typeOf")
                             .ToIndentedString(1);
-                        
+
                         sb.AppendLine("/// The element type of the System.Array".IndentAllLines(1));
                         sb.AppendLine(elementTypeDecl);
                         sb.AppendLine();
-                        
+
                         string emptyArrayInitializerImpl = $$"""
 let elementType = {{swiftTypeName}}.elementType
 let elementTypeC = elementType.__handle
@@ -501,13 +501,13 @@ let newArrayC = System_Array_CreateInstance(elementTypeC, 0, &__exceptionC)
 if let __exceptionC {
     let __exception = System_Exception(handle: __exceptionC)
     let __error = __exception.swiftError
-    
+
     throw __error
 }
 
 self.init(handle: newArrayC)
 """;
-                        
+
                         string emptyArrayInitializer = Builder.Initializer()
                             .Public()
                             .Convenience()
@@ -518,25 +518,25 @@ self.init(handle: newArrayC)
                         sb.AppendLine($"/// Creates an empty {type.GetFullNameOrName()}".IndentAllLines(1));
                         sb.AppendLine(emptyArrayInitializer);
                         sb.AppendLine();
-                        
+
                         string arrayInitializerImpl = $$"""
  let elementType = {{swiftTypeName}}.elementType
  let elementTypeC = elementType.__handle
 
  var __exceptionC: System_Exception_t?
- 
+
  let newArrayC = System_Array_CreateInstance(elementTypeC, length, &__exceptionC)
- 
+
  if let __exceptionC {
      let __exception = System_Exception(handle: __exceptionC)
      let __error = __exception.swiftError
-     
+
      throw __error
  }
 
  self.init(handle: newArrayC)
  """;
-                        
+
                         string arrayInitializer = Builder.Initializer()
                             .Public()
                             .Convenience()
@@ -548,19 +548,19 @@ self.init(handle: newArrayC)
                         sb.AppendLine($"/// Creates an {type.GetFullNameOrName()} with the specified length".IndentAllLines(1));
                         sb.AppendLine(arrayInitializer);
                         sb.AppendLine();
-                        
+
                         string arrayMutableCollectionConformanceImpl = $$"""
 public typealias Element = {{swiftElementTypeName}}?
 
 public subscript(position: Index) -> Element {
     get {
         assert(position >= startIndex && position < endIndex, "Out of bounds")
-        
+
         do {
             guard let element = try self.getValue(position) else {
                 return nil
             }
-            
+
             return try element.castTo()
         } catch {
             fatalError("An exception was thrown while calling System.Array.GetValue: \(error.localizedDescription)")
@@ -598,7 +598,7 @@ public subscript(position: Index) -> Element {
                 generatedMembers.Contains(member)) {
                 continue;
             }
-            
+
             var memberKind = cSharpMember.MemberKind;
             var memberType = member?.MemberType;
 
@@ -606,12 +606,12 @@ public subscript(position: Index) -> Element {
                 memberKind,
                 memberType ?? MemberTypes.Custom
             );
-            
+
             if (syntaxWriter == null) {
                 if (Settings.EmitUnsupported) {
                     sbMembers.AppendLine(Builder.SingleLineComment($"TODO: Unsupported Member Type \"{memberType}\"").ToString());
                 }
-                    
+
                 continue;
             }
 
@@ -659,7 +659,7 @@ public subscript(position: Index) -> Element {
         if (writeTypeDefinition) {
             membersCode = membersCode.IndentAllLines(1);
         }
-        
+
         sb.AppendLine(membersCode);
 
         if (writeTypeDefinition) {
@@ -684,7 +684,7 @@ public subscript(position: Index) -> Element {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
 
         string? codeForOptional;
-        
+
         if (!extendedType.IsEnum &&
             !extendedType.IsStruct()) {
             codeForOptional = GetTypeExtensionsCode(
@@ -696,7 +696,7 @@ public subscript(position: Index) -> Element {
         } else {
             codeForOptional = null;
         }
-            
+
         string codeForNonOptional = GetTypeExtensionsCode(
             extendedType,
             false,
@@ -710,14 +710,14 @@ public subscript(position: Index) -> Element {
             sb.AppendLine(codeForOptional);
             sb.AppendLine();
         }
-        
+
         sb.AppendLine(codeForNonOptional);
 
         string code = sb.ToString();
 
         return code;
     }
-    
+
     private string GetTypeExtensionsCode(
         Type extendedType,
         bool isExtendedTypeOptional,
@@ -728,7 +728,7 @@ public subscript(position: Index) -> Element {
         if (generatedMembers.Count <= 0) {
             return string.Empty;
         }
-        
+
         TypeDescriptor extendedTypeDescriptor = extendedType.GetTypeDescriptor(typeDescriptorRegistry);
         string extendedTypeSwiftName = extendedTypeDescriptor.GetTypeName(CodeLanguage.Swift, false);
 
@@ -737,7 +737,7 @@ public subscript(position: Index) -> Element {
             : string.Empty;
 
         SwiftCodeBuilder sbMembers = new();
-        
+
         foreach (GeneratedMember swiftGeneratedMember in generatedMembers) {
             string extensionMethod = SwiftMethodSyntaxWriter.WriteExtensionMethod(
                 swiftGeneratedMember,
@@ -748,11 +748,11 @@ public subscript(position: Index) -> Element {
             sbMembers.AppendLine(extensionMethod);
             sbMembers.AppendLine();
         }
-        
+
         string code = Builder.Extension($"{extendedTypeSwiftName}{extendedTypeOptionality}")
             .Implementation(sbMembers.ToString())
             .ToString();
-        
+
         return code;
     }
     #endregion Type Extensions

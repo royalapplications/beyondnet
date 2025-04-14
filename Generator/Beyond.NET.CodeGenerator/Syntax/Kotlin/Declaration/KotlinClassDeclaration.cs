@@ -11,7 +11,7 @@ public class KotlinClassDeclaration
     public KotlinFunSignatureParameters? PrimaryConstructorParameters { get; }
     public IEnumerable<string> BaseTypePrimaryConstructorParameterNames { get; }
     public string? Implementation { get; }
-    
+
     public KotlinClassDeclaration(
         string name,
         string? baseTypeName,
@@ -34,9 +34,9 @@ public class KotlinClassDeclaration
     public override string ToString()
     {
         const string @class = "class";
-        
+
         string visibilityString = Visibility.ToKotlinSyntaxString();
-        
+
         var primaryConstructorParametersStr = PrimaryConstructorParameters?.ToString();
         string primaryConstructorStr;
 
@@ -70,7 +70,7 @@ public class KotlinClassDeclaration
                 ? $", {InterfaceConformance}"
                 : $": {InterfaceConformance}";
         }
-        
+
         string[] signatureComponents = [
             visibilityString,
             @class,
@@ -80,10 +80,10 @@ public class KotlinClassDeclaration
         string signature = KotlinFunSignatureComponents.ComponentsToString(signatureComponents);
 
         string fullDecl;
-        
+
         if (!string.IsNullOrEmpty(Implementation)) {
             string indentedImpl = Implementation.IndentAllLines(1);
-            
+
             fullDecl = $"{signature} {{\n{indentedImpl}\n}}";
         } else {
             fullDecl = signature;

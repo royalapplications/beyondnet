@@ -16,15 +16,15 @@ public class SwiftFieldSyntaxWriter: SwiftMethodSyntaxWriter, IFieldSyntaxWriter
     public string Write(FieldInfo field, State state, ISyntaxWriterConfiguration? configuration)
     {
         const bool addToState = false;
-        
+
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
-        
+
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         Result cResult = state.CResult ?? throw new Exception("No CResult provided");
-        
+
         GeneratedMember? cSharpGeneratedGetterMember = cSharpUnmanagedResult.GetGeneratedMember(field, MemberKind.FieldGetter);
         GeneratedMember? cGeneratedGetterMember = cResult.GetGeneratedMember(field, MemberKind.FieldGetter);
-        
+
         GeneratedMember? cSharpGeneratedSetterMember = cSharpUnmanagedResult.GetGeneratedMember(field, MemberKind.FieldSetter);
         GeneratedMember? cGeneratedSetterMember = cResult.GetGeneratedMember(field, MemberKind.FieldSetter);
 
@@ -32,7 +32,7 @@ public class SwiftFieldSyntaxWriter: SwiftMethodSyntaxWriter, IFieldSyntaxWriter
             cSharpGeneratedSetterMember is null) {
             throw new Exception("No C# generated member");
         }
-        
+
         if (cGeneratedGetterMember is null &&
             cGeneratedSetterMember is null) {
             throw new Exception("No C generated member");
@@ -48,7 +48,7 @@ public class SwiftFieldSyntaxWriter: SwiftMethodSyntaxWriter, IFieldSyntaxWriter
         if (cSharpGeneratedGetterMember is not null &&
             cGeneratedGetterMember is not null) {
             bool mayThrow = cSharpGeneratedGetterMember.MayThrow;
-                
+
             string code = WriteMethod(
                 cSharpGeneratedGetterMember,
                 cGeneratedGetterMember,
@@ -68,7 +68,7 @@ public class SwiftFieldSyntaxWriter: SwiftMethodSyntaxWriter, IFieldSyntaxWriter
             );
 
             sb.AppendLine(code);
-            
+
             state.AddGeneratedMember(
                 MemberKind.FieldGetter,
                 field,
@@ -81,7 +81,7 @@ public class SwiftFieldSyntaxWriter: SwiftMethodSyntaxWriter, IFieldSyntaxWriter
         if (cSharpGeneratedSetterMember is not null &&
             cGeneratedSetterMember is not null) {
             bool mayThrow = cSharpGeneratedSetterMember.MayThrow;
-            
+
             string code = WriteMethod(
                 cSharpGeneratedSetterMember,
                 cGeneratedSetterMember,
@@ -101,7 +101,7 @@ public class SwiftFieldSyntaxWriter: SwiftMethodSyntaxWriter, IFieldSyntaxWriter
             );
 
             sb.AppendLine(code);
-            
+
             state.AddGeneratedMember(
                 MemberKind.FieldSetter,
                 field,

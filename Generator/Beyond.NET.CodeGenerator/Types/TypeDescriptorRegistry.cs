@@ -3,7 +3,7 @@ namespace Beyond.NET.CodeGenerator.Types;
 public class TypeDescriptorRegistry
 {
     public static TypeDescriptorRegistry Shared { get; } = new();
-    
+
     private TypeDescriptorRegistry()
     {
         var builtInDescriptors = GetBuiltInTypeDescriptors();
@@ -27,7 +27,7 @@ public class TypeDescriptorRegistry
         if (typeDescriptor == null) {
             // TODO
             typeDescriptor = new(managedType);
-            
+
             Descriptors[managedType] = typeDescriptor;
         }
 
@@ -47,12 +47,12 @@ public class TypeDescriptorRegistry
     {
         HashSet<TypeDescriptor> descriptors = new() {
             BuiltIn.BuiltInTypeDescriptors.VoidTypeDescriptor,
-            
+
             BuiltIn.BuiltInTypeDescriptors.BoolTypeDescriptor,
             BuiltIn.BuiltInTypeDescriptors.CharTypeDescriptor,
             BuiltIn.BuiltInTypeDescriptors.NintTypeDescriptor,
             BuiltIn.BuiltInTypeDescriptors.NuintTypeDescriptor,
-            
+
             BuiltIn.BuiltInTypeDescriptors.Int8TypeDescriptor,
             BuiltIn.BuiltInTypeDescriptors.UInt8TypeDescriptor,
             BuiltIn.BuiltInTypeDescriptors.Int16TypeDescriptor,
@@ -61,12 +61,12 @@ public class TypeDescriptorRegistry
             BuiltIn.BuiltInTypeDescriptors.UInt32TypeDescriptor,
             BuiltIn.BuiltInTypeDescriptors.Int64TypeDescriptor,
             BuiltIn.BuiltInTypeDescriptors.UInt64TypeDescriptor,
-            
+
             BuiltIn.BuiltInTypeDescriptors.FloatTypeDescriptor,
             BuiltIn.BuiltInTypeDescriptors.DoubleTypeDescriptor,
-            
+
             BuiltIn.BuiltInTypeDescriptors.ReadOnlySpanOfByteTypeDescriptor,
-            
+
             // BuiltIn.BuiltInTypeDescriptors.StringTypeDescriptor
         };
 

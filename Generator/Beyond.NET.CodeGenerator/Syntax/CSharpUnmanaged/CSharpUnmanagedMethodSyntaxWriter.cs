@@ -13,11 +13,11 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     {
         return Write((MethodInfo)@object, state, configuration);
     }
-    
+
     public string Write(MethodInfo method, State state, ISyntaxWriterConfiguration? configuration)
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
-        
+
         const bool mayThrow = true;
         const MemberKind methodKind = MemberKind.Method;
         const bool addToState = true;
@@ -28,7 +28,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         Type declaringType = method.DeclaringType ?? throw new Exception("No declaring type");;
         Type returnType = method.ReturnType;
         IEnumerable<ParameterInfo> parameters = method.GetParameters();
-        
+
         string methodCode = WriteMethod(
             method,
             methodKind,
@@ -67,12 +67,12 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             memberKind != MemberKind.TypeOf) {
             throw new Exception("memberInfo may only be null when memberKind is Destructor or TypeOf");
         }
-        
+
         MethodBase? methodBase = memberInfo as MethodBase;
 
         bool isGenericType = declaringType.IsGenericType ||
                              declaringType.IsGenericTypeDefinition;
-        
+
         Type[] genericTypeArguments = Array.Empty<Type>();
         int numberOfGenericTypeArguments = 0;
 
@@ -80,7 +80,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             genericTypeArguments = declaringType.GetGenericArguments();
             numberOfGenericTypeArguments = genericTypeArguments.Length;
         }
-        
+
         bool isGeneric = false;
         Type[] genericMethodArguments = Array.Empty<Type>();
         int numberOfGenericMethodArguments = 0;
@@ -98,7 +98,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 } catch {
                     genericMethodArguments = Array.Empty<Type>();
                 }
-                
+
                 numberOfGenericMethodArguments = genericMethodArguments.Length;
             }
         } else if (isGenericType &&
@@ -119,7 +119,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         }
 
         List<Type> tempCombinedGenericArguments = new();
-        
+
         tempCombinedGenericArguments.AddRange(genericTypeArguments);
         tempCombinedGenericArguments.AddRange(genericMethodArguments);
 
@@ -136,13 +136,13 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
                     if (nonByRefParameterType.IsArray) {
                         generatedName = string.Empty;
-                        
-                        return "// TODO: Generic Methods with out/ref parameters that are arrays are not supported";    
+
+                        return "// TODO: Generic Methods with out/ref parameters that are arrays are not supported";
                     }
                 }
             }
         }
-        
+
         bool isGenericConstructor = isGenericType &&
                                     memberKind == MemberKind.Constructor;
 
@@ -155,7 +155,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             genericMethodArguments.Length > 0) {
             methodNameWithGenericArity = methodName + "_A" + numberOfGenericMethodArguments;
         }
-        
+
         string methodNameC;
 
         switch (memberKind) {
@@ -273,9 +273,9 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         if (isReturnOrSetterOrEventHandlerTypeByRef) {
             returnOrSetterOrEventHandlerType = returnOrSetterOrEventHandlerType.GetNonByRefType();
         }
-        
+
         TypeDescriptor returnOrSetterOrEventHandlerTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
-        
+
         string unmanagedReturnOrSetterOrEventHandlerTypeName = returnOrSetterOrEventHandlerTypeDescriptor.GetTypeName(
             CodeLanguage.CSharpUnmanaged,
             true,
@@ -285,7 +285,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             isReturnOrSetterOrEventHandlerTypeByRef,
             false
         );
-        
+
         string unmanagedReturnOrSetterOrEventHandlerTypeNameWithComment;
 
         if (memberKind == MemberKind.PropertySetter ||
@@ -296,9 +296,9 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         } else {
             unmanagedReturnOrSetterOrEventHandlerTypeNameWithComment = $"{unmanagedReturnOrSetterOrEventHandlerTypeName} /* {returnOrSetterOrEventHandlerType.GetFullNameOrName()} */";
         }
-        
+
         CSharpCodeBuilder sb = new();
-        
+
         sb.AppendLine($"[UnmanagedCallersOnly(EntryPoint = \"{methodNameC}\")]");
         sb.AppendLine($"internal static {unmanagedReturnOrSetterOrEventHandlerTypeNameWithComment} {methodNameC}({methodSignatureParameters})");
         sb.AppendLine("{");
@@ -311,7 +311,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             memberKind != MemberKind.Destructor &&
             memberKind != MemberKind.TypeOf) {
             selfType = declaringType;
-            
+
             string selfConversionCode = WriteSelfConversion(
                 declaringType,
                 typeDescriptorRegistry,
@@ -346,8 +346,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 """);
         }
 
-        string implPrefix = mayThrow 
-            ? "\t\t" 
+        string implPrefix = mayThrow
+            ? "\t\t"
             : "\t";
 
         string methodTarget;
@@ -391,10 +391,10 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             string callPrefix = isReturnOrSetterOrEventHandlerTypeByRef
                 ? "ref "
                 : string.Empty;
-            
+
             returnValuePrefix = $"{fullReturnTypeName} {returnValueName} = {callPrefix}";
         }
-        
+
         bool isProperty = memberKind == MemberKind.PropertyGetter ||
                           memberKind == MemberKind.PropertySetter;
 
@@ -407,17 +407,17 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             methodNameForInvocation = string.Empty;
         } else if (memberKind == MemberKind.Destructor) {
             bool generateCheckedDestructors = state.Settings?.GenerateTypeCheckedDestroyMethods ?? false;
-            
+
             if (generateCheckedDestructors &&
                 !declaringType.IsAbstract &&
                 !declaringType.IsGenericType &&
                 !declaringType.IsGenericTypeDefinition) {
                 string typeName = fullTypeName;
-                
+
                 if (declaringType.IsDelegate()) {
                     typeName = fullTypeNameC;
                 }
-                
+
                 methodNameForInvocation = $"InteropUtils.CheckedFreeIfAllocated<{typeName}>(__self)";
             } else {
                 methodNameForInvocation = "InteropUtils.FreeIfAllocated(__self)";
@@ -478,7 +478,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         } else if (memberKind == MemberKind.EventHandlerAdder ||
                    memberKind == MemberKind.EventHandlerRemover) {
             string valueParamterName = "__value";
-            
+
             string? eventHandlerTypeConversion = returnOrSetterOrEventHandlerTypeDescriptor.GetTypeConversion(
                 CodeLanguage.CSharpUnmanaged,
                 CodeLanguage.CSharp
@@ -501,33 +501,33 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         if (isGeneric) {
             bool isNonConstructedGenericType = isGenericType &&
                                                !declaringType.IsConstructedGenericType;
-            
+
             string declaringTypeName = declaringType.GetFullNameOrName();
-            
+
             if (isGenericConstructor) { // Constructor
                 sb.AppendLine($"{implPrefix}System.Type __targetTypeForGenericCall = typeof({declaringTypeName});");
             } else { // Method, Property, etc.
                 sb.AppendLine($"{implPrefix}System.Type __targetTypeForGenericCall = typeof({declaringTypeName});");
-                
+
                 if (isNonConstructedGenericType) {
                     sb.AppendLine($"{implPrefix}const System.String __memberNameForGenericCall = \"{methodName}\";");
                 } else {
                     sb.AppendLine($"{implPrefix}System.String __memberNameForGenericCall = nameof({declaringTypeName}.{methodName});");
                 }
-                
+
                 if (isStaticMethod) {
                     sb.AppendLine($"{implPrefix}System.Object? __methodTargetForGenericCall = null;");
                 } else {
                     sb.AppendLine($"{implPrefix}System.Object? __methodTargetForGenericCall = {convertedSelfParameterName};");
                 }
-    
+
                 sb.AppendLine();
             }
 
             Type returnType;
             string returnTypeName;
             string typeOfReturnTypeName;
-            
+
             if (isGenericReturnType ||
                 isConstructedGenericReturnType) {
                 returnType = originalReturnOrSetterOrEventHandlerType;
@@ -561,7 +561,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                         typeOfReturnTypeName = "typeof(System.Object)";
                     } else {
                         typeOfReturnTypeName = returnTypeName;
-                        
+
                         if (returnTypeIsGenericParameterType) {
                             returnTypeName = "System.Object";
                         }
@@ -587,7 +587,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
                     parameterNamesString += $"{fullSetterTypeConversion}";
                 }
-                
+
                 sb.AppendLine($"{implPrefix}System.Object[] __parametersForGenericCall = new System.Object[] {{ {parameterNamesString} }};");
 
                 List<string> parameterTypeNames = new();
@@ -609,7 +609,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
                     if (isGenericParameterType) {
                         string parameterTypeName;
-                        
+
                         if (isGenericMethodParameter) {
                             parameterTypeName = $"System.Type.MakeGenericMethodParameter({parameterType.GenericParameterPosition})";
                         } else {
@@ -619,7 +619,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                                 parameterTypeName = convertedGenericTypeArgumentNames[parameterType.GenericParameterPosition];
                             }
                         }
-                        
+
                         if (isByRefParameter) {
                             parameterTypeName += ".MakeByRefType()";
                         }
@@ -628,7 +628,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                     } else {
                         bool isGenericArrayParameterType = false;
                         Type? arrayType = parameterType.GetElementType();
-                        
+
                         if (parameterType.IsArray &&
                             arrayType is not null &&
                             (arrayType.IsGenericParameter || arrayType.IsGenericMethodParameter)) {
@@ -639,13 +639,13 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                             arrayType is not null) {
                             // TODO: This is not correct for type generic parameters
                             string parameterTypeName = $"System.Type.MakeGenericMethodParameter({arrayType.GenericParameterPosition}).MakeArrayType()";
-                        
+
                             parameterTypeNames.Add(parameterTypeName);
                         } else {
                             string parameterTypeName = parameterType.GetFullNameOrName();
-                            
+
                             string typeOfCode = $"typeof({parameterTypeName})";
-                            
+
                             if (isByRefParameter) {
                                 typeOfCode += ".MakeByRefType()";
                             }
@@ -660,7 +660,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 }
 
                 string parameterTypeNamesString = string.Join(", ", parameterTypeNames);
-                
+
                 sb.AppendLine($"{implPrefix}System.Type[] __parameterTypesForGenericCall = new System.Type[] {{ {parameterTypeNamesString} }};");
             } else {
                 if (memberKind == MemberKind.PropertySetter) {
@@ -676,25 +676,25 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
             if (isNonConstructedGenericType) {
                 string convertedGenericTypeArgumentNamesString = string.Join(", ", convertedGenericTypeArgumentNames);
-                
+
                 sb.AppendLine($"{implPrefix}System.Type[] __genericParameterTypesForGenericType = new System.Type[] {{ {convertedGenericTypeArgumentNamesString} }};");
-                sb.AppendLine();    
+                sb.AppendLine();
             }
 
             string convertedGenericMethodArgumentNamesString = string.Join(", ", convertedGenericMethodArgumentNames);
-            
+
             sb.AppendLine($"{implPrefix}System.Type[] __genericParameterTypesForGenericCall = new System.Type[] {{ {convertedGenericMethodArgumentNamesString} }};");
             sb.AppendLine();
 
             if (isNonConstructedGenericType) {
                 sb.AppendLine($"{implPrefix}__targetTypeForGenericCall = __targetTypeForGenericCall.MakeGenericType(__genericParameterTypesForGenericType);");
             }
-            
+
             if (!isGenericConstructor) {
                 // TODO: More member kinds
 
                 bool hasMethodForGenericCall = true;
-                
+
                 if (memberKind == MemberKind.Method) {
                     sb.AppendLine($"{implPrefix}System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__memberNameForGenericCall, {numberOfGenericMethodArguments}, __parameterTypesForGenericCall) ?? throw new Exception(\"Method {methodName} not found\");");
                 } else if (memberKind == MemberKind.PropertyGetter) {
@@ -704,7 +704,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 } else if (memberKind == MemberKind.FieldGetter ||
                            memberKind == MemberKind.FieldSetter) {
                     hasMethodForGenericCall = false;
-                    
+
                     sb.AppendLine($"{implPrefix}System.Reflection.FieldInfo __fieldForGenericCall = __targetTypeForGenericCall.GetField(__memberNameForGenericCall) ?? throw new Exception(\"Field {methodName} not found\");");
                 } else {
                     throw new Exception($"Unsupported member kind in generic method or type: {memberKind}");
@@ -753,9 +753,9 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
             if (returnValueTypeConversion != null) {
                 string fullReturnValueTypeConversion = string.Format(returnValueTypeConversion, returnValueName);
-                
+
                 convertedReturnValueName = "__returnValueNative";
-                
+
                 sb.AppendLine($"{implPrefix}{returnOrSetterOrEventHandlerTypeDescriptor.GetTypeName(CodeLanguage.CSharpUnmanaged, true)} {convertedReturnValueName} = {fullReturnValueTypeConversion};");
             } else {
                 convertedReturnValueName = returnValueName;
@@ -763,7 +763,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
             if (isReturnOrSetterOrEventHandlerTypeByRef) {
                 string boxedReturnValueName = "__returnValueBoxed";
-                
+
                 returnValueBoxing = $"{unmanagedReturnOrSetterOrEventHandlerTypeName} {boxedReturnValueName} = ({unmanagedReturnOrSetterOrEventHandlerTypeName})System.Runtime.InteropServices.Marshal.AllocHGlobal(sizeof({unmanagedReturnOrSetterOrEventHandlerTypeName})); *{boxedReturnValueName} = {convertedReturnValueName};";
 
                 convertedReturnValueName = boxedReturnValueName;
@@ -783,13 +783,13 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
             foreach (var parameter in parameters) {
                 parameterIdx++;
-                
+
                 Type parameterType = parameter.ParameterType;
 
                 bool isOutParameter = parameter.IsOut;
                 bool isInParameter = parameter.IsIn;
                 bool isByRefParameter = parameterType.IsByRef;
-                
+
                 if (!isOutParameter &&
                     !isInParameter &&
                     !isByRefParameter) {
@@ -802,7 +802,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                     parameterType.IsGenericMethodParameter) {
                     parameterType = typeof(object);
                 }
-                
+
                 string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
                 string convertedParameterName = $"{parameterName}Converted";
 
@@ -818,11 +818,11 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 if (isGeneric) {
                     parameterPrefix = string.Empty;
                 } else {
-                    parameterPrefix = isOutParameter 
+                    parameterPrefix = isOutParameter
                         ? "out "
-                        : isInParameter 
+                        : isInParameter
                             ? string.Empty
-                            : "ref ";                    
+                            : "ref ";
                 }
 
                 string fullParameterName = $"{parameterPrefix}{convertedParameterName}";
@@ -835,33 +835,33 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                     sb.AppendLine($"\t\t{fullParameterName} = ({parameterType.GetFullNameOrName()})__parametersForGenericCall[{parameterIdx}];");
                     sb.AppendLine();
                 }
-                
+
                 if (string.IsNullOrEmpty(parameterTypeConversion)) {
                     parameterTypeConversion = convertedParameterName;
                 } else {
                     parameterTypeConversion = string.Format(parameterTypeConversion, convertedParameterName);
                 }
-                
+
                 sb.AppendLine($"\t\tif ({parameterName} is not null) {{");
                 sb.AppendLine($"\t\t\t*{parameterName} = {parameterTypeConversion};");
                 sb.AppendLine("\t\t}");
                 sb.AppendLine();
             }
-            
+
             if (isReturning) {
                 if (!string.IsNullOrEmpty(returnValueBoxing)) {
                     sb.AppendLine($"{implPrefix}{returnValueBoxing}");
                     sb.AppendLine();
                 }
-                
+
                 sb.AppendLine($"{implPrefix}return {convertedReturnValueName};");
             }
-            
+
             sb.AppendLine("""
     } catch (Exception __exception) {
         if (__outException is not null) {
             void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-                
+
             *__outException = __exceptionHandleAddress;
         }
 
@@ -871,13 +871,13 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 if (!parameter.IsOut) {
                     continue;
                 }
-                
+
                 string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
 
                 Type parameterType = parameter.ParameterType.GetNonByRefType();
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
 
-                string outValue = parameterTypeDescriptor.GetDefaultValue() 
+                string outValue = parameterTypeDescriptor.GetDefaultValue()
                                   ?? $"default({parameterType.GetFullNameOrName()})";
 
                 sb.AppendLine($"\t\tif ({parameterName} is not null) {{");
@@ -888,7 +888,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
             if (isReturning) {
                 string returnValue;
-                
+
                 if (isReturnOrSetterOrEventHandlerTypeByRef) {
                     returnValue = "null";
                 } else {
@@ -898,7 +898,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
                 sb.AppendLine($"{implPrefix}return {returnValue};");
             }
-            
+
             sb.AppendLine("\t} finally {");
 
             string mutableStructInstanceReplacement = WriteMutableStructInstanceReplacement(
@@ -911,7 +911,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 sb.AppendLine(mutableStructInstanceReplacement
                     .IndentAllLines(2));
             }
-            
+
             sb.AppendLine("\t}");
         } else {
             string mutableStructInstanceReplacement = WriteMutableStructInstanceReplacement(
@@ -924,13 +924,13 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 sb.AppendLine(mutableStructInstanceReplacement
                     .IndentAllLines(1));
             }
-            
+
             if (isReturning) {
                 if (!string.IsNullOrEmpty(returnValueBoxing)) {
                     sb.AppendLine($"\t{returnValueBoxing}");
                     sb.AppendLine();
                 }
-                
+
                 sb.AppendLine($"\treturn {convertedReturnValueName};");
             }
         }
@@ -952,7 +952,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             string.IsNullOrEmpty(convertedParameterName)) {
             return string.Empty;
         }
-        
+
         CSharpCodeBuilder sb = new();
 
         sb.AppendLine($"if ({parameterName} is not null) {{");
@@ -971,26 +971,26 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     {
         bool isNonConstructedGeneric = (type.IsGenericType || type.IsGenericTypeDefinition) &&
                                        !type.IsConstructedGenericType;
-                
+
         if (isNonConstructedGeneric) {
             type = typeof(System.Object);
         }
-        
+
         TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
-        
+
         string parameterName = "__self";
         convertedSelfParameterName = parameterName;
 
         CSharpCodeBuilder sb = new();
-                
+
         string? typeConversion = typeDescriptor.GetTypeConversion(
-            CodeLanguage.CSharpUnmanaged, 
+            CodeLanguage.CSharpUnmanaged,
             CodeLanguage.CSharp
         );
-            
+
         if (typeConversion != null) {
             string convertedParameterName = $"{parameterName}Converted";
-                
+
             string fullTypeConversion = string.Format(typeConversion, parameterName);
 
             bool isSelfPointer = typeDescriptor.RequiresNativePointer;
@@ -1001,7 +1001,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 sb.AppendLine("\t}");
                 sb.AppendLine();
             }
-            
+
             string typeConversionCode = $"{type.GetFullNameOrName()} {convertedParameterName} = {fullTypeConversion};";
 
             sb.AppendLine($"\t{typeConversionCode}");
@@ -1027,12 +1027,12 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     )
     {
         List<string> parameterList = new();
-        
-        string parameterNamePrefix = onlyWriteParameterTypes 
+
+        string parameterNamePrefix = onlyWriteParameterTypes
             ? "/* "
             : string.Empty;
-        
-        string parameterNameSuffix = onlyWriteParameterTypes 
+
+        string parameterNameSuffix = onlyWriteParameterTypes
             ? " */"
             : string.Empty;
 
@@ -1040,27 +1040,27 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
             string declaringTypeName = declaringTypeDescriptor.GetTypeName(targetLanguage, true);
             string selfParameterName = "__self";
-            
+
             string parameterString = $"{declaringTypeName} /* {declaringType.GetFullNameOrName()} */ {parameterNamePrefix}{selfParameterName}{parameterNameSuffix}";
-            
+
             parameterList.Add(parameterString);
         }
-        
+
         if (isGeneric) {
             Type typeOfSystemType = typeof(Type);
             TypeDescriptor systemTypeTypeDescriptor = typeOfSystemType.GetTypeDescriptor(typeDescriptorRegistry);
             string systemTypeTypeName = typeOfSystemType.GetFullNameOrName();
             string nativeSystemTypeTypeName = systemTypeTypeDescriptor.GetTypeName(targetLanguage, true);
-            
+
             foreach (var genericArgumentType in genericArguments) {
                 string parameterName = genericArgumentType.Name;
-            
+
                 string parameterString = $"{nativeSystemTypeTypeName} /* {systemTypeTypeName} */ {parameterNamePrefix}{parameterName}{parameterNameSuffix}";
-            
+
                 parameterList.Add(parameterString);
             }
         }
-        
+
         if (memberKind != MemberKind.Destructor) {
             foreach (var parameter in parameters) {
                 Type parameterType = parameter.ParameterType;
@@ -1072,9 +1072,9 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 if (isByRefParameter) {
                     parameterType = parameterType.GetNonByRefType();
                 }
-                
+
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
-                
+
                 string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
                     targetLanguage,
                     true,
@@ -1084,7 +1084,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                     isByRefParameter,
                     isInParameter
                 );
-                
+
                 string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameterNamePrefix}{parameter.Name}{parameterNameSuffix}";
                 parameterList.Add(parameterString);
             }
@@ -1097,10 +1097,10 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             if (setterOrEventHandlerType == null) {
                 throw new Exception("Setter or Event Handler Type may not be null");
             }
-            
+
             TypeDescriptor setterOrEventHandlerTypeDescriptor = setterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
             string unmanagedSetterOrEventHandlerTypeName = setterOrEventHandlerTypeDescriptor.GetTypeName(targetLanguage, true);
-    
+
             string parameterString = $"{unmanagedSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */ {parameterNamePrefix}__value{parameterNameSuffix}";
             parameterList.Add(parameterString);
         }
@@ -1108,7 +1108,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         if (mayThrow) {
             Type exceptionType = typeof(Exception);
             TypeDescriptor outExceptionTypeDescriptor = exceptionType.GetTypeDescriptor(typeDescriptorRegistry);
-            
+
             string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(
                 targetLanguage,
                 true,
@@ -1118,10 +1118,10 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 true,
                 false
             );
-            
+
             string outExceptionParameterName = "__outException";
 
-            string outExceptionParameterString = $"{outExceptionTypeName} /* {exceptionType.GetFullNameOrName()} */ {parameterNamePrefix}{outExceptionParameterName}{parameterNameSuffix}"; 
+            string outExceptionParameterString = $"{outExceptionTypeName} /* {exceptionType.GetFullNameOrName()} */ {parameterNamePrefix}{outExceptionParameterName}{parameterNameSuffix}";
             parameterList.Add(outExceptionParameterString);
         }
 
@@ -1145,7 +1145,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
     )
     {
         CSharpCodeBuilder sb = new();
-        
+
         convertedParameterNames = new();
         convertedGenericTypeArgumentNames = new();
         convertedGenericMethodArgumentNames = new();
@@ -1155,42 +1155,42 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             Type typeOfSystemType = typeof(Type);
             TypeDescriptor systemTypeTypeDescriptor = typeOfSystemType.GetTypeDescriptor(typeDescriptorRegistry);
             string systemTypeTypeName = typeOfSystemType.GetFullNameOrName();
-            
+
             string systemTypeTypeConversion = systemTypeTypeDescriptor.GetTypeConversion(
                 sourceLanguage,
                 targetLanguage
             )!;
-    
+
             foreach (var genericArgumentType in genericTypeArguments) {
                 string name = genericArgumentType.Name;
-                
+
                 string convertedGenericArgumentName = $"{name}Converted";
-                    
+
                 string fullTypeConversion = string.Format(systemTypeTypeConversion, name);
                 string typeConversionCode = $"{systemTypeTypeName} {convertedGenericArgumentName} = {fullTypeConversion};";
-    
+
                 sb.AppendLine($"\t{typeConversionCode}");
-                
+
                 convertedGenericTypeArgumentNames.Add(convertedGenericArgumentName);
             }
-            
+
             foreach (var genericArgumentType in genericMethodArguments) {
                 string name = genericArgumentType.Name;
-                
+
                 string convertedGenericArgumentName = $"{name}Converted";
-                    
+
                 string fullTypeConversion = string.Format(systemTypeTypeConversion, name);
                 string typeConversionCode = $"{systemTypeTypeName} {convertedGenericArgumentName} = {fullTypeConversion};";
-    
+
                 sb.AppendLine($"\t{typeConversionCode}");
-                
+
                 convertedGenericMethodArgumentNames.Add(convertedGenericArgumentName);
             }
         }
 
         foreach (var parameter in parameters) {
             string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
-            
+
             Type parameterType = parameter.ParameterType;
             bool isOutParameter = parameter.IsOut;
             bool isInParameter = parameter.IsIn;
@@ -1200,7 +1200,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             if (isByRefParameter) {
                 parameterType = parameterType.GetNonByRefType();
             }
-            
+
             bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
 
             if (isOutParameter &&
@@ -1218,7 +1218,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                     }
                 }
             }
-            
+
             TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
 
             string? typeConversion = parameterTypeDescriptor.GetTypeConversion(
@@ -1256,7 +1256,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 if (sourceLanguage == CodeLanguage.CSharpUnmanaged &&
                     targetLanguage == CodeLanguage.CSharp) {
                     string typeConversionCode;
-                
+
                     if (!string.IsNullOrEmpty(typeConversion)) {
                         string fullTypeConversion = string.Format(typeConversion, $"(*{parameterName})");
                         typeConversionCode = $"{convertedParameterName} = {fullTypeConversion};";
@@ -1267,13 +1267,13 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                     sb.AppendLine($"\t{parameterTypeName} {convertedParameterName};");
 
                     sb.AppendLine();
-                
+
                     sb.AppendLine($"\tif ({parameterName} is not null) {{");
                     sb.AppendLine($"\t\t{typeConversionCode}");
                     sb.AppendLine("\t} else {");
-                
+
                     string defaultValue = $"default({parameterType.GetFullNameOrName()})";
-                
+
                     sb.AppendLine($"\t\t{convertedParameterName} = {defaultValue};");
                     sb.AppendLine("\t}");
 
@@ -1287,7 +1287,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 } else if (sourceLanguage == CodeLanguage.CSharp &&
                            targetLanguage == CodeLanguage.CSharpUnmanaged) {
                     // TODO: Delegates
-                
+
                     if (string.IsNullOrEmpty(typeConversion)) {
                         string convertedParameterTypeName = parameterTypeDescriptor.GetTypeName(
                             CodeLanguage.CSharpUnmanaged,
@@ -1298,7 +1298,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                             true,
                             isInParameter
                         );
-                    
+
                         sb.AppendLine($"\t{convertedParameterTypeName} {convertedParameterName} = ({convertedParameterTypeName})System.Runtime.CompilerServices.Unsafe.AsPointer(ref {parameterName});");
                     } else {
                         string convertedParameterTypeName = parameterTypeDescriptor.GetTypeName(
@@ -1327,13 +1327,13 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
 
                         // TODO: I don't know... This kind of looks dangerous
                         var destructorFormat = parameterTypeDescriptor.GetDestructor(CodeLanguage.CSharpUnmanaged);
-                        
+
                         if (!string.IsNullOrEmpty(destructorFormat)) {
                             sbDestructor.AppendLine($"\t{string.Format(destructorFormat, convertedParameterName)};");
                         }
 
                         var destructor = sbDestructor.ToString();
-                        
+
                         convertedTypeDestructors.Add(destructor);
                     }
                 }
@@ -1344,7 +1344,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                     .Replace("&", string.Empty);
 
                 string typeConversionCode;
-                
+
                 if (!string.IsNullOrEmpty(typeConversion)) {
                     string fullTypeConversion = string.Format(typeConversion, $"(*{parameterName})");
                     typeConversionCode = $"{convertedParameterName} = {fullTypeConversion};";
@@ -1355,13 +1355,13 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                 sb.AppendLine($"\t{parameterTypeName} {convertedParameterName};");
 
                 sb.AppendLine();
-                
+
                 sb.AppendLine($"\tif ({parameterName} is not null) {{");
                 sb.AppendLine($"\t\t{typeConversionCode}");
                 sb.AppendLine("\t} else {");
-                
+
                 string defaultValue = $"default({parameterType.GetFullNameOrName()})";
-                
+
                 sb.AppendLine($"\t\t{convertedParameterName} = {defaultValue};");
                 sb.AppendLine("\t}");
 
@@ -1376,9 +1376,9 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                     isByRefParameter,
                     isInParameter
                 );
-                
+
                 convertedParameterName = $"{parameterName}Converted";
-                
+
                 string fullTypeConversion = string.Format(typeConversion, parameterName);
                 string typeConversionCode = $"{parameterTypeName} {convertedParameterName} = {fullTypeConversion};";
 
@@ -1408,7 +1408,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                     convertedParameterName = parameterName;
                 }
             }
-            
+
             convertedParameterNames.Add(convertedParameterName);
         }
 

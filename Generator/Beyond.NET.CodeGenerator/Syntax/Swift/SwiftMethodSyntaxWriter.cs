@@ -19,10 +19,10 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
     public string Write(MethodInfo method, State state, ISyntaxWriterConfiguration? configuration)
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
-        
+
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         Result cResult = state.CResult ?? throw new Exception("No CResult provided");
-        
+
         GeneratedMember cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedMember(method) ?? throw new Exception("No C# generated member");
         GeneratedMember cGeneratedMember = cResult.GetGeneratedMember(method) ?? throw new Exception("No C generated member");
 
@@ -84,19 +84,19 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         #region TODO: Unsupported Stuff
         if (returnOrSetterOrEventHandlerType.IsByRef) {
             generatedName = string.Empty;
-            
+
             return $"// TODO: Method with by ref return or setter or event handler type ({cMember.GetGeneratedName(CodeLanguage.C)})";
         }
         #endregion TODO: Unsupported Stuff
 
         var interfaceGenerationPhase = (syntaxWriterConfiguration as SwiftSyntaxWriterConfiguration)?.InterfaceGenerationPhase ?? SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.NoInterface;
-        
+
         MethodBase? methodBase = memberInfo as MethodBase;
         MethodInfo? methodInfo = methodBase as MethodInfo;
 
         bool isGenericType = declaringType.IsGenericType ||
                              declaringType.IsGenericTypeDefinition;
-        
+
         Type[] genericTypeArguments = Array.Empty<Type>();
         int numberOfGenericTypeArguments = 0;
 
@@ -104,7 +104,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             genericTypeArguments = declaringType.GetGenericArguments();
             numberOfGenericTypeArguments = genericTypeArguments.Length;
         }
-        
+
         bool isGeneric = false;
         Type[] genericMethodArguments = Array.Empty<Type>();
         int numberOfGenericMethodArguments = 0;
@@ -122,7 +122,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 } catch {
                     genericMethodArguments = Array.Empty<Type>();
                 }
-                
+
                 numberOfGenericMethodArguments = genericMethodArguments.Length;
             }
         } else if (isGenericType &&
@@ -143,7 +143,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         }
 
         List<Type> tempCombinedGenericArguments = new();
-        
+
         tempCombinedGenericArguments.AddRange(genericTypeArguments);
         tempCombinedGenericArguments.AddRange(genericMethodArguments);
 
@@ -160,15 +160,15 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
 
                     if (nonByRefParameterType.IsArray) {
                         generatedName = string.Empty;
-                        
+
                         return "// TODO: Generic Methods with out/in/ref parameters that are arrays are not supported";
                     }
                 }
             }
         }
-        
+
         string cMethodName = cSharpGeneratedMember.GetGeneratedName(CodeLanguage.CSharpUnmanaged) ?? throw new Exception("No native name");
-        
+
         // string methodNameSwift = state.UniqueGeneratedName(
         //     memberKind.SwiftName(memberInfo),
         //     CodeLanguage.Swift
@@ -190,7 +190,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                         treatAsOverridden = true;
                     } else {
                         generatedName = string.Empty;
-                        
+
                         return "// TODO: Overridden property or field with incompatible nullability";
                     }
                 } else { // Method
@@ -225,7 +225,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 CodeLanguage.Swift
             );
         }
-        
+
         bool isGenericReturnType = returnOrSetterOrEventHandlerType.IsGenericParameter ||
                                    returnOrSetterOrEventHandlerType.IsGenericMethodParameter ||
                                    returnOrSetterOrEventHandlerType.IsGenericType ||
@@ -234,7 +234,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                                    returnOrSetterOrEventHandlerType.IsConstructedGenericType;
 
         bool isConstructedGenericReturnType = returnOrSetterOrEventHandlerType.IsConstructedGenericType;
-        
+
         bool isGenericArrayReturnType = false;
 
         if (!isGenericReturnType &&
@@ -267,13 +267,13 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         if (returnOrSetterOrEventHandlerTypeIsByRef) {
             returnOrSetterOrEventHandlerType = returnOrSetterOrEventHandlerType.GetNonByRefType();
         }
-        
+
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
-        
+
         var nullabilityInfoContext = new NullabilityInfoContext();
         var returnOrSetterTypeNullability = Nullability.NotSpecified;
-        var returnOrSetterTypeArrayElementNullability = Nullability.NotSpecified; 
-        
+        var returnOrSetterTypeArrayElementNullability = Nullability.NotSpecified;
+
         if (memberKind == MemberKind.TypeOf) {
             returnOrSetterTypeNullability = Nullability.NonNullable;
         } else if (returnOrSetterOrEventHandlerType.IsNullableValueType(out _)) {
@@ -291,7 +291,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 } else {
                     returnOrSetterValueParameter = methodInfo.ReturnParameter;
                 }
-                
+
                 var nullabilityInfo = nullabilityInfoContext.Create(returnOrSetterValueParameter);
 
                 if (memberKind == MemberKind.PropertyGetter) {
@@ -306,7 +306,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                     returnOrSetterTypeNullability = nullabilityInfo.WriteState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
-                    
+
                     returnOrSetterTypeArrayElementNullability = nullabilityInfo.ElementType?.WriteState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
@@ -343,7 +343,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                     returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
-                    
+
                     returnOrSetterTypeArrayElementNullability = nullabilityInfo.ElementType?.ReadState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
@@ -351,7 +351,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                     returnOrSetterTypeNullability = nullabilityInfo.WriteState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
-                    
+
                     returnOrSetterTypeArrayElementNullability = nullabilityInfo.ElementType?.WriteState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
@@ -361,7 +361,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                             ? Nullability.NonNullable
                             : Nullability.NotSpecified;
                     }
-                    
+
                     var elementTypeNullabilityInfo = nullabilityInfo.ElementType;
 
                     if (elementTypeNullabilityInfo is not null &&
@@ -373,7 +373,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 }
             }
         }
-        
+
         // TODO: This generates inout TypeName if the return type is by ref
         string swiftReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(
             CodeLanguage.Swift,
@@ -384,10 +384,10 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             returnOrSetterOrEventHandlerTypeIsByRef,
             false
         );
-        
+
         string swiftReturnOrSetterTypeNameWithComment;
         Type? setterType;
-        
+
         if (memberKind == MemberKind.PropertySetter ||
             memberKind == MemberKind.FieldSetter ||
             memberKind == MemberKind.EventHandlerAdder ||
@@ -398,7 +398,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             swiftReturnOrSetterTypeNameWithComment = $"{swiftReturnOrSetterTypeName} /* {returnOrSetterOrEventHandlerType.GetFullNameOrName()} */";
             setterType = null;
         }
-        
+
         generatedName = methodNameSwift;
         #endregion Preparation
 
@@ -414,7 +414,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         } else {
             needImpl = true;
         }
-        
+
         if (!needImpl) {
             memberImpl = null;
         } else {
@@ -437,9 +437,9 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 genericMethodArguments,
                 syntaxWriterConfiguration,
                 typeDescriptorRegistry
-            );   
+            );
         }
-        
+
         string methodSignatureParameters = WriteParameters(
             memberKind,
             setterType,
@@ -487,14 +487,14 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 .ToString();
         } else if (memberKind == MemberKind.TypeOf) {
             bool isEnum = declaringType.IsEnum;
-            
+
             string propTypeName = !returnOrSetterOrEventHandlerType.IsVoid()
                 ? swiftReturnOrSetterTypeNameWithComment
                 : throw new Exception("A property must have a return type");
 
             declaration = Builder.GetOnlyProperty(methodNameSwift, propTypeName)
                 .Visibility(memberVisibility)
-                .TypeAttachmentKind(isEnum 
+                .TypeAttachmentKind(isEnum
                     ? SwiftTypeAttachmentKinds.Static
                     : SwiftTypeAttachmentKinds.Class)
                 .Override(!isEnum)
@@ -518,7 +518,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         } else {
             declaration = Builder.Func(methodNameSwift)
                 .Visibility(memberVisibility)
-                .TypeAttachmentKind(isStaticMethod 
+                .TypeAttachmentKind(isStaticMethod
                     ? interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.Protocol || interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ProtocolExtensionForDefaultImplementations ? SwiftTypeAttachmentKinds.Static : SwiftTypeAttachmentKinds.Class
                     : SwiftTypeAttachmentKinds.Instance)
                 .Override(treatAsOverridden)
@@ -533,7 +533,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         #endregion Func Declaration
 
         XmlDocumentationMember? xmlDocumentationContent;
-        
+
         if (originatingMemberInfo is FieldInfo originatingFieldInfo) {
             xmlDocumentationContent = originatingFieldInfo.GetDocumentation();
         } else if (originatingMemberInfo is PropertyInfo originatingPropertyInfo) {
@@ -549,7 +549,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         } else {
             xmlDocumentationContent = null;
         }
-        
+
         var declarationComment = xmlDocumentationContent
             ?.GetFormattedDocumentationComment();
 
@@ -565,7 +565,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         } else {
             declarationWithComment = declaration;
         }
-        
+
         return declarationWithComment;
     }
 
@@ -580,7 +580,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             !isGeneric &&
             !hasParameters;
     }
-    
+
     private static string WriteMethodImplementation(
         GeneratedMember cSharpGeneratedMember,
         GeneratedMember cMember,
@@ -608,13 +608,13 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
 
         if (memberKind == MemberKind.Destructor) {
             needsRegularImpl = false;
-            
+
             sbImpl.AppendLine($"{cMethodName}(self.__handle)");
         } else if (memberKind == MemberKind.TypeOf) {
             needsRegularImpl = false;
-            
+
             string returnTypeConversion = returnOrSetterTypeDescriptor.GetTypeConversion(
-                CodeLanguage.C, 
+                CodeLanguage.C,
                 CodeLanguage.Swift,
                 returnOrSetterOrEventHandlerArrayElementNullability
             ) ?? "{0}";
@@ -648,13 +648,13 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
 
             if (mayThrow) {
                 string cExceptionVarName = "__exceptionC";
-                
+
                 convertedParameterNames.Add($"&{cExceptionVarName}");
-                
+
                 sbImpl.AppendLine(Builder.Var(cExceptionVarName)
                     .TypeName("System_Exception_t?")
                     .ToString());
-                
+
                 sbImpl.AppendLine();
             }
 
@@ -666,7 +666,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 !returnOrSetterTypeDescriptor.IsVoid;
 
             string returnValueName = "__returnValueC";
-            
+
             string returnValueCStorage = isReturning
                 ? $"let {returnValueName} = "
                 : string.Empty;
@@ -676,15 +676,15 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
             if (!isStaticMethod) {
                 allParameterNames.Add("self.__handle");
             }
-            
+
             allParameterNames.AddRange(convertedGenericTypeArgumentNames);
             allParameterNames.AddRange(convertedGenericMethodArgumentNames);
             allParameterNames.AddRange(convertedParameterNames);
-            
+
             string allParameterNamesString = string.Join(", ", allParameterNames);
-            
+
             string invocation = $"{returnValueCStorage}{cMethodName}({allParameterNamesString})";
-            
+
             sbImpl.AppendLine(invocation);
             sbImpl.AppendLine();
 
@@ -699,20 +699,20 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                         CodeLanguage.Swift,
                         returnOrSetterOrEventHandlerArrayElementNullability
                     );
-    
+
                     if (!string.IsNullOrEmpty(returnTypeConversion)) {
                         string newReturnValueName = "__returnValue";
 
                         string fullReturnTypeConversion = Builder.Let(newReturnValueName)
                             .Value(string.Format(returnTypeConversion, returnValueName))
                             .ToString();
-    
+
                         sbImpl.AppendLine(fullReturnTypeConversion);
                         sbImpl.AppendLine();
-                        
+
                         returnValueName = newReturnValueName;
                     }
-    
+
                     returnCode = $"return {returnValueName}";
                 }
             }
@@ -725,7 +725,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 bool isOutParameter = parameter.IsOut;
                 bool isInParameter = parameter.IsIn;
                 bool isByRefParameter = parameterType.IsByRef;
-                
+
                 if (!isOutParameter &&
                     !isInParameter &&
                     !isByRefParameter) {
@@ -738,7 +738,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                     parameterType.IsGenericMethodParameter) {
                     parameterType = typeof(object);
                 }
-                
+
                 string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
                 string convertedParameterName = $"{parameterName}C";
 
@@ -777,7 +777,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 } else {
                     parameterTypeConversion = string.Format(parameterTypeConversion, convertedParameterName);
                 }
-                
+
                 sbByRefParameters.AppendLine($"{parameterName} = {parameterTypeConversion}");
                 sbByRefParameters.AppendLine();
             }
@@ -793,7 +793,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
 if let __exceptionC {
     let __exception = System_Exception(handle: __exceptionC)
     let __error = __exception.swiftError
-    
+
     throw __error
 }
 """);
@@ -828,25 +828,25 @@ if let __exceptionC {
         if (typeWhereExtensionIsDeclared is null) {
             return string.Empty;
         }
-        
+
         MemberKind memberKind = swiftGeneratedMember.MemberKind;
 
         TypeDescriptor typeDescriptorWhereExtensionIsDeclared = typeWhereExtensionIsDeclared.GetTypeDescriptor(typeDescriptorRegistry);
         string swiftTypeNameWhereExtensionIsDeclared = typeDescriptorWhereExtensionIsDeclared.GetTypeName(CodeLanguage.Swift, false);
-        
+
         string? generatedName = swiftGeneratedMember.GetGeneratedName(CodeLanguage.Swift);
 
         if (string.IsNullOrEmpty(generatedName)) {
             return string.Empty;
         }
-        
+
         // TODO: This is likely wrong
         bool isGeneric = false;
         IEnumerable<Type> genericParameters = Array.Empty<Type>();
-        
+
         List<ParameterInfo> parameters = methodBase.GetParameters().ToList();
         var extendedTypeParameter = parameters[0];
-        
+
         if (isExtendedTypeOptional) {
             if (!isGeneric &&
                 extendedTypeParameter.ParameterType.IsReferenceType()) {
@@ -862,7 +862,7 @@ if let __exceptionC {
                 }
             }
         }
-        
+
         parameters.RemoveAt(0);
 
         string parametersString = WriteParameters(
@@ -881,25 +881,25 @@ if let __exceptionC {
         );
 
         Type returnType = typeof(void);
-        
+
         MethodInfo? methodInfo = methodBase as MethodInfo;
 
         if (methodInfo is not null) {
             returnType = methodInfo.ReturnType;
         }
-        
+
         bool returnTypeIsByRef = returnType.IsByRef;
 
         if (returnTypeIsByRef) {
             returnType = returnType.GetNonByRefType();
         }
-        
+
         TypeDescriptor returnTypeDescriptor = returnType.GetTypeDescriptor(typeDescriptorRegistry);
-        
+
         var nullabilityInfoContext = new NullabilityInfoContext();
         var returnTypeNullability = Nullability.NotSpecified;
-        var returnTypeArrayElementNullability = Nullability.NotSpecified; 
-        
+        var returnTypeArrayElementNullability = Nullability.NotSpecified;
+
         if (returnType.IsNullableValueType(out _)) {
             returnTypeNullability = Nullability.Nullable;
         } else if (returnType.IsReferenceType() &&
@@ -915,7 +915,7 @@ if let __exceptionC {
                 } else {
                     returnOrSetterValueParameter = methodInfo.ReturnParameter;
                 }
-                
+
                 var nullabilityInfo = nullabilityInfoContext.Create(returnOrSetterValueParameter);
 
                 if (memberKind == MemberKind.PropertyGetter) {
@@ -930,7 +930,7 @@ if let __exceptionC {
                     returnTypeNullability = nullabilityInfo.WriteState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
-                    
+
                     returnTypeArrayElementNullability = nullabilityInfo.ElementType?.WriteState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
@@ -959,7 +959,7 @@ if let __exceptionC {
                 }
             }
         }
-        
+
         // TODO: This generates inout TypeName if the return type is by ref
         string swiftReturnTypeName = returnTypeDescriptor.GetTypeName(
             CodeLanguage.Swift,
@@ -977,7 +977,7 @@ if let __exceptionC {
         string toReturnOrNotToReturn = !returnType.IsVoid()
             ? "return "
             : string.Empty;
-        
+
         string toTryOrNotToTry = mayThrow
             ? "try "
             : string.Empty;
@@ -1012,7 +1012,7 @@ if let __exceptionC {
             string propTypeName = !returnType.IsVoid()
                 ? swiftReturnTypeName
                 : throw new Exception("A property must have a return type");
-            
+
             fullDecl = Builder.GetOnlyProperty(generatedName, propTypeName)
                 .Public()
                 .Throws(mayThrow)
@@ -1027,12 +1027,12 @@ if let __exceptionC {
                     ? swiftReturnTypeName
                     : null)
                 .Implementation(invocation)
-                .ToString();   
+                .ToString();
         }
 
         return fullDecl;
     }
-    
+
     internal static string WriteParameters(
         MemberKind memberKind,
         Type? setterOrEventHandlerType,
@@ -1049,52 +1049,52 @@ if let __exceptionC {
     )
     {
         var nullabilityContext = new NullabilityInfoContext();
-        
+
         List<string> parameterList = new();
 
         if (isGeneric) {
             Type typeOfSystemType = typeof(Type);
             TypeDescriptor systemTypeTypeDescriptor = typeOfSystemType.GetTypeDescriptor(typeDescriptorRegistry);
             string systemTypeTypeName = typeOfSystemType.GetFullNameOrName();
-            
+
             string nativeSystemTypeTypeName = systemTypeTypeDescriptor.GetTypeName(
-                CodeLanguage.Swift, 
+                CodeLanguage.Swift,
                 true,
                 Nullability.NonNullable
             );
-            
+
             foreach (var genericArgumentType in genericArguments) {
                 string parameterName = genericArgumentType.Name.EscapedSwiftName();
 
-                string parameterString = onlyWriteParameterNames 
-                    ? parameterName 
+                string parameterString = onlyWriteParameterNames
+                    ? parameterName
                     : $"{parameterName}: {nativeSystemTypeTypeName} /* {systemTypeTypeName} */";
-            
+
                 parameterList.Add(parameterString);
             }
         }
-        
+
         foreach (var parameter in parameters) {
             bool isOutParameter = parameter.IsOut;
             bool isInParameter = parameter.IsIn;
-            
+
             Type parameterType = parameter.ParameterType;
-            
+
             bool isByRefParameter = parameterType.IsByRef;
 
             if (isByRefParameter) {
                 parameterType = parameterType.GetNonByRefType();
             }
-            
+
             bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
-            
+
             if (isGenericParameterType) {
                 parameterType = typeof(object);
             }
-            
+
             bool isGenericArrayParameterType = false;
             Type? arrayType = parameterType.GetElementType();
-                    
+
             if (parameterType.IsArray &&
                 arrayType is not null &&
                 (arrayType.IsGenericParameter || arrayType.IsGenericMethodParameter)) {
@@ -1104,7 +1104,7 @@ if let __exceptionC {
             if (isGenericArrayParameterType) {
                 parameterType = typeof(Array);
             }
-            
+
             bool isNotNull = false;
             bool isArrayElementNotNull = false;
 
@@ -1125,7 +1125,7 @@ if let __exceptionC {
                     isArrayElementNotNull = parameterElementTypeNullability.ReadState == NullabilityState.NotNull;
                 }
             }
-            
+
             TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
 
             string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
@@ -1146,7 +1146,7 @@ if let __exceptionC {
             }
 
             string parameterString;
-            
+
             if (onlyWriteParameterNames) {
                 if (writeModifiersForInvocation) {
                     parameterString = $"{(isByRefParameter || isOutParameter ? "&" : string.Empty)}{parameterName}";
@@ -1154,9 +1154,9 @@ if let __exceptionC {
                     parameterString = parameterName;
                 }
             } else {
-                parameterString = $"_ {parameterName}: {unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */";    
+                parameterString = $"_ {parameterName}: {unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */";
             }
-            
+
             parameterList.Add(parameterString);
         }
 
@@ -1167,9 +1167,9 @@ if let __exceptionC {
             if (setterOrEventHandlerType == null) {
                 throw new Exception("Setter or Event Handler Type may not be null");
             }
-            
+
             TypeDescriptor setterOrEventHandlerTypeDescriptor = setterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
-            
+
             string cSetterOrEventHandlerTypeName = setterOrEventHandlerTypeDescriptor.GetTypeName(
                 CodeLanguage.Swift,
                 true,
@@ -1182,7 +1182,7 @@ if let __exceptionC {
             string parameterString = onlyWriteParameterNames
                 ? parameterName
                 : $"_ {parameterName}: {cSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */";
-            
+
             parameterList.Add(parameterString);
         }
 
@@ -1190,7 +1190,7 @@ if let __exceptionC {
 
         return parametersString;
     }
-    
+
     internal static string WriteParameterConversions(
         CodeLanguage sourceLanguage,
         CodeLanguage targetLanguage,
@@ -1220,9 +1220,9 @@ if let __exceptionC {
         } else {
             throw new Exception("Unknown language pair");
         }
-        
+
         SwiftCodeBuilder sb = new();
-        
+
         convertedParameterNames = new();
         convertedGenericTypeArgumentNames = new();
         convertedGenericMethodArgumentNames = new();
@@ -1232,42 +1232,42 @@ if let __exceptionC {
             Type typeOfSystemType = typeof(Type);
             TypeDescriptor systemTypeTypeDescriptor = typeOfSystemType.GetTypeDescriptor(typeDescriptorRegistry);
             string systemTypeTypeName = typeOfSystemType.GetFullNameOrName();
-            
+
             string systemTypeTypeConversion = systemTypeTypeDescriptor.GetTypeConversion(
                 sourceLanguage,
                 targetLanguage,
                 Nullability.NotSpecified
             )!;
-    
+
             foreach (var genericArgumentType in genericTypeArguments) {
                 string name = genericArgumentType.Name;
-                
+
                 string convertedGenericArgumentName = $"{name}{convertedParameterNameSuffix}";
-                    
+
                 string fullTypeConversion = string.Format(systemTypeTypeConversion, name);
 
                 string typeConversionCode = Builder.Let(convertedGenericArgumentName)
                     .Value(fullTypeConversion)
                     .ToString();
-    
+
                 sb.AppendLine(typeConversionCode);
-                
+
                 convertedGenericTypeArgumentNames.Add(convertedGenericArgumentName);
             }
-            
+
             foreach (var genericArgumentType in genericMethodArguments) {
                 string name = genericArgumentType.Name;
-                
+
                 string convertedGenericArgumentName = $"{name}{convertedParameterNameSuffix}";
-                    
+
                 string fullTypeConversion = string.Format(systemTypeTypeConversion, name);
 
                 string typeConversionCode = Builder.Let(convertedGenericArgumentName)
                     .Value(fullTypeConversion)
                     .ToString();
-    
+
                 sb.AppendLine(typeConversionCode);
-                
+
                 convertedGenericMethodArgumentNames.Add(convertedGenericArgumentName);
             }
         }
@@ -1275,15 +1275,15 @@ if let __exceptionC {
         foreach (var parameter in parameters) {
             string? parameterName = parameter.Name
                 ?.EscapedSwiftName();
-            
+
             if (parameterName is null) {
                 throw new Exception("Parameter without a name");
             }
-            
+
             Type parameterType = parameter.ParameterType;
             bool isOutParameter = parameter.IsOut;
             bool isInParameter = parameter.IsIn;
-            
+
             WriteParameterConversion(
                 sourceLanguage,
                 targetLanguage,
@@ -1303,7 +1303,7 @@ if let __exceptionC {
             if (!string.IsNullOrEmpty(typeConversionCode)) {
                 sb.AppendLine(typeConversionCode);
             }
-            
+
             convertedParameterNames.Add(convertedParameterName);
 
             if (!string.IsNullOrEmpty(typeBackConversionCode)) {
@@ -1319,7 +1319,7 @@ if let __exceptionC {
             Type parameterType = setterOrEventHandlerType ?? throw new Exception("No setter or event handler type");
             const bool isOutParameter = false;
             const bool isInParameter = false;
-            
+
             WriteParameterConversion(
                 sourceLanguage,
                 targetLanguage,
@@ -1339,9 +1339,9 @@ if let __exceptionC {
             if (!string.IsNullOrEmpty(typeConversionCode)) {
                 sb.AppendLine(typeConversionCode);
             }
-            
+
             convertedParameterNames.Add(convertedParameterName);
-            
+
             if (!string.IsNullOrEmpty(typeBackConversionCode)) {
                 parameterTypeBackConversionCodes.Add(typeBackConversionCode);
             }
@@ -1367,11 +1367,11 @@ if let __exceptionC {
     )
     {
         if (string.IsNullOrEmpty(parameterName)) {
-            throw new Exception("Parameter has no name");   
+            throw new Exception("Parameter has no name");
         }
-        
+
         var nullabilityContext = new NullabilityInfoContext();
-        
+
         string convertedParameterNameSuffix;
 
         if (sourceLanguage == CodeLanguage.Swift &&
@@ -1383,7 +1383,7 @@ if let __exceptionC {
         } else {
             throw new Exception("Unknown language pair");
         }
-        
+
         bool isByRefParameter = parameterType.IsByRef;
         bool isArrayType = parameterType.IsArray;
         bool isInOut = isOutParameter || isInParameter || isByRefParameter;
@@ -1391,7 +1391,7 @@ if let __exceptionC {
         if (isByRefParameter) {
             parameterType = parameterType.GetNonByRefType();
         }
-        
+
         bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
 
         if (!isByRefParameter &&
@@ -1409,11 +1409,11 @@ if let __exceptionC {
                 }
             }
         }
-        
+
         TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
 
         Nullability parameterArrayElementNullability;
-        
+
         if (parameterInfo is not null) {
             var nullabilityInfoContext = new NullabilityInfoContext();
             var parameterNullabilityA = nullabilityInfoContext.Create(parameterInfo);
@@ -1436,19 +1436,19 @@ if let __exceptionC {
             targetLanguage,
             parameterArrayElementNullability
         );
-        
+
         if (typeConversion != null) {
             string parameterNameForConversion = parameterName;
-            
+
             if (parameterName.StartsWith("`") &&
                 parameterName.EndsWith("`")) {
                 parameterNameForConversion = parameterName.Trim('`');
             }
-            
+
             convertedParameterName = $"{parameterNameForConversion}{convertedParameterNameSuffix}";
 
             string optionalString;
-            
+
             if (sourceLanguage == CodeLanguage.Swift &&
                 targetLanguage == CodeLanguage.C) {
                 if (parameterInfo is not null &&
@@ -1456,22 +1456,22 @@ if let __exceptionC {
                     !isGenericParameterType &&
                     parameterType.IsReferenceType()) {
                     bool isNotNull = false;
-                    
+
                     var parameterNullabilityInfo = nullabilityContext.Create(parameterInfo);
 
                     if (parameterNullabilityInfo.ReadState == parameterNullabilityInfo.WriteState) {
                         isNotNull = parameterNullabilityInfo.ReadState == NullabilityState.NotNull;
                     }
-                    
+
                     parameterNullability = isNotNull
                         ? Nullability.NonNullable
-                        : parameterTypeDescriptor.Nullability;   
+                        : parameterTypeDescriptor.Nullability;
                 }
 
                 if (parameterNullability == Nullability.NotSpecified) {
                     parameterNullability = parameterTypeDescriptor.Nullability;
                 }
-                
+
                 optionalString = parameterNullability.GetSwiftOptionalitySpecifier();
             } else {
                 optionalString = string.Empty;
@@ -1486,7 +1486,7 @@ if let __exceptionC {
             typeConversionCode = Builder.Variable(variableKind, convertedParameterName)
                 .Value(fullTypeConversion)
                 .ToString();
-            
+
             if (isInOut) {
                 convertedParameterName = $"&{convertedParameterName}";
             }
@@ -1497,15 +1497,15 @@ if let __exceptionC {
                 targetLanguage == CodeLanguage.Swift &&
                 isInOut) {
                 string swiftParameterName = $"__{parameterName}Swift";
-                
+
                 typeConversionCode = $"var {swiftParameterName} = {parameterName}?.pointee ?? .init()";
                 typeBackConversionCode = $"{parameterName}?.pointee = {swiftParameterName}";
-                
+
                 convertedParameterName = $"&{swiftParameterName}";
             } else {
                 typeConversionCode = null;
                 typeBackConversionCode = null;
-                
+
                 if (isInOut) {
                     convertedParameterName = $"&{parameterName}";
                 } else {

@@ -16,7 +16,7 @@ public class KotlinCodeGenerator: ICodeGenerator
     public Settings Settings { get; }
     public Result CSharpUnmanagedResult { get; }
     public Result CResult { get; }
-    
+
     public KotlinCodeGenerator(
         Settings settings,
         Result cSharpUnmanagedResult,
@@ -37,7 +37,7 @@ public class KotlinCodeGenerator: ICodeGenerator
         KotlinSyntaxWriterConfiguration syntaxWriterConfiguration = new() {
             GenerationPhase = KotlinSyntaxWriterConfiguration.GenerationPhases.KotlinBindings
         };
-        
+
         SourceCodeSection headerSection = writer.AddSection("Header");
         SourceCodeSection utilsSection = writer.AddSection("Utils");
         SourceCodeSection commonTypesSection = writer.AddSection("Common Types");
@@ -50,10 +50,10 @@ public class KotlinCodeGenerator: ICodeGenerator
 
         var package = Settings.KotlinPackageName;
         var nativeLibraryName = Settings.KotlinNativeLibraryName;
-        
+
         string header = GetHeaderCode(package);
         headerSection.Code.AppendLine(header);
-        
+
         string utilsCode = GetUtilsCode(types.ToArray());
         utilsSection.Code.AppendLine(utilsCode);
 
@@ -64,9 +64,9 @@ public class KotlinCodeGenerator: ICodeGenerator
             foreach (var kvp in unsupportedTypes) {
                 Type type = kvp.Key;
                 string reason = kvp.Value;
-    
+
                 string typeName = type.FullName ?? type.Name;
-    
+
                 unsupportedTypesSection.Code.AppendLine($"// Unsupported Type \"{typeName}\": {reason}");
             }
         } else {
@@ -85,34 +85,34 @@ public class KotlinCodeGenerator: ICodeGenerator
             typeSyntaxWriter,
             result
         );
-        
+
         syntaxWriterConfiguration = new KotlinSyntaxWriterConfiguration
         {
             GenerationPhase = KotlinSyntaxWriterConfiguration.GenerationPhases.JNA
         };
 
         const string jnaClassName = KotlinTypeSyntaxWriter.JNA_CLASS_NAME;
-        
+
         var jnaStart = $$"""
 object {{jnaClassName}} {
     init {
         val nativeLibName = "{{nativeLibraryName}}"
         Native.register({{jnaClassName}}::class.java, nativeLibName)
     }
-    
+
     external fun DNStringToC(systemString: Pointer /* System_String_t */): Pointer /* const char* */
     external fun DNStringFromC(cString: String /* const char* */): Pointer /* System_String_t */
-    
+
     external fun DNObjectCastTo(`object`: Pointer /* System_Object_t */, type: Pointer /* System_Type_t */, outException: PointerByReference /* System_Exception_t* */): Pointer /* System_Object_t */;
     external fun DNObjectCastAs(`object`: Pointer /* System_Object_t */, type: Pointer /* System_Type_t */): Pointer /* System_Object_t */
     external fun DNObjectIs(`object`: Pointer /* System_Object_t */, type: Pointer /* System_Type_t */): Boolean
-    
+
     external fun DNObjectCastToBool(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Boolean
     external fun DNObjectFromBool(value: Boolean): Pointer /* System_Boolean_t */
-    
+
     external fun DNObjectCastToChar(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Char
     external fun DNObjectFromChar(value: Char): Pointer /* System_Char_t */
-    
+
     external fun DNObjectCastToFloat(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Float
     external fun DNObjectFromFloat(value: Float): Pointer /* System_Single_t */
 
@@ -127,28 +127,28 @@ object {{jnaClassName}} {
 
     external fun DNObjectCastToInt16(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Short
     external fun DNObjectFromInt16(value: Short): Pointer /* System_Int16_t */
-    
+
     external fun DNObjectCastToUInt16(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Short
     external fun DNObjectFromUInt16(value: Short): Pointer /* System_UInt16_t */
 
     external fun DNObjectCastToInt32(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Int
     external fun DNObjectFromInt32(value: Int): Pointer /* System_Int32_t */
-    
+
     external fun DNObjectCastToUInt32(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Int
     external fun DNObjectFromUInt32(value: Int): Pointer /* System_UInt32_t */
 
     external fun DNObjectCastToInt64(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Long
     external fun DNObjectFromInt64(value: Long): Pointer /* System_Int64_t */
-    
+
     external fun DNObjectCastToUInt64(`object`: Pointer /* System_Object_t */, outException: PointerByReference /* System_Exception_t* */): Long
     external fun DNObjectFromUInt64(value: Long): Pointer /* System_UInt64_t */
-    
+
     // TODO: DNGetPinnedPointerToByteArray
-                                     
+
 """;
 
         jnaSection.Code.AppendLine(jnaStart);
-        
+
         Generate(
             syntaxWriterConfiguration,
             jnaSection,
@@ -157,9 +157,9 @@ object {{jnaClassName}} {
             typeSyntaxWriter,
             result
         );
-        
+
         var jnaEnd = """
-}                 
+}
 """;
 
         jnaSection.Code.AppendLine(jnaEnd);
@@ -188,12 +188,12 @@ object {{jnaClassName}} {
             .ThenByDescending(t => !t.IsDelegate());
 
         Dictionary<Type, List<GeneratedMember>> typeExtensionMembers = new();
-        
+
         foreach (Type type in orderedTypes) {
             bool isInterface = type.IsInterface;
-            
+
             Syntax.State state = new(CSharpUnmanagedResult, CResult);
-            
+
             string typeCode = typeSyntaxWriter.Write(
                 type,
                 state,
@@ -207,15 +207,15 @@ object {{jnaClassName}} {
             section.Code.AppendLine(typeCode);
             section.Code.AppendLine(new SingleLineComment($"MARK: - END {fullTypeName}").ToString().IndentAllLines(1));
             section.Code.AppendLine();
-            
+
             if (state.SkippedTypes.Contains(type)) {
                 continue;
             }
-            
+
             result.AddGeneratedType(
                 type,
                 state.GeneratedMembers
-            );                
+            );
 
             IEnumerable<GeneratedMember> newExtensionMembers = state.GetGeneratedMembersThatAreExtensions();
 
@@ -233,11 +233,11 @@ object {{jnaClassName}} {
                 }
 
                 Type extendedType = firstParameter.ParameterType;
-                
+
                 if (!typeExtensionMembers.TryGetValue(extendedType, out List<GeneratedMember>? extensionMembers)) {
                     extensionMembers = new();
                 }
-            
+
                 extensionMembers.Add(generatedMember);
 
                 if (extensionMembers.Count > 0) {
@@ -252,16 +252,16 @@ object {{jnaClassName}} {
             foreach (var kvp in typeExtensionMembers) {
                 Type extendedType = kvp.Key;
                 List<GeneratedMember> members = kvp.Value;
-                
+
                 Syntax.State state = new(CSharpUnmanagedResult, CResult);
-            
+
                 string code = typeSyntaxWriter.WriteTypeExtensionMethods(
                     extendedType,
                     state,
                     syntaxWriterConfiguration,
                     members
                 );
-            
+
                 // TODO: Shouldn't this be in it's own section? Like in Swift?
                 section.Code.AppendLine(code);
             }
@@ -281,16 +281,16 @@ import java.util.*
 import kotlin.experimental.or
 """;
     }
-    
+
     private string GetUtilsCode(Type[] types)
     {
         KotlinCodeBuilder sb = new();
-        
+
         sb.AppendLine(KotlinSharedCode.SharedCode);
         sb.AppendLine();
 
         string code = sb.ToString();
-        
+
         return code;
     }
 
@@ -298,7 +298,7 @@ import kotlin.experimental.or
     {
         return "";
     }
-    
+
     private string GetFooterCode()
     {
         return """

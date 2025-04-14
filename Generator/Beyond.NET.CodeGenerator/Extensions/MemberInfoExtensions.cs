@@ -17,7 +17,7 @@ public static class MemberInfoExtensions
         if (isError) {
             return true;
         }
-        
+
         return false;
     }
 

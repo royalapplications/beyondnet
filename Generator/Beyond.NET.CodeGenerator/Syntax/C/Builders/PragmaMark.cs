@@ -7,7 +7,7 @@ public struct PragmaMark
 {
     private bool m_isSeparator;
     private string? m_comment;
-    
+
     public PragmaMark() { }
 
     #region Separator
@@ -27,7 +27,7 @@ public struct PragmaMark
         return this;
     }
     #endregion Comment
-    
+
     #region Build
     public CPragmaMarkDeclaration Build()
     {
@@ -42,7 +42,7 @@ public struct PragmaMark
         return Build()
             .ToString();
     }
-    
+
     public string ToIndentedString(int indentationLevel)
     {
         return Build()

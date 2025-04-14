@@ -16,7 +16,7 @@ public class Address
     /// The Street of the Address.
     /// </summary>
     public string Street { get; }
-    
+
     /// <summary>
     /// The City of the Address.
     /// </summary>

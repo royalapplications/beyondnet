@@ -5,7 +5,7 @@ internal class Parser
     internal static string[] GetAllRelevantSymbols(string output)
     {
         var lines = output.Split(
-            new[] { "\r\n", "\n", "\r" }, 
+            new[] { "\r\n", "\n", "\r" },
             StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries
         );
 
@@ -13,7 +13,7 @@ internal class Parser
 
         foreach (var line in lines) {
             var splitLine = line.Split(
-                ' ', 
+                ' ',
                 StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries
             );
 
@@ -29,7 +29,7 @@ internal class Parser
                 // Swift internal symbol, not relevant
                 continue;
             }
-            
+
             symbols.Add(symbol);
         }
 
