@@ -11,14 +11,14 @@ public struct Protocol
     private string? m_protocolConformance = null;
     private SwiftVisibilities m_visibility = SwiftVisibilities.None;
     private string? m_implementation = null;
-    
+
     public Protocol(
         string name
     )
     {
         m_name = name;
     }
-    
+
     #region BaseTypeName
     public Protocol BaseTypeName(string? baseTypeName = null)
     {
@@ -36,15 +36,15 @@ public struct Protocol
         return this;
     }
     #endregion ProtocolConformance
-    
+
     #region Visibility
     public Protocol Visibility(SwiftVisibilities visibility)
     {
         m_visibility = visibility;
-        
+
         return this;
     }
-    
+
     public Protocol Open()
     {
         return Visibility(SwiftVisibilities.Open);
@@ -54,23 +54,23 @@ public struct Protocol
     {
         return Visibility(SwiftVisibilities.Public);
     }
-    
+
     public Protocol Internal()
     {
         return Visibility(SwiftVisibilities.Internal);
     }
-    
+
     public Protocol Private()
     {
         return Visibility(SwiftVisibilities.Private);
     }
-    
+
     public Protocol FilePrivate()
     {
         return Visibility(SwiftVisibilities.FilePrivate);
     }
     #endregion Visibility
-    
+
     #region Implementation
     public Protocol Implementation(string? implementation = null)
     {
@@ -79,7 +79,7 @@ public struct Protocol
         return this;
     }
     #endregion Implementation
-    
+
     #region Build
     public SwiftProtocolDeclaration Build()
     {
@@ -97,7 +97,7 @@ public struct Protocol
         return Build()
             .ToString();
     }
-    
+
     public string ToIndentedString(int indentationLevel)
     {
         return Build()

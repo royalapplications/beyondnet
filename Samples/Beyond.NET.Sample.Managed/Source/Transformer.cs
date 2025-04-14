@@ -5,11 +5,11 @@ public static class Transformer
     public delegate string StringGetterDelegate();
     public delegate string StringTransformerDelegate(string inputString);
     public delegate double DoublesTransformerDelegate(double number1, double number2);
-    
+
     public static class BuiltInTransformers
     {
         public static StringTransformerDelegate UppercaseStringTransformer { get; set; } =
-            inputString => inputString.ToUpper();    
+            inputString => inputString.ToUpper();
     }
 
     public static string TransformString(
@@ -21,7 +21,7 @@ public static class Transformer
 
         return outputString;
     }
-    
+
     public static double TransformDoubles(
         double number1,
         double number2,

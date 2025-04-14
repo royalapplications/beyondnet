@@ -7,7 +7,7 @@ static class KotlinSharedSettings
         typeof(System.Net.ICredentials), // Unsupported because some implementations of this use different nullability
         typeof(System.ICloneable), // Unsupported because some implementations of this use different nullability
     ];
-    
+
     private static readonly List<Type> UnsupportedTypes = [
         typeof(System.Xml.XmlDocument), // Unsupported because some implementations of this use different nullability
         typeof(System.Xml.XmlProcessingInstruction), // Unsupported because some implementations of this use different nullability
@@ -21,7 +21,7 @@ static class KotlinSharedSettings
 
         return isIt;
     }
-    
+
     internal static bool IsUnsupportedTypeOrDerivedByUnsupportedType(this Type type)
     {
         bool isIt = UnsupportedTypes.Contains(type);
@@ -29,7 +29,7 @@ static class KotlinSharedSettings
         if (isIt) {
             return true;
         }
-        
+
         var baseType = type.BaseType;
 
         if (baseType is not null &&

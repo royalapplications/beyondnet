@@ -18,7 +18,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <StripSymbols>true</StripSymbols>
   </PropertyGroup>
-  
+
   <!-- Project References -->
   <ItemGroup>
     <ProjectReference Include="..\..\Builder\Beyond.NET.Builder\Beyond.NET.Builder.csproj" />

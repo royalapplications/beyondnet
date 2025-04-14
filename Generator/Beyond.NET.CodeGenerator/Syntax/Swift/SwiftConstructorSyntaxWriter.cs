@@ -16,12 +16,12 @@ public class SwiftConstructorSyntaxWriter: SwiftMethodSyntaxWriter, IConstructor
     {
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         Result cResult = state.CResult ?? throw new Exception("No CResult provided");
-        
+
         GeneratedMember cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedMember(constructor) ?? throw new Exception("No C# generated member");
         GeneratedMember cGeneratedMember = cResult.GetGeneratedMember(constructor) ?? throw new Exception("No C generated member");
-        
+
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
-        
+
         bool mayThrow = cSharpGeneratedMember.MayThrow;
         const MemberKind methodKind = MemberKind.Constructor;
 
@@ -32,7 +32,7 @@ public class SwiftConstructorSyntaxWriter: SwiftMethodSyntaxWriter, IConstructor
         if (declaringType.IsAbstract) {
             return string.Empty;
         }
-        
+
         Type returnType = declaringType;
         IEnumerable<ParameterInfo> parameters = constructor.GetParameters();
 

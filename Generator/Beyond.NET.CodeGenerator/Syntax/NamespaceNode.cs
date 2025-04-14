@@ -64,14 +64,14 @@ public class NamespaceNode
                 if (parent.IsTreeRoot) {
                     break;
                 }
-                
+
                 names.Add(parent.Name);
 
                 target = parent;
             }
-            
+
             names.Reverse();
-            
+
             string joined = string.Join('.', names);
 
             return joined;
@@ -87,10 +87,10 @@ public class NamespaceNode
     private void AddChild(NamespaceNode childNode)
     {
         childNode.m_parent = new(this);
-        
+
         m_children.Add(childNode);
     }
-    
+
     public static NamespaceNode FromTypes(IEnumerable<Type> types)
     {
         var rootNode = new NamespaceNode(string.Empty);
@@ -106,7 +106,7 @@ public class NamespaceNode
                     currentNode = existingNode;
                 } else {
                     var newNode = new NamespaceNode(part);
-                    
+
                     currentNode.AddChild(newNode);
                     currentNode = newNode;
                 }

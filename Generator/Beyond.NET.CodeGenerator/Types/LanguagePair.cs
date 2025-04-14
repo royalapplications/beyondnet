@@ -10,7 +10,7 @@ public record struct LanguagePair
         if (sourceLanguage == targetLanguage) {
             throw new Exception("Source Language is same as Target Language");
         }
-        
+
         SourceLanguage = sourceLanguage;
         TargetLanguage = targetLanguage;
     }

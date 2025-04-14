@@ -22,15 +22,15 @@ public struct Func
     {
         m_name = name;
     }
-    
+
     #region Visibility
     public Func Visibility(SwiftVisibilities visibility)
     {
         m_visibility = visibility;
-        
+
         return this;
     }
-    
+
     public Func Open()
     {
         return Visibility(SwiftVisibilities.Open);
@@ -40,23 +40,23 @@ public struct Func
     {
         return Visibility(SwiftVisibilities.Public);
     }
-    
+
     public Func Internal()
     {
         return Visibility(SwiftVisibilities.Internal);
     }
-    
+
     public Func Private()
     {
         return Visibility(SwiftVisibilities.Private);
     }
-    
+
     public Func FilePrivate()
     {
         return Visibility(SwiftVisibilities.FilePrivate);
     }
     #endregion Visibility
-    
+
     #region TypeAttachmentKind
     public Func TypeAttachmentKind(SwiftTypeAttachmentKinds typeAttachmentKind)
     {
@@ -69,13 +69,13 @@ public struct Func
     {
         return TypeAttachmentKind(SwiftTypeAttachmentKinds.Static);
     }
-    
+
     public Func Class()
     {
         return TypeAttachmentKind(SwiftTypeAttachmentKinds.Class);
     }
     #endregion TypeAttachmentKind
-    
+
     #region Override
     public Func Override(bool isOverride = true)
     {
@@ -102,7 +102,7 @@ public struct Func
         return this;
     }
     #endregion Parameters
-    
+
     #region ReturnTypeName
     public Func ReturnTypeName(string? returnTypeName = null)
     {
@@ -111,7 +111,7 @@ public struct Func
         return this;
     }
     #endregion ReturnTypeName
-    
+
     #region Implementation
     public Func Implementation(string? implementation = null)
     {
@@ -120,7 +120,7 @@ public struct Func
         return this;
     }
     #endregion Implementation
-    
+
     #region Build
     public SwiftFuncDeclaration Build()
     {
@@ -141,7 +141,7 @@ public struct Func
         return Build()
             .ToString();
     }
-    
+
     public string ToIndentedString(int indentationLevel)
     {
         return Build()

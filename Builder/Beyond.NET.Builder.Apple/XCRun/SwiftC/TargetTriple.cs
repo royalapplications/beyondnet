@@ -14,7 +14,7 @@ public static class TargetTriple
             platformIdentifier,
             string.Empty
         );
-        
+
         string targetTriple = $"{targetDouble}{deploymentTarget}{platformSuffix}";
 
         return targetTriple;

@@ -21,7 +21,7 @@ public struct ConsoleLogger: ILogger
     {
         Log(message, LoggingLevel.Error);
     }
-    
+
     internal enum LoggingLevel
     {
         Debug,
@@ -50,7 +50,7 @@ public struct ConsoleLogger: ILogger
             message,
             loggingLevel
         );
-        
+
         Console.WriteLine(fullMessage);
     }
 }

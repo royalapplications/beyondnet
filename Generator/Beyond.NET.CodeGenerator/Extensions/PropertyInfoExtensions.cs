@@ -27,7 +27,7 @@ public static class PropertyInfoExtensions
                 }
             }
         }
-        
+
         return setterMethod;
     }
 }

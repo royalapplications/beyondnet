@@ -25,13 +25,13 @@ public struct SwiftEnumDeclaration
     public override string ToString()
     {
         const string @enum = "enum";
-        
+
         string visibilityString = Visibility.ToSwiftSyntaxString();
 
         string rawTypeDecl = !string.IsNullOrEmpty(RawTypeName)
             ? $": {RawTypeName}"
-            : string.Empty; 
-        
+            : string.Empty;
+
         string[] signatureComponents = new[] {
             visibilityString,
             @enum,
@@ -41,10 +41,10 @@ public struct SwiftEnumDeclaration
         string signature = SwiftFuncSignatureComponents.ComponentsToString(signatureComponents);
 
         string fullDecl;
-        
+
         if (!string.IsNullOrEmpty(Implementation)) {
             string indentedImpl = Implementation.IndentAllLines(1);
-            
+
             fullDecl = $"{signature} {{\n{indentedImpl}\n}}";
         } else {
             fullDecl = signature;

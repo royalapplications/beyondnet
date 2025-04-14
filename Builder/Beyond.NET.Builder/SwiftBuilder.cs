@@ -14,24 +14,24 @@ public class SwiftBuilder
         string DeploymentTargetiOS,
         bool BuildInParallel
     );
-    
+
     public record BuildResult(
         string OutputRootPath,
-        
+
         string LibraryOutputPathFormat,
         string SymbolsOutputPathFormat,
-        
+
         string OutputClangModuleMapFilePath,
         string macOSDeploymentTarget,
         string iOSDeploymentTarget,
-        
+
         PartialCompileResult? MacOSARM64Result,
         PartialCompileResult? MacOSX64Result,
         PartialCompileResult? iOSARM64Result,
         PartialCompileResult? iOSSimulatorARM64Result,
         PartialCompileResult? iOSSimulatorX64Result
     );
-    
+
     public record PartialCompileResult(
         string StandardOutput,
         string LibraryOutputFilePath,
@@ -43,7 +43,7 @@ public class SwiftBuilder
     );
 
     private ILogger Logger => Services.Shared.LoggerService;
-    
+
     public BuilderConfiguration Configuration { get; }
 
     public SwiftBuilder(BuilderConfiguration configuration)
@@ -54,7 +54,7 @@ public class SwiftBuilder
     public BuildResult Build()
     {
         const string swiftVersion = "5";
-        
+
         string productName = Configuration.ProductName;
         string bundleIdentifier = Configuration.BundleIdentifier;
 
@@ -73,11 +73,11 @@ public class SwiftBuilder
 
         string sanitizedProductName = productName.SanitizedProductNameForTempDirectory();
         string tempDirectoryPrefix = $"BeyondNETBuilderSwiftBuilder_{sanitizedProductName}_";
-        
+
         Logger.LogDebug("Creating temporary directory for Swift build");
-        
+
         string tempDirectoryPath = Directory.CreateTempSubdirectory(tempDirectoryPrefix).FullName;
-        
+
         Logger.LogDebug($"Temporary directory for Swift build created at \"{tempDirectoryPath}\"");
 
         string moduleMapFilePath = Path.Combine(tempDirectoryPath, moduleMapFileName);
@@ -91,7 +91,7 @@ public class SwiftBuilder
                 }
             }
         };
-        
+
         Apple.Clang.ModuleMap clangModuleMap = new(productName) {
             IsFramework = true,
             ExportEverything = true
@@ -123,16 +123,16 @@ public class SwiftBuilder
         string moduleMapString = moduleMap.ToString();
         string clangModuleMapString = clangModuleMap.ToString();
         string headerMapString = headerFile.ToString();
-        
+
         Logger.LogDebug($"Writing Swift module map file to \"{moduleMapFilePath}\"");
         File.WriteAllText(moduleMapFilePath, moduleMapString);
-        
+
         Logger.LogDebug($"Writing Clang module map file to \"{clangModuleMapFilePath}\"");
         File.WriteAllText(clangModuleMapFilePath, clangModuleMapString);
-        
+
         Logger.LogDebug($"Writing Header map file to \"{headerMapFilePath}\"");
         File.WriteAllText(headerMapFilePath, headerMapString);
-        
+
         string generatedCHeaderDestinationFilePath = Path.Combine(tempDirectoryPath, generatedCHeaderFileName);
         Logger.LogDebug($"Copying generated C header file to \"{generatedCHeaderDestinationFilePath}\"");
         File.Copy(generatedCHeaderFilePath, generatedCHeaderDestinationFilePath);
@@ -149,7 +149,7 @@ public class SwiftBuilder
         } else {
             sdkPathMacOS = null;
         }
-        
+
         string? sdkPathiOS;
 
         if (Configuration.Targets.HasFlag(BuildTargets.iOSARM64)) {
@@ -158,7 +158,7 @@ public class SwiftBuilder
         } else {
             sdkPathiOS = null;
         }
-        
+
         string? sdkPathiOSSimulator;
 
         if (Configuration.Targets.ContainsAnyiOSSimulatorTarget()) {
@@ -189,9 +189,9 @@ public class SwiftBuilder
         string outputPathApple = Path.Combine(outputPathRoot, "apple");
 
         string? outputPathMacOSARM64 = Configuration.Targets.HasFlag(BuildTargets.MacOSARM64)
-            ? Path.Combine(outputPathApple, $"{platformIdentifierMacOSDN}-{targetIdentifierARM64DN}") 
+            ? Path.Combine(outputPathApple, $"{platformIdentifierMacOSDN}-{targetIdentifierARM64DN}")
             : null;
-        
+
         string? outputPathMacOSX64 = Configuration.Targets.HasFlag(BuildTargets.MacOSX64)
             ? Path.Combine(outputPathApple, $"{platformIdentifierMacOSDN}-{targetIdentifierX64DN}")
             : null;
@@ -242,7 +242,7 @@ public class SwiftBuilder
             generatedCHeaderFileName,
             headerMapFileName
         );
-        
+
         #region macOS
         Func<PartialCompileResult>? macOSARM64Func;
 
@@ -258,7 +258,7 @@ public class SwiftBuilder
         } else {
             macOSARM64Func = null;
         }
-        
+
         Func<PartialCompileResult>? macOSX64Func;
 
         if (Configuration.Targets.HasFlag(BuildTargets.MacOSX64)) {
@@ -307,7 +307,7 @@ public class SwiftBuilder
         } else {
             iOSSimulatorARM64Func = null;
         }
-        
+
         Func<PartialCompileResult>? iOSSimulatorX64Func;
 
         if (Configuration.Targets.HasFlag(BuildTargets.iOSSimulatorX64)) {
@@ -323,13 +323,13 @@ public class SwiftBuilder
             iOSSimulatorX64Func = null;
         }
         #endregion iOS Simulator
-        
+
         string libraryOutputPathFormat = Path.Combine(
             outputPathApple,
             "{0}", // Runtime Identifier
             $"{productName}.a"
         );
-        
+
         string symbolsOutputPathFormat = Path.Combine(
             outputPathApple,
             "{0}", // Runtime Identifier
@@ -350,35 +350,35 @@ public class SwiftBuilder
                 macOSARM64Task = Task.Run(macOSARM64Func);
                 tasks.Add(macOSARM64Task);
             }
-            
+
             Task<PartialCompileResult>? macOSX64Task = null;
             if (macOSX64Func is not null) {
                 macOSX64Task = Task.Run(macOSX64Func);
                 tasks.Add(macOSX64Task);
             }
-            
+
             Task<PartialCompileResult>? iOSARM64Task = null;
             if (iOSARM64Func is not null) {
                 iOSARM64Task = Task.Run(iOSARM64Func);
                 tasks.Add(iOSARM64Task);
             }
-            
+
             Task<PartialCompileResult>? iOSSimulatorARM64Task = null;
             if (iOSSimulatorARM64Func is not null) {
-                iOSSimulatorARM64Task = Task.Run(iOSSimulatorARM64Func); 
+                iOSSimulatorARM64Task = Task.Run(iOSSimulatorARM64Func);
                 tasks.Add(iOSSimulatorARM64Task);
             }
-            
+
             Task<PartialCompileResult>? iOSSimulatorX64Task = null;
             if (iOSSimulatorX64Func is not null) {
-                iOSSimulatorX64Task = Task.Run(iOSSimulatorX64Func); 
+                iOSSimulatorX64Task = Task.Run(iOSSimulatorX64Func);
                 tasks.Add(iOSSimulatorX64Task);
             }
-            
+
             Logger.LogDebug($"Waiting for {tasks.Count} Swift compilation tasks to complete in parallel");
 
             Task.WaitAll(tasks.ToArray());
-            
+
             macOSARM64Result = macOSARM64Task?.Result;
             macOSX64Result = macOSX64Task?.Result;
             iOSARM64Result = iOSARM64Task?.Result;
@@ -420,7 +420,7 @@ public class SwiftBuilder
     )
     {
         private ILogger Logger => Services.Shared.LoggerService;
-        
+
         internal PartialCompileResult Compile(
             string sdk,
             string targetIdentifier,
@@ -511,7 +511,7 @@ public class SwiftBuilder
                 Apple.XCRun.SwiftC.App.ARGUMENT_OUTPUT, objectOutputFilePath,
                 Apple.XCRun.SwiftC.App.ARGUMENT_COMPILE, swiftFileName
             });
-            
+
             Logger.LogDebug($"Compiling generated Swift code for \"{targetTriple}\"");
 
             string swiftStandardOutput = Apple.XCRun.SwiftC.App.Run(
@@ -524,28 +524,28 @@ public class SwiftBuilder
             if (!File.Exists(swiftDocOutputFilePath)) {
                 swiftDocOutputFilePath = null;
             }
-            
+
             string? swiftABIOutputFilePath = Path.Combine(outputPath, $"{targetDouble}.{Apple.XCRun.SwiftC.FileExtensions.SwiftABI}");
 
             if (!File.Exists(swiftABIOutputFilePath)) {
                 swiftABIOutputFilePath = null;
             }
-            
+
             Logger.LogDebug($"Creating static library at \"{libraryOutputFilePath}\" using compiled Swift object file at \"{objectOutputFilePath}\"");
-            
+
             string libToolStandardOutput = Apple.XCRun.Libtool.StaticMerge(
                 workingDirectory,
                 [ objectOutputFilePath ],
                 libraryOutputFilePath,
                 true // No warning for no symbols
             );
-            
+
             // Extract symbols
             Logger.LogDebug($"Extracting symbols from \"{libraryOutputFilePath}\"");
-            
+
             var symbols = Apple.Nm.App.GetRelevantSymbols(libraryOutputFilePath);
             var symbolsString = string.Join('\n', symbols);
-            
+
             Logger.LogDebug($"Writing symbols file to \"{symbolsOutputFilePath}\"");
             File.WriteAllText(symbolsOutputFilePath, symbolsString);
 

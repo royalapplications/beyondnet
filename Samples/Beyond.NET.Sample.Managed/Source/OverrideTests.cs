@@ -2,12 +2,12 @@ namespace Beyond.NET.Sample.Source;
 
 public interface IOverrideTestsInterface
 {
-    
+
 }
 
 public class OverrideTestsInterfaceImpl: IOverrideTestsInterface
 {
-    
+
 }
 
 public class OverrideTestsBaseClass
@@ -16,7 +16,7 @@ public class OverrideTestsBaseClass
     {
         return null;
     }
-    
+
     public virtual IOverrideTestsInterface? ReturnInterface()
     {
         return null;

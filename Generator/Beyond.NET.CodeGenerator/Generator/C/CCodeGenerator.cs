@@ -8,7 +8,7 @@ public class CCodeGenerator: ICodeGenerator
 {
     public Settings Settings { get; }
     public Result CSharpUnmanagedResult { get; }
-    
+
     public CCodeGenerator(Settings settings, Result cSharpUnmanagedResult)
     {
         Settings = settings ?? throw new ArgumentNullException(nameof(settings));
@@ -22,7 +22,7 @@ public class CCodeGenerator: ICodeGenerator
     )
     {
         CSyntaxWriterConfiguration? syntaxWriterConfiguration = null;
-        
+
         SourceCodeSection headerSection = writer.AddSection("Header");
         SourceCodeSection commonTypesSection = writer.AddSection("Common Types");
         SourceCodeSection unsupportedTypesSection = writer.AddSection("Unsupported Types");
@@ -30,7 +30,7 @@ public class CCodeGenerator: ICodeGenerator
         SourceCodeSection apisSection = writer.AddSection("APIs");
         SourceCodeSection utilsSection = writer.AddSection("Utils");
         SourceCodeSection footerSection = writer.AddSection("Footer");
-        
+
         string header = CSharedCode.HeaderCode;
         headerSection.Code.AppendLine(header);
 
@@ -41,7 +41,7 @@ public class CCodeGenerator: ICodeGenerator
             foreach (var kvp in unsupportedTypes) {
                 Type type = kvp.Key;
                 string reason = kvp.Value;
-    
+
                 string typeName = type.FullName ?? type.Name;
 
                 unsupportedTypesSection.Code.AppendLine(
@@ -61,22 +61,22 @@ public class CCodeGenerator: ICodeGenerator
         var orderedTypes = types
             .OrderByDescending(t => t.IsEnum)
             .ThenByDescending(t => !t.IsDelegate());
-        
+
         foreach (Type type in orderedTypes) {
             Syntax.State state = new(CSharpUnmanagedResult);
-            
+
             string typeCode = typeSyntaxWriter.Write(type, state, syntaxWriterConfiguration);
             typedefsSection.Code.AppendLine(typeCode);
 
             string membersCode = typeSyntaxWriter.WriteMembers(type, state, syntaxWriterConfiguration);
             apisSection.Code.AppendLine(membersCode);
-            
+
             result.AddGeneratedType(
                 type,
                 state.GeneratedMembers
             );
         }
-        
+
         string utilsCode = CSharedCode.UtilsCode;
         utilsSection.Code.AppendLine(utilsCode);
 

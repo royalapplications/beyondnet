@@ -10,11 +10,11 @@ public class CSharpUnmanagedEventSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter
     {
         return Write((EventInfo)@object, state, configuration);
     }
-    
+
     public string Write(EventInfo @event, State state, ISyntaxWriterConfiguration? configuration)
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
-        
+
         const bool mayThrow = false;
         const bool addToState = false;
 
@@ -37,7 +37,7 @@ public class CSharpUnmanagedEventSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter
 
         if (addMethod != null) {
             bool isStaticMethod = addMethod.IsStatic;
-            
+
             string adderCode = WriteMethod(
                 addMethod,
                 MemberKind.EventHandlerAdder,
@@ -63,10 +63,10 @@ public class CSharpUnmanagedEventSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter
                 CodeLanguage.CSharpUnmanaged
             );
         }
-        
+
         if (removeMethod != null) {
             bool isStaticMethod = removeMethod.IsStatic;
-            
+
             string removerCode = WriteMethod(
                 removeMethod,
                 MemberKind.EventHandlerRemover,
@@ -83,7 +83,7 @@ public class CSharpUnmanagedEventSyntaxWriter: CSharpUnmanagedMethodSyntaxWriter
             );
 
             sb.AppendLine(removerCode);
-            
+
             state.AddGeneratedMember(
                 MemberKind.EventHandlerRemover,
                 @event,

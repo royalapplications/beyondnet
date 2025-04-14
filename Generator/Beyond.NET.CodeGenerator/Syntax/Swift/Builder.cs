@@ -37,7 +37,7 @@ public struct Builder
             comment
         );
     }
-    
+
     public static Builders.Class Class
     (
         string name
@@ -47,7 +47,7 @@ public struct Builder
             name
         );
     }
-    
+
     public static Builders.Struct Struct
     (
         string name
@@ -57,7 +57,7 @@ public struct Builder
             name
         );
     }
-    
+
     public static Builders.Enum Enum
     (
         string name
@@ -67,7 +67,7 @@ public struct Builder
             name
         );
     }
-    
+
     public static Builders.Extension Extension
     (
         string name
@@ -77,7 +77,7 @@ public struct Builder
             name
         );
     }
-    
+
     public static Builders.Protocol Protocol
     (
         string name
@@ -87,7 +87,7 @@ public struct Builder
             name
         );
     }
-    
+
     public static Builders.Func Func
     (
         string name
@@ -97,17 +97,17 @@ public struct Builder
             name
         );
     }
-    
+
     public static Builders.Initializer Initializer()
     {
         return new();
     }
-    
+
     public static Builders.Closure Closure()
     {
         return new();
     }
-    
+
     public static Builders.FuncSignatureParameter FuncSignatureParameter
     (
         string label,
@@ -121,7 +121,7 @@ public struct Builder
             typeName
         );
     }
-    
+
     public static Builders.FuncSignatureParameter FuncSignatureParameter
     (
         string label,
@@ -133,12 +133,12 @@ public struct Builder
             typeName
         );
     }
-    
+
     public static Builders.FuncSignatureParameters FuncSignatureParameters()
     {
         return new();
     }
-    
+
     public static Builders.Variable Variable
     (
         SwiftVariableKinds variableKind,
@@ -150,7 +150,7 @@ public struct Builder
             name
         );
     }
-    
+
     public static Builders.Variable Let
     (
         string name
@@ -161,7 +161,7 @@ public struct Builder
             name
         );
     }
-    
+
     public static Builders.Variable Var
     (
         string name

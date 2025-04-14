@@ -12,19 +12,19 @@ public class SourceCodeWriter
             return m_sections;
         }
     }
-    
+
     public void Write(string code)
     {
         Write(code, string.Empty);
     }
-    
+
     public void Write(string code, string sectionName)
     {
         SourceCodeSection section = GetSection(sectionName) ?? AddSection(sectionName);
 
         section.Code.AppendLine(code);
     }
-    
+
     public SourceCodeSection AddSection(string sectionName)
     {
         var tempSection = new SourceCodeSection(sectionName);
@@ -40,7 +40,7 @@ public class SourceCodeWriter
         if (m_sectionsDict.TryGetValue(section.Name, out SourceCodeSection? existingSection)) {
             return existingSection;
         }
-        
+
         m_sections.Add(section);
         m_sectionsDict[section.Name] = section;
 

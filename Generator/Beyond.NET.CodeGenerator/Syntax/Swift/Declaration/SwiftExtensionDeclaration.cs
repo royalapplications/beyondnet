@@ -21,17 +21,17 @@ public struct SwiftExtensionDeclaration
         Visibility = visibility;
         Implementation = implementation;
     }
-    
+
     public override string ToString()
     {
         const string extension = "extension";
-        
+
         string visibilityString = Visibility.ToSwiftSyntaxString();
 
         string protocolConformanceDecl = !string.IsNullOrEmpty(ProtocolConformance)
             ? $": {ProtocolConformance}"
-            : string.Empty; 
-        
+            : string.Empty;
+
         string[] signatureComponents = new[] {
             visibilityString,
             extension,
@@ -41,10 +41,10 @@ public struct SwiftExtensionDeclaration
         string signature = SwiftFuncSignatureComponents.ComponentsToString(signatureComponents);
 
         string fullDecl;
-        
+
         if (!string.IsNullOrEmpty(Implementation)) {
             string indentedImpl = Implementation.IndentAllLines(1);
-            
+
             fullDecl = $"{signature} {{\n{indentedImpl}\n}}";
         } else {
             fullDecl = signature;

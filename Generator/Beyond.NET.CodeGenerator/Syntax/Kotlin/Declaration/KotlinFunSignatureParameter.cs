@@ -4,7 +4,7 @@ public struct KotlinFunSignatureParameter
 {
     public string Name { get; }
     public string TypeName { get; }
-    
+
     public KotlinFunSignatureParameter(
         string name,
         string typeName
@@ -19,13 +19,13 @@ public struct KotlinFunSignatureParameter
         if (string.IsNullOrEmpty(TypeName)) {
             throw new ArgumentOutOfRangeException(nameof(TypeName));
         }
-        
+
         if (string.IsNullOrEmpty(Name)) {
             throw new ArgumentOutOfRangeException(nameof(Name));
         }
 
         string nameAndColon = $"{Name}:";
-        
+
         string parameter = KotlinFunSignatureComponents.ComponentsToString(new[] {
             nameAndColon,
             TypeName

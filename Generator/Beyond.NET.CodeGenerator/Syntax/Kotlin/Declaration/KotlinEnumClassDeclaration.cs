@@ -17,22 +17,22 @@ public struct KotlinEnumClassDeclaration
     )
     {
         Name = !string.IsNullOrEmpty(name)
-            ? name 
+            ? name
             : throw new ArgumentOutOfRangeException(nameof(name));
-        
+
         Visibility = visibility;
-        
+
         UnderlyingTypeName = !string.IsNullOrEmpty(underlyingTypeName)
-            ? underlyingTypeName 
+            ? underlyingTypeName
             : throw new ArgumentOutOfRangeException(nameof(underlyingTypeName));
 
         Implementation = implementation;
     }
-    
+
     public override string ToString()
     {
         const string enumClass = "enum class";
-        
+
         var visibilityString = Visibility.ToKotlinSyntaxString();
         var underlyingTypeString = $"(val rawValue: {UnderlyingTypeName})";
         var nameAndUnderlyingTypeString = $"{Name}{underlyingTypeString}";
@@ -46,10 +46,10 @@ public struct KotlinEnumClassDeclaration
         string signature = KotlinFunSignatureComponents.ComponentsToString(signatureComponents);
 
         string fullFunc;
-        
+
         if (!string.IsNullOrEmpty(Implementation)) {
             string indentedImplementation = Implementation.IndentAllLines(1);
-            
+
             fullFunc = $"{signature} {{\n{indentedImplementation}\n}}";
         } else {
             fullFunc = signature;

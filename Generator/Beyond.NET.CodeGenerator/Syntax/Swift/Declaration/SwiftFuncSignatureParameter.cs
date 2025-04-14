@@ -5,7 +5,7 @@ public struct SwiftFuncSignatureParameter
     public string Label { get; }
     public string? Name { get; }
     public string TypeName { get; }
-    
+
     public SwiftFuncSignatureParameter(
         string label,
         string? name,
@@ -16,7 +16,7 @@ public struct SwiftFuncSignatureParameter
         Name = name;
         TypeName = typeName;
     }
-    
+
     public SwiftFuncSignatureParameter(
         string label,
         string typeName
@@ -32,7 +32,7 @@ public struct SwiftFuncSignatureParameter
         if (string.IsNullOrEmpty(TypeName)) {
             throw new ArgumentOutOfRangeException(nameof(TypeName));
         }
-        
+
         string label = !string.IsNullOrEmpty(Label)
             ? Label
             : "_";
@@ -45,7 +45,7 @@ public struct SwiftFuncSignatureParameter
             label == "_") {
             throw new Exception("Either Label or Name or both must be supplied");
         }
-        
+
         string labelAndName;
 
         if (!string.IsNullOrEmpty(name) &&
@@ -56,7 +56,7 @@ public struct SwiftFuncSignatureParameter
         }
 
         string labelAndNameAndColon = $"{labelAndName}:";
-        
+
         string parameter = SwiftFuncSignatureComponents.ComponentsToString(new[] {
             labelAndNameAndColon,
             TypeName

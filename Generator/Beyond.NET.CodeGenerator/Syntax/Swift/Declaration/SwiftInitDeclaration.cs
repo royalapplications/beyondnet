@@ -10,7 +10,7 @@ public struct SwiftInitDeclaration
     public string Parameters { get; }
     public bool Throws { get; }
     public string? Implementation { get; }
-    
+
     public SwiftInitDeclaration(
         bool isConvenience,
         bool isFailable,
@@ -25,30 +25,30 @@ public struct SwiftInitDeclaration
         Visibility = visibility;
         Parameters = parameters;
         Throws = throws;
-        
+
         Implementation = !string.IsNullOrEmpty(implementation)
             ? implementation
             : null;
     }
-    
+
     public override string ToString()
     {
         string convenienceString = IsConvenience
             ? "convenience"
             : string.Empty;
-        
+
         const string name = "init";
-        
+
         string isFailableString = IsFailable
             ? "?"
             : string.Empty;
-        
+
         string visibilityString = Visibility.ToSwiftSyntaxString();
-        
+
         string throwsString = Throws
             ? "throws"
             : string.Empty;
-        
+
         string[] signatureComponents = new[] {
             visibilityString,
             convenienceString,
@@ -57,12 +57,12 @@ public struct SwiftInitDeclaration
         };
 
         string signature = SwiftFuncSignatureComponents.ComponentsToString(signatureComponents);
-        
+
         string fullInit;
-        
+
         if (!string.IsNullOrEmpty(Implementation)) {
             string indentedImpl = Implementation.IndentAllLines(1);
-            
+
             fullInit = $"{signature} {{\n{indentedImpl}\n}}";
         } else {
             fullInit = signature;

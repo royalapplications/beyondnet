@@ -7,9 +7,9 @@ public struct TypeAlias
 {
     private readonly string m_aliasTypeName;
     private readonly string m_originalTypeName;
-    
+
     private SwiftVisibilities m_visibility = SwiftVisibilities.None;
-    
+
     public TypeAlias(
         string aliasTypeName,
         string originalTypeName
@@ -18,15 +18,15 @@ public struct TypeAlias
         m_aliasTypeName = aliasTypeName;
         m_originalTypeName = originalTypeName;
     }
-    
+
     #region Visibility
     public TypeAlias Visibility(SwiftVisibilities visibility)
     {
         m_visibility = visibility;
-        
+
         return this;
     }
-    
+
     public TypeAlias Open()
     {
         return Visibility(SwiftVisibilities.Open);
@@ -36,23 +36,23 @@ public struct TypeAlias
     {
         return Visibility(SwiftVisibilities.Public);
     }
-    
+
     public TypeAlias Internal()
     {
         return Visibility(SwiftVisibilities.Internal);
     }
-    
+
     public TypeAlias Private()
     {
         return Visibility(SwiftVisibilities.Private);
     }
-    
+
     public TypeAlias FilePrivate()
     {
         return Visibility(SwiftVisibilities.FilePrivate);
     }
     #endregion Visibility
-    
+
     #region Build
     public SwiftTypeAliasDeclaration Build()
     {
@@ -68,7 +68,7 @@ public struct TypeAlias
         return Build()
             .ToString();
     }
-    
+
     public string ToIndentedString(int indentationLevel)
     {
         return Build()

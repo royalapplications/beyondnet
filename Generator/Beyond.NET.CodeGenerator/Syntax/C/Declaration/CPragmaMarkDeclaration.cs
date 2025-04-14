@@ -15,7 +15,7 @@ public struct CPragmaMarkDeclaration
         IsSeparator = isSeparator;
         Comment = comment;
     }
-    
+
     public override string ToString()
     {
         var sb = new CCodeBuilder("#pragma mark");
@@ -30,7 +30,7 @@ public struct CPragmaMarkDeclaration
         }
 
         var str = sb.ToString();
-        
+
         return str;
     }
 }

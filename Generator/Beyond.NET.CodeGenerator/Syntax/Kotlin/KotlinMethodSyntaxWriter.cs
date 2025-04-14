@@ -19,10 +19,10 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
     public string Write(MethodInfo method, State state, ISyntaxWriterConfiguration? configuration)
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
-        
+
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         Result cResult = state.CResult ?? throw new Exception("No CResult provided");
-        
+
         GeneratedMember cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedMember(method) ?? throw new Exception("No C# generated member");
         GeneratedMember cGeneratedMember = cResult.GetGeneratedMember(method) ?? throw new Exception("No C generated member");
 
@@ -142,12 +142,12 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             memberKind != MemberKind.TypeOf) {
             throw new Exception("memberInfo may only be null when memberKind is Destructor");
         }
-        
+
         MethodBase? methodBase = memberInfo as MethodBase;
 
         bool isGenericType = declaringType.IsGenericType ||
                              declaringType.IsGenericTypeDefinition;
-        
+
         Type[] genericTypeArguments = Array.Empty<Type>();
         int numberOfGenericTypeArguments = 0;
 
@@ -155,7 +155,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             genericTypeArguments = declaringType.GetGenericArguments();
             numberOfGenericTypeArguments = genericTypeArguments.Length;
         }
-        
+
         bool isGeneric = false;
         Type[] genericMethodArguments = Array.Empty<Type>();
         int numberOfGenericMethodArguments = 0;
@@ -173,7 +173,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 } catch {
                     genericMethodArguments = Array.Empty<Type>();
                 }
-                
+
                 numberOfGenericMethodArguments = genericMethodArguments.Length;
             }
         } else if (isGenericType &&
@@ -192,9 +192,9 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             numberOfGenericMethodArguments <= 0) {
             throw new Exception("Generic Method without generic arguments");
         }
-        
+
         List<Type> tempCombinedGenericArguments = new();
-        
+
         tempCombinedGenericArguments.AddRange(genericTypeArguments);
         tempCombinedGenericArguments.AddRange(genericMethodArguments);
 
@@ -211,13 +211,13 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
                     if (nonByRefParameterType.IsArray) {
                         generatedName = string.Empty;
-                        
-                        return Builder.SingleLineComment("TODO: Generic Methods with out/in/ref parameters that are arrays are not supported").ToString();    
+
+                        return Builder.SingleLineComment("TODO: Generic Methods with out/in/ref parameters that are arrays are not supported").ToString();
                     }
                 }
             }
         }
-        
+
         string methodNameC = cSharpGeneratedMember.GetGeneratedName(CodeLanguage.CSharpUnmanaged) ?? throw new Exception("No native name");
 
         if (addToState) {
@@ -231,7 +231,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         }
 
         bool isNullableValueTypeReturnType = returnOrSetterOrEventHandlerType.IsNullableValueType(out Type? nullableValueReturnType);
-        
+
         bool isGenericReturnType = !isNullableValueTypeReturnType &&
                                    (
                                        returnOrSetterOrEventHandlerType.IsGenericParameter ||
@@ -244,7 +244,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
         bool isConstructedGenericReturnType = !isNullableValueTypeReturnType &&
                                               returnOrSetterOrEventHandlerType.IsConstructedGenericType;
-        
+
         bool isGenericArrayReturnType = false;
 
         if (!isGenericReturnType &&
@@ -396,9 +396,9 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
             if (returnOrSetterOrEventHandlerTypeIsByRef) {
                 returnOrSetterOrEventHandlerType = returnOrSetterOrEventHandlerType.GetNonByRefType();
-            }   
+            }
         }
-        
+
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
 
         string? kotlinJNAReturnOrSetterTypeName;
@@ -407,19 +407,19 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             kotlinJNAReturnOrSetterTypeName = null;
         } else {
             kotlinJNAReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(
-                CodeLanguage.KotlinJNA, 
+                CodeLanguage.KotlinJNA,
                 true,
                 returnOrSetterTypeNullability,
                 returnOrSetterTypeArrayElementNullability,
                 false,
                 returnOrSetterOrEventHandlerTypeIsByRef,
                 false
-            );   
+            );
         }
-        
+
         string? kotlinJNAReturnOrSetterTypeNameWithComment;
         Type? setterType;
-        
+
         if (memberKind == MemberKind.PropertySetter ||
             memberKind == MemberKind.FieldSetter ||
             memberKind == MemberKind.EventHandlerAdder ||
@@ -432,7 +432,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             } else {
                 kotlinJNAReturnOrSetterTypeNameWithComment = null;
             }
-            
+
             setterType = null;
         }
 
@@ -459,7 +459,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             typeDescriptorRegistry,
             CodeLanguage.KotlinJNA
         );
-        
+
         KotlinCodeBuilder sb = new();
 
         // if (string.IsNullOrEmpty(methodSignatureParameters)) {
@@ -474,10 +474,10 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         sb.AppendLine(fun.ToString());
 
         generatedName = methodNameC;
-        
+
         return sb.ToString();
     }
-    
+
     internal static string WriteJNAParameters(
         MemberKind memberKind,
         Type? setterOrEventHandlerType,
@@ -493,57 +493,57 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
     )
     {
         var nullabilityContext = new NullabilityInfoContext();
-        
+
         List<KotlinFunSignatureParameter> parameterList = new();
 
         if (!isStatic) {
             TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
-            
+
             string declaringTypeName = declaringTypeDescriptor.GetTypeName(targetLanguage, true);
-            
+
             string selfParameterName = "self";
             var selfParameter = new KotlinFunSignatureParameter(selfParameterName, $"{declaringTypeName} /* {declaringType.GetFullNameOrName()} */");
 
             parameterList.Add(selfParameter);
         }
-        
+
         if (isGeneric) {
             Type typeOfSystemType = typeof(Type);
             TypeDescriptor systemTypeTypeDescriptor = typeOfSystemType.GetTypeDescriptor(typeDescriptorRegistry);
             string systemTypeTypeName = typeOfSystemType.GetFullNameOrName();
             string nativeSystemTypeTypeName = systemTypeTypeDescriptor.GetTypeName(targetLanguage, true);
-            
+
             foreach (var genericArgumentType in genericArguments) {
                 string parameterName = genericArgumentType.Name
                     .EscapedKotlinName();
-            
+
                 var kotlinParameter = new KotlinFunSignatureParameter(parameterName, $"{nativeSystemTypeTypeName} /* {systemTypeTypeName} */");
-            
+
                 parameterList.Add(kotlinParameter);
             }
         }
-        
+
         foreach (var parameter in parameters) {
             bool isOutParameter = parameter.IsOut;
             bool isInParameter = parameter.IsIn;
-                
+
             Type parameterType = parameter.ParameterType;
-                
+
             bool isByRefParameter = parameterType.IsByRef;
 
             if (isByRefParameter) {
                 parameterType = parameterType.GetNonByRefType();
             }
-                
+
             bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
-                
+
             if (isGenericParameterType) {
                 parameterType = typeof(object);
             }
-                
+
             bool isGenericArrayParameterType = false;
             Type? arrayType = parameterType.GetElementType();
-                        
+
             if (parameterType.IsArray &&
                 arrayType is not null &&
                 (arrayType.IsGenericParameter || arrayType.IsGenericMethodParameter)) {
@@ -566,13 +566,13 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                     isNotNull = parameterNullabilityInfo.ReadState == NullabilityState.NotNull;
                 }
             }
-            
+
             Nullability parameterNullability = isNotNull
                 ? Nullability.NonNullable
                 : Nullability.NotSpecified;
-            
+
             TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
-                
+
             string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
                 targetLanguage,
                 true,
@@ -582,12 +582,12 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 isByRefParameter,
                 isInParameter
             );
-            
+
             var parameterName = parameter.Name
                 ?.EscapedKotlinName() ?? throw new Exception("Parameter without a name");
 
             var kotlinParameter = new KotlinFunSignatureParameter(parameterName, $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */");
-            
+
             parameterList.Add(kotlinParameter);
         }
 
@@ -598,24 +598,24 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             if (setterOrEventHandlerType == null) {
                 throw new Exception("Setter or Event Handler Type may not be null");
             }
-            
+
             TypeDescriptor setterOrEventHandlerTypeDescriptor = setterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
-            
+
             string cSetterOrEventHandlerTypeName = setterOrEventHandlerTypeDescriptor.GetTypeName(
                 targetLanguage,
                 true,
                 setterOrEventHandlerTypeNullability
             );
-    
+
             var kotlinParameter = new KotlinFunSignatureParameter("value", $"{cSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */");
-            
+
             parameterList.Add(kotlinParameter);
         }
 
         if (mayThrow) {
             Type exceptionType = typeof(Exception);
             TypeDescriptor outExceptionTypeDescriptor = exceptionType.GetTypeDescriptor(typeDescriptorRegistry);
-            
+
             string outExceptionTypeName = outExceptionTypeDescriptor.GetTypeName(
                 targetLanguage,
                 true,
@@ -625,10 +625,10 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 true,
                 false
             );
-            
+
             string outExceptionParameterName = "outException";
             var outExceptionParameter = new KotlinFunSignatureParameter(outExceptionParameterName, $"{outExceptionTypeName} /* {exceptionType.GetFullNameOrName()} */");
- 
+
             parameterList.Add(outExceptionParameter);
         }
 
@@ -665,7 +665,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             memberKind != MemberKind.TypeOf) {
             throw new Exception("memberInfo may only be null when memberKind is Destructor");
         }
-        
+
         MethodBase? methodBase = memberInfo as MethodBase;
         MethodInfo? methodInfo = methodBase as MethodInfo;
 
@@ -674,35 +674,35 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             methodBase is not null &&
             methodBase.Name == "get_Current") {
             generatedName = string.Empty;
-            
+
             return "// TODO: System.CharEnumerator.Current getter causes issues in Kotlin's type system because it overrides the method with the same name in System.Collections.IEnumerator which has a return value of System.Object. But this one here has a return value of char which is a primitive and not an System.Object as far as Kotlin is concerned.";
         }
-        
+
         if (returnOrSetterOrEventHandlerType.IsByRef) {
             generatedName = string.Empty;
-            
+
             return $"// TODO: Method with by ref return or setter or event handler type ({cMember.GetGeneratedName(CodeLanguage.C)})";
         }
-        
+
         if (returnOrSetterOrEventHandlerType.IsGenericInAnyWay(true) &&
             !returnOrSetterOrEventHandlerType.IsNullableValueType(out _)) {
             generatedName = string.Empty;
-            
+
             return $"// TODO: Method with generic return or setter or event handler type ({cMember.GetGeneratedName(CodeLanguage.C)})";
         }
 
         if (methodInfo?.ContainsGenericParameters ?? false) {
             generatedName = string.Empty;
-            
+
             return $"// TODO: Method with generic parameters ({cMember.GetGeneratedName(CodeLanguage.C)})";
         }
 
         foreach (var parameter in parameters) {
             var parameterType = parameter.ParameterType;
-            
+
             if (parameterType.IsGenericInAnyWay(true)) {
                 generatedName = string.Empty;
-                
+
                 return $"// TODO: Method with generic parameter ({cMember.GetGeneratedName(CodeLanguage.C)})";
             }
 
@@ -710,20 +710,20 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                                    parameter.IsIn ||
                                    parameterType.IsByRef ||
                                    parameterType.IsByRefLike ||
-                                   parameterType.IsByRefValueType(out _); 
-            
+                                   parameterType.IsByRefValueType(out _);
+
             if (isByRefParameter) {
                 var nonByRefType = parameterType.GetNonByRefType();
-                
+
                 if (nonByRefType.IsEnum ||
                     nonByRefType.IsPointer ||
                     nonByRefType == typeof(IntPtr) ||
                     nonByRefType == typeof(UIntPtr)) {
                     generatedName = string.Empty;
-                    
+
                     return $"// TODO: Method with out or in or by ref enum/IntPtr/UIntPtr/Pointer type parameter ({cMember.GetGeneratedName(CodeLanguage.C)})";
                 }
-                
+
                 bool isNullableValueType = nonByRefType.IsNullableValueType(out Type? nullableValueType);
 
                 // Only nullable structs, not primitives or enums are currently supported
@@ -733,7 +733,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 if (nonByRefType.IsGenericInAnyWay(true) &&
                     !isNullableStruct) {
                     generatedName = string.Empty;
-                    
+
                     return $"// TODO: Method with out or in or by ref generic type parameter ({cMember.GetGeneratedName(CodeLanguage.C)})";
                 }
 
@@ -748,7 +748,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
         bool isGenericType = declaringType.IsGenericType ||
                              declaringType.IsGenericTypeDefinition;
-        
+
         Type[] genericTypeArguments = Array.Empty<Type>();
         int numberOfGenericTypeArguments = 0;
 
@@ -756,7 +756,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             genericTypeArguments = declaringType.GetGenericArguments();
             numberOfGenericTypeArguments = genericTypeArguments.Length;
         }
-        
+
         bool isGeneric = false;
         Type[] genericMethodArguments = Array.Empty<Type>();
         int numberOfGenericMethodArguments = 0;
@@ -774,7 +774,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 } catch {
                     genericMethodArguments = Array.Empty<Type>();
                 }
-                
+
                 numberOfGenericMethodArguments = genericMethodArguments.Length;
             }
         } else if (isGenericType &&
@@ -795,7 +795,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         }
 
         List<Type> tempCombinedGenericArguments = new();
-        
+
         tempCombinedGenericArguments.AddRange(genericTypeArguments);
         tempCombinedGenericArguments.AddRange(genericMethodArguments);
 
@@ -812,15 +812,15 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
                     if (nonByRefParameterType.IsArray) {
                         generatedName = string.Empty;
-                        
-                        return "// TODO: Generic Methods with out/in/ref parameters that are arrays are not supported";    
+
+                        return "// TODO: Generic Methods with out/in/ref parameters that are arrays are not supported";
                     }
                 }
             }
         }
-        
+
         const string jnaClassName = KotlinTypeSyntaxWriter.JNA_CLASS_NAME;
-        
+
         string cMethodName = $"{jnaClassName}.{cSharpGeneratedMember.GetGeneratedName(CodeLanguage.CSharpUnmanaged)}" ?? throw new Exception("No native name");
 
         // string methodNameKotlin = state.UniqueGeneratedName(
@@ -886,7 +886,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 CodeLanguage.Kotlin
             );
         }
-        
+
         bool isGenericReturnType = returnOrSetterOrEventHandlerType.IsGenericParameter ||
                                    returnOrSetterOrEventHandlerType.IsGenericMethodParameter ||
                                    returnOrSetterOrEventHandlerType.IsGenericType ||
@@ -895,7 +895,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                                    returnOrSetterOrEventHandlerType.IsConstructedGenericType;
 
         bool isConstructedGenericReturnType = returnOrSetterOrEventHandlerType.IsConstructedGenericType;
-        
+
         bool isGenericArrayReturnType = false;
 
         if (!isGenericReturnType &&
@@ -934,13 +934,13 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
             return "// TODO: Unsupported because of unsupported return type or derived by unsupported type";
         }
-        
+
         TypeDescriptor returnOrSetterTypeDescriptor = returnOrSetterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
-        
+
         var nullabilityInfoContext = new NullabilityInfoContext();
         var returnOrSetterTypeNullability = Nullability.NotSpecified;
-        var returnOrSetterTypeArrayElementNullability = Nullability.NotSpecified; 
-        
+        var returnOrSetterTypeArrayElementNullability = Nullability.NotSpecified;
+
         if (memberKind == MemberKind.TypeOf) {
             returnOrSetterTypeNullability = Nullability.NonNullable;
         } else if (returnOrSetterOrEventHandlerType.IsNullableValueType(out _)) {
@@ -958,7 +958,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 } else {
                     returnOrSetterValueParameter = methodInfo.ReturnParameter;
                 }
-                
+
                 var nullabilityInfo = nullabilityInfoContext.Create(returnOrSetterValueParameter);
 
                 if (memberKind == MemberKind.PropertyGetter) {
@@ -973,7 +973,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                     returnOrSetterTypeNullability = nullabilityInfo.WriteState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
-                    
+
                     returnOrSetterTypeArrayElementNullability = nullabilityInfo.ElementType?.WriteState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
@@ -1010,7 +1010,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                     returnOrSetterTypeNullability = nullabilityInfo.ReadState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
-                    
+
                     returnOrSetterTypeArrayElementNullability = nullabilityInfo.ElementType?.ReadState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
@@ -1018,7 +1018,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                     returnOrSetterTypeNullability = nullabilityInfo.WriteState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
-                    
+
                     returnOrSetterTypeArrayElementNullability = nullabilityInfo.ElementType?.WriteState == NullabilityState.NotNull
                         ? Nullability.NonNullable
                         : Nullability.NotSpecified;
@@ -1028,7 +1028,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                             ? Nullability.NonNullable
                             : Nullability.NotSpecified;
                     }
-                    
+
                     var elementTypeNullabilityInfo = nullabilityInfo.ElementType;
 
                     if (elementTypeNullabilityInfo is not null &&
@@ -1040,7 +1040,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 }
             }
         }
-        
+
         // TODO: This generates inout TypeName if the return type is by ref
         string kotlinReturnOrSetterTypeName = returnOrSetterTypeDescriptor.GetTypeName(
             CodeLanguage.Kotlin,
@@ -1051,10 +1051,10 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             returnOrSetterOrEventHandlerTypeIsByRef,
             false
         );
-        
+
         string kotlinReturnOrSetterTypeNameWithComment;
         Type? setterType;
-        
+
         if (memberKind == MemberKind.PropertySetter ||
             memberKind == MemberKind.FieldSetter ||
             memberKind == MemberKind.EventHandlerAdder ||
@@ -1065,7 +1065,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             kotlinReturnOrSetterTypeNameWithComment = $"{kotlinReturnOrSetterTypeName} /* {returnOrSetterOrEventHandlerType.GetFullNameOrName()} */";
             setterType = null;
         }
-        
+
         generatedName = methodNameKotlin;
         #endregion Preparation
 
@@ -1091,8 +1091,8 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             genericMethodArguments,
             syntaxWriterConfiguration,
             typeDescriptorRegistry
-        );   
-        
+        );
+
         string methodSignatureParameters = WriteParameters(
             memberKind,
             setterType,
@@ -1148,7 +1148,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             if (isEnum) {
                 return "// TODO: typeOf for enums";
             }
-            
+
             string typeOfTypeName = !returnOrSetterOrEventHandlerType.IsVoid()
                 ? kotlinReturnOrSetterTypeNameWithComment
                 : throw new Exception("A typeof declaration must have a return type");
@@ -1161,7 +1161,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 .ReturnTypeName(typeOfTypeName)
                 .Implementation(memberImpl)
                 .ToString();
-            
+
             // TODO: Properties
             /* } else if (CanBeGeneratedAsGetOnlyProperty(memberKind, isGeneric, parameters.Any())) {
                 // string propTypeName = !returnOrSetterOrEventHandlerType.IsVoid()
@@ -1185,7 +1185,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         } else {
             // TODO: Static?
             // TODO: Throws?
-            
+
             var extensionMethodType = syntaxWriterConfiguration.ExtensionMethodType;
             string? extensionMethodTypeName;
 
@@ -1202,10 +1202,10 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             }else {
                 extensionMethodTypeName = null;
             }
-            
+
             declaration = Builder.Fun(methodNameKotlin)
                 .Visibility(memberVisibility)
-                // .TypeAttachmentKind(isStaticMethod 
+                // .TypeAttachmentKind(isStaticMethod
                 //     ? interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.Protocol || interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ProtocolExtensionForDefaultImplementations ? SwiftTypeAttachmentKinds.Static : SwiftTypeAttachmentKinds.Class
                 //     : SwiftTypeAttachmentKinds.Instance)
                 .Override(treatAsOverridden)
@@ -1221,7 +1221,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         #endregion Func Declaration
 
         XmlDocumentationMember? xmlDocumentationContent;
-        
+
         if (originatingMemberInfo is FieldInfo originatingFieldInfo) {
             xmlDocumentationContent = originatingFieldInfo.GetDocumentation();
         } else if (originatingMemberInfo is PropertyInfo originatingPropertyInfo) {
@@ -1237,7 +1237,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         } else {
             xmlDocumentationContent = null;
         }
-        
+
         var declarationComment = xmlDocumentationContent
             ?.GetFormattedDocumentationComment();
 
@@ -1253,10 +1253,10 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         } else {
             declarationWithComment = declaration;
         }
-        
+
         return declarationWithComment;
     }
-    
+
     private static bool CanBeGeneratedAsGetOnlyProperty(
         MemberKind memberKind,
         bool isGeneric,
@@ -1268,7 +1268,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             !isGeneric &&
             !hasParameters;
     }
-    
+
     private static string WriteMethodImplementation(
         GeneratedMember cSharpGeneratedMember,
         GeneratedMember cMember,
@@ -1291,18 +1291,18 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
     )
     {
         // TODO: This was copied from the Swift version of the same method and modified
-        
+
         KotlinCodeBuilder sbImpl = new();
 
         bool needsRegularImpl = true;
 
         if (memberKind == MemberKind.Destructor) {
             needsRegularImpl = false;
-            
+
             sbImpl.AppendLine($"{cMethodName}(this.__handle)");
         } else if (memberKind == MemberKind.TypeOf) {
             needsRegularImpl = false;
-            
+
             string returnTypeConversion = returnOrSetterTypeDescriptor.GetTypeConversion(
                 CodeLanguage.KotlinJNA,
                 CodeLanguage.Kotlin,
@@ -1339,14 +1339,14 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
             if (mayThrow) {
                 string cExceptionVarName = "__exceptionC";
-                
+
                 // TODO
                 convertedParameterNames.Add(cExceptionVarName);
-                
+
                 sbImpl.AppendLine(Builder.Val(cExceptionVarName)
                     .Value("PointerByReference()")
                     .ToString());
-                
+
                 sbImpl.AppendLine();
             }
 
@@ -1358,7 +1358,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 !returnOrSetterTypeDescriptor.IsVoid;
 
             string returnValueName = "__returnValueC";
-            
+
             string returnValueCStorage = isReturning
                 ? $"val {returnValueName} = "
                 : string.Empty;
@@ -1368,22 +1368,22 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             if (!isStaticMethod) {
                 allParameterNames.Add("this.__handle");
             }
-            
+
             allParameterNames.AddRange(convertedGenericTypeArgumentNames);
             allParameterNames.AddRange(convertedGenericMethodArgumentNames);
             allParameterNames.AddRange(convertedParameterNames);
-            
+
             string allParameterNamesString = string.Join(", ", allParameterNames);
-            
+
             string invocation = $"{returnValueCStorage}{cMethodName}({allParameterNamesString})";
-            
+
             sbImpl.AppendLine(invocation);
             sbImpl.AppendLine();
-            
+
             if (mayThrow) {
                 sbImpl.AppendLine("""
                                   val __exceptionCHandle = __exceptionC.value
-                                   
+
                                   if (__exceptionCHandle != null) {
                                       throw System_Exception(__exceptionCHandle).toKException()
                                   }
@@ -1398,7 +1398,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 if (memberKind == MemberKind.Constructor) {
                     TypeDescriptor declaringTypeDescriptor = declaringType.GetTypeDescriptor(typeDescriptorRegistry);
                     string declaringTypeName = declaringTypeDescriptor.GetTypeName(CodeLanguage.Kotlin, false);
-                    
+
                     returnCode = $"return {declaringTypeName}({returnValueName})";
                 } else {
                     string? returnTypeConversion = returnOrSetterTypeDescriptor.GetTypeConversion(
@@ -1406,7 +1406,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                         CodeLanguage.Kotlin,
                         returnOrSetterOrEventHandlerArrayElementNullability
                     );
-    
+
                     if (!string.IsNullOrEmpty(returnTypeConversion)) {
                         string newReturnValueName = "__returnValue";
                         var conv = string.Format(returnTypeConversion, returnValueName);
@@ -1417,7 +1417,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                         Nullability actualNullability = returnOrSetterOrEventHandlerNullability != Nullability.NotSpecified
                                 ? returnOrSetterOrEventHandlerNullability
                                 : returnOrSetterTypeDescriptor.Nullability;
-                        
+
                         if (returnOrSetterTypeDescriptor.RequiresNativePointer &&
                             actualNullability != Nullability.NonNullable) {
                             prefix = $"if ({returnValueName} != null) ";
@@ -1430,13 +1430,13 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                         string fullReturnTypeConversion = Builder.Val(newReturnValueName)
                             .Value($"{prefix}{conv}{suffix}")
                             .ToString();
-    
+
                         sbImpl.AppendLine(fullReturnTypeConversion);
                         sbImpl.AppendLine();
-                        
+
                         returnValueName = newReturnValueName;
                     }
-    
+
                     returnCode = $"return {returnValueName}";
                 }
             }
@@ -1451,19 +1451,19 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 bool isByRefParameter = parameterType.IsByRef;
 
                 var isInOutParameter = isOutParameter || isInParameter || isByRefParameter;
-                
+
                 if (!isInOutParameter) {
                     continue;
                 }
 
                 bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
-                
+
                 parameterType = parameterType.GetNonByRefType();
 
                 if (isGenericParameterType) {
                     parameterType = typeof(object);
                 }
-                
+
                 string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
                 string convertedParameterName = $"__{parameterName}JNAByRef";
 
@@ -1483,28 +1483,28 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                     parameterArrayElementNullability = Nullability.NotSpecified;
                 }
 
-                Nullability parameterNullability = Nullability.NotSpecified; 
-                
+                Nullability parameterNullability = Nullability.NotSpecified;
+
                 if (!isGeneric &&
                     !isGenericParameterType &&
                     parameterType.IsReferenceType()) {
                     bool isNotNull = false;
-                        
+
                     var parameterNullabilityInfo = nullabilityInfoContext.Create(parameter);
-                        
+
                     if (parameterNullabilityInfo.ReadState == parameterNullabilityInfo.WriteState) {
                         isNotNull = parameterNullabilityInfo.ReadState == NullabilityState.NotNull;
                     }
-                        
+
                     parameterNullability = isNotNull
                         ? Nullability.NonNullable
                         : parameterTypeDescriptor.Nullability;
                 }
-    
+
                 if (parameterNullability == Nullability.NotSpecified) {
                     parameterNullability = parameterTypeDescriptor.Nullability;
                 }
-                
+
                 string? parameterTypeConversion = parameterTypeDescriptor.GetTypeConversion(
                     CodeLanguage.KotlinJNA,
                     CodeLanguage.Kotlin,
@@ -1528,7 +1528,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                         // TODO: This is a bad hack
                         parameterNullability = Nullability.NonNullable;
                     }
-                    
+
                     if (parameterNullability == Nullability.NonNullable) {
                         parameterTypeConversion = resolvedConversion;
                     } else {
@@ -1555,7 +1555,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
         return funcImpl;
     }
-    
+
     internal static string WriteParameters(
         MemberKind memberKind,
         Type? setterOrEventHandlerType,
@@ -1573,65 +1573,65 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
     )
     {
         // TODO: This was copied from the Swift version of the same method and modified
-        
+
         var nullabilityContext = new NullabilityInfoContext();
-        
+
         List<string> parameterList = new();
 
         if (isGeneric) {
             Type typeOfSystemType = typeof(Type);
             TypeDescriptor systemTypeTypeDescriptor = typeOfSystemType.GetTypeDescriptor(typeDescriptorRegistry);
             string systemTypeTypeName = typeOfSystemType.GetFullNameOrName();
-            
+
             string nativeSystemTypeTypeName = systemTypeTypeDescriptor.GetTypeName(
-                CodeLanguage.Kotlin, 
+                CodeLanguage.Kotlin,
                 true,
                 Nullability.NonNullable
             );
-            
+
             foreach (var genericArgumentType in genericArguments) {
                 string parameterName = genericArgumentType.Name.EscapedKotlinName();
 
-                string parameterString = onlyWriteParameterNames 
-                    ? parameterName 
+                string parameterString = onlyWriteParameterNames
+                    ? parameterName
                     : $"{parameterName}: {nativeSystemTypeTypeName} /* {systemTypeTypeName} */";
-            
+
                 parameterList.Add(parameterString);
             }
         }
 
         var isExtensionMethod = syntaxWriterConfiguration?.IsExtensionMethod ?? false;
         var firstParameter = true;
-        
+
         foreach (var parameter in parameters) {
             if (firstParameter) {
                 firstParameter = false;
-            
+
                 if (isExtensionMethod) {
                     continue;
                 }
             }
-            
+
             bool isOutParameter = parameter.IsOut;
             bool isInParameter = parameter.IsIn;
-            
+
             Type parameterType = parameter.ParameterType;
-            
+
             bool isByRefParameter = parameterType.IsByRef;
 
             if (isByRefParameter) {
                 parameterType = parameterType.GetNonByRefType();
             }
-            
+
             bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
-            
+
             if (isGenericParameterType) {
                 parameterType = typeof(object);
             }
-            
+
             bool isGenericArrayParameterType = false;
             Type? arrayType = parameterType.GetElementType();
-                    
+
             if (parameterType.IsArray &&
                 arrayType is not null &&
                 (arrayType.IsGenericParameter || arrayType.IsGenericMethodParameter)) {
@@ -1641,7 +1641,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             if (isGenericArrayParameterType) {
                 parameterType = typeof(Array);
             }
-            
+
             bool isNotNull = false;
             bool isArrayElementNotNull = false;
 
@@ -1662,7 +1662,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                     isArrayElementNotNull = parameterElementTypeNullability.ReadState == NullabilityState.NotNull;
                 }
             }
-            
+
             TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
 
             string unmanagedParameterTypeName = parameterTypeDescriptor.GetTypeName(
@@ -1684,7 +1684,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             }
 
             string parameterString;
-            
+
             if (onlyWriteParameterNames) {
                 if (writeModifiersForInvocation) {
                     // TODO
@@ -1694,9 +1694,9 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                     parameterString = parameterName;
                 }
             } else {
-                parameterString = $"{parameterName}: {unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */";    
+                parameterString = $"{parameterName}: {unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */";
             }
-            
+
             parameterList.Add(parameterString);
         }
 
@@ -1707,9 +1707,9 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             if (setterOrEventHandlerType == null) {
                 throw new Exception("Setter or Event Handler Type may not be null");
             }
-            
+
             TypeDescriptor setterOrEventHandlerTypeDescriptor = setterOrEventHandlerType.GetTypeDescriptor(typeDescriptorRegistry);
-            
+
             string cSetterOrEventHandlerTypeName = setterOrEventHandlerTypeDescriptor.GetTypeName(
                 CodeLanguage.Kotlin,
                 true,
@@ -1722,7 +1722,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             string parameterString = onlyWriteParameterNames
                 ? parameterName
                 : $"{parameterName}: {cSetterOrEventHandlerTypeName} /* {setterOrEventHandlerType.GetFullNameOrName()} */";
-            
+
             parameterList.Add(parameterString);
         }
 
@@ -1730,7 +1730,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
         return parametersString;
     }
-    
+
     internal static string WriteParameterConversions(
         CodeLanguage sourceLanguage,
         CodeLanguage targetLanguage,
@@ -1751,7 +1751,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
     )
     {
         // TODO: This was copied from the Swift version of the same method and modified
-        
+
         string convertedParameterNameSuffix;
 
         if (sourceLanguage == CodeLanguage.Kotlin &&
@@ -1763,9 +1763,9 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         } else {
             throw new Exception("Unknown language pair");
         }
-        
+
         KotlinCodeBuilder sb = new();
-        
+
         convertedParameterNames = new();
         convertedGenericTypeArgumentNames = new();
         convertedGenericMethodArgumentNames = new();
@@ -1775,52 +1775,52 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             Type typeOfSystemType = typeof(Type);
             TypeDescriptor systemTypeTypeDescriptor = typeOfSystemType.GetTypeDescriptor(typeDescriptorRegistry);
             string systemTypeTypeName = typeOfSystemType.GetFullNameOrName();
-            
+
             string systemTypeTypeConversion = systemTypeTypeDescriptor.GetTypeConversion(
                 sourceLanguage,
                 targetLanguage,
                 Nullability.NotSpecified
             )!;
-    
+
             foreach (var genericArgumentType in genericTypeArguments) {
                 string name = genericArgumentType.Name;
-                
+
                 string convertedGenericArgumentName = $"{name}{convertedParameterNameSuffix}";
-                    
+
                 string fullTypeConversion = string.Format(systemTypeTypeConversion, name);
 
                 string typeConversionCode = Builder.Val(convertedGenericArgumentName)
                     .Value(fullTypeConversion)
                     .ToString();
-    
+
                 sb.AppendLine(typeConversionCode);
-                
+
                 convertedGenericTypeArgumentNames.Add(convertedGenericArgumentName);
             }
-            
+
             foreach (var genericArgumentType in genericMethodArguments) {
                 string name = genericArgumentType.Name;
-                
+
                 string convertedGenericArgumentName = $"{name}{convertedParameterNameSuffix}";
-                    
+
                 string fullTypeConversion = string.Format(systemTypeTypeConversion, name);
 
                 string typeConversionCode = Builder.Val(convertedGenericArgumentName)
                     .Value(fullTypeConversion)
                     .ToString();
-    
+
                 sb.AppendLine(typeConversionCode);
-                
+
                 convertedGenericMethodArgumentNames.Add(convertedGenericArgumentName);
             }
         }
-        
+
         var isExtensionMethod = syntaxWriterConfiguration?.IsExtensionMethod ?? false;
         var isFirstParameter = true;
 
         foreach (var parameter in parameters) {
             string extensionMethodTargetParameter = string.Empty;
-            
+
             if (isFirstParameter) {
                 isFirstParameter = false;
 
@@ -1828,19 +1828,19 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                     extensionMethodTargetParameter = "this";
                 }
             }
-            
-            string? parameterName = !string.IsNullOrEmpty(extensionMethodTargetParameter) 
-                ? extensionMethodTargetParameter 
+
+            string? parameterName = !string.IsNullOrEmpty(extensionMethodTargetParameter)
+                ? extensionMethodTargetParameter
                 : parameter.Name?.EscapedKotlinName();
-            
+
             if (parameterName is null) {
                 throw new Exception("Parameter without a name");
             }
-            
+
             Type parameterType = parameter.ParameterType;
             bool isOutParameter = parameter.IsOut;
             bool isInParameter = parameter.IsIn;
-            
+
             WriteParameterConversion(
                 sourceLanguage,
                 targetLanguage,
@@ -1860,7 +1860,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             if (!string.IsNullOrEmpty(typeConversionCode)) {
                 sb.AppendLine(typeConversionCode);
             }
-            
+
             convertedParameterNames.Add(convertedParameterName);
 
             if (!string.IsNullOrEmpty(typeBackConversionCode)) {
@@ -1876,7 +1876,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             Type parameterType = setterOrEventHandlerType ?? throw new Exception("No setter or event handler type");
             const bool isOutParameter = false;
             const bool isInParameter = false;
-            
+
             WriteParameterConversion(
                 sourceLanguage,
                 targetLanguage,
@@ -1896,9 +1896,9 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             if (!string.IsNullOrEmpty(typeConversionCode)) {
                 sb.AppendLine(typeConversionCode);
             }
-            
+
             convertedParameterNames.Add(convertedParameterName);
-            
+
             if (!string.IsNullOrEmpty(typeBackConversionCode)) {
                 parameterTypeBackConversionCodes.Add(typeBackConversionCode);
             }
@@ -1906,7 +1906,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
         return sb.ToString();
     }
-    
+
     private static void WriteParameterConversion(
         CodeLanguage sourceLanguage,
         CodeLanguage targetLanguage,
@@ -1924,13 +1924,13 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
     )
     {
         // TODO: This was copied from the Swift version of the same method and modified
-        
+
         if (string.IsNullOrEmpty(parameterName)) {
-            throw new Exception("Parameter has no name");   
+            throw new Exception("Parameter has no name");
         }
-        
+
         var nullabilityContext = new NullabilityInfoContext();
-        
+
         string convertedParameterNameSuffix;
 
         if (sourceLanguage == CodeLanguage.Kotlin &&
@@ -1942,7 +1942,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         } else {
             throw new Exception("Unknown language pair");
         }
-        
+
         bool isByRefParameter = parameterType.IsByRef;
         bool isArrayType = parameterType.IsArray;
         bool isInOut = isOutParameter || isInParameter || isByRefParameter;
@@ -1950,7 +1950,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         if (isByRefParameter) {
             parameterType = parameterType.GetNonByRefType();
         }
-        
+
         bool isGenericParameterType = parameterType.IsGenericParameter || parameterType.IsGenericMethodParameter;
 
         if (!isByRefParameter &&
@@ -1968,11 +1968,11 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 }
             }
         }
-        
+
         TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
 
         Nullability parameterArrayElementNullability;
-        
+
         if (parameterInfo is not null) {
             var nullabilityInfoContext = new NullabilityInfoContext();
             var parameterNullabilityA = nullabilityInfoContext.Create(parameterInfo);
@@ -1989,51 +1989,51 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         } else {
             parameterArrayElementNullability = Nullability.NotSpecified;
         }
-        
+
         string parameterNameForConversion = parameterName;
-            
+
         if (parameterName.StartsWith("`") &&
             parameterName.EndsWith("`")) {
             parameterNameForConversion = parameterName.Trim('`');
         }
-        
+
         string? typeConversion = parameterTypeDescriptor.GetTypeConversion(
             sourceLanguage,
             targetLanguage,
             parameterArrayElementNullability
         );
-        
+
         string optionalString;
-                
+
         if (sourceLanguage == CodeLanguage.Kotlin &&
             targetLanguage == CodeLanguage.KotlinJNA) {
             // bool isNotNull = false;
-    
+
             if ((typeDescriptorRegistry.GetTypeDescriptor(parameterType)?.RequiresNativePointer ?? false)) {
                 parameterNullability = Nullability.NonNullable;
             }
-    
+
             if (parameterInfo is not null &&
                 !isGeneric &&
                 !isGenericParameterType &&
                 parameterType.IsReferenceType()) {
                 bool isNotNull = false;
-                        
+
                 var parameterNullabilityInfo = nullabilityContext.Create(parameterInfo);
-                        
+
                 if (parameterNullabilityInfo.ReadState == parameterNullabilityInfo.WriteState) {
                     isNotNull = parameterNullabilityInfo.ReadState == NullabilityState.NotNull;
                 }
-                        
+
                 parameterNullability = isNotNull
                     ? Nullability.NonNullable
                     : parameterTypeDescriptor.Nullability;
             }
-    
+
             if (parameterNullability == Nullability.NotSpecified) {
                 parameterNullability = parameterTypeDescriptor.Nullability;
             }
-                    
+
             optionalString = parameterNullability.GetKotlinOptionalitySpecifier();
         } else {
             optionalString = string.Empty;
@@ -2046,13 +2046,13 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         } else {
             if (typeConversion != null) {
                 convertedParameterName = $"{parameterNameForConversion}{convertedParameterNameSuffix}";
-    
+
                 string fullTypeConversion = string.Format(typeConversion, $"{parameterName}{optionalString}");
-    
+
                 typeConversionCode = Builder.Val(convertedParameterName)
                     .Value(fullTypeConversion)
                     .ToString();
-                
+
                 typeBackConversionCode = null;
             } else {
                 typeConversionCode = null;

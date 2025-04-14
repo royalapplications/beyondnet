@@ -5,7 +5,7 @@ public struct SwiftClosureDeclaration
     public string Parameters { get; }
     public bool Throws { get; }
     public string? ReturnTypeName { get; }
-    
+
     public SwiftClosureDeclaration(
         string parameters,
         bool throws,
@@ -16,7 +16,7 @@ public struct SwiftClosureDeclaration
         Throws = throws;
 
         ReturnTypeName = !string.IsNullOrEmpty(returnTypeName)
-            ? returnTypeName 
+            ? returnTypeName
             : null;
     }
 

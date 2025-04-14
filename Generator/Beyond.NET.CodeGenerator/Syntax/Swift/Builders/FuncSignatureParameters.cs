@@ -15,7 +15,7 @@ public struct FuncSignatureParameters
 
         return this;
     }
-    
+
     public FuncSignatureParameters AddParameter(
         string label,
         string? name,
@@ -28,7 +28,7 @@ public struct FuncSignatureParameters
             typeName
         ));
     }
-    
+
     public FuncSignatureParameters AddParameter(
         string label,
         string typeName
@@ -40,7 +40,7 @@ public struct FuncSignatureParameters
         ));
     }
     #endregion Add Parameter
-    
+
     #region Build
     public SwiftFuncSignatureParameters Build()
     {
@@ -48,10 +48,10 @@ public struct FuncSignatureParameters
 
         foreach (var parameter in m_parameters) {
             var convertedParameter = parameter.Build();
-            
+
             parameters.Add(convertedParameter);
         }
-        
+
         return new(parameters);
     }
 

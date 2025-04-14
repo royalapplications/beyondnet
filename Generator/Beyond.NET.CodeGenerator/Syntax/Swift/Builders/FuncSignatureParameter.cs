@@ -7,7 +7,7 @@ public struct FuncSignatureParameter
     private readonly string m_label;
     private readonly string? m_name;
     private readonly string m_typeName;
-    
+
     public FuncSignatureParameter
     (
         string label,
@@ -19,7 +19,7 @@ public struct FuncSignatureParameter
         m_name = name;
         m_typeName = typeName;
     }
-    
+
     public FuncSignatureParameter
     (
         string label,
@@ -30,7 +30,7 @@ public struct FuncSignatureParameter
         m_name = null;
         m_typeName = typeName;
     }
-    
+
     #region Build
     public SwiftFuncSignatureParameter Build()
     {

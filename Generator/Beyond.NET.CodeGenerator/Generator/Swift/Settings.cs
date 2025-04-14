@@ -4,6 +4,6 @@ public class Settings: Generator.Settings
 {
     public Settings()
     {
-        
+
     }
 }

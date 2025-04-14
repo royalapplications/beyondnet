@@ -12,7 +12,7 @@ public struct Initializer
     private string? m_parameters = null;
     private bool m_throws = false;
     private string? m_implementation = null;
-    
+
     public Initializer() { }
 
     #region Convenience
@@ -23,7 +23,7 @@ public struct Initializer
         return this;
     }
     #endregion Convenience
-    
+
     #region Failable
     public Initializer Failable(bool failable = true)
     {
@@ -32,15 +32,15 @@ public struct Initializer
         return this;
     }
     #endregion Failable
-    
+
     #region Visibility
     public Initializer Visibility(SwiftVisibilities visibility)
     {
         m_visibility = visibility;
-        
+
         return this;
     }
-    
+
     public Initializer Open()
     {
         return Visibility(SwiftVisibilities.Open);
@@ -50,17 +50,17 @@ public struct Initializer
     {
         return Visibility(SwiftVisibilities.Public);
     }
-    
+
     public Initializer Internal()
     {
         return Visibility(SwiftVisibilities.Internal);
     }
-    
+
     public Initializer Private()
     {
         return Visibility(SwiftVisibilities.Private);
     }
-    
+
     public Initializer FilePrivate()
     {
         return Visibility(SwiftVisibilities.FilePrivate);
@@ -75,7 +75,7 @@ public struct Initializer
         return this;
     }
     #endregion Parameters
-    
+
     #region Throws
     public Initializer Throws(bool throws = true)
     {
@@ -84,7 +84,7 @@ public struct Initializer
         return this;
     }
     #endregion Throws
-    
+
     #region Implementation
     public Initializer Implementation([StringSyntax("Swift")] string? implementation = null)
     {
@@ -93,7 +93,7 @@ public struct Initializer
         return this;
     }
     #endregion Implementation
-    
+
     #region Build
     public SwiftInitDeclaration Build()
     {
@@ -112,7 +112,7 @@ public struct Initializer
         return Build()
             .ToString();
     }
-    
+
     public string ToIndentedString(int indentationLevel)
     {
         return Build()

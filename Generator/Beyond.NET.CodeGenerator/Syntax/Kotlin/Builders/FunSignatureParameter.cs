@@ -6,7 +6,7 @@ public struct FunSignatureParameter
 {
     private readonly string m_name;
     private readonly string m_typeName;
-    
+
     public FunSignatureParameter
     (
         string name,
@@ -16,7 +16,7 @@ public struct FunSignatureParameter
         m_name = name;
         m_typeName = typeName;
     }
-    
+
     #region Build
     public KotlinFunSignatureParameter Build()
     {

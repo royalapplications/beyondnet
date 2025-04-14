@@ -43,7 +43,7 @@ public class TypeCollector
         typeof(System.Runtime.InteropServices.GCHandle),
         typeof(System.ReadOnlySpan<byte>)
     };
-    
+
     private static readonly Type[] UNSUPPORTED_TYPES = new [] {
         typeof(System.Runtime.CompilerServices.DefaultInterpolatedStringHandler),
         typeof(System.Runtime.InteropServices.ComTypes.ITypeInfo),
@@ -77,7 +77,7 @@ public class TypeCollector
     private readonly Type[] m_excludedTypes;
     private readonly HashSet<string> m_excludedFullAssemblyNames;
     private readonly HashSet<string> m_excludedSimpleAssemblyNames;
-    
+
     public TypeCollector(
         Assembly? assembly,
         TypeCollectorSettings settings
@@ -85,7 +85,7 @@ public class TypeCollector
     {
         List<Type> whitelist = new(INCLUDED_TYPES);
         whitelist.AddRange(settings.IncludedTypes);
-        
+
         List<Type> blacklist = new(UNSUPPORTED_TYPES);
         blacklist.AddRange(settings.ExcludedTypes);
 
@@ -94,7 +94,7 @@ public class TypeCollector
 
         m_excludedFullAssemblyNames = settings.ExcludedFullAssemblyNames;
         m_excludedSimpleAssemblyNames = settings.ExcludedSimpleAssemblyNames;
-        
+
         m_assembly = assembly;
         EnableGenericsSupport = settings.EnableGenericsSupport;
     }
@@ -105,7 +105,7 @@ public class TypeCollector
         unsupportedTypes = new();
 
         List<Type> typesToCollect = new(m_includedTypes);
-        
+
         var assemblyTypes = m_assembly?.ExportedTypes;
 
         if (assemblyTypes is not null) {
@@ -132,32 +132,32 @@ public class TypeCollector
         if (m_excludedTypes.Contains(type) &&
             !m_includedTypes.Contains(type)) {
             unsupportedTypes[type] = "Excluded";
-            
+
             return;
         }
 
         var assemblyName = type.Assembly.GetName();
-        
+
         var fullNameOfAssemblyName = assemblyName.FullName;
-        
+
         if (m_excludedFullAssemblyNames.Contains(fullNameOfAssemblyName)) {
             unsupportedTypes[type] = $"Excluded by assembly name '{fullNameOfAssemblyName}'";
 
             return;
         }
-        
+
         var nameOfAssemblyName = assemblyName.Name;
-        
+
         if (!string.IsNullOrEmpty(nameOfAssemblyName) &&
             m_excludedSimpleAssemblyNames.Contains(nameOfAssemblyName)) {
             unsupportedTypes[type] = $"Excluded by assembly name '{nameOfAssemblyName}'";
 
             return;
         }
-        
+
         if (!IsSupportedType(type, out string? unsupportedReason)) {
             unsupportedTypes[type] = unsupportedReason ?? string.Empty;
-            
+
             return;
         }
 
@@ -189,7 +189,7 @@ public class TypeCollector
 
         if (!added) {
             // Already added, so skip this type
-            
+
             return;
         }
 
@@ -222,13 +222,13 @@ public class TypeCollector
                 unsupportedTypes
             );
         } else {
-            BindingFlags getMembersFlags = BindingFlags.Public | 
+            BindingFlags getMembersFlags = BindingFlags.Public |
                                            BindingFlags.DeclaredOnly |
                                            BindingFlags.Instance |
                                            BindingFlags.Static;
-    
+
             var memberInfos = type.GetMembers(getMembersFlags);
-    
+
             foreach (var memberInfo in memberInfos) {
                 CollectMember(
                     memberInfo,
@@ -248,30 +248,30 @@ public class TypeCollector
         switch (memberInfo.MemberType) {
             case MemberTypes.Constructor:
                 CollectConstructor((ConstructorInfo)memberInfo, collectedTypes, unsupportedTypes);
-                
+
                 break;
             case MemberTypes.Method:
                 CollectMethod((MethodInfo)memberInfo, collectedTypes, unsupportedTypes);
-                
+
                 break;
             case MemberTypes.Property:
                 CollectProperty((PropertyInfo)memberInfo, collectedTypes, unsupportedTypes);
-                
+
                 break;
             case MemberTypes.Field:
                 CollectField((FieldInfo)memberInfo, collectedTypes, unsupportedTypes);
-                
+
                 break;
             case MemberTypes.Event:
                 CollectEvent((EventInfo)memberInfo, collectedTypes, unsupportedTypes);
-                
+
                 break;
         }
     }
 
     private void CollectConstructor(
         ConstructorInfo constructorInfo,
-        HashSet<Type> collectedTypes, 
+        HashSet<Type> collectedTypes,
         Dictionary<Type, string> unsupportedTypes
     )
     {
@@ -281,7 +281,7 @@ public class TypeCollector
             CollectParameter(parameterInfo, collectedTypes, unsupportedTypes);
         }
     }
-    
+
     private void CollectMethod(
         MethodInfo methodInfo,
         HashSet<Type> collectedTypes,
@@ -291,7 +291,7 @@ public class TypeCollector
         Type returnType = methodInfo.ReturnType;
 
         CollectType(returnType, collectedTypes, unsupportedTypes);
-        
+
         var parameterInfos = methodInfo.GetParameters();
 
         foreach (var parameterInfo in parameterInfos) {
@@ -310,14 +310,14 @@ public class TypeCollector
         if (invokeMethod is null) {
             return;
         }
-        
+
         CollectMethod(
             invokeMethod,
             collectedTypes,
             unsupportedTypes
         );
     }
-    
+
     private void CollectProperty(
         PropertyInfo propertyInfo,
         HashSet<Type> collectedTypes,
@@ -328,7 +328,7 @@ public class TypeCollector
 
         CollectType(propertyType, collectedTypes, unsupportedTypes);
     }
-    
+
     private void CollectField(
         FieldInfo fieldInfo,
         HashSet<Type> collectedTypes,
@@ -339,7 +339,7 @@ public class TypeCollector
 
         CollectType(fieldType, collectedTypes, unsupportedTypes);
     }
-    
+
     private void CollectEvent(
         EventInfo eventInfo,
         HashSet<Type> collectedTypes,
@@ -368,14 +368,14 @@ public class TypeCollector
     {
         return IsSupportedType(type, out _);
     }
-    
+
     public bool IsSupportedType(
         Type type,
         out string? unsupportedReason
     )
     {
         unsupportedReason = null;
-        
+
         if (type.IsByRef) {
             Type nonByRefType = type.GetNonByRefType();
 
@@ -384,7 +384,7 @@ public class TypeCollector
 
                 if (!isNonByRefTypeSupported) {
                     unsupportedReason = innerUnsupportedReason;
-                    
+
                     return false;
                 }
             }
@@ -405,7 +405,7 @@ public class TypeCollector
         //     unsupportedReason = $"Is Nullable Value Type ({nullableValueType.FullName}?)";
         //     return false;
         // }
-        
+
         if (isNullableValueType &&
             !isNullableStruct) {
             unsupportedReason = $"Is Nullable Value Type, but not a struct ({nullableValueType?.FullName}?)";
@@ -427,7 +427,7 @@ public class TypeCollector
             unsupportedReason = "Is Generic Delegate Type";
             return false;
         }
-        
+
         // TODO: Generic Types as arguments, properties, etc.
         if (!isNullableValueType &&
             !isReadOnlySpanOfByte &&
@@ -438,7 +438,7 @@ public class TypeCollector
                 unsupportedReason = "Is unsupported Type";
                 return false;
             }
-            
+
             if (type.ContainsNonConstructedGenericTypes()) {
                 unsupportedReason = "Is Constructed Generic Type with non-constructed generic types";
                 return false;
@@ -460,7 +460,7 @@ public class TypeCollector
                     return false;
                 } else if (elementType.IsInterface) {
                     // TODO: Skipped for now because of problems with DNArray<T> in Swift (maybe Kotlin as well; C should be fine)
-                    
+
                     unsupportedReason = "Is Array of Interface Type";
                     return false;
                 }
@@ -486,28 +486,28 @@ public class TypeCollector
 
             if (invokeMethod is not null) {
                 var delegateReturnType = invokeMethod.ReturnType;
-    
+
                 if (!IsSupportedType(delegateReturnType)) {
                     unsupportedReason = "Unsupported delegate return type";
                     return false;
                 }
-                
+
                 var delegateParameters = invokeMethod.GetParameters();
-    
+
                 foreach (var delegateParameter in delegateParameters) {
                     if (!IsSupportedType(delegateParameter.ParameterType)) {
                         unsupportedReason = "Unsupported delegate paramter type";
-                        return false;        
+                        return false;
                     }
                 }
             }
         }
-            
+
         if (m_excludedTypes.Contains(type)) {
             unsupportedReason = "Is unsupported Type";
             return false;
         }
 
         return true;
-    } 
+    }
 }

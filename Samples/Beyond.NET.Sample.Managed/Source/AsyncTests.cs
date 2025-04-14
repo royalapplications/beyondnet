@@ -25,7 +25,7 @@ public class AsyncTests
     )
     {
         var task = Task<int>.Factory.StartNew(() => transformerDelegate(number1, number2));
-        
+
         var result = await task;
 
         return result;

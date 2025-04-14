@@ -7,10 +7,10 @@ namespace Beyond.NET.CodeGenerator.Syntax;
 public class State
 {
     public Settings? Settings { get; init; }
-    
+
     private List<GeneratedMember> m_generatedMembers = new();
     public IEnumerable<GeneratedMember> GeneratedMembers => m_generatedMembers;
-    
+
     private List<Type> m_skippedTypes = new();
     public IEnumerable<Type> SkippedTypes => m_skippedTypes;
 
@@ -23,7 +23,7 @@ public class State
     {
         CSharpUnmanagedResult = cSharpUnmanagedResult ?? throw new ArgumentNullException(nameof(cSharpUnmanagedResult));
     }
-    
+
     public State(
         Result cSharpUnmanagedResult,
         Result cResult
@@ -44,7 +44,7 @@ public class State
             member,
             mayThrow
         );
-        
+
         m_generatedMembers.Add(generatedMember);
 
         return generatedMember;
@@ -63,9 +63,9 @@ public class State
             member,
             mayThrow
         );
-        
+
         generatedMember.SetGeneratedName(generatedName, generatedNameLanguage);
-        
+
         return generatedMember;
     }
 
@@ -122,10 +122,10 @@ public class State
     public IEnumerable<GeneratedMember> GetGeneratedMembersThatAreExtensions()
     {
         List<GeneratedMember> extensionMembers = new();
-        
+
         foreach (var generatedMember in GeneratedMembers) {
             MethodBase? methodBase = generatedMember.Member as MethodBase;
-            
+
             if (methodBase is null) {
                 continue;
             }
@@ -135,7 +135,7 @@ public class State
             if (declaringType is null) {
                 continue;
             }
-            
+
             if (declaringType.IsGenericType ||
                 declaringType.IsNested ||
                 !declaringType.IsSealed ||
@@ -148,7 +148,7 @@ public class State
             if (parameters.Length < 1) {
                 continue;
             }
-            
+
             extensionMembers.Add(generatedMember);
         }
 

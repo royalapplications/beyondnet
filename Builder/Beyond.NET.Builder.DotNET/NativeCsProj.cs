@@ -10,23 +10,23 @@ public class NativeCsProj
     (
         string iOSSDKPath,
         string iOSSimulatorSDKPath,
-        
+
         string MinMacOSVersion,
         string MiniOSVersion,
 
         string? SwiftLibraryFilePathFormat,
         string? SymbolsFilePathFormat,
-        
+
         string? ModuleMapFilePath
     );
-    
+
     public string TargetFramework { get; }
     public string ProductName { get; }
     public string TargetAssemblyFilePath { get; }
     public string[] AssemblyReferences { get; }
     public AppleSpecificSettings? AppleSettings { get; }
     public bool StripSymbols { get; }
-    
+
     private string OutputProductName => ProductName;
 
     public NativeCsProj(
@@ -50,24 +50,24 @@ public class NativeCsProj
     {
         // TODO: Disabled for now to get faster build times
         const string nullable = "disable";
-        
+
         string iOSSDKPath = AppleSettings?.iOSSDKPath ?? string.Empty;
         string iOSSimulatorSDKPath = AppleSettings?.iOSSimulatorSDKPath ?? string.Empty;
 
         string swiftLibraryFilePathFormat = AppleSettings?.SwiftLibraryFilePathFormat ?? string.Empty;
         string symbolsFilePathFormat = AppleSettings?.SymbolsFilePathFormat ?? string.Empty;
         string moduleMapFilePath = AppleSettings?.ModuleMapFilePath ?? string.Empty;
-        
+
         string minMacOSVersion = AppleSettings?.MinMacOSVersion ?? "1.0";
         string miniOSVersion = AppleSettings?.MiniOSVersion ?? "1.0";
-        
+
         bool mixInSwift = !string.IsNullOrEmpty(swiftLibraryFilePathFormat) &&
                           !string.IsNullOrEmpty(moduleMapFilePath) &&
                           !string.IsNullOrEmpty(symbolsFilePathFormat);
 
         string swiftLibraryFilePath;
         string symbolsFilePath;
-        
+
         if (mixInSwift) {
             swiftLibraryFilePath = string.Format(swiftLibraryFilePathFormat, "$(RuntimeIdentifier)");
             symbolsFilePath = string.Format(symbolsFilePathFormat, "$(RuntimeIdentifier)");
@@ -77,7 +77,7 @@ public class NativeCsProj
         }
 
         StringBuilder assemblyReferencesXmlSb = new();
-        
+
         foreach (var assemblyReference in AssemblyReferences) {
             assemblyReferencesXmlSb.AppendLine($"<Reference Include=\"{assemblyReference}\" />");
         }
@@ -107,21 +107,21 @@ public class NativeCsProj
     }
 
     private const string TOKEN = "$__BEYOND_TOKEN__$";
-    
+
     private const string TOKEN_ASSEMBLY_NAME = $"{TOKEN}AssemblyName{TOKEN}";
     private const string TOKEN_TARGET_FRAMEWORK = $"{TOKEN}TargetFramework{TOKEN}";
     private const string TOKEN_NULLABLE = $"{TOKEN}Nullable{TOKEN}";
     private const string TOKEN_TARGET_ASSEMBLY_FILE_PATH = $"{TOKEN}TargetAssemblyFilePath{TOKEN}";
     private const string TOKEN_ASSEMBLY_REFERENCES = $"{TOKEN}AssemblyReferences{TOKEN}";
     private const string TOKEN_STRIP_SYMBOLS = $"{TOKEN}StripSymbols{TOKEN}";
-    
+
     private const string TOKEN_MIX_IN_SWIFT = $"{TOKEN}MixInSwift{TOKEN}";
     private const string TOKEN_MIN_MACOS_VERSION = $"{TOKEN}MinMacOSVersion{TOKEN}";
     private const string TOKEN_MIN_IOS_VERSION = $"{TOKEN}MiniOSVersion{TOKEN}";
     private const string TOKEN_SWIFT_LIBRARY_FILE_PATH = $"{TOKEN}SwiftLibraryFilePath{TOKEN}";
     private const string TOKEN_SYMBOLS_FILE_PATH = $"{TOKEN}SymbolsFilePath{TOKEN}";
     private const string TOKEN_MODULE_MAP_FILE_PATH = $"{TOKEN}ModuleMapFilePath{TOKEN}";
-    
+
     private const string TOKEN_IOS_SDK_PATH = $"{TOKEN}iOSSDKFilePath{TOKEN}";
     private const string TOKEN_IOS_SIMULATOR_SDK_PATH = $"{TOKEN}iOSSimulatorSDKFilePath{TOKEN}";
 
@@ -138,12 +138,12 @@ public class NativeCsProj
     <PublishAot>true</PublishAot>
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
     <EnablePreviewFeatures>true</EnablePreviewFeatures>
-    
+
     <StripSymbols>{TOKEN_STRIP_SYMBOLS}</StripSymbols>
 
     <!-- TODO: Disabled for now to get faster build times -->
     <Nullable>{TOKEN_NULLABLE}</Nullable>
-    
+
     <!-- Seems to not be required as long as we're providing the RuntimeIdentifier when calling dotnet publish/build -->
     <!-- <RuntimeIdentifiers>osx-x64;osx-arm64;linux-x64;ios-arm64;iossimulator-arm64;iossimulator-x64</RuntimeIdentifiers> -->
 
@@ -154,11 +154,11 @@ public class NativeCsProj
     <MacOSMinVersion>{TOKEN_MIN_MACOS_VERSION}</MacOSMinVersion>
     <iOSMinVersion>{TOKEN_MIN_IOS_VERSION}</iOSMinVersion>
   </PropertyGroup>
-  
+
   <!-- Compiler Customization -->
 
   <!-- Merge exported Symbols List -->
-  <Target Name="MergeExportedSymbolsList" 
+  <Target Name="MergeExportedSymbolsList"
           BeforeTargets="LinkNative"
           Condition="$(MixInSwift) And ($(RuntimeIdentifier.Contains('osx')) Or $(RuntimeIdentifier.Contains('ios')))">
     <Exec Command="echo '\n' >> '$(ExportsFile)'; cat '{TOKEN_SYMBOLS_FILE_PATH}' >> '$(ExportsFile)'" />
@@ -226,7 +226,7 @@ public class NativeCsProj
       </ItemGroup>
     </When>
   </Choose>
-  
+
   <!-- Item Excludes -->
   <PropertyGroup>
     <DefaultItemExcludes>$(DefaultItemExcludes);.gitignore;*.sln.DotSettings;</DefaultItemExcludes>

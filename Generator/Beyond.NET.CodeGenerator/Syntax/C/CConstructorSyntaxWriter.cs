@@ -16,9 +16,9 @@ public class CConstructorSyntaxWriter: CMethodSyntaxWriter, IConstructorSyntaxWr
     {
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
         GeneratedMember cSharpGeneratedMember = cSharpUnmanagedResult.GetGeneratedMember(constructor) ?? throw new Exception("No C# generated member");
-        
+
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
-        
+
         bool mayThrow = cSharpGeneratedMember.MayThrow;
         const MemberKind methodKind = MemberKind.Constructor;
 
@@ -29,7 +29,7 @@ public class CConstructorSyntaxWriter: CMethodSyntaxWriter, IConstructorSyntaxWr
         if (declaringType.IsAbstract) {
             return string.Empty;
         }
-        
+
         Type returnType = declaringType;
         IEnumerable<ParameterInfo> parameters = constructor.GetParameters();
 

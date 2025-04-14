@@ -27,15 +27,15 @@ public struct Enum
         return this;
     }
     #endregion RawTypeName
-    
+
     #region Visibility
     public Enum Visibility(SwiftVisibilities visibility)
     {
         m_visibility = visibility;
-        
+
         return this;
     }
-    
+
     public Enum Open()
     {
         return Visibility(SwiftVisibilities.Open);
@@ -45,23 +45,23 @@ public struct Enum
     {
         return Visibility(SwiftVisibilities.Public);
     }
-    
+
     public Enum Internal()
     {
         return Visibility(SwiftVisibilities.Internal);
     }
-    
+
     public Enum Private()
     {
         return Visibility(SwiftVisibilities.Private);
     }
-    
+
     public Enum FilePrivate()
     {
         return Visibility(SwiftVisibilities.FilePrivate);
     }
     #endregion Visibility
-    
+
     #region Implementation
     public Enum Implementation(string? implementation = null)
     {
@@ -70,7 +70,7 @@ public struct Enum
         return this;
     }
     #endregion Implementation
-    
+
     #region Build
     public SwiftEnumDeclaration Build()
     {
@@ -87,7 +87,7 @@ public struct Enum
         return Build()
             .ToString();
     }
-    
+
     public string ToIndentedString(int indentationLevel)
     {
         return Build()

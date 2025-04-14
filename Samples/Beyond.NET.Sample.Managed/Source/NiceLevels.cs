@@ -10,17 +10,17 @@ public enum NiceLevels: uint
     /// Not nice at all.
     /// </summary>
     NotNice,
-    
+
     /// <summary>
     /// A little bit nice.
     /// </summary>
     LittleBitNice,
-    
+
     /// <summary>
     /// Pretty nice.
     /// </summary>
     Nice,
-    
+
     /// <summary>
     /// Very nice.
     /// </summary>

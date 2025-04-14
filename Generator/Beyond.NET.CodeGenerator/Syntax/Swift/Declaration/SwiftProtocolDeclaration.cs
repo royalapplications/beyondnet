@@ -28,7 +28,7 @@ public struct SwiftProtocolDeclaration
     public override string ToString()
     {
         const string protocol = "protocol";
-        
+
         string visibilityString = Visibility.ToSwiftSyntaxString();
 
         string baseTypeAndProtocolConformanceDecl = !string.IsNullOrEmpty(BaseTypeName)
@@ -39,8 +39,8 @@ public struct SwiftProtocolDeclaration
             baseTypeAndProtocolConformanceDecl += !string.IsNullOrEmpty(baseTypeAndProtocolConformanceDecl)
                 ? $", {ProtocolConformance}"
                 : $": {ProtocolConformance}";
-        } 
-        
+        }
+
         string[] signatureComponents = [
             visibilityString,
             protocol,
@@ -50,10 +50,10 @@ public struct SwiftProtocolDeclaration
         string signature = SwiftFuncSignatureComponents.ComponentsToString(signatureComponents);
 
         string fullDecl;
-        
+
         if (!string.IsNullOrEmpty(Implementation)) {
             string indentedImpl = Implementation.IndentAllLines(1);
-            
+
             fullDecl = $"{signature} {{\n{indentedImpl}\n}}";
         } else {
             fullDecl = signature;

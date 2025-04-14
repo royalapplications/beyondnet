@@ -12,7 +12,7 @@ public class ModuleMap
             Private,
             Umbrella
         }
-        
+
         public Types Type { get; init; }
         public string Name { get; init; }
 
@@ -36,11 +36,11 @@ public class ModuleMap
                     prefix = string.Empty;
                     break;
             }
-            
+
             return $"{prefix}header \"{Name}\"";
         }
     }
-    
+
     public string Name { get; init; }
     public bool IsFramework { get; init; }
     public Header[]? Headers { get; init; }
@@ -56,7 +56,7 @@ public class ModuleMap
         string frameworkPrefix = IsFramework
             ? "framework "
             : string.Empty;
-        
+
         string moduleDecl = $"{frameworkPrefix}module {Name} {{\n";
 
         StringBuilder sb = new(moduleDecl);

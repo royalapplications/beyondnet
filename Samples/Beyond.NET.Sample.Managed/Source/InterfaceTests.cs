@@ -17,7 +17,7 @@ public readonly struct IInterface1_DelegateAdapter : IInterface1
     {
         _MethodInIInterface1_Adapter = methodInIInterface1_Adapter ?? throw new ArgumentNullException(nameof(methodInIInterface1_Adapter));
     }
-    
+
     public void MethodInIInterface1()
     {
         _MethodInIInterface1_Adapter();
@@ -41,7 +41,7 @@ public class TypeThatImplementsMultipleInterfaces: IInterface1, IInterface2, IIn
         Console.WriteLine($"{nameof(MethodInIInterface1)} called through {nameof(TypeThatImplementsMultipleInterfaces)}");
     }
 
-    private int _propertyInIInterface2; 
+    private int _propertyInIInterface2;
     public int PropertyInIInterface2
     {
         get
@@ -69,32 +69,32 @@ public class TypeThatUsesInterfaces
 {
     public delegate void DelegateThatReceivesIInterface1(IInterface1 interface1);
     public delegate IInterface1 DelegateThatReturnsIInterface1();
-    
+
     public void CallMethod1InIInterface1(IInterface1 interface1)
     {
         interface1.MethodInIInterface1();
     }
-    
+
     public void DelegateThatReceivesInterfaceTest(DelegateThatReceivesIInterface1 del, IInterface1 interface1)
     {
         del(interface1);
     }
-    
+
     public IInterface1 DelegateThatReturnsInterfaceTest(DelegateThatReturnsIInterface1 del)
     {
         return del();
     }
-    
+
     public void SetPropertyInIInterface2(IInterface2 interface2, int value)
     {
         interface2.PropertyInIInterface2 = value;
     }
-    
+
     public int GetPropertyInIInterface2(IInterface2 interface2)
     {
         return interface2.PropertyInIInterface2;
     }
-    
+
     public void CallMethod1InIInterface3(IInterface3 interface3)
     {
         interface3.MethodInIInterface3();
@@ -104,22 +104,22 @@ public class TypeThatUsesInterfaces
     {
         return new TypeThatImplementsMultipleInterfaces();
     }
-    
+
     public void GetTypeThatImplementsIInterface1AsOutParam(out IInterface1 interface1)
     {
         interface1 = new TypeThatImplementsMultipleInterfaces();
     }
-    
+
     public IInterface2 GetTypeThatImplementsIInterface2()
     {
         return new TypeThatImplementsMultipleInterfaces();
     }
-    
+
     public void GetTypeThatMaybeImplementsIInterface2AsOutParam(out IInterface2? interface2)
     {
         interface2 = null;
     }
-    
+
     public IInterface3 GetTypeThatImplementsIInterface3()
     {
         return new TypeThatImplementsMultipleInterfaces();
@@ -143,7 +143,7 @@ public abstract class BaseRegistrationData
     }
 }
 
-public sealed class RegistrationData1 : BaseRegistrationData, IRegistrationData  
+public sealed class RegistrationData1 : BaseRegistrationData, IRegistrationData
 {
     public static DataType RegisteredDataType { get; } = default;
 
@@ -154,7 +154,7 @@ public sealed class RegistrationData1 : BaseRegistrationData, IRegistrationData
     { }
 }
 
-public sealed class RegistrationData2 : BaseRegistrationData, IRegistrationData  
+public sealed class RegistrationData2 : BaseRegistrationData, IRegistrationData
 {
     public static DataType RegisteredDataType { get; } = default;
 
