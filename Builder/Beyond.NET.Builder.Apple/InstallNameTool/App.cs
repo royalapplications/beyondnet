@@ -6,7 +6,7 @@ public class App
 {
     private static string InstallNameToolPath => Which.GetAbsoluteCommandPath("install_name_tool");
     private static CLIApp InstallNameToolApp => new(InstallNameToolPath);
-    
+
     private const string ARGUMENT_ID = "-id";
 
     public static void ChangeId(
@@ -21,7 +21,7 @@ public class App
         };
 
         var result = InstallNameToolApp.Launch(args);
-        
+
         Exception? failure = result.FailureAsException;
 
         if (failure is not null) {

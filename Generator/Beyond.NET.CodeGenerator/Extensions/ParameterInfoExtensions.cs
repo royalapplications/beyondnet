@@ -14,7 +14,7 @@ public static class ParameterInfoExtensions
         var nullability = ctx.Create(parameterInfo);
         var readState = nullability.ReadState;
         var writeState = nullability.WriteState;
-        
+
         var otherNullability = ctx.Create(otherParameterInfo);
         var otherReadState = otherNullability.ReadState;
         var otherWriteState = otherNullability.WriteState;
@@ -23,7 +23,7 @@ public static class ParameterInfoExtensions
             !IsNullabilityStateCompatible(readState, otherReadState)) {
             return false;
         }
-        
+
         if (writeState != otherWriteState &&
             !IsNullabilityStateCompatible(writeState, otherWriteState)) {
             return false;
@@ -40,7 +40,7 @@ public static class ParameterInfoExtensions
         bool isUnknown = state == NullabilityState.Unknown;
         bool isNullable = state == NullabilityState.Nullable;
         bool isNotNull = state == NullabilityState.NotNull;
-        
+
         bool isOtherUnknown = otherState == NullabilityState.Unknown;
         bool isOtherNullable = otherState == NullabilityState.Nullable;
         bool isOtherNotNull = otherState == NullabilityState.NotNull;

@@ -11,7 +11,7 @@ public class CLIApp
         public string? WorkingDirectory { get; }
         public int ExitCode { get; }
         public Exception? LaunchException { get; init; }
-        
+
         public string? StandardOut { get; init; }
         public string? StandardError { get; init; }
 
@@ -19,14 +19,14 @@ public class CLIApp
         {
             get {
                 Exception innerException;
-                
+
                 if (LaunchException is not null) {
                     innerException = LaunchException;
                 } else if (!string.IsNullOrEmpty(StandardError)) {
                     innerException = new Exception(StandardError);
                 } else if (ExitCode != 0) {
                     if (!string.IsNullOrEmpty(StandardOut)) {
-                        innerException = new Exception(StandardOut);    
+                        innerException = new Exception(StandardOut);
                     } else {
                         innerException = new Exception("Unknown Error");
                     }
@@ -43,7 +43,7 @@ public class CLIApp
                 }
 
                 var ex = new Exception(
-                    msg, 
+                    msg,
                     innerException
                 );
 
@@ -61,7 +61,7 @@ public class CLIApp
             WorkingDirectory = workingDirectory;
             ExitCode = exitCode;
         }
-        
+
         public Result(
             string invocation,
             string? workingDirectory,
@@ -76,7 +76,7 @@ public class CLIApp
             StandardOut = standardOut;
             StandardError = standardError;
         }
-        
+
         public Result(
             string invocation,
             string? workingDirectory,
@@ -91,27 +91,27 @@ public class CLIApp
     }
 
     private ILogger Logger => Services.Shared.LoggerService;
-    
+
     public string Command { get; init; }
 
     public CLIApp(string command)
     {
         Command = command;
     }
-    
+
     public Result Launch(
         string[]? arguments,
         string? workingDirectory = null
     )
     {
         int timeout = int.MaxValue;
-        
+
         var startInfo = MakeStartInfo(
             arguments,
             workingDirectory,
             out string invocationString
         );
-        
+
         string logMsg;
 
         if (!string.IsNullOrEmpty(workingDirectory)) {
@@ -119,7 +119,7 @@ public class CLIApp
         } else {
             logMsg = $"Running command \"{invocationString}\"";
         }
-        
+
         Logger.LogDebug(logMsg);
 
         try {
@@ -136,7 +136,7 @@ public class CLIApp
 
             using var stdOutWaitHandle = new AutoResetEvent(false);
             using var stdErrWaitHandle = new AutoResetEvent(false);
-            
+
             process.OutputDataReceived += (_, e) => {
                 if (e.Data is null) {
                     stdOutWaitHandle.Set();

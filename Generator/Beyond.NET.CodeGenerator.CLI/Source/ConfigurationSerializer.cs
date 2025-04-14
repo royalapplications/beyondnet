@@ -19,7 +19,7 @@ internal class ConfigurationSerializer
 
         return configuration;
     }
-    
+
     internal Configuration? DeserializeFromJsonFilePath(string jsonFilePath)
     {
         string jsonString = File.ReadAllText(jsonFilePath);

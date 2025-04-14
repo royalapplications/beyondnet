@@ -15,32 +15,32 @@ static class Program
         }
 
         ConfigurationSerializer serializer = new();
-        
-        Configuration configuration = serializer.DeserializeFromJsonFilePath(configFilePath) 
+
+        Configuration configuration = serializer.DeserializeFromJsonFilePath(configFilePath)
                                       ?? throw new Exception("Error while parsing configuration file.");
 
         CodeGeneratorDriver driver = new(configuration);
-        
+
         driver.Generate();
 
         return 0;
     }
-    
+
     private static void ShowUsage()
     {
         var assemblyInfo = typeof(Program).Assembly.GetName();
 
         const string productName = "Beyond.NET";
         string assemblyName = assemblyInfo.Name ?? "beyondnetgen";
-        
+
         Version? version = assemblyInfo.Version;
         string versionString = version?.ToString() ?? "N/A";
-        
+
         string usageText = $"""
 {productName} Version {versionString}
 Usage: {assemblyName} <PathToConfig.json>
 """;
-        
-        Console.WriteLine(usageText);    
+
+        Console.WriteLine(usageText);
     }
 }

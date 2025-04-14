@@ -12,14 +12,14 @@ readonly struct SwiftCodeBuilder
 
     internal SwiftCodeBuilder([StringSyntax("Swift")] string? value = null) : this(new StringBuilder(value))
     { }
-    
+
     private SwiftCodeBuilder(StringBuilder sb) => m_sb = sb;
-    
+
     internal SwiftCodeBuilder Append(char c) => new(m_sb.Append(c));
-    
+
     internal SwiftCodeBuilder Append([StringSyntax("Swift")] string value) => new(m_sb.Append(value));
-    
+
     internal SwiftCodeBuilder AppendLine([StringSyntax("Swift")] string? value = null) => new(m_sb.AppendLine(value));
-    
+
     public override string ToString() => m_sb.ToString();
 }

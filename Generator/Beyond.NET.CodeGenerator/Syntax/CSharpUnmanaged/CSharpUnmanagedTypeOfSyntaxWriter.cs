@@ -17,7 +17,7 @@ public class CSharpUnmanagedTypeOfSyntaxWriter: CSharpUnmanagedMethodSyntaxWrite
         if (type.IsVoid()) {
             return string.Empty;
         }
-        
+
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
 
         const bool mayThrow = false;

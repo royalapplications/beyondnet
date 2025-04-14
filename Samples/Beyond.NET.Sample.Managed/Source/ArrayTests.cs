@@ -8,15 +8,15 @@ public class ArrayTests
         { true, false }
     };
 
-    public bool[,] TwoDimensionalArrayOfBoolAsReturn() 
+    public bool[,] TwoDimensionalArrayOfBoolAsReturn()
         => TwoDimensionalArrayOfBool;
-    
+
     public void SetTwoDimensionalArrayOfBoolWithParameter(bool[,] twoDimensionalArrayOfBool)
         => TwoDimensionalArrayOfBool = twoDimensionalArrayOfBool;
-    
+
     public void TwoDimensionalArrayOfBoolAsOut(out bool[,] twoDimensionalArrayOfBool)
         => twoDimensionalArrayOfBool = TwoDimensionalArrayOfBool;
-    
+
     public void TwoDimensionalArrayOfBoolAsRef(ref bool[,] twoDimensionalArrayOfBool)
         => twoDimensionalArrayOfBool = TwoDimensionalArrayOfBool;
     #endregion TwoDimensionalArrayOfBool
@@ -32,16 +32,16 @@ public class ArrayTests
     public string?[] ArrayOfNullableString { get; set; } = {
         null, "a", "b", "c"
     };
-    
-    public string?[] ArrayOfNullableStringAsReturn() 
+
+    public string?[] ArrayOfNullableStringAsReturn()
         => ArrayOfNullableString;
-    
+
     public void SetArrayOfNullableStringWithParameter(string?[] arrayOfNullableString)
         => ArrayOfNullableString = arrayOfNullableString;
-    
+
     public void ArrayOfNullableStringAsOut(out string?[] arrayOfNullableString)
         => arrayOfNullableString = ArrayOfNullableString;
-    
+
     public void ArrayOfNullableStringAsRef(ref string?[] arrayOfNullableString)
         => arrayOfNullableString = ArrayOfNullableString;
     #endregion ArrayOfNullableString
@@ -76,7 +76,7 @@ public class ArrayTests
     public byte[] ArrayOfBytes { get; set; } = [
         byte.MinValue, 1, 2, byte.MaxValue
     ];
-    
+
     public sbyte[] ArrayOfSBytes { get; set; } = [
         SByte.MinValue, 1, 2, sbyte.MaxValue
     ];
@@ -87,7 +87,7 @@ public class ArrayTests
         new Cat(), new Dog()
     ];
     #endregion ArrayOfInterfaces
-    
+
     #region ArrayOfInterfaces
     public IAnimal?[] ArrayOfNullableInterfaces { get; set; } = [
         null, new Dog()

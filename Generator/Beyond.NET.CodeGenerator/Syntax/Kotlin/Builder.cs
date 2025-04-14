@@ -37,7 +37,7 @@ public struct Builder
             comment
         );
     }
-    
+
     // public static Builders.Class Class
     // (
     //     string name
@@ -87,7 +87,7 @@ public struct Builder
     //         name
     //     );
     // }
-    
+
     public static Builders.Fun Fun
     (
         string name
@@ -97,7 +97,7 @@ public struct Builder
             name
         );
     }
-    
+
     // public static Builders.Initializer Initializer()
     // {
     //     return new();
@@ -107,7 +107,7 @@ public struct Builder
     // {
     //     return new();
     // }
-    
+
     public static Builders.FunSignatureParameter FunSignatureParameter
     (
         string label,
@@ -119,12 +119,12 @@ public struct Builder
             typeName
         );
     }
-    
+
     public static Builders.FunSignatureParameters FunSignatureParameters()
     {
         return new();
     }
-    
+
     public static Builders.Variable Variable
     (
         KotlinVariableKinds variableKind,
@@ -136,7 +136,7 @@ public struct Builder
             name
         );
     }
-    
+
     public static Builders.Variable Val
     (
         string name
@@ -147,7 +147,7 @@ public struct Builder
             name
         );
     }
-    
+
     public static Builders.Variable Var
     (
         string name

@@ -16,16 +16,16 @@ public partial class BuiltInTypeDescriptors
                     { CodeLanguage.Kotlin, "Boolean" }
                 },
                 new() {
-                    { 
-                        new(CodeLanguage.CSharp, CodeLanguage.CSharpUnmanaged), 
+                    {
+                        new(CodeLanguage.CSharp, CodeLanguage.CSharpUnmanaged),
                         "{0}.ToCBool()"
                     }, {
-                        new(CodeLanguage.CSharpUnmanaged, CodeLanguage.CSharp), 
+                        new(CodeLanguage.CSharpUnmanaged, CodeLanguage.CSharp),
                         "{0}.ToBool()"
                     }
                 }
             );
-        
+
             return descriptor;
         }
     }

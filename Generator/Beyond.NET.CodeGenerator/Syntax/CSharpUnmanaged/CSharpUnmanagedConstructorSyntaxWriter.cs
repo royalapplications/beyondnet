@@ -10,11 +10,11 @@ public class CSharpUnmanagedConstructorSyntaxWriter: CSharpUnmanagedMethodSyntax
     {
         return Write((ConstructorInfo)@object, state, configuration);
     }
-    
+
     public string Write(ConstructorInfo constructor, State state, ISyntaxWriterConfiguration? configuration)
     {
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
-        
+
         const bool mayThrow = true;
         const MemberKind methodKind = MemberKind.Constructor;
         const bool addToState = true;
@@ -27,7 +27,7 @@ public class CSharpUnmanagedConstructorSyntaxWriter: CSharpUnmanagedMethodSyntax
         if (declaringType.IsAbstract) {
             return string.Empty;
         }
-        
+
         Type returnType = declaringType;
         IEnumerable<ParameterInfo> parameters = constructor.GetParameters();
 

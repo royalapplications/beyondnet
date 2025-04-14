@@ -15,7 +15,7 @@ public class HeaderFileSerializer
 
         return json;
     }
-    
+
     public HeaderFile DeserializeFromJson(string jsonString)
     {
         HeaderFile? headerFile = JsonSerializer.Deserialize(jsonString, ConfigurationMetadataOnlyContext.Default.HeaderFile);
@@ -26,7 +26,7 @@ public class HeaderFileSerializer
 
         return headerFile;
     }
-    
+
     public HeaderFile DeserializeFromJsonFilePath(string jsonFilePath)
     {
         string jsonString = File.ReadAllText(jsonFilePath);

@@ -3,7 +3,7 @@ namespace Beyond.NET.Builder.DotNET;
 public class Clean
 {
     private const string FLAG_CLEAN = "clean";
-    
+
     public static string Run(
         string workingDirectory,
         string? configuration
@@ -15,7 +15,7 @@ public class Clean
 
         if (!string.IsNullOrEmpty(configuration)) {
             string configArg = $"/p:Configuration={configuration}";
-            
+
             args.Add(configArg);
         }
 
@@ -23,7 +23,7 @@ public class Clean
             args.ToArray(),
             workingDirectory
         );
-        
+
         Exception? failure = result.FailureAsException;
 
         if (failure is not null) {

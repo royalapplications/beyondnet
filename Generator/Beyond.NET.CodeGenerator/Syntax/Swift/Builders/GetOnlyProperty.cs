@@ -7,13 +7,13 @@ public struct GetOnlyProperty
 {
     private readonly string m_name;
     private readonly string m_typeName;
-    
+
     private SwiftVisibilities m_visibility = SwiftVisibilities.None;
     private SwiftTypeAttachmentKinds m_typeAttachmentKind = SwiftTypeAttachmentKinds.Instance;
     private bool m_override = false;
     private bool m_throws = false;
     private string? m_implementation = null;
-    
+
     public GetOnlyProperty(
         string name,
         string typeName
@@ -27,10 +27,10 @@ public struct GetOnlyProperty
     public GetOnlyProperty Visibility(SwiftVisibilities visibility)
     {
         m_visibility = visibility;
-        
+
         return this;
     }
-    
+
     public GetOnlyProperty Open()
     {
         return Visibility(SwiftVisibilities.Open);
@@ -40,17 +40,17 @@ public struct GetOnlyProperty
     {
         return Visibility(SwiftVisibilities.Public);
     }
-    
+
     public GetOnlyProperty Internal()
     {
         return Visibility(SwiftVisibilities.Internal);
     }
-    
+
     public GetOnlyProperty Private()
     {
         return Visibility(SwiftVisibilities.Private);
     }
-    
+
     public GetOnlyProperty FilePrivate()
     {
         return Visibility(SwiftVisibilities.FilePrivate);
@@ -69,7 +69,7 @@ public struct GetOnlyProperty
     {
         return TypeAttachmentKind(SwiftTypeAttachmentKinds.Static);
     }
-    
+
     public GetOnlyProperty Class()
     {
         return TypeAttachmentKind(SwiftTypeAttachmentKinds.Class);
@@ -122,7 +122,7 @@ public struct GetOnlyProperty
         return Build()
             .ToString();
     }
-    
+
     public string ToIndentedString(int indentationLevel)
     {
         return Build()

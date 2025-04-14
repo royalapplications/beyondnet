@@ -10,7 +10,7 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 
     <!-- Disable no XML comment warnings -->
-    <NoWarn>CS1591</NoWarn> 
+    <NoWarn>CS1591</NoWarn>
   </PropertyGroup>
 
 </Project>

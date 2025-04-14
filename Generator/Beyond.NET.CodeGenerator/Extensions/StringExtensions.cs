@@ -72,7 +72,7 @@ internal static class StringExtensions
         "willSet",
         "unowned"
     };
-    
+
     private static readonly string[] KOTLIN_KEYWORDS = new[] {
         "val",
         "do"
@@ -87,7 +87,7 @@ internal static class StringExtensions
         if (string.IsNullOrEmpty(cSharpCaseName)) {
             return cSharpCaseName;
         }
-        
+
         string swiftCaseName = cSharpCaseName.FirstCharToLower();
 
         if (swiftCaseName.IsSwiftKeyword()) {
@@ -96,19 +96,19 @@ internal static class StringExtensions
 
         return swiftCaseName;
     }
-    
+
     internal static string FirstCharToLower(this string input)
     {
         if (string.IsNullOrEmpty(input)) {
             return string.Empty;
         }
-        
+
         char[] stringArray = input.ToCharArray();
-        
+
         if (char.IsUpper(stringArray[0])) {
             stringArray[0] = char.ToLower(stringArray[0]);
         }
-        
+
         return new string(stringArray);
     }
 
@@ -127,18 +127,18 @@ internal static class StringExtensions
         if (!input.IsSwiftKeyword()) {
             return input;
         }
-        
+
         string output = $"`{input}`";
 
         return output;
     }
-    
+
     internal static string EscapedSwiftTypeAliasTypeName(this string input)
     {
         if (!input.IsReservedSwiftTypeName()) {
             return input;
         }
-        
+
         string output = $"`{input}`";
 
         return output;
@@ -148,13 +148,13 @@ internal static class StringExtensions
     {
         return KOTLIN_KEYWORDS.Contains(input);
     }
-    
+
     internal static string EscapedKotlinName(this string input)
     {
         if (!input.IsKotlinKeyword()) {
             return input;
         }
-        
+
         string output = $"`{input}`";
 
         return output;

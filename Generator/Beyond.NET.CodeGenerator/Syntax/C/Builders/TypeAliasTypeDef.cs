@@ -7,7 +7,7 @@ public struct TypeAliasTypeDef
 {
     private readonly string m_aliasTypeName;
     private readonly string m_originalTypeName;
-    
+
     public TypeAliasTypeDef(
         string aliasTypeName,
         string originalTypeName
@@ -16,7 +16,7 @@ public struct TypeAliasTypeDef
         m_aliasTypeName = aliasTypeName;
         m_originalTypeName = originalTypeName;
     }
-    
+
     #region Build
     public CTypeAliasTypeDefDeclaration Build()
     {
@@ -31,7 +31,7 @@ public struct TypeAliasTypeDef
         return Build()
             .ToString();
     }
-    
+
     public string ToIndentedString(int indentationLevel)
     {
         return Build()

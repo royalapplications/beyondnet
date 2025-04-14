@@ -11,7 +11,7 @@ internal static class TypeExtensions
     {
         return type.GetTypeDescriptor(TypeDescriptorRegistry.Shared);
     }
-    
+
     internal static TypeDescriptor GetTypeDescriptor(this Type type, TypeDescriptorRegistry typeDescriptorRegistry)
     {
         return typeDescriptorRegistry.GetOrCreateTypeDescriptor(type);
@@ -36,7 +36,7 @@ internal static class TypeExtensions
 
         name = name
             .Replace("+", ".");
-        
+
         bool isGeneric = type.IsGenericType ||
                          type.IsGenericTypeDefinition;
 
@@ -61,12 +61,12 @@ internal static class TypeExtensions
             name += "<";
 
             int index = 0;
-            
+
             foreach (Type genericArgument in genericArguments) {
                 if (index > 0) {
                     name += ",";
                 }
-                
+
                 if (isConstructedGeneric) {
                     string argumentTypeName = genericArgument.GetFullNameOrName();
 
@@ -75,19 +75,19 @@ internal static class TypeExtensions
 
                 index++;
             }
-            
+
             name += ">";
         }
 
         return name;
     }
-    
+
     internal static string CTypeName(this Type type)
     {
         if (type.IsNullableValueType(out Type? valueType)) {
             type = valueType;
         }
-        
+
         string fullTypeName = type.GetFullNameOrName();
 
         string cTypeName = fullTypeName
@@ -122,7 +122,7 @@ internal static class TypeExtensions
 
         if (isGeneric) {
             int genericArgsCount = type.GetGenericArguments().Length;
-            
+
             int backtickIndex = cTypeName.IndexOf('`');
 
             if (backtickIndex > 0) {
@@ -134,7 +134,7 @@ internal static class TypeExtensions
             if (lessThanIndex > 0) {
                 cTypeName = cTypeName.Substring(0, lessThanIndex);
             }
-            
+
             cTypeName += "_A" + genericArgsCount;
         }
 
@@ -150,7 +150,7 @@ internal static class TypeExtensions
     {
         return type == typeof(bool);
     }
-    
+
     internal static bool IsVoid(this Type type)
     {
         return type == typeof(void);
@@ -163,9 +163,9 @@ internal static class TypeExtensions
 
     internal static bool IsGenericInAnyWay(this Type type, bool includeBaseTypes)
     {
-        bool isGeneric = type.IsGenericType || 
-                         type.IsConstructedGenericType || 
-                         type.IsGenericTypeDefinition || 
+        bool isGeneric = type.IsGenericType ||
+                         type.IsConstructedGenericType ||
+                         type.IsGenericTypeDefinition ||
                          type.IsGenericParameter;
 
         if (isGeneric) {
@@ -195,7 +195,7 @@ internal static class TypeExtensions
         if (!type.IsGenericType ||
             type.GetGenericTypeDefinition() != typeof(Nullable<>)) {
             valueType = null;
-            
+
             return false;
         }
 
@@ -212,7 +212,7 @@ internal static class TypeExtensions
     {
         return type == typeof(ReadOnlySpan<byte>);
     }
-    
+
     internal static bool IsStruct(this Type type)
     {
         return type.IsValueType &&
@@ -224,7 +224,7 @@ internal static class TypeExtensions
     internal static MethodInfo? GetDelegateInvokeMethod(this Type delegateType)
     {
         const string invokeMethodName = "Invoke";
-        
+
         MethodInfo? invokeMethod = delegateType.GetMethod(invokeMethodName);
 
         return invokeMethod;
@@ -236,7 +236,7 @@ internal static class TypeExtensions
     )
     {
         nonByRefTypeIsStruct = false;
-        
+
         if (!type.IsByRef) {
             return false;
         }
@@ -276,7 +276,7 @@ internal static class TypeExtensions
         if (type.IsGenericParameter) {
             return true;
         }
-        
+
         Type[] genericArgs = type.GetGenericArguments();
 
         foreach (Type genericArg in genericArgs) {
@@ -295,7 +295,7 @@ internal static class TypeExtensions
 
         return hasIt;
     }
-    
+
     internal static bool DoesAnyBaseTypeImplementInterface(
         this Type derivedType,
         Type interfaceType
@@ -307,12 +307,12 @@ internal static class TypeExtensions
 
         // Iterate through the base types
         Type? currentType = derivedType.BaseType;
-        
+
         while (currentType is not null) {
             if (currentType.GetInterfaces().Contains(interfaceType)) {
                 return true;
             }
-            
+
             currentType = currentType.BaseType;
         }
 

@@ -4,9 +4,9 @@ public class NullabilityTests
 {
     public NullabilityTests()
     {
-        
+
     }
-    
+
     public NullabilityTests(bool throwAnException)
     {
         if (throwAnException) {
@@ -18,7 +18,7 @@ public class NullabilityTests
     {
         return new NullabilityTests(throwAnException);
     }
-    
+
     public string NonNullableStringProperty { get; set; } = "Hello";
     public string NonNullableStringField = "Hello";
 
@@ -36,12 +36,12 @@ public class NullabilityTests
 
         return value;
     }
-    
+
     public string MethodWithNonNullableStringParameterThatThrows(string value)
     {
         throw new Exception("Expected Exception");
     }
-    
+
     public string? MethodWithNullableStringParameter(string? value)
     {
         return value;

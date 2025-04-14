@@ -10,7 +10,7 @@ namespace Beyond.NET.CodeGenerator.Syntax.CSharpUnmanaged;
 public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWriter, ITypeSyntaxWriter
 {
     public Settings Settings { get; }
-    
+
     private readonly Dictionary<MemberTypes, ICSharpUnmanagedSyntaxWriter> m_syntaxWriters = new() {
         { MemberTypes.Constructor, new CSharpUnmanagedConstructorSyntaxWriter() },
         { MemberTypes.Property, new CSharpUnmanagedPropertySyntaxWriter() },
@@ -26,12 +26,12 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
     {
         Settings = settings ?? throw new ArgumentNullException(nameof(settings));
     }
-    
+
     public string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
         return Write((Type)@object, state, configuration);
     }
-    
+
     public string Write(Type type, State state, ISyntaxWriterConfiguration? configuration)
     {
         if (type.IsPointer ||
@@ -42,23 +42,23 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
 
             return string.Empty;
         }
-        
+
         string? fullTypeName = type.FullName;
 
         if (fullTypeName == null) {
             return $"// Type \"{type.Name}\" was skipped. Reason: It has no full name.";
         }
-        
+
         string cTypeName = type.CTypeName();
 
         bool isDelegate = type.IsDelegate();
-        
+
         MethodInfo? delegateInvokeMethod = isDelegate
             ? type.GetDelegateInvokeMethod()
             : null;
-        
+
         CSharpCodeBuilder sb = new();
-        
+
         sb.AppendLine($"internal unsafe class {cTypeName}");
         sb.AppendLine("{");
 
@@ -114,7 +114,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
             null,
             typeCollectorSettings
         );
-        
+
         var memberCollector = new MemberCollector(type, typeCollector);
         var members = memberCollector.Collect(out Dictionary<MemberInfo, string> unsupportedMembers);
 
@@ -122,14 +122,14 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
             foreach (var kvp in unsupportedMembers) {
                 MemberInfo member = kvp.Key;
                 string reason = kvp.Value;
-    
+
                 string memberName = member.Name;
-    
+
                 sb.AppendLine($"\t// Unsupported Member \"{memberName}\": {reason}");
                 sb.AppendLine();
             }
         }
-        
+
         foreach (var member in members) {
             var memberType = member.MemberType;
 
@@ -142,7 +142,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
                 if (Settings.EmitUnsupported) {
                     sb.AppendLine($"\t// TODO: Unsupported Member Type \"{memberType}\"");
                 }
-                    
+
                 continue;
             }
 
@@ -151,14 +151,14 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
 
             sb.AppendLine(memberCode);
         }
-        
+
         WriteTypeOf(
             configuration,
             type,
             sb,
             state
         );
-        
+
         WriteDestructor(
             configuration,
             type,
@@ -218,7 +218,7 @@ public partial class CSharpUnmanagedTypeSyntaxWriter: ICSharpUnmanagedSyntaxWrit
 
         sb.AppendLine(code);
     }
-    
+
     private void WriteDestructor(
         ISyntaxWriterConfiguration? configuration,
         Type type,

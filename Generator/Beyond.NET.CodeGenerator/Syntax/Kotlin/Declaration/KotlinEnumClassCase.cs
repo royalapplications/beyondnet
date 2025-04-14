@@ -11,14 +11,14 @@ public struct KotlinEnumClassCase
     )
     {
         Name = !string.IsNullOrEmpty(name)
-            ? name 
+            ? name
             : throw new ArgumentOutOfRangeException(nameof(name));
-        
+
         UnderlyingValue = !string.IsNullOrEmpty(underlyingValue)
-            ? underlyingValue 
+            ? underlyingValue
             : throw new ArgumentOutOfRangeException(nameof(underlyingValue));
     }
-    
+
     public override string ToString()
     {
         var str = $"{Name}({UnderlyingValue})";

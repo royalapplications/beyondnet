@@ -32,7 +32,7 @@ public class Version
         }
 
         var versionSplit = version.Split(
-            '.', 
+            '.',
             StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries
         );
 

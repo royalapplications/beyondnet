@@ -45,7 +45,7 @@ public struct SwiftVariableDeclaration
             default:
                 throw new Exception("Unknown Variable Kind");
         }
-        
+
         string visibilityString = Visibility.ToSwiftSyntaxString();
         string typeAttachmentKindString = TypeAttachmentKind.ToSwiftSyntaxString();
 
@@ -58,7 +58,7 @@ public struct SwiftVariableDeclaration
         string valueAssignment = !string.IsNullOrEmpty(Value)
             ? $"= {Value}"
             : string.Empty;
-        
+
         string[] signatureComponents = [
             visibilityString,
             typeAttachmentKindString,
@@ -68,7 +68,7 @@ public struct SwiftVariableDeclaration
         ];
 
         string decl = SwiftFuncSignatureComponents.ComponentsToString(signatureComponents);
-        
+
         return decl;
     }
 }

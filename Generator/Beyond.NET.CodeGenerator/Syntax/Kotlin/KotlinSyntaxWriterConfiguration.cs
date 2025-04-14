@@ -7,7 +7,7 @@ public class KotlinSyntaxWriterConfiguration: ISyntaxWriterConfiguration
         KotlinBindings,
         JNA
     }
-    
+
     public enum ExtensionMethodKinds
     {
         None,
@@ -16,10 +16,10 @@ public class KotlinSyntaxWriterConfiguration: ISyntaxWriterConfiguration
     }
 
     public GenerationPhases GenerationPhase { get; set; } = GenerationPhases.KotlinBindings;
-    
+
     public ExtensionMethodKinds ExtensionMethodKind { get; set; } = ExtensionMethodKinds.None;
     public Type? ExtensionMethodType { get; set; } = null;
-    
-    public bool IsExtensionMethod => 
+
+    public bool IsExtensionMethod =>
         ExtensionMethodKind != ExtensionMethodKinds.None && ExtensionMethodType is not null;
 }

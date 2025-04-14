@@ -12,7 +12,7 @@ public struct SwiftFuncDeclaration
     public bool Throws { get; }
     public string? ReturnTypeName { get; }
     public string? Implementation { get; }
-    
+
     public SwiftFuncDeclaration(
         string name,
         SwiftVisibilities visibility,
@@ -25,9 +25,9 @@ public struct SwiftFuncDeclaration
     )
     {
         Name = !string.IsNullOrEmpty(name)
-            ? name 
+            ? name
             : throw new ArgumentOutOfRangeException(nameof(name));
-        
+
         Visibility = visibility;
         TypeAttachmentKind = typeAttachmentKind;
         IsOverride = isOverride;
@@ -37,7 +37,7 @@ public struct SwiftFuncDeclaration
         ReturnTypeName = !string.IsNullOrEmpty(returnTypeName)
             ? returnTypeName
             : null;
-        
+
         Implementation = !string.IsNullOrEmpty(implementation)
             ? implementation
             : null;
@@ -46,7 +46,7 @@ public struct SwiftFuncDeclaration
     public override string ToString()
     {
         const string func = "func";
-        
+
         string visibilityString = Visibility.ToSwiftSyntaxString();
         string typeAttachmentKindString = TypeAttachmentKind.ToSwiftSyntaxString();
 
@@ -75,10 +75,10 @@ public struct SwiftFuncDeclaration
         string signature = SwiftFuncSignatureComponents.ComponentsToString(signatureComponents);
 
         string fullFunc;
-        
+
         if (!string.IsNullOrEmpty(Implementation)) {
             string indentedImpl = Implementation.IndentAllLines(1);
-            
+
             fullFunc = $"{signature} {{\n{indentedImpl}\n}}";
         } else {
             fullFunc = signature;

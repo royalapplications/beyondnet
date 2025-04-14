@@ -16,11 +16,11 @@ public class CFieldSyntaxWriter: CMethodSyntaxWriter, IFieldSyntaxWriter
     public string Write(FieldInfo field, State state, ISyntaxWriterConfiguration? configuration)
     {
         const bool addToState = false;
-        
+
         TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
-        
+
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
-        
+
         GeneratedMember? generatedGetterMember = cSharpUnmanagedResult.GetGeneratedMember(field, MemberKind.FieldGetter);
         GeneratedMember? generatedSetterMember = cSharpUnmanagedResult.GetGeneratedMember(field, MemberKind.FieldSetter);
 
@@ -38,7 +38,7 @@ public class CFieldSyntaxWriter: CMethodSyntaxWriter, IFieldSyntaxWriter
 
         if (generatedGetterMember is not null) {
             bool mayThrow = generatedGetterMember.MayThrow;
-            
+
             string code = WriteMethod(
                 generatedGetterMember,
                 field,
@@ -55,7 +55,7 @@ public class CFieldSyntaxWriter: CMethodSyntaxWriter, IFieldSyntaxWriter
             );
 
             sb.AppendLine(code);
-            
+
             state.AddGeneratedMember(
                 MemberKind.FieldGetter,
                 field,
@@ -67,7 +67,7 @@ public class CFieldSyntaxWriter: CMethodSyntaxWriter, IFieldSyntaxWriter
 
         if (generatedSetterMember is not null) {
             bool mayThrow = generatedSetterMember.MayThrow;
-            
+
             string code = WriteMethod(
                 generatedSetterMember,
                 field,
@@ -84,7 +84,7 @@ public class CFieldSyntaxWriter: CMethodSyntaxWriter, IFieldSyntaxWriter
             );
 
             sb.AppendLine(code);
-            
+
             state.AddGeneratedMember(
                 MemberKind.FieldSetter,
                 field,

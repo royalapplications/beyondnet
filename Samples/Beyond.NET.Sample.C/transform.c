@@ -61,7 +61,7 @@ System_String_t transformer_transform(
 	int shouldUppercase = transformer->uppercase;
 
 	System_String_t transformedSystemString;
-	
+
 	if (shouldUppercase) { // Uppercase
 		// Call the .NET System.String.ToUpper method
 		transformedSystemString = System_String_ToUpper(

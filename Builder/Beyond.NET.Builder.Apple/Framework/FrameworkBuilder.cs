@@ -9,25 +9,25 @@ public record FrameworkBuilder
     string FrameworkBundleIdentifier,
     string LibraryFilePath,
     string OutputDirectoryPath,
-    
+
     bool BuildForMacOS,
-    
+
     string? ModuleMapFilePath,
     string? SwiftModuleDirectoryPath
 )
 {
 	public record Result(string FrameworkOutputDirectoryPath);
-	
+
     private static ILogger Logger => Services.Shared.LoggerService;
-    
+
     public Result Build()
     {
-	    string bundleName = $"{FrameworkName}.framework"; 
+	    string bundleName = $"{FrameworkName}.framework";
         string outputBundlePath = Path.Combine(OutputDirectoryPath, bundleName);
         string libraryName = FrameworkName;
 
 	    Logger.LogDebug($"Creating framework \"{FrameworkName}\" at \"{outputBundlePath}\"");
-	    
+
         const string versionsDirName = "Versions";
         const string versionsADirName = "A";
         const string versionsCurrentDirName = "Current";
@@ -38,16 +38,16 @@ public record FrameworkBuilder
         const string infoPlistFileName = "Info.plist";
         const string moduleMapFileName = "module.modulemap";
         string swiftModuleDirName = $"{FrameworkName}.{FileExtensions.SwiftModule}";
-        
+
         // Only relevant for macOS
         string versionsDirectoryPath = Path.Combine(outputBundlePath, versionsDirName);
-        
+
         // Only relevant for macOS
         string versionsADirectoryPath = Path.Combine(versionsDirectoryPath, versionsADirName);
-        
+
         // Only relevant for macOS
         string versionsCurrentDirectoryPath = Path.Combine(versionsDirectoryPath, versionsCurrentDirName);
-        
+
         string modulesDirectoryPath;
 
         if (BuildForMacOS) {
@@ -55,7 +55,7 @@ public record FrameworkBuilder
         } else {
 	        modulesDirectoryPath = Path.Combine(outputBundlePath, modulesDirName);
         }
-        
+
         // Only relevant for macOS
         string resourcesDirectoryPath = Path.Combine(versionsADirectoryPath, resourcesDirName);
 
@@ -69,7 +69,7 @@ public record FrameworkBuilder
 
         // Only relevant for macOS
         string modulesLinkDirectoryPath = Path.Combine(outputBundlePath, modulesDirName);
-        
+
         // Only relevant for macOS
         string resourcesLinkDirectoryPath = Path.Combine(outputBundlePath, resourcesDirName);
 
@@ -80,7 +80,7 @@ public record FrameworkBuilder
         } else {
 	        frameworkLibraryFilePath = Path.Combine(outputBundlePath, libraryName);
         }
-        
+
         // Only relevant for macOS
         string frameworkLibraryFileLinkPath = Path.Combine(outputBundlePath, libraryName);
 
@@ -96,9 +96,9 @@ public record FrameworkBuilder
         }
 
         Logger.LogDebug("Creating Framework Directory Structure");
-        
+
         Directory.CreateDirectory(outputBundlePath);
-        
+
         if (BuildForMacOS) {
 	        Directory.CreateDirectory(versionsDirectoryPath);
 	        Directory.CreateDirectory(versionsADirectoryPath);
@@ -107,7 +107,7 @@ public record FrameworkBuilder
 
 	        Directory.CreateSymbolicLink(versionsCurrentDirectoryPath, versionsADirName);
 	        Directory.CreateSymbolicLink(modulesLinkDirectoryPath, $"{versionsDirName}/{versionsCurrentDirName}/{modulesDirName}");
-	        Directory.CreateSymbolicLink(resourcesLinkDirectoryPath, $"{versionsDirName}/{versionsCurrentDirName}/{resourcesDirName}");   
+	        Directory.CreateSymbolicLink(resourcesLinkDirectoryPath, $"{versionsDirName}/{versionsCurrentDirName}/{resourcesDirName}");
         } else { // iOS-like
 	        Directory.CreateDirectory(modulesDirectoryPath);
         }
@@ -129,16 +129,16 @@ public record FrameworkBuilder
 		        true
 		    );
         }
-        
+
         Logger.LogDebug("Copying Framework library");
         File.Copy(LibraryFilePath, frameworkLibraryFilePath);
 
         if (BuildForMacOS) {
 			File.CreateSymbolicLink(frameworkLibraryFileLinkPath, $"{versionsDirName}/{versionsCurrentDirName}/{libraryName}");
         }
-        
+
         Logger.LogDebug($"Changing Framework library ID to \"{newFrameworkLibraryID}\"");
-        
+
         InstallNameTool.App.ChangeId(
 	        frameworkLibraryFilePath,
 	        newFrameworkLibraryID

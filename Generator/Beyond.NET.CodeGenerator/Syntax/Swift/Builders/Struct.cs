@@ -10,7 +10,7 @@ public struct Struct
     private string? m_protocolConformance = null;
     private SwiftVisibilities m_visibility = SwiftVisibilities.None;
     private string? m_implementation = null;
-    
+
     public Struct(
         string name
     )
@@ -26,15 +26,15 @@ public struct Struct
         return this;
     }
     #endregion ProtocolConformance
-    
+
     #region Visibility
     public Struct Visibility(SwiftVisibilities visibility)
     {
         m_visibility = visibility;
-        
+
         return this;
     }
-    
+
     public Struct Open()
     {
         return Visibility(SwiftVisibilities.Open);
@@ -44,23 +44,23 @@ public struct Struct
     {
         return Visibility(SwiftVisibilities.Public);
     }
-    
+
     public Struct Internal()
     {
         return Visibility(SwiftVisibilities.Internal);
     }
-    
+
     public Struct Private()
     {
         return Visibility(SwiftVisibilities.Private);
     }
-    
+
     public Struct FilePrivate()
     {
         return Visibility(SwiftVisibilities.FilePrivate);
     }
     #endregion Visibility
-    
+
     #region Implementation
     public Struct Implementation(string? implementation = null)
     {
@@ -69,7 +69,7 @@ public struct Struct
         return this;
     }
     #endregion Implementation
-    
+
     #region Build
     public SwiftStructDeclaration Build()
     {
@@ -86,7 +86,7 @@ public struct Struct
         return Build()
             .ToString();
     }
-    
+
     public string ToIndentedString(int indentationLevel)
     {
         return Build()

@@ -22,7 +22,7 @@ public static class Libtool
         if (noWarningForNoSymbols) {
             arguments.Add("-no_warning_for_no_symbols");
         }
-        
+
         var result = App.XCRunApp.Launch(
             arguments.ToArray(),
             workingDirectory

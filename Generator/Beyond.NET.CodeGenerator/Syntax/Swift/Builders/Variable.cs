@@ -31,7 +31,7 @@ public struct Variable
         return this;
     }
     #endregion TypeName
-    
+
     #region Value
     public Variable Value([StringSyntax("Swift")]string? value)
     {
@@ -40,15 +40,15 @@ public struct Variable
         return this;
     }
     #endregion Value
-    
+
     #region Visibility
     public Variable Visibility(SwiftVisibilities visibility)
     {
         m_visibility = visibility;
-        
+
         return this;
     }
-    
+
     public Variable Open()
     {
         return Visibility(SwiftVisibilities.Open);
@@ -58,23 +58,23 @@ public struct Variable
     {
         return Visibility(SwiftVisibilities.Public);
     }
-    
+
     public Variable Internal()
     {
         return Visibility(SwiftVisibilities.Internal);
     }
-    
+
     public Variable Private()
     {
         return Visibility(SwiftVisibilities.Private);
     }
-    
+
     public Variable FilePrivate()
     {
         return Visibility(SwiftVisibilities.FilePrivate);
     }
     #endregion Visibility
-    
+
     #region TypeAttachmentKind
     public Variable TypeAttachmentKind(SwiftTypeAttachmentKinds typeAttachmentKind)
     {
@@ -87,13 +87,13 @@ public struct Variable
     {
         return TypeAttachmentKind(SwiftTypeAttachmentKinds.Static);
     }
-    
+
     public Variable Class()
     {
         return TypeAttachmentKind(SwiftTypeAttachmentKinds.Class);
     }
     #endregion TypeAttachmentKind
-    
+
     #region Build
     public SwiftVariableDeclaration Build()
     {
@@ -112,7 +112,7 @@ public struct Variable
         return Build()
             .ToString();
     }
-    
+
     public string ToIndentedString(int indentationLevel)
     {
         return Build()

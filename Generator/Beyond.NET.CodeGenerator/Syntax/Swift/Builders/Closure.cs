@@ -8,9 +8,9 @@ public struct Closure
     private string? m_parameters = null;
     private bool m_throws = false;
     private string? m_returnTypeName = null;
-    
+
     public Closure() { }
-    
+
     #region Parameters
     public Closure Parameters(string? parameters = null)
     {
@@ -19,7 +19,7 @@ public struct Closure
         return this;
     }
     #endregion Parameters
-    
+
     #region Throws
     public Closure Throws(bool throws = true)
     {
@@ -37,7 +37,7 @@ public struct Closure
         return this;
     }
     #endregion ReturnTypeName
-    
+
     #region Build
     public SwiftClosureDeclaration Build()
     {
@@ -53,7 +53,7 @@ public struct Closure
         return Build()
             .ToString();
     }
-    
+
     public string ToIndentedString(int indentationLevel)
     {
         return Build()

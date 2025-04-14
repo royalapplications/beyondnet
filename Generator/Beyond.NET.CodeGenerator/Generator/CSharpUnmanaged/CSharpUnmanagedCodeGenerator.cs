@@ -6,12 +6,12 @@ namespace Beyond.NET.CodeGenerator.Generator.CSharpUnmanaged;
 public class CSharpUnmanagedCodeGenerator: ICodeGenerator
 {
     public Settings Settings { get; }
-    
+
     public CSharpUnmanagedCodeGenerator(Settings settings)
     {
         Settings = settings ?? throw new ArgumentNullException(nameof(settings));
     }
-    
+
     public Result Generate(
         IEnumerable<Type> types,
         Dictionary<Type, string> unsupportedTypes,
@@ -19,7 +19,7 @@ public class CSharpUnmanagedCodeGenerator: ICodeGenerator
     )
     {
         CSharpUnmanagedSyntaxWriterConfiguration? syntaxWriterConfiguration = new(Settings.TypeCollectorSettings!);
-        
+
         SourceCodeSection headerSection = writer.AddSection("Header");
         SourceCodeSection sharedCodeSection = writer.AddSection("Shared Code");
         SourceCodeSection unsupportedTypesSection = writer.AddSection("Unsupported Types");
@@ -35,9 +35,9 @@ public class CSharpUnmanagedCodeGenerator: ICodeGenerator
             foreach (var kvp in unsupportedTypes) {
                 Type type = kvp.Key;
                 string reason = kvp.Value;
-    
+
                 string typeName = type.FullName ?? type.Name;
-    
+
                 unsupportedTypesSection.Code.AppendLine($"// Unsupported Type \"{typeName}\": {reason}");
             }
         } else {
@@ -47,16 +47,16 @@ public class CSharpUnmanagedCodeGenerator: ICodeGenerator
         CSharpUnmanagedTypeSyntaxWriter typeSyntaxWriter = new(Settings);
 
         Result result = new();
-        
+
         foreach (Type type in types) {
             Syntax.State state = new() {
                 Settings = Settings
             };
-            
+
             string typeCode = typeSyntaxWriter.Write(type, state, syntaxWriterConfiguration);
-            
+
             apisSection.Code.AppendLine(typeCode);
-            
+
             result.AddGeneratedType(
                 type,
                 state.GeneratedMembers
