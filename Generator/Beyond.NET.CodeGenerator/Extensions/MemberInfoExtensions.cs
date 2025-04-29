@@ -21,7 +21,7 @@ public static class MemberInfoExtensions
         return false;
     }
 
-    // See https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record#nondestructive-mutation
+    // See https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/record#nondestructive-mutation
     public static bool IsVirtualCloneMethod(this MemberInfo memberInfo)
     {
         if (!(memberInfo is MethodInfo methodInfo)) {

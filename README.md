@@ -25,7 +25,7 @@ The generated C# code can then be compiled with .NET NativeAOT which allows the 
 
 ### Prerequisites
 
-- Make sure [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) is installed and on your path.
+- Make sure [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) is installed and on your path.
 - On macOS, make sure [Xcode](https://developer.apple.com/xcode/), the macOS and iOS SDKs and the Command Line Tools (`xcode-select --install`) are installed.
 - On Linux, make sure clang and zlib are installed
 
@@ -266,7 +266,7 @@ The generator currently uses a configuration file where all of its options are s
 - **`DoNotDeleteTemporaryDirectories`** (Boolean; `false` by default): If set to `true`, any temporary directories created during the generation or build process are not deleted automatically.
 - **`IncludedTypeNames`** (Array of Strings): Use this to provide a list of types that should be included even if they are not used by the target assembly.
 - **`ExcludedTypeNames`** (Array of Strings): Use this to provide a list of types that should be excluded.
-- **`ExcludedAssemblyNames`** (Array of Strings): Use this to provide a list of [assembly names](https://learn.microsoft.com/en-us/dotnet/api/system.reflection.assemblyname#remarks) whose types should be excluded.
+- **`ExcludedAssemblyNames`** (Array of Strings): Use this to provide a list of [assembly names](https://learn.microsoft.com/dotnet/api/system.reflection.assemblyname#remarks) whose types should be excluded.
   Simple names (e.g. `MyAssembly`) loosely match any assembly with that name, regardless of its version, culture or signing keys. Fully-qualified names (e.g. `MyAssembly, Version=1.2.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed`) match strictly that exact assembly identity.
 - **`AssemblySearchPaths`** (Array of Strings): Use this to provide a list of file system paths that are included when searching for assembly references.
 
