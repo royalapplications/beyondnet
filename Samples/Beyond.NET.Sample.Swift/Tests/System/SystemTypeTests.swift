@@ -50,7 +50,7 @@ final class SystemTypeTests: XCTestCase {
 
             let exceptionMessage = error.localizedDescription
 
-            XCTAssertTrue(exceptionMessage.contains("The type \'\(invalidTypeName)\' cannot be found"))
+            XCTAssertTrue(exceptionMessage.contains("Could not resolve type \'\(invalidTypeName)\' in assembly"))
         }
     }
 
