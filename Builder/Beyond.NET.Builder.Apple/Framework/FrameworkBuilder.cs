@@ -173,6 +173,10 @@ public record FrameworkBuilder
 	<string>{TOKEN_FRAMEWORK_NAME}</string>
 	<key>CFBundleIdentifier</key>
 	<string>{TOKEN_BUNDLE_IDENTIFIER}</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>CFBundleShortVersionString</key>
+    <string>1.0</string>
 </dict>
 </plist>
 """;
