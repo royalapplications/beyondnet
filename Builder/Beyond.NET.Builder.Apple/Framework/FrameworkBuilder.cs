@@ -16,6 +16,23 @@ public record FrameworkBuilder
     string? SwiftModuleDirectoryPath
 )
 {
+    // TODO: Get from config
+    private const string BundleVersion = "1.0";
+
+    // TODO: Get from config
+    private const string BundleShortVersion = "1.0";
+
+    // TODO: Get from config
+    private const string MinimumMacOsVersion = "13.0";
+
+    // TODO: Get from config
+    private const string MinimumiOsVersion = "16.0";
+
+    private string MinimumOsVersion =>
+        BuildForMacOS
+            ? MinimumMacOsVersion
+            : MinimumiOsVersion;
+
 	public record Result(string FrameworkOutputDirectoryPath);
 
     private static ILogger Logger => Services.Shared.LoggerService;
@@ -151,14 +168,22 @@ public record FrameworkBuilder
     {
 	    string extendedTemplate = INFO_PLIST_TEMPLATE
 		    .Replace(TOKEN_FRAMEWORK_NAME, FrameworkName)
-		    .Replace(TOKEN_BUNDLE_IDENTIFIER, FrameworkBundleIdentifier);
+		    .Replace(TOKEN_BUNDLE_IDENTIFIER, FrameworkBundleIdentifier)
+            .Replace(TOKEN_BUNDLE_VERSION, BundleVersion)
+            .Replace(TOKEN_BUNDLE_SHORT_VERSION, BundleShortVersion)
+            .Replace(TOKEN_MINIMUM_OS_VERSION, MinimumOsVersion)
+            ;
 
 	    return extendedTemplate;
     }
 
     private const string TOKEN = "$__BEYOND_TOKEN__$";
+
     private const string TOKEN_FRAMEWORK_NAME = $"{TOKEN}FrameworkName{TOKEN}";
     private const string TOKEN_BUNDLE_IDENTIFIER = $"{TOKEN}BundleIdentifier{TOKEN}";
+    private const string TOKEN_BUNDLE_VERSION = $"{TOKEN}BundleVersion{TOKEN}";
+    private const string TOKEN_BUNDLE_SHORT_VERSION = $"{TOKEN}BundleShortVersion{TOKEN}";
+    private const string TOKEN_MINIMUM_OS_VERSION = $"{TOKEN}MinimumOSVersion{TOKEN}";
 
     private const string INFO_PLIST_TEMPLATE = $"""
 <?xml version="1.0" encoding="UTF-8"?>
@@ -174,9 +199,11 @@ public record FrameworkBuilder
 	<key>CFBundleIdentifier</key>
 	<string>{TOKEN_BUNDLE_IDENTIFIER}</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>{TOKEN_BUNDLE_VERSION}</string>
 	<key>CFBundleShortVersionString</key>
-    <string>1.0</string>
+    <string>{TOKEN_BUNDLE_SHORT_VERSION}</string>
+    <key>MinimumOSVersion</key>
+    <string>{TOKEN_MINIMUM_OS_VERSION}</string>
 </dict>
 </plist>
 """;
