@@ -29,7 +29,7 @@ class SystemTypeTests {
             assertNotNull(exMessage)
 
             if (exMessage != null) {
-                assertTrue(exMessage.contains("The type '$invalidTypeName' cannot be found"))
+                assertTrue(exMessage.contains("Could not resolve type '$invalidTypeName' in assembly"))
             }
         }
     }
