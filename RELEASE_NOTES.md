@@ -1,5 +1,8 @@
 # Beyond.NET Release Notes
 
+## Version 0.6 (Alpha)
+- .NET: Updated to .NET 10
+
 ## Version 0.5 (Alpha)
 - .NET: Updated to 9.0.202
 - General: Bugfixes related to nullability

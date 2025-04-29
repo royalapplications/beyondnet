@@ -25,7 +25,7 @@ The generated C# code can then be compiled with .NET NativeAOT which allows the 
 
 ### Prerequisites
 
-- Make sure [.NET 9](https://dotnet.microsoft.com/download/dotnet/9.0) is installed and on your path.
+- Make sure [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) is installed and on your path.
 - On macOS, make sure [Xcode](https://developer.apple.com/xcode/), the macOS and iOS SDKs and the Command Line Tools (`xcode-select --install`) are installed.
 - On Linux, make sure clang and zlib are installed
 
@@ -90,7 +90,7 @@ public class Hello
 ```
 
 - Compile the .NET class library: `dotnet publish`.
-- Note the published dll's output path (should be something like this `/Path/To/BeyondDemo/bin/Release/net9.0/publish/BeyondDemo.dll`).
+- Note the published dll's output path (should be something like this `/Path/To/BeyondDemo/bin/Release/net10.0/publish/BeyondDemo.dll`).
 - Create a config file for Beyond.NET: `touch Config.json`.
 - Open `Config.json` in a text editor.
 - Replace its contents with this:
@@ -266,7 +266,7 @@ The generator currently uses a configuration file where all of its options are s
 - **`DoNotDeleteTemporaryDirectories`** (Boolean; `false` by default): If set to `true`, any temporary directories created during the generation or build process are not deleted automatically.
 - **`IncludedTypeNames`** (Array of Strings): Use this to provide a list of types that should be included even if they are not used by the target assembly.
 - **`ExcludedTypeNames`** (Array of Strings): Use this to provide a list of types that should be excluded.
-- **`ExcludedAssemblyNames`** (Array of Strings): Use this to provide a list of [assembly names](https://learn.microsoft.com/en-us/dotnet/api/system.reflection.assemblyname?view=net-8.0#remarks) whose types should be excluded.
+- **`ExcludedAssemblyNames`** (Array of Strings): Use this to provide a list of [assembly names](https://learn.microsoft.com/en-us/dotnet/api/system.reflection.assemblyname#remarks) whose types should be excluded.
   Simple names (e.g. `MyAssembly`) loosely match any assembly with that name, regardless of its version, culture or signing keys. Fully-qualified names (e.g. `MyAssembly, Version=1.2.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed`) match strictly that exact assembly identity.
 - **`AssemblySearchPaths`** (Array of Strings): Use this to provide a list of file system paths that are included when searching for assembly references.
 
