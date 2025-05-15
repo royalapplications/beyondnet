@@ -190,17 +190,17 @@ public record FrameworkBuilder
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleExecutable</key>
-	<string>{TOKEN_FRAMEWORK_NAME}</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>{TOKEN_FRAMEWORK_NAME}</string>
-	<key>CFBundleIdentifier</key>
-	<string>{TOKEN_BUNDLE_IDENTIFIER}</string>
-	<key>CFBundleVersion</key>
-	<string>{TOKEN_BUNDLE_VERSION}</string>
-	<key>CFBundleShortVersionString</key>
+    <key>CFBundleExecutable</key>
+    <string>{TOKEN_FRAMEWORK_NAME}</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>{TOKEN_FRAMEWORK_NAME}</string>
+    <key>CFBundleIdentifier</key>
+    <string>{TOKEN_BUNDLE_IDENTIFIER}</string>
+    <key>CFBundleVersion</key>
+    <string>{TOKEN_BUNDLE_VERSION}</string>
+    <key>CFBundleShortVersionString</key>
     <string>{TOKEN_BUNDLE_SHORT_VERSION}</string>
     <key>MinimumOSVersion</key>
     <string>{TOKEN_MINIMUM_OS_VERSION}</string>
