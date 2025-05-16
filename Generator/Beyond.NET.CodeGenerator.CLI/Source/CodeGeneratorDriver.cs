@@ -547,7 +547,31 @@ internal class CodeGeneratorDriver
             try {
                 type = assembly.GetType(typeName, true);
             } catch {
-                type = Type.GetType(typeName, true);
+                // TODO: Make this recursive
+                var refAssemblyNames = assembly.GetReferencedAssemblies();
+                Type? typeFromRefAssembly = null;
+
+                foreach (var refAssemblyName in refAssemblyNames)
+                {
+                    try {
+                        var refAssembly = Assembly.Load(refAssemblyName);
+                        var refAssemblyType = refAssembly.GetType(typeName, false);
+
+                        if (refAssemblyType is not null) {
+                            typeFromRefAssembly = refAssemblyType;
+
+                            break;
+                        }
+                    } catch {
+                        // ignored
+                    }
+                }
+
+                if (typeFromRefAssembly is not null) {
+                    type = typeFromRefAssembly;
+                } else {
+                    type = Type.GetType(typeName, true);
+                }
             }
 
             if (type is not null) {
