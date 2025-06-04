@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		E70361632A6A8126000EF63C /* TestRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70361622A6A8126000EF63C /* TestRecordTests.swift */; };
+		E703CBBD2DF0829A007F2E91 /* EnumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E703CBBC2DF08298007F2E91 /* EnumTests.swift */; };
 		E705F33B2B0E024A00230720 /* NullabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705F33A2B0E024A00230720 /* NullabilityTests.swift */; };
 		E71E41FE2A6012340075FE5F /* BeyondNETSampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71E41E62A60030F0075FE5F /* BeyondNETSampleSwift.framework */; };
 		E74001D02B275A43008C70F6 /* ArrayTestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74001CF2B275A43008C70F6 /* ArrayTestsTests.swift */; };
@@ -102,6 +103,7 @@
 
 /* Begin PBXFileReference section */
 		E70361622A6A8126000EF63C /* TestRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRecordTests.swift; sourceTree = "<group>"; };
+		E703CBBC2DF08298007F2E91 /* EnumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumTests.swift; sourceTree = "<group>"; };
 		E705F33A2B0E024A00230720 /* NullabilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullabilityTests.swift; sourceTree = "<group>"; };
 		E70D117229BF9FEC00B4E738 /* BeyondNETSampleSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeyondNETSampleSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71E41E62A60030F0075FE5F /* BeyondNETSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BeyondNETSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -267,6 +269,7 @@
 		E7C8CF0329C1FA7B00C4230F /* TestClasses */ = {
 			isa = PBXGroup;
 			children = (
+				E703CBBC2DF08298007F2E91 /* EnumTests.swift */,
 				E7A3E6EB29EEEB0800447BF2 /* TestClassesTests.swift */,
 				E7A3E6ED29EEEDB100447BF2 /* PersonTests.swift */,
 				E756F71229F17AA000CA039F /* AnimalTests.swift */,
@@ -347,7 +350,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					E70D117129BF9FEC00B4E738 = {
 						CreatedOnToolsVersion = 14.2;
@@ -442,6 +445,7 @@
 				E7A3E6D829EED85000447BF2 /* SystemConvertTests.swift in Sources */,
 				E7A3E6DC29EEDDE000447BF2 /* SystemRandomTests.swift in Sources */,
 				E7A3E6DE29EEDE3400447BF2 /* SystemIOPathTests.swift in Sources */,
+				E703CBBD2DF0829A007F2E91 /* EnumTests.swift in Sources */,
 				E7E5171A2AD9289200634B3E /* ComparisonTests.swift in Sources */,
 				E756F71329F17AA000CA039F /* AnimalTests.swift in Sources */,
 				E7A3E6E029EEDEA700447BF2 /* SystemReflectionAssemblyTests.swift in Sources */,
@@ -493,6 +497,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -559,6 +564,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

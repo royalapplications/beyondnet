@@ -1,5 +1,5 @@
-// Number of generated types: 1633
-// Number of generated members: 7728
+// Number of generated types: 1634
+// Number of generated members: 7730
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -3700,6 +3700,12 @@ typedef enum __attribute__((enum_extensibility(open))): int32_t {
 	Beyond_NET_Sample_Source_EnumWithUnfavorableNames_String = 2,
 	Beyond_NET_Sample_Source_EnumWithUnfavorableNames_System = 3
 } Beyond_NET_Sample_Source_EnumWithUnfavorableNames_t;
+
+
+typedef enum __attribute__((enum_extensibility(open))): int32_t {
+	Beyond_NET_Sample_Source_TestEnum_A = 0,
+	Beyond_NET_Sample_Source_TestEnum_B = 1
+} Beyond_NET_Sample_Source_TestEnum_t;
 
 
 typedef void* System_Object_t;
@@ -7433,6 +7439,14 @@ Beyond_NET_Sample_Source_EnumWithUnfavorableNames_TypeOf(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.Source.EnumWithUnfavorableNames
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.TestEnum
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_Source_TestEnum_TypeOf(
+	void
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.Source.TestEnum
 
 #pragma mark - BEGIN APIs of System.Object
 System_Type_t _Nonnull /* System.Type */
@@ -61262,6 +61276,12 @@ System_String_t _Nonnull /* System.String */
 Beyond_NET_Sample_Source_EnumTests_GetEnumName(
 	Beyond_NET_Sample_Source_EnumTests_t _Nullable /* Beyond.NET.Sample.Source.EnumTests */ self,
 	Beyond_NET_Sample_Source_EnumWithUnfavorableNames_t /* Beyond.NET.Sample.Source.EnumWithUnfavorableNames */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_Source_TestEnum_t /* Beyond.NET.Sample.Source.TestEnum */
+Beyond_NET_Sample_Source_EnumTests_GetUnknownEnumValue(
+	Beyond_NET_Sample_Source_EnumTests_t _Nullable /* Beyond.NET.Sample.Source.EnumTests */ self,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
