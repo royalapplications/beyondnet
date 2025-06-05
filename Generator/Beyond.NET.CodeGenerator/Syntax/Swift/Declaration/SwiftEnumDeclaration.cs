@@ -6,18 +6,21 @@ public struct SwiftEnumDeclaration
 {
     public string Name { get; }
     public string? RawTypeName { get; }
+    public string? ProtocolConformance { get; }
     public SwiftVisibilities Visibility { get; }
     public string? Implementation { get; }
 
     public SwiftEnumDeclaration(
         string name,
         string? rawTypeName,
+        string? protocolConformance,
         SwiftVisibilities visibility,
         string? implementation
     )
     {
         Name = name;
         RawTypeName = rawTypeName;
+        ProtocolConformance = protocolConformance;
         Visibility = visibility;
         Implementation = implementation;
     }
@@ -28,14 +31,20 @@ public struct SwiftEnumDeclaration
 
         string visibilityString = Visibility.ToSwiftSyntaxString();
 
-        string rawTypeDecl = !string.IsNullOrEmpty(RawTypeName)
+        string rawTypeOrProtocolConformanceDecl = !string.IsNullOrEmpty(RawTypeName)
             ? $": {RawTypeName}"
             : string.Empty;
+
+        if (!string.IsNullOrEmpty(ProtocolConformance)) {
+            rawTypeOrProtocolConformanceDecl += !string.IsNullOrEmpty(rawTypeOrProtocolConformanceDecl)
+                ? $", {ProtocolConformance}"
+                : $": {ProtocolConformance}";
+        }
 
         string[] signatureComponents = new[] {
             visibilityString,
             @enum,
-            $"{Name}{rawTypeDecl}"
+            $"{Name}{rawTypeOrProtocolConformanceDecl}"
         };
 
         string signature = SwiftFuncSignatureComponents.ComponentsToString(signatureComponents);

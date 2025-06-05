@@ -8,6 +8,7 @@ public struct Enum
     private readonly string m_name;
 
     private string? m_rawTypeName = null;
+    private string? m_protocolConformance = null;
     private SwiftVisibilities m_visibility = SwiftVisibilities.None;
     private string? m_implementation = null;
 
@@ -62,6 +63,15 @@ public struct Enum
     }
     #endregion Visibility
 
+    #region ProtocolConformance
+    public Enum ProtocolConformance(string? protocolConformance = null)
+    {
+        m_protocolConformance = protocolConformance;
+
+        return this;
+    }
+    #endregion ProtocolConformance
+
     #region Implementation
     public Enum Implementation(string? implementation = null)
     {
@@ -77,6 +87,7 @@ public struct Enum
         return new(
             m_name,
             m_rawTypeName,
+            m_protocolConformance,
             m_visibility,
             m_implementation
         );

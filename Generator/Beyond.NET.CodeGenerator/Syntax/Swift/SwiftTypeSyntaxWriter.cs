@@ -144,6 +144,12 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         var typeDocumentationComment = type.GetDocumentation()
             ?.GetFormattedDocumentationComment();
 
+        const string rawValueTypeAliasVarName = "RawValue";
+
+        string rawValueTypeAliasDecl = Builder.TypeAlias(rawValueTypeAliasVarName, rawSwiftTypeName)
+            .Public()
+            .ToIndentedString(1);
+
         if (isFlagsEnum) {
             string structDecl = Builder.Struct(swiftEnumTypeName)
                 .ProtocolConformance("OptionSet")
@@ -155,12 +161,6 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             }
 
             sb.AppendLine($"{structDecl} {{");
-
-            const string rawValueTypeAliasVarName = "RawValue";
-
-            string rawValueTypeAliasDecl = Builder.TypeAlias(rawValueTypeAliasVarName, rawSwiftTypeName)
-                .Public()
-                .ToIndentedString(1);
 
             sb.AppendLine(rawValueTypeAliasDecl);
 
@@ -185,7 +185,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         } else {
             string enumDecl = Builder.Enum(swiftEnumTypeName)
                 .Public()
-                .RawTypeName(rawSwiftTypeName)
+                .ProtocolConformance("Equatable")
                 .ToString();
 
             if (!string.IsNullOrEmpty(typeDocumentationComment)) {
@@ -195,9 +195,13 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             sb.AppendLine($"{enumDecl} {{");
         }
 
-        string initUnwrap = isFlagsEnum
-            ? string.Empty
-            : "!";
+        // string initUnwrap = isFlagsEnum
+        //     ? string.Empty
+        //     : "!";
+
+        sb.AppendLine(rawValueTypeAliasDecl);
+
+        // TODO
 
         string cValueParam = Builder.FuncSignatureParameter("cValue", cEnumTypeName)
             .ToString();
