@@ -3,6 +3,7 @@ using System.Reflection;
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.Generator;
 using Beyond.NET.CodeGenerator.Generator.Swift;
+using Beyond.NET.CodeGenerator.Syntax.Swift.Builders;
 using Beyond.NET.CodeGenerator.Types;
 using Beyond.NET.Core;
 
@@ -204,20 +205,22 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             initDeclImpl = "self.init(rawValue: cValue.rawValue)";
             cValuePropDeclImpl = $"{cEnumTypeName}(rawValue: rawValue)";
         } else {
-            initDeclImpl = """
+            initDeclImpl = $$"""
                            let cRawValue = cValue.rawValue
 
-                           guard let enumValue = Self(rawValue: cRawValue) else {
-                               fatalError("Initialization of \"\(Self.self)\" failed because an unknown enum raw value was provided: \(cRawValue)")
-                           }
+                           {{Builder.Guard(
+                               "let enumValue = Self(rawValue: cRawValue)",
+                               "fatalError(\"Initialization of \\\"\\(Self.self)\\\" failed because an unknown enum raw value was provided: \\(cRawValue)\")"
+                           ).ToString()}}
 
                            self = enumValue
                            """;
 
             cValuePropDeclImpl = $$"""
-                                  guard let cEnumValue = {{cEnumTypeName}}(rawValue: rawValue) else {
-                                      fatalError("Initialization of \"{{cEnumTypeName}}\" failed because an unknown enum raw value was provided: \(rawValue)")
-                                  }
+                                  {{Builder.Guard(
+                                      $"let cEnumValue = {cEnumTypeName}(rawValue: rawValue)",
+                                      $"fatalError(\"Initialization of \\\"{cEnumTypeName}\\\" failed because an unknown enum raw value was provided: \\(rawValue)\")"
+                                  ).ToString()}}
 
                                   return cEnumValue
                                   """;
