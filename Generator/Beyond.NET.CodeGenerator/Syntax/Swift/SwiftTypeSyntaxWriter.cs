@@ -195,23 +195,44 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             sb.AppendLine($"{enumDecl} {{");
         }
 
-        string initUnwrap = isFlagsEnum
-            ? string.Empty
-            : "!";
-
         string cValueParam = Builder.FuncSignatureParameter("cValue", cEnumTypeName)
             .ToString();
 
+        string initDeclImpl, cValuePropDeclImpl;
+
+        if (isFlagsEnum) {
+            initDeclImpl = "self.init(rawValue: cValue.rawValue)";
+            cValuePropDeclImpl = $"{cEnumTypeName}(rawValue: rawValue)";
+        } else {
+            initDeclImpl = """
+                           let cRawValue = cValue.rawValue
+
+                           guard let enumValue = Self(rawValue: cRawValue) else {
+                               fatalError("Initialization of \"\(Self.self)\" failed because an unknown enum raw value was provided: \(cRawValue)")
+                           }
+
+                           self = enumValue
+                           """;
+
+            cValuePropDeclImpl = $$"""
+                                  guard let cEnumValue = {{cEnumTypeName}}(rawValue: rawValue) else {
+                                      fatalError("Initialization of \"{{cEnumTypeName}}\" failed because an unknown enum raw value was provided: \(rawValue)")
+                                  }
+
+                                  return cEnumValue
+                                  """;
+        }
+
         string initDecl = Builder.Initializer()
             .Parameters(cValueParam)
-            .Implementation($"self.init(rawValue: cValue.rawValue){initUnwrap}")
+            .Implementation(initDeclImpl)
             .ToIndentedString(1);
 
         sb.AppendLine(initDecl);
         sb.AppendLine();
 
         string cValuePropDecl = Builder.GetOnlyProperty("cValue", cEnumTypeName)
-            .Implementation($"{cEnumTypeName}(rawValue: rawValue){initUnwrap}")
+            .Implementation(cValuePropDeclImpl)
             .ToIndentedString(1);
 
         sb.AppendLine(cValuePropDecl);
