@@ -68,6 +68,18 @@ public struct Builder
         );
     }
 
+    public static Builders.Guard Guard
+    (
+        string condition,
+        string elseStatement
+    )
+    {
+        return new(
+            condition,
+            elseStatement
+        );
+    }
+
     public static Builders.Extension Extension
     (
         string name
