@@ -5,19 +5,48 @@ namespace Beyond.NET.Sample;
 public class Person
 {
     #region Constants
+    /// <summary>
+    /// A Person's Age when Born
+    /// </summary>
     public const int AGE_WHEN_BORN = 0;
+
+    /// <summary>
+    /// The default Person's Age.
+    /// </summary>
     public const int DEFAULT_AGE = AGE_WHEN_BORN;
     #endregion Constants
 
     #region Properties
+    /// <summary>
+    /// The Person's First Name
+    /// </summary>
     public string FirstName { get; set; }
+
+    /// <summary>
+    /// The Person's Last Name
+    /// </summary>
     public string LastName { get; set; }
+
+    /// <summary>
+    /// The Person's Age
+    /// </summary>
     public int Age { get; set; }
+
+    /// <summary>
+    /// The Person's Postal Address
+    /// </summary>
     public Address? Address { get; set; }
+
+    /// <summary>
+    /// The Person's Website
+    /// </summary>
     public Uri? Website { get; set; }
 
     private Person[] m_children = Array.Empty<Person>();
 
+    /// <summary>
+    /// The Person's Children
+    /// </summary>
     public Person[] Children
     {
         get {
@@ -32,8 +61,14 @@ public class Person
 
     public event NumberOfChildrenChangedDelegate? NumberOfChildrenChanged;
 
+    /// <summary>
+    /// Answers the question: How nice is this Person?
+    /// </summary>
     public NiceLevels NiceLevel { get; set; } = NiceLevels.Nice;
 
+    /// <summary>
+    /// The Person's Full Name
+    /// </summary>
     public string FullName => $"{FirstName} {LastName}";
     #endregion Properties
 
