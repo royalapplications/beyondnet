@@ -158,4 +158,21 @@ public struct Builder
             name
         );
     }
+
+    public static Builders.FunctionType FunctionType()
+    {
+        return new();
+    }
+
+    public static Builders.TypeAlias TypeAlias
+    (
+        string name,
+        string typeName
+    )
+    {
+        return new(
+            name,
+            typeName
+        );
+    }
 }

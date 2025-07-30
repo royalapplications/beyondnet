@@ -11,6 +11,7 @@ import com.example.beyondnetsampleandroid.dn.*
 
 @RunWith(AndroidJUnit4::class)
 class PersonTests {
+    // NOTE: This was copied from the Swift tests
     @Test
     fun testPerson() {
         val johnDoe = Beyond_NET_Sample_Person.makeJohnDoe()
@@ -55,5 +56,91 @@ class PersonTests {
         johnDoe.website_set(websiteUri)
 
         assertEquals(johnDoe.website_get(), websiteUri)
+    }
+
+    // NOTE: This was copied from the Swift tests
+    @Test
+    fun testPersonEvents() {
+        val initialAge = 0
+
+        val firstNameDN = "Johanna".toDotNETString()
+        val lastNameDN = "Doe".toDotNETString()
+
+        val person = Beyond_NET_Sample_Person(
+            firstNameDN,
+            lastNameDN,
+            initialAge
+        )
+
+        val ageAfterCreation = person.age_get()
+        assertEquals(initialAge, ageAfterCreation)
+
+        val newAgeProviderDelegate = Beyond_NET_Sample_Person_NewAgeProviderDelegate {
+            10
+        }
+
+        person.changeAge(newAgeProviderDelegate)
+
+        val age = person.age_get()
+        assertEquals(10, age)
+    }
+
+    // NOTE: This was copied from the Swift tests
+    @Test
+    fun testPersonChangeAge() {
+        var numberOfTimesNumberOfChildrenChangedWasCalled = 0
+
+        val motherFirstNameDN = "Johanna".toDotNETString()
+        val sonFirstNameDN = "Max".toDotNETString()
+        val daugtherFirstNameDN = "Marie".toDotNETString()
+        val lastNameDN = "Doe".toDotNETString()
+
+        val mother = Beyond_NET_Sample_Person(
+            motherFirstNameDN,
+            lastNameDN,
+            40
+        )
+
+        val numberOfChildrenChangedDelegate = Beyond_NET_Sample_Person_NumberOfChildrenChangedDelegate {
+            numberOfTimesNumberOfChildrenChangedWasCalled += 1
+        }
+
+        mother.numberOfChildrenChanged_add(numberOfChildrenChangedDelegate)
+
+        val son = Beyond_NET_Sample_Person(
+            sonFirstNameDN,
+            lastNameDN,
+            4
+        )
+
+        mother.addChild(son)
+
+        val daughter = Beyond_NET_Sample_Person(
+            daugtherFirstNameDN,
+            lastNameDN,
+            10
+        )
+
+        mother.addChild(daughter)
+
+        val numberOfChildren = mother.numberOfChildren_get()
+
+        val expectedNumberOfChildren = 2
+
+        assertEquals(expectedNumberOfChildren, numberOfChildren)
+        assertEquals(expectedNumberOfChildren, numberOfTimesNumberOfChildrenChangedWasCalled)
+
+        mother.removeChild(daughter)
+
+        assertEquals(3, numberOfTimesNumberOfChildrenChangedWasCalled)
+
+        mother.numberOfChildrenChanged_remove(numberOfChildrenChangedDelegate)
+
+        mother.removeChildAt(0)
+        assertEquals(3, numberOfTimesNumberOfChildrenChangedWasCalled)
+
+        val numberOfChildrenAfterRemoval = mother.numberOfChildren_get()
+        val expectedNumberOfChildrenAfterRemoval = 0
+        assertEquals(expectedNumberOfChildrenAfterRemoval, numberOfChildrenAfterRemoval)
     }
 }

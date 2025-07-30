@@ -4,6 +4,11 @@ namespace Beyond.NET.Sample;
 public interface IInterface1
 {
     void MethodInIInterface1();
+
+    public static IInterface1 CreateDefaultInstance()
+    {
+        return new TypeThatImplementsMultipleInterfaces();
+    }
 }
 
 // This should be auto-generated to allow Swift to provide implementations for .NET interfaces.

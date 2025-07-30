@@ -11,6 +11,7 @@ import com.example.beyondnetsampleandroid.dn.*
 
 @RunWith(AndroidJUnit4::class)
 class AnimalTests {
+    // NOTE: This was copied from the Swift tests
     @Test
     fun testDog() {
         val dogNameDN = Beyond_NET_Sample_Dog.dogName_get()
@@ -35,6 +36,7 @@ class AnimalTests {
         assertEquals(expectedEat, eat)
     }
 
+    // NOTE: This was copied from the Swift tests
     @Test
     fun testCat() {
         val catNameDN = Beyond_NET_Sample_Cat.catName_get()
@@ -59,6 +61,58 @@ class AnimalTests {
         assertEquals(expectedEat, eat)
     }
 
+    // NOTE: This was copied from the Swift tests
+    @Test
+    fun testCustomAnimalCreator() {
+        val creatorFunc: (animalName: System_String) -> Beyond_NET_Sample_IAnimal? = { innerAnimalName ->
+            Beyond_NET_Sample_GenericAnimal(innerAnimalName)
+        }
+
+        val creatorDelegate = Beyond_NET_Sample_AnimalCreatorDelegate(creatorFunc)
+
+        val animalName = "Horse"
+        val animalNameDN = animalName.toDotNETString()
+
+        val horse = Beyond_NET_Sample_AnimalFactory.createAnimal(
+            animalNameDN,
+            creatorDelegate
+        )
+
+        assertNotNull(horse)
+
+        val retrievedAnimalName = horse?.name_get()?.toKString()
+        assertEquals(animalName, retrievedAnimalName)
+    }
+
+    // NOTE: This was copied from the Swift tests
+    @Test
+    fun testGettingDefaultAnimalCreator() {
+        val defaultCreator = Beyond_NET_Sample_AnimalFactory.dEFAULT_CREATOR_get()
+
+        val dogName = "Dog"
+        val dogNameDN = dogName.toDotNETString()
+
+        val dog = defaultCreator.invoke(dogNameDN)
+        assertNotNull(dog)
+
+        val dogNameRet = dog?.name_get()?.toKString()
+        assertEquals(dogName, dogNameRet)
+
+        val catName = "Cat"
+        val catNameDN = catName.toDotNETString()
+
+        val cat = Beyond_NET_Sample_AnimalFactory.createAnimal(
+            catNameDN,
+            defaultCreator
+        )
+
+        assertNotNull(cat)
+
+        val catNameRet = cat?.name_get()?.toKString()
+        assertEquals(catName, catNameRet)
+    }
+
+    // NOTE: This was copied from the Swift tests
     @Test
     fun testStaticMemberShadowing() {
         val dogNameDN = Beyond_NET_Sample_Dog.staticName_get()

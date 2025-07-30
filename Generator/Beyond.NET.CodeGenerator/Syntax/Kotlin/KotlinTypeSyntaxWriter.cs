@@ -11,7 +11,7 @@ using Settings = Beyond.NET.CodeGenerator.Generator.Kotlin.Settings;
 
 namespace Beyond.NET.CodeGenerator.Syntax.Kotlin;
 
-public class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWriter
+public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWriter
 {
     public const string JNA_CLASS_NAME = "CAPI";
 
@@ -284,6 +284,8 @@ public val value: {{underlyingTypeName}}
         KotlinSyntaxWriterConfiguration configuration
     )
     {
+        KotlinCodeBuilder sb = new();
+
         // TypeDescriptorRegistry typeDescriptorRegistry = TypeDescriptorRegistry.Shared;
 
         Result cSharpUnmanagedResult = state.CSharpUnmanagedResult ?? throw new Exception("No CSharpUnmanagedResult provided");
@@ -300,79 +302,97 @@ public val value: {{underlyingTypeName}}
             return string.Empty;
         }
 
-        var cSharpMembers = cSharpUnmanagedResult.GeneratedTypes[type];
-        // var cMembers = cResult.GeneratedTypes[type];
+        bool writeMembers = true;
 
-        HashSet<MemberInfo> generatedMembers = new();
+        if (type.IsDelegate()) {
+            // writeMembers = false;
 
-        KotlinCodeBuilder sbMembers = new();
-
-        foreach (var cSharpMember in cSharpMembers) {
-            var member = cSharpMember.Member;
-
-            if (member is not null &&
-                generatedMembers.Contains(member)) {
-                continue;
-            }
-
-            var memberKind = cSharpMember.MemberKind;
-            var memberType = member?.MemberType;
-
-            IKotlinSyntaxWriter? syntaxWriter = GetSyntaxWriter(
-                memberKind,
-                memberType ?? MemberTypes.Custom
+            string delegateTypeCode = WriteDelegateType(
+                configuration,
+                type,
+                state
             );
 
-            if (syntaxWriter == null) {
-                if (Settings.EmitUnsupported) {
-                    sbMembers.AppendLine(Builder.SingleLineComment($"TODO: Unsupported Member Type \"{memberType}\"").ToString());
-                }
-
-                continue;
-            }
-
-            object? target;
-
-            if (syntaxWriter is IDestructorSyntaxWriter) {
-                target = type;
-            } else if (syntaxWriter is ITypeOfSyntaxWriter) {
-                target = type;
-            } else {
-                target = member;
-            }
-
-            if (target == null) {
-                throw new Exception("No target");
-            }
-
-            // if ((interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.Protocol || interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ProtocolExtensionForDefaultImplementations) &&
-            //     (syntaxWriter is IDestructorSyntaxWriter || syntaxWriter is ITypeOfSyntaxWriter)) {
-            //     continue;
-            // }
-            //
-            // if (interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ImplementationClass &&
-            //     syntaxWriter is not IDestructorSyntaxWriter &&
-            //     syntaxWriter is not ITypeOfSyntaxWriter) {
-            //     continue;
-            // }
-
-            string memberCode = syntaxWriter.Write(
-                target,
-                state,
-                configuration
-            );
-
-            sbMembers.AppendLine(memberCode);
-
-            if (member is not null) {
-                generatedMembers.Add(member);
-            }
+            sb.AppendLine(delegateTypeCode);
         }
 
-        string membersCode = sbMembers.ToString()
-            .IndentAllLines(1);
+        if (writeMembers) {
+            var cSharpMembers = cSharpUnmanagedResult.GeneratedTypes[type];
+            // var cMembers = cResult.GeneratedTypes[type];
 
-        return membersCode;
+            HashSet<MemberInfo> generatedMembers = new();
+            KotlinCodeBuilder sbMembers = new();
+
+            foreach (var cSharpMember in cSharpMembers) {
+                var member = cSharpMember.Member;
+
+                if (member is not null &&
+                    generatedMembers.Contains(member)) {
+                    continue;
+                }
+
+                var memberKind = cSharpMember.MemberKind;
+                var memberType = member?.MemberType;
+
+                IKotlinSyntaxWriter? syntaxWriter = GetSyntaxWriter(
+                    memberKind,
+                    memberType ?? MemberTypes.Custom
+                );
+
+                if (syntaxWriter == null) {
+                    if (Settings.EmitUnsupported) {
+                        sbMembers.AppendLine(Builder
+                            .SingleLineComment($"TODO: Unsupported Member Type \"{memberType}\"").ToString());
+                    }
+
+                    continue;
+                }
+
+                object? target;
+
+                if (syntaxWriter is IDestructorSyntaxWriter) {
+                    target = type;
+                } else if (syntaxWriter is ITypeOfSyntaxWriter) {
+                    target = type;
+                } else {
+                    target = member;
+                }
+
+                if (target == null) {
+                    throw new Exception("No target");
+                }
+
+                // if ((interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.Protocol || interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ProtocolExtensionForDefaultImplementations) &&
+                //     (syntaxWriter is IDestructorSyntaxWriter || syntaxWriter is ITypeOfSyntaxWriter)) {
+                //     continue;
+                // }
+                //
+                // if (interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ImplementationClass &&
+                //     syntaxWriter is not IDestructorSyntaxWriter &&
+                //     syntaxWriter is not ITypeOfSyntaxWriter) {
+                //     continue;
+                // }
+
+                string memberCode = syntaxWriter.Write(
+                    target,
+                    state,
+                    configuration
+                );
+
+                sbMembers.AppendLine(memberCode);
+
+                if (member is not null) {
+                    generatedMembers.Add(member);
+                }
+            }
+
+            string membersCode = sbMembers.ToString();
+
+            sb.AppendLine(membersCode);
+        }
+
+        return sb.ToString()
+            .IndentAllLines(1);
     }
     #endregion JNA
 
@@ -732,6 +752,17 @@ public val value: {{underlyingTypeName}}
 //                 }
 //             }
         // TODO: Interfaces
+        }
+
+        if (type.IsDelegate()) {
+            string delegateTypeCode = WriteDelegateType(
+                configuration,
+                type,
+                state
+            ).IndentAllLines(1);
+
+            sb.AppendLine(delegateTypeCode);
+            sb.AppendLine();
         }
 
         HashSet<MemberInfo> generatedMembers = new();

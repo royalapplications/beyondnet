@@ -457,7 +457,8 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             isGeneric,
             combinedGenericArguments,
             typeDescriptorRegistry,
-            CodeLanguage.KotlinJNA
+            CodeLanguage.KotlinJNA,
+            false
         );
 
         KotlinCodeBuilder sb = new();
@@ -489,7 +490,8 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         bool isGeneric,
         IEnumerable<Type> genericArguments,
         TypeDescriptorRegistry typeDescriptorRegistry,
-        CodeLanguage targetLanguage
+        CodeLanguage targetLanguage,
+        bool insertCContextParameter
     )
     {
         var nullabilityContext = new NullabilityInfoContext();
@@ -505,6 +507,13 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             var selfParameter = new KotlinFunSignatureParameter(selfParameterName, $"{declaringTypeName} /* {declaringType.GetFullNameOrName()} */");
 
             parameterList.Add(selfParameter);
+        }
+
+        if (insertCContextParameter) {
+            string cContextParameterName = "context";
+            var cContextParameter = new KotlinFunSignatureParameter(cContextParameterName, "Pointer?");
+
+            parameterList.Add(cContextParameter);
         }
 
         if (isGeneric) {
@@ -2003,37 +2012,37 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             parameterArrayElementNullability
         );
 
+        if ((typeDescriptorRegistry.GetTypeDescriptor(parameterType)?.RequiresNativePointer ?? false)) {
+            parameterNullability = Nullability.NonNullable;
+        }
+
+        if (parameterInfo is not null &&
+            !isGeneric &&
+            !isGenericParameterType &&
+            parameterType.IsReferenceType()) {
+            bool isNotNull = false;
+
+            var parameterNullabilityInfo = nullabilityContext.Create(parameterInfo);
+
+            if (parameterNullabilityInfo.ReadState == parameterNullabilityInfo.WriteState) {
+                isNotNull = parameterNullabilityInfo.ReadState == NullabilityState.NotNull;
+            }
+
+            parameterNullability = isNotNull
+                ? Nullability.NonNullable
+                : parameterTypeDescriptor.Nullability;
+        }
+
+        if (parameterNullability == Nullability.NotSpecified) {
+            parameterNullability = parameterTypeDescriptor.Nullability;
+        }
+
         string optionalString;
+        bool isNullable = parameterNullability == Nullability.Nullable;
 
         if (sourceLanguage == CodeLanguage.Kotlin &&
             targetLanguage == CodeLanguage.KotlinJNA) {
             // bool isNotNull = false;
-
-            if ((typeDescriptorRegistry.GetTypeDescriptor(parameterType)?.RequiresNativePointer ?? false)) {
-                parameterNullability = Nullability.NonNullable;
-            }
-
-            if (parameterInfo is not null &&
-                !isGeneric &&
-                !isGenericParameterType &&
-                parameterType.IsReferenceType()) {
-                bool isNotNull = false;
-
-                var parameterNullabilityInfo = nullabilityContext.Create(parameterInfo);
-
-                if (parameterNullabilityInfo.ReadState == parameterNullabilityInfo.WriteState) {
-                    isNotNull = parameterNullabilityInfo.ReadState == NullabilityState.NotNull;
-                }
-
-                parameterNullability = isNotNull
-                    ? Nullability.NonNullable
-                    : parameterTypeDescriptor.Nullability;
-            }
-
-            if (parameterNullability == Nullability.NotSpecified) {
-                parameterNullability = parameterTypeDescriptor.Nullability;
-            }
-
             optionalString = parameterNullability.GetKotlinOptionalitySpecifier();
         } else {
             optionalString = string.Empty;
@@ -2047,7 +2056,20 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             if (typeConversion != null) {
                 convertedParameterName = $"{parameterNameForConversion}{convertedParameterNameSuffix}";
 
-                string fullTypeConversion = string.Format(typeConversion, $"{parameterName}{optionalString}");
+                string fullTypeConversion;
+
+                if (sourceLanguage == CodeLanguage.Kotlin &&
+                    targetLanguage == CodeLanguage.KotlinJNA) {
+                    fullTypeConversion = string.Format(typeConversion, $"{parameterName}{optionalString}");
+                } else {
+                    if (isNullable) {
+                        var conv = string.Format(typeConversion, $"{parameterName}");
+
+                        fullTypeConversion = $"if ({parameterName} != null) {conv} else null";
+                    } else {
+                        fullTypeConversion = string.Format(typeConversion, $"{parameterName}");
+                    }
+                }
 
                 typeConversionCode = Builder.Val(convertedParameterName)
                     .Value(fullTypeConversion)

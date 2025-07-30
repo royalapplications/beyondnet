@@ -155,7 +155,8 @@ public partial class SwiftTypeSyntaxWriter
         }
     }
 
-    private string WriteDelegateTypeDefs(
+    // NOTE: Entry Point
+    private string WriteDelegateType(
         ISyntaxWriterConfiguration? configuration,
         Type type,
         State state

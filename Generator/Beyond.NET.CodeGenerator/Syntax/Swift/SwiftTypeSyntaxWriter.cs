@@ -82,13 +82,13 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             writeTypeDefinition = false;
             writeMembers = false;
 
-            string delegateTypedefCode = WriteDelegateTypeDefs(
+            string delegateTypeCode = WriteDelegateType(
                 configuration,
                 type,
                 state
             );
 
-            sb.AppendLine(delegateTypedefCode);
+            sb.AppendLine(delegateTypeCode);
         }
 
         if (writeTypeExtension) {

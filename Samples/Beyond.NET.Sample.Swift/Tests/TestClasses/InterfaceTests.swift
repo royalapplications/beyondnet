@@ -21,6 +21,13 @@ final class InterfaceTests: XCTestCase {
         XCTAssertEqual(val, retVal)
         try typeThatUsesInterfaces.callMethod1InIInterface3(typeThatImplementsMultipleInterfaces)
     }
+    
+    func testStaticMethodOnInterface() throws {
+        let inst = try Beyond_NET_Sample_IInterface1_DNInterface.createDefaultInstance()
+        XCTAssertTrue(inst.is(Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces.typeOf))
+        
+        try inst.methodInIInterface1()
+    }
 
     func testRetrievingInterfaces() throws {
         let typeThatUsesInterfaces = try Beyond.NET.Sample.TypeThatUsesInterfaces()

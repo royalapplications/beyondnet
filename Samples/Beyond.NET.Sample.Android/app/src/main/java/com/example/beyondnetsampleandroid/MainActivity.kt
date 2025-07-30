@@ -2,30 +2,20 @@ package com.example.beyondnetsampleandroid
 
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-
-import com.example.beyondnetsampleandroid.dn.*
-import com.example.beyondnetsampleandroid.ui.theme.BeyondNETSampleAndroidTheme
-import com.sun.jna.Pointer
-import com.sun.jna.ptr.PointerByReference
+import androidx.activity.compose.*
+import androidx.activity.*
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.*
+import androidx.compose.ui.tooling.preview.*
 
 import java.util.UUID
 
-import kotlin.time.Duration
-import kotlin.time.DurationUnit
-import kotlin.time.measureTime
+import kotlin.time.*
+
+import com.example.beyondnetsampleandroid.dn.*
+import com.example.beyondnetsampleandroid.ui.theme.BeyondNETSampleAndroidTheme
 
 class MainActivity : ComponentActivity() {
     private val LOG_TAG = "Beyond.NET.Sample.Android"
@@ -41,6 +31,10 @@ class MainActivity : ComponentActivity() {
     private var _uuidTime = Duration.ZERO
     private var uuidTime = mutableStateOf(_uuidTime)
 
+    private var timer: System_Threading_Timer? = null
+    private var _numberOfTimesTimerFired = 0
+    private var numberOfTimesTimerFired = mutableIntStateOf(_numberOfTimesTimerFired)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -49,6 +43,17 @@ class MainActivity : ComponentActivity() {
         System.setProperty("jna.debug_jna_load", "true")
 
         enableEdgeToEdge()
+
+        val timerCallback = System_Threading_TimerCallback { _ ->
+            numberOfTimesTimerFired.intValue++
+        }
+
+        timer = System_Threading_Timer(
+            timerCallback,
+            null,
+            0,
+            250
+        )
 
         updateGuid()
 
@@ -93,6 +98,8 @@ class MainActivity : ComponentActivity() {
                     Column(modifier = Modifier.padding(innerPadding)) {
                         Text("Hello, ${johnDoeName}! You're $johnDoeAge years old.")
                         Text(welcomeMessage)
+
+                        Text("Timer fired ${numberOfTimesTimerFired.intValue} times.")
 
                         Text("Here's a new System.Guid for you: ${guidText.value}")
 

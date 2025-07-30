@@ -267,11 +267,11 @@ final class PersonTests: XCTestCase {
 
 		try mother.addChild(son)
 
-        let daugther = try Beyond_NET_Sample_Person(daugtherFirstNameDN,
+        let daughter = try Beyond_NET_Sample_Person(daugtherFirstNameDN,
                                                     lastNameDN,
                                                     10)
 
-		try mother.addChild(daugther)
+		try mother.addChild(daughter)
 
 		let numberOfChildren = try mother.numberOfChildren
 
@@ -280,7 +280,7 @@ final class PersonTests: XCTestCase {
         XCTAssertEqual(expectedNumberOfChildren, numberOfChildren)
         XCTAssertEqual(expectedNumberOfChildren, numberOfTimesNumberOfChildrenChangedWasCalled)
 
-		try mother.removeChild(daugther)
+		try mother.removeChild(daughter)
 
         XCTAssertEqual(3, numberOfTimesNumberOfChildrenChangedWasCalled)
 

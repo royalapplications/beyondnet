@@ -27,11 +27,7 @@ final class TransformerTests: XCTestCase {
     } */
 
     func testStringTransformer() throws {
-        guard let uppercaser = createUppercaser() else {
-            XCTFail("Failed to create uppercaser")
-
-            return
-        }
+        let uppercaser = createUppercaser()
 
         let inputString = "Hello"
         let inputStringDN = inputString.dotNETString()
@@ -45,17 +41,8 @@ final class TransformerTests: XCTestCase {
     }
 
     func testStringGetterAndTransformer() throws {
-        guard let fixedStringProvider = createFixedStringProvider() else {
-            XCTFail("Failed to create random string provider")
-
-            return
-        }
-
-        guard let uppercaser = createUppercaser() else {
-            XCTFail("Failed to create uppercaser")
-
-            return
-        }
+        let fixedStringProvider = createFixedStringProvider()
+        let uppercaser = createUppercaser()
 
         let outputString = try Beyond_NET_Sample_Transformer.getAndTransformString(fixedStringProvider,
                                                                                    uppercaser).string()
@@ -85,12 +72,10 @@ final class TransformerTests: XCTestCase {
     }
 
     func testUppercaserThatActuallyLowercases() throws {
-        guard let lowercaser = createLowercaser() else {
-            XCTFail("Failed to create lowercaser")
+        let lowercaser = createLowercaser()
 
-            return
-        }
-
+        // "Remember" original uppercaser
+        let origUppercaser = try Beyond_NET_Sample_Transformer_BuiltInTransformers.uppercaseStringTransformer
         try Beyond_NET_Sample_Transformer_BuiltInTransformers.uppercaseStringTransformer_set(lowercaser)
 
         let inputString = "Hello"
@@ -100,11 +85,18 @@ final class TransformerTests: XCTestCase {
 
         let outputString = try Beyond_NET_Sample_Transformer.uppercaseString(inputStringDN).string()
         XCTAssertEqual(expectedOutputString, outputString)
+        
+        // Restore original uppercaser
+        try Beyond_NET_Sample_Transformer_BuiltInTransformers.uppercaseStringTransformer_set(origUppercaser)
+        let expectedOutputStringWithOrig = inputString.uppercased()
+        
+        let outputStringWithOrig = try Beyond_NET_Sample_Transformer.uppercaseString(inputStringDN).string()
+        XCTAssertEqual(expectedOutputStringWithOrig, outputStringWithOrig)
     }
 }
 
 private extension TransformerTests {
-    func createFixedStringProvider() -> Beyond_NET_Sample_Transformer_StringGetterDelegate? {
+    func createFixedStringProvider() -> Beyond_NET_Sample_Transformer_StringGetterDelegate {
         let fixedStringProvider: Beyond_NET_Sample_Transformer_StringGetterDelegate.ClosureType = {
             let outputString = "Fixed String"
             let outputStringDN = outputString.dotNETString()
@@ -117,7 +109,7 @@ private extension TransformerTests {
         return stringGetterDelegate
     }
 
-    func createUppercaser() -> Beyond_NET_Sample_Transformer_StringTransformerDelegate? {
+    func createUppercaser() -> Beyond_NET_Sample_Transformer_StringTransformerDelegate {
         let caser: Beyond_NET_Sample_Transformer_StringTransformerDelegate.ClosureType = { inputStringDN in
             let inputString = inputStringDN.string()
 
@@ -128,11 +120,11 @@ private extension TransformerTests {
         }
 
         let stringTransformerDelegate = Beyond_NET_Sample_Transformer_StringTransformerDelegate(caser)
-
+        
         return stringTransformerDelegate
     }
 
-    func createLowercaser() -> Beyond_NET_Sample_Transformer_StringTransformerDelegate? {
+    func createLowercaser() -> Beyond_NET_Sample_Transformer_StringTransformerDelegate {
         let caser: Beyond_NET_Sample_Transformer_StringTransformerDelegate.ClosureType = { inputStringDN in
             let inputString = inputStringDN.string()
 

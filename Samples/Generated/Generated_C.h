@@ -1,5 +1,5 @@
 // Number of generated types: 1634
-// Number of generated members: 7730
+// Number of generated members: 7731
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -45486,6 +45486,11 @@ Beyond_NET_Sample_IndexerTests_Destroy(
 void /* System.Void */
 Beyond_NET_Sample_IInterface1_MethodInIInterface1(
 	Beyond_NET_Sample_IInterface1_t _Nullable /* Beyond.NET.Sample.IInterface1 */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_IInterface1_t _Nonnull /* Beyond.NET.Sample.IInterface1 */
+Beyond_NET_Sample_IInterface1_CreateDefaultInstance(
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
