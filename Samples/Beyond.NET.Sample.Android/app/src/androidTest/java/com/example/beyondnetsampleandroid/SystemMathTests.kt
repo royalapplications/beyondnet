@@ -29,13 +29,13 @@ class SystemMathTests {
         assertEquals(System_Math.max(UInt.MIN_VALUE, UInt.MAX_VALUE), UInt.MAX_VALUE)
         assertEquals(System_Math.max(ULong.MIN_VALUE, ULong.MAX_VALUE), ULong.MAX_VALUE)
 
-        val dnMaxF = Beyond_NET_Sample_PrimitiveTests.floatMax_get()
+        val dnMaxF = Beyond_NET_Sample_PrimitiveTests.floatMax
         val kMaxF = Float.MAX_VALUE
         val maxDeltaF = Math.ulp(dnMaxF).coerceAtLeast(Math.ulp(kMaxF))
 
         assertEquals(System_Math.max(-kMaxF, kMaxF), kMaxF, maxDeltaF)
 
-        val dnMaxD = Beyond_NET_Sample_PrimitiveTests.doubleMax_get()
+        val dnMaxD = Beyond_NET_Sample_PrimitiveTests.doubleMax
         val kMaxD = Double.MAX_VALUE
         val maxDeltaD = Math.ulp(dnMaxD).coerceAtLeast(Math.ulp(kMaxD))
 

@@ -39,8 +39,8 @@ class SystemSecurityCryptographyTests {
         aes.generateIV()
         aes.generateKey()
 
-        val iv = aes.iV_get()
-        val key = aes.key_get()
+        val iv = aes.iV
+        val key = aes.key
 
         val encryptor = aes.createEncryptor()
         val memoryStream = System_IO_MemoryStream()

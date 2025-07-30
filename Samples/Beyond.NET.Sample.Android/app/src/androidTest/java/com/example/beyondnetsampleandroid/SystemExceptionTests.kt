@@ -16,7 +16,7 @@ class SystemExceptionTests {
         val exceptionMessage = "I'm a nice exception"
 
         val createdException = System_Exception(exceptionMessage.toDotNETString())
-        val retrievedExceptionMessage = createdException.message_get().toKString()
+        val retrievedExceptionMessage = createdException.message.toKString()
 
         assertEquals(exceptionMessage, retrievedExceptionMessage)
     }

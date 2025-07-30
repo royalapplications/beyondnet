@@ -29,16 +29,16 @@ class SystemVersionTests {
         assertTrue(systemVersionType == versionFromComponentsType)
         assertTrue(System_Object.equals(systemVersionType, versionFromComponentsType))
 
-        val majorRet = version.major_get()
+        val majorRet = version.major
         assertEquals(major, majorRet)
 
-        val minorRet = version.minor_get()
+        val minorRet = version.minor
         assertEquals(minor, minorRet)
 
-        val buildRet = version.build_get()
+        val buildRet = version.build
         assertEquals(build, buildRet)
 
-        val revisionRet = version.revision_get()
+        val revisionRet = version.revision
         assertEquals(revision, revisionRet)
 
         assertEquals(versionString, version.dnToString().toKString())

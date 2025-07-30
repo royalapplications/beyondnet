@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace Beyond.NET.CodeGenerator.Extensions;
 
@@ -244,5 +245,12 @@ public static class MethodInfoExtensions
         }
 
         return false;
+    }
+
+    public static bool IsExtension(this MethodBase methodBase)
+    {
+        var isIt = methodBase.IsDefined(typeof(ExtensionAttribute));
+
+        return isIt;
     }
 }

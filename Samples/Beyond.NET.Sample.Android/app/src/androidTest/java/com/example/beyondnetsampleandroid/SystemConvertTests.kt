@@ -51,7 +51,7 @@ class SystemConvertTests {
         val text = "Hello World!"
         val textDN = text.toDotNETString()
 
-        val utf8Encoding = System_Text_Encoding.uTF8_get()
+        val utf8Encoding = System_Text_Encoding.uTF8
         val textBytes = utf8Encoding.getBytes(textDN)
         val textAsBase64StringDN = System_Convert.toBase64String(textBytes)
         val textAsBase64String = textAsBase64StringDN.toKString()

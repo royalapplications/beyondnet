@@ -42,9 +42,9 @@ class OutParameterTestTests {
     fun testNonOptionalStructs() {
         val inst = makeInstance()
 
-        val returnValue = ObjectRef(System_DateTime.minValue_get())
+        val returnValue = ObjectRef(System_DateTime.minValue)
         inst.return_DateTime_MaxValue_NonOptional(returnValue)
-        assertEquals(returnValue.value, System_DateTime.maxValue_get())
+        assertEquals(returnValue.value, System_DateTime.maxValue)
 
         // TODO
 //        val returnValueWithPlaceholder = System.DateTime.outParameterPlaceholder
@@ -59,11 +59,11 @@ class OutParameterTestTests {
 
         val returnValue = ObjectRef<System_DateTime?>(null)
         inst.return_DateTime_MaxValue_Optional(returnValue)
-        assertEquals(returnValue.value, System_DateTime.maxValue_get())
+        assertEquals(returnValue.value, System_DateTime.maxValue)
 
-        val returnValueWithInValue = ObjectRef<System_DateTime?>(System_DateTime.minValue_get())
+        val returnValueWithInValue = ObjectRef<System_DateTime?>(System_DateTime.minValue)
         inst.return_DateTime_MaxValue_Optional(returnValueWithInValue)
-        assertEquals(returnValueWithInValue.value, System_DateTime.maxValue_get())
+        assertEquals(returnValueWithInValue.value, System_DateTime.maxValue)
 
         // TODO
 //        var returnValueWithPlaceholder: System.DateTime? = System.DateTime.outParameterPlaceholder
@@ -80,7 +80,7 @@ class OutParameterTestTests {
         inst.return_DateTime_Null(returnValue)
         assertNull(returnValue.value)
 
-        val returnValueWithInValue = ObjectRef<System_DateTime?>(System_DateTime.minValue_get())
+        val returnValueWithInValue = ObjectRef<System_DateTime?>(System_DateTime.minValue)
         inst.return_DateTime_Null(returnValueWithInValue)
         assertNull(returnValueWithInValue.value)
 
@@ -98,7 +98,7 @@ class OutParameterTestTests {
 
         val abc = "Abc".toDotNETString()
 
-        val returnValue = ObjectRef(System_String.empty_get())
+        val returnValue = ObjectRef(System_String.empty)
         inst.return_String_Abc_NonOptional(returnValue)
         assertEquals(returnValue.value, abc)
 
@@ -119,7 +119,7 @@ class OutParameterTestTests {
         inst.return_String_Abc_Optional(returnValue)
         assertEquals(returnValue.value, abc)
 
-        val returnValueWithInValue = ObjectRef<System_String?>(System_String.empty_get())
+        val returnValueWithInValue = ObjectRef<System_String?>(System_String.empty)
         inst.return_String_Abc_Optional(returnValueWithInValue)
         assertEquals(returnValue.value, abc)
 
@@ -138,7 +138,7 @@ class OutParameterTestTests {
         inst.return_String_Null(returnValue)
         assertNull(returnValue.value)
 
-        val returnValueWithInValue = ObjectRef<System_String?>(System_String.empty_get())
+        val returnValueWithInValue = ObjectRef<System_String?>(System_String.empty)
         inst.return_String_Null(returnValueWithInValue)
         assertNull(returnValueWithInValue.value)
 
@@ -156,7 +156,7 @@ class OutParameterTestTests {
 
         val abc = "Abc".toDotNETString()
 
-        val returnValue = ObjectRef<System_Collections_IEnumerable>(System_String.empty_get())
+        val returnValue = ObjectRef<System_Collections_IEnumerable>(System_String.empty)
         inst.return_IEnumerable_String_Abc_NonOptional(returnValue)
         assertEquals(returnValue.value.castTo(System_String.typeOf()), abc)
 
@@ -177,7 +177,7 @@ class OutParameterTestTests {
         inst.return_IEnumerable_String_Abc_Optional(returnValue)
         assertEquals(returnValue.value?.castTo(System_String.typeOf()), abc)
 
-        val returnValueWithInValue = ObjectRef<System_Collections_IEnumerable?>(System_String.empty_get())
+        val returnValueWithInValue = ObjectRef<System_Collections_IEnumerable?>(System_String.empty)
         inst.return_IEnumerable_String_Abc_Optional(returnValueWithInValue)
         assertEquals(returnValueWithInValue.value?.castTo(System_String.typeOf()), abc)
 
@@ -196,7 +196,7 @@ class OutParameterTestTests {
         inst.return_IEnumerable_Null(returnValue)
         assertNull(returnValue.value)
 
-        val returnValueWithInValue = ObjectRef<System_Collections_IEnumerable?>(System_String.empty_get())
+        val returnValueWithInValue = ObjectRef<System_Collections_IEnumerable?>(System_String.empty)
         inst.return_IEnumerable_Null(returnValueWithInValue)
         assertNull(returnValueWithInValue.value)
 

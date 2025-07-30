@@ -29,11 +29,11 @@ class SystemDateTimeTests {
 
         val nowDN = System_DateTime(expectedYear, expectedMonth, expectedDay, expectedHour, expectedMinute, expectedSecond)
 
-        val year = nowDN.year_get()
-        val month = nowDN.month_get()
-        val day = nowDN.day_get()
-        val hour = nowDN.hour_get()
-        val minute = nowDN.minute_get()
+        val year = nowDN.year
+        val month = nowDN.month
+        val day = nowDN.day
+        val hour = nowDN.hour
+        val minute = nowDN.minute
 
         assertEquals(expectedYear, year)
         assertEquals(expectedMonth, month)
@@ -64,11 +64,11 @@ class SystemDateTimeTests {
 
         val nowDN = System_DateTime.parse(dateStringDN, enUSCulture)
 
-        val year = nowDN.year_get()
-        val month = nowDN.month_get()
-        val day = nowDN.day_get()
-        val hour = nowDN.hour_get()
-        val minute = nowDN.minute_get()
+        val year = nowDN.year
+        val month = nowDN.month
+        val day = nowDN.day
+        val hour = nowDN.hour
+        val minute = nowDN.minute
 
         assertEquals(expectedYear, year)
         assertEquals(expectedMonth, month)
@@ -83,7 +83,7 @@ class SystemDateTimeTests {
         val referenceKDate = Date(0)
         val dateTime = System_DateTime(1970, 1, 1, 0, 0, 0, 0, 0, System_DateTimeKind.UTC)
 
-        val dateTimeMinValue = System_DateTime.minValue_get()
+        val dateTimeMinValue = System_DateTime.minValue
 
         val retDate = dateTime.toKDate()
         assertEquals(retDate, referenceKDate)

@@ -38,7 +38,7 @@ class SystemTypeTests {
     @Test
     fun testSystemTypeComparison() {
         val staticSystemGuidType = System_Guid.typeOf()
-        val systemGuidType = System_Guid.empty_get().getType()
+        val systemGuidType = System_Guid.empty.getType()
         val staticSystemStringType = System_String.typeOf()
 
         assertTrue(System_Object.equals(staticSystemGuidType, systemGuidType))

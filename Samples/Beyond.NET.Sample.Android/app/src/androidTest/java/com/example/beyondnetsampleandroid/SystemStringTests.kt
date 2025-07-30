@@ -14,7 +14,7 @@ class SystemStringTests {
     // NOTE: This was copied from the Swift tests
     @Test
     fun testString() {
-        val emptyStringDN = System_String.empty_get()
+        val emptyStringDN = System_String.empty
 
         val emptyString = emptyStringDN.toKString()
         assertTrue(emptyString.isEmpty())
@@ -50,7 +50,7 @@ class SystemStringTests {
 
         val split = nonEmptyStringDN.split(blankDN, splitOptions)
 
-        if (split.length_get() != 2) {
+        if (split.length != 2) {
             fail("System.Array.Length getter should not throw and return 2")
         }
     }

@@ -70,7 +70,7 @@ class TransfomerTests {
         val lowercaser = createLowercaser()
 
         // "Remember" original uppercaser
-        val origUppercaser = Beyond_NET_Sample_Transformer_BuiltInTransformers.uppercaseStringTransformer_get()
+        val origUppercaser = Beyond_NET_Sample_Transformer_BuiltInTransformers.uppercaseStringTransformer
         Beyond_NET_Sample_Transformer_BuiltInTransformers.uppercaseStringTransformer_set(lowercaser)
 
         val inputString = "Hello"

@@ -27,7 +27,7 @@ class TypeConversionTests {
         assertFalse(systemObject.`is`(systemGuidTypeDN))
 
         // MARK: - System.String
-        val systemString = System_String.empty_get()
+        val systemString = System_String.empty
 
         assertTrue(systemString.`is`(systemObjectTypeDN))
         assertTrue(systemString.`is`(systemStringTypeDN))

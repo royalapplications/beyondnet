@@ -14,7 +14,7 @@ class AnimalTests {
     // NOTE: This was copied from the Swift tests
     @Test
     fun testDog() {
-        val dogNameDN = Beyond_NET_Sample_Dog.dogName_get()
+        val dogNameDN = Beyond_NET_Sample_Dog.dogName
         val dogName = dogNameDN.toKString()
 
         val dog = Beyond_NET_Sample_AnimalFactory.createAnimal(dogNameDN)
@@ -25,7 +25,7 @@ class AnimalTests {
             return
         }
 
-        val retrievedDogName = dog.name_get().toKString()
+        val retrievedDogName = dog.name.toKString()
         assertEquals(dogName, retrievedDogName)
 
         val food = "Bone"
@@ -39,7 +39,7 @@ class AnimalTests {
     // NOTE: This was copied from the Swift tests
     @Test
     fun testCat() {
-        val catNameDN = Beyond_NET_Sample_Cat.catName_get()
+        val catNameDN = Beyond_NET_Sample_Cat.catName
         val catName = catNameDN.toKString()
 
         val cat = Beyond_NET_Sample_AnimalFactory.createAnimal(catNameDN)
@@ -50,7 +50,7 @@ class AnimalTests {
             return
         }
 
-        val retrievedCatName = cat.name_get().toKString()
+        val retrievedCatName = cat.name.toKString()
         assertEquals(catName, retrievedCatName)
 
         val food = "Catnip"
@@ -80,14 +80,14 @@ class AnimalTests {
 
         assertNotNull(horse)
 
-        val retrievedAnimalName = horse?.name_get()?.toKString()
+        val retrievedAnimalName = horse?.name?.toKString()
         assertEquals(animalName, retrievedAnimalName)
     }
 
     // NOTE: This was copied from the Swift tests
     @Test
     fun testGettingDefaultAnimalCreator() {
-        val defaultCreator = Beyond_NET_Sample_AnimalFactory.dEFAULT_CREATOR_get()
+        val defaultCreator = Beyond_NET_Sample_AnimalFactory.dEFAULT_CREATOR
 
         val dogName = "Dog"
         val dogNameDN = dogName.toDotNETString()
@@ -95,7 +95,7 @@ class AnimalTests {
         val dog = defaultCreator.invoke(dogNameDN)
         assertNotNull(dog)
 
-        val dogNameRet = dog?.name_get()?.toKString()
+        val dogNameRet = dog?.name?.toKString()
         assertEquals(dogName, dogNameRet)
 
         val catName = "Cat"
@@ -108,17 +108,17 @@ class AnimalTests {
 
         assertNotNull(cat)
 
-        val catNameRet = cat?.name_get()?.toKString()
+        val catNameRet = cat?.name?.toKString()
         assertEquals(catName, catNameRet)
     }
 
     // NOTE: This was copied from the Swift tests
     @Test
     fun testStaticMemberShadowing() {
-        val dogNameDN = Beyond_NET_Sample_Dog.staticName_get()
+        val dogNameDN = Beyond_NET_Sample_Dog.staticName
         val dogName = dogNameDN.toKString()
 
-        val labradorNameDN = Beyond_NET_Sample_Labrador.staticName_get()
+        val labradorNameDN = Beyond_NET_Sample_Labrador.staticName
         val labradorName = labradorNameDN.toKString()
 
         assertEquals(dogName, "Dog")

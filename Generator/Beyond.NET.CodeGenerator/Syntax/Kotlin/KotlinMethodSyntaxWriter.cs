@@ -1172,25 +1172,29 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 .ToString();
 
             // TODO: Properties
-            /* } else if (CanBeGeneratedAsGetOnlyProperty(memberKind, isGeneric, parameters.Any())) {
-                // string propTypeName = !returnOrSetterOrEventHandlerType.IsVoid()
-                //     ? kotlinReturnOrSetterTypeNameWithComment
-                //     : throw new Exception("A property must have a return type");
-                //
-                // declaration = Builder.GetOnlyProperty(methodNameKotlin, propTypeName)
-                //     .Visibility(memberVisibility)
-                //     .TypeAttachmentKind(isStaticMethod
-                //         ? interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.Protocol || interfaceGenerationPhase == SwiftSyntaxWriterConfiguration.InterfaceGenerationPhases.ProtocolExtensionForDefaultImplementations ? SwiftTypeAttachmentKinds.Static : SwiftTypeAttachmentKinds.Class
-                //         : SwiftTypeAttachmentKinds.Instance)
-                //     .Override(treatAsOverridden)
-                //     .Throws(mayThrow)
-                //     .Implementation(memberImpl)
-                //     .ToString();
-            } else if (memberKind == MemberKind.FieldGetter ||
+            /* } else if (memberKind == MemberKind.FieldGetter ||
                        memberKind == MemberKind.FieldSetter ||
                        memberKind == MemberKind.PropertyGetter ||
                        memberKind == MemberKind.PropertySetter) {
             */
+        } else if (CanBeGeneratedAsGetOnlyProperty(memberKind, isGeneric, parameters.Any(), methodBase?.IsExtension() ?? false)) {
+            string propTypeName = !returnOrSetterOrEventHandlerType.IsVoid()
+                ? kotlinReturnOrSetterTypeNameWithComment
+                : throw new Exception("A property must have a return type");
+
+            // TODO: Computed Property Builder
+            KotlinComputedPropertyDeclaration propDecl = new(
+                methodNameKotlin,
+                propTypeName,
+                memberVisibility,
+                treatAsOverridden,
+                memberImpl,
+                $"{methodNameKotlin}_get",
+                null, // No setter
+                null // No JVM name for a non-existent setter
+            );
+
+            declaration = propDecl.ToString();
         } else {
             // TODO: Static?
             // TODO: Throws?
@@ -1208,7 +1212,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 }
 
                 extensionMethodTypeName = name;
-            }else {
+            } else {
                 extensionMethodTypeName = null;
             }
 
@@ -1269,13 +1273,15 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
     private static bool CanBeGeneratedAsGetOnlyProperty(
         MemberKind memberKind,
         bool isGeneric,
-        bool hasParameters
+        bool hasParameters,
+        bool isExtension
     )
     {
         return
             (memberKind == MemberKind.PropertyGetter || memberKind == MemberKind.FieldGetter) &&
             !isGeneric &&
-            !hasParameters;
+            !hasParameters &&
+            !isExtension;
     }
 
     private static string WriteMethodImplementation(

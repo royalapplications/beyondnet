@@ -13,13 +13,13 @@ import com.example.beyondnetsampleandroid.dn.*
 class SystemArrayTests {
     @Test
     fun testSystemArray() {
-        val now = System_DateTime.now_get()
+        val now = System_DateTime.now
         val dateTimeType = now.getType()
 
         val arrayLength = 1
         val arrayOfDateTime = System_Array.createInstance(dateTimeType, arrayLength)
 
-        val rank = arrayOfDateTime.rank_get()
+        val rank = arrayOfDateTime.rank
 
         assertEquals(rank, 1)
 
@@ -66,8 +66,8 @@ class SystemArrayTests {
         val count = 2
         val arrayOfDateTime = DNArray<System_DateTime>(count)
 
-        val dateTimeMax = System_DateTime.maxValue_get()
-        val dateTimeMin = System_DateTime.minValue_get()
+        val dateTimeMax = System_DateTime.maxValue
+        val dateTimeMin = System_DateTime.minValue
 
         arrayOfDateTime[0] = dateTimeMax
         arrayOfDateTime[1] = dateTimeMin

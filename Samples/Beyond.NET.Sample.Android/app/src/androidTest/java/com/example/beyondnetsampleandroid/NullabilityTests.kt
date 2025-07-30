@@ -21,10 +21,10 @@ class NullabilityTests {
         assertEquals(test.methodWithNonNullableStringParameter(helloString), helloString)
         assertEquals(test.methodWithNullableStringParameter(nullString), nullString)
 
-        assertEquals(test.nonNullableStringProperty_get(), helloString)
-        assertEquals(test.nonNullableStringField_get(), helloString)
-        assertEquals(test.nullableStringProperty_get(), nullString)
-        assertEquals(test.nullableStringField_get(), nullString)
+        assertEquals(test.nonNullableStringProperty, helloString)
+        assertEquals(test.nonNullableStringField, helloString)
+        assertEquals(test.nullableStringProperty, nullString)
+        assertEquals(test.nullableStringField, nullString)
 
         assertEquals(test.methodWithNonNullableStringReturnValue(), helloString)
         assertEquals(test.methodWithNullableStringReturnValue(), nullString)

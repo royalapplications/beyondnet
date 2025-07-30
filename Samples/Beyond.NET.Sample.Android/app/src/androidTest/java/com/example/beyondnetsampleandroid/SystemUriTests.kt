@@ -21,7 +21,7 @@ class SystemUriTests {
         val value = true
 
         creationOptions.dangerousDisablePathAndQueryCanonicalization_set(value)
-        val valueRet = creationOptions.dangerousDisablePathAndQueryCanonicalization_get()
+        val valueRet = creationOptions.dangerousDisablePathAndQueryCanonicalization
         assertEquals(value, valueRet)
     }
 

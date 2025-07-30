@@ -54,8 +54,8 @@ class DelegateTestTests {
         val expectedResult = Beyond_NET_Sample_Point(originalX + valueToAddToX, originalY + valueToAddToY)
 
         val result = Beyond_NET_Sample_DelegatesTest.transformPoint(original, Beyond_NET_Sample_DelegatesTest_PointTransformDelegate { p ->
-            val pX = p.x_get()
-            val pY = p.y_get()
+            val pX = p.x
+            val pY = p.y
 
             val newX = pX + valueToAddToX
             val newY = pY + valueToAddToY
@@ -63,10 +63,10 @@ class DelegateTestTests {
             Beyond_NET_Sample_Point(newX, newY)
         })
 
-        val resultX = result.x_get()
-        val resultY = result.y_get()
-        val expectedX = expectedResult.x_get()
-        val expectedY = expectedResult.y_get()
+        val resultX = result.x
+        val resultY = result.y
+        val expectedX = expectedResult.x
+        val expectedY = expectedResult.y
 
         assertEquals(resultX, expectedX, 0.001)
         assertEquals(resultY, expectedY, 0.001)

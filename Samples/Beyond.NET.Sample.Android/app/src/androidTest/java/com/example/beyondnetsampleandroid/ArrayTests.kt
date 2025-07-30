@@ -14,7 +14,7 @@ class ArrayTests {
     @Test
     fun testArrayOfNullableString() {
         val tests = Beyond_NET_Sample_ArrayTests()
-        val array = tests.arrayOfNullableString_get()
+        val array = tests.arrayOfNullableString
 
         // Check initial state
         verifyArrayOfNullableStringInitialState(array)
@@ -23,7 +23,7 @@ class ArrayTests {
         array[3] = null
 
         tests.arrayOfNullableString_set(array)
-        val newArray = tests.arrayOfNullableString_get()
+        val newArray = tests.arrayOfNullableString
 
         // Check modified state
         assertNull(newArray[0])
@@ -45,7 +45,7 @@ class ArrayTests {
         val tests = Beyond_NET_Sample_ArrayTests()
         val newArray = DNNullableArray<System_String>(3)
 
-        assertEquals(newArray.rank_get(), 1)
+        assertEquals(newArray.rank, 1)
 
         // Set values
         newArray[0] = "z".toDotNETString()
@@ -54,8 +54,8 @@ class ArrayTests {
 
         tests.setArrayOfNullableStringWithParameter(newArray)
 
-        val array = tests.arrayOfNullableString_get()
-        assertEquals(array.rank_get(), 1)
+        val array = tests.arrayOfNullableString
+        assertEquals(array.rank, 1)
 
         // Check state
         assertEquals(array.getValue(0)?.castTo<System_String>()?.toKString(), "z")
@@ -94,12 +94,12 @@ class ArrayTests {
     fun testArrayOfGuids() {
         val tests = Beyond_NET_Sample_ArrayTests()
 
-        val array = tests.arrayOfGuids_get()
-        val rank = array.rank_get()
+        val array = tests.arrayOfGuids
+        val rank = array.rank
 
         assertEquals(rank, 1)
 
-        val emptyGuid = System_Guid.empty_get()
+        val emptyGuid = System_Guid.empty
 
         // Check initial state
         assertEquals(array[0], emptyGuid)
@@ -110,7 +110,7 @@ class ArrayTests {
         array[1] = emptyGuid
 
         tests.arrayOfGuids_set(array)
-        val newArray = tests.arrayOfGuids_get()
+        val newArray = tests.arrayOfGuids
 
         // Check modified state
         assertNotEquals(newArray[0], emptyGuid)
@@ -120,8 +120,8 @@ class ArrayTests {
     @Test
     fun testArrayOfCharacters() {
         val tests = Beyond_NET_Sample_ArrayTests()
-        val array = tests.arrayOfCharacters_get()
-        val rank = array.rank_get()
+        val array = tests.arrayOfCharacters
+        val rank = array.rank
 
         assertEquals(rank, 1)
 
@@ -140,7 +140,7 @@ class ArrayTests {
         array[2] = bChar.toDotNETObject()
 
         tests.arrayOfCharacters_set(array)
-        val newArray = tests.arrayOfCharacters_get()
+        val newArray = tests.arrayOfCharacters
 
         // Check modified state
         assertEquals(newArray[0].castToChar(), cChar)
@@ -151,8 +151,8 @@ class ArrayTests {
     @Test
     fun testArrayOfBytes() {
         val tests = Beyond_NET_Sample_ArrayTests()
-        val array = tests.arrayOfBytes_get()
-        val rank = array.rank_get()
+        val array = tests.arrayOfBytes
+        val rank = array.rank
 
         assertEquals(rank, 1)
 
@@ -171,8 +171,8 @@ class ArrayTests {
     @Test
     fun testArrayOfBytesConversion() {
         val tests = Beyond_NET_Sample_ArrayTests()
-        val array = tests.arrayOfBytes_get()
-        val rank = array.rank_get()
+        val array = tests.arrayOfBytes
+        val rank = array.rank
 
         assertEquals(rank, 1)
 
@@ -194,8 +194,8 @@ class ArrayTests {
     @Test
     fun testArrayOfSBytes() {
         val tests = Beyond_NET_Sample_ArrayTests()
-        val array = tests.arrayOfSBytes_get()
-        val rank = array.rank_get()
+        val array = tests.arrayOfSBytes
+        val rank = array.rank
 
         assertEquals(rank, 1)
 
@@ -213,8 +213,8 @@ class ArrayTests {
     @Test
     fun testArrayOfSBytesConversion() {
         val tests = Beyond_NET_Sample_ArrayTests()
-        val array = tests.arrayOfSBytes_get()
-        val rank = array.rank_get()
+        val array = tests.arrayOfSBytes
+        val rank = array.rank
 
         assertEquals(rank, 1)
 
@@ -250,7 +250,7 @@ class ArrayTests {
 
         val dnByteArray = uByteArray.toDotNETByteArray()
 
-        val rank = dnByteArray.rank_get()
+        val rank = dnByteArray.rank
         assertEquals(rank, 1)
 
         assertEquals(dnByteArray.count(), 4)
@@ -277,7 +277,7 @@ class ArrayTests {
 
         val dnSByteArray = byteArray.toDotNETSByteArray()
 
-        val rank = dnSByteArray.rank_get()
+        val rank = dnSByteArray.rank
         assertEquals(rank, 1)
 
         assertEquals(dnSByteArray.count(), 4)
@@ -289,7 +289,7 @@ class ArrayTests {
     }
 
     private fun verifyArrayOfNullableStringInitialState(array: DNNullableArray<System_String>) {
-        assertEquals(array.rank_get(), 1)
+        assertEquals(array.rank, 1)
         assertNull(array[0])
         assertEquals(array[1]?.toKString(), "a")
         assertEquals(array[2]?.toKString(), "b")

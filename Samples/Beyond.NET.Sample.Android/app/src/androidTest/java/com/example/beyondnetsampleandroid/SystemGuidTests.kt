@@ -32,7 +32,7 @@ class SystemGuidTests {
         val inputUUIDStr = inputUUID.toString()
         val inputUUIDStrDN = inputUUIDStr.toDotNETString()
 
-        val guidRef = ObjectRef(System_Guid.empty_get())
+        val guidRef = ObjectRef(System_Guid.empty)
         val result = System_Guid.tryParse(inputUUIDStrDN, guidRef)
 
         assertTrue(result)
@@ -47,7 +47,7 @@ class SystemGuidTests {
 
     @Test
     fun testComparingSystemGuids() {
-        val emptyGuid = System_Guid.empty_get()
+        val emptyGuid = System_Guid.empty
         val emptyGuidWithCtor = System_Guid()
 
         val areEqual = System_Object.equals(emptyGuid, emptyGuidWithCtor)

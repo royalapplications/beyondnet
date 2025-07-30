@@ -57,7 +57,7 @@ class MainActivity : ComponentActivity() {
 
         updateGuid()
 
-        val emptyGuid = System_Guid.empty_get()
+        val emptyGuid = System_Guid.empty
         require(emptyGuid.`is`(System_Guid.typeOf()))
 
         val emptyGuidWithCtor = System_Guid()
@@ -66,7 +66,7 @@ class MainActivity : ComponentActivity() {
         require(System_Object.equals(emptyGuid, emptyGuidWithCtor))
         require(System_Object.equals(System_Guid.typeOf(), emptyGuid.getType()))
 
-        val emptyStringDN = System_String.empty_get()
+        val emptyStringDN = System_String.empty
 
         var exceptionString = "ERROR: We should run into an exception here"
 
@@ -84,10 +84,10 @@ class MainActivity : ComponentActivity() {
             50
         )
 
-        val johnDoeName = johnDoe.fullName_get().toKString()
-        val johnDoeAge = johnDoe.age_get()
+        val johnDoeName = johnDoe.fullName.toKString()
+        val johnDoeAge = johnDoe.age
         johnDoe.niceLevel_set(Beyond_NET_Sample_NiceLevels.LITTLEBITNICE)
-        val johnDoeNiceLevel = johnDoe.niceLevel_get()
+        val johnDoeNiceLevel = johnDoe.niceLevel
         val welcomeMessage = johnDoe.getWelcomeMessage().toKString()
 
         require(johnDoeNiceLevel == Beyond_NET_Sample_NiceLevels.LITTLEBITNICE)

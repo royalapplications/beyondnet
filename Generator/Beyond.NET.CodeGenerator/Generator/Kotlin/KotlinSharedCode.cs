@@ -40,11 +40,11 @@ open class DNObject(handle: Pointer): IDNObject {
     }
 }
 
-public class DNException(public val dnException: System_Exception) : Exception(try { dnException.message_get().toKString() } catch (e: Exception) { "Error while getting System.Exception.Message" }) {
+public class DNException(public val dnException: System_Exception) : Exception(try { dnException.message.toKString() } catch (e: Exception) { "Error while getting System.Exception.Message" }) {
     public val dnStackTrace: String?
         get() {
             return try {
-                dnException.stackTrace_get()?.toKString()
+                dnException.stackTrace?.toKString()
             } catch (e: Exception) {
                 null
             }
@@ -430,7 +430,7 @@ open class DNArray<T: System_Object>(handle: Pointer, klassOfT: Class<T>)
 
     // Iterator/foreach loop support
     override fun iterator() = object: Iterator<T> {
-        private val count = this@DNArray.count_get()
+        private val count = this@DNArray.count
         private var currentIndex: Int = -1
 
         override fun hasNext(): Boolean {
@@ -515,7 +515,7 @@ open class DNNullableArray<T: System_Object?>(handle: Pointer, klassOfT: Class<T
 
     // Iterator/foreach loop support, works with nullable types
     override fun iterator() = object : Iterator<T?> {
-        private val count = this@DNNullableArray.count_get()
+        private val count = this@DNNullableArray.count
         private var currentIndex: Int = -1
 
         override fun hasNext(): Boolean {
@@ -948,7 +948,7 @@ fun UUID.toDotNETGuid(): System_Guid {
 }
 
 fun System_DateTime.toKDate(): Date {
-    val dateTimeKind = kind_get()
+    val dateTimeKind = kind
 
     if (dateTimeKind == System_DateTimeKind.UNSPECIFIED) {
         throw Exception("DateTimeKind.Unspecified cannot be safely converted")
@@ -966,14 +966,14 @@ fun System_DateTime.toKDate(): Date {
 fun Date.toDotNETDateTime(): System_DateTime {
     val unixTime = this.time
     val offset = System_DateTimeOffset.fromUnixTimeMilliseconds(unixTime)
-    val dateTime = offset.utcDateTime_get()
+    val dateTime = offset.utcDateTime
 
     return dateTime
 }
 
 @OptIn(ExperimentalUnsignedTypes::class)
 fun DNArray<System_Byte>.toKUByteArray(): UByteArray {
-    val len = this.length_get()
+    val len = this.length
 
     if (len <= 0) {
         return UByteArray(0)
@@ -1008,7 +1008,7 @@ fun DNArray<System_Byte>.toKUByteArray(): UByteArray {
 }
 
 fun DNArray<System_SByte>.toKByteArray(): ByteArray {
-    val len = this.length_get()
+    val len = this.length
 
     if (len <= 0) {
         return ByteArray(0)

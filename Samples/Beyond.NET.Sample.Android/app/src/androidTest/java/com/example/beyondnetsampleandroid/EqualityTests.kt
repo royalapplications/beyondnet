@@ -15,7 +15,7 @@ class EqualityTests {
 
     @Test
     fun testEquality() {
-        val emptyString = System_String.empty_get()
+        val emptyString = System_String.empty
         val emptyStringFromK = "".toDotNETString()
         val helloString = "Hello".toDotNETString()
         val helloCustomString = "Hello World".toDotNETString().replace(" World".toDotNETString(), emptyString)
@@ -25,7 +25,7 @@ class EqualityTests {
         assertNotEquals(emptyString, helloString)
         assertEquals(helloString, helloCustomString)
 
-        val emptyGuid = System_Guid.empty_get()
+        val emptyGuid = System_Guid.empty
         val newGuid = System_Guid.newGuid()
         val newGuidConverted = System_Guid.parse(newGuid.dnToString())
 

@@ -501,7 +501,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
                 .Throws(mayThrow)
                 .Implementation(memberImpl)
                 .ToString();
-        } else if (CanBeGeneratedAsGetOnlyProperty(memberKind, isGeneric, parameters.Any())) {
+        } else if (CanBeGeneratedAsGetOnlyProperty(memberKind, isGeneric, parameters.Any(), methodBase?.IsExtension() ?? false)) {
             string propTypeName = !returnOrSetterOrEventHandlerType.IsVoid()
                 ? swiftReturnOrSetterTypeNameWithComment
                 : throw new Exception("A property must have a return type");
@@ -572,13 +572,15 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
     private static bool CanBeGeneratedAsGetOnlyProperty(
         MemberKind memberKind,
         bool isGeneric,
-        bool hasParameters
+        bool hasParameters,
+        bool isExtension
     )
     {
         return
             (memberKind == MemberKind.PropertyGetter || memberKind == MemberKind.FieldGetter) &&
             !isGeneric &&
-            !hasParameters;
+            !hasParameters &&
+            !isExtension;
     }
 
     private static string WriteMethodImplementation(
@@ -1008,7 +1010,7 @@ if let __exceptionC {
 
         string fullDecl;
 
-        if (CanBeGeneratedAsGetOnlyProperty(memberKind, isGeneric, parameters.Any())) {
+        if (CanBeGeneratedAsGetOnlyProperty(memberKind, isGeneric, parameters.Any(), methodBase.IsExtension())) {
             string propTypeName = !returnType.IsVoid()
                 ? swiftReturnTypeName
                 : throw new Exception("A property must have a return type");

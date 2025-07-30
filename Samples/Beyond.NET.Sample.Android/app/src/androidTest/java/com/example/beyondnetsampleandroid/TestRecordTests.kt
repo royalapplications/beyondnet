@@ -18,10 +18,10 @@ class TestRecordTests {
 
         val aRecord = Beyond_NET_Sample_TestRecord(expectedString.toDotNETString())
 
-        val retString = aRecord.aString_get().toKString()
+        val retString = aRecord.aString.toKString()
         assertEquals(expectedString, retString)
 
-        val deconstructedStringRefDN = ObjectRef(System_String.empty_get())
+        val deconstructedStringRefDN = ObjectRef(System_String.empty)
 
         aRecord.deconstruct(deconstructedStringRefDN)
 
@@ -36,7 +36,7 @@ class TestRecordTests {
         val expectedInt = Int.MAX_VALUE
 
         val aRecord = Beyond_NET_Sample_TestReadOnlyRecordStruct(expectedInt)
-        val retInt = aRecord.anInt_get()
+        val retInt = aRecord.anInt
 
         assertEquals(expectedInt, retInt)
     }

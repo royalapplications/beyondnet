@@ -14,7 +14,7 @@ class CharTests {
     @Test
     fun testLowercaseA() {
         val value = 'a'
-        val valueDN = Beyond_NET_Sample_Source_CharTests.lowercaseA_get()
+        val valueDN = Beyond_NET_Sample_Source_CharTests.lowercaseA
 
         assertEquals(valueDN, value)
 
@@ -33,7 +33,7 @@ class CharTests {
     @Test
     fun testUppercaseA() {
         val value = 'A'
-        val valueDN = Beyond_NET_Sample_Source_CharTests.uppercaseA_get()
+        val valueDN = Beyond_NET_Sample_Source_CharTests.uppercaseA
 
         assertEquals(valueDN, value)
 
@@ -52,7 +52,7 @@ class CharTests {
     @Test
     fun testOne() {
         val value = '1'
-        val valueDN = Beyond_NET_Sample_Source_CharTests.one_get()
+        val valueDN = Beyond_NET_Sample_Source_CharTests.one
 
         assertEquals(valueDN, value)
 
@@ -71,7 +71,7 @@ class CharTests {
     @Test
     fun testLowercaseUmlautA() {
         val value = 'ä'
-        val valueDN = Beyond_NET_Sample_Source_CharTests.lowercaseUmlautA_get()
+        val valueDN = Beyond_NET_Sample_Source_CharTests.lowercaseUmlautA
 
         assertEquals(valueDN, value)
 

@@ -16,14 +16,14 @@ class PersonTests {
     fun testPerson() {
         val johnDoe = Beyond_NET_Sample_Person.makeJohnDoe()
 
-        assertEquals(johnDoe.fullName_get().toKString(), "John Doe")
-        assertEquals(johnDoe.age_get(), 50)
-        assertEquals(johnDoe.niceLevel_get(), Beyond_NET_Sample_NiceLevels.NICE)
-        assertEquals(johnDoe.numberOfChildren_get(), 0)
+        assertEquals(johnDoe.fullName.toKString(), "John Doe")
+        assertEquals(johnDoe.age, 50)
+        assertEquals(johnDoe.niceLevel, Beyond_NET_Sample_NiceLevels.NICE)
+        assertEquals(johnDoe.numberOfChildren, 0)
 
         johnDoe.increaseAge(2)
 
-        assertEquals(johnDoe.age_get(), 52)
+        assertEquals(johnDoe.age, 52)
 
         val address = Beyond_NET_Sample_Address("Homestreet".toDotNETString(), "Hometwon".toDotNETString())
         johnDoe.address_set(address)
@@ -37,7 +37,7 @@ class PersonTests {
         val babyJohn = Beyond_NET_Sample_Person("John".toDotNETString(), "Doe Junior".toDotNETString(), 0)
         johnDoe.addChild(babyJohn)
 
-        assertEquals(johnDoe.numberOfChildren_get(), 1)
+        assertEquals(johnDoe.numberOfChildren, 1)
 
         val firstChildRef = ObjectRef<Beyond_NET_Sample_Person?>(null)
         assertNull(firstChildRef.value)
@@ -55,7 +55,7 @@ class PersonTests {
 
         johnDoe.website_set(websiteUri)
 
-        assertEquals(johnDoe.website_get(), websiteUri)
+        assertEquals(johnDoe.website, websiteUri)
     }
 
     // NOTE: This was copied from the Swift tests
@@ -72,7 +72,7 @@ class PersonTests {
             initialAge
         )
 
-        val ageAfterCreation = person.age_get()
+        val ageAfterCreation = person.age
         assertEquals(initialAge, ageAfterCreation)
 
         val newAgeProviderDelegate = Beyond_NET_Sample_Person_NewAgeProviderDelegate {
@@ -81,7 +81,7 @@ class PersonTests {
 
         person.changeAge(newAgeProviderDelegate)
 
-        val age = person.age_get()
+        val age = person.age
         assertEquals(10, age)
     }
 
@@ -123,7 +123,7 @@ class PersonTests {
 
         mother.addChild(daughter)
 
-        val numberOfChildren = mother.numberOfChildren_get()
+        val numberOfChildren = mother.numberOfChildren
 
         val expectedNumberOfChildren = 2
 
@@ -139,7 +139,7 @@ class PersonTests {
         mother.removeChildAt(0)
         assertEquals(3, numberOfTimesNumberOfChildrenChangedWasCalled)
 
-        val numberOfChildrenAfterRemoval = mother.numberOfChildren_get()
+        val numberOfChildrenAfterRemoval = mother.numberOfChildren
         val expectedNumberOfChildrenAfterRemoval = 0
         assertEquals(expectedNumberOfChildrenAfterRemoval, numberOfChildrenAfterRemoval)
     }

@@ -15,7 +15,7 @@ class ByRefTests {
         val inst = Beyond_NET_Sample_Source_OutParameterTests()
 
         val origValue = DNOutParameter.createPlaceholder(::System_DateTime)
-        val expectedValue = System_DateTime.maxValue_get()
+        val expectedValue = System_DateTime.maxValue
         val valueRef = ObjectRef(origValue)
 
         inst.return_DateTime_MaxValue_NonOptional(valueRef)
@@ -118,8 +118,8 @@ class ByRefTests {
     fun testNonOptionalStruct() {
         val inst = Beyond_NET_Sample_Source_OutParameterTests()
 
-        val origValue = System_DateTime.minValue_get()
-        val expectedValue = System_DateTime.maxValue_get()
+        val origValue = System_DateTime.minValue
+        val expectedValue = System_DateTime.maxValue
         val valueRef = origValue.toRef()
 
         inst.return_DateTime_MaxValue_NonOptional(valueRef)
@@ -131,7 +131,7 @@ class ByRefTests {
     fun testOptionalStruct() {
         val inst = Beyond_NET_Sample_Source_OutParameterTests()
 
-        val expectedValue = System_DateTime.maxValue_get()
+        val expectedValue = System_DateTime.maxValue
         val valueRef = ObjectRef<System_DateTime?>(null)
 
         inst.return_DateTime_MaxValue_Optional(valueRef)
@@ -155,7 +155,7 @@ class ByRefTests {
     fun testNonOptionalClass() {
         val inst = Beyond_NET_Sample_Source_OutParameterTests()
 
-        val origValue = System_String.empty_get()
+        val origValue = System_String.empty
         val expectedValue = "Abc".toDotNETString()
         val valueRef = origValue.toRef()
 
@@ -192,7 +192,7 @@ class ByRefTests {
     fun testNonOptionalInterface() {
         val inst = Beyond_NET_Sample_Source_OutParameterTests()
 
-        val origValue: System_Collections_IEnumerable = System_String.empty_get()
+        val origValue: System_Collections_IEnumerable = System_String.empty
         val expectedValue = "Abc".toDotNETString()
         val valueRef = origValue.toRef()
 

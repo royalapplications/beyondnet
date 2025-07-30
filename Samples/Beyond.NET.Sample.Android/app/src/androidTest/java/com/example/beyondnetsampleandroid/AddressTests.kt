@@ -25,12 +25,12 @@ class AddressTests {
             cityDN
         )
 
-        val retrievedStreet = address.street_get().toKString()
+        val retrievedStreet = address.street.toKString()
         assertEquals(street, retrievedStreet)
 
         val addressType = address.getType()
         val expectedAddressTypeFullName = "Beyond.NET.Sample.Address"
-        val actualAddressFullTypeName = addressType.fullName_get()?.toKString()
+        val actualAddressFullTypeName = addressType.fullName?.toKString()
         assertEquals(expectedAddressTypeFullName, actualAddressFullTypeName)
     }
 
@@ -68,10 +68,10 @@ class AddressTests {
             newCityDN
         )
 
-        val retrievedNewStreet = newAddress.street_get().toKString()
+        val retrievedNewStreet = newAddress.street.toKString()
         assertEquals(newStreet, retrievedNewStreet)
 
-        val retrievedNewCity = newAddress.city_get().toKString()
+        val retrievedNewCity = newAddress.city.toKString()
         assertEquals(newCity, retrievedNewCity)
     }
 }
