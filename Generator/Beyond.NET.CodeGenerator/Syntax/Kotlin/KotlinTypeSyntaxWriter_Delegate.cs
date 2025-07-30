@@ -1199,8 +1199,18 @@ public partial class KotlinTypeSyntaxWriter
         }
 
         var parameterNamesJoined = string.Join(", ", parameterNames);
-        var callbackImplPrefix = typeInfo.IsReturning ? "return " : string.Empty;
-        var callbackImpl = $"{callbackImplPrefix}parent.get()!!.callback({parameterNamesJoined})";
+        var callbackInvocationImplPrefix = typeInfo.IsReturning ? "return " : string.Empty;
+        var callbackInvocationImpl = $"{callbackInvocationImplPrefix}parent.get()!!.callback({parameterNamesJoined})";
+
+        KotlinCodeBuilder callbackImplBuilder = new();
+
+        callbackImplBuilder.AppendLine("try {");
+        callbackImplBuilder.AppendLine($"\t{callbackInvocationImpl}");
+        callbackImplBuilder.AppendLine("} catch (t: Throwable) {");
+        callbackImplBuilder.AppendLine("\terror(\"Error: Throwing inside .NET delegates is not supported and results in undefined behavior. Thrown Exception: ${t.toString()}\")");
+        callbackImplBuilder.AppendLine("}");
+
+        var callbackImpl = callbackImplBuilder.ToString();
 
         funImpl.AppendLine(
             WriteCallbackDeclaration(

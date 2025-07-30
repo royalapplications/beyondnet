@@ -27,8 +27,34 @@ class SystemActionTests {
         action.invoke()
         action.invoke()
         action.invoke()
-
         assertEquals(4, numberOfTimesCalled)
+    }
+
+    @Test
+    fun testSystemActionThrowingAnException() {
+        var numberOfTimesCalled = 0
+
+        val action = System_Action {
+            throw Exception("Oh no!")
+
+            numberOfTimesCalled += 1
+        }
+
+//        try {
+//
+//        } catch (t: Throwable) {
+//            error("Blah ${t.toString()}")
+//        }
+
+        assertEquals(0, numberOfTimesCalled)
+
+        action.invoke()
+        assertEquals(0, numberOfTimesCalled)
+
+        action.invoke()
+        action.invoke()
+        action.invoke()
+        assertEquals(0, numberOfTimesCalled)
     }
 
     @Test
