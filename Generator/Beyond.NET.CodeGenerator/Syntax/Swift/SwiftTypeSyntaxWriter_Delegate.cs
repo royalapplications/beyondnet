@@ -296,7 +296,7 @@ public partial class SwiftTypeSyntaxWriter
             .ToString();
 
         var typeDocumentationComment = type.GetDocumentation()
-            ?.GetFormattedDocumentationComment();
+            ?.GetFormattedDocumentationComment(CodeLanguage.Swift);
 
         SwiftCodeBuilder sbFinal;
 

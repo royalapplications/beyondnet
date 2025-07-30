@@ -601,7 +601,7 @@ public val value: {{underlyingTypeName}}
             // }
 
             var typeDocumentationComment = type.GetDocumentation()
-                ?.GetFormattedDocumentationComment();
+                ?.GetFormattedDocumentationComment(CodeLanguage.Kotlin);
 
             if (!string.IsNullOrEmpty(typeDocumentationComment)) {
                 sb.AppendLine(typeDocumentationComment);

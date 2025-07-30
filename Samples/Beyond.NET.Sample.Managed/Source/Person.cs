@@ -78,6 +78,12 @@ public class Person
     #endregion Delegate Types
 
     #region Constructors
+    /// <summary>
+    /// Creates a new Person
+    /// </summary>
+    /// <param name="firstName">The Person's First Name</param>
+    /// <param name="lastName">The Person's Last Name</param>
+    /// <param name="age">The Person's Age</param>
     public Person(
         string firstName,
         string lastName,
@@ -89,6 +95,11 @@ public class Person
         Age = age;
     }
 
+    /// <summary>
+    /// Creates a new Person
+    /// </summary>
+    /// <param name="firstName">The Person's First Name</param>
+    /// <param name="lastName">The Person's Last Name</param>
     public Person(
         string firstName,
         string lastName
@@ -101,8 +112,17 @@ public class Person
     #endregion Constructors
 
     #region Methods
+    /// <summary>
+    /// Creates a Person named "John Doe" who is 50 years old.
+    /// </summary>
+    /// <returns>Your new John New</returns>
     public static Person MakeJohnDoe() => new("John", "Doe", 50);
 
+    /// <summary>
+    /// Gets a human-readable string representing how nice the person is
+    /// </summary>
+    /// <returns>A human-readable string representing how nice the person is</returns>
+    /// <exception cref="Exception">Throws an exception if the nice level is unknown or invalid</exception>
     public string GetNiceLevelString()
     {
         switch (NiceLevel) {
@@ -119,6 +139,10 @@ public class Person
         throw new Exception("Unknown nice level");
     }
 
+    /// <summary>
+    /// Gets a nice Welcome Message for this Person
+    /// </summary>
+    /// <returns>A nice Welcome Message for this Person</returns>
     public string GetWelcomeMessage()
     {
         return $"Welcome, {FullName}! You're {Age} years old and {GetNiceLevelString()}.";

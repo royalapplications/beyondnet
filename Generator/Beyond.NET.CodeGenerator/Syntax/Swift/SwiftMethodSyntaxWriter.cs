@@ -551,7 +551,7 @@ public class SwiftMethodSyntaxWriter: ISwiftSyntaxWriter, IMethodSyntaxWriter
         }
 
         var declarationComment = xmlDocumentationContent
-            ?.GetFormattedDocumentationComment();
+            ?.GetFormattedDocumentationComment(CodeLanguage.Swift);
 
         if (declarationComment is null &&
             originatingMemberInfo is ParameterlessStructConstructorInfo) {

@@ -1252,7 +1252,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         }
 
         var declarationComment = xmlDocumentationContent
-            ?.GetFormattedDocumentationComment();
+            ?.GetFormattedDocumentationComment(CodeLanguage.Kotlin);
 
         if (declarationComment is null &&
             originatingMemberInfo is ParameterlessStructConstructorInfo) {

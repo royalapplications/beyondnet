@@ -143,7 +143,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
         bool isFlagsEnum = type.IsDefined(typeof(FlagsAttribute), false);
 
         var typeDocumentationComment = type.GetDocumentation()
-            ?.GetFormattedDocumentationComment();
+            ?.GetFormattedDocumentationComment(CodeLanguage.Swift);
 
         if (isFlagsEnum) {
             string structDecl = Builder.Struct(swiftEnumTypeName)
@@ -461,7 +461,7 @@ public partial class SwiftTypeSyntaxWriter: ISwiftSyntaxWriter, ITypeSyntaxWrite
             }
 
             var typeDocumentationComment = type.GetDocumentation()
-                ?.GetFormattedDocumentationComment();
+                ?.GetFormattedDocumentationComment(CodeLanguage.Swift);
 
             if (!string.IsNullOrEmpty(typeDocumentationComment)) {
                 sb.AppendLine(typeDocumentationComment);

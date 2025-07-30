@@ -302,7 +302,7 @@ public class SwiftCodeGenerator: ICodeGenerator
                 .ToString();
 
             var typeDocumentationComment = type.GetDocumentation()
-                ?.GetFormattedDocumentationComment();
+                ?.GetFormattedDocumentationComment(CodeLanguage.Swift);
 
             sbTypeAliases.AppendLine(typeDocumentationComment);
             sbTypeAliases.AppendLine(typeAlias);
