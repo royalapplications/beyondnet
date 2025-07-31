@@ -39,12 +39,13 @@ public class KotlinDestructorSyntaxWriter: KotlinMethodSyntaxWriter, IDestructor
             mayThrow,
             type,
             typeof(void),
-            Array.Empty<ParameterInfo>(),
+            [],
             configuration,
             true,
             typeDescriptorRegistry,
             state,
             null,
+            out _,
             out _
         );
 

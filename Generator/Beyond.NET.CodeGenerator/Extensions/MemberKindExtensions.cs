@@ -126,7 +126,7 @@ public static class MemberKindExtensions
     {
         // TODO: This was copied from the Swift version of the same method and modified
         const string getterPrefix = "get_";
-        const string getterSuffix = "";
+        const string getterSuffix = "_get";
 
         const string setterPrefix = "set_";
         const string setterSuffix = "_set";

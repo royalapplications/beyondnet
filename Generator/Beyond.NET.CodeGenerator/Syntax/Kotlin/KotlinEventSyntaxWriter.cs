@@ -78,7 +78,8 @@ public class KotlinEventSyntaxWriter: KotlinMethodSyntaxWriter, IEventSyntaxWrit
                 typeDescriptorRegistry,
                 state,
                 @event,
-                out string generatedName
+                out string generatedName,
+                out _
             );
 
             sb.AppendLine(adderCode);
@@ -112,7 +113,8 @@ public class KotlinEventSyntaxWriter: KotlinMethodSyntaxWriter, IEventSyntaxWrit
                 typeDescriptorRegistry,
                 state,
                 @event,
-                out string generatedName
+                out string generatedName,
+                out _
             );
 
             sb.AppendLine(removerCode);

@@ -2,6 +2,7 @@ using System.Reflection;
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.Generator;
 using Beyond.NET.CodeGenerator.Generator.Kotlin;
+using Beyond.NET.CodeGenerator.Syntax.Kotlin.Declaration;
 using Beyond.NET.CodeGenerator.Types;
 
 namespace Beyond.NET.CodeGenerator.Syntax.Kotlin;
@@ -45,19 +46,21 @@ public class KotlinPropertySyntaxWriter: KotlinMethodSyntaxWriter, IPropertySynt
 
         IEnumerable<ParameterInfo> parameters = property.GetIndexParameters();
 
-        KotlinCodeBuilder sb = new();
-
         Type propertyType = property.PropertyType;
 
         MethodInfo? getterMethod = property.GetGetMethod(false);
         MethodInfo? setterMethod = property.GetPublicAndNonInitSetMethod();
+
+        string? getterCode;
+        string? generatedGetterName;
+        KotlinPropertyInfo? getterInfo;
 
         if (getterMethod is not null &&
             cSharpGeneratedMemberGetter is not null &&
             cGeneratedMemberGetter is not null) {
             bool isStaticMethod = getterMethod.IsStatic;
 
-            string getterCode = WriteMethod(
+            getterCode = WriteMethod(
                 cSharpGeneratedMemberGetter,
                 cGeneratedMemberGetter,
                 getterMethod,
@@ -72,26 +75,25 @@ public class KotlinPropertySyntaxWriter: KotlinMethodSyntaxWriter, IPropertySynt
                 typeDescriptorRegistry,
                 state,
                 property,
-                out string generatedName
+                out generatedGetterName,
+                out getterInfo
             );
-
-            sb.AppendLine(getterCode);
-
-            state.AddGeneratedMember(
-                MemberKind.PropertyGetter,
-                property,
-                getterMayThrow,
-                generatedName,
-                CodeLanguage.Kotlin
-            );
+        } else {
+            getterCode = null;
+            generatedGetterName = null;
+            getterInfo = null;
         }
+
+        string? setterCode;
+        string? generatedSetterName;
+        KotlinPropertyInfo? setterInfo;
 
         if (setterMethod is not null &&
             cSharpGeneratedMemberSetter is not null &&
             cGeneratedMemberSetter is not null) {
             bool isStaticMethod = setterMethod.IsStatic;
 
-            string setterCode = WriteMethod(
+            setterCode = WriteMethod(
                 cSharpGeneratedMemberSetter,
                 cGeneratedMemberSetter,
                 setterMethod,
@@ -106,18 +108,100 @@ public class KotlinPropertySyntaxWriter: KotlinMethodSyntaxWriter, IPropertySynt
                 typeDescriptorRegistry,
                 state,
                 property,
-                out string generatedName
+                out generatedSetterName,
+                out setterInfo
+            );
+        } else {
+            setterCode = null;
+            generatedSetterName = null;
+            setterInfo = null;
+        }
+
+        KotlinCodeBuilder sb = new();
+
+        if (getterInfo is not null ||
+            setterInfo is not null) {
+            KotlinComputedPropertyDeclaration prop;
+
+            if (getterInfo is not null) {
+                state.AddGeneratedMember(
+                    MemberKind.PropertyGetter,
+                    property,
+                    getterMayThrow,
+                    getterInfo.Name,
+                    CodeLanguage.Kotlin
+                );
+            }
+
+            if (setterInfo is not null) {
+                state.AddGeneratedMember(
+                    MemberKind.PropertySetter,
+                    property,
+                    setterMayThrow,
+                    setterInfo.Name,
+                    CodeLanguage.Kotlin
+                );
+            }
+
+            var propName = getterInfo?.Name ?? setterInfo?.Name;
+
+            if (string.IsNullOrEmpty(propName)) {
+                throw new Exception("Property without a name is not valid");
+            }
+
+            var propType = getterInfo?.TypeName ?? setterInfo?.TypeName;
+
+            if (string.IsNullOrEmpty(propType)) {
+                throw new Exception("Property without a type is not valid");
+            }
+
+            var propVisibility = getterInfo?.Visibility ?? setterInfo?.Visibility ?? KotlinVisibilities.Public;
+            bool propIsOverride = getterInfo?.IsOverride ?? setterInfo?.IsOverride ?? false;
+
+            prop = new(
+                propName,
+                propType,
+                propVisibility,
+                propIsOverride,
+                getterInfo?.Implementation,
+                getterInfo?.JvmName,
+                setterInfo?.Implementation,
+                setterInfo?.JvmName
             );
 
-            sb.AppendLine(setterCode);
+            var declComment = getterInfo?.DeclarationComment ?? setterInfo?.DeclarationComment;
 
-            state.AddGeneratedMember(
-                MemberKind.PropertySetter,
-                property,
-                getterMayThrow,
-                generatedName,
-                CodeLanguage.Kotlin
-            );
+            if (!string.IsNullOrEmpty(declComment)) {
+                sb.AppendLine(declComment);
+            }
+
+            sb.AppendLine(prop.ToString());
+        } else {
+            if (getterCode is not null &&
+                generatedGetterName is not null) {
+                sb.AppendLine(getterCode);
+
+                state.AddGeneratedMember(
+                    MemberKind.PropertyGetter,
+                    property,
+                    getterMayThrow,
+                    generatedGetterName,
+                    CodeLanguage.Kotlin
+                );
+            }
+
+            if (setterCode is not null &&
+                generatedSetterName is not null) {
+                sb.AppendLine(setterCode);
+
+                state.AddGeneratedMember(
+                    MemberKind.PropertySetter,
+                    property,
+                    setterMayThrow,
+                    generatedSetterName,
+                    CodeLanguage.Kotlin
+                );
+            }
         }
 
         return sb.ToString();

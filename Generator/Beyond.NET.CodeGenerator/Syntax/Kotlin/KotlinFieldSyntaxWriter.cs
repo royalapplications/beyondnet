@@ -2,6 +2,7 @@ using System.Reflection;
 
 using Beyond.NET.CodeGenerator.Generator;
 using Beyond.NET.CodeGenerator.Generator.Kotlin;
+using Beyond.NET.CodeGenerator.Syntax.Kotlin.Declaration;
 using Beyond.NET.CodeGenerator.Types;
 
 namespace Beyond.NET.CodeGenerator.Syntax.Kotlin;
@@ -38,24 +39,27 @@ public class KotlinFieldSyntaxWriter: KotlinMethodSyntaxWriter, IFieldSyntaxWrit
             throw new Exception("No C generated member");
         }
 
+        bool getterMayThrow = cSharpGeneratedGetterMember?.MayThrow ?? true;
+        bool setterMayThrow = cSharpGeneratedSetterMember?.MayThrow ?? true;
+
         bool isStatic = field.IsStatic;
         Type declaringType = field.DeclaringType ?? throw new Exception("No declaring type");
         IEnumerable<ParameterInfo> parameters = Array.Empty<ParameterInfo>();
         Type fieldType = field.FieldType;
 
-        KotlinCodeBuilder sb = new();
+        string? getterCode;
+        string? generatedGetterName;
+        KotlinPropertyInfo? getterInfo;
 
         if (cSharpGeneratedGetterMember is not null &&
             cGeneratedGetterMember is not null) {
-            bool mayThrow = cSharpGeneratedGetterMember.MayThrow;
-
-            string code = WriteMethod(
+            getterCode = WriteMethod(
                 cSharpGeneratedGetterMember,
                 cGeneratedGetterMember,
                 field,
                 MemberKind.FieldGetter,
                 isStatic,
-                mayThrow,
+                getterMayThrow,
                 declaringType,
                 fieldType,
                 parameters,
@@ -64,31 +68,28 @@ public class KotlinFieldSyntaxWriter: KotlinMethodSyntaxWriter, IFieldSyntaxWrit
                 typeDescriptorRegistry,
                 state,
                 field,
-                out string generatedName
+                out generatedGetterName,
+                out getterInfo
             );
-
-            sb.AppendLine(code);
-
-            state.AddGeneratedMember(
-                MemberKind.FieldGetter,
-                field,
-                mayThrow,
-                generatedName,
-                CodeLanguage.Kotlin
-            );
+        } else {
+            getterCode = null;
+            generatedGetterName = null;
+            getterInfo = null;
         }
+
+        string? setterCode;
+        string? generatedSetterName;
+        KotlinPropertyInfo? setterInfo;
 
         if (cSharpGeneratedSetterMember is not null &&
             cGeneratedSetterMember is not null) {
-            bool mayThrow = cSharpGeneratedSetterMember.MayThrow;
-
-            string code = WriteMethod(
+            setterCode = WriteMethod(
                 cSharpGeneratedSetterMember,
                 cGeneratedSetterMember,
                 field,
                 MemberKind.FieldSetter,
                 isStatic,
-                mayThrow,
+                setterMayThrow,
                 declaringType,
                 fieldType,
                 parameters,
@@ -97,18 +98,91 @@ public class KotlinFieldSyntaxWriter: KotlinMethodSyntaxWriter, IFieldSyntaxWrit
                 typeDescriptorRegistry,
                 state,
                 field,
-                out string generatedName
+                out generatedSetterName,
+                out setterInfo
             );
+        } else {
+            setterCode = null;
+            generatedSetterName = null;
+            setterInfo = null;
+        }
 
-            sb.AppendLine(code);
+        KotlinCodeBuilder sb = new();
+
+        if (getterInfo is not null) {
+            KotlinComputedPropertyDeclaration prop;
 
             state.AddGeneratedMember(
-                MemberKind.FieldSetter,
+                MemberKind.FieldGetter,
                 field,
-                mayThrow,
-                generatedName,
+                getterMayThrow,
+                getterInfo.Name,
                 CodeLanguage.Kotlin
             );
+
+            if (setterInfo is not null) {
+                prop = new(
+                    getterInfo.Name,
+                    getterInfo.TypeName,
+                    getterInfo.Visibility,
+                    getterInfo.IsOverride,
+                    getterInfo.Implementation,
+                    getterInfo.JvmName,
+                    setterInfo.Implementation,
+                    setterInfo.JvmName
+                );
+
+                state.AddGeneratedMember(
+                    MemberKind.FieldSetter,
+                    field,
+                    setterMayThrow,
+                    setterInfo.Name,
+                    CodeLanguage.Kotlin
+                );
+            } else {
+                prop = new(
+                    getterInfo.Name,
+                    getterInfo.TypeName,
+                    getterInfo.Visibility,
+                    getterInfo.IsOverride,
+                    getterInfo.Implementation,
+                    getterInfo.JvmName,
+                    null,
+                    null
+                );
+            }
+
+            if (!string.IsNullOrEmpty(getterInfo.DeclarationComment)) {
+                sb.AppendLine(getterInfo.DeclarationComment);
+            }
+
+            sb.AppendLine(prop.ToString());
+        } else {
+            if (getterCode is not null &&
+                generatedGetterName is not null) {
+                sb.AppendLine(getterCode);
+
+                state.AddGeneratedMember(
+                    MemberKind.FieldGetter,
+                    field,
+                    getterMayThrow,
+                    generatedGetterName,
+                    CodeLanguage.Kotlin
+                );
+            }
+
+            if (setterCode is not null &&
+                generatedSetterName is not null) {
+                sb.AppendLine(setterCode);
+
+                state.AddGeneratedMember(
+                    MemberKind.FieldSetter,
+                    field,
+                    setterMayThrow,
+                    generatedSetterName,
+                    CodeLanguage.Kotlin
+                );
+            }
         }
 
         return sb.ToString();

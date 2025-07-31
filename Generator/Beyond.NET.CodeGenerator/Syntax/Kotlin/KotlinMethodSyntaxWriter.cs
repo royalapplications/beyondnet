@@ -53,6 +53,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             typeDescriptorRegistry,
             state,
             method,
+            out _,
             out _
         );
 
@@ -74,13 +75,16 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         TypeDescriptorRegistry typeDescriptorRegistry,
         State state,
         MemberInfo? originatingMemberInfo,
-        out string generatedName
+        out string generatedName,
+        out KotlinPropertyInfo? propertyInfo
     )
     {
         var kotlinConfiguration = (syntaxWriterConfiguration as KotlinSyntaxWriterConfiguration)!;
         var generationPhase = kotlinConfiguration.GenerationPhase;
 
         if (generationPhase == KotlinSyntaxWriterConfiguration.GenerationPhases.JNA) {
+            propertyInfo = null;
+
             return WriteJNAMethod(
                 cSharpGeneratedMember,
                 cMember,
@@ -114,7 +118,8 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 typeDescriptorRegistry,
                 state,
                 originatingMemberInfo,
-                out generatedName
+                out generatedName,
+                out propertyInfo
             );
         }
 
@@ -668,10 +673,13 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         TypeDescriptorRegistry typeDescriptorRegistry,
         State state,
         MemberInfo? originatingMemberInfo,
-        out string generatedName
+        out string generatedName,
+        out KotlinPropertyInfo? kotlinPropertyInfo
     )
     {
         #region Preparation
+        kotlinPropertyInfo = null;
+
         if (memberInfo == null &&
             memberKind != MemberKind.Destructor &&
             memberKind != MemberKind.TypeOf) {
@@ -847,6 +855,11 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         if (methodInfo is not null &&
             !methodInfo.IsStatic) {
             // Kotlin doesn't seem to care about nullability in overrides
+            // TODO: Unfortunately that's not true for computed properties with a setter.
+            // While computed "val" properties are fine by just not adding the "override" keyword, that workaround doesn't work for "var" properties.
+            // This currently prevents implementing .NET get/set properties as proper Kotlin properties.
+            // Only doing "val" (get-only) properties is fine though.
+
             bool isActuallyOverridden = methodInfo.IsOverridden(out _ /* bool overrideNullabilityIsCompatible */);
 
             if (isActuallyOverridden) {
@@ -1064,6 +1077,14 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             false
         );
 
+        bool canBeGeneratedAsProperty = CanBeGeneratedAsProperty(
+            originatingMemberInfo,
+            memberKind,
+            isGeneric,
+            parameters.Any(),
+            methodBase?.IsExtension() ?? false
+        );
+
         string kotlinReturnOrSetterTypeNameWithComment;
         Type? setterType;
 
@@ -1071,7 +1092,12 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
             memberKind == MemberKind.FieldSetter ||
             memberKind == MemberKind.EventHandlerAdder ||
             memberKind == MemberKind.EventHandlerRemover) {
-            kotlinReturnOrSetterTypeNameWithComment = string.Empty;
+            if (canBeGeneratedAsProperty) {
+                kotlinReturnOrSetterTypeNameWithComment = $"{kotlinReturnOrSetterTypeName} /* {returnOrSetterOrEventHandlerType.GetFullNameOrName()} */";
+            } else {
+                kotlinReturnOrSetterTypeNameWithComment = string.Empty;
+            }
+
             setterType = returnOrSetterOrEventHandlerType;
         } else {
             kotlinReturnOrSetterTypeNameWithComment = $"{kotlinReturnOrSetterTypeName} /* {returnOrSetterOrEventHandlerType.GetFullNameOrName()} */";
@@ -1080,6 +1106,34 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 
         generatedName = methodNameKotlin;
         #endregion Preparation
+
+        #region Documentation
+        XmlDocumentationMember? xmlDocumentationContent;
+
+        if (originatingMemberInfo is FieldInfo originatingFieldInfo) {
+            xmlDocumentationContent = originatingFieldInfo.GetDocumentation();
+        } else if (originatingMemberInfo is PropertyInfo originatingPropertyInfo) {
+            xmlDocumentationContent = originatingPropertyInfo.GetDocumentation();
+        } else if (originatingMemberInfo is EventInfo originatingEventInfo) {
+            xmlDocumentationContent = originatingEventInfo.GetDocumentation();
+        } else if (originatingMemberInfo is ParameterlessStructConstructorInfo) {
+            xmlDocumentationContent = null;
+        } else if (originatingMemberInfo is ConstructorInfo originatingConstructorInfo) {
+            xmlDocumentationContent = originatingConstructorInfo.GetDocumentation();
+        } else if (originatingMemberInfo is MethodInfo originatingMethodInfo) {
+            xmlDocumentationContent = originatingMethodInfo.GetDocumentation();
+        } else {
+            xmlDocumentationContent = null;
+        }
+
+        var declarationComment = xmlDocumentationContent
+            ?.GetFormattedDocumentationComment(CodeLanguage.Kotlin);
+
+        if (declarationComment is null &&
+            originatingMemberInfo is ParameterlessStructConstructorInfo) {
+            declarationComment = $"/// Initializes a new instance of the {declaringType.GetFullNameOrName()} struct.";
+        }
+        #endregion Documentation
 
         #region Func Declaration
         string? memberImpl;
@@ -1189,24 +1243,54 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                        memberKind == MemberKind.PropertyGetter ||
                        memberKind == MemberKind.PropertySetter) {
             */
-        } else if (CanBeGeneratedAsGetOnlyProperty(memberKind, isGeneric, parameters.Any(), methodBase?.IsExtension() ?? false)) {
+        } else if (canBeGeneratedAsProperty) {
             string propTypeName = !returnOrSetterOrEventHandlerType.IsVoid()
                 ? kotlinReturnOrSetterTypeNameWithComment
                 : throw new Exception("A property must have a return type");
 
-            // TODO: Computed Property Builder
-            KotlinComputedPropertyDeclaration propDecl = new(
-                methodNameKotlin,
+            bool isSetter;
+
+            if (memberKind == MemberKind.PropertyGetter ||
+                memberKind == MemberKind.FieldGetter) {
+                isSetter = false;
+            } else if (memberKind == MemberKind.PropertySetter ||
+                       memberKind == MemberKind.FieldSetter) {
+                isSetter = true;
+            } else {
+                throw new Exception($"Unexpected memberKind {memberKind}");
+            }
+
+            var jvmName = methodNameKotlin;
+            string propName;
+
+            if (isSetter) {
+                if (methodNameKotlin.EndsWith("_set")) {
+                    propName = methodNameKotlin.Substring(0, methodNameKotlin.Length - "_set".Length);
+                } else {
+                    propName = methodNameKotlin;
+                }
+            } else {
+                if (methodNameKotlin.EndsWith("_get")) {
+                    propName = methodNameKotlin.Substring(0, methodNameKotlin.Length - "_get".Length);
+                } else {
+                    propName = methodNameKotlin;
+                }
+            }
+
+            propName = propName.EscapedKotlinName();
+
+            kotlinPropertyInfo = new(
+                propName,
                 propTypeName,
                 memberVisibility,
                 treatAsOverridden,
                 memberImpl,
-                $"{methodNameKotlin}_get",
-                null, // No setter
-                null // No JVM name for a non-existent setter
+                jvmName,
+                declarationComment
             );
 
-            declaration = propDecl.ToString();
+            // Instead of using the declaration, use kotlinPropertyInfo to add the property code
+            declaration = string.Empty;
         } else {
             // TODO: Static?
             // TODO: Throws?
@@ -1245,32 +1329,6 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         }
         #endregion Func Declaration
 
-        XmlDocumentationMember? xmlDocumentationContent;
-
-        if (originatingMemberInfo is FieldInfo originatingFieldInfo) {
-            xmlDocumentationContent = originatingFieldInfo.GetDocumentation();
-        } else if (originatingMemberInfo is PropertyInfo originatingPropertyInfo) {
-            xmlDocumentationContent = originatingPropertyInfo.GetDocumentation();
-        } else if (originatingMemberInfo is EventInfo originatingEventInfo) {
-            xmlDocumentationContent = originatingEventInfo.GetDocumentation();
-        } else if (originatingMemberInfo is ParameterlessStructConstructorInfo) {
-            xmlDocumentationContent = null;
-        } else if (originatingMemberInfo is ConstructorInfo originatingConstructorInfo) {
-            xmlDocumentationContent = originatingConstructorInfo.GetDocumentation();
-        } else if (originatingMemberInfo is MethodInfo originatingMethodInfo) {
-            xmlDocumentationContent = originatingMethodInfo.GetDocumentation();
-        } else {
-            xmlDocumentationContent = null;
-        }
-
-        var declarationComment = xmlDocumentationContent
-            ?.GetFormattedDocumentationComment(CodeLanguage.Kotlin);
-
-        if (declarationComment is null &&
-            originatingMemberInfo is ParameterlessStructConstructorInfo) {
-            declarationComment = $"/// Initializes a new instance of the {declaringType.GetFullNameOrName()} struct.";
-        }
-
         string declarationWithComment;
 
         if (!string.IsNullOrEmpty(declarationComment)) {
@@ -1282,15 +1340,19 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         return declarationWithComment;
     }
 
-    private static bool CanBeGeneratedAsGetOnlyProperty(
+    internal static bool CanBeGeneratedAsProperty(
+        MemberInfo? originatingMemberInfo,
         MemberKind memberKind,
         bool isGeneric,
         bool hasParameters,
         bool isExtension
     )
     {
+        bool isCorrectMemberKind = (memberKind == MemberKind.PropertyGetter || memberKind == MemberKind.PropertySetter ||
+                                    memberKind == MemberKind.FieldGetter || memberKind == MemberKind.FieldSetter);
+
         return
-            (memberKind == MemberKind.PropertyGetter || memberKind == MemberKind.FieldGetter) &&
+            isCorrectMemberKind &&
             !isGeneric &&
             !hasParameters &&
             !isExtension;

@@ -51,6 +51,7 @@ public class KotlinConstructorSyntaxWriter: KotlinMethodSyntaxWriter, IConstruct
             typeDescriptorRegistry,
             state,
             constructor,
+            out _,
             out _
         );
 

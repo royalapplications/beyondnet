@@ -12,7 +12,7 @@ public struct KotlinComputedPropertyDeclaration
     public string TypeName { get; }
     public KotlinVisibilities Visibility { get; }
     public bool IsOverride { get; }
-    public string GetterImplementation { get; }
+    public string? GetterImplementation { get; }
     public string? GetterJvmName { get; }
     public string? SetterImplementation { get; }
     public string? SetterJvmName { get; }
@@ -22,7 +22,7 @@ public struct KotlinComputedPropertyDeclaration
         string typeName,
         KotlinVisibilities visibility,
         bool isOverride,
-        string getterImplementation,
+        string? getterImplementation,
         string? getterJvmName,
         string? setterImplementation,
         string? setterJvmName
@@ -39,8 +39,9 @@ public struct KotlinComputedPropertyDeclaration
         Visibility = visibility;
         IsOverride = isOverride;
 
-        if (string.IsNullOrEmpty(getterImplementation)) {
-            throw new Exception("A computed property must have a getter and optionally, a setter");
+        if (string.IsNullOrEmpty(getterImplementation) &&
+            string.IsNullOrEmpty(setterImplementation)) {
+            throw new Exception("A computed property must have a getter and/or a setter");
         }
 
         GetterImplementation = getterImplementation;
@@ -72,7 +73,10 @@ public struct KotlinComputedPropertyDeclaration
         }
 
         sb.AppendLine(propDecl);
-        sb.AppendLine(getter.IndentAllLines(1));
+
+        if (!string.IsNullOrEmpty(getter)) {
+            sb.AppendLine(getter.IndentAllLines(1));
+        }
 
         if (!string.IsNullOrEmpty(setter)) {
             sb.AppendLine(setter.IndentAllLines(1));
@@ -110,6 +114,8 @@ public struct KotlinComputedPropertyDeclaration
 
     private string WriteGetter()
     {
+        var getterImpl = GetterImplementation;
+
         KotlinCodeBuilder sb = new();
 
         if (!string.IsNullOrEmpty(GetterJvmName)) {
@@ -118,8 +124,21 @@ public struct KotlinComputedPropertyDeclaration
             sb.AppendLine($"@JvmName(\"{sanitizedJvmName}\")");
         }
 
+        const string writeOnlyPropErrorMsg = "This is a write-only property, do not(!) call the getter!";
+
+        if (string.IsNullOrEmpty(getterImpl)) {
+            sb.AppendLine("@JvmSynthetic"); // Hide from JVM
+            sb.AppendLine($"@Deprecated(\"{writeOnlyPropErrorMsg}\", level=DeprecationLevel.HIDDEN)"); // Hide from Kotlin
+        }
+
         sb.AppendLine("get() {");
-        sb.AppendLine(GetterImplementation.IndentAllLines(1));
+
+        if (string.IsNullOrEmpty(getterImpl)) {
+            sb.AppendLine($"\terror(\"{writeOnlyPropErrorMsg}\")");
+        } else {
+            sb.AppendLine(getterImpl?.IndentAllLines(1));
+        }
+
         sb.AppendLine("}");
 
         var getter = sb.ToString();

@@ -9,6 +9,57 @@ import org.junit.Assert.*
 
 import com.example.beyondnetsampleandroid.dn.*
 
+// Property override tests with different types
+open class BaseClass {
+    open var varProp: System_String?
+        get() {
+            error("TODO: Implement")
+        }
+        set(value) {
+
+        }
+
+    open val valProp: System_String?
+        get() {
+            error("TODO: Implement")
+        }
+
+    open fun getValue(): System_String? {
+        error("Fun")
+    }
+
+    open fun setValue(value: System_String?) {
+
+    }
+}
+
+open class SubClass: BaseClass() {
+    // TODO: Error: Type of 'value' doesn't match the type of the overridden 'var' property 'var value: System_String?' defined in 'com/example/beyondnetsampleandroid/BaseClass'.
+    open override var varProp: System_String
+        get() {
+            error("blah")
+        }
+        set(value) {
+
+        }
+
+    // This is fine
+    open override val valProp: System_String
+        get() {
+            error("TODO: Implement")
+        }
+
+    // This is fine
+    open override fun getValue(): System_String {
+        error("Fun")
+    }
+
+    // This is fine
+    open fun setValue(value: System_String) {
+
+    }
+}
+
 @RunWith(AndroidJUnit4::class)
 class TypeConversionTests {
     @Test

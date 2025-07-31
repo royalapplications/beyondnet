@@ -86,7 +86,7 @@ class MainActivity : ComponentActivity() {
 
         val johnDoeName = johnDoe.fullName.toKString()
         val johnDoeAge = johnDoe.age
-        johnDoe.niceLevel_set(Beyond_NET_Sample_NiceLevels.LITTLEBITNICE)
+        johnDoe.niceLevel = Beyond_NET_Sample_NiceLevels.LITTLEBITNICE
         val johnDoeNiceLevel = johnDoe.niceLevel
         val welcomeMessage = johnDoe.getWelcomeMessage().toKString()
 

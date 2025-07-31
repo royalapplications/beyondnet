@@ -44,6 +44,7 @@ public class KotlinTypeOfSyntaxWriter: KotlinMethodSyntaxWriter, ITypeOfSyntaxWr
             typeDescriptorRegistry,
             state,
             null,
+            out _,
             out _
         );
 
