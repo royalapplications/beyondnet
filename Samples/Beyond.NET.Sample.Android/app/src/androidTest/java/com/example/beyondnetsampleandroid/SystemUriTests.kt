@@ -14,7 +14,7 @@ class SystemUriTests {
     @Test
     fun testUriCreationOptions() {
         val creationOptions = System_UriCreationOptions()
-        val type = System_UriCreationOptions.typeOf()
+        val type = System_UriCreationOptions.typeOf
         val typeRet = creationOptions.getType()
         assertTrue(type == typeRet)
 

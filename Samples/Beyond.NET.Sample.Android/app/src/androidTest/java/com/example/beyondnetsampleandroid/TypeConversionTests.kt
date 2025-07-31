@@ -13,10 +13,10 @@ import com.example.beyondnetsampleandroid.dn.*
 class TypeConversionTests {
     @Test
     fun testIs() {
-        val systemObjectTypeDN = System_Object.typeOf()
-        val systemStringTypeDN = System_String.typeOf()
-        val systemExceptionTypeDN = System_Exception.typeOf()
-        val systemGuidTypeDN = System_Guid.typeOf()
+        val systemObjectTypeDN = System_Object.typeOf
+        val systemStringTypeDN = System_String.typeOf
+        val systemExceptionTypeDN = System_Exception.typeOf
+        val systemGuidTypeDN = System_Guid.typeOf
 
         // MARK: - System.Object
         val systemObject = System_Object()

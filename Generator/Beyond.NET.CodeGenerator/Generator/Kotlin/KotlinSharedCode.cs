@@ -1,8 +1,12 @@
+using Beyond.NET.CodeGenerator.Syntax.Kotlin;
+
 namespace Beyond.NET.CodeGenerator.Generator.Kotlin;
 
 internal static class KotlinSharedCode
 {
-    internal const string SharedCode = /*lang=Kt*/"""
+    private static string TypeOfMemberNameJvm => KotlinMethodSyntaxWriter.TypeOfMemberNameJvm;
+
+    internal static readonly string SharedCode = /*lang=Kt*/$$"""
 interface IDNObject {
     val __handle: Pointer
 
@@ -375,7 +379,7 @@ fun Double.toRef(): DoubleRef {
 // TODO: This uses reflection - no good
 open class DNArray<T: System_Object>(handle: Pointer, klassOfT: Class<T>)
     : System_Array(handle), Iterable<T> {
-    //    private val systemTypeOfT = klassOfT.getMethod("typeOf").invoke(null) as System_Type
+    //    private val systemTypeOfT = klassOfT.getMethod("{{TypeOfMemberNameJvm}}").invoke(null) as System_Type
     private val constructorOfT = klassOfT.getDeclaredConstructor(Pointer::class.java)
 
     companion object {
@@ -387,7 +391,7 @@ open class DNArray<T: System_Object>(handle: Pointer, klassOfT: Class<T>)
         // Constructor with optional length parameter
         public inline operator fun <reified T: System_Object> invoke(length: Int = 0): DNArray<T> {
             val klassOfT = T::class.java
-            val systemTypeOfT = klassOfT.getMethod("typeOf").invoke(null) as System_Type
+            val systemTypeOfT = klassOfT.getMethod("{{TypeOfMemberNameJvm}}").invoke(null) as System_Type
 
             val __exceptionC = PointerByReference()
 
@@ -455,7 +459,7 @@ open class DNArray<T: System_Object>(handle: Pointer, klassOfT: Class<T>)
 // TODO: This uses reflection - no good
 open class DNNullableArray<T: System_Object?>(handle: Pointer, klassOfT: Class<T>)
     : System_Array(handle), Iterable<T?> {
-//    private val systemTypeOfT = klassOfT.getMethod("typeOf").invoke(null) as System_Type
+//    private val systemTypeOfT = klassOfT.getMethod("{{TypeOfMemberNameJvm}}").invoke(null) as System_Type
     private val constructorOfT = klassOfT.getDeclaredConstructor(Pointer::class.java)
 
     companion object {
@@ -467,7 +471,7 @@ open class DNNullableArray<T: System_Object?>(handle: Pointer, klassOfT: Class<T
         // Constructor with optional length parameter
         public inline operator fun <reified T: System_Object?> invoke(length: Int = 0): DNNullableArray<T> {
             val klassOfT = T::class.java
-            val systemTypeOfT = klassOfT.getMethod("typeOf").invoke(null) as System_Type
+            val systemTypeOfT = klassOfT.getMethod("{{TypeOfMemberNameJvm}}").invoke(null) as System_Type
 
             val __exceptionC = PointerByReference()
 
@@ -565,7 +569,7 @@ fun IDNObject.castTo(type: System_Type): System_Object? {
 // TODO: This uses reflection - no good
 inline fun <reified T> IDNObject.castTo(): T where T : System_Object {
     val tClass = T::class.java
-    val tClassTypeOfMethod = tClass.getMethod("typeOf")
+    val tClassTypeOfMethod = tClass.getMethod("{{TypeOfMemberNameJvm}}")
     val tClassTypeOf = tClassTypeOfMethod.invoke(null) as System_Type
     val tClassConstructor = tClass.getDeclaredConstructor(Pointer::class.java)
 
@@ -587,7 +591,7 @@ inline fun <reified T> IDNObject.castTo(): T where T : System_Object {
 // TODO: This uses reflection - no good
 inline fun <reified T> IDNObject.castAs(): T? where T : System_Object {
     val tClass = T::class.java
-    val tClassTypeOfMethod = tClass.getMethod("typeOf")
+    val tClassTypeOfMethod = tClass.getMethod("{{TypeOfMemberNameJvm}}")
     val tClassTypeOf = tClassTypeOfMethod.invoke(null) as System_Type
     val tClassConstructor = tClass.getDeclaredConstructor(Pointer::class.java)
 

@@ -11,6 +11,9 @@ namespace Beyond.NET.CodeGenerator.Syntax.Kotlin;
 
 public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
 {
+    internal static readonly string TypeOfMemberName = "typeOf";
+    internal static readonly string TypeOfMemberNameJvm = $"{TypeOfMemberName}_get";
+
     public string Write(object @object, State state, ISyntaxWriterConfiguration? configuration)
     {
         return Write((MethodInfo)@object, state, configuration);
@@ -1162,14 +1165,23 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 ? kotlinReturnOrSetterTypeNameWithComment
                 : throw new Exception("A typeof declaration must have a return type");
 
-            // TODO: Render as get-only property
-            declaration = Builder.Fun("typeOf")
-                .Attribute("@JvmStatic")
-                .Visibility(KotlinVisibilities.Public)
-                //     .Throws(mayThrow)
-                .ReturnTypeName(typeOfTypeName)
-                .Implementation(memberImpl)
-                .ToString();
+            // TODO: Computed Property Builder
+            KotlinComputedPropertyDeclaration propDecl = new(
+                TypeOfMemberName,
+                typeOfTypeName,
+                KotlinVisibilities.Public,
+                false,
+                memberImpl,
+                TypeOfMemberNameJvm,
+                null, // No setter
+                null // No JVM name for a non-existent setter
+            );
+
+            KotlinCodeBuilder typeOfBuilder = new();
+            typeOfBuilder.AppendLine("@JvmStatic");
+            typeOfBuilder.AppendLine(propDecl.ToString());
+
+            declaration = typeOfBuilder.ToString();
 
             // TODO: Properties
             /* } else if (memberKind == MemberKind.FieldGetter ||

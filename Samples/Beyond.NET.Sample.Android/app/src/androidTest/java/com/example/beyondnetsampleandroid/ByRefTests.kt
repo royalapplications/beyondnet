@@ -198,7 +198,7 @@ class ByRefTests {
 
         inst.return_IEnumerable_String_Abc_NonOptional(valueRef)
 
-        assertEquals(valueRef.value.castTo(System_String.typeOf()), expectedValue)
+        assertEquals(valueRef.value.castTo(System_String.typeOf), expectedValue)
     }
 
     @Test
@@ -210,7 +210,7 @@ class ByRefTests {
 
         inst.return_IEnumerable_String_Abc_Optional(valueRef)
 
-        assertEquals(valueRef.value?.castTo(System_String.typeOf()), expectedValue)
+        assertEquals(valueRef.value?.castTo(System_String.typeOf), expectedValue)
     }
 
     @Test
@@ -222,6 +222,6 @@ class ByRefTests {
 
         inst.return_IEnumerable_Null(valueRef)
 
-        assertEquals(valueRef.value?.castTo(System_String.typeOf()), expectedValue)
+        assertEquals(valueRef.value?.castTo(System_String.typeOf), expectedValue)
     }
 }

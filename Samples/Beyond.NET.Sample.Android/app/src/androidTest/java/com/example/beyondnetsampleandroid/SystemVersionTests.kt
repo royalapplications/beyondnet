@@ -23,7 +23,7 @@ class SystemVersionTests {
             build,
             revision)
 
-        val systemVersionType = System_Version.typeOf()
+        val systemVersionType = System_Version.typeOf
         val versionFromComponentsType = version.getType()
         assertTrue(version.`is`(systemVersionType))
         assertTrue(systemVersionType == versionFromComponentsType)

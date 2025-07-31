@@ -26,7 +26,7 @@ class InterfaceTests {
     @Test
     fun testStaticMethodOnInterface() {
         val inst = Beyond_NET_Sample_IInterface1.createDefaultInstance()
-        assertTrue(inst.`is`(Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces.typeOf()))
+        assertTrue(inst.`is`(Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces.typeOf))
 
         inst.methodInIInterface1()
     }

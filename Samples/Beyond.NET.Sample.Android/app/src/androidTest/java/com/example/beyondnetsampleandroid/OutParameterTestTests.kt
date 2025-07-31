@@ -158,7 +158,7 @@ class OutParameterTestTests {
 
         val returnValue = ObjectRef<System_Collections_IEnumerable>(System_String.empty)
         inst.return_IEnumerable_String_Abc_NonOptional(returnValue)
-        assertEquals(returnValue.value.castTo(System_String.typeOf()), abc)
+        assertEquals(returnValue.value.castTo(System_String.typeOf), abc)
 
         // TODO
 //        var returnValueWithPlaceholder: System.Collections.IEnumerable = System.Collections.IEnumerable_DNInterface.outParameterPlaceholder
@@ -175,11 +175,11 @@ class OutParameterTestTests {
 
         val returnValue = ObjectRef<System_Collections_IEnumerable?>(null)
         inst.return_IEnumerable_String_Abc_Optional(returnValue)
-        assertEquals(returnValue.value?.castTo(System_String.typeOf()), abc)
+        assertEquals(returnValue.value?.castTo(System_String.typeOf), abc)
 
         val returnValueWithInValue = ObjectRef<System_Collections_IEnumerable?>(System_String.empty)
         inst.return_IEnumerable_String_Abc_Optional(returnValueWithInValue)
-        assertEquals(returnValueWithInValue.value?.castTo(System_String.typeOf()), abc)
+        assertEquals(returnValueWithInValue.value?.castTo(System_String.typeOf), abc)
 
         // TODO
 //        var returnValueWithPlaceholder: System.Collections.IEnumerable? = System.String.outParameterPlaceholder

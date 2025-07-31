@@ -34,7 +34,7 @@ class SystemArrayTests {
 
     @Test
     fun testSystemArrayBoxing() {
-        val elementType = System_Boolean.typeOf()
+        val elementType = System_Boolean.typeOf
         val array = System_Array.createInstance(elementType, 2)
 
         array.setValue(true.toDotNETObject(), 0)
