@@ -457,6 +457,7 @@ public val value: {{underlyingTypeName}}
         // var cMembers = cResult.GeneratedTypes[type];
 
         bool isInterface = type.IsInterface;
+        bool isSupportedInterface = isInterface && !type.IsUnsupportedInterface();
         bool isPrimitive = type.IsPrimitive;
         // bool isArray = type.IsArray;
 
@@ -896,12 +897,41 @@ public val value: {{underlyingTypeName}}
         #endregion Equals Function Override
 
         var instanceMembersCode = sbInstanceMembers.ToString();
-        var staticMembersCode = sbStaticMembers.ToString();
 
         string companionObjectCode;
 
-        if (!string.IsNullOrEmpty(staticMembersCode)) {
-            companionObjectCode = "companion object {\n" + staticMembersCode.IndentAllLines(1) + "\n}";
+        if (!sbStaticMembers.IsEmpty) {
+            if (!isInterface || isSupportedInterface) {
+                string companionConstructorImpl;
+
+                if (isSupportedInterface) {
+                    companionConstructorImpl = $"return {kotlinTypeName}_DNInterface(handle)";
+                } else {
+                    companionConstructorImpl = $"return {kotlinTypeName}(handle)";
+                }
+
+                var companionConstructor = Builder.Fun("__constructWithHandle")
+                    .Parameters(Builder.FunSignatureParameter("handle", "Pointer").ToString())
+                    .ReturnTypeName(kotlinTypeName)
+                    .Implementation(companionConstructorImpl)
+                    .Override()
+                    .Attribute("@JvmStatic")
+                    .ToString();
+
+                sbStaticMembers.AppendLine(companionConstructor);
+            }
+
+            var staticMembersCode = sbStaticMembers.ToString();
+
+            string companionObjectInterfaceConformance;
+
+            if (!isInterface || isSupportedInterface) {
+                companionObjectInterfaceConformance = $" : IDNObjectCompanion<{kotlinTypeName}>";
+            } else {
+                companionObjectInterfaceConformance = string.Empty;
+            }
+
+            companionObjectCode = $"companion object{companionObjectInterfaceConformance} {{\n{staticMembersCode.IndentAllLines(1)}\n}}";
         } else {
             companionObjectCode = string.Empty;
         }

@@ -13,7 +13,26 @@ interface IDNObject {
     fun destroy()
 }
 
+interface IDNObjectCompanion<T: IDNObject> {
+    val typeOf: System_Type
+    fun __constructWithHandle(handle: Pointer): T
+}
+
 open class DNObject(handle: Pointer): IDNObject {
+    companion object : IDNObjectCompanion<DNObject> {
+        @JvmStatic
+        @Suppress("INAPPLICABLE_JVM_NAME")
+        public override val typeOf: System_Type /* System.Type */
+        @JvmName("typeOf_get")
+        get() {
+            error("Do not call typeOf on DNObject but only on System_Object and derived classes.")
+        }
+
+        @JvmStatic override fun __constructWithHandle(handle: Pointer) : DNObject {
+            error("Do not call __constructWithHandle on DNObject but only on System_Object and derived classes.")
+        }
+    }
+
     enum class DestroyMode {
         Normal,
         Skip

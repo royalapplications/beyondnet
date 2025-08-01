@@ -1161,6 +1161,12 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 return "// TODO: typeOf for enums";
             }
 
+            var isInterface = declaringType.IsInterface;
+            var isSupportedInterface = isInterface && !declaringType.IsUnsupportedInterface();
+
+            // Needed because of IDNObjectCompanion but unsupported interfaces don't get that so they don't need the override keyword
+            var isOverride = !isInterface || isSupportedInterface;
+
             string typeOfTypeName = !returnOrSetterOrEventHandlerType.IsVoid()
                 ? kotlinReturnOrSetterTypeNameWithComment
                 : throw new Exception("A typeof declaration must have a return type");
@@ -1170,7 +1176,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 TypeOfMemberName,
                 typeOfTypeName,
                 KotlinVisibilities.Public,
-                false,
+                isOverride,
                 memberImpl,
                 TypeOfMemberNameJvm,
                 null, // No setter
