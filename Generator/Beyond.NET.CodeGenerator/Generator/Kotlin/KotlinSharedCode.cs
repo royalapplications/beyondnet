@@ -567,7 +567,7 @@ open class DNNullableArray<T: System_Object?>(handle: Pointer, klassOfT: Class<T
     internal static string GetExtensions(string jnaClassName)
     {
         return /*lang=Kt*/$$"""
-fun IDNObject.castTo(type: System_Type): System_Object? {
+fun IDNObject.castTo(type: System_Type): System_Object {
     val __exceptionC = PointerByReference()
 
     val __returnValueC = {{jnaClassName}}.DNObjectCastTo(this.__handle, type.__handle, __exceptionC)
@@ -576,10 +576,6 @@ fun IDNObject.castTo(type: System_Type): System_Object? {
 
     if (__exceptionCHandle != null) {
         throw System_Exception(__exceptionCHandle).toKException()
-    }
-
-    if (__returnValueC == null) {
-        return null
     }
 
     val __returnValue = System_Object(__returnValueC)
@@ -600,6 +596,18 @@ fun <T : System_Object> IDNObject.castTo(companion: IDNObjectCompanion<T>): T {
     }
 
     val __returnValue = companion.__constructWithHandle(__returnValueC)
+
+    return __returnValue
+}
+
+fun IDNObject.castAs(type: System_Type): System_Object? {
+    val __returnValueC = {{jnaClassName}}.DNObjectCastAs(this.__handle, type.__handle)
+
+    if (__returnValueC == null) {
+        return null
+    }
+
+    val __returnValue = System_Object(__returnValueC)
 
     return __returnValue
 }
