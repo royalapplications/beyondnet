@@ -6,7 +6,8 @@ internal static class KotlinSharedCode
 {
     private static string TypeOfMemberNameJvm => KotlinMethodSyntaxWriter.TypeOfMemberNameJvm;
 
-    internal static readonly string SharedCode = /*lang=Kt*/$$"""
+    internal static string GetSharedCode(string jnaClassName) {
+        return /*lang=Kt*/$$"""
 interface IDNObject {
     val __handle: Pointer
 
@@ -414,7 +415,7 @@ open class DNArray<T: System_Object>(handle: Pointer, klassOfT: Class<T>)
 
             val __exceptionC = PointerByReference()
 
-            val systemArrayHandle = CAPI.System_Array_CreateInstance(systemTypeOfT.__handle, length, __exceptionC)
+            val systemArrayHandle = {{jnaClassName}}.System_Array_CreateInstance(systemTypeOfT.__handle, length, __exceptionC)
 
             val __exceptionCHandle = __exceptionC.value
 
@@ -432,7 +433,7 @@ open class DNArray<T: System_Object>(handle: Pointer, klassOfT: Class<T>)
     public operator fun get(index: Int): T {
         val __exceptionC = PointerByReference()
 
-        val valueHandle = CAPI.System_Array_GetValue_1(__handle, index, __exceptionC)
+        val valueHandle = {{jnaClassName}}.System_Array_GetValue_1(__handle, index, __exceptionC)
             ?: throw NullPointerException()
 
         val __exceptionCHandle = __exceptionC.value
@@ -494,7 +495,7 @@ open class DNNullableArray<T: System_Object?>(handle: Pointer, klassOfT: Class<T
 
             val __exceptionC = PointerByReference()
 
-            val systemArrayHandle = CAPI.System_Array_CreateInstance(systemTypeOfT.__handle, length, __exceptionC)
+            val systemArrayHandle = {{jnaClassName}}.System_Array_CreateInstance(systemTypeOfT.__handle, length, __exceptionC)
 
             val __exceptionCHandle = __exceptionC.value
 
@@ -512,7 +513,7 @@ open class DNNullableArray<T: System_Object?>(handle: Pointer, klassOfT: Class<T
     public operator fun get(index: Int): T? {
         val __exceptionC = PointerByReference()
 
-        val valueHandle = CAPI.System_Array_GetValue_1(__handle, index, __exceptionC)
+        val valueHandle = {{jnaClassName}}.System_Array_GetValue_1(__handle, index, __exceptionC)
 
         val __exceptionCHandle = __exceptionC.value
 
@@ -561,6 +562,7 @@ open class DNNullableArray<T: System_Object?>(handle: Pointer, klassOfT: Class<T
     }
 }
 """;
+    }
 
     internal static string GetExtensions(string jnaClassName)
     {
@@ -589,7 +591,7 @@ inline fun <T : System_Object> IDNObject.castTo(companion: IDNObjectCompanion<T>
     val tTypeOf = companion.typeOf
     val __exceptionC = PointerByReference()
 
-    val __returnValueC = CAPI.DNObjectCastTo(this.__handle, tTypeOf.__handle, __exceptionC)
+    val __returnValueC = {{jnaClassName}}.DNObjectCastTo(this.__handle, tTypeOf.__handle, __exceptionC)
 
     val __exceptionCHandle = __exceptionC.value
 
@@ -605,7 +607,7 @@ inline fun <T : System_Object> IDNObject.castTo(companion: IDNObjectCompanion<T>
 inline fun <T : System_Object> IDNObject.castAs(companion: IDNObjectCompanion<T>): T? {
     val tTypeOf = companion.typeOf
 
-    val __returnValueC = CAPI.DNObjectCastAs(this.__handle, tTypeOf.__handle)
+    val __returnValueC = {{jnaClassName}}.DNObjectCastAs(this.__handle, tTypeOf.__handle)
 
     if (__returnValueC == null) {
         return null
@@ -626,7 +628,7 @@ fun IDNObject.`is`(type: System_Type): Boolean {
 fun IDNObject.castToBool(): Boolean {
     val __exceptionC = PointerByReference()
 
-    val __returnValueC = CAPI.DNObjectCastToBool(this.__handle, __exceptionC)
+    val __returnValueC = {{jnaClassName}}.DNObjectCastToBool(this.__handle, __exceptionC)
 
     val __exceptionCHandle = __exceptionC.value
 
@@ -640,7 +642,7 @@ fun IDNObject.castToBool(): Boolean {
 /// Boxes the specified Bool value in an .NET object.
 /// - Returns: An .NET object containing the boxed value.
 fun Boolean.toDotNETObject(): System_Boolean {
-    val castedObjectC = CAPI.DNObjectFromBool(this)
+    val castedObjectC = {{jnaClassName}}.DNObjectFromBool(this)
 
     return System_Boolean(castedObjectC)
 }
@@ -651,7 +653,7 @@ fun Boolean.toDotNETObject(): System_Boolean {
 fun IDNObject.castToChar(): Char {
     val __exceptionC = PointerByReference()
 
-    val __returnValueC = CAPI.DNObjectCastToChar(this.__handle, __exceptionC)
+    val __returnValueC = {{jnaClassName}}.DNObjectCastToChar(this.__handle, __exceptionC)
 
     val __exceptionCHandle = __exceptionC.value
 
@@ -665,7 +667,7 @@ fun IDNObject.castToChar(): Char {
 /// Boxes the specified Char value in an .NET object.
 /// - Returns: An .NET object containing the boxed value.
 fun Char.toDotNETObject(): System_Char {
-    val castedObjectC = CAPI.DNObjectFromChar(this)
+    val castedObjectC = {{jnaClassName}}.DNObjectFromChar(this)
 
     return System_Char(castedObjectC)
 }
@@ -676,7 +678,7 @@ fun Char.toDotNETObject(): System_Char {
 fun IDNObject.castToFloat(): Float {
     val __exceptionC = PointerByReference()
 
-    val __returnValueC = CAPI.DNObjectCastToFloat(this.__handle, __exceptionC)
+    val __returnValueC = {{jnaClassName}}.DNObjectCastToFloat(this.__handle, __exceptionC)
 
     val __exceptionCHandle = __exceptionC.value
 
@@ -690,7 +692,7 @@ fun IDNObject.castToFloat(): Float {
 /// Boxes the specified Float value in an .NET object.
 /// - Returns: An .NET object containing the boxed value.
 fun Float.toDotNETObject(): System_Single {
-    val castedObjectC = CAPI.DNObjectFromFloat(this)
+    val castedObjectC = {{jnaClassName}}.DNObjectFromFloat(this)
 
     return System_Single(castedObjectC)
 }
@@ -701,7 +703,7 @@ fun Float.toDotNETObject(): System_Single {
 fun IDNObject.castToDouble(): Double {
     val __exceptionC = PointerByReference()
 
-    val __returnValueC = CAPI.DNObjectCastToDouble(this.__handle, __exceptionC)
+    val __returnValueC = {{jnaClassName}}.DNObjectCastToDouble(this.__handle, __exceptionC)
 
     val __exceptionCHandle = __exceptionC.value
 
@@ -715,7 +717,7 @@ fun IDNObject.castToDouble(): Double {
 /// Boxes the specified Double value in an .NET object.
 /// - Returns: An .NET object containing the boxed value.
 fun Double.toDotNETObject(): System_Double {
-    val castedObjectC = CAPI.DNObjectFromDouble(this)
+    val castedObjectC = {{jnaClassName}}.DNObjectFromDouble(this)
 
     return System_Double(castedObjectC)
 }
@@ -726,7 +728,7 @@ fun Double.toDotNETObject(): System_Double {
 fun IDNObject.castToByte(): Byte {
     val __exceptionC = PointerByReference()
 
-    val __returnValueC = CAPI.DNObjectCastToInt8(this.__handle, __exceptionC)
+    val __returnValueC = {{jnaClassName}}.DNObjectCastToInt8(this.__handle, __exceptionC)
 
     val __exceptionCHandle = __exceptionC.value
 
@@ -740,7 +742,7 @@ fun IDNObject.castToByte(): Byte {
 /// Boxes the specified Byte value in an .NET object.
 /// - Returns: An .NET object containing the boxed value.
 fun Byte.toDotNETObject(): System_SByte {
-    val castedObjectC = CAPI.DNObjectFromInt8(this)
+    val castedObjectC = {{jnaClassName}}.DNObjectFromInt8(this)
 
     return System_SByte(castedObjectC)
 }
@@ -751,7 +753,7 @@ fun Byte.toDotNETObject(): System_SByte {
 fun IDNObject.castToUByte(): UByte {
     val __exceptionC = PointerByReference()
 
-    val __returnValueC = CAPI.DNObjectCastToUInt8(this.__handle, __exceptionC)
+    val __returnValueC = {{jnaClassName}}.DNObjectCastToUInt8(this.__handle, __exceptionC)
 
     val __exceptionCHandle = __exceptionC.value
 
@@ -765,7 +767,7 @@ fun IDNObject.castToUByte(): UByte {
 /// Boxes the specified UByte value in an .NET object.
 /// - Returns: An .NET object containing the boxed value.
 fun UByte.toDotNETObject(): System_Byte {
-    val castedObjectC = CAPI.DNObjectFromUInt8(this.toByte())
+    val castedObjectC = {{jnaClassName}}.DNObjectFromUInt8(this.toByte())
 
     return System_Byte(castedObjectC)
 }
@@ -776,7 +778,7 @@ fun UByte.toDotNETObject(): System_Byte {
 fun IDNObject.castToShort(): Short {
     val __exceptionC = PointerByReference()
 
-    val __returnValueC = CAPI.DNObjectCastToInt16(this.__handle, __exceptionC)
+    val __returnValueC = {{jnaClassName}}.DNObjectCastToInt16(this.__handle, __exceptionC)
 
     val __exceptionCHandle = __exceptionC.value
 
@@ -790,7 +792,7 @@ fun IDNObject.castToShort(): Short {
 /// Boxes the specified Short value in an .NET object.
 /// - Returns: An .NET object containing the boxed value.
 fun Short.toDotNETObject(): System_Int16 {
-    val castedObjectC = CAPI.DNObjectFromInt16(this)
+    val castedObjectC = {{jnaClassName}}.DNObjectFromInt16(this)
 
     return System_Int16(castedObjectC)
 }
@@ -801,7 +803,7 @@ fun Short.toDotNETObject(): System_Int16 {
 fun IDNObject.castToUShort(): UShort {
     val __exceptionC = PointerByReference()
 
-    val __returnValueC = CAPI.DNObjectCastToUInt16(this.__handle, __exceptionC)
+    val __returnValueC = {{jnaClassName}}.DNObjectCastToUInt16(this.__handle, __exceptionC)
 
     val __exceptionCHandle = __exceptionC.value
 
@@ -815,7 +817,7 @@ fun IDNObject.castToUShort(): UShort {
 /// Boxes the specified UShort value in an .NET object.
 /// - Returns: An .NET object containing the boxed value.
 fun UShort.toDotNETObject(): System_UInt16 {
-    val castedObjectC = CAPI.DNObjectFromUInt16(this.toShort())
+    val castedObjectC = {{jnaClassName}}.DNObjectFromUInt16(this.toShort())
 
     return System_UInt16(castedObjectC)
 }
@@ -826,7 +828,7 @@ fun UShort.toDotNETObject(): System_UInt16 {
 fun IDNObject.castToInt(): Int {
     val __exceptionC = PointerByReference()
 
-    val __returnValueC = CAPI.DNObjectCastToInt32(this.__handle, __exceptionC)
+    val __returnValueC = {{jnaClassName}}.DNObjectCastToInt32(this.__handle, __exceptionC)
 
     val __exceptionCHandle = __exceptionC.value
 
@@ -840,7 +842,7 @@ fun IDNObject.castToInt(): Int {
 /// Boxes the specified Int value in an .NET object.
 /// - Returns: An .NET object containing the boxed value.
 fun Int.toDotNETObject(): System_Int32 {
-    val castedObjectC = CAPI.DNObjectFromInt32(this)
+    val castedObjectC = {{jnaClassName}}.DNObjectFromInt32(this)
 
     return System_Int32(castedObjectC)
 }
@@ -851,7 +853,7 @@ fun Int.toDotNETObject(): System_Int32 {
 fun IDNObject.castToUInt(): UInt {
     val __exceptionC = PointerByReference()
 
-    val __returnValueC = CAPI.DNObjectCastToUInt32(this.__handle, __exceptionC)
+    val __returnValueC = {{jnaClassName}}.DNObjectCastToUInt32(this.__handle, __exceptionC)
 
     val __exceptionCHandle = __exceptionC.value
 
@@ -865,7 +867,7 @@ fun IDNObject.castToUInt(): UInt {
 /// Boxes the specified UInt value in an .NET object.
 /// - Returns: An .NET object containing the boxed value.
 fun UInt.toDotNETObject(): System_UInt32 {
-    val castedObjectC = CAPI.DNObjectFromUInt32(this.toInt())
+    val castedObjectC = {{jnaClassName}}.DNObjectFromUInt32(this.toInt())
 
     return System_UInt32(castedObjectC)
 }
@@ -876,7 +878,7 @@ fun UInt.toDotNETObject(): System_UInt32 {
 fun IDNObject.castToLong(): Long {
     val __exceptionC = PointerByReference()
 
-    val __returnValueC = CAPI.DNObjectCastToInt64(this.__handle, __exceptionC)
+    val __returnValueC = {{jnaClassName}}.DNObjectCastToInt64(this.__handle, __exceptionC)
 
     val __exceptionCHandle = __exceptionC.value
 
@@ -890,7 +892,7 @@ fun IDNObject.castToLong(): Long {
 /// Boxes the specified Long value in an .NET object.
 /// - Returns: An .NET object containing the boxed value.
 fun Long.toDotNETObject(): System_Int64 {
-    val castedObjectC = CAPI.DNObjectFromInt64(this)
+    val castedObjectC = {{jnaClassName}}.DNObjectFromInt64(this)
 
     return System_Int64(castedObjectC)
 }
@@ -901,7 +903,7 @@ fun Long.toDotNETObject(): System_Int64 {
 fun IDNObject.castToULong(): ULong {
     val __exceptionC = PointerByReference()
 
-    val __returnValueC = CAPI.DNObjectCastToUInt64(this.__handle, __exceptionC)
+    val __returnValueC = {{jnaClassName}}.DNObjectCastToUInt64(this.__handle, __exceptionC)
 
     val __exceptionCHandle = __exceptionC.value
 
@@ -915,7 +917,7 @@ fun IDNObject.castToULong(): ULong {
 /// Boxes the specified ULong value in an .NET object.
 /// - Returns: An .NET object containing the boxed value.
 fun ULong.toDotNETObject(): System_UInt64 {
-    val castedObjectC = CAPI.DNObjectFromUInt64(this.toLong())
+    val castedObjectC = {{jnaClassName}}.DNObjectFromUInt64(this.toLong())
 
     return System_UInt64(castedObjectC)
 }
@@ -998,7 +1000,7 @@ fun DNArray<System_Byte>.toKUByteArray(): UByteArray {
     try {
         val __exceptionC = PointerByReference()
 
-        CAPI.System_Runtime_InteropServices_Marshal_Copy_6(
+        {{jnaClassName}}.System_Runtime_InteropServices_Marshal_Copy_6(
             this.__handle,
             0,
             mem,
@@ -1033,7 +1035,7 @@ fun DNArray<System_SByte>.toKByteArray(): ByteArray {
     try {
         val __exceptionC = PointerByReference()
 
-        CAPI.System_Runtime_InteropServices_Marshal_Copy_6(
+        {{jnaClassName}}.System_Runtime_InteropServices_Marshal_Copy_6(
             this.__handle,
             0,
             mem,
@@ -1067,7 +1069,7 @@ fun UByteArray.toDotNETByteArray(): DNArray<System_Byte> {
 
         val __exceptionC = PointerByReference()
 
-        CAPI.System_Runtime_InteropServices_Marshal_Copy_14(
+        {{jnaClassName}}.System_Runtime_InteropServices_Marshal_Copy_14(
             mem,
             byteArray.__handle,
             0,
@@ -1098,7 +1100,7 @@ fun ByteArray.toDotNETSByteArray(): DNArray<System_SByte> {
 
         val __exceptionC = PointerByReference()
 
-        CAPI.System_Runtime_InteropServices_Marshal_Copy_14(
+        {{jnaClassName}}.System_Runtime_InteropServices_Marshal_Copy_14(
             mem,
             sByteArray.__handle,
             0,

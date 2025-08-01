@@ -288,7 +288,9 @@ import kotlin.experimental.or
     {
         KotlinCodeBuilder sb = new();
 
-        sb.AppendLine(KotlinSharedCode.SharedCode);
+        const string jnaClassName = KotlinTypeSyntaxWriter.JNA_CLASS_NAME;
+
+        sb.AppendLine(KotlinSharedCode.GetSharedCode(jnaClassName));
         sb.AppendLine();
 
         string code = sb.ToString();
