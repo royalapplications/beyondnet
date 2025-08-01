@@ -651,7 +651,7 @@ public class TypeDescriptor
                 // TODO: Shouldn't this go through TypeDescriptor?
                 var kotlinElementTypeName = elementType.CTypeName();
 
-                return $"{kotlinTypeName}({{0}}, {kotlinElementTypeName}::class.java)";
+                return $"{kotlinTypeName}({kotlinElementTypeName}, {{0}})";
             } else if (RequiresNativePointer) {
                 var suffix = IsInterface
                     ? KotlinDotNETInterfaceImplementationSuffix

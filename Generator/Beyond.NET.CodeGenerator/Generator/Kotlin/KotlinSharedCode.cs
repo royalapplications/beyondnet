@@ -396,26 +396,19 @@ fun Double.toRef(): DoubleRef {
     return DoubleRef(this)
 }
 
-// TODO: This uses reflection - no good
-open class DNArray<T: System_Object>(handle: Pointer, klassOfT: Class<T>)
-    : System_Array(handle), Iterable<T> {
-    //    private val systemTypeOfT = klassOfT.getMethod("{{TypeOfMemberNameJvm}}").invoke(null) as System_Type
-    private val constructorOfT = klassOfT.getDeclaredConstructor(Pointer::class.java)
-
+open class DNArray<T : System_Object>(private val companion: IDNObjectCompanion<T>, handle: Pointer) : System_Array(handle), Iterable<T> {
     companion object {
         // Constructor that creates an empty array
-        public inline fun <reified T: System_Object> empty(): DNArray<T> {
-            return invoke<T>(0)
+        public fun <T : System_Object> empty(companion: IDNObjectCompanion<T>): DNArray<T> {
+            return DNArray(companion, 0)
         }
 
         // Constructor with optional length parameter
-        public inline operator fun <reified T: System_Object> invoke(length: Int = 0): DNArray<T> {
-            val klassOfT = T::class.java
-            val systemTypeOfT = klassOfT.getMethod("{{TypeOfMemberNameJvm}}").invoke(null) as System_Type
-
+        public operator fun <T : System_Object> invoke(companion: IDNObjectCompanion<T>, length: Int = 0): DNArray<T> {
+            val typeOfT = companion.typeOf
             val __exceptionC = PointerByReference()
 
-            val systemArrayHandle = {{jnaClassName}}.System_Array_CreateInstance(systemTypeOfT.__handle, length, __exceptionC)
+            val systemArrayHandle = {{jnaClassName}}.System_Array_CreateInstance(typeOfT.__handle, length, __exceptionC)
 
             val __exceptionCHandle = __exceptionC.value
 
@@ -423,7 +416,7 @@ open class DNArray<T: System_Object>(handle: Pointer, klassOfT: Class<T>)
                 throw System_Exception(__exceptionCHandle).toKException()
             }
 
-            val dnArray = DNArray(systemArrayHandle, klassOfT)
+            val dnArray = DNArray(companion, systemArrayHandle)
 
             return dnArray
         }
@@ -442,7 +435,7 @@ open class DNArray<T: System_Object>(handle: Pointer, klassOfT: Class<T>)
             throw System_Exception(__exceptionCHandle).toKException()
         }
 
-        val castedValue = constructorOfT.newInstance(valueHandle)
+        val castedValue = companion.__constructWithHandle(valueHandle)
 
         return castedValue
     }
@@ -476,26 +469,19 @@ open class DNArray<T: System_Object>(handle: Pointer, klassOfT: Class<T>)
     }
 }
 
-// TODO: This uses reflection - no good
-open class DNNullableArray<T: System_Object?>(handle: Pointer, klassOfT: Class<T>)
-    : System_Array(handle), Iterable<T?> {
-//    private val systemTypeOfT = klassOfT.getMethod("{{TypeOfMemberNameJvm}}").invoke(null) as System_Type
-    private val constructorOfT = klassOfT.getDeclaredConstructor(Pointer::class.java)
-
+open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCompanion<T>, handle: Pointer) : System_Array(handle), Iterable<T?> {
     companion object {
-        // Constructor that creates an empty nullable array
-        public inline fun <reified T: System_Object?> empty(): DNNullableArray<T> {
-            return invoke<T>(0)
+        // Constructor that creates an empty array
+        public fun <T : System_Object> empty(companion: IDNObjectCompanion<T>): DNNullableArray<T> {
+            return DNNullableArray<T>(companion, 0)
         }
 
         // Constructor with optional length parameter
-        public inline operator fun <reified T: System_Object?> invoke(length: Int = 0): DNNullableArray<T> {
-            val klassOfT = T::class.java
-            val systemTypeOfT = klassOfT.getMethod("{{TypeOfMemberNameJvm}}").invoke(null) as System_Type
-
+        public operator fun <T : System_Object> invoke(companion: IDNObjectCompanion<T>, length: Int = 0): DNNullableArray<T> {
+            val typeOfT = companion.typeOf
             val __exceptionC = PointerByReference()
 
-            val systemArrayHandle = {{jnaClassName}}.System_Array_CreateInstance(systemTypeOfT.__handle, length, __exceptionC)
+            val systemArrayHandle = {{jnaClassName}}.System_Array_CreateInstance(typeOfT.__handle, length, __exceptionC)
 
             val __exceptionCHandle = __exceptionC.value
 
@@ -503,9 +489,9 @@ open class DNNullableArray<T: System_Object?>(handle: Pointer, klassOfT: Class<T
                 throw System_Exception(__exceptionCHandle).toKException()
             }
 
-            val dnNullableArray = DNNullableArray(systemArrayHandle, klassOfT)
+            val dnArray = DNNullableArray(companion, systemArrayHandle)
 
-            return dnNullableArray
+            return dnArray
         }
     }
 
@@ -527,7 +513,7 @@ open class DNNullableArray<T: System_Object?>(handle: Pointer, klassOfT: Class<T
         }
 
         // Otherwise, construct the casted object
-        val castedValue = constructorOfT.newInstance(valueHandle)
+        val castedValue = companion.__constructWithHandle(valueHandle)
 
         return castedValue
     }
@@ -1081,7 +1067,7 @@ fun UByteArray.toDotNETByteArray(): DNArray<System_Byte> {
     try {
         mem.write(0, this.toByteArray(), 0, len)
 
-        val byteArray = DNArray<System_Byte>(len)
+        val byteArray = DNArray(System_Byte, len)
 
         val __exceptionC = PointerByReference()
 
@@ -1112,7 +1098,7 @@ fun ByteArray.toDotNETSByteArray(): DNArray<System_SByte> {
     try {
         mem.write(0, this, 0, len)
 
-        val sByteArray = DNArray<System_SByte>(len)
+        val sByteArray = DNArray(System_SByte, len)
 
         val __exceptionC = PointerByReference()
 

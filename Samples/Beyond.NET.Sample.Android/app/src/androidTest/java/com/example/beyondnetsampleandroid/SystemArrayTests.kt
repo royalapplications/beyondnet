@@ -64,7 +64,7 @@ class SystemArrayTests {
     @Test
     fun testDNArray() {
         val count = 2
-        val arrayOfDateTime = DNArray<System_DateTime>(count)
+        val arrayOfDateTime = DNArray(System_DateTime, count)
 
         val dateTimeMax = System_DateTime.maxValue
         val dateTimeMin = System_DateTime.minValue
@@ -89,7 +89,7 @@ class SystemArrayTests {
     @Test
     fun testDNNullableArray() {
         val count = 3
-        val arrayOfString = DNNullableArray<System_String>(count)
+        val arrayOfString = DNNullableArray(System_String, count)
 
         val abc = "Abc".toDotNETString()
         val def = "Def".toDotNETString()

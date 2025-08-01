@@ -43,7 +43,7 @@ class ArrayTests {
     @Test
     fun testSetArrayOfNullableStringWithParameter() {
         val tests = Beyond_NET_Sample_ArrayTests()
-        val newArray = DNNullableArray<System_String>(3)
+        val newArray = DNNullableArray(System_String, 3)
 
         assertEquals(newArray.rank, 1)
 
@@ -71,7 +71,7 @@ class ArrayTests {
     @Test
     fun testArrayOfNullableStringAsOut() {
         val tests = Beyond_NET_Sample_ArrayTests()
-        val array = DNNullableArray.empty<System_String>()
+        val array = DNNullableArray.empty(System_String)
         val arrayRef = ObjectRef(array)
 
         tests.arrayOfNullableStringAsOut(arrayRef)
@@ -82,7 +82,7 @@ class ArrayTests {
     @Test
     fun testArrayOfNullableStringAsRef() {
         val tests = Beyond_NET_Sample_ArrayTests()
-        val array = DNNullableArray.empty<System_String>()
+        val array = DNNullableArray.empty(System_String)
         val arrayRef = ObjectRef(array)
 
         tests.arrayOfNullableStringAsRef(arrayRef)
