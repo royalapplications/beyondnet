@@ -46,10 +46,9 @@ class OutParameterTestTests {
         inst.return_DateTime_MaxValue_NonOptional(returnValue)
         assertEquals(returnValue.value, System_DateTime.maxValue)
 
-        // TODO
-//        val returnValueWithPlaceholder = System.DateTime.outParameterPlaceholder
-//        try inst.return_DateTime_MaxValue_NonOptional(&returnValueWithPlaceholder)
-//        XCTAssertEqual(returnValueWithPlaceholder, System.DateTime.maxValue)
+        val returnValueWithPlaceholder = ObjectRef(DNOutParameter.createPlaceholder(::System_DateTime))
+        inst.return_DateTime_MaxValue_NonOptional(returnValueWithPlaceholder)
+        assertEquals(returnValueWithPlaceholder.value, System_DateTime.maxValue)
     }
 
     // NOTE: This was copied from the Swift tests
@@ -65,10 +64,9 @@ class OutParameterTestTests {
         inst.return_DateTime_MaxValue_Optional(returnValueWithInValue)
         assertEquals(returnValueWithInValue.value, System_DateTime.maxValue)
 
-        // TODO
-//        var returnValueWithPlaceholder: System.DateTime? = System.DateTime.outParameterPlaceholder
-//        try inst.return_DateTime_MaxValue_Optional(&returnValueWithPlaceholder)
-//        XCTAssertEqual(returnValueWithPlaceholder, System.DateTime.maxValue)
+        val returnValueWithPlaceholder = ObjectRef<System_DateTime?>(DNOutParameter.createPlaceholder(::System_DateTime))
+        inst.return_DateTime_MaxValue_Optional(returnValueWithPlaceholder)
+        assertEquals(returnValueWithPlaceholder.value, System_DateTime.maxValue)
     }
 
     // NOTE: This was copied from the Swift tests
@@ -84,10 +82,9 @@ class OutParameterTestTests {
         inst.return_DateTime_Null(returnValueWithInValue)
         assertNull(returnValueWithInValue.value)
 
-        // TODO
-//        var returnValueWithPlaceholder: System.DateTime? = System.DateTime.outParameterPlaceholder
-//        try inst.return_DateTime_Null(&returnValueWithPlaceholder)
-//        XCTAssertNil(returnValueWithPlaceholder)
+        val returnValueWithPlaceholder = ObjectRef<System_DateTime?>(DNOutParameter.createPlaceholder(::System_DateTime))
+        inst.return_DateTime_Null(returnValueWithPlaceholder)
+        assertNull(returnValueWithPlaceholder.value)
     }
 
     // MARK: - Classes
@@ -102,10 +99,9 @@ class OutParameterTestTests {
         inst.return_String_Abc_NonOptional(returnValue)
         assertEquals(returnValue.value, abc)
 
-        // TODO
-//        var returnValueWithPlaceholder = System.String.outParameterPlaceholder
-//        try inst.return_String_Abc_NonOptional(&returnValueWithPlaceholder)
-//        XCTAssertEqual(returnValueWithPlaceholder, abc)
+        val returnValueWithPlaceholder = ObjectRef(DNOutParameter.createPlaceholder(::System_String))
+        inst.return_String_Abc_NonOptional(returnValueWithPlaceholder)
+        assertEquals(returnValueWithPlaceholder.value, abc)
     }
 
     // NOTE: This was copied from the Swift tests
@@ -123,10 +119,9 @@ class OutParameterTestTests {
         inst.return_String_Abc_Optional(returnValueWithInValue)
         assertEquals(returnValue.value, abc)
 
-        // TODO
-//        var returnValueWithPlaceholder: System.String? = System.String.outParameterPlaceholder
-//        try inst.return_String_Abc_Optional(&returnValueWithPlaceholder)
-//        XCTAssertEqual(returnValue, abc)
+        val returnValueWithPlaceholder = ObjectRef<System_String?>(DNOutParameter.createPlaceholder(::System_String))
+        inst.return_String_Abc_Optional(returnValueWithPlaceholder)
+        assertEquals(returnValue.value, abc)
     }
 
     // NOTE: This was copied from the Swift tests
@@ -142,10 +137,9 @@ class OutParameterTestTests {
         inst.return_String_Null(returnValueWithInValue)
         assertNull(returnValueWithInValue.value)
 
-        // TODO
-//        var returnValueWithPlaceholder: System.String? = System.String.outParameterPlaceholder
-//        try inst.return_String_Null(&returnValueWithPlaceholder)
-//        XCTAssertNil(returnValueWithPlaceholder)
+        val returnValueWithPlaceholder = ObjectRef<System_String?>(DNOutParameter.createPlaceholder(::System_String))
+        inst.return_String_Null(returnValueWithPlaceholder)
+        assertNull(returnValueWithPlaceholder.value)
     }
 
     // MARK: - Interfaces
@@ -160,10 +154,9 @@ class OutParameterTestTests {
         inst.return_IEnumerable_String_Abc_NonOptional(returnValue)
         assertEquals(returnValue.value.castTo(System_String.typeOf), abc)
 
-        // TODO
-//        var returnValueWithPlaceholder: System.Collections.IEnumerable = System.Collections.IEnumerable_DNInterface.outParameterPlaceholder
-//        try inst.return_IEnumerable_String_Abc_NonOptional(&returnValueWithPlaceholder)
-//        XCTAssertEqual(try returnValueWithPlaceholder.castTo(System.String.self), abc)
+        val returnValueWithPlaceholder = ObjectRef<System_Collections_IEnumerable>(DNOutParameter.createPlaceholder(::System_Collections_IEnumerable_DNInterface))
+        inst.return_IEnumerable_String_Abc_NonOptional(returnValueWithPlaceholder)
+        assertEquals(returnValueWithPlaceholder.value.castTo(System_String), abc)
     }
 
     // NOTE: This was copied from the Swift tests
@@ -181,10 +174,9 @@ class OutParameterTestTests {
         inst.return_IEnumerable_String_Abc_Optional(returnValueWithInValue)
         assertEquals(returnValueWithInValue.value?.castTo(System_String.typeOf), abc)
 
-        // TODO
-//        var returnValueWithPlaceholder: System.Collections.IEnumerable? = System.String.outParameterPlaceholder
-//        try inst.return_IEnumerable_String_Abc_Optional(&returnValueWithPlaceholder)
-//        XCTAssertEqual(try returnValueWithPlaceholder?.castTo(System.String.self), abc)
+        val returnValueWithPlaceholder = ObjectRef<System_Collections_IEnumerable?>(DNOutParameter.createPlaceholder(::System_String))
+        inst.return_IEnumerable_String_Abc_Optional(returnValueWithPlaceholder)
+        assertEquals(returnValueWithPlaceholder.value?.castTo(System_String), abc)
     }
 
     // NOTE: This was copied from the Swift tests
@@ -200,10 +192,9 @@ class OutParameterTestTests {
         inst.return_IEnumerable_Null(returnValueWithInValue)
         assertNull(returnValueWithInValue.value)
 
-        // TODO
-//        var returnValueWithPlaceholder: System.Collections.IEnumerable? = System.Collections.IEnumerable_DNInterface.outParameterPlaceholder
-//        try inst.return_IEnumerable_Null(&returnValueWithPlaceholder)
-//        XCTAssertNil(returnValueWithPlaceholder)
+        val returnValueWithPlaceholder = ObjectRef<System_Collections_IEnumerable?>(DNOutParameter.createPlaceholder(::System_Collections_IEnumerable_DNInterface))
+        inst.return_IEnumerable_Null(returnValueWithPlaceholder)
+        assertNull(returnValueWithPlaceholder.value)
     }
 
     private fun makeInstance(): Beyond_NET_Sample_Source_OutParameterTests {
