@@ -587,7 +587,7 @@ fun IDNObject.castTo(type: System_Type): System_Object? {
     return __returnValue
 }
 
-inline fun <T : System_Object> IDNObject.castTo(companion: IDNObjectCompanion<T>): T {
+fun <T : System_Object> IDNObject.castTo(companion: IDNObjectCompanion<T>): T {
     val tTypeOf = companion.typeOf
     val __exceptionC = PointerByReference()
 
@@ -604,7 +604,7 @@ inline fun <T : System_Object> IDNObject.castTo(companion: IDNObjectCompanion<T>
     return __returnValue
 }
 
-inline fun <T : System_Object> IDNObject.castAs(companion: IDNObjectCompanion<T>): T? {
+fun <T : System_Object> IDNObject.castAs(companion: IDNObjectCompanion<T>): T? {
     val tTypeOf = companion.typeOf
 
     val __returnValueC = {{jnaClassName}}.DNObjectCastAs(this.__handle, tTypeOf.__handle)
@@ -620,6 +620,14 @@ inline fun <T : System_Object> IDNObject.castAs(companion: IDNObjectCompanion<T>
 
 fun IDNObject.`is`(type: System_Type): Boolean {
     return {{jnaClassName}}.DNObjectIs(this.__handle, type.__handle)
+}
+
+fun <T : System_Object> IDNObject.`is`(companion: IDNObjectCompanion<T>): Boolean {
+    val tTypeOf = companion.typeOf
+
+    val __returnValue = {{jnaClassName}}.DNObjectIs(this.__handle, tTypeOf.__handle)
+
+    return __returnValue
 }
 
 /// Cast the targeted .NET object to a Bool.

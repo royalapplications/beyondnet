@@ -58,7 +58,7 @@ class MainActivity : ComponentActivity() {
         updateGuid()
 
         val emptyGuid = System_Guid.empty
-        require(emptyGuid.`is`(System_Guid.typeOf))
+        require(emptyGuid.`is`(System_Guid))
 
         val emptyGuidWithCtor = System_Guid()
         require(emptyGuid.dnToString().toKString() == emptyGuidWithCtor.dnToString().toKString())

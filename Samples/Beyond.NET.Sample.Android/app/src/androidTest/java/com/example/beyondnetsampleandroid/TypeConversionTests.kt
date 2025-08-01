@@ -13,42 +13,37 @@ import com.example.beyondnetsampleandroid.dn.*
 class TypeConversionTests {
     @Test
     fun testIs() {
-        val systemObjectTypeDN = System_Object.typeOf
-        val systemStringTypeDN = System_String.typeOf
-        val systemExceptionTypeDN = System_Exception.typeOf
-        val systemGuidTypeDN = System_Guid.typeOf
-
         // MARK: - System.Object
         val systemObject = System_Object()
 
-        assertTrue(systemObject.`is`(systemObjectTypeDN))
-        assertFalse(systemObject.`is`(systemStringTypeDN))
-        assertFalse(systemObject.`is`(systemExceptionTypeDN))
-        assertFalse(systemObject.`is`(systemGuidTypeDN))
+        assertTrue(systemObject.`is`(System_Object))
+        assertFalse(systemObject.`is`(System_String))
+        assertFalse(systemObject.`is`(System_Exception))
+        assertFalse(systemObject.`is`(System_Guid))
 
         // MARK: - System.String
         val systemString = System_String.empty
 
-        assertTrue(systemString.`is`(systemObjectTypeDN))
-        assertTrue(systemString.`is`(systemStringTypeDN))
-        assertFalse(systemString.`is`(systemExceptionTypeDN))
-        assertFalse(systemString.`is`(systemGuidTypeDN))
+        assertTrue(systemString.`is`(System_Object))
+        assertTrue(systemString.`is`(System_String))
+        assertFalse(systemString.`is`(System_Exception))
+        assertFalse(systemString.`is`(System_Guid))
 
         // MARK: - System.Exception
         val systemException = System_Exception()
 
-        assertTrue(systemException.`is`(systemObjectTypeDN))
-        assertFalse(systemException.`is`(systemStringTypeDN))
-        assertTrue(systemException.`is`(systemExceptionTypeDN))
-        assertFalse(systemException.`is`(systemGuidTypeDN))
+        assertTrue(systemException.`is`(System_Object))
+        assertFalse(systemException.`is`(System_String))
+        assertTrue(systemException.`is`(System_Exception))
+        assertFalse(systemException.`is`(System_Guid))
 
         // MARK: - System.Guid
         val systemGuid = System_Guid.newGuid()
 
-        assertTrue(systemGuid.`is`(systemObjectTypeDN))
-        assertFalse(systemGuid.`is`(systemStringTypeDN))
-        assertFalse(systemGuid.`is`(systemExceptionTypeDN))
-        assertTrue(systemGuid.`is`(systemGuidTypeDN))
+        assertTrue(systemGuid.`is`(System_Object))
+        assertFalse(systemGuid.`is`(System_String))
+        assertFalse(systemGuid.`is`(System_Exception))
+        assertTrue(systemGuid.`is`(System_Guid))
     }
 
     @Test
