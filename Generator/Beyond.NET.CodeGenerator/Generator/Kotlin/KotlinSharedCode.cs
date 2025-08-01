@@ -585,16 +585,11 @@ fun IDNObject.castTo(type: System_Type): System_Object? {
     return __returnValue
 }
 
-// TODO: This uses reflection - no good
-inline fun <reified T> IDNObject.castTo(): T where T : System_Object {
-    val tClass = T::class.java
-    val tClassTypeOfMethod = tClass.getMethod("{{TypeOfMemberNameJvm}}")
-    val tClassTypeOf = tClassTypeOfMethod.invoke(null) as System_Type
-    val tClassConstructor = tClass.getDeclaredConstructor(Pointer::class.java)
-
+inline fun <T : System_Object> IDNObject.castTo(companion: IDNObjectCompanion<T>): T {
+    val tTypeOf = companion.typeOf
     val __exceptionC = PointerByReference()
 
-    val __returnValueC = CAPI.DNObjectCastTo(this.__handle, tClassTypeOf.__handle, __exceptionC)
+    val __returnValueC = CAPI.DNObjectCastTo(this.__handle, tTypeOf.__handle, __exceptionC)
 
     val __exceptionCHandle = __exceptionC.value
 
@@ -602,25 +597,21 @@ inline fun <reified T> IDNObject.castTo(): T where T : System_Object {
         throw System_Exception(__exceptionCHandle).toKException()
     }
 
-    val __returnValue = tClassConstructor.newInstance(__returnValueC)
+    val __returnValue = companion.__constructWithHandle(__returnValueC)
 
     return __returnValue
 }
 
-// TODO: This uses reflection - no good
-inline fun <reified T> IDNObject.castAs(): T? where T : System_Object {
-    val tClass = T::class.java
-    val tClassTypeOfMethod = tClass.getMethod("{{TypeOfMemberNameJvm}}")
-    val tClassTypeOf = tClassTypeOfMethod.invoke(null) as System_Type
-    val tClassConstructor = tClass.getDeclaredConstructor(Pointer::class.java)
+inline fun <T : System_Object> IDNObject.castAs(companion: IDNObjectCompanion<T>): T? {
+    val tTypeOf = companion.typeOf
 
-    val __returnValueC = CAPI.DNObjectCastAs(this.__handle, tClassTypeOf.__handle)
+    val __returnValueC = CAPI.DNObjectCastAs(this.__handle, tTypeOf.__handle)
 
     if (__returnValueC == null) {
         return null
     }
 
-    val __returnValue = tClassConstructor.newInstance(__returnValueC)
+    val __returnValue = companion.__constructWithHandle(__returnValueC)
 
     return __returnValue
 }

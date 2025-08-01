@@ -58,13 +58,13 @@ class ArrayTests {
         assertEquals(array.rank, 1)
 
         // Check state
-        assertEquals(array.getValue(0)?.castTo<System_String>()?.toKString(), "z")
+        assertEquals(array.getValue(0)?.castTo(System_String)?.toKString(), "z")
         assertEquals(array[0]?.toKString(), "z")
 
-        assertEquals(array.getValue(1)?.castTo<System_String>()?.toKString(), "y")
+        assertEquals(array.getValue(1)?.castTo(System_String)?.toKString(), "y")
         assertEquals(array[1]?.toKString(), "y")
 
-        assertEquals(array.getValue(2)?.castTo<System_String>()?.toKString(), "x")
+        assertEquals(array.getValue(2)?.castTo(System_String)?.toKString(), "x")
         assertEquals(array[2]?.toKString(), "x")
     }
 

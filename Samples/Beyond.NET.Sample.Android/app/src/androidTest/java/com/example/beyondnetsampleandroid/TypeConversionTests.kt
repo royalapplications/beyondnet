@@ -58,22 +58,22 @@ class TypeConversionTests {
         val systemException = System_Exception()
         val systemNullReferenceException = System_NullReferenceException()
 
-        val systemObjectCastToSystemObject = systemObject.castAs<System_Object>()
+        val systemObjectCastToSystemObject = systemObject.castAs(System_Object)
         assertNotNull(systemObjectCastToSystemObject)
 
-        val systemObjectCastToSystemGuid = systemObject.castAs<System_Guid>()
+        val systemObjectCastToSystemGuid = systemObject.castAs(System_Guid)
         assertNull(systemObjectCastToSystemGuid)
 
-        val systemGuidCastToSystemGuid = systemGuid.castAs<System_Guid>()
+        val systemGuidCastToSystemGuid = systemGuid.castAs(System_Guid)
         assertNotNull(systemGuidCastToSystemGuid)
 
-        val systemGuidCastToSystemObject = systemGuid.castAs<System_Object>()
+        val systemGuidCastToSystemObject = systemGuid.castAs(System_Object)
         assertNotNull(systemGuidCastToSystemObject)
 
-        val systemExceptionCastToSystemNullReferenceException = systemException.castAs<System_NullReferenceException>()
+        val systemExceptionCastToSystemNullReferenceException = systemException.castAs(System_NullReferenceException)
         assertNull(systemExceptionCastToSystemNullReferenceException)
 
-        val systemNullReferenceExceptionCastToSystemException = systemNullReferenceException.castAs<System_Exception>()
+        val systemNullReferenceExceptionCastToSystemException = systemNullReferenceException.castAs(System_Exception)
         assertNotNull(systemNullReferenceExceptionCastToSystemException)
     }
 
@@ -84,11 +84,11 @@ class TypeConversionTests {
         val systemException = System_Exception()
         val systemNullReferenceException = System_NullReferenceException()
 
-        assertNotNull(systemObject.castTo<System_Object>())
-        assertThrows(DNException::class.java) { systemObject.castTo<System_Guid>() }
-        assertNotNull(systemGuid.castTo<System_Guid>())
-        assertNotNull(systemGuid.castTo<System_Object>())
-        assertThrows(DNException::class.java) { systemException.castTo<System_NullReferenceException>() }
-        assertNotNull(systemNullReferenceException.castTo<System_Exception>())
+        assertNotNull(systemObject.castTo(System_Object))
+        assertThrows(DNException::class.java) { systemObject.castTo(System_Guid) }
+        assertNotNull(systemGuid.castTo(System_Guid))
+        assertNotNull(systemGuid.castTo(System_Object))
+        assertThrows(DNException::class.java) { systemException.castTo(System_NullReferenceException) }
+        assertNotNull(systemNullReferenceException.castTo(System_Exception))
     }
 }
