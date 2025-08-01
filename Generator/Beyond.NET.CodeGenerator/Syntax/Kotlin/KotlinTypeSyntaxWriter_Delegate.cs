@@ -489,7 +489,7 @@ public partial class KotlinTypeSyntaxWriter
         sb.AppendLine();
 
         #region Secondary Constructor
-        sb.AppendLine($"constructor(callback: {inputFunctionTypeDecl}) : this(CAPI.{typeInfo.CTypeName}_Create(DelegateAdapterHelper.createCallbackAdapter(callback))) {{ }}");
+        sb.AppendLine($"constructor(callback: {inputFunctionTypeDecl}) : this({JNA_CLASS_NAME}.{typeInfo.CTypeName}_Create(DelegateAdapterHelper.createCallbackAdapter(callback))) {{ }}");
         #endregion Secondary Constructor
 
         var code = sb.ToString();
@@ -906,7 +906,7 @@ public partial class KotlinTypeSyntaxWriter
         } else {
             var impl = WriteParameterAndReturnValueConversion(
                 false,
-                $"CAPI.{typeInfo.CTypeName}_Invoke",
+                $"{JNA_CLASS_NAME}.{typeInfo.CTypeName}_Invoke",
                 CodeLanguage.Kotlin,
                 CodeLanguage.KotlinJNA,
                 typeInfo,
