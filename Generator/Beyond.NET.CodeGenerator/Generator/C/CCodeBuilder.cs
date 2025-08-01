@@ -21,5 +21,7 @@ readonly struct CCodeBuilder
 
     internal CCodeBuilder AppendLine([StringSyntax("C")] string? value = null) => new(m_sb.AppendLine(value));
 
+    internal bool IsEmpty => m_sb.Length <= 0;
+
     public override string ToString() => m_sb.ToString();
 }

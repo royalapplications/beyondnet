@@ -20,6 +20,8 @@ readonly struct KotlinCodeBuilder
     internal KotlinCodeBuilder Append([StringSyntax("Kt")] string value) => new(m_sb.Append(value));
 
     internal KotlinCodeBuilder AppendLine([StringSyntax("Kt")] string? value = null) => new(m_sb.AppendLine(value));
+    
+    internal bool IsEmpty => m_sb.Length <= 0;
 
     public override string ToString() => m_sb.ToString();
 }

@@ -20,6 +20,8 @@ readonly struct CSharpCodeBuilder
     internal CSharpCodeBuilder Append([StringSyntax("C#")] string value) => new(m_sb.Append(value));
 
     internal CSharpCodeBuilder AppendLine([StringSyntax("C#")] string? value = null) => new(m_sb.AppendLine(value));
+    
+    internal bool IsEmpty => m_sb.Length <= 0;
 
     public override string ToString() => m_sb.ToString();
 }
