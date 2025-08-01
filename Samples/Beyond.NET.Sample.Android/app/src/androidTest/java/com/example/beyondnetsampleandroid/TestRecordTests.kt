@@ -11,7 +11,7 @@ import com.example.beyondnetsampleandroid.dn.*
 
 @RunWith(AndroidJUnit4::class)
 class TestRecordTests {
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testRecords() {
         val expectedString = "Hello 👍"
@@ -30,7 +30,7 @@ class TestRecordTests {
         assertEquals(expectedString, deconstructedString)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testReadOnlyRecordStruct() {
         val expectedInt = Int.MAX_VALUE

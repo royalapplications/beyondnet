@@ -11,7 +11,7 @@ import com.example.beyondnetsampleandroid.dn.*
 
 @RunWith(AndroidJUnit4::class)
 class AddressTests {
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testAddress() {
         val street = "Schwedenplatz"
@@ -34,7 +34,7 @@ class AddressTests {
         assertEquals(expectedAddressTypeFullName, actualAddressFullTypeName)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testAddressMover() {
         val originalStreet = "Schwedenplatz"

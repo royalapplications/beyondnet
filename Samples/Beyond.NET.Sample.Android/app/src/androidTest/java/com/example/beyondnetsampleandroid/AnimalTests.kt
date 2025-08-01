@@ -11,7 +11,7 @@ import com.example.beyondnetsampleandroid.dn.*
 
 @RunWith(AndroidJUnit4::class)
 class AnimalTests {
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testDog() {
         val dogNameDN = Beyond_NET_Sample_Dog.dogName
@@ -36,7 +36,7 @@ class AnimalTests {
         assertEquals(expectedEat, eat)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testCat() {
         val catNameDN = Beyond_NET_Sample_Cat.catName
@@ -61,7 +61,7 @@ class AnimalTests {
         assertEquals(expectedEat, eat)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testCustomAnimalCreator() {
         val creatorFunc: (animalName: System_String) -> Beyond_NET_Sample_IAnimal? = { innerAnimalName ->
@@ -84,7 +84,7 @@ class AnimalTests {
         assertEquals(animalName, retrievedAnimalName)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testGettingDefaultAnimalCreator() {
         val defaultCreator = Beyond_NET_Sample_AnimalFactory.dEFAULT_CREATOR
@@ -112,7 +112,7 @@ class AnimalTests {
         assertEquals(catName, catNameRet)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testStaticMemberShadowing() {
         val dogNameDN = Beyond_NET_Sample_Dog.staticName

@@ -10,7 +10,7 @@ import org.junit.runner.*
 @RunWith(AndroidJUnit4::class)
 class OutParameterTestTests {
     // MARK: - Primitives
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testNonOptionalPrimitives() {
         val inst = makeInstance()
@@ -26,18 +26,18 @@ class OutParameterTestTests {
 
     // MARK: - Enums
     // TODO
-//    // NOTE: This was copied from the Swift tests
+//    // NOTE: This was transpiled from Swift
 //    @Test
 //    fun testNonOptionalEnums() {
 //        val inst = makeInstance()
 //
-//        val returnValue = System.DateTimeKind.unspecified
+//        val returnValue = System_DateTimeKind.UNSPECIFIED
 //        inst.return_DateTimeKind_Utc_NonOptional(&returnValue)
 //        assertEquals(returnValue, System_DateTimeKind.UTC)
 //    }
 
     // MARK: - Structs
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testNonOptionalStructs() {
         val inst = makeInstance()
@@ -51,7 +51,7 @@ class OutParameterTestTests {
         assertEquals(returnValueWithPlaceholder.value, System_DateTime.maxValue)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testOptionalStructs() {
         val inst = makeInstance()
@@ -69,7 +69,7 @@ class OutParameterTestTests {
         assertEquals(returnValueWithPlaceholder.value, System_DateTime.maxValue)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testOptionalNullStructs() {
         val inst = makeInstance()
@@ -88,7 +88,7 @@ class OutParameterTestTests {
     }
 
     // MARK: - Classes
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testNonOptionalClasses() {
         val inst = makeInstance()
@@ -104,7 +104,7 @@ class OutParameterTestTests {
         assertEquals(returnValueWithPlaceholder.value, abc)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testOptionalClasses() {
         val inst = makeInstance()
@@ -124,7 +124,7 @@ class OutParameterTestTests {
         assertEquals(returnValue.value, abc)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testOptionalNullClasses() {
         val inst = makeInstance()
@@ -143,7 +143,7 @@ class OutParameterTestTests {
     }
 
     // MARK: - Interfaces
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testNonOptionalInterfaces() {
         val inst = makeInstance()
@@ -159,7 +159,7 @@ class OutParameterTestTests {
         assertEquals(returnValueWithPlaceholder.value.castTo(System_String), abc)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testOptionalInterfaces() {
         val inst = makeInstance()
@@ -179,7 +179,7 @@ class OutParameterTestTests {
         assertEquals(returnValueWithPlaceholder.value?.castTo(System_String), abc)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testOptionalNullInterfaces() {
         val inst = makeInstance()

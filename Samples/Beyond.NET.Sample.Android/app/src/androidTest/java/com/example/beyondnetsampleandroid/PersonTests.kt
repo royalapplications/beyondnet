@@ -11,7 +11,7 @@ import com.example.beyondnetsampleandroid.dn.*
 
 @RunWith(AndroidJUnit4::class)
 class PersonTests {
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testPerson() {
         val johnDoe = Beyond_NET_Sample_Person.makeJohnDoe()
@@ -58,34 +58,109 @@ class PersonTests {
         assertEquals(johnDoe.website, websiteUri)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
-    fun testPersonEvents() {
-        val initialAge = 0
+    fun testPersonChildren() {
+        val motherFirstNameDN = "Johanna".toDotNETString()
+        val sonFirstNameDN = "Max".toDotNETString()
+        val lastNameDN = "Doe".toDotNETString()
 
+        val mother = Beyond_NET_Sample_Person(motherFirstNameDN, lastNameDN, 40)
+        val son = Beyond_NET_Sample_Person(sonFirstNameDN, lastNameDN, 4)
+
+        mother.addChild(son)
+
+        val numberOfChildren = mother.numberOfChildren
+        assertEquals(1, numberOfChildren)
+
+        val firstChild = try {
+            mother.childAt(0)
+        } catch (_: Throwable) {
+            fail("Person.childAt should not throw and should return an instance")
+            return
+        }
+
+        val firstChildEqualsSon = firstChild == son
+        assertTrue(firstChildEqualsSon)
+
+        mother.removeChild(son)
+
+        try {
+            mother.removeChildAt(0)
+            fail("Person.removeChildAt should throw because the sole child has already been removed")
+        } catch (e: Exception) {
+            val errorMessage = e.message ?: ""
+            assertTrue(errorMessage.contains("Index was out of range"))
+        }
+    }
+
+    // NOTE: This was transpiled from Swift
+    @Test
+    fun testPersonChildrenArray() {
+        val motherFirstNameDN = "Johanna".toDotNETString()
+        val sonFirstNameDN = "Max".toDotNETString()
+        val lastNameDN = "Doe".toDotNETString()
+
+        val mother = Beyond_NET_Sample_Person(motherFirstNameDN, lastNameDN, 40)
+        val son = Beyond_NET_Sample_Person(sonFirstNameDN, lastNameDN, 4)
+
+        mother.addChild(son)
+
+        val numberOfChildren = mother.numberOfChildren
+        assertEquals(1, numberOfChildren)
+
+        val children = mother.children
+        val childrenLength = children.length
+        assertEquals(numberOfChildren, childrenLength)
+
+        val firstChild = try {
+            children.getValue(0)
+        } catch (_: Exception) {
+            fail("System.Array.getValue should not throw and should return an instance")
+            return
+        }
+
+        val firstChildEqualsSon = firstChild == son
+        assertTrue(firstChildEqualsSon)
+    }
+
+    // NOTE: This was transpiled from Swift
+    @Test
+    fun testPersonExtensionMethods() {
+        val initialAge = 0
         val firstNameDN = "Johanna".toDotNETString()
         val lastNameDN = "Doe".toDotNETString()
 
-        val person = Beyond_NET_Sample_Person(
-            firstNameDN,
-            lastNameDN,
-            initialAge
+        val baby = Beyond_NET_Sample_Person(firstNameDN, lastNameDN, initialAge)
+
+        val increaseAgeByYears = 4
+        baby.increaseAge(increaseAgeByYears)
+
+        val expectedAge = initialAge + increaseAgeByYears
+        val age = baby.age
+        assertEquals(expectedAge, age)
+
+        val nilAddressRet = ObjectRef<Beyond_NET_Sample_Address?>(null)
+        val nilAddressSuccess = baby.tryGetAddress(nilAddressRet)
+
+        assertFalse(nilAddressSuccess)
+        assertNull(nilAddressRet.value)
+
+        val address = Beyond_NET_Sample_Address(
+            "Street Name".toDotNETString(),
+            "City Name".toDotNETString()
         )
 
-        val ageAfterCreation = person.age
-        assertEquals(initialAge, ageAfterCreation)
+        baby.address_set(address)
 
-        val newAgeProviderDelegate = Beyond_NET_Sample_Person_NewAgeProviderDelegate {
-            10
-        }
+        val addressRet = ObjectRef<Beyond_NET_Sample_Address?>(null)
+        val addressSuccess = baby.tryGetAddress(addressRet)
 
-        person.changeAge(newAgeProviderDelegate)
-
-        val age = person.age
-        assertEquals(10, age)
+        assertTrue(addressSuccess)
+        assertNotNull(addressRet.value)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testPersonChangeAge() {
         var numberOfTimesNumberOfChildrenChangedWasCalled = 0
@@ -142,5 +217,92 @@ class PersonTests {
         val numberOfChildrenAfterRemoval = mother.numberOfChildren
         val expectedNumberOfChildrenAfterRemoval = 0
         assertEquals(expectedNumberOfChildrenAfterRemoval, numberOfChildrenAfterRemoval)
+    }
+
+    @Test
+    fun testPersonAddress() {
+        val firstNameDN = "Johanna".toDotNETString()
+        val lastNameDN = "Doe".toDotNETString()
+
+        val person = Beyond_NET_Sample_Person(firstNameDN, lastNameDN, 15)
+
+        val street = "Stephansplatz"
+        val streetDN = street.toDotNETString()
+
+        val city = "Vienna"
+        val cityDN = city.toDotNETString()
+
+        val address = Beyond_NET_Sample_Address(streetDN, cityDN)
+        person.address_set(address)
+
+        val retrievedAddress = try {
+            person.address
+        } catch (_: Exception) {
+            fail("Person.address getter should return an instance and not throw")
+            return
+        }
+
+        val retrievedStreet = retrievedAddress?.street?.toKString()
+        assertEquals(street, retrievedStreet)
+
+        val retrievedCity = retrievedAddress?.city?.toKString()
+        assertEquals(city, retrievedCity)
+    }
+
+    // NOTE: This was transpiled from Swift
+    @Test
+    fun testPersonEvents() {
+        val initialAge = 0
+
+        val firstNameDN = "Johanna".toDotNETString()
+        val lastNameDN = "Doe".toDotNETString()
+
+        val person = Beyond_NET_Sample_Person(
+            firstNameDN,
+            lastNameDN,
+            initialAge
+        )
+
+        val ageAfterCreation = person.age
+        assertEquals(initialAge, ageAfterCreation)
+
+        val newAgeProviderDelegate = Beyond_NET_Sample_Person_NewAgeProviderDelegate {
+            10
+        }
+
+        person.changeAge(newAgeProviderDelegate)
+
+        val age = person.age
+        assertEquals(10, age)
+    }
+
+    // NOTE: This was transpiled from Swift
+    @Test
+    fun testPersonChildrenArrayChange() {
+        val motherFirstNameDN = "Johanna".toDotNETString()
+        val sonFirstNameDN = "Max".toDotNETString()
+        val daughterFirstNameDN = "Marie".toDotNETString()
+        val lastNameDN = "Doe".toDotNETString()
+
+        val mother = Beyond_NET_Sample_Person(motherFirstNameDN, lastNameDN, 40)
+        val son = Beyond_NET_Sample_Person(sonFirstNameDN, lastNameDN, 4)
+
+        mother.addChild(son)
+
+        val originalChildren = mother.children
+        val numberOfChildrenBeforeDaughter = originalChildren.length
+        assertEquals(1, numberOfChildrenBeforeDaughter)
+
+        val newChildren = DNArray(Beyond_NET_Sample_Person, 2)
+
+        System_Array.copy(originalChildren, newChildren, 1)
+
+        val daughter = Beyond_NET_Sample_Person(daughterFirstNameDN, lastNameDN, 10)
+        newChildren.setValue(daughter, 1)
+
+        mother.children_set(newChildren)
+
+        val numberOfChildrenAfterDaughter = mother.numberOfChildren
+        assertEquals(2, numberOfChildrenAfterDaughter)
     }
 }

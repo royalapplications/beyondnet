@@ -11,7 +11,7 @@ import com.example.beyondnetsampleandroid.dn.*
 
 @RunWith(AndroidJUnit4::class)
 class SystemStringTests {
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testString() {
         val emptyStringDN = System_String.empty
@@ -55,7 +55,7 @@ class SystemStringTests {
         }
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testStringReplace() {
         val hello = "Hello"
@@ -76,7 +76,7 @@ class SystemStringTests {
         }
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testStringSubstring() {
         val string = "Hello World 😀"
@@ -93,7 +93,7 @@ class SystemStringTests {
         }
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testStringComparison() {
         val hello = "Hello"

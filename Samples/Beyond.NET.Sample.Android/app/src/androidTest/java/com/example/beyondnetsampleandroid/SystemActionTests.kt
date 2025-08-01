@@ -10,7 +10,7 @@ import org.junit.runner.*
 
 @RunWith(AndroidJUnit4::class)
 class SystemActionTests {
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testSystemAction() {
         var numberOfTimesCalled = 0

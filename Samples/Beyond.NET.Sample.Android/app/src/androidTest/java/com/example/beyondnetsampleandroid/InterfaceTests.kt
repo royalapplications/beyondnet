@@ -9,7 +9,7 @@ import org.junit.runner.*
 
 @RunWith(AndroidJUnit4::class)
 class InterfaceTests {
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testPassingInInterfaces() {
         val typeThatImplementsMultipleInterfaces = Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces()
@@ -23,6 +23,7 @@ class InterfaceTests {
         typeThatUsesInterfaces.callMethod1InIInterface3(typeThatImplementsMultipleInterfaces)
     }
 
+    // NOTE: This was transpiled from Swift
     @Test
     fun testStaticMethodOnInterface() {
         val inst = Beyond_NET_Sample_IInterface1.createDefaultInstance()
@@ -31,15 +32,15 @@ class InterfaceTests {
         inst.methodInIInterface1()
     }
 
-    // TODO: No support for out parameter placeholders yet
-//    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
+    // TODO
 //    @Test
 //    fun testRetrievingInterfaces() {
 //
 //    }
 
     // TODO: How to test async code in Kotlin/Java?
-//    // NOTE: This was copied from the Swift tests
+//    // NOTE: This was transpiled from Swift
 //    @Test
 //    fun testInterfaceAdapter() {
 //        val typeThatUsesInterfaces = Beyond_NET_Sample_TypeThatUsesInterfaces()
@@ -60,7 +61,7 @@ class InterfaceTests {
 //        wait(for: [ methodInIInterface1CalledExpectation ])
 //    }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testDelegateThatReceivesInterface() {
         val typeThatUsesInterfaces = Beyond_NET_Sample_TypeThatUsesInterfaces()
@@ -73,7 +74,7 @@ class InterfaceTests {
         typeThatUsesInterfaces.delegateThatReceivesInterfaceTest(del, typeThatImplementsInterface)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testDelegateThatReturnsInterface() {
         val typeThatUsesInterfaces = Beyond_NET_Sample_TypeThatUsesInterfaces()

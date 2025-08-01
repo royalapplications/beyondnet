@@ -9,7 +9,7 @@ import org.junit.runner.*
 
 @RunWith(AndroidJUnit4::class)
 class DelegateTestTests {
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testTransformInt() {
         val original = 0
@@ -25,7 +25,7 @@ class DelegateTestTests {
         assertEquals(expectedResult, result)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testTransformStepMode() {
         var original = Beyond_NET_Sample_StepMode.IN
@@ -41,7 +41,7 @@ class DelegateTestTests {
         assertEquals(original, result)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testTransformPoint() {
         val originalX = 0.0

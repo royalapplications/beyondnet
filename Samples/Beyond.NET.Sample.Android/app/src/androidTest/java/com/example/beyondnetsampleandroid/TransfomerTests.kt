@@ -11,7 +11,7 @@ import com.example.beyondnetsampleandroid.dn.*
 
 @RunWith(AndroidJUnit4::class)
 class TransfomerTests {
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testStringTransformer() {
         val uppercaser = createUppercaser()
@@ -29,7 +29,7 @@ class TransfomerTests {
         assertEquals(expectedOutputString, outputString)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testStringGetterAndTransformer() {
         val fixedStringProvider = createFixedStringProvider()
@@ -43,7 +43,7 @@ class TransfomerTests {
         assertEquals("FIXED STRING", outputString)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testDoublesTransformer() {
         val doublesTransformerDelegate = Beyond_NET_Sample_Transformer_DoublesTransformerDelegate { number1, number2 ->
@@ -64,7 +64,7 @@ class TransfomerTests {
         assertEquals(expectedResult, result, 0.0001)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     @Test
     fun testUppercaserThatActuallyLowercases() {
         val lowercaser = createLowercaser()
@@ -90,7 +90,7 @@ class TransfomerTests {
         assertEquals(expectedOutputStringWithOrig, outputStringWithOrig)
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     private fun createFixedStringProvider(): Beyond_NET_Sample_Transformer_StringGetterDelegate {
         val fixedStringProvider = Beyond_NET_Sample_Transformer_StringGetterDelegate {
             val outputString = "Fixed String"
@@ -102,7 +102,7 @@ class TransfomerTests {
         return fixedStringProvider
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     private fun createUppercaser(): Beyond_NET_Sample_Transformer_StringTransformerDelegate {
         val caser = Beyond_NET_Sample_Transformer_StringTransformerDelegate { inputStringDN ->
             val inputString = inputStringDN.toKString()
@@ -116,7 +116,7 @@ class TransfomerTests {
         return caser
     }
 
-    // NOTE: This was copied from the Swift tests
+    // NOTE: This was transpiled from Swift
     private fun createLowercaser(): Beyond_NET_Sample_Transformer_StringTransformerDelegate {
         val caser = Beyond_NET_Sample_Transformer_StringTransformerDelegate { inputStringDN ->
             val inputString = inputStringDN.toKString()
