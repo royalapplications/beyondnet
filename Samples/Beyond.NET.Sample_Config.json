@@ -57,6 +57,12 @@
 		"System.Tuple`5",
 		"System.Tuple`6",
 		"System.Tuple`7",
-		"System.Tuple`8"
+		"System.Tuple`8",
+
+		"System.Security.Cryptography.SlhDsaAlgorithm"
+	],
+
+	"NoWarn": [
+		"SYSLIB5006"
 	]
 }

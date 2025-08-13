@@ -231,13 +231,17 @@ The generator currently uses a configuration file where all of its options are s
   ],
 
   "ExcludedAssemblyNames": [
-    "Assembly1, Version=4.2.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed",
-    "Assembly2"
+      "Assembly1, Version=4.2.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed",
+      "Assembly2"
   ],
 
   "AssemblySearchPaths": [
       "/Path/To/Assemblies",
       "/Another/Path/To/Assemblies"
+  ],
+
+  "NoWarn": [
+      "SYSLIB5006"
   ]
 }
 ```
@@ -269,6 +273,11 @@ The generator currently uses a configuration file where all of its options are s
 - **`ExcludedAssemblyNames`** (Array of Strings): Use this to provide a list of [assembly names](https://learn.microsoft.com/dotnet/api/system.reflection.assemblyname#remarks) whose types should be excluded.
   Simple names (e.g. `MyAssembly`) loosely match any assembly with that name, regardless of its version, culture or signing keys. Fully-qualified names (e.g. `MyAssembly, Version=1.2.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed`) match strictly that exact assembly identity.
 - **`AssemblySearchPaths`** (Array of Strings): Use this to provide a list of file system paths that are included when searching for assembly references.
+- **`NoWarn`** (Array of Strings): Use this to provide a list of [compiler warning suppressions](https://learn.microsoft.com/dotnet/csharp/language-reference/compiler-options/errors-warnings#nowarn) for the generated C# project. This can be helpful in many cases, but may be required if the generated C# code uses, directly or indirectly, .NET APIs [marked as experimental](https://learn.microsoft.com/dotnet/fundamentals/runtime-libraries/preview-apis#experimentalattribute).
+
+   For instance, in .NET 10, adding `SYSLIB5006` here helps address compilation issues such as:
+
+   > *error SYSLIB5006: 'System.Security.Cryptography.SlhDsaAlgorithm' is for evaluation purposes only and is subject to change or removal in future updates. <mark>Suppress this diagnostic to proceed.</mark>*
 
 Note that all paths can either be absolute or relative to the working directory.
 
