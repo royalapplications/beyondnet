@@ -12,6 +12,9 @@
     <EnablePreviewFeatures>true</EnablePreviewFeatures>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 
+    <!-- Allow experimental APIs (https://learn.microsoft.com/en-us/dotnet/fundamentals/runtime-libraries/preview-apis) -->
+    <NoWarn>$(NoWarn);SYSLIB5006</NoWarn>
+
     <!-- TODO: Disabled for now to get faster build times -->
     <Nullable>disable</Nullable>
 

@@ -125,7 +125,7 @@ public class NativeCsProj
     private const string TOKEN_IOS_SDK_PATH = $"{TOKEN}iOSSDKFilePath{TOKEN}";
     private const string TOKEN_IOS_SIMULATOR_SDK_PATH = $"{TOKEN}iOSSimulatorSDKFilePath{TOKEN}";
 
-    private const string CSPROJ_TEMPLATE = $"""
+    private const string CSPROJ_TEMPLATE = /*lang=xml*/$"""
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
@@ -138,6 +138,9 @@ public class NativeCsProj
     <PublishAot>true</PublishAot>
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
     <EnablePreviewFeatures>true</EnablePreviewFeatures>
+
+    <!-- Allow experimental APIs (https://learn.microsoft.com/en-us/dotnet/fundamentals/runtime-libraries/preview-apis) -->
+    <NoWarn>$(NoWarn);SYSLIB5006</NoWarn>
 
     <StripSymbols>{TOKEN_STRIP_SYMBOLS}</StripSymbols>
 
