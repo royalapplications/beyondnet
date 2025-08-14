@@ -24,6 +24,7 @@ public class NativeCsProj
     public string ProductName { get; }
     public string TargetAssemblyFilePath { get; }
     public string[] AssemblyReferences { get; }
+    public string[] NoWarn { get; }
     public AppleSpecificSettings? AppleSettings { get; }
     public bool StripSymbols { get; }
 
@@ -34,6 +35,7 @@ public class NativeCsProj
         string productName,
         string targetAssemblyFilePath,
         string[] assemblyReferences,
+        string[] noWarn,
         bool stripSymbols,
         AppleSpecificSettings? appleSettings
     )
@@ -42,6 +44,7 @@ public class NativeCsProj
         ProductName = productName;
         TargetAssemblyFilePath = targetAssemblyFilePath;
         AssemblyReferences = assemblyReferences;
+        NoWarn = noWarn;
         StripSymbols = stripSymbols;
         AppleSettings = appleSettings;
     }
@@ -92,6 +95,7 @@ public class NativeCsProj
             .Replace(TOKEN_NULLABLE, nullable)
             .Replace(TOKEN_TARGET_ASSEMBLY_FILE_PATH, TargetAssemblyFilePath)
             .Replace(TOKEN_ASSEMBLY_REFERENCES, assemblyReferencesXml)
+            .Replace(TOKEN_NO_WARN, string.Join(";", NoWarn))
             .Replace(TOKEN_STRIP_SYMBOLS, StripSymbols ? "true" : "false")
             .Replace(TOKEN_MIX_IN_SWIFT, mixInSwift ? "true" : "false")
             .Replace(TOKEN_MIN_MACOS_VERSION, minMacOSVersion)
@@ -114,6 +118,7 @@ public class NativeCsProj
     private const string TOKEN_TARGET_ASSEMBLY_FILE_PATH = $"{TOKEN}TargetAssemblyFilePath{TOKEN}";
     private const string TOKEN_ASSEMBLY_REFERENCES = $"{TOKEN}AssemblyReferences{TOKEN}";
     private const string TOKEN_STRIP_SYMBOLS = $"{TOKEN}StripSymbols{TOKEN}";
+    private const string TOKEN_NO_WARN = $"{TOKEN}NoWarn{TOKEN}";
 
     private const string TOKEN_MIX_IN_SWIFT = $"{TOKEN}MixInSwift{TOKEN}";
     private const string TOKEN_MIN_MACOS_VERSION = $"{TOKEN}MinMacOSVersion{TOKEN}";
@@ -125,7 +130,7 @@ public class NativeCsProj
     private const string TOKEN_IOS_SDK_PATH = $"{TOKEN}iOSSDKFilePath{TOKEN}";
     private const string TOKEN_IOS_SIMULATOR_SDK_PATH = $"{TOKEN}iOSSimulatorSDKFilePath{TOKEN}";
 
-    private const string CSPROJ_TEMPLATE = $"""
+    private const string CSPROJ_TEMPLATE = /*lang=xml*/$"""
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
@@ -138,6 +143,8 @@ public class NativeCsProj
     <PublishAot>true</PublishAot>
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
     <EnablePreviewFeatures>true</EnablePreviewFeatures>
+
+    <NoWarn>$(NoWarn);{TOKEN_NO_WARN}</NoWarn>
 
     <StripSymbols>{TOKEN_STRIP_SYMBOLS}</StripSymbols>
 

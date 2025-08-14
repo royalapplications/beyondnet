@@ -25,7 +25,7 @@ The generated C# code can then be compiled with .NET NativeAOT which allows the 
 
 ### Prerequisites
 
-- Make sure [.NET 9](https://dotnet.microsoft.com/download/dotnet/9.0) is installed and on your path.
+- Make sure [.NET 10](https://dotnet.microsoft.com/download/dotnet/10.0) is installed and on your path.
 - On macOS, make sure [Xcode](https://developer.apple.com/xcode/), the macOS and iOS SDKs and the Command Line Tools (`xcode-select --install`) are installed.
 - On Linux, make sure clang and zlib are installed
 
@@ -90,14 +90,14 @@ public class Hello
 ```
 
 - Compile the .NET class library: `dotnet publish`.
-- Note the published dll's output path (should be something like this `/Path/To/BeyondDemo/bin/Release/net9.0/publish/BeyondDemo.dll`).
+- Note the published dll's output path (should be something like this `/Path/To/BeyondDemo/bin/Release/net10.0/publish/BeyondDemo.dll`).
 - Create a config file for Beyond.NET: `touch Config.json`.
 - Open `Config.json` in a text editor.
 - Replace its contents with this:
 
 ```json
 {
-    "AssemblyPath": "bin/Release/net9.0/publish/BeyondDemo.dll",
+    "AssemblyPath": "bin/Release/net10.0/publish/BeyondDemo.dll",
 
     "Build": {
         "Target": "apple-universal"
@@ -110,8 +110,8 @@ public class Hello
 - Run the generator: `beyondnetgen Config.json`.
 - On a Mac Studio M2 Ultra, this takes a little more than a minute while on an 8-Core Intel Xeon iMac Pro, it takes around 3 minutes. So it might be worth getting some coffee depending on your hardware. (TODO: Outdated info, as now with parallel building support the times are way better)
 - The individual code generation and builds steps are shown in the terminal.
-- The last printed line should include the path where the build output has been written to (ie. `Build Output has been written to "/Path/To/BeyondDemo/bin/Release/net9.0/publish"`).
-- Check the contents of the build output path: `ls bin/Release/net9.0/publish`
+- The last printed line should include the path where the build output has been written to (ie. `Build Output has been written to "/Path/To/BeyondDemo/bin/Release/net10.0/publish"`).
+- Check the contents of the build output path: `ls bin/Release/net10.0/publish`
 - It should include an XCFramework bundle called `BeyondDemoKit.xcframework`.
 - Congratulations, you now have a fully functional native version of your .NET library that can be consumed by macOS and iOS Xcode projects.
 
@@ -131,7 +131,7 @@ Now that we have an XCFramework containing binaries for macOS and iOS, we can in
 - Select the `General` tab.
 - Under `Frameworks, Libraries and Embedded Content`, click the `+` button.
 - Select `Add Other... - Add Files...`.
-- Navigate one level up in the file picker, then go to `bin/Release/net9.0/publish` (depending on your output path).
+- Navigate one level up in the file picker, then go to `bin/Release/net10.0/publish` (depending on your output path).
 - Select `BeyondDemoKit.xcframework`.
 - The XCFramework should now show up and it should already be configured to `Embed & Sign`.
 - Select `ContentView.swift` in the project navigator.
@@ -202,7 +202,11 @@ The generator currently uses a configuration file where all of its options are s
       "iOSDeploymentTarget": "16.0",
 
       "DisableParallelBuild": false,
-      "DisableStripDotNETSymbols": false
+      "DisableStripDotNETSymbols": false,
+
+      "NoWarn": [
+          "SYSLIB5006"
+      ]
   },
 
   "CSharpUnmanagedOutputPath": "/Path/To/Generated/CSharpUnmanaged/Output_CS.cs",
@@ -231,8 +235,8 @@ The generator currently uses a configuration file where all of its options are s
   ],
 
   "ExcludedAssemblyNames": [
-    "Assembly1, Version=4.2.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed",
-    "Assembly2"
+      "Assembly1, Version=4.2.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed",
+      "Assembly2"
   ],
 
   "AssemblySearchPaths": [
@@ -252,6 +256,12 @@ The generator currently uses a configuration file where all of its options are s
     - **`iOSDeploymentTarget`**: The deployment target for the iOS portion of the XCFramework. (Optional; if not provided, `16.0` is used)
     - **`DisableParallelBuild`**: Set to `true` to disable building in parallel (ie. for improved debugging). (Optional; if not provided, `false` is used)
     - **`DisableStripDotNETSymbols`**: Set to `true` to disable stripping .NET symbols (ie. for improved debugging). (Optional; if not provided, `false` is used)
+    - **`NoWarn`** (Array of Strings): Use this to provide a list of [compiler warning suppressions](https://learn.microsoft.com/dotnet/csharp/language-reference/compiler-options/errors-warnings#nowarn) for the auto-generated C# project. This can be helpful in many cases, but may be required if the generated C# code uses, directly or indirectly, [.NET APIs marked as experimental](https://learn.microsoft.com/dotnet/fundamentals/runtime-libraries/preview-apis#experimentalattribute).
+
+        For instance, in .NET 10, adding `SYSLIB5006` here helps resolve compilation issues such as:
+
+        > *error SYSLIB5006: 'System.Security.Cryptography.SlhDsaAlgorithm' is for evaluation purposes only and is subject to change or removal in future updates. <mark>Suppress this diagnostic to proceed.</mark>*
+        
 - **`CSharpUnmanagedOutputPath`**: The generator will use this path to write the file containing the C# wrapper methods. (Required if `Build` is disabled; Optional if `Build` is enabled)
 - **`COutputPath`**: The generator will use this path to write the generated C bindings header file. (Required if `Build` is disabled; Optional if `Build` is enabled)
 - **`SwiftOutputPath`**: The generator will use this path to write the generated Swift bindings file. (Optional)
