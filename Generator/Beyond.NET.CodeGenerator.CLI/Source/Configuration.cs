@@ -25,7 +25,5 @@ public record Configuration(
 
     string[]? ExcludedAssemblyNames,
 
-    string[]? AssemblySearchPaths,
-
-    string[]? NoWarn
+    string[]? AssemblySearchPaths
 );

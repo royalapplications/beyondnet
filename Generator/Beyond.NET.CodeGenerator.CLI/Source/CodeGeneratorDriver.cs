@@ -483,7 +483,7 @@ internal class CodeGeneratorDriver
                     buildProductBundleIdentifier,
                     assemblyPath,
                     assemblyReferences,
-                    Configuration.NoWarn ?? [],
+                    Configuration.Build?.NoWarn ?? [],
                     !disableStripDotNETSymbols,
                     cSharpUnmanagedOutputPath,
                     !disableParallelBuild,

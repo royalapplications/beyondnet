@@ -202,7 +202,11 @@ The generator currently uses a configuration file where all of its options are s
       "iOSDeploymentTarget": "16.0",
 
       "DisableParallelBuild": false,
-      "DisableStripDotNETSymbols": false
+      "DisableStripDotNETSymbols": false,
+
+      "NoWarn": [
+          "SYSLIB5006"
+      ]
   },
 
   "CSharpUnmanagedOutputPath": "/Path/To/Generated/CSharpUnmanaged/Output_CS.cs",
@@ -238,10 +242,6 @@ The generator currently uses a configuration file where all of its options are s
   "AssemblySearchPaths": [
       "/Path/To/Assemblies",
       "/Another/Path/To/Assemblies"
-  ],
-
-  "NoWarn": [
-      "SYSLIB5006"
   ]
 }
 ```
@@ -256,6 +256,12 @@ The generator currently uses a configuration file where all of its options are s
     - **`iOSDeploymentTarget`**: The deployment target for the iOS portion of the XCFramework. (Optional; if not provided, `16.0` is used)
     - **`DisableParallelBuild`**: Set to `true` to disable building in parallel (ie. for improved debugging). (Optional; if not provided, `false` is used)
     - **`DisableStripDotNETSymbols`**: Set to `true` to disable stripping .NET symbols (ie. for improved debugging). (Optional; if not provided, `false` is used)
+    - **`NoWarn`** (Array of Strings): Use this to provide a list of [compiler warning suppressions](https://learn.microsoft.com/dotnet/csharp/language-reference/compiler-options/errors-warnings#nowarn) for the auto-generated C# project. This can be helpful in many cases, but may be required if the generated C# code uses, directly or indirectly, [.NET APIs marked as experimental](https://learn.microsoft.com/dotnet/fundamentals/runtime-libraries/preview-apis#experimentalattribute).
+
+        For instance, in .NET 10, adding `SYSLIB5006` here helps resolve compilation issues such as:
+
+        > *error SYSLIB5006: 'System.Security.Cryptography.SlhDsaAlgorithm' is for evaluation purposes only and is subject to change or removal in future updates. <mark>Suppress this diagnostic to proceed.</mark>*
+        
 - **`CSharpUnmanagedOutputPath`**: The generator will use this path to write the file containing the C# wrapper methods. (Required if `Build` is disabled; Optional if `Build` is enabled)
 - **`COutputPath`**: The generator will use this path to write the generated C bindings header file. (Required if `Build` is disabled; Optional if `Build` is enabled)
 - **`SwiftOutputPath`**: The generator will use this path to write the generated Swift bindings file. (Optional)
@@ -273,11 +279,6 @@ The generator currently uses a configuration file where all of its options are s
 - **`ExcludedAssemblyNames`** (Array of Strings): Use this to provide a list of [assembly names](https://learn.microsoft.com/dotnet/api/system.reflection.assemblyname#remarks) whose types should be excluded.
   Simple names (e.g. `MyAssembly`) loosely match any assembly with that name, regardless of its version, culture or signing keys. Fully-qualified names (e.g. `MyAssembly, Version=1.2.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed`) match strictly that exact assembly identity.
 - **`AssemblySearchPaths`** (Array of Strings): Use this to provide a list of file system paths that are included when searching for assembly references.
-- **`NoWarn`** (Array of Strings): Use this to provide a list of [compiler warning suppressions](https://learn.microsoft.com/dotnet/csharp/language-reference/compiler-options/errors-warnings#nowarn) for the generated C# project. This can be helpful in many cases, but may be required if the generated C# code uses, directly or indirectly, .NET APIs [marked as experimental](https://learn.microsoft.com/dotnet/fundamentals/runtime-libraries/preview-apis#experimentalattribute).
-
-   For instance, in .NET 10, adding `SYSLIB5006` here helps address compilation issues such as:
-
-   > *error SYSLIB5006: 'System.Security.Cryptography.SlhDsaAlgorithm' is for evaluation purposes only and is subject to change or removal in future updates. <mark>Suppress this diagnostic to proceed.</mark>*
 
 Note that all paths can either be absolute or relative to the working directory.
 
