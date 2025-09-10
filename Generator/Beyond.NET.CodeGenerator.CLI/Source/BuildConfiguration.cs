@@ -12,7 +12,9 @@ public record BuildConfiguration
     string? iOSDeploymentTarget,
 
     bool DisableParallelBuild,
-    bool DisableStripDotNETSymbols
+    bool DisableStripDotNETSymbols,
+
+    string[]? NoWarn
 );
 
 internal static class BuildTargets

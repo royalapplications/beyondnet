@@ -49,8 +49,8 @@ final class SystemTypeTests: XCTestCase {
             XCTAssertNil(invalidType)
 
             let exceptionMessage = error.localizedDescription
-
-            XCTAssertTrue(exceptionMessage.contains("The type \'\(invalidTypeName)\' cannot be found"))
+            
+            XCTAssertEqual(exceptionMessage, "Could not resolve type '\(invalidTypeName)' in assembly \'BeyondDotNETSampleKit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\'.")
         }
     }
 

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <AssemblyName>libBeyondDotNETSampleNative</AssemblyName>
     <OutputType>Library</OutputType>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PublishTrimmed>true</PublishTrimmed>
@@ -11,6 +11,9 @@
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
     <EnablePreviewFeatures>true</EnablePreviewFeatures>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+
+    <!-- Allow experimental APIs (https://learn.microsoft.com/en-us/dotnet/fundamentals/runtime-libraries/preview-apis) -->
+    <NoWarn>$(NoWarn);SYSLIB5006</NoWarn>
 
     <!-- TODO: Disabled for now to get faster build times -->
     <Nullable>disable</Nullable>

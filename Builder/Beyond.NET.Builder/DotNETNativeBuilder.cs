@@ -18,6 +18,7 @@ public class DotNETNativeBuilder
     public string ProductBundleIdentifier { get; }
     public string TargetAssemblyFilePath { get; }
     public string[] AssemblyReferences { get; }
+    public string[] NoWarn { get; }
     public bool StripSymbols { get; }
     public string GeneratedCSharpFilePath { get; }
     public bool BuildInParallel { get; }
@@ -39,6 +40,7 @@ public class DotNETNativeBuilder
         string productBundleIdentifier,
         string targetAssemblyFilePath,
         string[] assemblyReferences,
+        string[] noWarn,
         bool stripSymbols,
         string generatedCSharpFilePath,
         bool buildInParallel,
@@ -51,6 +53,7 @@ public class DotNETNativeBuilder
         ProductBundleIdentifier = productBundleIdentifier;
         TargetAssemblyFilePath = targetAssemblyFilePath;
         AssemblyReferences = assemblyReferences;
+        NoWarn = noWarn;
         StripSymbols = stripSymbols;
         GeneratedCSharpFilePath = generatedCSharpFilePath;
         BuildInParallel = buildInParallel;
@@ -86,6 +89,7 @@ public class DotNETNativeBuilder
             ProductName,
             TargetAssemblyFilePath,
             AssemblyReferences,
+            NoWarn,
             StripSymbols,
             appleSettings
         );

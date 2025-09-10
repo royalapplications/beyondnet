@@ -5,7 +5,10 @@
 		"Target": "apple-universal",
 		"ProductName": "BeyondDotNETSampleKit",
 		"ProductBundleIdentifier": "com.royalapps.beyonddotnetsamplekit",
-		"ProductOutputPath": "Generated"
+		"ProductOutputPath": "Generated",
+		"NoWarn": [
+			"SYSLIB5006"
+		]
 	},
 
 	"CSharpUnmanagedOutputPath": "Generated/Generated_CS.cs",
@@ -64,6 +67,8 @@
 		"System.Tuple`5",
 		"System.Tuple`6",
 		"System.Tuple`7",
-		"System.Tuple`8"
+		"System.Tuple`8",
+
+		"System.Security.Cryptography.SlhDsaAlgorithm"
 	]
 }
