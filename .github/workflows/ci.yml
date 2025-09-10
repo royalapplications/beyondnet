@@ -83,7 +83,7 @@ jobs:
         ./build_dependencies
 
         xcodebuild -workspace BeyondNETSamplesSwift.xcworkspace -scheme BeyondNETSampleSwift test -destination "name=My Mac"
-        xcodebuild -workspace BeyondNETSamplesSwift.xcworkspace -scheme BeyondNETSampleSwift test -destination "platform=iOS Simulator,name=iPhone 16,OS=18.0"
+        xcodebuild -workspace BeyondNETSamplesSwift.xcworkspace -scheme BeyondNETSampleSwift test -destination "platform=iOS Simulator,name=iPhone 16,OS=18.5"
 
     - name: build native sample
       run: |
