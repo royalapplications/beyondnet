@@ -1,5 +1,5 @@
-// Number of generated types: 1637
-// Number of generated members: 7778
+// Number of generated types: 1638
+// Number of generated members: 7782
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -6166,6 +6166,8 @@ typedef void* Beyond_NET_Sample_Source_OverrideTestsInterfaceImpl_t;
 typedef void* Beyond_NET_Sample_Source_OverrideTestsBaseClass_t;
 
 typedef void* Beyond_NET_Sample_Source_OverrideTestsDerivedClass_t;
+
+typedef void* Beyond_NET_Sample_Source_PrimitiveExtensionsTests_t;
 
 typedef void* Beyond_NET_Sample_Transformer_BuiltInTransformers_t;
 
@@ -61914,6 +61916,31 @@ Beyond_NET_Sample_Source_OverrideTestsDerivedClass_Destroy(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.Source.OverrideTestsDerivedClass
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.PrimitiveExtensionsTests
+int32_t /* System.Int32 */
+Beyond_NET_Sample_Source_PrimitiveExtensionsTests_RoundToInt(
+	double /* System.Double */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+Beyond_NET_Sample_Source_PrimitiveExtensionsTests_RoundToInt_1(
+	float /* System.Single */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_Source_PrimitiveExtensionsTests_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_PrimitiveExtensionsTests_Destroy(
+	Beyond_NET_Sample_Source_PrimitiveExtensionsTests_t _Nullable /* Beyond.NET.Sample.Source.PrimitiveExtensionsTests */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.Source.PrimitiveExtensionsTests
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Transformer.BuiltInTransformers
 Beyond_NET_Sample_Transformer_StringTransformerDelegate_t _Nonnull /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */

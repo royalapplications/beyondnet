@@ -710,7 +710,8 @@ public subscript(position: Index) -> Element {
         string? codeForOptional;
 
         if (!extendedType.IsEnum &&
-            !extendedType.IsStruct()) {
+            !extendedType.IsStruct() &&
+            !extendedType.IsPrimitive) {
             codeForOptional = GetTypeExtensionsCode(
                 extendedType,
                 true,
