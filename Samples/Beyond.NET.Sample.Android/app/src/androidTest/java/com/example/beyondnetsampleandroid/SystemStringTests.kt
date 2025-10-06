@@ -43,7 +43,7 @@ class SystemStringTests {
         assertEquals(expectedIndexOfWorld, indexOfWorld)
 
         val splitOptions = System_StringSplitOptions(
-            System_StringSplitOptions.REMOVEEMPTYENTRIES.value or System_StringSplitOptions.TRIMENTRIES.value
+            System_StringSplitOptions.REMOVE_EMPTY_ENTRIES.value or System_StringSplitOptions.TRIM_ENTRIES.value
         )
 
         val blankDN = " ".toDotNETString()

@@ -51,7 +51,7 @@ class TestClassesTests {
     // NOTE: This was transpiled from Swift
     @Test
     fun testEnum() {
-        val enumValue = Beyond_NET_Sample_TestEnum.SECONDCASE
+        val enumValue = Beyond_NET_Sample_TestEnum.SECOND_CASE
         val enumName = Beyond_NET_Sample_TestClass.getTestEnumName(enumValue).toKString()
         assertEquals("SecondCase", enumName)
     }

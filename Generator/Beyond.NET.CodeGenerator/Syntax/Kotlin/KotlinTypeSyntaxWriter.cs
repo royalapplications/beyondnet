@@ -1,5 +1,5 @@
 using System.Reflection;
-
+using System.Text;
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.Generator;
 using Beyond.NET.CodeGenerator.Generator.Kotlin;
@@ -179,8 +179,7 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
         List<KotlinEnumClassCase> enumCases = new();
 
         for (int i = 0; i < caseNames.Length; i++) {
-            string caseName = caseNames[i]
-                .ToUpper();
+            string caseName = ToKotlinEnumCaseName(caseNames[i]);
 
             var value = values.GetValue(i) ?? throw new Exception("No enum value for case");
             var valueType = value.GetType();
@@ -261,6 +260,29 @@ public val value: {{underlyingTypeName}}
         var enumClassDefStr = enumClassDef.ToString();
 
         return enumClassDefStr;
+    }
+
+    private static string ToKotlinEnumCaseName(string csharpName) {
+        var sb = new StringBuilder(csharpName.Length + 4);
+
+        sb.Append(char.ToUpper(csharpName[0]));
+        bool lastLower = false;
+
+        for (var i = 1; i < csharpName.Length; i++) {
+            char c = csharpName[i];
+            bool isLower = char.IsLetter(c)
+                ? char.IsLower(c)
+                : true;
+
+            if (!isLower && lastLower) {
+                sb.Append('_');
+            }
+
+            sb.Append(char.ToUpper(c));
+            lastLower = isLower;
+        }
+
+        return sb.ToString();
     }
     #endregion Enum
 
