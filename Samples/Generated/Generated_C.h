@@ -1,4 +1,4 @@
-// Number of generated types: 1638
+// Number of generated types: 1637
 // Number of generated members: 7782
 
 #pragma mark - BEGIN Header
@@ -2357,6 +2357,9 @@ typedef struct DNReadOnlySpanOfByte {
 // Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
 // Unsupported Type "System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
 // Unsupported Type "Beyond.NET.Sample.IAnimal[]": Is Array of Interface Type
+// Unsupported Type "Beyond.NET.Sample.DelegatesTest+TransformIntWithRefDelegate": Unsupported delegate paramter type: Has ref parameters
+// Unsupported Type "Beyond.NET.Sample.DelegatesTest+TransformIntWithOutDelegate": Unsupported delegate paramter type: Has out parameters
+// Unsupported Type "Beyond.NET.Sample.DelegatesTest+PointTransformWithRefDelegate": Unsupported delegate paramter type: Has ref parameters
 // Unsupported Type "Converter`2": Is Generic Delegate Type
 // Unsupported Type "System.Predicate`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "System.Action`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
@@ -2387,6 +2390,8 @@ typedef struct DNReadOnlySpanOfByte {
 // Unsupported Type "Beyond.NET.Sample.INotImplementedInterfaceWithStaticAbstractMembers": Static abstract members in interface
 // Unsupported Type "System.Span`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
 // Unsupported Type "System.Nullable`1": Excluded
+// Unsupported Type "Beyond.NET.Sample.ByRefParametersDelegate": Unsupported delegate paramter type: Has ref parameters
+// Unsupported Type "Beyond.NET.Sample.OutParametersDelegate": Unsupported delegate paramter type: Has out parameters
 // Unsupported Type "System.ArraySegment`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
 // Unsupported Type "System.Func`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
@@ -5594,6 +5599,7 @@ typedef void* Beyond_NET_Sample_Point_t;
 
 typedef void* Beyond_NET_Sample_DelegatesTest_t;
 
+
 typedef void* Beyond_NET_Sample_EventTests_t;
 
 typedef void* Beyond_NET_Sample_GenericTestClass_A1_t;
@@ -6428,10 +6434,6 @@ typedef System_Byte_Array_t _Nullable (*Beyond_NET_Sample_SpanTest_SpanToByteArr
 
 
 // TODO: (Beyond_NET_Sample_ByRefReturnValueDelegate) Unsupported delegate type. Reason: Has by ref return type
-
-// TODO: (Beyond_NET_Sample_ByRefParametersDelegate) Unsupported delegate type. Reason: Has by ref parameters
-
-// TODO: (Beyond_NET_Sample_OutParametersDelegate) Unsupported delegate type. Reason: Has out parameters
 
 typedef void* Beyond_NET_Sample_CharReturnerDelegate_t;
 typedef void (*Beyond_NET_Sample_CharReturnerDelegate_CDestructorFunction_t)(void* context);
@@ -45280,6 +45282,7 @@ Beyond_NET_Sample_DelegatesTest_Destroy(
 
 #pragma mark - END APIs of Beyond.NET.Sample.DelegatesTest
 
+
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.EventTests
 Beyond_NET_Sample_EventTests_t _Nonnull /* Beyond.NET.Sample.EventTests */
 Beyond_NET_Sample_EventTests_Create(
@@ -63102,14 +63105,6 @@ Beyond_NET_Sample_SpanTest_SpanToByteArrayDelegate_Destroy(
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.ByRefReturnValueDelegate
 // TODO: (Beyond_NET_Sample_ByRefReturnValueDelegate_t) Unsupported delegate type. Reason: Has by ref return type
 #pragma mark - END APIs of Beyond.NET.Sample.ByRefReturnValueDelegate
-
-#pragma mark - BEGIN APIs of Beyond.NET.Sample.ByRefParametersDelegate
-// TODO: (Beyond_NET_Sample_ByRefParametersDelegate_t) Unsupported delegate type. Reason: Has by ref parameters
-#pragma mark - END APIs of Beyond.NET.Sample.ByRefParametersDelegate
-
-#pragma mark - BEGIN APIs of Beyond.NET.Sample.OutParametersDelegate
-// TODO: (Beyond_NET_Sample_OutParametersDelegate_t) Unsupported delegate type. Reason: Has out parameters
-#pragma mark - END APIs of Beyond.NET.Sample.OutParametersDelegate
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.CharReturnerDelegate
 Beyond_NET_Sample_CharReturnerDelegate_t _Nonnull /* Beyond.NET.Sample.CharReturnerDelegate */

@@ -499,6 +499,25 @@ public class TypeCollector
                         unsupportedReason = "Unsupported delegate paramter type";
                         return false;
                     }
+
+                    if (delegateParameter.IsOut) {
+                        unsupportedReason = "Unsupported delegate paramter type: Has out parameters";
+                        return false;
+                    }
+
+                    if (delegateParameter.IsIn) {
+                        unsupportedReason = "Unsupported delegate paramter type: Has in parameters";
+                        return false;
+                    }
+
+                    if (!ExperimentalFeatureFlags.EnableByRefParametersInDelegates) {
+                        Type parameterType = delegateParameter.ParameterType;
+
+                        if (parameterType.IsByRef) {
+                            unsupportedReason = "Unsupported delegate paramter type: Has ref parameters";
+                            return false;
+                        }
+                    }
                 }
             }
         }
