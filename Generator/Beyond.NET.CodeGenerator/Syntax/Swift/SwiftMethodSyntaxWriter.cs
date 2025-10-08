@@ -815,6 +815,7 @@ if let __exceptionC {
 
     internal static string WriteExtensionMethod(
         GeneratedMember swiftGeneratedMember,
+        Type extendedType,
         bool isExtendedTypeOptional,
         TypeDescriptorRegistry typeDescriptorRegistry
     )
@@ -840,6 +841,25 @@ if let __exceptionC {
 
         if (string.IsNullOrEmpty(generatedName)) {
             return string.Empty;
+        }
+
+        string originalGeneratedName = generatedName;
+
+        var memberName = methodBase.Name;
+        MemberInfo[] membersWithSameNameOnExtendedType;
+
+        if (!string.IsNullOrEmpty(memberName)) {
+            membersWithSameNameOnExtendedType = extendedType.GetMember(methodBase.Name);
+        } else {
+            membersWithSameNameOnExtendedType = [];
+        }
+
+        foreach (var member in membersWithSameNameOnExtendedType) {
+            if (member is PropertyInfo propertyInfo &&
+                propertyInfo.GetMethod is not null) {
+                // If there's already a property named the same as this extension method on the extended type, it's likely we run into a naming conflict, so rename the generated extension method.
+                generatedName = $"{generatedName}_extension";
+            }
         }
 
         // TODO: This is likely wrong
@@ -1005,7 +1025,7 @@ if let __exceptionC {
             invocationParametersString = "self, " + invocationParametersString;
         }
 
-        string invocation = $"{toReturnOrNotToReturn}{toTryOrNotToTry}{swiftTypeNameWhereExtensionIsDeclared}.{generatedName}({invocationParametersString})";
+        string invocation = $"{toReturnOrNotToReturn}{toTryOrNotToTry}{swiftTypeNameWhereExtensionIsDeclared}.{originalGeneratedName}({invocationParametersString})";
         #endregion Impl
 
         string fullDecl;

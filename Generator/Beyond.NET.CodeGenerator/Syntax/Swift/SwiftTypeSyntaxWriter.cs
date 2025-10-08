@@ -766,6 +766,7 @@ public subscript(position: Index) -> Element {
         foreach (GeneratedMember swiftGeneratedMember in generatedMembers) {
             string extensionMethod = SwiftMethodSyntaxWriter.WriteExtensionMethod(
                 swiftGeneratedMember,
+                extendedType,
                 isExtendedTypeOptional,
                 typeDescriptorRegistry
             );
