@@ -803,7 +803,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                     parameterType = typeof(object);
                 }
 
-                string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
+                string parameterName = parameter.Name?.EscapedCSharpName() ?? throw new Exception("Parameter has no name");
                 string convertedParameterName = $"{parameterName}Converted";
 
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
@@ -872,7 +872,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                     continue;
                 }
 
-                string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
+                string parameterName = parameter.Name?.EscapedCSharpName() ?? throw new Exception("Parameter has no name");
 
                 Type parameterType = parameter.ParameterType.GetNonByRefType();
                 TypeDescriptor parameterTypeDescriptor = parameterType.GetTypeDescriptor(typeDescriptorRegistry);
@@ -1085,7 +1085,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
                     isInParameter
                 );
 
-                string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameterNamePrefix}{parameter.Name}{parameterNameSuffix}";
+                string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameterNamePrefix}{parameter.Name?.EscapedCSharpName()}{parameterNameSuffix}";
                 parameterList.Add(parameterString);
             }
         }
@@ -1189,7 +1189,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         }
 
         foreach (var parameter in parameters) {
-            string parameterName = parameter.Name ?? throw new Exception("Parameter has no name");
+            string parameterName = parameter.Name?.EscapedCSharpName() ?? throw new Exception("Parameter has no name");
 
             Type parameterType = parameter.ParameterType;
             bool isOutParameter = parameter.IsOut;

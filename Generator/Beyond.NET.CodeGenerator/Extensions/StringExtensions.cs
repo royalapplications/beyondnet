@@ -2,6 +2,10 @@ namespace Beyond.NET.CodeGenerator.Extensions;
 
 internal static class StringExtensions
 {
+    private static readonly string[] CSHARP_KEYWORDS = new[] {
+        "out"
+    };
+
     private static readonly string[] SWIFT_KEYWORDS = new[] {
         "class",
         "struct",
@@ -111,6 +115,22 @@ internal static class StringExtensions
         }
 
         return new string(stringArray);
+    }
+
+    internal static bool IsCSharpKeyword(this string input)
+    {
+        return CSHARP_KEYWORDS.Contains(input);
+    }
+
+    internal static string EscapedCSharpName(this string input)
+    {
+        if (!input.IsCSharpKeyword()) {
+            return input;
+        }
+
+        string output = $"@{input}";
+
+        return output;
     }
 
     internal static bool IsSwiftKeyword(this string input)
