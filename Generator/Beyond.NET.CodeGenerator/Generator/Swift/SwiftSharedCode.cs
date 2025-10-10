@@ -37,7 +37,7 @@ public struct DNChar: Equatable {
 }
 
 /// This is an "abstract" base class for all .NET types
-/// It's not inteneded to be used directly.
+/// It's not intended to be used directly.
 /// Instead, use one of the derived types, like `System_Object`.
 public class DNObject {
     enum DestroyMode {

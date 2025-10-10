@@ -456,7 +456,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             methodInvocationSuffix = ")";
         } else if (memberKind == MemberKind.PropertySetter ||
                    memberKind == MemberKind.FieldSetter) {
-            string valueParamterName = "__value";
+            string valueParameterName = "__value";
 
             string? setterTypeConversion = returnOrSetterOrEventHandlerTypeDescriptor.GetTypeConversion(
                 CodeLanguage.CSharpUnmanaged,
@@ -464,8 +464,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             );
 
             fullSetterTypeConversion = setterTypeConversion != null
-                ? string.Format(setterTypeConversion, valueParamterName)
-                : valueParamterName;
+                ? string.Format(setterTypeConversion, valueParameterName)
+                : valueParameterName;
 
             string indexerSuffix = invocationIsIndexer
                 ? "] "
@@ -477,7 +477,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             methodInvocationSuffix = "]";
         } else if (memberKind == MemberKind.EventHandlerAdder ||
                    memberKind == MemberKind.EventHandlerRemover) {
-            string valueParamterName = "__value";
+            string valueParameterName = "__value";
 
             string? eventHandlerTypeConversion = returnOrSetterOrEventHandlerTypeDescriptor.GetTypeConversion(
                 CodeLanguage.CSharpUnmanaged,
@@ -485,8 +485,8 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             );
 
             string fullEventHandlerTypeConversion = eventHandlerTypeConversion != null
-                ? string.Format(eventHandlerTypeConversion, valueParamterName)
-                : valueParamterName;
+                ? string.Format(eventHandlerTypeConversion, valueParameterName)
+                : valueParameterName;
 
             if (memberKind == MemberKind.EventHandlerAdder) {
                 methodInvocationSuffix = $" += {fullEventHandlerTypeConversion}";

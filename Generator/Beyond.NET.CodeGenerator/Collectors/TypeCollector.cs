@@ -496,17 +496,17 @@ public class TypeCollector
 
                 foreach (var delegateParameter in delegateParameters) {
                     if (!IsSupportedType(delegateParameter.ParameterType)) {
-                        unsupportedReason = "Unsupported delegate paramter type";
+                        unsupportedReason = "Unsupported delegate parameter type";
                         return false;
                     }
 
                     if (delegateParameter.IsOut) {
-                        unsupportedReason = "Unsupported delegate paramter type: Has out parameters";
+                        unsupportedReason = "Unsupported delegate parameter type: Has out parameters";
                         return false;
                     }
 
                     if (delegateParameter.IsIn) {
-                        unsupportedReason = "Unsupported delegate paramter type: Has in parameters";
+                        unsupportedReason = "Unsupported delegate parameter type: Has in parameters";
                         return false;
                     }
 
@@ -514,7 +514,7 @@ public class TypeCollector
                         Type parameterType = delegateParameter.ParameterType;
 
                         if (parameterType.IsByRef) {
-                            unsupportedReason = "Unsupported delegate paramter type: Has ref parameters";
+                            unsupportedReason = "Unsupported delegate parameter type: Has ref parameters";
                             return false;
                         }
                     }

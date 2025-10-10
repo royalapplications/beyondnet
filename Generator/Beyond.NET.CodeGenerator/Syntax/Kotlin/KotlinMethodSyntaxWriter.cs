@@ -1573,10 +1573,10 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 sbByRefParameters.AppendLine();
             }
 
-            string byRefParamtersCode = sbByRefParameters.ToString();
+            string byRefParametersCode = sbByRefParameters.ToString();
 
-            if (!string.IsNullOrEmpty(byRefParamtersCode)) {
-                sbImpl.AppendLine(byRefParamtersCode);
+            if (!string.IsNullOrEmpty(byRefParametersCode)) {
+                sbImpl.AppendLine(byRefParametersCode);
             }
 
             if (isReturning) {
