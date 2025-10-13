@@ -12,23 +12,17 @@ public enum SwiftVisibilities
 
 public static class SwiftVisibilities_Extensions
 {
-    public static string ToSwiftSyntaxString(this SwiftVisibilities visibilty)
+    public static string ToSwiftSyntaxString(this SwiftVisibilities visibility)
     {
-        switch (visibilty) {
-            case SwiftVisibilities.None:
-                return string.Empty;
-            case SwiftVisibilities.Private:
-                return "private";
-            case SwiftVisibilities.FilePrivate:
-                return "fileprivate";
-            case SwiftVisibilities.Internal:
-                return "internal";
-            case SwiftVisibilities.Public:
-                return "public";
-            case SwiftVisibilities.Open:
-                return "open";
-        }
-
-        throw new Exception($"Unknown Swift Visibility: {visibilty}");
+        return visibility switch
+        {
+            SwiftVisibilities.None => string.Empty,
+            SwiftVisibilities.Private => "private",
+            SwiftVisibilities.FilePrivate => "fileprivate",
+            SwiftVisibilities.Internal => "internal",
+            SwiftVisibilities.Public => "public",
+            SwiftVisibilities.Open => "open",
+            _ => throw new Exception($"Unknown Swift Visibility: {visibility}")
+        };
     }
 }

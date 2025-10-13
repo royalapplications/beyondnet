@@ -12,17 +12,12 @@ public static class KotlinVisibilities_Extensions
 {
     public static string ToKotlinSyntaxString(this KotlinVisibilities visibilty)
     {
-        switch (visibilty) {
-            case KotlinVisibilities.None:
-                return string.Empty;
-            case KotlinVisibilities.Private:
-                return "private";
-            case KotlinVisibilities.Public:
-                return "public";
-            case KotlinVisibilities.Open:
-                return "open";
-        }
-
-        throw new Exception($"Unknown Kotlin Visibility: {visibilty}");
+        return visibilty switch {
+            KotlinVisibilities.None => string.Empty,
+            KotlinVisibilities.Private => "private",
+            KotlinVisibilities.Public => "public",
+            KotlinVisibilities.Open => "open",
+            _ => throw new Exception($"Unknown Kotlin Visibility: {visibilty}")
+        };
     }
 }

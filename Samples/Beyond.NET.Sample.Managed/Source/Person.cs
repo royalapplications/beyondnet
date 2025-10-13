@@ -125,18 +125,13 @@ public class Person
     /// <exception cref="Exception">Throws an exception if the nice level is unknown or invalid</exception>
     public string GetNiceLevelString()
     {
-        switch (NiceLevel) {
-            case NiceLevels.NotNice:
-                return "Not nice";
-            case NiceLevels.LittleBitNice:
-                return "A little bit nice";
-            case NiceLevels.Nice:
-                return "Nice";
-            case NiceLevels.VeryNice:
-                return "Very nice";
-        }
-
-        throw new Exception("Unknown nice level");
+        return NiceLevel switch {
+            NiceLevels.NotNice => "Not nice",
+            NiceLevels.LittleBitNice => "A little bit nice",
+            NiceLevels.Nice => "Nice",
+            NiceLevels.VeryNice => "Very nice",
+            _ => throw new Exception("Unknown nice level")
+        };
     }
 
     /// <summary>

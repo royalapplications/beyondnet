@@ -156,40 +156,20 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
             methodNameWithGenericArity = methodName + "_A" + numberOfGenericMethodArguments;
         }
 
-        string methodNameC;
-
-        switch (memberKind) {
-            case MemberKind.Automatic:
-                throw new Exception("MemberKind may not be Automatic here");
-            case MemberKind.Method:
-                methodNameC = $"{fullTypeNameC}_{methodNameWithGenericArity}";
-                break;
-            case MemberKind.Constructor:
-                methodNameC = $"{fullTypeNameC}_Create";
-                break;
-            case MemberKind.Destructor:
-                methodNameC = $"{fullTypeNameC}_Destroy";
-                break;
-            case MemberKind.TypeOf:
-                methodNameC = $"{fullTypeNameC}_TypeOf";
-                break;
-            case MemberKind.PropertyGetter:
-            case MemberKind.FieldGetter:
-                methodNameC = $"{fullTypeNameC}_{methodNameWithGenericArity}_Get";
-                break;
-            case MemberKind.PropertySetter:
-            case MemberKind.FieldSetter:
-                methodNameC = $"{fullTypeNameC}_{methodNameWithGenericArity}_Set";
-                break;
-            case MemberKind.EventHandlerAdder:
-                methodNameC = $"{fullTypeNameC}_{methodNameWithGenericArity}_Add";
-                break;
-            case MemberKind.EventHandlerRemover:
-                methodNameC = $"{fullTypeNameC}_{methodNameWithGenericArity}_Remove";
-                break;
-            default:
-                throw new Exception("Unknown method kind");
-        }
+        string methodNameC = memberKind switch {
+            MemberKind.Automatic => throw new Exception("MemberKind may not be Automatic here"),
+            MemberKind.Method => $"{fullTypeNameC}_{methodNameWithGenericArity}",
+            MemberKind.Constructor => $"{fullTypeNameC}_Create",
+            MemberKind.Destructor => $"{fullTypeNameC}_Destroy",
+            MemberKind.TypeOf => $"{fullTypeNameC}_TypeOf",
+            MemberKind.PropertyGetter or MemberKind.FieldGetter
+                => $"{fullTypeNameC}_{methodNameWithGenericArity}_Get",
+            MemberKind.PropertySetter or MemberKind.FieldSetter
+                => $"{fullTypeNameC}_{methodNameWithGenericArity}_Set",
+            MemberKind.EventHandlerAdder => $"{fullTypeNameC}_{methodNameWithGenericArity}_Add",
+            MemberKind.EventHandlerRemover => $"{fullTypeNameC}_{methodNameWithGenericArity}_Remove",
+            _ => throw new Exception("Unknown method kind")
+        };
 
         methodNameC = state.UniqueGeneratedName(methodNameC, CodeLanguage.CSharpUnmanaged);
 

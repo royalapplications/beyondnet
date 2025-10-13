@@ -17,34 +17,27 @@ public static class Nullability_Extensions
 
     public static string GetClangAttribute(this Nullability nullability)
     {
-        switch (nullability) {
-            case Nullability.Nullable:
-                return ClangAttributeNullable;
-            case Nullability.NonNullable:
-                return ClangAttributeNonNull;
-            default:
-                return string.Empty;
-        }
+        return nullability switch {
+            Nullability.Nullable => ClangAttributeNullable,
+            Nullability.NonNullable => ClangAttributeNonNull,
+            _ => string.Empty
+        };
     }
 
     public static string GetSwiftOptionalitySpecifier(this Nullability nullability)
     {
-        switch (nullability) {
-            case Nullability.Nullable:
-                return "?";
-            default:
-                return string.Empty;
-        }
+        return nullability switch {
+            Nullability.Nullable => "?",
+            _ => string.Empty
+        };
     }
 
     public static string GetKotlinOptionalitySpecifier(this Nullability nullability)
     {
-        switch (nullability) {
-            case Nullability.Nullable:
-                return "?";
-            default:
-                return string.Empty;
-        }
+        return nullability switch {
+            Nullability.Nullable => "?",
+            _ => string.Empty
+        };
     }
 }
 
@@ -698,12 +691,10 @@ public class TypeDescriptor
             return string.Empty;
         }
 
-        switch (language) {
-            case CodeLanguage.CSharpUnmanaged:
-                return "InteropUtils.FreeIfAllocated({0})";
-        }
-
-        return null;
+        return language switch {
+            CodeLanguage.CSharpUnmanaged => "InteropUtils.FreeIfAllocated({0})",
+            _ => null
+        };
     }
 
     public string? GetDefaultValue()

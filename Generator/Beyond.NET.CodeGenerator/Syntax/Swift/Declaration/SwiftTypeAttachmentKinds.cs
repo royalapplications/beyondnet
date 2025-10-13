@@ -11,15 +11,11 @@ public static class SwiftTypeAttachmentKinds_Extensions
 {
     public static string ToSwiftSyntaxString(this SwiftTypeAttachmentKinds swiftTypeAttachmentKind)
     {
-        switch (swiftTypeAttachmentKind) {
-            case SwiftTypeAttachmentKinds.Instance:
-                return string.Empty;
-            case SwiftTypeAttachmentKinds.Static:
-                return "static";
-            case SwiftTypeAttachmentKinds.Class:
-                return "class";
-        }
-
-        throw new Exception($"Unknown Swift Type Attachment Kind: {swiftTypeAttachmentKind}");
+        return swiftTypeAttachmentKind switch {
+            SwiftTypeAttachmentKinds.Instance => string.Empty,
+            SwiftTypeAttachmentKinds.Static => "static",
+            SwiftTypeAttachmentKinds.Class => "class",
+            _ => throw new Exception($"Unknown Swift Type Attachment Kind: {swiftTypeAttachmentKind}")
+        };
     }
 }

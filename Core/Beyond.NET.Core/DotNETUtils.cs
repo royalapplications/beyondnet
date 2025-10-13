@@ -117,20 +117,12 @@ public class DotNETUtils
         const string installMarkerFile = "/etc/dotnet/install_location";
 
         var architecture = RuntimeInformation.OSArchitecture;
-        string file;
 
-        switch (architecture) {
-            case Architecture.X64:
-                file = installMarkerFile;
-                break;
-
-            case Architecture.Arm64:
-                file = installMarkerFile + "_arm64";
-                break;
-
-            default:
-                throw new Exception($"Unexpected architecture \"{architecture}\"");
-        }
+        string file = architecture switch {
+            Architecture.X64 => installMarkerFile,
+            Architecture.Arm64 => installMarkerFile + "_arm64",
+            _ => throw new Exception($"Unexpected architecture \"{architecture}\"")
+        };
 
         try {
             using var reader = File.OpenText(file);

@@ -4,15 +4,13 @@ public delegate IAnimal? AnimalCreatorDelegate(string animalName);
 
 public static class AnimalFactory
 {
-    public static readonly AnimalCreatorDelegate DEFAULT_CREATOR = (animalName) => {
-        switch (animalName) {
-            case Dog.DogName:
-                return new Dog();
-            case Cat.CatName:
-                return new Cat();
-        }
-
-        return null;
+    public static readonly AnimalCreatorDelegate DEFAULT_CREATOR = (animalName) =>
+    {
+        return animalName switch {
+            Dog.DogName => new Dog(),
+            Cat.CatName => new Cat(),
+            _ => null
+        };
     };
 
     public static IAnimal? CreateAnimal(string animalName)

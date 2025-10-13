@@ -30,18 +30,11 @@ public struct KotlinVariableDeclaration
 
     public override string ToString()
     {
-        string variableKindString;
-
-        switch (VariableKind) {
-            case KotlinVariableKinds.Constant:
-                variableKindString = "val";
-                break;
-            case KotlinVariableKinds.Variable:
-                variableKindString = "var";
-                break;
-            default:
-                throw new Exception("Unknown Variable Kind");
-        }
+        string variableKindString = VariableKind switch {
+            KotlinVariableKinds.Constant => "val",
+            KotlinVariableKinds.Variable => "var",
+            _ => throw new Exception("Unknown Variable Kind")
+        };
 
         string visibilityString = Visibility.ToKotlinSyntaxString();
 

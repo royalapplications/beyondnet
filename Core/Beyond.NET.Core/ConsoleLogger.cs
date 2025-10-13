@@ -59,17 +59,12 @@ internal static class LoggingLevelExtensions
 {
     internal static string GetLogMessagePrefix(this ConsoleLogger.LoggingLevel loggingLevel)
     {
-        switch (loggingLevel) {
-            case ConsoleLogger.LoggingLevel.Debug:
-                return "[Debug]";
-            case ConsoleLogger.LoggingLevel.Information:
-                return "[Info]";
-            case ConsoleLogger.LoggingLevel.Warning:
-                return "[Warn]";
-            case ConsoleLogger.LoggingLevel.Error:
-                return "[Error]";
-            default:
-                throw new Exception("Unknown Log Level");
-        }
+        return loggingLevel switch {
+            ConsoleLogger.LoggingLevel.Debug => "[Debug]",
+            ConsoleLogger.LoggingLevel.Information => "[Info]",
+            ConsoleLogger.LoggingLevel.Warning => "[Warn]",
+            ConsoleLogger.LoggingLevel.Error => "[Error]",
+            _ => throw new Exception("Unknown Log Level")
+        };
     }
 }

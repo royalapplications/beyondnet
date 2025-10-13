@@ -33,18 +33,11 @@ public struct SwiftVariableDeclaration
 
     public override string ToString()
     {
-        string variableKindString;
-
-        switch (VariableKind) {
-            case SwiftVariableKinds.Constant:
-                variableKindString = "let";
-                break;
-            case SwiftVariableKinds.Variable:
-                variableKindString = "var";
-                break;
-            default:
-                throw new Exception("Unknown Variable Kind");
-        }
+        string variableKindString = VariableKind switch {
+            SwiftVariableKinds.Constant => "let",
+            SwiftVariableKinds.Variable => "var",
+            _ => throw new Exception("Unknown Variable Kind")
+        };
 
         string visibilityString = Visibility.ToSwiftSyntaxString();
         string typeAttachmentKindString = TypeAttachmentKind.ToSwiftSyntaxString();

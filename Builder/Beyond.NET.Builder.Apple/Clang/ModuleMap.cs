@@ -23,19 +23,11 @@ public class ModuleMap
 
         public override string ToString()
         {
-            string prefix;
-
-            switch (Type) {
-                case Types.Umbrella:
-                    prefix = "umbrella ";
-                    break;
-                case Types.Private:
-                    prefix = "private ";
-                    break;
-                default:
-                    prefix = string.Empty;
-                    break;
-            }
+            string prefix = Type switch {
+                Types.Umbrella => "umbrella ",
+                Types.Private => "private ",
+                _ => string.Empty
+            };
 
             return $"{prefix}header \"{Name}\"";
         }
