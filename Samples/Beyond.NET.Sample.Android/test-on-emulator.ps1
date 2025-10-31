@@ -16,7 +16,7 @@ $adb = Join-Path $env:ANDROID_HOME 'platform-tools/adb' -Resolve
 $emulator = Join-Path $env:ANDROID_HOME 'emulator/emulator' -Resolve
 $avd = $env:ANDROID_AVD
 if (-not "$avd") {
-    $avd = 'Pixel_Fold_API_35'
+    $avd = 'Pixel_9_Pro'
     Write-Warning "ANDROID_AVD environment variable not set, falling back to '${avd}'"
 }
 
