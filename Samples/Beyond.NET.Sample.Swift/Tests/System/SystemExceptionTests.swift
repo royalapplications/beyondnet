@@ -30,7 +30,7 @@ final class SystemExceptionTests: XCTestCase {
         let caughtErr: DNError?
         
         do {
-            try Beyond_NET_Sample_ExceptionTests.throw(ex)
+            try Beyond_NET_Sample_ExceptionTests.testThrow(ex)
             caughtErr = nil
         } catch let error as DNError {
             caughtErr = error

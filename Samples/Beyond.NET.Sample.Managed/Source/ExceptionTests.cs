@@ -2,7 +2,7 @@ namespace Beyond.NET.Sample;
 
 public class ExceptionTests
 {
-    public static void Throw(Exception ex)
+    public static void TestThrow(Exception ex)
     {
         throw ex;
     }
