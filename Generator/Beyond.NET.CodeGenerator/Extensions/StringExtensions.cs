@@ -2,11 +2,13 @@ namespace Beyond.NET.CodeGenerator.Extensions;
 
 internal static class StringExtensions
 {
-    private static readonly string[] CSHARP_KEYWORDS = new[] {
+    private static readonly string[] CSHARP_KEYWORDS =
+    [
         "out"
-    };
+    ];
 
-    private static readonly string[] SWIFT_KEYWORDS = new[] {
+    private static readonly string[] SWIFT_KEYWORDS =
+    [
         "class",
         "struct",
         "import",
@@ -75,18 +77,20 @@ internal static class StringExtensions
         "weak",
         "willSet",
         "unowned"
-    };
+    ];
 
-    private static readonly string[] KOTLIN_KEYWORDS = new[] {
+    private static readonly string[] KOTLIN_KEYWORDS =
+    [
         "val",
         "do",
         "null",
         "throw"
-    };
+    ];
 
-    private static readonly string[] SWIFT_RESERVED_TYPE_NAMES = new[] {
+    private static readonly string[] SWIFT_RESERVED_TYPE_NAMES =
+    [
         "Type"
-    };
+    ];
 
     internal static string ToSwiftEnumCaseName(this string cSharpCaseName)
     {
