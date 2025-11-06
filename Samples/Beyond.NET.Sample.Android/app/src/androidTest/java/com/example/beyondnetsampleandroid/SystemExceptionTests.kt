@@ -21,5 +21,28 @@ class SystemExceptionTests {
         assertEquals(exceptionMessage, retrievedExceptionMessage)
     }
 
-    // TODO: Add tests for throwing/catching exceptions that occur within .NET
+    @Test
+    fun testCatchingDNExceptions() {
+        val exceptionMessage = "I'm a nice exception"
+        val createdException = System_Exception(exceptionMessage.toDotNETString())
+
+        var caughtThrowable: Throwable?
+
+        try {
+            Beyond_NET_Sample_ExceptionTests.`throw`(createdException)
+            caughtThrowable = null
+        } catch (e: Throwable) {
+            caughtThrowable = e
+        }
+
+        assertNotNull(caughtThrowable)
+        assertTrue(caughtThrowable is DNException)
+
+        val caughtException = caughtThrowable as DNException
+        assertEquals(caughtException.dnException, createdException)
+
+        assertEquals(caughtException.message, exceptionMessage)
+        assertNotNull(caughtException.dnStackTrace)
+        assertFalse(caughtException.dnStackTrace!!.isEmpty())
+    }
 }
