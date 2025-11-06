@@ -1,5 +1,5 @@
-// Number of generated types: 1637
-// Number of generated members: 7782
+// Number of generated types: 1638
+// Number of generated members: 7786
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -2357,9 +2357,9 @@ typedef struct DNReadOnlySpanOfByte {
 // Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
 // Unsupported Type "System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
 // Unsupported Type "Beyond.NET.Sample.IAnimal[]": Is Array of Interface Type
-// Unsupported Type "Beyond.NET.Sample.DelegatesTest+TransformIntWithRefDelegate": Unsupported delegate paramter type: Has ref parameters
-// Unsupported Type "Beyond.NET.Sample.DelegatesTest+TransformIntWithOutDelegate": Unsupported delegate paramter type: Has out parameters
-// Unsupported Type "Beyond.NET.Sample.DelegatesTest+PointTransformWithRefDelegate": Unsupported delegate paramter type: Has ref parameters
+// Unsupported Type "Beyond.NET.Sample.DelegatesTest+TransformIntWithRefDelegate": Unsupported delegate parameter type: Has ref parameters
+// Unsupported Type "Beyond.NET.Sample.DelegatesTest+TransformIntWithOutDelegate": Unsupported delegate parameter type: Has out parameters
+// Unsupported Type "Beyond.NET.Sample.DelegatesTest+PointTransformWithRefDelegate": Unsupported delegate parameter type: Has ref parameters
 // Unsupported Type "Converter`2": Is Generic Delegate Type
 // Unsupported Type "System.Predicate`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "System.Action`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
@@ -2390,8 +2390,8 @@ typedef struct DNReadOnlySpanOfByte {
 // Unsupported Type "Beyond.NET.Sample.INotImplementedInterfaceWithStaticAbstractMembers": Static abstract members in interface
 // Unsupported Type "System.Span`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
 // Unsupported Type "System.Nullable`1": Excluded
-// Unsupported Type "Beyond.NET.Sample.ByRefParametersDelegate": Unsupported delegate paramter type: Has ref parameters
-// Unsupported Type "Beyond.NET.Sample.OutParametersDelegate": Unsupported delegate paramter type: Has out parameters
+// Unsupported Type "Beyond.NET.Sample.ByRefParametersDelegate": Unsupported delegate parameter type: Has ref parameters
+// Unsupported Type "Beyond.NET.Sample.OutParametersDelegate": Unsupported delegate parameter type: Has out parameters
 // Unsupported Type "System.ArraySegment`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
 // Unsupported Type "System.Func`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
@@ -5601,6 +5601,8 @@ typedef void* Beyond_NET_Sample_DelegatesTest_t;
 
 
 typedef void* Beyond_NET_Sample_EventTests_t;
+
+typedef void* Beyond_NET_Sample_ExceptionTests_t;
 
 typedef void* Beyond_NET_Sample_GenericTestClass_A1_t;
 
@@ -45327,6 +45329,30 @@ Beyond_NET_Sample_EventTests_Destroy(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.EventTests
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.ExceptionTests
+void /* System.Void */
+Beyond_NET_Sample_ExceptionTests_Throw(
+	System_Exception_t _Nonnull /* System.Exception */ ex,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_ExceptionTests_t _Nonnull /* Beyond.NET.Sample.ExceptionTests */
+Beyond_NET_Sample_ExceptionTests_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_ExceptionTests_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_ExceptionTests_Destroy(
+	Beyond_NET_Sample_ExceptionTests_t _Nullable /* Beyond.NET.Sample.ExceptionTests */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.ExceptionTests
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.GenericTestClass<>
 System_Type_t _Nonnull /* System.Type */
