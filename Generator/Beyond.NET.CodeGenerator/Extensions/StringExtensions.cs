@@ -2,12 +2,89 @@ namespace Beyond.NET.CodeGenerator.Extensions;
 
 internal static class StringExtensions
 {
-    private static readonly string[] CSHARP_KEYWORDS =
+    // ref. https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/
+    private static readonly HashSet<string> CSHARP_KEYWORDS =
     [
-        "out"
+        "abstract",
+        "as",
+        "base",
+        "bool",
+        "break",
+        "byte",
+        "case",
+        "catch",
+        "char",
+        "checked",
+        "class",
+        "const",
+        "continue",
+        "decimal",
+        "default",
+        "delegate",
+        "do",
+        "double",
+        "else",
+        "enum",
+        "event",
+        "explicit",
+        "extern",
+        "false",
+        "finally",
+        "fixed",
+        "float",
+        "for",
+        "foreach",
+        "goto",
+        "if",
+        "implicit",
+        "in",
+        "int",
+        "interface",
+        "internal",
+        "is",
+        "lock",
+        "long",
+        "namespace",
+        "new",
+        "null",
+        "object",
+        "operator",
+        "out",
+        "override",
+        "params",
+        "private",
+        "protected",
+        "public",
+        "readonly",
+        "ref",
+        "return",
+        "sbyte",
+        "sealed",
+        "short",
+        "sizeof",
+        "stackalloc",
+        "static",
+        "string",
+        "struct",
+        "switch",
+        "this",
+        "throw",
+        "true",
+        "try",
+        "typeof",
+        "uint",
+        "ulong",
+        "unchecked",
+        "unsafe",
+        "ushort",
+        "using",
+        "virtual",
+        "void",
+        "volatile",
+        "while",
     ];
 
-    private static readonly string[] SWIFT_KEYWORDS =
+    private static readonly HashSet<string> SWIFT_KEYWORDS =
     [
         "class",
         "struct",
@@ -79,15 +156,88 @@ internal static class StringExtensions
         "unowned"
     ];
 
-    private static readonly string[] KOTLIN_KEYWORDS =
+    // https://kotlinlang.org/docs/keyword-reference.html#hard-keywords
+    private static readonly HashSet<string> KOTLIN_KEYWORDS =
     [
-        "val",
+        "abstract", // modifier
+        "actual", // modifier
+        "annotation", // modifier
+        "as",
+        "break",
+        "by", // soft
+        "catch", // soft
+        "class",
+        "companion", // modifier
+        "const", // modifier
+        "constructor", // soft
+        "continue",
+        "crossinline", // modifier
+        "data", // modifier
+        "delegate", // soft
         "do",
+        "dynamic", // soft
+        "else",
+        "enum", // modifier
+        "expect", // modifier
+        "external", // modifier
+        "false",
+        "field", // soft, special
+        "file", // soft
+        "final", // modifier
+        "finally", // soft
+        "for",
+        "fun",
+        "get", // soft
+        "if",
+        "import", // soft
+        "in",
+        "infix", // modifier
+        "init", // soft
+        "inline", // modifier
+        "inner", // modifier
+        "interface",
+        "internal", // modifier
+        "is",
+        "it", // special
+        "lateinit", // modifier
+        "noinline", // modifier
         "null",
-        "throw"
+        "object",
+        "open", // modifier
+        "operator", // modifier
+        "out", // modifier
+        "override", // modifier
+        "package",
+        "param", // soft
+        "private", // modifier
+        "property", // soft
+        "protected", // modifier
+        "public", // modifier
+        "receiver", // soft
+        "reified", // modifier
+        "return",
+        "sealed", // modifier
+        "set", // soft
+        "setparam", // soft
+        "super",
+        "suspend", // modifier
+        "tailrec", // modifier
+        "this",
+        "throw",
+        "true",
+        "try",
+        "typealias",
+        "typeof",
+        "val",
+        "value", // soft
+        "var",
+        "vararg", // modifier
+        "when",
+        "where", // soft
+        "while",
     ];
 
-    private static readonly string[] SWIFT_RESERVED_TYPE_NAMES =
+    private static readonly HashSet<string> SWIFT_RESERVED_TYPE_NAMES =
     [
         "Type"
     ];
