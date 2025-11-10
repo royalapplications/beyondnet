@@ -2073,7 +2073,7 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
         }
 
         if (isInOut) {
-            convertedParameterName = $"__{parameterName}JNAByRef";
+            convertedParameterName = $"__{parameterNameForConversion}JNAByRef";
             typeConversionCode = $"val {convertedParameterName} = {parameterName}.toJNARef()";
             typeBackConversionCode = null;
         } else {
