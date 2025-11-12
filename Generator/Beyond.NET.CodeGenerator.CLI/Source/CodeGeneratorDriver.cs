@@ -215,8 +215,7 @@ internal class CodeGeneratorDriver
                 if (string.IsNullOrEmpty(systemReferenceAssembliesDirectoryPath) ||
                     !Directory.Exists(systemReferenceAssembliesDirectoryPath)) {
                     // Fall back to hard coded path
-                    // TODO(nil4): update to .NET 10 SDK RTM (November)
-                    systemReferenceAssembliesDirectoryPath = "/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/10.0.0-rc.2.25502.107/ref/net10.0";
+                    systemReferenceAssembliesDirectoryPath = "/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/10.0.0/ref/net10.0";
 
                     Logger.LogWarning($"Failed to gather path to system reference assemblies - falling back to hard coded path \"{systemReferenceAssembliesDirectoryPath}\"");
                 } else {
