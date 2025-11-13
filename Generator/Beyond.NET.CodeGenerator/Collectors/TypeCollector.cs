@@ -396,7 +396,13 @@ public class TypeCollector
         }
 
         if (type.IsSpecialName) {
-            unsupportedReason = "Has special name (maybe C# 14 extension type?)";
+            if (type.GetCustomAttribute<System.Runtime.CompilerServices.ExtensionAttribute>() is not null ||
+                (type.IsNested && type.DeclaringType?.GetCustomAttribute<System.Runtime.CompilerServices.ExtensionAttribute>() is not null)) {
+                unsupportedReason = "Is C# 14+ extension block (and has special name)";
+            } else {
+                unsupportedReason = "Has special name";
+            }
+
             return false;
         }
 
