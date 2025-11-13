@@ -1,5 +1,5 @@
-// Number of generated types: 1638
-// Number of generated members: 7786
+// Number of generated types: 1640
+// Number of generated members: 7797
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -2474,6 +2474,8 @@ typedef struct DNReadOnlySpanOfByte {
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.Int32?)
 // Unsupported Type "System.Nullable`1[[System.DateTimeKind, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.DateTimeKind?)
+// Unsupported Type "Beyond.NET.Sample.Person_Extensions+<G>$9D63B61FF3DB94B34FDAE9CFA7044FE8": Has special name (maybe C# 14 extension type?)
+// Unsupported Type "Beyond.NET.Sample.Person_Extensions+<G>$9D63B61FF3DB94B34FDAE9CFA7044FE8+<M>$9737BC5C87033597E65A978C42067F7A": Has special name (maybe C# 14 extension type?)
 
 #pragma mark - END Unsupported Types
 
@@ -6161,6 +6163,8 @@ typedef void* Beyond_NET_Sample_Source_EnumTests_t;
 
 typedef void* Beyond_NET_Sample_Source_ManagedUnhandledExceptionHandler_t;
 
+typedef void* Beyond_NET_Sample_Source_NestedTypeTests_t;
+
 typedef void* Beyond_NET_Sample_Source_OutParameterTests_t;
 
 
@@ -6178,6 +6182,8 @@ typedef void* Beyond_NET_Sample_Source_OverrideTestsDerivedClass_t;
 typedef void* Beyond_NET_Sample_Source_PrimitiveExtensionsTests_t;
 
 typedef void* Beyond_NET_Sample_Transformer_BuiltInTransformers_t;
+
+typedef void* Beyond_NET_Sample_Source_NestedTypeTests_MyNestedType_t;
 
 typedef void* System_Action_t;
 typedef void (*System_Action_CDestructorFunction_t)(void* context);
@@ -47077,6 +47083,30 @@ Beyond_NET_Sample_Person_Extensions_TryGetAddress(
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
+Beyond_NET_Sample_Person_t _Nonnull /* Beyond.NET.Sample.Person */
+Beyond_NET_Sample_Person_Extensions_MakeJaneDoe(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Person_Extensions_CelerbrateBirthday(
+	Beyond_NET_Sample_Person_t _Nonnull /* Beyond.NET.Sample.Person */ person,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+Beyond_NET_Sample_Person_Extensions_get_IsMean(
+	Beyond_NET_Sample_Person_t _Nonnull /* Beyond.NET.Sample.Person */ person,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Person_Extensions_set_IsMean(
+	Beyond_NET_Sample_Person_t _Nonnull /* Beyond.NET.Sample.Person */ person,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
 System_Type_t _Nonnull /* System.Type */
 Beyond_NET_Sample_Person_Extensions_TypeOf(
 	void
@@ -61702,6 +61732,24 @@ Beyond_NET_Sample_Source_ManagedUnhandledExceptionHandler_Destroy(
 
 #pragma mark - END APIs of Beyond.NET.Sample.Source.ManagedUnhandledExceptionHandler
 
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.NestedTypeTests
+Beyond_NET_Sample_Source_NestedTypeTests_t _Nonnull /* Beyond.NET.Sample.Source.NestedTypeTests */
+Beyond_NET_Sample_Source_NestedTypeTests_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_Source_NestedTypeTests_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_NestedTypeTests_Destroy(
+	Beyond_NET_Sample_Source_NestedTypeTests_t _Nullable /* Beyond.NET.Sample.Source.NestedTypeTests */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.Source.NestedTypeTests
+
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.OutParameterTests
 void /* System.Void */
 Beyond_NET_Sample_Source_OutParameterTests_Return_Int_1_NonOptional(
@@ -61995,6 +62043,30 @@ Beyond_NET_Sample_Transformer_BuiltInTransformers_Destroy(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.Transformer.BuiltInTransformers
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.NestedTypeTests.MyNestedType
+Beyond_NET_Sample_Source_NestedTypeTests_MyNestedType_t _Nonnull /* Beyond.NET.Sample.Source.NestedTypeTests.MyNestedType */
+Beyond_NET_Sample_Source_NestedTypeTests_MyNestedType_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+Beyond_NET_Sample_Source_NestedTypeTests_MyNestedType_PrettyLonelyAroundHere_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_Source_NestedTypeTests_MyNestedType_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_NestedTypeTests_MyNestedType_Destroy(
+	Beyond_NET_Sample_Source_NestedTypeTests_MyNestedType_t _Nullable /* Beyond.NET.Sample.Source.NestedTypeTests.MyNestedType */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.Source.NestedTypeTests.MyNestedType
 
 #pragma mark - BEGIN APIs of System.Action
 System_Action_t _Nonnull /* System.Action */

@@ -79,6 +79,12 @@ public class MemberCollector
                     continue;
                 }
 
+                if (memberInfo.GetCustomAttribute<System.Runtime.CompilerServices.ExtensionMarkerAttribute>() is not null) {
+                    unsupportedMembers[memberInfo] = "Has extension marker";
+
+                    continue;
+                }
+
                 if (isInterface)
                 {
                     if (memberInfo is MethodInfo { IsAbstract: true, IsStatic: true })
@@ -157,6 +163,24 @@ public class MemberCollector
                 CollectEvent((EventInfo)memberInfo, collectedMembers, unsupportedMembers);
 
                 break;
+            // case MemberTypes.NestedType:
+            //     // TODO: This might be useful to retrieve a mapping from a C# 14 extension type to the extended type
+            //     if (memberInfo.GetCustomAttribute<System.Runtime.CompilerServices.ExtensionAttribute>() is not null &&
+            //         memberInfo is TypeInfo typeInfo) {
+            //         var nestedType = typeInfo.DeclaredNestedTypes.FirstOrDefault();
+            //
+            //         if (nestedType is not null &&
+            //             nestedType.GetMember("<Extension>$").FirstOrDefault() is MethodInfo extensionMember) {
+            //             var extensionType = typeInfo.AsType();
+            //             var extensionTargetType = extensionMember.GetParameters().FirstOrDefault()?.ParameterType;
+            //
+            //             // TODO: Store this mapping somewhere so that we can refer to it later on
+            //
+            //             Console.WriteLine("TODO");
+            //         }
+            //     }
+            //
+            //     break;
             default:
                 unsupportedMembers[memberInfo] = $"Unsupported member type: {memberType}";
 

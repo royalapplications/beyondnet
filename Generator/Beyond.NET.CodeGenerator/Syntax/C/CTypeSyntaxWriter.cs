@@ -307,7 +307,7 @@ public class CTypeSyntaxWriter: ICSyntaxWriter, ITypeSyntaxWriter
         string fullTypeName = type.GetFullNameOrName();
 
         bool isDelegate = type.IsDelegate();
-
+    
         sb.AppendLine(
             Builder.PragmaMark()
                 .Separator()

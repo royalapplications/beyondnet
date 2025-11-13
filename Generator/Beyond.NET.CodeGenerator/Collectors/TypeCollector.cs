@@ -395,6 +395,11 @@ public class TypeCollector
             return false;
         }
 
+        if (type.IsSpecialName) {
+            unsupportedReason = "Has special name (maybe C# 14 extension type?)";
+            return false;
+        }
+
         bool isNullableValueType = type.IsNullableValueType(out Type? nullableValueType);
 
         // Only nullable structs, not primitives or enums are currently supported

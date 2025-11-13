@@ -334,4 +334,14 @@ final class PersonTests: XCTestCase {
 
         XCTAssertEqual(2, numberOfChildrenAfterDaugther)
     }
+    
+    func testPersonExtensions() throws {
+        // TODO: Support for C# 14 extension methods is incomplete!
+        
+        let janeDoe = try Beyond_NET_Sample_Person_Extensions.makeJaneDoe()
+        try XCTAssertEqual(janeDoe.fullName.string(), "Jane Doe")
+        
+//        let janeDoe = try Beyond_NET_Sample_Person.makeJaneDoe()
+//        try XCTAssertEqual(janeDoe.fullName.string(), "Jane Doe")
+    }
 }

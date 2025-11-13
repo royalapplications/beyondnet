@@ -115,7 +115,7 @@ public class Person
     /// <summary>
     /// Creates a Person named "John Doe" who is 50 years old.
     /// </summary>
-    /// <returns>Your new John New</returns>
+    /// <returns>Your new John Doe</returns>
     public static Person MakeJohnDoe() => new("John", "Doe", 50);
 
     /// <summary>

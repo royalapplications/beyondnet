@@ -40,4 +40,9 @@ public class GeneratedMember
 
         return generatedName;
     }
+
+    public override string ToString()
+    {
+        return Member?.ToString() ?? MemberKind.ToString();
+    }
 }

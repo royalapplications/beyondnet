@@ -136,6 +136,8 @@ public class State
                 continue;
             }
 
+            // TODO: This doesn't work for C# 14 extensions as they don't have the System.Runtime.CompilerServices.ExtensionAttribute
+            // Instead, they seem to emit some additional nested type which we maybe could use to retrieve the mapping between extension type and extended type. There's also a new attribute: System.Runtime.CompilerServices.ExtensionMarkerAttribute
             if (declaringType.IsGenericType ||
                 declaringType.IsNested ||
                 !declaringType.IsSealed ||
