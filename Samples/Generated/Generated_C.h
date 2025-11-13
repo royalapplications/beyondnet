@@ -1,5 +1,5 @@
-// Number of generated types: 1640
-// Number of generated members: 7797
+// Number of generated types: 1641
+// Number of generated members: 7800
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -6164,6 +6164,8 @@ typedef void* Beyond_NET_Sample_Source_EnumTests_t;
 typedef void* Beyond_NET_Sample_Source_ManagedUnhandledExceptionHandler_t;
 
 typedef void* Beyond_NET_Sample_Source_NestedTypeTests_t;
+
+typedef void* Beyond_NET_Sample_Source_OperatorTests_t;
 
 typedef void* Beyond_NET_Sample_Source_OutParameterTests_t;
 
@@ -61749,6 +61751,24 @@ Beyond_NET_Sample_Source_NestedTypeTests_Destroy(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.Source.NestedTypeTests
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.OperatorTests
+Beyond_NET_Sample_Source_OperatorTests_t _Nonnull /* Beyond.NET.Sample.Source.OperatorTests */
+Beyond_NET_Sample_Source_OperatorTests_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_Source_OperatorTests_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OperatorTests_Destroy(
+	Beyond_NET_Sample_Source_OperatorTests_t _Nullable /* Beyond.NET.Sample.Source.OperatorTests */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.Source.OperatorTests
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.OutParameterTests
 void /* System.Void */
