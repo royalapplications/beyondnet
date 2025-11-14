@@ -36,7 +36,7 @@ jobs:
               SCRIPT_SUFFIX: "linux_arm64"
 
           - name: "macOS ARM64"
-            os: macos-15
+            os: macos-latest
             env:
               OS: "macOS"
               SCRIPT_SUFFIX: "macos_universal"
