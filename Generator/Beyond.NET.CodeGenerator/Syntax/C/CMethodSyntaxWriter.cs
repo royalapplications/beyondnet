@@ -445,7 +445,9 @@ public class CMethodSyntaxWriter: ICSyntaxWriter, IMethodSyntaxWriter
                 isInParameter
             );
 
-            string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameter.Name}";
+            string parameterName = parameter.Name?.EscapedCName() ?? throw new Exception("Parameter has no name");
+
+            string parameterString = $"{unmanagedParameterTypeName} /* {parameterType.GetFullNameOrName()} */ {parameterName}";
             parameterList.Add(parameterString);
         }
 

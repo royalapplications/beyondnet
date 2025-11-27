@@ -1,5 +1,5 @@
-// Number of generated types: 1641
-// Number of generated members: 7800
+// Number of generated types: 1642
+// Number of generated members: 7805
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -5754,6 +5754,8 @@ typedef void* Beyond_NET_Sample_SubclassingTests_MyBaseClass_t;
 typedef void* Beyond_NET_Sample_SubclassingTests_MySubClass_t;
 
 typedef void* Beyond_NET_Sample_Source_CharTests_t;
+
+typedef void* Beyond_NET_Sample_Source_CKeywordsTests_t;
 
 typedef void* Beyond_NET_Sample_Source_DontStrip_t;
 
@@ -48131,6 +48133,41 @@ Beyond_NET_Sample_Source_CharTests_Destroy(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.Source.CharTests
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.CKeywordsTests
+void /* System.Void */
+Beyond_NET_Sample_Source_CKeywordsTests_Keyword1(
+	Beyond_NET_Sample_Source_CKeywordsTests_t _Nullable /* Beyond.NET.Sample.Source.CKeywordsTests */ self,
+	System_String_t _Nonnull /* System.String */ body,
+	int32_t /* System.Int32 */ break_,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_CKeywordsTests_Keyword2(
+	Beyond_NET_Sample_Source_CKeywordsTests_t _Nullable /* Beyond.NET.Sample.Source.CKeywordsTests */ self,
+	System_String_t _Nonnull /* System.String */ body,
+	int32_t /* System.Int32 */ break_,
+	int32_t /* System.Int32 */ continue_,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_Source_CKeywordsTests_t _Nonnull /* Beyond.NET.Sample.Source.CKeywordsTests */
+Beyond_NET_Sample_Source_CKeywordsTests_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_Source_CKeywordsTests_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_CKeywordsTests_Destroy(
+	Beyond_NET_Sample_Source_CKeywordsTests_t _Nullable /* Beyond.NET.Sample.Source.CKeywordsTests */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.Source.CKeywordsTests
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.DontStrip
 System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */
