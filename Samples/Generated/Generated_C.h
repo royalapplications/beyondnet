@@ -1,5 +1,5 @@
-// Number of generated types: 1642
-// Number of generated members: 7805
+// Number of generated types: 1643
+// Number of generated members: 7816
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -5756,6 +5756,8 @@ typedef void* Beyond_NET_Sample_SubclassingTests_MySubClass_t;
 typedef void* Beyond_NET_Sample_Source_CharTests_t;
 
 typedef void* Beyond_NET_Sample_Source_CKeywordsTests_t;
+
+typedef void* Beyond_NET_Sample_Source_CSharpKeywordsTests_t;
 
 typedef void* Beyond_NET_Sample_Source_DontStrip_t;
 
@@ -48168,6 +48170,77 @@ Beyond_NET_Sample_Source_CKeywordsTests_Destroy(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.Source.CKeywordsTests
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.CSharpKeywordsTests
+void /* System.Void */
+Beyond_NET_Sample_Source_CSharpKeywordsTests_try(
+	Beyond_NET_Sample_Source_CSharpKeywordsTests_t _Nullable /* Beyond.NET.Sample.Source.CSharpKeywordsTests */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+Beyond_NET_Sample_Source_CSharpKeywordsTests_abstract(
+	System_String_t _Nullable /* System.String */ class_,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_Source_CSharpKeywordsTests_t _Nonnull /* Beyond.NET.Sample.Source.CSharpKeywordsTests */
+Beyond_NET_Sample_Source_CSharpKeywordsTests_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+Beyond_NET_Sample_Source_CSharpKeywordsTests_operator_Get(
+	Beyond_NET_Sample_Source_CSharpKeywordsTests_t _Nullable /* Beyond.NET.Sample.Source.CSharpKeywordsTests */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+uint8_t /* System.Byte */
+Beyond_NET_Sample_Source_CSharpKeywordsTests_this_Get(
+	Beyond_NET_Sample_Source_CSharpKeywordsTests_t _Nullable /* Beyond.NET.Sample.Source.CSharpKeywordsTests */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_CSharpKeywordsTests_this_Set(
+	Beyond_NET_Sample_Source_CSharpKeywordsTests_t _Nullable /* Beyond.NET.Sample.Source.CSharpKeywordsTests */ self,
+	uint8_t /* System.Byte */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int64_t /* System.Int64 */
+Beyond_NET_Sample_Source_CSharpKeywordsTests_Item_Get(
+	Beyond_NET_Sample_Source_CSharpKeywordsTests_t _Nullable /* Beyond.NET.Sample.Source.CSharpKeywordsTests */ self,
+	int32_t /* System.Int32 */ struct_,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nullable /* System.String */
+Beyond_NET_Sample_Source_CSharpKeywordsTests_as_Get(
+	Beyond_NET_Sample_Source_CSharpKeywordsTests_t _Nullable /* Beyond.NET.Sample.Source.CSharpKeywordsTests */ self
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_CSharpKeywordsTests_as_Set(
+	Beyond_NET_Sample_Source_CSharpKeywordsTests_t _Nullable /* Beyond.NET.Sample.Source.CSharpKeywordsTests */ self,
+	System_String_t _Nullable /* System.String */ value
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_Source_CSharpKeywordsTests_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_CSharpKeywordsTests_Destroy(
+	Beyond_NET_Sample_Source_CSharpKeywordsTests_t _Nullable /* Beyond.NET.Sample.Source.CSharpKeywordsTests */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.Source.CSharpKeywordsTests
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.DontStrip
 System_IO_MemoryStream_t _Nonnull /* System.IO.MemoryStream */

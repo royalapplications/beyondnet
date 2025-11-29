@@ -114,6 +114,30 @@ final class TestClassesTests: XCTestCase {
         XCTAssertTrue(originalBook == originalBookRet)
         XCTAssertTrue(targetBook == bookToModify)
     }
+    
+    func testCSharpKeywords() throws {
+        let testClass = try Beyond_NET_Sample_Source_CSharpKeywordsTests()
+        
+        let `as` = testClass.as
+        XCTAssertEqual(`as`?.string(), "test")
+        
+        let `operator` = try testClass.operator
+        XCTAssertEqual(`operator`, 0)
+        
+        let this = try testClass.this
+        XCTAssertEqual(this, 0)
+        
+        try testClass.this_set(33)
+        XCTAssertEqual(try testClass.this, 33)
+        
+        try testClass.try()
+        
+        let fromIndexer = try testClass.item(1)
+        XCTAssertEqual(4242, fromIndexer)
+        
+        let abstract = try Beyond_NET_Sample_Source_CSharpKeywordsTests.abstract(nil)
+        XCTAssertEqual(42, abstract)
+    }
 
     // TODO: By Ref return values are not supported in Swift yet
 //    func testGetCurrentBookByRef() {
