@@ -407,7 +407,7 @@ public class CSharpUnmanagedMethodSyntaxWriter: ICSharpUnmanagedSyntaxWriter, IM
         } else if (invocationIsIndexer) {
             methodNameForInvocation = string.Empty;
         } else {
-            methodNameForInvocation = $".{methodName}";
+            methodNameForInvocation = $".{methodName.EscapedCSharpName()}";
         }
 
         bool invocationNeedsParentheses = memberKind != MemberKind.PropertyGetter &&

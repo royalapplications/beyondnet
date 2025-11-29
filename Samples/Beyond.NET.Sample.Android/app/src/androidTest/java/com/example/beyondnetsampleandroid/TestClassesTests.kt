@@ -97,6 +97,32 @@ class TestClassesTests {
         assertEquals(value, retVal)
     }
 
+    @Test
+    fun testCSharpKeywords() {
+        val testClass = Beyond_NET_Sample_Source_CSharpKeywordsTests()
+
+        val `as` = testClass.`as`
+        requireNotNull(`as`) { "test class should not return null" }
+        assertEquals("test", `as`.toKString())
+
+        val operator = testClass.operator
+        assertEquals(0, operator)
+
+        val `this` = testClass.`this`
+        assertEquals(0u.toUByte(), `this`)
+
+        testClass.this_set(33u)
+        assertEquals(33u.toUByte(), testClass.`this`)
+
+        testClass.`try`()
+
+        val indexer = testClass.item(1)
+        assertEquals(4242L, indexer)
+
+        val abstract = Beyond_NET_Sample_Source_CSharpKeywordsTests.abstract(null)
+        assertEquals(42, abstract)
+    }
+
     // NOTE: This was transpiled from Swift
     // TODO: Fails. Why?
 //    @Test
