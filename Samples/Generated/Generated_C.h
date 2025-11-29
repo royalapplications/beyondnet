@@ -1,5 +1,5 @@
-// Number of generated types: 1643
-// Number of generated members: 7816
+// Number of generated types: 1644
+// Number of generated members: 7819
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -1839,7 +1839,7 @@ typedef struct DNReadOnlySpanOfByte {
 // Unsupported Type "System.ISpanParsable`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "System.IParsable`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "SpanAction`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.DefaultInterpolatedStringHandler&": Is unsupported Type
+// Unsupported Type "System.Runtime.CompilerServices.DefaultInterpolatedStringHandler&": Is ref struct
 // Unsupported Type "System.ReadOnlySpan`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "System.ReadOnlySpan`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
@@ -2474,6 +2474,7 @@ typedef struct DNReadOnlySpanOfByte {
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.Int32?)
 // Unsupported Type "System.Nullable`1[[System.DateTimeKind, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.DateTimeKind?)
+// Unsupported Type "Beyond.NET.Sample.Source.RefStructTests+TestRefStruct": Is ref struct
 // Unsupported Type "Beyond.NET.Sample.Person_Extensions+<G>$9D63B61FF3DB94B34FDAE9CFA7044FE8": Is C# 14+ extension block (and has special name)
 // Unsupported Type "Beyond.NET.Sample.Person_Extensions+<G>$9D63B61FF3DB94B34FDAE9CFA7044FE8+<M>$9737BC5C87033597E65A978C42067F7A": Is C# 14+ extension block (and has special name)
 
@@ -6186,6 +6187,8 @@ typedef void* Beyond_NET_Sample_Source_OverrideTestsBaseClass_t;
 typedef void* Beyond_NET_Sample_Source_OverrideTestsDerivedClass_t;
 
 typedef void* Beyond_NET_Sample_Source_PrimitiveExtensionsTests_t;
+
+typedef void* Beyond_NET_Sample_Source_RefStructTests_t;
 
 typedef void* Beyond_NET_Sample_Transformer_BuiltInTransformers_t;
 
@@ -62148,6 +62151,24 @@ Beyond_NET_Sample_Source_PrimitiveExtensionsTests_Destroy(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.Source.PrimitiveExtensionsTests
+
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.Source.RefStructTests
+Beyond_NET_Sample_Source_RefStructTests_t _Nonnull /* Beyond.NET.Sample.Source.RefStructTests */
+Beyond_NET_Sample_Source_RefStructTests_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_Source_RefStructTests_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_RefStructTests_Destroy(
+	Beyond_NET_Sample_Source_RefStructTests_t _Nullable /* Beyond.NET.Sample.Source.RefStructTests */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.Source.RefStructTests
 
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.Transformer.BuiltInTransformers
 Beyond_NET_Sample_Transformer_StringTransformerDelegate_t _Nonnull /* Beyond.NET.Sample.Transformer.StringTransformerDelegate */
