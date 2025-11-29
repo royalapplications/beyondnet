@@ -483,6 +483,13 @@ public class TypeCollector
             return false;
         }
 
+        if (type.IsByRefLike && !isReadOnlySpanOfByte)
+        {
+            // https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/ref-struct
+            unsupportedReason = "Is ref struct";
+            return false;
+        }
+
         if (type.IsInterface) {
             if (type.GetMethods().Any(m => m is { IsAbstract: true, IsStatic: true })
                 || type.GetProperties().Any(p => p.GetMethod is { IsAbstract: true, IsStatic: true } ||
