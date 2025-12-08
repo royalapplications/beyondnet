@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+
+# Script to build Beyond.NET Code Generator for Android platforms
+# See https://github.com/dotnet/runtime/blob/main/src/coreclr/nativeaot/docs/android-bionic.md for instructions
+
+set -e
+
+# Either set the "ANDROID_NDK_BIN_PATH" environment variable and point it to the following Android NDK installation directory's subpath "ndk_home/toolchains/llvm/prebuilt/platform-arch/bin"
+# Or alternatively, make sure the "ANDROID_NDK_HOME" enviroment variable is set and pointing to your Android NDK installation. We'll then try to automatically detect where the bin path is.
+if [ ! -d "${ANDROID_NDK_BIN_PATH}" ] ; then
+  echo "Warning: ANDROID_NDK_BIN_PATH enviroment variable is not set or directory does not exist. Trying to fall back to ANDROID_NDK_HOME and automatically detecting the bin directory."
+
+  if [ ! -d "${ANDROID_NDK_HOME}" ] ; then
+    echo "Error: ANDROID_NDK_HOME enviroment variable is not set or directory does not exist."
+    exit 1
+  fi
+
+  echo "Android NDK Home: ${ANDROID_NDK_HOME}"
+
+  # ndk_bin_common.sh sets the "HOST_TAG" environment variable to the NDK's toolchain platform
+  source "${ANDROID_NDK_HOME}/build/tools/ndk_bin_common.sh"
+  echo "Android Host Tag: ${HOST_TAG}"
+
+  ANDROID_NDK_BIN_PATH="${ANDROID_NDK_HOME}/toolchains/llvm/prebuilt/${HOST_TAG}/bin"
+
+  if [ ! -d "${ANDROID_NDK_BIN_PATH}" ] ; then
+    echo "Error: Android NDK bin Path not found at ${ANDROID_NDK_BIN_PATH}"
+    exit 1
+  fi
+fi
+
+echo "Android NDK bin Path: ${ANDROID_NDK_BIN_PATH}"
+
+export PATH=${ANDROID_NDK_BIN_PATH}:$PATH
+
+echo ""
+
+OUTPUT_PRODUCT_NAME="beyondnetgen"
+BUILD_CONFIGURATION="Release"
+
+OUTPUT_FILE_NAME="${OUTPUT_PRODUCT_NAME}"
+
+VERBOSITY_LEVEL="normal"
+
+RUNTIME_IDENTIFIER_ARM64="linux-bionic-arm64"
+
+BIN_DIR="bin"
+PUBLISH_DIR="publish"
+
+ARM64_BUILD_DIR="${BIN_DIR}/${BUILD_CONFIGURATION}/${RUNTIME_IDENTIFIER_ARM64}/${PUBLISH_DIR}"
+
+ARM64_FILE_PATH="${ARM64_BUILD_DIR}/${OUTPUT_FILE_NAME}"
+
+echo "Cleaning ${OUTPUT_PRODUCT_NAME}"
+dotnet clean /p:Configuration=Release
+
+echo "Building ${OUTPUT_PRODUCT_NAME} for Android"
+dotnet publish \
+  -r ${RUNTIME_IDENTIFIER_ARM64} \
+  -v "${VERBOSITY_LEVEL}" \
+  -p:PublishAotUsingRuntimePack=true
+
+echo "Build complete!"
+echo "ARM64 binary: ${ARM64_FILE_PATH}"
+

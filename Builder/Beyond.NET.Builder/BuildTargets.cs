@@ -10,6 +10,7 @@ public enum BuildTargets
     iOSARM64 =              1 << 2,
     iOSSimulatorARM64 =     1 << 3,
     iOSSimulatorX64 =       1 << 4,
+    AndroidARM64 =          1 << 5,
 
     MacOSUniversal = MacOSARM64 | MacOSX64,
     iOSSimulatorUniversal = iOSSimulatorARM64 | iOSSimulatorX64,
@@ -37,5 +38,10 @@ internal static class BuildTargets_Extensions
     {
         return buildTargets.HasFlag(BuildTargets.MacOSARM64) ||
                buildTargets.HasFlag(BuildTargets.MacOSX64);
+    }
+
+    public static bool ContainsAnyAndroidTarget(this BuildTargets buildTargets)
+    {
+        return buildTargets.HasFlag(BuildTargets.AndroidARM64);
     }
 }
