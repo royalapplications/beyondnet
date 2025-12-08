@@ -4,7 +4,7 @@
 
 Beyond.NET is a toolset that makes it possible to call .NET code from other programming languages.
 Conceptually, think of it like the reverse of the Xamarin tools.
-Currently, C and Swift are the supported output languages. But any language that has C interoperability can use the generated bindings.
+Currently, C, Swift, and Kotlin are the supported output languages. But any language that has C interoperability can use the generated bindings.
 
 
 
@@ -28,6 +28,7 @@ The generated C# code can then be compiled with .NET NativeAOT which allows the 
 - Make sure [.NET 10](https://dotnet.microsoft.com/download/dotnet/10.0) is installed and on your path.
 - On macOS, make sure [Xcode](https://developer.apple.com/xcode/), the macOS and iOS SDKs and the Command Line Tools (`xcode-select --install`) are installed.
 - On Linux, make sure clang and zlib are installed
+- For Android builds, make sure the [Android NDK](https://developer.android.com/ndk/downloads) is installed and configured (see [Android Build Guide](docs/ANDROID_BUILD.md))
 
 
 ### Generator Executable
@@ -50,10 +51,12 @@ The generated C# code can then be compiled with .NET NativeAOT which allows the 
 
 ### Generator Modes
 
-The generator always generates language bindings (C header file and optionally a Swift source code file) but it can also be configured to automatically compile a native version of the target assembly.
-At the moment, automatic build support is only available on Apple platforms.
+The generator always generates language bindings (C header file and optionally Swift and/or Kotlin source code files) but it can also be configured to automatically compile a native version of the target assembly.
 
-If enabled, an [XCFramework](https://developer.apple.com/documentation/xcode/creating-a-multi-platform-binary-framework-bundle) containing compiled binaries for macOS ARM64, macOS x64, iOS ARM64, iOS Simulator ARM64 and iOS Simulator x64 is built. The generated XCFramework is ready to use and can just be dropped into an Xcode project.
+Automatic build support is available for:
+- **Apple platforms**: Generates an [XCFramework](https://developer.apple.com/documentation/xcode/creating-a-multi-platform-binary-framework-bundle) containing compiled binaries for macOS ARM64, macOS x64, iOS ARM64, iOS Simulator ARM64 and iOS Simulator x64. The generated XCFramework is ready to use and can just be dropped into an Xcode project.
+- **Android platforms**: Generates native libraries (.so files) for ARM64 architecture in the Android jniLibs structure, ready to be integrated into Android projects.
+- **Multi-platform**: Build for multiple platforms simultaneously (e.g., iOS + Android) in a single operation. See the [Multi-Platform Build Guide](docs/MULTI_PLATFORM_BUILD.md).
 
 We recommend using the automatic build support if possible.
 If you decide to [do things manually](README_MANUAL_BUILD.md), you will have to compile the generated C# file using NativeAOT, then link the resulting dynamic library into your native code and include the generated language bindings to call into it.
@@ -181,6 +184,42 @@ struct ContentView: View {
 
 
 
+### Creating a native version of a .NET classlib for Android
+
+
+1. **Set up Android NDK**:
+   ```bash
+   export ANDROID_NDK_HOME="/path/to/android-ndk"
+   ```
+
+2. **Create a configuration file** (`MyProject_Android_Config.json`):
+   ```json
+   {
+     "AssemblyPath": "path/to/YourAssembly.dll",
+     "Build": {
+       "Target": "android-arm64",
+       "ProductName": "YourLibraryName",
+       "ProductOutputPath": "output/path"
+     },
+     "CSharpUnmanagedOutputPath": "Generated.cs",
+     "COutputPath": "Generated.h",
+     "KotlinOutputPath": "Generated.kt",
+     "KotlinPackageName": "com.yourcompany.yourapp",
+     "KotlinNativeLibraryName": "YourLibraryName"
+   }
+   ```
+
+3. **Run the generator**:
+   ```bash
+   beyondnetgen MyProject_Android_Config.json
+   ```
+
+4. **Copy the generated libraries** to your Android project:
+   ```bash
+   cp -r output/path/android/jniLibs app/src/main/
+   ```
+
+
 ## Generator Configuration
 
 The generator currently uses a configuration file where all of its options are specified.
@@ -193,6 +232,7 @@ The generator currently uses a configuration file where all of its options are s
 
   "Build": {
       "Target": "apple-universal",
+      "Targets": ["ios-universal", "android-universal"],
 
       "ProductName": "AssemblyKit",
       "ProductBundleIdentifier": "com.mycompany.assemblykit",
@@ -248,10 +288,11 @@ The generator currently uses a configuration file where all of its options are s
 
 - **`AssemblyPath`**: Enter the path to the compiled .NET assembly you want to generate native bindings for. (Required)
 - **`Build`**: Configuration options for automatic build support. (Optional; automatic build is disabled if not provided)
-    - **`Target`**: The platform and architecture to build for. (Required; currently `apple-universal`, `macos-universal` and `ios-universal` are supported)
-    - **`ProductName`**: The name of the resulting XCFramework and Swift/Clang module. This must be different than the target assembly name and any namespaces contained within it or its dependencies. (Optional; if not provided the assembly file name suffixed with `Kit` is used)
-    - **`ProductBundleIdentifier`**: The bundle identifier of the resulting frameworks. (Optional; if not provided the bundle identifier is `com.mycompany.` suffixed with the `ProductName`)
-    - **`ProductOutputPath`**: The output path for the resulting XCFramework. (Optional; if not provided, the directory of the `AssemblyPath` is used)
+    - **`Target`**: Single platform to build for. (Optional; use `Targets` for multiple platforms. Supported values: `apple-universal`, `macos-universal`, `ios-universal`, `android-arm64`)
+    - **`Targets`**: Array of platforms to build for simultaneously. (Optional; can be used with or instead of `Target`. See [Multi-Platform Build Guide](docs/MULTI_PLATFORM_BUILD.md))
+    - **`ProductName`**: The name of the resulting libraries and modules. This must be different than the target assembly name and any namespaces contained within it or its dependencies. (Optional; if not provided the assembly file name suffixed with `Kit` is used)
+    - **`ProductBundleIdentifier`**: The bundle identifier of the resulting frameworks (Apple platforms only). (Optional; if not provided the bundle identifier is `com.mycompany.` suffixed with the `ProductName`)
+    - **`ProductOutputPath`**: The output path for the resulting libraries. When building for multiple platforms, outputs are organized in subdirectories. (Optional; if not provided, the directory of the `AssemblyPath` is used)
     - **`MacOSDeploymentTarget`**: The deployment target for the macOS portion of the XCFramework. (Optional; if not provided, `13.0` is used)
     - **`iOSDeploymentTarget`**: The deployment target for the iOS portion of the XCFramework. (Optional; if not provided, `16.0` is used)
     - **`DisableParallelBuild`**: Set to `true` to disable building in parallel (ie. for improved debugging). (Optional; if not provided, `false` is used)

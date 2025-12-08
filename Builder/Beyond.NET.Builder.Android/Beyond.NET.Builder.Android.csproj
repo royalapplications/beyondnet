@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Beyond.NET.Core\Beyond.NET.Core.csproj" />
+    <ProjectReference Include="..\Beyond.NET.Builder.DotNET\Beyond.NET.Builder.DotNET.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="build_android.sh" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
+

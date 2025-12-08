@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Core\Beyond.NET.Core\Beyond.NET.Core.csproj" />
+      <ProjectReference Include="..\Beyond.NET.Builder.Android\Beyond.NET.Builder.Android.csproj" />
       <ProjectReference Include="..\Beyond.NET.Builder.Apple\Beyond.NET.Builder.Apple.csproj" />
       <ProjectReference Include="..\Beyond.NET.Builder.DotNET\Beyond.NET.Builder.DotNET.csproj" />
     </ItemGroup>
