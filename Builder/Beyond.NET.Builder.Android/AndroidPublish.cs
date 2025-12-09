@@ -22,23 +22,6 @@ public static class AndroidPublish
             throw new FileNotFoundException($"Android build script not found at: {scriptPath}");
         }
 
-        // Make sure script is executable
-        if (OperatingSystem.IsMacOS() || OperatingSystem.IsLinux())
-        {
-            try
-            {
-                var chmodApp = new CLIApp("chmod");
-                var chmodResult = chmodApp.Launch(
-                    new[] { "+x", scriptPath },
-                    workingDirectory
-                );
-            }
-            catch
-            {
-                // Ignore chmod errors - script might already be executable
-            }
-        }
-
         // Build arguments for the script
         List<string> args = new()
         {
