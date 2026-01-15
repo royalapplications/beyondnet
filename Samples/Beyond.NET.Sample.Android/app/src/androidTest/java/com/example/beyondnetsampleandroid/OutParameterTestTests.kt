@@ -197,6 +197,65 @@ class OutParameterTestTests {
         assertNull(returnValueWithPlaceholder.value)
     }
 
+    // MARK: - Arrays
+    // NOTE: This was transpiled from Swift
+    @Test
+    fun testNonOptionalArrays() {
+        val inst = makeInstance()
+
+        val returnValue = ObjectRef(DNArray.empty(System_String))
+        inst.return_StringArray_NonOptional(returnValue)
+        assertEquals(returnValue.value.length, 0)
+
+        // TODO: Not sure how to create a placeholder with DNArray
+//        val returnValueWithPlaceholder = ObjectRef(DNOutParameter.createPlaceholder(::DNArray<System_String>))
+//        inst.return_String_Abc_NonOptional(returnValueWithPlaceholder)
+//        assertTrue(returnValueWithPlaceholder.value.length == 0)
+    }
+
+    // NOTE: This was transpiled from Swift
+    @Test
+    fun testOptionalArrays() {
+        val inst = makeInstance()
+
+        val returnValue = ObjectRef<DNArray<System_String>?>(null)
+        inst.return_StringArray_Optional(returnValue)
+        assertEquals(returnValue.value?.length, 0)
+
+        val returnValueWithInValue = ObjectRef<DNArray<System_String>?>(DNArray.empty(System_String))
+        inst.return_StringArray_Optional(returnValueWithInValue)
+        assertEquals(returnValue.value?.length, 0)
+
+        // TODO: Not sure how to create a placeholder with DNArray
+//        val returnValueWithPlaceholder = ObjectRef<System_String?>(DNOutParameter.createPlaceholder(::System_String))
+//        inst.return_String_Abc_Optional(returnValueWithPlaceholder)
+//        assertEquals(returnValue.value, abc)
+    }
+
+    // NOTE: This was transpiled from Swift
+    @Test
+    fun testOptionalNullArrays() {
+        val inst = makeInstance()
+
+        val returnValue = ObjectRef<DNArray<System_String>?>(null)
+        inst.return_StringArray_Null(returnValue)
+        assertNull(returnValue.value)
+
+        val returnValueWithInValue = ObjectRef<DNArray<System_String>?>(DNArray.empty(System_String))
+        inst.return_StringArray_Null(returnValueWithInValue)
+        assertNull(returnValueWithInValue.value)
+
+        // TODO: Not sure how to create a placeholder with DNArray
+//        val returnValueWithPlaceholder = ObjectRef<System_String?>(DNOutParameter.createPlaceholder(::System_String))
+//        inst.return_String_Null(returnValueWithPlaceholder)
+//        assertNull(returnValueWithPlaceholder.value)
+    }
+
+
+
+
+
+
     private fun makeInstance(): Beyond_NET_Sample_Source_OutParameterTests {
         return Beyond_NET_Sample_Source_OutParameterTests()
     }

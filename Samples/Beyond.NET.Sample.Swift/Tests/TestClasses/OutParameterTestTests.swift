@@ -182,4 +182,54 @@ final class OutParameterTestTests: XCTestCase {
         try inst.return_IEnumerable_Null(&returnValueWithPlaceholder)
         XCTAssertNil(returnValueWithPlaceholder)
     }
+    
+    // MARK: - Arrays
+    func testNonOptionalArrays() throws {
+        let inst = try makeInstance()
+
+        let empty = try DNArray<System.String>.empty
+
+        var returnValue = try DNArray<System.String>.empty
+        try inst.return_StringArray_NonOptional(&returnValue)
+        XCTAssertTrue(empty.elementsEqual(returnValue))
+
+        var returnValueWithPlaceholder = DNArray<System.String>.outParameterPlaceholder
+        try inst.return_StringArray_NonOptional(&returnValueWithPlaceholder)
+        XCTAssertTrue(empty.elementsEqual(returnValueWithPlaceholder))
+    }
+
+    func testOptionalArrays() throws {
+        let inst = try makeInstance()
+
+        let empty = try DNArray<System.String>.empty
+
+        var returnValue: DNArray<System.String>?
+        try inst.return_StringArray_Optional(&returnValue)
+        
+        XCTAssertTrue(empty.elementsEqual(try XCTUnwrap(returnValue)))
+
+        var returnValueWithInValue: DNArray<System.String>? = try .empty
+        try inst.return_StringArray_Optional(&returnValueWithInValue)
+        XCTAssertTrue(empty.elementsEqual(try XCTUnwrap(returnValueWithInValue)))
+
+        var returnValueWithPlaceholder: DNArray<System.String>? = .outParameterPlaceholder
+        try inst.return_StringArray_Optional(&returnValueWithPlaceholder)
+        XCTAssertTrue(empty.elementsEqual(try XCTUnwrap(returnValueWithPlaceholder)))
+    }
+
+    func testOptionalNullArrays() throws {
+        let inst = try makeInstance()
+
+        var returnValue: DNArray<System.String>?
+        try inst.return_StringArray_Null(&returnValue)
+        XCTAssertNil(returnValue)
+
+        var returnValueWithInValue: DNArray<System.String>? = try .empty
+        try inst.return_StringArray_Null(&returnValueWithInValue)
+        XCTAssertNil(returnValueWithInValue)
+
+        var returnValueWithPlaceholder: DNArray<System.String>? = .outParameterPlaceholder
+        try inst.return_StringArray_Null(&returnValueWithPlaceholder)
+        XCTAssertNil(returnValueWithPlaceholder)
+    }
 }

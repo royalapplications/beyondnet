@@ -124,4 +124,21 @@ public class OutParameterTests
         returnValue = null;
     }
     #endregion Interfaces
+
+    #region Arrays
+    public void Return_StringArray_NonOptional(out string[] returnValues)
+    {
+        returnValues = [];
+    }
+
+    public void Return_StringArray_Optional(out string[]? returnValues)
+    {
+        returnValues = [];
+    }
+
+    public void Return_StringArray_Null(out string[]? returnValues)
+    {
+        returnValues = null;
+    }
+    #endregion Arrays
 }

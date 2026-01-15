@@ -1,5 +1,5 @@
 // Number of generated types: 1644
-// Number of generated members: 7819
+// Number of generated members: 7822
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -62000,6 +62000,27 @@ void /* System.Void */
 Beyond_NET_Sample_Source_OutParameterTests_Return_IEnumerable_Null(
 	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
 	System_Collections_IEnumerable_t _Nullable* _Nullable /* System.Collections.IEnumerable */ returnValue,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_StringArray_NonOptional(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	System_String_Array_t _Nonnull* _Nonnull /* System.String[] */ returnValues,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_StringArray_Optional(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	System_String_Array_t _Nullable* _Nullable /* System.String[] */ returnValues,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_Source_OutParameterTests_Return_StringArray_Null(
+	Beyond_NET_Sample_Source_OutParameterTests_t _Nullable /* Beyond.NET.Sample.Source.OutParameterTests */ self,
+	System_String_Array_t _Nullable* _Nullable /* System.String[] */ returnValues,
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
