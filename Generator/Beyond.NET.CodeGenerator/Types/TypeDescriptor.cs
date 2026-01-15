@@ -166,6 +166,7 @@ public class TypeDescriptor
                 typeName,
                 language,
                 nullability,
+                arrayElementNullability,
                 isOutParameter,
                 isByRefParameter,
                 isInParameter
@@ -179,6 +180,7 @@ public class TypeDescriptor
         string typeName,
         CodeLanguage language,
         Nullability nullability,
+        Nullability arrayElementNullability,
         bool isOutParameter,
         bool isByRefParameter,
         bool isInParameter
@@ -297,7 +299,13 @@ public class TypeDescriptor
                 string kotlinNullabilitySpecifier = nullability.GetKotlinOptionalitySpecifier();
 
                 if (isOutParameter || isByRefParameter || isInParameter) {
-                    var kotlinTypeName = GetTypeName(CodeLanguage.Kotlin, false);
+                    var kotlinTypeName = GetTypeName(
+                        CodeLanguage.Kotlin,
+                        false,
+                        Nullability.NotSpecified,
+                        arrayElementNullability
+                    );
+
                     string refTypeName;
 
                     if (IsPrimitive) {
