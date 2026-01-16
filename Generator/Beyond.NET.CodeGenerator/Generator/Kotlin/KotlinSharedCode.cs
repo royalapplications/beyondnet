@@ -92,9 +92,7 @@ public class DNException(public val dnException: System_Exception) : Exception(t
 public class DNOutParameter {
     companion object {
         fun <T> createPlaceholder(factory: (Pointer) -> T): T where T: DNObject {
-            // TODO: Not sure why SIZE is not available: https://java-native-access.github.io/jna/4.2.1/com/sun/jna/Pointer.html#SIZE
-//            val sizeOfPointer = com.sun.jna.Pointer.SIZE
-            val sizeOfPointer: Long = 8
+            val sizeOfPointer = com.sun.jna.Native.POINTER_SIZE.toLong()
 
             val mem = Memory(sizeOfPointer)
             val ptr = mem.value
