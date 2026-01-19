@@ -421,4 +421,53 @@ final class ArrayTestsTests: XCTestCase {
         XCTAssertEqual(try newArray[1].castToChar(), aChar)
         XCTAssertEqual(try newArray[2].castToChar(), bChar)
     }
+    
+    func testArrayOfEnums() throws {
+        let tests = try Beyond.NET.Sample.ArrayTests()
+        
+        let array = try tests.arrayOfEnums
+        let rank = try array.rank
+
+        XCTAssertEqual(rank, 1)
+        
+        func toSystemDateTimeKind(_ value: System.Enum) throws -> System.DateTimeKind {
+            let rawValue = try value.castToInt32()
+            
+            return try XCTUnwrap(System.DateTimeKind(rawValue: rawValue))
+        }
+        
+        func toSystemEnum(_ value: System.DateTimeKind) throws -> System.Enum {
+            // TODO: There surely is a better way to do this, right?
+            let systemEnumValue = try System.Enum.toObject(System.DateTimeKind.typeOf, value.rawValue.dotNETObject())
+                .castTo(System.Enum.self)
+            
+            return systemEnumValue
+        }
+        
+        // Check initial state
+        let value0 = try toSystemDateTimeKind(array[0])
+        let value1 = try toSystemDateTimeKind(array[1])
+        let value2 = try toSystemDateTimeKind(array[2])
+        
+        XCTAssertEqual(value0, .local)
+        XCTAssertEqual(value1, .utc)
+        XCTAssertEqual(value2, .unspecified)
+        
+        // Modify it
+        array[0] = try toSystemEnum(value2)
+        array[1] = try toSystemEnum(value1)
+        array[2] = try toSystemEnum(value0)
+        
+        try tests.arrayOfEnums_set(array)
+        let newArray = try tests.arrayOfEnums
+
+        // Check modified state
+        let modValue0 = try toSystemDateTimeKind(newArray[0])
+        let modValue1 = try toSystemDateTimeKind(newArray[1])
+        let modValue2 = try toSystemDateTimeKind(newArray[2])
+        
+        XCTAssertEqual(modValue0, .unspecified)
+        XCTAssertEqual(modValue1, .utc)
+        XCTAssertEqual(modValue2, .local)
+    }
 }

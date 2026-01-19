@@ -93,4 +93,10 @@ public class ArrayTests
         null, new Dog()
     ];
     #endregion ArrayOfInterfaces
+
+    #region ArrayOfEnums
+    public DateTimeKind[] ArrayOfEnums { get; set; } = [
+        DateTimeKind.Local, DateTimeKind.Utc, DateTimeKind.Unspecified
+    ];
+    #endregion ArrayOfEnums
 }

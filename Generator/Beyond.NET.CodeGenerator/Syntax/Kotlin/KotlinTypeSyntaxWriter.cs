@@ -125,7 +125,9 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
             if (type.IsEnum) {
                 typeCode = WriteEnumType(
                     type,
-                    typeDescriptorRegistry
+                    state,
+                    typeDescriptorRegistry,
+                    kotlinConfiguration
                 );
             } else if (ExperimentalFeatureFlags.EnableKotlinTypeGenerator) {
                 typeCode = WriteKotlinType(
@@ -154,7 +156,9 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
     #region Enum
     private string WriteEnumType(
         Type type,
-        TypeDescriptorRegistry typeDescriptorRegistry
+        State state,
+        TypeDescriptorRegistry typeDescriptorRegistry,
+        KotlinSyntaxWriterConfiguration configuration
     )
     {
         TypeDescriptor typeDescriptor = type.GetTypeDescriptor(typeDescriptorRegistry);
@@ -210,6 +214,14 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
 
         string enumCasesString = KotlinEnumClassCase.CasesToString(enumCases);
 
+        var typeOfSyntaxWriter = GetSyntaxWriter(MemberKind.TypeOf, MemberTypes.All);
+
+        var typeOfCode = typeOfSyntaxWriter.Write(
+            type,
+            state,
+            configuration
+        );
+
         var additionalEnumCode = $$"""
 companion object {
     public operator fun invoke(underlyingValue: {{underlyingTypeName}}): {{kotlinEnumTypeName}} {
@@ -225,6 +237,8 @@ companion object {
             _dnCustomValue = underlyingValue
         }
     }
+
+    {{typeOfCode}}
 }
 
 infix fun or(other: {{kotlinEnumTypeName}}): {{kotlinEnumTypeName}} {

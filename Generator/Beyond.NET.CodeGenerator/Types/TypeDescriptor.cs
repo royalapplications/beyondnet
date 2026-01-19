@@ -371,7 +371,16 @@ public class TypeDescriptor
                     elementType is not null)
                 {
                     // TODO: Shouldn't this go through TypeDescriptor?
-                    var swiftElementTypeName = elementType.CTypeName();
+                    string swiftElementTypeName;
+
+                    if (elementType.IsEnum) {
+                        // TODO: We currently can't directly support Enums as Arrays in Swift because Enums don't derive from System.Object which DNArray and friends require.
+                        // But at least we can map them to `DNArray<System.Enum>` which allows us to get at the values, even though it's not very convenient.
+                        swiftElementTypeName = typeof(System.Enum).CTypeName();
+                    } else {
+                        swiftElementTypeName = elementType.CTypeName();
+                    }
+
                     var rank = ManagedType.GetArrayRank();
 
                     if (arrayElementNullability == Nullability.NotSpecified)
@@ -440,7 +449,16 @@ public class TypeDescriptor
                     elementType is not null)
                 {
                     // TODO: Shouldn't this go through TypeDescriptor?
-                    var kotlinElementTypeName = elementType.CTypeName();
+                    string kotlinElementTypeName;
+
+                    if (elementType.IsEnum) {
+                        // TODO: We currently can't directly support Enums as Arrays in Kotlin because Enums don't derive from System.Object which DNArray and friends require.
+                        // But at least we can map them to `DNArray<System.Enum>` which allows us to get at the values, even though it's not very convenient.
+                        kotlinElementTypeName = typeof(System.Enum).CTypeName();
+                    } else {
+                        kotlinElementTypeName = elementType.CTypeName();
+                    }
+
                     var rank = ManagedType.GetArrayRank();
 
                     if (arrayElementNullability == Nullability.NotSpecified)
@@ -650,7 +668,15 @@ public class TypeDescriptor
                        arrayRank == 1 /* Single dimensional array */) {
                 // TODO: Support multi-dimensional arrays
                 // TODO: Shouldn't this go through TypeDescriptor?
-                var kotlinElementTypeName = elementType.CTypeName();
+                string kotlinElementTypeName;
+
+                if (elementType.IsEnum) {
+                    // TODO: We currently can't directly support Enums as Arrays in Kotlin because Enums don't derive from System.Object which DNArray and friends require.
+                    // But at least we can map them to `DNArray<System.Enum>` which allows us to get at the values, even though it's not very convenient.
+                    kotlinElementTypeName = typeof(System.Enum).CTypeName();
+                } else {
+                    kotlinElementTypeName = elementType.CTypeName();
+                }
 
                 return $"{kotlinTypeName}({kotlinElementTypeName}, {{0}})";
             } else if (RequiresNativePointer) {

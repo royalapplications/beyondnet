@@ -1,5 +1,5 @@
-// Number of generated types: 1644
-// Number of generated members: 7822
+// Number of generated types: 1651
+// Number of generated members: 7824
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -5596,6 +5596,21 @@ typedef void* System_Collections_Generic_IReadOnlyList_A1_t;
 
 typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
 
+typedef void* System_DateTimeKind_Array_t;
+
+typedef void* System_Collections_Generic_IList_A1_t;
+
+typedef void* System_Collections_Generic_ICollection_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerable_A1_t;
+
+typedef void* System_Collections_Generic_IEnumerator_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyList_A1_t;
+
+typedef void* System_Collections_Generic_IReadOnlyCollection_A1_t;
+
+
 typedef void* Beyond_NET_Sample_AsyncTests_t;
 
 typedef void* Beyond_NET_Sample_Point_t;
@@ -6173,7 +6188,6 @@ typedef void* Beyond_NET_Sample_Source_NestedTypeTests_t;
 typedef void* Beyond_NET_Sample_Source_OperatorTests_t;
 
 typedef void* Beyond_NET_Sample_Source_OutParameterTests_t;
-
 
 
 
@@ -45148,6 +45162,20 @@ Beyond_NET_Sample_ArrayTests_ArrayOfSBytes_Set(
 );
 
 
+System_DateTimeKind_Array_t _Nonnull /* System.DateTimeKind[] */
+Beyond_NET_Sample_ArrayTests_ArrayOfEnums_Get(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+Beyond_NET_Sample_ArrayTests_ArrayOfEnums_Set(
+	Beyond_NET_Sample_ArrayTests_t _Nullable /* Beyond.NET.Sample.ArrayTests */ self,
+	System_DateTimeKind_Array_t _Nonnull /* System.DateTimeKind[] */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
 System_Type_t _Nonnull /* System.Type */
 Beyond_NET_Sample_ArrayTests_TypeOf(
 	void
@@ -45179,6 +45207,16 @@ Beyond_NET_Sample_ArrayTests_Destroy(
 
 #pragma mark - BEGIN APIs of System.SByte[]
 #pragma mark - END APIs of System.SByte[]
+
+
+
+
+
+
+
+#pragma mark - BEGIN APIs of System.DateTimeKind[]
+#pragma mark - END APIs of System.DateTimeKind[]
+
 
 
 
@@ -62040,7 +62078,6 @@ Beyond_NET_Sample_Source_OutParameterTests_Destroy(
 );
 
 #pragma mark - END APIs of Beyond.NET.Sample.Source.OutParameterTests
-
 
 
 

@@ -1154,18 +1154,24 @@ public class KotlinMethodSyntaxWriter: IKotlinSyntaxWriter, IMethodSyntaxWriter
                 .Implementation(memberImpl)
                 .ToString();
         } else if (memberKind == MemberKind.TypeOf) {
-            // TODO: Enums
-            bool isEnum = declaringType.IsEnum;
-
-            if (isEnum) {
-                return "// TODO: typeOf for enums";
-            }
-
+            var isEnum = declaringType.IsEnum;
             var isInterface = declaringType.IsInterface;
             var isSupportedInterface = isInterface && !declaringType.IsUnsupportedInterface();
 
-            // Needed because of IDNObjectCompanion but unsupported interfaces don't get that so they don't need the override keyword
-            var isOverride = !isInterface || isSupportedInterface;
+            bool isOverride;
+
+            // Needed because of IDNObjectCompanion but unsupported interfaces don't get that so they don't need the override keyword. Same for Enums.
+            if (isInterface) {
+                if (isSupportedInterface) {
+                    isOverride = true;
+                } else {
+                    isOverride = false;
+                }
+            } else if (isEnum) {
+                isOverride = false;
+            } else {
+                isOverride = true;
+            }
 
             string typeOfTypeName = !returnOrSetterOrEventHandlerType.IsVoid()
                 ? kotlinReturnOrSetterTypeNameWithComment

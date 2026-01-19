@@ -295,4 +295,53 @@ class ArrayTests {
         assertEquals(array[2]?.toKString(), "b")
         assertEquals(array[3]?.toKString(), "c")
     }
+
+    @Test
+    fun testArrayOfEnums() {
+        val tests = Beyond_NET_Sample_ArrayTests()
+        val array = tests.arrayOfEnums
+        val rank = array.rank
+
+        assertEquals(rank, 1)
+
+        fun toSystemDateTimeKind(value: System_Enum): System_DateTimeKind {
+            val rawValue = value.castToInt()
+
+            return System_DateTimeKind(rawValue)
+        }
+
+        fun toSystemEnum(value: System_DateTimeKind): System_Enum {
+            // TODO: There surely is a better way to do this, right?
+            val systemEnumValue = System_Enum.toObject(System_DateTimeKind.typeOf, value.rawValue.toDotNETObject())
+                .castTo(System_Enum)
+
+            return systemEnumValue
+        }
+
+        // Check initial state
+        val value0 = toSystemDateTimeKind(array[0])
+        val value1 = toSystemDateTimeKind(array[1])
+        val value2 = toSystemDateTimeKind(array[2])
+
+        assertEquals(value0, System_DateTimeKind.LOCAL)
+        assertEquals(value1, System_DateTimeKind.UTC)
+        assertEquals(value2, System_DateTimeKind.UNSPECIFIED)
+
+        // Modify it
+        array[0] = toSystemEnum(value2)
+        array[1] = toSystemEnum(value1)
+        array[2] = toSystemEnum(value0)
+
+        tests.arrayOfEnums_set(array)
+        val newArray = tests.arrayOfEnums
+
+        // Check modified state
+        val modValue0 = toSystemDateTimeKind(newArray[0])
+        val modValue1 = toSystemDateTimeKind(newArray[1])
+        val modValue2 = toSystemDateTimeKind(newArray[2])
+
+        assertEquals(modValue0, System_DateTimeKind.UNSPECIFIED)
+        assertEquals(modValue1, System_DateTimeKind.UTC)
+        assertEquals(modValue2, System_DateTimeKind.LOCAL)
+    }
 }
