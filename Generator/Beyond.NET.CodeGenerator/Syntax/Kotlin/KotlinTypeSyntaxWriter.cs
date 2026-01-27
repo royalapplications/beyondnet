@@ -214,7 +214,7 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
 
         string enumCasesString = KotlinEnumClassCase.CasesToString(enumCases);
 
-        var typeOfSyntaxWriter = GetSyntaxWriter(MemberKind.TypeOf, MemberTypes.All);
+        var typeOfSyntaxWriter = GetSyntaxWriter(MemberKind.TypeOf, MemberTypes.All)!;
 
         var typeOfCode = typeOfSyntaxWriter.Write(
             type,
