@@ -1,3 +1,4 @@
+using Beyond.NET.Builder.Android;
 using Beyond.NET.Builder.Apple.Framework;
 using Beyond.NET.Builder.Apple.XCRun;
 using Beyond.NET.Builder.DotNET;
@@ -127,7 +128,17 @@ public class DotNETNativeBuilder
         File.Copy(GeneratedCSharpFilePath, generatedCSharpDestinationFilePath);
         #endregion Copy Material to Temp Dir
 
-        if (swiftBuildResult is not null) {
+        bool hasAppleTargets = swiftBuildResult is not null;
+        bool hasAndroidTargets = Targets.ContainsAnyAndroidTarget();
+
+        if (!hasAppleTargets && !hasAndroidTargets) {
+            throw new Exception("No valid build targets specified. Either Swift build result for Apple targets or Android targets must be provided.");
+        }
+
+        string? appleOutputPath = null;
+        string? androidOutputPath = null;
+
+        if (hasAppleTargets) {
             #region Build for Apple
             #region Prepare File Paths
             const string binDirName = "bin";
@@ -460,18 +471,101 @@ public class DotNETNativeBuilder
                 appleUniversalXCFrameworkFilePath!
             );
 
-            string outputDirectoryPath = appleUniversalBuildPath!;
+            appleOutputPath = appleUniversalBuildPath!;
             #endregion Apple Universal
-
-            return new(
-                tempDirPaths,
-                outputDirectoryPath
-            );
             #endregion Build for Apple
-        } else {
-            // TODO: Currently only apple builds are supported
-            throw new Exception("No swift build result");
         }
+
+        if (hasAndroidTargets) {
+            #region Build for Android
+            #region Prepare File Paths
+            const string binDirName = "bin";
+            const string publishDirName = "publish";
+
+            string? androidARM64BuildDir = Targets.HasFlag(BuildTargets.AndroidARM64) ? $"{binDirName}/{BUILD_CONFIGURATION}/{TargetFramework}/{RuntimeIdentifier.Android_ARM64}/{publishDirName}" : null;
+            string androidBuildDir = $"{binDirName}/{BUILD_CONFIGURATION}/{TargetFramework}/{RuntimeIdentifier.Android_ARM64}/{publishDirName}";
+
+            string? androidARM64TempPath = null;
+            string? androidARM64BuildPath = null;
+
+            if (Targets.HasFlag(BuildTargets.AndroidARM64)) {
+                androidARM64TempPath = Directory.CreateTempSubdirectory(tempDirectoryPrefix + "_Android_ARM64").FullName;
+                tempDirPaths.Add(androidARM64TempPath);
+                Logger.LogDebug($"Created temp directory for Android ARM64 build at \"{androidARM64TempPath}\"");
+
+                FileSystemUtils.CopyDirectoryContents(tempDirectoryPath, androidARM64TempPath, true);
+                androidARM64BuildPath = Path.Combine(androidARM64TempPath, androidARM64BuildDir!);
+            }
+
+            string androidTempPath = Directory.CreateTempSubdirectory(tempDirectoryPrefix + "_Android").FullName;
+            tempDirPaths.Add(androidTempPath);
+            Logger.LogDebug($"Created temp directory for Android build at \"{androidTempPath}\"");
+            string androidBuildPath = Path.Combine(androidTempPath, androidBuildDir);
+            #endregion Prepare File Paths
+
+            #region dotnet publish
+            if (Targets.HasFlag(BuildTargets.AndroidARM64)) {
+                AndroidPublish(androidARM64TempPath!, RuntimeIdentifier.Android_ARM64);
+            }
+            #endregion dotnet publish
+
+            #region Build Android Libraries
+            Directory.CreateDirectory(androidBuildPath);
+
+            var androidBuilder = new Android.AndroidBuilder(
+                ProductName,
+                androidBuildPath,
+                Targets.HasFlag(BuildTargets.AndroidARM64)
+            );
+
+            var androidBuildResult = androidBuilder.Build(
+                androidARM64BuildPath
+            );
+
+            androidOutputPath = androidBuildResult.OutputDirectoryPath;
+            #endregion Build Android Libraries
+            #endregion Build for Android
+        }
+
+        #region Combine Outputs
+        string finalOutputPath;
+
+        if (hasAppleTargets && hasAndroidTargets) {
+            // Both platforms: create a combined output directory
+            string combinedOutputTempPath = Directory.CreateTempSubdirectory(tempDirectoryPrefix + "_Combined_Output").FullName;
+            tempDirPaths.Add(combinedOutputTempPath);
+            Logger.LogDebug($"Created temp directory for combined output at \"{combinedOutputTempPath}\"");
+
+            // Copy Apple output
+            if (appleOutputPath is not null) {
+                string appleDestPath = Path.Combine(combinedOutputTempPath, "apple");
+                Directory.CreateDirectory(appleDestPath);
+                FileSystemUtils.CopyDirectoryContents(appleOutputPath, appleDestPath, true);
+                Logger.LogDebug($"Copied Apple output to \"{appleDestPath}\"");
+            }
+
+            // Copy Android output
+            if (androidOutputPath is not null) {
+                string androidDestPath = Path.Combine(combinedOutputTempPath, "android");
+                Directory.CreateDirectory(androidDestPath);
+                FileSystemUtils.CopyDirectoryContents(androidOutputPath, androidDestPath, true);
+                Logger.LogDebug($"Copied Android output to \"{androidDestPath}\"");
+            }
+
+            finalOutputPath = combinedOutputTempPath;
+        } else if (hasAppleTargets) {
+            // Apple only
+            finalOutputPath = appleOutputPath!;
+        } else {
+            // Android only
+            finalOutputPath = androidOutputPath!;
+        }
+        #endregion Combine Outputs
+
+        return new(
+            tempDirPaths,
+            finalOutputPath
+        );
     }
 
     private void DotNETPublish(
@@ -486,6 +580,21 @@ public class DotNETNativeBuilder
             runtimeIdentifier,
             VERBOSITY_LEVEL,
             null
+        );
+    }
+
+    private void AndroidPublish(
+        string workingDirectory,
+        string runtimeIdentifier
+    )
+    {
+        Logger.LogInformation($"Compiling .NET NativeAOT project for Android in \"{workingDirectory}\" with runtime identifier \"{runtimeIdentifier}\"");
+
+        Android.AndroidPublish.Run(
+            workingDirectory,
+            runtimeIdentifier,
+            BUILD_CONFIGURATION,
+            VERBOSITY_LEVEL
         );
     }
 
