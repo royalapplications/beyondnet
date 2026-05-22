@@ -43,12 +43,14 @@ open class DNObject(handle: Pointer): IDNObject {
     var __destroyMode: DestroyMode = DestroyMode.Normal
 
     init {
+        @Suppress("SENSELESS_COMPARISON")
         require(handle != null) {
             "Cannot initialize DNObject with a null pointer"
         }
     }
 
     protected fun finalize() {
+        @Suppress("SENSELESS_COMPARISON")
         if (__handle == null) {
             return
         }
@@ -587,6 +589,7 @@ fun <T : System_Object> IDNObject.castTo(companion: IDNObjectCompanion<T>): T {
 fun IDNObject.castAs(type: System_Type): System_Object? {
     val __returnValueC = {{jnaClassName}}.DNObjectCastAs(this.__handle, type.__handle)
 
+    @Suppress("SENSELESS_COMPARISON")
     if (__returnValueC == null) {
         return null
     }
@@ -601,6 +604,7 @@ fun <T : System_Object> IDNObject.castAs(companion: IDNObjectCompanion<T>): T? {
 
     val __returnValueC = {{jnaClassName}}.DNObjectCastAs(this.__handle, tTypeOf.__handle)
 
+    @Suppress("SENSELESS_COMPARISON")
     if (__returnValueC == null) {
         return null
     }
