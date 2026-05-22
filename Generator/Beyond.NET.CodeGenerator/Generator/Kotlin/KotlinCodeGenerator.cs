@@ -1,12 +1,10 @@
 using System.Reflection;
-using System.Text;
 
 using Beyond.NET.CodeGenerator.Extensions;
 using Beyond.NET.CodeGenerator.SourceCode;
 using Beyond.NET.CodeGenerator.Syntax;
 using Beyond.NET.CodeGenerator.Syntax.Kotlin;
 using Beyond.NET.CodeGenerator.Syntax.Kotlin.Builders;
-using Beyond.NET.CodeGenerator.Types;
 using Beyond.NET.Core;
 
 namespace Beyond.NET.CodeGenerator.Generator.Kotlin;
@@ -271,6 +269,8 @@ object {{jnaClassName}} {
     private string GetHeaderCode(string package)
     {
         return /*lang=Kt*/$"""
+@file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE", "REDUNDANT_CALL_OF_CONVERSION_METHOD")
+
 package {package}
 
 import com.sun.jna.*
