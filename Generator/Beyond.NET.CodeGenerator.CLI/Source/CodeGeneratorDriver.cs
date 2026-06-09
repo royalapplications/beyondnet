@@ -70,7 +70,7 @@ internal class CodeGeneratorDriver
             BuildConfiguration? buildConfig = Configuration.Build;
 
             bool buildEnabled = false;
-            string? buildTarget = null;
+            string[]? buildTargets = null;
             string? buildProductName = null;
             string? buildProductBundleIdentifier = null;
             string? buildProductOutputPath = null;
@@ -82,12 +82,20 @@ internal class CodeGeneratorDriver
             if (buildConfig is not null) {
                 buildEnabled = true;
 
-                buildTarget = buildConfig.Target;
+                buildTargets = buildConfig.GetAllTargets();
 
-                if (buildTarget != BuildTargets.APPLE_UNIVERSAL &&
-                    buildTarget != BuildTargets.MACOS_UNIVERSAL &&
-                    buildTarget != BuildTargets.IOS_UNIVERSAL) {
-                    throw new Exception($"Only \"{BuildTargets.APPLE_UNIVERSAL}\", \"{BuildTargets.MACOS_UNIVERSAL}\" and \"{BuildTargets.IOS_UNIVERSAL}\" are currently supported as \"{nameof(buildConfig.Target)}\"");
+                if (buildTargets.Length == 0) {
+                    throw new Exception($"At least one build target must be specified in \"{nameof(buildConfig.Target)}\" or \"{nameof(buildConfig.Targets)}\"");
+                }
+
+                // Validate all targets
+                foreach (var target in buildTargets) {
+                    if (target != BuildTargets.APPLE_UNIVERSAL &&
+                        target != BuildTargets.MACOS_UNIVERSAL &&
+                        target != BuildTargets.IOS_UNIVERSAL &&
+                        target != BuildTargets.ANDROID_ARM64) {
+                        throw new Exception($"Build target \"{target}\" is not supported. Supported targets: \"{BuildTargets.APPLE_UNIVERSAL}\", \"{BuildTargets.MACOS_UNIVERSAL}\", \"{BuildTargets.IOS_UNIVERSAL}\", \"{BuildTargets.ANDROID_ARM64}\"");
+                    }
                 }
 
                 var potentialProductName = buildConfig.ProductName;
@@ -419,55 +427,95 @@ internal class CodeGeneratorDriver
 
             #region Build
             if (buildEnabled) {
-                // TODO: This assumes that we're always building for Apple platforms
-                if (string.IsNullOrEmpty(buildProductName) ||
-                    string.IsNullOrEmpty(buildProductBundleIdentifier) ||
-                    string.IsNullOrEmpty(buildProductOutputPath) ||
-                    string.IsNullOrEmpty(cSharpUnmanagedOutputPath) ||
-                    string.IsNullOrEmpty(cOutputPath) ||
-                    string.IsNullOrEmpty(swiftOutputPath) ||
-                    string.IsNullOrEmpty(buildMacOSDeploymentTarget) ||
-                    string.IsNullOrEmpty(buildiOSDeploymentTarget)) {
-                    // We checked all of these above so we shouldn't get here but just in case...
-                    throw new Exception("Invalid build configuration");
+                // Determine which platforms are being targeted
+                bool hasAndroidTargets = buildTargets!.Any(t =>
+                    t == BuildTargets.ANDROID_ARM64);
+
+                bool hasAppleTargets = buildTargets!.Any(t =>
+                    t == BuildTargets.APPLE_UNIVERSAL ||
+                    t == BuildTargets.MACOS_UNIVERSAL ||
+                    t == BuildTargets.IOS_UNIVERSAL);
+
+                // Validate required configuration for each platform
+                if (hasAppleTargets) {
+                    // Apple builds require Swift
+                    if (string.IsNullOrEmpty(buildProductName) ||
+                        string.IsNullOrEmpty(buildProductBundleIdentifier) ||
+                        string.IsNullOrEmpty(buildProductOutputPath) ||
+                        string.IsNullOrEmpty(cSharpUnmanagedOutputPath) ||
+                        string.IsNullOrEmpty(cOutputPath) ||
+                        string.IsNullOrEmpty(swiftOutputPath) ||
+                        string.IsNullOrEmpty(buildMacOSDeploymentTarget) ||
+                        string.IsNullOrEmpty(buildiOSDeploymentTarget)) {
+                        throw new Exception("Invalid build configuration for Apple platforms");
+                    }
                 }
 
-                Beyond.NET.Builder.BuildTargets builderBuildTargets;
-
-                if (buildTarget == BuildTargets.APPLE_UNIVERSAL) {
-                    builderBuildTargets = Beyond.NET.Builder.BuildTargets.AppleUniversal;
-                } else if (buildTarget == BuildTargets.MACOS_UNIVERSAL) {
-                    builderBuildTargets = Beyond.NET.Builder.BuildTargets.MacOSUniversal;
-                } else if (buildTarget == BuildTargets.IOS_UNIVERSAL) {
-                    builderBuildTargets = Beyond.NET.Builder.BuildTargets.iOSUniversal;
-                } else {
-                    throw new Exception($"Build Target \"{buildTarget}\" is not a supported target for the SwiftBuilder");
+                if (hasAndroidTargets) {
+                    // Android builds don't require Swift but need basic config
+                    if (string.IsNullOrEmpty(buildProductName) ||
+                        string.IsNullOrEmpty(buildProductOutputPath) ||
+                        string.IsNullOrEmpty(cSharpUnmanagedOutputPath) ||
+                        string.IsNullOrEmpty(cOutputPath)) {
+                        throw new Exception("Invalid build configuration for Android platforms");
+                    }
                 }
 
-                SwiftBuilder.BuilderConfiguration config = new(
-                    builderBuildTargets,
-                    buildProductName,
-                    buildProductBundleIdentifier,
-                    cOutputPath,
-                    swiftOutputPath,
-                    buildMacOSDeploymentTarget,
-                    buildiOSDeploymentTarget,
-                    !disableParallelBuild
-                );
+                // Convert all targets to builder flags
+                Beyond.NET.Builder.BuildTargets builderBuildTargets = Beyond.NET.Builder.BuildTargets.None;
 
-                Logger.LogInformation("Building Swift bindings");
-
-                SwiftBuilder swiftBuilder = new(config);
-
-                var swiftBuildResult = swiftBuilder.Build();
-
-                if (!Directory.Exists(swiftBuildResult.OutputRootPath)) {
-                    throw new Exception($"Swift product directory does not exist at \"{swiftBuildResult.OutputRootPath}\"");
+                foreach (var target in buildTargets!) {
+                    if (target == BuildTargets.APPLE_UNIVERSAL) {
+                        builderBuildTargets |= Beyond.NET.Builder.BuildTargets.AppleUniversal;
+                    } else if (target == BuildTargets.MACOS_UNIVERSAL) {
+                        builderBuildTargets |= Beyond.NET.Builder.BuildTargets.MacOSUniversal;
+                    } else if (target == BuildTargets.IOS_UNIVERSAL) {
+                        builderBuildTargets |= Beyond.NET.Builder.BuildTargets.iOSUniversal;
+                    } else if (target == BuildTargets.ANDROID_ARM64) {
+                        builderBuildTargets |= Beyond.NET.Builder.BuildTargets.AndroidARM64;
+                    }
                 }
 
-                tempDirPaths.Add(swiftBuildResult.OutputRootPath);
+                if (builderBuildTargets == Beyond.NET.Builder.BuildTargets.None) {
+                    throw new Exception("No valid build targets were specified");
+                }
 
-                Logger.LogInformation($"Swift bindings built at \"{swiftBuildResult.OutputRootPath}\"");
+                Logger.LogInformation($"Building for targets: {string.Join(", ", buildTargets!)}");
+
+                SwiftBuilder.BuildResult? swiftBuildResult = null;
+
+                if (hasAppleTargets) {
+                    // Extract only Apple targets for Swift builder
+                    Beyond.NET.Builder.BuildTargets appleTargets = builderBuildTargets &
+                        (Beyond.NET.Builder.BuildTargets.AppleUniversal |
+                         Beyond.NET.Builder.BuildTargets.MacOSUniversal |
+                         Beyond.NET.Builder.BuildTargets.iOSUniversal);
+
+                    SwiftBuilder.BuilderConfiguration config = new(
+                        appleTargets,
+                        buildProductName!,
+                        buildProductBundleIdentifier!,
+                        cOutputPath!,
+                        swiftOutputPath!,
+                        buildMacOSDeploymentTarget!,
+                        buildiOSDeploymentTarget!,
+                        !disableParallelBuild
+                    );
+
+                    Logger.LogInformation("Building Swift bindings");
+
+                    SwiftBuilder swiftBuilder = new(config);
+
+                    swiftBuildResult = swiftBuilder.Build();
+
+                    if (!Directory.Exists(swiftBuildResult.OutputRootPath)) {
+                        throw new Exception($"Swift product directory does not exist at \"{swiftBuildResult.OutputRootPath}\"");
+                    }
+
+                    tempDirPaths.Add(swiftBuildResult.OutputRootPath);
+
+                    Logger.LogInformation($"Swift bindings built at \"{swiftBuildResult.OutputRootPath}\"");
+                }
 
                 Logger.LogInformation("Building .NET Native stuff");
 
@@ -478,13 +526,13 @@ internal class CodeGeneratorDriver
                 var dnNativeBuilder = new DotNETNativeBuilder(
                     builderBuildTargets,
                     dotNetTargetFramework,
-                    buildProductName,
-                    buildProductBundleIdentifier,
+                    buildProductName!,
+                    buildProductBundleIdentifier ?? string.Empty,
                     assemblyPath,
                     assemblyReferences,
                     Configuration.Build?.NoWarn ?? [],
                     !disableStripDotNETSymbols,
-                    cSharpUnmanagedOutputPath,
+                    cSharpUnmanagedOutputPath!,
                     !disableParallelBuild,
                     swiftBuildResult
                 );
