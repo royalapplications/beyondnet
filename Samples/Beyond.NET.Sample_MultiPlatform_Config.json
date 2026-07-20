@@ -1,0 +1,25 @@
+{
+  "AssemblyPath": "Beyond.NET.Sample.Managed/bin/Release/Beyond.NET.Sample.Managed.dll",
+  "Build": {
+    "Targets": [
+      "ios-universal",
+      "android-arm64"
+    ],
+    "ProductName": "BeyondDotNETSample",
+    "ProductOutputPath": "Beyond.NET.Sample.MultiPlatform/output",
+    "MacOSDeploymentTarget": "13.0",
+    "iOSDeploymentTarget": "16.0"
+  },
+  "CSharpUnmanagedOutputPath": "Beyond.NET.Sample.Native/Generated.cs",
+  "COutputPath": "Beyond.NET.Sample.C/Generated.h",
+  "SwiftOutputPath": "Beyond.NET.Sample.Swift/Generated.swift",
+  "KotlinOutputPath": "Beyond.NET.Sample.Android/app/src/main/java/com/example/beyondnetsampleandroid/Generated.kt",
+  "KotlinPackageName": "com.example.beyondnetsampleandroid",
+  "KotlinNativeLibraryName": "BeyondDotNETSample",
+  "EmitUnsupported": false,
+  "GenerateTypeCheckedDestroyMethods": true,
+  "EnableGenericsSupport": true,
+  "DoNotGenerateDocumentation": false,
+  "DoNotDeleteTemporaryDirectories": false
+}
+
