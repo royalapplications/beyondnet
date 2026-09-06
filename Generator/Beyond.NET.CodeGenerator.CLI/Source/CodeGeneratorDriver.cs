@@ -370,12 +370,18 @@ internal class CodeGeneratorDriver
             // If the user doesn't provide output paths for generated code files but build is enabled, we can use temporary paths
             string? temporaryGeneratedCodeDirPath = null;
 
-            // TODO: This assumes that we're always building for Apple platforms
+            bool buildRequiresSwiftOutput = buildEnabled &&
+                buildTargets is not null &&
+                buildTargets.Any(t =>
+                    t == BuildTargets.APPLE_UNIVERSAL ||
+                    t == BuildTargets.MACOS_UNIVERSAL ||
+                    t == BuildTargets.IOS_UNIVERSAL);
+
             if (buildEnabled &&
                 !string.IsNullOrEmpty(buildProductName) &&
                 (string.IsNullOrEmpty(cSharpUnmanagedOutputPath) ||
                  string.IsNullOrEmpty(cOutputPath) ||
-                 string.IsNullOrEmpty(swiftOutputPath))) {
+                 (buildRequiresSwiftOutput && string.IsNullOrEmpty(swiftOutputPath)))) {
                 string sanitizedProductName = buildProductName.SanitizedProductNameForTempDirectory();
                 string tempDirectoryPrefix = $"BeyondNETCodeGenerator_{sanitizedProductName}_";
 
@@ -391,7 +397,7 @@ internal class CodeGeneratorDriver
                     cOutputPath = Path.Combine(temporaryGeneratedCodeDirPath, "Generated_C.h");
                 }
 
-                if (string.IsNullOrEmpty(swiftOutputPath)) {
+                if (buildRequiresSwiftOutput && string.IsNullOrEmpty(swiftOutputPath)) {
                     swiftOutputPath = Path.Combine(temporaryGeneratedCodeDirPath, "Generated_Swift.swift");
                 }
 

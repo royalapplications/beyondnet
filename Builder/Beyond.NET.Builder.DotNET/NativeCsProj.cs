@@ -234,6 +234,18 @@ public class NativeCsProj
     </When>
   </Choose>
 
+  <!-- TODO: Temporary workarounds for Android support -->
+  <Choose>
+    <When Condition="$(RuntimeIdentifier.StartsWith('linux-bionic'))">
+      <PropertyGroup>
+        <PublishAotUsingRuntimePack>true</PublishAotUsingRuntimePack>
+      </PropertyGroup>
+      <ItemGroup>
+        <LinkerArg Include="-Wl,--undefined-version" />
+      </ItemGroup>
+    </When>
+  </Choose>
+
   <!-- Item Excludes -->
   <PropertyGroup>
     <DefaultItemExcludes>$(DefaultItemExcludes);.gitignore;*.sln.DotSettings;</DefaultItemExcludes>

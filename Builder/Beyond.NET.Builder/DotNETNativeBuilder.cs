@@ -113,6 +113,8 @@ public class DotNETNativeBuilder
         #endregion Create Temp Dir
 
         #region Copy Material to Temp Dir
+        // Materialize the temporary NativeAOT project used for both Apple and Android builds:
+        // a generated csproj plus the generated unmanaged C# bindings source file.
         string nativeCsProjFileName = $"{ProductName}.csproj";
         string nativeCsProjFilePath = Path.Combine(tempDirectoryPath, nativeCsProjFileName);
 
@@ -491,7 +493,7 @@ public class DotNETNativeBuilder
             if (Targets.HasFlag(BuildTargets.AndroidARM64)) {
                 androidARM64TempPath = Directory.CreateTempSubdirectory(tempDirectoryPrefix + "_Android_ARM64").FullName;
                 tempDirPaths.Add(androidARM64TempPath);
-                Logger.LogDebug($"Created temp directory for Android ARM64 build at \"{androidARM64TempPath}\"");
+                Logger.LogDebug($"Created temp directory for Android ARM64 NativeAOT project at \"{androidARM64TempPath}\"");
 
                 FileSystemUtils.CopyDirectoryContents(tempDirectoryPath, androidARM64TempPath, true);
                 androidARM64BuildPath = Path.Combine(androidARM64TempPath, androidARM64BuildDir!);
