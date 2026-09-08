@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		52C414503050547E00BC17CA /* WebProxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C4144F3050547800BC17CA /* WebProxyTests.swift */; };
 		E70361632A6A8126000EF63C /* TestRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70361622A6A8126000EF63C /* TestRecordTests.swift */; };
 		E703CBBD2DF0829A007F2E91 /* EnumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E703CBBC2DF08298007F2E91 /* EnumTests.swift */; };
 		E705F33B2B0E024A00230720 /* NullabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705F33A2B0E024A00230720 /* NullabilityTests.swift */; };
@@ -102,6 +103,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		52C4144F3050547800BC17CA /* WebProxyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebProxyTests.swift; sourceTree = "<group>"; };
 		E70361622A6A8126000EF63C /* TestRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRecordTests.swift; sourceTree = "<group>"; };
 		E703CBBC2DF08298007F2E91 /* EnumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumTests.swift; sourceTree = "<group>"; };
 		E705F33A2B0E024A00230720 /* NullabilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullabilityTests.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 		E7C8CF0329C1FA7B00C4230F /* TestClasses */ = {
 			isa = PBXGroup;
 			children = (
+				52C4144F3050547800BC17CA /* WebProxyTests.swift */,
 				E703CBBC2DF08298007F2E91 /* EnumTests.swift */,
 				E7A3E6EB29EEEB0800447BF2 /* TestClassesTests.swift */,
 				E7A3E6ED29EEEDB100447BF2 /* PersonTests.swift */,
@@ -458,6 +461,7 @@
 				E7FBD6A52B0365A3006BDB53 /* SpanTestTests.swift in Sources */,
 				E790871829EE8591001F776F /* PrimitivesTests.swift in Sources */,
 				E7B905DA2A865C6000B5DC75 /* DelegateTestTests.swift in Sources */,
+				52C414503050547E00BC17CA /* WebProxyTests.swift in Sources */,
 				E7C16FCB2B21D2C10021DCB3 /* SystemSecurityCryptographyTests.swift in Sources */,
 				E790871E29EECA06001F776F /* SystemArrayTests.swift in Sources */,
 				E7ABDE632C33E4F3004D3C08 /* InterfaceTests.swift in Sources */,

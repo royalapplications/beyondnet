@@ -1,5 +1,5 @@
-// Number of generated types: 1650
-// Number of generated members: 8014
+// Number of generated types: 1653
+// Number of generated members: 8054
 
 // MARK: - BEGIN Header
 import Foundation
@@ -137716,6 +137716,1268 @@ public class Beyond_NET_Sample_Transformer /* Beyond.NET.Sample.Transformer */: 
 }
 
 
+public class Beyond_NET_Sample_WebProxyTests /* Beyond.NET.Sample.WebProxyTests */: System_Object {
+	public override class var typeName: String { get {
+		"WebProxyTests"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"Beyond.NET.Sample.WebProxyTests"
+	}}
+
+	public class func createWebProxy() throws -> System_Net_WebProxy /* System.Net.WebProxy */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = Beyond_NET_Sample_WebProxyTests_CreateWebProxy(&__exceptionC)
+		
+		let __returnValue = System_Net_WebProxy(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public convenience init() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = Beyond_NET_Sample_WebProxyTests_Create_1(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: Beyond_NET_Sample_WebProxyTests_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		Beyond_NET_Sample_WebProxyTests_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Contains HTTP proxy settings for the System.Net.Http.HttpClient class.
+public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, System_Net_IWebProxy, System_Runtime_Serialization_ISerializable {
+	public override class var typeName: String { get {
+		"WebProxy"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Net.WebProxy"
+	}}
+
+	/// Returns the proxied URI for a request.
+	/// - Parameter destination: The System.Uri instance of the requested Internet resource.
+	/// - Throws: System.ArgumentNullException: The destination parameter is null.
+	/// - Returns: The System.Uri instance of the Internet resource, if the resource is on the bypass list; otherwise, the System.Uri instance of the proxy.
+	public func getProxy(_ destination: System_Uri /* System.Uri */) throws -> System_Uri? /* System.Uri */ {
+		let destinationC = destination.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_WebProxy_GetProxy(self.__handle, destinationC, &__exceptionC)
+		
+		let __returnValue = System_Uri(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Indicates whether to use the proxy server for the specified host.
+	/// - Parameter host: The System.Uri instance of the host to check for proxy use.
+	/// - Throws: System.ArgumentNullException: The host parameter is null.
+	/// - Returns: true if the proxy server should not be used for host; otherwise, false.
+	public func isBypassed(_ host: System_Uri /* System.Uri */) throws -> Bool /* System.Boolean */ {
+		let hostC = host.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_WebProxy_IsBypassed(self.__handle, hostC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Reads the Internet options nondynamic proxy settings.
+	/// - Throws: System.PlatformNotSupportedException: On .NET Core.
+	/// - Returns: A System.Net.WebProxy instance that contains the nondynamic proxy settings from Internet options.
+	public class func getDefaultProxy() throws -> System_Net_WebProxy /* System.Net.WebProxy */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_WebProxy_GetDefaultProxy(&__exceptionC)
+		
+		let __returnValue = System_Net_WebProxy(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Initializes an empty instance of the System.Net.WebProxy class.
+	public convenience init() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_WebProxy_Create(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Net.WebProxy class from the specified System.Uri instance.
+	/// - Parameter Address: A System.Uri instance that contains the address of the proxy server.
+	public convenience init(_ Address: System_Uri? /* System.Uri */) throws {
+		let AddressC = Address?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_WebProxy_Create_1(AddressC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Net.WebProxy class with the System.Uri instance and bypass setting.
+	/// - Parameter Address: A System.Uri instance that contains the address of the proxy server.
+	/// - Parameter BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
+	public convenience init(_ Address: System_Uri? /* System.Uri */, _ BypassOnLocal: Bool /* System.Boolean */) throws {
+		let AddressC = Address?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_WebProxy_Create_2(AddressC, BypassOnLocal, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Net.WebProxy class with the specified System.Uri instance, bypass setting, and list of URIs to bypass.
+	/// - Parameter Address: A System.Uri instance that contains the address of the proxy server.
+	/// - Parameter BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
+	/// - Parameter BypassList: An array of regular expression strings that contains the URIs of the servers to bypass.
+	public convenience init(_ Address: System_Uri? /* System.Uri */, _ BypassOnLocal: Bool /* System.Boolean */, _ BypassList: DNArray<System_String>? /* System.String[] */) throws {
+		let AddressC = Address?.__handle
+		let BypassListC = BypassList?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_WebProxy_Create_3(AddressC, BypassOnLocal, BypassListC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Net.WebProxy class with the specified System.Uri instance, bypass setting, list of URIs to bypass, and credentials.
+	/// - Parameter Address: A System.Uri instance that contains the address of the proxy server.
+	/// - Parameter BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
+	/// - Parameter BypassList: An array of regular expression strings that contains the URIs of the servers to bypass.
+	/// - Parameter Credentials: An System.Net.ICredentials instance to submit to the proxy server for authentication.
+	public convenience init(_ Address: System_Uri? /* System.Uri */, _ BypassOnLocal: Bool /* System.Boolean */, _ BypassList: DNArray<System_String>? /* System.String[] */, _ Credentials: System_Net_ICredentials? /* System.Net.ICredentials */) throws {
+		let AddressC = Address?.__handle
+		let BypassListC = BypassList?.__handle
+		let CredentialsC = Credentials?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_WebProxy_Create_4(AddressC, BypassOnLocal, BypassListC, CredentialsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Net.WebProxy class with the specified host and port number.
+	/// - Parameter Host: The name of the proxy host.
+	/// - Parameter Port: The port number on Host to use.
+	/// - Throws: System.UriFormatException: The URI formed by combining Host and Port is not a valid URI.
+	public convenience init(_ Host: System_String /* System.String */, _ Port: Int32 /* System.Int32 */) throws {
+		let HostC = Host.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_WebProxy_Create_5(HostC, Port, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Net.WebProxy class with the specified URI.
+	/// - Parameter Address: The URI of the proxy server.
+	/// - Throws: System.UriFormatException: Address is an invalid URI.
+	public convenience init(_ Address: System_String? /* System.String */) throws {
+		let AddressC = Address?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_WebProxy_Create_6(AddressC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Net.WebProxy class with the specified URI and bypass setting.
+	/// - Parameter Address: The URI of the proxy server.
+	/// - Parameter BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
+	/// - Throws: System.UriFormatException: Address is an invalid URI.
+	public convenience init(_ Address: System_String? /* System.String */, _ BypassOnLocal: Bool /* System.Boolean */) throws {
+		let AddressC = Address?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_WebProxy_Create_7(AddressC, BypassOnLocal, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Net.WebProxy class with the specified URI, bypass setting, and list of URIs to bypass.
+	/// - Parameter Address: The URI of the proxy server.
+	/// - Parameter BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
+	/// - Parameter BypassList: An array of regular expression strings that contain the URIs of the servers to bypass.
+	/// - Throws: System.UriFormatException: Address is an invalid URI.
+	public convenience init(_ Address: System_String? /* System.String */, _ BypassOnLocal: Bool /* System.Boolean */, _ BypassList: DNArray<System_String>? /* System.String[] */) throws {
+		let AddressC = Address?.__handle
+		let BypassListC = BypassList?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_WebProxy_Create_8(AddressC, BypassOnLocal, BypassListC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Net.WebProxy class with the specified URI, bypass setting, list of URIs to bypass, and credentials.
+	/// - Parameter Address: The URI of the proxy server.
+	/// - Parameter BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
+	/// - Parameter BypassList: An array of regular expression strings that contains the URIs of the servers to bypass.
+	/// - Parameter Credentials: An System.Net.ICredentials instance to submit to the proxy server for authentication.
+	/// - Throws: System.UriFormatException: Address is an invalid URI.
+	public convenience init(_ Address: System_String? /* System.String */, _ BypassOnLocal: Bool /* System.Boolean */, _ BypassList: DNArray<System_String>? /* System.String[] */, _ Credentials: System_Net_ICredentials? /* System.Net.ICredentials */) throws {
+		let AddressC = Address?.__handle
+		let BypassListC = BypassList?.__handle
+		let CredentialsC = Credentials?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_WebProxy_Create_9(AddressC, BypassOnLocal, BypassListC, CredentialsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Gets or sets the address of the proxy server.
+	/// - Returns: A System.Uri instance that contains the address of the proxy server.
+	public var address: System_Uri? /* System.Uri */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_WebProxy_Address_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Uri(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	/// Gets or sets the address of the proxy server.
+	/// - Returns: A System.Uri instance that contains the address of the proxy server.
+	public func address_set(_ value: System_Uri? /* System.Uri */) throws {
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Net_WebProxy_Address_Set(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	/// Gets or sets a value that indicates whether to bypass the proxy server for local addresses.
+	/// - Returns: true to bypass the proxy server for local addresses; otherwise, false. The default value is false.
+	public var bypassProxyOnLocal: Bool /* System.Boolean */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_WebProxy_BypassProxyOnLocal_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	/// Gets or sets a value that indicates whether to bypass the proxy server for local addresses.
+	/// - Returns: true to bypass the proxy server for local addresses; otherwise, false. The default value is false.
+	public func bypassProxyOnLocal_set(_ value: Bool /* System.Boolean */) throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Net_WebProxy_BypassProxyOnLocal_Set(self.__handle, value, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	/// Gets or sets an array of addresses that do not use the proxy server.
+	/// - Returns: An array that contains a list of regular expressions that describe URIs that do not use the proxy server when accessed.
+	public var bypassList: DNArray<System_String> /* System.String[] */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_WebProxy_BypassList_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_String>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	/// Gets or sets an array of addresses that do not use the proxy server.
+	/// - Returns: An array that contains a list of regular expressions that describe URIs that do not use the proxy server when accessed.
+	public func bypassList_set(_ value: DNArray<System_String>? /* System.String[] */) throws {
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Net_WebProxy_BypassList_Set(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	/// Gets a list of addresses that do not use the proxy server.
+	/// - Returns: An System.Collections.ArrayList that contains a list of System.Net.WebProxy.BypassList arrays that represents URIs that do not use the proxy server when accessed.
+	public var bypassArrayList: System_Collections_ArrayList /* System.Collections.ArrayList */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_WebProxy_BypassArrayList_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Collections_ArrayList(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets or sets the credentials to submit to the proxy server for authentication.
+	/// - Throws: System.InvalidOperationException: You attempted to set this property when the System.Net.WebProxy.UseDefaultCredentials property was set to true.
+	/// - Returns: An System.Net.ICredentials instance that contains the credentials to submit to the proxy server for authentication.
+	public var credentials: System_Net_ICredentials? /* System.Net.ICredentials */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_WebProxy_Credentials_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Net_ICredentials_DNInterface(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	/// Gets or sets the credentials to submit to the proxy server for authentication.
+	/// - Throws: System.InvalidOperationException: You attempted to set this property when the System.Net.WebProxy.UseDefaultCredentials property was set to true.
+	/// - Returns: An System.Net.ICredentials instance that contains the credentials to submit to the proxy server for authentication.
+	public func credentials_set(_ value: System_Net_ICredentials? /* System.Net.ICredentials */) throws {
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Net_WebProxy_Credentials_Set(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	/// Gets or sets a System.Boolean value that controls whether the System.Net.CredentialCache.DefaultCredentials are sent with requests.
+	/// - Throws: System.InvalidOperationException: You attempted to set this property when the System.Net.WebProxy.Credentials property contains credentials other than the default credentials.
+	/// - Returns: true if the default credentials are used; otherwise, false. The default value is false.
+	public var useDefaultCredentials: Bool /* System.Boolean */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_WebProxy_UseDefaultCredentials_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	/// Gets or sets a System.Boolean value that controls whether the System.Net.CredentialCache.DefaultCredentials are sent with requests.
+	/// - Throws: System.InvalidOperationException: You attempted to set this property when the System.Net.WebProxy.Credentials property contains credentials other than the default credentials.
+	/// - Returns: true if the default credentials are used; otherwise, false. The default value is false.
+	public func useDefaultCredentials_set(_ value: Bool /* System.Boolean */) throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Net_WebProxy_UseDefaultCredentials_Set(self.__handle, value, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Net_WebProxy_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Net_WebProxy_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Provides the base interface for implementation of proxy access for the System.Net.Http.HttpClient class.
+public protocol System_Net_IWebProxy /* System.Net.IWebProxy */: DNObject {
+	/// Returns the URI of a proxy.
+	/// - Parameter destination: A System.Uri that specifies the requested Internet resource.
+	/// - Returns: A System.Uri instance that contains the URI of the proxy used to contact destination; otherwise null or destination itself.
+	func getProxy(_ destination: System_Uri /* System.Uri */) throws -> System_Uri? /* System.Uri */
+	
+	/// Indicates that the proxy should not be used for the specified host.
+	/// - Parameter host: The System.Uri of the host to check for proxy use.
+	/// - Returns: true if the proxy server should not be used for host; otherwise, false.
+	func isBypassed(_ host: System_Uri /* System.Uri */) throws -> Bool /* System.Boolean */
+	
+	/// The credentials to submit to the proxy server for authentication.
+	/// - Returns: An System.Net.ICredentials instance that contains the credentials that are needed to authenticate a request to the proxy server.
+	var credentials: System_Net_ICredentials? /* System.Net.ICredentials */ { get throws }
+	/// The credentials to submit to the proxy server for authentication.
+	/// - Returns: An System.Net.ICredentials instance that contains the credentials that are needed to authenticate a request to the proxy server.
+	func credentials_set(_ value: System_Net_ICredentials? /* System.Net.ICredentials */) throws
+	
+	
+	
+}
+
+
+/// Provides the base interface for implementation of proxy access for the System.Net.Http.HttpClient class.
+extension System_Net_IWebProxy /* System.Net.IWebProxy */ {
+	/// Returns the URI of a proxy.
+	/// - Parameter destination: A System.Uri that specifies the requested Internet resource.
+	/// - Returns: A System.Uri instance that contains the URI of the proxy used to contact destination; otherwise null or destination itself.
+	public func getProxy(_ destination: System_Uri /* System.Uri */) throws -> System_Uri? /* System.Uri */ {
+		let destinationC = destination.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_IWebProxy_GetProxy(self.__handle, destinationC, &__exceptionC)
+		
+		let __returnValue = System_Uri(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Indicates that the proxy should not be used for the specified host.
+	/// - Parameter host: The System.Uri of the host to check for proxy use.
+	/// - Returns: true if the proxy server should not be used for host; otherwise, false.
+	public func isBypassed(_ host: System_Uri /* System.Uri */) throws -> Bool /* System.Boolean */ {
+		let hostC = host.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_IWebProxy_IsBypassed(self.__handle, hostC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// The credentials to submit to the proxy server for authentication.
+	/// - Returns: An System.Net.ICredentials instance that contains the credentials that are needed to authenticate a request to the proxy server.
+	public var credentials: System_Net_ICredentials? /* System.Net.ICredentials */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_IWebProxy_Credentials_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Net_ICredentials_DNInterface(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	/// The credentials to submit to the proxy server for authentication.
+	/// - Returns: An System.Net.ICredentials instance that contains the credentials that are needed to authenticate a request to the proxy server.
+	public func credentials_set(_ value: System_Net_ICredentials? /* System.Net.ICredentials */) throws {
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Net_IWebProxy_Credentials_Set(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	
+}
+
+
+/// Provides the base interface for implementation of proxy access for the System.Net.Http.HttpClient class.
+public class System_Net_IWebProxy_DNInterface /* System.Net.IWebProxy */: DNObject, System_Net_IWebProxy {
+	public override class var typeName: String { get {
+		"IWebProxy"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Net.IWebProxy"
+	}}
+
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Net_IWebProxy_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Net_IWebProxy_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Provides the base authentication interface for retrieving credentials for Web client authentication.
+public protocol System_Net_ICredentials /* System.Net.ICredentials */: DNObject {
+	/// Returns a System.Net.NetworkCredential object that is associated with the specified URI, and authentication type.
+	/// - Parameter uri: The System.Uri that the client is providing authentication for.
+	/// - Parameter authType: The type of authentication, as defined in the System.Net.IAuthenticationModule.AuthenticationType property.
+	/// - Returns: The System.Net.NetworkCredential that is associated with the specified URI and authentication type, or, if no credentials are available, null.
+	func getCredential(_ uri: System_Uri /* System.Uri */, _ authType: System_String /* System.String */) throws -> System_Net_NetworkCredential? /* System.Net.NetworkCredential */
+	
+	
+}
+
+
+/// Provides the base authentication interface for retrieving credentials for Web client authentication.
+extension System_Net_ICredentials /* System.Net.ICredentials */ {
+	/// Returns a System.Net.NetworkCredential object that is associated with the specified URI, and authentication type.
+	/// - Parameter uri: The System.Uri that the client is providing authentication for.
+	/// - Parameter authType: The type of authentication, as defined in the System.Net.IAuthenticationModule.AuthenticationType property.
+	/// - Returns: The System.Net.NetworkCredential that is associated with the specified URI and authentication type, or, if no credentials are available, null.
+	public func getCredential(_ uri: System_Uri /* System.Uri */, _ authType: System_String /* System.String */) throws -> System_Net_NetworkCredential? /* System.Net.NetworkCredential */ {
+		let uriC = uri.__handle
+		let authTypeC = authType.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_ICredentials_GetCredential(self.__handle, uriC, authTypeC, &__exceptionC)
+		
+		let __returnValue = System_Net_NetworkCredential(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+}
+
+
+/// Provides the base authentication interface for retrieving credentials for Web client authentication.
+public class System_Net_ICredentials_DNInterface /* System.Net.ICredentials */: DNObject, System_Net_ICredentials {
+	public override class var typeName: String { get {
+		"ICredentials"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Net.ICredentials"
+	}}
+
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Net_ICredentials_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Net_ICredentials_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Provides credentials for password-based authentication schemes such as basic, digest, NTLM, and Kerberos authentication.
+public class System_Net_NetworkCredential /* System.Net.NetworkCredential */: System_Object, System_Net_ICredentials, System_Net_ICredentialsByHost {
+	public override class var typeName: String { get {
+		"NetworkCredential"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Net.NetworkCredential"
+	}}
+
+	/// Returns an instance of the System.Net.NetworkCredential class for the specified Uniform Resource Identifier (URI) and authentication type.
+	/// - Parameter uri: The URI that the client provides authentication for.
+	/// - Returns: A System.Net.NetworkCredential object.
+	public func getCredential(_ uri: System_Uri? /* System.Uri */, _ authenticationType: System_String? /* System.String */) throws -> System_Net_NetworkCredential /* System.Net.NetworkCredential */ {
+		let uriC = uri?.__handle
+		let authenticationTypeC = authenticationType?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_NetworkCredential_GetCredential(self.__handle, uriC, authenticationTypeC, &__exceptionC)
+		
+		let __returnValue = System_Net_NetworkCredential(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns an instance of the System.Net.NetworkCredential class for the specified host, port, and authentication type.
+	/// - Parameter host: The host computer that authenticates the client.
+	/// - Parameter port: The port on the host that the client communicates with.
+	/// - Parameter authenticationType: The type of authentication requested, as defined in the System.Net.IAuthenticationModule.AuthenticationType property.
+	/// - Returns: A System.Net.NetworkCredential for the specified host, port, and authentication protocol, or null if there are no credentials available for the specified host, port, and authentication protocol.
+	public func getCredential(_ host: System_String? /* System.String */, _ port: Int32 /* System.Int32 */, _ authenticationType: System_String? /* System.String */) throws -> System_Net_NetworkCredential /* System.Net.NetworkCredential */ {
+		let hostC = host?.__handle
+		let authenticationTypeC = authenticationType?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_NetworkCredential_GetCredential_1(self.__handle, hostC, port, authenticationTypeC, &__exceptionC)
+		
+		let __returnValue = System_Net_NetworkCredential(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Initializes a new instance of the System.Net.NetworkCredential class.
+	public convenience init() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_NetworkCredential_Create(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Net.NetworkCredential class with the specified user name and password.
+	/// - Parameter userName: The user name associated with the credentials.
+	/// - Parameter password: The password for the user name associated with the credentials.
+	public convenience init(_ userName: System_String? /* System.String */, _ password: System_String? /* System.String */) throws {
+		let userNameC = userName?.__handle
+		let passwordC = password?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_NetworkCredential_Create_1(userNameC, passwordC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Net.NetworkCredential class with the specified user name, password, and domain.
+	/// - Parameter userName: The user name associated with the credentials.
+	/// - Parameter password: The password for the user name associated with the credentials.
+	/// - Parameter domain: The domain associated with these credentials.
+	public convenience init(_ userName: System_String? /* System.String */, _ password: System_String? /* System.String */, _ domain: System_String? /* System.String */) throws {
+		let userNameC = userName?.__handle
+		let passwordC = password?.__handle
+		let domainC = domain?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_NetworkCredential_Create_2(userNameC, passwordC, domainC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Net.NetworkCredential class with the specified user name and password.
+	/// - Parameter userName: The user name associated with the credentials.
+	/// - Parameter password: The password for the user name associated with the credentials.
+	/// - Throws: System.NotSupportedException: The System.Security.SecureString class is not supported on this platform.
+	public convenience init(_ userName: System_String? /* System.String */, _ password: System_Security_SecureString? /* System.Security.SecureString */) throws {
+		let userNameC = userName?.__handle
+		let passwordC = password?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_NetworkCredential_Create_3(userNameC, passwordC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Net.NetworkCredential class with the specified user name, password, and domain.
+	/// - Parameter userName: The user name associated with the credentials.
+	/// - Parameter password: The password for the user name associated with the credentials.
+	/// - Parameter domain: The domain associated with these credentials.
+	/// - Throws: System.NotSupportedException: The System.Security.SecureString class is not supported on this platform.
+	public convenience init(_ userName: System_String? /* System.String */, _ password: System_Security_SecureString? /* System.Security.SecureString */, _ domain: System_String? /* System.String */) throws {
+		let userNameC = userName?.__handle
+		let passwordC = password?.__handle
+		let domainC = domain?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_NetworkCredential_Create_4(userNameC, passwordC, domainC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Gets or sets the user name associated with the credentials.
+	/// - Returns: The user name associated with the credentials.
+	public var userName: System_String /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_NetworkCredential_UserName_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	/// Gets or sets the user name associated with the credentials.
+	/// - Returns: The user name associated with the credentials.
+	public func userName_set(_ value: System_String? /* System.String */) throws {
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Net_NetworkCredential_UserName_Set(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	/// Gets or sets the password for the user name associated with the credentials.
+	/// - Returns: The password associated with the credentials. If this System.Net.NetworkCredential instance was initialized with the password parameter set to null, then the System.Net.NetworkCredential.Password property will return an empty string.
+	public var password: System_String /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_NetworkCredential_Password_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	/// Gets or sets the password for the user name associated with the credentials.
+	/// - Returns: The password associated with the credentials. If this System.Net.NetworkCredential instance was initialized with the password parameter set to null, then the System.Net.NetworkCredential.Password property will return an empty string.
+	public func password_set(_ value: System_String? /* System.String */) throws {
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Net_NetworkCredential_Password_Set(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	/// Gets or sets the password as a System.Security.SecureString instance.
+	/// - Throws: System.NotSupportedException: The System.Security.SecureString class is not supported on this platform.
+	/// - Returns: The password for the user name associated with the credentials.
+	public var securePassword: System_Security_SecureString /* System.Security.SecureString */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_NetworkCredential_SecurePassword_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_SecureString(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	/// Gets or sets the password as a System.Security.SecureString instance.
+	/// - Throws: System.NotSupportedException: The System.Security.SecureString class is not supported on this platform.
+	/// - Returns: The password for the user name associated with the credentials.
+	public func securePassword_set(_ value: System_Security_SecureString? /* System.Security.SecureString */) throws {
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Net_NetworkCredential_SecurePassword_Set(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	/// Gets or sets the domain or computer name that verifies the credentials.
+	/// - Returns: The name of the domain associated with the credentials.
+	public var domain: System_String /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_NetworkCredential_Domain_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	/// Gets or sets the domain or computer name that verifies the credentials.
+	/// - Returns: The name of the domain associated with the credentials.
+	public func domain_set(_ value: System_String? /* System.String */) throws {
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Net_NetworkCredential_Domain_Set(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Net_NetworkCredential_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Net_NetworkCredential_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Provides the interface for retrieving credentials for a host, port, and authentication type.
+public protocol System_Net_ICredentialsByHost /* System.Net.ICredentialsByHost */: DNObject {
+	/// Returns the credential for the specified host, port, and authentication protocol.
+	/// - Parameter host: The host computer that is authenticating the client.
+	/// - Parameter port: The port on host that the client will communicate with.
+	/// - Parameter authenticationType: The authentication protocol.
+	/// - Returns: A System.Net.NetworkCredential for the specified host, port, and authentication protocol, or null if there are no credentials available for the specified host, port, and authentication protocol.
+	func getCredential(_ host: System_String /* System.String */, _ port: Int32 /* System.Int32 */, _ authenticationType: System_String /* System.String */) throws -> System_Net_NetworkCredential? /* System.Net.NetworkCredential */
+	
+	
+}
+
+
+/// Provides the interface for retrieving credentials for a host, port, and authentication type.
+extension System_Net_ICredentialsByHost /* System.Net.ICredentialsByHost */ {
+	/// Returns the credential for the specified host, port, and authentication protocol.
+	/// - Parameter host: The host computer that is authenticating the client.
+	/// - Parameter port: The port on host that the client will communicate with.
+	/// - Parameter authenticationType: The authentication protocol.
+	/// - Returns: A System.Net.NetworkCredential for the specified host, port, and authentication protocol, or null if there are no credentials available for the specified host, port, and authentication protocol.
+	public func getCredential(_ host: System_String /* System.String */, _ port: Int32 /* System.Int32 */, _ authenticationType: System_String /* System.String */) throws -> System_Net_NetworkCredential? /* System.Net.NetworkCredential */ {
+		let hostC = host.__handle
+		let authenticationTypeC = authenticationType.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Net_ICredentialsByHost_GetCredential(self.__handle, hostC, port, authenticationTypeC, &__exceptionC)
+		
+		let __returnValue = System_Net_NetworkCredential(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+}
+
+
+/// Provides the interface for retrieving credentials for a host, port, and authentication type.
+public class System_Net_ICredentialsByHost_DNInterface /* System.Net.ICredentialsByHost */: DNObject, System_Net_ICredentialsByHost {
+	public override class var typeName: String { get {
+		"ICredentialsByHost"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Net.ICredentialsByHost"
+	}}
+
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Net_ICredentialsByHost_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Net_ICredentialsByHost_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
 public class Beyond_NET_Sample_SubclassingTests_MyBaseClass /* Beyond.NET.Sample.SubclassingTests.MyBaseClass */: System_Object {
 	public override class var typeName: String { get {
 		"MyBaseClass"
@@ -146255,507 +147517,6 @@ public class System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Sec
 	
 	internal override func destroy() {
 		System_Security_Cryptography_ECDiffieHellmanPublicKey_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-/// Provides credentials for password-based authentication schemes such as basic, digest, NTLM, and Kerberos authentication.
-public class System_Net_NetworkCredential /* System.Net.NetworkCredential */: System_Object, System_Net_ICredentials, System_Net_ICredentialsByHost {
-	public override class var typeName: String { get {
-		"NetworkCredential"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Net.NetworkCredential"
-	}}
-
-	/// Returns an instance of the System.Net.NetworkCredential class for the specified Uniform Resource Identifier (URI) and authentication type.
-	/// - Parameter uri: The URI that the client provides authentication for.
-	/// - Returns: A System.Net.NetworkCredential object.
-	public func getCredential(_ uri: System_Uri? /* System.Uri */, _ authenticationType: System_String? /* System.String */) throws -> System_Net_NetworkCredential /* System.Net.NetworkCredential */ {
-		let uriC = uri?.__handle
-		let authenticationTypeC = authenticationType?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Net_NetworkCredential_GetCredential(self.__handle, uriC, authenticationTypeC, &__exceptionC)
-		
-		let __returnValue = System_Net_NetworkCredential(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Returns an instance of the System.Net.NetworkCredential class for the specified host, port, and authentication type.
-	/// - Parameter host: The host computer that authenticates the client.
-	/// - Parameter port: The port on the host that the client communicates with.
-	/// - Parameter authenticationType: The type of authentication requested, as defined in the System.Net.IAuthenticationModule.AuthenticationType property.
-	/// - Returns: A System.Net.NetworkCredential for the specified host, port, and authentication protocol, or null if there are no credentials available for the specified host, port, and authentication protocol.
-	public func getCredential(_ host: System_String? /* System.String */, _ port: Int32 /* System.Int32 */, _ authenticationType: System_String? /* System.String */) throws -> System_Net_NetworkCredential /* System.Net.NetworkCredential */ {
-		let hostC = host?.__handle
-		let authenticationTypeC = authenticationType?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Net_NetworkCredential_GetCredential_1(self.__handle, hostC, port, authenticationTypeC, &__exceptionC)
-		
-		let __returnValue = System_Net_NetworkCredential(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Initializes a new instance of the System.Net.NetworkCredential class.
-	public convenience init() throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Net_NetworkCredential_Create(&__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	/// Initializes a new instance of the System.Net.NetworkCredential class with the specified user name and password.
-	/// - Parameter userName: The user name associated with the credentials.
-	/// - Parameter password: The password for the user name associated with the credentials.
-	public convenience init(_ userName: System_String? /* System.String */, _ password: System_String? /* System.String */) throws {
-		let userNameC = userName?.__handle
-		let passwordC = password?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Net_NetworkCredential_Create_1(userNameC, passwordC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	/// Initializes a new instance of the System.Net.NetworkCredential class with the specified user name, password, and domain.
-	/// - Parameter userName: The user name associated with the credentials.
-	/// - Parameter password: The password for the user name associated with the credentials.
-	/// - Parameter domain: The domain associated with these credentials.
-	public convenience init(_ userName: System_String? /* System.String */, _ password: System_String? /* System.String */, _ domain: System_String? /* System.String */) throws {
-		let userNameC = userName?.__handle
-		let passwordC = password?.__handle
-		let domainC = domain?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Net_NetworkCredential_Create_2(userNameC, passwordC, domainC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	/// Initializes a new instance of the System.Net.NetworkCredential class with the specified user name and password.
-	/// - Parameter userName: The user name associated with the credentials.
-	/// - Parameter password: The password for the user name associated with the credentials.
-	/// - Throws: System.NotSupportedException: The System.Security.SecureString class is not supported on this platform.
-	public convenience init(_ userName: System_String? /* System.String */, _ password: System_Security_SecureString? /* System.Security.SecureString */) throws {
-		let userNameC = userName?.__handle
-		let passwordC = password?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Net_NetworkCredential_Create_3(userNameC, passwordC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	/// Initializes a new instance of the System.Net.NetworkCredential class with the specified user name, password, and domain.
-	/// - Parameter userName: The user name associated with the credentials.
-	/// - Parameter password: The password for the user name associated with the credentials.
-	/// - Parameter domain: The domain associated with these credentials.
-	/// - Throws: System.NotSupportedException: The System.Security.SecureString class is not supported on this platform.
-	public convenience init(_ userName: System_String? /* System.String */, _ password: System_Security_SecureString? /* System.Security.SecureString */, _ domain: System_String? /* System.String */) throws {
-		let userNameC = userName?.__handle
-		let passwordC = password?.__handle
-		let domainC = domain?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Net_NetworkCredential_Create_4(userNameC, passwordC, domainC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	/// Gets or sets the user name associated with the credentials.
-	/// - Returns: The user name associated with the credentials.
-	public var userName: System_String /* System.String */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Net_NetworkCredential_UserName_Get(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	/// Gets or sets the user name associated with the credentials.
-	/// - Returns: The user name associated with the credentials.
-	public func userName_set(_ value: System_String? /* System.String */) throws {
-		let valueC = value?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Net_NetworkCredential_UserName_Set(self.__handle, valueC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	
-	/// Gets or sets the password for the user name associated with the credentials.
-	/// - Returns: The password associated with the credentials. If this System.Net.NetworkCredential instance was initialized with the password parameter set to null, then the System.Net.NetworkCredential.Password property will return an empty string.
-	public var password: System_String /* System.String */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Net_NetworkCredential_Password_Get(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	/// Gets or sets the password for the user name associated with the credentials.
-	/// - Returns: The password associated with the credentials. If this System.Net.NetworkCredential instance was initialized with the password parameter set to null, then the System.Net.NetworkCredential.Password property will return an empty string.
-	public func password_set(_ value: System_String? /* System.String */) throws {
-		let valueC = value?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Net_NetworkCredential_Password_Set(self.__handle, valueC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	
-	/// Gets or sets the password as a System.Security.SecureString instance.
-	/// - Throws: System.NotSupportedException: The System.Security.SecureString class is not supported on this platform.
-	/// - Returns: The password for the user name associated with the credentials.
-	public var securePassword: System_Security_SecureString /* System.Security.SecureString */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Net_NetworkCredential_SecurePassword_Get(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_Security_SecureString(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	/// Gets or sets the password as a System.Security.SecureString instance.
-	/// - Throws: System.NotSupportedException: The System.Security.SecureString class is not supported on this platform.
-	/// - Returns: The password for the user name associated with the credentials.
-	public func securePassword_set(_ value: System_Security_SecureString? /* System.Security.SecureString */) throws {
-		let valueC = value?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Net_NetworkCredential_SecurePassword_Set(self.__handle, valueC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	
-	/// Gets or sets the domain or computer name that verifies the credentials.
-	/// - Returns: The name of the domain associated with the credentials.
-	public var domain: System_String /* System.String */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Net_NetworkCredential_Domain_Get(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	/// Gets or sets the domain or computer name that verifies the credentials.
-	/// - Returns: The name of the domain associated with the credentials.
-	public func domain_set(_ value: System_String? /* System.String */) throws {
-		let valueC = value?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Net_NetworkCredential_Domain_Set(self.__handle, valueC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Net_NetworkCredential_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Net_NetworkCredential_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-/// Provides the base authentication interface for retrieving credentials for Web client authentication.
-public protocol System_Net_ICredentials /* System.Net.ICredentials */: DNObject {
-	/// Returns a System.Net.NetworkCredential object that is associated with the specified URI, and authentication type.
-	/// - Parameter uri: The System.Uri that the client is providing authentication for.
-	/// - Parameter authType: The type of authentication, as defined in the System.Net.IAuthenticationModule.AuthenticationType property.
-	/// - Returns: The System.Net.NetworkCredential that is associated with the specified URI and authentication type, or, if no credentials are available, null.
-	func getCredential(_ uri: System_Uri /* System.Uri */, _ authType: System_String /* System.String */) throws -> System_Net_NetworkCredential? /* System.Net.NetworkCredential */
-	
-	
-}
-
-
-/// Provides the base authentication interface for retrieving credentials for Web client authentication.
-extension System_Net_ICredentials /* System.Net.ICredentials */ {
-	/// Returns a System.Net.NetworkCredential object that is associated with the specified URI, and authentication type.
-	/// - Parameter uri: The System.Uri that the client is providing authentication for.
-	/// - Parameter authType: The type of authentication, as defined in the System.Net.IAuthenticationModule.AuthenticationType property.
-	/// - Returns: The System.Net.NetworkCredential that is associated with the specified URI and authentication type, or, if no credentials are available, null.
-	public func getCredential(_ uri: System_Uri /* System.Uri */, _ authType: System_String /* System.String */) throws -> System_Net_NetworkCredential? /* System.Net.NetworkCredential */ {
-		let uriC = uri.__handle
-		let authTypeC = authType.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Net_ICredentials_GetCredential(self.__handle, uriC, authTypeC, &__exceptionC)
-		
-		let __returnValue = System_Net_NetworkCredential(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-}
-
-
-/// Provides the base authentication interface for retrieving credentials for Web client authentication.
-public class System_Net_ICredentials_DNInterface /* System.Net.ICredentials */: DNObject, System_Net_ICredentials {
-	public override class var typeName: String { get {
-		"ICredentials"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Net.ICredentials"
-	}}
-
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Net_ICredentials_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Net_ICredentials_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-/// Provides the interface for retrieving credentials for a host, port, and authentication type.
-public protocol System_Net_ICredentialsByHost /* System.Net.ICredentialsByHost */: DNObject {
-	/// Returns the credential for the specified host, port, and authentication protocol.
-	/// - Parameter host: The host computer that is authenticating the client.
-	/// - Parameter port: The port on host that the client will communicate with.
-	/// - Parameter authenticationType: The authentication protocol.
-	/// - Returns: A System.Net.NetworkCredential for the specified host, port, and authentication protocol, or null if there are no credentials available for the specified host, port, and authentication protocol.
-	func getCredential(_ host: System_String /* System.String */, _ port: Int32 /* System.Int32 */, _ authenticationType: System_String /* System.String */) throws -> System_Net_NetworkCredential? /* System.Net.NetworkCredential */
-	
-	
-}
-
-
-/// Provides the interface for retrieving credentials for a host, port, and authentication type.
-extension System_Net_ICredentialsByHost /* System.Net.ICredentialsByHost */ {
-	/// Returns the credential for the specified host, port, and authentication protocol.
-	/// - Parameter host: The host computer that is authenticating the client.
-	/// - Parameter port: The port on host that the client will communicate with.
-	/// - Parameter authenticationType: The authentication protocol.
-	/// - Returns: A System.Net.NetworkCredential for the specified host, port, and authentication protocol, or null if there are no credentials available for the specified host, port, and authentication protocol.
-	public func getCredential(_ host: System_String /* System.String */, _ port: Int32 /* System.Int32 */, _ authenticationType: System_String /* System.String */) throws -> System_Net_NetworkCredential? /* System.Net.NetworkCredential */ {
-		let hostC = host.__handle
-		let authenticationTypeC = authenticationType.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Net_ICredentialsByHost_GetCredential(self.__handle, hostC, port, authenticationTypeC, &__exceptionC)
-		
-		let __returnValue = System_Net_NetworkCredential(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	
-}
-
-
-/// Provides the interface for retrieving credentials for a host, port, and authentication type.
-public class System_Net_ICredentialsByHost_DNInterface /* System.Net.ICredentialsByHost */: DNObject, System_Net_ICredentialsByHost {
-	public override class var typeName: String { get {
-		"ICredentialsByHost"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Net.ICredentialsByHost"
-	}}
-
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Net_ICredentialsByHost_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Net_ICredentialsByHost_Destroy(self.__handle)
 		
 	}
 	
@@ -185073,12 +185834,18 @@ public extension System {
 
 public extension System {
     struct Net {
-		/// Provides credentials for password-based authentication schemes such as basic, digest, NTLM, and Kerberos authentication.
-		public typealias NetworkCredential = System_Net_NetworkCredential
+		/// Contains HTTP proxy settings for the System.Net.Http.HttpClient class.
+		public typealias WebProxy = System_Net_WebProxy
+		/// Provides the base interface for implementation of proxy access for the System.Net.Http.HttpClient class.
+		public typealias IWebProxy = System_Net_IWebProxy
+		/// Provides the base interface for implementation of proxy access for the System.Net.Http.HttpClient class.
+		public typealias IWebProxy_DNInterface = System_Net_IWebProxy_DNInterface
 		/// Provides the base authentication interface for retrieving credentials for Web client authentication.
 		public typealias ICredentials = System_Net_ICredentials
 		/// Provides the base authentication interface for retrieving credentials for Web client authentication.
 		public typealias ICredentials_DNInterface = System_Net_ICredentials_DNInterface
+		/// Provides credentials for password-based authentication schemes such as basic, digest, NTLM, and Kerberos authentication.
+		public typealias NetworkCredential = System_Net_NetworkCredential
 		/// Provides the interface for retrieving credentials for a host, port, and authentication type.
 		public typealias ICredentialsByHost = System_Net_ICredentialsByHost
 		/// Provides the interface for retrieving credentials for a host, port, and authentication type.
@@ -185207,6 +185974,8 @@ public extension Beyond.NET {
 		public typealias TestReadOnlyRecordStruct = Beyond_NET_Sample_TestReadOnlyRecordStruct
 		
 		public typealias Transformer = Beyond_NET_Sample_Transformer
+		
+		public typealias WebProxyTests = Beyond_NET_Sample_WebProxyTests
 		
 		public typealias Transformer_BuiltInTransformers = Beyond_NET_Sample_Transformer_BuiltInTransformers
 		///             A delegate that returns a new Address.

@@ -1,5 +1,5 @@
-// Number of generated types: 1651
-// Number of generated members: 7824
+// Number of generated types: 1654
+// Number of generated members: 7860
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -5765,6 +5765,18 @@ typedef void* System_IEquatable_A1_t;
 
 typedef void* Beyond_NET_Sample_Transformer_t;
 
+typedef void* Beyond_NET_Sample_WebProxyTests_t;
+
+typedef void* System_Net_WebProxy_t;
+
+typedef void* System_Net_IWebProxy_t;
+
+typedef void* System_Net_ICredentials_t;
+
+typedef void* System_Net_NetworkCredential_t;
+
+typedef void* System_Net_ICredentialsByHost_t;
+
 typedef void* Beyond_NET_Sample_SubclassingTests_MyBaseClass_t;
 
 typedef void* Beyond_NET_Sample_SubclassingTests_MySubClass_t;
@@ -5833,12 +5845,6 @@ typedef void* System_Security_Cryptography_Oid_t;
 typedef void* System_Security_Cryptography_ECDiffieHellman_t;
 
 typedef void* System_Security_Cryptography_ECDiffieHellmanPublicKey_t;
-
-typedef void* System_Net_NetworkCredential_t;
-
-typedef void* System_Net_ICredentials_t;
-
-typedef void* System_Net_ICredentialsByHost_t;
 
 typedef void* System_Xml_Serialization_XmlSerializer_t;
 
@@ -48068,6 +48074,415 @@ Beyond_NET_Sample_Transformer_Destroy(
 
 #pragma mark - END APIs of Beyond.NET.Sample.Transformer
 
+#pragma mark - BEGIN APIs of Beyond.NET.Sample.WebProxyTests
+System_Net_WebProxy_t _Nonnull /* System.Net.WebProxy */
+Beyond_NET_Sample_WebProxyTests_CreateWebProxy(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+Beyond_NET_Sample_WebProxyTests_t _Nonnull /* Beyond.NET.Sample.WebProxyTests */
+Beyond_NET_Sample_WebProxyTests_Create_1(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+Beyond_NET_Sample_WebProxyTests_TypeOf(
+	void
+);
+
+void /* System.Void */
+Beyond_NET_Sample_WebProxyTests_Destroy(
+	Beyond_NET_Sample_WebProxyTests_t _Nullable /* Beyond.NET.Sample.WebProxyTests */ self
+);
+
+#pragma mark - END APIs of Beyond.NET.Sample.WebProxyTests
+
+#pragma mark - BEGIN APIs of System.Net.WebProxy
+System_Uri_t _Nullable /* System.Uri */
+System_Net_WebProxy_GetProxy(
+	System_Net_WebProxy_t _Nullable /* System.Net.WebProxy */ self,
+	System_Uri_t _Nonnull /* System.Uri */ destination,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Net_WebProxy_IsBypassed(
+	System_Net_WebProxy_t _Nullable /* System.Net.WebProxy */ self,
+	System_Uri_t _Nonnull /* System.Uri */ host,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_WebProxy_t _Nonnull /* System.Net.WebProxy */
+System_Net_WebProxy_GetDefaultProxy(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_WebProxy_t _Nonnull /* System.Net.WebProxy */
+System_Net_WebProxy_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_WebProxy_t _Nonnull /* System.Net.WebProxy */
+System_Net_WebProxy_Create_1(
+	System_Uri_t _Nullable /* System.Uri */ Address,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_WebProxy_t _Nonnull /* System.Net.WebProxy */
+System_Net_WebProxy_Create_2(
+	System_Uri_t _Nullable /* System.Uri */ Address,
+	bool /* System.Boolean */ BypassOnLocal,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_WebProxy_t _Nonnull /* System.Net.WebProxy */
+System_Net_WebProxy_Create_3(
+	System_Uri_t _Nullable /* System.Uri */ Address,
+	bool /* System.Boolean */ BypassOnLocal,
+	System_String_Array_t _Nullable /* System.String[] */ BypassList,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_WebProxy_t _Nonnull /* System.Net.WebProxy */
+System_Net_WebProxy_Create_4(
+	System_Uri_t _Nullable /* System.Uri */ Address,
+	bool /* System.Boolean */ BypassOnLocal,
+	System_String_Array_t _Nullable /* System.String[] */ BypassList,
+	System_Net_ICredentials_t _Nullable /* System.Net.ICredentials */ Credentials,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_WebProxy_t _Nonnull /* System.Net.WebProxy */
+System_Net_WebProxy_Create_5(
+	System_String_t _Nonnull /* System.String */ Host,
+	int32_t /* System.Int32 */ Port,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_WebProxy_t _Nonnull /* System.Net.WebProxy */
+System_Net_WebProxy_Create_6(
+	System_String_t _Nullable /* System.String */ Address,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_WebProxy_t _Nonnull /* System.Net.WebProxy */
+System_Net_WebProxy_Create_7(
+	System_String_t _Nullable /* System.String */ Address,
+	bool /* System.Boolean */ BypassOnLocal,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_WebProxy_t _Nonnull /* System.Net.WebProxy */
+System_Net_WebProxy_Create_8(
+	System_String_t _Nullable /* System.String */ Address,
+	bool /* System.Boolean */ BypassOnLocal,
+	System_String_Array_t _Nullable /* System.String[] */ BypassList,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_WebProxy_t _Nonnull /* System.Net.WebProxy */
+System_Net_WebProxy_Create_9(
+	System_String_t _Nullable /* System.String */ Address,
+	bool /* System.Boolean */ BypassOnLocal,
+	System_String_Array_t _Nullable /* System.String[] */ BypassList,
+	System_Net_ICredentials_t _Nullable /* System.Net.ICredentials */ Credentials,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Uri_t _Nullable /* System.Uri */
+System_Net_WebProxy_Address_Get(
+	System_Net_WebProxy_t _Nullable /* System.Net.WebProxy */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Net_WebProxy_Address_Set(
+	System_Net_WebProxy_t _Nullable /* System.Net.WebProxy */ self,
+	System_Uri_t _Nullable /* System.Uri */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Net_WebProxy_BypassProxyOnLocal_Get(
+	System_Net_WebProxy_t _Nullable /* System.Net.WebProxy */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Net_WebProxy_BypassProxyOnLocal_Set(
+	System_Net_WebProxy_t _Nullable /* System.Net.WebProxy */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_Array_t _Nonnull /* System.String[] */
+System_Net_WebProxy_BypassList_Get(
+	System_Net_WebProxy_t _Nullable /* System.Net.WebProxy */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Net_WebProxy_BypassList_Set(
+	System_Net_WebProxy_t _Nullable /* System.Net.WebProxy */ self,
+	System_String_Array_t _Nullable /* System.String[] */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Collections_ArrayList_t _Nonnull /* System.Collections.ArrayList */
+System_Net_WebProxy_BypassArrayList_Get(
+	System_Net_WebProxy_t _Nullable /* System.Net.WebProxy */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Net_ICredentials_t _Nullable /* System.Net.ICredentials */
+System_Net_WebProxy_Credentials_Get(
+	System_Net_WebProxy_t _Nullable /* System.Net.WebProxy */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Net_WebProxy_Credentials_Set(
+	System_Net_WebProxy_t _Nullable /* System.Net.WebProxy */ self,
+	System_Net_ICredentials_t _Nullable /* System.Net.ICredentials */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+bool /* System.Boolean */
+System_Net_WebProxy_UseDefaultCredentials_Get(
+	System_Net_WebProxy_t _Nullable /* System.Net.WebProxy */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Net_WebProxy_UseDefaultCredentials_Set(
+	System_Net_WebProxy_t _Nullable /* System.Net.WebProxy */ self,
+	bool /* System.Boolean */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Net_WebProxy_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Net_WebProxy_Destroy(
+	System_Net_WebProxy_t _Nullable /* System.Net.WebProxy */ self
+);
+
+#pragma mark - END APIs of System.Net.WebProxy
+
+#pragma mark - BEGIN APIs of System.Net.IWebProxy
+System_Uri_t _Nullable /* System.Uri */
+System_Net_IWebProxy_GetProxy(
+	System_Net_IWebProxy_t _Nullable /* System.Net.IWebProxy */ self,
+	System_Uri_t _Nonnull /* System.Uri */ destination,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Net_IWebProxy_IsBypassed(
+	System_Net_IWebProxy_t _Nullable /* System.Net.IWebProxy */ self,
+	System_Uri_t _Nonnull /* System.Uri */ host,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_ICredentials_t _Nullable /* System.Net.ICredentials */
+System_Net_IWebProxy_Credentials_Get(
+	System_Net_IWebProxy_t _Nullable /* System.Net.IWebProxy */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Net_IWebProxy_Credentials_Set(
+	System_Net_IWebProxy_t _Nullable /* System.Net.IWebProxy */ self,
+	System_Net_ICredentials_t _Nullable /* System.Net.ICredentials */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Net_IWebProxy_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Net_IWebProxy_Destroy(
+	System_Net_IWebProxy_t _Nullable /* System.Net.IWebProxy */ self
+);
+
+#pragma mark - END APIs of System.Net.IWebProxy
+
+#pragma mark - BEGIN APIs of System.Net.ICredentials
+System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */
+System_Net_ICredentials_GetCredential(
+	System_Net_ICredentials_t _Nullable /* System.Net.ICredentials */ self,
+	System_Uri_t _Nonnull /* System.Uri */ uri,
+	System_String_t _Nonnull /* System.String */ authType,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Net_ICredentials_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Net_ICredentials_Destroy(
+	System_Net_ICredentials_t _Nullable /* System.Net.ICredentials */ self
+);
+
+#pragma mark - END APIs of System.Net.ICredentials
+
+#pragma mark - BEGIN APIs of System.Net.NetworkCredential
+System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
+System_Net_NetworkCredential_GetCredential(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_Uri_t _Nullable /* System.Uri */ uri,
+	System_String_t _Nullable /* System.String */ authenticationType,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
+System_Net_NetworkCredential_GetCredential_1(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_String_t _Nullable /* System.String */ host,
+	int32_t /* System.Int32 */ port,
+	System_String_t _Nullable /* System.String */ authenticationType,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
+System_Net_NetworkCredential_Create(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
+System_Net_NetworkCredential_Create_1(
+	System_String_t _Nullable /* System.String */ userName,
+	System_String_t _Nullable /* System.String */ password,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
+System_Net_NetworkCredential_Create_2(
+	System_String_t _Nullable /* System.String */ userName,
+	System_String_t _Nullable /* System.String */ password,
+	System_String_t _Nullable /* System.String */ domain,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
+System_Net_NetworkCredential_Create_3(
+	System_String_t _Nullable /* System.String */ userName,
+	System_Security_SecureString_t _Nullable /* System.Security.SecureString */ password,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
+System_Net_NetworkCredential_Create_4(
+	System_String_t _Nullable /* System.String */ userName,
+	System_Security_SecureString_t _Nullable /* System.Security.SecureString */ password,
+	System_String_t _Nullable /* System.String */ domain,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Net_NetworkCredential_UserName_Get(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Net_NetworkCredential_UserName_Set(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Net_NetworkCredential_Password_Get(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Net_NetworkCredential_Password_Set(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_SecureString_t _Nonnull /* System.Security.SecureString */
+System_Net_NetworkCredential_SecurePassword_Get(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Net_NetworkCredential_SecurePassword_Set(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_Security_SecureString_t _Nullable /* System.Security.SecureString */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_String_t _Nonnull /* System.String */
+System_Net_NetworkCredential_Domain_Get(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Net_NetworkCredential_Domain_Set(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
+	System_String_t _Nullable /* System.String */ value,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Net_NetworkCredential_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Net_NetworkCredential_Destroy(
+	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self
+);
+
+#pragma mark - END APIs of System.Net.NetworkCredential
+
+#pragma mark - BEGIN APIs of System.Net.ICredentialsByHost
+System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */
+System_Net_ICredentialsByHost_GetCredential(
+	System_Net_ICredentialsByHost_t _Nullable /* System.Net.ICredentialsByHost */ self,
+	System_String_t _Nonnull /* System.String */ host,
+	int32_t /* System.Int32 */ port,
+	System_String_t _Nonnull /* System.String */ authenticationType,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Type_t _Nonnull /* System.Type */
+System_Net_ICredentialsByHost_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Net_ICredentialsByHost_Destroy(
+	System_Net_ICredentialsByHost_t _Nullable /* System.Net.ICredentialsByHost */ self
+);
+
+#pragma mark - END APIs of System.Net.ICredentialsByHost
+
 #pragma mark - BEGIN APIs of Beyond.NET.Sample.SubclassingTests.MyBaseClass
 void /* System.Void */
 Beyond_NET_Sample_SubclassingTests_MyBaseClass_Do(
@@ -50985,170 +51400,6 @@ System_Security_Cryptography_ECDiffieHellmanPublicKey_Destroy(
 );
 
 #pragma mark - END APIs of System.Security.Cryptography.ECDiffieHellmanPublicKey
-
-#pragma mark - BEGIN APIs of System.Net.NetworkCredential
-System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
-System_Net_NetworkCredential_GetCredential(
-	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
-	System_Uri_t _Nullable /* System.Uri */ uri,
-	System_String_t _Nullable /* System.String */ authenticationType,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
-System_Net_NetworkCredential_GetCredential_1(
-	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
-	System_String_t _Nullable /* System.String */ host,
-	int32_t /* System.Int32 */ port,
-	System_String_t _Nullable /* System.String */ authenticationType,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
-System_Net_NetworkCredential_Create(
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
-System_Net_NetworkCredential_Create_1(
-	System_String_t _Nullable /* System.String */ userName,
-	System_String_t _Nullable /* System.String */ password,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
-System_Net_NetworkCredential_Create_2(
-	System_String_t _Nullable /* System.String */ userName,
-	System_String_t _Nullable /* System.String */ password,
-	System_String_t _Nullable /* System.String */ domain,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
-System_Net_NetworkCredential_Create_3(
-	System_String_t _Nullable /* System.String */ userName,
-	System_Security_SecureString_t _Nullable /* System.Security.SecureString */ password,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_Net_NetworkCredential_t _Nonnull /* System.Net.NetworkCredential */
-System_Net_NetworkCredential_Create_4(
-	System_String_t _Nullable /* System.String */ userName,
-	System_Security_SecureString_t _Nullable /* System.Security.SecureString */ password,
-	System_String_t _Nullable /* System.String */ domain,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_String_t _Nonnull /* System.String */
-System_Net_NetworkCredential_UserName_Get(
-	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Net_NetworkCredential_UserName_Set(
-	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
-	System_String_t _Nullable /* System.String */ value,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-
-System_String_t _Nonnull /* System.String */
-System_Net_NetworkCredential_Password_Get(
-	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Net_NetworkCredential_Password_Set(
-	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
-	System_String_t _Nullable /* System.String */ value,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-
-System_Security_SecureString_t _Nonnull /* System.Security.SecureString */
-System_Net_NetworkCredential_SecurePassword_Get(
-	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Net_NetworkCredential_SecurePassword_Set(
-	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
-	System_Security_SecureString_t _Nullable /* System.Security.SecureString */ value,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-
-System_String_t _Nonnull /* System.String */
-System_Net_NetworkCredential_Domain_Get(
-	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-void /* System.Void */
-System_Net_NetworkCredential_Domain_Set(
-	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self,
-	System_String_t _Nullable /* System.String */ value,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-
-System_Type_t _Nonnull /* System.Type */
-System_Net_NetworkCredential_TypeOf(
-	void
-);
-
-void /* System.Void */
-System_Net_NetworkCredential_Destroy(
-	System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */ self
-);
-
-#pragma mark - END APIs of System.Net.NetworkCredential
-
-#pragma mark - BEGIN APIs of System.Net.ICredentials
-System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */
-System_Net_ICredentials_GetCredential(
-	System_Net_ICredentials_t _Nullable /* System.Net.ICredentials */ self,
-	System_Uri_t _Nonnull /* System.Uri */ uri,
-	System_String_t _Nonnull /* System.String */ authType,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_Type_t _Nonnull /* System.Type */
-System_Net_ICredentials_TypeOf(
-	void
-);
-
-void /* System.Void */
-System_Net_ICredentials_Destroy(
-	System_Net_ICredentials_t _Nullable /* System.Net.ICredentials */ self
-);
-
-#pragma mark - END APIs of System.Net.ICredentials
-
-#pragma mark - BEGIN APIs of System.Net.ICredentialsByHost
-System_Net_NetworkCredential_t _Nullable /* System.Net.NetworkCredential */
-System_Net_ICredentialsByHost_GetCredential(
-	System_Net_ICredentialsByHost_t _Nullable /* System.Net.ICredentialsByHost */ self,
-	System_String_t _Nonnull /* System.String */ host,
-	int32_t /* System.Int32 */ port,
-	System_String_t _Nonnull /* System.String */ authenticationType,
-	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
-);
-
-System_Type_t _Nonnull /* System.Type */
-System_Net_ICredentialsByHost_TypeOf(
-	void
-);
-
-void /* System.Void */
-System_Net_ICredentialsByHost_Destroy(
-	System_Net_ICredentialsByHost_t _Nullable /* System.Net.ICredentialsByHost */ self
-);
-
-#pragma mark - END APIs of System.Net.ICredentialsByHost
 
 #pragma mark - BEGIN APIs of System.Xml.Serialization.XmlSerializer
 void /* System.Void */

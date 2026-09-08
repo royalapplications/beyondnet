@@ -1,5 +1,5 @@
-// Number of generated types: 1648
-// Number of generated members: 7524
+// Number of generated types: 1651
+// Number of generated members: 7560
 
 // MARK: - BEGIN Header
 @file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE", "REDUNDANT_CALL_OF_CONVERSION_METHOD")
@@ -137163,6 +137163,1359 @@ open class Beyond_NET_Sample_Transformer /* Beyond.NET.Sample.Transformer */(han
 	// MARK: - END Beyond.NET.Sample.Transformer
 
 
+	// MARK: - BEGIN Beyond.NET.Sample.WebProxyTests
+open class Beyond_NET_Sample_WebProxyTests /* Beyond.NET.Sample.WebProxyTests */(handle: Pointer): System_Object(handle) {
+	companion object : IDNObjectCompanion<Beyond_NET_Sample_WebProxyTests> {
+		public fun createWebProxy() : System_Net_WebProxy /* System.Net.WebProxy */ {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.Beyond_NET_Sample_WebProxyTests_CreateWebProxy(__exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Net_WebProxy(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		operator public fun invoke() : Beyond_NET_Sample_WebProxyTests /* Beyond.NET.Sample.WebProxyTests */ {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.Beyond_NET_Sample_WebProxyTests_Create_1(__exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return Beyond_NET_Sample_WebProxyTests(__returnValueC)
+			
+		}
+		@JvmStatic
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public override val typeOf: System_Type /* System.Type */
+			@JvmName("typeOf_get")
+			get() {
+				return System_Type(CAPI.Beyond_NET_Sample_WebProxyTests_TypeOf())
+				
+			}
+			
+		
+		
+		@JvmStatic override fun __constructWithHandle(handle: Pointer) : Beyond_NET_Sample_WebProxyTests {
+			return Beyond_NET_Sample_WebProxyTests(handle)
+		}
+		
+	}
+	
+	open override fun destroy() {
+		CAPI.Beyond_NET_Sample_WebProxyTests_Destroy(this.__handle)
+		
+	}
+	override fun equals(other: Any?) : Boolean {
+		val otherSystemObject = other as? System_Object
+		
+		try {
+		    otherSystemObject?.let {
+		        return System_Object.equals(this, otherSystemObject)
+		    }
+		} catch (e: Exception) {
+		    return false
+		}
+		
+		return false
+	}
+	
+}
+
+
+	// MARK: - END Beyond.NET.Sample.WebProxyTests
+
+
+	// MARK: - BEGIN System.Net.WebProxy
+/**
+ * Contains HTTP proxy settings for the System.Net.Http.HttpClient class.
+ */
+open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): System_Object(handle), System_Net_IWebProxy, System_Runtime_Serialization_ISerializable {
+	companion object : IDNObjectCompanion<System_Net_WebProxy> {
+		/**
+		 * Reads the Internet options nondynamic proxy settings.
+		 * @throws System.PlatformNotSupportedException: On .NET Core.
+		 * @return A System.Net.WebProxy instance that contains the nondynamic proxy settings from Internet options.
+		 */
+		public fun getDefaultProxy() : System_Net_WebProxy /* System.Net.WebProxy */ {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_WebProxy_GetDefaultProxy(__exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Net_WebProxy(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		/**
+		 * Initializes an empty instance of the System.Net.WebProxy class.
+		 */
+		operator public fun invoke() : System_Net_WebProxy /* System.Net.WebProxy */ {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_WebProxy_Create(__exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return System_Net_WebProxy(__returnValueC)
+			
+		}
+		/**
+		 * Initializes a new instance of the System.Net.WebProxy class from the specified System.Uri instance.
+		 * @param Address: A System.Uri instance that contains the address of the proxy server.
+		 */
+		operator public fun invoke(Address: System_Uri? /* System.Uri */) : System_Net_WebProxy /* System.Net.WebProxy */ {
+			val AddressC = Address?.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_WebProxy_Create_1(AddressC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return System_Net_WebProxy(__returnValueC)
+			
+		}
+		/**
+		 * Initializes a new instance of the System.Net.WebProxy class with the System.Uri instance and bypass setting.
+		 * @param Address: A System.Uri instance that contains the address of the proxy server.
+		 * @param BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
+		 */
+		operator public fun invoke(Address: System_Uri? /* System.Uri */, BypassOnLocal: Boolean /* System.Boolean */) : System_Net_WebProxy /* System.Net.WebProxy */ {
+			val AddressC = Address?.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_WebProxy_Create_2(AddressC, BypassOnLocal, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return System_Net_WebProxy(__returnValueC)
+			
+		}
+		/**
+		 * Initializes a new instance of the System.Net.WebProxy class with the specified System.Uri instance, bypass setting, and list of URIs to bypass.
+		 * @param Address: A System.Uri instance that contains the address of the proxy server.
+		 * @param BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
+		 * @param BypassList: An array of regular expression strings that contains the URIs of the servers to bypass.
+		 */
+		operator public fun invoke(Address: System_Uri? /* System.Uri */, BypassOnLocal: Boolean /* System.Boolean */, BypassList: DNArray<System_String>? /* System.String[] */) : System_Net_WebProxy /* System.Net.WebProxy */ {
+			val AddressC = Address?.getHandleOrNull()
+			val BypassListC = BypassList?.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_WebProxy_Create_3(AddressC, BypassOnLocal, BypassListC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return System_Net_WebProxy(__returnValueC)
+			
+		}
+		/**
+		 * Initializes a new instance of the System.Net.WebProxy class with the specified System.Uri instance, bypass setting, list of URIs to bypass, and credentials.
+		 * @param Address: A System.Uri instance that contains the address of the proxy server.
+		 * @param BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
+		 * @param BypassList: An array of regular expression strings that contains the URIs of the servers to bypass.
+		 * @param Credentials: An System.Net.ICredentials instance to submit to the proxy server for authentication.
+		 */
+		operator public fun invoke(Address: System_Uri? /* System.Uri */, BypassOnLocal: Boolean /* System.Boolean */, BypassList: DNArray<System_String>? /* System.String[] */, Credentials: System_Net_ICredentials? /* System.Net.ICredentials */) : System_Net_WebProxy /* System.Net.WebProxy */ {
+			val AddressC = Address?.getHandleOrNull()
+			val BypassListC = BypassList?.getHandleOrNull()
+			val CredentialsC = Credentials?.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_WebProxy_Create_4(AddressC, BypassOnLocal, BypassListC, CredentialsC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return System_Net_WebProxy(__returnValueC)
+			
+		}
+		/**
+		 * Initializes a new instance of the System.Net.WebProxy class with the specified host and port number.
+		 * @param Host: The name of the proxy host.
+		 * @param Port: The port number on Host to use.
+		 * @throws System.UriFormatException: The URI formed by combining Host and Port is not a valid URI.
+		 */
+		operator public fun invoke(Host: System_String /* System.String */, Port: Int /* System.Int32 */) : System_Net_WebProxy /* System.Net.WebProxy */ {
+			val HostC = Host.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_WebProxy_Create_5(HostC, Port, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return System_Net_WebProxy(__returnValueC)
+			
+		}
+		/**
+		 * Initializes a new instance of the System.Net.WebProxy class with the specified URI.
+		 * @param Address: The URI of the proxy server.
+		 * @throws System.UriFormatException: Address is an invalid URI.
+		 */
+		operator public fun invoke(Address: System_String? /* System.String */) : System_Net_WebProxy /* System.Net.WebProxy */ {
+			val AddressC = Address?.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_WebProxy_Create_6(AddressC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return System_Net_WebProxy(__returnValueC)
+			
+		}
+		/**
+		 * Initializes a new instance of the System.Net.WebProxy class with the specified URI and bypass setting.
+		 * @param Address: The URI of the proxy server.
+		 * @param BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
+		 * @throws System.UriFormatException: Address is an invalid URI.
+		 */
+		operator public fun invoke(Address: System_String? /* System.String */, BypassOnLocal: Boolean /* System.Boolean */) : System_Net_WebProxy /* System.Net.WebProxy */ {
+			val AddressC = Address?.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_WebProxy_Create_7(AddressC, BypassOnLocal, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return System_Net_WebProxy(__returnValueC)
+			
+		}
+		/**
+		 * Initializes a new instance of the System.Net.WebProxy class with the specified URI, bypass setting, and list of URIs to bypass.
+		 * @param Address: The URI of the proxy server.
+		 * @param BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
+		 * @param BypassList: An array of regular expression strings that contain the URIs of the servers to bypass.
+		 * @throws System.UriFormatException: Address is an invalid URI.
+		 */
+		operator public fun invoke(Address: System_String? /* System.String */, BypassOnLocal: Boolean /* System.Boolean */, BypassList: DNArray<System_String>? /* System.String[] */) : System_Net_WebProxy /* System.Net.WebProxy */ {
+			val AddressC = Address?.getHandleOrNull()
+			val BypassListC = BypassList?.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_WebProxy_Create_8(AddressC, BypassOnLocal, BypassListC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return System_Net_WebProxy(__returnValueC)
+			
+		}
+		/**
+		 * Initializes a new instance of the System.Net.WebProxy class with the specified URI, bypass setting, list of URIs to bypass, and credentials.
+		 * @param Address: The URI of the proxy server.
+		 * @param BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
+		 * @param BypassList: An array of regular expression strings that contains the URIs of the servers to bypass.
+		 * @param Credentials: An System.Net.ICredentials instance to submit to the proxy server for authentication.
+		 * @throws System.UriFormatException: Address is an invalid URI.
+		 */
+		operator public fun invoke(Address: System_String? /* System.String */, BypassOnLocal: Boolean /* System.Boolean */, BypassList: DNArray<System_String>? /* System.String[] */, Credentials: System_Net_ICredentials? /* System.Net.ICredentials */) : System_Net_WebProxy /* System.Net.WebProxy */ {
+			val AddressC = Address?.getHandleOrNull()
+			val BypassListC = BypassList?.getHandleOrNull()
+			val CredentialsC = Credentials?.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_WebProxy_Create_9(AddressC, BypassOnLocal, BypassListC, CredentialsC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return System_Net_WebProxy(__returnValueC)
+			
+		}
+		@JvmStatic
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public override val typeOf: System_Type /* System.Type */
+			@JvmName("typeOf_get")
+			get() {
+				return System_Type(CAPI.System_Net_WebProxy_TypeOf())
+				
+			}
+			
+		
+		
+		@JvmStatic override fun __constructWithHandle(handle: Pointer) : System_Net_WebProxy {
+			return System_Net_WebProxy(handle)
+		}
+		
+	}
+	
+	/**
+	 * Returns the proxied URI for a request.
+	 * @param destination: The System.Uri instance of the requested Internet resource.
+	 * @throws System.ArgumentNullException: The destination parameter is null.
+	 * @return The System.Uri instance of the Internet resource, if the resource is on the bypass list; otherwise, the System.Uri instance of the proxy.
+	 */
+	open override fun getProxy(destination: System_Uri /* System.Uri */) : System_Uri? /* System.Uri */ {
+		val destinationC = destination.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Net_WebProxy_GetProxy(this.__handle, destinationC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = if (__returnValueC != null) System_Uri(__returnValueC) else null
+		
+		return __returnValue
+		
+	}
+	/**
+	 * Indicates whether to use the proxy server for the specified host.
+	 * @param host: The System.Uri instance of the host to check for proxy use.
+	 * @throws System.ArgumentNullException: The host parameter is null.
+	 * @return true if the proxy server should not be used for host; otherwise, false.
+	 */
+	open override fun isBypassed(host: System_Uri /* System.Uri */) : Boolean /* System.Boolean */ {
+		val hostC = host.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Net_WebProxy_IsBypassed(this.__handle, hostC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	/**
+	 * Gets or sets the address of the proxy server.
+	 * @return A System.Uri instance that contains the address of the proxy server.
+	 */
+	@Suppress("INAPPLICABLE_JVM_NAME")
+	open val address: System_Uri? /* System.Uri */
+		@JvmName("address_get")
+		get() {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_WebProxy_Address_Get(this.__handle, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = if (__returnValueC != null) System_Uri(__returnValueC) else null
+			
+			return __returnValue
+			
+		}
+		
+	
+	/**
+	 * Gets or sets the address of the proxy server.
+	 * @return A System.Uri instance that contains the address of the proxy server.
+	 */
+	open fun address_set(value: System_Uri? /* System.Uri */) {
+		val valueC = value.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		CAPI.System_Net_WebProxy_Address_Set(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		
+	}
+	
+	/**
+	 * Gets or sets a value that indicates whether to bypass the proxy server for local addresses.
+	 * @return true to bypass the proxy server for local addresses; otherwise, false. The default value is false.
+	 */
+	@Suppress("INAPPLICABLE_JVM_NAME")
+	open val bypassProxyOnLocal: Boolean /* System.Boolean */
+		@JvmName("bypassProxyOnLocal_get")
+		get() {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_WebProxy_BypassProxyOnLocal_Get(this.__handle, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		
+	
+	/**
+	 * Gets or sets a value that indicates whether to bypass the proxy server for local addresses.
+	 * @return true to bypass the proxy server for local addresses; otherwise, false. The default value is false.
+	 */
+	open fun bypassProxyOnLocal_set(value: Boolean /* System.Boolean */) {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		CAPI.System_Net_WebProxy_BypassProxyOnLocal_Set(this.__handle, value, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		
+	}
+	
+	/**
+	 * Gets or sets an array of addresses that do not use the proxy server.
+	 * @return An array that contains a list of regular expressions that describe URIs that do not use the proxy server when accessed.
+	 */
+	@Suppress("INAPPLICABLE_JVM_NAME")
+	open val bypassList: DNArray<System_String> /* System.String[] */
+		@JvmName("bypassList_get")
+		get() {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_WebProxy_BypassList_Get(this.__handle, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = DNArray<System_String>(System_String, __returnValueC)
+			
+			return __returnValue
+			
+		}
+		
+	
+	/**
+	 * Gets or sets an array of addresses that do not use the proxy server.
+	 * @return An array that contains a list of regular expressions that describe URIs that do not use the proxy server when accessed.
+	 */
+	open fun bypassList_set(value: DNArray<System_String>? /* System.String[] */) {
+		val valueC = value.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		CAPI.System_Net_WebProxy_BypassList_Set(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		
+	}
+	
+	/**
+	 * Gets a list of addresses that do not use the proxy server.
+	 * @return An System.Collections.ArrayList that contains a list of System.Net.WebProxy.BypassList arrays that represents URIs that do not use the proxy server when accessed.
+	 */
+	@Suppress("INAPPLICABLE_JVM_NAME")
+	open val bypassArrayList: System_Collections_ArrayList /* System.Collections.ArrayList */
+		@JvmName("bypassArrayList_get")
+		get() {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_WebProxy_BypassArrayList_Get(this.__handle, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Collections_ArrayList(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		
+	
+	
+	/**
+	 * Gets or sets the credentials to submit to the proxy server for authentication.
+	 * @throws System.InvalidOperationException: You attempted to set this property when the System.Net.WebProxy.UseDefaultCredentials property was set to true.
+	 * @return An System.Net.ICredentials instance that contains the credentials to submit to the proxy server for authentication.
+	 */
+	@Suppress("INAPPLICABLE_JVM_NAME")
+	open override val credentials: System_Net_ICredentials? /* System.Net.ICredentials */
+		@JvmName("credentials_get")
+		get() {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_WebProxy_Credentials_Get(this.__handle, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = if (__returnValueC != null) System_Net_ICredentials_DNInterface(__returnValueC) else null
+			
+			return __returnValue
+			
+		}
+		
+	
+	/**
+	 * Gets or sets the credentials to submit to the proxy server for authentication.
+	 * @throws System.InvalidOperationException: You attempted to set this property when the System.Net.WebProxy.UseDefaultCredentials property was set to true.
+	 * @return An System.Net.ICredentials instance that contains the credentials to submit to the proxy server for authentication.
+	 */
+	open override fun credentials_set(value: System_Net_ICredentials? /* System.Net.ICredentials */) {
+		val valueC = value.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		CAPI.System_Net_WebProxy_Credentials_Set(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		
+	}
+	
+	/**
+	 * Gets or sets a System.Boolean value that controls whether the System.Net.CredentialCache.DefaultCredentials are sent with requests.
+	 * @throws System.InvalidOperationException: You attempted to set this property when the System.Net.WebProxy.Credentials property contains credentials other than the default credentials.
+	 * @return true if the default credentials are used; otherwise, false. The default value is false.
+	 */
+	@Suppress("INAPPLICABLE_JVM_NAME")
+	open val useDefaultCredentials: Boolean /* System.Boolean */
+		@JvmName("useDefaultCredentials_get")
+		get() {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_WebProxy_UseDefaultCredentials_Get(this.__handle, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		
+	
+	/**
+	 * Gets or sets a System.Boolean value that controls whether the System.Net.CredentialCache.DefaultCredentials are sent with requests.
+	 * @throws System.InvalidOperationException: You attempted to set this property when the System.Net.WebProxy.Credentials property contains credentials other than the default credentials.
+	 * @return true if the default credentials are used; otherwise, false. The default value is false.
+	 */
+	open fun useDefaultCredentials_set(value: Boolean /* System.Boolean */) {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		CAPI.System_Net_WebProxy_UseDefaultCredentials_Set(this.__handle, value, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		
+	}
+	
+	open override fun destroy() {
+		CAPI.System_Net_WebProxy_Destroy(this.__handle)
+		
+	}
+	override fun equals(other: Any?) : Boolean {
+		val otherSystemObject = other as? System_Object
+		
+		try {
+		    otherSystemObject?.let {
+		        return System_Object.equals(this, otherSystemObject)
+		    }
+		} catch (e: Exception) {
+		    return false
+		}
+		
+		return false
+	}
+	
+}
+
+
+	// MARK: - END System.Net.WebProxy
+
+
+	// MARK: - BEGIN System.Net.IWebProxy
+/**
+ * Provides the base interface for implementation of proxy access for the System.Net.Http.HttpClient class.
+ */
+public interface System_Net_IWebProxy /* System.Net.IWebProxy */: IDNObject {
+	companion object : IDNObjectCompanion<System_Net_IWebProxy> {
+		@JvmStatic
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public override val typeOf: System_Type /* System.Type */
+			@JvmName("typeOf_get")
+			get() {
+				return System_Type(CAPI.System_Net_IWebProxy_TypeOf())
+				
+			}
+			
+		
+		
+		@JvmStatic override fun __constructWithHandle(handle: Pointer) : System_Net_IWebProxy {
+			return System_Net_IWebProxy_DNInterface(handle)
+		}
+		
+	}
+	
+	/**
+	 * Returns the URI of a proxy.
+	 * @param destination: A System.Uri that specifies the requested Internet resource.
+	 * @return A System.Uri instance that contains the URI of the proxy used to contact destination; otherwise null or destination itself.
+	 */
+	open fun getProxy(destination: System_Uri /* System.Uri */) : System_Uri? /* System.Uri */ {
+		val destinationC = destination.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Net_IWebProxy_GetProxy(this.__handle, destinationC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = if (__returnValueC != null) System_Uri(__returnValueC) else null
+		
+		return __returnValue
+		
+	}
+	/**
+	 * Indicates that the proxy should not be used for the specified host.
+	 * @param host: The System.Uri of the host to check for proxy use.
+	 * @return true if the proxy server should not be used for host; otherwise, false.
+	 */
+	open fun isBypassed(host: System_Uri /* System.Uri */) : Boolean /* System.Boolean */ {
+		val hostC = host.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Net_IWebProxy_IsBypassed(this.__handle, hostC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	/**
+	 * The credentials to submit to the proxy server for authentication.
+	 * @return An System.Net.ICredentials instance that contains the credentials that are needed to authenticate a request to the proxy server.
+	 */
+	@Suppress("INAPPLICABLE_JVM_NAME")
+	open val credentials: System_Net_ICredentials? /* System.Net.ICredentials */
+		@JvmName("credentials_get")
+		get() {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_IWebProxy_Credentials_Get(this.__handle, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = if (__returnValueC != null) System_Net_ICredentials_DNInterface(__returnValueC) else null
+			
+			return __returnValue
+			
+		}
+		
+	
+	/**
+	 * The credentials to submit to the proxy server for authentication.
+	 * @return An System.Net.ICredentials instance that contains the credentials that are needed to authenticate a request to the proxy server.
+	 */
+	open fun credentials_set(value: System_Net_ICredentials? /* System.Net.ICredentials */) {
+		val valueC = value.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		CAPI.System_Net_IWebProxy_Credentials_Set(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		
+	}
+	
+	
+}
+open class System_Net_IWebProxy_DNInterface /* System.Net.IWebProxy */(handle: Pointer): DNObject(handle), System_Net_IWebProxy{
+	open override fun destroy() {
+		CAPI.System_Net_IWebProxy_Destroy(this.__handle)
+		
+	}
+}
+
+
+	// MARK: - END System.Net.IWebProxy
+
+
+	// MARK: - BEGIN System.Net.ICredentials
+/**
+ * Provides the base authentication interface for retrieving credentials for Web client authentication.
+ */
+public interface System_Net_ICredentials /* System.Net.ICredentials */: IDNObject {
+	companion object {
+		@JvmStatic
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val typeOf: System_Type /* System.Type */
+			@JvmName("typeOf_get")
+			get() {
+				return System_Type(CAPI.System_Net_ICredentials_TypeOf())
+				
+			}
+			
+		
+		
+		
+	}
+	
+	/**
+	 * Returns a System.Net.NetworkCredential object that is associated with the specified URI, and authentication type.
+	 * @param uri: The System.Uri that the client is providing authentication for.
+	 * @param authType: The type of authentication, as defined in the System.Net.IAuthenticationModule.AuthenticationType property.
+	 * @return The System.Net.NetworkCredential that is associated with the specified URI and authentication type, or, if no credentials are available, null.
+	 */
+	open fun getCredential(uri: System_Uri /* System.Uri */, authType: System_String /* System.String */) : System_Net_NetworkCredential? /* System.Net.NetworkCredential */ {
+		val uriC = uri.getHandleOrNull()
+		val authTypeC = authType.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Net_ICredentials_GetCredential(this.__handle, uriC, authTypeC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = if (__returnValueC != null) System_Net_NetworkCredential(__returnValueC) else null
+		
+		return __returnValue
+		
+	}
+	
+}
+open class System_Net_ICredentials_DNInterface /* System.Net.ICredentials */(handle: Pointer): DNObject(handle){
+	open override fun destroy() {
+		CAPI.System_Net_ICredentials_Destroy(this.__handle)
+		
+	}
+}
+
+
+	// MARK: - END System.Net.ICredentials
+
+
+	// MARK: - BEGIN System.Net.NetworkCredential
+/**
+ * Provides credentials for password-based authentication schemes such as basic, digest, NTLM, and Kerberos authentication.
+ */
+open class System_Net_NetworkCredential /* System.Net.NetworkCredential */(handle: Pointer): System_Object(handle) {
+	companion object : IDNObjectCompanion<System_Net_NetworkCredential> {
+		/**
+		 * Initializes a new instance of the System.Net.NetworkCredential class.
+		 */
+		operator public fun invoke() : System_Net_NetworkCredential /* System.Net.NetworkCredential */ {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_NetworkCredential_Create(__exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return System_Net_NetworkCredential(__returnValueC)
+			
+		}
+		/**
+		 * Initializes a new instance of the System.Net.NetworkCredential class with the specified user name and password.
+		 * @param userName: The user name associated with the credentials.
+		 * @param password: The password for the user name associated with the credentials.
+		 */
+		operator public fun invoke(userName: System_String? /* System.String */, password: System_String? /* System.String */) : System_Net_NetworkCredential /* System.Net.NetworkCredential */ {
+			val userNameC = userName?.getHandleOrNull()
+			val passwordC = password?.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_NetworkCredential_Create_1(userNameC, passwordC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return System_Net_NetworkCredential(__returnValueC)
+			
+		}
+		/**
+		 * Initializes a new instance of the System.Net.NetworkCredential class with the specified user name, password, and domain.
+		 * @param userName: The user name associated with the credentials.
+		 * @param password: The password for the user name associated with the credentials.
+		 * @param domain: The domain associated with these credentials.
+		 */
+		operator public fun invoke(userName: System_String? /* System.String */, password: System_String? /* System.String */, domain: System_String? /* System.String */) : System_Net_NetworkCredential /* System.Net.NetworkCredential */ {
+			val userNameC = userName?.getHandleOrNull()
+			val passwordC = password?.getHandleOrNull()
+			val domainC = domain?.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_NetworkCredential_Create_2(userNameC, passwordC, domainC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return System_Net_NetworkCredential(__returnValueC)
+			
+		}
+		/**
+		 * Initializes a new instance of the System.Net.NetworkCredential class with the specified user name and password.
+		 * @param userName: The user name associated with the credentials.
+		 * @param password: The password for the user name associated with the credentials.
+		 * @throws System.NotSupportedException: The System.Security.SecureString class is not supported on this platform.
+		 */
+		operator public fun invoke(userName: System_String? /* System.String */, password: System_Security_SecureString? /* System.Security.SecureString */) : System_Net_NetworkCredential /* System.Net.NetworkCredential */ {
+			val userNameC = userName?.getHandleOrNull()
+			val passwordC = password?.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_NetworkCredential_Create_3(userNameC, passwordC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return System_Net_NetworkCredential(__returnValueC)
+			
+		}
+		/**
+		 * Initializes a new instance of the System.Net.NetworkCredential class with the specified user name, password, and domain.
+		 * @param userName: The user name associated with the credentials.
+		 * @param password: The password for the user name associated with the credentials.
+		 * @param domain: The domain associated with these credentials.
+		 * @throws System.NotSupportedException: The System.Security.SecureString class is not supported on this platform.
+		 */
+		operator public fun invoke(userName: System_String? /* System.String */, password: System_Security_SecureString? /* System.Security.SecureString */, domain: System_String? /* System.String */) : System_Net_NetworkCredential /* System.Net.NetworkCredential */ {
+			val userNameC = userName?.getHandleOrNull()
+			val passwordC = password?.getHandleOrNull()
+			val domainC = domain?.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_NetworkCredential_Create_4(userNameC, passwordC, domainC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return System_Net_NetworkCredential(__returnValueC)
+			
+		}
+		@JvmStatic
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public override val typeOf: System_Type /* System.Type */
+			@JvmName("typeOf_get")
+			get() {
+				return System_Type(CAPI.System_Net_NetworkCredential_TypeOf())
+				
+			}
+			
+		
+		
+		@JvmStatic override fun __constructWithHandle(handle: Pointer) : System_Net_NetworkCredential {
+			return System_Net_NetworkCredential(handle)
+		}
+		
+	}
+	
+	/**
+	 * Returns an instance of the System.Net.NetworkCredential class for the specified Uniform Resource Identifier (URI) and authentication type.
+	 * @param uri: The URI that the client provides authentication for.
+	 * @return A System.Net.NetworkCredential object.
+	 */
+	open fun getCredential(uri: System_Uri? /* System.Uri */, authenticationType: System_String? /* System.String */) : System_Net_NetworkCredential /* System.Net.NetworkCredential */ {
+		val uriC = uri?.getHandleOrNull()
+		val authenticationTypeC = authenticationType?.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Net_NetworkCredential_GetCredential(this.__handle, uriC, authenticationTypeC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_Net_NetworkCredential(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	/**
+	 * Returns an instance of the System.Net.NetworkCredential class for the specified host, port, and authentication type.
+	 * @param host: The host computer that authenticates the client.
+	 * @param port: The port on the host that the client communicates with.
+	 * @param authenticationType: The type of authentication requested, as defined in the System.Net.IAuthenticationModule.AuthenticationType property.
+	 * @return A System.Net.NetworkCredential for the specified host, port, and authentication protocol, or null if there are no credentials available for the specified host, port, and authentication protocol.
+	 */
+	open fun getCredential(host: System_String? /* System.String */, port: Int /* System.Int32 */, authenticationType: System_String? /* System.String */) : System_Net_NetworkCredential /* System.Net.NetworkCredential */ {
+		val hostC = host?.getHandleOrNull()
+		val authenticationTypeC = authenticationType?.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Net_NetworkCredential_GetCredential_1(this.__handle, hostC, port, authenticationTypeC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_Net_NetworkCredential(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	/**
+	 * Gets or sets the user name associated with the credentials.
+	 * @return The user name associated with the credentials.
+	 */
+	@Suppress("INAPPLICABLE_JVM_NAME")
+	open val userName: System_String /* System.String */
+		@JvmName("userName_get")
+		get() {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_NetworkCredential_UserName_Get(this.__handle, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_String(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		
+	
+	/**
+	 * Gets or sets the user name associated with the credentials.
+	 * @return The user name associated with the credentials.
+	 */
+	open fun userName_set(value: System_String? /* System.String */) {
+		val valueC = value.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		CAPI.System_Net_NetworkCredential_UserName_Set(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		
+	}
+	
+	/**
+	 * Gets or sets the password for the user name associated with the credentials.
+	 * @return The password associated with the credentials. If this System.Net.NetworkCredential instance was initialized with the password parameter set to null, then the System.Net.NetworkCredential.Password property will return an empty string.
+	 */
+	@Suppress("INAPPLICABLE_JVM_NAME")
+	open val password: System_String /* System.String */
+		@JvmName("password_get")
+		get() {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_NetworkCredential_Password_Get(this.__handle, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_String(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		
+	
+	/**
+	 * Gets or sets the password for the user name associated with the credentials.
+	 * @return The password associated with the credentials. If this System.Net.NetworkCredential instance was initialized with the password parameter set to null, then the System.Net.NetworkCredential.Password property will return an empty string.
+	 */
+	open fun password_set(value: System_String? /* System.String */) {
+		val valueC = value.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		CAPI.System_Net_NetworkCredential_Password_Set(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		
+	}
+	
+	/**
+	 * Gets or sets the password as a System.Security.SecureString instance.
+	 * @throws System.NotSupportedException: The System.Security.SecureString class is not supported on this platform.
+	 * @return The password for the user name associated with the credentials.
+	 */
+	@Suppress("INAPPLICABLE_JVM_NAME")
+	open val securePassword: System_Security_SecureString /* System.Security.SecureString */
+		@JvmName("securePassword_get")
+		get() {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_NetworkCredential_SecurePassword_Get(this.__handle, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Security_SecureString(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		
+	
+	/**
+	 * Gets or sets the password as a System.Security.SecureString instance.
+	 * @throws System.NotSupportedException: The System.Security.SecureString class is not supported on this platform.
+	 * @return The password for the user name associated with the credentials.
+	 */
+	open fun securePassword_set(value: System_Security_SecureString? /* System.Security.SecureString */) {
+		val valueC = value.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		CAPI.System_Net_NetworkCredential_SecurePassword_Set(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		
+	}
+	
+	/**
+	 * Gets or sets the domain or computer name that verifies the credentials.
+	 * @return The name of the domain associated with the credentials.
+	 */
+	@Suppress("INAPPLICABLE_JVM_NAME")
+	open val domain: System_String /* System.String */
+		@JvmName("domain_get")
+		get() {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Net_NetworkCredential_Domain_Get(this.__handle, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_String(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		
+	
+	/**
+	 * Gets or sets the domain or computer name that verifies the credentials.
+	 * @return The name of the domain associated with the credentials.
+	 */
+	open fun domain_set(value: System_String? /* System.String */) {
+		val valueC = value.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		CAPI.System_Net_NetworkCredential_Domain_Set(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		
+	}
+	
+	open override fun destroy() {
+		CAPI.System_Net_NetworkCredential_Destroy(this.__handle)
+		
+	}
+	override fun equals(other: Any?) : Boolean {
+		val otherSystemObject = other as? System_Object
+		
+		try {
+		    otherSystemObject?.let {
+		        return System_Object.equals(this, otherSystemObject)
+		    }
+		} catch (e: Exception) {
+		    return false
+		}
+		
+		return false
+	}
+	
+}
+
+
+	// MARK: - END System.Net.NetworkCredential
+
+
+	// MARK: - BEGIN System.Net.ICredentialsByHost
+/**
+ * Provides the interface for retrieving credentials for a host, port, and authentication type.
+ */
+public interface System_Net_ICredentialsByHost /* System.Net.ICredentialsByHost */: IDNObject {
+	companion object {
+		@JvmStatic
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val typeOf: System_Type /* System.Type */
+			@JvmName("typeOf_get")
+			get() {
+				return System_Type(CAPI.System_Net_ICredentialsByHost_TypeOf())
+				
+			}
+			
+		
+		
+		
+	}
+	
+	/**
+	 * Returns the credential for the specified host, port, and authentication protocol.
+	 * @param host: The host computer that is authenticating the client.
+	 * @param port: The port on host that the client will communicate with.
+	 * @param authenticationType: The authentication protocol.
+	 * @return A System.Net.NetworkCredential for the specified host, port, and authentication protocol, or null if there are no credentials available for the specified host, port, and authentication protocol.
+	 */
+	open fun getCredential(host: System_String /* System.String */, port: Int /* System.Int32 */, authenticationType: System_String /* System.String */) : System_Net_NetworkCredential? /* System.Net.NetworkCredential */ {
+		val hostC = host.getHandleOrNull()
+		val authenticationTypeC = authenticationType.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Net_ICredentialsByHost_GetCredential(this.__handle, hostC, port, authenticationTypeC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = if (__returnValueC != null) System_Net_NetworkCredential(__returnValueC) else null
+		
+		return __returnValue
+		
+	}
+	
+}
+open class System_Net_ICredentialsByHost_DNInterface /* System.Net.ICredentialsByHost */(handle: Pointer): DNObject(handle){
+	open override fun destroy() {
+		CAPI.System_Net_ICredentialsByHost_Destroy(this.__handle)
+		
+	}
+}
+
+
+	// MARK: - END System.Net.ICredentialsByHost
+
+
 	// MARK: - BEGIN Beyond.NET.Sample.SubclassingTests.MyBaseClass
 open class Beyond_NET_Sample_SubclassingTests_MyBaseClass /* Beyond.NET.Sample.SubclassingTests.MyBaseClass */(handle: Pointer): System_Object(handle) {
 	companion object : IDNObjectCompanion<Beyond_NET_Sample_SubclassingTests_MyBaseClass> {
@@ -145959,535 +147312,6 @@ open class System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Secur
 
 
 	// MARK: - END System.Security.Cryptography.ECDiffieHellmanPublicKey
-
-
-	// MARK: - BEGIN System.Net.NetworkCredential
-/**
- * Provides credentials for password-based authentication schemes such as basic, digest, NTLM, and Kerberos authentication.
- */
-open class System_Net_NetworkCredential /* System.Net.NetworkCredential */(handle: Pointer): System_Object(handle) {
-	companion object : IDNObjectCompanion<System_Net_NetworkCredential> {
-		/**
-		 * Initializes a new instance of the System.Net.NetworkCredential class.
-		 */
-		operator public fun invoke() : System_Net_NetworkCredential /* System.Net.NetworkCredential */ {
-			
-			
-			val __exceptionC = PointerByReference()
-			
-			val __returnValueC = CAPI.System_Net_NetworkCredential_Create(__exceptionC)
-			
-			val __exceptionCHandle = __exceptionC.value
-			
-			if (__exceptionCHandle != null) {
-			    throw System_Exception(__exceptionCHandle).toKException()
-			}
-			
-			return System_Net_NetworkCredential(__returnValueC)
-			
-		}
-		/**
-		 * Initializes a new instance of the System.Net.NetworkCredential class with the specified user name and password.
-		 * @param userName: The user name associated with the credentials.
-		 * @param password: The password for the user name associated with the credentials.
-		 */
-		operator public fun invoke(userName: System_String? /* System.String */, password: System_String? /* System.String */) : System_Net_NetworkCredential /* System.Net.NetworkCredential */ {
-			val userNameC = userName?.getHandleOrNull()
-			val passwordC = password?.getHandleOrNull()
-			
-			
-			val __exceptionC = PointerByReference()
-			
-			val __returnValueC = CAPI.System_Net_NetworkCredential_Create_1(userNameC, passwordC, __exceptionC)
-			
-			val __exceptionCHandle = __exceptionC.value
-			
-			if (__exceptionCHandle != null) {
-			    throw System_Exception(__exceptionCHandle).toKException()
-			}
-			
-			return System_Net_NetworkCredential(__returnValueC)
-			
-		}
-		/**
-		 * Initializes a new instance of the System.Net.NetworkCredential class with the specified user name, password, and domain.
-		 * @param userName: The user name associated with the credentials.
-		 * @param password: The password for the user name associated with the credentials.
-		 * @param domain: The domain associated with these credentials.
-		 */
-		operator public fun invoke(userName: System_String? /* System.String */, password: System_String? /* System.String */, domain: System_String? /* System.String */) : System_Net_NetworkCredential /* System.Net.NetworkCredential */ {
-			val userNameC = userName?.getHandleOrNull()
-			val passwordC = password?.getHandleOrNull()
-			val domainC = domain?.getHandleOrNull()
-			
-			
-			val __exceptionC = PointerByReference()
-			
-			val __returnValueC = CAPI.System_Net_NetworkCredential_Create_2(userNameC, passwordC, domainC, __exceptionC)
-			
-			val __exceptionCHandle = __exceptionC.value
-			
-			if (__exceptionCHandle != null) {
-			    throw System_Exception(__exceptionCHandle).toKException()
-			}
-			
-			return System_Net_NetworkCredential(__returnValueC)
-			
-		}
-		/**
-		 * Initializes a new instance of the System.Net.NetworkCredential class with the specified user name and password.
-		 * @param userName: The user name associated with the credentials.
-		 * @param password: The password for the user name associated with the credentials.
-		 * @throws System.NotSupportedException: The System.Security.SecureString class is not supported on this platform.
-		 */
-		operator public fun invoke(userName: System_String? /* System.String */, password: System_Security_SecureString? /* System.Security.SecureString */) : System_Net_NetworkCredential /* System.Net.NetworkCredential */ {
-			val userNameC = userName?.getHandleOrNull()
-			val passwordC = password?.getHandleOrNull()
-			
-			
-			val __exceptionC = PointerByReference()
-			
-			val __returnValueC = CAPI.System_Net_NetworkCredential_Create_3(userNameC, passwordC, __exceptionC)
-			
-			val __exceptionCHandle = __exceptionC.value
-			
-			if (__exceptionCHandle != null) {
-			    throw System_Exception(__exceptionCHandle).toKException()
-			}
-			
-			return System_Net_NetworkCredential(__returnValueC)
-			
-		}
-		/**
-		 * Initializes a new instance of the System.Net.NetworkCredential class with the specified user name, password, and domain.
-		 * @param userName: The user name associated with the credentials.
-		 * @param password: The password for the user name associated with the credentials.
-		 * @param domain: The domain associated with these credentials.
-		 * @throws System.NotSupportedException: The System.Security.SecureString class is not supported on this platform.
-		 */
-		operator public fun invoke(userName: System_String? /* System.String */, password: System_Security_SecureString? /* System.Security.SecureString */, domain: System_String? /* System.String */) : System_Net_NetworkCredential /* System.Net.NetworkCredential */ {
-			val userNameC = userName?.getHandleOrNull()
-			val passwordC = password?.getHandleOrNull()
-			val domainC = domain?.getHandleOrNull()
-			
-			
-			val __exceptionC = PointerByReference()
-			
-			val __returnValueC = CAPI.System_Net_NetworkCredential_Create_4(userNameC, passwordC, domainC, __exceptionC)
-			
-			val __exceptionCHandle = __exceptionC.value
-			
-			if (__exceptionCHandle != null) {
-			    throw System_Exception(__exceptionCHandle).toKException()
-			}
-			
-			return System_Net_NetworkCredential(__returnValueC)
-			
-		}
-		@JvmStatic
-		@Suppress("INAPPLICABLE_JVM_NAME")
-		public override val typeOf: System_Type /* System.Type */
-			@JvmName("typeOf_get")
-			get() {
-				return System_Type(CAPI.System_Net_NetworkCredential_TypeOf())
-				
-			}
-			
-		
-		
-		@JvmStatic override fun __constructWithHandle(handle: Pointer) : System_Net_NetworkCredential {
-			return System_Net_NetworkCredential(handle)
-		}
-		
-	}
-	
-	/**
-	 * Returns an instance of the System.Net.NetworkCredential class for the specified Uniform Resource Identifier (URI) and authentication type.
-	 * @param uri: The URI that the client provides authentication for.
-	 * @return A System.Net.NetworkCredential object.
-	 */
-	open fun getCredential(uri: System_Uri? /* System.Uri */, authenticationType: System_String? /* System.String */) : System_Net_NetworkCredential /* System.Net.NetworkCredential */ {
-		val uriC = uri?.getHandleOrNull()
-		val authenticationTypeC = authenticationType?.getHandleOrNull()
-		
-		
-		val __exceptionC = PointerByReference()
-		
-		val __returnValueC = CAPI.System_Net_NetworkCredential_GetCredential(this.__handle, uriC, authenticationTypeC, __exceptionC)
-		
-		val __exceptionCHandle = __exceptionC.value
-		
-		if (__exceptionCHandle != null) {
-		    throw System_Exception(__exceptionCHandle).toKException()
-		}
-		
-		val __returnValue = System_Net_NetworkCredential(__returnValueC)
-		
-		return __returnValue
-		
-	}
-	/**
-	 * Returns an instance of the System.Net.NetworkCredential class for the specified host, port, and authentication type.
-	 * @param host: The host computer that authenticates the client.
-	 * @param port: The port on the host that the client communicates with.
-	 * @param authenticationType: The type of authentication requested, as defined in the System.Net.IAuthenticationModule.AuthenticationType property.
-	 * @return A System.Net.NetworkCredential for the specified host, port, and authentication protocol, or null if there are no credentials available for the specified host, port, and authentication protocol.
-	 */
-	open fun getCredential(host: System_String? /* System.String */, port: Int /* System.Int32 */, authenticationType: System_String? /* System.String */) : System_Net_NetworkCredential /* System.Net.NetworkCredential */ {
-		val hostC = host?.getHandleOrNull()
-		val authenticationTypeC = authenticationType?.getHandleOrNull()
-		
-		
-		val __exceptionC = PointerByReference()
-		
-		val __returnValueC = CAPI.System_Net_NetworkCredential_GetCredential_1(this.__handle, hostC, port, authenticationTypeC, __exceptionC)
-		
-		val __exceptionCHandle = __exceptionC.value
-		
-		if (__exceptionCHandle != null) {
-		    throw System_Exception(__exceptionCHandle).toKException()
-		}
-		
-		val __returnValue = System_Net_NetworkCredential(__returnValueC)
-		
-		return __returnValue
-		
-	}
-	/**
-	 * Gets or sets the user name associated with the credentials.
-	 * @return The user name associated with the credentials.
-	 */
-	@Suppress("INAPPLICABLE_JVM_NAME")
-	open val userName: System_String /* System.String */
-		@JvmName("userName_get")
-		get() {
-			
-			
-			val __exceptionC = PointerByReference()
-			
-			val __returnValueC = CAPI.System_Net_NetworkCredential_UserName_Get(this.__handle, __exceptionC)
-			
-			val __exceptionCHandle = __exceptionC.value
-			
-			if (__exceptionCHandle != null) {
-			    throw System_Exception(__exceptionCHandle).toKException()
-			}
-			
-			val __returnValue = System_String(__returnValueC)
-			
-			return __returnValue
-			
-		}
-		
-	
-	/**
-	 * Gets or sets the user name associated with the credentials.
-	 * @return The user name associated with the credentials.
-	 */
-	open fun userName_set(value: System_String? /* System.String */) {
-		val valueC = value.getHandleOrNull()
-		
-		
-		val __exceptionC = PointerByReference()
-		
-		CAPI.System_Net_NetworkCredential_UserName_Set(this.__handle, valueC, __exceptionC)
-		
-		val __exceptionCHandle = __exceptionC.value
-		
-		if (__exceptionCHandle != null) {
-		    throw System_Exception(__exceptionCHandle).toKException()
-		}
-		
-		
-	}
-	
-	/**
-	 * Gets or sets the password for the user name associated with the credentials.
-	 * @return The password associated with the credentials. If this System.Net.NetworkCredential instance was initialized with the password parameter set to null, then the System.Net.NetworkCredential.Password property will return an empty string.
-	 */
-	@Suppress("INAPPLICABLE_JVM_NAME")
-	open val password: System_String /* System.String */
-		@JvmName("password_get")
-		get() {
-			
-			
-			val __exceptionC = PointerByReference()
-			
-			val __returnValueC = CAPI.System_Net_NetworkCredential_Password_Get(this.__handle, __exceptionC)
-			
-			val __exceptionCHandle = __exceptionC.value
-			
-			if (__exceptionCHandle != null) {
-			    throw System_Exception(__exceptionCHandle).toKException()
-			}
-			
-			val __returnValue = System_String(__returnValueC)
-			
-			return __returnValue
-			
-		}
-		
-	
-	/**
-	 * Gets or sets the password for the user name associated with the credentials.
-	 * @return The password associated with the credentials. If this System.Net.NetworkCredential instance was initialized with the password parameter set to null, then the System.Net.NetworkCredential.Password property will return an empty string.
-	 */
-	open fun password_set(value: System_String? /* System.String */) {
-		val valueC = value.getHandleOrNull()
-		
-		
-		val __exceptionC = PointerByReference()
-		
-		CAPI.System_Net_NetworkCredential_Password_Set(this.__handle, valueC, __exceptionC)
-		
-		val __exceptionCHandle = __exceptionC.value
-		
-		if (__exceptionCHandle != null) {
-		    throw System_Exception(__exceptionCHandle).toKException()
-		}
-		
-		
-	}
-	
-	/**
-	 * Gets or sets the password as a System.Security.SecureString instance.
-	 * @throws System.NotSupportedException: The System.Security.SecureString class is not supported on this platform.
-	 * @return The password for the user name associated with the credentials.
-	 */
-	@Suppress("INAPPLICABLE_JVM_NAME")
-	open val securePassword: System_Security_SecureString /* System.Security.SecureString */
-		@JvmName("securePassword_get")
-		get() {
-			
-			
-			val __exceptionC = PointerByReference()
-			
-			val __returnValueC = CAPI.System_Net_NetworkCredential_SecurePassword_Get(this.__handle, __exceptionC)
-			
-			val __exceptionCHandle = __exceptionC.value
-			
-			if (__exceptionCHandle != null) {
-			    throw System_Exception(__exceptionCHandle).toKException()
-			}
-			
-			val __returnValue = System_Security_SecureString(__returnValueC)
-			
-			return __returnValue
-			
-		}
-		
-	
-	/**
-	 * Gets or sets the password as a System.Security.SecureString instance.
-	 * @throws System.NotSupportedException: The System.Security.SecureString class is not supported on this platform.
-	 * @return The password for the user name associated with the credentials.
-	 */
-	open fun securePassword_set(value: System_Security_SecureString? /* System.Security.SecureString */) {
-		val valueC = value.getHandleOrNull()
-		
-		
-		val __exceptionC = PointerByReference()
-		
-		CAPI.System_Net_NetworkCredential_SecurePassword_Set(this.__handle, valueC, __exceptionC)
-		
-		val __exceptionCHandle = __exceptionC.value
-		
-		if (__exceptionCHandle != null) {
-		    throw System_Exception(__exceptionCHandle).toKException()
-		}
-		
-		
-	}
-	
-	/**
-	 * Gets or sets the domain or computer name that verifies the credentials.
-	 * @return The name of the domain associated with the credentials.
-	 */
-	@Suppress("INAPPLICABLE_JVM_NAME")
-	open val domain: System_String /* System.String */
-		@JvmName("domain_get")
-		get() {
-			
-			
-			val __exceptionC = PointerByReference()
-			
-			val __returnValueC = CAPI.System_Net_NetworkCredential_Domain_Get(this.__handle, __exceptionC)
-			
-			val __exceptionCHandle = __exceptionC.value
-			
-			if (__exceptionCHandle != null) {
-			    throw System_Exception(__exceptionCHandle).toKException()
-			}
-			
-			val __returnValue = System_String(__returnValueC)
-			
-			return __returnValue
-			
-		}
-		
-	
-	/**
-	 * Gets or sets the domain or computer name that verifies the credentials.
-	 * @return The name of the domain associated with the credentials.
-	 */
-	open fun domain_set(value: System_String? /* System.String */) {
-		val valueC = value.getHandleOrNull()
-		
-		
-		val __exceptionC = PointerByReference()
-		
-		CAPI.System_Net_NetworkCredential_Domain_Set(this.__handle, valueC, __exceptionC)
-		
-		val __exceptionCHandle = __exceptionC.value
-		
-		if (__exceptionCHandle != null) {
-		    throw System_Exception(__exceptionCHandle).toKException()
-		}
-		
-		
-	}
-	
-	open override fun destroy() {
-		CAPI.System_Net_NetworkCredential_Destroy(this.__handle)
-		
-	}
-	override fun equals(other: Any?) : Boolean {
-		val otherSystemObject = other as? System_Object
-		
-		try {
-		    otherSystemObject?.let {
-		        return System_Object.equals(this, otherSystemObject)
-		    }
-		} catch (e: Exception) {
-		    return false
-		}
-		
-		return false
-	}
-	
-}
-
-
-	// MARK: - END System.Net.NetworkCredential
-
-
-	// MARK: - BEGIN System.Net.ICredentials
-/**
- * Provides the base authentication interface for retrieving credentials for Web client authentication.
- */
-public interface System_Net_ICredentials /* System.Net.ICredentials */: IDNObject {
-	companion object {
-		@JvmStatic
-		@Suppress("INAPPLICABLE_JVM_NAME")
-		public val typeOf: System_Type /* System.Type */
-			@JvmName("typeOf_get")
-			get() {
-				return System_Type(CAPI.System_Net_ICredentials_TypeOf())
-				
-			}
-			
-		
-		
-		
-	}
-	
-	/**
-	 * Returns a System.Net.NetworkCredential object that is associated with the specified URI, and authentication type.
-	 * @param uri: The System.Uri that the client is providing authentication for.
-	 * @param authType: The type of authentication, as defined in the System.Net.IAuthenticationModule.AuthenticationType property.
-	 * @return The System.Net.NetworkCredential that is associated with the specified URI and authentication type, or, if no credentials are available, null.
-	 */
-	open fun getCredential(uri: System_Uri /* System.Uri */, authType: System_String /* System.String */) : System_Net_NetworkCredential? /* System.Net.NetworkCredential */ {
-		val uriC = uri.getHandleOrNull()
-		val authTypeC = authType.getHandleOrNull()
-		
-		
-		val __exceptionC = PointerByReference()
-		
-		val __returnValueC = CAPI.System_Net_ICredentials_GetCredential(this.__handle, uriC, authTypeC, __exceptionC)
-		
-		val __exceptionCHandle = __exceptionC.value
-		
-		if (__exceptionCHandle != null) {
-		    throw System_Exception(__exceptionCHandle).toKException()
-		}
-		
-		val __returnValue = if (__returnValueC != null) System_Net_NetworkCredential(__returnValueC) else null
-		
-		return __returnValue
-		
-	}
-	
-}
-open class System_Net_ICredentials_DNInterface /* System.Net.ICredentials */(handle: Pointer): DNObject(handle){
-	open override fun destroy() {
-		CAPI.System_Net_ICredentials_Destroy(this.__handle)
-		
-	}
-}
-
-
-	// MARK: - END System.Net.ICredentials
-
-
-	// MARK: - BEGIN System.Net.ICredentialsByHost
-/**
- * Provides the interface for retrieving credentials for a host, port, and authentication type.
- */
-public interface System_Net_ICredentialsByHost /* System.Net.ICredentialsByHost */: IDNObject {
-	companion object {
-		@JvmStatic
-		@Suppress("INAPPLICABLE_JVM_NAME")
-		public val typeOf: System_Type /* System.Type */
-			@JvmName("typeOf_get")
-			get() {
-				return System_Type(CAPI.System_Net_ICredentialsByHost_TypeOf())
-				
-			}
-			
-		
-		
-		
-	}
-	
-	/**
-	 * Returns the credential for the specified host, port, and authentication protocol.
-	 * @param host: The host computer that is authenticating the client.
-	 * @param port: The port on host that the client will communicate with.
-	 * @param authenticationType: The authentication protocol.
-	 * @return A System.Net.NetworkCredential for the specified host, port, and authentication protocol, or null if there are no credentials available for the specified host, port, and authentication protocol.
-	 */
-	open fun getCredential(host: System_String /* System.String */, port: Int /* System.Int32 */, authenticationType: System_String /* System.String */) : System_Net_NetworkCredential? /* System.Net.NetworkCredential */ {
-		val hostC = host.getHandleOrNull()
-		val authenticationTypeC = authenticationType.getHandleOrNull()
-		
-		
-		val __exceptionC = PointerByReference()
-		
-		val __returnValueC = CAPI.System_Net_ICredentialsByHost_GetCredential(this.__handle, hostC, port, authenticationTypeC, __exceptionC)
-		
-		val __exceptionCHandle = __exceptionC.value
-		
-		if (__exceptionCHandle != null) {
-		    throw System_Exception(__exceptionCHandle).toKException()
-		}
-		
-		val __returnValue = if (__returnValueC != null) System_Net_NetworkCredential(__returnValueC) else null
-		
-		return __returnValue
-		
-	}
-	
-}
-open class System_Net_ICredentialsByHost_DNInterface /* System.Net.ICredentialsByHost */(handle: Pointer): DNObject(handle){
-	open override fun destroy() {
-		CAPI.System_Net_ICredentialsByHost_Destroy(this.__handle)
-		
-	}
-}
-
-
-	// MARK: - END System.Net.ICredentialsByHost
 
 
 	// MARK: - BEGIN System.Xml.Serialization.XmlSerializer
@@ -204897,6 +205721,177 @@ object CAPI {
 	// MARK: - END Beyond.NET.Sample.Transformer
 
 
+	// MARK: - BEGIN Beyond.NET.Sample.WebProxyTests
+	external fun Beyond_NET_Sample_WebProxyTests_CreateWebProxy(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.WebProxy */
+	
+	external fun Beyond_NET_Sample_WebProxyTests_Create_1(outException: PointerByReference? /* System.Exception */) : Pointer /* Beyond.NET.Sample.WebProxyTests */
+	
+	external fun Beyond_NET_Sample_WebProxyTests_TypeOf() : Pointer /* System.Type */
+	
+	external fun Beyond_NET_Sample_WebProxyTests_Destroy(self: Pointer? /* Beyond.NET.Sample.WebProxyTests */)
+	
+	
+	
+
+	// MARK: - END Beyond.NET.Sample.WebProxyTests
+
+
+	// MARK: - BEGIN System.Net.WebProxy
+	external fun System_Net_WebProxy_GetProxy(self: Pointer? /* System.Net.WebProxy */, destination: Pointer /* System.Uri */, outException: PointerByReference? /* System.Exception */) : Pointer? /* System.Uri */
+	
+	external fun System_Net_WebProxy_IsBypassed(self: Pointer? /* System.Net.WebProxy */, host: Pointer /* System.Uri */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Net_WebProxy_GetDefaultProxy(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.WebProxy */
+	
+	external fun System_Net_WebProxy_Create(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.WebProxy */
+	
+	external fun System_Net_WebProxy_Create_1(Address: Pointer? /* System.Uri */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.WebProxy */
+	
+	external fun System_Net_WebProxy_Create_2(Address: Pointer? /* System.Uri */, BypassOnLocal: Boolean /* System.Boolean */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.WebProxy */
+	
+	external fun System_Net_WebProxy_Create_3(Address: Pointer? /* System.Uri */, BypassOnLocal: Boolean /* System.Boolean */, BypassList: Pointer? /* System.String[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.WebProxy */
+	
+	external fun System_Net_WebProxy_Create_4(Address: Pointer? /* System.Uri */, BypassOnLocal: Boolean /* System.Boolean */, BypassList: Pointer? /* System.String[] */, Credentials: Pointer? /* System.Net.ICredentials */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.WebProxy */
+	
+	external fun System_Net_WebProxy_Create_5(Host: Pointer /* System.String */, Port: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.WebProxy */
+	
+	external fun System_Net_WebProxy_Create_6(Address: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.WebProxy */
+	
+	external fun System_Net_WebProxy_Create_7(Address: Pointer? /* System.String */, BypassOnLocal: Boolean /* System.Boolean */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.WebProxy */
+	
+	external fun System_Net_WebProxy_Create_8(Address: Pointer? /* System.String */, BypassOnLocal: Boolean /* System.Boolean */, BypassList: Pointer? /* System.String[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.WebProxy */
+	
+	external fun System_Net_WebProxy_Create_9(Address: Pointer? /* System.String */, BypassOnLocal: Boolean /* System.Boolean */, BypassList: Pointer? /* System.String[] */, Credentials: Pointer? /* System.Net.ICredentials */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.WebProxy */
+	
+	external fun System_Net_WebProxy_Address_Get(self: Pointer? /* System.Net.WebProxy */, outException: PointerByReference? /* System.Exception */) : Pointer? /* System.Uri */
+	
+	external fun System_Net_WebProxy_Address_Set(self: Pointer? /* System.Net.WebProxy */, value: Pointer? /* System.Uri */, outException: PointerByReference? /* System.Exception */)
+	
+	
+	external fun System_Net_WebProxy_BypassProxyOnLocal_Get(self: Pointer? /* System.Net.WebProxy */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Net_WebProxy_BypassProxyOnLocal_Set(self: Pointer? /* System.Net.WebProxy */, value: Boolean /* System.Boolean */, outException: PointerByReference? /* System.Exception */)
+	
+	
+	external fun System_Net_WebProxy_BypassList_Get(self: Pointer? /* System.Net.WebProxy */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
+	
+	external fun System_Net_WebProxy_BypassList_Set(self: Pointer? /* System.Net.WebProxy */, value: Pointer? /* System.String[] */, outException: PointerByReference? /* System.Exception */)
+	
+	
+	external fun System_Net_WebProxy_BypassArrayList_Get(self: Pointer? /* System.Net.WebProxy */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Collections.ArrayList */
+	
+	
+	external fun System_Net_WebProxy_Credentials_Get(self: Pointer? /* System.Net.WebProxy */, outException: PointerByReference? /* System.Exception */) : Pointer? /* System.Net.ICredentials */
+	
+	external fun System_Net_WebProxy_Credentials_Set(self: Pointer? /* System.Net.WebProxy */, value: Pointer? /* System.Net.ICredentials */, outException: PointerByReference? /* System.Exception */)
+	
+	
+	external fun System_Net_WebProxy_UseDefaultCredentials_Get(self: Pointer? /* System.Net.WebProxy */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Net_WebProxy_UseDefaultCredentials_Set(self: Pointer? /* System.Net.WebProxy */, value: Boolean /* System.Boolean */, outException: PointerByReference? /* System.Exception */)
+	
+	
+	external fun System_Net_WebProxy_TypeOf() : Pointer /* System.Type */
+	
+	external fun System_Net_WebProxy_Destroy(self: Pointer? /* System.Net.WebProxy */)
+	
+	
+	
+
+	// MARK: - END System.Net.WebProxy
+
+
+	// MARK: - BEGIN System.Net.IWebProxy
+	external fun System_Net_IWebProxy_GetProxy(self: Pointer? /* System.Net.IWebProxy */, destination: Pointer /* System.Uri */, outException: PointerByReference? /* System.Exception */) : Pointer? /* System.Uri */
+	
+	external fun System_Net_IWebProxy_IsBypassed(self: Pointer? /* System.Net.IWebProxy */, host: Pointer /* System.Uri */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Net_IWebProxy_Credentials_Get(self: Pointer? /* System.Net.IWebProxy */, outException: PointerByReference? /* System.Exception */) : Pointer? /* System.Net.ICredentials */
+	
+	external fun System_Net_IWebProxy_Credentials_Set(self: Pointer? /* System.Net.IWebProxy */, value: Pointer? /* System.Net.ICredentials */, outException: PointerByReference? /* System.Exception */)
+	
+	
+	external fun System_Net_IWebProxy_TypeOf() : Pointer /* System.Type */
+	
+	external fun System_Net_IWebProxy_Destroy(self: Pointer? /* System.Net.IWebProxy */)
+	
+	
+	
+
+	// MARK: - END System.Net.IWebProxy
+
+
+	// MARK: - BEGIN System.Net.ICredentials
+	external fun System_Net_ICredentials_GetCredential(self: Pointer? /* System.Net.ICredentials */, uri: Pointer /* System.Uri */, authType: Pointer /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer? /* System.Net.NetworkCredential */
+	
+	external fun System_Net_ICredentials_TypeOf() : Pointer /* System.Type */
+	
+	external fun System_Net_ICredentials_Destroy(self: Pointer? /* System.Net.ICredentials */)
+	
+	
+	
+
+	// MARK: - END System.Net.ICredentials
+
+
+	// MARK: - BEGIN System.Net.NetworkCredential
+	external fun System_Net_NetworkCredential_GetCredential(self: Pointer? /* System.Net.NetworkCredential */, uri: Pointer? /* System.Uri */, authenticationType: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.NetworkCredential */
+	
+	external fun System_Net_NetworkCredential_GetCredential_1(self: Pointer? /* System.Net.NetworkCredential */, host: Pointer? /* System.String */, port: Int /* System.Int32 */, authenticationType: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.NetworkCredential */
+	
+	external fun System_Net_NetworkCredential_Create(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.NetworkCredential */
+	
+	external fun System_Net_NetworkCredential_Create_1(userName: Pointer? /* System.String */, password: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.NetworkCredential */
+	
+	external fun System_Net_NetworkCredential_Create_2(userName: Pointer? /* System.String */, password: Pointer? /* System.String */, domain: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.NetworkCredential */
+	
+	external fun System_Net_NetworkCredential_Create_3(userName: Pointer? /* System.String */, password: Pointer? /* System.Security.SecureString */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.NetworkCredential */
+	
+	external fun System_Net_NetworkCredential_Create_4(userName: Pointer? /* System.String */, password: Pointer? /* System.Security.SecureString */, domain: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.NetworkCredential */
+	
+	external fun System_Net_NetworkCredential_UserName_Get(self: Pointer? /* System.Net.NetworkCredential */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
+	external fun System_Net_NetworkCredential_UserName_Set(self: Pointer? /* System.Net.NetworkCredential */, value: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */)
+	
+	
+	external fun System_Net_NetworkCredential_Password_Get(self: Pointer? /* System.Net.NetworkCredential */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
+	external fun System_Net_NetworkCredential_Password_Set(self: Pointer? /* System.Net.NetworkCredential */, value: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */)
+	
+	
+	external fun System_Net_NetworkCredential_SecurePassword_Get(self: Pointer? /* System.Net.NetworkCredential */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.SecureString */
+	
+	external fun System_Net_NetworkCredential_SecurePassword_Set(self: Pointer? /* System.Net.NetworkCredential */, value: Pointer? /* System.Security.SecureString */, outException: PointerByReference? /* System.Exception */)
+	
+	
+	external fun System_Net_NetworkCredential_Domain_Get(self: Pointer? /* System.Net.NetworkCredential */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
+	external fun System_Net_NetworkCredential_Domain_Set(self: Pointer? /* System.Net.NetworkCredential */, value: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */)
+	
+	
+	external fun System_Net_NetworkCredential_TypeOf() : Pointer /* System.Type */
+	
+	external fun System_Net_NetworkCredential_Destroy(self: Pointer? /* System.Net.NetworkCredential */)
+	
+	
+	
+
+	// MARK: - END System.Net.NetworkCredential
+
+
+	// MARK: - BEGIN System.Net.ICredentialsByHost
+	external fun System_Net_ICredentialsByHost_GetCredential(self: Pointer? /* System.Net.ICredentialsByHost */, host: Pointer /* System.String */, port: Int /* System.Int32 */, authenticationType: Pointer /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer? /* System.Net.NetworkCredential */
+	
+	external fun System_Net_ICredentialsByHost_TypeOf() : Pointer /* System.Type */
+	
+	external fun System_Net_ICredentialsByHost_Destroy(self: Pointer? /* System.Net.ICredentialsByHost */)
+	
+	
+	
+
+	// MARK: - END System.Net.ICredentialsByHost
+
+
 	// MARK: - BEGIN Beyond.NET.Sample.SubclassingTests.MyBaseClass
 	external fun Beyond_NET_Sample_SubclassingTests_MyBaseClass_Do(self: Pointer? /* Beyond.NET.Sample.SubclassingTests.MyBaseClass */, outException: PointerByReference? /* System.Exception */)
 	
@@ -206052,77 +207047,6 @@ object CAPI {
 	
 
 	// MARK: - END System.Security.Cryptography.ECDiffieHellmanPublicKey
-
-
-	// MARK: - BEGIN System.Net.NetworkCredential
-	external fun System_Net_NetworkCredential_GetCredential(self: Pointer? /* System.Net.NetworkCredential */, uri: Pointer? /* System.Uri */, authenticationType: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.NetworkCredential */
-	
-	external fun System_Net_NetworkCredential_GetCredential_1(self: Pointer? /* System.Net.NetworkCredential */, host: Pointer? /* System.String */, port: Int /* System.Int32 */, authenticationType: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.NetworkCredential */
-	
-	external fun System_Net_NetworkCredential_Create(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.NetworkCredential */
-	
-	external fun System_Net_NetworkCredential_Create_1(userName: Pointer? /* System.String */, password: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.NetworkCredential */
-	
-	external fun System_Net_NetworkCredential_Create_2(userName: Pointer? /* System.String */, password: Pointer? /* System.String */, domain: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.NetworkCredential */
-	
-	external fun System_Net_NetworkCredential_Create_3(userName: Pointer? /* System.String */, password: Pointer? /* System.Security.SecureString */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.NetworkCredential */
-	
-	external fun System_Net_NetworkCredential_Create_4(userName: Pointer? /* System.String */, password: Pointer? /* System.Security.SecureString */, domain: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Net.NetworkCredential */
-	
-	external fun System_Net_NetworkCredential_UserName_Get(self: Pointer? /* System.Net.NetworkCredential */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
-	
-	external fun System_Net_NetworkCredential_UserName_Set(self: Pointer? /* System.Net.NetworkCredential */, value: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */)
-	
-	
-	external fun System_Net_NetworkCredential_Password_Get(self: Pointer? /* System.Net.NetworkCredential */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
-	
-	external fun System_Net_NetworkCredential_Password_Set(self: Pointer? /* System.Net.NetworkCredential */, value: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */)
-	
-	
-	external fun System_Net_NetworkCredential_SecurePassword_Get(self: Pointer? /* System.Net.NetworkCredential */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.SecureString */
-	
-	external fun System_Net_NetworkCredential_SecurePassword_Set(self: Pointer? /* System.Net.NetworkCredential */, value: Pointer? /* System.Security.SecureString */, outException: PointerByReference? /* System.Exception */)
-	
-	
-	external fun System_Net_NetworkCredential_Domain_Get(self: Pointer? /* System.Net.NetworkCredential */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
-	
-	external fun System_Net_NetworkCredential_Domain_Set(self: Pointer? /* System.Net.NetworkCredential */, value: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */)
-	
-	
-	external fun System_Net_NetworkCredential_TypeOf() : Pointer /* System.Type */
-	
-	external fun System_Net_NetworkCredential_Destroy(self: Pointer? /* System.Net.NetworkCredential */)
-	
-	
-	
-
-	// MARK: - END System.Net.NetworkCredential
-
-
-	// MARK: - BEGIN System.Net.ICredentials
-	external fun System_Net_ICredentials_GetCredential(self: Pointer? /* System.Net.ICredentials */, uri: Pointer /* System.Uri */, authType: Pointer /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer? /* System.Net.NetworkCredential */
-	
-	external fun System_Net_ICredentials_TypeOf() : Pointer /* System.Type */
-	
-	external fun System_Net_ICredentials_Destroy(self: Pointer? /* System.Net.ICredentials */)
-	
-	
-	
-
-	// MARK: - END System.Net.ICredentials
-
-
-	// MARK: - BEGIN System.Net.ICredentialsByHost
-	external fun System_Net_ICredentialsByHost_GetCredential(self: Pointer? /* System.Net.ICredentialsByHost */, host: Pointer /* System.String */, port: Int /* System.Int32 */, authenticationType: Pointer /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer? /* System.Net.NetworkCredential */
-	
-	external fun System_Net_ICredentialsByHost_TypeOf() : Pointer /* System.Type */
-	
-	external fun System_Net_ICredentialsByHost_Destroy(self: Pointer? /* System.Net.ICredentialsByHost */)
-	
-	
-	
-
-	// MARK: - END System.Net.ICredentialsByHost
 
 
 	// MARK: - BEGIN System.Xml.Serialization.XmlSerializer
