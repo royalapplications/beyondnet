@@ -4,8 +4,8 @@
 #nullable disable warnings
 #pragma warning disable
 
-// Number of generated types: 1651
-// Number of generated members: 7824
+// Number of generated types: 1654
+// Number of generated members: 7860
 
 // <Header>
 using System;
@@ -172563,6 +172563,1547 @@ internal unsafe class Beyond_NET_Sample_Transformer_StringGetterDelegate
 }
 
 
+internal unsafe class Beyond_NET_Sample_WebProxyTests
+{
+	[UnmanagedCallersOnly(EntryPoint = "Beyond_NET_Sample_WebProxyTests_CreateWebProxy")]
+	internal static void* /* System.Net.WebProxy */ Beyond_NET_Sample_WebProxyTests_CreateWebProxy(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Net.WebProxy __returnValue = Beyond.NET.Sample.WebProxyTests.CreateWebProxy();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "Beyond_NET_Sample_WebProxyTests_Create_1")]
+	internal static void* /* Beyond.NET.Sample.WebProxyTests */ Beyond_NET_Sample_WebProxyTests_Create_1(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			Beyond.NET.Sample.WebProxyTests __returnValue = new Beyond.NET.Sample.WebProxyTests();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "Beyond_NET_Sample_WebProxyTests_TypeOf")]
+	internal static void* /* System.Type */ Beyond_NET_Sample_WebProxyTests_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(Beyond.NET.Sample.WebProxyTests);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "Beyond_NET_Sample_WebProxyTests_Destroy")]
+	internal static void /* System.Void */ Beyond_NET_Sample_WebProxyTests_Destroy(void* /* Beyond.NET.Sample.WebProxyTests */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+}
+
+
+internal unsafe class System_Net_WebProxy
+{
+	// Unsupported Member "get_Address": Is Special Name
+
+	// Unsupported Member "set_Address": Is Special Name
+
+	// Unsupported Member "get_BypassProxyOnLocal": Is Special Name
+
+	// Unsupported Member "set_BypassProxyOnLocal": Is Special Name
+
+	// Unsupported Member "get_BypassList": Is Special Name
+
+	// Unsupported Member "set_BypassList": Is Special Name
+
+	// Unsupported Member "get_BypassArrayList": Is Special Name
+
+	// Unsupported Member "get_Credentials": Is Special Name
+
+	// Unsupported Member "set_Credentials": Is Special Name
+
+	// Unsupported Member "get_UseDefaultCredentials": Is Special Name
+
+	// Unsupported Member "set_UseDefaultCredentials": Is Special Name
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_GetProxy")]
+	internal static void* /* System.Uri */ System_Net_WebProxy_GetProxy(void* /* System.Net.WebProxy */ __self, void* /* System.Uri */ destination, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.WebProxy __selfConverted = InteropUtils.GetInstance<System.Net.WebProxy>(__self);
+	
+		System.Uri destinationConverted = InteropUtils.GetInstance<System.Uri>(destination);
+	
+	    try {
+			System.Uri __returnValue = __selfConverted.GetProxy(destinationConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_IsBypassed")]
+	internal static byte /* System.Boolean */ System_Net_WebProxy_IsBypassed(void* /* System.Net.WebProxy */ __self, void* /* System.Uri */ host, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.WebProxy __selfConverted = InteropUtils.GetInstance<System.Net.WebProxy>(__self);
+	
+		System.Uri hostConverted = InteropUtils.GetInstance<System.Uri>(host);
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.IsBypassed(hostConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_GetDefaultProxy")]
+	internal static void* /* System.Net.WebProxy */ System_Net_WebProxy_GetDefaultProxy(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Net.WebProxy __returnValue = System.Net.WebProxy.GetDefaultProxy();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_Create")]
+	internal static void* /* System.Net.WebProxy */ System_Net_WebProxy_Create(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Net.WebProxy __returnValue = new System.Net.WebProxy();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_Create_1")]
+	internal static void* /* System.Net.WebProxy */ System_Net_WebProxy_Create_1(void* /* System.Uri */ Address, void** /* System.Exception */ __outException)
+	{
+		System.Uri AddressConverted = InteropUtils.GetInstance<System.Uri>(Address);
+	
+	    try {
+			System.Net.WebProxy __returnValue = new System.Net.WebProxy(AddressConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_Create_2")]
+	internal static void* /* System.Net.WebProxy */ System_Net_WebProxy_Create_2(void* /* System.Uri */ Address, byte /* System.Boolean */ BypassOnLocal, void** /* System.Exception */ __outException)
+	{
+		System.Uri AddressConverted = InteropUtils.GetInstance<System.Uri>(Address);
+		System.Boolean BypassOnLocalConverted = BypassOnLocal.ToBool();
+	
+	    try {
+			System.Net.WebProxy __returnValue = new System.Net.WebProxy(AddressConverted, BypassOnLocalConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_Create_3")]
+	internal static void* /* System.Net.WebProxy */ System_Net_WebProxy_Create_3(void* /* System.Uri */ Address, byte /* System.Boolean */ BypassOnLocal, void* /* System.String[] */ BypassList, void** /* System.Exception */ __outException)
+	{
+		System.Uri AddressConverted = InteropUtils.GetInstance<System.Uri>(Address);
+		System.Boolean BypassOnLocalConverted = BypassOnLocal.ToBool();
+		System.String[] BypassListConverted = InteropUtils.GetInstance<System.String[]>(BypassList);
+	
+	    try {
+			System.Net.WebProxy __returnValue = new System.Net.WebProxy(AddressConverted, BypassOnLocalConverted, BypassListConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_Create_4")]
+	internal static void* /* System.Net.WebProxy */ System_Net_WebProxy_Create_4(void* /* System.Uri */ Address, byte /* System.Boolean */ BypassOnLocal, void* /* System.String[] */ BypassList, void* /* System.Net.ICredentials */ Credentials, void** /* System.Exception */ __outException)
+	{
+		System.Uri AddressConverted = InteropUtils.GetInstance<System.Uri>(Address);
+		System.Boolean BypassOnLocalConverted = BypassOnLocal.ToBool();
+		System.String[] BypassListConverted = InteropUtils.GetInstance<System.String[]>(BypassList);
+		System.Net.ICredentials CredentialsConverted = InteropUtils.GetInstance<System.Net.ICredentials>(Credentials);
+	
+	    try {
+			System.Net.WebProxy __returnValue = new System.Net.WebProxy(AddressConverted, BypassOnLocalConverted, BypassListConverted, CredentialsConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_Create_5")]
+	internal static void* /* System.Net.WebProxy */ System_Net_WebProxy_Create_5(void* /* System.String */ Host, int /* System.Int32 */ Port, void** /* System.Exception */ __outException)
+	{
+		System.String HostConverted = InteropUtils.GetInstance<System.String>(Host);
+	
+	    try {
+			System.Net.WebProxy __returnValue = new System.Net.WebProxy(HostConverted, Port);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_Create_6")]
+	internal static void* /* System.Net.WebProxy */ System_Net_WebProxy_Create_6(void* /* System.String */ Address, void** /* System.Exception */ __outException)
+	{
+		System.String AddressConverted = InteropUtils.GetInstance<System.String>(Address);
+	
+	    try {
+			System.Net.WebProxy __returnValue = new System.Net.WebProxy(AddressConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_Create_7")]
+	internal static void* /* System.Net.WebProxy */ System_Net_WebProxy_Create_7(void* /* System.String */ Address, byte /* System.Boolean */ BypassOnLocal, void** /* System.Exception */ __outException)
+	{
+		System.String AddressConverted = InteropUtils.GetInstance<System.String>(Address);
+		System.Boolean BypassOnLocalConverted = BypassOnLocal.ToBool();
+	
+	    try {
+			System.Net.WebProxy __returnValue = new System.Net.WebProxy(AddressConverted, BypassOnLocalConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_Create_8")]
+	internal static void* /* System.Net.WebProxy */ System_Net_WebProxy_Create_8(void* /* System.String */ Address, byte /* System.Boolean */ BypassOnLocal, void* /* System.String[] */ BypassList, void** /* System.Exception */ __outException)
+	{
+		System.String AddressConverted = InteropUtils.GetInstance<System.String>(Address);
+		System.Boolean BypassOnLocalConverted = BypassOnLocal.ToBool();
+		System.String[] BypassListConverted = InteropUtils.GetInstance<System.String[]>(BypassList);
+	
+	    try {
+			System.Net.WebProxy __returnValue = new System.Net.WebProxy(AddressConverted, BypassOnLocalConverted, BypassListConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_Create_9")]
+	internal static void* /* System.Net.WebProxy */ System_Net_WebProxy_Create_9(void* /* System.String */ Address, byte /* System.Boolean */ BypassOnLocal, void* /* System.String[] */ BypassList, void* /* System.Net.ICredentials */ Credentials, void** /* System.Exception */ __outException)
+	{
+		System.String AddressConverted = InteropUtils.GetInstance<System.String>(Address);
+		System.Boolean BypassOnLocalConverted = BypassOnLocal.ToBool();
+		System.String[] BypassListConverted = InteropUtils.GetInstance<System.String[]>(BypassList);
+		System.Net.ICredentials CredentialsConverted = InteropUtils.GetInstance<System.Net.ICredentials>(Credentials);
+	
+	    try {
+			System.Net.WebProxy __returnValue = new System.Net.WebProxy(AddressConverted, BypassOnLocalConverted, BypassListConverted, CredentialsConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_Address_Get")]
+	internal static void* /* System.Uri */ System_Net_WebProxy_Address_Get(void* /* System.Net.WebProxy */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.WebProxy __selfConverted = InteropUtils.GetInstance<System.Net.WebProxy>(__self);
+	
+	
+	    try {
+			System.Uri __returnValue = __selfConverted.Address;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_Address_Set")]
+	internal static void /* System.Void */ System_Net_WebProxy_Address_Set(void* /* System.Net.WebProxy */ __self, void* /* System.Uri */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.WebProxy __selfConverted = InteropUtils.GetInstance<System.Net.WebProxy>(__self);
+	
+	
+	    try {
+			__selfConverted.Address = InteropUtils.GetInstance<System.Uri>(__value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_BypassProxyOnLocal_Get")]
+	internal static byte /* System.Boolean */ System_Net_WebProxy_BypassProxyOnLocal_Get(void* /* System.Net.WebProxy */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.WebProxy __selfConverted = InteropUtils.GetInstance<System.Net.WebProxy>(__self);
+	
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.BypassProxyOnLocal;
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_BypassProxyOnLocal_Set")]
+	internal static void /* System.Void */ System_Net_WebProxy_BypassProxyOnLocal_Set(void* /* System.Net.WebProxy */ __self, byte /* System.Boolean */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.WebProxy __selfConverted = InteropUtils.GetInstance<System.Net.WebProxy>(__self);
+	
+	
+	    try {
+			__selfConverted.BypassProxyOnLocal = __value.ToBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_BypassList_Get")]
+	internal static void* /* System.String[] */ System_Net_WebProxy_BypassList_Get(void* /* System.Net.WebProxy */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.WebProxy __selfConverted = InteropUtils.GetInstance<System.Net.WebProxy>(__self);
+	
+	
+	    try {
+			System.String[] __returnValue = __selfConverted.BypassList;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_BypassList_Set")]
+	internal static void /* System.Void */ System_Net_WebProxy_BypassList_Set(void* /* System.Net.WebProxy */ __self, void* /* System.String[] */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.WebProxy __selfConverted = InteropUtils.GetInstance<System.Net.WebProxy>(__self);
+	
+	
+	    try {
+			__selfConverted.BypassList = InteropUtils.GetInstance<System.String[]>(__value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_BypassArrayList_Get")]
+	internal static void* /* System.Collections.ArrayList */ System_Net_WebProxy_BypassArrayList_Get(void* /* System.Net.WebProxy */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.WebProxy __selfConverted = InteropUtils.GetInstance<System.Net.WebProxy>(__self);
+	
+	
+	    try {
+			System.Collections.ArrayList __returnValue = __selfConverted.BypassArrayList;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_Credentials_Get")]
+	internal static void* /* System.Net.ICredentials */ System_Net_WebProxy_Credentials_Get(void* /* System.Net.WebProxy */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.WebProxy __selfConverted = InteropUtils.GetInstance<System.Net.WebProxy>(__self);
+	
+	
+	    try {
+			System.Net.ICredentials __returnValue = __selfConverted.Credentials;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_Credentials_Set")]
+	internal static void /* System.Void */ System_Net_WebProxy_Credentials_Set(void* /* System.Net.WebProxy */ __self, void* /* System.Net.ICredentials */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.WebProxy __selfConverted = InteropUtils.GetInstance<System.Net.WebProxy>(__self);
+	
+	
+	    try {
+			__selfConverted.Credentials = InteropUtils.GetInstance<System.Net.ICredentials>(__value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_UseDefaultCredentials_Get")]
+	internal static byte /* System.Boolean */ System_Net_WebProxy_UseDefaultCredentials_Get(void* /* System.Net.WebProxy */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.WebProxy __selfConverted = InteropUtils.GetInstance<System.Net.WebProxy>(__self);
+	
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.UseDefaultCredentials;
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_UseDefaultCredentials_Set")]
+	internal static void /* System.Void */ System_Net_WebProxy_UseDefaultCredentials_Set(void* /* System.Net.WebProxy */ __self, byte /* System.Boolean */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.WebProxy __selfConverted = InteropUtils.GetInstance<System.Net.WebProxy>(__self);
+	
+	
+	    try {
+			__selfConverted.UseDefaultCredentials = __value.ToBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_TypeOf")]
+	internal static void* /* System.Type */ System_Net_WebProxy_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Net.WebProxy);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_WebProxy_Destroy")]
+	internal static void /* System.Void */ System_Net_WebProxy_Destroy(void* /* System.Net.WebProxy */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+}
+
+
+internal unsafe class System_Net_IWebProxy
+{
+	// Unsupported Member "get_Credentials": Is Special Name
+
+	// Unsupported Member "set_Credentials": Is Special Name
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_IWebProxy_GetProxy")]
+	internal static void* /* System.Uri */ System_Net_IWebProxy_GetProxy(void* /* System.Net.IWebProxy */ __self, void* /* System.Uri */ destination, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.IWebProxy __selfConverted = InteropUtils.GetInstance<System.Net.IWebProxy>(__self);
+	
+		System.Uri destinationConverted = InteropUtils.GetInstance<System.Uri>(destination);
+	
+	    try {
+			System.Uri __returnValue = __selfConverted.GetProxy(destinationConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_IWebProxy_IsBypassed")]
+	internal static byte /* System.Boolean */ System_Net_IWebProxy_IsBypassed(void* /* System.Net.IWebProxy */ __self, void* /* System.Uri */ host, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.IWebProxy __selfConverted = InteropUtils.GetInstance<System.Net.IWebProxy>(__self);
+	
+		System.Uri hostConverted = InteropUtils.GetInstance<System.Uri>(host);
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.IsBypassed(hostConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_IWebProxy_Credentials_Get")]
+	internal static void* /* System.Net.ICredentials */ System_Net_IWebProxy_Credentials_Get(void* /* System.Net.IWebProxy */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.IWebProxy __selfConverted = InteropUtils.GetInstance<System.Net.IWebProxy>(__self);
+	
+	
+	    try {
+			System.Net.ICredentials __returnValue = __selfConverted.Credentials;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_IWebProxy_Credentials_Set")]
+	internal static void /* System.Void */ System_Net_IWebProxy_Credentials_Set(void* /* System.Net.IWebProxy */ __self, void* /* System.Net.ICredentials */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.IWebProxy __selfConverted = InteropUtils.GetInstance<System.Net.IWebProxy>(__self);
+	
+	
+	    try {
+			__selfConverted.Credentials = InteropUtils.GetInstance<System.Net.ICredentials>(__value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_IWebProxy_TypeOf")]
+	internal static void* /* System.Type */ System_Net_IWebProxy_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Net.IWebProxy);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_IWebProxy_Destroy")]
+	internal static void /* System.Void */ System_Net_IWebProxy_Destroy(void* /* System.Net.IWebProxy */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+}
+
+
+internal unsafe class System_Net_ICredentials
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_ICredentials_GetCredential")]
+	internal static void* /* System.Net.NetworkCredential */ System_Net_ICredentials_GetCredential(void* /* System.Net.ICredentials */ __self, void* /* System.Uri */ uri, void* /* System.String */ authType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.ICredentials __selfConverted = InteropUtils.GetInstance<System.Net.ICredentials>(__self);
+	
+		System.Uri uriConverted = InteropUtils.GetInstance<System.Uri>(uri);
+		System.String authTypeConverted = InteropUtils.GetInstance<System.String>(authType);
+	
+	    try {
+			System.Net.NetworkCredential __returnValue = __selfConverted.GetCredential(uriConverted, authTypeConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_ICredentials_TypeOf")]
+	internal static void* /* System.Type */ System_Net_ICredentials_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Net.ICredentials);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_ICredentials_Destroy")]
+	internal static void /* System.Void */ System_Net_ICredentials_Destroy(void* /* System.Net.ICredentials */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+}
+
+
+internal unsafe class System_Net_NetworkCredential
+{
+	// Unsupported Member "get_UserName": Is Special Name
+
+	// Unsupported Member "set_UserName": Is Special Name
+
+	// Unsupported Member "get_Password": Is Special Name
+
+	// Unsupported Member "set_Password": Is Special Name
+
+	// Unsupported Member "get_SecurePassword": Is Special Name
+
+	// Unsupported Member "set_SecurePassword": Is Special Name
+
+	// Unsupported Member "get_Domain": Is Special Name
+
+	// Unsupported Member "set_Domain": Is Special Name
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_GetCredential")]
+	internal static void* /* System.Net.NetworkCredential */ System_Net_NetworkCredential_GetCredential(void* /* System.Net.NetworkCredential */ __self, void* /* System.Uri */ uri, void* /* System.String */ authenticationType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
+	
+		System.Uri uriConverted = InteropUtils.GetInstance<System.Uri>(uri);
+		System.String authenticationTypeConverted = InteropUtils.GetInstance<System.String>(authenticationType);
+	
+	    try {
+			System.Net.NetworkCredential __returnValue = __selfConverted.GetCredential(uriConverted, authenticationTypeConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_GetCredential_1")]
+	internal static void* /* System.Net.NetworkCredential */ System_Net_NetworkCredential_GetCredential_1(void* /* System.Net.NetworkCredential */ __self, void* /* System.String */ host, int /* System.Int32 */ port, void* /* System.String */ authenticationType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
+	
+		System.String hostConverted = InteropUtils.GetInstance<System.String>(host);
+		System.String authenticationTypeConverted = InteropUtils.GetInstance<System.String>(authenticationType);
+	
+	    try {
+			System.Net.NetworkCredential __returnValue = __selfConverted.GetCredential(hostConverted, port, authenticationTypeConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Create")]
+	internal static void* /* System.Net.NetworkCredential */ System_Net_NetworkCredential_Create(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Net.NetworkCredential __returnValue = new System.Net.NetworkCredential();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Create_1")]
+	internal static void* /* System.Net.NetworkCredential */ System_Net_NetworkCredential_Create_1(void* /* System.String */ userName, void* /* System.String */ password, void** /* System.Exception */ __outException)
+	{
+		System.String userNameConverted = InteropUtils.GetInstance<System.String>(userName);
+		System.String passwordConverted = InteropUtils.GetInstance<System.String>(password);
+	
+	    try {
+			System.Net.NetworkCredential __returnValue = new System.Net.NetworkCredential(userNameConverted, passwordConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Create_2")]
+	internal static void* /* System.Net.NetworkCredential */ System_Net_NetworkCredential_Create_2(void* /* System.String */ userName, void* /* System.String */ password, void* /* System.String */ domain, void** /* System.Exception */ __outException)
+	{
+		System.String userNameConverted = InteropUtils.GetInstance<System.String>(userName);
+		System.String passwordConverted = InteropUtils.GetInstance<System.String>(password);
+		System.String domainConverted = InteropUtils.GetInstance<System.String>(domain);
+	
+	    try {
+			System.Net.NetworkCredential __returnValue = new System.Net.NetworkCredential(userNameConverted, passwordConverted, domainConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Create_3")]
+	internal static void* /* System.Net.NetworkCredential */ System_Net_NetworkCredential_Create_3(void* /* System.String */ userName, void* /* System.Security.SecureString */ password, void** /* System.Exception */ __outException)
+	{
+		System.String userNameConverted = InteropUtils.GetInstance<System.String>(userName);
+		System.Security.SecureString passwordConverted = InteropUtils.GetInstance<System.Security.SecureString>(password);
+	
+	    try {
+			System.Net.NetworkCredential __returnValue = new System.Net.NetworkCredential(userNameConverted, passwordConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Create_4")]
+	internal static void* /* System.Net.NetworkCredential */ System_Net_NetworkCredential_Create_4(void* /* System.String */ userName, void* /* System.Security.SecureString */ password, void* /* System.String */ domain, void** /* System.Exception */ __outException)
+	{
+		System.String userNameConverted = InteropUtils.GetInstance<System.String>(userName);
+		System.Security.SecureString passwordConverted = InteropUtils.GetInstance<System.Security.SecureString>(password);
+		System.String domainConverted = InteropUtils.GetInstance<System.String>(domain);
+	
+	    try {
+			System.Net.NetworkCredential __returnValue = new System.Net.NetworkCredential(userNameConverted, passwordConverted, domainConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_UserName_Get")]
+	internal static void* /* System.String */ System_Net_NetworkCredential_UserName_Get(void* /* System.Net.NetworkCredential */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfConverted.UserName;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_UserName_Set")]
+	internal static void /* System.Void */ System_Net_NetworkCredential_UserName_Set(void* /* System.Net.NetworkCredential */ __self, void* /* System.String */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
+	
+	
+	    try {
+			__selfConverted.UserName = InteropUtils.GetInstance<System.String>(__value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Password_Get")]
+	internal static void* /* System.String */ System_Net_NetworkCredential_Password_Get(void* /* System.Net.NetworkCredential */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfConverted.Password;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Password_Set")]
+	internal static void /* System.Void */ System_Net_NetworkCredential_Password_Set(void* /* System.Net.NetworkCredential */ __self, void* /* System.String */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
+	
+	
+	    try {
+			__selfConverted.Password = InteropUtils.GetInstance<System.String>(__value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_SecurePassword_Get")]
+	internal static void* /* System.Security.SecureString */ System_Net_NetworkCredential_SecurePassword_Get(void* /* System.Net.NetworkCredential */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
+	
+	
+	    try {
+			System.Security.SecureString __returnValue = __selfConverted.SecurePassword;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_SecurePassword_Set")]
+	internal static void /* System.Void */ System_Net_NetworkCredential_SecurePassword_Set(void* /* System.Net.NetworkCredential */ __self, void* /* System.Security.SecureString */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
+	
+	
+	    try {
+			__selfConverted.SecurePassword = InteropUtils.GetInstance<System.Security.SecureString>(__value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Domain_Get")]
+	internal static void* /* System.String */ System_Net_NetworkCredential_Domain_Get(void* /* System.Net.NetworkCredential */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfConverted.Domain;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Domain_Set")]
+	internal static void /* System.Void */ System_Net_NetworkCredential_Domain_Set(void* /* System.Net.NetworkCredential */ __self, void* /* System.String */ __value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
+	
+	
+	    try {
+			__selfConverted.Domain = InteropUtils.GetInstance<System.String>(__value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_TypeOf")]
+	internal static void* /* System.Type */ System_Net_NetworkCredential_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Net.NetworkCredential);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Destroy")]
+	internal static void /* System.Void */ System_Net_NetworkCredential_Destroy(void* /* System.Net.NetworkCredential */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+}
+
+
+internal unsafe class System_Net_ICredentialsByHost
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_ICredentialsByHost_GetCredential")]
+	internal static void* /* System.Net.NetworkCredential */ System_Net_ICredentialsByHost_GetCredential(void* /* System.Net.ICredentialsByHost */ __self, void* /* System.String */ host, int /* System.Int32 */ port, void* /* System.String */ authenticationType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Net.ICredentialsByHost __selfConverted = InteropUtils.GetInstance<System.Net.ICredentialsByHost>(__self);
+	
+		System.String hostConverted = InteropUtils.GetInstance<System.String>(host);
+		System.String authenticationTypeConverted = InteropUtils.GetInstance<System.String>(authenticationType);
+	
+	    try {
+			System.Net.NetworkCredential __returnValue = __selfConverted.GetCredential(hostConverted, port, authenticationTypeConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_ICredentialsByHost_TypeOf")]
+	internal static void* /* System.Type */ System_Net_ICredentialsByHost_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Net.ICredentialsByHost);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Net_ICredentialsByHost_Destroy")]
+	internal static void /* System.Void */ System_Net_ICredentialsByHost_Destroy(void* /* System.Net.ICredentialsByHost */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+}
+
+
 internal unsafe class Beyond_NET_Sample_SubclassingTests_MyBaseClass
 {
 	[UnmanagedCallersOnly(EntryPoint = "Beyond_NET_Sample_SubclassingTests_MyBaseClass_Do")]
@@ -183900,592 +185441,6 @@ internal unsafe class System_Security_Cryptography_ECDiffieHellmanPublicKey
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_ECDiffieHellmanPublicKey_Destroy")]
 	internal static void /* System.Void */ System_Security_Cryptography_ECDiffieHellmanPublicKey_Destroy(void* /* System.Security.Cryptography.ECDiffieHellmanPublicKey */ __self)
-	{
-	
-		InteropUtils.FreeIfAllocated(__self);
-	}
-	
-}
-
-
-internal unsafe class System_Net_NetworkCredential
-{
-	// Unsupported Member "get_UserName": Is Special Name
-
-	// Unsupported Member "set_UserName": Is Special Name
-
-	// Unsupported Member "get_Password": Is Special Name
-
-	// Unsupported Member "set_Password": Is Special Name
-
-	// Unsupported Member "get_SecurePassword": Is Special Name
-
-	// Unsupported Member "set_SecurePassword": Is Special Name
-
-	// Unsupported Member "get_Domain": Is Special Name
-
-	// Unsupported Member "set_Domain": Is Special Name
-
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_GetCredential")]
-	internal static void* /* System.Net.NetworkCredential */ System_Net_NetworkCredential_GetCredential(void* /* System.Net.NetworkCredential */ __self, void* /* System.Uri */ uri, void* /* System.String */ authenticationType, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
-	
-		System.Uri uriConverted = InteropUtils.GetInstance<System.Uri>(uri);
-		System.String authenticationTypeConverted = InteropUtils.GetInstance<System.String>(authenticationType);
-	
-	    try {
-			System.Net.NetworkCredential __returnValue = __selfConverted.GetCredential(uriConverted, authenticationTypeConverted);
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		} finally {
-		}
-	}
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_GetCredential_1")]
-	internal static void* /* System.Net.NetworkCredential */ System_Net_NetworkCredential_GetCredential_1(void* /* System.Net.NetworkCredential */ __self, void* /* System.String */ host, int /* System.Int32 */ port, void* /* System.String */ authenticationType, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
-	
-		System.String hostConverted = InteropUtils.GetInstance<System.String>(host);
-		System.String authenticationTypeConverted = InteropUtils.GetInstance<System.String>(authenticationType);
-	
-	    try {
-			System.Net.NetworkCredential __returnValue = __selfConverted.GetCredential(hostConverted, port, authenticationTypeConverted);
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		} finally {
-		}
-	}
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Create")]
-	internal static void* /* System.Net.NetworkCredential */ System_Net_NetworkCredential_Create(void** /* System.Exception */ __outException)
-	{
-	
-	    try {
-			System.Net.NetworkCredential __returnValue = new System.Net.NetworkCredential();
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		} finally {
-		}
-	}
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Create_1")]
-	internal static void* /* System.Net.NetworkCredential */ System_Net_NetworkCredential_Create_1(void* /* System.String */ userName, void* /* System.String */ password, void** /* System.Exception */ __outException)
-	{
-		System.String userNameConverted = InteropUtils.GetInstance<System.String>(userName);
-		System.String passwordConverted = InteropUtils.GetInstance<System.String>(password);
-	
-	    try {
-			System.Net.NetworkCredential __returnValue = new System.Net.NetworkCredential(userNameConverted, passwordConverted);
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		} finally {
-		}
-	}
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Create_2")]
-	internal static void* /* System.Net.NetworkCredential */ System_Net_NetworkCredential_Create_2(void* /* System.String */ userName, void* /* System.String */ password, void* /* System.String */ domain, void** /* System.Exception */ __outException)
-	{
-		System.String userNameConverted = InteropUtils.GetInstance<System.String>(userName);
-		System.String passwordConverted = InteropUtils.GetInstance<System.String>(password);
-		System.String domainConverted = InteropUtils.GetInstance<System.String>(domain);
-	
-	    try {
-			System.Net.NetworkCredential __returnValue = new System.Net.NetworkCredential(userNameConverted, passwordConverted, domainConverted);
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		} finally {
-		}
-	}
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Create_3")]
-	internal static void* /* System.Net.NetworkCredential */ System_Net_NetworkCredential_Create_3(void* /* System.String */ userName, void* /* System.Security.SecureString */ password, void** /* System.Exception */ __outException)
-	{
-		System.String userNameConverted = InteropUtils.GetInstance<System.String>(userName);
-		System.Security.SecureString passwordConverted = InteropUtils.GetInstance<System.Security.SecureString>(password);
-	
-	    try {
-			System.Net.NetworkCredential __returnValue = new System.Net.NetworkCredential(userNameConverted, passwordConverted);
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		} finally {
-		}
-	}
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Create_4")]
-	internal static void* /* System.Net.NetworkCredential */ System_Net_NetworkCredential_Create_4(void* /* System.String */ userName, void* /* System.Security.SecureString */ password, void* /* System.String */ domain, void** /* System.Exception */ __outException)
-	{
-		System.String userNameConverted = InteropUtils.GetInstance<System.String>(userName);
-		System.Security.SecureString passwordConverted = InteropUtils.GetInstance<System.Security.SecureString>(password);
-		System.String domainConverted = InteropUtils.GetInstance<System.String>(domain);
-	
-	    try {
-			System.Net.NetworkCredential __returnValue = new System.Net.NetworkCredential(userNameConverted, passwordConverted, domainConverted);
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		} finally {
-		}
-	}
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_UserName_Get")]
-	internal static void* /* System.String */ System_Net_NetworkCredential_UserName_Get(void* /* System.Net.NetworkCredential */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
-	
-	
-	    try {
-			System.String __returnValue = __selfConverted.UserName;
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		} finally {
-		}
-	}
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_UserName_Set")]
-	internal static void /* System.Void */ System_Net_NetworkCredential_UserName_Set(void* /* System.Net.NetworkCredential */ __self, void* /* System.String */ __value, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
-	
-	
-	    try {
-			__selfConverted.UserName = InteropUtils.GetInstance<System.String>(__value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		} finally {
-		}
-	}
-	
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Password_Get")]
-	internal static void* /* System.String */ System_Net_NetworkCredential_Password_Get(void* /* System.Net.NetworkCredential */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
-	
-	
-	    try {
-			System.String __returnValue = __selfConverted.Password;
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		} finally {
-		}
-	}
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Password_Set")]
-	internal static void /* System.Void */ System_Net_NetworkCredential_Password_Set(void* /* System.Net.NetworkCredential */ __self, void* /* System.String */ __value, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
-	
-	
-	    try {
-			__selfConverted.Password = InteropUtils.GetInstance<System.String>(__value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		} finally {
-		}
-	}
-	
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_SecurePassword_Get")]
-	internal static void* /* System.Security.SecureString */ System_Net_NetworkCredential_SecurePassword_Get(void* /* System.Net.NetworkCredential */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
-	
-	
-	    try {
-			System.Security.SecureString __returnValue = __selfConverted.SecurePassword;
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		} finally {
-		}
-	}
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_SecurePassword_Set")]
-	internal static void /* System.Void */ System_Net_NetworkCredential_SecurePassword_Set(void* /* System.Net.NetworkCredential */ __self, void* /* System.Security.SecureString */ __value, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
-	
-	
-	    try {
-			__selfConverted.SecurePassword = InteropUtils.GetInstance<System.Security.SecureString>(__value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		} finally {
-		}
-	}
-	
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Domain_Get")]
-	internal static void* /* System.String */ System_Net_NetworkCredential_Domain_Get(void* /* System.Net.NetworkCredential */ __self, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
-	
-	
-	    try {
-			System.String __returnValue = __selfConverted.Domain;
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		} finally {
-		}
-	}
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Domain_Set")]
-	internal static void /* System.Void */ System_Net_NetworkCredential_Domain_Set(void* /* System.Net.NetworkCredential */ __self, void* /* System.String */ __value, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Net.NetworkCredential __selfConverted = InteropUtils.GetInstance<System.Net.NetworkCredential>(__self);
-	
-	
-	    try {
-			__selfConverted.Domain = InteropUtils.GetInstance<System.String>(__value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		} finally {
-		}
-	}
-	
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_TypeOf")]
-	internal static void* /* System.Type */ System_Net_NetworkCredential_TypeOf()
-	{
-	
-		System.Type __returnValue = typeof(System.Net.NetworkCredential);
-		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-		return __returnValueNative;
-	}
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_NetworkCredential_Destroy")]
-	internal static void /* System.Void */ System_Net_NetworkCredential_Destroy(void* /* System.Net.NetworkCredential */ __self)
-	{
-	
-		InteropUtils.FreeIfAllocated(__self);
-	}
-	
-}
-
-
-internal unsafe class System_Net_ICredentials
-{
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_ICredentials_GetCredential")]
-	internal static void* /* System.Net.NetworkCredential */ System_Net_ICredentials_GetCredential(void* /* System.Net.ICredentials */ __self, void* /* System.Uri */ uri, void* /* System.String */ authType, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Net.ICredentials __selfConverted = InteropUtils.GetInstance<System.Net.ICredentials>(__self);
-	
-		System.Uri uriConverted = InteropUtils.GetInstance<System.Uri>(uri);
-		System.String authTypeConverted = InteropUtils.GetInstance<System.String>(authType);
-	
-	    try {
-			System.Net.NetworkCredential __returnValue = __selfConverted.GetCredential(uriConverted, authTypeConverted);
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		} finally {
-		}
-	}
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_ICredentials_TypeOf")]
-	internal static void* /* System.Type */ System_Net_ICredentials_TypeOf()
-	{
-	
-		System.Type __returnValue = typeof(System.Net.ICredentials);
-		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-		return __returnValueNative;
-	}
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_ICredentials_Destroy")]
-	internal static void /* System.Void */ System_Net_ICredentials_Destroy(void* /* System.Net.ICredentials */ __self)
-	{
-	
-		InteropUtils.FreeIfAllocated(__self);
-	}
-	
-}
-
-
-internal unsafe class System_Net_ICredentialsByHost
-{
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_ICredentialsByHost_GetCredential")]
-	internal static void* /* System.Net.NetworkCredential */ System_Net_ICredentialsByHost_GetCredential(void* /* System.Net.ICredentialsByHost */ __self, void* /* System.String */ host, int /* System.Int32 */ port, void* /* System.String */ authenticationType, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Net.ICredentialsByHost __selfConverted = InteropUtils.GetInstance<System.Net.ICredentialsByHost>(__self);
-	
-		System.String hostConverted = InteropUtils.GetInstance<System.String>(host);
-		System.String authenticationTypeConverted = InteropUtils.GetInstance<System.String>(authenticationType);
-	
-	    try {
-			System.Net.NetworkCredential __returnValue = __selfConverted.GetCredential(hostConverted, port, authenticationTypeConverted);
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		} finally {
-		}
-	}
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_ICredentialsByHost_TypeOf")]
-	internal static void* /* System.Type */ System_Net_ICredentialsByHost_TypeOf()
-	{
-	
-		System.Type __returnValue = typeof(System.Net.ICredentialsByHost);
-		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-		return __returnValueNative;
-	}
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_Net_ICredentialsByHost_Destroy")]
-	internal static void /* System.Void */ System_Net_ICredentialsByHost_Destroy(void* /* System.Net.ICredentialsByHost */ __self)
 	{
 	
 		InteropUtils.FreeIfAllocated(__self);
