@@ -1,5 +1,5 @@
-// Number of generated types: 624
-// Number of generated members: 8124
+// Number of generated types: 627
+// Number of generated members: 8344
 
 // MARK: - BEGIN Header
 @file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE", "REDUNDANT_CALL_OF_CONVERSION_METHOD")
@@ -569,9 +569,9 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 
 // MARK: - BEGIN Unsupported Types
 // Unsupported Type "IEnumerator`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "IComparable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IComparisonOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
@@ -590,28 +590,28 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Span`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -628,8 +628,8 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.IUtfChar`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.IUtfChar`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
 // Unsupported Type "System.Char&": Excluded
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
@@ -640,57 +640,57 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.Span`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Span`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "System.ReadOnlySpan`1": Excluded
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtfChar`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.ValueTuple`2[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtfChar`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.ValueTuple`2[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -739,11 +739,11 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ArraySegment`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ArraySegment`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "ReadOnlySpan`1": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1+Enumerator[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.ReadOnlySpan`1+Enumerator[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
 // Unsupported Type "System.Void*": Is Managed Pointer Type
-// Unsupported Type "System.ValueTuple`2[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -792,31 +792,31 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.ValueTuple`2[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.ValueTuple`2[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -865,30 +865,30 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.ValueTuple`2[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.ValueTuple`2[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -937,144 +937,144 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
 // Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "INumber`1": Is Constructed Generic Type with non-constructed generic types
@@ -1107,37 +1107,37 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IPowerFunctions`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IRootFunctions`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ITrigonometricFunctions`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
 // Unsupported Type "IBinaryInteger`1": Is unsupported Type
 // Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
@@ -1234,62 +1234,62 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ValueTuple`2[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ValueTuple`2[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -1338,37 +1338,37 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
 // Unsupported Type "IBinaryInteger`1": Is unsupported Type
 // Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
@@ -1465,30 +1465,30 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ValueTuple`2[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ValueTuple`2[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -1633,8 +1633,8 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -1683,7 +1683,7 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -1732,7 +1732,7 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IBinaryInteger`1": Is unsupported Type
 // Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
@@ -1829,8 +1829,8 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -1879,7 +1879,7 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -1928,7 +1928,7 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -1977,36 +1977,36 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ISpanParsable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.TimeSpan, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.TimeSpan, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.DateOnly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.DateOnly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.TimeOnly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.TimeOnly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.DateTime, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.DateTime, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.TimeSpan, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.TimeSpan, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.DateOnly, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.DateOnly, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.TimeOnly, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.TimeOnly, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "System.Runtime.Serialization.DeserializationToken": Excluded
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Version, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Version, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "ValueTask`1": Is unsupported Type
-// Unsupported Type "System.Action`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.CancellationToken, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`1[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.CancellationToken, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "ValueTask`1": Is unsupported Type
-// Unsupported Type "System.ISpanParsable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ISpanParsable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Guid, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Guid, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Guid, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ISpanParsable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "System.TypedReference": Excluded
 // Unsupported Type "ValueTask`1": Is unsupported Type
-// Unsupported Type "System.EventHandler`1[[System.Threading.Tasks.UnobservedTaskExceptionEventArgs, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Nullable Value Type, but not a struct (System.Int32?)
+// Unsupported Type "System.EventHandler`1[[System.Threading.Tasks.UnobservedTaskExceptionEventArgs, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Nullable Value Type, but not a struct (System.Int32?)
 // Unsupported Type "IList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerator`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Func`2[[System.Exception, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Exception, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`1": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
@@ -2023,8 +2023,8 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Action`1[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`3[[System.AsyncCallback, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`1[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`3[[System.AsyncCallback, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`4": Is Generic Delegate Type
 // Unsupported Type "Func`4": Is Generic Delegate Type
 // Unsupported Type "Func`5": Is Generic Delegate Type
@@ -2059,7 +2059,7 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`6": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Task`1[]": Is Array of Generic Type
 // Unsupported Type "Action`1": Is Generic Delegate Type
 // Unsupported Type "Task`1[]": Is Array of Generic Type
@@ -2088,7 +2088,7 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Task`1[]": Is Array of Generic Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
@@ -2120,7 +2120,7 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "System.Runtime.CompilerServices.ITaskAwaiter": Is Not Visible (public)
 // Unsupported Type "System.Runtime.CompilerServices.IConfiguredTaskAwaiter": Is Not Visible (public)
 // Unsupported Type "System.Runtime.CompilerServices.IStateMachineBoxAwareAwaiter": Is Not Visible (public)
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
@@ -2141,7 +2141,7 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
@@ -2149,7 +2149,7 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "Func`1": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`1": Is Generic Delegate Type
-// Unsupported Type "System.Func`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`1": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
@@ -2306,21 +2306,21 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "ReadOnlySpan`1": Is unsupported Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
@@ -2340,29 +2340,29 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAsyncEnumerator`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Threading.Tasks.ValueTask`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Threading.Tasks.ValueTask`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IAsyncEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Task`1[]": Is Array of Generic Type
 // Unsupported Type "IAsyncEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ReadOnlySpan`1": Is unsupported Type
 // Unsupported Type "IAsyncEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Func`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
@@ -2373,18 +2373,20 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.Threading.Tasks.ValueTask`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Memory`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlyMemory`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Nullable`1[[System.IO.UnixFileMode, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Nullable Value Type, but not a struct (System.IO.UnixFileMode?)
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Text.Rune, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ISpanParsable`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Threading.Tasks.ValueTask`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Memory`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlyMemory`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Nullable`1[[System.IO.UnixFileMode, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Nullable Value Type, but not a struct (System.IO.UnixFileMode?)
+// Unsupported Type "System.IParsable`1[[System.Text.Rune, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Text.Rune, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Text.Rune, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ISpanParsable`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "SpanAction`2": Is Generic Delegate Type
 // Unsupported Type "System.Runtime.CompilerServices.DefaultInterpolatedStringHandler&": Is ref struct
-// Unsupported Type "System.ReadOnlySpan`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.ReadOnlySpan`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "System.Char*": Is Managed Pointer Type
@@ -2395,31 +2397,31 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.ValueTuple`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.ValueTuple`2[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -2468,8 +2470,8 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ISpanParsable`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "ReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
@@ -2711,8 +2713,8 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IReadOnlyList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Predicate`1": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Reflection.AssemblyName, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Reflection.Assembly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`4[[System.Reflection.Assembly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Type, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Reflection.AssemblyName, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Reflection.Assembly, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`4[[System.Reflection.Assembly, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Type, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "IList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
@@ -2724,8 +2726,8 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IReadOnlyList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "System.Runtime.InteropServices.ComTypes.ITypeInfo": Excluded
-// Unsupported Type "System.ReadOnlySpan`1[[System.TimeSpan, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.GCGenerationInfo, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.TimeSpan, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.GCGenerationInfo, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
@@ -2740,9 +2742,115 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.EventHandler`1[[System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Nullable Value Type, but not a struct (System.Boolean?)
-// Unsupported Type "System.ReadOnlySpan`1[[System.Threading.CancellationToken, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.EventHandler`1[[System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Nullable Value Type, but not a struct (System.Boolean?)
+// Unsupported Type "System.ReadOnlySpan`1[[System.Threading.CancellationToken, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "IBinaryInteger`1": Is unsupported Type
+// Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparisonOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IModulusOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "IShiftOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMinMaxValue`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBinaryInteger`1": Is unsupported Type
+// Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparisonOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IModulusOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "IShiftOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBinaryInteger`1": Is unsupported Type
+// Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparisonOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IModulusOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "IShiftOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBinaryFloatingPointIeee754`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparisonOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IModulusOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "IFloatingPointIeee754`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IExponentialFunctions`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IFloatingPointConstants`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IFloatingPoint`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISignedNumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IHyperbolicFunctions`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ILogarithmicFunctions`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IPowerFunctions`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IRootFunctions`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ITrigonometricFunctions`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ReadOnlySpan`1": Is unsupported Type
 // Unsupported Type "Span`1": Is unsupported Type
 // Unsupported Type "IList`1": Is Constructed Generic Type with non-constructed generic types
@@ -2762,53 +2870,25 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IReadOnlyList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Span`1": Is unsupported Type
-// Unsupported Type "System.ReadOnlyMemory`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlyMemory`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Func`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.Threading.Tasks.ValueTask`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Memory`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Func`1[[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
@@ -2819,22 +2899,24 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.Func`1[[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Threading.Tasks.ValueTask`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Memory`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Func`1[[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
@@ -2845,24 +2927,130 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Func`1[[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
@@ -2896,21 +3084,21 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "System.ITupleInternal": Is Not Visible (public)
-// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
-// Unsupported Type "System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
+// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
+// Unsupported Type "System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
 // Unsupported Type "Beyond.NET.Sample.IAnimal[]": Is Array of Interface Type
 // Unsupported Type "Beyond.NET.Sample.DelegatesTest+TransformIntWithRefDelegate": Unsupported delegate parameter type: Has ref parameters
 // Unsupported Type "Beyond.NET.Sample.DelegatesTest+TransformIntWithOutDelegate": Unsupported delegate parameter type: Has out parameters
 // Unsupported Type "Beyond.NET.Sample.DelegatesTest+PointTransformWithRefDelegate": Unsupported delegate parameter type: Has ref parameters
 // Unsupported Type "Converter`2": Is Generic Delegate Type
-// Unsupported Type "System.Predicate`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Collections.Generic.List`1+Enumerator[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Comparison`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
-// Unsupported Type "System.Collections.Generic.Dictionary`2+KeyCollection[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Collections.Generic.Dictionary`2+ValueCollection[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Collections.Generic.Dictionary`2+Enumerator[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Predicate`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Collections.Generic.List`1+Enumerator[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Comparison`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
+// Unsupported Type "System.Collections.Generic.Dictionary`2+KeyCollection[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Collections.Generic.Dictionary`2+ValueCollection[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Collections.Generic.Dictionary`2+Enumerator[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
 // Unsupported Type "AlternateLookup`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "AlternateLookup`1&": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IList`1": Is Constructed Generic Type with non-constructed generic types
@@ -2930,54 +3118,27 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Beyond.NET.Sample.IRegistrationData": Static abstract members in interface
 // Unsupported Type "Beyond.NET.Sample.INotImplementedInterfaceWithStaticAbstractMembers": Static abstract members in interface
-// Unsupported Type "System.Span`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
 // Unsupported Type "System.Nullable`1": Excluded
 // Unsupported Type "Beyond.NET.Sample.ByRefParametersDelegate": Unsupported delegate parameter type: Has ref parameters
 // Unsupported Type "Beyond.NET.Sample.OutParametersDelegate": Unsupported delegate parameter type: Has out parameters
-// Unsupported Type "System.ArraySegment`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
-// Unsupported Type "System.Func`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.ArraySegment`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
+// Unsupported Type "System.Func`1[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
-// Unsupported Type "System.Func`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
@@ -2988,22 +3149,23 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.Func`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
+// Unsupported Type "System.Func`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
@@ -3014,8 +3176,34 @@ open class DNNullableArray<T : System_Object>(private val companion: IDNObjectCo
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.Int32?)
-// Unsupported Type "System.Nullable`1[[System.DateTimeKind, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.DateTimeKind?)
+// Unsupported Type "System.Func`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.Int32?)
+// Unsupported Type "System.Nullable`1[[System.DateTimeKind, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.DateTimeKind?)
 // Unsupported Type "Beyond.NET.Sample.Source.RefStructTests+TestRefStruct": Is ref struct
 // Unsupported Type "Beyond.NET.Sample.Person_Extensions+<G>$9D63B61FF3DB94B34FDAE9CFA7044FE8": Is C# 14+ extension block (and has special name)
 // Unsupported Type "Beyond.NET.Sample.Person_Extensions+<G>$9D63B61FF3DB94B34FDAE9CFA7044FE8+<M>$9737BC5C87033597E65A978C42067F7A": Is C# 14+ extension block (and has special name)
@@ -3096,6 +3284,68 @@ public enum class System_TypeCode(val rawValue: Int) {
 }
 
 	// MARK: - END System.TypeCode
+
+
+	// MARK: - BEGIN System.StringComparison
+public enum class System_StringComparison(val rawValue: Int) {
+	CURRENT_CULTURE(0),
+	CURRENT_CULTURE_IGNORE_CASE(1),
+	INVARIANT_CULTURE(2),
+	INVARIANT_CULTURE_IGNORE_CASE(3),
+	ORDINAL(4),
+	ORDINAL_IGNORE_CASE(5),
+	DN_CUSTOM(Int.MAX_VALUE);
+	
+	companion object {
+	    public operator fun invoke(underlyingValue: Int): System_StringComparison {
+	        val foundCase = System_StringComparison.entries.firstOrNull {
+	            it.rawValue == underlyingValue
+	        }
+	
+	        foundCase?.let {
+	            return foundCase
+	        }
+	
+	        return DN_CUSTOM.apply {
+	            _dnCustomValue = underlyingValue
+	        }
+	    }
+	
+	    @JvmStatic
+	@Suppress("INAPPLICABLE_JVM_NAME")
+	public val typeOf: System_Type /* System.Type */
+		@JvmName("typeOf_get")
+		get() {
+			return System_Type(CAPI.System_StringComparison_TypeOf())
+			
+		}
+		
+	
+	
+	}
+	
+	infix fun or(other: System_StringComparison): System_StringComparison {
+	    val newRawValue = this.value or other.value
+	    val customEnumCase = System_StringComparison.invoke(newRawValue)
+	
+	    return customEnumCase
+	}
+	
+	private var _dnCustomValue: Int? = null
+	
+	public val value: Int
+	    get() {
+	        val dnCustomValue = _dnCustomValue
+	
+	        dnCustomValue?.let {
+	            return dnCustomValue
+	        }
+	
+	        return rawValue
+	    }
+}
+
+	// MARK: - END System.StringComparison
 
 
 	// MARK: - BEGIN System.Globalization.CultureTypes
@@ -3181,6 +3431,7 @@ public enum class System_Globalization_NumberStyles(val rawValue: Int) {
 	ANY(511),
 	ALLOW_HEX_SPECIFIER(512),
 	HEX_NUMBER(515),
+	HEX_FLOAT(679),
 	ALLOW_BINARY_SPECIFIER(1024),
 	BINARY_NUMBER(1027),
 	DN_CUSTOM(Int.MAX_VALUE);
@@ -5211,6 +5462,70 @@ public enum class System_IO_SeekOrigin(val rawValue: Int) {
 	// MARK: - END System.IO.SeekOrigin
 
 
+	// MARK: - BEGIN System.IO.FileHandleType
+public enum class System_IO_FileHandleType(val rawValue: Int) {
+	UNKNOWN(0),
+	REGULAR_FILE(1),
+	PIPE(2),
+	SOCKET(3),
+	CHARACTER_DEVICE(4),
+	DIRECTORY(5),
+	SYMBOLIC_LINK(6),
+	BLOCK_DEVICE(7),
+	DN_CUSTOM(Int.MAX_VALUE);
+	
+	companion object {
+	    public operator fun invoke(underlyingValue: Int): System_IO_FileHandleType {
+	        val foundCase = System_IO_FileHandleType.entries.firstOrNull {
+	            it.rawValue == underlyingValue
+	        }
+	
+	        foundCase?.let {
+	            return foundCase
+	        }
+	
+	        return DN_CUSTOM.apply {
+	            _dnCustomValue = underlyingValue
+	        }
+	    }
+	
+	    @JvmStatic
+	@Suppress("INAPPLICABLE_JVM_NAME")
+	public val typeOf: System_Type /* System.Type */
+		@JvmName("typeOf_get")
+		get() {
+			return System_Type(CAPI.System_IO_FileHandleType_TypeOf())
+			
+		}
+		
+	
+	
+	}
+	
+	infix fun or(other: System_IO_FileHandleType): System_IO_FileHandleType {
+	    val newRawValue = this.value or other.value
+	    val customEnumCase = System_IO_FileHandleType.invoke(newRawValue)
+	
+	    return customEnumCase
+	}
+	
+	private var _dnCustomValue: Int? = null
+	
+	public val value: Int
+	    get() {
+	        val dnCustomValue = _dnCustomValue
+	
+	        dnCustomValue?.let {
+	            return dnCustomValue
+	        }
+	
+	        return rawValue
+	    }
+}
+
+	// MARK: - END System.IO.FileHandleType
+
+
 	// MARK: - BEGIN System.IO.FileAccess
 public enum class System_IO_FileAccess(val rawValue: Int) {
 	READ(1),
@@ -5906,68 +6221,6 @@ public enum class System_Globalization_DigitShapes(val rawValue: Int) {
 	// MARK: - END System.Globalization.DigitShapes
 
 
-	// MARK: - BEGIN System.StringComparison
-public enum class System_StringComparison(val rawValue: Int) {
-	CURRENT_CULTURE(0),
-	CURRENT_CULTURE_IGNORE_CASE(1),
-	INVARIANT_CULTURE(2),
-	INVARIANT_CULTURE_IGNORE_CASE(3),
-	ORDINAL(4),
-	ORDINAL_IGNORE_CASE(5),
-	DN_CUSTOM(Int.MAX_VALUE);
-	
-	companion object {
-	    public operator fun invoke(underlyingValue: Int): System_StringComparison {
-	        val foundCase = System_StringComparison.entries.firstOrNull {
-	            it.rawValue == underlyingValue
-	        }
-	
-	        foundCase?.let {
-	            return foundCase
-	        }
-	
-	        return DN_CUSTOM.apply {
-	            _dnCustomValue = underlyingValue
-	        }
-	    }
-	
-	    @JvmStatic
-	@Suppress("INAPPLICABLE_JVM_NAME")
-	public val typeOf: System_Type /* System.Type */
-		@JvmName("typeOf_get")
-		get() {
-			return System_Type(CAPI.System_StringComparison_TypeOf())
-			
-		}
-		
-	
-	
-	}
-	
-	infix fun or(other: System_StringComparison): System_StringComparison {
-	    val newRawValue = this.value or other.value
-	    val customEnumCase = System_StringComparison.invoke(newRawValue)
-	
-	    return customEnumCase
-	}
-	
-	private var _dnCustomValue: Int? = null
-	
-	public val value: Int
-	    get() {
-	        val dnCustomValue = _dnCustomValue
-	
-	        dnCustomValue?.let {
-	            return dnCustomValue
-	        }
-	
-	        return rawValue
-	    }
-}
-
-	// MARK: - END System.StringComparison
-
-
 	// MARK: - BEGIN System.Text.NormalizationForm
 public enum class System_Text_NormalizationForm(val rawValue: Int) {
 	FORM_C(1),
@@ -6169,6 +6422,7 @@ public enum class System_Reflection_TypeAttributes(val rawValue: Int) {
 	SEQUENTIAL_LAYOUT(8),
 	EXPLICIT_LAYOUT(16),
 	LAYOUT_MASK(24),
+	EXTENDED_LAYOUT(24),
 	INTERFACE(32),
 	CLASS_SEMANTICS_MASK(32),
 	ABSTRACT(128),
@@ -6243,6 +6497,7 @@ public enum class System_Reflection_TypeAttributes(val rawValue: Int) {
 	// MARK: - BEGIN System.Runtime.InteropServices.LayoutKind
 public enum class System_Runtime_InteropServices_LayoutKind(val rawValue: Int) {
 	SEQUENTIAL(0),
+	EXTENDED(1),
 	EXPLICIT(2),
 	AUTO(3),
 	DN_CUSTOM(Int.MAX_VALUE);
@@ -11358,6 +11613,48 @@ open class System_Type /* System.Type */(handle: Pointer): System_Reflection_Mem
 			return __returnValue
 			
 		}
+		public fun makeFunctionPointerSignatureType(returnType: System_Type /* System.Type */, parameterTypes: DNArray<System_Type>? /* System.Type[] */, isUnmanaged: Boolean /* System.Boolean */, callingConventions: DNArray<System_Type>? /* System.Type[] */) : System_Type /* System.Type */ {
+			val returnTypeC = returnType.getHandleOrNull()
+			val parameterTypesC = parameterTypes?.getHandleOrNull()
+			val callingConventionsC = callingConventions?.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Type_MakeFunctionPointerSignatureType(returnTypeC, parameterTypesC, isUnmanaged, callingConventionsC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Type(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun makeModifiedSignatureType(type: System_Type /* System.Type */, requiredCustomModifiers: DNArray<System_Type>? /* System.Type[] */, optionalCustomModifiers: DNArray<System_Type>? /* System.Type[] */) : System_Type /* System.Type */ {
+			val typeC = type.getHandleOrNull()
+			val requiredCustomModifiersC = requiredCustomModifiers?.getHandleOrNull()
+			val optionalCustomModifiersC = optionalCustomModifiers?.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Type_MakeModifiedSignatureType(typeC, requiredCustomModifiersC, optionalCustomModifiersC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Type(__returnValueC)
+			
+			return __returnValue
+			
+		}
 		/**
 		 * Creates a generic signature type, which allows third party reimplementations of Reflection to fully support the use of signature types in querying type members.
 		 * @param genericTypeDefinition: The generic type definition.
@@ -12440,34 +12737,7 @@ open class System_Type /* System.Type */(handle: Pointer): System_Reflection_Mem
 		return __returnValue
 		
 	}
-	/**
-	 * Searches for the specified method whose parameters match the specified argument types, using the specified binding constraints.
-	 * @param name: The string containing the name of the method to get.
-	 * @param bindingAttr: A bitwise combination of the enumeration values that specify how the search is conducted.             -or- Default to return null.
-	 * @param types: An array of System.Type objects representing the number, order, and type of the parameters for the method to get.             -or- An empty array of System.Type objects (as provided by the System.Type.EmptyTypes field) to get a method that takes no parameters.
-	 * @return An object representing the method that matches the specified requirements, if found; otherwise, null.
-	 */
-	open fun getMethod(name: System_String /* System.String */, bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */, types: DNArray<System_Type> /* System.Type[] */) : System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
-		val nameC = name.getHandleOrNull()
-		val bindingAttrC = bindingAttr.value
-		val typesC = types.getHandleOrNull()
-		
-		
-		val __exceptionC = PointerByReference()
-		
-		val __returnValueC = CAPI.System_Type_GetMethod_2(this.__handle, nameC, bindingAttrC, typesC, __exceptionC)
-		
-		val __exceptionCHandle = __exceptionC.value
-		
-		if (__exceptionCHandle != null) {
-		    throw System_Exception(__exceptionCHandle).toKException()
-		}
-		
-		val __returnValue = if (__returnValueC != null) System_Reflection_MethodInfo(__returnValueC) else null
-		
-		return __returnValue
-		
-	}
+	// TODO: Conflicting overload that differs only by array element type was ignored "System.Reflection.MethodInfo GetMethod(System.String, System.Reflection.BindingFlags, System.Type[])"
 	/**
 	 * Searches for the specified public method whose parameters match the specified argument types.
 	 * @param name: The string containing the name of the public method to get.
@@ -12599,24 +12869,25 @@ open class System_Type /* System.Type */(handle: Pointer): System_Reflection_Mem
 		return __returnValue
 		
 	}
-	// TODO: Conflicting overload that differs only by array element type was ignored "System.Reflection.MethodInfo GetMethod(System.String, Int32, System.Type[], System.Reflection.ParameterModifier[])"
 	/**
-	 * Searches for the specified method whose parameters match the specified generic parameter count and argument types, using the specified binding constraints.
-	 * @param name: The string containing the name of the method to get.
+	 * Searches for the specified public method whose parameters match the specified generic parameter count, argument types and modifiers.
+	 * @param name: The string containing the name of the public method to get.
 	 * @param genericParameterCount: The number of generic type parameters of the method.
-	 * @param bindingAttr: A bitwise combination of the enumeration values that specify how the search is conducted.  -or-  System.Reflection.BindingFlags.Default to return null.
 	 * @param types: An array of System.Type objects representing the number, order, and type of the parameters for the method to get. -or- An empty array of System.Type objects (as provided by the System.Type.EmptyTypes field) to get a method that takes no parameters.
-	 * @return An object representing the method that matches the specified generic parameter count, argument types, and binding constraints, if found; otherwise, null.
+	 * @param modifiers: An array of System.Reflection.ParameterModifier objects representing the attributes associated with the corresponding element in the types array. To be only used when calling through COM interop, and only parameters that are passed by reference are handled. The default binder does not process this parameter.
+	 * @throws System.ArgumentNullException: name is null. -or- types is null. -or- One of the elements in the types array is null.
+	 * @throws System.ArgumentException: genericParameterCount is negative.
+	 * @return An object representing the public method that matches the specified generic parameter count, argument types and modifiers, if found; otherwise, null.
 	 */
-	open fun getMethod(name: System_String /* System.String */, genericParameterCount: Int /* System.Int32 */, bindingAttr: System_Reflection_BindingFlags /* System.Reflection.BindingFlags */, types: DNArray<System_Type> /* System.Type[] */) : System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
+	open fun getMethod(name: System_String /* System.String */, genericParameterCount: Int /* System.Int32 */, types: DNArray<System_Type> /* System.Type[] */, modifiers: DNArray<System_Reflection_ParameterModifier>? /* System.Reflection.ParameterModifier[] */) : System_Reflection_MethodInfo? /* System.Reflection.MethodInfo */ {
 		val nameC = name.getHandleOrNull()
-		val bindingAttrC = bindingAttr.value
 		val typesC = types.getHandleOrNull()
+		val modifiersC = modifiers?.getHandleOrNull()
 		
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Type_GetMethod_9(this.__handle, nameC, genericParameterCount, bindingAttrC, typesC, __exceptionC)
+		val __returnValueC = CAPI.System_Type_GetMethod_8(this.__handle, nameC, genericParameterCount, typesC, modifiersC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -12629,6 +12900,7 @@ open class System_Type /* System.Type */(handle: Pointer): System_Reflection_Mem
 		return __returnValue
 		
 	}
+	// TODO: Conflicting overload that differs only by array element type was ignored "System.Reflection.MethodInfo GetMethod(System.String, Int32, System.Reflection.BindingFlags, System.Type[])"
 	/**
 	 * Searches for the specified method whose parameters match the specified generic parameter count, argument types and modifiers, using the specified binding constraints.
 	 * @param name: The string containing the name of the public method to get.
@@ -13406,6 +13678,24 @@ open class System_Type /* System.Type */(handle: Pointer): System_Reflection_Mem
 		return __returnValueC
 		
 	}
+	open fun getNullableUnderlyingType() : System_Type? /* System.Type */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Type_GetNullableUnderlyingType(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = if (__returnValueC != null) System_Type(__returnValueC) else null
+		
+		return __returnValue
+		
+	}
 	/**
 	 * Returns the underlying type of the current enumeration type.
 	 * @throws System.ArgumentException: The current type is not an enumeration.  -or-  The enumeration type is not valid, because it contains more than one instance field.
@@ -13537,6 +13827,25 @@ open class System_Type /* System.Type */(handle: Pointer): System_Reflection_Mem
 		val __exceptionC = PointerByReference()
 		
 		val __returnValueC = CAPI.System_Type_MakeByRefType(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_Type(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun makeFunctionPointerType(parameterTypes: DNArray<System_Type>? /* System.Type[] */, isUnmanaged: Boolean /* System.Boolean */) : System_Type /* System.Type */ {
+		val parameterTypesC = parameterTypes?.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Type_MakeFunctionPointerType(this.__handle, parameterTypesC, isUnmanaged, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -21290,61 +21599,6 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 			
 		}
 		/**
-		 * Concatenates an array of strings, using the specified separator between each member.
-		 * @param separator: The character to use as a separator. separator is included in the returned string only if value has more than one element.
-		 * @param value: An array of strings to concatenate.
-		 * @throws System.ArgumentNullException: value is null.
-		 * @throws System.OutOfMemoryException: The length of the resulting string overflows the maximum allowed length (System.Int32.MaxValue).
-		 * @return A string that consists of the elements of value delimited by the separator character. -or- System.String.Empty if value has zero elements.
-		 */
-		public fun join(separator: Char /* System.Char */, `value`: DNNullableArray<System_String> /* System.String[] */) : System_String /* System.String */ {
-			val valueC = `value`.getHandleOrNull()
-			
-			
-			val __exceptionC = PointerByReference()
-			
-			val __returnValueC = CAPI.System_String_Join(separator, valueC, __exceptionC)
-			
-			val __exceptionCHandle = __exceptionC.value
-			
-			if (__exceptionCHandle != null) {
-			    throw System_Exception(__exceptionCHandle).toKException()
-			}
-			
-			val __returnValue = System_String(__returnValueC)
-			
-			return __returnValue
-			
-		}
-		/**
-		 * Concatenates all the elements of a string array, using the specified separator between each element.
-		 * @param separator: The string to use as a separator. separator is included in the returned string only if value has more than one element.
-		 * @param value: An array that contains the elements to concatenate.
-		 * @throws System.ArgumentNullException: value is null.
-		 * @throws System.OutOfMemoryException: The length of the resulting string overflows the maximum allowed length (System.Int32.MaxValue).
-		 * @return A string that consists of the elements in value delimited by the separator string. -or- System.String.Empty if value has zero elements.
-		 */
-		public fun join(separator: System_String? /* System.String */, `value`: DNNullableArray<System_String> /* System.String[] */) : System_String /* System.String */ {
-			val separatorC = separator?.getHandleOrNull()
-			val valueC = `value`.getHandleOrNull()
-			
-			
-			val __exceptionC = PointerByReference()
-			
-			val __returnValueC = CAPI.System_String_Join_1(separatorC, valueC, __exceptionC)
-			
-			val __exceptionCHandle = __exceptionC.value
-			
-			if (__exceptionCHandle != null) {
-			    throw System_Exception(__exceptionCHandle).toKException()
-			}
-			
-			val __returnValue = System_String(__returnValueC)
-			
-			return __returnValue
-			
-		}
-		/**
 		 * Concatenates an array of strings, using the specified separator between each member, starting with the element in value located at the startIndex position, and concatenating up to count elements.
 		 * @param separator: Concatenates an array of strings, using the specified separator between each member, starting with the element located at the specified index and including a specified number of elements.
 		 * @param value: An array of strings to concatenate.
@@ -21406,6 +21660,33 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 			
 		}
 		// TODO: Method with generic parameter (System_String_Join_4)
+		/**
+		 * Concatenates the string representations of an array of objects, using the specified separator between each member.
+		 * @param separator: The character to use as a separator. separator is included in the returned string only if values has more than one element.
+		 * @param values: An array of objects whose string representations will be concatenated.
+		 * @throws System.ArgumentNullException: values is null.
+		 * @throws System.OutOfMemoryException: The length of the resulting string overflows the maximum allowed length (System.Int32.MaxValue).
+		 * @return A string that consists of the elements of values delimited by the separator character. -or- System.String.Empty if values has zero elements.
+		 */
+		public fun join(separator: Char /* System.Char */, values: DNNullableArray<System_Object> /* System.Object[] */) : System_String /* System.String */ {
+			val valuesC = values.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_String_Join_5(separator, valuesC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_String(__returnValueC)
+			
+			return __returnValue
+			
+		}
 		/**
 		 * Initializes a new instance of the System.String class to the Unicode characters indicated in the specified character array.
 		 * @param value: An array of Unicode characters.
@@ -21651,6 +21932,58 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		return __returnValueC
 		
 	}
+	open fun endsWith(`value`: Char /* System.Char */, comparisonType: System_StringComparison /* System.StringComparison */) : Boolean /* System.Boolean */ {
+		val comparisonTypeC = comparisonType.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_EndsWith_4(this.__handle, `value`, comparisonTypeC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun endsWith(`value`: System_Text_Rune /* System.Text.Rune */) : Boolean /* System.Boolean */ {
+		val valueC = `value`.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_EndsWith_5(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun endsWith(`value`: System_Text_Rune /* System.Text.Rune */, comparisonType: System_StringComparison /* System.StringComparison */) : Boolean /* System.Boolean */ {
+		val valueC = `value`.getHandleOrNull()
+		val comparisonTypeC = comparisonType.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_EndsWith_6(this.__handle, valueC, comparisonTypeC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
 	/**
 	 * Determines whether this instance and a specified object, which must also be a System.String object, have the same value.
 	 * @param obj: The string to compare to this instance.
@@ -21848,6 +22181,58 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		val __exceptionC = PointerByReference()
 		
 		val __returnValueC = CAPI.System_String_StartsWith_3(this.__handle, `value`, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun startsWith(`value`: Char /* System.Char */, comparisonType: System_StringComparison /* System.StringComparison */) : Boolean /* System.Boolean */ {
+		val comparisonTypeC = comparisonType.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_StartsWith_4(this.__handle, `value`, comparisonTypeC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun startsWith(`value`: System_Text_Rune /* System.Text.Rune */) : Boolean /* System.Boolean */ {
+		val valueC = `value`.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_StartsWith_5(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun startsWith(`value`: System_Text_Rune /* System.Text.Rune */, comparisonType: System_StringComparison /* System.StringComparison */) : Boolean /* System.Boolean */ {
+		val valueC = `value`.getHandleOrNull()
+		val comparisonTypeC = comparisonType.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_StartsWith_6(this.__handle, valueC, comparisonTypeC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -22184,7 +22569,8 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		return __returnValue
 		
 	}
-	// TODO: Conflicting overload that differs only by array element type was ignored "System.String Join(Char, System.Object[])"
+	// TODO: Conflicting overload that differs only by array element type was ignored "System.String Join(Char, System.String[])"
+	// TODO: Conflicting overload that differs only by array element type was ignored "System.String Join(System.String, System.String[])"
 	// TODO: Conflicting overload that differs only by array element type was ignored "System.String Join(System.String, System.Object[])"
 	/**
 	 * Returns a new string that right-aligns the characters in this instance by padding them with spaces on the left, for a specified total length.
@@ -22446,6 +22832,26 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		return __returnValue
 		
 	}
+	open fun replace(oldRune: System_Text_Rune /* System.Text.Rune */, newRune: System_Text_Rune /* System.Text.Rune */) : System_String /* System.String */ {
+		val oldRuneC = oldRune.getHandleOrNull()
+		val newRuneC = newRune.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_Replace_4(this.__handle, oldRuneC, newRuneC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_String(__returnValueC)
+		
+		return __returnValue
+		
+	}
 	/**
 	 * Replaces all newline sequences in the current string with System.Environment.NewLine.
 	 * @return A string whose contents match the current string, but with all newline sequences replaced with System.Environment.NewLine.
@@ -22543,6 +22949,46 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		return __returnValue
 		
 	}
+	open fun split(separator: System_Text_Rune /* System.Text.Rune */, options: System_StringSplitOptions /* System.StringSplitOptions */) : DNArray<System_String> /* System.String[] */ {
+		val separatorC = separator.getHandleOrNull()
+		val optionsC = options.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_Split_2(this.__handle, separatorC, optionsC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = DNArray<System_String>(System_String, __returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun split(separator: System_Text_Rune /* System.Text.Rune */, count: Int /* System.Int32 */, options: System_StringSplitOptions /* System.StringSplitOptions */) : DNArray<System_String> /* System.String[] */ {
+		val separatorC = separator.getHandleOrNull()
+		val optionsC = options.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_Split_3(this.__handle, separatorC, count, optionsC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = DNArray<System_String>(System_String, __returnValueC)
+		
+		return __returnValue
+		
+	}
 	/**
 	 * Splits a string into substrings based on specified delimiting characters.
 	 * @param separator: An array of delimiting characters, an empty array that contains no delimiters, or null.
@@ -22554,7 +23000,7 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_String_Split_2(this.__handle, separatorC, __exceptionC)
+		val __returnValueC = CAPI.System_String_Split_4(this.__handle, separatorC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -22567,88 +23013,9 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		return __returnValue
 		
 	}
-	/**
-	 * Splits a string into a maximum number of substrings based on specified delimiting characters.
-	 * @param separator: An array of characters that delimit the substrings in this string, an empty array that contains no delimiters, or null.
-	 * @param count: The maximum number of substrings to return.
-	 * @throws System.ArgumentOutOfRangeException: count is negative.
-	 * @return An array whose elements contain the substrings in this instance that are delimited by one or more characters in separator. For more information, see the Remarks section.
-	 */
-	open fun split(separator: DNArray<System_Char>? /* System.Char[] */, count: Int /* System.Int32 */) : DNArray<System_String> /* System.String[] */ {
-		val separatorC = separator?.getHandleOrNull()
-		
-		
-		val __exceptionC = PointerByReference()
-		
-		val __returnValueC = CAPI.System_String_Split_3(this.__handle, separatorC, count, __exceptionC)
-		
-		val __exceptionCHandle = __exceptionC.value
-		
-		if (__exceptionCHandle != null) {
-		    throw System_Exception(__exceptionCHandle).toKException()
-		}
-		
-		val __returnValue = DNArray<System_String>(System_String, __returnValueC)
-		
-		return __returnValue
-		
-	}
-	/**
-	 * Splits a string into substrings based on specified delimiting characters and options.
-	 * @param separator: An array of characters that delimit the substrings in this string, an empty array that contains no delimiters, or null.
-	 * @param options: A bitwise combination of the enumeration values that specifies whether to trim substrings and include empty substrings.
-	 * @throws System.ArgumentException: options is not one of the System.StringSplitOptions values.
-	 * @return An array whose elements contain the substrings in this string that are delimited by one or more characters in separator. For more information, see the Remarks section.
-	 */
-	open fun split(separator: DNArray<System_Char>? /* System.Char[] */, options: System_StringSplitOptions /* System.StringSplitOptions */) : DNArray<System_String> /* System.String[] */ {
-		val separatorC = separator?.getHandleOrNull()
-		val optionsC = options.value
-		
-		
-		val __exceptionC = PointerByReference()
-		
-		val __returnValueC = CAPI.System_String_Split_4(this.__handle, separatorC, optionsC, __exceptionC)
-		
-		val __exceptionCHandle = __exceptionC.value
-		
-		if (__exceptionCHandle != null) {
-		    throw System_Exception(__exceptionCHandle).toKException()
-		}
-		
-		val __returnValue = DNArray<System_String>(System_String, __returnValueC)
-		
-		return __returnValue
-		
-	}
-	/**
-	 * Splits a string into a maximum number of substrings based on specified delimiting characters and, optionally, options.
-	 * @param separator: An array of characters that delimit the substrings in this string, an empty array that contains no delimiters, or null.
-	 * @param count: The maximum number of substrings to return.
-	 * @param options: A bitwise combination of the enumeration values that specifies whether to trim substrings and include empty substrings.
-	 * @throws System.ArgumentOutOfRangeException: count is negative.
-	 * @throws System.ArgumentException: options is not one of the System.StringSplitOptions values.
-	 * @return An array that contains the substrings in this string that are delimited by one or more characters in separator. For more information, see the Remarks section.
-	 */
-	open fun split(separator: DNArray<System_Char>? /* System.Char[] */, count: Int /* System.Int32 */, options: System_StringSplitOptions /* System.StringSplitOptions */) : DNArray<System_String> /* System.String[] */ {
-		val separatorC = separator?.getHandleOrNull()
-		val optionsC = options.value
-		
-		
-		val __exceptionC = PointerByReference()
-		
-		val __returnValueC = CAPI.System_String_Split_5(this.__handle, separatorC, count, optionsC, __exceptionC)
-		
-		val __exceptionCHandle = __exceptionC.value
-		
-		if (__exceptionCHandle != null) {
-		    throw System_Exception(__exceptionCHandle).toKException()
-		}
-		
-		val __returnValue = DNArray<System_String>(System_String, __returnValueC)
-		
-		return __returnValue
-		
-	}
+	// TODO: Conflicting overload that differs only by array element type was ignored "System.String[] Split(Char[], Int32)"
+	// TODO: Conflicting overload that differs only by array element type was ignored "System.String[] Split(Char[], System.StringSplitOptions)"
+	// TODO: Conflicting overload that differs only by array element type was ignored "System.String[] Split(Char[], Int32, System.StringSplitOptions)"
 	/**
 	 * Splits a string into substrings that are based on the provided string separator.
 	 * @param separator: A string that delimits the substrings in this string.
@@ -22662,7 +23029,7 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_String_Split_6(this.__handle, separatorC, optionsC, __exceptionC)
+		val __returnValueC = CAPI.System_String_Split_8(this.__handle, separatorC, optionsC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -22689,7 +23056,7 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_String_Split_7(this.__handle, separatorC, count, optionsC, __exceptionC)
+		val __returnValueC = CAPI.System_String_Split_9(this.__handle, separatorC, count, optionsC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -22702,8 +23069,62 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		return __returnValue
 		
 	}
-	// TODO: Conflicting overload that differs only by array element type was ignored "System.String[] Split(System.String[], System.StringSplitOptions)"
-	// TODO: Conflicting overload that differs only by array element type was ignored "System.String[] Split(System.String[], Int32, System.StringSplitOptions)"
+	/**
+	 * Splits a string into substrings based on a specified delimiting string and, optionally, options.
+	 * @param separator: An array of strings that delimit the substrings in this string, an empty array that contains no delimiters, or null.
+	 * @param options: A bitwise combination of the enumeration values that specifies whether to trim substrings and include empty substrings.
+	 * @throws System.ArgumentException: options is not one of the System.StringSplitOptions values.
+	 * @return An array whose elements contain the substrings in this string that are delimited by one or more strings in separator. For more information, see the Remarks section.
+	 */
+	open fun split(separator: DNArray<System_String>? /* System.String[] */, options: System_StringSplitOptions /* System.StringSplitOptions */) : DNArray<System_String> /* System.String[] */ {
+		val separatorC = separator?.getHandleOrNull()
+		val optionsC = options.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_Split_10(this.__handle, separatorC, optionsC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = DNArray<System_String>(System_String, __returnValueC)
+		
+		return __returnValue
+		
+	}
+	/**
+	 * Splits a string into a maximum number of substrings based on specified delimiting strings and, optionally, options.
+	 * @param separator: The strings that delimit the substrings in this string, an empty array that contains no delimiters, or null.
+	 * @param count: The maximum number of substrings to return.
+	 * @param options: A bitwise combination of the enumeration values that specifies whether to trim substrings and include empty substrings.
+	 * @throws System.ArgumentOutOfRangeException: count is negative.
+	 * @throws System.ArgumentException: options is not one of the System.StringSplitOptions values.
+	 * @return An array whose elements contain the substrings in this string that are delimited by one or more strings in separator. For more information, see the Remarks section.
+	 */
+	open fun split(separator: DNArray<System_String>? /* System.String[] */, count: Int /* System.Int32 */, options: System_StringSplitOptions /* System.StringSplitOptions */) : DNArray<System_String> /* System.String[] */ {
+		val separatorC = separator?.getHandleOrNull()
+		val optionsC = options.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_Split_11(this.__handle, separatorC, count, optionsC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = DNArray<System_String>(System_String, __returnValueC)
+		
+		return __returnValue
+		
+	}
 	/**
 	 * Retrieves a substring from this instance. The substring starts at a specified character position and continues to the end of the string.
 	 * @param startIndex: The zero-based starting character position of a substring in this instance.
@@ -22889,6 +23310,42 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		return __returnValue
 		
 	}
+	open fun toUpperOrdinal() : System_String /* System.String */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_ToUpperOrdinal(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_String(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun toLowerOrdinal() : System_String /* System.String */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_ToLowerOrdinal(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_String(__returnValueC)
+		
+		return __returnValue
+		
+	}
 	/**
 	 * Removes all leading and trailing white-space characters from the current string.
 	 * @return The string that remains after all white-space characters are removed from the start and end of the current string. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.
@@ -22934,6 +23391,25 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		return __returnValue
 		
 	}
+	open fun trim(trimRune: System_Text_Rune /* System.Text.Rune */) : System_String /* System.String */ {
+		val trimRuneC = trimRune.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_Trim_2(this.__handle, trimRuneC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_String(__returnValueC)
+		
+		return __returnValue
+		
+	}
 	/**
 	 * Removes all leading and trailing occurrences of a set of characters specified in an array from the current string.
 	 * @param trimChars: An array of Unicode characters to remove, or null.
@@ -22945,7 +23421,7 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_String_Trim_2(this.__handle, trimCharsC, __exceptionC)
+		val __returnValueC = CAPI.System_String_Trim_3(this.__handle, trimCharsC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -23003,6 +23479,25 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		return __returnValue
 		
 	}
+	open fun trimStart(trimRune: System_Text_Rune /* System.Text.Rune */) : System_String /* System.String */ {
+		val trimRuneC = trimRune.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_TrimStart_2(this.__handle, trimRuneC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_String(__returnValueC)
+		
+		return __returnValue
+		
+	}
 	/**
 	 * Removes all the leading occurrences of a set of characters specified in an array from the current string.
 	 * @param trimChars: An array of Unicode characters to remove, or null.
@@ -23014,7 +23509,7 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_String_TrimStart_2(this.__handle, trimCharsC, __exceptionC)
+		val __returnValueC = CAPI.System_String_TrimStart_3(this.__handle, trimCharsC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -23072,6 +23567,25 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		return __returnValue
 		
 	}
+	open fun trimEnd(trimRune: System_Text_Rune /* System.Text.Rune */) : System_String /* System.String */ {
+		val trimRuneC = trimRune.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_TrimEnd_2(this.__handle, trimRuneC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_String(__returnValueC)
+		
+		return __returnValue
+		
+	}
 	/**
 	 * Removes all the trailing occurrences of a set of characters specified in an array from the current string.
 	 * @param trimChars: An array of Unicode characters to remove, or null.
@@ -23083,7 +23597,7 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_String_TrimEnd_2(this.__handle, trimCharsC, __exceptionC)
+		val __returnValueC = CAPI.System_String_TrimEnd_3(this.__handle, trimCharsC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -23187,6 +23701,41 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		return __returnValueC
 		
 	}
+	open fun contains(`value`: System_Text_Rune /* System.Text.Rune */) : Boolean /* System.Boolean */ {
+		val valueC = `value`.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_Contains_4(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun contains(`value`: System_Text_Rune /* System.Text.Rune */, comparisonType: System_StringComparison /* System.StringComparison */) : Boolean /* System.Boolean */ {
+		val valueC = `value`.getHandleOrNull()
+		val comparisonTypeC = comparisonType.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_Contains_5(this.__handle, valueC, comparisonTypeC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
 	/**
 	 * Reports the zero-based index of the first occurrence of the specified Unicode character in this string.
 	 * @param value: A Unicode character to seek.
@@ -23255,6 +23804,40 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		return __returnValueC
 		
 	}
+	open fun indexOf(`value`: Char /* System.Char */, startIndex: Int /* System.Int32 */, comparisonType: System_StringComparison /* System.StringComparison */) : Int /* System.Int32 */ {
+		val comparisonTypeC = comparisonType.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_IndexOf_3(this.__handle, `value`, startIndex, comparisonTypeC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun indexOf(`value`: Char /* System.Char */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, comparisonType: System_StringComparison /* System.StringComparison */) : Int /* System.Int32 */ {
+		val comparisonTypeC = comparisonType.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_IndexOf_4(this.__handle, `value`, startIndex, count, comparisonTypeC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
 	/**
 	 * Reports the zero-based index of the first occurrence of the specified character in this instance. The search starts at a specified character position and examines a specified number of character positions.
 	 * @param value: A Unicode character to seek.
@@ -23268,7 +23851,7 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_String_IndexOf_3(this.__handle, `value`, startIndex, count, __exceptionC)
+		val __returnValueC = CAPI.System_String_IndexOf_5(this.__handle, `value`, startIndex, count, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -23365,7 +23948,7 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_String_IndexOf_4(this.__handle, valueC, __exceptionC)
+		val __returnValueC = CAPI.System_String_IndexOf_6(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -23390,7 +23973,7 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_String_IndexOf_5(this.__handle, valueC, startIndex, __exceptionC)
+		val __returnValueC = CAPI.System_String_IndexOf_7(this.__handle, valueC, startIndex, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -23416,7 +23999,7 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_String_IndexOf_6(this.__handle, valueC, startIndex, count, __exceptionC)
+		val __returnValueC = CAPI.System_String_IndexOf_8(this.__handle, valueC, startIndex, count, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -23442,7 +24025,7 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_String_IndexOf_7(this.__handle, valueC, comparisonTypeC, __exceptionC)
+		val __returnValueC = CAPI.System_String_IndexOf_9(this.__handle, valueC, comparisonTypeC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -23470,7 +24053,7 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_String_IndexOf_8(this.__handle, valueC, startIndex, comparisonTypeC, __exceptionC)
+		val __returnValueC = CAPI.System_String_IndexOf_10(this.__handle, valueC, startIndex, comparisonTypeC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -23499,7 +24082,112 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_String_IndexOf_9(this.__handle, valueC, startIndex, count, comparisonTypeC, __exceptionC)
+		val __returnValueC = CAPI.System_String_IndexOf_11(this.__handle, valueC, startIndex, count, comparisonTypeC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun indexOf(`value`: System_Text_Rune /* System.Text.Rune */) : Int /* System.Int32 */ {
+		val valueC = `value`.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_IndexOf_12(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun indexOf(`value`: System_Text_Rune /* System.Text.Rune */, startIndex: Int /* System.Int32 */) : Int /* System.Int32 */ {
+		val valueC = `value`.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_IndexOf_13(this.__handle, valueC, startIndex, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun indexOf(`value`: System_Text_Rune /* System.Text.Rune */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */) : Int /* System.Int32 */ {
+		val valueC = `value`.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_IndexOf_14(this.__handle, valueC, startIndex, count, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun indexOf(`value`: System_Text_Rune /* System.Text.Rune */, comparisonType: System_StringComparison /* System.StringComparison */) : Int /* System.Int32 */ {
+		val valueC = `value`.getHandleOrNull()
+		val comparisonTypeC = comparisonType.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_IndexOf_15(this.__handle, valueC, comparisonTypeC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun indexOf(`value`: System_Text_Rune /* System.Text.Rune */, startIndex: Int /* System.Int32 */, comparisonType: System_StringComparison /* System.StringComparison */) : Int /* System.Int32 */ {
+		val valueC = `value`.getHandleOrNull()
+		val comparisonTypeC = comparisonType.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_IndexOf_16(this.__handle, valueC, startIndex, comparisonTypeC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun indexOf(`value`: System_Text_Rune /* System.Text.Rune */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, comparisonType: System_StringComparison /* System.StringComparison */) : Int /* System.Int32 */ {
+		val valueC = `value`.getHandleOrNull()
+		val comparisonTypeC = comparisonType.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_IndexOf_17(this.__handle, valueC, startIndex, count, comparisonTypeC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -23568,6 +24256,57 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		val __exceptionC = PointerByReference()
 		
 		val __returnValueC = CAPI.System_String_LastIndexOf_2(this.__handle, `value`, startIndex, count, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun lastIndexOf(`value`: Char /* System.Char */, comparisonType: System_StringComparison /* System.StringComparison */) : Int /* System.Int32 */ {
+		val comparisonTypeC = comparisonType.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_LastIndexOf_3(this.__handle, `value`, comparisonTypeC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun lastIndexOf(`value`: Char /* System.Char */, startIndex: Int /* System.Int32 */, comparisonType: System_StringComparison /* System.StringComparison */) : Int /* System.Int32 */ {
+		val comparisonTypeC = comparisonType.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_LastIndexOf_4(this.__handle, `value`, startIndex, comparisonTypeC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun lastIndexOf(`value`: Char /* System.Char */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, comparisonType: System_StringComparison /* System.StringComparison */) : Int /* System.Int32 */ {
+		val comparisonTypeC = comparisonType.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_LastIndexOf_5(this.__handle, `value`, startIndex, count, comparisonTypeC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -23664,7 +24403,7 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_String_LastIndexOf_3(this.__handle, valueC, __exceptionC)
+		val __returnValueC = CAPI.System_String_LastIndexOf_6(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -23689,7 +24428,7 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_String_LastIndexOf_4(this.__handle, valueC, startIndex, __exceptionC)
+		val __returnValueC = CAPI.System_String_LastIndexOf_7(this.__handle, valueC, startIndex, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -23715,7 +24454,7 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_String_LastIndexOf_5(this.__handle, valueC, startIndex, count, __exceptionC)
+		val __returnValueC = CAPI.System_String_LastIndexOf_8(this.__handle, valueC, startIndex, count, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -23741,7 +24480,7 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_String_LastIndexOf_6(this.__handle, valueC, comparisonTypeC, __exceptionC)
+		val __returnValueC = CAPI.System_String_LastIndexOf_9(this.__handle, valueC, comparisonTypeC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -23769,7 +24508,7 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_String_LastIndexOf_7(this.__handle, valueC, startIndex, comparisonTypeC, __exceptionC)
+		val __returnValueC = CAPI.System_String_LastIndexOf_10(this.__handle, valueC, startIndex, comparisonTypeC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -23798,7 +24537,112 @@ open class System_String /* System.String */(handle: Pointer): System_Object(han
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_String_LastIndexOf_8(this.__handle, valueC, startIndex, count, comparisonTypeC, __exceptionC)
+		val __returnValueC = CAPI.System_String_LastIndexOf_11(this.__handle, valueC, startIndex, count, comparisonTypeC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun lastIndexOf(`value`: System_Text_Rune /* System.Text.Rune */) : Int /* System.Int32 */ {
+		val valueC = `value`.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_LastIndexOf_12(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun lastIndexOf(`value`: System_Text_Rune /* System.Text.Rune */, startIndex: Int /* System.Int32 */) : Int /* System.Int32 */ {
+		val valueC = `value`.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_LastIndexOf_13(this.__handle, valueC, startIndex, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun lastIndexOf(`value`: System_Text_Rune /* System.Text.Rune */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */) : Int /* System.Int32 */ {
+		val valueC = `value`.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_LastIndexOf_14(this.__handle, valueC, startIndex, count, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun lastIndexOf(`value`: System_Text_Rune /* System.Text.Rune */, comparisonType: System_StringComparison /* System.StringComparison */) : Int /* System.Int32 */ {
+		val valueC = `value`.getHandleOrNull()
+		val comparisonTypeC = comparisonType.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_LastIndexOf_15(this.__handle, valueC, comparisonTypeC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun lastIndexOf(`value`: System_Text_Rune /* System.Text.Rune */, startIndex: Int /* System.Int32 */, comparisonType: System_StringComparison /* System.StringComparison */) : Int /* System.Int32 */ {
+		val valueC = `value`.getHandleOrNull()
+		val comparisonTypeC = comparisonType.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_LastIndexOf_16(this.__handle, valueC, startIndex, comparisonTypeC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun lastIndexOf(`value`: System_Text_Rune /* System.Text.Rune */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, comparisonType: System_StringComparison /* System.StringComparison */) : Int /* System.Int32 */ {
+		val valueC = `value`.getHandleOrNull()
+		val comparisonTypeC = comparisonType.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_String_LastIndexOf_17(this.__handle, valueC, startIndex, count, comparisonTypeC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -31446,6 +32290,25 @@ open class System_UInt128 /* System.UInt128 */(handle: Pointer): System_ValueTyp
 			return __returnValue
 			
 		}
+		public fun log10(`value`: System_UInt128 /* System.UInt128 */) : System_UInt128 /* System.UInt128 */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_UInt128_Log10(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_UInt128(__returnValueC)
+			
+			return __returnValue
+			
+		}
 		/**
 		 * Computes the number of bits that are set in a value.
 		 * @param value: The value whose set bits are to be counted.
@@ -31770,6 +32633,33 @@ open class System_UInt128 /* System.UInt128 */(handle: Pointer): System_ValueTyp
 			return __returnValueC
 			
 		}
+		public fun tryParsePartial(s: System_String? /* System.String */, style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, provider: System_IFormatProvider? /* System.IFormatProvider */, result: ObjectRef<System_UInt128> /* System.UInt128 */, charsConsumed: IntRef /* System.Int32 */) : Boolean /* System.Boolean */ {
+			val sC = s?.getHandleOrNull()
+			val styleC = style.value
+			val providerC = provider?.getHandleOrNull()
+			val __resultJNAByRef = result.toJNARef()
+			val __charsConsumedJNAByRef = charsConsumed.toJNARef()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_UInt128_TryParsePartial(sC, styleC, providerC, __resultJNAByRef, __charsConsumedJNAByRef, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			result.value = System_UInt128(__resultJNAByRef.value)
+			
+			charsConsumed.value = __charsConsumedJNAByRef.value
+			
+			
+			return __returnValueC
+			
+		}
+		// TODO: Method with generic parameter (System_UInt128_TryParsePartial_1)
 		/**
 		 * Tries to parse a string into a value.
 		 * @param s: The string to parse.
@@ -33442,6 +34332,33 @@ open class System_Decimal /* System.Decimal */(handle: Pointer): System_ValueTyp
 			return __returnValue
 			
 		}
+		public fun tryParsePartial(s: System_String? /* System.String */, style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, provider: System_IFormatProvider? /* System.IFormatProvider */, result: ObjectRef<System_Decimal> /* System.Decimal */, charsConsumed: IntRef /* System.Int32 */) : Boolean /* System.Boolean */ {
+			val sC = s?.getHandleOrNull()
+			val styleC = style.value
+			val providerC = provider?.getHandleOrNull()
+			val __resultJNAByRef = result.toJNARef()
+			val __charsConsumedJNAByRef = charsConsumed.toJNARef()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Decimal_TryParsePartial(sC, styleC, providerC, __resultJNAByRef, __charsConsumedJNAByRef, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			result.value = System_Decimal(__resultJNAByRef.value)
+			
+			charsConsumed.value = __charsConsumedJNAByRef.value
+			
+			
+			return __returnValueC
+			
+		}
+		// TODO: Method with generic parameter (System_Decimal_TryParsePartial_1)
 		/**
 		 * Tries to parse a string into a value.
 		 * @param s: The string to parse.
@@ -34323,6 +35240,25 @@ open class System_Int128 /* System.Int128 */(handle: Pointer): System_ValueType(
 			return __returnValue
 			
 		}
+		public fun log10(`value`: System_Int128 /* System.Int128 */) : System_Int128 /* System.Int128 */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Int128_Log10(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Int128(__returnValueC)
+			
+			return __returnValue
+			
+		}
 		/**
 		 * Computes the number of bits that are set in a value.
 		 * @param value: The value whose set bits are to be counted.
@@ -34793,6 +35729,33 @@ open class System_Int128 /* System.Int128 */(handle: Pointer): System_ValueType(
 			return __returnValue
 			
 		}
+		public fun tryParsePartial(s: System_String? /* System.String */, style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, provider: System_IFormatProvider? /* System.IFormatProvider */, result: ObjectRef<System_Int128> /* System.Int128 */, charsConsumed: IntRef /* System.Int32 */) : Boolean /* System.Boolean */ {
+			val sC = s?.getHandleOrNull()
+			val styleC = style.value
+			val providerC = provider?.getHandleOrNull()
+			val __resultJNAByRef = result.toJNARef()
+			val __charsConsumedJNAByRef = charsConsumed.toJNARef()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Int128_TryParsePartial(sC, styleC, providerC, __resultJNAByRef, __charsConsumedJNAByRef, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			result.value = System_Int128(__resultJNAByRef.value)
+			
+			charsConsumed.value = __charsConsumedJNAByRef.value
+			
+			
+			return __returnValueC
+			
+		}
+		// TODO: Method with generic parameter (System_Int128_TryParsePartial_1)
 		/**
 		 * Tries to parse a string into a value.
 		 * @param s: The string to parse.
@@ -37188,6 +38151,33 @@ open class System_Half /* System.Half */(handle: Pointer): System_ValueType(hand
 			return __returnValue
 			
 		}
+		public fun tryParsePartial(s: System_String? /* System.String */, style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, provider: System_IFormatProvider? /* System.IFormatProvider */, result: ObjectRef<System_Half> /* System.Half */, charsConsumed: IntRef /* System.Int32 */) : Boolean /* System.Boolean */ {
+			val sC = s?.getHandleOrNull()
+			val styleC = style.value
+			val providerC = provider?.getHandleOrNull()
+			val __resultJNAByRef = result.toJNARef()
+			val __charsConsumedJNAByRef = charsConsumed.toJNARef()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Half_TryParsePartial(sC, styleC, providerC, __resultJNAByRef, __charsConsumedJNAByRef, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			result.value = System_Half(__resultJNAByRef.value)
+			
+			charsConsumed.value = __charsConsumedJNAByRef.value
+			
+			
+			return __returnValueC
+			
+		}
+		// TODO: Method with generic parameter (System_Half_TryParsePartial_1)
 		/**
 		 * Tries to parse a string into a value.
 		 * @param s: The string to parse.
@@ -64529,6 +65519,24 @@ open class System_Reflection_ConstructorInfo /* System.Reflection.ConstructorInf
 		
 	}
 	
+	open override fun getGenericArguments() : DNArray<System_Type> /* System.Type[] */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Reflection_ConstructorInfo_GetGenericArguments(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = DNArray<System_Type>(System_Type, __returnValueC)
+		
+		return __returnValue
+		
+	}
 	/**
 	 * Invokes the constructor reflected by the instance that has the specified parameters, providing default values for the parameters not commonly used.
 	 * @param parameters: An array of values that matches the number, order and type (under the constraints of the default binder) of the parameters for this constructor. If this constructor takes no parameters, then use either an array with zero elements or null, as in Object[] parameters = new Object[0]. Any object in this array that is not explicitly initialized with a value will contain the default value for that object type. For reference-type elements, this value is null. For value-type elements, this value is 0, 0.0, or false, depending on the specific element type.
@@ -73229,6 +74237,28 @@ open class System_Threading_Tasks_Sources_IValueTaskSource_DNInterface /* System
  */
 open class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHandles.SafeFileHandle */(handle: Pointer): Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid(handle) {
 	companion object : IDNObjectCompanion<Microsoft_Win32_SafeHandles_SafeFileHandle> {
+		public fun createAnonymousPipe(readHandle: ObjectRef<Microsoft_Win32_SafeHandles_SafeFileHandle> /* Microsoft.Win32.SafeHandles.SafeFileHandle */, writeHandle: ObjectRef<Microsoft_Win32_SafeHandles_SafeFileHandle> /* Microsoft.Win32.SafeHandles.SafeFileHandle */, asyncRead: Boolean /* System.Boolean */, asyncWrite: Boolean /* System.Boolean */) {
+			val __readHandleJNAByRef = readHandle.toJNARef()
+			val __writeHandleJNAByRef = writeHandle.toJNARef()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			CAPI.Microsoft_Win32_SafeHandles_SafeFileHandle_CreateAnonymousPipe(__readHandleJNAByRef, __writeHandleJNAByRef, asyncRead, asyncWrite, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			readHandle.value = Microsoft_Win32_SafeHandles_SafeFileHandle(__readHandleJNAByRef.value)
+			
+			writeHandle.value = Microsoft_Win32_SafeHandles_SafeFileHandle(__writeHandleJNAByRef.value)
+			
+			
+			
+		}
 		/**
 		 * Initializes a new instance of the Microsoft.Win32.SafeHandles.SafeFileHandle class.
 		 * @param preexistingHandle: An System.IntPtr object that represents the pre-existing handle to use.
@@ -73239,7 +74269,7 @@ open class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHan
 			
 			val __exceptionC = PointerByReference()
 			
-			val __returnValueC = CAPI.Microsoft_Win32_SafeHandles_SafeFileHandle_Create(preexistingHandle, ownsHandle, __exceptionC)
+			val __returnValueC = CAPI.Microsoft_Win32_SafeHandles_SafeFileHandle_Create_1(preexistingHandle, ownsHandle, __exceptionC)
 			
 			val __exceptionCHandle = __exceptionC.value
 			
@@ -73258,7 +74288,7 @@ open class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHan
 			
 			val __exceptionC = PointerByReference()
 			
-			val __returnValueC = CAPI.Microsoft_Win32_SafeHandles_SafeFileHandle_Create_1(__exceptionC)
+			val __returnValueC = CAPI.Microsoft_Win32_SafeHandles_SafeFileHandle_Create_2(__exceptionC)
 			
 			val __exceptionCHandle = __exceptionC.value
 			
@@ -73285,6 +74315,30 @@ open class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHan
 		}
 		
 	}
+	
+	@Suppress("INAPPLICABLE_JVM_NAME")
+	open val type: System_IO_FileHandleType /* System.IO.FileHandleType */
+		@JvmName("type_get")
+		get() {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.Microsoft_Win32_SafeHandles_SafeFileHandle_Type_Get(this.__handle, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_IO_FileHandleType(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		
+	
 	
 	/**
 	 * Gets a value that determines if the handle is asynchronous or not.
@@ -73360,6 +74414,12 @@ open class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHan
 
 
 	// MARK: - END Microsoft.Win32.SafeHandles.SafeFileHandle
+
+
+	// MARK: - BEGIN Microsoft.Win32.SafeHandles.SafeFileHandle&
+
+
+	// MARK: - END Microsoft.Win32.SafeHandles.SafeFileHandle&
 
 
 	// MARK: - BEGIN System.IO.FileStreamOptions
@@ -76155,6 +77215,44 @@ open class System_Text_Rune /* System.Text.Rune */(handle: Pointer): System_Valu
 			return __returnValue
 			
 		}
+		public fun toUpperOrdinal(`value`: System_Text_Rune /* System.Text.Rune */) : System_Text_Rune /* System.Text.Rune */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Text_Rune_ToUpperOrdinal(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Text_Rune(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun toLowerOrdinal(`value`: System_Text_Rune /* System.Text.Rune */) : System_Text_Rune /* System.Text.Rune */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Text_Rune_ToLowerOrdinal(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Text_Rune(__returnValueC)
+			
+			return __returnValue
+			
+		}
 		/**
 		 * Creates a System.Text.Rune from the provided UTF-16 code unit.
 		 * @param ch: A UTF-16 code unit.
@@ -76359,6 +77457,24 @@ open class System_Text_Rune /* System.Text.Rune */(handle: Pointer): System_Valu
 		val __exceptionC = PointerByReference()
 		
 		val __returnValueC = CAPI.System_Text_Rune_Equals_1(this.__handle, otherC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun equals(other: System_Text_Rune /* System.Text.Rune */, comparisonType: System_StringComparison /* System.StringComparison */) : Boolean /* System.Boolean */ {
+		val otherC = other.getHandleOrNull()
+		val comparisonTypeC = comparisonType.value
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Text_Rune_Equals_2(this.__handle, otherC, comparisonTypeC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -77150,6 +78266,44 @@ open class System_Globalization_TextInfo /* System.Globalization.TextInfo */(han
 		}
 		
 		val __returnValue = System_String(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun toLower(`value`: System_Text_Rune /* System.Text.Rune */) : System_Text_Rune /* System.Text.Rune */ {
+		val valueC = `value`.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Globalization_TextInfo_ToLower_2(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_Text_Rune(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun toUpper(`value`: System_Text_Rune /* System.Text.Rune */) : System_Text_Rune /* System.Text.Rune */ {
+		val valueC = `value`.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Globalization_TextInfo_ToUpper_2(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_Text_Rune(__returnValueC)
 		
 		return __returnValue
 		
@@ -104610,31 +105764,6 @@ open class System_Threading_Thread /* System.Threading.Thread */(handle: Pointer
 		
 	}
 	/**
-	 * Blocks the calling thread until the thread represented by this instance terminates or the specified time elapses, while continuing to perform standard COM and SendMessage pumping.
-	 * @param millisecondsTimeout: The number of milliseconds to wait for the thread to terminate.
-	 * @throws System.ArgumentOutOfRangeException: The value of millisecondsTimeout is negative and is not equal to System.Threading.Timeout.Infinite in milliseconds.
-	 * @throws System.Threading.ThreadStateException: The thread has not been started.
-	 * @throws System.ArgumentException: millisecondsTimeout is less than -1 (Timeout.Infinite).
-	 * @throws System.Threading.ThreadInterruptedException: The thread was interrupted while waiting.
-	 * @return true if the thread has terminated; false if the thread has not terminated after the amount of time specified by the millisecondsTimeout parameter has elapsed.
-	 */
-	open fun join(millisecondsTimeout: Int /* System.Int32 */) : Boolean /* System.Boolean */ {
-		
-		
-		val __exceptionC = PointerByReference()
-		
-		val __returnValueC = CAPI.System_Threading_Thread_Join(this.__handle, millisecondsTimeout, __exceptionC)
-		
-		val __exceptionCHandle = __exceptionC.value
-		
-		if (__exceptionCHandle != null) {
-		    throw System_Exception(__exceptionCHandle).toKException()
-		}
-		
-		return __returnValueC
-		
-	}
-	/**
 	 * Causes the operating system to change the state of the current instance to System.Threading.ThreadState.Running, and optionally supplies an object containing data to be used by the method the thread executes.
 	 * @param parameter: An object that contains data to be used by the method the thread executes.
 	 * @throws System.Threading.ThreadStateException: The thread has already been started.
@@ -104718,6 +105847,31 @@ open class System_Threading_Thread /* System.Threading.Thread */(handle: Pointer
 		    throw System_Exception(__exceptionCHandle).toKException()
 		}
 		
+		
+	}
+	/**
+	 * Blocks the calling thread until the thread represented by this instance terminates or the specified time elapses, while continuing to perform standard COM and SendMessage pumping.
+	 * @param millisecondsTimeout: The number of milliseconds to wait for the thread to terminate.
+	 * @throws System.ArgumentOutOfRangeException: The value of millisecondsTimeout is negative and is not equal to System.Threading.Timeout.Infinite in milliseconds.
+	 * @throws System.Threading.ThreadStateException: The thread has not been started.
+	 * @throws System.ArgumentException: millisecondsTimeout is less than -1 (Timeout.Infinite).
+	 * @throws System.Threading.ThreadInterruptedException: The thread was interrupted while waiting.
+	 * @return true if the thread has terminated; false if the thread has not terminated after the amount of time specified by the millisecondsTimeout parameter has elapsed.
+	 */
+	open fun join(millisecondsTimeout: Int /* System.Int32 */) : Boolean /* System.Boolean */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Threading_Thread_Join(this.__handle, millisecondsTimeout, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
 		
 	}
 	/**
@@ -113666,6 +114820,10 @@ open class System_Random /* System.Random */(handle: Pointer): System_Object(han
 		
 		
 	}
+	// TODO: Method with generic return or setter or event handler type (System_Random_NextInteger_A1)
+	// TODO: Method with generic return or setter or event handler type (System_Random_NextInteger_A1_1)
+	// TODO: Method with generic return or setter or event handler type (System_Random_NextInteger_A1_2)
+	// TODO: Method with generic return or setter or event handler type (System_Random_NextBinaryFloat_A1)
 	// TODO: Method with generic parameters (System_Random_GetItems_A1)
 	// TODO: Method with generic parameters (System_Random_Shuffle_A1)
 	/**
@@ -113714,6 +114872,26 @@ open class System_Random /* System.Random */(handle: Pointer): System_Object(han
 
 
 	// MARK: - END System.Random
+
+
+	// MARK: - BEGIN T
+// Type "T" was skipped. Reason: It has no full name.
+	// MARK: - END T
+
+
+	// MARK: - BEGIN T
+// Type "T" was skipped. Reason: It has no full name.
+	// MARK: - END T
+
+
+	// MARK: - BEGIN T
+// Type "T" was skipped. Reason: It has no full name.
+	// MARK: - END T
+
+
+	// MARK: - BEGIN T
+// Type "T" was skipped. Reason: It has no full name.
+	// MARK: - END T
 
 
 	// MARK: - BEGIN T[]
@@ -113767,6 +114945,25 @@ open class System_Random /* System.Random */(handle: Pointer): System_Object(han
  */
 open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Pointer): System_Object(handle), System_Runtime_Serialization_ISerializable {
 	companion object : IDNObjectCompanion<System_Text_StringBuilder> {
+		public fun moveChunks(source: System_Text_StringBuilder /* System.Text.StringBuilder */) : System_Text_StringBuilder /* System.Text.StringBuilder */ {
+			val sourceC = source.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Text_StringBuilder_MoveChunks(sourceC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Text_StringBuilder(__returnValueC)
+			
+			return __returnValue
+			
+		}
 		/**
 		 * Initializes a new instance of the System.Text.StringBuilder class.
 		 */
@@ -114024,6 +115221,24 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		}
 		
 		val __returnValue = System_Text_StringBuilder_ChunkEnumerator(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun enumerateRunes() : System_Text_StringBuilderRuneEnumerator /* System.Text.StringBuilderRuneEnumerator */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Text_StringBuilder_EnumerateRunes(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_Text_StringBuilderRuneEnumerator(__returnValueC)
 		
 		return __returnValue
 		
@@ -114360,6 +115575,25 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		return __returnValue
 		
 	}
+	open fun append(`value`: System_Text_Rune /* System.Text.Rune */) : System_Text_StringBuilder /* System.Text.StringBuilder */ {
+		val valueC = `value`.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Text_StringBuilder_Append_8(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_Text_StringBuilder(__returnValueC)
+		
+		return __returnValue
+		
+	}
 	/**
 	 * Appends the string representation of a specified 8-bit signed integer to this instance.
 	 * @param value: The value to append.
@@ -114371,7 +115605,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Append_8(this.__handle, `value`, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Append_9(this.__handle, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -114396,7 +115630,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Append_9(this.__handle, valueC, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Append_10(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -114420,7 +115654,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Append_10(this.__handle, `value`, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Append_11(this.__handle, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -114444,7 +115678,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Append_11(this.__handle, `value`, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Append_12(this.__handle, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -114468,7 +115702,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Append_12(this.__handle, `value`, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Append_13(this.__handle, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -114492,7 +115726,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Append_13(this.__handle, `value`, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Append_14(this.__handle, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -114516,7 +115750,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Append_14(this.__handle, `value`, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Append_15(this.__handle, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -114541,7 +115775,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Append_15(this.__handle, valueC, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Append_16(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -114566,7 +115800,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Append_16(this.__handle, valueC, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Append_17(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -114591,7 +115825,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Append_17(this.__handle, valueC, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Append_18(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -114616,7 +115850,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Append_18(this.__handle, valueC, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Append_19(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -114641,7 +115875,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Append_19(this.__handle, valueC, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Append_20(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -114666,7 +115900,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Append_20(this.__handle, valueC, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Append_21(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -114690,7 +115924,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Append_21(this.__handle, __handlerJNAByRef, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Append_22(this.__handle, __handlerJNAByRef, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -114719,7 +115953,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Append_22(this.__handle, providerC, __handlerJNAByRef, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Append_23(this.__handle, providerC, __handlerJNAByRef, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -114791,22 +116025,20 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		return __returnValue
 		
 	}
-	// TODO: Conflicting overload that differs only by array element type was ignored "System.Text.StringBuilder AppendJoin(System.String, System.Object[])"
-	// TODO: Conflicting overload that differs only by array element type was ignored "System.Text.StringBuilder AppendJoin(System.String, System.String[])"
-	// TODO: Conflicting overload that differs only by array element type was ignored "System.Text.StringBuilder AppendJoin(Char, System.Object[])"
 	/**
-	 * Concatenates the strings of the provided array, using the specified char separator between each string, then appends the result to the current instance of the string builder.
-	 * @param separator: The character to use as a separator. separator is included in the joined strings only if values has more than one element.
+	 * Concatenates the string representations of the elements in the provided array of objects, using the specified separator between each member, then appends the result to the current instance of the string builder.
+	 * @param separator: The string to use as a separator. separator is included in the joined strings only if values has more than one element.
 	 * @param values: An array that contains the strings to concatenate and append to the current instance of the string builder.
 	 * @return A reference to this instance after the append operation has completed.
 	 */
-	open fun appendJoin(separator: Char /* System.Char */, values: DNNullableArray<System_String> /* System.String[] */) : System_Text_StringBuilder /* System.Text.StringBuilder */ {
+	open fun appendJoin(separator: System_String? /* System.String */, values: DNNullableArray<System_Object> /* System.Object[] */) : System_Text_StringBuilder /* System.Text.StringBuilder */ {
+		val separatorC = separator?.getHandleOrNull()
 		val valuesC = values.getHandleOrNull()
 		
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_AppendJoin_3(this.__handle, separator, valuesC, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_AppendJoin(this.__handle, separatorC, valuesC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -114819,6 +116051,9 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		return __returnValue
 		
 	}
+	// TODO: Conflicting overload that differs only by array element type was ignored "System.Text.StringBuilder AppendJoin(System.String, System.String[])"
+	// TODO: Conflicting overload that differs only by array element type was ignored "System.Text.StringBuilder AppendJoin(Char, System.Object[])"
+	// TODO: Conflicting overload that differs only by array element type was ignored "System.Text.StringBuilder AppendJoin(Char, System.String[])"
 	/**
 	 * Inserts a string into this instance at the specified character position.
 	 * @param index: The position in this instance where insertion begins.
@@ -114975,6 +116210,25 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		return __returnValue
 		
 	}
+	open fun insert(index: Int /* System.Int32 */, `value`: System_Text_Rune /* System.Text.Rune */) : System_Text_StringBuilder /* System.Text.StringBuilder */ {
+		val valueC = `value`.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_7(this.__handle, index, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_Text_StringBuilder(__returnValueC)
+		
+		return __returnValue
+		
+	}
 	/**
 	 * Inserts the string representation of a specified array of Unicode characters into this instance at the specified character position.
 	 * @param index: The position in this instance where insertion begins.
@@ -114988,7 +116242,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_7(this.__handle, index, valueC, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_8(this.__handle, index, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -115017,7 +116271,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_8(this.__handle, index, valueC, startIndex, charCount, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_9(this.__handle, index, valueC, startIndex, charCount, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -115043,7 +116297,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_9(this.__handle, index, `value`, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_10(this.__handle, index, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -115069,7 +116323,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_10(this.__handle, index, `value`, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_11(this.__handle, index, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -115095,7 +116349,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_11(this.__handle, index, `value`, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_12(this.__handle, index, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -115121,7 +116375,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_12(this.__handle, index, `value`, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_13(this.__handle, index, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -115148,7 +116402,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_13(this.__handle, index, valueC, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_14(this.__handle, index, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -115175,7 +116429,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_14(this.__handle, index, valueC, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_15(this.__handle, index, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -115202,7 +116456,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_15(this.__handle, index, valueC, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_16(this.__handle, index, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -115229,7 +116483,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_16(this.__handle, index, valueC, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_17(this.__handle, index, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -115256,7 +116510,7 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_17(this.__handle, index, valueC, __exceptionC)
+		val __returnValueC = CAPI.System_Text_StringBuilder_Insert_18(this.__handle, index, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -115688,6 +116942,84 @@ open class System_Text_StringBuilder /* System.Text.StringBuilder */(handle: Poi
 		return __returnValue
 		
 	}
+	open fun replace(oldRune: System_Text_Rune /* System.Text.Rune */, newRune: System_Text_Rune /* System.Text.Rune */) : System_Text_StringBuilder /* System.Text.StringBuilder */ {
+		val oldRuneC = oldRune.getHandleOrNull()
+		val newRuneC = newRune.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Text_StringBuilder_Replace_4(this.__handle, oldRuneC, newRuneC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_Text_StringBuilder(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun replace(oldRune: System_Text_Rune /* System.Text.Rune */, newRune: System_Text_Rune /* System.Text.Rune */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */) : System_Text_StringBuilder /* System.Text.StringBuilder */ {
+		val oldRuneC = oldRune.getHandleOrNull()
+		val newRuneC = newRune.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Text_StringBuilder_Replace_5(this.__handle, oldRuneC, newRuneC, startIndex, count, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_Text_StringBuilder(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun getRuneAt(index: Int /* System.Int32 */) : System_Text_Rune /* System.Text.Rune */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Text_StringBuilder_GetRuneAt(this.__handle, index, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_Text_Rune(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun tryGetRuneAt(index: Int /* System.Int32 */, `value`: ObjectRef<System_Text_Rune> /* System.Text.Rune */) : Boolean /* System.Boolean */ {
+		val __valueJNAByRef = `value`.toJNARef()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Text_StringBuilder_TryGetRuneAt(this.__handle, index, __valueJNAByRef, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		value.value = System_Text_Rune(__valueJNAByRef.value)
+		
+		
+		return __returnValueC
+		
+	}
 	/**
 	 * Gets or sets the maximum number of characters that can be contained in the memory allocated by the current instance.
 	 * @throws System.ArgumentOutOfRangeException: The value specified for a set operation is less than the current length of this instance.  -or-  The value specified for a set operation is greater than the maximum capacity.
@@ -115968,6 +117300,125 @@ open class System_Text_StringBuilder_ChunkEnumerator /* System.Text.StringBuilde
 
 
 	// MARK: - END System.Text.StringBuilder.ChunkEnumerator
+
+
+	// MARK: - BEGIN System.Text.StringBuilderRuneEnumerator
+open class System_Text_StringBuilderRuneEnumerator /* System.Text.StringBuilderRuneEnumerator */(handle: Pointer): System_ValueType(handle), System_Collections_IEnumerable, System_IDisposable, System_Collections_IEnumerator {
+	companion object : IDNObjectCompanion<System_Text_StringBuilderRuneEnumerator> {
+		/// Initializes a new instance of the System.Text.StringBuilderRuneEnumerator struct.
+		operator public fun invoke() : System_Text_StringBuilderRuneEnumerator /* System.Text.StringBuilderRuneEnumerator */ {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Text_StringBuilderRuneEnumerator_Create(__exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return System_Text_StringBuilderRuneEnumerator(__returnValueC)
+			
+		}
+		@JvmStatic
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public override val typeOf: System_Type /* System.Type */
+			@JvmName("typeOf_get")
+			get() {
+				return System_Type(CAPI.System_Text_StringBuilderRuneEnumerator_TypeOf())
+				
+			}
+			
+		
+		
+		@JvmStatic override fun __constructWithHandle(handle: Pointer) : System_Text_StringBuilderRuneEnumerator {
+			return System_Text_StringBuilderRuneEnumerator(handle)
+		}
+		
+	}
+	
+	open override fun getEnumerator() : System_Text_StringBuilderRuneEnumerator /* System.Text.StringBuilderRuneEnumerator */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Text_StringBuilderRuneEnumerator_GetEnumerator(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_Text_StringBuilderRuneEnumerator(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	open override fun moveNext() : Boolean /* System.Boolean */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Text_StringBuilderRuneEnumerator_MoveNext(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	@Suppress("INAPPLICABLE_JVM_NAME")
+	open override val current: System_Text_Rune /* System.Text.Rune */
+		@JvmName("current_get")
+		get() {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Text_StringBuilderRuneEnumerator_Current_Get(this.__handle, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Text_Rune(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		
+	
+	
+	open override fun destroy() {
+		CAPI.System_Text_StringBuilderRuneEnumerator_Destroy(this.__handle)
+		
+	}
+	override fun equals(other: Any?) : Boolean {
+		val otherSystemObject = other as? System_Object
+		
+		try {
+		    otherSystemObject?.let {
+		        return System_Object.equals(this, otherSystemObject)
+		    }
+		} catch (e: Exception) {
+		    return false
+		}
+		
+		return false
+	}
+	
+}
+
+
+	// MARK: - END System.Text.StringBuilderRuneEnumerator
 
 
 	// MARK: - BEGIN System.Text.StringBuilder.AppendInterpolatedStringHandler
@@ -117545,6 +118996,24 @@ open class System_IO_File /* System.IO.File */(handle: Pointer): System_Object(h
 			val __exceptionC = PointerByReference()
 			
 			val __returnValueC = CAPI.System_IO_File_OpenHandle(pathC, modeC, accessC, shareC, optionsC, preallocationSize, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = Microsoft_Win32_SafeHandles_SafeFileHandle(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun openNullHandle() : Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHandles.SafeFileHandle */ {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_IO_File_OpenNullHandle(__exceptionC)
 			
 			val __exceptionCHandle = __exceptionC.value
 			
@@ -119294,6 +120763,26 @@ open class System_IO_File /* System.IO.File */(handle: Pointer): System_Object(h
 		}
 		// TODO: Method with generic parameter (System_IO_File_AppendAllLinesAsync)
 		// TODO: Method with generic parameter (System_IO_File_AppendAllLinesAsync_1)
+		public fun createHardLink(path: System_String /* System.String */, pathToTarget: System_String /* System.String */) : System_IO_FileSystemInfo /* System.IO.FileSystemInfo */ {
+			val pathC = path.getHandleOrNull()
+			val pathToTargetC = pathToTarget.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_IO_File_CreateHardLink(pathC, pathToTargetC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_IO_FileSystemInfo(__returnValueC)
+			
+			return __returnValue
+			
+		}
 		/**
 		 * Creates a file symbolic link identified by path that points to pathToTarget.
 		 * @param path: The path where the symbolic link should be created.
@@ -121619,6 +123108,22 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		
 	}
+	open fun write(`value`: System_Text_Rune /* System.Text.Rune */) {
+		val valueC = `value`.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		CAPI.System_IO_TextWriter_Write_1(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		
+	}
 	/**
 	 * Writes a character array to the text stream.
 	 * @param buffer: The character array to write to the text stream.
@@ -121631,7 +123136,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_Write_1(this.__handle, bufferC, __exceptionC)
+		CAPI.System_IO_TextWriter_Write_2(this.__handle, bufferC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -121658,7 +123163,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_Write_2(this.__handle, bufferC, index, count, __exceptionC)
+		CAPI.System_IO_TextWriter_Write_3(this.__handle, bufferC, index, count, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -121679,7 +123184,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_Write_3(this.__handle, `value`, __exceptionC)
+		CAPI.System_IO_TextWriter_Write_4(this.__handle, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -121700,7 +123205,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_Write_4(this.__handle, `value`, __exceptionC)
+		CAPI.System_IO_TextWriter_Write_5(this.__handle, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -121722,7 +123227,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_Write_5(this.__handle, valueC, __exceptionC)
+		CAPI.System_IO_TextWriter_Write_6(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -121743,7 +123248,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_Write_6(this.__handle, `value`, __exceptionC)
+		CAPI.System_IO_TextWriter_Write_7(this.__handle, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -121765,7 +123270,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_Write_7(this.__handle, valueC, __exceptionC)
+		CAPI.System_IO_TextWriter_Write_8(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -121786,7 +123291,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_Write_8(this.__handle, `value`, __exceptionC)
+		CAPI.System_IO_TextWriter_Write_9(this.__handle, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -121807,7 +123312,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_Write_9(this.__handle, `value`, __exceptionC)
+		CAPI.System_IO_TextWriter_Write_10(this.__handle, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -121829,7 +123334,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_Write_10(this.__handle, valueC, __exceptionC)
+		CAPI.System_IO_TextWriter_Write_11(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -121851,7 +123356,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_Write_11(this.__handle, valueC, __exceptionC)
+		CAPI.System_IO_TextWriter_Write_12(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -121873,7 +123378,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_Write_12(this.__handle, valueC, __exceptionC)
+		CAPI.System_IO_TextWriter_Write_13(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -121893,7 +123398,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_Write_13(this.__handle, valueC, __exceptionC)
+		CAPI.System_IO_TextWriter_Write_14(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -121919,7 +123424,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_Write_14(this.__handle, formatC, arg0C, __exceptionC)
+		CAPI.System_IO_TextWriter_Write_15(this.__handle, formatC, arg0C, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -121947,7 +123452,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_Write_15(this.__handle, formatC, arg0C, arg1C, __exceptionC)
+		CAPI.System_IO_TextWriter_Write_16(this.__handle, formatC, arg0C, arg1C, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -121977,7 +123482,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_Write_16(this.__handle, formatC, arg0C, arg1C, arg2C, __exceptionC)
+		CAPI.System_IO_TextWriter_Write_17(this.__handle, formatC, arg0C, arg1C, arg2C, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122003,7 +123508,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_Write_17(this.__handle, formatC, argC, __exceptionC)
+		CAPI.System_IO_TextWriter_Write_18(this.__handle, formatC, argC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122054,6 +123559,22 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		
 	}
+	open fun writeLine(`value`: System_Text_Rune /* System.Text.Rune */) {
+		val valueC = `value`.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		CAPI.System_IO_TextWriter_WriteLine_2(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		
+	}
 	/**
 	 * Writes an array of characters to the text stream, followed by a line terminator.
 	 * @param buffer: The character array from which data is read.
@@ -122066,7 +123587,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_WriteLine_2(this.__handle, bufferC, __exceptionC)
+		CAPI.System_IO_TextWriter_WriteLine_3(this.__handle, bufferC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122093,7 +123614,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_WriteLine_3(this.__handle, bufferC, index, count, __exceptionC)
+		CAPI.System_IO_TextWriter_WriteLine_4(this.__handle, bufferC, index, count, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122114,7 +123635,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_WriteLine_4(this.__handle, `value`, __exceptionC)
+		CAPI.System_IO_TextWriter_WriteLine_5(this.__handle, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122135,7 +123656,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_WriteLine_5(this.__handle, `value`, __exceptionC)
+		CAPI.System_IO_TextWriter_WriteLine_6(this.__handle, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122157,7 +123678,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_WriteLine_6(this.__handle, valueC, __exceptionC)
+		CAPI.System_IO_TextWriter_WriteLine_7(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122178,7 +123699,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_WriteLine_7(this.__handle, `value`, __exceptionC)
+		CAPI.System_IO_TextWriter_WriteLine_8(this.__handle, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122200,7 +123721,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_WriteLine_8(this.__handle, valueC, __exceptionC)
+		CAPI.System_IO_TextWriter_WriteLine_9(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122221,7 +123742,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_WriteLine_9(this.__handle, `value`, __exceptionC)
+		CAPI.System_IO_TextWriter_WriteLine_10(this.__handle, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122242,7 +123763,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_WriteLine_10(this.__handle, `value`, __exceptionC)
+		CAPI.System_IO_TextWriter_WriteLine_11(this.__handle, `value`, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122264,7 +123785,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_WriteLine_11(this.__handle, valueC, __exceptionC)
+		CAPI.System_IO_TextWriter_WriteLine_12(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122286,7 +123807,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_WriteLine_12(this.__handle, valueC, __exceptionC)
+		CAPI.System_IO_TextWriter_WriteLine_13(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122306,7 +123827,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_WriteLine_13(this.__handle, valueC, __exceptionC)
+		CAPI.System_IO_TextWriter_WriteLine_14(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122328,7 +123849,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_WriteLine_14(this.__handle, valueC, __exceptionC)
+		CAPI.System_IO_TextWriter_WriteLine_15(this.__handle, valueC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122354,7 +123875,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_WriteLine_15(this.__handle, formatC, arg0C, __exceptionC)
+		CAPI.System_IO_TextWriter_WriteLine_16(this.__handle, formatC, arg0C, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122382,7 +123903,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_WriteLine_16(this.__handle, formatC, arg0C, arg1C, __exceptionC)
+		CAPI.System_IO_TextWriter_WriteLine_17(this.__handle, formatC, arg0C, arg1C, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122412,7 +123933,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_WriteLine_17(this.__handle, formatC, arg0C, arg1C, arg2C, __exceptionC)
+		CAPI.System_IO_TextWriter_WriteLine_18(this.__handle, formatC, arg0C, arg1C, arg2C, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122438,7 +123959,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		CAPI.System_IO_TextWriter_WriteLine_18(this.__handle, formatC, argC, __exceptionC)
+		CAPI.System_IO_TextWriter_WriteLine_19(this.__handle, formatC, argC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122473,6 +123994,25 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		return __returnValue
 		
 	}
+	open fun writeAsync(`value`: System_Text_Rune /* System.Text.Rune */) : System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
+		val valueC = `value`.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_IO_TextWriter_WriteAsync_1(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_Threading_Tasks_Task(__returnValueC)
+		
+		return __returnValue
+		
+	}
 	/**
 	 * Writes a string to the text stream asynchronously.
 	 * @param value: The string to write. If value is null, nothing is written to the text stream.
@@ -122486,7 +124026,27 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_IO_TextWriter_WriteAsync_1(this.__handle, valueC, __exceptionC)
+		val __returnValueC = CAPI.System_IO_TextWriter_WriteAsync_2(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_Threading_Tasks_Task(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun writeAsync(`value`: System_String? /* System.String */, cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) : System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
+		val valueC = `value`?.getHandleOrNull()
+		val cancellationTokenC = cancellationToken.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_IO_TextWriter_WriteAsync_3(this.__handle, valueC, cancellationTokenC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122513,7 +124073,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_IO_TextWriter_WriteAsync_2(this.__handle, valueC, cancellationTokenC, __exceptionC)
+		val __returnValueC = CAPI.System_IO_TextWriter_WriteAsync_4(this.__handle, valueC, cancellationTokenC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122539,7 +124099,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_IO_TextWriter_WriteAsync_3(this.__handle, bufferC, __exceptionC)
+		val __returnValueC = CAPI.System_IO_TextWriter_WriteAsync_5(this.__handle, bufferC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122570,7 +124130,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_IO_TextWriter_WriteAsync_4(this.__handle, bufferC, index, count, __exceptionC)
+		val __returnValueC = CAPI.System_IO_TextWriter_WriteAsync_6(this.__handle, bufferC, index, count, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122608,6 +124168,25 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		return __returnValue
 		
 	}
+	open fun writeLineAsync(`value`: System_Text_Rune /* System.Text.Rune */) : System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
+		val valueC = `value`.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_IO_TextWriter_WriteLineAsync_1(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_Threading_Tasks_Task(__returnValueC)
+		
+		return __returnValue
+		
+	}
 	/**
 	 * Asynchronously writes a string to the text stream, followed by a line terminator.
 	 * @param value: The string to write. If the value is null, only a line terminator is written.
@@ -122621,7 +124200,27 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_IO_TextWriter_WriteLineAsync_1(this.__handle, valueC, __exceptionC)
+		val __returnValueC = CAPI.System_IO_TextWriter_WriteLineAsync_2(this.__handle, valueC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_Threading_Tasks_Task(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun writeLineAsync(`value`: System_String? /* System.String */, cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) : System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
+		val valueC = `value`?.getHandleOrNull()
+		val cancellationTokenC = cancellationToken.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_IO_TextWriter_WriteLineAsync_3(this.__handle, valueC, cancellationTokenC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122648,7 +124247,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_IO_TextWriter_WriteLineAsync_2(this.__handle, valueC, cancellationTokenC, __exceptionC)
+		val __returnValueC = CAPI.System_IO_TextWriter_WriteLineAsync_4(this.__handle, valueC, cancellationTokenC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122674,7 +124273,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_IO_TextWriter_WriteLineAsync_3(this.__handle, bufferC, __exceptionC)
+		val __returnValueC = CAPI.System_IO_TextWriter_WriteLineAsync_5(this.__handle, bufferC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122705,7 +124304,7 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_IO_TextWriter_WriteLineAsync_4(this.__handle, bufferC, index, count, __exceptionC)
+		val __returnValueC = CAPI.System_IO_TextWriter_WriteLineAsync_6(this.__handle, bufferC, index, count, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -122729,7 +124328,26 @@ open class System_IO_TextWriter /* System.IO.TextWriter */(handle: Pointer): Sys
 		
 		val __exceptionC = PointerByReference()
 		
-		val __returnValueC = CAPI.System_IO_TextWriter_WriteLineAsync_5(this.__handle, __exceptionC)
+		val __returnValueC = CAPI.System_IO_TextWriter_WriteLineAsync_7(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_Threading_Tasks_Task(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun writeLineAsync(cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) : System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
+		val cancellationTokenC = cancellationToken.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_IO_TextWriter_WriteLineAsync_8(this.__handle, cancellationTokenC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -124339,6 +125957,22 @@ open class System_IO_FileInfo /* System.IO.FileInfo */(handle: Pointer): System_
 		val __exceptionC = PointerByReference()
 		
 		CAPI.System_IO_FileInfo_Encrypt(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		
+	}
+	open fun createAsHardLink(pathToTarget: System_String /* System.String */) {
+		val pathToTargetC = pathToTarget.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		CAPI.System_IO_FileInfo_CreateAsHardLink(this.__handle, pathToTargetC, __exceptionC)
 		
 		val __exceptionCHandle = __exceptionC.value
 		
@@ -126973,6 +128607,7 @@ open class System_Buffers_Binary_BinaryPrimitives /* System.Buffers.Binary.Binar
 	companion object : IDNObjectCompanion<System_Buffers_Binary_BinaryPrimitives> {
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_ReadDoubleBigEndian)
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_ReadHalfBigEndian)
+		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_ReadBFloat16BigEndian)
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_ReadInt16BigEndian)
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_ReadInt32BigEndian)
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_ReadInt64BigEndian)
@@ -126986,6 +128621,7 @@ open class System_Buffers_Binary_BinaryPrimitives /* System.Buffers.Binary.Binar
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_ReadUIntPtrBigEndian)
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_TryReadDoubleBigEndian)
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_TryReadHalfBigEndian)
+		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_TryReadBFloat16BigEndian)
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_TryReadInt16BigEndian)
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_TryReadInt32BigEndian)
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_TryReadInt64BigEndian)
@@ -126999,6 +128635,7 @@ open class System_Buffers_Binary_BinaryPrimitives /* System.Buffers.Binary.Binar
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_TryReadUIntPtrBigEndian)
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_ReadDoubleLittleEndian)
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_ReadHalfLittleEndian)
+		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_ReadBFloat16LittleEndian)
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_ReadInt16LittleEndian)
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_ReadInt32LittleEndian)
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_ReadInt64LittleEndian)
@@ -127012,6 +128649,7 @@ open class System_Buffers_Binary_BinaryPrimitives /* System.Buffers.Binary.Binar
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_ReadUIntPtrLittleEndian)
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_TryReadDoubleLittleEndian)
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_TryReadHalfLittleEndian)
+		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_TryReadBFloat16LittleEndian)
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_TryReadInt16LittleEndian)
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_TryReadInt32LittleEndian)
 		// TODO: Method with generic parameter (System_Buffers_Binary_BinaryPrimitives_TryReadInt64LittleEndian)
@@ -127335,6 +128973,2351 @@ open class System_Buffers_Binary_BinaryPrimitives /* System.Buffers.Binary.Binar
 
 
 	// MARK: - END System.Buffers.Binary.BinaryPrimitives
+
+
+	// MARK: - BEGIN System.Numerics.BFloat16
+open class System_Numerics_BFloat16 /* System.Numerics.BFloat16 */(handle: Pointer): System_ValueType(handle), System_IComparable, System_ISpanFormattable, System_IFormattable, System_IUtf8SpanFormattable {
+	companion object : IDNObjectCompanion<System_Numerics_BFloat16> {
+		public fun isFinite(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : Boolean /* System.Boolean */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_IsFinite(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		public fun isInfinity(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : Boolean /* System.Boolean */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_IsInfinity(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		public fun isNaN(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : Boolean /* System.Boolean */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_IsNaN(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		public fun isNegative(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : Boolean /* System.Boolean */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_IsNegative(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		public fun isNegativeInfinity(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : Boolean /* System.Boolean */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_IsNegativeInfinity(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		public fun isNormal(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : Boolean /* System.Boolean */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_IsNormal(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		public fun isPositiveInfinity(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : Boolean /* System.Boolean */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_IsPositiveInfinity(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		public fun isSubnormal(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : Boolean /* System.Boolean */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_IsSubnormal(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		public fun isZero(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : Boolean /* System.Boolean */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_IsZero(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		public fun parse(s: System_String /* System.String */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val sC = s.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Parse(sC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun parse(s: System_String /* System.String */, style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val sC = s.getHandleOrNull()
+			val styleC = style.value
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Parse_1(sC, styleC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun parse(s: System_String /* System.String */, provider: System_IFormatProvider? /* System.IFormatProvider */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val sC = s.getHandleOrNull()
+			val providerC = provider?.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Parse_2(sC, providerC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun parse(s: System_String /* System.String */, style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, provider: System_IFormatProvider? /* System.IFormatProvider */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val sC = s.getHandleOrNull()
+			val styleC = style.value
+			val providerC = provider?.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Parse_3(sC, styleC, providerC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun tryParse(s: System_String? /* System.String */, result: ObjectRef<System_Numerics_BFloat16> /* System.Numerics.BFloat16 */) : Boolean /* System.Boolean */ {
+			val sC = s?.getHandleOrNull()
+			val __resultJNAByRef = result.toJNARef()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_TryParse(sC, __resultJNAByRef, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			result.value = System_Numerics_BFloat16(__resultJNAByRef.value)
+			
+			
+			return __returnValueC
+			
+		}
+		// TODO: Method with generic parameter (System_Numerics_BFloat16_TryParse_1)
+		public fun tryParse(s: System_String? /* System.String */, style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, provider: System_IFormatProvider? /* System.IFormatProvider */, result: ObjectRef<System_Numerics_BFloat16> /* System.Numerics.BFloat16 */) : Boolean /* System.Boolean */ {
+			val sC = s?.getHandleOrNull()
+			val styleC = style.value
+			val providerC = provider?.getHandleOrNull()
+			val __resultJNAByRef = result.toJNARef()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_TryParse_2(sC, styleC, providerC, __resultJNAByRef, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			result.value = System_Numerics_BFloat16(__resultJNAByRef.value)
+			
+			
+			return __returnValueC
+			
+		}
+		public fun isPow2(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : Boolean /* System.Boolean */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_IsPow2(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		public fun log2(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Log2(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun exp(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Exp(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun expM1(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_ExpM1(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun exp2(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Exp2(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun exp2M1(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Exp2M1(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun exp10(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Exp10(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun exp10M1(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Exp10M1(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun ceiling(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Ceiling(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun floor(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Floor(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun round(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Round(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun round(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, digits: Int /* System.Int32 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Round_1(xC, digits, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun round(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, mode: System_MidpointRounding /* System.MidpointRounding */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			val modeC = mode.value
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Round_2(xC, modeC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun round(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, digits: Int /* System.Int32 */, mode: System_MidpointRounding /* System.MidpointRounding */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			val modeC = mode.value
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Round_3(xC, digits, modeC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun truncate(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Truncate(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun atan2(y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val yC = y.getHandleOrNull()
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Atan2(yC, xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun atan2Pi(y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val yC = y.getHandleOrNull()
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Atan2Pi(yC, xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun bitDecrement(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_BitDecrement(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun bitIncrement(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_BitIncrement(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun fusedMultiplyAdd(left: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, right: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, addend: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val leftC = left.getHandleOrNull()
+			val rightC = right.getHandleOrNull()
+			val addendC = addend.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_FusedMultiplyAdd(leftC, rightC, addendC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun ieee754Remainder(left: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, right: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val leftC = left.getHandleOrNull()
+			val rightC = right.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Ieee754Remainder(leftC, rightC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun iLogB(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : Int /* System.Int32 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_ILogB(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		public fun lerp(value1: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, value2: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, amount: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val value1C = value1.getHandleOrNull()
+			val value2C = value2.getHandleOrNull()
+			val amountC = amount.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Lerp(value1C, value2C, amountC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun reciprocalEstimate(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_ReciprocalEstimate(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun reciprocalSqrtEstimate(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_ReciprocalSqrtEstimate(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun scaleB(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, n: Int /* System.Int32 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_ScaleB(xC, n, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun acosh(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Acosh(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun asinh(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Asinh(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun atanh(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Atanh(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun cosh(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Cosh(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun sinh(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Sinh(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun tanh(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Tanh(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun log(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Log_1(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun log(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, newBase: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			val newBaseC = newBase.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Log_2(xC, newBaseC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun log10(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Log10(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun logP1(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_LogP1(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun log2P1(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Log2P1(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun log10P1(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Log10P1(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun clamp(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, min: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, max: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val valueC = `value`.getHandleOrNull()
+			val minC = min.getHandleOrNull()
+			val maxC = max.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Clamp(valueC, minC, maxC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun copySign(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, sign: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val valueC = `value`.getHandleOrNull()
+			val signC = sign.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_CopySign(valueC, signC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun max(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			val yC = y.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Max(xC, yC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun maxNumber(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			val yC = y.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_MaxNumber(xC, yC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun min(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			val yC = y.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Min(xC, yC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun minNumber(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			val yC = y.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_MinNumber(xC, yC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun sign(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : Int /* System.Int32 */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Sign(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		public fun abs(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Abs(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		// TODO: Method with generic parameters (System_Numerics_BFloat16_CreateChecked_A1)
+		// TODO: Method with generic parameters (System_Numerics_BFloat16_CreateSaturating_A1)
+		// TODO: Method with generic parameters (System_Numerics_BFloat16_CreateTruncating_A1)
+		public fun isEvenInteger(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : Boolean /* System.Boolean */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_IsEvenInteger(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		public fun isInteger(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : Boolean /* System.Boolean */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_IsInteger(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		public fun isOddInteger(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : Boolean /* System.Boolean */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_IsOddInteger(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		public fun isPositive(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : Boolean /* System.Boolean */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_IsPositive_1(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		public fun isRealNumber(`value`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : Boolean /* System.Boolean */ {
+			val valueC = `value`.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_IsRealNumber(valueC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		public fun maxMagnitude(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			val yC = y.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_MaxMagnitude(xC, yC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun maxMagnitudeNumber(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			val yC = y.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_MaxMagnitudeNumber(xC, yC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun minMagnitude(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			val yC = y.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_MinMagnitude(xC, yC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun minMagnitudeNumber(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			val yC = y.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_MinMagnitudeNumber(xC, yC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun tryParsePartial(s: System_String? /* System.String */, style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, provider: System_IFormatProvider? /* System.IFormatProvider */, result: ObjectRef<System_Numerics_BFloat16> /* System.Numerics.BFloat16 */, charsConsumed: IntRef /* System.Int32 */) : Boolean /* System.Boolean */ {
+			val sC = s?.getHandleOrNull()
+			val styleC = style.value
+			val providerC = provider?.getHandleOrNull()
+			val __resultJNAByRef = result.toJNARef()
+			val __charsConsumedJNAByRef = charsConsumed.toJNARef()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_TryParsePartial(sC, styleC, providerC, __resultJNAByRef, __charsConsumedJNAByRef, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			result.value = System_Numerics_BFloat16(__resultJNAByRef.value)
+			
+			charsConsumed.value = __charsConsumedJNAByRef.value
+			
+			
+			return __returnValueC
+			
+		}
+		// TODO: Method with generic parameter (System_Numerics_BFloat16_TryParsePartial_1)
+		public fun tryParse(s: System_String? /* System.String */, provider: System_IFormatProvider? /* System.IFormatProvider */, result: ObjectRef<System_Numerics_BFloat16> /* System.Numerics.BFloat16 */) : Boolean /* System.Boolean */ {
+			val sC = s?.getHandleOrNull()
+			val providerC = provider?.getHandleOrNull()
+			val __resultJNAByRef = result.toJNARef()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_TryParse_3(sC, providerC, __resultJNAByRef, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			result.value = System_Numerics_BFloat16(__resultJNAByRef.value)
+			
+			
+			return __returnValueC
+			
+		}
+		public fun pow(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			val yC = y.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Pow(xC, yC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun cbrt(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Cbrt(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun hypot(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			val yC = y.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Hypot(xC, yC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun rootN(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, n: Int /* System.Int32 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_RootN(xC, n, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun sqrt(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Sqrt(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun acos(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Acos_1(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun acosPi(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_AcosPi(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun asin(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Asin_1(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun asinPi(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_AsinPi(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun atan(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Atan_1(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun atanPi(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_AtanPi(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun cos(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Cos_1(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun cosPi(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_CosPi(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun degreesToRadians(degrees: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val degreesC = degrees.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_DegreesToRadians(degreesC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun radiansToDegrees(radians: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val radiansC = radians.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_RadiansToDegrees(radiansC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun sin(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Sin_1(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun sinPi(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_SinPi(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun tan(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Tan_1(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun tanPi(x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			val xC = x.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_TanPi(xC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Numerics_BFloat16(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		// TODO: Method with generic parameter (System_Numerics_BFloat16_Parse_4)
+		// TODO: Method with generic parameter (System_Numerics_BFloat16_TryParse_4)
+		// TODO: Method with generic parameter (System_Numerics_BFloat16_Parse_5)
+		// TODO: Method with generic parameter (System_Numerics_BFloat16_TryParse_5)
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val epsilon: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */
+			@JvmName("epsilon_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Numerics_BFloat16_Epsilon_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Numerics_BFloat16(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val positiveInfinity: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */
+			@JvmName("positiveInfinity_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Numerics_BFloat16_PositiveInfinity_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Numerics_BFloat16(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val negativeInfinity: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */
+			@JvmName("negativeInfinity_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Numerics_BFloat16_NegativeInfinity_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Numerics_BFloat16(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val naN: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */
+			@JvmName("naN_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Numerics_BFloat16_NaN_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Numerics_BFloat16(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val minValue: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */
+			@JvmName("minValue_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Numerics_BFloat16_MinValue_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Numerics_BFloat16(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val maxValue: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */
+			@JvmName("maxValue_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Numerics_BFloat16_MaxValue_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Numerics_BFloat16(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val e: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */
+			@JvmName("e_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Numerics_BFloat16_E_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Numerics_BFloat16(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val pi: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */
+			@JvmName("pi_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Numerics_BFloat16_Pi_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Numerics_BFloat16(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val tau: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */
+			@JvmName("tau_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Numerics_BFloat16_Tau_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Numerics_BFloat16(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val negativeZero: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */
+			@JvmName("negativeZero_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Numerics_BFloat16_NegativeZero_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Numerics_BFloat16(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val multiplicativeIdentity: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */
+			@JvmName("multiplicativeIdentity_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Numerics_BFloat16_MultiplicativeIdentity_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Numerics_BFloat16(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val one: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */
+			@JvmName("one_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Numerics_BFloat16_One_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Numerics_BFloat16(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val zero: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */
+			@JvmName("zero_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Numerics_BFloat16_Zero_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Numerics_BFloat16(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val negativeOne: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */
+			@JvmName("negativeOne_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Numerics_BFloat16_NegativeOne_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Numerics_BFloat16(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		/// Initializes a new instance of the System.Numerics.BFloat16 struct.
+		operator public fun invoke() : System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Numerics_BFloat16_Create_1(__exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return System_Numerics_BFloat16(__returnValueC)
+			
+		}
+		@JvmStatic
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public override val typeOf: System_Type /* System.Type */
+			@JvmName("typeOf_get")
+			get() {
+				return System_Type(CAPI.System_Numerics_BFloat16_TypeOf())
+				
+			}
+			
+		
+		
+		@JvmStatic override fun __constructWithHandle(handle: Pointer) : System_Numerics_BFloat16 {
+			return System_Numerics_BFloat16(handle)
+		}
+		
+	}
+	
+	open override fun compareTo(obj: System_Object? /* System.Object */) : Int /* System.Int32 */ {
+		val objC = obj?.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Numerics_BFloat16_CompareTo(this.__handle, objC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun compareTo(other: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : Int /* System.Int32 */ {
+		val otherC = other.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Numerics_BFloat16_CompareTo_1(this.__handle, otherC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open fun equals(other: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) : Boolean /* System.Boolean */ {
+		val otherC = other.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Numerics_BFloat16_Equals(this.__handle, otherC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open override fun equals(obj: System_Object? /* System.Object */) : Boolean /* System.Boolean */ {
+		val objC = obj?.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Numerics_BFloat16_Equals_1(this.__handle, objC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open override fun getHashCode() : Int /* System.Int32 */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Numerics_BFloat16_GetHashCode(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open override fun dnToString() : System_String /* System.String */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Numerics_BFloat16_ToString(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_String(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun dnToString(format: System_String? /* System.String */) : System_String /* System.String */ {
+		val formatC = format?.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Numerics_BFloat16_ToString_1(this.__handle, formatC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_String(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun dnToString(provider: System_IFormatProvider? /* System.IFormatProvider */) : System_String /* System.String */ {
+		val providerC = provider?.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Numerics_BFloat16_ToString_2(this.__handle, providerC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_String(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	open override fun dnToString(format: System_String? /* System.String */, provider: System_IFormatProvider? /* System.IFormatProvider */) : System_String /* System.String */ {
+		val formatC = format?.getHandleOrNull()
+		val providerC = provider?.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Numerics_BFloat16_ToString_3(this.__handle, formatC, providerC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_String(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	open override fun destroy() {
+		CAPI.System_Numerics_BFloat16_Destroy(this.__handle)
+		
+	}
+	override fun equals(other: Any?) : Boolean {
+		val otherSystemObject = other as? System_Object
+		
+		try {
+		    otherSystemObject?.let {
+		        return System_Object.equals(this, otherSystemObject)
+		    }
+		} catch (e: Exception) {
+		    return false
+		}
+		
+		return false
+	}
+	
+}
+
+
+	// MARK: - END System.Numerics.BFloat16
+
+
+	// MARK: - BEGIN System.IComparable<System.Numerics.BFloat16>
+// Type "IComparable`1" was skipped. Reason: It is generic somehow.
+	// MARK: - END System.IComparable<System.Numerics.BFloat16>
+
+
+	// MARK: - BEGIN System.IEquatable<System.Numerics.BFloat16>
+// Type "IEquatable`1" was skipped. Reason: It is generic somehow.
+	// MARK: - END System.IEquatable<System.Numerics.BFloat16>
+
+
+	// MARK: - BEGIN System.Numerics.IBinaryFloatingPointIeee754<System.Numerics.BFloat16>
+// Type "IBinaryFloatingPointIeee754`1" was skipped. Reason: It is generic somehow.
+	// MARK: - END System.Numerics.IBinaryFloatingPointIeee754<System.Numerics.BFloat16>
+
+
+	// MARK: - BEGIN System.Numerics.INumber<System.Numerics.BFloat16>
+// Type "INumber`1" was skipped. Reason: It is generic somehow.
+	// MARK: - END System.Numerics.INumber<System.Numerics.BFloat16>
+
+
+	// MARK: - BEGIN System.Numerics.BFloat16&
+
+
+	// MARK: - END System.Numerics.BFloat16&
+
+
+	// MARK: - BEGIN TOther
+// Type "TOther" was skipped. Reason: It has no full name.
+	// MARK: - END TOther
+
+
+	// MARK: - BEGIN TOther
+// Type "TOther" was skipped. Reason: It has no full name.
+	// MARK: - END TOther
+
+
+	// MARK: - BEGIN TOther
+// Type "TOther" was skipped. Reason: It has no full name.
+	// MARK: - END TOther
 
 
 	// MARK: - BEGIN System.WeakReference<>
@@ -133898,6 +137881,22 @@ open class System_Uri /* System.Uri */(handle: Pointer): System_Object(handle), 
 			
 		
 		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val uriSchemeData: System_String /* System.String */
+			@JvmName("uriSchemeData_get")
+			get() {
+				
+				
+				val __returnValueC = CAPI.System_Uri_UriSchemeData_Get()
+				
+				val __returnValue = System_String(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
 		/**
 		 * Specifies the characters that separate the communication protocol scheme from the address portion of the URI. This field is read-only.
 		 */
@@ -136126,10 +140125,10 @@ open class Beyond_NET_Sample_SpanTest /* Beyond.NET.Sample.SpanTest */(handle: P
 	// MARK: - END Beyond.NET.Sample.SpanTest
 
 
-	// MARK: - BEGIN System.ReadOnlySpan`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
+	// MARK: - BEGIN System.ReadOnlySpan`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
 
 
-	// MARK: - END System.ReadOnlySpan`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
+	// MARK: - END System.ReadOnlySpan`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.StructTestClass
@@ -137744,14 +141743,16 @@ open class Beyond_NET_Sample_WebProxyTests /* Beyond.NET.Sample.WebProxyTests */
 
 	// MARK: - BEGIN System.Net.WebProxy
 /**
- * Contains HTTP proxy settings for the System.Net.Http.HttpClient class.
+ *             Contains HTTP proxy settings for the System.Net.Http.HttpClient class.
+ *             
  */
 open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): System_Object(handle), System_Net_IWebProxy, System_Runtime_Serialization_ISerializable {
 	companion object : IDNObjectCompanion<System_Net_WebProxy> {
 		/**
-		 * Reads the Internet options nondynamic proxy settings.
-		 * @throws System.PlatformNotSupportedException: On .NET Core.
-		 * @return A System.Net.WebProxy instance that contains the nondynamic proxy settings from Internet options.
+		 *             Returns the proxy information configured by the system.
+		 *             
+		 * @throws System.PlatformNotSupportedException: This method is not supported on .NET Core and will always throw System.PlatformNotSupportedException.
+		 * @return             A System.Net.WebProxy instance that contains the nondynamic proxy settings from Internet options.             
 		 */
 		public fun getDefaultProxy() : System_Net_WebProxy /* System.Net.WebProxy */ {
 			
@@ -137772,7 +141773,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 			
 		}
 		/**
-		 * Initializes an empty instance of the System.Net.WebProxy class.
+		 *             Initializes an empty instance of the System.Net.WebProxy class.
+		 *             
 		 */
 		operator public fun invoke() : System_Net_WebProxy /* System.Net.WebProxy */ {
 			
@@ -137791,8 +141793,9 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 			
 		}
 		/**
-		 * Initializes a new instance of the System.Net.WebProxy class from the specified System.Uri instance.
-		 * @param Address: A System.Uri instance that contains the address of the proxy server.
+		 *             Initializes a new instance of the System.Net.WebProxy class from the specified System.Uri instance.
+		 *             
+		 * @param Address: The address of the proxy server.
 		 */
 		operator public fun invoke(Address: System_Uri? /* System.Uri */) : System_Net_WebProxy /* System.Net.WebProxy */ {
 			val AddressC = Address?.getHandleOrNull()
@@ -137812,7 +141815,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 			
 		}
 		/**
-		 * Initializes a new instance of the System.Net.WebProxy class with the System.Uri instance and bypass setting.
+		 *             Initializes a new instance of the System.Net.WebProxy class with the System.Uri instance and bypass setting.
+		 *             
 		 * @param Address: A System.Uri instance that contains the address of the proxy server.
 		 * @param BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
 		 */
@@ -137834,7 +141838,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 			
 		}
 		/**
-		 * Initializes a new instance of the System.Net.WebProxy class with the specified System.Uri instance, bypass setting, and list of URIs to bypass.
+		 *             Initializes a new instance of the System.Net.WebProxy class with the specified System.Uri instance, bypass setting, and list of URIs to bypass.
+		 *             
 		 * @param Address: A System.Uri instance that contains the address of the proxy server.
 		 * @param BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
 		 * @param BypassList: An array of regular expression strings that contains the URIs of the servers to bypass.
@@ -137858,7 +141863,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 			
 		}
 		/**
-		 * Initializes a new instance of the System.Net.WebProxy class with the specified System.Uri instance, bypass setting, list of URIs to bypass, and credentials.
+		 *             Initializes a new instance of the System.Net.WebProxy class with the specified System.Uri instance, bypass setting, list of URIs to bypass, and credentials.
+		 *             
 		 * @param Address: A System.Uri instance that contains the address of the proxy server.
 		 * @param BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
 		 * @param BypassList: An array of regular expression strings that contains the URIs of the servers to bypass.
@@ -137884,7 +141890,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 			
 		}
 		/**
-		 * Initializes a new instance of the System.Net.WebProxy class with the specified host and port number.
+		 *             Initializes a new instance of the System.Net.WebProxy class with the specified host and port number.
+		 *             
 		 * @param Host: The name of the proxy host.
 		 * @param Port: The port number on Host to use.
 		 * @throws System.UriFormatException: The URI formed by combining Host and Port is not a valid URI.
@@ -137907,7 +141914,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 			
 		}
 		/**
-		 * Initializes a new instance of the System.Net.WebProxy class with the specified URI.
+		 *             Initializes a new instance of the System.Net.WebProxy class with the specified URI.
+		 *             
 		 * @param Address: The URI of the proxy server.
 		 * @throws System.UriFormatException: Address is an invalid URI.
 		 */
@@ -137929,7 +141937,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 			
 		}
 		/**
-		 * Initializes a new instance of the System.Net.WebProxy class with the specified URI and bypass setting.
+		 *             Initializes a new instance of the System.Net.WebProxy class with the specified URI and bypass setting.
+		 *             
 		 * @param Address: The URI of the proxy server.
 		 * @param BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
 		 * @throws System.UriFormatException: Address is an invalid URI.
@@ -137952,7 +141961,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 			
 		}
 		/**
-		 * Initializes a new instance of the System.Net.WebProxy class with the specified URI, bypass setting, and list of URIs to bypass.
+		 *             Initializes a new instance of the System.Net.WebProxy class with the specified URI, bypass setting, and list of URIs to bypass.
+		 *             
 		 * @param Address: The URI of the proxy server.
 		 * @param BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
 		 * @param BypassList: An array of regular expression strings that contain the URIs of the servers to bypass.
@@ -137977,7 +141987,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 			
 		}
 		/**
-		 * Initializes a new instance of the System.Net.WebProxy class with the specified URI, bypass setting, list of URIs to bypass, and credentials.
+		 *             Initializes a new instance of the System.Net.WebProxy class with the specified URI, bypass setting, list of URIs to bypass, and credentials.
+		 *             
 		 * @param Address: The URI of the proxy server.
 		 * @param BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
 		 * @param BypassList: An array of regular expression strings that contains the URIs of the servers to bypass.
@@ -138021,10 +142032,11 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 	}
 	
 	/**
-	 * Returns the proxied URI for a request.
+	 *             Returns the URI of a proxy.
+	 *             
 	 * @param destination: The System.Uri instance of the requested Internet resource.
 	 * @throws System.ArgumentNullException: The destination parameter is null.
-	 * @return The System.Uri instance of the Internet resource, if the resource is on the bypass list; otherwise, the System.Uri instance of the proxy.
+	 * @return             The System.Uri instance of the Internet resource, if the resource is on the bypass list; otherwise, the System.Uri instance of the proxy.             
 	 */
 	open override fun getProxy(destination: System_Uri /* System.Uri */) : System_Uri? /* System.Uri */ {
 		val destinationC = destination.getHandleOrNull()
@@ -138046,10 +142058,11 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 		
 	}
 	/**
-	 * Indicates whether to use the proxy server for the specified host.
+	 *             Indicates whether to use the proxy server for the specified host.
+	 *             
 	 * @param host: The System.Uri instance of the host to check for proxy use.
 	 * @throws System.ArgumentNullException: The host parameter is null.
-	 * @return true if the proxy server should not be used for host; otherwise, false.
+	 * @return true if the proxy server should not be used for host; otherwise, false.             
 	 */
 	open override fun isBypassed(host: System_Uri /* System.Uri */) : Boolean /* System.Boolean */ {
 		val hostC = host.getHandleOrNull()
@@ -138069,8 +142082,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 		
 	}
 	/**
-	 * Gets or sets the address of the proxy server.
-	 * @return A System.Uri instance that contains the address of the proxy server.
+	 *             Gets or sets the address of the proxy server.
+	 *             
 	 */
 	@Suppress("INAPPLICABLE_JVM_NAME")
 	open val address: System_Uri? /* System.Uri */
@@ -138096,8 +142109,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 		
 	
 	/**
-	 * Gets or sets the address of the proxy server.
-	 * @return A System.Uri instance that contains the address of the proxy server.
+	 *             Gets or sets the address of the proxy server.
+	 *             
 	 */
 	open fun address_set(value: System_Uri? /* System.Uri */) {
 		val valueC = value.getHandleOrNull()
@@ -138117,8 +142130,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 	}
 	
 	/**
-	 * Gets or sets a value that indicates whether to bypass the proxy server for local addresses.
-	 * @return true to bypass the proxy server for local addresses; otherwise, false. The default value is false.
+	 *             Gets or sets a value that indicates whether to bypass the proxy server for local addresses.
+	 *             
 	 */
 	@Suppress("INAPPLICABLE_JVM_NAME")
 	open val bypassProxyOnLocal: Boolean /* System.Boolean */
@@ -138142,8 +142155,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 		
 	
 	/**
-	 * Gets or sets a value that indicates whether to bypass the proxy server for local addresses.
-	 * @return true to bypass the proxy server for local addresses; otherwise, false. The default value is false.
+	 *             Gets or sets a value that indicates whether to bypass the proxy server for local addresses.
+	 *             
 	 */
 	open fun bypassProxyOnLocal_set(value: Boolean /* System.Boolean */) {
 		
@@ -138162,8 +142175,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 	}
 	
 	/**
-	 * Gets or sets an array of addresses that do not use the proxy server.
-	 * @return An array that contains a list of regular expressions that describe URIs that do not use the proxy server when accessed.
+	 *             Gets or sets an array of addresses that do not use the proxy server.
+	 *             
 	 */
 	@Suppress("INAPPLICABLE_JVM_NAME")
 	open val bypassList: DNArray<System_String> /* System.String[] */
@@ -138189,8 +142202,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 		
 	
 	/**
-	 * Gets or sets an array of addresses that do not use the proxy server.
-	 * @return An array that contains a list of regular expressions that describe URIs that do not use the proxy server when accessed.
+	 *             Gets or sets an array of addresses that do not use the proxy server.
+	 *             
 	 */
 	open fun bypassList_set(value: DNArray<System_String>? /* System.String[] */) {
 		val valueC = value.getHandleOrNull()
@@ -138210,8 +142223,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 	}
 	
 	/**
-	 * Gets a list of addresses that do not use the proxy server.
-	 * @return An System.Collections.ArrayList that contains a list of System.Net.WebProxy.BypassList arrays that represents URIs that do not use the proxy server when accessed.
+	 *             Gets or sets an System.Collections.ArrayList of addresses that do not use the proxy server.
+	 *             
 	 */
 	@Suppress("INAPPLICABLE_JVM_NAME")
 	open val bypassArrayList: System_Collections_ArrayList /* System.Collections.ArrayList */
@@ -138238,9 +142251,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 	
 	
 	/**
-	 * Gets or sets the credentials to submit to the proxy server for authentication.
-	 * @throws System.InvalidOperationException: You attempted to set this property when the System.Net.WebProxy.UseDefaultCredentials property was set to true.
-	 * @return An System.Net.ICredentials instance that contains the credentials to submit to the proxy server for authentication.
+	 *             Gets or sets the credentials to submit to the proxy server for authentication.
+	 *             
 	 */
 	@Suppress("INAPPLICABLE_JVM_NAME")
 	open override val credentials: System_Net_ICredentials? /* System.Net.ICredentials */
@@ -138266,9 +142278,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 		
 	
 	/**
-	 * Gets or sets the credentials to submit to the proxy server for authentication.
-	 * @throws System.InvalidOperationException: You attempted to set this property when the System.Net.WebProxy.UseDefaultCredentials property was set to true.
-	 * @return An System.Net.ICredentials instance that contains the credentials to submit to the proxy server for authentication.
+	 *             Gets or sets the credentials to submit to the proxy server for authentication.
+	 *             
 	 */
 	open override fun credentials_set(value: System_Net_ICredentials? /* System.Net.ICredentials */) {
 		val valueC = value.getHandleOrNull()
@@ -138288,9 +142299,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 	}
 	
 	/**
-	 * Gets or sets a System.Boolean value that controls whether the System.Net.CredentialCache.DefaultCredentials are sent with requests.
-	 * @throws System.InvalidOperationException: You attempted to set this property when the System.Net.WebProxy.Credentials property contains credentials other than the default credentials.
-	 * @return true if the default credentials are used; otherwise, false. The default value is false.
+	 *             Gets or sets a value that controls whether the System.Net.CredentialCache.DefaultCredentials are sent with requests.
+	 *             
 	 */
 	@Suppress("INAPPLICABLE_JVM_NAME")
 	open val useDefaultCredentials: Boolean /* System.Boolean */
@@ -138314,9 +142324,8 @@ open class System_Net_WebProxy /* System.Net.WebProxy */(handle: Pointer): Syste
 		
 	
 	/**
-	 * Gets or sets a System.Boolean value that controls whether the System.Net.CredentialCache.DefaultCredentials are sent with requests.
-	 * @throws System.InvalidOperationException: You attempted to set this property when the System.Net.WebProxy.Credentials property contains credentials other than the default credentials.
-	 * @return true if the default credentials are used; otherwise, false. The default value is false.
+	 *             Gets or sets a value that controls whether the System.Net.CredentialCache.DefaultCredentials are sent with requests.
+	 *             
 	 */
 	open fun useDefaultCredentials_set(value: Boolean /* System.Boolean */) {
 		
@@ -157973,6 +161982,22 @@ open class System_Security_Cryptography_Aes /* System.Security.Cryptography.Aes 
 			return __returnValue
 			
 		}
+		public fun getKeyWrapLength(plaintextLengthInBytes: Int /* System.Int32 */) : Int /* System.Int32 */ {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Security_Cryptography_Aes_GetKeyWrapLength(plaintextLengthInBytes, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
 		/**
 		 * Computes the output length of the IETF RFC 5649 AES Key Wrap with Padding Algorithm for the specified plaintext length.
 		 * @param plaintextLengthInBytes: The length of the plaintext to be wrapped, in bytes.
@@ -158012,6 +162037,46 @@ open class System_Security_Cryptography_Aes /* System.Security.Cryptography.Aes 
 		
 	}
 	
+	open fun encryptKeyWrap(plaintext: DNArray<System_Byte> /* System.Byte[] */) : DNArray<System_Byte> /* System.Byte[] */ {
+		val plaintextC = plaintext.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Security_Cryptography_Aes_EncryptKeyWrap(this.__handle, plaintextC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = DNArray<System_Byte>(System_Byte, __returnValueC)
+		
+		return __returnValue
+		
+	}
+	// TODO: Method with generic parameter (System_Security_Cryptography_Aes_EncryptKeyWrap_1)
+	open fun decryptKeyWrap(ciphertext: DNArray<System_Byte> /* System.Byte[] */) : DNArray<System_Byte> /* System.Byte[] */ {
+		val ciphertextC = ciphertext.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Security_Cryptography_Aes_DecryptKeyWrap(this.__handle, ciphertextC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = DNArray<System_Byte>(System_Byte, __returnValueC)
+		
+		return __returnValue
+		
+	}
+	// TODO: Method with generic parameter (System_Security_Cryptography_Aes_DecryptKeyWrap_1)
 	/**
 	 * Wraps a key using the IETF RFC 5649 AES Key Wrap with Padding algorithm.
 	 * @param plaintext: The data to wrap.
@@ -193506,10 +197571,10 @@ open class Beyond_NET_Sample_Source_OutParameterTests /* Beyond.NET.Sample.Sourc
 	// MARK: - END System.Nullable<System.DateTime>
 
 
-	// MARK: - BEGIN System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
+	// MARK: - BEGIN System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
 
 
-	// MARK: - END System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
+	// MARK: - END System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
 
 
 	// MARK: - BEGIN System.Collections.IEnumerable&
@@ -197590,6 +201655,15 @@ object CAPI {
 	// MARK: - END System.TypeCode
 
 
+	// MARK: - BEGIN System.StringComparison
+	external fun System_StringComparison_TypeOf() : Pointer /* System.Type */
+	
+	
+	
+
+	// MARK: - END System.StringComparison
+
+
 	// MARK: - BEGIN System.Globalization.CultureTypes
 	external fun System_Globalization_CultureTypes_TypeOf() : Pointer /* System.Type */
 	
@@ -197887,6 +201961,15 @@ object CAPI {
 	// MARK: - END System.IO.SeekOrigin
 
 
+	// MARK: - BEGIN System.IO.FileHandleType
+	external fun System_IO_FileHandleType_TypeOf() : Pointer /* System.Type */
+	
+	
+	
+
+	// MARK: - END System.IO.FileHandleType
+
+
 	// MARK: - BEGIN System.IO.FileAccess
 	external fun System_IO_FileAccess_TypeOf() : Pointer /* System.Type */
 	
@@ -197984,15 +202067,6 @@ object CAPI {
 	
 
 	// MARK: - END System.Globalization.DigitShapes
-
-
-	// MARK: - BEGIN System.StringComparison
-	external fun System_StringComparison_TypeOf() : Pointer /* System.Type */
-	
-	
-	
-
-	// MARK: - END System.StringComparison
 
 
 	// MARK: - BEGIN System.Text.NormalizationForm
@@ -198882,6 +202956,8 @@ object CAPI {
 	
 	external fun System_Type_IsEquivalentTo(self: Pointer? /* System.Type */, other: Pointer? /* System.Type */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
+	external fun System_Type_GetNullableUnderlyingType(self: Pointer? /* System.Type */, outException: PointerByReference? /* System.Exception */) : Pointer? /* System.Type */
+	
 	external fun System_Type_GetEnumUnderlyingType(self: Pointer? /* System.Type */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Type */
 	
 	external fun System_Type_GetEnumValues(self: Pointer? /* System.Type */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Array */
@@ -198894,7 +202970,13 @@ object CAPI {
 	
 	external fun System_Type_MakeByRefType(self: Pointer? /* System.Type */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Type */
 	
+	external fun System_Type_MakeFunctionPointerSignatureType(returnType: Pointer /* System.Type */, parameterTypes: Pointer? /* System.Type[] */, isUnmanaged: Boolean /* System.Boolean */, callingConventions: Pointer? /* System.Type[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Type */
+	
+	external fun System_Type_MakeFunctionPointerType(self: Pointer? /* System.Type */, parameterTypes: Pointer? /* System.Type[] */, isUnmanaged: Boolean /* System.Boolean */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Type */
+	
 	external fun System_Type_MakeGenericType(self: Pointer? /* System.Type */, typeArguments: Pointer /* System.Type[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Type */
+	
+	external fun System_Type_MakeModifiedSignatureType(type: Pointer /* System.Type */, requiredCustomModifiers: Pointer? /* System.Type[] */, optionalCustomModifiers: Pointer? /* System.Type[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Type */
 	
 	external fun System_Type_MakePointerType(self: Pointer? /* System.Type */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Type */
 	
@@ -199775,6 +203857,12 @@ object CAPI {
 	
 	external fun System_String_EndsWith_3(self: Pointer? /* System.String */, `value`: Char /* System.Char */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
+	external fun System_String_EndsWith_4(self: Pointer? /* System.String */, `value`: Char /* System.Char */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_String_EndsWith_5(self: Pointer? /* System.String */, `value`: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_String_EndsWith_6(self: Pointer? /* System.String */, `value`: Pointer /* System.Text.Rune */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
 	external fun System_String_Equals(self: Pointer? /* System.String */, obj: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
 	external fun System_String_Equals_1(self: Pointer? /* System.String */, `value`: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
@@ -199796,6 +203884,12 @@ object CAPI {
 	external fun System_String_StartsWith_2(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, ignoreCase: Boolean /* System.Boolean */, culture: Pointer? /* System.Globalization.CultureInfo */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
 	external fun System_String_StartsWith_3(self: Pointer? /* System.String */, `value`: Char /* System.Char */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_String_StartsWith_4(self: Pointer? /* System.String */, `value`: Char /* System.Char */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_String_StartsWith_5(self: Pointer? /* System.String */, `value`: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_String_StartsWith_6(self: Pointer? /* System.String */, `value`: Pointer /* System.Text.Rune */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
 	external fun System_String_Clone(self: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Object */
 	
@@ -199907,6 +204001,8 @@ object CAPI {
 	
 	external fun System_String_Replace_3(self: Pointer? /* System.String */, oldValue: Pointer /* System.String */, newValue: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
 	
+	external fun System_String_Replace_4(self: Pointer? /* System.String */, oldRune: Pointer /* System.Text.Rune */, newRune: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
 	external fun System_String_ReplaceLineEndings(self: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
 	
 	external fun System_String_ReplaceLineEndings_1(self: Pointer? /* System.String */, replacementText: Pointer /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
@@ -199915,21 +204011,25 @@ object CAPI {
 	
 	external fun System_String_Split_1(self: Pointer? /* System.String */, separator: Char /* System.Char */, count: Int /* System.Int32 */, options: Int /* System.StringSplitOptions */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
 	
-	external fun System_String_Split_2(self: Pointer? /* System.String */, separator: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
+	external fun System_String_Split_2(self: Pointer? /* System.String */, separator: Pointer /* System.Text.Rune */, options: Int /* System.StringSplitOptions */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
 	
-	external fun System_String_Split_3(self: Pointer? /* System.String */, separator: Pointer? /* System.Char[] */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
+	external fun System_String_Split_3(self: Pointer? /* System.String */, separator: Pointer /* System.Text.Rune */, count: Int /* System.Int32 */, options: Int /* System.StringSplitOptions */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
 	
-	external fun System_String_Split_4(self: Pointer? /* System.String */, separator: Pointer? /* System.Char[] */, options: Int /* System.StringSplitOptions */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
+	external fun System_String_Split_4(self: Pointer? /* System.String */, separator: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
 	
-	external fun System_String_Split_5(self: Pointer? /* System.String */, separator: Pointer? /* System.Char[] */, count: Int /* System.Int32 */, options: Int /* System.StringSplitOptions */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
+	external fun System_String_Split_5(self: Pointer? /* System.String */, separator: Pointer? /* System.Char[] */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
 	
-	external fun System_String_Split_6(self: Pointer? /* System.String */, separator: Pointer? /* System.String */, options: Int /* System.StringSplitOptions */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
+	external fun System_String_Split_6(self: Pointer? /* System.String */, separator: Pointer? /* System.Char[] */, options: Int /* System.StringSplitOptions */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
 	
-	external fun System_String_Split_7(self: Pointer? /* System.String */, separator: Pointer? /* System.String */, count: Int /* System.Int32 */, options: Int /* System.StringSplitOptions */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
+	external fun System_String_Split_7(self: Pointer? /* System.String */, separator: Pointer? /* System.Char[] */, count: Int /* System.Int32 */, options: Int /* System.StringSplitOptions */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
 	
-	external fun System_String_Split_8(self: Pointer? /* System.String */, separator: Pointer? /* System.String[] */, options: Int /* System.StringSplitOptions */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
+	external fun System_String_Split_8(self: Pointer? /* System.String */, separator: Pointer? /* System.String */, options: Int /* System.StringSplitOptions */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
 	
-	external fun System_String_Split_9(self: Pointer? /* System.String */, separator: Pointer? /* System.String[] */, count: Int /* System.Int32 */, options: Int /* System.StringSplitOptions */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
+	external fun System_String_Split_9(self: Pointer? /* System.String */, separator: Pointer? /* System.String */, count: Int /* System.Int32 */, options: Int /* System.StringSplitOptions */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
+	
+	external fun System_String_Split_10(self: Pointer? /* System.String */, separator: Pointer? /* System.String[] */, options: Int /* System.StringSplitOptions */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
+	
+	external fun System_String_Split_11(self: Pointer? /* System.String */, separator: Pointer? /* System.String[] */, count: Int /* System.Int32 */, options: Int /* System.StringSplitOptions */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String[] */
 	
 	external fun System_String_Substring(self: Pointer? /* System.String */, startIndex: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
 	
@@ -199947,23 +204047,33 @@ object CAPI {
 	
 	external fun System_String_ToUpperInvariant(self: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
 	
+	external fun System_String_ToUpperOrdinal(self: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
+	external fun System_String_ToLowerOrdinal(self: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
 	external fun System_String_Trim(self: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
 	
 	external fun System_String_Trim_1(self: Pointer? /* System.String */, trimChar: Char /* System.Char */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
 	
-	external fun System_String_Trim_2(self: Pointer? /* System.String */, trimChars: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	external fun System_String_Trim_2(self: Pointer? /* System.String */, trimRune: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
+	external fun System_String_Trim_3(self: Pointer? /* System.String */, trimChars: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
 	
 	external fun System_String_TrimStart(self: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
 	
 	external fun System_String_TrimStart_1(self: Pointer? /* System.String */, trimChar: Char /* System.Char */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
 	
-	external fun System_String_TrimStart_2(self: Pointer? /* System.String */, trimChars: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	external fun System_String_TrimStart_2(self: Pointer? /* System.String */, trimRune: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
+	external fun System_String_TrimStart_3(self: Pointer? /* System.String */, trimChars: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
 	
 	external fun System_String_TrimEnd(self: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
 	
 	external fun System_String_TrimEnd_1(self: Pointer? /* System.String */, trimChar: Char /* System.Char */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
 	
-	external fun System_String_TrimEnd_2(self: Pointer? /* System.String */, trimChars: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	external fun System_String_TrimEnd_2(self: Pointer? /* System.String */, trimRune: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
+	external fun System_String_TrimEnd_3(self: Pointer? /* System.String */, trimChars: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
 	
 	external fun System_String_Contains(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
@@ -199973,13 +204083,21 @@ object CAPI {
 	
 	external fun System_String_Contains_3(self: Pointer? /* System.String */, `value`: Char /* System.Char */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
+	external fun System_String_Contains_4(self: Pointer? /* System.String */, `value`: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_String_Contains_5(self: Pointer? /* System.String */, `value`: Pointer /* System.Text.Rune */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
 	external fun System_String_IndexOf(self: Pointer? /* System.String */, `value`: Char /* System.Char */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
 	external fun System_String_IndexOf_1(self: Pointer? /* System.String */, `value`: Char /* System.Char */, startIndex: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
 	external fun System_String_IndexOf_2(self: Pointer? /* System.String */, `value`: Char /* System.Char */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
-	external fun System_String_IndexOf_3(self: Pointer? /* System.String */, `value`: Char /* System.Char */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	external fun System_String_IndexOf_3(self: Pointer? /* System.String */, `value`: Char /* System.Char */, startIndex: Int /* System.Int32 */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_String_IndexOf_4(self: Pointer? /* System.String */, `value`: Char /* System.Char */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_String_IndexOf_5(self: Pointer? /* System.String */, `value`: Char /* System.Char */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
 	external fun System_String_IndexOfAny(self: Pointer? /* System.String */, anyOf: Pointer /* System.Char[] */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
@@ -199987,17 +204105,29 @@ object CAPI {
 	
 	external fun System_String_IndexOfAny_2(self: Pointer? /* System.String */, anyOf: Pointer /* System.Char[] */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
-	external fun System_String_IndexOf_4(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	external fun System_String_IndexOf_6(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
-	external fun System_String_IndexOf_5(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, startIndex: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	external fun System_String_IndexOf_7(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, startIndex: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
-	external fun System_String_IndexOf_6(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	external fun System_String_IndexOf_8(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
-	external fun System_String_IndexOf_7(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	external fun System_String_IndexOf_9(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
-	external fun System_String_IndexOf_8(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, startIndex: Int /* System.Int32 */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	external fun System_String_IndexOf_10(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, startIndex: Int /* System.Int32 */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
-	external fun System_String_IndexOf_9(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	external fun System_String_IndexOf_11(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_String_IndexOf_12(self: Pointer? /* System.String */, `value`: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_String_IndexOf_13(self: Pointer? /* System.String */, `value`: Pointer /* System.Text.Rune */, startIndex: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_String_IndexOf_14(self: Pointer? /* System.String */, `value`: Pointer /* System.Text.Rune */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_String_IndexOf_15(self: Pointer? /* System.String */, `value`: Pointer /* System.Text.Rune */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_String_IndexOf_16(self: Pointer? /* System.String */, `value`: Pointer /* System.Text.Rune */, startIndex: Int /* System.Int32 */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_String_IndexOf_17(self: Pointer? /* System.String */, `value`: Pointer /* System.Text.Rune */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
 	external fun System_String_LastIndexOf(self: Pointer? /* System.String */, `value`: Char /* System.Char */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
@@ -200005,23 +204135,41 @@ object CAPI {
 	
 	external fun System_String_LastIndexOf_2(self: Pointer? /* System.String */, `value`: Char /* System.Char */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
+	external fun System_String_LastIndexOf_3(self: Pointer? /* System.String */, `value`: Char /* System.Char */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_String_LastIndexOf_4(self: Pointer? /* System.String */, `value`: Char /* System.Char */, startIndex: Int /* System.Int32 */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_String_LastIndexOf_5(self: Pointer? /* System.String */, `value`: Char /* System.Char */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
 	external fun System_String_LastIndexOfAny(self: Pointer? /* System.String */, anyOf: Pointer /* System.Char[] */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
 	external fun System_String_LastIndexOfAny_1(self: Pointer? /* System.String */, anyOf: Pointer /* System.Char[] */, startIndex: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
 	external fun System_String_LastIndexOfAny_2(self: Pointer? /* System.String */, anyOf: Pointer /* System.Char[] */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
-	external fun System_String_LastIndexOf_3(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	external fun System_String_LastIndexOf_6(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
-	external fun System_String_LastIndexOf_4(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, startIndex: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	external fun System_String_LastIndexOf_7(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, startIndex: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
-	external fun System_String_LastIndexOf_5(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	external fun System_String_LastIndexOf_8(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
-	external fun System_String_LastIndexOf_6(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	external fun System_String_LastIndexOf_9(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
-	external fun System_String_LastIndexOf_7(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, startIndex: Int /* System.Int32 */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	external fun System_String_LastIndexOf_10(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, startIndex: Int /* System.Int32 */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
-	external fun System_String_LastIndexOf_8(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	external fun System_String_LastIndexOf_11(self: Pointer? /* System.String */, `value`: Pointer /* System.String */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_String_LastIndexOf_12(self: Pointer? /* System.String */, `value`: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_String_LastIndexOf_13(self: Pointer? /* System.String */, `value`: Pointer /* System.Text.Rune */, startIndex: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_String_LastIndexOf_14(self: Pointer? /* System.String */, `value`: Pointer /* System.Text.Rune */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_String_LastIndexOf_15(self: Pointer? /* System.String */, `value`: Pointer /* System.Text.Rune */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_String_LastIndexOf_16(self: Pointer? /* System.String */, `value`: Pointer /* System.Text.Rune */, startIndex: Int /* System.Int32 */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_String_LastIndexOf_17(self: Pointer? /* System.String */, `value`: Pointer /* System.Text.Rune */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
 	external fun System_String_Create(`value`: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
 	
@@ -201263,6 +205411,8 @@ object CAPI {
 	
 	external fun System_UInt128_LeadingZeroCount(`value`: Pointer /* System.UInt128 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.UInt128 */
 	
+	external fun System_UInt128_Log10(`value`: Pointer /* System.UInt128 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.UInt128 */
+	
 	external fun System_UInt128_PopCount(`value`: Pointer /* System.UInt128 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.UInt128 */
 	
 	external fun System_UInt128_RotateLeft(`value`: Pointer /* System.UInt128 */, rotateAmount: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.UInt128 */
@@ -201294,6 +205444,10 @@ object CAPI {
 	external fun System_UInt128_IsEvenInteger(`value`: Pointer /* System.UInt128 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
 	external fun System_UInt128_IsOddInteger(`value`: Pointer /* System.UInt128 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_UInt128_TryParsePartial(s: Pointer? /* System.String */, style: Int /* System.Globalization.NumberStyles */, provider: Pointer? /* System.IFormatProvider */, result: PointerByReference /* System.UInt128 */, charsConsumed: IntByReference /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_UInt128_TryParsePartial_1(utf8Text: Pointer /* System.ReadOnlySpan<System.Byte> */, style: Int /* System.Globalization.NumberStyles */, provider: Pointer? /* System.IFormatProvider */, result: PointerByReference /* System.UInt128 */, bytesConsumed: IntByReference /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
 	external fun System_UInt128_TryParse_3(s: Pointer? /* System.String */, provider: Pointer? /* System.IFormatProvider */, result: PointerByReference /* System.UInt128 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
@@ -201486,6 +205640,10 @@ object CAPI {
 	
 	external fun System_Decimal_MinMagnitude(x: Pointer /* System.Decimal */, y: Pointer /* System.Decimal */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Decimal */
 	
+	external fun System_Decimal_TryParsePartial(s: Pointer? /* System.String */, style: Int /* System.Globalization.NumberStyles */, provider: Pointer? /* System.IFormatProvider */, result: PointerByReference /* System.Decimal */, charsConsumed: IntByReference /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Decimal_TryParsePartial_1(utf8Text: Pointer /* System.ReadOnlySpan<System.Byte> */, style: Int /* System.Globalization.NumberStyles */, provider: Pointer? /* System.IFormatProvider */, result: PointerByReference /* System.Decimal */, bytesConsumed: IntByReference /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
 	external fun System_Decimal_TryParse_3(s: Pointer? /* System.String */, provider: Pointer? /* System.IFormatProvider */, result: PointerByReference /* System.Decimal */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
 	external fun System_Decimal_Parse_4(utf8Text: Pointer /* System.ReadOnlySpan<System.Byte> */, style: Int /* System.Globalization.NumberStyles */, provider: Pointer? /* System.IFormatProvider */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Decimal */
@@ -201616,6 +205774,8 @@ object CAPI {
 	
 	external fun System_Int128_LeadingZeroCount(`value`: Pointer /* System.Int128 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Int128 */
 	
+	external fun System_Int128_Log10(`value`: Pointer /* System.Int128 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Int128 */
+	
 	external fun System_Int128_PopCount(`value`: Pointer /* System.Int128 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Int128 */
 	
 	external fun System_Int128_RotateLeft(`value`: Pointer /* System.Int128 */, rotateAmount: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Int128 */
@@ -201659,6 +205819,10 @@ object CAPI {
 	external fun System_Int128_MaxMagnitude(x: Pointer /* System.Int128 */, y: Pointer /* System.Int128 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Int128 */
 	
 	external fun System_Int128_MinMagnitude(x: Pointer /* System.Int128 */, y: Pointer /* System.Int128 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Int128 */
+	
+	external fun System_Int128_TryParsePartial(s: Pointer? /* System.String */, style: Int /* System.Globalization.NumberStyles */, provider: Pointer? /* System.IFormatProvider */, result: PointerByReference /* System.Int128 */, charsConsumed: IntByReference /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Int128_TryParsePartial_1(utf8Text: Pointer /* System.ReadOnlySpan<System.Byte> */, style: Int /* System.Globalization.NumberStyles */, provider: Pointer? /* System.IFormatProvider */, result: PointerByReference /* System.Int128 */, bytesConsumed: IntByReference /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
 	external fun System_Int128_TryParse_3(s: Pointer? /* System.String */, provider: Pointer? /* System.IFormatProvider */, result: PointerByReference /* System.Int128 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
@@ -201961,6 +206125,10 @@ object CAPI {
 	external fun System_Half_MinMagnitudeNumber(x: Pointer /* System.Half */, y: Pointer /* System.Half */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Half */
 	
 	external fun System_Half_MultiplyAddEstimate(left: Pointer /* System.Half */, right: Pointer /* System.Half */, addend: Pointer /* System.Half */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Half */
+	
+	external fun System_Half_TryParsePartial(s: Pointer? /* System.String */, style: Int /* System.Globalization.NumberStyles */, provider: Pointer? /* System.IFormatProvider */, result: PointerByReference /* System.Half */, charsConsumed: IntByReference /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Half_TryParsePartial_1(utf8Text: Pointer /* System.ReadOnlySpan<System.Byte> */, style: Int /* System.Globalization.NumberStyles */, provider: Pointer? /* System.IFormatProvider */, result: PointerByReference /* System.Half */, bytesConsumed: IntByReference /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
 	external fun System_Half_TryParse_3(s: Pointer? /* System.String */, provider: Pointer? /* System.IFormatProvider */, result: PointerByReference /* System.Half */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
@@ -205677,6 +209845,8 @@ object CAPI {
 
 
 	// MARK: - BEGIN System.Reflection.ConstructorInfo
+	external fun System_Reflection_ConstructorInfo_GetGenericArguments(self: Pointer? /* System.Reflection.ConstructorInfo */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Type[] */
+	
 	external fun System_Reflection_ConstructorInfo_Invoke(self: Pointer? /* System.Reflection.ConstructorInfo */, parameters: Pointer? /* System.Object[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Object */
 	
 	external fun System_Reflection_ConstructorInfo_Invoke_1(self: Pointer? /* System.Reflection.ConstructorInfo */, invokeAttr: Int /* System.Reflection.BindingFlags */, binder: Pointer? /* System.Reflection.Binder */, parameters: Pointer? /* System.Object[] */, culture: Pointer? /* System.Globalization.CultureInfo */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Object */
@@ -207490,9 +211660,14 @@ object CAPI {
 
 
 	// MARK: - BEGIN Microsoft.Win32.SafeHandles.SafeFileHandle
-	external fun Microsoft_Win32_SafeHandles_SafeFileHandle_Create(preexistingHandle: Pointer /* System.IntPtr */, ownsHandle: Boolean /* System.Boolean */, outException: PointerByReference? /* System.Exception */) : Pointer /* Microsoft.Win32.SafeHandles.SafeFileHandle */
+	external fun Microsoft_Win32_SafeHandles_SafeFileHandle_CreateAnonymousPipe(readHandle: PointerByReference /* Microsoft.Win32.SafeHandles.SafeFileHandle */, writeHandle: PointerByReference /* Microsoft.Win32.SafeHandles.SafeFileHandle */, asyncRead: Boolean /* System.Boolean */, asyncWrite: Boolean /* System.Boolean */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun Microsoft_Win32_SafeHandles_SafeFileHandle_Create_1(outException: PointerByReference? /* System.Exception */) : Pointer /* Microsoft.Win32.SafeHandles.SafeFileHandle */
+	external fun Microsoft_Win32_SafeHandles_SafeFileHandle_Create_1(preexistingHandle: Pointer /* System.IntPtr */, ownsHandle: Boolean /* System.Boolean */, outException: PointerByReference? /* System.Exception */) : Pointer /* Microsoft.Win32.SafeHandles.SafeFileHandle */
+	
+	external fun Microsoft_Win32_SafeHandles_SafeFileHandle_Create_2(outException: PointerByReference? /* System.Exception */) : Pointer /* Microsoft.Win32.SafeHandles.SafeFileHandle */
+	
+	external fun Microsoft_Win32_SafeHandles_SafeFileHandle_Type_Get(self: Pointer? /* Microsoft.Win32.SafeHandles.SafeFileHandle */, outException: PointerByReference? /* System.Exception */) : Int /* System.IO.FileHandleType */
+	
 	
 	external fun Microsoft_Win32_SafeHandles_SafeFileHandle_IsAsync_Get(self: Pointer? /* Microsoft.Win32.SafeHandles.SafeFileHandle */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
@@ -207508,6 +211683,12 @@ object CAPI {
 	
 
 	// MARK: - END Microsoft.Win32.SafeHandles.SafeFileHandle
+
+
+	// MARK: - BEGIN Microsoft.Win32.SafeHandles.SafeFileHandle&
+
+
+	// MARK: - END Microsoft.Win32.SafeHandles.SafeFileHandle&
 
 
 	// MARK: - BEGIN System.IO.FileStreamOptions
@@ -207987,6 +212168,8 @@ object CAPI {
 	
 	external fun System_Text_Rune_Equals_1(self: Pointer /* System.Text.Rune */, other: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
+	external fun System_Text_Rune_Equals_2(self: Pointer /* System.Text.Rune */, other: Pointer /* System.Text.Rune */, comparisonType: Int /* System.StringComparison */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
 	external fun System_Text_Rune_GetHashCode(self: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
 	external fun System_Text_Rune_GetRuneAt(input: Pointer /* System.String */, index: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.Rune */
@@ -208040,6 +212223,10 @@ object CAPI {
 	external fun System_Text_Rune_ToUpper(`value`: Pointer /* System.Text.Rune */, culture: Pointer /* System.Globalization.CultureInfo */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.Rune */
 	
 	external fun System_Text_Rune_ToUpperInvariant(`value`: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.Rune */
+	
+	external fun System_Text_Rune_ToUpperOrdinal(`value`: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.Rune */
+	
+	external fun System_Text_Rune_ToLowerOrdinal(`value`: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.Rune */
 	
 	external fun System_Text_Rune_Create(ch: Char /* System.Char */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.Rune */
 	
@@ -208165,6 +212352,10 @@ object CAPI {
 	external fun System_Globalization_TextInfo_ToUpper(self: Pointer? /* System.Globalization.TextInfo */, c: Char /* System.Char */, outException: PointerByReference? /* System.Exception */) : Char /* System.Char */
 	
 	external fun System_Globalization_TextInfo_ToUpper_1(self: Pointer? /* System.Globalization.TextInfo */, str: Pointer /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
+	external fun System_Globalization_TextInfo_ToLower_2(self: Pointer? /* System.Globalization.TextInfo */, `value`: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.Rune */
+	
+	external fun System_Globalization_TextInfo_ToUpper_2(self: Pointer? /* System.Globalization.TextInfo */, `value`: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.Rune */
 	
 	external fun System_Globalization_TextInfo_Equals(self: Pointer? /* System.Globalization.TextInfo */, obj: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
@@ -212170,8 +216361,6 @@ object CAPI {
 	
 	external fun System_Threading_Thread_Interrupt(self: Pointer? /* System.Threading.Thread */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_Threading_Thread_Join(self: Pointer? /* System.Threading.Thread */, millisecondsTimeout: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
-	
 	external fun System_Threading_Thread_Start(self: Pointer? /* System.Threading.Thread */, parameter: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */)
 	
 	external fun System_Threading_Thread_UnsafeStart(self: Pointer? /* System.Threading.Thread */, parameter: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */)
@@ -212179,6 +216368,8 @@ object CAPI {
 	external fun System_Threading_Thread_Start_1(self: Pointer? /* System.Threading.Thread */, outException: PointerByReference? /* System.Exception */)
 	
 	external fun System_Threading_Thread_UnsafeStart_1(self: Pointer? /* System.Threading.Thread */, outException: PointerByReference? /* System.Exception */)
+	
+	external fun System_Threading_Thread_Join(self: Pointer? /* System.Threading.Thread */, millisecondsTimeout: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
 	external fun System_Threading_Thread_Sleep(millisecondsTimeout: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */)
 	
@@ -213347,6 +217538,14 @@ object CAPI {
 	
 	external fun System_Random_NextBytes(self: Pointer? /* System.Random */, buffer: Pointer /* System.Byte[] */, outException: PointerByReference? /* System.Exception */)
 	
+	external fun System_Random_NextInteger_A1(self: Pointer? /* System.Random */, T: Pointer? /* System.Type */, outException: PointerByReference? /* System.Exception */) : Pointer? /* System.Object */
+	
+	external fun System_Random_NextInteger_A1_1(self: Pointer? /* System.Random */, T: Pointer? /* System.Type */, maxValue: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */) : Pointer? /* System.Object */
+	
+	external fun System_Random_NextInteger_A1_2(self: Pointer? /* System.Random */, T: Pointer? /* System.Type */, minValue: Pointer? /* System.Object */, maxValue: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */) : Pointer? /* System.Object */
+	
+	external fun System_Random_NextBinaryFloat_A1(self: Pointer? /* System.Random */, T: Pointer? /* System.Type */, outException: PointerByReference? /* System.Exception */) : Pointer? /* System.Object */
+	
 	external fun System_Random_GetItems_A1(self: Pointer? /* System.Random */, T: Pointer? /* System.Type */, choices: Pointer? /* System.Array */, length: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Array */
 	
 	external fun System_Random_Shuffle_A1(self: Pointer? /* System.Random */, T: Pointer? /* System.Type */, values: Pointer? /* System.Array */, outException: PointerByReference? /* System.Exception */)
@@ -213368,6 +217567,26 @@ object CAPI {
 	
 
 	// MARK: - END System.Random
+
+
+	// MARK: - BEGIN T
+// Type "T" was skipped. Reason: It has no full name.
+	// MARK: - END T
+
+
+	// MARK: - BEGIN T
+// Type "T" was skipped. Reason: It has no full name.
+	// MARK: - END T
+
+
+	// MARK: - BEGIN T
+// Type "T" was skipped. Reason: It has no full name.
+	// MARK: - END T
+
+
+	// MARK: - BEGIN T
+// Type "T" was skipped. Reason: It has no full name.
+	// MARK: - END T
 
 
 	// MARK: - BEGIN T[]
@@ -213424,7 +217643,11 @@ object CAPI {
 	
 	external fun System_Text_StringBuilder_Clear(self: Pointer? /* System.Text.StringBuilder */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
+	external fun System_Text_StringBuilder_MoveChunks(source: Pointer /* System.Text.StringBuilder */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	
 	external fun System_Text_StringBuilder_GetChunks(self: Pointer? /* System.Text.StringBuilder */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder.ChunkEnumerator */
+	
+	external fun System_Text_StringBuilder_EnumerateRunes(self: Pointer? /* System.Text.StringBuilder */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilderRuneEnumerator */
 	
 	external fun System_Text_StringBuilder_Append(self: Pointer? /* System.Text.StringBuilder */, `value`: Char /* System.Char */, repeatCount: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
@@ -213452,35 +217675,37 @@ object CAPI {
 	
 	external fun System_Text_StringBuilder_Append_7(self: Pointer? /* System.Text.StringBuilder */, `value`: Char /* System.Char */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Append_8(self: Pointer? /* System.Text.StringBuilder */, `value`: Byte /* System.SByte */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Append_8(self: Pointer? /* System.Text.StringBuilder */, `value`: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Append_9(self: Pointer? /* System.Text.StringBuilder */, `value`: Byte /* System.Byte */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Append_9(self: Pointer? /* System.Text.StringBuilder */, `value`: Byte /* System.SByte */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Append_10(self: Pointer? /* System.Text.StringBuilder */, `value`: Short /* System.Int16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Append_10(self: Pointer? /* System.Text.StringBuilder */, `value`: Byte /* System.Byte */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Append_11(self: Pointer? /* System.Text.StringBuilder */, `value`: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Append_11(self: Pointer? /* System.Text.StringBuilder */, `value`: Short /* System.Int16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Append_12(self: Pointer? /* System.Text.StringBuilder */, `value`: Long /* System.Int64 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Append_12(self: Pointer? /* System.Text.StringBuilder */, `value`: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Append_13(self: Pointer? /* System.Text.StringBuilder */, `value`: Float /* System.Single */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Append_13(self: Pointer? /* System.Text.StringBuilder */, `value`: Long /* System.Int64 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Append_14(self: Pointer? /* System.Text.StringBuilder */, `value`: Double /* System.Double */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Append_14(self: Pointer? /* System.Text.StringBuilder */, `value`: Float /* System.Single */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Append_15(self: Pointer? /* System.Text.StringBuilder */, `value`: Pointer /* System.Decimal */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Append_15(self: Pointer? /* System.Text.StringBuilder */, `value`: Double /* System.Double */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Append_16(self: Pointer? /* System.Text.StringBuilder */, `value`: Short /* System.UInt16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Append_16(self: Pointer? /* System.Text.StringBuilder */, `value`: Pointer /* System.Decimal */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Append_17(self: Pointer? /* System.Text.StringBuilder */, `value`: Int /* System.UInt32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Append_17(self: Pointer? /* System.Text.StringBuilder */, `value`: Short /* System.UInt16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Append_18(self: Pointer? /* System.Text.StringBuilder */, `value`: Long /* System.UInt64 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Append_18(self: Pointer? /* System.Text.StringBuilder */, `value`: Int /* System.UInt32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Append_19(self: Pointer? /* System.Text.StringBuilder */, `value`: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Append_19(self: Pointer? /* System.Text.StringBuilder */, `value`: Long /* System.UInt64 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Append_20(self: Pointer? /* System.Text.StringBuilder */, `value`: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Append_20(self: Pointer? /* System.Text.StringBuilder */, `value`: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Append_21(self: Pointer? /* System.Text.StringBuilder */, handler: PointerByReference /* System.Text.StringBuilder.AppendInterpolatedStringHandler */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Append_21(self: Pointer? /* System.Text.StringBuilder */, `value`: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Append_22(self: Pointer? /* System.Text.StringBuilder */, provider: Pointer? /* System.IFormatProvider */, handler: PointerByReference /* System.Text.StringBuilder.AppendInterpolatedStringHandler */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Append_22(self: Pointer? /* System.Text.StringBuilder */, handler: PointerByReference /* System.Text.StringBuilder.AppendInterpolatedStringHandler */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	
+	external fun System_Text_StringBuilder_Append_23(self: Pointer? /* System.Text.StringBuilder */, provider: Pointer? /* System.IFormatProvider */, handler: PointerByReference /* System.Text.StringBuilder.AppendInterpolatedStringHandler */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
 	external fun System_Text_StringBuilder_AppendLine_2(self: Pointer? /* System.Text.StringBuilder */, handler: PointerByReference /* System.Text.StringBuilder.AppendInterpolatedStringHandler */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
@@ -213506,27 +217731,29 @@ object CAPI {
 	
 	external fun System_Text_StringBuilder_Insert_6(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Char /* System.Char */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Insert_7(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Insert_7(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Insert_8(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Pointer? /* System.Char[] */, startIndex: Int /* System.Int32 */, charCount: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Insert_8(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Insert_9(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Insert_9(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Pointer? /* System.Char[] */, startIndex: Int /* System.Int32 */, charCount: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Insert_10(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Long /* System.Int64 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Insert_10(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Insert_11(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Float /* System.Single */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Insert_11(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Long /* System.Int64 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Insert_12(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Double /* System.Double */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Insert_12(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Float /* System.Single */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Insert_13(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Pointer /* System.Decimal */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Insert_13(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Double /* System.Double */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Insert_14(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Short /* System.UInt16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Insert_14(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Pointer /* System.Decimal */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Insert_15(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Int /* System.UInt32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Insert_15(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Short /* System.UInt16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Insert_16(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Long /* System.UInt64 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Insert_16(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Int /* System.UInt32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
-	external fun System_Text_StringBuilder_Insert_17(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	external fun System_Text_StringBuilder_Insert_17(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Long /* System.UInt64 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	
+	external fun System_Text_StringBuilder_Insert_18(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
 	external fun System_Text_StringBuilder_AppendFormat(self: Pointer? /* System.Text.StringBuilder */, format: Pointer /* System.String */, arg0: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
@@ -213561,6 +217788,14 @@ object CAPI {
 	external fun System_Text_StringBuilder_Replace_2(self: Pointer? /* System.Text.StringBuilder */, oldChar: Char /* System.Char */, newChar: Char /* System.Char */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
 	external fun System_Text_StringBuilder_Replace_3(self: Pointer? /* System.Text.StringBuilder */, oldChar: Char /* System.Char */, newChar: Char /* System.Char */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	
+	external fun System_Text_StringBuilder_Replace_4(self: Pointer? /* System.Text.StringBuilder */, oldRune: Pointer /* System.Text.Rune */, newRune: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	
+	external fun System_Text_StringBuilder_Replace_5(self: Pointer? /* System.Text.StringBuilder */, oldRune: Pointer /* System.Text.Rune */, newRune: Pointer /* System.Text.Rune */, startIndex: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
+	
+	external fun System_Text_StringBuilder_GetRuneAt(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.Rune */
+	
+	external fun System_Text_StringBuilder_TryGetRuneAt(self: Pointer? /* System.Text.StringBuilder */, index: Int /* System.Int32 */, `value`: PointerByReference /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
 	external fun System_Text_StringBuilder_Create(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilder */
 	
@@ -213617,6 +217852,26 @@ object CAPI {
 	
 
 	// MARK: - END System.Text.StringBuilder.ChunkEnumerator
+
+
+	// MARK: - BEGIN System.Text.StringBuilderRuneEnumerator
+	external fun System_Text_StringBuilderRuneEnumerator_GetEnumerator(self: Pointer /* System.Text.StringBuilderRuneEnumerator */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilderRuneEnumerator */
+	
+	external fun System_Text_StringBuilderRuneEnumerator_MoveNext(self: Pointer /* System.Text.StringBuilderRuneEnumerator */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Text_StringBuilderRuneEnumerator_Current_Get(self: Pointer /* System.Text.StringBuilderRuneEnumerator */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.Rune */
+	
+	
+	external fun System_Text_StringBuilderRuneEnumerator_Create(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Text.StringBuilderRuneEnumerator */
+	
+	external fun System_Text_StringBuilderRuneEnumerator_TypeOf() : Pointer /* System.Type */
+	
+	external fun System_Text_StringBuilderRuneEnumerator_Destroy(self: Pointer /* System.Text.StringBuilderRuneEnumerator */)
+	
+	
+	
+
+	// MARK: - END System.Text.StringBuilderRuneEnumerator
 
 
 	// MARK: - BEGIN System.Text.StringBuilder.AppendInterpolatedStringHandler
@@ -213821,6 +218076,8 @@ object CAPI {
 	
 	external fun System_IO_File_OpenHandle(path: Pointer /* System.String */, mode: Int /* System.IO.FileMode */, access: Int /* System.IO.FileAccess */, share: Int /* System.IO.FileShare */, options: Int /* System.IO.FileOptions */, preallocationSize: Long /* System.Int64 */, outException: PointerByReference? /* System.Exception */) : Pointer /* Microsoft.Win32.SafeHandles.SafeFileHandle */
 	
+	external fun System_IO_File_OpenNullHandle(outException: PointerByReference? /* System.Exception */) : Pointer /* Microsoft.Win32.SafeHandles.SafeFileHandle */
+	
 	external fun System_IO_File_SetCreationTime(path: Pointer /* System.String */, creationTime: Pointer /* System.DateTime */, outException: PointerByReference? /* System.Exception */)
 	
 	external fun System_IO_File_SetCreationTime_1(fileHandle: Pointer /* Microsoft.Win32.SafeHandles.SafeFileHandle */, creationTime: Pointer /* System.DateTime */, outException: PointerByReference? /* System.Exception */)
@@ -213976,6 +218233,8 @@ object CAPI {
 	external fun System_IO_File_AppendAllLinesAsync(path: Pointer /* System.String */, contents: Pointer /* System.Collections.Generic.IEnumerable<System.String> */, cancellationToken: Pointer /* System.Threading.CancellationToken */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
 	
 	external fun System_IO_File_AppendAllLinesAsync_1(path: Pointer /* System.String */, contents: Pointer /* System.Collections.Generic.IEnumerable<System.String> */, encoding: Pointer /* System.Text.Encoding */, cancellationToken: Pointer /* System.Threading.CancellationToken */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
+	
+	external fun System_IO_File_CreateHardLink(path: Pointer /* System.String */, pathToTarget: Pointer /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.IO.FileSystemInfo */
 	
 	external fun System_IO_File_CreateSymbolicLink(path: Pointer /* System.String */, pathToTarget: Pointer /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.IO.FileSystemInfo */
 	
@@ -214234,99 +218493,113 @@ object CAPI {
 	
 	external fun System_IO_TextWriter_Write(self: Pointer? /* System.IO.TextWriter */, `value`: Char /* System.Char */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_Write_1(self: Pointer? /* System.IO.TextWriter */, buffer: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_Write_1(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_Write_2(self: Pointer? /* System.IO.TextWriter */, buffer: Pointer /* System.Char[] */, index: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_Write_2(self: Pointer? /* System.IO.TextWriter */, buffer: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_Write_3(self: Pointer? /* System.IO.TextWriter */, `value`: Boolean /* System.Boolean */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_Write_3(self: Pointer? /* System.IO.TextWriter */, buffer: Pointer /* System.Char[] */, index: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_Write_4(self: Pointer? /* System.IO.TextWriter */, `value`: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_Write_4(self: Pointer? /* System.IO.TextWriter */, `value`: Boolean /* System.Boolean */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_Write_5(self: Pointer? /* System.IO.TextWriter */, `value`: Int /* System.UInt32 */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_Write_5(self: Pointer? /* System.IO.TextWriter */, `value`: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_Write_6(self: Pointer? /* System.IO.TextWriter */, `value`: Long /* System.Int64 */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_Write_6(self: Pointer? /* System.IO.TextWriter */, `value`: Int /* System.UInt32 */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_Write_7(self: Pointer? /* System.IO.TextWriter */, `value`: Long /* System.UInt64 */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_Write_7(self: Pointer? /* System.IO.TextWriter */, `value`: Long /* System.Int64 */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_Write_8(self: Pointer? /* System.IO.TextWriter */, `value`: Float /* System.Single */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_Write_8(self: Pointer? /* System.IO.TextWriter */, `value`: Long /* System.UInt64 */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_Write_9(self: Pointer? /* System.IO.TextWriter */, `value`: Double /* System.Double */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_Write_9(self: Pointer? /* System.IO.TextWriter */, `value`: Float /* System.Single */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_Write_10(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer /* System.Decimal */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_Write_10(self: Pointer? /* System.IO.TextWriter */, `value`: Double /* System.Double */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_Write_11(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_Write_11(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer /* System.Decimal */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_Write_12(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_Write_12(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_Write_13(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.Text.StringBuilder */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_Write_13(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_Write_14(self: Pointer? /* System.IO.TextWriter */, format: Pointer /* System.String */, arg0: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_Write_14(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.Text.StringBuilder */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_Write_15(self: Pointer? /* System.IO.TextWriter */, format: Pointer /* System.String */, arg0: Pointer? /* System.Object */, arg1: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_Write_15(self: Pointer? /* System.IO.TextWriter */, format: Pointer /* System.String */, arg0: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_Write_16(self: Pointer? /* System.IO.TextWriter */, format: Pointer /* System.String */, arg0: Pointer? /* System.Object */, arg1: Pointer? /* System.Object */, arg2: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_Write_16(self: Pointer? /* System.IO.TextWriter */, format: Pointer /* System.String */, arg0: Pointer? /* System.Object */, arg1: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_Write_17(self: Pointer? /* System.IO.TextWriter */, format: Pointer /* System.String */, arg: Pointer /* System.Object[] */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_Write_17(self: Pointer? /* System.IO.TextWriter */, format: Pointer /* System.String */, arg0: Pointer? /* System.Object */, arg1: Pointer? /* System.Object */, arg2: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */)
+	
+	external fun System_IO_TextWriter_Write_18(self: Pointer? /* System.IO.TextWriter */, format: Pointer /* System.String */, arg: Pointer /* System.Object[] */, outException: PointerByReference? /* System.Exception */)
 	
 	external fun System_IO_TextWriter_WriteLine(self: Pointer? /* System.IO.TextWriter */, outException: PointerByReference? /* System.Exception */)
 	
 	external fun System_IO_TextWriter_WriteLine_1(self: Pointer? /* System.IO.TextWriter */, `value`: Char /* System.Char */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_WriteLine_2(self: Pointer? /* System.IO.TextWriter */, buffer: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_WriteLine_2(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_WriteLine_3(self: Pointer? /* System.IO.TextWriter */, buffer: Pointer /* System.Char[] */, index: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_WriteLine_3(self: Pointer? /* System.IO.TextWriter */, buffer: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_WriteLine_4(self: Pointer? /* System.IO.TextWriter */, `value`: Boolean /* System.Boolean */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_WriteLine_4(self: Pointer? /* System.IO.TextWriter */, buffer: Pointer /* System.Char[] */, index: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_WriteLine_5(self: Pointer? /* System.IO.TextWriter */, `value`: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_WriteLine_5(self: Pointer? /* System.IO.TextWriter */, `value`: Boolean /* System.Boolean */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_WriteLine_6(self: Pointer? /* System.IO.TextWriter */, `value`: Int /* System.UInt32 */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_WriteLine_6(self: Pointer? /* System.IO.TextWriter */, `value`: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_WriteLine_7(self: Pointer? /* System.IO.TextWriter */, `value`: Long /* System.Int64 */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_WriteLine_7(self: Pointer? /* System.IO.TextWriter */, `value`: Int /* System.UInt32 */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_WriteLine_8(self: Pointer? /* System.IO.TextWriter */, `value`: Long /* System.UInt64 */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_WriteLine_8(self: Pointer? /* System.IO.TextWriter */, `value`: Long /* System.Int64 */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_WriteLine_9(self: Pointer? /* System.IO.TextWriter */, `value`: Float /* System.Single */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_WriteLine_9(self: Pointer? /* System.IO.TextWriter */, `value`: Long /* System.UInt64 */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_WriteLine_10(self: Pointer? /* System.IO.TextWriter */, `value`: Double /* System.Double */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_WriteLine_10(self: Pointer? /* System.IO.TextWriter */, `value`: Float /* System.Single */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_WriteLine_11(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer /* System.Decimal */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_WriteLine_11(self: Pointer? /* System.IO.TextWriter */, `value`: Double /* System.Double */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_WriteLine_12(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_WriteLine_12(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer /* System.Decimal */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_WriteLine_13(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.Text.StringBuilder */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_WriteLine_13(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_WriteLine_14(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_WriteLine_14(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.Text.StringBuilder */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_WriteLine_15(self: Pointer? /* System.IO.TextWriter */, format: Pointer /* System.String */, arg0: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_WriteLine_15(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_WriteLine_16(self: Pointer? /* System.IO.TextWriter */, format: Pointer /* System.String */, arg0: Pointer? /* System.Object */, arg1: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_WriteLine_16(self: Pointer? /* System.IO.TextWriter */, format: Pointer /* System.String */, arg0: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_WriteLine_17(self: Pointer? /* System.IO.TextWriter */, format: Pointer /* System.String */, arg0: Pointer? /* System.Object */, arg1: Pointer? /* System.Object */, arg2: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_WriteLine_17(self: Pointer? /* System.IO.TextWriter */, format: Pointer /* System.String */, arg0: Pointer? /* System.Object */, arg1: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */)
 	
-	external fun System_IO_TextWriter_WriteLine_18(self: Pointer? /* System.IO.TextWriter */, format: Pointer /* System.String */, arg: Pointer /* System.Object[] */, outException: PointerByReference? /* System.Exception */)
+	external fun System_IO_TextWriter_WriteLine_18(self: Pointer? /* System.IO.TextWriter */, format: Pointer /* System.String */, arg0: Pointer? /* System.Object */, arg1: Pointer? /* System.Object */, arg2: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */)
+	
+	external fun System_IO_TextWriter_WriteLine_19(self: Pointer? /* System.IO.TextWriter */, format: Pointer /* System.String */, arg: Pointer /* System.Object[] */, outException: PointerByReference? /* System.Exception */)
 	
 	external fun System_IO_TextWriter_WriteAsync(self: Pointer? /* System.IO.TextWriter */, `value`: Char /* System.Char */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
 	
-	external fun System_IO_TextWriter_WriteAsync_1(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
+	external fun System_IO_TextWriter_WriteAsync_1(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
 	
-	external fun System_IO_TextWriter_WriteAsync_2(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.Text.StringBuilder */, cancellationToken: Pointer /* System.Threading.CancellationToken */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
+	external fun System_IO_TextWriter_WriteAsync_2(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
 	
-	external fun System_IO_TextWriter_WriteAsync_3(self: Pointer? /* System.IO.TextWriter */, buffer: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
+	external fun System_IO_TextWriter_WriteAsync_3(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.String */, cancellationToken: Pointer /* System.Threading.CancellationToken */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
 	
-	external fun System_IO_TextWriter_WriteAsync_4(self: Pointer? /* System.IO.TextWriter */, buffer: Pointer /* System.Char[] */, index: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
+	external fun System_IO_TextWriter_WriteAsync_4(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.Text.StringBuilder */, cancellationToken: Pointer /* System.Threading.CancellationToken */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
+	
+	external fun System_IO_TextWriter_WriteAsync_5(self: Pointer? /* System.IO.TextWriter */, buffer: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
+	
+	external fun System_IO_TextWriter_WriteAsync_6(self: Pointer? /* System.IO.TextWriter */, buffer: Pointer /* System.Char[] */, index: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
 	
 	external fun System_IO_TextWriter_WriteLineAsync(self: Pointer? /* System.IO.TextWriter */, `value`: Char /* System.Char */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
 	
-	external fun System_IO_TextWriter_WriteLineAsync_1(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
+	external fun System_IO_TextWriter_WriteLineAsync_1(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer /* System.Text.Rune */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
 	
-	external fun System_IO_TextWriter_WriteLineAsync_2(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.Text.StringBuilder */, cancellationToken: Pointer /* System.Threading.CancellationToken */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
+	external fun System_IO_TextWriter_WriteLineAsync_2(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
 	
-	external fun System_IO_TextWriter_WriteLineAsync_3(self: Pointer? /* System.IO.TextWriter */, buffer: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
+	external fun System_IO_TextWriter_WriteLineAsync_3(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.String */, cancellationToken: Pointer /* System.Threading.CancellationToken */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
 	
-	external fun System_IO_TextWriter_WriteLineAsync_4(self: Pointer? /* System.IO.TextWriter */, buffer: Pointer /* System.Char[] */, index: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
+	external fun System_IO_TextWriter_WriteLineAsync_4(self: Pointer? /* System.IO.TextWriter */, `value`: Pointer? /* System.Text.StringBuilder */, cancellationToken: Pointer /* System.Threading.CancellationToken */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
 	
-	external fun System_IO_TextWriter_WriteLineAsync_5(self: Pointer? /* System.IO.TextWriter */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
+	external fun System_IO_TextWriter_WriteLineAsync_5(self: Pointer? /* System.IO.TextWriter */, buffer: Pointer? /* System.Char[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
+	
+	external fun System_IO_TextWriter_WriteLineAsync_6(self: Pointer? /* System.IO.TextWriter */, buffer: Pointer /* System.Char[] */, index: Int /* System.Int32 */, count: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
+	
+	external fun System_IO_TextWriter_WriteLineAsync_7(self: Pointer? /* System.IO.TextWriter */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
+	
+	external fun System_IO_TextWriter_WriteLineAsync_8(self: Pointer? /* System.IO.TextWriter */, cancellationToken: Pointer /* System.Threading.CancellationToken */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
 	
 	external fun System_IO_TextWriter_FlushAsync(self: Pointer? /* System.IO.TextWriter */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Threading.Tasks.Task */
 	
@@ -214569,6 +218842,8 @@ object CAPI {
 	external fun System_IO_FileInfo_Decrypt(self: Pointer? /* System.IO.FileInfo */, outException: PointerByReference? /* System.Exception */)
 	
 	external fun System_IO_FileInfo_Encrypt(self: Pointer? /* System.IO.FileInfo */, outException: PointerByReference? /* System.Exception */)
+	
+	external fun System_IO_FileInfo_CreateAsHardLink(self: Pointer? /* System.IO.FileInfo */, pathToTarget: Pointer /* System.String */, outException: PointerByReference? /* System.Exception */)
 	
 	external fun System_IO_FileInfo_Create_2(fileName: Pointer /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.IO.FileInfo */
 	
@@ -214983,6 +219258,8 @@ object CAPI {
 	
 	external fun System_Buffers_Binary_BinaryPrimitives_ReadHalfBigEndian(source: Pointer /* System.ReadOnlySpan<System.Byte> */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Half */
 	
+	external fun System_Buffers_Binary_BinaryPrimitives_ReadBFloat16BigEndian(source: Pointer /* System.ReadOnlySpan<System.Byte> */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
 	external fun System_Buffers_Binary_BinaryPrimitives_ReadInt16BigEndian(source: Pointer /* System.ReadOnlySpan<System.Byte> */, outException: PointerByReference? /* System.Exception */) : Short /* System.Int16 */
 	
 	external fun System_Buffers_Binary_BinaryPrimitives_ReadInt32BigEndian(source: Pointer /* System.ReadOnlySpan<System.Byte> */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
@@ -215008,6 +219285,8 @@ object CAPI {
 	external fun System_Buffers_Binary_BinaryPrimitives_TryReadDoubleBigEndian(source: Pointer /* System.ReadOnlySpan<System.Byte> */, `value`: DoubleByReference /* System.Double */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
 	external fun System_Buffers_Binary_BinaryPrimitives_TryReadHalfBigEndian(source: Pointer /* System.ReadOnlySpan<System.Byte> */, `value`: PointerByReference /* System.Half */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Buffers_Binary_BinaryPrimitives_TryReadBFloat16BigEndian(source: Pointer /* System.ReadOnlySpan<System.Byte> */, `value`: PointerByReference /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
 	external fun System_Buffers_Binary_BinaryPrimitives_TryReadInt16BigEndian(source: Pointer /* System.ReadOnlySpan<System.Byte> */, `value`: ShortByReference /* System.Int16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
@@ -215035,6 +219314,8 @@ object CAPI {
 	
 	external fun System_Buffers_Binary_BinaryPrimitives_ReadHalfLittleEndian(source: Pointer /* System.ReadOnlySpan<System.Byte> */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Half */
 	
+	external fun System_Buffers_Binary_BinaryPrimitives_ReadBFloat16LittleEndian(source: Pointer /* System.ReadOnlySpan<System.Byte> */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
 	external fun System_Buffers_Binary_BinaryPrimitives_ReadInt16LittleEndian(source: Pointer /* System.ReadOnlySpan<System.Byte> */, outException: PointerByReference? /* System.Exception */) : Short /* System.Int16 */
 	
 	external fun System_Buffers_Binary_BinaryPrimitives_ReadInt32LittleEndian(source: Pointer /* System.ReadOnlySpan<System.Byte> */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
@@ -215060,6 +219341,8 @@ object CAPI {
 	external fun System_Buffers_Binary_BinaryPrimitives_TryReadDoubleLittleEndian(source: Pointer /* System.ReadOnlySpan<System.Byte> */, `value`: DoubleByReference /* System.Double */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
 	external fun System_Buffers_Binary_BinaryPrimitives_TryReadHalfLittleEndian(source: Pointer /* System.ReadOnlySpan<System.Byte> */, `value`: PointerByReference /* System.Half */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Buffers_Binary_BinaryPrimitives_TryReadBFloat16LittleEndian(source: Pointer /* System.ReadOnlySpan<System.Byte> */, `value`: PointerByReference /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
 	external fun System_Buffers_Binary_BinaryPrimitives_TryReadInt16LittleEndian(source: Pointer /* System.ReadOnlySpan<System.Byte> */, `value`: ShortByReference /* System.Int16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
 	
@@ -215115,6 +219398,320 @@ object CAPI {
 	
 
 	// MARK: - END System.Buffers.Binary.BinaryPrimitives
+
+
+	// MARK: - BEGIN System.Numerics.BFloat16
+	external fun System_Numerics_BFloat16_IsFinite(`value`: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_IsInfinity(`value`: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_IsNaN(`value`: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_IsNegative(`value`: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_IsNegativeInfinity(`value`: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_IsNormal(`value`: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_IsPositiveInfinity(`value`: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_IsSubnormal(`value`: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_IsZero(`value`: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_Parse(s: Pointer /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Parse_1(s: Pointer /* System.String */, style: Int /* System.Globalization.NumberStyles */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Parse_2(s: Pointer /* System.String */, provider: Pointer? /* System.IFormatProvider */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Parse_3(s: Pointer /* System.String */, style: Int /* System.Globalization.NumberStyles */, provider: Pointer? /* System.IFormatProvider */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_TryParse(s: Pointer? /* System.String */, result: PointerByReference /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_TryParse_1(utf8Text: Pointer /* System.ReadOnlySpan<System.Byte> */, result: PointerByReference /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_TryParse_2(s: Pointer? /* System.String */, style: Int /* System.Globalization.NumberStyles */, provider: Pointer? /* System.IFormatProvider */, result: PointerByReference /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_CompareTo(self: Pointer /* System.Numerics.BFloat16 */, obj: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_Numerics_BFloat16_CompareTo_1(self: Pointer /* System.Numerics.BFloat16 */, other: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_Numerics_BFloat16_Equals(self: Pointer /* System.Numerics.BFloat16 */, other: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_Equals_1(self: Pointer /* System.Numerics.BFloat16 */, obj: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_GetHashCode(self: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_Numerics_BFloat16_ToString(self: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
+	external fun System_Numerics_BFloat16_ToString_1(self: Pointer /* System.Numerics.BFloat16 */, format: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
+	external fun System_Numerics_BFloat16_ToString_2(self: Pointer /* System.Numerics.BFloat16 */, provider: Pointer? /* System.IFormatProvider */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
+	external fun System_Numerics_BFloat16_ToString_3(self: Pointer /* System.Numerics.BFloat16 */, format: Pointer? /* System.String */, provider: Pointer? /* System.IFormatProvider */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
+	external fun System_Numerics_BFloat16_IsPow2(`value`: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_Log2(`value`: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Exp(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_ExpM1(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Exp2(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Exp2M1(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Exp10(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Exp10M1(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Ceiling(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Floor(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Round(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Round_1(x: Pointer /* System.Numerics.BFloat16 */, digits: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Round_2(x: Pointer /* System.Numerics.BFloat16 */, mode: Int /* System.MidpointRounding */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Round_3(x: Pointer /* System.Numerics.BFloat16 */, digits: Int /* System.Int32 */, mode: Int /* System.MidpointRounding */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Truncate(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Atan2(y: Pointer /* System.Numerics.BFloat16 */, x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Atan2Pi(y: Pointer /* System.Numerics.BFloat16 */, x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_BitDecrement(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_BitIncrement(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_FusedMultiplyAdd(left: Pointer /* System.Numerics.BFloat16 */, right: Pointer /* System.Numerics.BFloat16 */, addend: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Ieee754Remainder(left: Pointer /* System.Numerics.BFloat16 */, right: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_ILogB(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_Numerics_BFloat16_Lerp(value1: Pointer /* System.Numerics.BFloat16 */, value2: Pointer /* System.Numerics.BFloat16 */, amount: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_ReciprocalEstimate(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_ReciprocalSqrtEstimate(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_ScaleB(x: Pointer /* System.Numerics.BFloat16 */, n: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Acosh(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Asinh(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Atanh(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Cosh(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Sinh(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Tanh(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Log_1(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Log_2(x: Pointer /* System.Numerics.BFloat16 */, newBase: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Log10(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_LogP1(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Log2P1(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Log10P1(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Clamp(`value`: Pointer /* System.Numerics.BFloat16 */, min: Pointer /* System.Numerics.BFloat16 */, max: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_CopySign(`value`: Pointer /* System.Numerics.BFloat16 */, sign: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Max(x: Pointer /* System.Numerics.BFloat16 */, y: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_MaxNumber(x: Pointer /* System.Numerics.BFloat16 */, y: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Min(x: Pointer /* System.Numerics.BFloat16 */, y: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_MinNumber(x: Pointer /* System.Numerics.BFloat16 */, y: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Sign(`value`: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_Numerics_BFloat16_Abs(`value`: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_CreateChecked_A1(TOther: Pointer? /* System.Type */, `value`: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_CreateSaturating_A1(TOther: Pointer? /* System.Type */, `value`: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_CreateTruncating_A1(TOther: Pointer? /* System.Type */, `value`: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_IsEvenInteger(`value`: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_IsInteger(`value`: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_IsOddInteger(`value`: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_IsPositive_1(`value`: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_IsRealNumber(`value`: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_MaxMagnitude(x: Pointer /* System.Numerics.BFloat16 */, y: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_MaxMagnitudeNumber(x: Pointer /* System.Numerics.BFloat16 */, y: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_MinMagnitude(x: Pointer /* System.Numerics.BFloat16 */, y: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_MinMagnitudeNumber(x: Pointer /* System.Numerics.BFloat16 */, y: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_TryParsePartial(s: Pointer? /* System.String */, style: Int /* System.Globalization.NumberStyles */, provider: Pointer? /* System.IFormatProvider */, result: PointerByReference /* System.Numerics.BFloat16 */, charsConsumed: IntByReference /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_TryParsePartial_1(utf8Text: Pointer /* System.ReadOnlySpan<System.Byte> */, style: Int /* System.Globalization.NumberStyles */, provider: Pointer? /* System.IFormatProvider */, result: PointerByReference /* System.Numerics.BFloat16 */, bytesConsumed: IntByReference /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_TryParse_3(s: Pointer? /* System.String */, provider: Pointer? /* System.IFormatProvider */, result: PointerByReference /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_Pow(x: Pointer /* System.Numerics.BFloat16 */, y: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Cbrt(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Hypot(x: Pointer /* System.Numerics.BFloat16 */, y: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_RootN(x: Pointer /* System.Numerics.BFloat16 */, n: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Sqrt(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Acos_1(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_AcosPi(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Asin_1(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_AsinPi(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Atan_1(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_AtanPi(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Cos_1(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_CosPi(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_DegreesToRadians(degrees: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_RadiansToDegrees(radians: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Sin_1(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_SinPi(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Tan_1(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_TanPi(x: Pointer /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_Parse_4(utf8Text: Pointer /* System.ReadOnlySpan<System.Byte> */, style: Int /* System.Globalization.NumberStyles */, provider: Pointer? /* System.IFormatProvider */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_TryParse_4(utf8Text: Pointer /* System.ReadOnlySpan<System.Byte> */, style: Int /* System.Globalization.NumberStyles */, provider: Pointer? /* System.IFormatProvider */, result: PointerByReference /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_Parse_5(utf8Text: Pointer /* System.ReadOnlySpan<System.Byte> */, provider: Pointer? /* System.IFormatProvider */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_TryParse_5(utf8Text: Pointer /* System.ReadOnlySpan<System.Byte> */, provider: Pointer? /* System.IFormatProvider */, result: PointerByReference /* System.Numerics.BFloat16 */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Numerics_BFloat16_Epsilon_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	
+	external fun System_Numerics_BFloat16_PositiveInfinity_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	
+	external fun System_Numerics_BFloat16_NegativeInfinity_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	
+	external fun System_Numerics_BFloat16_NaN_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	
+	external fun System_Numerics_BFloat16_MinValue_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	
+	external fun System_Numerics_BFloat16_MaxValue_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	
+	external fun System_Numerics_BFloat16_E_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	
+	external fun System_Numerics_BFloat16_Pi_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	
+	external fun System_Numerics_BFloat16_Tau_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	
+	external fun System_Numerics_BFloat16_NegativeZero_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	
+	external fun System_Numerics_BFloat16_MultiplicativeIdentity_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	
+	external fun System_Numerics_BFloat16_One_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	
+	external fun System_Numerics_BFloat16_Zero_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	
+	external fun System_Numerics_BFloat16_NegativeOne_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	
+	external fun System_Numerics_BFloat16_Create_1(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Numerics.BFloat16 */
+	
+	external fun System_Numerics_BFloat16_TypeOf() : Pointer /* System.Type */
+	
+	external fun System_Numerics_BFloat16_Destroy(self: Pointer /* System.Numerics.BFloat16 */)
+	
+	
+	
+
+	// MARK: - END System.Numerics.BFloat16
+
+
+	// MARK: - BEGIN System.IComparable<System.Numerics.BFloat16>
+// Type "IComparable`1" was skipped. Reason: It is generic somehow.
+	// MARK: - END System.IComparable<System.Numerics.BFloat16>
+
+
+	// MARK: - BEGIN System.IEquatable<System.Numerics.BFloat16>
+// Type "IEquatable`1" was skipped. Reason: It is generic somehow.
+	// MARK: - END System.IEquatable<System.Numerics.BFloat16>
+
+
+	// MARK: - BEGIN System.Numerics.IBinaryFloatingPointIeee754<System.Numerics.BFloat16>
+// Type "IBinaryFloatingPointIeee754`1" was skipped. Reason: It is generic somehow.
+	// MARK: - END System.Numerics.IBinaryFloatingPointIeee754<System.Numerics.BFloat16>
+
+
+	// MARK: - BEGIN System.Numerics.INumber<System.Numerics.BFloat16>
+// Type "INumber`1" was skipped. Reason: It is generic somehow.
+	// MARK: - END System.Numerics.INumber<System.Numerics.BFloat16>
+
+
+	// MARK: - BEGIN System.Numerics.BFloat16&
+
+
+	// MARK: - END System.Numerics.BFloat16&
+
+
+	// MARK: - BEGIN TOther
+// Type "TOther" was skipped. Reason: It has no full name.
+	// MARK: - END TOther
+
+
+	// MARK: - BEGIN TOther
+// Type "TOther" was skipped. Reason: It has no full name.
+	// MARK: - END TOther
+
+
+	// MARK: - BEGIN TOther
+// Type "TOther" was skipped. Reason: It has no full name.
+	// MARK: - END TOther
 
 
 	// MARK: - BEGIN System.WeakReference<>
@@ -216779,6 +221376,9 @@ object CAPI {
 	external fun System_Uri_UriSchemeNetPipe_Get() : Pointer /* System.String */
 	
 	
+	external fun System_Uri_UriSchemeData_Get() : Pointer /* System.String */
+	
+	
 	external fun System_Uri_SchemeDelimiter_Get() : Pointer /* System.String */
 	
 	
@@ -217057,10 +221657,10 @@ object CAPI {
 	// MARK: - END Beyond.NET.Sample.SpanTest
 
 
-	// MARK: - BEGIN System.ReadOnlySpan`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
+	// MARK: - BEGIN System.ReadOnlySpan`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
 
 
-	// MARK: - END System.ReadOnlySpan`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
+	// MARK: - END System.ReadOnlySpan`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
 
 
 	// MARK: - BEGIN Beyond.NET.Sample.StructTestClass
@@ -220133,6 +224733,16 @@ object CAPI {
 	external fun System_Security_Cryptography_Aes_Create(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.Aes */
 	
 	external fun System_Security_Cryptography_Aes_Create_1(algorithmName: Pointer /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer? /* System.Security.Cryptography.Aes */
+	
+	external fun System_Security_Cryptography_Aes_GetKeyWrapLength(plaintextLengthInBytes: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_Security_Cryptography_Aes_EncryptKeyWrap(self: Pointer? /* System.Security.Cryptography.Aes */, plaintext: Pointer /* System.Byte[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Byte[] */
+	
+	external fun System_Security_Cryptography_Aes_EncryptKeyWrap_1(self: Pointer? /* System.Security.Cryptography.Aes */, plaintext: Pointer /* System.ReadOnlySpan<System.Byte> */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Byte[] */
+	
+	external fun System_Security_Cryptography_Aes_DecryptKeyWrap(self: Pointer? /* System.Security.Cryptography.Aes */, ciphertext: Pointer /* System.Byte[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Byte[] */
+	
+	external fun System_Security_Cryptography_Aes_DecryptKeyWrap_1(self: Pointer? /* System.Security.Cryptography.Aes */, ciphertext: Pointer /* System.ReadOnlySpan<System.Byte> */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Byte[] */
 	
 	external fun System_Security_Cryptography_Aes_GetKeyWrapPaddedLength(plaintextLengthInBytes: Int /* System.Int32 */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
 	
@@ -224943,10 +229553,10 @@ object CAPI {
 	// MARK: - END System.Nullable<System.DateTime>
 
 
-	// MARK: - BEGIN System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
+	// MARK: - BEGIN System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
 
 
-	// MARK: - END System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
+	// MARK: - END System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&
 
 
 	// MARK: - BEGIN System.Collections.IEnumerable&
@@ -228881,6 +233491,10 @@ public object System {
 	 */
 	typealias TypeCode = System_TypeCode
 	/**
+	 * Specifies the culture, case, and sort rules to be used by certain overloads of the System.String.Compare(System.String,System.String) and System.String.Equals(System.Object) methods.
+	 */
+	typealias StringComparison = System_StringComparison
+	/**
 	 * Specifies the strategy that mathematical rounding methods should use to round a number.
 	 */
 	typealias MidpointRounding = System_MidpointRounding
@@ -228892,10 +233506,6 @@ public object System {
 	 * Specifies the day of the week.
 	 */
 	typealias DayOfWeek = System_DayOfWeek
-	/**
-	 * Specifies the culture, case, and sort rules to be used by certain overloads of the System.String.Compare(System.String,System.String) and System.String.Equals(System.Object) methods.
-	 */
-	typealias StringComparison = System_StringComparison
 	/**
 	 * Specifies options for applicable Overload:System.String.Split method overloads, such as whether to omit empty substrings from the returned array or trim whitespace from substrings.
 	 */
@@ -229914,6 +234524,8 @@ public object System {
 		 * Specifies the position in a stream to use for seeking.
 		 */
 		typealias SeekOrigin = System_IO_SeekOrigin
+		
+		typealias FileHandleType = System_IO_FileHandleType
 		/**
 		 * Defines constants for read, write, or read/write access to a file.
 		 */
@@ -230398,6 +235010,8 @@ public object System {
 		 * Supports simple iteration over the chunks of a System.Text.StringBuilder instance.
 		 */
 		typealias StringBuilder_ChunkEnumerator = System_Text_StringBuilder_ChunkEnumerator
+		
+		typealias StringBuilderRuneEnumerator = System_Text_StringBuilderRuneEnumerator
 		/**
 		 * Provides a handler used by the language compiler to append interpolated strings into System.Text.StringBuilder instances.
 		 */
@@ -231015,9 +235629,15 @@ public object System {
 		typealias CollectionBase = System_Collections_CollectionBase
 		
 	}
+	public object Numerics {
+		
+		typealias BFloat16 = System_Numerics_BFloat16
+		
+	}
 	public object Net {
 		/**
-		 * Contains HTTP proxy settings for the System.Net.Http.HttpClient class.
+		 *             Contains HTTP proxy settings for the System.Net.Http.HttpClient class.
+		 *             
 		 */
 		typealias WebProxy = System_Net_WebProxy
 		/**
