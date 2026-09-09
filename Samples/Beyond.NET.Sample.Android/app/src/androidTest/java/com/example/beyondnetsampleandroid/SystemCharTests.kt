@@ -8,9 +8,10 @@ import org.junit.runner.RunWith
 import org.junit.Assert.*
 
 import com.example.beyondnetsampleandroid.dn.*
+import com.example.beyondnetsampleandroid.dn.Beyond.NET.Sample.Source.CharTests
 
 @RunWith(AndroidJUnit4::class)
-class CharTests {
+class SystemCharTests {
     @Test
     fun testToDNObjectAndBack() {
         val value = 'a'
@@ -25,7 +26,7 @@ class CharTests {
 
     @Test
     fun testGetLowercaseA() {
-        val valueDN = Beyond_NET_Sample_Source_CharTests.lowercaseA
+        val valueDN = CharTests.lowercaseA
 
         assertEquals('a', valueDN)
         assertNotEquals('A', valueDN)
@@ -33,16 +34,16 @@ class CharTests {
 
     @Test
     fun testPassInLowercaseA() {
-        Beyond_NET_Sample_Source_CharTests.passInLowercaseAOrThrow('a')
+        CharTests.passInLowercaseAOrThrow('a')
 
         assertThrows(DNException::class.java) {
-            Beyond_NET_Sample_Source_CharTests.passInLowercaseAOrThrow('A')
+            CharTests.passInLowercaseAOrThrow('A')
         }
     }
 
     @Test
     fun testGetUppercaseA() {
-        val valueDN = Beyond_NET_Sample_Source_CharTests.uppercaseA
+        val valueDN = CharTests.uppercaseA
 
         assertEquals('A', valueDN)
         assertNotEquals('a', valueDN)
@@ -50,16 +51,16 @@ class CharTests {
 
     @Test
     fun testPassInUppercaseA() {
-        Beyond_NET_Sample_Source_CharTests.passInUppercaseAOrThrow('A')
+        CharTests.passInUppercaseAOrThrow('A')
 
         assertThrows(DNException::class.java) {
-            Beyond_NET_Sample_Source_CharTests.passInUppercaseAOrThrow('a')
+            CharTests.passInUppercaseAOrThrow('a')
         }
     }
 
     @Test
     fun testGetOne() {
-        val valueDN = Beyond_NET_Sample_Source_CharTests.one
+        val valueDN = CharTests.one
 
         assertEquals('1', valueDN)
         assertNotEquals('2', valueDN)
@@ -67,16 +68,16 @@ class CharTests {
 
     @Test
     fun testPassInOne() {
-        Beyond_NET_Sample_Source_CharTests.passInOneOrThrow('1')
+        CharTests.passInOneOrThrow('1')
 
         assertThrows(DNException::class.java) {
-            Beyond_NET_Sample_Source_CharTests.passInOneOrThrow('2')
+            CharTests.passInOneOrThrow('2')
         }
     }
 
     @Test
     fun testGetLowercaseUmlautA() {
-        val valueDN = Beyond_NET_Sample_Source_CharTests.lowercaseUmlautA
+        val valueDN = CharTests.lowercaseUmlautA
 
         assertEquals('ä', valueDN)
         assertNotEquals('Ä', valueDN)
@@ -84,10 +85,10 @@ class CharTests {
 
     @Test
     fun testPassInLowercaseUmlautA() {
-        Beyond_NET_Sample_Source_CharTests.passInLowercaseUmlautAOrThrow('ä')
+        CharTests.passInLowercaseUmlautAOrThrow('ä')
 
         assertThrows(DNException::class.java) {
-            Beyond_NET_Sample_Source_CharTests.passInLowercaseUmlautAOrThrow('Ä')
+            CharTests.passInLowercaseUmlautAOrThrow('Ä')
         }
     }
 }

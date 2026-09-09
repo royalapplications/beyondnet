@@ -17,6 +17,7 @@ public record Configuration(
     bool? GenerateTypeCheckedDestroyMethods,
     bool? EnableGenericsSupport,
     bool? DoNotGenerateSwiftNestedTypeAliases,
+    bool? DoNotGenerateKotlinNestedTypeAliases,
     bool? DoNotGenerateDocumentation,
     bool? DoNotDeleteTemporaryDirectories,
 

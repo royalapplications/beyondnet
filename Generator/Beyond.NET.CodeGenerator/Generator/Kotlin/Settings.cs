@@ -7,4 +7,5 @@ public class Settings(
 {
     public string KotlinPackageName { get; init; } = kotlinPackageName;
     public string KotlinNativeLibraryName { get; init; } = kotlinNativeLibraryName;
+    public bool DoNotGenerateKotlinNestedTypeAliases { get; init; }
 }

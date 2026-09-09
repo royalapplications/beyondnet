@@ -65,6 +65,7 @@ internal class CodeGeneratorDriver
             bool generateTypeCheckedDestroyMethods = Configuration.GenerateTypeCheckedDestroyMethods ?? false;
             bool enableGenericsSupport = Configuration.EnableGenericsSupport ?? false;
             bool doNotGenerateSwiftNestedTypeAliases = Configuration.DoNotGenerateSwiftNestedTypeAliases ?? false;
+            bool doNotGenerateKotlinNestedTypeAliases = Configuration.DoNotGenerateKotlinNestedTypeAliases ?? false;
             bool doNotGenerateDocumentation = Configuration.DoNotGenerateDocumentation ?? false;
 
             BuildConfiguration? buildConfig = Configuration.Build;
@@ -336,6 +337,7 @@ internal class CodeGeneratorDriver
                 cSharpUnmanagedResult,
                 cResult,
                 emitUnsupported,
+                doNotGenerateKotlinNestedTypeAliases,
                 typeCollectorSettings,
                 kotlinPackageName,
                 kotlinNativeLibraryName
@@ -840,6 +842,7 @@ internal class CodeGeneratorDriver
         Result cSharpUnmanagedResult,
         Result cResult,
         bool emitUnsupported,
+        bool doNotGenerateKotlinNestedTypeAliases,
         TypeCollectorSettings typeCollectorSettings,
         string kotlinPackageName,
         string kotlinNativeLibraryName
@@ -849,7 +852,8 @@ internal class CodeGeneratorDriver
 
         Generator.Kotlin.Settings settings = new(kotlinPackageName, kotlinNativeLibraryName) {
             EmitUnsupported = emitUnsupported,
-            TypeCollectorSettings = typeCollectorSettings
+            TypeCollectorSettings = typeCollectorSettings,
+            DoNotGenerateKotlinNestedTypeAliases = doNotGenerateKotlinNestedTypeAliases
         };
 
         KotlinCodeGenerator codeGenerator = new(

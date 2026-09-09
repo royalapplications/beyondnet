@@ -1,4 +1,4 @@
-// Number of generated types: 1716
+// Number of generated types: 624
 // Number of generated members: 8124
 
 // MARK: - BEGIN Header
@@ -228875,6 +228875,2406 @@ fun ByteArray.toDotNETSByteArray(): DNArray<System_SByte> {
 // MARK: - END API Extensions
 
 // MARK: - BEGIN Namespaces
+public object System {
+	/**
+	 * Specifies the type of an object.
+	 */
+	typealias TypeCode = System_TypeCode
+	/**
+	 * Specifies the strategy that mathematical rounding methods should use to round a number.
+	 */
+	typealias MidpointRounding = System_MidpointRounding
+	/**
+	 * Specifies whether a System.DateTime object represents a local time, a Coordinated Universal Time (UTC), or is not specified as either local time or UTC.
+	 */
+	typealias DateTimeKind = System_DateTimeKind
+	/**
+	 * Specifies the day of the week.
+	 */
+	typealias DayOfWeek = System_DayOfWeek
+	/**
+	 * Specifies the culture, case, and sort rules to be used by certain overloads of the System.String.Compare(System.String,System.String) and System.String.Equals(System.Object) methods.
+	 */
+	typealias StringComparison = System_StringComparison
+	/**
+	 * Specifies options for applicable Overload:System.String.Split method overloads, such as whether to omit empty substrings from the returned array or trim whitespace from substrings.
+	 */
+	typealias StringSplitOptions = System_StringSplitOptions
+	/**
+	 * Specifies the kind of a garbage collection.
+	 */
+	typealias GCKind = System_GCKind
+	/**
+	 * Specifies the behavior for a forced garbage collection.
+	 */
+	typealias GCCollectionMode = System_GCCollectionMode
+	/**
+	 * Provides information about the current registration for notification of the next full garbage collection.
+	 */
+	typealias GCNotificationStatus = System_GCNotificationStatus
+	/**
+	 * Specifies whether relevant Overload:System.Convert.ToBase64CharArray and Overload:System.Convert.ToBase64String methods insert line breaks in their output.
+	 */
+	typealias Base64FormattingOptions = System_Base64FormattingOptions
+	/**
+	 * Defines host name types for the System.Uri.CheckHostName(System.String) method.
+	 */
+	typealias UriHostNameType = System_UriHostNameType
+	/**
+	 * Defines the parts of a URI for the System.Uri.GetLeftPart(System.UriPartial) method.
+	 */
+	typealias UriPartial = System_UriPartial
+	/**
+	 * Defines the different kinds of URIs.
+	 */
+	typealias UriKind = System_UriKind
+	/**
+	 * Specifies the parts of a System.Uri.
+	 */
+	typealias UriComponents = System_UriComponents
+	/**
+	 * Controls how URI information is escaped.
+	 */
+	typealias UriFormat = System_UriFormat
+	/**
+	 * Supports all classes in the .NET class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all .NET classes; it is the root of the type hierarchy.
+	 */
+	typealias Object = System_Object
+	/**
+	 * Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.
+	 */
+	typealias Type = System_Type
+	/**
+	 * Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays in the common language runtime.
+	 */
+	typealias Array = System_Array
+	/**
+	 * Supports cloning, which creates a new instance of a class with the same value as an existing instance.
+	 */
+	typealias ICloneable = System_ICloneable
+	/**
+	 * Supports cloning, which creates a new instance of a class with the same value as an existing instance.
+	 */
+	typealias ICloneable_DNInterface = System_ICloneable_DNInterface
+	/**
+	 * Represents a Boolean (true or false) value.
+	 */
+	typealias Boolean = System_Boolean
+	/**
+	 * Provides the base class for value types.
+	 */
+	typealias ValueType = System_ValueType
+	/**
+	 * Represents a 32-bit signed integer.
+	 */
+	typealias Int32 = System_Int32
+	/**
+	 * Defines a generalized type-specific comparison method that a value type or class implements to order or sort its instances.
+	 */
+	typealias IComparable = System_IComparable
+	/**
+	 * Defines a generalized type-specific comparison method that a value type or class implements to order or sort its instances.
+	 */
+	typealias IComparable_DNInterface = System_IComparable_DNInterface
+	/**
+	 * Defines methods that convert the value of the implementing reference or value type to a common language runtime type that has an equivalent value.
+	 */
+	typealias IConvertible = System_IConvertible
+	/**
+	 * Defines methods that convert the value of the implementing reference or value type to a common language runtime type that has an equivalent value.
+	 */
+	typealias IConvertible_DNInterface = System_IConvertible_DNInterface
+	/**
+	 * Provides the base class for enumerations.
+	 */
+	typealias Enum = System_Enum
+	/**
+	 * Provides functionality to format the string representation of an object into a span.
+	 */
+	typealias ISpanFormattable = System_ISpanFormattable
+	/**
+	 * Provides functionality to format the string representation of an object into a span.
+	 */
+	typealias ISpanFormattable_DNInterface = System_ISpanFormattable_DNInterface
+	/**
+	 * Provides functionality to format the value of an object into a string representation.
+	 */
+	typealias IFormattable = System_IFormattable
+	/**
+	 * Provides functionality to format the value of an object into a string representation.
+	 */
+	typealias IFormattable_DNInterface = System_IFormattable_DNInterface
+	/**
+	 * Represents text as a sequence of UTF-16 code units.
+	 */
+	typealias String = System_String
+	/**
+	 * Provides a mechanism for releasing unmanaged resources.
+	 */
+	typealias IDisposable = System_IDisposable
+	/**
+	 * Provides a mechanism for releasing unmanaged resources.
+	 */
+	typealias IDisposable_DNInterface = System_IDisposable_DNInterface
+	/**
+	 * Represents a character as a UTF-16 code unit.
+	 */
+	typealias Char = System_Char
+	/**
+	 * Provides functionality to format the string representation of an object into a span as UTF-8.
+	 */
+	typealias IUtf8SpanFormattable = System_IUtf8SpanFormattable
+	/**
+	 * Provides functionality to format the string representation of an object into a span as UTF-8.
+	 */
+	typealias IUtf8SpanFormattable_DNInterface = System_IUtf8SpanFormattable_DNInterface
+	/**
+	 * Provides a mechanism for retrieving an object to control formatting.
+	 */
+	typealias IFormatProvider = System_IFormatProvider
+	/**
+	 * Provides a mechanism for retrieving an object to control formatting.
+	 */
+	typealias IFormatProvider_DNInterface = System_IFormatProvider_DNInterface
+	/**
+	 * Represents an 8-bit signed integer.
+	 */
+	typealias SByte = System_SByte
+	/**
+	 * Represents an 8-bit unsigned integer.
+	 */
+	typealias Byte = System_Byte
+	/**
+	 * Represents a 16-bit signed integer.
+	 */
+	typealias Int16 = System_Int16
+	/**
+	 * Represents a 16-bit unsigned integer.
+	 */
+	typealias UInt16 = System_UInt16
+	/**
+	 * Represents a 32-bit unsigned integer.
+	 */
+	typealias UInt32 = System_UInt32
+	/**
+	 * Represents a 64-bit unsigned integer.
+	 */
+	typealias UInt64 = System_UInt64
+	/**
+	 * Represents a 128-bit unsigned integer.
+	 */
+	typealias UInt128 = System_UInt128
+	/**
+	 * Represents a decimal floating-point number.
+	 */
+	typealias Decimal = System_Decimal
+	/**
+	 * Represents a 64-bit signed integer.
+	 */
+	typealias Int64 = System_Int64
+	/**
+	 * Represents a 128-bit signed integer.
+	 */
+	typealias Int128 = System_Int128
+	/**
+	 * Represents a double-precision floating-point number.
+	 */
+	typealias Double = System_Double
+	/**
+	 * Represents a half-precision floating-point number.
+	 */
+	typealias Half = System_Half
+	/**
+	 * Represents a signed integer where the bit-width is the same as a pointer.
+	 */
+	typealias IntPtr = System_IntPtr
+	/**
+	 * Represents a single-precision floating-point number.
+	 */
+	typealias Single = System_Single
+	/**
+	 * Represents an unsigned integer where the bit-width is the same as a pointer.
+	 */
+	typealias UIntPtr = System_UIntPtr
+	/**
+	 * Represents an instant in time, typically expressed as a date and time of day.
+	 */
+	typealias DateTime = System_DateTime
+	/**
+	 * Represents a time interval.
+	 */
+	typealias TimeSpan = System_TimeSpan
+	/**
+	 * Represents dates with values ranging from January 1, 0001 Anno Domini (Common Era) through December 31, 9999 A.D. (C.E.) in the Gregorian calendar.
+	 */
+	typealias DateOnly = System_DateOnly
+	/**
+	 * Represents a time of day, as would be read from a clock, within the range 00:00:00 to 23:59:59.9999999.
+	 */
+	typealias TimeOnly = System_TimeOnly
+	/**
+	 * Represents the version number of an assembly, operating system, or the common language runtime. This class cannot be inherited.
+	 */
+	typealias Version = System_Version
+	/**
+	 * Enables access to objects across application domain boundaries in applications that support remoting.
+	 */
+	typealias MarshalByRefObject = System_MarshalByRefObject
+	/**
+	 * Provides a mechanism for releasing unmanaged resources asynchronously.
+	 */
+	typealias IAsyncDisposable = System_IAsyncDisposable
+	/**
+	 * Provides a mechanism for releasing unmanaged resources asynchronously.
+	 */
+	typealias IAsyncDisposable_DNInterface = System_IAsyncDisposable_DNInterface
+	/**
+	 * Represents errors that occur during application execution.
+	 */
+	typealias Exception = System_Exception
+	/**
+	 * System.RuntimeMethodHandle is a handle to the internal metadata representation of a method.
+	 */
+	typealias RuntimeMethodHandle = System_RuntimeMethodHandle
+	/**
+	 * Represents a type using an internal metadata token.
+	 */
+	typealias RuntimeTypeHandle = System_RuntimeTypeHandle
+	/**
+	 * Represents a runtime handle for a module.
+	 */
+	typealias ModuleHandle = System_ModuleHandle
+	/**
+	 * Represents a field using an internal metadata token.
+	 */
+	typealias RuntimeFieldHandle = System_RuntimeFieldHandle
+	/**
+	 * Represents a globally unique identifier (GUID).
+	 */
+	typealias Guid = System_Guid
+	/**
+	 * Represents a point in time, typically expressed as a date and time of day, relative to Coordinated Universal Time (UTC).
+	 */
+	typealias DateTimeOffset = System_DateTimeOffset
+	/**
+	 * Represents the status of an asynchronous operation.
+	 */
+	typealias IAsyncResult = System_IAsyncResult
+	/**
+	 * Represents the status of an asynchronous operation.
+	 */
+	typealias IAsyncResult_DNInterface = System_IAsyncResult_DNInterface
+	/**
+	 * Represents one or more errors that occur during application execution.
+	 */
+	typealias AggregateException = System_AggregateException
+	/**
+	 * Provides an abstraction for time.
+	 */
+	typealias TimeProvider = System_TimeProvider
+	/**
+	 * Represents any time zone in the world.
+	 */
+	typealias TimeZoneInfo = System_TimeZoneInfo
+	/**
+	 * Provides information about a time zone adjustment, such as the transition to and from daylight saving time.
+	 */
+	typealias TimeZoneInfo_AdjustmentRule = System_TimeZoneInfo_AdjustmentRule
+	/**
+	 * Provides information about a specific time change, such as the change from daylight saving time to standard time or vice versa, in a particular time zone.
+	 */
+	typealias TimeZoneInfo_TransitionTime = System_TimeZoneInfo_TransitionTime
+	/**
+	 * Provides data for loader resolution events, such as the System.AppDomain.TypeResolve, System.AppDomain.ResourceResolve, System.AppDomain.ReflectionOnlyAssemblyResolve, and System.AppDomain.AssemblyResolve events.
+	 */
+	typealias ResolveEventArgs = System_ResolveEventArgs
+	/**
+	 * Represents the base class for classes that contain event data, and provides a value to use for events that do not include event data.
+	 */
+	typealias EventArgs = System_EventArgs
+	/**
+	 * Supports iterating over a System.String object and reading its individual characters. This class cannot be inherited.
+	 */
+	typealias CharEnumerator = System_CharEnumerator
+	/**
+	 * Represents the base class for custom attributes.
+	 */
+	typealias Attribute = System_Attribute
+	/**
+	 * The exception that is thrown when there is an attempt to dereference a null object reference.
+	 */
+	typealias NullReferenceException = System_NullReferenceException
+	/**
+	 * Serves as the base class for system exceptions namespace.
+	 */
+	typealias SystemException = System_SystemException
+	/**
+	 * The exception that is thrown when a feature does not run on a particular platform.
+	 */
+	typealias PlatformNotSupportedException = System_PlatformNotSupportedException
+	/**
+	 * The exception that is thrown when an invoked method is not supported, or when there is an attempt to read, seek, or write to a stream that does not support the invoked functionality.
+	 */
+	typealias NotSupportedException = System_NotSupportedException
+	/**
+	 * Provides members for setting and retrieving data about an application's context.
+	 */
+	typealias AppContext = System_AppContext
+	/**
+	 * Controls the system garbage collector, a service that automatically reclaims unused memory.
+	 */
+	typealias GC = System_GC
+	/**
+	 * Provides a set of APIs that can be used to retrieve garbage collection information.
+	 */
+	typealias GCMemoryInfo = System_GCMemoryInfo
+	/**
+	 * Represents a weak reference, which references an object while still allowing that object to be reclaimed by garbage collection.
+	 */
+	typealias WeakReference = System_WeakReference
+	/**
+	 * Provides constants and static methods for trigonometric, logarithmic, and other common mathematical functions.
+	 */
+	typealias Math = System_Math
+	/**
+	 * Converts a base data type to another base data type.
+	 */
+	typealias Convert = System_Convert
+	/**
+	 * Encapsulates a memory slot to store local data. This class cannot be inherited.
+	 */
+	typealias LocalDataStoreSlot = System_LocalDataStoreSlot
+	/**
+	 * Represents an application domain, which is an isolated environment where applications execute. This class cannot be inherited.
+	 */
+	typealias AppDomain = System_AppDomain
+	/**
+	 * Represents assembly binding information that can be added to an instance of System.AppDomain.
+	 */
+	typealias AppDomainSetup = System_AppDomainSetup
+	/**
+	 * Provides data for the event that is raised when there is an exception that is not handled in any application domain.
+	 */
+	typealias UnhandledExceptionEventArgs = System_UnhandledExceptionEventArgs
+	/**
+	 * Provides data for the System.AppDomain.AssemblyLoad event.
+	 */
+	typealias AssemblyLoadEventArgs = System_AssemblyLoadEventArgs
+	/**
+	 * Represents a pseudo-random number generator, which is an algorithm that produces a sequence of numbers that meet certain statistical requirements for randomness.
+	 */
+	typealias Random = System_Random
+	/**
+	 * Provides an object representation of a uniform resource identifier (URI) and easy access to the parts of the URI.
+	 */
+	typealias Uri = System_Uri
+	/**
+	 * Provides options that control how a System.Uri is created and behaves.
+	 */
+	typealias UriCreationOptions = System_UriCreationOptions
+	/**
+	 * Encapsulates a method that has no parameters and does not return a value.
+	 */
+	typealias Action = System_Action
+	/**
+	 * Represents a multicast delegate; that is, a delegate that can have more than one element in its invocation list.
+	 */
+	typealias MulticastDelegate = System_MulticastDelegate
+	/**
+	 * Represents a delegate, which is a data structure that refers to a static method or to a class instance and an instance method of that class.
+	 */
+	typealias Delegate = System_Delegate
+	/**
+	 * References a method to be called when a corresponding asynchronous operation completes.
+	 * @param ar: The result of the asynchronous operation.
+	 */
+	typealias AsyncCallback = System_AsyncCallback
+	/**
+	 * Represents the method that will handle the event raised by an exception that is not handled by the application domain.
+	 * @param sender: The source of the unhandled exception event.
+	 * @param e: An UnhandledExceptionEventArgs that contains the event data.
+	 */
+	typealias UnhandledExceptionEventHandler = System_UnhandledExceptionEventHandler
+	/**
+	 * Represents the method that will handle an event that has no event data.
+	 * @param sender: The source of the event.
+	 * @param e: An object that contains no event data.
+	 */
+	typealias EventHandler = System_EventHandler
+	/**
+	 * Represents the method that handles the System.AppDomain.AssemblyLoad event of an System.AppDomain.
+	 * @param sender: The source of the event.
+	 * @param args: An System.AssemblyLoadEventArgs that contains the event data.
+	 */
+	typealias AssemblyLoadEventHandler = System_AssemblyLoadEventHandler
+	/**
+	 * Represents a method that handles the System.AppDomain.TypeResolve, System.AppDomain.ResourceResolve, or System.AppDomain.AssemblyResolve event of an System.AppDomain.
+	 * @param sender: The source of the event.
+	 * @param args: The event data.
+	 * @return The assembly that resolves the type, assembly, or resource; or null if the assembly cannot be resolved.
+	 */
+	typealias ResolveEventHandler = System_ResolveEventHandler
+	public object Globalization {
+		/**
+		 * Defines the types of culture lists that can be retrieved using the System.Globalization.CultureInfo.GetCultures(System.Globalization.CultureTypes) method.
+		 */
+		typealias CultureTypes = System_Globalization_CultureTypes
+		/**
+		 * Determines the styles permitted in numeric string arguments that are passed to the Parse and TryParse methods of the integral and floating-point numeric types.
+		 */
+		typealias NumberStyles = System_Globalization_NumberStyles
+		/**
+		 * Defines the formatting options that customize string parsing for the Overload:System.TimeSpan.ParseExact and Overload:System.TimeSpan.TryParseExact methods.
+		 */
+		typealias TimeSpanStyles = System_Globalization_TimeSpanStyles
+		/**
+		 * Defines the formatting options that customize string parsing for some date and time parsing methods.
+		 */
+		typealias DateTimeStyles = System_Globalization_DateTimeStyles
+		/**
+		 * Specifies whether a calendar is solar-based, lunar-based, or lunisolar-based.
+		 */
+		typealias CalendarAlgorithmType = System_Globalization_CalendarAlgorithmType
+		/**
+		 * Defines different rules for determining the first week of the year.
+		 */
+		typealias CalendarWeekRule = System_Globalization_CalendarWeekRule
+		/**
+		 * Defines the Unicode category of a character.
+		 */
+		typealias UnicodeCategory = System_Globalization_UnicodeCategory
+		/**
+		 *       Defines the string comparison options to use with System.Globalization.CompareInfo.
+		 */
+		typealias CompareOptions = System_Globalization_CompareOptions
+		/**
+		 * Specifies the culture-specific display of digits.
+		 */
+		typealias DigitShapes = System_Globalization_DigitShapes
+		/**
+		 * Provides information about a specific culture (called a locale for unmanaged code development). The information includes the names for the culture, the writing system, the calendar used, the sort order of strings, and formatting for dates and numbers.
+		 */
+		typealias CultureInfo = System_Globalization_CultureInfo
+		/**
+		 * Implements a set of methods for culture-sensitive string comparisons.
+		 */
+		typealias CompareInfo = System_Globalization_CompareInfo
+		/**
+		 * Represents time in divisions, such as weeks, months, and years.
+		 */
+		typealias Calendar = System_Globalization_Calendar
+		/**
+		 * Represents the result of mapping a string to its sort key.
+		 */
+		typealias SortKey = System_Globalization_SortKey
+		/**
+		 * Provides information about the version of Unicode used to compare and order strings.
+		 */
+		typealias SortVersion = System_Globalization_SortVersion
+		/**
+		 * Defines text properties and behaviors, such as casing, that are specific to a writing system.
+		 */
+		typealias TextInfo = System_Globalization_TextInfo
+		/**
+		 * Provides culture-specific information for formatting and parsing numeric values.
+		 */
+		typealias NumberFormatInfo = System_Globalization_NumberFormatInfo
+		/**
+		 * Provides culture-specific information about the format of date and time values.
+		 */
+		typealias DateTimeFormatInfo = System_Globalization_DateTimeFormatInfo
+		
+	}
+	public object Runtime {
+		public object Serialization {
+			/**
+			 * Defines a set of flags that specifies the source or destination context for the stream during serialization.
+			 */
+			typealias StreamingContextStates = System_Runtime_Serialization_StreamingContextStates
+			/**
+			 * Indicates that a class is to be notified when deserialization of the entire object graph has been completed. This interface is not called when you deserialize with System.Xml.Serialization.XmlSerializer.
+			 */
+			typealias IDeserializationCallback = System_Runtime_Serialization_IDeserializationCallback
+			/**
+			 * Indicates that a class is to be notified when deserialization of the entire object graph has been completed. This interface is not called when you deserialize with System.Xml.Serialization.XmlSerializer.
+			 */
+			typealias IDeserializationCallback_DNInterface = System_Runtime_Serialization_IDeserializationCallback_DNInterface
+			/**
+			 * Allows an object to control its own serialization and deserialization through binary and XML serialization.
+			 */
+			typealias ISerializable = System_Runtime_Serialization_ISerializable
+			/**
+			 * Allows an object to control its own serialization and deserialization through binary and XML serialization.
+			 */
+			typealias ISerializable_DNInterface = System_Runtime_Serialization_ISerializable_DNInterface
+			/**
+			 * Stores all the data needed to serialize or deserialize an object. This class cannot be inherited.
+			 */
+			typealias SerializationInfo = System_Runtime_Serialization_SerializationInfo
+			/**
+			 * Provides a formatter-friendly mechanism for parsing the data in System.Runtime.Serialization.SerializationInfo. This class cannot be inherited.
+			 */
+			typealias SerializationInfoEnumerator = System_Runtime_Serialization_SerializationInfoEnumerator
+			/**
+			 * Holds the value, System.Type, and name of a serialized object.
+			 */
+			typealias SerializationEntry = System_Runtime_Serialization_SerializationEntry
+			/**
+			 * Provides the connection between an instance of System.Runtime.Serialization.SerializationInfo and the formatter-provided class best suited to parse the data inside the System.Runtime.Serialization.SerializationInfo.
+			 */
+			typealias IFormatterConverter = System_Runtime_Serialization_IFormatterConverter
+			/**
+			 * Provides the connection between an instance of System.Runtime.Serialization.SerializationInfo and the formatter-provided class best suited to parse the data inside the System.Runtime.Serialization.SerializationInfo.
+			 */
+			typealias IFormatterConverter_DNInterface = System_Runtime_Serialization_IFormatterConverter_DNInterface
+			/**
+			 * Describes the source and destination of a given serialized stream, and provides an additional caller-defined context.
+			 */
+			typealias StreamingContext = System_Runtime_Serialization_StreamingContext
+			/**
+			 * Indicates that the current interface implementer is a reference to another object.
+			 */
+			typealias IObjectReference = System_Runtime_Serialization_IObjectReference
+			/**
+			 * Indicates that the current interface implementer is a reference to another object.
+			 */
+			typealias IObjectReference_DNInterface = System_Runtime_Serialization_IObjectReference_DNInterface
+			
+		}
+		public object InteropServices {
+			/**
+			 * Controls the layout of an object when exported to unmanaged code.
+			 */
+			typealias LayoutKind = System_Runtime_InteropServices_LayoutKind
+			/**
+			 * Dictates which character set marshaled strings should use.
+			 */
+			typealias CharSet = System_Runtime_InteropServices_CharSet
+			/**
+			 * Indicates whether the System.Runtime.InteropServices.Marshal.GetComInterfaceForObject(System.Object,System.Type,System.Runtime.InteropServices.CustomQueryInterfaceMode) method's IUnknown::QueryInterface calls can use the System.Runtime.InteropServices.ICustomQueryInterface interface.
+			 */
+			typealias CustomQueryInterfaceMode = System_Runtime_InteropServices_CustomQueryInterfaceMode
+			/**
+			 * Represents the types of handles the System.Runtime.InteropServices.GCHandle type can allocate.
+			 */
+			typealias GCHandleType = System_Runtime_InteropServices_GCHandleType
+			/**
+			 * Represents a wrapper class for operating system handles. This class must be inherited.
+			 */
+			typealias SafeHandle = System_Runtime_InteropServices_SafeHandle
+			/**
+			 * Lets you control the physical layout of the data fields of a class or structure in memory.
+			 */
+			typealias StructLayoutAttribute = System_Runtime_InteropServices_StructLayoutAttribute
+			/**
+			 * Provides a collection of methods for allocating unmanaged memory, copying unmanaged memory blocks, and converting managed to unmanaged types, as well as other miscellaneous methods used when interacting with unmanaged code.
+			 */
+			typealias Marshal = System_Runtime_InteropServices_Marshal
+			/**
+			 * Provides a way to access a managed object from unmanaged memory.
+			 */
+			typealias GCHandle = System_Runtime_InteropServices_GCHandle
+			
+		}
+		public object ConstrainedExecution {
+			/**
+			 * Ensures that all finalization code in derived classes is marked as critical.
+			 */
+			typealias CriticalFinalizerObject = System_Runtime_ConstrainedExecution_CriticalFinalizerObject
+			
+		}
+		public object CompilerServices {
+			/**
+			 * Provides an object that waits for the completion of an asynchronous task.
+			 */
+			typealias TaskAwaiter = System_Runtime_CompilerServices_TaskAwaiter
+			/**
+			 * Represents an awaiter that schedules continuations when an await operation completes.
+			 */
+			typealias ICriticalNotifyCompletion = System_Runtime_CompilerServices_ICriticalNotifyCompletion
+			/**
+			 * Represents an awaiter that schedules continuations when an await operation completes.
+			 */
+			typealias ICriticalNotifyCompletion_DNInterface = System_Runtime_CompilerServices_ICriticalNotifyCompletion_DNInterface
+			/**
+			 * Represents an operation that schedules continuations when it completes.
+			 */
+			typealias INotifyCompletion = System_Runtime_CompilerServices_INotifyCompletion
+			/**
+			 * Represents an operation that schedules continuations when it completes.
+			 */
+			typealias INotifyCompletion_DNInterface = System_Runtime_CompilerServices_INotifyCompletion_DNInterface
+			/**
+			 * Provides an awaitable object that enables configured awaits on a task.
+			 */
+			typealias ConfiguredTaskAwaitable = System_Runtime_CompilerServices_ConfiguredTaskAwaitable
+			/**
+			 * Provides an awaiter for an awaitable (System.Runtime.CompilerServices.ConfiguredTaskAwaitable) object.
+			 */
+			typealias ConfiguredTaskAwaitable_ConfiguredTaskAwaiter = System_Runtime_CompilerServices_ConfiguredTaskAwaitable_ConfiguredTaskAwaiter
+			/**
+			 * Provides the context for waiting when asynchronously switching into a target environment.
+			 */
+			typealias YieldAwaitable = System_Runtime_CompilerServices_YieldAwaitable
+			/**
+			 * Provides an awaiter for switching into a target environment.
+			 */
+			typealias YieldAwaitable_YieldAwaiter = System_Runtime_CompilerServices_YieldAwaitable_YieldAwaiter
+			/**
+			 * Provides an awaiter for a System.Threading.Tasks.ValueTask.
+			 */
+			typealias ValueTaskAwaiter = System_Runtime_CompilerServices_ValueTaskAwaiter
+			/**
+			 * Provides an awaitable type that enables configured awaits on a System.Threading.Tasks.ValueTask.
+			 */
+			typealias ConfiguredValueTaskAwaitable = System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable
+			/**
+			 * Provides an awaiter for a System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.
+			 */
+			typealias ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter = System_Runtime_CompilerServices_ConfiguredValueTaskAwaitable_ConfiguredValueTaskAwaiter
+			/**
+			 * Defines a general-purpose Tuple implementation that allows access to Tuple instance members without knowing the underlying Tuple type.
+			 */
+			typealias ITuple = System_Runtime_CompilerServices_ITuple
+			/**
+			 * Defines a general-purpose Tuple implementation that allows access to Tuple instance members without knowing the underlying Tuple type.
+			 */
+			typealias ITuple_DNInterface = System_Runtime_CompilerServices_ITuple_DNInterface
+			
+		}
+		public object Remoting {
+			/**
+			 * Wraps marshal-by-value object references, allowing them to be returned through an indirection.
+			 */
+			typealias ObjectHandle = System_Runtime_Remoting_ObjectHandle
+			
+		}
+		
+	}
+	public object Reflection {
+		/**
+		 * Identifies the processor and bits-per-word of the platform targeted by an executable.
+		 */
+		typealias ProcessorArchitecture = System_Reflection_ProcessorArchitecture
+		/**
+		 * Provides information about the type of code contained in an assembly.
+		 */
+		typealias AssemblyContentType = System_Reflection_AssemblyContentType
+		/**
+		 * Provides information about an System.Reflection.Assembly reference.
+		 */
+		typealias AssemblyNameFlags = System_Reflection_AssemblyNameFlags
+		/**
+		 * Defines the attributes that can be associated with a parameter. These are defined in CorHdr.h.
+		 */
+		typealias ParameterAttributes = System_Reflection_ParameterAttributes
+		/**
+		 * Identifies the nature of the code in an executable file.
+		 */
+		typealias PortableExecutableKinds = System_Reflection_PortableExecutableKinds
+		/**
+		 * Identifies the platform targeted by an executable.
+		 */
+		typealias ImageFileMachine = System_Reflection_ImageFileMachine
+		/**
+		 * Marks each type of member that is defined as a derived class of System.Reflection.MemberInfo.
+		 */
+		typealias MemberTypes = System_Reflection_MemberTypes
+		/**
+		 * Specifies flags that control binding and the way in which the search for members and types is conducted by reflection.
+		 */
+		typealias BindingFlags = System_Reflection_BindingFlags
+		/**
+		 * Specifies flags that describe the attributes of a field.
+		 */
+		typealias FieldAttributes = System_Reflection_FieldAttributes
+		/**
+		 * Defines the attributes that can be associated with a property. These attribute values are defined in corhdr.h.
+		 */
+		typealias PropertyAttributes = System_Reflection_PropertyAttributes
+		/**
+		 * Defines the valid calling conventions for a method.
+		 */
+		typealias CallingConventions = System_Reflection_CallingConventions
+		/**
+		 * Specifies flags for method attributes. These flags are defined in the corhdr.h file.
+		 */
+		typealias MethodAttributes = System_Reflection_MethodAttributes
+		/**
+		 * Specifies flags for the attributes of a method implementation.
+		 */
+		typealias MethodImplAttributes = System_Reflection_MethodImplAttributes
+		/**
+		 * Identifies kinds of exception-handling clauses.
+		 */
+		typealias ExceptionHandlingClauseOptions = System_Reflection_ExceptionHandlingClauseOptions
+		/**
+		 * Specifies the attributes of an event.
+		 */
+		typealias EventAttributes = System_Reflection_EventAttributes
+		/**
+		 * Specifies the resource location.
+		 */
+		typealias ResourceLocation = System_Reflection_ResourceLocation
+		/**
+		 * Describes the constraints on a generic type parameter of a generic type or method.
+		 */
+		typealias GenericParameterAttributes = System_Reflection_GenericParameterAttributes
+		/**
+		 * Specifies type attributes.
+		 */
+		typealias TypeAttributes = System_Reflection_TypeAttributes
+		/**
+		 * Obtains information about the attributes of a member and provides access to member metadata.
+		 */
+		typealias MemberInfo = System_Reflection_MemberInfo
+		/**
+		 * Provides custom attributes for reflection objects that support them.
+		 */
+		typealias ICustomAttributeProvider = System_Reflection_ICustomAttributeProvider
+		/**
+		 * Provides custom attributes for reflection objects that support them.
+		 */
+		typealias ICustomAttributeProvider_DNInterface = System_Reflection_ICustomAttributeProvider_DNInterface
+		/**
+		 * Represents an assembly, which is a reusable, versionable, and self-describing building block of a common language runtime application.
+		 */
+		typealias Assembly = System_Reflection_Assembly
+		/**
+		 * Describes an assembly's unique identity in full.
+		 */
+		typealias AssemblyName = System_Reflection_AssemblyName
+		/**
+		 * Encapsulates access to a public or private key pair used to sign strong name assemblies.
+		 */
+		typealias StrongNameKeyPair = System_Reflection_StrongNameKeyPair
+		/**
+		 * Provides information about methods and constructors.
+		 */
+		typealias MethodBase = System_Reflection_MethodBase
+		/**
+		 * Discovers the attributes of a parameter and provides access to parameter metadata.
+		 */
+		typealias ParameterInfo = System_Reflection_ParameterInfo
+		/**
+		 * Provides access to custom attribute data for assemblies, modules, types, members and parameters that are loaded into the reflection-only context.
+		 */
+		typealias CustomAttributeData = System_Reflection_CustomAttributeData
+		/**
+		 * Performs reflection on a module.
+		 */
+		typealias Module = System_Reflection_Module
+		/**
+		 * Discovers the attributes of a method and provides access to method metadata.
+		 */
+		typealias MethodInfo = System_Reflection_MethodInfo
+		/**
+		 * Selects a member from a list of candidates, and performs type conversion from actual argument type to formal argument type.
+		 */
+		typealias Binder = System_Reflection_Binder
+		/**
+		 * Discovers the attributes of a field and provides access to field metadata.
+		 */
+		typealias FieldInfo = System_Reflection_FieldInfo
+		/**
+		 * Attaches a modifier to parameters so that binding can work with parameter signatures in which the types have been modified.
+		 */
+		typealias ParameterModifier = System_Reflection_ParameterModifier
+		/**
+		 * Discovers the attributes of a property and provides access to property metadata.
+		 */
+		typealias PropertyInfo = System_Reflection_PropertyInfo
+		/**
+		 * Discovers the attributes of a class constructor and provides access to constructor metadata.
+		 */
+		typealias ConstructorInfo = System_Reflection_ConstructorInfo
+		/**
+		 * Represents an argument of a custom attribute in the reflection-only context, or an element of an array argument.
+		 */
+		typealias CustomAttributeTypedArgument = System_Reflection_CustomAttributeTypedArgument
+		/**
+		 * Represents a named argument of a custom attribute in the reflection-only context.
+		 */
+		typealias CustomAttributeNamedArgument = System_Reflection_CustomAttributeNamedArgument
+		/**
+		 * Provides access to the metadata and MSIL for the body of a method.
+		 */
+		typealias MethodBody = System_Reflection_MethodBody
+		/**
+		 * Discovers the attributes of a local variable and provides access to local variable metadata.
+		 */
+		typealias LocalVariableInfo = System_Reflection_LocalVariableInfo
+		/**
+		 * Represents a clause in a structured exception-handling block.
+		 */
+		typealias ExceptionHandlingClause = System_Reflection_ExceptionHandlingClause
+		/**
+		 * Represents type declarations for class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.
+		 */
+		typealias TypeInfo = System_Reflection_TypeInfo
+		/**
+		 * Interoperates with the IDispatch interface.
+		 */
+		typealias IReflect = System_Reflection_IReflect
+		/**
+		 * Interoperates with the IDispatch interface.
+		 */
+		typealias IReflect_DNInterface = System_Reflection_IReflect_DNInterface
+		/**
+		 * Represents a type that you can reflect over.
+		 */
+		typealias IReflectableType = System_Reflection_IReflectableType
+		/**
+		 * Represents a type that you can reflect over.
+		 */
+		typealias IReflectableType_DNInterface = System_Reflection_IReflectableType_DNInterface
+		/**
+		 * Discovers the attributes of an event and provides access to event metadata.
+		 */
+		typealias EventInfo = System_Reflection_EventInfo
+		/**
+		 * Provides access to manifest resources, which are XML files that describe application dependencies.
+		 */
+		typealias ManifestResourceInfo = System_Reflection_ManifestResourceInfo
+		/**
+		 * Retrieves the mapping of an interface into the actual methods on a class that implements that interface.
+		 */
+		typealias InterfaceMapping = System_Reflection_InterfaceMapping
+		/**
+		 * Filters the classes represented in an array of System.Type objects.
+		 * @param m: The Type object to which the filter is applied.
+		 * @param filterCriteria: An arbitrary object used to filter the list.
+		 * @return true to include the System.Type in the filtered list; otherwise false.
+		 */
+		typealias TypeFilter = System_Reflection_TypeFilter
+		/**
+		 * Represents the method that will handle the System.Reflection.Assembly.ModuleResolve event of an System.Reflection.Assembly.
+		 * @param sender: The assembly that was the source of the event.
+		 * @param e: The arguments supplied by the object describing the event.
+		 * @return The module that satisfies the request.
+		 */
+		typealias ModuleResolveEventHandler = System_Reflection_ModuleResolveEventHandler
+		/**
+		 * Represents a delegate that is used to filter a list of members represented in an array of System.Reflection.MemberInfo objects.
+		 * @param m: The System.Reflection.MemberInfo object to which the filter is applied.
+		 * @param filterCriteria: An arbitrary object used to filter the list.
+		 * @return true to include the member in the filtered list; otherwise false.
+		 */
+		typealias MemberFilter = System_Reflection_MemberFilter
+		
+	}
+	public object Configuration {
+		public object Assemblies {
+			/**
+			 * Specifies all the hash algorithms used for hashing files and for generating the strong name.
+			 */
+			typealias AssemblyHashAlgorithm = System_Configuration_Assemblies_AssemblyHashAlgorithm
+			/**
+			 * Defines the different types of assembly version compatibility.
+			 */
+			typealias AssemblyVersionCompatibility = System_Configuration_Assemblies_AssemblyVersionCompatibility
+			
+		}
+		
+	}
+	public object Threading {
+		/**
+		 * Specifies the scheduling priority of a System.Threading.Thread.
+		 */
+		typealias ThreadPriority = System_Threading_ThreadPriority
+		/**
+		 * Specifies the execution states of a System.Threading.Thread.
+		 */
+		typealias ThreadState = System_Threading_ThreadState
+		/**
+		 * Specifies the apartment state of a System.Threading.Thread.
+		 */
+		typealias ApartmentState = System_Threading_ApartmentState
+		/**
+		 * Propagates notification that operations should be canceled.
+		 */
+		typealias CancellationToken = System_Threading_CancellationToken
+		/**
+		 * Encapsulates operating system-specific objects that wait for exclusive access to shared resources.
+		 */
+		typealias WaitHandle = System_Threading_WaitHandle
+		/**
+		 * Represents a callback delegate that has been registered with a System.Threading.CancellationToken.
+		 */
+		typealias CancellationTokenRegistration = System_Threading_CancellationTokenRegistration
+		/**
+		 * Represents a timer that can have its due time and period changed.
+		 */
+		typealias ITimer = System_Threading_ITimer
+		/**
+		 * Represents a timer that can have its due time and period changed.
+		 */
+		typealias ITimer_DNInterface = System_Threading_ITimer_DNInterface
+		/**
+		 * Creates and controls a thread, sets its priority, and gets its status.
+		 */
+		typealias Thread = System_Threading_Thread
+		/**
+		 * Manages the execution context for the current thread. This class cannot be inherited.
+		 */
+		typealias ExecutionContext = System_Threading_ExecutionContext
+		/**
+		 * Provides the functionality to restore the migration, or flow, of the execution context between threads.
+		 */
+		typealias AsyncFlowControl = System_Threading_AsyncFlowControl
+		/**
+		 * Provides methods for setting and capturing the compressed stack on the current thread. This class cannot be inherited.
+		 */
+		typealias CompressedStack = System_Threading_CompressedStack
+		/**
+		 * Provides a mechanism for executing a method on a thread pool thread at specified intervals. This class cannot be inherited.
+		 */
+		typealias Timer = System_Threading_Timer
+		/**
+		 * Signals to a System.Threading.CancellationToken that it should be canceled.
+		 */
+		typealias CancellationTokenSource = System_Threading_CancellationTokenSource
+		/**
+		 * Represents the method that handles calls from a System.Threading.Timer.
+		 * @param state: An object containing application-specific information relevant to the method invoked by this delegate, or null.
+		 */
+		typealias TimerCallback = System_Threading_TimerCallback
+		/**
+		 * Represents a method to be called within a new context.
+		 * @param state: An object containing information to be used by the callback method each time it executes.
+		 */
+		typealias ContextCallback = System_Threading_ContextCallback
+		/**
+		 * Represents the method that executes on a System.Threading.Thread.
+		 */
+		typealias ThreadStart = System_Threading_ThreadStart
+		/**
+		 * Represents the method that executes on a System.Threading.Thread.
+		 * @param obj: An object that contains data for the thread procedure.
+		 */
+		typealias ParameterizedThreadStart = System_Threading_ParameterizedThreadStart
+		public object Tasks {
+			/**
+			 * Represents the current stage in the lifecycle of a System.Threading.Tasks.Task.
+			 */
+			typealias TaskStatus = System_Threading_Tasks_TaskStatus
+			/**
+			 * Specifies flags that control optional behavior for the creation and execution of tasks.
+			 */
+			typealias TaskCreationOptions = System_Threading_Tasks_TaskCreationOptions
+			/**
+			 * Specifies the behavior for a task that is created by using the System.Threading.Tasks.Task.ContinueWith(System.Action{System.Threading.Tasks.Task},System.Threading.CancellationToken,System.Threading.Tasks.TaskContinuationOptions,System.Threading.Tasks.TaskScheduler) or System.Threading.Tasks.Task`1.ContinueWith(System.Action{System.Threading.Tasks.Task{`0}},System.Threading.Tasks.TaskContinuationOptions) method.
+			 */
+			typealias TaskContinuationOptions = System_Threading_Tasks_TaskContinuationOptions
+			/**
+			 * Options to control behavior when awaiting.
+			 */
+			typealias ConfigureAwaitOptions = System_Threading_Tasks_ConfigureAwaitOptions
+			/**
+			 * Provides an awaitable result of an asynchronous operation.
+			 */
+			typealias ValueTask = System_Threading_Tasks_ValueTask
+			/**
+			 * Represents an asynchronous operation.
+			 */
+			typealias Task = System_Threading_Tasks_Task
+			/**
+			 * Represents an object that handles the low-level work of queuing tasks onto threads.
+			 */
+			typealias TaskScheduler = System_Threading_Tasks_TaskScheduler
+			/**
+			 * Provides support for creating and scheduling System.Threading.Tasks.Task objects.
+			 */
+			typealias TaskFactory = System_Threading_Tasks_TaskFactory
+			public object Sources {
+				/**
+				 * Indicates the status of an System.Threading.Tasks.Sources.IValueTaskSource or System.Threading.Tasks.Sources.IValueTaskSource`1.
+				 */
+				typealias ValueTaskSourceStatus = System_Threading_Tasks_Sources_ValueTaskSourceStatus
+				/**
+				 * Provides flags passed from System.Threading.Tasks.ValueTask and System.Threading.Tasks.ValueTask`1 to the OnCompleted method to control the behavior of a continuation.
+				 */
+				typealias ValueTaskSourceOnCompletedFlags = System_Threading_Tasks_Sources_ValueTaskSourceOnCompletedFlags
+				/**
+				 * Represents an object that can be wrapped by a System.Threading.Tasks.ValueTask.
+				 */
+				typealias IValueTaskSource = System_Threading_Tasks_Sources_IValueTaskSource
+				/**
+				 * Represents an object that can be wrapped by a System.Threading.Tasks.ValueTask.
+				 */
+				typealias IValueTaskSource_DNInterface = System_Threading_Tasks_Sources_IValueTaskSource_DNInterface
+				
+			}
+			
+		}
+		
+	}
+	public object IO {
+		/**
+		 * Specifies the position in a stream to use for seeking.
+		 */
+		typealias SeekOrigin = System_IO_SeekOrigin
+		/**
+		 * Defines constants for read, write, or read/write access to a file.
+		 */
+		typealias FileAccess = System_IO_FileAccess
+		/**
+		 * Specifies how the operating system should open a file.
+		 */
+		typealias FileMode = System_IO_FileMode
+		/**
+		 * Contains constants for controlling the kind of access other operations can have to the same file.
+		 */
+		typealias FileShare = System_IO_FileShare
+		/**
+		 * Represents advanced options for creating a System.IO.FileStream object.
+		 */
+		typealias FileOptions = System_IO_FileOptions
+		/**
+		 * Provides attributes for files and directories.
+		 */
+		typealias FileAttributes = System_IO_FileAttributes
+		/**
+		 * Represents the Unix filesystem permissions.This enumeration supports a bitwise combination of its member values.
+		 */
+		typealias UnixFileMode = System_IO_UnixFileMode
+		/**
+		 * Specifies whether to search the current directory, or the current directory and all subdirectories.
+		 */
+		typealias SearchOption = System_IO_SearchOption
+		/**
+		 * Specifies the type of wildcard matching to use.
+		 */
+		typealias MatchType = System_IO_MatchType
+		/**
+		 * Specifies the type of character casing to match.
+		 */
+		typealias MatchCasing = System_IO_MatchCasing
+		/**
+		 * Provides a System.IO.Stream for a file, supporting both synchronous and asynchronous read and write operations.
+		 */
+		typealias FileStream = System_IO_FileStream
+		/**
+		 * Provides a generic view of a sequence of bytes. This is an abstract class.
+		 */
+		typealias Stream = System_IO_Stream
+		/**
+		 * Defines a variety of configuration options for System.IO.FileStream.
+		 */
+		typealias FileStreamOptions = System_IO_FileStreamOptions
+		/**
+		 * Performs operations on System.String instances that contain file or directory path information. These operations are performed in a cross-platform manner.
+		 */
+		typealias Path = System_IO_Path
+		/**
+		 * Provides static methods for the creation, copying, deletion, moving, and opening of a single file, and aids in the creation of System.IO.FileStream objects.
+		 */
+		typealias File = System_IO_File
+		/**
+		 * Implements a System.IO.TextReader that reads characters from a byte stream in a particular encoding.
+		 */
+		typealias StreamReader = System_IO_StreamReader
+		/**
+		 * Represents a reader that can read a sequential series of characters.
+		 */
+		typealias TextReader = System_IO_TextReader
+		/**
+		 * Implements a System.IO.TextWriter for writing characters to a stream in a particular encoding.
+		 */
+		typealias StreamWriter = System_IO_StreamWriter
+		/**
+		 * Represents a writer that can write a sequential series of characters. This class is abstract.
+		 */
+		typealias TextWriter = System_IO_TextWriter
+		/**
+		 * Provides the base class for both System.IO.FileInfo and System.IO.DirectoryInfo objects.
+		 */
+		typealias FileSystemInfo = System_IO_FileSystemInfo
+		/**
+		 * Provides properties and instance methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of System.IO.FileStream objects. This class cannot be inherited.
+		 */
+		typealias FileInfo = System_IO_FileInfo
+		/**
+		 * Exposes instance methods for creating, moving, and enumerating through directories and subdirectories. This class cannot be inherited.
+		 */
+		typealias DirectoryInfo = System_IO_DirectoryInfo
+		/**
+		 * Provides file and directory enumeration options.
+		 */
+		typealias EnumerationOptions = System_IO_EnumerationOptions
+		/**
+		 * Exposes static methods for creating, moving, and enumerating through directories and subdirectories. This class cannot be inherited.
+		 */
+		typealias Directory = System_IO_Directory
+		/**
+		 * Creates a stream whose backing store is memory.
+		 */
+		typealias MemoryStream = System_IO_MemoryStream
+		
+	}
+	public object Security {
+		/**
+		 * Identifies the set of security rules the common language runtime should enforce for an assembly.
+		 */
+		typealias SecurityRuleSet = System_Security_SecurityRuleSet
+		/**
+		 * Represents text that should be kept confidential, such as by deleting it from computer memory when no longer needed. This class cannot be inherited.
+		 */
+		typealias SecureString = System_Security_SecureString
+		/**
+		 * Represents a collection that can contain many different types of permissions.
+		 */
+		typealias PermissionSet = System_Security_PermissionSet
+		/**
+		 * Defines the methods that convert permission object state to and from XML element representation.
+		 */
+		typealias ISecurityEncodable = System_Security_ISecurityEncodable
+		/**
+		 * Defines the methods that convert permission object state to and from XML element representation.
+		 */
+		typealias ISecurityEncodable_DNInterface = System_Security_ISecurityEncodable_DNInterface
+		/**
+		 * Represents the XML object model for encoding security objects. This class cannot be inherited.
+		 */
+		typealias SecurityElement = System_Security_SecurityElement
+		/**
+		 * Manages the stack walk that determines whether all callers in the call stack have the required permissions to access a protected resource.
+		 */
+		typealias IStackWalk = System_Security_IStackWalk
+		/**
+		 * Manages the stack walk that determines whether all callers in the call stack have the required permissions to access a protected resource.
+		 */
+		typealias IStackWalk_DNInterface = System_Security_IStackWalk_DNInterface
+		/**
+		 * Defines methods implemented by permission types.
+		 */
+		typealias IPermission = System_Security_IPermission
+		/**
+		 * Defines methods implemented by permission types.
+		 */
+		typealias IPermission_DNInterface = System_Security_IPermission_DNInterface
+		public object Permissions {
+			/**
+			 * Specifies whether a permission should have all or no access to resources at creation.
+			 */
+			typealias PermissionState = System_Security_Permissions_PermissionState
+			
+		}
+		public object Principal {
+			/**
+			 * Specifies how principal and identity objects should be created for an application domain. The default is UnauthenticatedPrincipal.
+			 */
+			typealias PrincipalPolicy = System_Security_Principal_PrincipalPolicy
+			/**
+			 * Defines the basic functionality of a principal object.
+			 */
+			typealias IPrincipal = System_Security_Principal_IPrincipal
+			/**
+			 * Defines the basic functionality of a principal object.
+			 */
+			typealias IPrincipal_DNInterface = System_Security_Principal_IPrincipal_DNInterface
+			/**
+			 * Defines the basic functionality of an identity object.
+			 */
+			typealias IIdentity = System_Security_Principal_IIdentity
+			/**
+			 * Defines the basic functionality of an identity object.
+			 */
+			typealias IIdentity_DNInterface = System_Security_Principal_IIdentity_DNInterface
+			
+		}
+		public object Cryptography {
+			/**
+			 * Specifies encryption algorithms to be used with Password-Based Encryption (PBE).
+			 */
+			typealias PbeEncryptionAlgorithm = System_Security_Cryptography_PbeEncryptionAlgorithm
+			/**
+			 * Identifies Windows cryptographic object identifier (OID) groups.
+			 */
+			typealias OidGroup = System_Security_Cryptography_OidGroup
+			/**
+			 * Specifies the padding mode to use with RSA encryption or decryption operations.
+			 */
+			typealias RSAEncryptionPaddingMode = System_Security_Cryptography_RSAEncryptionPaddingMode
+			/**
+			 * Specifies the padding mode to use with RSA signature creation or verification operations.
+			 */
+			typealias RSASignaturePaddingMode = System_Security_Cryptography_RSASignaturePaddingMode
+			/**
+			 * Specifies the data format for signatures with the DSA family of algorithms.
+			 */
+			typealias DSASignatureFormat = System_Security_Cryptography_DSASignatureFormat
+			/**
+			 * Indicates how to interpret the data contained in an System.Security.Cryptography.ECCurve object.
+			 */
+			typealias ECCurve_ECCurveType = System_Security_Cryptography_ECCurve_ECCurveType
+			/**
+			 * Specifies the mode of a cryptographic stream.
+			 */
+			typealias CryptoStreamMode = System_Security_Cryptography_CryptoStreamMode
+			/**
+			 * Specifies the block cipher mode to use for encryption.
+			 */
+			typealias CipherMode = System_Security_Cryptography_CipherMode
+			/**
+			 * Specifies the type of padding to apply when the message data block is shorter than the full number of bytes needed for a cryptographic operation.
+			 */
+			typealias PaddingMode = System_Security_Cryptography_PaddingMode
+			/**
+			 * Represents a specific algorithm within the SHL-DSA family.
+			 */
+			typealias SlhDsaAlgorithm = System_Security_Cryptography_SlhDsaAlgorithm
+			/**
+			 * Represents parameters to be used for Password-Based Encryption (PBE).
+			 */
+			typealias PbeParameters = System_Security_Cryptography_PbeParameters
+			/**
+			 * Specifies the name of a cryptographic hash algorithm.
+			 */
+			typealias HashAlgorithmName = System_Security_Cryptography_HashAlgorithmName
+			/**
+			 * Represents Abstract Syntax Notation One (ASN.1)-encoded data.
+			 */
+			typealias AsnEncodedData = System_Security_Cryptography_AsnEncodedData
+			/**
+			 * Represents a cryptographic object identifier. This class cannot be inherited.
+			 */
+			typealias Oid = System_Security_Cryptography_Oid
+			/**
+			 * Represents the abstract base class from which all implementations of asymmetric algorithms must inherit.
+			 */
+			typealias AsymmetricAlgorithm = System_Security_Cryptography_AsymmetricAlgorithm
+			/**
+			 * Determines the set of valid key sizes for the symmetric cryptographic algorithms.
+			 */
+			typealias KeySizes = System_Security_Cryptography_KeySizes
+			/**
+			 * Represents the base class from which all implementations of the System.Security.Cryptography.RSA algorithm inherit.
+			 */
+			typealias RSA = System_Security_Cryptography_RSA
+			/**
+			 * Represents the standard parameters for the System.Security.Cryptography.RSA algorithm.
+			 */
+			typealias RSAParameters = System_Security_Cryptography_RSAParameters
+			/**
+			 * Specifies the padding mode and parameters to use with RSA encryption or decryption operations.
+			 */
+			typealias RSAEncryptionPadding = System_Security_Cryptography_RSAEncryptionPadding
+			/**
+			 * Specifies the padding mode and parameters to use with RSA signature creation or verification operations.
+			 */
+			typealias RSASignaturePadding = System_Security_Cryptography_RSASignaturePadding
+			/**
+			 * Represents the abstract base class from which all implementations of the Digital Signature Algorithm (System.Security.Cryptography.DSA) must inherit.
+			 */
+			typealias DSA = System_Security_Cryptography_DSA
+			/**
+			 * Contains the typical parameters for the System.Security.Cryptography.DSA algorithm.
+			 */
+			typealias DSAParameters = System_Security_Cryptography_DSAParameters
+			/**
+			 * Provides an abstract base class that encapsulates the Elliptic Curve Digital Signature Algorithm (ECDSA).
+			 */
+			typealias ECDsa = System_Security_Cryptography_ECDsa
+			/**
+			 * Represents the abstract class from which elliptic-curve asymmetric algorithms can inherit.
+			 */
+			typealias ECAlgorithm = System_Security_Cryptography_ECAlgorithm
+			/**
+			 * Represents the standard parameters for the elliptic curve cryptography (ECC) algorithm.
+			 */
+			typealias ECParameters = System_Security_Cryptography_ECParameters
+			/**
+			 * Represents a (X,Y) coordinate pair for elliptic curve cryptography (ECC) structures.
+			 */
+			typealias ECPoint = System_Security_Cryptography_ECPoint
+			/**
+			 * Represents an elliptic curve.
+			 */
+			typealias ECCurve = System_Security_Cryptography_ECCurve
+			/**
+			 * Provides an abstract base class that Elliptic Curve Diffie-Hellman (ECDH) algorithm implementations can derive from. This class provides the basic set of operations that all ECDH implementations must support.
+			 */
+			typealias ECDiffieHellman = System_Security_Cryptography_ECDiffieHellman
+			/**
+			 * Provides an abstract base class from which all System.Security.Cryptography.ECDiffieHellmanCngPublicKey implementations must inherit.
+			 */
+			typealias ECDiffieHellmanPublicKey = System_Security_Cryptography_ECDiffieHellmanPublicKey
+			/**
+			 * Represents an ML-KEM key.
+			 */
+			typealias MLKem = System_Security_Cryptography_MLKem
+			/**
+			 * Represents a specific algorithm within the ML-KEM family.
+			 */
+			typealias MLKemAlgorithm = System_Security_Cryptography_MLKemAlgorithm
+			/**
+			 * Represents an ML-DSA key.
+			 */
+			typealias MLDsa = System_Security_Cryptography_MLDsa
+			/**
+			 * Represents a specific algorithm within the ML-DSA family.
+			 */
+			typealias MLDsaAlgorithm = System_Security_Cryptography_MLDsaAlgorithm
+			/**
+			 * Represents an SLH-DSA key.
+			 */
+			typealias SlhDsa = System_Security_Cryptography_SlhDsa
+			/**
+			 * Represents a Composite ML-DSA key.
+			 */
+			typealias CompositeMLDsa = System_Security_Cryptography_CompositeMLDsa
+			/**
+			 * Represents a composite ML-DSA algorithm identifier, combining ML-DSA with a traditional algorithm.
+			 */
+			typealias CompositeMLDsaAlgorithm = System_Security_Cryptography_CompositeMLDsaAlgorithm
+			/**
+			 * Defines a stream that links data streams to cryptographic transformations.
+			 */
+			typealias CryptoStream = System_Security_Cryptography_CryptoStream
+			/**
+			 * Defines the basic operations of cryptographic transformations.
+			 */
+			typealias ICryptoTransform = System_Security_Cryptography_ICryptoTransform
+			/**
+			 * Defines the basic operations of cryptographic transformations.
+			 */
+			typealias ICryptoTransform_DNInterface = System_Security_Cryptography_ICryptoTransform_DNInterface
+			/**
+			 * Represents the abstract base class from which all implementations of the Advanced Encryption Standard (AES) must inherit.
+			 */
+			typealias Aes = System_Security_Cryptography_Aes
+			/**
+			 * Represents the abstract base class from which all implementations of symmetric algorithms must inherit.
+			 */
+			typealias SymmetricAlgorithm = System_Security_Cryptography_SymmetricAlgorithm
+			public object X509Certificates {
+				/**
+				 * Specifies the format of an X.509 certificate.
+				 */
+				typealias X509ContentType = System_Security_Cryptography_X509Certificates_X509ContentType
+				/**
+				 * Specifies the export Password Based Enryption (PBE) parameters with PKCS12 / PFX.
+				 */
+				typealias Pkcs12ExportPbeParameters = System_Security_Cryptography_X509Certificates_Pkcs12ExportPbeParameters
+				/**
+				 * Defines where and how to import the private key of an X.509 certificate.
+				 */
+				typealias X509KeyStorageFlags = System_Security_Cryptography_X509Certificates_X509KeyStorageFlags
+				/**
+				 * Specifies characteristics of the X.500 distinguished name.
+				 */
+				typealias X500DistinguishedNameFlags = System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags
+				/**
+				 * Specifies the type of name the X509 certificate contains.
+				 */
+				typealias X509NameType = System_Security_Cryptography_X509Certificates_X509NameType
+				/**
+				 * Specifies the type of value the System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Find(System.Security.Cryptography.X509Certificates.X509FindType,System.Object,System.Boolean) method searches for.
+				 */
+				typealias X509FindType = System_Security_Cryptography_X509Certificates_X509FindType
+				/**
+				 * Defines a collection that stores System.Security.Cryptography.X509Certificates.X509Certificate objects.
+				 */
+				typealias X509CertificateCollection = System_Security_Cryptography_X509Certificates_X509CertificateCollection
+				/**
+				 * Provides methods that help you use X.509 v.3 certificates.
+				 */
+				typealias X509Certificate = System_Security_Cryptography_X509Certificates_X509Certificate
+				/**
+				 * Enumerates the System.Security.Cryptography.X509Certificates.X509Certificate objects in an System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+				 */
+				typealias X509CertificateCollection_X509CertificateEnumerator = System_Security_Cryptography_X509Certificates_X509CertificateCollection_X509CertificateEnumerator
+				/**
+				 * Represents an X.509 certificate.
+				 */
+				typealias X509Certificate2 = System_Security_Cryptography_X509Certificates_X509Certificate2
+				/**
+				 * Represents a collection of System.Security.Cryptography.X509Certificates.X509Extension objects. This class cannot be inherited.
+				 */
+				typealias X509ExtensionCollection = System_Security_Cryptography_X509Certificates_X509ExtensionCollection
+				/**
+				 * Represents an X509 extension.
+				 */
+				typealias X509Extension = System_Security_Cryptography_X509Certificates_X509Extension
+				/**
+				 * Supports a simple iteration over a System.Security.Cryptography.X509Certificates.X509ExtensionCollection. This class cannot be inherited.
+				 */
+				typealias X509ExtensionEnumerator = System_Security_Cryptography_X509Certificates_X509ExtensionEnumerator
+				/**
+				 * Represents the distinguished name of an X509 certificate. This class cannot be inherited.
+				 */
+				typealias X500DistinguishedName = System_Security_Cryptography_X509Certificates_X500DistinguishedName
+				/**
+				 * Represents a Relative Distinguished Name component of an X.500 Distinguished Name.
+				 */
+				typealias X500RelativeDistinguishedName = System_Security_Cryptography_X509Certificates_X500RelativeDistinguishedName
+				/**
+				 * Represents a certificate's public key information. This class cannot be inherited.
+				 */
+				typealias PublicKey = System_Security_Cryptography_X509Certificates_PublicKey
+				/**
+				 * Supports a simple iteration over a System.Security.Cryptography.X509Certificates.X509Certificate2Collection object. This class cannot be inherited.
+				 */
+				typealias X509Certificate2Enumerator = System_Security_Cryptography_X509Certificates_X509Certificate2Enumerator
+				
+			}
+			
+		}
+		
+	}
+	public object Buffers {
+		/**
+		 * Defines the values that can be returned from span-based operations that support processing of input contained in multiple discontiguous buffers.
+		 */
+		typealias OperationStatus = System_Buffers_OperationStatus
+		public object Binary {
+			/**
+			 * Reads bytes as primitives with specific endianness.
+			 */
+			typealias BinaryPrimitives = System_Buffers_Binary_BinaryPrimitives
+			
+		}
+		
+	}
+	public object Text {
+		/**
+		 * Defines the type of normalization to perform.
+		 */
+		typealias NormalizationForm = System_Text_NormalizationForm
+		/**
+		 * Represents a Unicode scalar value ([ U+0000..U+D7FF ], inclusive; or [ U+E000..U+10FFFF ], inclusive).
+		 */
+		typealias Rune = System_Text_Rune
+		/**
+		 * Provides an enumerator for the System.Text.Rune values represented by a string.
+		 */
+		typealias StringRuneEnumerator = System_Text_StringRuneEnumerator
+		/**
+		 * Represents a parsed composite format string.
+		 */
+		typealias CompositeFormat = System_Text_CompositeFormat
+		/**
+		 * Represents a character encoding.
+		 */
+		typealias Encoding = System_Text_Encoding
+		/**
+		 * Provides the base class for an encoding provider, which supplies encodings that are unavailable on a particular platform.
+		 */
+		typealias EncodingProvider = System_Text_EncodingProvider
+		/**
+		 * Provides a failure-handling mechanism, called a fallback, for an input character that cannot be converted to an encoded output byte sequence.
+		 */
+		typealias EncoderFallback = System_Text_EncoderFallback
+		/**
+		 * Provides a buffer that allows a fallback handler to return an alternate string to an encoder when it cannot encode an input character.
+		 */
+		typealias EncoderFallbackBuffer = System_Text_EncoderFallbackBuffer
+		/**
+		 * Provides a failure-handling mechanism, called a fallback, for an encoded input byte sequence that cannot be converted to an output character.
+		 */
+		typealias DecoderFallback = System_Text_DecoderFallback
+		/**
+		 * Provides a buffer that allows a fallback handler to return an alternate string to a decoder when it cannot decode an input byte sequence.
+		 */
+		typealias DecoderFallbackBuffer = System_Text_DecoderFallbackBuffer
+		/**
+		 * Provides basic information about an encoding.
+		 */
+		typealias EncodingInfo = System_Text_EncodingInfo
+		/**
+		 * Converts a sequence of encoded bytes into a set of characters.
+		 */
+		typealias Decoder = System_Text_Decoder
+		/**
+		 * Converts a set of characters into a sequence of bytes.
+		 */
+		typealias Encoder = System_Text_Encoder
+		/**
+		 * Represents a mutable string of characters. This class cannot be inherited.
+		 */
+		typealias StringBuilder = System_Text_StringBuilder
+		/**
+		 * Supports simple iteration over the chunks of a System.Text.StringBuilder instance.
+		 */
+		typealias StringBuilder_ChunkEnumerator = System_Text_StringBuilder_ChunkEnumerator
+		/**
+		 * Provides a handler used by the language compiler to append interpolated strings into System.Text.StringBuilder instances.
+		 */
+		typealias StringBuilder_AppendInterpolatedStringHandler = System_Text_StringBuilder_AppendInterpolatedStringHandler
+		
+	}
+	public object Xml {
+		/**
+		 * Specifies how to handle line breaks.
+		 */
+		typealias NewLineHandling = System_Xml_NewLineHandling
+		/**
+		 * Specifies the amount of input or output checking that System.Xml.XmlReader and System.Xml.XmlWriter objects perform.
+		 */
+		typealias ConformanceLevel = System_Xml_ConformanceLevel
+		/**
+		 * Specifies whether to remove duplicate namespace declarations in the System.Xml.XmlWriter.
+		 */
+		typealias NamespaceHandling = System_Xml_NamespaceHandling
+		/**
+		 * Specifies the method used to serialize the System.Xml.XmlWriter output.
+		 */
+		typealias XmlOutputMethod = System_Xml_XmlOutputMethod
+		/**
+		 * Specifies the state of the System.Xml.XmlWriter.
+		 */
+		typealias WriteState = System_Xml_WriteState
+		/**
+		 * Specifies the current xml:space scope.
+		 */
+		typealias XmlSpace = System_Xml_XmlSpace
+		/**
+		 * Specifies the options for processing DTDs. The System.Xml.DtdProcessing enumeration is used by the System.Xml.XmlReaderSettings class.
+		 */
+		typealias DtdProcessing = System_Xml_DtdProcessing
+		/**
+		 * Specifies the type of validation to perform.
+		 */
+		typealias ValidationType = System_Xml_ValidationType
+		/**
+		 * Defines the namespace scope.
+		 */
+		typealias XmlNamespaceScope = System_Xml_XmlNamespaceScope
+		/**
+		 * Represents the XML type for the string. This allows the string to be read as a particular XML type, for example a CDATA section type.
+		 */
+		typealias XmlTokenizedType = System_Xml_XmlTokenizedType
+		/**
+		 * Describes the document order of a node compared to a second node.
+		 */
+		typealias XmlNodeOrder = System_Xml_XmlNodeOrder
+		/**
+		 * Specifies the type of node.
+		 */
+		typealias XmlNodeType = System_Xml_XmlNodeType
+		/**
+		 * Specifies the type of node change.
+		 */
+		typealias XmlNodeChangedAction = System_Xml_XmlNodeChangedAction
+		/**
+		 * Specifies the state of the reader.
+		 */
+		typealias ReadState = System_Xml_ReadState
+		/**
+		 * Represents an XML qualified name.
+		 */
+		typealias XmlQualifiedName = System_Xml_XmlQualifiedName
+		/**
+		 * Represents a writer that provides a fast, non-cached, forward-only way to generate streams or files that contain XML data.
+		 */
+		typealias XmlWriter = System_Xml_XmlWriter
+		/**
+		 * Specifies a set of features to support on the System.Xml.XmlWriter object created by the Overload:System.Xml.XmlWriter.Create method.
+		 */
+		typealias XmlWriterSettings = System_Xml_XmlWriterSettings
+		/**
+		 * Represents a reader that provides fast, noncached, forward-only access to XML data.
+		 */
+		typealias XmlReader = System_Xml_XmlReader
+		/**
+		 * Specifies a set of features to support on the System.Xml.XmlReader object created by the Overload:System.Xml.XmlReader.Create method.
+		 */
+		typealias XmlReaderSettings = System_Xml_XmlReaderSettings
+		/**
+		 * Table of atomized string objects.
+		 */
+		typealias XmlNameTable = System_Xml_XmlNameTable
+		/**
+		 * Resolves external XML resources named by a Uniform Resource Identifier (URI).
+		 */
+		typealias XmlResolver = System_Xml_XmlResolver
+		/**
+		 * Resolves, adds, and removes namespaces to a collection and provides scope management for these namespaces.
+		 */
+		typealias XmlNamespaceManager = System_Xml_XmlNamespaceManager
+		/**
+		 * Provides read-only access to a set of prefix and namespace mappings.
+		 */
+		typealias IXmlNamespaceResolver = System_Xml_IXmlNamespaceResolver
+		/**
+		 * Provides read-only access to a set of prefix and namespace mappings.
+		 */
+		typealias IXmlNamespaceResolver_DNInterface = System_Xml_IXmlNamespaceResolver_DNInterface
+		/**
+		 * Represents an attribute. Valid and default values for the attribute are defined in a document type definition (DTD) or schema.
+		 */
+		typealias XmlAttribute = System_Xml_XmlAttribute
+		/**
+		 * Represents a single node in the XML document.
+		 */
+		typealias XmlNode = System_Xml_XmlNode
+		/**
+		 * Represents an ordered collection of nodes.
+		 */
+		typealias XmlNodeList = System_Xml_XmlNodeList
+		/**
+		 * Represents a collection of nodes that can be accessed by name or index.
+		 */
+		typealias XmlNamedNodeMap = System_Xml_XmlNamedNodeMap
+		/**
+		 * Represents the document type declaration.
+		 */
+		typealias XmlDocumentType = System_Xml_XmlDocumentType
+		/**
+		 * Gets the node immediately preceding or following this node.
+		 */
+		typealias XmlLinkedNode = System_Xml_XmlLinkedNode
+		/**
+		 * Defines the context for a set of System.Xml.XmlDocument objects.
+		 */
+		typealias XmlImplementation = System_Xml_XmlImplementation
+		/**
+		 * Represents an element.
+		 */
+		typealias XmlElement = System_Xml_XmlElement
+		/**
+		 * Represents a CDATA section.
+		 */
+		typealias XmlCDataSection = System_Xml_XmlCDataSection
+		/**
+		 * Provides text manipulation methods that are used by several classes.
+		 */
+		typealias XmlCharacterData = System_Xml_XmlCharacterData
+		/**
+		 * Represents the content of an XML comment.
+		 */
+		typealias XmlComment = System_Xml_XmlComment
+		/**
+		 * Represents a lightweight object that is useful for tree insert operations.
+		 */
+		typealias XmlDocumentFragment = System_Xml_XmlDocumentFragment
+		/**
+		 * Represents an entity reference node.
+		 */
+		typealias XmlEntityReference = System_Xml_XmlEntityReference
+		/**
+		 * Represents the XML declaration node <?xml version='1.0'...?>.
+		 */
+		typealias XmlDeclaration = System_Xml_XmlDeclaration
+		/**
+		 * Represents the text content of an element or attribute.
+		 */
+		typealias XmlText = System_Xml_XmlText
+		/**
+		 * Represents white space between markup in a mixed content node or white space within an xml:space= 'preserve' scope. This is also referred to as significant white space.
+		 */
+		typealias XmlSignificantWhitespace = System_Xml_XmlSignificantWhitespace
+		/**
+		 * Represents white space in element content.
+		 */
+		typealias XmlWhitespace = System_Xml_XmlWhitespace
+		/**
+		 * Provides data for the System.Xml.XmlDocument.NodeChanged, System.Xml.XmlDocument.NodeChanging, System.Xml.XmlDocument.NodeInserted, System.Xml.XmlDocument.NodeInserting, System.Xml.XmlDocument.NodeRemoved and System.Xml.XmlDocument.NodeRemoving events.
+		 */
+		typealias XmlNodeChangedEventArgs = System_Xml_XmlNodeChangedEventArgs
+		/**
+		 * Provides all the context information required by the System.Xml.XmlReader to parse an XML fragment.
+		 */
+		typealias XmlParserContext = System_Xml_XmlParserContext
+		/**
+		 * Represents the method that handles System.Xml.XmlDocument.NodeChanged, System.Xml.XmlDocument.NodeChanging, System.Xml.XmlDocument.NodeInserted, System.Xml.XmlDocument.NodeInserting, System.Xml.XmlDocument.NodeRemoved and System.Xml.XmlDocument.NodeRemoving events.
+		 * @param sender: The source of the event.
+		 * @param e: An System.Xml.XmlNodeChangedEventArgs containing the event data.
+		 */
+		typealias XmlNodeChangedEventHandler = System_Xml_XmlNodeChangedEventHandler
+		public object Schema {
+			/**
+			 * Specifies schema validation options used by the System.Xml.Schema.XmlSchemaValidator and System.Xml.XmlReader classes.
+			 */
+			typealias XmlSchemaValidationFlags = System_Xml_Schema_XmlSchemaValidationFlags
+			/**
+			 * Represents the severity of the validation event.
+			 */
+			typealias XmlSeverityType = System_Xml_Schema_XmlSeverityType
+			/**
+			 * Indicates if attributes or elements need to be qualified with a namespace prefix.
+			 */
+			typealias XmlSchemaForm = System_Xml_Schema_XmlSchemaForm
+			/**
+			 * Provides different methods for preventing derivation.
+			 */
+			typealias XmlSchemaDerivationMethod = System_Xml_Schema_XmlSchemaDerivationMethod
+			/**
+			 * Represents the W3C XML Schema Definition Language (XSD) schema types.
+			 */
+			typealias XmlTypeCode = System_Xml_Schema_XmlTypeCode
+			/**
+			 * Provides information about the validation mode of any and anyAttribute element replacements.
+			 */
+			typealias XmlSchemaContentProcessing = System_Xml_Schema_XmlSchemaContentProcessing
+			/**
+			 * Enumerations for the content model of the complex type. This represents the content in the post-schema-validation information set (infoset).
+			 */
+			typealias XmlSchemaContentType = System_Xml_Schema_XmlSchemaContentType
+			/**
+			 * Specifies the W3C XML schema data type variety of the type.
+			 */
+			typealias XmlSchemaDatatypeVariety = System_Xml_Schema_XmlSchemaDatatypeVariety
+			/**
+			 * Represents the validity of an XML item validated by the System.Xml.Schema.XmlSchemaValidator class.
+			 */
+			typealias XmlSchemaValidity = System_Xml_Schema_XmlSchemaValidity
+			/**
+			 * Indicator of how the attribute is used.
+			 */
+			typealias XmlSchemaUse = System_Xml_Schema_XmlSchemaUse
+			/**
+			 * Contains a cache of XML Schema definition language (XSD) schemas.
+			 */
+			typealias XmlSchemaSet = System_Xml_Schema_XmlSchemaSet
+			/**
+			 * Returns detailed information related to the ValidationEventHandler.
+			 */
+			typealias ValidationEventArgs = System_Xml_Schema_ValidationEventArgs
+			/**
+			 * Returns detailed information about the schema exception.
+			 */
+			typealias XmlSchemaException = System_Xml_Schema_XmlSchemaException
+			/**
+			 * Represents the root class for the Xml schema object model hierarchy and serves as a base class for classes such as the System.Xml.Schema.XmlSchema class.
+			 */
+			typealias XmlSchemaObject = System_Xml_Schema_XmlSchemaObject
+			/**
+			 * Provides schema compilation options for the System.Xml.Schema.XmlSchemaSet class This class cannot be inherited.
+			 */
+			typealias XmlSchemaCompilationSettings = System_Xml_Schema_XmlSchemaCompilationSettings
+			/**
+			 * Provides the collections for contained elements in the System.Xml.Schema.XmlSchema class (for example, Attributes, AttributeGroups, Elements, and so on).
+			 */
+			typealias XmlSchemaObjectTable = System_Xml_Schema_XmlSchemaObjectTable
+			/**
+			 * An in-memory representation of an XML Schema, as specified in the World Wide Web Consortium (W3C) XML Schema Part 1: Structures and XML Schema Part 2: Datatypes].
+			 */
+			typealias XmlSchema = System_Xml_Schema_XmlSchema
+			/**
+			 * A collection of System.Xml.Schema.XmlSchemaObjects.
+			 */
+			typealias XmlSchemaObjectCollection = System_Xml_Schema_XmlSchemaObjectCollection
+			/**
+			 * Represents the enumerator for the System.Xml.Schema.XmlSchemaObjectCollection.
+			 */
+			typealias XmlSchemaObjectEnumerator = System_Xml_Schema_XmlSchemaObjectEnumerator
+			/**
+			 * The base class for all simple types and complex types.
+			 */
+			typealias XmlSchemaType = System_Xml_Schema_XmlSchemaType
+			/**
+			 * The base class for any element that can contain annotation elements.
+			 */
+			typealias XmlSchemaAnnotated = System_Xml_Schema_XmlSchemaAnnotated
+			/**
+			 * Represents the World Wide Web Consortium (W3C) annotation element.
+			 */
+			typealias XmlSchemaAnnotation = System_Xml_Schema_XmlSchemaAnnotation
+			/**
+			 * Represents the simpleType element for simple content from XML Schema as specified by the World Wide Web Consortium (W3C). This class defines a simple type. Simple types can specify information and constraints for the value of attributes or elements with text-only content.
+			 */
+			typealias XmlSchemaSimpleType = System_Xml_Schema_XmlSchemaSimpleType
+			/**
+			 * Abstract class for simple type content classes.
+			 */
+			typealias XmlSchemaSimpleTypeContent = System_Xml_Schema_XmlSchemaSimpleTypeContent
+			/**
+			 * Represents the complexType element from XML Schema as specified by the World Wide Web Consortium (W3C). This class defines a complex type that determines the set of attributes and content of an element.
+			 */
+			typealias XmlSchemaComplexType = System_Xml_Schema_XmlSchemaComplexType
+			/**
+			 * Specifies the order and structure of the child elements of a type.
+			 */
+			typealias XmlSchemaContentModel = System_Xml_Schema_XmlSchemaContentModel
+			/**
+			 * An abstract class for schema content.
+			 */
+			typealias XmlSchemaContent = System_Xml_Schema_XmlSchemaContent
+			/**
+			 * Abstract class for that is the base class for all particle types (e.g. System.Xml.Schema.XmlSchemaAny).
+			 */
+			typealias XmlSchemaParticle = System_Xml_Schema_XmlSchemaParticle
+			/**
+			 * Represents the World Wide Web Consortium (W3C) anyAttribute element.
+			 */
+			typealias XmlSchemaAnyAttribute = System_Xml_Schema_XmlSchemaAnyAttribute
+			/**
+			 * The System.Xml.Schema.XmlSchemaDatatype class is an abstract class for mapping XML Schema definition language (XSD) types to Common Language Runtime (CLR) types.
+			 */
+			typealias XmlSchemaDatatype = System_Xml_Schema_XmlSchemaDatatype
+			/**
+			 * Defines the post-schema-validation infoset of a validated XML node.
+			 */
+			typealias IXmlSchemaInfo = System_Xml_Schema_IXmlSchemaInfo
+			/**
+			 * Defines the post-schema-validation infoset of a validated XML node.
+			 */
+			typealias IXmlSchemaInfo_DNInterface = System_Xml_Schema_IXmlSchemaInfo_DNInterface
+			/**
+			 * Represents the element element from XML Schema as specified by the World Wide Web Consortium (W3C). This class is the base class for all particle types and is used to describe an element in an XML document.
+			 */
+			typealias XmlSchemaElement = System_Xml_Schema_XmlSchemaElement
+			/**
+			 * Represents the attribute element from the XML Schema as specified by the World Wide Web Consortium (W3C). Attributes provide additional information for other document elements. The attribute tag is nested between the tags of a document's element for the schema. The XML document displays attributes as named items in the opening tag of an element.
+			 */
+			typealias XmlSchemaAttribute = System_Xml_Schema_XmlSchemaAttribute
+			/**
+			 * Represents the callback method that will handle XML schema validation events and the System.Xml.Schema.ValidationEventArgs.
+			 * @param sender: The source of the event.       Note Determine the type of a sender before using it in your code. You cannot assume that the sender is an instance of a particular type. The sender is also not guaranteed to not  be null. Always surround your casts with failure handling logic.
+			 * @param e: The event data.
+			 */
+			typealias ValidationEventHandler = System_Xml_Schema_ValidationEventHandler
+			
+		}
+		public object XPath {
+			/**
+			 * Defines the XPath node types that can be returned from the System.Xml.XPath.XPathNavigator class.
+			 */
+			typealias XPathNodeType = System_Xml_XPath_XPathNodeType
+			/**
+			 * Defines the namespace scope.
+			 */
+			typealias XPathNamespaceScope = System_Xml_XPath_XPathNamespaceScope
+			/**
+			 * Specifies the sort order.
+			 */
+			typealias XmlSortOrder = System_Xml_XPath_XmlSortOrder
+			/**
+			 * Specifies the sort order for uppercase and lowercase letters.
+			 */
+			typealias XmlCaseOrder = System_Xml_XPath_XmlCaseOrder
+			/**
+			 * Specifies the data type used to determine sort order.
+			 */
+			typealias XmlDataType = System_Xml_XPath_XmlDataType
+			/**
+			 * Specifies the return type of the XPath expression.
+			 */
+			typealias XPathResultType = System_Xml_XPath_XPathResultType
+			/**
+			 * Provides an accessor to the System.Xml.XPath.XPathNavigator class.
+			 */
+			typealias IXPathNavigable = System_Xml_XPath_IXPathNavigable
+			/**
+			 * Provides an accessor to the System.Xml.XPath.XPathNavigator class.
+			 */
+			typealias IXPathNavigable_DNInterface = System_Xml_XPath_IXPathNavigable_DNInterface
+			/**
+			 * Provides a cursor model for navigating and editing XML data.
+			 */
+			typealias XPathNavigator = System_Xml_XPath_XPathNavigator
+			/**
+			 * Represents an item in the XQuery 1.0 and XPath 2.0 Data Model.
+			 */
+			typealias XPathItem = System_Xml_XPath_XPathItem
+			/**
+			 * Provides a typed class that represents a compiled XPath expression.
+			 */
+			typealias XPathExpression = System_Xml_XPath_XPathExpression
+			/**
+			 * Provides an iterator over a selected set of nodes.
+			 */
+			typealias XPathNodeIterator = System_Xml_XPath_XPathNodeIterator
+			
+		}
+		public object Serialization {
+			/**
+			 * Serializes and deserializes objects into and from XML documents. The System.Xml.Serialization.XmlSerializer enables you to control how objects are encoded into XML.
+			 */
+			typealias XmlSerializer = System_Xml_Serialization_XmlSerializer
+			/**
+			 * Contains the XML namespaces and prefixes that the System.Xml.Serialization.XmlSerializer uses to generate qualified names in an XML-document instance.
+			 */
+			typealias XmlSerializerNamespaces = System_Xml_Serialization_XmlSerializerNamespaces
+			/**
+			 * Contains fields that can be used to pass event delegates to a thread-safe Overload:System.Xml.Serialization.XmlSerializer.Deserialize method of the System.Xml.Serialization.XmlSerializer.
+			 */
+			typealias XmlDeserializationEvents = System_Xml_Serialization_XmlDeserializationEvents
+			/**
+			 * Provides data for the System.Xml.Serialization.XmlSerializer.UnknownNode event.
+			 */
+			typealias XmlNodeEventArgs = System_Xml_Serialization_XmlNodeEventArgs
+			/**
+			 * Provides data for the System.Xml.Serialization.XmlSerializer.UnknownAttribute event.
+			 */
+			typealias XmlAttributeEventArgs = System_Xml_Serialization_XmlAttributeEventArgs
+			/**
+			 * Provides data for the System.Xml.Serialization.XmlSerializer.UnknownElement event.
+			 */
+			typealias XmlElementEventArgs = System_Xml_Serialization_XmlElementEventArgs
+			/**
+			 * Provides data for the known, but unreferenced, object found in an encoded SOAP XML stream during deserialization.
+			 */
+			typealias UnreferencedObjectEventArgs = System_Xml_Serialization_UnreferencedObjectEventArgs
+			/**
+			 * Supports mappings between .NET types and XML Schema data types.
+			 */
+			typealias XmlMapping = System_Xml_Serialization_XmlMapping
+			/**
+			 * Allows you to override property, field, and class attributes when you use the System.Xml.Serialization.XmlSerializer to serialize or deserialize an object.
+			 */
+			typealias XmlAttributeOverrides = System_Xml_Serialization_XmlAttributeOverrides
+			/**
+			 * Represents a collection of attribute objects that control how the System.Xml.Serialization.XmlSerializer serializes and deserializes an object.
+			 */
+			typealias XmlAttributes = System_Xml_Serialization_XmlAttributes
+			/**
+			 * Represents a collection of System.Xml.Serialization.XmlElementAttribute objects used by the System.Xml.Serialization.XmlSerializer to override the default way it serializes a class.
+			 */
+			typealias XmlElementAttributes = System_Xml_Serialization_XmlElementAttributes
+			/**
+			 * Indicates that a public field or property represents an XML element when the System.Xml.Serialization.XmlSerializer serializes or deserializes the object that contains it.
+			 */
+			typealias XmlElementAttribute = System_Xml_Serialization_XmlElementAttribute
+			/**
+			 * Specifies that the System.Xml.Serialization.XmlSerializer must serialize the class member as an XML attribute.
+			 */
+			typealias XmlAttributeAttribute = System_Xml_Serialization_XmlAttributeAttribute
+			/**
+			 * Controls how the System.Xml.Serialization.XmlSerializer serializes an enumeration member.
+			 */
+			typealias XmlEnumAttribute = System_Xml_Serialization_XmlEnumAttribute
+			/**
+			 * Indicates to the System.Xml.Serialization.XmlSerializer that the member must be treated as XML text when the class that contains it is serialized or deserialized.
+			 */
+			typealias XmlTextAttribute = System_Xml_Serialization_XmlTextAttribute
+			/**
+			 * Specifies that the System.Xml.Serialization.XmlSerializer must serialize a particular class member as an array of XML elements.
+			 */
+			typealias XmlArrayAttribute = System_Xml_Serialization_XmlArrayAttribute
+			/**
+			 * Represents a collection of System.Xml.Serialization.XmlArrayItemAttribute objects.
+			 */
+			typealias XmlArrayItemAttributes = System_Xml_Serialization_XmlArrayItemAttributes
+			/**
+			 * Represents an attribute that specifies the derived types that the System.Xml.Serialization.XmlSerializer can place in a serialized array.
+			 */
+			typealias XmlArrayItemAttribute = System_Xml_Serialization_XmlArrayItemAttribute
+			/**
+			 * Controls the XML schema that is generated when the attribute target is serialized by the System.Xml.Serialization.XmlSerializer.
+			 */
+			typealias XmlTypeAttribute = System_Xml_Serialization_XmlTypeAttribute
+			/**
+			 * Controls XML serialization of the attribute target as an XML root element.
+			 */
+			typealias XmlRootAttribute = System_Xml_Serialization_XmlRootAttribute
+			/**
+			 * Represents a collection of System.Xml.Serialization.XmlAnyElementAttribute objects.
+			 */
+			typealias XmlAnyElementAttributes = System_Xml_Serialization_XmlAnyElementAttributes
+			/**
+			 * Specifies that the member (a field that returns an array of System.Xml.XmlElement or System.Xml.XmlNode objects) contains objects that represent any XML element that has no corresponding member in the object being serialized or deserialized.
+			 */
+			typealias XmlAnyElementAttribute = System_Xml_Serialization_XmlAnyElementAttribute
+			/**
+			 * Specifies that the member (a field that returns an array of System.Xml.XmlAttribute objects) can contain any XML attributes.
+			 */
+			typealias XmlAnyAttributeAttribute = System_Xml_Serialization_XmlAnyAttributeAttribute
+			/**
+			 * Specifies that the member can be further detected by using an enumeration.
+			 */
+			typealias XmlChoiceIdentifierAttribute = System_Xml_Serialization_XmlChoiceIdentifierAttribute
+			/**
+			 * Contains a mapping of one type to another.
+			 */
+			typealias XmlTypeMapping = System_Xml_Serialization_XmlTypeMapping
+			/**
+			 * Represents the method that handles the System.Xml.Serialization.XmlSerializer.UnknownNode event of an System.Xml.Serialization.XmlSerializer.
+			 * @param sender: The source of the event.
+			 * @param e: An System.Xml.Serialization.XmlNodeEventArgs that contains the event data.
+			 */
+			typealias XmlNodeEventHandler = System_Xml_Serialization_XmlNodeEventHandler
+			/**
+			 * Represents the method that handles the System.Xml.Serialization.XmlSerializer.UnknownAttribute.
+			 * @param sender: The source of the event.
+			 * @param e: An System.Xml.Serialization.XmlAttributeEventArgs that contains the event data.
+			 */
+			typealias XmlAttributeEventHandler = System_Xml_Serialization_XmlAttributeEventHandler
+			/**
+			 * Represents the method that handles the System.Xml.Serialization.XmlSerializer.UnknownElement event of an System.Xml.Serialization.XmlSerializer.
+			 * @param sender: The source of the event.
+			 * @param e: A System.Xml.Serialization.XmlElementEventArgs that contains the event data.
+			 */
+			typealias XmlElementEventHandler = System_Xml_Serialization_XmlElementEventHandler
+			/**
+			 * Represents the method that handles the System.Xml.Serialization.XmlSerializer.UnreferencedObject event of an System.Xml.Serialization.XmlSerializer.
+			 * @param sender: The source of the event.
+			 * @param e: An System.Xml.Serialization.UnreferencedObjectEventArgs that contains the event data.
+			 */
+			typealias UnreferencedObjectEventHandler = System_Xml_Serialization_UnreferencedObjectEventHandler
+			
+		}
+		
+	}
+	public object Collections {
+		/**
+		 * Represents a non-generic collection of objects that can be individually accessed by index.
+		 */
+		typealias IList = System_Collections_IList
+		/**
+		 * Represents a non-generic collection of objects that can be individually accessed by index.
+		 */
+		typealias IList_DNInterface = System_Collections_IList_DNInterface
+		/**
+		 * Defines size, enumerators, and synchronization methods for all nongeneric collections.
+		 */
+		typealias ICollection = System_Collections_ICollection
+		/**
+		 * Defines size, enumerators, and synchronization methods for all nongeneric collections.
+		 */
+		typealias ICollection_DNInterface = System_Collections_ICollection_DNInterface
+		/**
+		 * Exposes an enumerator, which supports a simple iteration over a non-generic collection.
+		 */
+		typealias IEnumerable = System_Collections_IEnumerable
+		/**
+		 * Exposes an enumerator, which supports a simple iteration over a non-generic collection.
+		 */
+		typealias IEnumerable_DNInterface = System_Collections_IEnumerable_DNInterface
+		/**
+		 * Supports a simple iteration over a non-generic collection.
+		 */
+		typealias IEnumerator = System_Collections_IEnumerator
+		/**
+		 * Supports a simple iteration over a non-generic collection.
+		 */
+		typealias IEnumerator_DNInterface = System_Collections_IEnumerator_DNInterface
+		/**
+		 * Supports the structural comparison of collection objects.
+		 */
+		typealias IStructuralComparable = System_Collections_IStructuralComparable
+		/**
+		 * Supports the structural comparison of collection objects.
+		 */
+		typealias IStructuralComparable_DNInterface = System_Collections_IStructuralComparable_DNInterface
+		/**
+		 * Exposes a method that compares two objects.
+		 */
+		typealias IComparer = System_Collections_IComparer
+		/**
+		 * Exposes a method that compares two objects.
+		 */
+		typealias IComparer_DNInterface = System_Collections_IComparer_DNInterface
+		/**
+		 * Defines methods to support the comparison of objects for structural equality.
+		 */
+		typealias IStructuralEquatable = System_Collections_IStructuralEquatable
+		/**
+		 * Defines methods to support the comparison of objects for structural equality.
+		 */
+		typealias IStructuralEquatable_DNInterface = System_Collections_IStructuralEquatable_DNInterface
+		/**
+		 * Defines methods to support the comparison of objects for equality.
+		 */
+		typealias IEqualityComparer = System_Collections_IEqualityComparer
+		/**
+		 * Defines methods to support the comparison of objects for equality.
+		 */
+		typealias IEqualityComparer_DNInterface = System_Collections_IEqualityComparer_DNInterface
+		/**
+		 * Represents a nongeneric collection of key/value pairs.
+		 */
+		typealias IDictionary = System_Collections_IDictionary
+		/**
+		 * Represents a nongeneric collection of key/value pairs.
+		 */
+		typealias IDictionary_DNInterface = System_Collections_IDictionary_DNInterface
+		/**
+		 * Enumerates the elements of a nongeneric dictionary.
+		 */
+		typealias IDictionaryEnumerator = System_Collections_IDictionaryEnumerator
+		/**
+		 * Enumerates the elements of a nongeneric dictionary.
+		 */
+		typealias IDictionaryEnumerator_DNInterface = System_Collections_IDictionaryEnumerator_DNInterface
+		/**
+		 * Defines a dictionary key/value pair that can be set or retrieved.
+		 */
+		typealias DictionaryEntry = System_Collections_DictionaryEntry
+		/**
+		 * Represents a collection of key/value pairs that are organized based on the hash code of the key.
+		 */
+		typealias Hashtable = System_Collections_Hashtable
+		/**
+		 * Supplies a hash code for an object, using a custom hash function.
+		 */
+		typealias IHashCodeProvider = System_Collections_IHashCodeProvider
+		/**
+		 * Supplies a hash code for an object, using a custom hash function.
+		 */
+		typealias IHashCodeProvider_DNInterface = System_Collections_IHashCodeProvider_DNInterface
+		/**
+		 * Implements the System.Collections.IList interface using an array whose size is dynamically increased as required.
+		 */
+		typealias ArrayList = System_Collections_ArrayList
+		/**
+		 * Provides the abstract base class for a strongly typed collection.
+		 */
+		typealias CollectionBase = System_Collections_CollectionBase
+		
+	}
+	public object Net {
+		/**
+		 * Contains HTTP proxy settings for the System.Net.Http.HttpClient class.
+		 */
+		typealias WebProxy = System_Net_WebProxy
+		/**
+		 * Provides the base interface for implementation of proxy access for the System.Net.Http.HttpClient class.
+		 */
+		typealias IWebProxy = System_Net_IWebProxy
+		/**
+		 * Provides the base interface for implementation of proxy access for the System.Net.Http.HttpClient class.
+		 */
+		typealias IWebProxy_DNInterface = System_Net_IWebProxy_DNInterface
+		/**
+		 * Provides the base authentication interface for retrieving credentials for Web client authentication.
+		 */
+		typealias ICredentials = System_Net_ICredentials
+		/**
+		 * Provides the base authentication interface for retrieving credentials for Web client authentication.
+		 */
+		typealias ICredentials_DNInterface = System_Net_ICredentials_DNInterface
+		/**
+		 * Provides the interface for retrieving credentials for a host, port, and authentication type.
+		 */
+		typealias ICredentialsByHost = System_Net_ICredentialsByHost
+		/**
+		 * Provides the interface for retrieving credentials for a host, port, and authentication type.
+		 */
+		typealias ICredentialsByHost_DNInterface = System_Net_ICredentialsByHost_DNInterface
+		
+	}
+	
+}
+public object Beyond {
+	public object NET {
+		public object Sample {
+			
+			typealias StepMode = Beyond_NET_Sample_StepMode
+			/**
+			 *             Describes how nice one can be.
+			 *             Ordered from not nice, to very nice.
+			 *             
+			 */
+			typealias NiceLevels = Beyond_NET_Sample_NiceLevels
+			
+			typealias TestEnum = Beyond_NET_Sample_TestEnum
+			/**
+			 *             Describes an Address.
+			 *             Summaries can have multiple lines.
+			 *             Right?
+			 *             
+			 */
+			typealias Address = Beyond_NET_Sample_Address
+			
+			typealias IAnimal = Beyond_NET_Sample_IAnimal
+			
+			typealias IAnimal_DNInterface = Beyond_NET_Sample_IAnimal_DNInterface
+			
+			typealias AnimalFactory = Beyond_NET_Sample_AnimalFactory
+			
+			typealias BaseAnimal = Beyond_NET_Sample_BaseAnimal
+			
+			typealias Cat = Beyond_NET_Sample_Cat
+			
+			typealias Dog = Beyond_NET_Sample_Dog
+			
+			typealias GenericAnimal = Beyond_NET_Sample_GenericAnimal
+			
+			typealias Labrador = Beyond_NET_Sample_Labrador
+			
+			typealias ArrayTests = Beyond_NET_Sample_ArrayTests
+			
+			typealias AsyncTests = Beyond_NET_Sample_AsyncTests
+			
+			typealias Point = Beyond_NET_Sample_Point
+			
+			typealias DelegatesTest = Beyond_NET_Sample_DelegatesTest
+			
+			typealias EventTests = Beyond_NET_Sample_EventTests
+			
+			typealias ExceptionTests = Beyond_NET_Sample_ExceptionTests
+			
+			typealias GenericTests = Beyond_NET_Sample_GenericTests
+			
+			typealias GenericTests_SimpleKeyValuePair = Beyond_NET_Sample_GenericTests_SimpleKeyValuePair
+			
+			typealias IndexerTests = Beyond_NET_Sample_IndexerTests
+			
+			typealias IInterface1 = Beyond_NET_Sample_IInterface1
+			
+			typealias IInterface1_DNInterface = Beyond_NET_Sample_IInterface1_DNInterface
+			
+			typealias IInterface1_DelegateAdapter = Beyond_NET_Sample_IInterface1_DelegateAdapter
+			
+			typealias IInterface2 = Beyond_NET_Sample_IInterface2
+			
+			typealias IInterface2_DNInterface = Beyond_NET_Sample_IInterface2_DNInterface
+			
+			typealias IInterface3 = Beyond_NET_Sample_IInterface3
+			
+			typealias IInterface3_DNInterface = Beyond_NET_Sample_IInterface3_DNInterface
+			
+			typealias TypeThatImplementsMultipleInterfaces = Beyond_NET_Sample_TypeThatImplementsMultipleInterfaces
+			
+			typealias TypeThatUsesInterfaces = Beyond_NET_Sample_TypeThatUsesInterfaces
+			
+			typealias BaseRegistrationData = Beyond_NET_Sample_BaseRegistrationData
+			
+			typealias DataType = Beyond_NET_Sample_DataType
+			
+			typealias RegistrationData1 = Beyond_NET_Sample_RegistrationData1
+			
+			typealias RegistrationData2 = Beyond_NET_Sample_RegistrationData2
+			
+			typealias NullabilityTests = Beyond_NET_Sample_NullabilityTests
+			
+			typealias OverloadTests = Beyond_NET_Sample_OverloadTests
+			
+			typealias Person = Beyond_NET_Sample_Person
+			
+			typealias Person_Extensions = Beyond_NET_Sample_Person_Extensions
+			
+			typealias PrimitiveTests = Beyond_NET_Sample_PrimitiveTests
+			
+			typealias PropertyTests = Beyond_NET_Sample_PropertyTests
+			
+			typealias SpanTest = Beyond_NET_Sample_SpanTest
+			
+			typealias StructTestClass = Beyond_NET_Sample_StructTestClass
+			
+			typealias StructTest = Beyond_NET_Sample_StructTest
+			
+			typealias Book = Beyond_NET_Sample_Book
+			
+			typealias TestClass = Beyond_NET_Sample_TestClass
+			
+			typealias TestRecord = Beyond_NET_Sample_TestRecord
+			
+			typealias TestRecordStruct = Beyond_NET_Sample_TestRecordStruct
+			
+			typealias TestReadOnlyRecordStruct = Beyond_NET_Sample_TestReadOnlyRecordStruct
+			
+			typealias Transformer = Beyond_NET_Sample_Transformer
+			
+			typealias WebProxyTests = Beyond_NET_Sample_WebProxyTests
+			
+			typealias X509CertificatesTests = Beyond_NET_Sample_X509CertificatesTests
+			
+			typealias Transformer_BuiltInTransformers = Beyond_NET_Sample_Transformer_BuiltInTransformers
+			/**
+			 *             A delegate that returns a new Address.
+			 *             
+			 */
+			typealias MoveDelegate = Beyond_NET_Sample_MoveDelegate
+			
+			typealias AnimalCreatorDelegate = Beyond_NET_Sample_AnimalCreatorDelegate
+			
+			typealias AsyncTests_TransformerDelegate = Beyond_NET_Sample_AsyncTests_TransformerDelegate
+			
+			typealias DelegatesTest_TransformIntDelegate = Beyond_NET_Sample_DelegatesTest_TransformIntDelegate
+			
+			typealias DelegatesTest_PointTransformDelegate = Beyond_NET_Sample_DelegatesTest_PointTransformDelegate
+			
+			typealias EventTests_ValueChangedDelegate = Beyond_NET_Sample_EventTests_ValueChangedDelegate
+			
+			typealias IInterface1_DelegateAdapter_MethodInIInterface1_Delegate = Beyond_NET_Sample_IInterface1_DelegateAdapter_MethodInIInterface1_Delegate
+			
+			typealias TypeThatUsesInterfaces_DelegateThatReceivesIInterface1 = Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReceivesIInterface1
+			
+			typealias TypeThatUsesInterfaces_DelegateThatReturnsIInterface1 = Beyond_NET_Sample_TypeThatUsesInterfaces_DelegateThatReturnsIInterface1
+			
+			typealias Person_NumberOfChildrenChangedDelegate = Beyond_NET_Sample_Person_NumberOfChildrenChangedDelegate
+			
+			typealias Person_NewAgeProviderDelegate = Beyond_NET_Sample_Person_NewAgeProviderDelegate
+			
+			typealias CharReturnerDelegate = Beyond_NET_Sample_CharReturnerDelegate
+			
+			typealias Transformer_StringTransformerDelegate = Beyond_NET_Sample_Transformer_StringTransformerDelegate
+			
+			typealias Transformer_DoublesTransformerDelegate = Beyond_NET_Sample_Transformer_DoublesTransformerDelegate
+			
+			typealias Transformer_StringGetterDelegate = Beyond_NET_Sample_Transformer_StringGetterDelegate
+			
+			typealias DelegatesTest_DebugEventHandler = Beyond_NET_Sample_DelegatesTest_DebugEventHandler
+			public object Source {
+				
+				typealias EnumWithUnfavorableNames = Beyond_NET_Sample_Source_EnumWithUnfavorableNames
+				
+				typealias TestEnum = Beyond_NET_Sample_Source_TestEnum
+				
+				typealias CharTests = Beyond_NET_Sample_Source_CharTests
+				
+				typealias CKeywordsTests = Beyond_NET_Sample_Source_CKeywordsTests
+				
+				typealias CSharpKeywordsTests = Beyond_NET_Sample_Source_CSharpKeywordsTests
+				
+				typealias DontStrip = Beyond_NET_Sample_Source_DontStrip
+				
+				typealias EnumTests = Beyond_NET_Sample_Source_EnumTests
+				
+				typealias ManagedUnhandledExceptionHandler = Beyond_NET_Sample_Source_ManagedUnhandledExceptionHandler
+				
+				typealias NestedTypeTests = Beyond_NET_Sample_Source_NestedTypeTests
+				
+				typealias OperatorTests = Beyond_NET_Sample_Source_OperatorTests
+				
+				typealias OutParameterTests = Beyond_NET_Sample_Source_OutParameterTests
+				
+				typealias IOverrideTestsInterface = Beyond_NET_Sample_Source_IOverrideTestsInterface
+				
+				typealias IOverrideTestsInterface_DNInterface = Beyond_NET_Sample_Source_IOverrideTestsInterface_DNInterface
+				
+				typealias OverrideTestsInterfaceImpl = Beyond_NET_Sample_Source_OverrideTestsInterfaceImpl
+				
+				typealias OverrideTestsBaseClass = Beyond_NET_Sample_Source_OverrideTestsBaseClass
+				
+				typealias OverrideTestsDerivedClass = Beyond_NET_Sample_Source_OverrideTestsDerivedClass
+				
+				typealias PrimitiveExtensionsTests = Beyond_NET_Sample_Source_PrimitiveExtensionsTests
+				
+				typealias RefStructTests = Beyond_NET_Sample_Source_RefStructTests
+				
+				typealias NestedTypeTests_MyNestedType = Beyond_NET_Sample_Source_NestedTypeTests_MyNestedType
+				
+			}
+			public object SubclassingTests {
+				
+				typealias MyBaseClass = Beyond_NET_Sample_SubclassingTests_MyBaseClass
+				
+				typealias MySubClass = Beyond_NET_Sample_SubclassingTests_MySubClass
+				
+			}
+			
+		}
+		
+	}
+	
+}
+public object Microsoft {
+	public object Win32 {
+		public object SafeHandles {
+			/**
+			 * Represents a wrapper class for a wait handle.
+			 */
+			typealias SafeWaitHandle = Microsoft_Win32_SafeHandles_SafeWaitHandle
+			/**
+			 * Provides a base class for Win32 safe handle implementations in which the value of either 0 or -1 indicates an invalid handle.
+			 */
+			typealias SafeHandleZeroOrMinusOneIsInvalid = Microsoft_Win32_SafeHandles_SafeHandleZeroOrMinusOneIsInvalid
+			/**
+			 * Represents a wrapper class for a file handle.
+			 */
+			typealias SafeFileHandle = Microsoft_Win32_SafeHandles_SafeFileHandle
+			
+		}
+		
+	}
+	
+}
+
 
 // MARK: - END Namespaces
 

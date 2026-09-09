@@ -109,11 +109,15 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
         string? fullTypeName = type.FullName;
 
         if (fullTypeName == null) {
+            state.AddSkippedType(type);
+
             return Builder.SingleLineComment($"Type \"{type.Name}\" was skipped. Reason: It has no full name.").ToString();
         }
 
         // TODO
         if (type.IsGenericInAnyWay(true)) {
+            state.AddSkippedType(type);
+
             return Builder.SingleLineComment($"Type \"{type.Name}\" was skipped. Reason: It is generic somehow.").ToString();
         }
 
@@ -136,6 +140,8 @@ public partial class KotlinTypeSyntaxWriter: IKotlinSyntaxWriter, ITypeSyntaxWri
                     kotlinConfiguration
                 );
             } else {
+                state.AddSkippedType(type);
+
                 typeCode = Builder.SingleLineComment("TODO: ENABLE_EXPERIMENTAL_KOTLIN_TYPE_GENERATOR is false").ToString();
             }
         } else if (generationPhase == KotlinSyntaxWriterConfiguration.GenerationPhases.JNA) {
@@ -335,6 +341,8 @@ public val value: {{underlyingTypeName}}
             type.IsConstructedGenericType) {
             // No need to generate Kotlin code for those kinds of types
 
+            state.AddSkippedType(type);
+
             return string.Empty;
         }
 
@@ -469,6 +477,8 @@ public val value: {{underlyingTypeName}}
             type.IsConstructedGenericType) {
             // No need to generate Kotlin code for those kinds of types
 
+            state.AddSkippedType(type);
+
             return string.Empty;
         }
 
@@ -480,11 +490,13 @@ public val value: {{underlyingTypeName}}
         {
             // No need to generate Kotlin code for single-dimensional arrays
 
+            state.AddSkippedType(type);
+
             return string.Empty;
         }
 
         if (KotlinSharedSettings.IsUnsupportedTypeOrDerivedByUnsupportedType(type)) {
-            // No need to generate Kotlin code for single-dimensional arrays
+            state.AddSkippedType(type);
 
             return "// TODO: Unsupported type or derived type of unsupported type";
         }

@@ -5,6 +5,7 @@ using Beyond.NET.CodeGenerator.SourceCode;
 using Beyond.NET.CodeGenerator.Syntax;
 using Beyond.NET.CodeGenerator.Syntax.Kotlin;
 using Beyond.NET.CodeGenerator.Syntax.Kotlin.Builders;
+using Beyond.NET.CodeGenerator.Types;
 using Beyond.NET.Core;
 
 namespace Beyond.NET.CodeGenerator.Generator.Kotlin;
@@ -83,6 +84,18 @@ public class KotlinCodeGenerator: ICodeGenerator
             typeSyntaxWriter,
             result
         );
+
+        // Use the Kotlin result before the JNA pass adds types without Kotlin bindings.
+        if (!Settings.DoNotGenerateKotlinNestedTypeAliases) {
+            string namespacesCode = GetNamespacesCode(
+                result,
+                TypeDescriptorRegistry.Shared
+            );
+
+            namespacesSection.Code.AppendLine(namespacesCode);
+        } else {
+            namespacesSection.Code.AppendLine("// Omitted due to settings");
+        }
 
         syntaxWriterConfiguration = new KotlinSyntaxWriterConfiguration
         {
@@ -170,6 +183,87 @@ object {{jnaClassName}} {
         extensionsSection.Code.AppendLine(sharedExtensionsCode);
 
         return result;
+    }
+
+    private string GetNamespacesCode(
+        Result result,
+        TypeDescriptorRegistry typeDescriptorRegistry
+    )
+    {
+        KotlinCodeBuilder sb = new();
+
+        var namespaceTree = result.GetNamespaceTreeOfGeneratedTypes();
+
+        foreach (var node in namespaceTree.Children) {
+            string nodeCode = GetNamespaceCode(
+                node,
+                result,
+                typeDescriptorRegistry
+            );
+
+            sb.AppendLine(nodeCode);
+        }
+
+        return sb.ToString();
+    }
+
+    private string GetNamespaceCode(
+        NamespaceNode namespaceNode,
+        Result result,
+        TypeDescriptorRegistry typeDescriptorRegistry
+    )
+    {
+        KotlinCodeBuilder sb = new();
+
+        string fullNamespaceName = namespaceNode.FullName;
+        string kotlinNamespacePrefix = fullNamespaceName.Replace('.', '_') + "_";
+        var typesInNamespace = result.GetTypesInNamespace(fullNamespaceName);
+
+        foreach (var type in typesInNamespace) {
+            if (type.IsArray) {
+                continue;
+            }
+
+            string kotlinTypeName = type.IsPrimitive
+                ? type.CTypeName()
+                : type.GetTypeDescriptor(typeDescriptorRegistry).GetTypeName(CodeLanguage.Kotlin, false);
+
+            string typeAliasName = kotlinTypeName.StartsWith(kotlinNamespacePrefix, StringComparison.Ordinal)
+                ? kotlinTypeName[kotlinNamespacePrefix.Length..]
+                : kotlinTypeName;
+
+            var typeDocumentationComment = type.GetDocumentation()
+                ?.GetFormattedDocumentationComment(CodeLanguage.Kotlin);
+
+            sb.AppendLine(typeDocumentationComment);
+            sb.AppendLine(new TypeAlias(typeAliasName.EscapedKotlinName(), kotlinTypeName).ToString());
+
+            if (type.IsInterface) {
+                string suffix = TypeDescriptor.KotlinDotNETInterfaceImplementationSuffix;
+
+                sb.AppendLine(typeDocumentationComment);
+                sb.AppendLine(new TypeAlias($"{typeAliasName}{suffix}".EscapedKotlinName(), $"{kotlinTypeName}{suffix}").ToString());
+            }
+        }
+
+        foreach (var subNode in namespaceNode.Children) {
+            string subNodeCode = GetNamespaceCode(
+                subNode,
+                result,
+                typeDescriptorRegistry
+            );
+
+            sb.AppendLine(subNodeCode);
+        }
+
+        string name = namespaceNode.Name.EscapedKotlinName();
+        string membersCode = sb.ToString();
+
+        return $$"""
+public object {{name}} {
+{{membersCode.IndentAllLines(1)}}
+}
+""";
     }
 
     private void Generate(
