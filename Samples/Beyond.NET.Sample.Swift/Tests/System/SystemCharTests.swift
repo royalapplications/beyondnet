@@ -18,8 +18,7 @@ final class SystemCharTests: XCTestCase {
         XCTAssertNotEqual("A", aCharacter)
         
         let dnObj = aDNChar.dotNETObject()
-
-        // TODO: This currently fails with `caught error: "System.InvalidCastException: Specified cast is not valid. at NativeGeneratedCode.InteropUtils.DNObjectCastToChar(Void*, Void**) + 0x60"`
+        
         let aDNCharBack = try XCTUnwrap(dnObj.castToChar())
         let aCharacterBack = aDNCharBack.character
         

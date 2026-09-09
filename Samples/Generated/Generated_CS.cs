@@ -375,7 +375,7 @@ internal static unsafe class InteropUtils
     [UnmanagedCallersOnly(EntryPoint = "DNObjectFromChar")]
     internal static void* /* System.Object */ DNObjectFromChar(ushort value)
     {
-        return ((System.Object)value).AllocateGCHandleAndGetAddress();
+        return ((System.Object)(char)value).AllocateGCHandleAndGetAddress();
     }
     #endregion Char
 
