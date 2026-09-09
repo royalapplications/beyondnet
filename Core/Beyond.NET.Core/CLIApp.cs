@@ -101,8 +101,8 @@ public class CLIApp
 
     public Result Launch(
         string[]? arguments,
-        string? workingDirectory = null
-    )
+        string? workingDirectory = null,
+        List<(string key, string value)>? environment = null)
     {
         int timeout = int.MaxValue;
 
@@ -111,6 +111,12 @@ public class CLIApp
             workingDirectory,
             out string invocationString
         );
+
+        if (environment is not null) {
+            foreach ((string key, string value) in environment) {
+                startInfo.Environment[key] = value;
+            }
+        }
 
         string logMsg;
 

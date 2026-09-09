@@ -45,7 +45,8 @@ public class Publish
 
         var result = App.DotNETApp.Launch(
             args.ToArray(),
-            workingDirectory
+            workingDirectory,
+            environment: [("DOTNET_CLI_USE_MSBUILD_SERVER", "false")]
         );
 
         Exception? failure = result.FailureAsException;
