@@ -334,7 +334,7 @@ internal static unsafe class InteropUtils
 
     #region Char
     [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToChar")]
-    internal static char DNObjectCastToChar(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
+    internal static ushort DNObjectCastToChar(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
     {
         System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
 
@@ -345,7 +345,7 @@ internal static unsafe class InteropUtils
                 *outException = null;
             }
 
-            return returnValue;
+            return (ushort)returnValue;
         } catch (Exception exception) {
             if (outException is not null) {
                 void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
@@ -353,14 +353,14 @@ internal static unsafe class InteropUtils
                 *outException = exceptionHandleAddress;
             }
 
-            return default(char);
+            return (ushort)(default(char));
         }
     }
 
     [UnmanagedCallersOnly(EntryPoint = "DNObjectFromChar")]
-    internal static void* /* System.Object */ DNObjectFromChar(char value)
+    internal static void* /* System.Object */ DNObjectFromChar(ushort value)
     {
-        return ((System.Object)value).AllocateGCHandleAndGetAddress();
+        return ((System.Object)(char)value).AllocateGCHandleAndGetAddress();
     }
     #endregion Char
 
