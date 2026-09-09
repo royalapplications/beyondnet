@@ -1,5 +1,5 @@
-// Number of generated types: 1653
-// Number of generated members: 8054
+// Number of generated types: 1718
+// Number of generated members: 8618
 
 // MARK: - BEGIN Header
 import Foundation
@@ -7193,6 +7193,461 @@ extension Beyond_NET_Sample_TestEnum {
 	
 }
 
+/// Specifies the format of an X.509 certificate.
+public enum System_Security_Cryptography_X509Certificates_X509ContentType: Int32 {
+	init(cValue: System_Security_Cryptography_X509Certificates_X509ContentType_t) {
+		let cRawValue = cValue.rawValue
+		
+		guard let enumValue = Self(rawValue: cRawValue) else {
+		    fatalError("Initialization of \"\(Self.self)\" failed because an unknown enum raw value was provided: \(cRawValue)")
+		}
+		
+		self = enumValue
+	}
+
+	var cValue: System_Security_Cryptography_X509Certificates_X509ContentType_t { get {
+		guard let cEnumValue = System_Security_Cryptography_X509Certificates_X509ContentType_t(rawValue: rawValue) else {
+		    fatalError("Initialization of \"System_Security_Cryptography_X509Certificates_X509ContentType_t\" failed because an unknown enum raw value was provided: \(rawValue)")
+		}
+		
+		return cEnumValue
+	}}
+
+	case unknown = 0
+	case cert = 1
+	case serializedCert = 2
+	case pfx = 3
+	public static let pkcs12 = System_Security_Cryptography_X509Certificates_X509ContentType.pfx
+	case serializedStore = 4
+	case pkcs7 = 5
+	case authenticode = 6
+}
+
+extension System_Security_Cryptography_X509Certificates_X509ContentType {
+	public static var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_X509Certificates_X509ContentType_TypeOf())
+		
+	}}
+	
+	
+	
+}
+
+/// Specifies the export Password Based Enryption (PBE) parameters with PKCS12 / PFX.
+public enum System_Security_Cryptography_X509Certificates_Pkcs12ExportPbeParameters: Int32 {
+	init(cValue: System_Security_Cryptography_X509Certificates_Pkcs12ExportPbeParameters_t) {
+		let cRawValue = cValue.rawValue
+		
+		guard let enumValue = Self(rawValue: cRawValue) else {
+		    fatalError("Initialization of \"\(Self.self)\" failed because an unknown enum raw value was provided: \(cRawValue)")
+		}
+		
+		self = enumValue
+	}
+
+	var cValue: System_Security_Cryptography_X509Certificates_Pkcs12ExportPbeParameters_t { get {
+		guard let cEnumValue = System_Security_Cryptography_X509Certificates_Pkcs12ExportPbeParameters_t(rawValue: rawValue) else {
+		    fatalError("Initialization of \"System_Security_Cryptography_X509Certificates_Pkcs12ExportPbeParameters_t\" failed because an unknown enum raw value was provided: \(rawValue)")
+		}
+		
+		return cEnumValue
+	}}
+
+	case `default` = 0
+	case pkcs12TripleDesSha1 = 1
+	case pbes2Aes256Sha256 = 2
+}
+
+extension System_Security_Cryptography_X509Certificates_Pkcs12ExportPbeParameters {
+	public static var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_X509Certificates_Pkcs12ExportPbeParameters_TypeOf())
+		
+	}}
+	
+	
+	
+}
+
+/// Specifies encryption algorithms to be used with Password-Based Encryption (PBE).
+public enum System_Security_Cryptography_PbeEncryptionAlgorithm: Int32 {
+	init(cValue: System_Security_Cryptography_PbeEncryptionAlgorithm_t) {
+		let cRawValue = cValue.rawValue
+		
+		guard let enumValue = Self(rawValue: cRawValue) else {
+		    fatalError("Initialization of \"\(Self.self)\" failed because an unknown enum raw value was provided: \(cRawValue)")
+		}
+		
+		self = enumValue
+	}
+
+	var cValue: System_Security_Cryptography_PbeEncryptionAlgorithm_t { get {
+		guard let cEnumValue = System_Security_Cryptography_PbeEncryptionAlgorithm_t(rawValue: rawValue) else {
+		    fatalError("Initialization of \"System_Security_Cryptography_PbeEncryptionAlgorithm_t\" failed because an unknown enum raw value was provided: \(rawValue)")
+		}
+		
+		return cEnumValue
+	}}
+
+	case unknown = 0
+	case aes128Cbc = 1
+	case aes192Cbc = 2
+	case aes256Cbc = 3
+	case tripleDes3KeyPkcs12 = 4
+}
+
+extension System_Security_Cryptography_PbeEncryptionAlgorithm {
+	public static var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_PbeEncryptionAlgorithm_TypeOf())
+		
+	}}
+	
+	
+	
+}
+
+/// Defines where and how to import the private key of an X.509 certificate.
+public struct System_Security_Cryptography_X509Certificates_X509KeyStorageFlags: OptionSet {
+	public typealias RawValue = Int32
+	public let rawValue: RawValue
+
+	public init(rawValue: RawValue) {
+		self.rawValue = rawValue
+	}
+
+	init(cValue: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags_t) {
+		self.init(rawValue: cValue.rawValue)
+	}
+
+	var cValue: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags_t { get {
+		System_Security_Cryptography_X509Certificates_X509KeyStorageFlags_t(rawValue: rawValue)
+	}}
+
+	public static let defaultKeySet = System_Security_Cryptography_X509Certificates_X509KeyStorageFlags([])
+	public static let userKeySet = System_Security_Cryptography_X509Certificates_X509KeyStorageFlags(rawValue: 1)
+	public static let machineKeySet = System_Security_Cryptography_X509Certificates_X509KeyStorageFlags(rawValue: 2)
+	public static let exportable = System_Security_Cryptography_X509Certificates_X509KeyStorageFlags(rawValue: 4)
+	public static let userProtected = System_Security_Cryptography_X509Certificates_X509KeyStorageFlags(rawValue: 8)
+	public static let persistKeySet = System_Security_Cryptography_X509Certificates_X509KeyStorageFlags(rawValue: 16)
+	public static let ephemeralKeySet = System_Security_Cryptography_X509Certificates_X509KeyStorageFlags(rawValue: 32)
+}
+
+extension System_Security_Cryptography_X509Certificates_X509KeyStorageFlags {
+	public static var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags_TypeOf())
+		
+	}}
+	
+	
+	
+}
+
+/// Identifies Windows cryptographic object identifier (OID) groups.
+public enum System_Security_Cryptography_OidGroup: Int32 {
+	init(cValue: System_Security_Cryptography_OidGroup_t) {
+		let cRawValue = cValue.rawValue
+		
+		guard let enumValue = Self(rawValue: cRawValue) else {
+		    fatalError("Initialization of \"\(Self.self)\" failed because an unknown enum raw value was provided: \(cRawValue)")
+		}
+		
+		self = enumValue
+	}
+
+	var cValue: System_Security_Cryptography_OidGroup_t { get {
+		guard let cEnumValue = System_Security_Cryptography_OidGroup_t(rawValue: rawValue) else {
+		    fatalError("Initialization of \"System_Security_Cryptography_OidGroup_t\" failed because an unknown enum raw value was provided: \(rawValue)")
+		}
+		
+		return cEnumValue
+	}}
+
+	case all = 0
+	case hashAlgorithm = 1
+	case encryptionAlgorithm = 2
+	case publicKeyAlgorithm = 3
+	case signatureAlgorithm = 4
+	case attribute = 5
+	case extensionOrAttribute = 6
+	case enhancedKeyUsage = 7
+	case policy = 8
+	case template = 9
+	case keyDerivationFunction = 10
+}
+
+extension System_Security_Cryptography_OidGroup {
+	public static var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_OidGroup_TypeOf())
+		
+	}}
+	
+	
+	
+}
+
+/// Specifies characteristics of the X.500 distinguished name.
+public struct System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags: OptionSet {
+	public typealias RawValue = Int32
+	public let rawValue: RawValue
+
+	public init(rawValue: RawValue) {
+		self.rawValue = rawValue
+	}
+
+	init(cValue: System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags_t) {
+		self.init(rawValue: cValue.rawValue)
+	}
+
+	var cValue: System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags_t { get {
+		System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags_t(rawValue: rawValue)
+	}}
+
+	public static let `none` = System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags([])
+	public static let reversed = System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags(rawValue: 1)
+	public static let useSemicolons = System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags(rawValue: 16)
+	public static let doNotUsePlusSign = System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags(rawValue: 32)
+	public static let doNotUseQuotes = System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags(rawValue: 64)
+	public static let useCommas = System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags(rawValue: 128)
+	public static let useNewLines = System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags(rawValue: 256)
+	public static let useUTF8Encoding = System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags(rawValue: 4096)
+	public static let useT61Encoding = System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags(rawValue: 8192)
+	public static let forceUTF8Encoding = System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags(rawValue: 16384)
+}
+
+extension System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags {
+	public static var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags_TypeOf())
+		
+	}}
+	
+	
+	
+}
+
+/// Specifies the padding mode to use with RSA encryption or decryption operations.
+public enum System_Security_Cryptography_RSAEncryptionPaddingMode: Int32 {
+	init(cValue: System_Security_Cryptography_RSAEncryptionPaddingMode_t) {
+		let cRawValue = cValue.rawValue
+		
+		guard let enumValue = Self(rawValue: cRawValue) else {
+		    fatalError("Initialization of \"\(Self.self)\" failed because an unknown enum raw value was provided: \(cRawValue)")
+		}
+		
+		self = enumValue
+	}
+
+	var cValue: System_Security_Cryptography_RSAEncryptionPaddingMode_t { get {
+		guard let cEnumValue = System_Security_Cryptography_RSAEncryptionPaddingMode_t(rawValue: rawValue) else {
+		    fatalError("Initialization of \"System_Security_Cryptography_RSAEncryptionPaddingMode_t\" failed because an unknown enum raw value was provided: \(rawValue)")
+		}
+		
+		return cEnumValue
+	}}
+
+	case pkcs1 = 0
+	case oaep = 1
+}
+
+extension System_Security_Cryptography_RSAEncryptionPaddingMode {
+	public static var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_RSAEncryptionPaddingMode_TypeOf())
+		
+	}}
+	
+	
+	
+}
+
+/// Specifies the padding mode to use with RSA signature creation or verification operations.
+public enum System_Security_Cryptography_RSASignaturePaddingMode: Int32 {
+	init(cValue: System_Security_Cryptography_RSASignaturePaddingMode_t) {
+		let cRawValue = cValue.rawValue
+		
+		guard let enumValue = Self(rawValue: cRawValue) else {
+		    fatalError("Initialization of \"\(Self.self)\" failed because an unknown enum raw value was provided: \(cRawValue)")
+		}
+		
+		self = enumValue
+	}
+
+	var cValue: System_Security_Cryptography_RSASignaturePaddingMode_t { get {
+		guard let cEnumValue = System_Security_Cryptography_RSASignaturePaddingMode_t(rawValue: rawValue) else {
+		    fatalError("Initialization of \"System_Security_Cryptography_RSASignaturePaddingMode_t\" failed because an unknown enum raw value was provided: \(rawValue)")
+		}
+		
+		return cEnumValue
+	}}
+
+	case pkcs1 = 0
+	case pss = 1
+}
+
+extension System_Security_Cryptography_RSASignaturePaddingMode {
+	public static var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_RSASignaturePaddingMode_TypeOf())
+		
+	}}
+	
+	
+	
+}
+
+/// Specifies the data format for signatures with the DSA family of algorithms.
+public enum System_Security_Cryptography_DSASignatureFormat: Int32 {
+	init(cValue: System_Security_Cryptography_DSASignatureFormat_t) {
+		let cRawValue = cValue.rawValue
+		
+		guard let enumValue = Self(rawValue: cRawValue) else {
+		    fatalError("Initialization of \"\(Self.self)\" failed because an unknown enum raw value was provided: \(cRawValue)")
+		}
+		
+		self = enumValue
+	}
+
+	var cValue: System_Security_Cryptography_DSASignatureFormat_t { get {
+		guard let cEnumValue = System_Security_Cryptography_DSASignatureFormat_t(rawValue: rawValue) else {
+		    fatalError("Initialization of \"System_Security_Cryptography_DSASignatureFormat_t\" failed because an unknown enum raw value was provided: \(rawValue)")
+		}
+		
+		return cEnumValue
+	}}
+
+	case ieeeP1363FixedFieldConcatenation = 0
+	case rfc3279DerSequence = 1
+}
+
+extension System_Security_Cryptography_DSASignatureFormat {
+	public static var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_DSASignatureFormat_TypeOf())
+		
+	}}
+	
+	
+	
+}
+
+/// Indicates how to interpret the data contained in an System.Security.Cryptography.ECCurve object.
+public enum System_Security_Cryptography_ECCurve_ECCurveType: Int32 {
+	init(cValue: System_Security_Cryptography_ECCurve_ECCurveType_t) {
+		let cRawValue = cValue.rawValue
+		
+		guard let enumValue = Self(rawValue: cRawValue) else {
+		    fatalError("Initialization of \"\(Self.self)\" failed because an unknown enum raw value was provided: \(cRawValue)")
+		}
+		
+		self = enumValue
+	}
+
+	var cValue: System_Security_Cryptography_ECCurve_ECCurveType_t { get {
+		guard let cEnumValue = System_Security_Cryptography_ECCurve_ECCurveType_t(rawValue: rawValue) else {
+		    fatalError("Initialization of \"System_Security_Cryptography_ECCurve_ECCurveType_t\" failed because an unknown enum raw value was provided: \(rawValue)")
+		}
+		
+		return cEnumValue
+	}}
+
+	case implicit = 0
+	case primeShortWeierstrass = 1
+	case primeTwistedEdwards = 2
+	case primeMontgomery = 3
+	case characteristic2 = 4
+	case named = 5
+}
+
+extension System_Security_Cryptography_ECCurve_ECCurveType {
+	public static var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_ECCurve_ECCurveType_TypeOf())
+		
+	}}
+	
+	
+	
+}
+
+/// Specifies the type of name the X509 certificate contains.
+public enum System_Security_Cryptography_X509Certificates_X509NameType: Int32 {
+	init(cValue: System_Security_Cryptography_X509Certificates_X509NameType_t) {
+		let cRawValue = cValue.rawValue
+		
+		guard let enumValue = Self(rawValue: cRawValue) else {
+		    fatalError("Initialization of \"\(Self.self)\" failed because an unknown enum raw value was provided: \(cRawValue)")
+		}
+		
+		self = enumValue
+	}
+
+	var cValue: System_Security_Cryptography_X509Certificates_X509NameType_t { get {
+		guard let cEnumValue = System_Security_Cryptography_X509Certificates_X509NameType_t(rawValue: rawValue) else {
+		    fatalError("Initialization of \"System_Security_Cryptography_X509Certificates_X509NameType_t\" failed because an unknown enum raw value was provided: \(rawValue)")
+		}
+		
+		return cEnumValue
+	}}
+
+	case simpleName = 0
+	case emailName = 1
+	case upnName = 2
+	case dnsName = 3
+	case dnsFromAlternativeName = 4
+	case urlName = 5
+}
+
+extension System_Security_Cryptography_X509Certificates_X509NameType {
+	public static var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_X509Certificates_X509NameType_TypeOf())
+		
+	}}
+	
+	
+	
+}
+
+/// Specifies the type of value the System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Find(System.Security.Cryptography.X509Certificates.X509FindType,System.Object,System.Boolean) method searches for.
+public enum System_Security_Cryptography_X509Certificates_X509FindType: Int32 {
+	init(cValue: System_Security_Cryptography_X509Certificates_X509FindType_t) {
+		let cRawValue = cValue.rawValue
+		
+		guard let enumValue = Self(rawValue: cRawValue) else {
+		    fatalError("Initialization of \"\(Self.self)\" failed because an unknown enum raw value was provided: \(cRawValue)")
+		}
+		
+		self = enumValue
+	}
+
+	var cValue: System_Security_Cryptography_X509Certificates_X509FindType_t { get {
+		guard let cEnumValue = System_Security_Cryptography_X509Certificates_X509FindType_t(rawValue: rawValue) else {
+		    fatalError("Initialization of \"System_Security_Cryptography_X509Certificates_X509FindType_t\" failed because an unknown enum raw value was provided: \(rawValue)")
+		}
+		
+		return cEnumValue
+	}}
+
+	case findByThumbprint = 0
+	case findBySubjectName = 1
+	case findBySubjectDistinguishedName = 2
+	case findByIssuerName = 3
+	case findByIssuerDistinguishedName = 4
+	case findBySerialNumber = 5
+	case findByTimeValid = 6
+	case findByTimeNotYetValid = 7
+	case findByTimeExpired = 8
+	case findByTemplateName = 9
+	case findByApplicationPolicy = 10
+	case findByCertificatePolicy = 11
+	case findByExtension = 12
+	case findByKeyUsage = 13
+	case findBySubjectKeyIdentifier = 14
+}
+
+extension System_Security_Cryptography_X509Certificates_X509FindType {
+	public static var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_X509Certificates_X509FindType_TypeOf())
+		
+	}}
+	
+	
+	
+}
+
 /// Specifies the mode of a cryptographic stream.
 public enum System_Security_Cryptography_CryptoStreamMode: Int32 {
 	init(cValue: System_Security_Cryptography_CryptoStreamMode_t) {
@@ -7294,158 +7749,6 @@ public enum System_Security_Cryptography_PaddingMode: Int32 {
 extension System_Security_Cryptography_PaddingMode {
 	public static var typeOf: System_Type /* System.Type */ { get {
 		return System_Type(handle: System_Security_Cryptography_PaddingMode_TypeOf())
-		
-	}}
-	
-	
-	
-}
-
-/// Specifies encryption algorithms to be used with Password-Based Encryption (PBE).
-public enum System_Security_Cryptography_PbeEncryptionAlgorithm: Int32 {
-	init(cValue: System_Security_Cryptography_PbeEncryptionAlgorithm_t) {
-		let cRawValue = cValue.rawValue
-		
-		guard let enumValue = Self(rawValue: cRawValue) else {
-		    fatalError("Initialization of \"\(Self.self)\" failed because an unknown enum raw value was provided: \(cRawValue)")
-		}
-		
-		self = enumValue
-	}
-
-	var cValue: System_Security_Cryptography_PbeEncryptionAlgorithm_t { get {
-		guard let cEnumValue = System_Security_Cryptography_PbeEncryptionAlgorithm_t(rawValue: rawValue) else {
-		    fatalError("Initialization of \"System_Security_Cryptography_PbeEncryptionAlgorithm_t\" failed because an unknown enum raw value was provided: \(rawValue)")
-		}
-		
-		return cEnumValue
-	}}
-
-	case unknown = 0
-	case aes128Cbc = 1
-	case aes192Cbc = 2
-	case aes256Cbc = 3
-	case tripleDes3KeyPkcs12 = 4
-}
-
-extension System_Security_Cryptography_PbeEncryptionAlgorithm {
-	public static var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Security_Cryptography_PbeEncryptionAlgorithm_TypeOf())
-		
-	}}
-	
-	
-	
-}
-
-/// Specifies the data format for signatures with the DSA family of algorithms.
-public enum System_Security_Cryptography_DSASignatureFormat: Int32 {
-	init(cValue: System_Security_Cryptography_DSASignatureFormat_t) {
-		let cRawValue = cValue.rawValue
-		
-		guard let enumValue = Self(rawValue: cRawValue) else {
-		    fatalError("Initialization of \"\(Self.self)\" failed because an unknown enum raw value was provided: \(cRawValue)")
-		}
-		
-		self = enumValue
-	}
-
-	var cValue: System_Security_Cryptography_DSASignatureFormat_t { get {
-		guard let cEnumValue = System_Security_Cryptography_DSASignatureFormat_t(rawValue: rawValue) else {
-		    fatalError("Initialization of \"System_Security_Cryptography_DSASignatureFormat_t\" failed because an unknown enum raw value was provided: \(rawValue)")
-		}
-		
-		return cEnumValue
-	}}
-
-	case ieeeP1363FixedFieldConcatenation = 0
-	case rfc3279DerSequence = 1
-}
-
-extension System_Security_Cryptography_DSASignatureFormat {
-	public static var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Security_Cryptography_DSASignatureFormat_TypeOf())
-		
-	}}
-	
-	
-	
-}
-
-/// Identifies Windows cryptographic object identifier (OID) groups.
-public enum System_Security_Cryptography_OidGroup: Int32 {
-	init(cValue: System_Security_Cryptography_OidGroup_t) {
-		let cRawValue = cValue.rawValue
-		
-		guard let enumValue = Self(rawValue: cRawValue) else {
-		    fatalError("Initialization of \"\(Self.self)\" failed because an unknown enum raw value was provided: \(cRawValue)")
-		}
-		
-		self = enumValue
-	}
-
-	var cValue: System_Security_Cryptography_OidGroup_t { get {
-		guard let cEnumValue = System_Security_Cryptography_OidGroup_t(rawValue: rawValue) else {
-		    fatalError("Initialization of \"System_Security_Cryptography_OidGroup_t\" failed because an unknown enum raw value was provided: \(rawValue)")
-		}
-		
-		return cEnumValue
-	}}
-
-	case all = 0
-	case hashAlgorithm = 1
-	case encryptionAlgorithm = 2
-	case publicKeyAlgorithm = 3
-	case signatureAlgorithm = 4
-	case attribute = 5
-	case extensionOrAttribute = 6
-	case enhancedKeyUsage = 7
-	case policy = 8
-	case template = 9
-	case keyDerivationFunction = 10
-}
-
-extension System_Security_Cryptography_OidGroup {
-	public static var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Security_Cryptography_OidGroup_TypeOf())
-		
-	}}
-	
-	
-	
-}
-
-/// Indicates how to interpret the data contained in an System.Security.Cryptography.ECCurve object.
-public enum System_Security_Cryptography_ECCurve_ECCurveType: Int32 {
-	init(cValue: System_Security_Cryptography_ECCurve_ECCurveType_t) {
-		let cRawValue = cValue.rawValue
-		
-		guard let enumValue = Self(rawValue: cRawValue) else {
-		    fatalError("Initialization of \"\(Self.self)\" failed because an unknown enum raw value was provided: \(cRawValue)")
-		}
-		
-		self = enumValue
-	}
-
-	var cValue: System_Security_Cryptography_ECCurve_ECCurveType_t { get {
-		guard let cEnumValue = System_Security_Cryptography_ECCurve_ECCurveType_t(rawValue: rawValue) else {
-		    fatalError("Initialization of \"System_Security_Cryptography_ECCurve_ECCurveType_t\" failed because an unknown enum raw value was provided: \(rawValue)")
-		}
-		
-		return cEnumValue
-	}}
-
-	case implicit = 0
-	case primeShortWeierstrass = 1
-	case primeTwistedEdwards = 2
-	case primeMontgomery = 3
-	case characteristic2 = 4
-	case named = 5
-}
-
-extension System_Security_Cryptography_ECCurve_ECCurveType {
-	public static var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Security_Cryptography_ECCurve_ECCurveType_TypeOf())
 		
 	}}
 	
@@ -138978,6 +139281,17361 @@ public class System_Net_ICredentialsByHost_DNInterface /* System.Net.ICredential
 }
 
 
+public class Beyond_NET_Sample_X509CertificatesTests /* Beyond.NET.Sample.X509CertificatesTests */: System_Object {
+	public override class var typeName: String { get {
+		"X509CertificatesTests"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"Beyond.NET.Sample.X509CertificatesTests"
+	}}
+
+	public class func createX509CertificateCollection() throws -> System_Security_Cryptography_X509Certificates_X509CertificateCollection /* System.Security.Cryptography.X509Certificates.X509CertificateCollection */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = Beyond_NET_Sample_X509CertificatesTests_CreateX509CertificateCollection(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509CertificateCollection(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func createX509CertificateEnumerator() throws -> System_Security_Cryptography_X509Certificates_X509CertificateCollection_X509CertificateEnumerator /* System.Security.Cryptography.X509Certificates.X509CertificateCollection.X509CertificateEnumerator */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = Beyond_NET_Sample_X509CertificatesTests_CreateX509CertificateEnumerator(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509CertificateCollection_X509CertificateEnumerator(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func createX509Certificate2Collection() throws -> System_Security_Cryptography_X509Certificates_X509Certificate2Collection /* System.Security.Cryptography.X509Certificates.X509Certificate2Collection */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = Beyond_NET_Sample_X509CertificatesTests_CreateX509Certificate2Collection(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate2Collection(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func createX509Certificate2Enumerator() throws -> System_Security_Cryptography_X509Certificates_X509Certificate2Enumerator /* System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = Beyond_NET_Sample_X509CertificatesTests_CreateX509Certificate2Enumerator(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate2Enumerator(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public convenience init() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = Beyond_NET_Sample_X509CertificatesTests_Create_1(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: Beyond_NET_Sample_X509CertificatesTests_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		Beyond_NET_Sample_X509CertificatesTests_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Defines a collection that stores System.Security.Cryptography.X509Certificates.X509Certificate objects.
+public class System_Security_Cryptography_X509Certificates_X509CertificateCollection /* System.Security.Cryptography.X509Certificates.X509CertificateCollection */: System_Collections_CollectionBase {
+	public override class var typeName: String { get {
+		"X509CertificateCollection"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.X509Certificates.X509CertificateCollection"
+	}}
+
+	/// Adds an System.Security.Cryptography.X509Certificates.X509Certificate with the specified value to the current System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+	/// - Parameter value: The System.Security.Cryptography.X509Certificates.X509Certificate to add to the current System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+	/// - Returns: The index into the current System.Security.Cryptography.X509Certificates.X509CertificateCollection at which the new System.Security.Cryptography.X509Certificates.X509Certificate was inserted.
+	public func add(_ value: System_Security_Cryptography_X509Certificates_X509Certificate /* System.Security.Cryptography.X509Certificates.X509Certificate */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509CertificateCollection_Add(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Copies the elements of an array of type System.Security.Cryptography.X509Certificates.X509Certificate to the end of the current System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+	/// - Parameter value: The array of type System.Security.Cryptography.X509Certificates.X509Certificate containing the objects to add to the current System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+	/// - Throws: System.ArgumentNullException: The value parameter is null.
+	public func addRange(_ value: DNArray<System_Security_Cryptography_X509Certificates_X509Certificate> /* System.Security.Cryptography.X509Certificates.X509Certificate[] */) throws {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509CertificateCollection_AddRange(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Copies the elements of the specified System.Security.Cryptography.X509Certificates.X509CertificateCollection to the end of the current System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+	/// - Parameter value: The System.Security.Cryptography.X509Certificates.X509CertificateCollection containing the objects to add to the collection.
+	/// - Throws: System.ArgumentNullException: The value parameter is null.
+	public func addRange(_ value: System_Security_Cryptography_X509Certificates_X509CertificateCollection /* System.Security.Cryptography.X509Certificates.X509CertificateCollection */) throws {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509CertificateCollection_AddRange_1(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Gets a value indicating whether the current System.Security.Cryptography.X509Certificates.X509CertificateCollection contains the specified System.Security.Cryptography.X509Certificates.X509Certificate.
+	/// - Parameter value: The System.Security.Cryptography.X509Certificates.X509Certificate to locate.
+	/// - Returns: true if the System.Security.Cryptography.X509Certificates.X509Certificate is contained in this collection; otherwise, false.
+	public func contains(_ value: System_Security_Cryptography_X509Certificates_X509Certificate /* System.Security.Cryptography.X509Certificates.X509Certificate */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509CertificateCollection_Contains(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Copies the System.Security.Cryptography.X509Certificates.X509Certificate values in the current System.Security.Cryptography.X509Certificates.X509CertificateCollection to a one-dimensional System.Array instance at the specified index.
+	/// - Parameter array: The one-dimensional System.Array that is the destination of the values copied from System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+	/// - Parameter index: The index into array to begin copying.
+	/// - Throws: System.ArgumentException: The array parameter is multidimensional.  -or-  The number of elements in the System.Security.Cryptography.X509Certificates.X509CertificateCollection is greater than the available space between index and the end of array.
+	/// - Throws: System.ArgumentNullException: The array parameter is null.
+	/// - Throws: System.ArgumentOutOfRangeException: The index parameter is less than the array parameter's lower bound.
+	public func copyTo(_ array: DNArray<System_Security_Cryptography_X509Certificates_X509Certificate> /* System.Security.Cryptography.X509Certificates.X509Certificate[] */, _ index: Int32 /* System.Int32 */) throws {
+		let arrayC = array.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509CertificateCollection_CopyTo(self.__handle, arrayC, index, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Returns an enumerator that can iterate through the System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+	/// - Returns: An enumerator of the subelements of System.Security.Cryptography.X509Certificates.X509CertificateCollection you can use to iterate through the collection.
+	public func getEnumerator() throws -> System_Security_Cryptography_X509Certificates_X509CertificateCollection_X509CertificateEnumerator /* System.Security.Cryptography.X509Certificates.X509CertificateCollection.X509CertificateEnumerator */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509CertificateCollection_GetEnumerator(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509CertificateCollection_X509CertificateEnumerator(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Builds a hash value based on all values contained in the current System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+	/// - Returns: A hash value based on all values contained in the current System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509CertificateCollection_GetHashCode(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Returns the index of the specified System.Security.Cryptography.X509Certificates.X509Certificate in the current System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+	/// - Parameter value: The System.Security.Cryptography.X509Certificates.X509Certificate to locate.
+	/// - Returns: The index of the System.Security.Cryptography.X509Certificates.X509Certificate specified by the value parameter in the System.Security.Cryptography.X509Certificates.X509CertificateCollection, if found; otherwise, -1.
+	public func indexOf(_ value: System_Security_Cryptography_X509Certificates_X509Certificate /* System.Security.Cryptography.X509Certificates.X509Certificate */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509CertificateCollection_IndexOf(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Inserts a System.Security.Cryptography.X509Certificates.X509Certificate into the current System.Security.Cryptography.X509Certificates.X509CertificateCollection at the specified index.
+	/// - Parameter index: The zero-based index where value should be inserted.
+	/// - Parameter value: The System.Security.Cryptography.X509Certificates.X509Certificate to insert.
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: System_Security_Cryptography_X509Certificates_X509Certificate /* System.Security.Cryptography.X509Certificates.X509Certificate */) throws {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509CertificateCollection_Insert(self.__handle, index, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Removes a specific System.Security.Cryptography.X509Certificates.X509Certificate from the current System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+	/// - Parameter value: The System.Security.Cryptography.X509Certificates.X509Certificate to remove from the current System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+	/// - Throws: System.ArgumentException: The System.Security.Cryptography.X509Certificates.X509Certificate specified by the value parameter is not found in the current System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+	public func remove(_ value: System_Security_Cryptography_X509Certificates_X509Certificate /* System.Security.Cryptography.X509Certificates.X509Certificate */) throws {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509CertificateCollection_Remove(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509CertificateCollection class.
+	public convenience init() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509CertificateCollection_Create(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509CertificateCollection class from an array of System.Security.Cryptography.X509Certificates.X509Certificate objects.
+	/// - Parameter value: The array of System.Security.Cryptography.X509Certificates.X509Certificate objects with which to initialize the new object.
+	public convenience init(_ value: DNArray<System_Security_Cryptography_X509Certificates_X509Certificate> /* System.Security.Cryptography.X509Certificates.X509Certificate[] */) throws {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509CertificateCollection_Create_1(valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509CertificateCollection class from another System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+	/// - Parameter value: The System.Security.Cryptography.X509Certificates.X509CertificateCollection with which to initialize the new object.
+	public convenience init(_ value: System_Security_Cryptography_X509Certificates_X509CertificateCollection /* System.Security.Cryptography.X509Certificates.X509CertificateCollection */) throws {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509CertificateCollection_Create_2(valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public func item(_ index: Int32 /* System.Int32 */) throws -> System_Security_Cryptography_X509Certificates_X509Certificate /* System.Security.Cryptography.X509Certificates.X509Certificate */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509CertificateCollection_Item_Get(self.__handle, index, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	public func item_set(_ index: Int32 /* System.Int32 */, _ value: System_Security_Cryptography_X509Certificates_X509Certificate /* System.Security.Cryptography.X509Certificates.X509Certificate */) throws {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509CertificateCollection_Item_Set(self.__handle, index, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_X509Certificates_X509CertificateCollection_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_X509Certificates_X509CertificateCollection_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Provides the abstract base class for a strongly typed collection.
+public class System_Collections_CollectionBase /* System.Collections.CollectionBase */: System_Object, System_Collections_IList, System_Collections_ICollection, System_Collections_IEnumerable {
+	public override class var typeName: String { get {
+		"CollectionBase"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Collections.CollectionBase"
+	}}
+
+	/// Removes all objects from the System.Collections.CollectionBase instance. This method cannot be overridden.
+	public func clear() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Collections_CollectionBase_Clear(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Removes the element at the specified index of the System.Collections.CollectionBase instance. This method is not overridable.
+	/// - Parameter index: The zero-based index of the element to remove.
+	/// - Throws: System.ArgumentOutOfRangeException: index is less than zero.  -or-  index is equal to or greater than System.Collections.CollectionBase.Count.
+	public func removeAt(_ index: Int32 /* System.Int32 */) throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Collections_CollectionBase_RemoveAt(self.__handle, index, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Returns an enumerator that iterates through the System.Collections.CollectionBase instance.
+	/// - Returns: An System.Collections.IEnumerator for the System.Collections.CollectionBase instance.
+	public func getEnumerator() throws -> System_Collections_IEnumerator /* System.Collections.IEnumerator */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_CollectionBase_GetEnumerator(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Collections_IEnumerator_DNInterface(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets or sets the number of elements that the System.Collections.CollectionBase can contain.
+	/// - Throws: System.ArgumentOutOfRangeException: System.Collections.CollectionBase.Capacity is set to a value that is less than System.Collections.CollectionBase.Count.
+	/// - Throws: System.OutOfMemoryException: There is not enough memory available on the system.
+	/// - Returns: The number of elements that the System.Collections.CollectionBase can contain.
+	public var capacity: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_CollectionBase_Capacity_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	/// Gets or sets the number of elements that the System.Collections.CollectionBase can contain.
+	/// - Throws: System.ArgumentOutOfRangeException: System.Collections.CollectionBase.Capacity is set to a value that is less than System.Collections.CollectionBase.Count.
+	/// - Throws: System.OutOfMemoryException: There is not enough memory available on the system.
+	/// - Returns: The number of elements that the System.Collections.CollectionBase can contain.
+	public func capacity_set(_ value: Int32 /* System.Int32 */) throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Collections_CollectionBase_Capacity_Set(self.__handle, value, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	/// Gets the number of elements contained in the System.Collections.CollectionBase instance. This property cannot be overridden.
+	/// - Returns: The number of elements contained in the System.Collections.CollectionBase instance. Retrieving the value of this property is an O(1) operation.
+	public var count: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Collections_CollectionBase_Count_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Collections_CollectionBase_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Collections_CollectionBase_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Provides methods that help you use X.509 v.3 certificates.
+public class System_Security_Cryptography_X509Certificates_X509Certificate /* System.Security.Cryptography.X509Certificates.X509Certificate */: System_Object, System_IDisposable, System_Runtime_Serialization_IDeserializationCallback, System_Runtime_Serialization_ISerializable {
+	public override class var typeName: String { get {
+		"X509Certificate"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.X509Certificates.X509Certificate"
+	}}
+
+	/// Resets the state of the System.Security.Cryptography.X509Certificates.X509Certificate2 object.
+	public func reset() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate_Reset(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Creates an X.509v3 certificate from the specified PKCS7 signed file.
+	/// - Parameter filename: The path of the PKCS7 signed file from which to create the X.509 certificate.
+	/// - Throws: System.ArgumentException: The filename parameter is null.
+	/// - Returns: The newly created X.509 certificate.
+	public class func createFromCertFile(_ filename: System_String /* System.String */) throws -> System_Security_Cryptography_X509Certificates_X509Certificate /* System.Security.Cryptography.X509Certificates.X509Certificate */ {
+		let filenameC = filename.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_CreateFromCertFile(filenameC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Creates an X.509v3 certificate from the specified signed file.
+	/// - Parameter filename: The path of the signed file from which to create the X.509 certificate.
+	/// - Returns: The newly created X.509 certificate.
+	public class func createFromSignedFile(_ filename: System_String /* System.String */) throws -> System_Security_Cryptography_X509Certificates_X509Certificate /* System.Security.Cryptography.X509Certificates.X509Certificate */ {
+		let filenameC = filename.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_CreateFromSignedFile(filenameC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Releases all resources used by the current System.Security.Cryptography.X509Certificates.X509Certificate object.
+	public func dispose() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate_Dispose(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Compares two System.Security.Cryptography.X509Certificates.X509Certificate objects for equality.
+	/// - Parameter obj: An System.Security.Cryptography.X509Certificates.X509Certificate object to compare to the current object.
+	/// - Returns: true if the current System.Security.Cryptography.X509Certificates.X509Certificate object is equal to the object specified by the obj parameter; otherwise, false.
+	public override func equals(_ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let objC = obj?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Equals(self.__handle, objC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Compares two System.Security.Cryptography.X509Certificates.X509Certificate objects for equality.
+	/// - Parameter other: An System.Security.Cryptography.X509Certificates.X509Certificate object to compare to the current object.
+	/// - Returns: true if the current System.Security.Cryptography.X509Certificates.X509Certificate object is equal to the object specified by the other parameter; otherwise, false.
+	public func equals(_ other: System_Security_Cryptography_X509Certificates_X509Certificate? /* System.Security.Cryptography.X509Certificates.X509Certificate */) throws -> Bool /* System.Boolean */ {
+		let otherC = other?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Equals_1(self.__handle, otherC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Exports the current System.Security.Cryptography.X509Certificates.X509Certificate object to a byte array in a format described by one of the System.Security.Cryptography.X509Certificates.X509ContentType values.
+	/// - Parameter contentType: One of the System.Security.Cryptography.X509Certificates.X509ContentType values that describes how to format the output data.
+	/// - Throws: System.Security.Cryptography.CryptographicException: A value other than System.Security.Cryptography.X509Certificates.X509ContentType.Cert, System.Security.Cryptography.X509Certificates.X509ContentType.SerializedCert, or System.Security.Cryptography.X509Certificates.X509ContentType.Pkcs12 was passed to the contentType parameter.  -or-  The certificate could not be exported.
+	/// - Returns: An array of bytes that represents the current System.Security.Cryptography.X509Certificates.X509Certificate object.
+	public func export(_ contentType: System_Security_Cryptography_X509Certificates_X509ContentType /* System.Security.Cryptography.X509Certificates.X509ContentType */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let contentTypeC = contentType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Export(self.__handle, contentTypeC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current System.Security.Cryptography.X509Certificates.X509Certificate object to a byte array in a format described by one of the System.Security.Cryptography.X509Certificates.X509ContentType values, and using the specified password.
+	/// - Parameter contentType: One of the System.Security.Cryptography.X509Certificates.X509ContentType values that describes how to format the output data.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Throws: System.Security.Cryptography.CryptographicException: A value other than System.Security.Cryptography.X509Certificates.X509ContentType.Cert, System.Security.Cryptography.X509Certificates.X509ContentType.SerializedCert, or System.Security.Cryptography.X509Certificates.X509ContentType.Pkcs12 was passed to the contentType parameter.  -or-  The certificate could not be exported.
+	/// - Returns: An array of bytes that represents the current System.Security.Cryptography.X509Certificates.X509Certificate object.
+	public func export(_ contentType: System_Security_Cryptography_X509Certificates_X509ContentType /* System.Security.Cryptography.X509Certificates.X509ContentType */, _ password: System_String? /* System.String */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let contentTypeC = contentType.cValue
+		let passwordC = password?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Export_1(self.__handle, contentTypeC, passwordC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current System.Security.Cryptography.X509Certificates.X509Certificate object to a byte array using the specified format and a password.
+	/// - Parameter contentType: One of the System.Security.Cryptography.X509Certificates.X509ContentType values that describes how to format the output data.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Throws: System.Security.Cryptography.CryptographicException: A value other than System.Security.Cryptography.X509Certificates.X509ContentType.Cert, System.Security.Cryptography.X509Certificates.X509ContentType.SerializedCert, or System.Security.Cryptography.X509Certificates.X509ContentType.Pkcs12 was passed to the contentType parameter.  -or-  The certificate could not be exported.
+	/// - Returns: A byte array that represents the current System.Security.Cryptography.X509Certificates.X509Certificate object.
+	public func export(_ contentType: System_Security_Cryptography_X509Certificates_X509ContentType /* System.Security.Cryptography.X509Certificates.X509ContentType */, _ password: System_Security_SecureString? /* System.Security.SecureString */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let contentTypeC = contentType.cValue
+		let passwordC = password?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Export_2(self.__handle, contentTypeC, passwordC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the certificate and private key in PKCS#12 / PFX format.
+	/// - Parameter exportParameters: The algorithm parameters to use for the export.
+	/// - Parameter password: The password to use for the export.
+	/// - Throws: System.ArgumentException: password contains a Unicode 'NULL' character.
+	/// - Throws: System.ArgumentOutOfRangeException: exportParameters is not a valid value.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The current instance is disposed.-or-The export operation failed.
+	/// - Returns: A byte array containing the encoded PKCS#12.
+	public func exportPkcs12(_ exportParameters: System_Security_Cryptography_X509Certificates_Pkcs12ExportPbeParameters /* System.Security.Cryptography.X509Certificates.Pkcs12ExportPbeParameters */, _ password: System_String? /* System.String */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let exportParametersC = exportParameters.cValue
+		let passwordC = password?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_ExportPkcs12(self.__handle, exportParametersC, passwordC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the certificate and private key in PKCS#12 / PFX format.
+	/// - Parameter exportParameters: The algorithm parameters to use for the export.
+	/// - Parameter password: The password to use for the export.
+	/// - Throws: System.ArgumentException: password contains a Unicode 'NULL' character.
+	/// - Throws: System.ArgumentNullException: exportParameters is null .
+	/// - Throws: System.Security.Cryptography.CryptographicException: The current instance is disposed.-or-The export operation failed.-or-exportParameters specifies a System.Security.Cryptography.PbeParameters.HashAlgorithm value that is not supported for the System.Security.Cryptography.PbeParameters.EncryptionAlgorithm value.-or-exportParameters contains an invalid encryption algorithm for System.Security.Cryptography.PbeParameters.EncryptionAlgorithm.
+	/// - Returns: A byte array containing the encoded PKCS#12.
+	public func exportPkcs12(_ exportParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */, _ password: System_String? /* System.String */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let exportParametersC = exportParameters.__handle
+		let passwordC = password?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_ExportPkcs12_1(self.__handle, exportParametersC, passwordC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns the raw data for the entire X.509v3 certificate as a hexadecimal string.
+	/// - Returns: The X.509 certificate data as a hexadecimal string.
+	public func getRawCertDataString() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_GetRawCertDataString(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns the hash value for the X.509v3 certificate as an array of bytes.
+	/// - Returns: The hash value for the X.509 certificate.
+	public func getCertHash() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_GetCertHash(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns the hash value for the X.509v3 certificate that is computed by using the specified cryptographic hash algorithm.
+	/// - Parameter hashAlgorithm: The name of the cryptographic hash algorithm to use.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or an empty string.
+	/// - Throws: System.Security.Cryptography.CryptographicException: hashAlgorithm is not a known hash algorithm.
+	/// - Returns: A byte array that contains the hash value for the X.509 certificate.
+	public func getCertHash(_ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_GetCertHash_1(self.__handle, hashAlgorithmC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns the SHA-1 hash value for the X.509v3 certificate as a hexadecimal string.
+	/// - Returns: The hexadecimal string representation of the X.509 certificate hash value.
+	public func getCertHashString() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_GetCertHashString(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns a hexadecimal string containing the hash value for the X.509v3 certificate computed using the specified cryptographic hash algorithm.
+	/// - Parameter hashAlgorithm: The name of the cryptographic hash algorithm to use.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or an empty string.
+	/// - Throws: System.Security.Cryptography.CryptographicException: hashAlgorithm is not a known hash algorithm.
+	/// - Returns: The hexadecimal string representation of the X.509 certificate hash value.
+	public func getCertHashString(_ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> System_String /* System.String */ {
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_GetCertHashString_1(self.__handle, hashAlgorithmC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns the effective date of this X.509v3 certificate.
+	/// - Returns: The effective date for this X.509 certificate.
+	public func getEffectiveDateString() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_GetEffectiveDateString(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns the expiration date of this X.509v3 certificate.
+	/// - Returns: The expiration date for this X.509 certificate.
+	public func getExpirationDateString() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_GetExpirationDateString(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns the name of the format of this X.509v3 certificate.
+	/// - Returns: The format of this X.509 certificate.
+	public func getFormat() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_GetFormat(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns the public key for the X.509v3 certificate as a hexadecimal string.
+	/// - Returns: The public key for the X.509 certificate as a hexadecimal string.
+	public func getPublicKeyString() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_GetPublicKeyString(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns the raw data for the entire X.509v3 certificate as an array of bytes.
+	/// - Returns: A byte array containing the X.509 certificate data.
+	public func getRawCertData() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_GetRawCertData_1(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns the hash code for the X.509v3 certificate as an integer.
+	/// - Returns: The hash code for the X.509 certificate as an integer.
+	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_GetHashCode(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Returns the key algorithm information for this X.509v3 certificate as a string.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate context is invalid.
+	/// - Returns: The key algorithm information for this X.509 certificate as a string.
+	public func getKeyAlgorithm() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_GetKeyAlgorithm(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns the key algorithm parameters for the X.509v3 certificate as an array of bytes.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate context is invalid.
+	/// - Returns: The key algorithm parameters for the X.509 certificate as an array of bytes.
+	public func getKeyAlgorithmParameters() throws -> DNArray<System_Byte>? /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_GetKeyAlgorithmParameters(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns the key algorithm parameters for the X.509v3 certificate as a hexadecimal string.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate context is invalid.
+	/// - Returns: The key algorithm parameters for the X.509 certificate as a hexadecimal string.
+	public func getKeyAlgorithmParametersString() throws -> System_String? /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_GetKeyAlgorithmParametersString(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns the public key for the X.509v3 certificate as an array of bytes.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate context is invalid.
+	/// - Returns: The public key for the X.509 certificate as an array of bytes.
+	public func getPublicKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_GetPublicKey_1(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns the serial number of the X.509v3 certificate as an array of bytes in little-endian order.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate context is invalid.
+	/// - Returns: The serial number of the X.509 certificate as an array of bytes in little-endian order.
+	public func getSerialNumber() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_GetSerialNumber(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns the serial number of the X.509v3 certificate as a big-endian hexadecimal string.
+	/// - Returns: The serial number of the X.509 certificate as a big-endian hexadecimal string.
+	public func getSerialNumberString() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_GetSerialNumberString(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns the name of the principal to which the certificate was issued.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate context is invalid.
+	/// - Returns: The name of the principal to which the certificate was issued.
+	public func getName() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_GetName(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns the name of the certification authority that issued the X.509v3 certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	/// - Returns: The name of the certification authority that issued the X.509 certificate.
+	public func getIssuerName() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_GetIssuerName(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns a string representation of the current System.Security.Cryptography.X509Certificates.X509Certificate object.
+	/// - Returns: A string representation of the current System.Security.Cryptography.X509Certificates.X509Certificate object.
+	public override func toString() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_ToString(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns a string representation of the current System.Security.Cryptography.X509Certificates.X509Certificate object, with extra information, if specified.
+	/// - Parameter fVerbose: true to produce the verbose form of the string representation; otherwise, false.
+	/// - Returns: A string representation of the current System.Security.Cryptography.X509Certificates.X509Certificate object.
+	public func toString(_ fVerbose: Bool /* System.Boolean */) throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_ToString_1(self.__handle, fVerbose, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Populates the System.Security.Cryptography.X509Certificates.X509Certificate object with data from a byte array.
+	/// - Parameter rawData: A byte array containing data from an X.509 certificate.
+	/// - Throws: System.ArgumentException: The rawData parameter is null.  -or-  The length of the rawData parameter is 0.
+	/// - Throws: System.PlatformNotSupportedException: .NET Core and .NET 5+ only: In all cases.
+	public func `import`(_ rawData: DNArray<System_Byte> /* System.Byte[] */) throws {
+		let rawDataC = rawData.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate_Import(self.__handle, rawDataC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Populates the System.Security.Cryptography.X509Certificates.X509Certificate object using data from a byte array, a password, and flags for determining how the private key is imported.
+	/// - Parameter rawData: A byte array containing data from an X.509 certificate.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Parameter keyStorageFlags: A bitwise combination of the enumeration values that control where and how to import the certificate.
+	/// - Throws: System.ArgumentException: The rawData parameter is null.  -or-  The length of the rawData parameter is 0.
+	/// - Throws: System.PlatformNotSupportedException: .NET Core and .NET 5+ only: In all cases.
+	public func `import`(_ rawData: DNArray<System_Byte> /* System.Byte[] */, _ password: System_String? /* System.String */, _ keyStorageFlags: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags /* System.Security.Cryptography.X509Certificates.X509KeyStorageFlags */) throws {
+		let rawDataC = rawData.__handle
+		let passwordC = password?.__handle
+		let keyStorageFlagsC = keyStorageFlags.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate_Import_1(self.__handle, rawDataC, passwordC, keyStorageFlagsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Populates an System.Security.Cryptography.X509Certificates.X509Certificate object using data from a byte array, a password, and a key storage flag.
+	/// - Parameter rawData: A byte array that contains data from an X.509 certificate.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Parameter keyStorageFlags: A bitwise combination of the enumeration values that control where and how to import the certificate.
+	/// - Throws: System.ArgumentException: The rawData parameter is null.  -or-  The length of the rawData parameter is 0.
+	/// - Throws: System.PlatformNotSupportedException: .NET Core and .NET 5+ only: In all cases.
+	public func `import`(_ rawData: DNArray<System_Byte> /* System.Byte[] */, _ password: System_Security_SecureString? /* System.Security.SecureString */, _ keyStorageFlags: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags /* System.Security.Cryptography.X509Certificates.X509KeyStorageFlags */) throws {
+		let rawDataC = rawData.__handle
+		let passwordC = password?.__handle
+		let keyStorageFlagsC = keyStorageFlags.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate_Import_2(self.__handle, rawDataC, passwordC, keyStorageFlagsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Populates the System.Security.Cryptography.X509Certificates.X509Certificate object with information from a certificate file.
+	/// - Parameter fileName: The name of a certificate file represented as a string.
+	/// - Throws: System.ArgumentException: The fileName parameter is null.
+	/// - Throws: System.PlatformNotSupportedException: .NET Core and .NET 5+ only: In all cases.
+	public func `import`(_ fileName: System_String /* System.String */) throws {
+		let fileNameC = fileName.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate_Import_3(self.__handle, fileNameC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Populates the System.Security.Cryptography.X509Certificates.X509Certificate object with information from a certificate file, a password, and a System.Security.Cryptography.X509Certificates.X509KeyStorageFlags value.
+	/// - Parameter fileName: The name of a certificate file represented as a string.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Parameter keyStorageFlags: A bitwise combination of the enumeration values that control where and how to import the certificate.
+	/// - Throws: System.ArgumentException: The fileName parameter is null.
+	/// - Throws: System.PlatformNotSupportedException: .NET Core and .NET 5+ only: In all cases.
+	public func `import`(_ fileName: System_String /* System.String */, _ password: System_String? /* System.String */, _ keyStorageFlags: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags /* System.Security.Cryptography.X509Certificates.X509KeyStorageFlags */) throws {
+		let fileNameC = fileName.__handle
+		let passwordC = password?.__handle
+		let keyStorageFlagsC = keyStorageFlags.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate_Import_4(self.__handle, fileNameC, passwordC, keyStorageFlagsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Populates an System.Security.Cryptography.X509Certificates.X509Certificate object with information from a certificate file, a password, and a key storage flag.
+	/// - Parameter fileName: The name of a certificate file.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Parameter keyStorageFlags: A bitwise combination of the enumeration values that control where and how to import the certificate.
+	/// - Throws: System.ArgumentException: The fileName parameter is null.
+	/// - Throws: System.PlatformNotSupportedException: .NET Core and .NET 5+ only: In all cases.
+	public func `import`(_ fileName: System_String /* System.String */, _ password: System_Security_SecureString? /* System.Security.SecureString */, _ keyStorageFlags: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags /* System.Security.Cryptography.X509Certificates.X509KeyStorageFlags */) throws {
+		let fileNameC = fileName.__handle
+		let passwordC = password?.__handle
+		let keyStorageFlagsC = keyStorageFlags.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate_Import_5(self.__handle, fileNameC, passwordC, keyStorageFlagsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate class.
+	public convenience init() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Create_1(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate class defined from a sequence of bytes representing an X.509v3 certificate.
+	/// - Parameter data: A byte array containing data from an X.509 certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	/// - Throws: System.ArgumentException: The data parameter is null.  -or-  The length of the data parameter is 0.
+	public convenience init(_ data: DNArray<System_Byte> /* System.Byte[] */) throws {
+		let dataC = data.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Create_2(dataC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate class using a byte array and a password.
+	/// - Parameter rawData: A byte array containing data from an X.509 certificate.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	/// - Throws: System.ArgumentException: The rawData parameter is null.  -or-  The length of the rawData parameter is 0.
+	public convenience init(_ rawData: DNArray<System_Byte> /* System.Byte[] */, _ password: System_String? /* System.String */) throws {
+		let rawDataC = rawData.__handle
+		let passwordC = password?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Create_3(rawDataC, passwordC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate class using a byte array and a password.
+	/// - Parameter rawData: A byte array that contains data from an X.509 certificate.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	/// - Throws: System.ArgumentException: The rawData parameter is null.  -or-  The length of the rawData parameter is 0.
+	public convenience init(_ rawData: DNArray<System_Byte> /* System.Byte[] */, _ password: System_Security_SecureString? /* System.Security.SecureString */) throws {
+		let rawDataC = rawData.__handle
+		let passwordC = password?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Create_4(rawDataC, passwordC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate class using a byte array, a password, and a key storage flag.
+	/// - Parameter rawData: A byte array containing data from an X.509 certificate.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Parameter keyStorageFlags: A bitwise combination of the enumeration values that control where and how to import the certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	/// - Throws: System.ArgumentException: The rawData parameter is null.  -or-  The length of the rawData parameter is 0.
+	public convenience init(_ rawData: DNArray<System_Byte> /* System.Byte[] */, _ password: System_String? /* System.String */, _ keyStorageFlags: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags /* System.Security.Cryptography.X509Certificates.X509KeyStorageFlags */) throws {
+		let rawDataC = rawData.__handle
+		let passwordC = password?.__handle
+		let keyStorageFlagsC = keyStorageFlags.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Create_5(rawDataC, passwordC, keyStorageFlagsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate class using a byte array, a password, and a key storage flag.
+	/// - Parameter rawData: A byte array that contains data from an X.509 certificate.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Parameter keyStorageFlags: A bitwise combination of the enumeration values that control where and how to import the certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	/// - Throws: System.ArgumentException: The rawData parameter is null.  -or-  The length of the rawData parameter is 0.
+	public convenience init(_ rawData: DNArray<System_Byte> /* System.Byte[] */, _ password: System_Security_SecureString? /* System.Security.SecureString */, _ keyStorageFlags: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags /* System.Security.Cryptography.X509Certificates.X509KeyStorageFlags */) throws {
+		let rawDataC = rawData.__handle
+		let passwordC = password?.__handle
+		let keyStorageFlagsC = keyStorageFlags.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Create_6(rawDataC, passwordC, keyStorageFlagsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate class using a handle to an unmanaged PCCERT_CONTEXT structure.
+	/// - Parameter handle: A handle to an unmanaged PCCERT_CONTEXT structure.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	/// - Throws: System.ArgumentException: The handle parameter does not represent a valid PCCERT_CONTEXT structure.
+	public convenience init(_ handle: UnsafeMutableRawPointer? /* System.IntPtr */) throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Create_7(handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate class using the name of a PKCS7 signed file.
+	/// - Parameter fileName: The name of a PKCS7 signed file.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	/// - Throws: System.ArgumentException: The fileName parameter is null.
+	public convenience init(_ fileName: System_String /* System.String */) throws {
+		let fileNameC = fileName.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Create_8(fileNameC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate class using the name of a PKCS7 signed file and a password to access the certificate.
+	/// - Parameter fileName: The name of a PKCS7 signed file.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	/// - Throws: System.ArgumentException: The fileName parameter is null.
+	public convenience init(_ fileName: System_String /* System.String */, _ password: System_String? /* System.String */) throws {
+		let fileNameC = fileName.__handle
+		let passwordC = password?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Create_9(fileNameC, passwordC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate class using a certificate file name and a password.
+	/// - Parameter fileName: The name of a certificate file.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	/// - Throws: System.ArgumentException: The fileName parameter is null.
+	public convenience init(_ fileName: System_String /* System.String */, _ password: System_Security_SecureString? /* System.Security.SecureString */) throws {
+		let fileNameC = fileName.__handle
+		let passwordC = password?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Create_10(fileNameC, passwordC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate class using the name of a PKCS7 signed file, a password to access the certificate, and a key storage flag.
+	/// - Parameter fileName: The name of a PKCS7 signed file.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Parameter keyStorageFlags: A bitwise combination of the enumeration values that control where and how to import the certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	/// - Throws: System.ArgumentException: The fileName parameter is null.
+	public convenience init(_ fileName: System_String /* System.String */, _ password: System_String? /* System.String */, _ keyStorageFlags: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags /* System.Security.Cryptography.X509Certificates.X509KeyStorageFlags */) throws {
+		let fileNameC = fileName.__handle
+		let passwordC = password?.__handle
+		let keyStorageFlagsC = keyStorageFlags.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Create_11(fileNameC, passwordC, keyStorageFlagsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate class using a certificate file name, a password, and a key storage flag.
+	/// - Parameter fileName: The name of a certificate file.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Parameter keyStorageFlags: A bitwise combination of the enumeration values that control where and how to import the certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	/// - Throws: System.ArgumentException: The fileName parameter is null.
+	public convenience init(_ fileName: System_String /* System.String */, _ password: System_Security_SecureString? /* System.Security.SecureString */, _ keyStorageFlags: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags /* System.Security.Cryptography.X509Certificates.X509KeyStorageFlags */) throws {
+		let fileNameC = fileName.__handle
+		let passwordC = password?.__handle
+		let keyStorageFlagsC = keyStorageFlags.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Create_12(fileNameC, passwordC, keyStorageFlagsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate class using another System.Security.Cryptography.X509Certificates.X509Certificate class.
+	/// - Parameter cert: A System.Security.Cryptography.X509Certificates.X509Certificate class from which to initialize this class.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	/// - Throws: System.ArgumentNullException: The value of the cert parameter is null.
+	public convenience init(_ cert: System_Security_Cryptography_X509Certificates_X509Certificate /* System.Security.Cryptography.X509Certificates.X509Certificate */) throws {
+		let certC = cert.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Create_13(certC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate class using a System.Runtime.Serialization.SerializationInfo object and a System.Runtime.Serialization.StreamingContext structure.
+	/// - Parameter info: A System.Runtime.Serialization.SerializationInfo object that describes serialization information.
+	/// - Parameter context: A System.Runtime.Serialization.StreamingContext structure that describes how serialization should be performed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	public convenience init(_ info: System_Runtime_Serialization_SerializationInfo /* System.Runtime.Serialization.SerializationInfo */, _ context: System_Runtime_Serialization_StreamingContext /* System.Runtime.Serialization.StreamingContext */) throws {
+		let infoC = info.__handle
+		let contextC = context.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Create_14(infoC, contextC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Gets a handle to a Microsoft Cryptographic API certificate context described by an unmanaged PCCERT_CONTEXT structure.
+	/// - Returns: An System.IntPtr structure that represents an unmanaged PCCERT_CONTEXT structure.
+	public var handle: UnsafeMutableRawPointer? /* System.IntPtr */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Handle_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets the name of the certificate authority that issued the X.509v3 certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate handle is invalid.
+	/// - Returns: The name of the certificate authority that issued the X.509v3 certificate.
+	public var issuer: System_String /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Issuer_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the subject distinguished name from the certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate handle is invalid.
+	/// - Returns: The subject distinguished name from the certificate.
+	public var subject: System_String /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate_Subject_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_X509Certificates_X509Certificate_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_X509Certificates_X509Certificate_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Represents parameters to be used for Password-Based Encryption (PBE).
+public class System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */: System_Object {
+	public override class var typeName: String { get {
+		"PbeParameters"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.PbeParameters"
+	}}
+
+	/// Initializes a new instance of the System.Security.Cryptography.PbeParameters class.
+	/// - Parameter encryptionAlgorithm: The algorithm to use when encrypting data.
+	/// - Parameter hashAlgorithm: The name of a hash algorithm to use with the Key Derivation Function (KDF) to turn a password into an encryption key.
+	/// - Parameter iterationCount: The iteration count to provide to the Key Derivation Function (KDF) to turn a password into an encryption key.
+	/// - Throws: System.ArgumentOutOfRangeException: iterationCount is less than 1.
+	public convenience init(_ encryptionAlgorithm: System_Security_Cryptography_PbeEncryptionAlgorithm /* System.Security.Cryptography.PbeEncryptionAlgorithm */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ iterationCount: Int32 /* System.Int32 */) throws {
+		let encryptionAlgorithmC = encryptionAlgorithm.cValue
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_PbeParameters_Create(encryptionAlgorithmC, hashAlgorithmC, iterationCount, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Gets the algorithm to use when encrypting data.
+	/// - Returns: The algorithm to use when encrypting data.
+	public var encryptionAlgorithm: System_Security_Cryptography_PbeEncryptionAlgorithm /* System.Security.Cryptography.PbeEncryptionAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_PbeParameters_EncryptionAlgorithm_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_PbeEncryptionAlgorithm(cValue: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the name of the hash algorithm to use with the Key Derivation Function (KDF) to turn a password into an encryption key.
+	/// - Returns: The name of the hash algorithm to use with the Key Derivation Function (KDF) to turn a password into an encryption key.
+	public var hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_PbeParameters_HashAlgorithm_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the iteration count to provide to the Key Derivation Function (KDF) to turn a password into an encryption key.
+	/// - Returns: The iteration count to provide to the Key Derivation Function (KDF) to turn a password into an encryption key.
+	public var iterationCount: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_PbeParameters_IterationCount_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_PbeParameters_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_PbeParameters_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Specifies the name of a cryptographic hash algorithm.
+public class System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */: System_ValueType, System_IEquatable_A1 {
+	public override class var typeName: String { get {
+		"HashAlgorithmName"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.HashAlgorithmName"
+	}}
+
+	/// Returns the string representation of the current System.Security.Cryptography.HashAlgorithmName instance.
+	/// - Returns: The string representation of the current System.Security.Cryptography.HashAlgorithmName instance.
+	public override func toString() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_ToString(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns a value that indicates whether the current instance and a specified object are equal.
+	/// - Parameter obj: The object to compare with the current instance.
+	/// - Returns: true if obj is a System.Security.Cryptography.HashAlgorithmName object and its System.Security.Cryptography.HashAlgorithmName.Name property is equal to that of the current instance. The comparison is ordinal and case-sensitive.
+	public override func equals(_ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let objC = obj?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_Equals(self.__handle, objC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Returns a value that indicates whether two System.Security.Cryptography.HashAlgorithmName instances are equal.
+	/// - Parameter other: The object to compare with the current instance.
+	/// - Returns: true if the System.Security.Cryptography.HashAlgorithmName.Name property of other is equal to that of the current instance. The comparison is ordinal and case-sensitive.
+	public func equals(_ other: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
+		let otherC = other.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_Equals_1(self.__handle, otherC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Returns the hash code for the current instance.
+	/// - Returns: The hash code for the current instance, or 0 if no name value was supplied to the System.Security.Cryptography.HashAlgorithmName constructor.
+	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_GetHashCode(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Tries to convert the specified OID to a hash algorithm name.
+	/// - Parameter oidValue: The OID of the hash algorithm.
+	/// - Parameter value: When this method returns true, the hash algorithm. When this method returns false, contains default.
+	/// - Throws: System.ArgumentNullException: oidValue is null.
+	/// - Returns: true if the OID was successfully mapped to a hash algorithm; otherwise false.
+	public class func tryFromOid(_ oidValue: System_String /* System.String */, _ value: inout System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
+		let oidValueC = oidValue.__handle
+		var valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_TryFromOid(oidValueC, &valueC, &__exceptionC)
+		
+		value = System_Security_Cryptography_HashAlgorithmName(handle: valueC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Converts the specified OID to a hash algorithm name.
+	/// - Parameter oidValue: The OID of the hash algorithm.
+	/// - Throws: System.ArgumentNullException: oidValue is null.
+	/// - Throws: System.Security.Cryptography.CryptographicException: oidValue does not represent a known hash algorithm.
+	/// - Returns: The hash algorithm name identified by the OID.
+	public class func fromOid(_ oidValue: System_String /* System.String */) throws -> System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ {
+		let oidValueC = oidValue.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_FromOid(oidValueC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.HashAlgorithmName structure with a custom name.
+	/// - Parameter name: The custom hash algorithm name.
+	public convenience init(_ name: System_String? /* System.String */) throws {
+		let nameC = name?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_Create(nameC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Gets a hash algorithm name that represents "MD5".
+	/// - Returns: A hash algorithm name that represents "MD5".
+	public class var mD5: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_MD5_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a hash algorithm name that represents "SHA1".
+	/// - Returns: A hash algorithm name that represents "SHA1".
+	public class var sHA1: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_SHA1_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a hash algorithm name that represents "SHA256".
+	/// - Returns: A hash algorithm name that represents "SHA256".
+	public class var sHA256: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_SHA256_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a hash algorithm name that represents "SHA384".
+	/// - Returns: A hash algorithm name that represents "SHA384".
+	public class var sHA384: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_SHA384_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a hash algorithm name that represents "SHA512".
+	/// - Returns: A hash algorithm name that represents "SHA512".
+	public class var sHA512: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_SHA512_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a System.Security.Cryptography.HashAlgorithmName representing "SHA3-256"
+	public class var sHA3_256: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_SHA3_256_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a System.Security.Cryptography.HashAlgorithmName representing "SHA3-384"
+	public class var sHA3_384: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_SHA3_384_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a System.Security.Cryptography.HashAlgorithmName representing "SHA3-512"
+	public class var sHA3_512: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_SHA3_512_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the underlying string representation of the algorithm name.
+	/// - Returns: The string representation of the algorithm name, or default if no hash algorithm is available.
+	public var name: System_String? /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_Name_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Initializes a new instance of the System.Security.Cryptography.HashAlgorithmName struct.
+	public convenience init() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_Create_1(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_HashAlgorithmName_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_HashAlgorithmName_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// Enumerates the System.Security.Cryptography.X509Certificates.X509Certificate objects in an System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+public class System_Security_Cryptography_X509Certificates_X509CertificateCollection_X509CertificateEnumerator /* System.Security.Cryptography.X509Certificates.X509CertificateCollection.X509CertificateEnumerator */: System_Object, System_Collections_IEnumerator {
+	public override class var typeName: String { get {
+		"X509CertificateEnumerator"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.X509Certificates.X509CertificateCollection.X509CertificateEnumerator"
+	}}
+
+	/// Advances the enumerator to the next element of the collection.
+	/// - Throws: System.InvalidOperationException: The collection was modified after the enumerator was instantiated.
+	/// - Returns: true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection.
+	public func moveNext() throws -> Bool /* System.Boolean */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509CertificateCollection_X509CertificateEnumerator_MoveNext(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Sets the enumerator to its initial position, which is before the first element in the collection.
+	/// - Throws: System.InvalidOperationException: The collection is modified after the enumerator is instantiated.
+	public func reset() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509CertificateCollection_X509CertificateEnumerator_Reset(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509CertificateCollection.X509CertificateEnumerator class for the specified System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+	/// - Parameter mappings: The System.Security.Cryptography.X509Certificates.X509CertificateCollection to enumerate.
+	public convenience init(_ mappings: System_Security_Cryptography_X509Certificates_X509CertificateCollection /* System.Security.Cryptography.X509Certificates.X509CertificateCollection */) throws {
+		let mappingsC = mappings.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509CertificateCollection_X509CertificateEnumerator_Create(mappingsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Gets the current System.Security.Cryptography.X509Certificates.X509Certificate in the System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+	/// - Throws: System.InvalidOperationException: The enumerator is positioned before the first element of the collection or after the last element.
+	/// - Returns: The current System.Security.Cryptography.X509Certificates.X509Certificate in the System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+	public var current: System_Security_Cryptography_X509Certificates_X509Certificate /* System.Security.Cryptography.X509Certificates.X509Certificate */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509CertificateCollection_X509CertificateEnumerator_Current_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_X509Certificates_X509CertificateCollection_X509CertificateEnumerator_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_X509Certificates_X509CertificateCollection_X509CertificateEnumerator_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Represents a collection of System.Security.Cryptography.X509Certificates.X509Certificate2 objects. This class cannot be inherited.
+public class System_Security_Cryptography_X509Certificates_X509Certificate2Collection /* System.Security.Cryptography.X509Certificates.X509Certificate2Collection */: System_Security_Cryptography_X509Certificates_X509CertificateCollection, System_Collections_Generic_IEnumerable_A1 {
+	public override class var typeName: String { get {
+		"X509Certificate2Collection"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.X509Certificates.X509Certificate2Collection"
+	}}
+
+	/// Adds an object to the end of the System.Security.Cryptography.X509Certificates.X509Certificate2Collection.
+	/// - Parameter certificate: An X.509 certificate represented as an System.Security.Cryptography.X509Certificates.X509Certificate2 object.
+	/// - Throws: System.ArgumentNullException: certificate is null.
+	/// - Returns: The System.Security.Cryptography.X509Certificates.X509Certificate2Collection index at which the certificate has been added.
+	public func add(_ certificate: System_Security_Cryptography_X509Certificates_X509Certificate2 /* System.Security.Cryptography.X509Certificates.X509Certificate2 */) throws -> Int32 /* System.Int32 */ {
+		let certificateC = certificate.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Add(self.__handle, certificateC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Adds multiple System.Security.Cryptography.X509Certificates.X509Certificate2 objects in an array to the System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	/// - Parameter certificates: An array of System.Security.Cryptography.X509Certificates.X509Certificate2 objects.
+	/// - Throws: System.ArgumentNullException: certificates is null.
+	public func addRange(_ certificates: DNArray<System_Security_Cryptography_X509Certificates_X509Certificate2> /* System.Security.Cryptography.X509Certificates.X509Certificate2[] */) throws {
+		let certificatesC = certificates.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2Collection_AddRange(self.__handle, certificatesC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Adds multiple System.Security.Cryptography.X509Certificates.X509Certificate2 objects in an System.Security.Cryptography.X509Certificates.X509Certificate2Collection object to another System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	/// - Parameter certificates: An System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	/// - Throws: System.ArgumentNullException: certificates is null.
+	public func addRange(_ certificates: System_Security_Cryptography_X509Certificates_X509Certificate2Collection /* System.Security.Cryptography.X509Certificates.X509Certificate2Collection */) throws {
+		let certificatesC = certificates.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2Collection_AddRange_1(self.__handle, certificatesC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Determines whether the System.Security.Cryptography.X509Certificates.X509Certificate2Collection object contains a specific certificate.
+	/// - Parameter certificate: The System.Security.Cryptography.X509Certificates.X509Certificate2 object to locate in the collection.
+	/// - Throws: System.ArgumentNullException: certificate is null.
+	/// - Returns: true if the System.Security.Cryptography.X509Certificates.X509Certificate2Collection contains the specified certificate; otherwise, false.
+	public func contains(_ certificate: System_Security_Cryptography_X509Certificates_X509Certificate2 /* System.Security.Cryptography.X509Certificates.X509Certificate2 */) throws -> Bool /* System.Boolean */ {
+		let certificateC = certificate.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Contains(self.__handle, certificateC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Exports X.509 certificate information into a byte array.
+	/// - Parameter contentType: A supported System.Security.Cryptography.X509Certificates.X509ContentType object.
+	/// - Returns: X.509 certificate information in a byte array.
+	public func export(_ contentType: System_Security_Cryptography_X509Certificates_X509ContentType /* System.Security.Cryptography.X509Certificates.X509ContentType */) throws -> DNArray<System_Byte>? /* System.Byte[] */ {
+		let contentTypeC = contentType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Export(self.__handle, contentTypeC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the certificate and private key in PKCS#12 / PFX format.
+	/// - Parameter exportParameters: The algorithm parameters to use for the export.
+	/// - Parameter password: The password to use for the export.
+	/// - Throws: System.ArgumentException: password contains a Unicode 'NULL' character.
+	/// - Throws: System.ArgumentOutOfRangeException: exportParameters is not a valid value.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The export operation failed.
+	/// - Returns: A byte array containing the encoded PKCS#12.
+	public func exportPkcs12(_ exportParameters: System_Security_Cryptography_X509Certificates_Pkcs12ExportPbeParameters /* System.Security.Cryptography.X509Certificates.Pkcs12ExportPbeParameters */, _ password: System_String? /* System.String */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let exportParametersC = exportParameters.cValue
+		let passwordC = password?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2Collection_ExportPkcs12(self.__handle, exportParametersC, passwordC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the certificates and private keys in PKCS#12 / PFX format.
+	/// - Parameter exportParameters: The algorithm parameters to use for the export.
+	/// - Parameter password: The password to use for the export.
+	/// - Throws: System.ArgumentException: password contains a Unicode 'NULL' character.
+	/// - Throws: System.ArgumentNullException: exportParameters is null .
+	/// - Throws: System.Security.Cryptography.CryptographicException: The export operation failed.-or-exportParameters specifies a System.Security.Cryptography.PbeParameters.HashAlgorithm value that is not supported for the System.Security.Cryptography.PbeParameters.EncryptionAlgorithm value.-or-exportParameters contains an invalid encryption algorithm for System.Security.Cryptography.PbeParameters.EncryptionAlgorithm.
+	/// - Returns: A byte array containing the encoded PKCS#12.
+	public func exportPkcs12(_ exportParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */, _ password: System_String? /* System.String */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let exportParametersC = exportParameters.__handle
+		let passwordC = password?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2Collection_ExportPkcs12_1(self.__handle, exportParametersC, passwordC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports X.509 certificate information into a byte array using a password.
+	/// - Parameter contentType: A supported System.Security.Cryptography.X509Certificates.X509ContentType object.
+	/// - Parameter password: A string used to protect the byte array.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate is unreadable, the content is invalid or, in the case of a certificate requiring a password, the private key could not be exported because the password provided was incorrect.
+	/// - Returns: X.509 certificate information in a byte array.
+	public func export(_ contentType: System_Security_Cryptography_X509Certificates_X509ContentType /* System.Security.Cryptography.X509Certificates.X509ContentType */, _ password: System_String? /* System.String */) throws -> DNArray<System_Byte>? /* System.Byte[] */ {
+		let contentTypeC = contentType.cValue
+		let passwordC = password?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Export_1(self.__handle, contentTypeC, passwordC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Searches an System.Security.Cryptography.X509Certificates.X509Certificate2Collection object using the search criteria specified by the System.Security.Cryptography.X509Certificates.X509FindType enumeration and the findValue object.
+	/// - Parameter findType: One of the System.Security.Cryptography.X509Certificates.X509FindType values.
+	/// - Parameter findValue: The search criteria as an object.
+	/// - Parameter validOnly: true to allow only valid certificates to be returned from the search; otherwise, false.
+	/// - Throws: System.Security.Cryptography.CryptographicException: findType is invalid.
+	/// - Returns: An System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	public func find(_ findType: System_Security_Cryptography_X509Certificates_X509FindType /* System.Security.Cryptography.X509Certificates.X509FindType */, _ findValue: System_Object /* System.Object */, _ validOnly: Bool /* System.Boolean */) throws -> System_Security_Cryptography_X509Certificates_X509Certificate2Collection /* System.Security.Cryptography.X509Certificates.X509Certificate2Collection */ {
+		let findTypeC = findType.cValue
+		let findValueC = findValue.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Find(self.__handle, findTypeC, findValueC, validOnly, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate2Collection(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns an enumerator that can iterate through a System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	/// - Returns: An System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator object that can iterate through the System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	public func getEnumerator() throws -> System_Security_Cryptography_X509Certificates_X509Certificate2Enumerator /* System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2Collection_GetEnumerator(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate2Enumerator(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports a certificate in the form of a byte array into a System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	/// - Parameter rawData: A byte array containing data from an X.509 certificate.
+	public func `import`(_ rawData: DNArray<System_Byte> /* System.Byte[] */) throws {
+		let rawDataC = rawData.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Import(self.__handle, rawDataC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	public func `import`(_ rawData: Data? /* System.ReadOnlySpan<System.Byte> */) throws {
+		let rawDataC = rawData.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Import_1(self.__handle, rawDataC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Imports a certificate, in the form of a byte array that requires a password to access the certificate, into a System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	/// - Parameter rawData: A byte array containing data from an System.Security.Cryptography.X509Certificates.X509Certificate2 object.
+	/// - Parameter password: The password required to access the certificate information.
+	/// - Parameter keyStorageFlags: A bitwise combination of the enumeration values that control how and where the certificate is imported.
+	public func `import`(_ rawData: DNArray<System_Byte> /* System.Byte[] */, _ password: System_String? /* System.String */, _ keyStorageFlags: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags /* System.Security.Cryptography.X509Certificates.X509KeyStorageFlags */) throws {
+		let rawDataC = rawData.__handle
+		let passwordC = password?.__handle
+		let keyStorageFlagsC = keyStorageFlags.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Import_2(self.__handle, rawDataC, passwordC, keyStorageFlagsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	public func `import`(_ rawData: Data? /* System.ReadOnlySpan<System.Byte> */, _ password: System_String? /* System.String */, _ keyStorageFlags: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags /* System.Security.Cryptography.X509Certificates.X509KeyStorageFlags */) throws {
+		let rawDataC = rawData.readOnlySpanOfByte()
+		let passwordC = password?.__handle
+		let keyStorageFlagsC = keyStorageFlags.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Import_3(self.__handle, rawDataC, passwordC, keyStorageFlagsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Imports a certificate file into a System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	/// - Parameter fileName: The name of the file containing the certificate information.
+	public func `import`(_ fileName: System_String /* System.String */) throws {
+		let fileNameC = fileName.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Import_4(self.__handle, fileNameC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Imports a certificate file that requires a password into a System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	/// - Parameter fileName: The name of the file containing the certificate information.
+	/// - Parameter password: The password required to access the certificate information.
+	/// - Parameter keyStorageFlags: A bitwise combination of the enumeration values that control how and where the certificate is imported.
+	public func `import`(_ fileName: System_String /* System.String */, _ password: System_String? /* System.String */, _ keyStorageFlags: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags /* System.Security.Cryptography.X509Certificates.X509KeyStorageFlags */) throws {
+		let fileNameC = fileName.__handle
+		let passwordC = password?.__handle
+		let keyStorageFlagsC = keyStorageFlags.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Import_5(self.__handle, fileNameC, passwordC, keyStorageFlagsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Inserts an object into the System.Security.Cryptography.X509Certificates.X509Certificate2Collection object at the specified index.
+	/// - Parameter index: The zero-based index at which to insert certificate.
+	/// - Parameter certificate: The System.Security.Cryptography.X509Certificates.X509Certificate2 object to insert.
+	/// - Throws: System.ArgumentOutOfRangeException: index is less than zero.  -or-  index is greater than the System.Collections.CollectionBase.Count property.
+	/// - Throws: System.NotSupportedException: The collection is read-only.  -or-  The collection has a fixed size.
+	/// - Throws: System.ArgumentNullException: certificate is null.
+	public func insert(_ index: Int32 /* System.Int32 */, _ certificate: System_Security_Cryptography_X509Certificates_X509Certificate2 /* System.Security.Cryptography.X509Certificates.X509Certificate2 */) throws {
+		let certificateC = certificate.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Insert(self.__handle, index, certificateC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Removes the first occurrence of a certificate from the System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	/// - Parameter certificate: The System.Security.Cryptography.X509Certificates.X509Certificate2 object to be removed from the System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	/// - Throws: System.ArgumentNullException: certificate is null.
+	public func remove(_ certificate: System_Security_Cryptography_X509Certificates_X509Certificate2 /* System.Security.Cryptography.X509Certificates.X509Certificate2 */) throws {
+		let certificateC = certificate.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Remove(self.__handle, certificateC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Removes multiple System.Security.Cryptography.X509Certificates.X509Certificate2 objects in an array from an System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	/// - Parameter certificates: An array of System.Security.Cryptography.X509Certificates.X509Certificate2 objects.
+	/// - Throws: System.ArgumentNullException: certificates is null.
+	public func removeRange(_ certificates: DNArray<System_Security_Cryptography_X509Certificates_X509Certificate2> /* System.Security.Cryptography.X509Certificates.X509Certificate2[] */) throws {
+		let certificatesC = certificates.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2Collection_RemoveRange(self.__handle, certificatesC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Removes multiple System.Security.Cryptography.X509Certificates.X509Certificate2 objects in an System.Security.Cryptography.X509Certificates.X509Certificate2Collection object from another System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	/// - Parameter certificates: An System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	/// - Throws: System.ArgumentNullException: certificates is null.
+	public func removeRange(_ certificates: System_Security_Cryptography_X509Certificates_X509Certificate2Collection /* System.Security.Cryptography.X509Certificates.X509Certificate2Collection */) throws {
+		let certificatesC = certificates.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2Collection_RemoveRange_1(self.__handle, certificatesC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Imports a collection of RFC 7468 PEM-encoded certificates.
+	/// - Parameter certPemFilePath: The path for the PEM-encoded X509 certificate collection.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The decoded contents of a PEM are invalid or corrupt and could not be imported.
+	/// - Throws: System.ArgumentNullException: certPemFilePath is null.
+	public func importFromPemFile(_ certPemFilePath: System_String /* System.String */) throws {
+		let certPemFilePathC = certPemFilePath.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2Collection_ImportFromPemFile(self.__handle, certPemFilePathC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Exports the X.509 public certificates as a PKCS7 certificate collection, encoded as PEM.
+	/// - Throws: System.Security.Cryptography.CryptographicException: A certificate is corrupt, in an invalid state, or could not be exported             to PEM.
+	/// - Returns: The PEM encoded PKCS7 collection.
+	public func exportPkcs7Pem() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2Collection_ExportPkcs7Pem(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the public X.509 certificates, encoded as PEM.
+	/// - Throws: System.Security.Cryptography.CryptographicException: A certificate is corrupt, in an invalid state, or could not be exported             to PEM.
+	/// - Throws: System.OverflowException: The combined size of encoding all certificates exceeds System.Int32.MaxValue.
+	/// - Returns: The PEM encoding of the certificates.
+	public func exportCertificatePems() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2Collection_ExportCertificatePems(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Searches the collection for certificates with a matching thumbprint.
+	/// - Parameter hashAlgorithm: The name of the hash algorithm to compute the thumbprint.
+	/// - Parameter thumbprintHex: The thumbprint to match, hex-encoded.
+	/// - Throws: System.ArgumentNullException: thumbprintHex is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or empty.-or-thumbprintHex contains invalid hexadecimal characters.-or-thumbprintHex does not decode evenly and contains an odd number of characters.
+	/// - Throws: System.PlatformNotSupportedException: hashAlgorithm specifies a hash algorithm not supported by the current platform.
+	/// - Throws: System.Security.Cryptography.CryptographicException: hashAlgorithm specifies an unknown hash algorithm.-or-An error occured while finding the certificates with a matching thumbprint.
+	/// - Returns: A collection of certificates with a matching thumbprint.
+	public func findByThumbprint(_ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ thumbprintHex: System_String /* System.String */) throws -> System_Security_Cryptography_X509Certificates_X509Certificate2Collection /* System.Security.Cryptography.X509Certificates.X509Certificate2Collection */ {
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let thumbprintHexC = thumbprintHex.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2Collection_FindByThumbprint(self.__handle, hashAlgorithmC, thumbprintHexC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate2Collection(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func findByThumbprint(_ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ thumbprintBytes: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_X509Certificates_X509Certificate2Collection /* System.Security.Cryptography.X509Certificates.X509Certificate2Collection */ {
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let thumbprintBytesC = thumbprintBytes.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2Collection_FindByThumbprint_1(self.__handle, hashAlgorithmC, thumbprintBytesC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate2Collection(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate2Collection class without any System.Security.Cryptography.X509Certificates.X509Certificate2 information.
+	public convenience init() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Create(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate2Collection class using an System.Security.Cryptography.X509Certificates.X509Certificate2 object.
+	/// - Parameter certificate: An System.Security.Cryptography.X509Certificates.X509Certificate2 object to start the collection from.
+	public convenience init(_ certificate: System_Security_Cryptography_X509Certificates_X509Certificate2 /* System.Security.Cryptography.X509Certificates.X509Certificate2 */) throws {
+		let certificateC = certificate.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Create_1(certificateC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate2Collection class using an array of System.Security.Cryptography.X509Certificates.X509Certificate2 objects.
+	/// - Parameter certificates: An array of System.Security.Cryptography.X509Certificates.X509Certificate2 objects.
+	public convenience init(_ certificates: DNArray<System_Security_Cryptography_X509Certificates_X509Certificate2> /* System.Security.Cryptography.X509Certificates.X509Certificate2[] */) throws {
+		let certificatesC = certificates.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Create_2(certificatesC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate2Collection class using the specified certificate collection.
+	/// - Parameter certificates: An System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	public convenience init(_ certificates: System_Security_Cryptography_X509Certificates_X509Certificate2Collection /* System.Security.Cryptography.X509Certificates.X509Certificate2Collection */) throws {
+		let certificatesC = certificates.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Create_3(certificatesC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public override func item(_ index: Int32 /* System.Int32 */) throws -> System_Security_Cryptography_X509Certificates_X509Certificate2 /* System.Security.Cryptography.X509Certificates.X509Certificate2 */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Item_Get(self.__handle, index, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate2(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	public func item_set(_ index: Int32 /* System.Int32 */, _ value: System_Security_Cryptography_X509Certificates_X509Certificate2 /* System.Security.Cryptography.X509Certificates.X509Certificate2 */) throws {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Item_Set(self.__handle, index, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_X509Certificates_X509Certificate2Collection_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_X509Certificates_X509Certificate2Collection_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// Represents an X.509 certificate.
+public class System_Security_Cryptography_X509Certificates_X509Certificate2 /* System.Security.Cryptography.X509Certificates.X509Certificate2 */: System_Security_Cryptography_X509Certificates_X509Certificate {
+	public override class var typeName: String { get {
+		"X509Certificate2"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.X509Certificates.X509Certificate2"
+	}}
+
+	/// Resets the state of an System.Security.Cryptography.X509Certificates.X509Certificate2 object.
+	public override func reset() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2_Reset(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Indicates the type of certificate contained in a byte array.
+	/// - Parameter rawData: A byte array containing data from an X.509 certificate.
+	/// - Throws: System.ArgumentException: rawData has a zero length or is null.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The type of contents in rawData could not be determined or is unknown.
+	/// - Returns: An System.Security.Cryptography.X509Certificates.X509ContentType object.
+	public class func getCertContentType(_ rawData: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_X509Certificates_X509ContentType /* System.Security.Cryptography.X509Certificates.X509ContentType */ {
+		let rawDataC = rawData.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_GetCertContentType(rawDataC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509ContentType(cValue: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func getCertContentType(_ rawData: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_X509Certificates_X509ContentType /* System.Security.Cryptography.X509Certificates.X509ContentType */ {
+		let rawDataC = rawData.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_GetCertContentType_1(rawDataC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509ContentType(cValue: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Indicates the type of certificate contained in a file.
+	/// - Parameter fileName: The name of a certificate file.
+	/// - Throws: System.ArgumentNullException: fileName is null.
+	/// - Returns: An System.Security.Cryptography.X509Certificates.X509ContentType object.
+	public class func getCertContentType(_ fileName: System_String /* System.String */) throws -> System_Security_Cryptography_X509Certificates_X509ContentType /* System.Security.Cryptography.X509Certificates.X509ContentType */ {
+		let fileNameC = fileName.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_GetCertContentType_2(fileNameC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509ContentType(cValue: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the subject and issuer names from a certificate.
+	/// - Parameter nameType: The System.Security.Cryptography.X509Certificates.X509NameType value for the subject.
+	/// - Parameter forIssuer: true to include the issuer name; otherwise, false.
+	/// - Returns: The name of the certificate.
+	public func getNameInfo(_ nameType: System_Security_Cryptography_X509Certificates_X509NameType /* System.Security.Cryptography.X509Certificates.X509NameType */, _ forIssuer: Bool /* System.Boolean */) throws -> System_String /* System.String */ {
+		let nameTypeC = nameType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_GetNameInfo(self.__handle, nameTypeC, forIssuer, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Displays an X.509 certificate in text format.
+	/// - Returns: The certificate information.
+	public override func toString() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_ToString(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Displays an X.509 certificate in text format.
+	/// - Parameter verbose: true to display the public key, private key, extensions, and so forth; false to display information that is similar to the System.Security.Cryptography.X509Certificates.X509Certificate2 class, including thumbprint, serial number, subject and issuer names, and so on.
+	/// - Returns: The certificate information.
+	public override func toString(_ verbose: Bool /* System.Boolean */) throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_ToString_1(self.__handle, verbose, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Populates an System.Security.Cryptography.X509Certificates.X509Certificate2 object with data from a byte array.
+	/// - Parameter rawData: A byte array containing data from an X.509 certificate.
+	public override func `import`(_ rawData: DNArray<System_Byte> /* System.Byte[] */) throws {
+		let rawDataC = rawData.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2_Import(self.__handle, rawDataC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Populates an System.Security.Cryptography.X509Certificates.X509Certificate2 object using data from a byte array, a password, and flags for determining how to import the private key.
+	/// - Parameter rawData: A byte array containing data from an X.509 certificate.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Parameter keyStorageFlags: A bitwise combination of the enumeration values that control where and how to import the certificate.
+	public override func `import`(_ rawData: DNArray<System_Byte> /* System.Byte[] */, _ password: System_String? /* System.String */, _ keyStorageFlags: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags /* System.Security.Cryptography.X509Certificates.X509KeyStorageFlags */) throws {
+		let rawDataC = rawData.__handle
+		let passwordC = password?.__handle
+		let keyStorageFlagsC = keyStorageFlags.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2_Import_1(self.__handle, rawDataC, passwordC, keyStorageFlagsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Populates an System.Security.Cryptography.X509Certificates.X509Certificate2 object using data from a byte array, a password, and a key storage flag.
+	/// - Parameter rawData: A byte array that contains data from an X.509 certificate.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Parameter keyStorageFlags: A bitwise combination of the enumeration values that control where and how to import the certificate.
+	public override func `import`(_ rawData: DNArray<System_Byte> /* System.Byte[] */, _ password: System_Security_SecureString? /* System.Security.SecureString */, _ keyStorageFlags: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags /* System.Security.Cryptography.X509Certificates.X509KeyStorageFlags */) throws {
+		let rawDataC = rawData.__handle
+		let passwordC = password?.__handle
+		let keyStorageFlagsC = keyStorageFlags.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2_Import_2(self.__handle, rawDataC, passwordC, keyStorageFlagsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Populates an System.Security.Cryptography.X509Certificates.X509Certificate2 object with information from a certificate file.
+	/// - Parameter fileName: The name of a certificate.
+	public override func `import`(_ fileName: System_String /* System.String */) throws {
+		let fileNameC = fileName.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2_Import_3(self.__handle, fileNameC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Populates an System.Security.Cryptography.X509Certificates.X509Certificate2 object with information from a certificate file, a password, and a System.Security.Cryptography.X509Certificates.X509KeyStorageFlags value.
+	/// - Parameter fileName: The name of a certificate file.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Parameter keyStorageFlags: A bitwise combination of the enumeration values that control where and how to import the certificate.
+	public override func `import`(_ fileName: System_String /* System.String */, _ password: System_String? /* System.String */, _ keyStorageFlags: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags /* System.Security.Cryptography.X509Certificates.X509KeyStorageFlags */) throws {
+		let fileNameC = fileName.__handle
+		let passwordC = password?.__handle
+		let keyStorageFlagsC = keyStorageFlags.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2_Import_4(self.__handle, fileNameC, passwordC, keyStorageFlagsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Populates an System.Security.Cryptography.X509Certificates.X509Certificate2 object with information from a certificate file, a password, and a key storage flag.
+	/// - Parameter fileName: The name of a certificate file.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Parameter keyStorageFlags: A bitwise combination of the enumeration values that control where and how to import the certificate.
+	public override func `import`(_ fileName: System_String /* System.String */, _ password: System_Security_SecureString? /* System.Security.SecureString */, _ keyStorageFlags: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags /* System.Security.Cryptography.X509Certificates.X509KeyStorageFlags */) throws {
+		let fileNameC = fileName.__handle
+		let passwordC = password?.__handle
+		let keyStorageFlagsC = keyStorageFlags.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2_Import_5(self.__handle, fileNameC, passwordC, keyStorageFlagsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Performs a X.509 chain validation using basic validation policy.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate is unreadable.
+	/// - Returns: true if the validation succeeds; false if the validation fails.
+	public func verify() throws -> Bool /* System.Boolean */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_Verify(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Gets the System.Security.Cryptography.ECDiffieHellman public key from this certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The handle is invalid.
+	/// - Returns: The public key, or null if this certificate does not have an ECDiffieHellman public key.
+	public func getECDiffieHellmanPublicKey() throws -> System_Security_Cryptography_ECDiffieHellman? /* System.Security.Cryptography.ECDiffieHellman */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_GetECDiffieHellmanPublicKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECDiffieHellman(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the System.Security.Cryptography.ECDiffieHellman private key from this certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The handle is invalid.
+	/// - Returns: The private key, or null if this certificate does not have an ECDiffieHellman private key.
+	public func getECDiffieHellmanPrivateKey() throws -> System_Security_Cryptography_ECDiffieHellman? /* System.Security.Cryptography.ECDiffieHellman */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_GetECDiffieHellmanPrivateKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECDiffieHellman(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Combines a private key with the public key of an System.Security.Cryptography.ECDiffieHellman certificate to generate a new ECDiffieHellman certificate.
+	/// - Parameter privateKey: The private ECDiffieHellman key.
+	/// - Throws: System.ArgumentNullException: privateKey is null.
+	/// - Throws: System.InvalidOperationException: The certificate already has an associated private key.
+	/// - Throws: System.ArgumentException: The certificate doesn't have a public key. -or- The specified private key doesn't match the public key for this certificate.
+	/// - Returns: A new ECDiffieHellman certificate with the System.Security.Cryptography.X509Certificates.X509Certificate2.HasPrivateKey property set to true.             The current certificate isn't modified.
+	public func copyWithPrivateKey(_ privateKey: System_Security_Cryptography_ECDiffieHellman /* System.Security.Cryptography.ECDiffieHellman */) throws -> System_Security_Cryptography_X509Certificates_X509Certificate2 /* System.Security.Cryptography.X509Certificates.X509Certificate2 */ {
+		let privateKeyC = privateKey.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_CopyWithPrivateKey(self.__handle, privateKeyC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate2(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the System.Security.Cryptography.MLKem public key from this certificate.
+	/// - Throws: System.PlatformNotSupportedException: The certificate has an ML-KEM public key, but the platform does not support ML-KEM.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The public key was invalid, or otherwise could not be imported.
+	/// - Returns: The public key, or null if this certificate does not have an ML-KEM public key.
+	public func getMLKemPublicKey() throws -> System_Security_Cryptography_MLKem? /* System.Security.Cryptography.MLKem */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_GetMLKemPublicKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the System.Security.Cryptography.MLKem private key from this certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred accessing the private key.
+	/// - Returns: The private key, or null if this certificate does not have an ML-KEM private key.
+	public func getMLKemPrivateKey() throws -> System_Security_Cryptography_MLKem? /* System.Security.Cryptography.MLKem */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_GetMLKemPrivateKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Combines a private key with a certificate containing the associated public key into a new instance that can access the private key.
+	/// - Parameter privateKey: The ML-KEM private key that corresponds to the ML-KEM public key in this certificate.
+	/// - Throws: System.ArgumentNullException: privateKey is null.
+	/// - Throws: System.ArgumentException: The specified private key doesn't match the public key for this certificate.
+	/// - Throws: System.InvalidOperationException: The certificate already has an associated private key.
+	/// - Returns: A new certificate with the System.Security.Cryptography.X509Certificates.X509Certificate2.HasPrivateKey property set to true.The current certificate isn't modified.
+	public func copyWithPrivateKey(_ privateKey: System_Security_Cryptography_MLKem /* System.Security.Cryptography.MLKem */) throws -> System_Security_Cryptography_X509Certificates_X509Certificate2 /* System.Security.Cryptography.X509Certificates.X509Certificate2 */ {
+		let privateKeyC = privateKey.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_CopyWithPrivateKey_1(self.__handle, privateKeyC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate2(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the System.Security.Cryptography.MLDsa public key from this certificate.
+	/// - Throws: System.PlatformNotSupportedException: The certificate has an ML-DSA public key, but the platform does not support ML-DSA.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The public key was invalid, or otherwise could not be imported.
+	/// - Returns: The public key, or null if this certificate does not have an ML-DSA public key.
+	public func getMLDsaPublicKey() throws -> System_Security_Cryptography_MLDsa? /* System.Security.Cryptography.MLDsa */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_GetMLDsaPublicKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the System.Security.Cryptography.MLDsa private key from this certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred accessing the private key.
+	/// - Returns: The private key, or null if this certificate does not have an ML-DSA private key.
+	public func getMLDsaPrivateKey() throws -> System_Security_Cryptography_MLDsa? /* System.Security.Cryptography.MLDsa */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_GetMLDsaPrivateKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Combines a private key with a certificate containing the associated public key into a new instance that can access the private key.
+	/// - Parameter privateKey: The ML-DSA private key that corresponds to the ML-DSA public key in this certificate.
+	/// - Throws: System.ArgumentNullException: privateKey is null.
+	/// - Throws: System.ArgumentException: The specified private key doesn't match the public key for this certificate.
+	/// - Throws: System.InvalidOperationException: The certificate already has an associated private key.
+	/// - Returns: A new certificate with the System.Security.Cryptography.X509Certificates.X509Certificate2.HasPrivateKey property set to true.The current certificate isn't modified.
+	public func copyWithPrivateKey(_ privateKey: System_Security_Cryptography_MLDsa /* System.Security.Cryptography.MLDsa */) throws -> System_Security_Cryptography_X509Certificates_X509Certificate2 /* System.Security.Cryptography.X509Certificates.X509Certificate2 */ {
+		let privateKeyC = privateKey.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_CopyWithPrivateKey_2(self.__handle, privateKeyC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate2(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the System.Security.Cryptography.SlhDsa public key from this certificate.
+	/// - Throws: System.PlatformNotSupportedException: The certificate has an SLH-DSA public key, but the platform does not support SLH-DSA.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The public key was invalid, or otherwise could not be imported.
+	/// - Returns: The public key, or null if this certificate does not have an SLH-DSA public key.
+	public func getSlhDsaPublicKey() throws -> System_Security_Cryptography_SlhDsa? /* System.Security.Cryptography.SlhDsa */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_GetSlhDsaPublicKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_SlhDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the System.Security.Cryptography.SlhDsa private key from this certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred accessing the private key.
+	/// - Returns: The private key, or null if this certificate does not have an SLH-DSA private key.
+	public func getSlhDsaPrivateKey() throws -> System_Security_Cryptography_SlhDsa? /* System.Security.Cryptography.SlhDsa */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_GetSlhDsaPrivateKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_SlhDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Combines a private key with a certificate containing the associated public key into a new instance that can access the private key.
+	/// - Parameter privateKey: The SLH-DSA private key that corresponds to the SLH-DSA public key in this certificate.
+	/// - Throws: System.ArgumentNullException: privateKey is null.
+	/// - Throws: System.ArgumentException: The specified private key doesn't match the public key for this certificate.
+	/// - Throws: System.InvalidOperationException: The certificate already has an associated private key.
+	/// - Returns: A new certificate with the System.Security.Cryptography.X509Certificates.X509Certificate2.HasPrivateKey property set to true.The current certificate isn't modified.
+	public func copyWithPrivateKey(_ privateKey: System_Security_Cryptography_SlhDsa /* System.Security.Cryptography.SlhDsa */) throws -> System_Security_Cryptography_X509Certificates_X509Certificate2 /* System.Security.Cryptography.X509Certificates.X509Certificate2 */ {
+		let privateKeyC = privateKey.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_CopyWithPrivateKey_3(self.__handle, privateKeyC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate2(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the System.Security.Cryptography.CompositeMLDsa public key from this certificate.
+	/// - Throws: System.PlatformNotSupportedException: The certificate has a Composite ML-DSA public key, but the platform does not support Composite ML-DSA.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The public key was invalid, or otherwise could not be imported.
+	/// - Returns: The public key, or null if this certificate does not have a Composite ML-DSA public key.
+	public func getCompositeMLDsaPublicKey() throws -> System_Security_Cryptography_CompositeMLDsa? /* System.Security.Cryptography.CompositeMLDsa */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_GetCompositeMLDsaPublicKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the System.Security.Cryptography.CompositeMLDsa private key from this certificate.
+	/// - Throws: System.PlatformNotSupportedException: Retrieving a Composite ML-DSA private key from a certificate is not supported on this platform.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred accessing the private key.
+	/// - Returns: The private key, or null if this certificate does not have a Composite ML-DSA private key.
+	public func getCompositeMLDsaPrivateKey() throws -> System_Security_Cryptography_CompositeMLDsa? /* System.Security.Cryptography.CompositeMLDsa */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_GetCompositeMLDsaPrivateKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Combines a private key with a certificate containing the associated public key into a new instance that can access the private key.
+	/// - Parameter privateKey: The Composite ML-DSA private key that corresponds to the Composite ML-DSA public key in this certificate.
+	/// - Throws: System.ArgumentNullException: privateKey is null.
+	/// - Throws: System.ArgumentException: The specified private key doesn't match the public key for this certificate.
+	/// - Throws: System.InvalidOperationException: The certificate already has an associated private key.
+	/// - Throws: System.PlatformNotSupportedException: Combining a certificate and a Composite ML-DSA private key is not supported on this platform.
+	/// - Returns: A new certificate with the System.Security.Cryptography.X509Certificates.X509Certificate2.HasPrivateKey property set to true.The current certificate isn't modified.
+	public func copyWithPrivateKey(_ privateKey: System_Security_Cryptography_CompositeMLDsa /* System.Security.Cryptography.CompositeMLDsa */) throws -> System_Security_Cryptography_X509Certificates_X509Certificate2 /* System.Security.Cryptography.X509Certificates.X509Certificate2 */ {
+		let privateKeyC = privateKey.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_CopyWithPrivateKey_4(self.__handle, privateKeyC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate2(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Creates a new X509 certificate from the file contents of an RFC 7468 PEM-encoded certificate and private key.
+	/// - Parameter certPemFilePath: The path for the PEM-encoded X509 certificate.
+	/// - Parameter keyPemFilePath: If specified, the path for the PEM-encoded private key.             If unspecified, the certPemFilePath file will be used to load the private key.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The contents of the file path in certPemFilePath do not contain a PEM-encoded certificate, or it is malformed. -or- The contents of the file path in keyPemFilePath do not contain a PEM-encoded private key, or it is malformed. -or- The contents of the file path in keyPemFilePath contains a key that does not match the public key in the certificate. -or- The certificate uses an unknown public key algorithm.
+	/// - Throws: System.ArgumentNullException: certPemFilePath is null.
+	/// - Returns: A new certificate with the private key.
+	public class func createFromPemFile(_ certPemFilePath: System_String /* System.String */, _ keyPemFilePath: System_String? /* System.String */) throws -> System_Security_Cryptography_X509Certificates_X509Certificate2 /* System.Security.Cryptography.X509Certificates.X509Certificate2 */ {
+		let certPemFilePathC = certPemFilePath.__handle
+		let keyPemFilePathC = keyPemFilePath?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_CreateFromPemFile(certPemFilePathC, keyPemFilePathC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate2(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the public X.509 certificate, encoded as PEM.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate is corrupt, in an invalid state, or could not be exported             to PEM.
+	/// - Returns: The PEM encoding of the certificate.
+	public func exportCertificatePem() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_ExportCertificatePem(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Checks to see if the certificate matches the provided host name.
+	/// - Parameter hostname: The host name to match against.
+	/// - Parameter allowWildcards: true to allow wildcard matching for dNSName values in the Subject Alternative Name extension; otherwise, false.
+	/// - Parameter allowCommonName: true to allow matching against the subject Common Name value; otherwise, false.
+	/// - Throws: System.ArgumentException: The hostname parameter is not a valid DNS hostname or IP address.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate contains multiple Subject Alternative Name extensions. -or- The Subject Alternative Name extension or Subject Name could not be decoded.
+	/// - Returns: true if the certificate is a match for the requested hostname; otherwise, false
+	public func matchesHostname(_ hostname: System_String /* System.String */, _ allowWildcards: Bool /* System.Boolean */, _ allowCommonName: Bool /* System.Boolean */) throws -> Bool /* System.Boolean */ {
+		let hostnameC = hostname.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_MatchesHostname(self.__handle, hostnameC, allowWildcards, allowCommonName, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate2 class.
+	public convenience init() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_Create_1(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate2 class using information from a byte array.
+	/// - Parameter rawData: A byte array containing data from an X.509 certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	public convenience init(_ rawData: DNArray<System_Byte> /* System.Byte[] */) throws {
+		let rawDataC = rawData.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_Create_2(rawDataC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate2 class using a byte array and a password.
+	/// - Parameter rawData: A byte array containing data from an X.509 certificate.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	public convenience init(_ rawData: DNArray<System_Byte> /* System.Byte[] */, _ password: System_String? /* System.String */) throws {
+		let rawDataC = rawData.__handle
+		let passwordC = password?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_Create_3(rawDataC, passwordC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate2 class using a byte array and a password.
+	/// - Parameter rawData: A byte array that contains data from an X.509 certificate.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	public convenience init(_ rawData: DNArray<System_Byte> /* System.Byte[] */, _ password: System_Security_SecureString? /* System.Security.SecureString */) throws {
+		let rawDataC = rawData.__handle
+		let passwordC = password?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_Create_4(rawDataC, passwordC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate2 class using a byte array, a password, and a key storage flag.
+	/// - Parameter rawData: A byte array containing data from an X.509 certificate.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Parameter keyStorageFlags: A bitwise combination of the enumeration values that control where and how to import the certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	public convenience init(_ rawData: DNArray<System_Byte> /* System.Byte[] */, _ password: System_String? /* System.String */, _ keyStorageFlags: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags /* System.Security.Cryptography.X509Certificates.X509KeyStorageFlags */) throws {
+		let rawDataC = rawData.__handle
+		let passwordC = password?.__handle
+		let keyStorageFlagsC = keyStorageFlags.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_Create_5(rawDataC, passwordC, keyStorageFlagsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate2 class using a byte array, a password, and a key storage flag.
+	/// - Parameter rawData: A byte array that contains data from an X.509 certificate.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Parameter keyStorageFlags: A bitwise combination of the enumeration values that control where and how to import the certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	public convenience init(_ rawData: DNArray<System_Byte> /* System.Byte[] */, _ password: System_Security_SecureString? /* System.Security.SecureString */, _ keyStorageFlags: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags /* System.Security.Cryptography.X509Certificates.X509KeyStorageFlags */) throws {
+		let rawDataC = rawData.__handle
+		let passwordC = password?.__handle
+		let keyStorageFlagsC = keyStorageFlags.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_Create_6(rawDataC, passwordC, keyStorageFlagsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public convenience init(_ rawData: Data? /* System.ReadOnlySpan<System.Byte> */) throws {
+		let rawDataC = rawData.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_Create_7(rawDataC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate2 class using an unmanaged handle.
+	/// - Parameter handle: A pointer to a certificate context in unmanaged code. The C structure is called PCCERT_CONTEXT.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	public convenience init(_ handle: UnsafeMutableRawPointer? /* System.IntPtr */) throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_Create_8(handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate2 class using a certificate file name.
+	/// - Parameter fileName: The name of a certificate file.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	public convenience init(_ fileName: System_String /* System.String */) throws {
+		let fileNameC = fileName.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_Create_9(fileNameC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate2 class using a certificate file name and a password used to access the certificate.
+	/// - Parameter fileName: The name of a certificate file.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	public convenience init(_ fileName: System_String /* System.String */, _ password: System_String? /* System.String */) throws {
+		let fileNameC = fileName.__handle
+		let passwordC = password?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_Create_10(fileNameC, passwordC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate2 class using a certificate file name and a password.
+	/// - Parameter fileName: The name of a certificate file.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	public convenience init(_ fileName: System_String /* System.String */, _ password: System_Security_SecureString? /* System.Security.SecureString */) throws {
+		let fileNameC = fileName.__handle
+		let passwordC = password?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_Create_11(fileNameC, passwordC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate2 class using a certificate file name, a password used to access the certificate, and a key storage flag.
+	/// - Parameter fileName: The name of a certificate file.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Parameter keyStorageFlags: A bitwise combination of the enumeration values that control where and how to import the certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	public convenience init(_ fileName: System_String /* System.String */, _ password: System_String? /* System.String */, _ keyStorageFlags: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags /* System.Security.Cryptography.X509Certificates.X509KeyStorageFlags */) throws {
+		let fileNameC = fileName.__handle
+		let passwordC = password?.__handle
+		let keyStorageFlagsC = keyStorageFlags.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_Create_12(fileNameC, passwordC, keyStorageFlagsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate2 class using a certificate file name, a password, and a key storage flag.
+	/// - Parameter fileName: The name of a certificate file.
+	/// - Parameter password: The password required to access the X.509 certificate data.
+	/// - Parameter keyStorageFlags: A bitwise combination of the enumeration values that control where and how to import the certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	public convenience init(_ fileName: System_String /* System.String */, _ password: System_Security_SecureString? /* System.Security.SecureString */, _ keyStorageFlags: System_Security_Cryptography_X509Certificates_X509KeyStorageFlags /* System.Security.Cryptography.X509Certificates.X509KeyStorageFlags */) throws {
+		let fileNameC = fileName.__handle
+		let passwordC = password?.__handle
+		let keyStorageFlagsC = keyStorageFlags.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_Create_13(fileNameC, passwordC, keyStorageFlagsC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Certificate2 class using an System.Security.Cryptography.X509Certificates.X509Certificate object.
+	/// - Parameter certificate: An System.Security.Cryptography.X509Certificates.X509Certificate object.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error with the certificate occurs. For example: - The certificate file does not exist. - The certificate is invalid. - The certificate's password is incorrect.
+	public convenience init(_ certificate: System_Security_Cryptography_X509Certificates_X509Certificate /* System.Security.Cryptography.X509Certificates.X509Certificate */) throws {
+		let certificateC = certificate.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_Create_14(certificateC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Gets or sets a value indicating that an X.509 certificate is archived.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate is unreadable.
+	/// - Returns: true if the certificate is archived, false if the certificate is not archived.
+	public var archived: Bool /* System.Boolean */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_Archived_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	/// Gets or sets a value indicating that an X.509 certificate is archived.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate is unreadable.
+	/// - Returns: true if the certificate is archived, false if the certificate is not archived.
+	public func archived_set(_ value: Bool /* System.Boolean */) throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2_Archived_Set(self.__handle, value, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	/// Gets a collection of System.Security.Cryptography.X509Certificates.X509Extension objects.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate is unreadable.
+	/// - Returns: An System.Security.Cryptography.X509Certificates.X509ExtensionCollection object.
+	public var extensions: System_Security_Cryptography_X509Certificates_X509ExtensionCollection /* System.Security.Cryptography.X509Certificates.X509ExtensionCollection */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_Extensions_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509ExtensionCollection(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets or sets the associated alias for a certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate is unreadable.
+	/// - Returns: The certificate's friendly name.
+	public var friendlyName: System_String /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_FriendlyName_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	/// Gets or sets the associated alias for a certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate is unreadable.
+	/// - Returns: The certificate's friendly name.
+	public func friendlyName_set(_ value: System_String /* System.String */) throws {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2_FriendlyName_Set(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	/// Gets a value that indicates whether an System.Security.Cryptography.X509Certificates.X509Certificate2 object contains a private key.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate context is invalid.
+	/// - Returns: true if the System.Security.Cryptography.X509Certificates.X509Certificate2 object contains a private key; otherwise, false.
+	public var hasPrivateKey: Bool /* System.Boolean */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_HasPrivateKey_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets or sets the System.Security.Cryptography.AsymmetricAlgorithm object that represents the private key associated with a certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key value is not an RSA or DSA key, or the key is unreadable.
+	/// - Throws: System.ArgumentNullException: The value being set for this property is null.
+	/// - Throws: System.NotSupportedException: The key algorithm for this private key is not supported.
+	/// - Throws: System.Security.Cryptography.CryptographicUnexpectedOperationException: The X.509 keys do not match.
+	/// - Throws: System.ArgumentException: The cryptographic service provider key is null.
+	/// - Throws: System.PlatformNotSupportedException: .NET Core and .NET 5+ only: An attempt was made to set this property.
+	/// - Returns: An System.Security.Cryptography.AsymmetricAlgorithm object, which is either an RSA or DSA cryptographic service provider.
+	public var privateKey: System_Security_Cryptography_AsymmetricAlgorithm? /* System.Security.Cryptography.AsymmetricAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_PrivateKey_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_AsymmetricAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	/// Gets or sets the System.Security.Cryptography.AsymmetricAlgorithm object that represents the private key associated with a certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key value is not an RSA or DSA key, or the key is unreadable.
+	/// - Throws: System.ArgumentNullException: The value being set for this property is null.
+	/// - Throws: System.NotSupportedException: The key algorithm for this private key is not supported.
+	/// - Throws: System.Security.Cryptography.CryptographicUnexpectedOperationException: The X.509 keys do not match.
+	/// - Throws: System.ArgumentException: The cryptographic service provider key is null.
+	/// - Throws: System.PlatformNotSupportedException: .NET Core and .NET 5+ only: An attempt was made to set this property.
+	/// - Returns: An System.Security.Cryptography.AsymmetricAlgorithm object, which is either an RSA or DSA cryptographic service provider.
+	public func privateKey_set(_ value: System_Security_Cryptography_AsymmetricAlgorithm? /* System.Security.Cryptography.AsymmetricAlgorithm */) throws {
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2_PrivateKey_Set(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	/// Gets the distinguished name of the certificate issuer.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate context is invalid.
+	/// - Returns: An System.Security.Cryptography.X509Certificates.X500DistinguishedName object that contains the name of the certificate issuer.
+	public var issuerName: System_Security_Cryptography_X509Certificates_X500DistinguishedName /* System.Security.Cryptography.X509Certificates.X500DistinguishedName */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_IssuerName_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X500DistinguishedName(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the date in local time after which a certificate is no longer valid.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate is unreadable.
+	/// - Returns: A System.DateTime object that represents the expiration date for the certificate.
+	public var notAfter: System_DateTime /* System.DateTime */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_NotAfter_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_DateTime(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the date in local time on which a certificate becomes valid.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate is unreadable.
+	/// - Returns: A System.DateTime object that represents the effective date of the certificate.
+	public var notBefore: System_DateTime /* System.DateTime */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_NotBefore_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_DateTime(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a System.Security.Cryptography.X509Certificates.X509Certificate2.PublicKey object associated with a certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key value is not an RSA or DSA key, or the key is unreadable.
+	/// - Returns: A System.Security.Cryptography.X509Certificates.X509Certificate2.PublicKey object.
+	public var publicKey: System_Security_Cryptography_X509Certificates_PublicKey /* System.Security.Cryptography.X509Certificates.PublicKey */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_PublicKey_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_PublicKey(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the raw X.509 public data of a certificate.
+	/// - Returns: The raw X.509 public data of a certificate.
+	public var rawData: DNArray<System_Byte> /* System.Byte[] */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_RawData_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the serial number of a certificate as a big-endian hexadecimal string.
+	/// - Returns: The serial number of the certificate as a big-endian hexadecimal string.
+	public var serialNumber: System_String /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_SerialNumber_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the algorithm used to create the signature of a certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate is unreadable.
+	/// - Returns: The object identifier of the signature algorithm.
+	public var signatureAlgorithm: System_Security_Cryptography_Oid /* System.Security.Cryptography.Oid */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_SignatureAlgorithm_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_Oid(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the subject distinguished name from a certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate context is invalid.
+	/// - Returns: An System.Security.Cryptography.X509Certificates.X500DistinguishedName object that represents the name of the certificate subject.
+	public var subjectName: System_Security_Cryptography_X509Certificates_X500DistinguishedName /* System.Security.Cryptography.X509Certificates.X500DistinguishedName */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_SubjectName_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X500DistinguishedName(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the thumbprint of a certificate.
+	/// - Returns: The thumbprint of the certificate.
+	public var thumbprint: System_String /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_Thumbprint_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the X.509 format version of a certificate.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate is unreadable.
+	/// - Returns: The certificate format.
+	public var version: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_Version_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_X509Certificates_X509Certificate2_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_X509Certificates_X509Certificate2_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Represents a collection of System.Security.Cryptography.X509Certificates.X509Extension objects. This class cannot be inherited.
+public class System_Security_Cryptography_X509Certificates_X509ExtensionCollection /* System.Security.Cryptography.X509Certificates.X509ExtensionCollection */: System_Object, System_Collections_ICollection, System_Collections_IEnumerable, System_Collections_Generic_IEnumerable_A1 {
+	public override class var typeName: String { get {
+		"X509ExtensionCollection"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.X509Certificates.X509ExtensionCollection"
+	}}
+
+	/// Adds an System.Security.Cryptography.X509Certificates.X509Extension object to an System.Security.Cryptography.X509Certificates.X509ExtensionCollection object.
+	/// - Parameter extension: An System.Security.Cryptography.X509Certificates.X509Extension object to add to the System.Security.Cryptography.X509Certificates.X509ExtensionCollection object.
+	/// - Throws: System.ArgumentNullException: The value of the extension parameter is null.
+	/// - Returns: The index at which the extension parameter was added.
+	public func add(_ `extension`: System_Security_Cryptography_X509Certificates_X509Extension /* System.Security.Cryptography.X509Certificates.X509Extension */) throws -> Int32 /* System.Int32 */ {
+		let extensionC = `extension`.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509ExtensionCollection_Add(self.__handle, extensionC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Copies a collection into an array starting at the specified index.
+	/// - Parameter array: An array of System.Security.Cryptography.X509Certificates.X509Extension objects.
+	/// - Parameter index: The location in the array at which copying starts.
+	/// - Throws: System.ArgumentException: index is a zero-length string or contains an invalid value.
+	/// - Throws: System.ArgumentNullException: index is null.
+	/// - Throws: System.ArgumentOutOfRangeException: index specifies a value that is not in the range of the array.
+	public func copyTo(_ array: DNArray<System_Security_Cryptography_X509Certificates_X509Extension> /* System.Security.Cryptography.X509Certificates.X509Extension[] */, _ index: Int32 /* System.Int32 */) throws {
+		let arrayC = array.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509ExtensionCollection_CopyTo(self.__handle, arrayC, index, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Returns an enumerator that can iterate through an System.Security.Cryptography.X509Certificates.X509ExtensionCollection object.
+	/// - Returns: An System.Security.Cryptography.X509Certificates.X509ExtensionEnumerator object to use to iterate through the System.Security.Cryptography.X509Certificates.X509ExtensionCollection object.
+	public func getEnumerator() throws -> System_Security_Cryptography_X509Certificates_X509ExtensionEnumerator /* System.Security.Cryptography.X509Certificates.X509ExtensionEnumerator */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509ExtensionCollection_GetEnumerator(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509ExtensionEnumerator(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509ExtensionCollection class.
+	public convenience init() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509ExtensionCollection_Create(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Gets the number of System.Security.Cryptography.X509Certificates.X509Extension objects in a System.Security.Cryptography.X509Certificates.X509ExtensionCollection object.
+	/// - Returns: An integer representing the number of System.Security.Cryptography.X509Certificates.X509Extension objects in the System.Security.Cryptography.X509Certificates.X509ExtensionCollection object.
+	public var count: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509ExtensionCollection_Count_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets a value indicating whether the collection is guaranteed to be thread safe.
+	/// - Returns: true if the collection is thread safe; otherwise, false.
+	public var isSynchronized: Bool /* System.Boolean */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509ExtensionCollection_IsSynchronized_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets an object that you can use to synchronize access to the System.Security.Cryptography.X509Certificates.X509ExtensionCollection object.
+	/// - Returns: An object that you can use to synchronize access to the System.Security.Cryptography.X509Certificates.X509ExtensionCollection object.
+	public var syncRoot: System_Object /* System.Object */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509ExtensionCollection_SyncRoot_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public func item(_ index: Int32 /* System.Int32 */) throws -> System_Security_Cryptography_X509Certificates_X509Extension /* System.Security.Cryptography.X509Certificates.X509Extension */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509ExtensionCollection_Item_Get(self.__handle, index, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Extension(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public func item(_ oid: System_String /* System.String */) throws -> System_Security_Cryptography_X509Certificates_X509Extension? /* System.Security.Cryptography.X509Certificates.X509Extension */ {
+		let oidC = oid.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509ExtensionCollection_Item_Get_1(self.__handle, oidC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Extension(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_X509Certificates_X509ExtensionCollection_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_X509Certificates_X509ExtensionCollection_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// Represents an X509 extension.
+public class System_Security_Cryptography_X509Certificates_X509Extension /* System.Security.Cryptography.X509Certificates.X509Extension */: System_Security_Cryptography_AsnEncodedData {
+	public override class var typeName: String { get {
+		"X509Extension"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.X509Certificates.X509Extension"
+	}}
+
+	/// Copies the extension properties of the specified System.Security.Cryptography.AsnEncodedData object.
+	/// - Parameter asnEncodedData: The System.Security.Cryptography.AsnEncodedData to be copied.
+	/// - Throws: System.ArgumentNullException: asnEncodedData is null.
+	/// - Throws: System.ArgumentException: asnEncodedData does not have a valid X.509 extension.
+	public override func copyFrom(_ asnEncodedData: System_Security_Cryptography_AsnEncodedData /* System.Security.Cryptography.AsnEncodedData */) throws {
+		let asnEncodedDataC = asnEncodedData.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Extension_CopyFrom(self.__handle, asnEncodedDataC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Extension class.
+	/// - Parameter encodedExtension: The encoded data to be used to create the extension.
+	/// - Parameter critical: true if the extension is critical; otherwise false.
+	public convenience init(_ encodedExtension: System_Security_Cryptography_AsnEncodedData /* System.Security.Cryptography.AsnEncodedData */, _ critical: Bool /* System.Boolean */) throws {
+		let encodedExtensionC = encodedExtension.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Extension_Create(encodedExtensionC, critical, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Extension class.
+	/// - Parameter oid: The object identifier used to identify the extension.
+	/// - Parameter rawData: The encoded data used to create the extension.
+	/// - Parameter critical: true if the extension is critical; otherwise false.
+	/// - Throws: System.ArgumentNullException: oid is null.
+	/// - Throws: System.ArgumentException: oid is an empty string ("").
+	public convenience init(_ oid: System_Security_Cryptography_Oid /* System.Security.Cryptography.Oid */, _ rawData: DNArray<System_Byte> /* System.Byte[] */, _ critical: Bool /* System.Boolean */) throws {
+		let oidC = oid.__handle
+		let rawDataC = rawData.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Extension_Create_1(oidC, rawDataC, critical, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public convenience init(_ oid: System_Security_Cryptography_Oid /* System.Security.Cryptography.Oid */, _ rawData: Data? /* System.ReadOnlySpan<System.Byte> */, _ critical: Bool /* System.Boolean */) throws {
+		let oidC = oid.__handle
+		let rawDataC = rawData.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Extension_Create_2(oidC, rawDataC, critical, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X509Extension class.
+	/// - Parameter oid: A string representing the object identifier.
+	/// - Parameter rawData: The encoded data used to create the extension.
+	/// - Parameter critical: true if the extension is critical; otherwise false.
+	public convenience init(_ oid: System_String /* System.String */, _ rawData: DNArray<System_Byte> /* System.Byte[] */, _ critical: Bool /* System.Boolean */) throws {
+		let oidC = oid.__handle
+		let rawDataC = rawData.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Extension_Create_3(oidC, rawDataC, critical, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public convenience init(_ oid: System_String /* System.String */, _ rawData: Data? /* System.ReadOnlySpan<System.Byte> */, _ critical: Bool /* System.Boolean */) throws {
+		let oidC = oid.__handle
+		let rawDataC = rawData.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Extension_Create_4(oidC, rawDataC, critical, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Gets a Boolean value indicating whether the extension is critical.
+	/// - Returns: true if the extension is critical; otherwise, false.
+	public var critical: Bool /* System.Boolean */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Extension_Critical_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	/// Gets a Boolean value indicating whether the extension is critical.
+	/// - Returns: true if the extension is critical; otherwise, false.
+	public func critical_set(_ value: Bool /* System.Boolean */) throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Extension_Critical_Set(self.__handle, value, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_X509Certificates_X509Extension_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_X509Certificates_X509Extension_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Represents Abstract Syntax Notation One (ASN.1)-encoded data.
+public class System_Security_Cryptography_AsnEncodedData /* System.Security.Cryptography.AsnEncodedData */: System_Object {
+	public override class var typeName: String { get {
+		"AsnEncodedData"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.AsnEncodedData"
+	}}
+
+	/// Copies information from an System.Security.Cryptography.AsnEncodedData object.
+	/// - Parameter asnEncodedData: The System.Security.Cryptography.AsnEncodedData object to base the new object on.
+	/// - Throws: System.ArgumentNullException: asnEncodedData is null.
+	public func copyFrom(_ asnEncodedData: System_Security_Cryptography_AsnEncodedData /* System.Security.Cryptography.AsnEncodedData */) throws {
+		let asnEncodedDataC = asnEncodedData.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_AsnEncodedData_CopyFrom(self.__handle, asnEncodedDataC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Returns a formatted version of the Abstract Syntax Notation One (ASN.1)-encoded data as a string.
+	/// - Parameter multiLine: true if the return string should contain carriage returns; otherwise, false.
+	/// - Returns: A formatted string that represents the Abstract Syntax Notation One (ASN.1)-encoded data.
+	public func format(_ multiLine: Bool /* System.Boolean */) throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsnEncodedData_Format(self.__handle, multiLine, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.AsnEncodedData class using a byte array.
+	/// - Parameter rawData: A byte array that contains Abstract Syntax Notation One (ASN.1)-encoded data.
+	public convenience init(_ rawData: DNArray<System_Byte> /* System.Byte[] */) throws {
+		let rawDataC = rawData.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsnEncodedData_Create(rawDataC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public convenience init(_ rawData: Data? /* System.ReadOnlySpan<System.Byte> */) throws {
+		let rawDataC = rawData.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsnEncodedData_Create_1(rawDataC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.AsnEncodedData class using an instance of the System.Security.Cryptography.AsnEncodedData class.
+	/// - Parameter asnEncodedData: An instance of the System.Security.Cryptography.AsnEncodedData class.
+	/// - Throws: System.ArgumentNullException: asnEncodedData is null.
+	public convenience init(_ asnEncodedData: System_Security_Cryptography_AsnEncodedData /* System.Security.Cryptography.AsnEncodedData */) throws {
+		let asnEncodedDataC = asnEncodedData.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsnEncodedData_Create_2(asnEncodedDataC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.AsnEncodedData class using an System.Security.Cryptography.Oid object and a byte array.
+	/// - Parameter oid: An System.Security.Cryptography.Oid object.
+	/// - Parameter rawData: A byte array that contains Abstract Syntax Notation One (ASN.1)-encoded data.
+	public convenience init(_ oid: System_Security_Cryptography_Oid? /* System.Security.Cryptography.Oid */, _ rawData: DNArray<System_Byte> /* System.Byte[] */) throws {
+		let oidC = oid?.__handle
+		let rawDataC = rawData.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsnEncodedData_Create_3(oidC, rawDataC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.AsnEncodedData class using a byte array.
+	/// - Parameter oid: A string that represents System.Security.Cryptography.Oid information.
+	/// - Parameter rawData: A byte array that contains Abstract Syntax Notation One (ASN.1)-encoded data.
+	public convenience init(_ oid: System_String /* System.String */, _ rawData: DNArray<System_Byte> /* System.Byte[] */) throws {
+		let oidC = oid.__handle
+		let rawDataC = rawData.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsnEncodedData_Create_4(oidC, rawDataC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public convenience init(_ oid: System_Security_Cryptography_Oid? /* System.Security.Cryptography.Oid */, _ rawData: Data? /* System.ReadOnlySpan<System.Byte> */) throws {
+		let oidC = oid?.__handle
+		let rawDataC = rawData.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsnEncodedData_Create_5(oidC, rawDataC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public convenience init(_ oid: System_String /* System.String */, _ rawData: Data? /* System.ReadOnlySpan<System.Byte> */) throws {
+		let oidC = oid.__handle
+		let rawDataC = rawData.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsnEncodedData_Create_6(oidC, rawDataC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Gets or sets the System.Security.Cryptography.Oid value for an System.Security.Cryptography.AsnEncodedData object.
+	/// - Returns: An System.Security.Cryptography.Oid object.
+	public var oid: System_Security_Cryptography_Oid? /* System.Security.Cryptography.Oid */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsnEncodedData_Oid_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_Oid(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	/// Gets or sets the System.Security.Cryptography.Oid value for an System.Security.Cryptography.AsnEncodedData object.
+	/// - Returns: An System.Security.Cryptography.Oid object.
+	public func oid_set(_ value: System_Security_Cryptography_Oid? /* System.Security.Cryptography.Oid */) throws {
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_AsnEncodedData_Oid_Set(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	/// Gets or sets the Abstract Syntax Notation One (ASN.1)-encoded data represented in a byte array.
+	/// - Throws: System.ArgumentNullException: The value is null.
+	/// - Returns: A byte array that represents the Abstract Syntax Notation One (ASN.1)-encoded data.
+	public var rawData: DNArray<System_Byte> /* System.Byte[] */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsnEncodedData_RawData_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	/// Gets or sets the Abstract Syntax Notation One (ASN.1)-encoded data represented in a byte array.
+	/// - Throws: System.ArgumentNullException: The value is null.
+	/// - Returns: A byte array that represents the Abstract Syntax Notation One (ASN.1)-encoded data.
+	public func rawData_set(_ value: DNArray<System_Byte> /* System.Byte[] */) throws {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_AsnEncodedData_RawData_Set(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_AsnEncodedData_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_AsnEncodedData_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Represents a cryptographic object identifier. This class cannot be inherited.
+public class System_Security_Cryptography_Oid /* System.Security.Cryptography.Oid */: System_Object {
+	public override class var typeName: String { get {
+		"Oid"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.Oid"
+	}}
+
+	/// Creates an System.Security.Cryptography.Oid object from an OID friendly name by searching the specified group.
+	/// - Parameter friendlyName: The friendly name of the identifier.
+	/// - Parameter group: The group to search in.
+	/// - Throws: System.ArgumentNullException: friendlyName is null.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The OID was not found.
+	/// - Returns: An object that represents the specified OID.
+	public class func fromFriendlyName(_ friendlyName: System_String /* System.String */, _ group: System_Security_Cryptography_OidGroup /* System.Security.Cryptography.OidGroup */) throws -> System_Security_Cryptography_Oid /* System.Security.Cryptography.Oid */ {
+		let friendlyNameC = friendlyName.__handle
+		let groupC = group.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_Oid_FromFriendlyName(friendlyNameC, groupC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_Oid(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Creates an System.Security.Cryptography.Oid object by using the specified OID value and group.
+	/// - Parameter oidValue: The OID value.
+	/// - Parameter group: The group to search in.
+	/// - Throws: System.ArgumentNullException: oidValue is null.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The friendly name for the OID value was not found.
+	/// - Returns: A new instance of an System.Security.Cryptography.Oid object.
+	public class func fromOidValue(_ oidValue: System_String /* System.String */, _ group: System_Security_Cryptography_OidGroup /* System.Security.Cryptography.OidGroup */) throws -> System_Security_Cryptography_Oid /* System.Security.Cryptography.Oid */ {
+		let oidValueC = oidValue.__handle
+		let groupC = group.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_Oid_FromOidValue(oidValueC, groupC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_Oid(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.Oid class.
+	public convenience init() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_Oid_Create(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.Oid class using a string value of an System.Security.Cryptography.Oid object.
+	/// - Parameter oid: An object identifier.
+	public convenience init(_ oid: System_String /* System.String */) throws {
+		let oidC = oid.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_Oid_Create_1(oidC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.Oid class using the specified value and friendly name.
+	/// - Parameter value: The dotted number of the identifier.
+	/// - Parameter friendlyName: The friendly name of the identifier.
+	public convenience init(_ value: System_String? /* System.String */, _ friendlyName: System_String? /* System.String */) throws {
+		let valueC = value?.__handle
+		let friendlyNameC = friendlyName?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_Oid_Create_2(valueC, friendlyNameC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.Oid class using the specified System.Security.Cryptography.Oid object.
+	/// - Parameter oid: The object identifier information to use to create the new object identifier.
+	/// - Throws: System.ArgumentNullException: oid is null.
+	public convenience init(_ oid: System_Security_Cryptography_Oid /* System.Security.Cryptography.Oid */) throws {
+		let oidC = oid.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_Oid_Create_3(oidC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Gets or sets the dotted number of the identifier.
+	/// - Throws: System.PlatformNotSupportedException: .NET 5 and later: An attempt is made to set the value and the value has previously been set.
+	/// - Returns: The dotted number of the identifier.
+	public var value: System_String? /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_Oid_Value_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	/// Gets or sets the dotted number of the identifier.
+	/// - Throws: System.PlatformNotSupportedException: .NET 5 and later: An attempt is made to set the value and the value has previously been set.
+	/// - Returns: The dotted number of the identifier.
+	public func value_set(_ value: System_String? /* System.String */) throws {
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_Oid_Value_Set(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	/// Gets or sets the friendly name of the identifier.
+	/// - Throws: System.PlatformNotSupportedException: .NET 5 and later: An attempt is made to set the value and the value has previously been set.
+	/// - Returns: The friendly name of the identifier.
+	public var friendlyName: System_String? /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_Oid_FriendlyName_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	/// Gets or sets the friendly name of the identifier.
+	/// - Throws: System.PlatformNotSupportedException: .NET 5 and later: An attempt is made to set the value and the value has previously been set.
+	/// - Returns: The friendly name of the identifier.
+	public func friendlyName_set(_ value: System_String? /* System.String */) throws {
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_Oid_FriendlyName_Set(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_Oid_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_Oid_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// Supports a simple iteration over a System.Security.Cryptography.X509Certificates.X509ExtensionCollection. This class cannot be inherited.
+public class System_Security_Cryptography_X509Certificates_X509ExtensionEnumerator /* System.Security.Cryptography.X509Certificates.X509ExtensionEnumerator */: System_Object, System_Collections_IEnumerator, System_Collections_Generic_IEnumerator_A1, System_IDisposable {
+	public override class var typeName: String { get {
+		"X509ExtensionEnumerator"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.X509Certificates.X509ExtensionEnumerator"
+	}}
+
+	/// Advances the enumerator to the next element in the System.Security.Cryptography.X509Certificates.X509ExtensionCollection.
+	/// - Throws: System.InvalidOperationException: The collection was modified after the enumerator was created.
+	/// - Returns: true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection.
+	public func moveNext() throws -> Bool /* System.Boolean */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509ExtensionEnumerator_MoveNext(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Sets the enumerator to its initial position, which is before the first element in the System.Security.Cryptography.X509Certificates.X509ExtensionCollection.
+	/// - Throws: System.InvalidOperationException: The collection was modified after the enumerator was created.
+	public func reset() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509ExtensionEnumerator_Reset(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Gets the current element in the System.Security.Cryptography.X509Certificates.X509ExtensionCollection.
+	/// - Throws: System.InvalidOperationException: The enumerator is positioned before the first element of the collection or after the last element.
+	/// - Returns: The current element in the System.Security.Cryptography.X509Certificates.X509ExtensionCollection.
+	public var current: System_Security_Cryptography_X509Certificates_X509Extension /* System.Security.Cryptography.X509Certificates.X509Extension */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509ExtensionEnumerator_Current_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Extension(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_X509Certificates_X509ExtensionEnumerator_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_X509Certificates_X509ExtensionEnumerator_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Represents the abstract base class from which all implementations of asymmetric algorithms must inherit.
+public class System_Security_Cryptography_AsymmetricAlgorithm /* System.Security.Cryptography.AsymmetricAlgorithm */: System_Object, System_IDisposable {
+	public override class var typeName: String { get {
+		"AsymmetricAlgorithm"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.AsymmetricAlgorithm"
+	}}
+
+	/// Creates a default cryptographic object used to perform the asymmetric algorithm.
+	/// - Throws: System.PlatformNotSupportedException: .NET Core 2.0 - 3.1 and .NET 5 and later: In all cases.
+	/// - Returns: A new System.Security.Cryptography.RSACryptoServiceProvider instance, unless the default settings have been changed with the <cryptoClass> element.
+	public class func create() throws -> System_Security_Cryptography_AsymmetricAlgorithm /* System.Security.Cryptography.AsymmetricAlgorithm */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_Create(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_AsymmetricAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Creates an instance of the specified implementation of an asymmetric algorithm.
+	/// - Parameter algName: The asymmetric algorithm implementation to use. The following table shows the valid values for the algName parameter and the algorithms they map to.   Parameter value Implements System.Security.Cryptography.AsymmetricAlgorithmSystem.Security.Cryptography.AsymmetricAlgorithm RSASystem.Security.Cryptography.RSA System.Security.Cryptography.RSASystem.Security.Cryptography.RSA DSASystem.Security.Cryptography.DSA System.Security.Cryptography.DSASystem.Security.Cryptography.DSA ECDsaSystem.Security.Cryptography.ECDsa ECDsaCngSystem.Security.Cryptography.ECDsaCng System.Security.Cryptography.ECDsaCngSystem.Security.Cryptography.ECDsaCng ECDHSystem.Security.Cryptography.ECDiffieHellman ECDiffieHellmanSystem.Security.Cryptography.ECDiffieHellman ECDiffieHellmanCngSystem.Security.Cryptography.ECDiffieHellmanCng System.Security.Cryptography.ECDiffieHellmanCngSystem.Security.Cryptography.ECDiffieHellmanCng
+	/// - Returns: A new instance of the specified asymmetric algorithm implementation.
+	public class func create(_ algName: System_String /* System.String */) throws -> System_Security_Cryptography_AsymmetricAlgorithm? /* System.Security.Cryptography.AsymmetricAlgorithm */ {
+		let algNameC = algName.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_Create_1(algNameC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_AsymmetricAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// When overridden in a derived class, reconstructs an System.Security.Cryptography.AsymmetricAlgorithm object from an XML string. Otherwise, throws a System.NotImplementedException.
+	/// - Parameter xmlString: The XML string to use to reconstruct the System.Security.Cryptography.AsymmetricAlgorithm object.
+	public func fromXmlString(_ xmlString: System_String /* System.String */) throws {
+		let xmlStringC = xmlString.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_AsymmetricAlgorithm_FromXmlString(self.__handle, xmlStringC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// When overridden in a derived class, creates and returns an XML string representation of the current System.Security.Cryptography.AsymmetricAlgorithm object. Otherwise, throws a System.NotImplementedException.
+	/// - Parameter includePrivateParameters: true to include private parameters; otherwise, false.
+	/// - Returns: An XML string encoding of the current System.Security.Cryptography.AsymmetricAlgorithm object.
+	public func toXmlString(_ includePrivateParameters: Bool /* System.Boolean */) throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_ToXmlString(self.__handle, includePrivateParameters, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Releases all resources used by the System.Security.Cryptography.AsymmetricAlgorithm class.
+	public func clear() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_AsymmetricAlgorithm_Clear(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Releases all resources used by the current instance of the System.Security.Cryptography.AsymmetricAlgorithm class.
+	public func dispose() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_AsymmetricAlgorithm_Dispose(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	public func importEncryptedPkcs8PrivateKey(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_AsymmetricAlgorithm_ImportEncryptedPkcs8PrivateKey(self.__handle, passwordBytesC, sourceC, &bytesRead, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	public func importPkcs8PrivateKey(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_AsymmetricAlgorithm_ImportPkcs8PrivateKey(self.__handle, sourceC, &bytesRead, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	public func importSubjectPublicKeyInfo(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_AsymmetricAlgorithm_ImportSubjectPublicKeyInfo(self.__handle, sourceC, &bytesRead, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	public func exportEncryptedPkcs8PrivateKey(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_ExportEncryptedPkcs8PrivateKey(self.__handle, passwordBytesC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in the PKCS#8 PrivateKeyInfo format.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key could not be exported.
+	/// - Returns: A byte array containing the PKCS#8 PrivateKeyInfo representation of this key.
+	public func exportPkcs8PrivateKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_ExportPkcs8PrivateKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the public-key portion of the current key in the X.509 SubjectPublicKeyInfo format.
+	/// - Returns: A byte array containing the X.509 SubjectPublicKeyInfo representation of the public-key portion of this key.
+	public func exportSubjectPublicKeyInfo() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_ExportSubjectPublicKeyInfo(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in the PKCS#8 PrivateKeyInfo format, PEM encoded.
+	/// - Throws: System.NotImplementedException: An implementation for System.Security.Cryptography.AsymmetricAlgorithm.ExportPkcs8PrivateKey or             System.Security.Cryptography.AsymmetricAlgorithm.TryExportPkcs8PrivateKey(System.Span{System.Byte},System.Int32@) has not been provided.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key could not be exported.
+	/// - Returns: A string containing the PEM-encoded PKCS#8 PrivateKeyInfo.
+	public func exportPkcs8PrivateKeyPem() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_ExportPkcs8PrivateKeyPem(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func exportEncryptedPkcs8PrivateKeyPem(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> System_String /* System.String */ {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_ExportEncryptedPkcs8PrivateKeyPem(self.__handle, passwordBytesC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the public-key portion of the current key in the X.509 SubjectPublicKeyInfo format, PEM encoded.
+	/// - Throws: System.NotImplementedException: An implementation for System.Security.Cryptography.AsymmetricAlgorithm.ExportSubjectPublicKeyInfo or             System.Security.Cryptography.AsymmetricAlgorithm.TryExportSubjectPublicKeyInfo(System.Span{System.Byte},System.Int32@) has not been provided.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key could not be exported.
+	/// - Returns: A string containing the PEM-encoded X.509 SubjectPublicKeyInfo.
+	public func exportSubjectPublicKeyInfoPem() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_ExportSubjectPublicKeyInfoPem(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets or sets the size, in bits, of the key modulus used by the asymmetric algorithm.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key modulus size is invalid.
+	/// - Returns: The size, in bits, of the key modulus used by the asymmetric algorithm.
+	public var keySize: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_KeySize_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	/// Gets or sets the size, in bits, of the key modulus used by the asymmetric algorithm.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key modulus size is invalid.
+	/// - Returns: The size, in bits, of the key modulus used by the asymmetric algorithm.
+	public func keySize_set(_ value: Int32 /* System.Int32 */) throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_AsymmetricAlgorithm_KeySize_Set(self.__handle, value, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	
+	/// Gets the key sizes that are supported by the asymmetric algorithm.
+	/// - Returns: An array that contains the key sizes supported by the asymmetric algorithm.
+	public var legalKeySizes: DNArray<System_Security_Cryptography_KeySizes> /* System.Security.Cryptography.KeySizes[] */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_LegalKeySizes_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Security_Cryptography_KeySizes>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// When implemented in a derived class, gets the name of the signature algorithm. Otherwise, always throws a System.NotImplementedException.
+	/// - Returns: The name of the signature algorithm.
+	public var signatureAlgorithm: System_String? /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_SignatureAlgorithm_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// When overridden in a derived class, gets the name of the key exchange algorithm. Otherwise, throws an System.NotImplementedException.
+	/// - Returns: The name of the key exchange algorithm.
+	public var keyExchangeAlgorithm: System_String? /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_KeyExchangeAlgorithm_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_AsymmetricAlgorithm_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_AsymmetricAlgorithm_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// Determines the set of valid key sizes for the symmetric cryptographic algorithms.
+public class System_Security_Cryptography_KeySizes /* System.Security.Cryptography.KeySizes */: System_Object {
+	public override class var typeName: String { get {
+		"KeySizes"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.KeySizes"
+	}}
+
+	/// Initializes a new instance of the System.Security.Cryptography.KeySizes class with the specified key values.
+	/// - Parameter minSize: The minimum valid key size.
+	/// - Parameter maxSize: The maximum valid key size.
+	/// - Parameter skipSize: The interval between valid key sizes.
+	public convenience init(_ minSize: Int32 /* System.Int32 */, _ maxSize: Int32 /* System.Int32 */, _ skipSize: Int32 /* System.Int32 */) throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_KeySizes_Create(minSize, maxSize, skipSize, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Specifies the minimum key size.
+	/// - Returns: The minimum key size.
+	public var minSize: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_KeySizes_MinSize_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Specifies the maximum key size.
+	/// - Returns: The maximum key size.
+	public var maxSize: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_KeySizes_MaxSize_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Specifies the interval between valid key sizes.
+	/// - Returns: The interval between valid key sizes.
+	public var skipSize: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_KeySizes_SkipSize_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_KeySizes_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_KeySizes_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// Represents the distinguished name of an X509 certificate. This class cannot be inherited.
+public class System_Security_Cryptography_X509Certificates_X500DistinguishedName /* System.Security.Cryptography.X509Certificates.X500DistinguishedName */: System_Security_Cryptography_AsnEncodedData {
+	public override class var typeName: String { get {
+		"X500DistinguishedName"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.X509Certificates.X500DistinguishedName"
+	}}
+
+	/// Decodes a distinguished name using the characteristics specified by the flag parameter.
+	/// - Parameter flag: A bitwise combination of the enumeration values that specify the characteristics of the distinguished name.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The certificate has an invalid name.
+	/// - Returns: The decoded distinguished name.
+	public func decode(_ flag: System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags /* System.Security.Cryptography.X509Certificates.X500DistinguishedNameFlags */) throws -> System_String /* System.String */ {
+		let flagC = flag.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X500DistinguishedName_Decode(self.__handle, flagC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns a formatted version of an X500 distinguished name for printing or for output to a text window or to a console.
+	/// - Parameter multiLine: true if the return string should contain carriage returns; otherwise, false.
+	/// - Returns: A formatted string that represents the X500 distinguished name.
+	public override func format(_ multiLine: Bool /* System.Boolean */) throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X500DistinguishedName_Format(self.__handle, multiLine, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Iterates over the RelativeDistinguishedName values within this distinguished name value.
+	/// - Parameter reversed: true to enumerate in the order used by System.Security.Cryptography.X509Certificates.X500DistinguishedName.Name; false to enumerate in the declared order.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The X.500 Name is not a proper DER-encoded X.500 Name value.
+	/// - Returns: An enumerator that iterates over the relative distinguished names in the X.500 Distinguished Name.
+	public func enumerateRelativeDistinguishedNames(_ reversed: Bool /* System.Boolean */) throws -> System_Collections_Generic_IEnumerable_A1 /* System.Collections.Generic.IEnumerable<System.Security.Cryptography.X509Certificates.X500RelativeDistinguishedName> */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X500DistinguishedName_EnumerateRelativeDistinguishedNames(self.__handle, reversed, &__exceptionC)
+		
+		let __returnValue = System_Collections_Generic_IEnumerable_A1_DNInterface(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X500DistinguishedName class using information from the specified byte array.
+	/// - Parameter encodedDistinguishedName: A byte array that contains distinguished name information.
+	public convenience init(_ encodedDistinguishedName: DNArray<System_Byte> /* System.Byte[] */) throws {
+		let encodedDistinguishedNameC = encodedDistinguishedName.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X500DistinguishedName_Create(encodedDistinguishedNameC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public convenience init(_ encodedDistinguishedName: Data? /* System.ReadOnlySpan<System.Byte> */) throws {
+		let encodedDistinguishedNameC = encodedDistinguishedName.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X500DistinguishedName_Create_1(encodedDistinguishedNameC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X500DistinguishedName class using the specified System.Security.Cryptography.AsnEncodedData object.
+	/// - Parameter encodedDistinguishedName: An System.Security.Cryptography.AsnEncodedData object that represents the distinguished name.
+	public convenience init(_ encodedDistinguishedName: System_Security_Cryptography_AsnEncodedData /* System.Security.Cryptography.AsnEncodedData */) throws {
+		let encodedDistinguishedNameC = encodedDistinguishedName.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X500DistinguishedName_Create_2(encodedDistinguishedNameC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X500DistinguishedName class using the specified System.Security.Cryptography.X509Certificates.X500DistinguishedName object.
+	/// - Parameter distinguishedName: An System.Security.Cryptography.X509Certificates.X500DistinguishedName object.
+	public convenience init(_ distinguishedName: System_Security_Cryptography_X509Certificates_X500DistinguishedName /* System.Security.Cryptography.X509Certificates.X500DistinguishedName */) throws {
+		let distinguishedNameC = distinguishedName.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X500DistinguishedName_Create_3(distinguishedNameC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X500DistinguishedName class using information from the specified string.
+	/// - Parameter distinguishedName: A string that represents the distinguished name.
+	public convenience init(_ distinguishedName: System_String /* System.String */) throws {
+		let distinguishedNameC = distinguishedName.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X500DistinguishedName_Create_4(distinguishedNameC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.X500DistinguishedName class using the specified string and System.Security.Cryptography.X509Certificates.X500DistinguishedNameFlags flag.
+	/// - Parameter distinguishedName: A string that represents the distinguished name.
+	/// - Parameter flag: A bitwise combination of the enumeration values that specify the characteristics of the distinguished name.
+	public convenience init(_ distinguishedName: System_String /* System.String */, _ flag: System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags /* System.Security.Cryptography.X509Certificates.X500DistinguishedNameFlags */) throws {
+		let distinguishedNameC = distinguishedName.__handle
+		let flagC = flag.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X500DistinguishedName_Create_5(distinguishedNameC, flagC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Gets the comma-delimited distinguished name from an X500 certificate.
+	/// - Returns: The comma-delimited distinguished name of the X509 certificate.
+	public var name: System_String /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X500DistinguishedName_Name_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_X509Certificates_X500DistinguishedName_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_X509Certificates_X500DistinguishedName_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// Represents a Relative Distinguished Name component of an X.500 Distinguished Name.
+public class System_Security_Cryptography_X509Certificates_X500RelativeDistinguishedName /* System.Security.Cryptography.X509Certificates.X500RelativeDistinguishedName */: System_Object {
+	public override class var typeName: String { get {
+		"X500RelativeDistinguishedName"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.X509Certificates.X500RelativeDistinguishedName"
+	}}
+
+	/// Gets the object identifier (OID) identifying the single attribute value for this Relative Distinguished Name (RDN), when the RDN only contains one attribute.
+	/// - Throws: System.InvalidOperationException: The Relative Distinguished Name has multiple attributes (System.Security.Cryptography.X509Certificates.X500RelativeDistinguishedName.HasMultipleElements               is true).
+	/// - Returns: The object identifier (OID) identifying the single attribute value for this Relative Distinguished Name (RDN).
+	public func getSingleElementType() throws -> System_Security_Cryptography_Oid /* System.Security.Cryptography.Oid */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X500RelativeDistinguishedName_GetSingleElementType(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_Oid(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the textual representation of the value for the Relative Distinguished Name (RDN), when the RDN only contains one attribute.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The attribute is identified as a textual value, but the value did not successfully decode.
+	/// - Throws: System.InvalidOperationException: The Relative Distinguished Name has multiple attributes (System.Security.Cryptography.X509Certificates.X500RelativeDistinguishedName.HasMultipleElements               is true).
+	/// - Returns: The decoded text representing the attribute value.               If the attribute value is an OCTET STRING, or other non-text data type, this method returns null.
+	public func getSingleElementValue() throws -> System_String? /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X500RelativeDistinguishedName_GetSingleElementValue(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets a value that indicates whether this Relative Distinguished Name is composed of multiple attributes or only a single attribute.
+	/// - Returns: true if the Relative Distinguished Name is composed of multiple attributes; false if it is composed of only a single attribute.
+	public var hasMultipleElements: Bool /* System.Boolean */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X500RelativeDistinguishedName_HasMultipleElements_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_X509Certificates_X500RelativeDistinguishedName_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_X509Certificates_X500RelativeDistinguishedName_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Represents a certificate's public key information. This class cannot be inherited.
+public class System_Security_Cryptography_X509Certificates_PublicKey /* System.Security.Cryptography.X509Certificates.PublicKey */: System_Object {
+	public override class var typeName: String { get {
+		"PublicKey"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.X509Certificates.PublicKey"
+	}}
+
+	/// Exports the current key in the X.509 SubjectPublicKeyInfo format.
+	/// - Returns: A byte array containing the X.509 SubjectPublicKeyInfo representation of this key.
+	public func exportSubjectPublicKeyInfo() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_ExportSubjectPublicKeyInfo(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func createFromSubjectPublicKeyInfo(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws -> System_Security_Cryptography_X509Certificates_PublicKey /* System.Security.Cryptography.X509Certificates.PublicKey */ {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_CreateFromSubjectPublicKeyInfo(sourceC, &bytesRead, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_PublicKey(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the System.Security.Cryptography.RSA public key, or null if the key is not an RSA key.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key contents are corrupt or could not be read successfully.
+	/// - Returns: The public key, or null if the key is not an RSA key.
+	public func getRSAPublicKey() throws -> System_Security_Cryptography_RSA? /* System.Security.Cryptography.RSA */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_GetRSAPublicKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_RSA(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the System.Security.Cryptography.DSA public key, or null if the key is not an DSA key.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key contents are corrupt or could not be read successfully.
+	/// - Returns: The public key, or null if the key is not an DSA key.
+	public func getDSAPublicKey() throws -> System_Security_Cryptography_DSA? /* System.Security.Cryptography.DSA */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_GetDSAPublicKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_DSA(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the System.Security.Cryptography.ECDsa public key, or null if the key is not an ECDsa key.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key contents are corrupt or could not be read successfully.
+	/// - Returns: The public key, or null if the key is not an ECDsa key.
+	public func getECDsaPublicKey() throws -> System_Security_Cryptography_ECDsa? /* System.Security.Cryptography.ECDsa */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_GetECDsaPublicKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the System.Security.Cryptography.ECDiffieHellman public key, or null if the key is not an ECDiffieHellman key.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key contents are corrupt or could not be read successfully.
+	/// - Returns: The public key, or null if the key is not an ECDiffieHellman key.
+	public func getECDiffieHellmanPublicKey() throws -> System_Security_Cryptography_ECDiffieHellman? /* System.Security.Cryptography.ECDiffieHellman */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_GetECDiffieHellmanPublicKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECDiffieHellman(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the System.Security.Cryptography.MLKem public key, or null if the key is not an ML-KEM key.
+	/// - Throws: System.PlatformNotSupportedException: The object represents an ML-KEM public key, but the platform does not support the algorithm.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key contents are corrupt or could not be read successfully.
+	/// - Returns: The public key, or null if the key is not an ML-KEM key.
+	public func getMLKemPublicKey() throws -> System_Security_Cryptography_MLKem? /* System.Security.Cryptography.MLKem */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_GetMLKemPublicKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the System.Security.Cryptography.MLDsa public key, or null if the key is not an ML-DSA key.
+	/// - Throws: System.PlatformNotSupportedException: The object represents an ML-DSA public key, but the platform does not support the algorithm.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key contents are corrupt or could not be read successfully.
+	/// - Returns: The public key, or null if the key is not an ML-DSA key.
+	public func getMLDsaPublicKey() throws -> System_Security_Cryptography_MLDsa? /* System.Security.Cryptography.MLDsa */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_GetMLDsaPublicKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the System.Security.Cryptography.SlhDsa public key, or null if the key is not an SLH-DSA key.
+	/// - Throws: System.PlatformNotSupportedException: The object represents an SLH-DSA public key, but the platform does not support the algorithm.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key contents are corrupt or could not be read successfully.
+	/// - Returns: The public key, or null if the key is not an SLH-DSA key.
+	public func getSlhDsaPublicKey() throws -> System_Security_Cryptography_SlhDsa? /* System.Security.Cryptography.SlhDsa */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_GetSlhDsaPublicKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_SlhDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the System.Security.Cryptography.CompositeMLDsa public key, or null if the key is not a Composite ML-DSA key.
+	/// - Throws: System.PlatformNotSupportedException: The object represents a Composite ML-DSA public key, but the platform does not support the algorithm.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key contents are corrupt or could not be read successfully.
+	/// - Returns: The public key, or null if the key is not a Composite ML-DSA key.
+	public func getCompositeMLDsaPublicKey() throws -> System_Security_Cryptography_CompositeMLDsa? /* System.Security.Cryptography.CompositeMLDsa */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_GetCompositeMLDsaPublicKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.PublicKey class using an object identifier (OID) object of the public key, an ASN.1-encoded representation of the public key parameters, and an ASN.1-encoded representation of the public key value.
+	/// - Parameter oid: An object identifier (OID) object that represents the public key.
+	/// - Parameter parameters: An ASN.1-encoded representation of the public key parameters.
+	/// - Parameter keyValue: An ASN.1-encoded representation of the public key value.
+	public convenience init(_ oid: System_Security_Cryptography_Oid /* System.Security.Cryptography.Oid */, _ parameters: System_Security_Cryptography_AsnEncodedData? /* System.Security.Cryptography.AsnEncodedData */, _ keyValue: System_Security_Cryptography_AsnEncodedData /* System.Security.Cryptography.AsnEncodedData */) throws {
+		let oidC = oid.__handle
+		let parametersC = parameters?.__handle
+		let keyValueC = keyValue.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_Create_1(oidC, parametersC, keyValueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.PublicKey class using SubjectPublicKeyInfo from an System.Security.Cryptography.AsymmetricAlgorithm.
+	/// - Parameter key: An asymmetric algorithm to obtain the SubjectPublicKeyInfo from.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The SubjectPublicKeyInfo could not be decoded. The System.Security.Cryptography.AsymmetricAlgorithm.ExportSubjectPublicKeyInfo must return a valid ASN.1-DER encoded X.509 SubjectPublicKeyInfo.
+	/// - Throws: System.NotImplementedException: System.Security.Cryptography.AsymmetricAlgorithm.ExportSubjectPublicKeyInfo has not been overridden in a derived class.
+	public convenience init(_ key: System_Security_Cryptography_AsymmetricAlgorithm /* System.Security.Cryptography.AsymmetricAlgorithm */) throws {
+		let keyC = key.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_Create_2(keyC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.PublicKey class using SubjectPublicKeyInfo from an System.Security.Cryptography.MLKem.
+	/// - Parameter key: An System.Security.Cryptography.MLKem key to obtain the SubjectPublicKeyInfo from.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The SubjectPublicKeyInfo could not be decoded. The System.Security.Cryptography.MLKem.ExportSubjectPublicKeyInfo must return a valid ASN.1-DER encoded X.509 SubjectPublicKeyInfo.
+	public convenience init(_ key: System_Security_Cryptography_MLKem /* System.Security.Cryptography.MLKem */) throws {
+		let keyC = key.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_Create_3(keyC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.PublicKey class using SubjectPublicKeyInfo from an System.Security.Cryptography.MLDsa.
+	/// - Parameter key: An System.Security.Cryptography.MLDsa key to obtain the SubjectPublicKeyInfo from.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The SubjectPublicKeyInfo could not be decoded. The System.Security.Cryptography.MLDsa.ExportSubjectPublicKeyInfo must return a valid ASN.1-DER encoded X.509 SubjectPublicKeyInfo.
+	public convenience init(_ key: System_Security_Cryptography_MLDsa /* System.Security.Cryptography.MLDsa */) throws {
+		let keyC = key.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_Create_4(keyC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.PublicKey class using SubjectPublicKeyInfo from an System.Security.Cryptography.SlhDsa.
+	/// - Parameter key: An System.Security.Cryptography.SlhDsa key to obtain the SubjectPublicKeyInfo from.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The SubjectPublicKeyInfo could not be decoded. The System.Security.Cryptography.SlhDsa.ExportSubjectPublicKeyInfo must return a valid ASN.1-DER encoded X.509 SubjectPublicKeyInfo.
+	public convenience init(_ key: System_Security_Cryptography_SlhDsa /* System.Security.Cryptography.SlhDsa */) throws {
+		let keyC = key.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_Create_5(keyC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Initializes a new instance of the System.Security.Cryptography.X509Certificates.PublicKey class using SubjectPublicKeyInfo from an System.Security.Cryptography.CompositeMLDsa.
+	/// - Parameter key: An System.Security.Cryptography.CompositeMLDsa key to obtain the SubjectPublicKeyInfo from.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The SubjectPublicKeyInfo could not be decoded. The System.Security.Cryptography.CompositeMLDsa.ExportSubjectPublicKeyInfo must return a valid ASN.1-DER encoded X.509 SubjectPublicKeyInfo.
+	public convenience init(_ key: System_Security_Cryptography_CompositeMLDsa /* System.Security.Cryptography.CompositeMLDsa */) throws {
+		let keyC = key.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_Create_6(keyC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	/// Gets the ASN.1-encoded representation of the public key value.
+	/// - Returns: The ASN.1-encoded representation of the public key value.
+	public var encodedKeyValue: System_Security_Cryptography_AsnEncodedData /* System.Security.Cryptography.AsnEncodedData */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_EncodedKeyValue_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_AsnEncodedData(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the ASN.1-encoded representation of the public key parameters.
+	/// - Returns: The ASN.1-encoded representation of the public key parameters.
+	public var encodedParameters: System_Security_Cryptography_AsnEncodedData? /* System.Security.Cryptography.AsnEncodedData */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_EncodedParameters_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_AsnEncodedData(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets an System.Security.Cryptography.RSA derived object or a System.Security.Cryptography.DSA derived object representing the public key.
+	/// - Throws: System.NotSupportedException: The key algorithm is not supported.
+	/// - Returns: An System.Security.Cryptography.AsymmetricAlgorithm object representing the public key.
+	public var key: System_Security_Cryptography_AsymmetricAlgorithm /* System.Security.Cryptography.AsymmetricAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_Key_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_AsymmetricAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets an object identifier (OID) object of the public key.
+	/// - Returns: An object identifier (OID) object of the public key.
+	public var oid: System_Security_Cryptography_Oid /* System.Security.Cryptography.Oid */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_PublicKey_Oid_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_Oid(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_X509Certificates_PublicKey_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_X509Certificates_PublicKey_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Represents the base class from which all implementations of the System.Security.Cryptography.RSA algorithm inherit.
+public class System_Security_Cryptography_RSA /* System.Security.Cryptography.RSA */: System_Security_Cryptography_AsymmetricAlgorithm {
+	public override class var typeName: String { get {
+		"RSA"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.RSA"
+	}}
+
+	/// Creates an instance of the default implementation of the System.Security.Cryptography.RSA algorithm.
+	/// - Returns: A new instance of the default implementation of System.Security.Cryptography.RSA.
+	public override class func create() throws -> System_Security_Cryptography_RSA /* System.Security.Cryptography.RSA */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_Create(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_RSA(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Creates an instance of the specified implementation of System.Security.Cryptography.RSA.
+	/// - Parameter algName: The name of the implementation of System.Security.Cryptography.RSA to use.
+	/// - Returns: A new instance of the specified implementation of System.Security.Cryptography.RSA.
+	public override class func create(_ algName: System_String /* System.String */) throws -> System_Security_Cryptography_RSA? /* System.Security.Cryptography.RSA */ {
+		let algNameC = algName.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_Create_1(algNameC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_RSA(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Creates a new ephemeral RSA key with the specified key size.
+	/// - Parameter keySizeInBits: The key size, in bits.
+	/// - Throws: System.Security.Cryptography.CryptographicException: keySizeInBits is not supported by the default implementation.
+	/// - Returns: A new ephemeral RSA key with the specified key size.
+	public class func create(_ keySizeInBits: Int32 /* System.Int32 */) throws -> System_Security_Cryptography_RSA /* System.Security.Cryptography.RSA */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_Create_2(keySizeInBits, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_RSA(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Creates a new ephemeral RSA key with the specified RSA key parameters.
+	/// - Parameter parameters: The parameters for the System.Security.Cryptography.RSA algorithm.
+	/// - Throws: System.Security.Cryptography.CryptographicException: parameters does not represent a valid RSA key.
+	/// - Returns: A new ephemeral RSA key.
+	public class func create(_ parameters: System_Security_Cryptography_RSAParameters /* System.Security.Cryptography.RSAParameters */) throws -> System_Security_Cryptography_RSA /* System.Security.Cryptography.RSA */ {
+		let parametersC = parameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_Create_3(parametersC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_RSA(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the maximum number of bytes an RSA operation can produce.
+	/// - Throws: System.Security.Cryptography.CryptographicException: System.Security.Cryptography.AsymmetricAlgorithm.KeySize returned a value that is not a possible RSA key size.
+	/// - Returns: The maximum number of bytes an RSA operation can produce.
+	public func getMaxOutputSize() throws -> Int32 /* System.Int32 */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_GetMaxOutputSize(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// When overridden in a derived class, exports the System.Security.Cryptography.RSAParameters.
+	/// - Parameter includePrivateParameters: true to include private parameters; otherwise, false.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The parameters could not be exported.
+	/// - Returns: The parameters for System.Security.Cryptography.RSA.
+	public func exportParameters(_ includePrivateParameters: Bool /* System.Boolean */) throws -> System_Security_Cryptography_RSAParameters /* System.Security.Cryptography.RSAParameters */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_ExportParameters(self.__handle, includePrivateParameters, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_RSAParameters(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// When overridden in a derived class, imports the specified System.Security.Cryptography.RSAParameters.
+	/// - Parameter parameters: The parameters for System.Security.Cryptography.RSA.
+	public func importParameters(_ parameters: System_Security_Cryptography_RSAParameters /* System.Security.Cryptography.RSAParameters */) throws {
+		let parametersC = parameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_RSA_ImportParameters(self.__handle, parametersC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// When overridden in a derived class, encrypts the input data using the specified padding mode.
+	/// - Parameter data: The data to encrypt.
+	/// - Parameter padding: The padding mode.
+	/// - Throws: System.ArgumentNullException: data or padding is null.
+	/// - Throws: System.NotImplementedException: A derived class must override this method.
+	/// - Throws: System.Security.Cryptography.CryptographicException: padding is unknown, or not supported by this implementation. -or- The length of data is too long for the combination of System.Security.Cryptography.AsymmetricAlgorithm.KeySize and the selected padding. -or- The encryption operation failed.
+	/// - Returns: The encrypted data.
+	public func encrypt(_ data: DNArray<System_Byte> /* System.Byte[] */, _ padding: System_Security_Cryptography_RSAEncryptionPadding /* System.Security.Cryptography.RSAEncryptionPadding */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let paddingC = padding.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_Encrypt(self.__handle, dataC, paddingC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// When overridden in a derived class, decrypts the input data using the specified padding mode.
+	/// - Parameter data: The data to decrypt.
+	/// - Parameter padding: The padding mode.
+	/// - Throws: System.ArgumentNullException: data or padding is null.
+	/// - Throws: System.NotImplementedException: A derived class must override this method.
+	/// - Throws: System.Security.Cryptography.CryptographicException: padding is unknown, or not supported by this implementation. -or- The length of data is not equal to the number of bytes for System.Security.Cryptography.AsymmetricAlgorithm.KeySize. -or- This instance represents only a public key. -or- The decryption operation failed.
+	/// - Returns: The decrypted data.
+	public func decrypt(_ data: DNArray<System_Byte> /* System.Byte[] */, _ padding: System_Security_Cryptography_RSAEncryptionPadding /* System.Security.Cryptography.RSAEncryptionPadding */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let paddingC = padding.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_Decrypt(self.__handle, dataC, paddingC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// When overridden in a derived class, computes the signature for the specified hash value using the specified padding.
+	/// - Parameter hash: The hash value of the data to be signed.
+	/// - Parameter hashAlgorithm: The hash algorithm used to create the hash value of the data.
+	/// - Parameter padding: The padding.
+	/// - Throws: System.NotImplementedException: A derived class must override this method.
+	/// - Throws: System.ArgumentNullException: hash or padding is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Throws: System.Security.Cryptography.CryptographicException: padding is unknown, or not supported by this implementation. -or- This instance represents only a public key. -or- An error occurred creating the signature.
+	/// - Returns: The RSA signature for the specified hash value.
+	public func signHash(_ hash: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ padding: System_Security_Cryptography_RSASignaturePadding /* System.Security.Cryptography.RSASignaturePadding */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let hashC = hash.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let paddingC = padding.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_SignHash(self.__handle, hashC, hashAlgorithmC, paddingC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Verifies that a digital signature is valid by determining the hash value in the signature using the specified hash algorithm and padding, and comparing it to the provided hash value.
+	/// - Parameter hash: The hash value of the signed data.
+	/// - Parameter signature: The signature data to be verified.
+	/// - Parameter hashAlgorithm: The hash algorithm used to create the hash value.
+	/// - Parameter padding: The padding mode.
+	/// - Throws: System.NotImplementedException: A derived class must override this method.
+	/// - Throws: System.ArgumentNullException: hash or padding is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Throws: System.Security.Cryptography.CryptographicException: padding is unknown, or not supported by this implementation.
+	/// - Returns: true if the signature is valid; otherwise, false.
+	public func verifyHash(_ hash: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ padding: System_Security_Cryptography_RSASignaturePadding /* System.Security.Cryptography.RSASignaturePadding */) throws -> Bool /* System.Boolean */ {
+		let hashC = hash.__handle
+		let signatureC = signature.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let paddingC = padding.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_VerifyHash(self.__handle, hashC, signatureC, hashAlgorithmC, paddingC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func encrypt(_ data: Data? /* System.ReadOnlySpan<System.Byte> */, _ padding: System_Security_Cryptography_RSAEncryptionPadding /* System.Security.Cryptography.RSAEncryptionPadding */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.readOnlySpanOfByte()
+		let paddingC = padding.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_Encrypt_1(self.__handle, dataC, paddingC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func decrypt(_ data: Data? /* System.ReadOnlySpan<System.Byte> */, _ padding: System_Security_Cryptography_RSAEncryptionPadding /* System.Security.Cryptography.RSAEncryptionPadding */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.readOnlySpanOfByte()
+		let paddingC = padding.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_Decrypt_1(self.__handle, dataC, paddingC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func verifyHash(_ hash: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ padding: System_Security_Cryptography_RSASignaturePadding /* System.Security.Cryptography.RSASignaturePadding */) throws -> Bool /* System.Boolean */ {
+		let hashC = hash.readOnlySpanOfByte()
+		let signatureC = signature.readOnlySpanOfByte()
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let paddingC = padding.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_VerifyHash_1(self.__handle, hashC, signatureC, hashAlgorithmC, paddingC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// When overridden in a derived class, decrypts the input data using the private key.
+	/// - Parameter rgb: The cipher text to be decrypted.
+	/// - Throws: System.NotSupportedException: This method call is not supported. This exception is thrown starting with the .NET Framework 4.6.
+	/// - Returns: The resulting decryption of the rgb parameter in plain text.
+	public func decryptValue(_ rgb: DNArray<System_Byte> /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let rgbC = rgb.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_DecryptValue(self.__handle, rgbC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// When overridden in a derived class, encrypts the input data using the public key.
+	/// - Parameter rgb: The plain text to be encrypted.
+	/// - Throws: System.NotSupportedException: This method call is not supported. This exception is thrown starting with the .NET Framework 4.6.
+	/// - Returns: The resulting encryption of the rgb parameter as cipher text.
+	public func encryptValue(_ rgb: DNArray<System_Byte> /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let rgbC = rgb.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_EncryptValue(self.__handle, rgbC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Computes the hash value of the specified byte array using the specified hash algorithm and padding mode, and signs the resulting hash value.
+	/// - Parameter data: The input data to hash and sign.
+	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
+	/// - Parameter padding: The padding mode.
+	/// - Throws: System.ArgumentNullException: data is null.  -or-  padding is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Throws: System.Security.Cryptography.CryptographicException: padding is unknown, or not supported by this implementation. -or- This instance represents only a public key. -or- An error occurred creating the signature.
+	/// - Returns: The RSA signature for the specified data.
+	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ padding: System_Security_Cryptography_RSASignaturePadding /* System.Security.Cryptography.RSASignaturePadding */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let paddingC = padding.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_SignData(self.__handle, dataC, hashAlgorithmC, paddingC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Computes the hash value of a portion of the specified byte array using the specified hash algorithm and padding mode, and signs the resulting hash value.
+	/// - Parameter data: The input data to hash and sign.
+	/// - Parameter offset: The offset into the array at which to begin using data.
+	/// - Parameter count: The number of bytes in the array to use as data.
+	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
+	/// - Parameter padding: The padding mode.
+	/// - Throws: System.ArgumentNullException: data is null.  -or-  padding is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Throws: System.ArgumentOutOfRangeException: offset is less than zero.  -or-  count is less than zero.  -or-  offset + count - 1 results in an index that is beyond the upper bound of data.
+	/// - Throws: System.Security.Cryptography.CryptographicException: padding is unknown, or not supported by this implementation. -or- This instance represents only a public key. -or- An error occurred creating the signature.
+	/// - Returns: The RSA signature for the specified data.
+	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ padding: System_Security_Cryptography_RSASignaturePadding /* System.Security.Cryptography.RSASignaturePadding */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let paddingC = padding.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_SignData_1(self.__handle, dataC, offset, count, hashAlgorithmC, paddingC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Computes the hash value of the specified stream using the specified hash algorithm and padding mode, and signs the resulting hash value.
+	/// - Parameter data: The input stream to hash and sign.
+	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
+	/// - Parameter padding: The padding mode.
+	/// - Throws: System.ArgumentNullException: data is null.  -or-  padding is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Throws: System.Security.Cryptography.CryptographicException: padding is unknown, or not supported by this implementation. -or- This instance represents only a public key. -or- An error occurred creating the signature.
+	/// - Returns: The RSA signature for the specified data.
+	public func signData(_ data: System_IO_Stream /* System.IO.Stream */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ padding: System_Security_Cryptography_RSASignaturePadding /* System.Security.Cryptography.RSASignaturePadding */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let paddingC = padding.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_SignData_2(self.__handle, dataC, hashAlgorithmC, paddingC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func signData(_ data: Data? /* System.ReadOnlySpan<System.Byte> */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ padding: System_Security_Cryptography_RSASignaturePadding /* System.Security.Cryptography.RSASignaturePadding */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.readOnlySpanOfByte()
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let paddingC = padding.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_SignData_3(self.__handle, dataC, hashAlgorithmC, paddingC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func signHash(_ hash: Data? /* System.ReadOnlySpan<System.Byte> */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ padding: System_Security_Cryptography_RSASignaturePadding /* System.Security.Cryptography.RSASignaturePadding */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let hashC = hash.readOnlySpanOfByte()
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let paddingC = padding.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_SignHash_1(self.__handle, hashC, hashAlgorithmC, paddingC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Verifies that a digital signature is valid by calculating the hash value of the specified data using the specified hash algorithm and padding, and comparing it to the provided signature.
+	/// - Parameter data: The signed data.
+	/// - Parameter signature: The signature data to be verified.
+	/// - Parameter hashAlgorithm: The hash algorithm used to create the hash value of the data.
+	/// - Parameter padding: The padding mode.
+	/// - Throws: System.ArgumentNullException: data is null.  -or-  signature is null.  -or-  padding is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Throws: System.Security.Cryptography.CryptographicException: padding is unknown, or not supported by this implementation.
+	/// - Returns: true if the signature is valid; otherwise, false.
+	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ padding: System_Security_Cryptography_RSASignaturePadding /* System.Security.Cryptography.RSASignaturePadding */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.__handle
+		let signatureC = signature.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let paddingC = padding.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_VerifyData(self.__handle, dataC, signatureC, hashAlgorithmC, paddingC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Verifies that a digital signature is valid by calculating the hash value of the data in a portion of a byte array using the specified hash algorithm and padding, and comparing it to the provided signature.
+	/// - Parameter data: The signed data.
+	/// - Parameter offset: The starting index at which to compute the hash.
+	/// - Parameter count: The number of bytes to hash.
+	/// - Parameter signature: The signature data to be verified.
+	/// - Parameter hashAlgorithm: The hash algorithm used to create the hash value of the data.
+	/// - Parameter padding: The padding mode.
+	/// - Throws: System.ArgumentNullException: data is null.  -or-  signature is null.  -or-  padding is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Throws: System.ArgumentOutOfRangeException: offset is less than zero.  -or-  count is less than zero.  -or-  offset + count - 1 results in an index that is beyond the upper bound of data.
+	/// - Throws: System.Security.Cryptography.CryptographicException: padding is unknown, or not supported by this implementation.
+	/// - Returns: true if the signature is valid; otherwise, false.
+	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ padding: System_Security_Cryptography_RSASignaturePadding /* System.Security.Cryptography.RSASignaturePadding */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.__handle
+		let signatureC = signature.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let paddingC = padding.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_VerifyData_1(self.__handle, dataC, offset, count, signatureC, hashAlgorithmC, paddingC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Verifies that a digital signature is valid by calculating the hash value of the specified stream using the specified hash algorithm and padding, and comparing it to the provided signature.
+	/// - Parameter data: The signed data.
+	/// - Parameter signature: The signature data to be verified.
+	/// - Parameter hashAlgorithm: The hash algorithm used to create the hash value of the data.
+	/// - Parameter padding: The padding mode.
+	/// - Throws: System.ArgumentNullException: data is null.  -or-  signature is null.  -or-  padding is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Throws: System.Security.Cryptography.CryptographicException: padding is unknown, or not supported by this implementation.
+	/// - Returns: true if the signature is valid; otherwise, false.
+	public func verifyData(_ data: System_IO_Stream /* System.IO.Stream */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ padding: System_Security_Cryptography_RSASignaturePadding /* System.Security.Cryptography.RSASignaturePadding */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.__handle
+		let signatureC = signature.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let paddingC = padding.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_VerifyData_2(self.__handle, dataC, signatureC, hashAlgorithmC, paddingC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func verifyData(_ data: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ padding: System_Security_Cryptography_RSASignaturePadding /* System.Security.Cryptography.RSASignaturePadding */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.readOnlySpanOfByte()
+		let signatureC = signature.readOnlySpanOfByte()
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let paddingC = padding.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_VerifyData_3(self.__handle, dataC, signatureC, hashAlgorithmC, paddingC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Exports the current key in the PKCS#1 RSAPrivateKey format.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key could not be exported.
+	/// - Returns: A byte array containing the PKCS#1 RSAPrivateKey representation of this key.
+	public func exportRSAPrivateKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_ExportRSAPrivateKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the public-key portion of the current key in the PKCS#1 RSAPublicKey format.
+	/// - Returns: A byte array containing the PKCS#1 RSAPublicKey representation of this key.
+	public func exportRSAPublicKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_ExportRSAPublicKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public override func importSubjectPublicKeyInfo(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_RSA_ImportSubjectPublicKeyInfo(self.__handle, sourceC, &bytesRead, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	public func importRSAPublicKey(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_RSA_ImportRSAPublicKey(self.__handle, sourceC, &bytesRead, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	public func importRSAPrivateKey(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_RSA_ImportRSAPrivateKey(self.__handle, sourceC, &bytesRead, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	public override func importPkcs8PrivateKey(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_RSA_ImportPkcs8PrivateKey(self.__handle, sourceC, &bytesRead, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	public override func importEncryptedPkcs8PrivateKey(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_RSA_ImportEncryptedPkcs8PrivateKey(self.__handle, passwordBytesC, sourceC, &bytesRead, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Exports the current key in the PKCS#1 RSAPrivateKey format, PEM encoded.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key could not be exported.
+	/// - Returns: A string containing the PEM-encoded PKCS#1 RSAPrivateKey.
+	public func exportRSAPrivateKeyPem() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_ExportRSAPrivateKeyPem(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the public-key portion of the current key in the PKCS#1 RSAPublicKey format, PEM encoded.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key could not be exported.
+	/// - Returns: A string containing the PEM-encoded PKCS#1 RSAPublicKey.
+	public func exportRSAPublicKeyPem() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_ExportRSAPublicKeyPem(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Initializes an System.Security.Cryptography.RSA object from the key information from an XML string.
+	/// - Parameter xmlString: The XML string containing System.Security.Cryptography.RSA key information.
+	/// - Throws: System.ArgumentNullException: The xmlString parameter is null.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The format of the xmlString parameter is not valid.
+	/// - Throws: System.PlatformNotSupportedException: .NET Core and .NET 5+ only: In all cases.
+	public override func fromXmlString(_ xmlString: System_String /* System.String */) throws {
+		let xmlStringC = xmlString.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_RSA_FromXmlString(self.__handle, xmlStringC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Creates and returns an XML string containing the key of the current System.Security.Cryptography.RSA object.
+	/// - Parameter includePrivateParameters: true to include a public and private RSA key; false to include only the public key.
+	/// - Throws: System.PlatformNotSupportedException: .NET Core and .NET 5+ only: In all cases.
+	/// - Returns: An XML string containing the key of the current System.Security.Cryptography.RSA object.
+	public override func toXmlString(_ includePrivateParameters: Bool /* System.Boolean */) throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_ToXmlString(self.__handle, includePrivateParameters, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the name of the key exchange algorithm available with this implementation of System.Security.Cryptography.RSA.
+	/// - Returns: Returns "RSA".
+	public override var keyExchangeAlgorithm: System_String? /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_KeyExchangeAlgorithm_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the name of the signature algorithm available with this implementation of System.Security.Cryptography.RSA.
+	/// - Returns: Returns "RSA".
+	public override var signatureAlgorithm: System_String /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSA_SignatureAlgorithm_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_RSA_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_RSA_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Represents the standard parameters for the System.Security.Cryptography.RSA algorithm.
+public class System_Security_Cryptography_RSAParameters /* System.Security.Cryptography.RSAParameters */: System_ValueType {
+	public override class var typeName: String { get {
+		"RSAParameters"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.RSAParameters"
+	}}
+
+	/// Represents the D parameter for the System.Security.Cryptography.RSA algorithm.
+	public var d: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_RSAParameters_D_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Represents the D parameter for the System.Security.Cryptography.RSA algorithm.
+	public func d_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_RSAParameters_D_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Represents the DP parameter for the System.Security.Cryptography.RSA algorithm.
+	public var dP: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_RSAParameters_DP_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Represents the DP parameter for the System.Security.Cryptography.RSA algorithm.
+	public func dP_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_RSAParameters_DP_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Represents the DQ parameter for the System.Security.Cryptography.RSA algorithm.
+	public var dQ: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_RSAParameters_DQ_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Represents the DQ parameter for the System.Security.Cryptography.RSA algorithm.
+	public func dQ_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_RSAParameters_DQ_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Represents the Exponent parameter for the System.Security.Cryptography.RSA algorithm.
+	public var exponent: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_RSAParameters_Exponent_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Represents the Exponent parameter for the System.Security.Cryptography.RSA algorithm.
+	public func exponent_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_RSAParameters_Exponent_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Represents the InverseQ parameter for the System.Security.Cryptography.RSA algorithm.
+	public var inverseQ: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_RSAParameters_InverseQ_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Represents the InverseQ parameter for the System.Security.Cryptography.RSA algorithm.
+	public func inverseQ_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_RSAParameters_InverseQ_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Represents the Modulus parameter for the System.Security.Cryptography.RSA algorithm.
+	public var modulus: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_RSAParameters_Modulus_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Represents the Modulus parameter for the System.Security.Cryptography.RSA algorithm.
+	public func modulus_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_RSAParameters_Modulus_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Represents the P parameter for the System.Security.Cryptography.RSA algorithm.
+	public var p: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_RSAParameters_P_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Represents the P parameter for the System.Security.Cryptography.RSA algorithm.
+	public func p_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_RSAParameters_P_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Represents the Q parameter for the System.Security.Cryptography.RSA algorithm.
+	public var q: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_RSAParameters_Q_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Represents the Q parameter for the System.Security.Cryptography.RSA algorithm.
+	public func q_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_RSAParameters_Q_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Initializes a new instance of the System.Security.Cryptography.RSAParameters struct.
+	public convenience init() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSAParameters_Create(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_RSAParameters_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_RSAParameters_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Specifies the padding mode and parameters to use with RSA encryption or decryption operations.
+public class System_Security_Cryptography_RSAEncryptionPadding /* System.Security.Cryptography.RSAEncryptionPadding */: System_Object, System_IEquatable_A1 {
+	public override class var typeName: String { get {
+		"RSAEncryptionPadding"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.RSAEncryptionPadding"
+	}}
+
+	/// Creates a new System.Security.Cryptography.RSAEncryptionPadding instance whose System.Security.Cryptography.RSAEncryptionPadding.Mode is System.Security.Cryptography.RSAEncryptionPaddingMode.Oaep with the given hash algorithm.
+	/// - Parameter hashAlgorithm: The hash algorithm.
+	/// - Throws: System.ArgumentException: The System.Security.Cryptography.HashAlgorithmName.Name property of hashAlgorithm is either null or System.String.Empty.
+	/// - Returns: An object whose mode is System.Security.Cryptography.RSAEncryptionPadding.Mode is System.Security.Cryptography.RSAEncryptionPaddingMode.Oaep with the hash algorithm specified by hashAlgorithm.
+	public class func createOaep(_ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> System_Security_Cryptography_RSAEncryptionPadding /* System.Security.Cryptography.RSAEncryptionPadding */ {
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSAEncryptionPadding_CreateOaep(hashAlgorithmC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_RSAEncryptionPadding(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Returns the hash code of this System.Security.Cryptography.RSAEncryptionPadding object.
+	/// - Returns: The hash code of this instance.
+	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSAEncryptionPadding_GetHashCode(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Determines whether the current instance is equal to the specified object.
+	/// - Parameter obj: The object to compare.
+	/// - Returns: true if obj is equal to the current instance; otherwise, false.
+	public override func equals(_ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let objC = obj?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSAEncryptionPadding_Equals(self.__handle, objC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Determines whether the current instance is equal to the specified System.Security.Cryptography.RSAEncryptionPadding object.
+	/// - Parameter other: The object to compare.
+	/// - Returns: true if other is equal to the current instance; otherwise, false.
+	public func equals(_ other: System_Security_Cryptography_RSAEncryptionPadding? /* System.Security.Cryptography.RSAEncryptionPadding */) throws -> Bool /* System.Boolean */ {
+		let otherC = other?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSAEncryptionPadding_Equals_1(self.__handle, otherC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Returns the string representation of the current System.Security.Cryptography.RSAEncryptionPadding instance.
+	/// - Returns: The string representation of the current object.
+	public override func toString() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSAEncryptionPadding_ToString(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets an object that represents the PKCS #1 encryption standard.
+	/// - Returns: An object that represents the PKCS #1 encryption standard.
+	public class var pkcs1: System_Security_Cryptography_RSAEncryptionPadding /* System.Security.Cryptography.RSAEncryptionPadding */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSAEncryptionPadding_Pkcs1_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_RSAEncryptionPadding(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets an object that represents the Optimal Asymmetric Encryption Padding (OAEP) encryption standard with a SHA-1 hash algorithm.
+	/// - Returns: An object that represents the OAEP encryption standard with a SHA-1 hash algorithm.
+	public class var oaepSHA1: System_Security_Cryptography_RSAEncryptionPadding /* System.Security.Cryptography.RSAEncryptionPadding */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSAEncryptionPadding_OaepSHA1_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_RSAEncryptionPadding(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets an object that represents the Optimal Asymmetric Encryption Padding (OAEP) encryption standard with a SHA-256 hash algorithm.
+	/// - Returns: An object that represents the OAEP encryption standard with a SHA-256 hash algorithm.
+	public class var oaepSHA256: System_Security_Cryptography_RSAEncryptionPadding /* System.Security.Cryptography.RSAEncryptionPadding */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSAEncryptionPadding_OaepSHA256_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_RSAEncryptionPadding(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets an object that represents the Optimal Asymmetric Encryption Padding (OAEP) encryption standard with a SHA-384 hash algorithm.
+	/// - Returns: An object that represents the OAEP encryption standard with a SHA-384 hash algorithm.
+	public class var oaepSHA384: System_Security_Cryptography_RSAEncryptionPadding /* System.Security.Cryptography.RSAEncryptionPadding */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSAEncryptionPadding_OaepSHA384_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_RSAEncryptionPadding(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets an object that represents the Optimal Asymmetric Encryption Padding (OAEP) encryption standard with a SHA-512 hash algorithm.
+	/// - Returns: An object that represents the OAEP encryption standard with a SHA-512 hash algorithm.
+	public class var oaepSHA512: System_Security_Cryptography_RSAEncryptionPadding /* System.Security.Cryptography.RSAEncryptionPadding */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSAEncryptionPadding_OaepSHA512_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_RSAEncryptionPadding(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// System.Security.Cryptography.RSAEncryptionPaddingMode.Oaep mode with SHA-3-256 hash algorithm.
+	public class var oaepSHA3_256: System_Security_Cryptography_RSAEncryptionPadding /* System.Security.Cryptography.RSAEncryptionPadding */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSAEncryptionPadding_OaepSHA3_256_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_RSAEncryptionPadding(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// System.Security.Cryptography.RSAEncryptionPaddingMode.Oaep mode with SHA-3-384 hash algorithm.
+	public class var oaepSHA3_384: System_Security_Cryptography_RSAEncryptionPadding /* System.Security.Cryptography.RSAEncryptionPadding */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSAEncryptionPadding_OaepSHA3_384_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_RSAEncryptionPadding(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// System.Security.Cryptography.RSAEncryptionPaddingMode.Oaep mode with SHA-3-512 hash algorithm.
+	public class var oaepSHA3_512: System_Security_Cryptography_RSAEncryptionPadding /* System.Security.Cryptography.RSAEncryptionPadding */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSAEncryptionPadding_OaepSHA3_512_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_RSAEncryptionPadding(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the padding mode represented by this System.Security.Cryptography.RSAEncryptionPadding instance.
+	/// - Returns: A padding mode.
+	public var mode: System_Security_Cryptography_RSAEncryptionPaddingMode /* System.Security.Cryptography.RSAEncryptionPaddingMode */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSAEncryptionPadding_Mode_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_RSAEncryptionPaddingMode(cValue: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the hash algorithm used in conjunction with the System.Security.Cryptography.RSAEncryptionPaddingMode.Oaep padding mode.
+	/// - Returns: The hash algorithm.
+	public var oaepHashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSAEncryptionPadding_OaepHashAlgorithm_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_RSAEncryptionPadding_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_RSAEncryptionPadding_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+/// Specifies the padding mode and parameters to use with RSA signature creation or verification operations.
+public class System_Security_Cryptography_RSASignaturePadding /* System.Security.Cryptography.RSASignaturePadding */: System_Object, System_IEquatable_A1 {
+	public override class var typeName: String { get {
+		"RSASignaturePadding"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.RSASignaturePadding"
+	}}
+
+	/// Returns the hash code for this System.Security.Cryptography.RSASignaturePadding instance.
+	/// - Returns: The hash code for this System.Security.Cryptography.RSASignaturePadding instance.
+	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSASignaturePadding_GetHashCode(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Returns a value that indicates whether this instance is equal to a specified object.
+	/// - Parameter obj: The object to compare with the current instance.
+	/// - Returns: true if the specified object is equal to the current object; otherwise, false.
+	public override func equals(_ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let objC = obj?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSASignaturePadding_Equals(self.__handle, objC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Returns a value that indicates whether this instance is equal to a specified System.Security.Cryptography.RSASignaturePadding object.
+	/// - Parameter other: The object to compare with the current instance.
+	/// - Returns: true if the specified object is equal to the current object; otherwise, false.
+	public func equals(_ other: System_Security_Cryptography_RSASignaturePadding? /* System.Security.Cryptography.RSASignaturePadding */) throws -> Bool /* System.Boolean */ {
+		let otherC = other?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSASignaturePadding_Equals_1(self.__handle, otherC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Returns the string representation of the current System.Security.Cryptography.RSASignaturePadding instance.
+	/// - Returns: The string representation of the current object.
+	public override func toString() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSASignaturePadding_ToString(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets an object that uses the PKCS #1 v1.5 padding mode.
+	/// - Returns: An object that uses the System.Security.Cryptography.RSASignaturePaddingMode.Pkcs1 padding mode.
+	public class var pkcs1: System_Security_Cryptography_RSASignaturePadding /* System.Security.Cryptography.RSASignaturePadding */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSASignaturePadding_Pkcs1_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_RSASignaturePadding(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets an object that uses PSS padding mode.
+	/// - Returns: An object that uses the System.Security.Cryptography.RSASignaturePaddingMode.Pss padding mode with the number of salt bytes equal to the size of the hash.
+	public class var pss: System_Security_Cryptography_RSASignaturePadding /* System.Security.Cryptography.RSASignaturePadding */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSASignaturePadding_Pss_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_RSASignaturePadding(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the padding mode of this System.Security.Cryptography.RSASignaturePadding instance.
+	/// - Returns: The padding mode (either System.Security.Cryptography.RSASignaturePaddingMode.Pkcs1 or System.Security.Cryptography.RSASignaturePaddingMode.Pss) of this instance.
+	public var mode: System_Security_Cryptography_RSASignaturePaddingMode /* System.Security.Cryptography.RSASignaturePaddingMode */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_RSASignaturePadding_Mode_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_RSASignaturePaddingMode(cValue: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_RSASignaturePadding_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_RSASignaturePadding_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+/// Represents the abstract base class from which all implementations of the Digital Signature Algorithm (System.Security.Cryptography.DSA) must inherit.
+public class System_Security_Cryptography_DSA /* System.Security.Cryptography.DSA */: System_Security_Cryptography_AsymmetricAlgorithm {
+	public override class var typeName: String { get {
+		"DSA"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.DSA"
+	}}
+
+	/// When overridden in a derived class, exports the System.Security.Cryptography.DSAParameters.
+	/// - Parameter includePrivateParameters: true to include private parameters; otherwise, false.
+	/// - Returns: The parameters for System.Security.Cryptography.DSA.
+	public func exportParameters(_ includePrivateParameters: Bool /* System.Boolean */) throws -> System_Security_Cryptography_DSAParameters /* System.Security.Cryptography.DSAParameters */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_ExportParameters(self.__handle, includePrivateParameters, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_DSAParameters(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// When overridden in a derived class, imports the specified System.Security.Cryptography.DSAParameters.
+	/// - Parameter parameters: The parameters for System.Security.Cryptography.DSA.
+	/// - Throws: System.ArgumentException: parameters is missing required fields. -or- parameters has fields with inconsistent lengths for a valid key.
+	/// - Throws: System.Security.Cryptography.CryptographicException: parameters does not represent a valid DSA key parameter set.
+	public func importParameters(_ parameters: System_Security_Cryptography_DSAParameters /* System.Security.Cryptography.DSAParameters */) throws {
+		let parametersC = parameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_DSA_ImportParameters(self.__handle, parametersC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Creates the specified cryptographic object used to perform the asymmetric algorithm.
+	/// - Parameter algName: The name of the specific implementation of System.Security.Cryptography.DSA to use.
+	/// - Returns: A cryptographic object used to perform the asymmetric algorithm.
+	public override class func create(_ algName: System_String /* System.String */) throws -> System_Security_Cryptography_DSA? /* System.Security.Cryptography.DSA */ {
+		let algNameC = algName.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_Create(algNameC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_DSA(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Creates the default cryptographic object used to perform the asymmetric algorithm.
+	/// - Returns: A cryptographic object used to perform the asymmetric algorithm.
+	public override class func create() throws -> System_Security_Cryptography_DSA /* System.Security.Cryptography.DSA */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_Create_1(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_DSA(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Creates a new ephemeral DSA key with the specified key size.
+	/// - Parameter keySizeInBits: The key size, in bits.
+	/// - Throws: System.Security.Cryptography.CryptographicException: keySizeInBits is not permitted by System.Security.Cryptography.AsymmetricAlgorithm.LegalKeySizes.
+	/// - Returns: A new ephemeral DSA key with the specified key size.
+	public class func create(_ keySizeInBits: Int32 /* System.Int32 */) throws -> System_Security_Cryptography_DSA /* System.Security.Cryptography.DSA */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_Create_2(keySizeInBits, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_DSA(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Creates a new ephemeral DSA key with the specified DSA key parameters.
+	/// - Parameter parameters: The parameters for the System.Security.Cryptography.DSA algorithm.
+	/// - Returns: A new ephemeral DSA key.
+	public class func create(_ parameters: System_Security_Cryptography_DSAParameters /* System.Security.Cryptography.DSAParameters */) throws -> System_Security_Cryptography_DSA /* System.Security.Cryptography.DSA */ {
+		let parametersC = parameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_Create_3(parametersC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_DSA(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// When overridden in a derived class, creates the System.Security.Cryptography.DSA signature for the specified hash value.
+	/// - Parameter rgbHash: The hash value to be signed.
+	/// - Returns: The digital signature for the specified hash value.
+	public func createSignature(_ rgbHash: DNArray<System_Byte> /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let rgbHashC = rgbHash.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_CreateSignature(self.__handle, rgbHashC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// When overridden in a derived class, verifies the System.Security.Cryptography.DSA signature for the specified data.
+	/// - Parameter rgbHash: The hash of the data signed with rgbSignature.
+	/// - Parameter rgbSignature: The signature to be verified for rgbData.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The implementation type only supports legacy DSA (FIPS 186-2), and the hash value is not 20 bytes long. -or- Verifying the signature otherwise failed.
+	/// - Returns: true if rgbSignature matches the signature computed using the specified hash algorithm and key on rgbHash; otherwise, false.
+	public func verifySignature(_ rgbHash: DNArray<System_Byte> /* System.Byte[] */, _ rgbSignature: DNArray<System_Byte> /* System.Byte[] */) throws -> Bool /* System.Boolean */ {
+		let rgbHashC = rgbHash.__handle
+		let rgbSignatureC = rgbSignature.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_VerifySignature(self.__handle, rgbHashC, rgbSignatureC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Computes the hash value of the specified byte array using the specified hash algorithm and signs the resulting hash value.
+	/// - Parameter data: The input data for which to compute the hash.
+	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
+	/// - Throws: System.ArgumentNullException: data is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Returns: The DSA signature for the specified data.
+	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_SignData(self.__handle, dataC, hashAlgorithmC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Computes the hash value of the specified data and signs it using the specified signature format.
+	/// - Parameter data: The data to sign.
+	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
+	/// - Parameter signatureFormat: The encoding format to use for the signature.
+	/// - Throws: System.ArgumentNullException: data is null.
+	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
+	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or signing operation.
+	/// - Returns: The DSA signature for the specified data.
+	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_SignData_1(self.__handle, dataC, hashAlgorithmC, signatureFormatC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Computes the hash value of a portion of the specified byte array using the specified hash algorithm and signs the resulting hash value.
+	/// - Parameter data: The input data for which to compute the hash.
+	/// - Parameter offset: The offset into the array at which to begin using data.
+	/// - Parameter count: The number of bytes in the array to use as data.
+	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
+	/// - Throws: System.ArgumentNullException: data is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Throws: System.ArgumentOutOfRangeException: offset is less than zero.       -or-       count is less than zero.       -or-       offset + count - 1 results in an index that is beyond the upper bound of data.
+	/// - Returns: The DSA signature for the specified data.
+	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_SignData_2(self.__handle, dataC, offset, count, hashAlgorithmC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Computes the hash value of the specified data and signs it using the specified signature format.
+	/// - Parameter data: The data to sign.
+	/// - Parameter offset: The offset into data at which to begin hashing.
+	/// - Parameter count: The number of bytes to read from data.
+	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
+	/// - Parameter signatureFormat: The encoding format to use for the signature.
+	/// - Throws: System.ArgumentNullException: data is null.
+	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.             -or-            offset is less than zero.             -or-            count is less than zero.             -or-            offset + count - 1 results in an index that is beyond the upper bound of data.
+	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or signing operation.
+	/// - Returns: The DSA signature for the specified data.
+	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_SignData_3(self.__handle, dataC, offset, count, hashAlgorithmC, signatureFormatC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Computes the hash value of the specified stream using the specified hash algorithm and signs the resulting hash value.
+	/// - Parameter data: The input stream for which to compute the hash.
+	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
+	/// - Throws: System.ArgumentNullException: data is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Returns: The DSA signature for the specified data.
+	public func signData(_ data: System_IO_Stream /* System.IO.Stream */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_SignData_4(self.__handle, dataC, hashAlgorithmC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Computes the hash value of the specified data and signs it using the specified signature format.
+	/// - Parameter data: The data to sign.
+	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
+	/// - Parameter signatureFormat: The encoding format to use for the signature.
+	/// - Throws: System.ArgumentNullException: data is null.
+	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
+	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or signing operation.
+	/// - Returns: The DSA signature for the specified data.
+	public func signData(_ data: System_IO_Stream /* System.IO.Stream */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_SignData_5(self.__handle, dataC, hashAlgorithmC, signatureFormatC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Verifies that a digital signature is valid by calculating the hash value of the specified data using the specified hash algorithm and comparing it to the provided signature.
+	/// - Parameter data: The signed data.
+	/// - Parameter signature: The signature data to be verified.
+	/// - Parameter hashAlgorithm: The hash algorithm used to create the hash value of the data.
+	/// - Throws: System.ArgumentNullException: data is null.       -or-       signature is null.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The implementation type only supports legacy DSA (FIPS 186-2), and the hash algorithm is not SHA-1. -or- Verifying the signature otherwise failed.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Returns: true if the digital signature is valid; otherwise, false.
+	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.__handle
+		let signatureC = signature.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_VerifyData(self.__handle, dataC, signatureC, hashAlgorithmC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Verifies that a digital signature is valid by calculating the hash value of the data in a portion of a byte array using the specified hash algorithm and comparing it to the provided signature.
+	/// - Parameter data: The signed data.
+	/// - Parameter offset: The starting index at which to compute the hash.
+	/// - Parameter count: The number of bytes to hash.
+	/// - Parameter signature: The signature data to be verified.
+	/// - Parameter hashAlgorithm: The hash algorithm used to create the hash value of the data.
+	/// - Throws: System.ArgumentNullException: data is null.       -or-       signature is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Throws: System.ArgumentOutOfRangeException: offset is less than zero.       -or-       count is less than zero.       -or-       offset + count - 1 results in an index that is beyond the upper bound of data.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The implementation type only supports legacy DSA (FIPS 186-2), and the hash algorithm is not SHA-1. -or- Verifying the signature otherwise failed.
+	/// - Returns: true if the digital signature is valid; otherwise, false.
+	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.__handle
+		let signatureC = signature.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_VerifyData_1(self.__handle, dataC, offset, count, signatureC, hashAlgorithmC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Verifies that a digital signature is valid for the provided data.
+	/// - Parameter data: An array that contains the signed data.
+	/// - Parameter offset: The starting index of the signed portion of data.
+	/// - Parameter count: The number of bytes in data that were signed.
+	/// - Parameter signature: The signature to verify.
+	/// - Parameter hashAlgorithm: The hash algorithm used to hash the data for the verification process.
+	/// - Parameter signatureFormat: The encoding format for signature.
+	/// - Throws: System.ArgumentNullException: data or signature is null.
+	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.    -or-   offset is less than zero.    -or-   count is less than zero.    -or-   offset + count - 1 results in an index that is beyond the upper bound of data.
+	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or verification operation.
+	/// - Returns: true if the digital signature is valid for the provided data; otherwise, false.
+	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.__handle
+		let signatureC = signature.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_VerifyData_2(self.__handle, dataC, offset, count, signatureC, hashAlgorithmC, signatureFormatC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Verifies that a digital signature is valid by calculating the hash value of the specified stream using the specified hash algorithm and comparing it to the provided signature.
+	/// - Parameter data: The signed data.
+	/// - Parameter signature: The signature data to be verified.
+	/// - Parameter hashAlgorithm: The hash algorithm used to create the hash value of the data.
+	/// - Throws: System.ArgumentNullException: data is null.       -or-       signature is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The implementation type only supports legacy DSA (FIPS 186-2), and the hash algorithm is not SHA-1. -or- Verifying the signature otherwise failed.
+	/// - Returns: true if the digital signature is valid; otherwise, false.
+	public func verifyData(_ data: System_IO_Stream /* System.IO.Stream */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.__handle
+		let signatureC = signature.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_VerifyData_3(self.__handle, dataC, signatureC, hashAlgorithmC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Creates the DSA signature for the specified hash value in the indicated format.
+	/// - Parameter rgbHash: The hash value to sign.
+	/// - Parameter signatureFormat: The encoding format to use for the signature.
+	/// - Throws: System.ArgumentNullException: rgbHash is null.
+	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the signing operation.
+	/// - Returns: The DSA signature for the specified data.
+	public func createSignature(_ rgbHash: DNArray<System_Byte> /* System.Byte[] */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let rgbHashC = rgbHash.__handle
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_CreateSignature_1(self.__handle, rgbHashC, signatureFormatC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func verifyData(_ data: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.readOnlySpanOfByte()
+		let signatureC = signature.readOnlySpanOfByte()
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_VerifyData_4(self.__handle, dataC, signatureC, hashAlgorithmC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Verifies that a digital signature is valid for the provided data.
+	/// - Parameter data: The signed data.
+	/// - Parameter signature: The signature to verify.
+	/// - Parameter hashAlgorithm: The hash algorithm used to hash the data for the verification process.
+	/// - Parameter signatureFormat: The encoding format for signature.
+	/// - Throws: System.ArgumentNullException: data or signature is null.
+	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
+	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or verification operation.
+	/// - Returns: true if the digital signature is valid for the provided data; otherwise, false.
+	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.__handle
+		let signatureC = signature.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_VerifyData_5(self.__handle, dataC, signatureC, hashAlgorithmC, signatureFormatC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Verifies that a digital signature is valid for the provided data.
+	/// - Parameter data: The signed data.
+	/// - Parameter signature: The signature to verify.
+	/// - Parameter hashAlgorithm: The hash algorithm used to hash the data for the verification process.
+	/// - Parameter signatureFormat: The encoding format for signature.
+	/// - Throws: System.ArgumentNullException: data or signature is null.
+	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
+	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or verification operation.
+	/// - Returns: true if the digital signature is valid for the provided data; otherwise, false.
+	public func verifyData(_ data: System_IO_Stream /* System.IO.Stream */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.__handle
+		let signatureC = signature.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_VerifyData_6(self.__handle, dataC, signatureC, hashAlgorithmC, signatureFormatC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func verifyData(_ data: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.readOnlySpanOfByte()
+		let signatureC = signature.readOnlySpanOfByte()
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_VerifyData_7(self.__handle, dataC, signatureC, hashAlgorithmC, signatureFormatC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Verifies that a digital signature is valid for the provided hash.
+	/// - Parameter rgbHash: The signed hash.
+	/// - Parameter rgbSignature: The signature to verify.
+	/// - Parameter signatureFormat: The encoding format for rgbSignature.
+	/// - Throws: System.ArgumentNullException: rgbHash or rgbSignature is null.
+	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the verification operation.
+	/// - Returns: true if the digital signature is valid for the provided data; otherwise, false.
+	public func verifySignature(_ rgbHash: DNArray<System_Byte> /* System.Byte[] */, _ rgbSignature: DNArray<System_Byte> /* System.Byte[] */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
+		let rgbHashC = rgbHash.__handle
+		let rgbSignatureC = rgbSignature.__handle
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_VerifySignature_1(self.__handle, rgbHashC, rgbSignatureC, signatureFormatC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func verifySignature(_ hash: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> Bool /* System.Boolean */ {
+		let hashC = hash.readOnlySpanOfByte()
+		let signatureC = signature.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_VerifySignature_2(self.__handle, hashC, signatureC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func verifySignature(_ hash: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
+		let hashC = hash.readOnlySpanOfByte()
+		let signatureC = signature.readOnlySpanOfByte()
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_VerifySignature_3(self.__handle, hashC, signatureC, signatureFormatC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public override func importEncryptedPkcs8PrivateKey(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_DSA_ImportEncryptedPkcs8PrivateKey(self.__handle, passwordBytesC, sourceC, &bytesRead, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	public override func importPkcs8PrivateKey(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_DSA_ImportPkcs8PrivateKey(self.__handle, sourceC, &bytesRead, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	public override func importSubjectPublicKeyInfo(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_DSA_ImportSubjectPublicKeyInfo(self.__handle, sourceC, &bytesRead, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Gets the largest size, in bytes, for a signature produced by this key in the indicated format.
+	/// - Parameter signatureFormat: The encoding format for a signature.
+	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
+	/// - Returns: The largest size, in bytes, for a signature produced by this key in the indicated format.
+	public func getMaxSignatureSize(_ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Int32 /* System.Int32 */ {
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_GetMaxSignatureSize(self.__handle, signatureFormatC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Reconstructs a System.Security.Cryptography.DSA object from an XML string.
+	/// - Parameter xmlString: The XML string to use to reconstruct the System.Security.Cryptography.DSA object.
+	/// - Throws: System.ArgumentNullException: The xmlString parameter is null.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The format of the xmlString parameter is not valid.
+	public override func fromXmlString(_ xmlString: System_String /* System.String */) throws {
+		let xmlStringC = xmlString.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_DSA_FromXmlString(self.__handle, xmlStringC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Creates and returns an XML string representation of the current System.Security.Cryptography.DSA object.
+	/// - Parameter includePrivateParameters: true to include private parameters; otherwise, false.
+	/// - Returns: An XML string encoding of the current System.Security.Cryptography.DSA object.
+	public override func toXmlString(_ includePrivateParameters: Bool /* System.Boolean */) throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSA_ToXmlString(self.__handle, includePrivateParameters, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_DSA_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_DSA_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Contains the typical parameters for the System.Security.Cryptography.DSA algorithm.
+public class System_Security_Cryptography_DSAParameters /* System.Security.Cryptography.DSAParameters */: System_ValueType {
+	public override class var typeName: String { get {
+		"DSAParameters"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.DSAParameters"
+	}}
+
+	/// Specifies the P parameter for the System.Security.Cryptography.DSA algorithm.
+	public var p: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_DSAParameters_P_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Specifies the P parameter for the System.Security.Cryptography.DSA algorithm.
+	public func p_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_DSAParameters_P_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Specifies the Q parameter for the System.Security.Cryptography.DSA algorithm.
+	public var q: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_DSAParameters_Q_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Specifies the Q parameter for the System.Security.Cryptography.DSA algorithm.
+	public func q_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_DSAParameters_Q_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Specifies the G parameter for the System.Security.Cryptography.DSA algorithm.
+	public var g: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_DSAParameters_G_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Specifies the G parameter for the System.Security.Cryptography.DSA algorithm.
+	public func g_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_DSAParameters_G_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Specifies the Y parameter for the System.Security.Cryptography.DSA algorithm.
+	public var y: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_DSAParameters_Y_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Specifies the Y parameter for the System.Security.Cryptography.DSA algorithm.
+	public func y_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_DSAParameters_Y_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Specifies the J parameter for the System.Security.Cryptography.DSA algorithm.
+	public var j: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_DSAParameters_J_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Specifies the J parameter for the System.Security.Cryptography.DSA algorithm.
+	public func j_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_DSAParameters_J_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Specifies the X parameter for the System.Security.Cryptography.DSA algorithm.
+	public var x: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_DSAParameters_X_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Specifies the X parameter for the System.Security.Cryptography.DSA algorithm.
+	public func x_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_DSAParameters_X_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Specifies the seed for the System.Security.Cryptography.DSA algorithm.
+	public var seed: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_DSAParameters_Seed_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Specifies the seed for the System.Security.Cryptography.DSA algorithm.
+	public func seed_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_DSAParameters_Seed_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Specifies the counter for the System.Security.Cryptography.DSA algorithm.
+	public var counter: Int32 /* System.Int32 */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_DSAParameters_Counter_Get(self.__handle)
+		
+		return __returnValueC
+		
+	}}
+	/// Specifies the counter for the System.Security.Cryptography.DSA algorithm.
+	public func counter_set(_ value: Int32 /* System.Int32 */) {
+		
+		
+		System_Security_Cryptography_DSAParameters_Counter_Set(self.__handle, value)
+		
+		
+	}
+	
+	
+	/// Initializes a new instance of the System.Security.Cryptography.DSAParameters struct.
+	public convenience init() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_DSAParameters_Create(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_DSAParameters_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_DSAParameters_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Provides an abstract base class that encapsulates the Elliptic Curve Digital Signature Algorithm (ECDSA).
+public class System_Security_Cryptography_ECDsa /* System.Security.Cryptography.ECDsa */: System_Security_Cryptography_ECAlgorithm {
+	public override class var typeName: String { get {
+		"ECDsa"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.ECDsa"
+	}}
+
+	/// Creates a new instance of the default implementation of the Elliptic Curve Digital Signature Algorithm (ECDSA).
+	/// - Returns: A new instance of the default implementation (System.Security.Cryptography.ECDsaCng) of this class.
+	public override class func create() throws -> System_Security_Cryptography_ECDsa /* System.Security.Cryptography.ECDsa */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_Create(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Creates a new instance of the default implementation of the Elliptic Curve Digital Signature Algorithm (ECDSA) with a newly generated key over the specified curve.
+	/// - Parameter curve: The curve to use for key generation.
+	/// - Returns: A new instance of the default implementation (System.Security.Cryptography.ECDsaCng) of this class.
+	public class func create(_ curve: System_Security_Cryptography_ECCurve /* System.Security.Cryptography.ECCurve */) throws -> System_Security_Cryptography_ECDsa /* System.Security.Cryptography.ECDsa */ {
+		let curveC = curve.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_Create_1(curveC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Creates a new instance of the default implementation of the Elliptic Curve Digital Signature Algorithm (ECDSA) using the specified parameters as the key.
+	/// - Parameter parameters: The parameters representing the key to use.
+	/// - Returns: A new instance of the default implementation (System.Security.Cryptography.ECDsaCng) of this class.
+	public class func create(_ parameters: System_Security_Cryptography_ECParameters /* System.Security.Cryptography.ECParameters */) throws -> System_Security_Cryptography_ECDsa /* System.Security.Cryptography.ECDsa */ {
+		let parametersC = parameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_Create_2(parametersC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Creates a new instance of the specified implementation of the Elliptic Curve Digital Signature Algorithm (ECDSA).
+	/// - Parameter algorithm: The name of an ECDSA implementation. The following strings all refer to the same implementation, which is the only implementation currently supported in the .NET Framework: - "ECDsa" - "ECDsaCng" - "System.Security.Cryptography.ECDsaCng"  You can also provide the name of a custom ECDSA implementation.
+	/// - Throws: System.ArgumentNullException: The algorithm parameter is null.
+	/// - Returns: A new instance of the specified implementation of this class. If the specified algorithm name does not map to an ECDSA implementation, this method returns null.
+	public override class func create(_ algorithm: System_String /* System.String */) throws -> System_Security_Cryptography_ECDsa? /* System.Security.Cryptography.ECDsa */ {
+		let algorithmC = algorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_Create_3(algorithmC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Computes the hash value of the specified byte array using the specified hash algorithm and signs the resulting hash value.
+	/// - Parameter data: The input data for which to compute the hash.
+	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
+	/// - Throws: System.ArgumentNullException: data is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Returns: The ECDSA signature for the specified data.
+	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_SignData(self.__handle, dataC, hashAlgorithmC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Computes the hash value of a portion of the specified byte array using the specified hash algorithm and signs the resulting hash value.
+	/// - Parameter data: The input data for which to compute the hash.
+	/// - Parameter offset: The offset into the array at which to begin using data.
+	/// - Parameter count: The number of bytes in the array to use as data.
+	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
+	/// - Throws: System.ArgumentNullException: data is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Throws: System.ArgumentOutOfRangeException: offset is less than zero.  -or-  count is less than zero.  -or-  offset + count - 1 results in an index that is beyond the upper bound of data.
+	/// - Returns: The ECDSA signature for the specified data.
+	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_SignData_1(self.__handle, dataC, offset, count, hashAlgorithmC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Computes the hash value of the specified data and signs it using the specified signature format.
+	/// - Parameter data: The data to sign.
+	/// - Parameter offset: The offset into data at which to begin hashing.
+	/// - Parameter count: The number of bytes to read from data.
+	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
+	/// - Parameter signatureFormat: The encoding format to use for the signature.
+	/// - Throws: System.ArgumentNullException: data is null.
+	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.  -or-  offset is less than zero.  -or-  count is less than zero.  -or-  offset + count - 1 results in an index that is beyond the upper bound of data.
+	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or signing operation.
+	/// - Returns: The ECDSA signature for the specified data.
+	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_SignData_2(self.__handle, dataC, offset, count, hashAlgorithmC, signatureFormatC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Computes the hash value of the specified data and signs it using the specified signature format.
+	/// - Parameter data: The data to sign.
+	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
+	/// - Parameter signatureFormat: The encoding format to use for the signature.
+	/// - Throws: System.ArgumentNullException: data is null.
+	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
+	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or signing operation.
+	/// - Returns: The ECDSA signature for the specified data.
+	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_SignData_3(self.__handle, dataC, hashAlgorithmC, signatureFormatC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Computes the hash value of the specified data and signs it using the specified signature format.
+	/// - Parameter data: The data to sign.
+	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
+	/// - Parameter signatureFormat: The encoding format to use for the signature.
+	/// - Throws: System.ArgumentNullException: data is null.
+	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
+	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or signing operation.
+	/// - Returns: The ECDSA signature for the specified data.
+	public func signData(_ data: System_IO_Stream /* System.IO.Stream */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_SignData_4(self.__handle, dataC, hashAlgorithmC, signatureFormatC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Computes the ECDSA signature for the specified hash value in the indicated format.
+	/// - Parameter hash: The hash value to sign.
+	/// - Parameter signatureFormat: The encoding format to use for the signature.
+	/// - Throws: System.ArgumentNullException: hash is null.
+	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the signing operation.
+	/// - Returns: The ECDSA signature for the specified data.
+	public func signHash(_ hash: DNArray<System_Byte> /* System.Byte[] */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let hashC = hash.__handle
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_SignHash(self.__handle, hashC, signatureFormatC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func signHash(_ hash: Data? /* System.ReadOnlySpan<System.Byte> */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let hashC = hash.readOnlySpanOfByte()
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_SignHash_1(self.__handle, hashC, signatureFormatC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func signHash(_ hash: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let hashC = hash.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_SignHash_2(self.__handle, hashC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Computes the hash value of the specified stream using the specified hash algorithm and signs the resulting hash value.
+	/// - Parameter data: The input stream for which to compute the hash.
+	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
+	/// - Throws: System.ArgumentNullException: data is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Returns: The ECDSA signature for the specified data.
+	public func signData(_ data: System_IO_Stream /* System.IO.Stream */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_SignData_5(self.__handle, dataC, hashAlgorithmC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func signData(_ data: Data? /* System.ReadOnlySpan<System.Byte> */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.readOnlySpanOfByte()
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_SignData_6(self.__handle, dataC, hashAlgorithmC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func signData(_ data: Data? /* System.ReadOnlySpan<System.Byte> */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.readOnlySpanOfByte()
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_SignData_7(self.__handle, dataC, hashAlgorithmC, signatureFormatC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Verifies that a digital signature is appropriate for the current key and provided data with a specified hash algorithm.
+	/// - Parameter data: The signed data.
+	/// - Parameter signature: The signature data to be verified.
+	/// - Parameter hashAlgorithm: The hash algorithm used to create the hash value of the data.
+	/// - Throws: System.ArgumentNullException: data is null.  -or-  signature is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Returns: true if the signature is valid; otherwise, false.
+	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.__handle
+		let signatureC = signature.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyData(self.__handle, dataC, signatureC, hashAlgorithmC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Verifies that a digital signature is appropriate for the current key and provided portion of data with a specified hash algorithm.
+	/// - Parameter data: The signed data.
+	/// - Parameter offset: The starting index at which to compute the hash.
+	/// - Parameter count: The number of bytes to hash.
+	/// - Parameter signature: The signature data to be verified.
+	/// - Parameter hashAlgorithm: The hash algorithm used to create the hash value of the data.
+	/// - Throws: System.ArgumentNullException: data is null.  -or-  signature is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Throws: System.ArgumentOutOfRangeException: offset is less than zero.  -or-  count is less than zero.  -or-  offset + count - 1 results in an index that is beyond the upper bound of data.
+	/// - Returns: true if the signature is valid; otherwise, false.
+	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.__handle
+		let signatureC = signature.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyData_1(self.__handle, dataC, offset, count, signatureC, hashAlgorithmC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Verifies that a digital signature is valid for the provided data.
+	/// - Parameter data: An array that contains the signed data.
+	/// - Parameter offset: The starting index of the signed portion of data.
+	/// - Parameter count: The number of bytes in data that were signed.
+	/// - Parameter signature: The signature to verify.
+	/// - Parameter hashAlgorithm: The hash algorithm used to hash the data for the verification process.
+	/// - Parameter signatureFormat: The encoding format for signature.
+	/// - Throws: System.ArgumentNullException: data or signature is null.
+	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.  -or-  offset is less than zero.  -or-  count is less than zero.  -or-  offset + count - 1 results in an index that is beyond the upper bound of data.
+	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or verification operation.
+	/// - Returns: true if the digital signature is valid for the provided data; otherwise, false.
+	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.__handle
+		let signatureC = signature.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyData_2(self.__handle, dataC, offset, count, signatureC, hashAlgorithmC, signatureFormatC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Verifies that a digital signature is valid for the provided data.
+	/// - Parameter data: The signed data.
+	/// - Parameter signature: The signature to verify.
+	/// - Parameter hashAlgorithm: The hash algorithm used to hash the data for the verification process.
+	/// - Parameter signatureFormat: The encoding format for signature.
+	/// - Throws: System.ArgumentNullException: data or signature is null.
+	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
+	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or verification operation.
+	/// - Returns: true if the digital signature is valid for the provided data; otherwise, false.
+	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.__handle
+		let signatureC = signature.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyData_3(self.__handle, dataC, signatureC, hashAlgorithmC, signatureFormatC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func verifyData(_ data: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.readOnlySpanOfByte()
+		let signatureC = signature.readOnlySpanOfByte()
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyData_4(self.__handle, dataC, signatureC, hashAlgorithmC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func verifyData(_ data: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.readOnlySpanOfByte()
+		let signatureC = signature.readOnlySpanOfByte()
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyData_5(self.__handle, dataC, signatureC, hashAlgorithmC, signatureFormatC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Verifies that a digital signature is appropriate for the current key and provided data with a specified hash algorithm.
+	/// - Parameter data: The signed data.
+	/// - Parameter signature: The signature data to be verified.
+	/// - Parameter hashAlgorithm: The hash algorithm used to create the hash value of the data.
+	/// - Throws: System.ArgumentNullException: data is null.  -or-  signature is null.
+	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
+	/// - Returns: true if the signature is valid; otherwise, false.
+	public func verifyData(_ data: System_IO_Stream /* System.IO.Stream */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.__handle
+		let signatureC = signature.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyData_6(self.__handle, dataC, signatureC, hashAlgorithmC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Verifies that a digital signature is valid for the provided data.
+	/// - Parameter data: The signed data.
+	/// - Parameter signature: The signature to verify.
+	/// - Parameter hashAlgorithm: The hash algorithm used to hash the data for the verification process.
+	/// - Parameter signatureFormat: The encoding format for signature.
+	/// - Throws: System.ArgumentNullException: data or signature is null.
+	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
+	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or verification operation.
+	/// - Returns: true if the digital signature is valid for the provided data; otherwise, false.
+	public func verifyData(_ data: System_IO_Stream /* System.IO.Stream */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.__handle
+		let signatureC = signature.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyData_7(self.__handle, dataC, signatureC, hashAlgorithmC, signatureFormatC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Generates a digital signature for the specified hash value.
+	/// - Parameter hash: The hash value of the data that is being signed.
+	/// - Throws: System.ArgumentNullException: The hash parameter is null.
+	/// - Returns: A digital signature for the specified hash value.
+	public func signHash(_ hash: DNArray<System_Byte> /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let hashC = hash.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_SignHash_3(self.__handle, hashC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Verifies that a digital signature is appropriate for the current key and provided data hash.
+	/// - Parameter hash: The hash value of the data to be verified.
+	/// - Parameter signature: The digital signature of the data to be verified against the hash value.
+	/// - Throws: System.ArgumentNullException: hash or signature is null.
+	/// - Returns: true if the signature is valid; otherwise, false.
+	public func verifyHash(_ hash: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */) throws -> Bool /* System.Boolean */ {
+		let hashC = hash.__handle
+		let signatureC = signature.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyHash(self.__handle, hashC, signatureC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func verifyHash(_ hash: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> Bool /* System.Boolean */ {
+		let hashC = hash.readOnlySpanOfByte()
+		let signatureC = signature.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyHash_1(self.__handle, hashC, signatureC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Verifies that a digital signature is valid for the provided hash.
+	/// - Parameter hash: The signed hash.
+	/// - Parameter signature: The signature to verify.
+	/// - Parameter signatureFormat: The encoding format for signature.
+	/// - Throws: System.ArgumentNullException: hash or signature is null.
+	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the verification operation.
+	/// - Returns: true if the digital signature is valid for the provided data; otherwise, false.
+	public func verifyHash(_ hash: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
+		let hashC = hash.__handle
+		let signatureC = signature.__handle
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyHash_2(self.__handle, hashC, signatureC, signatureFormatC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func verifyHash(_ hash: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
+		let hashC = hash.readOnlySpanOfByte()
+		let signatureC = signature.readOnlySpanOfByte()
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyHash_3(self.__handle, hashC, signatureC, signatureFormatC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Gets the largest size, in bytes, for a signature produced by this key in the indicated format.
+	/// - Parameter signatureFormat: The encoding format for a signature.
+	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
+	/// - Returns: The largest size, in bytes, for a signature produced by this key in the indicated format.
+	public func getMaxSignatureSize(_ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Int32 /* System.Int32 */ {
+		let signatureFormatC = signatureFormat.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_GetMaxSignatureSize(self.__handle, signatureFormatC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// This method throws in all cases.
+	/// - Parameter xmlString: The XML string to use to reconstruct the System.Security.Cryptography.AsymmetricAlgorithm object.
+	/// - Throws: System.NotImplementedException: In all cases.
+	public override func fromXmlString(_ xmlString: System_String /* System.String */) throws {
+		let xmlStringC = xmlString.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_ECDsa_FromXmlString(self.__handle, xmlStringC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// This method throws in all cases.
+	/// - Parameter includePrivateParameters: true to include private parameters; otherwise, false.
+	/// - Throws: System.NotImplementedException: In all cases.
+	/// - Returns: This method does not return a value.
+	public override func toXmlString(_ includePrivateParameters: Bool /* System.Boolean */) throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_ToXmlString(self.__handle, includePrivateParameters, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the name of the key exchange algorithm.
+	/// - Returns: Always null.
+	public override var keyExchangeAlgorithm: System_String? /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_KeyExchangeAlgorithm_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the name of the signature algorithm.
+	/// - Returns: The string "ECDsa".
+	public override var signatureAlgorithm: System_String /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDsa_SignatureAlgorithm_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_ECDsa_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_ECDsa_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Represents the abstract class from which elliptic-curve asymmetric algorithms can inherit.
+public class System_Security_Cryptography_ECAlgorithm /* System.Security.Cryptography.ECAlgorithm */: System_Security_Cryptography_AsymmetricAlgorithm {
+	public override class var typeName: String { get {
+		"ECAlgorithm"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.ECAlgorithm"
+	}}
+
+	/// When overridden in a derived class, exports the named or explicit System.Security.Cryptography.ECParameters for an ECCurve.
+	///             If the curve has a name, the Curve property will contain named curve parameters otherwise it will contain explicit parameters.
+	/// - Parameter includePrivateParameters: true to include private parameters, otherwise, false.
+	/// - Throws: System.NotSupportedException: A derived class has not provided an implementation.
+	/// - Returns: The exported parameters.
+	public func exportParameters(_ includePrivateParameters: Bool /* System.Boolean */) throws -> System_Security_Cryptography_ECParameters /* System.Security.Cryptography.ECParameters */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECAlgorithm_ExportParameters(self.__handle, includePrivateParameters, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECParameters(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// When overridden in a derived class, exports the explicit System.Security.Cryptography.ECParameters for an ECCurve.
+	/// - Parameter includePrivateParameters: true to include private parameters, otherwise, false.
+	/// - Throws: System.NotSupportedException: A derived class has not provided an implementation.
+	/// - Returns: The exported explicit parameters.
+	public func exportExplicitParameters(_ includePrivateParameters: Bool /* System.Boolean */) throws -> System_Security_Cryptography_ECParameters /* System.Security.Cryptography.ECParameters */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECAlgorithm_ExportExplicitParameters(self.__handle, includePrivateParameters, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECParameters(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// When overridden in a derived class, imports the specified System.Security.Cryptography.ECParameters.
+	/// - Parameter parameters: The curve parameters.
+	/// - Throws: System.NotSupportedException: A derived class has not provided an implementation.
+	public func importParameters(_ parameters: System_Security_Cryptography_ECParameters /* System.Security.Cryptography.ECParameters */) throws {
+		let parametersC = parameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_ECAlgorithm_ImportParameters(self.__handle, parametersC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// When overridden in a derived class, generates a new public/private keypair for the specified curve.
+	/// - Parameter curve: The curve to use.
+	/// - Throws: System.NotSupportedException: A derived class has not provided an implementation.
+	public func generateKey(_ curve: System_Security_Cryptography_ECCurve /* System.Security.Cryptography.ECCurve */) throws {
+		let curveC = curve.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_ECAlgorithm_GenerateKey(self.__handle, curveC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	public override func importEncryptedPkcs8PrivateKey(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_ECAlgorithm_ImportEncryptedPkcs8PrivateKey(self.__handle, passwordBytesC, sourceC, &bytesRead, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	public override func importPkcs8PrivateKey(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_ECAlgorithm_ImportPkcs8PrivateKey(self.__handle, sourceC, &bytesRead, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	public override func importSubjectPublicKeyInfo(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_ECAlgorithm_ImportSubjectPublicKeyInfo(self.__handle, sourceC, &bytesRead, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	public func importECPrivateKey(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_ECAlgorithm_ImportECPrivateKey(self.__handle, sourceC, &bytesRead, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Exports the current key in the ECPrivateKey format.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key could not be exported.
+	/// - Returns: A byte array containing the ECPrivateKey representation of this key.
+	public func exportECPrivateKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECAlgorithm_ExportECPrivateKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in the ECPrivateKey format, PEM encoded.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key could not be exported.
+	/// - Returns: A string containing the PEM-encoded ECPrivateKey.
+	public func exportECPrivateKeyPem() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECAlgorithm_ExportECPrivateKeyPem(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_ECAlgorithm_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_ECAlgorithm_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Represents the standard parameters for the elliptic curve cryptography (ECC) algorithm.
+public class System_Security_Cryptography_ECParameters /* System.Security.Cryptography.ECParameters */: System_ValueType {
+	public override class var typeName: String { get {
+		"ECParameters"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.ECParameters"
+	}}
+
+	/// Validates the current object.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key or curve parameters are not valid for the current curve type.
+	public func validate() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_ECParameters_Validate(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Represents the public key Q for the elliptic curve cryptography (ECC) algorithm.
+	public var q: System_Security_Cryptography_ECPoint /* System.Security.Cryptography.ECPoint */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_ECParameters_Q_Get(self.__handle)
+		
+		let __returnValue = System_Security_Cryptography_ECPoint(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Represents the public key Q for the elliptic curve cryptography (ECC) algorithm.
+	public func q_set(_ value: System_Security_Cryptography_ECPoint /* System.Security.Cryptography.ECPoint */) {
+		let valueC = value.__handle
+		
+		
+		System_Security_Cryptography_ECParameters_Q_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Represents the private key D for the elliptic curve cryptography (ECC) algorithm, stored in big-endian format.
+	public var d: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_ECParameters_D_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Represents the private key D for the elliptic curve cryptography (ECC) algorithm, stored in big-endian format.
+	public func d_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_ECParameters_D_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Represents the curve associated with the public key (System.Security.Cryptography.ECParameters.Q) and the optional private key (System.Security.Cryptography.ECParameters.D).
+	public var curve: System_Security_Cryptography_ECCurve /* System.Security.Cryptography.ECCurve */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_ECParameters_Curve_Get(self.__handle)
+		
+		let __returnValue = System_Security_Cryptography_ECCurve(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Represents the curve associated with the public key (System.Security.Cryptography.ECParameters.Q) and the optional private key (System.Security.Cryptography.ECParameters.D).
+	public func curve_set(_ value: System_Security_Cryptography_ECCurve /* System.Security.Cryptography.ECCurve */) {
+		let valueC = value.__handle
+		
+		
+		System_Security_Cryptography_ECParameters_Curve_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Initializes a new instance of the System.Security.Cryptography.ECParameters struct.
+	public convenience init() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECParameters_Create(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_ECParameters_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_ECParameters_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Represents a (X,Y) coordinate pair for elliptic curve cryptography (ECC) structures.
+public class System_Security_Cryptography_ECPoint /* System.Security.Cryptography.ECPoint */: System_ValueType {
+	public override class var typeName: String { get {
+		"ECPoint"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.ECPoint"
+	}}
+
+	/// Represents the X coordinate.
+	public var x: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_ECPoint_X_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Represents the X coordinate.
+	public func x_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_ECPoint_X_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Represents the Y coordinate.
+	public var y: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_ECPoint_Y_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Represents the Y coordinate.
+	public func y_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_ECPoint_Y_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Initializes a new instance of the System.Security.Cryptography.ECPoint struct.
+	public convenience init() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECPoint_Create(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_ECPoint_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_ECPoint_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Represents an elliptic curve.
+public class System_Security_Cryptography_ECCurve /* System.Security.Cryptography.ECCurve */: System_ValueType {
+	public override class var typeName: String { get {
+		"ECCurve"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.ECCurve"
+	}}
+
+	/// Creates a named curve using the specified System.Security.Cryptography.Oid object.
+	/// - Parameter curveOid: The object identifier to use.
+	/// - Returns: An object representing the named curve.
+	public class func createFromOid(_ curveOid: System_Security_Cryptography_Oid /* System.Security.Cryptography.Oid */) throws -> System_Security_Cryptography_ECCurve /* System.Security.Cryptography.ECCurve */ {
+		let curveOidC = curveOid.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECCurve_CreateFromOid(curveOidC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECCurve(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Creates a named curve using the specified friendly name of the identifier.
+	/// - Parameter oidFriendlyName: The friendly name of the identifier.
+	/// - Throws: System.ArgumentNullException: oidFriendlyName is null.
+	/// - Returns: An object representing the named curve.
+	public class func createFromFriendlyName(_ oidFriendlyName: System_String /* System.String */) throws -> System_Security_Cryptography_ECCurve /* System.Security.Cryptography.ECCurve */ {
+		let oidFriendlyNameC = oidFriendlyName.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECCurve_CreateFromFriendlyName(oidFriendlyNameC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECCurve(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Creates a named curve using the specified dotted-decimal representation of the identifier.
+	/// - Parameter oidValue: The dotted number of the identifier.
+	/// - Throws: System.ArgumentNullException: oidValue is null.
+	/// - Returns: An object representing the named curve.
+	public class func createFromValue(_ oidValue: System_String /* System.String */) throws -> System_Security_Cryptography_ECCurve /* System.Security.Cryptography.ECCurve */ {
+		let oidValueC = oidValue.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECCurve_CreateFromValue(oidValueC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECCurve(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Validates the integrity of the current curve. Throws a System.Security.Cryptography.CryptographicException exception if the structure is not valid.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The curve parameters are not valid for the current curve type.
+	public func validate() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_ECCurve_Validate(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Gets the identifier of a named curve.
+	/// - Returns: The identifier of a named curve.
+	public var oid: System_Security_Cryptography_Oid /* System.Security.Cryptography.Oid */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECCurve_Oid_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_Oid(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a value that indicates whether the curve type indicates an explicit prime curve.
+	/// - Returns: true if the curve is an explicit prime curve; false if the curve is a named prime, characteristic 2 or implicit curves.
+	public var isPrime: Bool /* System.Boolean */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECCurve_IsPrime_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets a value that indicates whether the curve type indicates an explicit characteristic 2 curve.
+	/// - Returns: true if the curve is an explicit characteristic 2 curve; false if the curve is a named characteristic 2, prime, or implicit curve.
+	public var isCharacteristic2: Bool /* System.Boolean */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECCurve_IsCharacteristic2_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets a value that indicates whether the curve type indicates an explicit curve (either prime or characteristic 2).
+	/// - Returns: true if the curve is an explicit curve (either prime or characteristic 2); false if the curve is a named or implicit curve.
+	public var isExplicit: Bool /* System.Boolean */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECCurve_IsExplicit_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets a value that indicates whether the curve type indicates a named curve.
+	/// - Returns: true if the curve is a named curve; false if the curve is an implicit or an explicit curve (either prime or characteristic 2).
+	public var isNamed: Bool /* System.Boolean */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECCurve_IsNamed_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// The first coefficient for an explicit curve. A for short Weierstrass, Montgomery, and Twisted Edwards curves.
+	public var a: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_ECCurve_A_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// The first coefficient for an explicit curve. A for short Weierstrass, Montgomery, and Twisted Edwards curves.
+	public func a_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_ECCurve_A_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// The second coefficient for an explicit curve. B for short Weierstrass and d for Twisted Edwards curves.
+	public var b: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_ECCurve_B_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// The second coefficient for an explicit curve. B for short Weierstrass and d for Twisted Edwards curves.
+	public func b_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_ECCurve_B_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// The generator, or base point, for operations on the curve.
+	public var g: System_Security_Cryptography_ECPoint /* System.Security.Cryptography.ECPoint */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_ECCurve_G_Get(self.__handle)
+		
+		let __returnValue = System_Security_Cryptography_ECPoint(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// The generator, or base point, for operations on the curve.
+	public func g_set(_ value: System_Security_Cryptography_ECPoint /* System.Security.Cryptography.ECPoint */) {
+		let valueC = value.__handle
+		
+		
+		System_Security_Cryptography_ECCurve_G_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// The order of the curve. Applies only to explicit curves.
+	public var order: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_ECCurve_Order_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// The order of the curve. Applies only to explicit curves.
+	public func order_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_ECCurve_Order_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// The cofactor of the curve.
+	public var cofactor: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_ECCurve_Cofactor_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// The cofactor of the curve.
+	public func cofactor_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_ECCurve_Cofactor_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// The seed value for coefficient generation under the ANSI X9.62 generation algorithm. Applies only to explicit curves.
+	public var seed: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_ECCurve_Seed_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// The seed value for coefficient generation under the ANSI X9.62 generation algorithm. Applies only to explicit curves.
+	public func seed_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_ECCurve_Seed_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Identifies the composition of the System.Security.Cryptography.ECCurve object.
+	public var curveType: System_Security_Cryptography_ECCurve_ECCurveType /* System.Security.Cryptography.ECCurve.ECCurveType */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_ECCurve_CurveType_Get(self.__handle)
+		
+		let __returnValue = System_Security_Cryptography_ECCurve_ECCurveType(cValue: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// Identifies the composition of the System.Security.Cryptography.ECCurve object.
+	public func curveType_set(_ value: System_Security_Cryptography_ECCurve_ECCurveType /* System.Security.Cryptography.ECCurve.ECCurveType */) {
+		let valueC = value.cValue
+		
+		
+		System_Security_Cryptography_ECCurve_CurveType_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// The name of the hash algorithm which was used to generate the curve coefficients (System.Security.Cryptography.ECCurve.A and System.Security.Cryptography.ECCurve.B) from the System.Security.Cryptography.ECCurve.Seed under the ANSI X9.62 generation algorithm. Applies only to explicit curves.
+	public var hash: System_Security_Cryptography_HashAlgorithmName? /* System.Nullable<System.Security.Cryptography.HashAlgorithmName> */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_ECCurve_Hash_Get(self.__handle)
+		
+		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// The name of the hash algorithm which was used to generate the curve coefficients (System.Security.Cryptography.ECCurve.A and System.Security.Cryptography.ECCurve.B) from the System.Security.Cryptography.ECCurve.Seed under the ANSI X9.62 generation algorithm. Applies only to explicit curves.
+	public func hash_set(_ value: System_Security_Cryptography_HashAlgorithmName? /* System.Nullable<System.Security.Cryptography.HashAlgorithmName> */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_ECCurve_Hash_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// The curve polynomial. Applies only to characteristic 2 curves.
+	public var polynomial: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_ECCurve_Polynomial_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// The curve polynomial. Applies only to characteristic 2 curves.
+	public func polynomial_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_ECCurve_Polynomial_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// The prime specifying the base field. Applies only to prime curves.
+	public var prime: DNArray<System_Byte>? /* System.Byte[] */ { get {
+		
+		
+		let __returnValueC = System_Security_Cryptography_ECCurve_Prime_Get(self.__handle)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	/// The prime specifying the base field. Applies only to prime curves.
+	public func prime_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
+		let valueC = value?.__handle
+		
+		
+		System_Security_Cryptography_ECCurve_Prime_Set(self.__handle, valueC)
+		
+		
+	}
+	
+	
+	/// Initializes a new instance of the System.Security.Cryptography.ECCurve struct.
+	public convenience init() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECCurve_Create_1(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_ECCurve_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_ECCurve_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+
+
+/// Provides an abstract base class that Elliptic Curve Diffie-Hellman (ECDH) algorithm implementations can derive from. This class provides the basic set of operations that all ECDH implementations must support.
+public class System_Security_Cryptography_ECDiffieHellman /* System.Security.Cryptography.ECDiffieHellman */: System_Security_Cryptography_ECAlgorithm {
+	public override class var typeName: String { get {
+		"ECDiffieHellman"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.ECDiffieHellman"
+	}}
+
+	/// Creates a new instance of the default implementation of the Elliptic Curve Diffie-Hellman (ECDH) algorithm.
+	/// - Returns: A new instance of the default implementation of this class.
+	public override class func create() throws -> System_Security_Cryptography_ECDiffieHellman /* System.Security.Cryptography.ECDiffieHellman */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_Create(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECDiffieHellman(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Creates a new instance of the default implementation of the Elliptic Curve Diffie-Hellman (ECDH) algorithm with a new public/private key-pair generated over the specified curve.
+	/// - Parameter curve: The curve to use to generate a new public/private key-pair.
+	/// - Throws: System.Security.Cryptography.CryptographicException: curve does not validate.
+	/// - Returns: A new instance of the default implementation of the Elliptic Curve Diffie-Hellman (ECDH) algorithm.
+	public class func create(_ curve: System_Security_Cryptography_ECCurve /* System.Security.Cryptography.ECCurve */) throws -> System_Security_Cryptography_ECDiffieHellman /* System.Security.Cryptography.ECDiffieHellman */ {
+		let curveC = curve.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_Create_1(curveC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECDiffieHellman(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Creates a new instance of the default implementation of the Elliptic Curve Diffie-Hellman (ECDH) algorithm with the key described by the specified  System.Security.Cryptography.ECParameters object.
+	/// - Parameter parameters: The parameters  for the elliptic curve cryptography (ECC) algorithm.
+	/// - Throws: System.Security.Cryptography.CryptographicException: parameters does not validate.
+	/// - Returns: A new instance of the default implementation of the Elliptic Curve Diffie-Hellman (ECDH) algorithm.
+	public class func create(_ parameters: System_Security_Cryptography_ECParameters /* System.Security.Cryptography.ECParameters */) throws -> System_Security_Cryptography_ECDiffieHellman /* System.Security.Cryptography.ECDiffieHellman */ {
+		let parametersC = parameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_Create_2(parametersC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECDiffieHellman(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Creates a new instance of the specified implementation of the Elliptic Curve Diffie-Hellman (ECDH) algorithm.
+	/// - Parameter algorithm: The name of an implementation of the ECDH algorithm.
+	/// - Throws: System.ArgumentNullException: The algorithm parameter is null.
+	/// - Returns: A new instance of the specified implementation of this class. If the specified algorithm name does not map to an ECDH implementation, this method returns null.
+	public override class func create(_ algorithm: System_String /* System.String */) throws -> System_Security_Cryptography_ECDiffieHellman? /* System.Security.Cryptography.ECDiffieHellman */ {
+		let algorithmC = algorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_Create_3(algorithmC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECDiffieHellman(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// When implemented in a derived class, performs a key derivation on the shared secret.
+	/// - Parameter otherPartyPublicKey: The other party's public key.
+	/// - Throws: System.ArgumentException: The curve used by otherPartyPublicKey has a different size than the curve from this key.
+	/// - Throws: System.ArgumentNullException: otherPartyPublicKey is null.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The curve used by otherPartyPublicKey is different than the curve from this key. -or- This instance represents only a public key.
+	/// - Returns: The result of the key derivation function, using the shared secret as an input.
+	public func deriveKeyMaterial(_ otherPartyPublicKey: System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Security.Cryptography.ECDiffieHellmanPublicKey */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let otherPartyPublicKeyC = otherPartyPublicKey.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_DeriveKeyMaterial(self.__handle, otherPartyPublicKeyC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Performs key derivation using a specified hash algorithm.
+	/// - Parameter otherPartyPublicKey: The other party's public key.
+	/// - Parameter hashAlgorithm: The hash algorithm to use to derive the key material.
+	/// - Throws: System.ArgumentException: The curve used by otherPartyPublicKey has a different size than the curve from this key. -or- The hashAlgorithm parameter does not specify a hash.
+	/// - Throws: System.ArgumentNullException: otherPartyPublicKey is null.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The curve used by otherPartyPublicKey is different than the curve from this key. -or- This instance represents only a public key.
+	/// - Returns: The hash of the shared secret.
+	public func deriveKeyFromHash(_ otherPartyPublicKey: System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Security.Cryptography.ECDiffieHellmanPublicKey */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let otherPartyPublicKeyC = otherPartyPublicKey.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_DeriveKeyFromHash(self.__handle, otherPartyPublicKeyC, hashAlgorithmC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// When implemented in a derived class, performs key derivation using a specified hash algorithm with optional prepended or appended data.
+	/// - Parameter otherPartyPublicKey: The other party's public key.
+	/// - Parameter hashAlgorithm: The hash algorithm to use to derive the key material.
+	/// - Parameter secretPrepend: A value to prepend to the derived secret before hashing.
+	/// - Parameter secretAppend: A value to append to the derived secret before hashing.
+	/// - Throws: System.NotImplementedException: A derived class must override this method.
+	/// - Throws: System.ArgumentException: The curve used by otherPartyPublicKey has a different size than the curve from this key. -or- The hashAlgorithm parameter does not specify a hash.
+	/// - Throws: System.ArgumentNullException: otherPartyPublicKey is null.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The curve used by otherPartyPublicKey is different than the curve from this key. -or- This instance represents only a public key.
+	/// - Returns: The hash of the shared secret after prepending or appending data as requested.
+	public func deriveKeyFromHash(_ otherPartyPublicKey: System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Security.Cryptography.ECDiffieHellmanPublicKey */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ secretPrepend: DNArray<System_Byte>? /* System.Byte[] */, _ secretAppend: DNArray<System_Byte>? /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let otherPartyPublicKeyC = otherPartyPublicKey.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let secretPrependC = secretPrepend?.__handle
+		let secretAppendC = secretAppend?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_DeriveKeyFromHash_1(self.__handle, otherPartyPublicKeyC, hashAlgorithmC, secretPrependC, secretAppendC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Performs key derivation using a specified HMAC (Hash-based Message Authentication Code) algorithm.
+	/// - Parameter otherPartyPublicKey: The other party's public key.
+	/// - Parameter hashAlgorithm: The hash algorithm to use to derive the key material.
+	/// - Parameter hmacKey: The key for the HMAC.
+	/// - Throws: System.ArgumentException: The curve used by otherPartyPublicKey has a different size than the curve from this key. -or- The hashAlgorithm parameter does not specify a hash.
+	/// - Throws: System.ArgumentNullException: otherPartyPublicKey is null.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The curve used by otherPartyPublicKey is different than the curve from this key. -or- This instance represents only a public key.
+	/// - Returns: The HMAC of the shared secret.
+	public func deriveKeyFromHmac(_ otherPartyPublicKey: System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Security.Cryptography.ECDiffieHellmanPublicKey */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ hmacKey: DNArray<System_Byte>? /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let otherPartyPublicKeyC = otherPartyPublicKey.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let hmacKeyC = hmacKey?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_DeriveKeyFromHmac(self.__handle, otherPartyPublicKeyC, hashAlgorithmC, hmacKeyC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// When implemented in a derived class, performs key derivation using a specified HMAC (Hash-based Message Authentication Code) algorithm with optional prepended or appended data.
+	/// - Parameter otherPartyPublicKey: The other party's public key.
+	/// - Parameter hashAlgorithm: The hash algorithm to use to derive the key material.
+	/// - Parameter hmacKey: The key for the HMAC.
+	/// - Parameter secretPrepend: A value to prepend to the derived secret before hashing.
+	/// - Parameter secretAppend: A value to append to the derived secret before hashing.
+	/// - Throws: System.NotImplementedException: A derived class must override this method.
+	/// - Throws: System.ArgumentException: The curve used by otherPartyPublicKey has a different size than the curve from this key. -or- The hashAlgorithm parameter does not specify a hash.
+	/// - Throws: System.ArgumentNullException: otherPartyPublicKey is null.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The curve used by otherPartyPublicKey is different than the curve from this key. -or- This instance represents only a public key.
+	/// - Returns: The HMAC of the shared secret after prepending or appending data as requested.
+	public func deriveKeyFromHmac(_ otherPartyPublicKey: System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Security.Cryptography.ECDiffieHellmanPublicKey */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ hmacKey: DNArray<System_Byte>? /* System.Byte[] */, _ secretPrepend: DNArray<System_Byte>? /* System.Byte[] */, _ secretAppend: DNArray<System_Byte>? /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let otherPartyPublicKeyC = otherPartyPublicKey.__handle
+		let hashAlgorithmC = hashAlgorithm.__handle
+		let hmacKeyC = hmacKey?.__handle
+		let secretPrependC = secretPrepend?.__handle
+		let secretAppendC = secretAppend?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_DeriveKeyFromHmac_1(self.__handle, otherPartyPublicKeyC, hashAlgorithmC, hmacKeyC, secretPrependC, secretAppendC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// When implemented in a derived class, performs key derivation using the TLS (Transport Layer Security) 1.1 PRF (Pseudo-Random Function).
+	/// - Parameter otherPartyPublicKey: The other party's public key.
+	/// - Parameter prfLabel: The ASCII-encoded PRF label.
+	/// - Parameter prfSeed: The 64-byte PRF seed.
+	/// - Throws: System.NotImplementedException: A derived class must override this method.
+	/// - Throws: System.ArgumentException: The curve used by otherPartyPublicKey has a different size than the curve from this key.
+	/// - Throws: System.ArgumentNullException: otherPartyPublicKey, prfLabel or prfSeed is null.
+	/// - Throws: System.Security.Cryptography.CryptographicException: prfSeed is not exactly 64 bytes in length. -or- The curve used by otherPartyPublicKey is different than the curve from this key. -or- This instance represents only a public key.
+	/// - Returns: The first 48 bytes from the TLS 1.1 PRF, using the shared secret as the key.
+	public func deriveKeyTls(_ otherPartyPublicKey: System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Security.Cryptography.ECDiffieHellmanPublicKey */, _ prfLabel: DNArray<System_Byte> /* System.Byte[] */, _ prfSeed: DNArray<System_Byte> /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let otherPartyPublicKeyC = otherPartyPublicKey.__handle
+		let prfLabelC = prfLabel.__handle
+		let prfSeedC = prfSeed.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_DeriveKeyTls(self.__handle, otherPartyPublicKeyC, prfLabelC, prfSeedC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Derive raw key material.
+	/// - Parameter otherPartyPublicKey: The public key of the party with which to derive a mutual secret.
+	/// - Throws: System.ArgumentNullException: otherPartyPublicKey is null.
+	/// - Throws: System.ArgumentException: otherPartyPublicKey is over a different curve than this key.
+	/// - Throws: System.NotImplementedException: A derived implementation has not provided an implementation of the method.
+	/// - Throws: System.PlatformNotSupportedException: The current platform does not support raw key agreement.
+	/// - Throws: System.ObjectDisposedException: The object has already been disposed.
+	/// - Returns: The raw key agreement.
+	public func deriveRawSecretAgreement(_ otherPartyPublicKey: System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Security.Cryptography.ECDiffieHellmanPublicKey */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let otherPartyPublicKeyC = otherPartyPublicKey.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_DeriveRawSecretAgreement(self.__handle, otherPartyPublicKeyC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// This method throws in all cases.
+	/// - Parameter xmlString: The XML string to use to reconstruct the System.Security.Cryptography.AsymmetricAlgorithm object.
+	/// - Throws: System.NotImplementedException: In all cases.
+	public override func fromXmlString(_ xmlString: System_String /* System.String */) throws {
+		let xmlStringC = xmlString.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_ECDiffieHellman_FromXmlString(self.__handle, xmlStringC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// This method throws in all cases.
+	/// - Parameter includePrivateParameters: true to include private parameters; otherwise, false.
+	/// - Throws: System.NotImplementedException: In all cases.
+	/// - Returns: This method does not return a value.
+	public override func toXmlString(_ includePrivateParameters: Bool /* System.Boolean */) throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_ToXmlString(self.__handle, includePrivateParameters, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the name of the key exchange algorithm.
+	/// - Returns: The name of the key exchange algorithm.
+	public override var keyExchangeAlgorithm: System_String /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_KeyExchangeAlgorithm_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the name of the signature algorithm.
+	/// - Returns: Always null.
+	public override var signatureAlgorithm: System_String? /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_SignatureAlgorithm_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the public key that is being used by the current Elliptic Curve Diffie-Hellman (ECDH) instance.
+	/// - Returns: The public part of the ECDH key pair that is being used by this System.Security.Cryptography.ECDiffieHellman instance.
+	public var publicKey: System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Security.Cryptography.ECDiffieHellmanPublicKey */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_PublicKey_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECDiffieHellmanPublicKey(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_ECDiffieHellman_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_ECDiffieHellman_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Provides an abstract base class from which all System.Security.Cryptography.ECDiffieHellmanCngPublicKey implementations must inherit.
+public class System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Security.Cryptography.ECDiffieHellmanPublicKey */: System_Object, System_IDisposable {
+	public override class var typeName: String { get {
+		"ECDiffieHellmanPublicKey"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.ECDiffieHellmanPublicKey"
+	}}
+
+	/// Releases all resources used by the current instance of the System.Security.Cryptography.ECDiffieHellman class.
+	public func dispose() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_ECDiffieHellmanPublicKey_Dispose(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Serializes the System.Security.Cryptography.ECDiffieHellmanPublicKey key BLOB to a byte array.
+	/// - Throws: System.PlatformNotSupportedException: Linux and macOS: In all cases.
+	/// - Returns: A byte array that contains the serialized Elliptic Curve Diffie-Hellman (ECDH) public key.
+	public func toByteArray() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellmanPublicKey_ToByteArray(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Serializes the System.Security.Cryptography.ECDiffieHellmanPublicKey public key to an XML string.
+	/// - Throws: System.PlatformNotSupportedException: .NET Core and .NET 5+: In all cases.
+	/// - Returns: An XML string that contains the serialized Elliptic Curve Diffie-Hellman (ECDH) public key.
+	public func toXmlString() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellmanPublicKey_ToXmlString(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// When overridden in a derived class, exports the named or explicit System.Security.Cryptography.ECParameters for an System.Security.Cryptography.ECCurve object.
+	/// - Throws: System.NotSupportedException: A derived class must override this method.
+	/// - Returns: An object that represents the point on the curve for this key.
+	public func exportParameters() throws -> System_Security_Cryptography_ECParameters /* System.Security.Cryptography.ECParameters */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellmanPublicKey_ExportParameters(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECParameters(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// When overridden in a derived class, exports the explicit System.Security.Cryptography.ECParameters for an System.Security.Cryptography.ECCurve object.
+	/// - Throws: System.NotSupportedException: A derived class must override this method.
+	/// - Returns: An object that represents the point on the curve for this key, using the explicit curve format.
+	public func exportExplicitParameters() throws -> System_Security_Cryptography_ECParameters /* System.Security.Cryptography.ECParameters */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellmanPublicKey_ExportExplicitParameters(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_ECParameters(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in the X.509 SubjectPublicKeyInfo format.
+	/// - Throws: System.NotSupportedException: The member System.Security.Cryptography.ECDiffieHellmanPublicKey.ExportParameters has not been overridden in a derived class.
+	/// - Throws: System.ObjectDisposedException: The object has already been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The key is invalid and could not be exported.
+	/// - Returns: A byte array containing the X.509 SubjectPublicKeyInfo representation of this key.
+	public func exportSubjectPublicKeyInfo() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_ECDiffieHellmanPublicKey_ExportSubjectPublicKeyInfo(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_ECDiffieHellmanPublicKey_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_ECDiffieHellmanPublicKey_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Represents an ML-KEM key.
+public class System_Security_Cryptography_MLKem /* System.Security.Cryptography.MLKem */: System_Object, System_IDisposable {
+	public override class var typeName: String { get {
+		"MLKem"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.MLKem"
+	}}
+
+	/// Generates a new ML-KEM key.
+	/// - Parameter algorithm: An algorithm identifying what kind of ML-KEM key to generate.
+	/// - Throws: System.ArgumentNullException: algorithm is null.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred generating the ML-KEM key.
+	/// - Throws: System.PlatformNotSupportedException: The platform does not support ML-KEM. Callers can use the System.Security.Cryptography.MLKem.IsSupported property to determine if the platform supports ML-KEM.
+	/// - Returns: The generated key.
+	public class func generateKey(_ algorithm: System_Security_Cryptography_MLKemAlgorithm /* System.Security.Cryptography.MLKemAlgorithm */) throws -> System_Security_Cryptography_MLKem /* System.Security.Cryptography.MLKem */ {
+		let algorithmC = algorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_GenerateKey(algorithmC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Creates an encapsulation ciphertext and shared secret.
+	/// - Parameter ciphertext: When this method returns, contains the ciphertext.
+	/// - Parameter sharedSecret: When this method returns, contains the shared secret.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred during encapsulation.
+	/// - Throws: System.ObjectDisposedException: The object has already been disposed.
+	public func encapsulate(_ ciphertext: inout DNArray<System_Byte> /* System.Byte[] */, _ sharedSecret: inout DNArray<System_Byte> /* System.Byte[] */) throws {
+		var ciphertextC = ciphertext.__handle
+		var sharedSecretC = sharedSecret.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_MLKem_Encapsulate(self.__handle, &ciphertextC, &sharedSecretC, &__exceptionC)
+		
+		ciphertext = DNArray<System_Byte>(handle: ciphertextC)
+		
+		sharedSecret = DNArray<System_Byte>(handle: sharedSecretC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Decapsulates a shared secret from a provided ciphertext.
+	/// - Parameter ciphertext: The ciphertext.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred during decapsulation.
+	/// - Throws: System.ArgumentException: ciphertext is not the correct size.
+	/// - Throws: System.ArgumentNullException: ciphertext is null.
+	/// - Throws: System.ObjectDisposedException: The object has already been disposed.
+	/// - Returns: The shared secret.
+	public func decapsulate(_ ciphertext: DNArray<System_Byte> /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let ciphertextC = ciphertext.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_Decapsulate(self.__handle, ciphertextC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the private seed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The current instance cannot export a seed.-or-An error occurred while exporting the key.
+	/// - Throws: System.ObjectDisposedException: The object has already been disposed.
+	/// - Returns: The private seed.
+	public func exportPrivateSeed() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ExportPrivateSeed(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importPrivateSeed(_ algorithm: System_Security_Cryptography_MLKemAlgorithm /* System.Security.Cryptography.MLKemAlgorithm */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_MLKem /* System.Security.Cryptography.MLKem */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ImportPrivateSeed(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an ML-KEM key from its private seed value.
+	/// - Parameter algorithm: The specific ML-KEM algorithm for this key.
+	/// - Parameter source: The private seed.
+	/// - Throws: System.ArgumentException: source has a length that is not the System.Security.Cryptography.MLKemAlgorithm.PrivateSeedSizeInBytes from algorithm.
+	/// - Throws: System.ArgumentNullException: algorithm is null.-or-source is null.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while importing the key.
+	/// - Throws: System.PlatformNotSupportedException: The platform does not support ML-KEM. Callers can use the System.Security.Cryptography.MLKem.IsSupported property to determine if the platform supports ML-KEM.
+	/// - Returns: The imported key.
+	public class func importPrivateSeed(_ algorithm: System_Security_Cryptography_MLKemAlgorithm /* System.Security.Cryptography.MLKemAlgorithm */, _ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_MLKem /* System.Security.Cryptography.MLKem */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ImportPrivateSeed_1(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importDecapsulationKey(_ algorithm: System_Security_Cryptography_MLKemAlgorithm /* System.Security.Cryptography.MLKemAlgorithm */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_MLKem /* System.Security.Cryptography.MLKem */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ImportDecapsulationKey(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an ML-KEM key from a decapsulation key.
+	/// - Parameter algorithm: The specific ML-KEM algorithm for this key.
+	/// - Parameter source: The decapsulation key.
+	/// - Throws: System.ArgumentException: source has a length that is not valid for the ML-KEM algorithm.
+	/// - Throws: System.ArgumentNullException: algorithm is null.-or-source is null.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while importing the key.
+	/// - Throws: System.PlatformNotSupportedException: The platform does not support ML-KEM. Callers can use the System.Security.Cryptography.MLKem.IsSupported property to determine if the platform supports ML-KEM.
+	/// - Returns: The imported key.
+	public class func importDecapsulationKey(_ algorithm: System_Security_Cryptography_MLKemAlgorithm /* System.Security.Cryptography.MLKemAlgorithm */, _ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_MLKem /* System.Security.Cryptography.MLKem */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ImportDecapsulationKey_1(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importEncapsulationKey(_ algorithm: System_Security_Cryptography_MLKemAlgorithm /* System.Security.Cryptography.MLKemAlgorithm */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_MLKem /* System.Security.Cryptography.MLKem */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ImportEncapsulationKey(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an ML-KEM key from a encapsulation key.
+	/// - Parameter algorithm: The specific ML-KEM algorithm for this key.
+	/// - Parameter source: The encapsulation key.
+	/// - Throws: System.ArgumentException: source has a length that is not valid for the ML-KEM algorithm.
+	/// - Throws: System.ArgumentNullException: algorithm is null.-or-source is null.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while importing the key.
+	/// - Throws: System.PlatformNotSupportedException: The platform does not support ML-KEM. Callers can use the System.Security.Cryptography.MLKem.IsSupported property to determine if the platform supports ML-KEM.
+	/// - Returns: The imported key.
+	public class func importEncapsulationKey(_ algorithm: System_Security_Cryptography_MLKemAlgorithm /* System.Security.Cryptography.MLKemAlgorithm */, _ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_MLKem /* System.Security.Cryptography.MLKem */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ImportEncapsulationKey_1(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the decapsulation key.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The current instance cannot export a decapsulation key.-or-An error occurred while importing the key.
+	/// - Throws: System.ObjectDisposedException: The object has already been disposed.
+	/// - Returns: The decapsulation key.
+	public func exportDecapsulationKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ExportDecapsulationKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the encapsulation key.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred exporting the encapsulation key.
+	/// - Throws: System.ObjectDisposedException: The object has already been disposed.
+	/// - Returns: The encapsulation key.
+	public func exportEncapsulationKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ExportEncapsulationKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the public-key portion of the current key in the X.509 SubjectPublicKeyInfo format.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while exporting the key.
+	/// - Returns: A byte array containing the X.509 SubjectPublicKeyInfo representation of the public-key portion of this key.
+	public func exportSubjectPublicKeyInfo() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ExportSubjectPublicKeyInfo(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the public-key portion of the current key in a PEM-encoded representation of the X.509 SubjectPublicKeyInfo format.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while exporting the key.
+	/// - Returns: A string containing the PEM-encoded representation of the X.509 SubjectPublicKeyInfo representation of the public-key portion of this key.
+	public func exportSubjectPublicKeyInfoPem() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ExportSubjectPublicKeyInfoPem(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Export the current key in the PKCS#8 PrivateKeyInfo format.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while exporting the key.
+	/// - Returns: A byte array containing the PKCS#8 PrivateKeyInfo representation of this key.
+	public func exportPkcs8PrivateKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ExportPkcs8PrivateKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in a PEM-encoded representation of the PKCS#8 PrivateKeyInfo format.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while exporting the key.
+	/// - Returns: A string containing the PEM-encoded representation of the PKCS#8 PrivateKeyInfo.
+	public func exportPkcs8PrivateKeyPem() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ExportPkcs8PrivateKeyPem(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func exportEncryptedPkcs8PrivateKey(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ExportEncryptedPkcs8PrivateKey(self.__handle, passwordBytesC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in the PKCS#8 EncryptedPrivateKeyInfo format with a char-based password.
+	/// - Parameter password: The password to use when encrypting the key material.
+	/// - Parameter pbeParameters: The password-based encryption (PBE) parameters to use when encrypting the key material.
+	/// - Throws: System.ArgumentNullException: pbeParameters or password is null.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: This instance only represents a public key.-or-The private key is not exportable.-or-An error occurred while exporting the key.-or-pbeParameters does not represent a valid password-based encryption algorithm.
+	/// - Returns: A byte array containing the PKCS#8 EncryptedPrivateKeyInfo representation of this key.
+	public func exportEncryptedPkcs8PrivateKey(_ password: System_String /* System.String */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let passwordC = password.__handle
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ExportEncryptedPkcs8PrivateKey_1(self.__handle, passwordC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func exportEncryptedPkcs8PrivateKeyPem(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> System_String /* System.String */ {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ExportEncryptedPkcs8PrivateKeyPem(self.__handle, passwordBytesC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in a PEM-encoded representation of the PKCS#8 EncryptedPrivateKeyInfo representation of this key, using a string password.
+	/// - Parameter password: The password to use when encrypting the key material.
+	/// - Parameter pbeParameters: The password-based encryption (PBE) parameters to use when encrypting the key material.
+	/// - Throws: System.ArgumentNullException: password or pbeParameters is null.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: This instance only represents a public key.-or-The private key is not exportable.-or-An error occurred while exporting the key.
+	/// - Returns: A string containing the PEM-encoded PKCS#8 EncryptedPrivateKeyInfo.
+	public func exportEncryptedPkcs8PrivateKeyPem(_ password: System_String /* System.String */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> System_String /* System.String */ {
+		let passwordC = password.__handle
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ExportEncryptedPkcs8PrivateKeyPem_1(self.__handle, passwordC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importSubjectPublicKeyInfo(_ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_MLKem /* System.Security.Cryptography.MLKem */ {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ImportSubjectPublicKeyInfo(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an ML-KEM encapsulation key from an X.509 SubjectPublicKeyInfo structure.
+	/// - Parameter source: The bytes of an X.509 SubjectPublicKeyInfo structure in the ASN.1-DER encoding.
+	/// - Throws: System.ArgumentNullException: source is null
+	/// - Returns: The imported key.
+	public class func importSubjectPublicKeyInfo(_ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_MLKem /* System.Security.Cryptography.MLKem */ {
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ImportSubjectPublicKeyInfo_1(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importPkcs8PrivateKey(_ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_MLKem /* System.Security.Cryptography.MLKem */ {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ImportPkcs8PrivateKey(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an ML-KEM private key from a PKCS#8 PrivateKeyInfo structure.
+	/// - Parameter source: The bytes of a PKCS#8 PrivateKeyInfo structure in the ASN.1-BER encoding.
+	/// - Throws: System.ArgumentNullException: source is null
+	/// - Returns: The imported key.
+	public class func importPkcs8PrivateKey(_ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_MLKem /* System.Security.Cryptography.MLKem */ {
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ImportPkcs8PrivateKey_1(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importEncryptedPkcs8PrivateKey(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_MLKem /* System.Security.Cryptography.MLKem */ {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ImportEncryptedPkcs8PrivateKey(passwordBytesC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an ML-KEM private key from a PKCS#8 EncryptedPrivateKeyInfo structure.
+	/// - Parameter password: The password to use when decrypting the key material.
+	/// - Parameter source: The bytes of a PKCS#8 EncryptedPrivateKeyInfo structure in the ASN.1-BER encoding.
+	/// - Throws: System.ArgumentNullException: password or source is null.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The contents of source do not represent an ASN.1-BER-encoded PKCS#8 EncryptedPrivateKeyInfo structure.-or-The specified password is incorrect.-or-The value does not represent an ML-KEM key.-or-The algorithm-specific import failed.
+	/// - Throws: System.PlatformNotSupportedException: The platform does not support ML-KEM. Callers can use the System.Security.Cryptography.MLKem.IsSupported property to determine if the platform supports ML-KEM.
+	/// - Returns: The imported key.
+	public class func importEncryptedPkcs8PrivateKey(_ password: System_String /* System.String */, _ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_MLKem /* System.Security.Cryptography.MLKem */ {
+		let passwordC = password.__handle
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ImportEncryptedPkcs8PrivateKey_1(passwordC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an ML-KEM key from an RFC 7468 PEM-encoded string.
+	/// - Parameter source: The text of the PEM key to import.
+	/// - Throws: System.ArgumentNullException: source is null
+	/// - Returns: The imported ML-KEM key.
+	public class func importFromPem(_ source: System_String /* System.String */) throws -> System_Security_Cryptography_MLKem /* System.Security.Cryptography.MLKem */ {
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ImportFromPem(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an ML-KEM key from an encrypted RFC 7468 PEM-encoded string.
+	/// - Parameter source: The PEM text of the encrypted key to import.
+	/// - Parameter password: The password to use for decrypting the key material.
+	/// - Throws: System.ArgumentNullException: source or password is null
+	public class func importFromEncryptedPem(_ source: System_String /* System.String */, _ password: System_String /* System.String */) throws -> System_Security_Cryptography_MLKem /* System.Security.Cryptography.MLKem */ {
+		let sourceC = source.__handle
+		let passwordC = password.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ImportFromEncryptedPem(sourceC, passwordC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an ML-KEM key from an encrypted RFC 7468 PEM-encoded string.
+	/// - Parameter source: The PEM text of the encrypted key to import.
+	/// - Parameter passwordBytes: The password to use for decrypting the key material.
+	/// - Throws: System.ArgumentNullException: source or passwordBytes is null
+	public class func importFromEncryptedPem(_ source: System_String /* System.String */, _ passwordBytes: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_MLKem /* System.Security.Cryptography.MLKem */ {
+		let sourceC = source.__handle
+		let passwordBytesC = passwordBytes.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_ImportFromEncryptedPem_1(sourceC, passwordBytesC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Releases all resources used by the System.Security.Cryptography.MLKem class.
+	public func dispose() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_MLKem_Dispose(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Gets a value that indicates whether the algorithm is supported on the current platform.
+	/// - Returns: true if the algorithm is supported; otherwise, false.
+	public class var isSupported: Bool /* System.Boolean */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_IsSupported_Get(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets the specific ML-KEM algorithm for this key.
+	/// - Returns: The specific ML-KEM algorithm for this key.
+	public var algorithm: System_Security_Cryptography_MLKemAlgorithm /* System.Security.Cryptography.MLKemAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKem_Algorithm_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKemAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_MLKem_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_MLKem_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Represents a specific algorithm within the ML-KEM family.
+public class System_Security_Cryptography_MLKemAlgorithm /* System.Security.Cryptography.MLKemAlgorithm */: System_Object, System_IEquatable_A1 {
+	public override class var typeName: String { get {
+		"MLKemAlgorithm"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.MLKemAlgorithm"
+	}}
+
+	/// Compares two System.Security.Cryptography.MLKemAlgorithm objects.
+	/// - Parameter other: An object to be compared to the current System.Security.Cryptography.MLKemAlgorithm object.
+	/// - Returns: true if the objects are considered equal; otherwise, false.
+	public func equals(_ other: System_Security_Cryptography_MLKemAlgorithm? /* System.Security.Cryptography.MLKemAlgorithm */) throws -> Bool /* System.Boolean */ {
+		let otherC = other?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKemAlgorithm_Equals(self.__handle, otherC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Determines whether the specified object is equal to the current object.
+	/// - Parameter obj: The object to compare with the current object.
+	/// - Returns: true if the specified object  is equal to the current object; otherwise, false.
+	public override func equals(_ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let objC = obj?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKemAlgorithm_Equals_1(self.__handle, objC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Serves as the default hash function.
+	/// - Returns: A hash code for the current object.
+	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKemAlgorithm_GetHashCode(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Returns a string that represents the current object.
+	/// - Returns: A string that represents the current object.
+	public override func toString() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKemAlgorithm_ToString(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets an ML-KEM algorithm identifier for the ML-KEM-512 algorithm.
+	/// - Returns: An ML-KEM algorithm identifier for the ML-KEM-512 algorithm.
+	public class var mLKem512: System_Security_Cryptography_MLKemAlgorithm /* System.Security.Cryptography.MLKemAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKemAlgorithm_MLKem512_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKemAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets an ML-KEM algorithm identifier for the ML-KEM-768 algorithm.
+	/// - Returns: An ML-KEM algorithm identifier for the ML-KEM-768 algorithm.
+	public class var mLKem768: System_Security_Cryptography_MLKemAlgorithm /* System.Security.Cryptography.MLKemAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKemAlgorithm_MLKem768_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKemAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets an ML-KEM algorithm identifier for the ML-KEM-1024 algorithm.
+	/// - Returns: An ML-KEM algorithm identifier for the ML-KEM-1024 algorithm.
+	public class var mLKem1024: System_Security_Cryptography_MLKemAlgorithm /* System.Security.Cryptography.MLKemAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKemAlgorithm_MLKem1024_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLKemAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the name of the algorithm.
+	/// - Returns: The algorithm name.
+	public var name: System_String /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKemAlgorithm_Name_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the size of the encapsulation key for the algorithm, in bytes.
+	/// - Returns: The size of the encapsulation key for the algorithm, in bytes.
+	public var encapsulationKeySizeInBytes: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKemAlgorithm_EncapsulationKeySizeInBytes_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets the size of the decapsulation key for the algorithm, in bytes.
+	/// - Returns: The size of the decapsulation key for the algorithm, in bytes.
+	public var decapsulationKeySizeInBytes: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKemAlgorithm_DecapsulationKeySizeInBytes_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets the size of the ciphertext for the algorithm, in bytes.
+	/// - Returns: The size of the ciphertext for the algorithm, in bytes.
+	public var ciphertextSizeInBytes: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKemAlgorithm_CiphertextSizeInBytes_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets the size of the shared secret for the algorithm, in bytes.
+	/// - Returns: The size of the shared secret for the algorithm, in bytes.
+	public var sharedSecretSizeInBytes: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKemAlgorithm_SharedSecretSizeInBytes_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets the size of the private seed for the algorithm, in bytes.
+	/// - Returns: The size of the private seed for the algorithm, in bytes.
+	public var privateSeedSizeInBytes: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLKemAlgorithm_PrivateSeedSizeInBytes_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_MLKemAlgorithm_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_MLKemAlgorithm_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+/// Represents an ML-DSA key.
+public class System_Security_Cryptography_MLDsa /* System.Security.Cryptography.MLDsa */: System_Object, System_IDisposable {
+	public override class var typeName: String { get {
+		"MLDsa"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.MLDsa"
+	}}
+
+	/// Releases all resources used by the System.Security.Cryptography.MLDsa class.
+	public func dispose() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_MLDsa_Dispose(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Signs the specified data.
+	/// - Parameter data: The data to sign.
+	/// - Parameter context: An optional context-specific value to limit the scope of the signature.The default value is null.
+	/// - Throws: System.ArgumentNullException: data is null.
+	/// - Throws: System.ArgumentOutOfRangeException: context has a length in excess of 255 bytes.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The instance represents only a public key.-or-An error occurred while signing the data.
+	/// - Returns: ML-DSA signature for the specified data.
+	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ context: DNArray<System_Byte>? /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let contextC = context?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_SignData(self.__handle, dataC, contextC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func verifyData(_ data: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */, _ context: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.readOnlySpanOfByte()
+		let signatureC = signature.readOnlySpanOfByte()
+		let contextC = context.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_VerifyData(self.__handle, dataC, signatureC, contextC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Verifies that the specified signature is valid for this key and the provided data.
+	/// - Parameter data: The data to verify.
+	/// - Parameter signature: The signature to verify.
+	/// - Parameter context: The context value which was provided during signing.The default value is null.
+	/// - Throws: System.ArgumentNullException: data or signature is null.
+	/// - Throws: System.ArgumentOutOfRangeException: context has a length in excess of 255 bytes.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while verifying the data.
+	/// - Returns: true if the signature validates the data; otherwise, false.
+	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ context: DNArray<System_Byte>? /* System.Byte[] */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.__handle
+		let signatureC = signature.__handle
+		let contextC = context?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_VerifyData_1(self.__handle, dataC, signatureC, contextC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Signs the specified hash using the FIPS 204 pre-hash signing algorithm.
+	/// - Parameter hash: The hash to sign.
+	/// - Parameter hashAlgorithmOid: The OID of the hash algorithm used to create the hash.
+	/// - Parameter context: An optional context-specific value to limit the scope of the signature.The default value is null.
+	/// - Throws: System.ArgumentNullException: hash or hashAlgorithmOid is null.An error occurred while verifying the data.hashAlgorithmOid is not a well-formed OID.-or-hashAlgorithmOid is a well-known algorithm and hash does not have the expected length.-or-The instance represents only a public key.-or-An error occurred while signing the hash.
+	public func signPreHash(_ hash: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithmOid: System_String /* System.String */, _ context: DNArray<System_Byte>? /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let hashC = hash.__handle
+		let hashAlgorithmOidC = hashAlgorithmOid.__handle
+		let contextC = context?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_SignPreHash(self.__handle, hashC, hashAlgorithmOidC, contextC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func verifyPreHash(_ hash: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */, _ hashAlgorithmOid: System_String /* System.String */, _ context: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> Bool /* System.Boolean */ {
+		let hashC = hash.readOnlySpanOfByte()
+		let signatureC = signature.readOnlySpanOfByte()
+		let hashAlgorithmOidC = hashAlgorithmOid.__handle
+		let contextC = context.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_VerifyPreHash(self.__handle, hashC, signatureC, hashAlgorithmOidC, contextC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Verifies that the specified FIPS 204 pre-hash signature is valid for this key and the provided hash.
+	/// - Parameter hash: The hash to verify.
+	/// - Parameter signature: The signature to verify.
+	/// - Parameter hashAlgorithmOid: The OID of the hash algorithm used to create the hash.
+	/// - Parameter context: The context value which was provided during signing.The default value is null.
+	/// - Throws: System.ArgumentNullException: hash or signature or hashAlgorithmOid is null.
+	/// - Throws: System.ArgumentOutOfRangeException: context has a length in excess of 255 bytes.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: hashAlgorithmOid is not a well-formed OID.-or-hashAlgorithmOid is a well-known algorithm and hash does not have the expected length.-or-An error occurred while verifying the hash.
+	/// - Returns: true if the signature validates the hash; otherwise, false.
+	public func verifyPreHash(_ hash: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithmOid: System_String /* System.String */, _ context: DNArray<System_Byte>? /* System.Byte[] */) throws -> Bool /* System.Boolean */ {
+		let hashC = hash.__handle
+		let signatureC = signature.__handle
+		let hashAlgorithmOidC = hashAlgorithmOid.__handle
+		let contextC = context?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_VerifyPreHash_1(self.__handle, hashC, signatureC, hashAlgorithmOidC, contextC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Signs the specified externally computed signature mu (μ) value.
+	/// - Parameter externalMu: The signature mu value to sign.
+	/// - Throws: System.ArgumentNullException: externalMu is null.
+	/// - Returns: ML-DSA signature for the specified mu value.
+	public func signMu(_ externalMu: DNArray<System_Byte> /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let externalMuC = externalMu.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_SignMu(self.__handle, externalMuC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func signMu(_ externalMu: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let externalMuC = externalMu.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_SignMu_1(self.__handle, externalMuC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Verifies that a digital signature is valid for the provided externally computed signature mu (μ) value.
+	/// - Parameter externalMu: The signature mu value.
+	/// - Parameter signature: The signature to verify.
+	/// - Throws: System.ArgumentNullException: externalMu or signature is null.
+	/// - Returns: true if the digital signature is valid for the provided mu value; otherwise, false.
+	public func verifyMu(_ externalMu: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */) throws -> Bool /* System.Boolean */ {
+		let externalMuC = externalMu.__handle
+		let signatureC = signature.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_VerifyMu(self.__handle, externalMuC, signatureC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func verifyMu(_ externalMu: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> Bool /* System.Boolean */ {
+		let externalMuC = externalMu.readOnlySpanOfByte()
+		let signatureC = signature.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_VerifyMu_1(self.__handle, externalMuC, signatureC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Exports the public-key portion of the current key in the X.509 SubjectPublicKeyInfo format.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while exporting the key.
+	/// - Returns: A byte array containing the X.509 SubjectPublicKeyInfo representation of the public-key portion of this key.
+	public func exportSubjectPublicKeyInfo() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ExportSubjectPublicKeyInfo(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the public-key portion of the current key in a PEM-encoded representation of the X.509 SubjectPublicKeyInfo format.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while exporting the key.
+	/// - Returns: A string containing the PEM-encoded representation of the X.509 SubjectPublicKeyInfo representation of the public-key portion of this key.
+	public func exportSubjectPublicKeyInfoPem() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ExportSubjectPublicKeyInfoPem(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in the PKCS#8 PrivateKeyInfo format.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: This instance only represents a public key.-or-The private key is not exportable.-or-An error occurred while exporting the key.
+	/// - Returns: A byte array containing the PKCS#8 PrivateKeyInfo representation of the this key.
+	public func exportPkcs8PrivateKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ExportPkcs8PrivateKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in a PEM-encoded representation of the PKCS#8 PrivateKeyInfo format.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while exporting the key.
+	/// - Returns: A string containing the PEM-encoded representation of the PKCS#8 PrivateKeyInfo representation of the public-key portion of this key.
+	public func exportPkcs8PrivateKeyPem() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ExportPkcs8PrivateKeyPem(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func exportEncryptedPkcs8PrivateKey(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ExportEncryptedPkcs8PrivateKey(self.__handle, passwordBytesC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in the PKCS#8 EncryptedPrivateKeyInfo format with a char-based password.
+	/// - Parameter password: The password to use when encrypting the key material.
+	/// - Parameter pbeParameters: The password-based encryption (PBE) parameters to use when encrypting the key material.
+	/// - Throws: System.ArgumentNullException: password or pbeParameters is null.
+	/// - Returns: A byte array containing the PKCS#8 EncryptedPrivateKeyInfo representation of the this key.
+	public func exportEncryptedPkcs8PrivateKey(_ password: System_String /* System.String */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let passwordC = password.__handle
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ExportEncryptedPkcs8PrivateKey_1(self.__handle, passwordC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func exportEncryptedPkcs8PrivateKeyPem(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> System_String /* System.String */ {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ExportEncryptedPkcs8PrivateKeyPem(self.__handle, passwordBytesC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in a PEM-encoded representation of the PKCS#8 EncryptedPrivateKeyInfo representation of this key, using a char-based password.
+	/// - Parameter password: The password to use when encrypting the key material.
+	/// - Parameter pbeParameters: The password-based encryption (PBE) parameters to use when encrypting the key material.
+	/// - Throws: System.ArgumentNullException: password or pbeParameters is null.
+	/// - Returns: A string containing the PEM-encoded PKCS#8 EncryptedPrivateKeyInfo.
+	public func exportEncryptedPkcs8PrivateKeyPem(_ password: System_String /* System.String */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> System_String /* System.String */ {
+		let passwordC = password.__handle
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ExportEncryptedPkcs8PrivateKeyPem_1(self.__handle, passwordC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the public-key portion of the current key in the FIPS 204 public key format.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while exporting the key.
+	/// - Throws: System.ObjectDisposedException: The object has already been disposed.
+	/// - Returns: The FIPS 204 public key.
+	public func exportMLDsaPublicKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ExportMLDsaPublicKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in the FIPS 204 private key format.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The current instance cannot export a private key.-or-An error occurred while exporting the key.
+	/// - Throws: System.ObjectDisposedException: The object has already been disposed.
+	/// - Returns: The FIPS 204 private key.
+	public func exportMLDsaPrivateKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ExportMLDsaPrivateKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the private seed in the FIPS 204 private seed format.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while exporting the key.
+	/// - Throws: System.ObjectDisposedException: The object has already been disposed.
+	/// - Returns: The FIPS 204 private seed.
+	public func exportMLDsaPrivateSeed() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ExportMLDsaPrivateSeed(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Generates a new ML-DSA key.
+	/// - Parameter algorithm: An algorithm identifying what kind of ML-DSA key to generate.
+	/// - Throws: System.ArgumentNullException: algorithm is null
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occured generating the ML-DSA key.
+	/// - Throws: System.PlatformNotSupportedException: The platform does not support ML-DSA. Callers can use the System.Security.Cryptography.MLDsa.IsSupported property to determine if the platform supports ML-DSA.
+	/// - Returns: The generated key.
+	public class func generateKey(_ algorithm: System_Security_Cryptography_MLDsaAlgorithm /* System.Security.Cryptography.MLDsaAlgorithm */) throws -> System_Security_Cryptography_MLDsa /* System.Security.Cryptography.MLDsa */ {
+		let algorithmC = algorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_GenerateKey(algorithmC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importSubjectPublicKeyInfo(_ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_MLDsa /* System.Security.Cryptography.MLDsa */ {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ImportSubjectPublicKeyInfo(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an ML-DSA public key from an X.509 SubjectPublicKeyInfo structure.
+	/// - Parameter source: The bytes of an X.509 SubjectPublicKeyInfo structure in the ASN.1-DER encoding.
+	/// - Throws: System.ArgumentNullException: source is null.
+	/// - Returns: The imported key.
+	public class func importSubjectPublicKeyInfo(_ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_MLDsa /* System.Security.Cryptography.MLDsa */ {
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ImportSubjectPublicKeyInfo_1(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importPkcs8PrivateKey(_ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_MLDsa /* System.Security.Cryptography.MLDsa */ {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ImportPkcs8PrivateKey(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an ML-DSA private key from a PKCS#8 PrivateKeyInfo structure.
+	/// - Parameter source: The bytes of a PKCS#8 PrivateKeyInfo structure in the ASN.1-BER encoding.
+	/// - Throws: System.ArgumentNullException: source is null.
+	/// - Returns: The imported key.
+	public class func importPkcs8PrivateKey(_ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_MLDsa /* System.Security.Cryptography.MLDsa */ {
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ImportPkcs8PrivateKey_1(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importEncryptedPkcs8PrivateKey(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_MLDsa /* System.Security.Cryptography.MLDsa */ {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ImportEncryptedPkcs8PrivateKey(passwordBytesC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an ML-DSA private key from a PKCS#8 EncryptedPrivateKeyInfo structure.
+	/// - Parameter password: The password to use when decrypting the key material.
+	/// - Parameter source: The bytes of a PKCS#8 EncryptedPrivateKeyInfo structure in the ASN.1-BER encoding.
+	/// - Throws: System.ArgumentNullException: password or source is null.
+	/// - Returns: The imported key.
+	public class func importEncryptedPkcs8PrivateKey(_ password: System_String /* System.String */, _ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_MLDsa /* System.Security.Cryptography.MLDsa */ {
+		let passwordC = password.__handle
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ImportEncryptedPkcs8PrivateKey_1(passwordC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an ML-DSA key from an RFC 7468 PEM-encoded string.
+	/// - Parameter source: The text of the PEM key to import.
+	/// - Throws: System.ArgumentNullException: source is null.
+	/// - Returns: The imported ML-DSA key.
+	public class func importFromPem(_ source: System_String /* System.String */) throws -> System_Security_Cryptography_MLDsa /* System.Security.Cryptography.MLDsa */ {
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ImportFromPem(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an ML-DSA key from an encrypted RFC 7468 PEM-encoded string.
+	/// - Parameter source: The PEM text of the encrypted key to import.
+	/// - Parameter password: The password to use for decrypting the key material.
+	/// - Throws: System.ArgumentNullException: source or password is null.
+	public class func importFromEncryptedPem(_ source: System_String /* System.String */, _ password: System_String /* System.String */) throws -> System_Security_Cryptography_MLDsa /* System.Security.Cryptography.MLDsa */ {
+		let sourceC = source.__handle
+		let passwordC = password.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ImportFromEncryptedPem(sourceC, passwordC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an ML-DSA key from an encrypted RFC 7468 PEM-encoded string.
+	/// - Parameter source: The PEM text of the encrypted key to import.
+	/// - Parameter passwordBytes: The bytes to use as a password when decrypting the key material.
+	/// - Throws: System.ArgumentNullException: source or passwordBytes is null.
+	public class func importFromEncryptedPem(_ source: System_String /* System.String */, _ passwordBytes: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_MLDsa /* System.Security.Cryptography.MLDsa */ {
+		let sourceC = source.__handle
+		let passwordBytesC = passwordBytes.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ImportFromEncryptedPem_1(sourceC, passwordBytesC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importMLDsaPublicKey(_ algorithm: System_Security_Cryptography_MLDsaAlgorithm /* System.Security.Cryptography.MLDsaAlgorithm */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_MLDsa /* System.Security.Cryptography.MLDsa */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ImportMLDsaPublicKey(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an ML-DSA public key in the FIPS 204 public key format.
+	/// - Parameter algorithm: The specific ML-DSA algorithm for this key.
+	/// - Parameter source: The bytes of a FIPS 204 public key.
+	/// - Throws: System.ArgumentNullException: algorithm or source is null.
+	/// - Returns: The imported key.
+	public class func importMLDsaPublicKey(_ algorithm: System_Security_Cryptography_MLDsaAlgorithm /* System.Security.Cryptography.MLDsaAlgorithm */, _ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_MLDsa /* System.Security.Cryptography.MLDsa */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ImportMLDsaPublicKey_1(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importMLDsaPrivateKey(_ algorithm: System_Security_Cryptography_MLDsaAlgorithm /* System.Security.Cryptography.MLDsaAlgorithm */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_MLDsa /* System.Security.Cryptography.MLDsa */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ImportMLDsaPrivateKey(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an ML-DSA private key in the FIPS 204 private key format.
+	/// - Parameter algorithm: The specific ML-DSA algorithm for this key.
+	/// - Parameter source: The bytes of a FIPS 204 private key.
+	/// - Throws: System.ArgumentNullException: algorithm or source is null.
+	/// - Returns: The imported key.
+	public class func importMLDsaPrivateKey(_ algorithm: System_Security_Cryptography_MLDsaAlgorithm /* System.Security.Cryptography.MLDsaAlgorithm */, _ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_MLDsa /* System.Security.Cryptography.MLDsa */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ImportMLDsaPrivateKey_1(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importMLDsaPrivateSeed(_ algorithm: System_Security_Cryptography_MLDsaAlgorithm /* System.Security.Cryptography.MLDsaAlgorithm */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_MLDsa /* System.Security.Cryptography.MLDsa */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ImportMLDsaPrivateSeed(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an ML-DSA private key from its private seed value.
+	/// - Parameter algorithm: The specific ML-DSA algorithm for this key.
+	/// - Parameter source: The bytes the key seed.
+	/// - Throws: System.ArgumentNullException: algorithm or source is null.
+	/// - Returns: The imported key.
+	public class func importMLDsaPrivateSeed(_ algorithm: System_Security_Cryptography_MLDsaAlgorithm /* System.Security.Cryptography.MLDsaAlgorithm */, _ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_MLDsa /* System.Security.Cryptography.MLDsa */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_ImportMLDsaPrivateSeed_1(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the specific ML-DSA algorithm for this key.
+	/// - Returns: The specific ML-DSA algorithm for this key.
+	public var algorithm: System_Security_Cryptography_MLDsaAlgorithm /* System.Security.Cryptography.MLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_Algorithm_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a value indicating whether the current platform supports ML-DSA.
+	/// - Returns: true if the current platform supports ML-DSA; otherwise, false.
+	public class var isSupported: Bool /* System.Boolean */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsa_IsSupported_Get(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_MLDsa_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_MLDsa_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Represents a specific algorithm within the ML-DSA family.
+public class System_Security_Cryptography_MLDsaAlgorithm /* System.Security.Cryptography.MLDsaAlgorithm */: System_Object, System_IEquatable_A1 {
+	public override class var typeName: String { get {
+		"MLDsaAlgorithm"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.MLDsaAlgorithm"
+	}}
+
+	/// Compares two System.Security.Cryptography.MLDsaAlgorithm objects.
+	/// - Parameter other: An object to be compared to the current System.Security.Cryptography.MLDsaAlgorithm object.
+	/// - Returns: true if the objects are considered equal; otherwise, false.
+	public func equals(_ other: System_Security_Cryptography_MLDsaAlgorithm? /* System.Security.Cryptography.MLDsaAlgorithm */) throws -> Bool /* System.Boolean */ {
+		let otherC = other?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsaAlgorithm_Equals(self.__handle, otherC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Determines whether the specified object is equal to the current object.
+	/// - Parameter obj: The object to compare with the current object.
+	/// - Returns: true if the specified object  is equal to the current object; otherwise, false.
+	public override func equals(_ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let objC = obj?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsaAlgorithm_Equals_1(self.__handle, objC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Serves as the default hash function.
+	/// - Returns: A hash code for the current object.
+	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsaAlgorithm_GetHashCode(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Returns a string that represents the current object.
+	/// - Returns: A string that represents the current object.
+	public override func toString() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsaAlgorithm_ToString(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the underlying string representation of the algorithm name.
+	/// - Returns: The underlying string representation of the algorithm name.
+	public var name: System_String /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsaAlgorithm_Name_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the size, in bytes, of the ML-DSA private key for the current ML-DSA algorithm.
+	/// - Returns: The size, in bytes, of the ML-DSA private key for the current ML-DSA algorithm.
+	public var privateKeySizeInBytes: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsaAlgorithm_PrivateKeySizeInBytes_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets the size, in bytes, of the ML-DSA private seed for the current ML-DSA algorithm.
+	/// - Returns: The size, in bytes, of the ML-DSA private seed for the current ML-DSA algorithm.
+	public var privateSeedSizeInBytes: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsaAlgorithm_PrivateSeedSizeInBytes_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets the size of the ML-DSA public key for the current ML-DSA algorithm.
+	/// - Returns: The size, in bytes, of the ML-DSA public key for the current ML-DSA algorithm.
+	public var publicKeySizeInBytes: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsaAlgorithm_PublicKeySizeInBytes_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets the size, in bytes, of the signature for the current ML-DSA algorithm.
+	/// - Returns: The size, in bytes, of the signature for the current ML-DSA algorithm.
+	public var signatureSizeInBytes: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsaAlgorithm_SignatureSizeInBytes_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets the size, in bytes, of the mu (μ) value for the current ML-DSA algorithm.
+	/// - Returns: The size, in bytes, of the mu (μ) value for the current ML-DSA algorithm.
+	public var muSizeInBytes: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsaAlgorithm_MuSizeInBytes_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets an ML-DSA algorithm identifier for the ML-DSA-44 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-44 algorithm.
+	public class var mLDsa44: System_Security_Cryptography_MLDsaAlgorithm /* System.Security.Cryptography.MLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsaAlgorithm_MLDsa44_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets an ML-DSA algorithm identifier for the ML-DSA-65 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-65 algorithm.
+	public class var mLDsa65: System_Security_Cryptography_MLDsaAlgorithm /* System.Security.Cryptography.MLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsaAlgorithm_MLDsa65_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets an ML-DSA algorithm identifier for the ML-DSA-87 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-87 algorithm.
+	public class var mLDsa87: System_Security_Cryptography_MLDsaAlgorithm /* System.Security.Cryptography.MLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_MLDsaAlgorithm_MLDsa87_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_MLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_MLDsaAlgorithm_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_MLDsaAlgorithm_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+/// Represents an SLH-DSA key.
+public class System_Security_Cryptography_SlhDsa /* System.Security.Cryptography.SlhDsa */: System_Object, System_IDisposable {
+	public override class var typeName: String { get {
+		"SlhDsa"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.SlhDsa"
+	}}
+
+	/// Releases all resources used by the System.Security.Cryptography.SlhDsa class.
+	public func dispose() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_SlhDsa_Dispose(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Signs the specified data.
+	/// - Parameter data: The data to sign.
+	/// - Parameter context: An optional context-specific value to limit the scope of the signature.The default value is null.
+	/// - Throws: System.ArgumentNullException: data is null.
+	/// - Throws: System.ArgumentOutOfRangeException: context has a length in excess of 255 bytes.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The instance represents only a public key.-or-An error occurred while signing the data.
+	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ context: DNArray<System_Byte>? /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let contextC = context?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_SignData(self.__handle, dataC, contextC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func verifyData(_ data: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */, _ context: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.readOnlySpanOfByte()
+		let signatureC = signature.readOnlySpanOfByte()
+		let contextC = context.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_VerifyData(self.__handle, dataC, signatureC, contextC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Verifies that the specified signature is valid for this key and the provided data.
+	/// - Parameter data: The data to verify.
+	/// - Parameter signature: The signature to verify.
+	/// - Parameter context: The context value which was provided during signing.The default value is null.
+	/// - Throws: System.ArgumentNullException: data or signature is null.
+	/// - Throws: System.ArgumentOutOfRangeException: context has a length in excess of 255 bytes.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while verifying the data.
+	/// - Returns: true if the signature validates the data; otherwise, false.
+	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ context: DNArray<System_Byte>? /* System.Byte[] */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.__handle
+		let signatureC = signature.__handle
+		let contextC = context?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_VerifyData_1(self.__handle, dataC, signatureC, contextC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Signs the specified hash using the FIPS 205 pre-hash signing algorithm.
+	/// - Parameter hash: The hash to sign.
+	/// - Parameter hashAlgorithmOid: The OID of the hash algorithm used to create the hash.
+	/// - Parameter context: An optional context-specific value to limit the scope of the signature.The default value is null.
+	/// - Throws: System.ArgumentNullException: hash or hashAlgorithmOid is null.
+	/// - Throws: System.ArgumentOutOfRangeException: context has a length in excess of 255 bytes.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: hashAlgorithmOid is not a well-formed OID.-or-hashAlgorithmOid is a well-known algorithm and hash does not have the expected length.-or-The instance represents only a public key.-or-An error occurred while signing the hash.
+	public func signPreHash(_ hash: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithmOid: System_String /* System.String */, _ context: DNArray<System_Byte>? /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let hashC = hash.__handle
+		let hashAlgorithmOidC = hashAlgorithmOid.__handle
+		let contextC = context?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_SignPreHash(self.__handle, hashC, hashAlgorithmOidC, contextC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func verifyPreHash(_ hash: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */, _ hashAlgorithmOid: System_String /* System.String */, _ context: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> Bool /* System.Boolean */ {
+		let hashC = hash.readOnlySpanOfByte()
+		let signatureC = signature.readOnlySpanOfByte()
+		let hashAlgorithmOidC = hashAlgorithmOid.__handle
+		let contextC = context.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_VerifyPreHash(self.__handle, hashC, signatureC, hashAlgorithmOidC, contextC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Verifies that the specified FIPS 205 pre-hash signature is valid for this key and the provided hash.
+	/// - Parameter hash: The hash to verify.
+	/// - Parameter signature: The signature to verify.
+	/// - Parameter hashAlgorithmOid: The OID of the hash algorithm used to create the hash.
+	/// - Parameter context: The context value which was provided during signing.The default value is null.
+	/// - Throws: System.ArgumentNullException: hash or signature or hashAlgorithmOid is null.
+	/// - Throws: System.ArgumentOutOfRangeException: context has a length in excess of 255 bytes.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: hashAlgorithmOid is not a well-formed OID.-or-hashAlgorithmOid is a well-known algorithm and hash does not have the expected length.-or-An error occurred while verifying the hash.
+	/// - Returns: true if the signature validates the hash; otherwise, false.
+	public func verifyPreHash(_ hash: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithmOid: System_String /* System.String */, _ context: DNArray<System_Byte>? /* System.Byte[] */) throws -> Bool /* System.Boolean */ {
+		let hashC = hash.__handle
+		let signatureC = signature.__handle
+		let hashAlgorithmOidC = hashAlgorithmOid.__handle
+		let contextC = context?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_VerifyPreHash_1(self.__handle, hashC, signatureC, hashAlgorithmOidC, contextC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Exports the public-key portion of the current key in the X.509 SubjectPublicKeyInfo format.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while exporting the key.
+	/// - Returns: A byte array containing the X.509 SubjectPublicKeyInfo representation of the public-key portion of this key.
+	public func exportSubjectPublicKeyInfo() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ExportSubjectPublicKeyInfo(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the public-key portion of the current key in a PEM-encoded representation of the X.509 SubjectPublicKeyInfo format.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while exporting the key.
+	/// - Returns: A string containing the PEM-encoded representation of the X.509 SubjectPublicKeyInfo representation of the public-key portion of this key.
+	public func exportSubjectPublicKeyInfoPem() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ExportSubjectPublicKeyInfoPem(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in the PKCS#8 PrivateKeyInfo format.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: This instance only represents a public key.-or-The private key is not exportable.-or-An error occurred while exporting the key.
+	/// - Returns: A byte array containing the PKCS#8 PrivateKeyInfo representation of the this key.
+	public func exportPkcs8PrivateKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ExportPkcs8PrivateKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in a PEM-encoded representation of the PKCS#8 PrivateKeyInfo format.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while exporting the key.
+	/// - Returns: A string containing the PEM-encoded representation of the PKCS#8 PrivateKeyInfo.
+	public func exportPkcs8PrivateKeyPem() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ExportPkcs8PrivateKeyPem(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func exportEncryptedPkcs8PrivateKey(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ExportEncryptedPkcs8PrivateKey(self.__handle, passwordBytesC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in the PKCS#8 EncryptedPrivateKeyInfo format with a char-based password.
+	/// - Parameter password: The password to use when encrypting the key material.
+	/// - Parameter pbeParameters: The password-based encryption (PBE) parameters to use when encrypting the key material.
+	/// - Throws: System.ArgumentNullException: password or pbeParameters is null.
+	/// - Returns: A byte array containing the PKCS#8 EncryptedPrivateKeyInfo representation of the this key.
+	public func exportEncryptedPkcs8PrivateKey(_ password: System_String /* System.String */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let passwordC = password.__handle
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ExportEncryptedPkcs8PrivateKey_1(self.__handle, passwordC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func exportEncryptedPkcs8PrivateKeyPem(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> System_String /* System.String */ {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ExportEncryptedPkcs8PrivateKeyPem(self.__handle, passwordBytesC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in a PEM-encoded representation of the PKCS#8 EncryptedPrivateKeyInfo representation of this key, using a char-based password.
+	/// - Parameter password: The password to use when encrypting the key material.
+	/// - Parameter pbeParameters: The password-based encryption (PBE) parameters to use when encrypting the key material.
+	/// - Throws: System.ArgumentNullException: password or pbeParameters is null.
+	/// - Returns: A string containing the PEM-encoded PKCS#8 EncryptedPrivateKeyInfo.
+	public func exportEncryptedPkcs8PrivateKeyPem(_ password: System_String /* System.String */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> System_String /* System.String */ {
+		let passwordC = password.__handle
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ExportEncryptedPkcs8PrivateKeyPem_1(self.__handle, passwordC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the public-key portion of the current key in the FIPS 205 public key format.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while exporting the key.
+	/// - Throws: System.ObjectDisposedException: The object has already been disposed.
+	/// - Returns: The FIPS 205 public key.
+	public func exportSlhDsaPublicKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ExportSlhDsaPublicKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in the FIPS 205 private key format.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The current instance cannot export a private key.-or-An error occurred while exporting the key.
+	/// - Throws: System.ObjectDisposedException: The object has already been disposed.
+	/// - Returns: The FIPS 205 private key.
+	public func exportSlhDsaPrivateKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ExportSlhDsaPrivateKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Generates a new SLH-DSA key for the specified algorithm.
+	/// - Parameter algorithm: An algorithm identifying what kind of SLH-DSA key to generate.
+	/// - Throws: System.ArgumentNullException: algorithm is null.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred generating the SLH-DSA key.
+	/// - Throws: System.PlatformNotSupportedException: The platform does not support SLH-DSA. Callers can use the System.Security.Cryptography.SlhDsa.IsSupported property to determine if the platform supports SLH-DSA.
+	/// - Returns: The generated object.
+	public class func generateKey(_ algorithm: System_Security_Cryptography_SlhDsaAlgorithm /* System.Security.Cryptography.SlhDsaAlgorithm */) throws -> System_Security_Cryptography_SlhDsa /* System.Security.Cryptography.SlhDsa */ {
+		let algorithmC = algorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_GenerateKey(algorithmC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_SlhDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importSubjectPublicKeyInfo(_ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_SlhDsa /* System.Security.Cryptography.SlhDsa */ {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ImportSubjectPublicKeyInfo(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_SlhDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an SLH-DSA public key from an X.509 SubjectPublicKeyInfo structure.
+	/// - Parameter source: The bytes of an X.509 SubjectPublicKeyInfo structure in the ASN.1-DER encoding.
+	/// - Throws: System.ArgumentNullException: source is null.
+	/// - Returns: The imported key.
+	public class func importSubjectPublicKeyInfo(_ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_SlhDsa /* System.Security.Cryptography.SlhDsa */ {
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ImportSubjectPublicKeyInfo_1(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_SlhDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importPkcs8PrivateKey(_ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_SlhDsa /* System.Security.Cryptography.SlhDsa */ {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ImportPkcs8PrivateKey(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_SlhDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an SLH-DSA private key from a PKCS#8 PrivateKeyInfo structure.
+	/// - Parameter source: The bytes of a PKCS#8 PrivateKeyInfo structure in the ASN.1-BER encoding.
+	/// - Throws: System.ArgumentNullException: source is null.
+	/// - Returns: The imported key.
+	public class func importPkcs8PrivateKey(_ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_SlhDsa /* System.Security.Cryptography.SlhDsa */ {
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ImportPkcs8PrivateKey_1(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_SlhDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importEncryptedPkcs8PrivateKey(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_SlhDsa /* System.Security.Cryptography.SlhDsa */ {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ImportEncryptedPkcs8PrivateKey(passwordBytesC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_SlhDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an SLH-DSA private key from a PKCS#8 EncryptedPrivateKeyInfo structure.
+	/// - Parameter password: The password to use when decrypting the key material.
+	/// - Parameter source: The bytes of a PKCS#8 EncryptedPrivateKeyInfo structure in the ASN.1-BER encoding.
+	/// - Throws: System.ArgumentNullException: password or source is null.
+	/// - Returns: The imported key.
+	public class func importEncryptedPkcs8PrivateKey(_ password: System_String /* System.String */, _ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_SlhDsa /* System.Security.Cryptography.SlhDsa */ {
+		let passwordC = password.__handle
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ImportEncryptedPkcs8PrivateKey_1(passwordC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_SlhDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an SLH-DSA key from an RFC 7468 PEM-encoded string.
+	/// - Parameter source: The text of the PEM key to import.
+	/// - Throws: System.ArgumentNullException: source is null.
+	/// - Returns: The imported SLH-DSA key.
+	public class func importFromPem(_ source: System_String /* System.String */) throws -> System_Security_Cryptography_SlhDsa /* System.Security.Cryptography.SlhDsa */ {
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ImportFromPem(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_SlhDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an SLH-DSA key from an encrypted RFC 7468 PEM-encoded string.
+	/// - Parameter source: The PEM text of the encrypted key to import.
+	/// - Parameter password: The password to use for decrypting the key material.
+	/// - Throws: System.ArgumentNullException: source or password is null.
+	public class func importFromEncryptedPem(_ source: System_String /* System.String */, _ password: System_String /* System.String */) throws -> System_Security_Cryptography_SlhDsa /* System.Security.Cryptography.SlhDsa */ {
+		let sourceC = source.__handle
+		let passwordC = password.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ImportFromEncryptedPem(sourceC, passwordC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_SlhDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an SLH-DSA key from an encrypted RFC 7468 PEM-encoded string.
+	/// - Parameter source: The PEM text of the encrypted key to import.
+	/// - Parameter passwordBytes: The bytes to use as a password when decrypting the key material.
+	/// - Throws: System.ArgumentNullException: source or passwordBytes is null.
+	public class func importFromEncryptedPem(_ source: System_String /* System.String */, _ passwordBytes: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_SlhDsa /* System.Security.Cryptography.SlhDsa */ {
+		let sourceC = source.__handle
+		let passwordBytesC = passwordBytes.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ImportFromEncryptedPem_1(sourceC, passwordBytesC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_SlhDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importSlhDsaPublicKey(_ algorithm: System_Security_Cryptography_SlhDsaAlgorithm /* System.Security.Cryptography.SlhDsaAlgorithm */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_SlhDsa /* System.Security.Cryptography.SlhDsa */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ImportSlhDsaPublicKey(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_SlhDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an SLH-DSA public key in the FIPS 205 public key format.
+	/// - Parameter algorithm: The specific SLH-DSA algorithm for this key.
+	/// - Parameter source: The bytes of a FIPS 205 public key.
+	/// - Throws: System.ArgumentNullException: algorithm or source is null.
+	/// - Returns: The imported key.
+	public class func importSlhDsaPublicKey(_ algorithm: System_Security_Cryptography_SlhDsaAlgorithm /* System.Security.Cryptography.SlhDsaAlgorithm */, _ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_SlhDsa /* System.Security.Cryptography.SlhDsa */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ImportSlhDsaPublicKey_1(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_SlhDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importSlhDsaPrivateKey(_ algorithm: System_Security_Cryptography_SlhDsaAlgorithm /* System.Security.Cryptography.SlhDsaAlgorithm */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_SlhDsa /* System.Security.Cryptography.SlhDsa */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ImportSlhDsaPrivateKey(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_SlhDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports an SLH-DSA private key in the FIPS 205 private key format.
+	/// - Parameter algorithm: The specific SLH-DSA algorithm for this key.
+	/// - Parameter source: The bytes of a FIPS 205 private key.
+	/// - Throws: System.ArgumentNullException: algorithm or source is null.
+	/// - Returns: The imported key.
+	public class func importSlhDsaPrivateKey(_ algorithm: System_Security_Cryptography_SlhDsaAlgorithm /* System.Security.Cryptography.SlhDsaAlgorithm */, _ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_SlhDsa /* System.Security.Cryptography.SlhDsa */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_ImportSlhDsaPrivateKey_1(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_SlhDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets a value indicating whether the current platform supports SLH-DSA.
+	/// - Returns: true if the current platform supports SLH-DSA; otherwise, false.
+	public class var isSupported: Bool /* System.Boolean */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_IsSupported_Get(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets the specific SLH-DSA algorithm for this key.
+	/// - Returns: The specific SLH-DSA algorithm for this key.
+	public var algorithm: System_Security_Cryptography_SlhDsaAlgorithm /* System.Security.Cryptography.SlhDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_SlhDsa_Algorithm_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_SlhDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_SlhDsa_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_SlhDsa_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Represents a Composite ML-DSA key.
+public class System_Security_Cryptography_CompositeMLDsa /* System.Security.Cryptography.CompositeMLDsa */: System_Object, System_IDisposable {
+	public override class var typeName: String { get {
+		"CompositeMLDsa"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.CompositeMLDsa"
+	}}
+
+	/// Determines whether the specified algorithm is supported by the current platform.
+	/// - Parameter algorithm: The System.Security.Cryptography.CompositeMLDsaAlgorithm to check for support.
+	/// - Throws: System.ArgumentNullException: algorithm is null.
+	/// - Returns: true if the algorithm is supported; otherwise, false.
+	public class func isAlgorithmSupported(_ algorithm: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */) throws -> Bool /* System.Boolean */ {
+		let algorithmC = algorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_IsAlgorithmSupported(algorithmC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Signs the specified data.
+	/// - Parameter data: The data to sign.
+	/// - Parameter context: An optional context-specific value to limit the scope of the signature.The default value is null.
+	/// - Throws: System.ArgumentNullException: data is null.
+	/// - Throws: System.ArgumentOutOfRangeException: context has a length in excess of 255 bytes.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The instance represents only a public key.-or-An error occurred while signing the data.
+	/// - Returns: The Composite ML-DSA signature of the specified data.
+	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ context: DNArray<System_Byte>? /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let dataC = data.__handle
+		let contextC = context?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_SignData(self.__handle, dataC, contextC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Verifies that the specified signature is valid for this key and the provided data.
+	/// - Parameter data: The data to verify.
+	/// - Parameter signature: The signature to verify.
+	/// - Parameter context: The context value which was provided during signing.The default value is null.
+	/// - Throws: System.ArgumentNullException: data or signature is null.
+	/// - Throws: System.ArgumentOutOfRangeException: context has a length in excess of 255 bytes.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while verifying the data.
+	/// - Returns: true if the signature validates the data; otherwise, false.
+	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ context: DNArray<System_Byte>? /* System.Byte[] */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.__handle
+		let signatureC = signature.__handle
+		let contextC = context?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_VerifyData(self.__handle, dataC, signatureC, contextC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func verifyData(_ data: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */, _ context: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> Bool /* System.Boolean */ {
+		let dataC = data.readOnlySpanOfByte()
+		let signatureC = signature.readOnlySpanOfByte()
+		let contextC = context.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_VerifyData_1(self.__handle, dataC, signatureC, contextC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Generates a new Composite ML-DSA key.
+	/// - Parameter algorithm: An algorithm identifying what kind of Composite ML-DSA key to generate.
+	/// - Throws: System.ArgumentNullException: algorithm is null
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred generating the Composite ML-DSA key.
+	/// - Throws: System.PlatformNotSupportedException: The platform does not support the specified Composite ML-DSA algorithm. Callers can use System.Security.Cryptography.CompositeMLDsa.IsAlgorithmSupported(System.Security.Cryptography.CompositeMLDsaAlgorithm) to determine if the algorithm is supported.
+	/// - Returns: The generated key.
+	public class func generateKey(_ algorithm: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */) throws -> System_Security_Cryptography_CompositeMLDsa /* System.Security.Cryptography.CompositeMLDsa */ {
+		let algorithmC = algorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_GenerateKey(algorithmC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports a Composite ML-DSA key from an encrypted RFC 7468 PEM-encoded string.
+	/// - Parameter source: The PEM text of the encrypted key to import.
+	/// - Parameter password: The password to use for decrypting the key material.
+	/// - Throws: System.ArgumentNullException: source or password is null.
+	public class func importFromEncryptedPem(_ source: System_String /* System.String */, _ password: System_String /* System.String */) throws -> System_Security_Cryptography_CompositeMLDsa /* System.Security.Cryptography.CompositeMLDsa */ {
+		let sourceC = source.__handle
+		let passwordC = password.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ImportFromEncryptedPem(sourceC, passwordC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports a Composite ML-DSA key from an encrypted RFC 7468 PEM-encoded string.
+	/// - Parameter source: The PEM text of the encrypted key to import.
+	/// - Parameter passwordBytes: The bytes to use as a password when decrypting the key material.
+	/// - Throws: System.ArgumentNullException: source or passwordBytes is null.
+	public class func importFromEncryptedPem(_ source: System_String /* System.String */, _ passwordBytes: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_CompositeMLDsa /* System.Security.Cryptography.CompositeMLDsa */ {
+		let sourceC = source.__handle
+		let passwordBytesC = passwordBytes.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ImportFromEncryptedPem_1(sourceC, passwordBytesC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports a Composite ML-DSA key from an RFC 7468 PEM-encoded string.
+	/// - Parameter source: The text of the PEM key to import.
+	/// - Throws: System.ArgumentNullException: source is null.
+	/// - Returns: The imported Composite ML-DSA key.
+	public class func importFromPem(_ source: System_String /* System.String */) throws -> System_Security_Cryptography_CompositeMLDsa /* System.Security.Cryptography.CompositeMLDsa */ {
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ImportFromPem(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports a Composite ML-DSA public key from an X.509 SubjectPublicKeyInfo structure.
+	/// - Parameter source: The bytes of an X.509 SubjectPublicKeyInfo structure in the ASN.1-DER encoding.
+	/// - Throws: System.ArgumentNullException: source is null.
+	/// - Returns: The imported key.
+	public class func importSubjectPublicKeyInfo(_ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_CompositeMLDsa /* System.Security.Cryptography.CompositeMLDsa */ {
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ImportSubjectPublicKeyInfo(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importSubjectPublicKeyInfo(_ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_CompositeMLDsa /* System.Security.Cryptography.CompositeMLDsa */ {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ImportSubjectPublicKeyInfo_1(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports a Composite ML-DSA private key from a PKCS#8 EncryptedPrivateKeyInfo structure.
+	/// - Parameter password: The password to use when decrypting the key material.
+	/// - Parameter source: The bytes of a PKCS#8 EncryptedPrivateKeyInfo structure in the ASN.1-BER encoding.
+	/// - Throws: System.ArgumentNullException: password or source is null.
+	/// - Returns: The imported key.
+	public class func importEncryptedPkcs8PrivateKey(_ password: System_String /* System.String */, _ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_CompositeMLDsa /* System.Security.Cryptography.CompositeMLDsa */ {
+		let passwordC = password.__handle
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ImportEncryptedPkcs8PrivateKey(passwordC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importEncryptedPkcs8PrivateKey(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_CompositeMLDsa /* System.Security.Cryptography.CompositeMLDsa */ {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ImportEncryptedPkcs8PrivateKey_1(passwordBytesC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports a Composite ML-DSA private key from a PKCS#8 PrivateKeyInfo structure.
+	/// - Parameter source: The bytes of a PKCS#8 PrivateKeyInfo structure in the ASN.1-BER encoding.
+	/// - Throws: System.ArgumentNullException: source is null.
+	/// - Returns: The imported key.
+	public class func importPkcs8PrivateKey(_ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_CompositeMLDsa /* System.Security.Cryptography.CompositeMLDsa */ {
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ImportPkcs8PrivateKey(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importPkcs8PrivateKey(_ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_CompositeMLDsa /* System.Security.Cryptography.CompositeMLDsa */ {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ImportPkcs8PrivateKey_1(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports a Composite ML-DSA public key.
+	/// - Parameter algorithm: The specific Composite ML-DSA algorithm for this key.
+	/// - Parameter source: The bytes of the public key.
+	/// - Throws: System.ArgumentNullException: algorithm or source is null.
+	/// - Returns: The imported key.
+	public class func importCompositeMLDsaPublicKey(_ algorithm: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */, _ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_CompositeMLDsa /* System.Security.Cryptography.CompositeMLDsa */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ImportCompositeMLDsaPublicKey(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importCompositeMLDsaPublicKey(_ algorithm: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_CompositeMLDsa /* System.Security.Cryptography.CompositeMLDsa */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ImportCompositeMLDsaPublicKey_1(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Imports a Composite ML-DSA private key.
+	/// - Parameter algorithm: The specific Composite ML-DSA algorithm for this key.
+	/// - Parameter source: The bytes of the public key.
+	/// - Throws: System.ArgumentNullException: algorithm or source is null.
+	/// - Returns: The imported key.
+	public class func importCompositeMLDsaPrivateKey(_ algorithm: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */, _ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_CompositeMLDsa /* System.Security.Cryptography.CompositeMLDsa */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ImportCompositeMLDsaPrivateKey(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importCompositeMLDsaPrivateKey(_ algorithm: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_CompositeMLDsa /* System.Security.Cryptography.CompositeMLDsa */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ImportCompositeMLDsaPrivateKey_1(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsa(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in a PEM-encoded representation of the PKCS#8 EncryptedPrivateKeyInfo representation of this key, using a char-based password.
+	/// - Parameter password: The password to use when encrypting the key material.
+	/// - Parameter pbeParameters: The password-based encryption (PBE) parameters to use when encrypting the key material.
+	/// - Throws: System.ArgumentNullException: password or pbeParameters is null.
+	/// - Returns: A string containing the PEM-encoded PKCS#8 EncryptedPrivateKeyInfo.
+	public func exportEncryptedPkcs8PrivateKeyPem(_ password: System_String /* System.String */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> System_String /* System.String */ {
+		let passwordC = password.__handle
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ExportEncryptedPkcs8PrivateKeyPem(self.__handle, passwordC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func exportEncryptedPkcs8PrivateKeyPem(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> System_String /* System.String */ {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ExportEncryptedPkcs8PrivateKeyPem_1(self.__handle, passwordBytesC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in the PKCS#8 EncryptedPrivateKeyInfo format with a char-based password.
+	/// - Parameter password: The password to use when encrypting the key material.
+	/// - Parameter pbeParameters: The password-based encryption (PBE) parameters to use when encrypting the key material.
+	/// - Throws: System.ArgumentNullException: password or pbeParameters is null.
+	/// - Returns: A byte array containing the PKCS#8 EncryptedPrivateKeyInfo representation of the this key.
+	public func exportEncryptedPkcs8PrivateKey(_ password: System_String /* System.String */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let passwordC = password.__handle
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ExportEncryptedPkcs8PrivateKey_1(self.__handle, passwordC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func exportEncryptedPkcs8PrivateKey(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ExportEncryptedPkcs8PrivateKey_2(self.__handle, passwordBytesC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in a PEM-encoded representation of the PKCS#8 PrivateKeyInfo format.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while exporting the key.
+	/// - Returns: A string containing the PEM-encoded representation of the PKCS#8 PrivateKeyInfo representation of the public-key portion of this key.
+	public func exportPkcs8PrivateKeyPem() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ExportPkcs8PrivateKeyPem(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the current key in the PKCS#8 PrivateKeyInfo format.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: This instance only represents a public key.-or-The private key is not exportable.-or-An error occurred while exporting the key.
+	/// - Returns: A byte array containing the PKCS#8 PrivateKeyInfo representation of the this key.
+	public func exportPkcs8PrivateKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ExportPkcs8PrivateKey_1(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the public-key portion of the current key in a PEM-encoded representation of the X.509 SubjectPublicKeyInfo format.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while exporting the key.
+	/// - Returns: A string containing the PEM-encoded representation of the X.509 SubjectPublicKeyInfo representation of the public-key portion of this key.
+	public func exportSubjectPublicKeyInfoPem() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ExportSubjectPublicKeyInfoPem(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the public-key portion of the current key in the X.509 SubjectPublicKeyInfo format.
+	/// - Throws: System.ObjectDisposedException: This instance has been disposed.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while exporting the key.
+	/// - Returns: A byte array containing the X.509 SubjectPublicKeyInfo representation of the public-key portion of this key.
+	public func exportSubjectPublicKeyInfo() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ExportSubjectPublicKeyInfo_1(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the public-key portion of the current key.
+	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred while exporting the key.
+	/// - Throws: System.ObjectDisposedException: The object has already been disposed.
+	/// - Returns: The Composite ML-DSA public key.
+	public func exportCompositeMLDsaPublicKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ExportCompositeMLDsaPublicKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Exports the private-key portion of the current key.
+	/// - Throws: System.Security.Cryptography.CryptographicException: The current instance cannot export a private key.-or-An error occurred while exporting the key.
+	/// - Throws: System.ObjectDisposedException: The object has already been disposed.
+	/// - Returns: The Composite ML-DSA private key.
+	public func exportCompositeMLDsaPrivateKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_ExportCompositeMLDsaPrivateKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Releases all resources used by the System.Security.Cryptography.CompositeMLDsa class.
+	public func dispose() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_CompositeMLDsa_Dispose(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Gets a value indicating whether the current platform supports Composite ML-DSA.
+	/// - Returns: true if the current platform supports Composite ML-DSA; otherwise, false.
+	public class var isSupported: Bool /* System.Boolean */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_IsSupported_Get(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets the specific Composite ML-DSA algorithm for this key.
+	public var algorithm: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsa_Algorithm_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_CompositeMLDsa_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_CompositeMLDsa_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+/// Represents a composite ML-DSA algorithm identifier, combining ML-DSA with a traditional algorithm.
+public class System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */: System_Object, System_IEquatable_A1 {
+	public override class var typeName: String { get {
+		"CompositeMLDsaAlgorithm"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.CompositeMLDsaAlgorithm"
+	}}
+
+	/// Compares two System.Security.Cryptography.CompositeMLDsaAlgorithm objects.
+	/// - Parameter other: An object to be compared to the current System.Security.Cryptography.CompositeMLDsaAlgorithm object.
+	/// - Returns: true if the objects are considered equal; otherwise, false.
+	public func equals(_ other: System_Security_Cryptography_CompositeMLDsaAlgorithm? /* System.Security.Cryptography.CompositeMLDsaAlgorithm */) throws -> Bool /* System.Boolean */ {
+		let otherC = other?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_Equals(self.__handle, otherC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Determines whether the specified object is equal to the current object.
+	/// - Parameter obj: The object to compare with the current object.
+	/// - Returns: true if the specified object  is equal to the current object; otherwise, false.
+	public override func equals(_ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let objC = obj?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_Equals_1(self.__handle, objC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Serves as the default hash function.
+	/// - Returns: A hash code for the current object.
+	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_GetHashCode(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Returns a string that represents the current object.
+	/// - Returns: A string that represents the current object.
+	public override func toString() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_ToString(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	/// Gets the name of the algorithm.
+	/// - Returns: A string representing the algorithm name.
+	public var name: System_String /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_Name_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets the maximum signature size in bytes for the composite algorithm.
+	/// - Returns: The maximum signature size in bytes for the composite algorithm.
+	public var maxSignatureSizeInBytes: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_MaxSignatureSizeInBytes_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	/// Gets a Composite ML-DSA algorithm identifier for the ML-DSA-44 and 2048-bit RSASSA-PSS with SHA256 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-44 and 2048-bit RSASSA-PSS with SHA256 algorithm.
+	public class var mLDsa44WithRSA2048Pss: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_MLDsa44WithRSA2048Pss_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a Composite ML-DSA algorithm identifier for the ML-DSA-44 and 2048-bit RSASSA-PKCS1-v1_5 with SHA256 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-44 and 2048-bit RSASSA-PKCS1-v1_5 with SHA256 algorithm.
+	public class var mLDsa44WithRSA2048Pkcs15: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_MLDsa44WithRSA2048Pkcs15_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a Composite ML-DSA algorithm identifier for the ML-DSA-44 and Ed25519 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-44 and Ed25519 algorithm.
+	public class var mLDsa44WithEd25519: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_MLDsa44WithEd25519_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a Composite ML-DSA algorithm identifier for the ML-DSA-44 and ECDSA P-256 with SHA256 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-44 and ECDSA P-256 with SHA256 algorithm.
+	public class var mLDsa44WithECDsaP256: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_MLDsa44WithECDsaP256_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a Composite ML-DSA algorithm identifier for the ML-DSA-65 and 3072-bit RSASSA-PSS with SHA512 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-65 and 3072-bit RSASSA-PSS with SHA512 algorithm.
+	public class var mLDsa65WithRSA3072Pss: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_MLDsa65WithRSA3072Pss_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a Composite ML-DSA algorithm identifier for the ML-DSA-65 and 3072-bit RSASSA-PKCS1-v1_5 with SHA512 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-65 and 3072-bit RSASSA-PKCS1-v1_5 with SHA512 algorithm.
+	public class var mLDsa65WithRSA3072Pkcs15: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_MLDsa65WithRSA3072Pkcs15_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a Composite ML-DSA algorithm identifier for the ML-DSA-65 and 4096-bit RSASSA-PSS with SHA512 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-65 and 4096-bit RSASSA-PSS with SHA512 algorithm.
+	public class var mLDsa65WithRSA4096Pss: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_MLDsa65WithRSA4096Pss_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a Composite ML-DSA algorithm identifier for the ML-DSA-65 and 4096-bit RSASSA-PKCS1-v1_5 with SHA512 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-65 and 4096-bit RSASSA-PKCS1-v1_5 with SHA512 algorithm.
+	public class var mLDsa65WithRSA4096Pkcs15: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_MLDsa65WithRSA4096Pkcs15_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a Composite ML-DSA algorithm identifier for the ML-DSA-65 and ECDSA P-256 with SHA512 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-65 and ECDSA P-256 with SHA512 algorithm.
+	public class var mLDsa65WithECDsaP256: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_MLDsa65WithECDsaP256_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a Composite ML-DSA algorithm identifier for the ML-DSA-65 and ECDSA P-384 with SHA512 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-65 and ECDSA P-384 with SHA512 algorithm.
+	public class var mLDsa65WithECDsaP384: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_MLDsa65WithECDsaP384_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a Composite ML-DSA algorithm identifier for the ML-DSA-65 and ECDSA BrainpoolP256r1 with SHA512 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-65 and ECDSA BrainpoolP256r1 with SHA512 algorithm.
+	public class var mLDsa65WithECDsaBrainpoolP256r1: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_MLDsa65WithECDsaBrainpoolP256r1_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a Composite ML-DSA algorithm identifier for the ML-DSA-65 and Ed25519 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-65 and Ed25519 algorithm.
+	public class var mLDsa65WithEd25519: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_MLDsa65WithEd25519_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a Composite ML-DSA algorithm identifier for the ML-DSA-87 and ECDSA P-384 with SHA512 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-87 and ECDSA P-384 with SHA512 algorithm.
+	public class var mLDsa87WithECDsaP384: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_MLDsa87WithECDsaP384_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a Composite ML-DSA algorithm identifier for the ML-DSA-87 and ECDSA BrainpoolP384r1 with SHA512 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-87 and ECDSA BrainpoolP384r1 with SHA512 algorithm.
+	public class var mLDsa87WithECDsaBrainpoolP384r1: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_MLDsa87WithECDsaBrainpoolP384r1_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a Composite ML-DSA algorithm identifier for the ML-DSA-87 and Ed448 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-87 and Ed448 algorithm.
+	public class var mLDsa87WithEd448: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_MLDsa87WithEd448_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a Composite ML-DSA algorithm identifier for the ML-DSA-87 and 3072-bit RSASSA-PSS with SHA512 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-87 and 3072-bit RSASSA-PSS with SHA512 algorithm.
+	public class var mLDsa87WithRSA3072Pss: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_MLDsa87WithRSA3072Pss_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a Composite ML-DSA algorithm identifier for the ML-DSA-87 and 4096-bit RSASSA-PSS with SHA512 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-87 and 4096-bit RSASSA-PSS with SHA512 algorithm.
+	public class var mLDsa87WithRSA4096Pss: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_MLDsa87WithRSA4096Pss_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Gets a Composite ML-DSA algorithm identifier for the ML-DSA-87 and ECDSA P-521 with SHA512 algorithm.
+	/// - Returns: An ML-DSA algorithm identifier for the ML-DSA-87 and ECDSA P-521 with SHA512 algorithm.
+	public class var mLDsa87WithECDsaP521: System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Security.Cryptography.CompositeMLDsaAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLDsaAlgorithm_MLDsa87WithECDsaP521_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLDsaAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_CompositeMLDsaAlgorithm_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_CompositeMLDsaAlgorithm_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// Supports a simple iteration over a System.Security.Cryptography.X509Certificates.X509Certificate2Collection object. This class cannot be inherited.
+public class System_Security_Cryptography_X509Certificates_X509Certificate2Enumerator /* System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator */: System_Object, System_Collections_IEnumerator, System_Collections_Generic_IEnumerator_A1, System_IDisposable {
+	public override class var typeName: String { get {
+		"X509Certificate2Enumerator"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator"
+	}}
+
+	/// Advances the enumerator to the next element in the System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	/// - Throws: System.InvalidOperationException: The collection was modified after the enumerator was created.
+	/// - Returns: true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection.
+	public func moveNext() throws -> Bool /* System.Boolean */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2Enumerator_MoveNext(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	/// Sets the enumerator to its initial position, which is before the first element in the System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	/// - Throws: System.InvalidOperationException: The collection was modified after the enumerator was created.
+	public func reset() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_X509Certificates_X509Certificate2Enumerator_Reset(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	/// Gets the current element in the System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	/// - Throws: System.InvalidOperationException: The enumerator is positioned before the first element of the collection or after the last element.
+	/// - Returns: The current element in the System.Security.Cryptography.X509Certificates.X509Certificate2Collection object.
+	public var current: System_Security_Cryptography_X509Certificates_X509Certificate2 /* System.Security.Cryptography.X509Certificates.X509Certificate2 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2Enumerator_Current_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate2(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_X509Certificates_X509Certificate2Enumerator_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_X509Certificates_X509Certificate2Enumerator_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
 public class Beyond_NET_Sample_SubclassingTests_MyBaseClass /* Beyond.NET.Sample.SubclassingTests.MyBaseClass */: System_Object {
 	public override class var typeName: String { get {
 		"MyBaseClass"
@@ -142659,4864 +160317,6 @@ public class System_Security_Cryptography_SymmetricAlgorithm /* System.Security.
 	
 	internal override func destroy() {
 		System_Security_Cryptography_SymmetricAlgorithm_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/// Determines the set of valid key sizes for the symmetric cryptographic algorithms.
-public class System_Security_Cryptography_KeySizes /* System.Security.Cryptography.KeySizes */: System_Object {
-	public override class var typeName: String { get {
-		"KeySizes"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Security.Cryptography.KeySizes"
-	}}
-
-	/// Initializes a new instance of the System.Security.Cryptography.KeySizes class with the specified key values.
-	/// - Parameter minSize: The minimum valid key size.
-	/// - Parameter maxSize: The maximum valid key size.
-	/// - Parameter skipSize: The interval between valid key sizes.
-	public convenience init(_ minSize: Int32 /* System.Int32 */, _ maxSize: Int32 /* System.Int32 */, _ skipSize: Int32 /* System.Int32 */) throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_KeySizes_Create(minSize, maxSize, skipSize, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	/// Specifies the minimum key size.
-	/// - Returns: The minimum key size.
-	public var minSize: Int32 /* System.Int32 */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_KeySizes_MinSize_Get(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}}
-	
-	
-	/// Specifies the maximum key size.
-	/// - Returns: The maximum key size.
-	public var maxSize: Int32 /* System.Int32 */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_KeySizes_MaxSize_Get(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}}
-	
-	
-	/// Specifies the interval between valid key sizes.
-	/// - Returns: The interval between valid key sizes.
-	public var skipSize: Int32 /* System.Int32 */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_KeySizes_SkipSize_Get(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}}
-	
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Security_Cryptography_KeySizes_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Security_Cryptography_KeySizes_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/// Represents the abstract base class from which all implementations of the Digital Signature Algorithm (System.Security.Cryptography.DSA) must inherit.
-public class System_Security_Cryptography_DSA /* System.Security.Cryptography.DSA */: System_Security_Cryptography_AsymmetricAlgorithm {
-	public override class var typeName: String { get {
-		"DSA"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Security.Cryptography.DSA"
-	}}
-
-	/// When overridden in a derived class, exports the System.Security.Cryptography.DSAParameters.
-	/// - Parameter includePrivateParameters: true to include private parameters; otherwise, false.
-	/// - Returns: The parameters for System.Security.Cryptography.DSA.
-	public func exportParameters(_ includePrivateParameters: Bool /* System.Boolean */) throws -> System_Security_Cryptography_DSAParameters /* System.Security.Cryptography.DSAParameters */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_ExportParameters(self.__handle, includePrivateParameters, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_DSAParameters(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// When overridden in a derived class, imports the specified System.Security.Cryptography.DSAParameters.
-	/// - Parameter parameters: The parameters for System.Security.Cryptography.DSA.
-	/// - Throws: System.ArgumentException: parameters is missing required fields. -or- parameters has fields with inconsistent lengths for a valid key.
-	/// - Throws: System.Security.Cryptography.CryptographicException: parameters does not represent a valid DSA key parameter set.
-	public func importParameters(_ parameters: System_Security_Cryptography_DSAParameters /* System.Security.Cryptography.DSAParameters */) throws {
-		let parametersC = parameters.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_DSA_ImportParameters(self.__handle, parametersC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	/// Creates the specified cryptographic object used to perform the asymmetric algorithm.
-	/// - Parameter algName: The name of the specific implementation of System.Security.Cryptography.DSA to use.
-	/// - Returns: A cryptographic object used to perform the asymmetric algorithm.
-	public override class func create(_ algName: System_String /* System.String */) throws -> System_Security_Cryptography_DSA? /* System.Security.Cryptography.DSA */ {
-		let algNameC = algName.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_Create(algNameC, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_DSA(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Creates the default cryptographic object used to perform the asymmetric algorithm.
-	/// - Returns: A cryptographic object used to perform the asymmetric algorithm.
-	public override class func create() throws -> System_Security_Cryptography_DSA /* System.Security.Cryptography.DSA */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_Create_1(&__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_DSA(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Creates a new ephemeral DSA key with the specified key size.
-	/// - Parameter keySizeInBits: The key size, in bits.
-	/// - Throws: System.Security.Cryptography.CryptographicException: keySizeInBits is not permitted by System.Security.Cryptography.AsymmetricAlgorithm.LegalKeySizes.
-	/// - Returns: A new ephemeral DSA key with the specified key size.
-	public class func create(_ keySizeInBits: Int32 /* System.Int32 */) throws -> System_Security_Cryptography_DSA /* System.Security.Cryptography.DSA */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_Create_2(keySizeInBits, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_DSA(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Creates a new ephemeral DSA key with the specified DSA key parameters.
-	/// - Parameter parameters: The parameters for the System.Security.Cryptography.DSA algorithm.
-	/// - Returns: A new ephemeral DSA key.
-	public class func create(_ parameters: System_Security_Cryptography_DSAParameters /* System.Security.Cryptography.DSAParameters */) throws -> System_Security_Cryptography_DSA /* System.Security.Cryptography.DSA */ {
-		let parametersC = parameters.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_Create_3(parametersC, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_DSA(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// When overridden in a derived class, creates the System.Security.Cryptography.DSA signature for the specified hash value.
-	/// - Parameter rgbHash: The hash value to be signed.
-	/// - Returns: The digital signature for the specified hash value.
-	public func createSignature(_ rgbHash: DNArray<System_Byte> /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let rgbHashC = rgbHash.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_CreateSignature(self.__handle, rgbHashC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// When overridden in a derived class, verifies the System.Security.Cryptography.DSA signature for the specified data.
-	/// - Parameter rgbHash: The hash of the data signed with rgbSignature.
-	/// - Parameter rgbSignature: The signature to be verified for rgbData.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The implementation type only supports legacy DSA (FIPS 186-2), and the hash value is not 20 bytes long. -or- Verifying the signature otherwise failed.
-	/// - Returns: true if rgbSignature matches the signature computed using the specified hash algorithm and key on rgbHash; otherwise, false.
-	public func verifySignature(_ rgbHash: DNArray<System_Byte> /* System.Byte[] */, _ rgbSignature: DNArray<System_Byte> /* System.Byte[] */) throws -> Bool /* System.Boolean */ {
-		let rgbHashC = rgbHash.__handle
-		let rgbSignatureC = rgbSignature.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_VerifySignature(self.__handle, rgbHashC, rgbSignatureC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Computes the hash value of the specified byte array using the specified hash algorithm and signs the resulting hash value.
-	/// - Parameter data: The input data for which to compute the hash.
-	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
-	/// - Throws: System.ArgumentNullException: data is null.
-	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
-	/// - Returns: The DSA signature for the specified data.
-	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let dataC = data.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_SignData(self.__handle, dataC, hashAlgorithmC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Computes the hash value of the specified data and signs it using the specified signature format.
-	/// - Parameter data: The data to sign.
-	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
-	/// - Parameter signatureFormat: The encoding format to use for the signature.
-	/// - Throws: System.ArgumentNullException: data is null.
-	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
-	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
-	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or signing operation.
-	/// - Returns: The DSA signature for the specified data.
-	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let dataC = data.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_SignData_1(self.__handle, dataC, hashAlgorithmC, signatureFormatC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Computes the hash value of a portion of the specified byte array using the specified hash algorithm and signs the resulting hash value.
-	/// - Parameter data: The input data for which to compute the hash.
-	/// - Parameter offset: The offset into the array at which to begin using data.
-	/// - Parameter count: The number of bytes in the array to use as data.
-	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
-	/// - Throws: System.ArgumentNullException: data is null.
-	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
-	/// - Throws: System.ArgumentOutOfRangeException: offset is less than zero.       -or-       count is less than zero.       -or-       offset + count - 1 results in an index that is beyond the upper bound of data.
-	/// - Returns: The DSA signature for the specified data.
-	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let dataC = data.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_SignData_2(self.__handle, dataC, offset, count, hashAlgorithmC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Computes the hash value of the specified data and signs it using the specified signature format.
-	/// - Parameter data: The data to sign.
-	/// - Parameter offset: The offset into data at which to begin hashing.
-	/// - Parameter count: The number of bytes to read from data.
-	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
-	/// - Parameter signatureFormat: The encoding format to use for the signature.
-	/// - Throws: System.ArgumentNullException: data is null.
-	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.             -or-            offset is less than zero.             -or-            count is less than zero.             -or-            offset + count - 1 results in an index that is beyond the upper bound of data.
-	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
-	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or signing operation.
-	/// - Returns: The DSA signature for the specified data.
-	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let dataC = data.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_SignData_3(self.__handle, dataC, offset, count, hashAlgorithmC, signatureFormatC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Computes the hash value of the specified stream using the specified hash algorithm and signs the resulting hash value.
-	/// - Parameter data: The input stream for which to compute the hash.
-	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
-	/// - Throws: System.ArgumentNullException: data is null.
-	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
-	/// - Returns: The DSA signature for the specified data.
-	public func signData(_ data: System_IO_Stream /* System.IO.Stream */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let dataC = data.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_SignData_4(self.__handle, dataC, hashAlgorithmC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Computes the hash value of the specified data and signs it using the specified signature format.
-	/// - Parameter data: The data to sign.
-	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
-	/// - Parameter signatureFormat: The encoding format to use for the signature.
-	/// - Throws: System.ArgumentNullException: data is null.
-	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
-	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
-	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or signing operation.
-	/// - Returns: The DSA signature for the specified data.
-	public func signData(_ data: System_IO_Stream /* System.IO.Stream */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let dataC = data.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_SignData_5(self.__handle, dataC, hashAlgorithmC, signatureFormatC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Verifies that a digital signature is valid by calculating the hash value of the specified data using the specified hash algorithm and comparing it to the provided signature.
-	/// - Parameter data: The signed data.
-	/// - Parameter signature: The signature data to be verified.
-	/// - Parameter hashAlgorithm: The hash algorithm used to create the hash value of the data.
-	/// - Throws: System.ArgumentNullException: data is null.       -or-       signature is null.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The implementation type only supports legacy DSA (FIPS 186-2), and the hash algorithm is not SHA-1. -or- Verifying the signature otherwise failed.
-	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
-	/// - Returns: true if the digital signature is valid; otherwise, false.
-	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
-		let dataC = data.__handle
-		let signatureC = signature.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_VerifyData(self.__handle, dataC, signatureC, hashAlgorithmC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Verifies that a digital signature is valid by calculating the hash value of the data in a portion of a byte array using the specified hash algorithm and comparing it to the provided signature.
-	/// - Parameter data: The signed data.
-	/// - Parameter offset: The starting index at which to compute the hash.
-	/// - Parameter count: The number of bytes to hash.
-	/// - Parameter signature: The signature data to be verified.
-	/// - Parameter hashAlgorithm: The hash algorithm used to create the hash value of the data.
-	/// - Throws: System.ArgumentNullException: data is null.       -or-       signature is null.
-	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
-	/// - Throws: System.ArgumentOutOfRangeException: offset is less than zero.       -or-       count is less than zero.       -or-       offset + count - 1 results in an index that is beyond the upper bound of data.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The implementation type only supports legacy DSA (FIPS 186-2), and the hash algorithm is not SHA-1. -or- Verifying the signature otherwise failed.
-	/// - Returns: true if the digital signature is valid; otherwise, false.
-	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
-		let dataC = data.__handle
-		let signatureC = signature.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_VerifyData_1(self.__handle, dataC, offset, count, signatureC, hashAlgorithmC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Verifies that a digital signature is valid for the provided data.
-	/// - Parameter data: An array that contains the signed data.
-	/// - Parameter offset: The starting index of the signed portion of data.
-	/// - Parameter count: The number of bytes in data that were signed.
-	/// - Parameter signature: The signature to verify.
-	/// - Parameter hashAlgorithm: The hash algorithm used to hash the data for the verification process.
-	/// - Parameter signatureFormat: The encoding format for signature.
-	/// - Throws: System.ArgumentNullException: data or signature is null.
-	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.    -or-   offset is less than zero.    -or-   count is less than zero.    -or-   offset + count - 1 results in an index that is beyond the upper bound of data.
-	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
-	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or verification operation.
-	/// - Returns: true if the digital signature is valid for the provided data; otherwise, false.
-	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
-		let dataC = data.__handle
-		let signatureC = signature.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_VerifyData_2(self.__handle, dataC, offset, count, signatureC, hashAlgorithmC, signatureFormatC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Verifies that a digital signature is valid by calculating the hash value of the specified stream using the specified hash algorithm and comparing it to the provided signature.
-	/// - Parameter data: The signed data.
-	/// - Parameter signature: The signature data to be verified.
-	/// - Parameter hashAlgorithm: The hash algorithm used to create the hash value of the data.
-	/// - Throws: System.ArgumentNullException: data is null.       -or-       signature is null.
-	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The implementation type only supports legacy DSA (FIPS 186-2), and the hash algorithm is not SHA-1. -or- Verifying the signature otherwise failed.
-	/// - Returns: true if the digital signature is valid; otherwise, false.
-	public func verifyData(_ data: System_IO_Stream /* System.IO.Stream */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
-		let dataC = data.__handle
-		let signatureC = signature.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_VerifyData_3(self.__handle, dataC, signatureC, hashAlgorithmC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Creates the DSA signature for the specified hash value in the indicated format.
-	/// - Parameter rgbHash: The hash value to sign.
-	/// - Parameter signatureFormat: The encoding format to use for the signature.
-	/// - Throws: System.ArgumentNullException: rgbHash is null.
-	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
-	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the signing operation.
-	/// - Returns: The DSA signature for the specified data.
-	public func createSignature(_ rgbHash: DNArray<System_Byte> /* System.Byte[] */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let rgbHashC = rgbHash.__handle
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_CreateSignature_1(self.__handle, rgbHashC, signatureFormatC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public func verifyData(_ data: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
-		let dataC = data.readOnlySpanOfByte()
-		let signatureC = signature.readOnlySpanOfByte()
-		let hashAlgorithmC = hashAlgorithm.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_VerifyData_4(self.__handle, dataC, signatureC, hashAlgorithmC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Verifies that a digital signature is valid for the provided data.
-	/// - Parameter data: The signed data.
-	/// - Parameter signature: The signature to verify.
-	/// - Parameter hashAlgorithm: The hash algorithm used to hash the data for the verification process.
-	/// - Parameter signatureFormat: The encoding format for signature.
-	/// - Throws: System.ArgumentNullException: data or signature is null.
-	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
-	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
-	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or verification operation.
-	/// - Returns: true if the digital signature is valid for the provided data; otherwise, false.
-	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
-		let dataC = data.__handle
-		let signatureC = signature.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_VerifyData_5(self.__handle, dataC, signatureC, hashAlgorithmC, signatureFormatC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Verifies that a digital signature is valid for the provided data.
-	/// - Parameter data: The signed data.
-	/// - Parameter signature: The signature to verify.
-	/// - Parameter hashAlgorithm: The hash algorithm used to hash the data for the verification process.
-	/// - Parameter signatureFormat: The encoding format for signature.
-	/// - Throws: System.ArgumentNullException: data or signature is null.
-	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
-	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
-	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or verification operation.
-	/// - Returns: true if the digital signature is valid for the provided data; otherwise, false.
-	public func verifyData(_ data: System_IO_Stream /* System.IO.Stream */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
-		let dataC = data.__handle
-		let signatureC = signature.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_VerifyData_6(self.__handle, dataC, signatureC, hashAlgorithmC, signatureFormatC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func verifyData(_ data: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
-		let dataC = data.readOnlySpanOfByte()
-		let signatureC = signature.readOnlySpanOfByte()
-		let hashAlgorithmC = hashAlgorithm.__handle
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_VerifyData_7(self.__handle, dataC, signatureC, hashAlgorithmC, signatureFormatC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Verifies that a digital signature is valid for the provided hash.
-	/// - Parameter rgbHash: The signed hash.
-	/// - Parameter rgbSignature: The signature to verify.
-	/// - Parameter signatureFormat: The encoding format for rgbSignature.
-	/// - Throws: System.ArgumentNullException: rgbHash or rgbSignature is null.
-	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
-	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the verification operation.
-	/// - Returns: true if the digital signature is valid for the provided data; otherwise, false.
-	public func verifySignature(_ rgbHash: DNArray<System_Byte> /* System.Byte[] */, _ rgbSignature: DNArray<System_Byte> /* System.Byte[] */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
-		let rgbHashC = rgbHash.__handle
-		let rgbSignatureC = rgbSignature.__handle
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_VerifySignature_1(self.__handle, rgbHashC, rgbSignatureC, signatureFormatC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func verifySignature(_ hash: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> Bool /* System.Boolean */ {
-		let hashC = hash.readOnlySpanOfByte()
-		let signatureC = signature.readOnlySpanOfByte()
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_VerifySignature_2(self.__handle, hashC, signatureC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func verifySignature(_ hash: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
-		let hashC = hash.readOnlySpanOfByte()
-		let signatureC = signature.readOnlySpanOfByte()
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_VerifySignature_3(self.__handle, hashC, signatureC, signatureFormatC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public override func importEncryptedPkcs8PrivateKey(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
-		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
-		let sourceC = source.readOnlySpanOfByte()
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_DSA_ImportEncryptedPkcs8PrivateKey(self.__handle, passwordBytesC, sourceC, &bytesRead, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	public override func importPkcs8PrivateKey(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
-		let sourceC = source.readOnlySpanOfByte()
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_DSA_ImportPkcs8PrivateKey(self.__handle, sourceC, &bytesRead, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	public override func importSubjectPublicKeyInfo(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
-		let sourceC = source.readOnlySpanOfByte()
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_DSA_ImportSubjectPublicKeyInfo(self.__handle, sourceC, &bytesRead, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	/// Gets the largest size, in bytes, for a signature produced by this key in the indicated format.
-	/// - Parameter signatureFormat: The encoding format for a signature.
-	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
-	/// - Returns: The largest size, in bytes, for a signature produced by this key in the indicated format.
-	public func getMaxSignatureSize(_ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Int32 /* System.Int32 */ {
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_GetMaxSignatureSize(self.__handle, signatureFormatC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Reconstructs a System.Security.Cryptography.DSA object from an XML string.
-	/// - Parameter xmlString: The XML string to use to reconstruct the System.Security.Cryptography.DSA object.
-	/// - Throws: System.ArgumentNullException: The xmlString parameter is null.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The format of the xmlString parameter is not valid.
-	public override func fromXmlString(_ xmlString: System_String /* System.String */) throws {
-		let xmlStringC = xmlString.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_DSA_FromXmlString(self.__handle, xmlStringC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	/// Creates and returns an XML string representation of the current System.Security.Cryptography.DSA object.
-	/// - Parameter includePrivateParameters: true to include private parameters; otherwise, false.
-	/// - Returns: An XML string encoding of the current System.Security.Cryptography.DSA object.
-	public override func toXmlString(_ includePrivateParameters: Bool /* System.Boolean */) throws -> System_String /* System.String */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSA_ToXmlString(self.__handle, includePrivateParameters, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Security_Cryptography_DSA_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Security_Cryptography_DSA_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-/// Represents the abstract base class from which all implementations of asymmetric algorithms must inherit.
-public class System_Security_Cryptography_AsymmetricAlgorithm /* System.Security.Cryptography.AsymmetricAlgorithm */: System_Object, System_IDisposable {
-	public override class var typeName: String { get {
-		"AsymmetricAlgorithm"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Security.Cryptography.AsymmetricAlgorithm"
-	}}
-
-	/// Creates a default cryptographic object used to perform the asymmetric algorithm.
-	/// - Throws: System.PlatformNotSupportedException: .NET Core 2.0 - 3.1 and .NET 5 and later: In all cases.
-	/// - Returns: A new System.Security.Cryptography.RSACryptoServiceProvider instance, unless the default settings have been changed with the <cryptoClass> element.
-	public class func create() throws -> System_Security_Cryptography_AsymmetricAlgorithm /* System.Security.Cryptography.AsymmetricAlgorithm */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_Create(&__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_AsymmetricAlgorithm(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Creates an instance of the specified implementation of an asymmetric algorithm.
-	/// - Parameter algName: The asymmetric algorithm implementation to use. The following table shows the valid values for the algName parameter and the algorithms they map to.   Parameter value Implements System.Security.Cryptography.AsymmetricAlgorithmSystem.Security.Cryptography.AsymmetricAlgorithm RSASystem.Security.Cryptography.RSA System.Security.Cryptography.RSASystem.Security.Cryptography.RSA DSASystem.Security.Cryptography.DSA System.Security.Cryptography.DSASystem.Security.Cryptography.DSA ECDsaSystem.Security.Cryptography.ECDsa ECDsaCngSystem.Security.Cryptography.ECDsaCng System.Security.Cryptography.ECDsaCngSystem.Security.Cryptography.ECDsaCng ECDHSystem.Security.Cryptography.ECDiffieHellman ECDiffieHellmanSystem.Security.Cryptography.ECDiffieHellman ECDiffieHellmanCngSystem.Security.Cryptography.ECDiffieHellmanCng System.Security.Cryptography.ECDiffieHellmanCngSystem.Security.Cryptography.ECDiffieHellmanCng
-	/// - Returns: A new instance of the specified asymmetric algorithm implementation.
-	public class func create(_ algName: System_String /* System.String */) throws -> System_Security_Cryptography_AsymmetricAlgorithm? /* System.Security.Cryptography.AsymmetricAlgorithm */ {
-		let algNameC = algName.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_Create_1(algNameC, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_AsymmetricAlgorithm(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// When overridden in a derived class, reconstructs an System.Security.Cryptography.AsymmetricAlgorithm object from an XML string. Otherwise, throws a System.NotImplementedException.
-	/// - Parameter xmlString: The XML string to use to reconstruct the System.Security.Cryptography.AsymmetricAlgorithm object.
-	public func fromXmlString(_ xmlString: System_String /* System.String */) throws {
-		let xmlStringC = xmlString.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_AsymmetricAlgorithm_FromXmlString(self.__handle, xmlStringC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	/// When overridden in a derived class, creates and returns an XML string representation of the current System.Security.Cryptography.AsymmetricAlgorithm object. Otherwise, throws a System.NotImplementedException.
-	/// - Parameter includePrivateParameters: true to include private parameters; otherwise, false.
-	/// - Returns: An XML string encoding of the current System.Security.Cryptography.AsymmetricAlgorithm object.
-	public func toXmlString(_ includePrivateParameters: Bool /* System.Boolean */) throws -> System_String /* System.String */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_ToXmlString(self.__handle, includePrivateParameters, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Releases all resources used by the System.Security.Cryptography.AsymmetricAlgorithm class.
-	public func clear() throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_AsymmetricAlgorithm_Clear(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	/// Releases all resources used by the current instance of the System.Security.Cryptography.AsymmetricAlgorithm class.
-	public func dispose() throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_AsymmetricAlgorithm_Dispose(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	public func importEncryptedPkcs8PrivateKey(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
-		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
-		let sourceC = source.readOnlySpanOfByte()
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_AsymmetricAlgorithm_ImportEncryptedPkcs8PrivateKey(self.__handle, passwordBytesC, sourceC, &bytesRead, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	public func importPkcs8PrivateKey(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
-		let sourceC = source.readOnlySpanOfByte()
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_AsymmetricAlgorithm_ImportPkcs8PrivateKey(self.__handle, sourceC, &bytesRead, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	public func importSubjectPublicKeyInfo(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
-		let sourceC = source.readOnlySpanOfByte()
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_AsymmetricAlgorithm_ImportSubjectPublicKeyInfo(self.__handle, sourceC, &bytesRead, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	public func exportEncryptedPkcs8PrivateKey(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
-		let pbeParametersC = pbeParameters.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_ExportEncryptedPkcs8PrivateKey(self.__handle, passwordBytesC, pbeParametersC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Exports the current key in the PKCS#8 PrivateKeyInfo format.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The key could not be exported.
-	/// - Returns: A byte array containing the PKCS#8 PrivateKeyInfo representation of this key.
-	public func exportPkcs8PrivateKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_ExportPkcs8PrivateKey(self.__handle, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Exports the public-key portion of the current key in the X.509 SubjectPublicKeyInfo format.
-	/// - Returns: A byte array containing the X.509 SubjectPublicKeyInfo representation of the public-key portion of this key.
-	public func exportSubjectPublicKeyInfo() throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_ExportSubjectPublicKeyInfo(self.__handle, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Exports the current key in the PKCS#8 PrivateKeyInfo format, PEM encoded.
-	/// - Throws: System.NotImplementedException: An implementation for System.Security.Cryptography.AsymmetricAlgorithm.ExportPkcs8PrivateKey or             System.Security.Cryptography.AsymmetricAlgorithm.TryExportPkcs8PrivateKey(System.Span{System.Byte},System.Int32@) has not been provided.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The key could not be exported.
-	/// - Returns: A string containing the PEM-encoded PKCS#8 PrivateKeyInfo.
-	public func exportPkcs8PrivateKeyPem() throws -> System_String /* System.String */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_ExportPkcs8PrivateKeyPem(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public func exportEncryptedPkcs8PrivateKeyPem(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> System_String /* System.String */ {
-		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
-		let pbeParametersC = pbeParameters.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_ExportEncryptedPkcs8PrivateKeyPem(self.__handle, passwordBytesC, pbeParametersC, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Exports the public-key portion of the current key in the X.509 SubjectPublicKeyInfo format, PEM encoded.
-	/// - Throws: System.NotImplementedException: An implementation for System.Security.Cryptography.AsymmetricAlgorithm.ExportSubjectPublicKeyInfo or             System.Security.Cryptography.AsymmetricAlgorithm.TryExportSubjectPublicKeyInfo(System.Span{System.Byte},System.Int32@) has not been provided.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The key could not be exported.
-	/// - Returns: A string containing the PEM-encoded X.509 SubjectPublicKeyInfo.
-	public func exportSubjectPublicKeyInfoPem() throws -> System_String /* System.String */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_ExportSubjectPublicKeyInfoPem(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Gets or sets the size, in bits, of the key modulus used by the asymmetric algorithm.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The key modulus size is invalid.
-	/// - Returns: The size, in bits, of the key modulus used by the asymmetric algorithm.
-	public var keySize: Int32 /* System.Int32 */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_KeySize_Get(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}}
-	/// Gets or sets the size, in bits, of the key modulus used by the asymmetric algorithm.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The key modulus size is invalid.
-	/// - Returns: The size, in bits, of the key modulus used by the asymmetric algorithm.
-	public func keySize_set(_ value: Int32 /* System.Int32 */) throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_AsymmetricAlgorithm_KeySize_Set(self.__handle, value, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	
-	/// Gets the key sizes that are supported by the asymmetric algorithm.
-	/// - Returns: An array that contains the key sizes supported by the asymmetric algorithm.
-	public var legalKeySizes: DNArray<System_Security_Cryptography_KeySizes> /* System.Security.Cryptography.KeySizes[] */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_LegalKeySizes_Get(self.__handle, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Security_Cryptography_KeySizes>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	/// When implemented in a derived class, gets the name of the signature algorithm. Otherwise, always throws a System.NotImplementedException.
-	/// - Returns: The name of the signature algorithm.
-	public var signatureAlgorithm: System_String? /* System.String */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_SignatureAlgorithm_Get(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	/// When overridden in a derived class, gets the name of the key exchange algorithm. Otherwise, throws an System.NotImplementedException.
-	/// - Returns: The name of the key exchange algorithm.
-	public var keyExchangeAlgorithm: System_String? /* System.String */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_AsymmetricAlgorithm_KeyExchangeAlgorithm_Get(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Security_Cryptography_AsymmetricAlgorithm_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Security_Cryptography_AsymmetricAlgorithm_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-/// Represents parameters to be used for Password-Based Encryption (PBE).
-public class System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */: System_Object {
-	public override class var typeName: String { get {
-		"PbeParameters"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Security.Cryptography.PbeParameters"
-	}}
-
-	/// Initializes a new instance of the System.Security.Cryptography.PbeParameters class.
-	/// - Parameter encryptionAlgorithm: The algorithm to use when encrypting data.
-	/// - Parameter hashAlgorithm: The name of a hash algorithm to use with the Key Derivation Function (KDF) to turn a password into an encryption key.
-	/// - Parameter iterationCount: The iteration count to provide to the Key Derivation Function (KDF) to turn a password into an encryption key.
-	/// - Throws: System.ArgumentOutOfRangeException: iterationCount is less than 1.
-	public convenience init(_ encryptionAlgorithm: System_Security_Cryptography_PbeEncryptionAlgorithm /* System.Security.Cryptography.PbeEncryptionAlgorithm */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ iterationCount: Int32 /* System.Int32 */) throws {
-		let encryptionAlgorithmC = encryptionAlgorithm.cValue
-		let hashAlgorithmC = hashAlgorithm.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_PbeParameters_Create(encryptionAlgorithmC, hashAlgorithmC, iterationCount, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	/// Gets the algorithm to use when encrypting data.
-	/// - Returns: The algorithm to use when encrypting data.
-	public var encryptionAlgorithm: System_Security_Cryptography_PbeEncryptionAlgorithm /* System.Security.Cryptography.PbeEncryptionAlgorithm */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_PbeParameters_EncryptionAlgorithm_Get(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_PbeEncryptionAlgorithm(cValue: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	/// Gets the name of the hash algorithm to use with the Key Derivation Function (KDF) to turn a password into an encryption key.
-	/// - Returns: The name of the hash algorithm to use with the Key Derivation Function (KDF) to turn a password into an encryption key.
-	public var hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_PbeParameters_HashAlgorithm_Get(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	/// Gets the iteration count to provide to the Key Derivation Function (KDF) to turn a password into an encryption key.
-	/// - Returns: The iteration count to provide to the Key Derivation Function (KDF) to turn a password into an encryption key.
-	public var iterationCount: Int32 /* System.Int32 */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_PbeParameters_IterationCount_Get(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}}
-	
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Security_Cryptography_PbeParameters_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Security_Cryptography_PbeParameters_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-/// Specifies the name of a cryptographic hash algorithm.
-public class System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */: System_ValueType, System_IEquatable_A1 {
-	public override class var typeName: String { get {
-		"HashAlgorithmName"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Security.Cryptography.HashAlgorithmName"
-	}}
-
-	/// Returns the string representation of the current System.Security.Cryptography.HashAlgorithmName instance.
-	/// - Returns: The string representation of the current System.Security.Cryptography.HashAlgorithmName instance.
-	public override func toString() throws -> System_String /* System.String */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_ToString(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Returns a value that indicates whether the current instance and a specified object are equal.
-	/// - Parameter obj: The object to compare with the current instance.
-	/// - Returns: true if obj is a System.Security.Cryptography.HashAlgorithmName object and its System.Security.Cryptography.HashAlgorithmName.Name property is equal to that of the current instance. The comparison is ordinal and case-sensitive.
-	public override func equals(_ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
-		let objC = obj?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_Equals(self.__handle, objC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Returns a value that indicates whether two System.Security.Cryptography.HashAlgorithmName instances are equal.
-	/// - Parameter other: The object to compare with the current instance.
-	/// - Returns: true if the System.Security.Cryptography.HashAlgorithmName.Name property of other is equal to that of the current instance. The comparison is ordinal and case-sensitive.
-	public func equals(_ other: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
-		let otherC = other.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_Equals_1(self.__handle, otherC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Returns the hash code for the current instance.
-	/// - Returns: The hash code for the current instance, or 0 if no name value was supplied to the System.Security.Cryptography.HashAlgorithmName constructor.
-	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_GetHashCode(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Tries to convert the specified OID to a hash algorithm name.
-	/// - Parameter oidValue: The OID of the hash algorithm.
-	/// - Parameter value: When this method returns true, the hash algorithm. When this method returns false, contains default.
-	/// - Throws: System.ArgumentNullException: oidValue is null.
-	/// - Returns: true if the OID was successfully mapped to a hash algorithm; otherwise false.
-	public class func tryFromOid(_ oidValue: System_String /* System.String */, _ value: inout System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
-		let oidValueC = oidValue.__handle
-		var valueC = value.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_TryFromOid(oidValueC, &valueC, &__exceptionC)
-		
-		value = System_Security_Cryptography_HashAlgorithmName(handle: valueC)
-		
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Converts the specified OID to a hash algorithm name.
-	/// - Parameter oidValue: The OID of the hash algorithm.
-	/// - Throws: System.ArgumentNullException: oidValue is null.
-	/// - Throws: System.Security.Cryptography.CryptographicException: oidValue does not represent a known hash algorithm.
-	/// - Returns: The hash algorithm name identified by the OID.
-	public class func fromOid(_ oidValue: System_String /* System.String */) throws -> System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ {
-		let oidValueC = oidValue.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_FromOid(oidValueC, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Initializes a new instance of the System.Security.Cryptography.HashAlgorithmName structure with a custom name.
-	/// - Parameter name: The custom hash algorithm name.
-	public convenience init(_ name: System_String? /* System.String */) throws {
-		let nameC = name?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_Create(nameC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	/// Gets a hash algorithm name that represents "MD5".
-	/// - Returns: A hash algorithm name that represents "MD5".
-	public class var mD5: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_MD5_Get(&__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	/// Gets a hash algorithm name that represents "SHA1".
-	/// - Returns: A hash algorithm name that represents "SHA1".
-	public class var sHA1: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_SHA1_Get(&__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	/// Gets a hash algorithm name that represents "SHA256".
-	/// - Returns: A hash algorithm name that represents "SHA256".
-	public class var sHA256: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_SHA256_Get(&__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	/// Gets a hash algorithm name that represents "SHA384".
-	/// - Returns: A hash algorithm name that represents "SHA384".
-	public class var sHA384: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_SHA384_Get(&__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	/// Gets a hash algorithm name that represents "SHA512".
-	/// - Returns: A hash algorithm name that represents "SHA512".
-	public class var sHA512: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_SHA512_Get(&__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	/// Gets a System.Security.Cryptography.HashAlgorithmName representing "SHA3-256"
-	public class var sHA3_256: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_SHA3_256_Get(&__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	/// Gets a System.Security.Cryptography.HashAlgorithmName representing "SHA3-384"
-	public class var sHA3_384: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_SHA3_384_Get(&__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	/// Gets a System.Security.Cryptography.HashAlgorithmName representing "SHA3-512"
-	public class var sHA3_512: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_SHA3_512_Get(&__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	/// Gets the underlying string representation of the algorithm name.
-	/// - Returns: The string representation of the algorithm name, or default if no hash algorithm is available.
-	public var name: System_String? /* System.String */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_Name_Get(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	/// Initializes a new instance of the System.Security.Cryptography.HashAlgorithmName struct.
-	public convenience init() throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_HashAlgorithmName_Create_1(&__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Security_Cryptography_HashAlgorithmName_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Security_Cryptography_HashAlgorithmName_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-
-
-
-
-
-
-
-/// Contains the typical parameters for the System.Security.Cryptography.DSA algorithm.
-public class System_Security_Cryptography_DSAParameters /* System.Security.Cryptography.DSAParameters */: System_ValueType {
-	public override class var typeName: String { get {
-		"DSAParameters"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Security.Cryptography.DSAParameters"
-	}}
-
-	/// Specifies the P parameter for the System.Security.Cryptography.DSA algorithm.
-	public var p: DNArray<System_Byte>? /* System.Byte[] */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_DSAParameters_P_Get(self.__handle)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// Specifies the P parameter for the System.Security.Cryptography.DSA algorithm.
-	public func p_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
-		let valueC = value?.__handle
-		
-		
-		System_Security_Cryptography_DSAParameters_P_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// Specifies the Q parameter for the System.Security.Cryptography.DSA algorithm.
-	public var q: DNArray<System_Byte>? /* System.Byte[] */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_DSAParameters_Q_Get(self.__handle)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// Specifies the Q parameter for the System.Security.Cryptography.DSA algorithm.
-	public func q_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
-		let valueC = value?.__handle
-		
-		
-		System_Security_Cryptography_DSAParameters_Q_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// Specifies the G parameter for the System.Security.Cryptography.DSA algorithm.
-	public var g: DNArray<System_Byte>? /* System.Byte[] */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_DSAParameters_G_Get(self.__handle)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// Specifies the G parameter for the System.Security.Cryptography.DSA algorithm.
-	public func g_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
-		let valueC = value?.__handle
-		
-		
-		System_Security_Cryptography_DSAParameters_G_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// Specifies the Y parameter for the System.Security.Cryptography.DSA algorithm.
-	public var y: DNArray<System_Byte>? /* System.Byte[] */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_DSAParameters_Y_Get(self.__handle)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// Specifies the Y parameter for the System.Security.Cryptography.DSA algorithm.
-	public func y_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
-		let valueC = value?.__handle
-		
-		
-		System_Security_Cryptography_DSAParameters_Y_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// Specifies the J parameter for the System.Security.Cryptography.DSA algorithm.
-	public var j: DNArray<System_Byte>? /* System.Byte[] */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_DSAParameters_J_Get(self.__handle)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// Specifies the J parameter for the System.Security.Cryptography.DSA algorithm.
-	public func j_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
-		let valueC = value?.__handle
-		
-		
-		System_Security_Cryptography_DSAParameters_J_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// Specifies the X parameter for the System.Security.Cryptography.DSA algorithm.
-	public var x: DNArray<System_Byte>? /* System.Byte[] */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_DSAParameters_X_Get(self.__handle)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// Specifies the X parameter for the System.Security.Cryptography.DSA algorithm.
-	public func x_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
-		let valueC = value?.__handle
-		
-		
-		System_Security_Cryptography_DSAParameters_X_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// Specifies the seed for the System.Security.Cryptography.DSA algorithm.
-	public var seed: DNArray<System_Byte>? /* System.Byte[] */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_DSAParameters_Seed_Get(self.__handle)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// Specifies the seed for the System.Security.Cryptography.DSA algorithm.
-	public func seed_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
-		let valueC = value?.__handle
-		
-		
-		System_Security_Cryptography_DSAParameters_Seed_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// Specifies the counter for the System.Security.Cryptography.DSA algorithm.
-	public var counter: Int32 /* System.Int32 */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_DSAParameters_Counter_Get(self.__handle)
-		
-		return __returnValueC
-		
-	}}
-	/// Specifies the counter for the System.Security.Cryptography.DSA algorithm.
-	public func counter_set(_ value: Int32 /* System.Int32 */) {
-		
-		
-		System_Security_Cryptography_DSAParameters_Counter_Set(self.__handle, value)
-		
-		
-	}
-	
-	
-	/// Initializes a new instance of the System.Security.Cryptography.DSAParameters struct.
-	public convenience init() throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_DSAParameters_Create(&__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Security_Cryptography_DSAParameters_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Security_Cryptography_DSAParameters_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-/// Provides an abstract base class that encapsulates the Elliptic Curve Digital Signature Algorithm (ECDSA).
-public class System_Security_Cryptography_ECDsa /* System.Security.Cryptography.ECDsa */: System_Security_Cryptography_ECAlgorithm {
-	public override class var typeName: String { get {
-		"ECDsa"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Security.Cryptography.ECDsa"
-	}}
-
-	/// Creates a new instance of the default implementation of the Elliptic Curve Digital Signature Algorithm (ECDSA).
-	/// - Returns: A new instance of the default implementation (System.Security.Cryptography.ECDsaCng) of this class.
-	public override class func create() throws -> System_Security_Cryptography_ECDsa /* System.Security.Cryptography.ECDsa */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_Create(&__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_ECDsa(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Creates a new instance of the default implementation of the Elliptic Curve Digital Signature Algorithm (ECDSA) with a newly generated key over the specified curve.
-	/// - Parameter curve: The curve to use for key generation.
-	/// - Returns: A new instance of the default implementation (System.Security.Cryptography.ECDsaCng) of this class.
-	public class func create(_ curve: System_Security_Cryptography_ECCurve /* System.Security.Cryptography.ECCurve */) throws -> System_Security_Cryptography_ECDsa /* System.Security.Cryptography.ECDsa */ {
-		let curveC = curve.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_Create_1(curveC, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_ECDsa(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Creates a new instance of the default implementation of the Elliptic Curve Digital Signature Algorithm (ECDSA) using the specified parameters as the key.
-	/// - Parameter parameters: The parameters representing the key to use.
-	/// - Returns: A new instance of the default implementation (System.Security.Cryptography.ECDsaCng) of this class.
-	public class func create(_ parameters: System_Security_Cryptography_ECParameters /* System.Security.Cryptography.ECParameters */) throws -> System_Security_Cryptography_ECDsa /* System.Security.Cryptography.ECDsa */ {
-		let parametersC = parameters.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_Create_2(parametersC, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_ECDsa(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Creates a new instance of the specified implementation of the Elliptic Curve Digital Signature Algorithm (ECDSA).
-	/// - Parameter algorithm: The name of an ECDSA implementation. The following strings all refer to the same implementation, which is the only implementation currently supported in the .NET Framework: - "ECDsa" - "ECDsaCng" - "System.Security.Cryptography.ECDsaCng"  You can also provide the name of a custom ECDSA implementation.
-	/// - Throws: System.ArgumentNullException: The algorithm parameter is null.
-	/// - Returns: A new instance of the specified implementation of this class. If the specified algorithm name does not map to an ECDSA implementation, this method returns null.
-	public override class func create(_ algorithm: System_String /* System.String */) throws -> System_Security_Cryptography_ECDsa? /* System.Security.Cryptography.ECDsa */ {
-		let algorithmC = algorithm.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_Create_3(algorithmC, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_ECDsa(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Computes the hash value of the specified byte array using the specified hash algorithm and signs the resulting hash value.
-	/// - Parameter data: The input data for which to compute the hash.
-	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
-	/// - Throws: System.ArgumentNullException: data is null.
-	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
-	/// - Returns: The ECDSA signature for the specified data.
-	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let dataC = data.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_SignData(self.__handle, dataC, hashAlgorithmC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Computes the hash value of a portion of the specified byte array using the specified hash algorithm and signs the resulting hash value.
-	/// - Parameter data: The input data for which to compute the hash.
-	/// - Parameter offset: The offset into the array at which to begin using data.
-	/// - Parameter count: The number of bytes in the array to use as data.
-	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
-	/// - Throws: System.ArgumentNullException: data is null.
-	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
-	/// - Throws: System.ArgumentOutOfRangeException: offset is less than zero.  -or-  count is less than zero.  -or-  offset + count - 1 results in an index that is beyond the upper bound of data.
-	/// - Returns: The ECDSA signature for the specified data.
-	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let dataC = data.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_SignData_1(self.__handle, dataC, offset, count, hashAlgorithmC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Computes the hash value of the specified data and signs it using the specified signature format.
-	/// - Parameter data: The data to sign.
-	/// - Parameter offset: The offset into data at which to begin hashing.
-	/// - Parameter count: The number of bytes to read from data.
-	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
-	/// - Parameter signatureFormat: The encoding format to use for the signature.
-	/// - Throws: System.ArgumentNullException: data is null.
-	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.  -or-  offset is less than zero.  -or-  count is less than zero.  -or-  offset + count - 1 results in an index that is beyond the upper bound of data.
-	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
-	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or signing operation.
-	/// - Returns: The ECDSA signature for the specified data.
-	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let dataC = data.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_SignData_2(self.__handle, dataC, offset, count, hashAlgorithmC, signatureFormatC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Computes the hash value of the specified data and signs it using the specified signature format.
-	/// - Parameter data: The data to sign.
-	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
-	/// - Parameter signatureFormat: The encoding format to use for the signature.
-	/// - Throws: System.ArgumentNullException: data is null.
-	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
-	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
-	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or signing operation.
-	/// - Returns: The ECDSA signature for the specified data.
-	public func signData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let dataC = data.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_SignData_3(self.__handle, dataC, hashAlgorithmC, signatureFormatC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Computes the hash value of the specified data and signs it using the specified signature format.
-	/// - Parameter data: The data to sign.
-	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
-	/// - Parameter signatureFormat: The encoding format to use for the signature.
-	/// - Throws: System.ArgumentNullException: data is null.
-	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
-	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
-	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or signing operation.
-	/// - Returns: The ECDSA signature for the specified data.
-	public func signData(_ data: System_IO_Stream /* System.IO.Stream */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let dataC = data.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_SignData_4(self.__handle, dataC, hashAlgorithmC, signatureFormatC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Computes the ECDSA signature for the specified hash value in the indicated format.
-	/// - Parameter hash: The hash value to sign.
-	/// - Parameter signatureFormat: The encoding format to use for the signature.
-	/// - Throws: System.ArgumentNullException: hash is null.
-	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
-	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the signing operation.
-	/// - Returns: The ECDSA signature for the specified data.
-	public func signHash(_ hash: DNArray<System_Byte> /* System.Byte[] */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let hashC = hash.__handle
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_SignHash(self.__handle, hashC, signatureFormatC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public func signHash(_ hash: Data? /* System.ReadOnlySpan<System.Byte> */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let hashC = hash.readOnlySpanOfByte()
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_SignHash_1(self.__handle, hashC, signatureFormatC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public func signHash(_ hash: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let hashC = hash.readOnlySpanOfByte()
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_SignHash_2(self.__handle, hashC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Computes the hash value of the specified stream using the specified hash algorithm and signs the resulting hash value.
-	/// - Parameter data: The input stream for which to compute the hash.
-	/// - Parameter hashAlgorithm: The hash algorithm to use to create the hash value.
-	/// - Throws: System.ArgumentNullException: data is null.
-	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
-	/// - Returns: The ECDSA signature for the specified data.
-	public func signData(_ data: System_IO_Stream /* System.IO.Stream */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let dataC = data.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_SignData_5(self.__handle, dataC, hashAlgorithmC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public func signData(_ data: Data? /* System.ReadOnlySpan<System.Byte> */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let dataC = data.readOnlySpanOfByte()
-		let hashAlgorithmC = hashAlgorithm.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_SignData_6(self.__handle, dataC, hashAlgorithmC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public func signData(_ data: Data? /* System.ReadOnlySpan<System.Byte> */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let dataC = data.readOnlySpanOfByte()
-		let hashAlgorithmC = hashAlgorithm.__handle
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_SignData_7(self.__handle, dataC, hashAlgorithmC, signatureFormatC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Verifies that a digital signature is appropriate for the current key and provided data with a specified hash algorithm.
-	/// - Parameter data: The signed data.
-	/// - Parameter signature: The signature data to be verified.
-	/// - Parameter hashAlgorithm: The hash algorithm used to create the hash value of the data.
-	/// - Throws: System.ArgumentNullException: data is null.  -or-  signature is null.
-	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
-	/// - Returns: true if the signature is valid; otherwise, false.
-	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
-		let dataC = data.__handle
-		let signatureC = signature.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyData(self.__handle, dataC, signatureC, hashAlgorithmC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Verifies that a digital signature is appropriate for the current key and provided portion of data with a specified hash algorithm.
-	/// - Parameter data: The signed data.
-	/// - Parameter offset: The starting index at which to compute the hash.
-	/// - Parameter count: The number of bytes to hash.
-	/// - Parameter signature: The signature data to be verified.
-	/// - Parameter hashAlgorithm: The hash algorithm used to create the hash value of the data.
-	/// - Throws: System.ArgumentNullException: data is null.  -or-  signature is null.
-	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
-	/// - Throws: System.ArgumentOutOfRangeException: offset is less than zero.  -or-  count is less than zero.  -or-  offset + count - 1 results in an index that is beyond the upper bound of data.
-	/// - Returns: true if the signature is valid; otherwise, false.
-	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
-		let dataC = data.__handle
-		let signatureC = signature.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyData_1(self.__handle, dataC, offset, count, signatureC, hashAlgorithmC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Verifies that a digital signature is valid for the provided data.
-	/// - Parameter data: An array that contains the signed data.
-	/// - Parameter offset: The starting index of the signed portion of data.
-	/// - Parameter count: The number of bytes in data that were signed.
-	/// - Parameter signature: The signature to verify.
-	/// - Parameter hashAlgorithm: The hash algorithm used to hash the data for the verification process.
-	/// - Parameter signatureFormat: The encoding format for signature.
-	/// - Throws: System.ArgumentNullException: data or signature is null.
-	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.  -or-  offset is less than zero.  -or-  count is less than zero.  -or-  offset + count - 1 results in an index that is beyond the upper bound of data.
-	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
-	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or verification operation.
-	/// - Returns: true if the digital signature is valid for the provided data; otherwise, false.
-	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ offset: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
-		let dataC = data.__handle
-		let signatureC = signature.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyData_2(self.__handle, dataC, offset, count, signatureC, hashAlgorithmC, signatureFormatC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Verifies that a digital signature is valid for the provided data.
-	/// - Parameter data: The signed data.
-	/// - Parameter signature: The signature to verify.
-	/// - Parameter hashAlgorithm: The hash algorithm used to hash the data for the verification process.
-	/// - Parameter signatureFormat: The encoding format for signature.
-	/// - Throws: System.ArgumentNullException: data or signature is null.
-	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
-	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
-	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or verification operation.
-	/// - Returns: true if the digital signature is valid for the provided data; otherwise, false.
-	public func verifyData(_ data: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
-		let dataC = data.__handle
-		let signatureC = signature.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyData_3(self.__handle, dataC, signatureC, hashAlgorithmC, signatureFormatC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func verifyData(_ data: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
-		let dataC = data.readOnlySpanOfByte()
-		let signatureC = signature.readOnlySpanOfByte()
-		let hashAlgorithmC = hashAlgorithm.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyData_4(self.__handle, dataC, signatureC, hashAlgorithmC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func verifyData(_ data: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
-		let dataC = data.readOnlySpanOfByte()
-		let signatureC = signature.readOnlySpanOfByte()
-		let hashAlgorithmC = hashAlgorithm.__handle
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyData_5(self.__handle, dataC, signatureC, hashAlgorithmC, signatureFormatC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Verifies that a digital signature is appropriate for the current key and provided data with a specified hash algorithm.
-	/// - Parameter data: The signed data.
-	/// - Parameter signature: The signature data to be verified.
-	/// - Parameter hashAlgorithm: The hash algorithm used to create the hash value of the data.
-	/// - Throws: System.ArgumentNullException: data is null.  -or-  signature is null.
-	/// - Throws: System.ArgumentException: hashAlgorithm.System.Security.Cryptography.HashAlgorithmName.Name is null or System.String.Empty.
-	/// - Returns: true if the signature is valid; otherwise, false.
-	public func verifyData(_ data: System_IO_Stream /* System.IO.Stream */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> Bool /* System.Boolean */ {
-		let dataC = data.__handle
-		let signatureC = signature.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyData_6(self.__handle, dataC, signatureC, hashAlgorithmC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Verifies that a digital signature is valid for the provided data.
-	/// - Parameter data: The signed data.
-	/// - Parameter signature: The signature to verify.
-	/// - Parameter hashAlgorithm: The hash algorithm used to hash the data for the verification process.
-	/// - Parameter signatureFormat: The encoding format for signature.
-	/// - Throws: System.ArgumentNullException: data or signature is null.
-	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
-	/// - Throws: System.ArgumentException: hashAlgorithm has a null or empty System.Security.Cryptography.HashAlgorithmName.Name.
-	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the hashing or verification operation.
-	/// - Returns: true if the digital signature is valid for the provided data; otherwise, false.
-	public func verifyData(_ data: System_IO_Stream /* System.IO.Stream */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
-		let dataC = data.__handle
-		let signatureC = signature.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyData_7(self.__handle, dataC, signatureC, hashAlgorithmC, signatureFormatC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Generates a digital signature for the specified hash value.
-	/// - Parameter hash: The hash value of the data that is being signed.
-	/// - Throws: System.ArgumentNullException: The hash parameter is null.
-	/// - Returns: A digital signature for the specified hash value.
-	public func signHash(_ hash: DNArray<System_Byte> /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let hashC = hash.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_SignHash_3(self.__handle, hashC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Verifies that a digital signature is appropriate for the current key and provided data hash.
-	/// - Parameter hash: The hash value of the data to be verified.
-	/// - Parameter signature: The digital signature of the data to be verified against the hash value.
-	/// - Throws: System.ArgumentNullException: hash or signature is null.
-	/// - Returns: true if the signature is valid; otherwise, false.
-	public func verifyHash(_ hash: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */) throws -> Bool /* System.Boolean */ {
-		let hashC = hash.__handle
-		let signatureC = signature.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyHash(self.__handle, hashC, signatureC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func verifyHash(_ hash: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> Bool /* System.Boolean */ {
-		let hashC = hash.readOnlySpanOfByte()
-		let signatureC = signature.readOnlySpanOfByte()
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyHash_1(self.__handle, hashC, signatureC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Verifies that a digital signature is valid for the provided hash.
-	/// - Parameter hash: The signed hash.
-	/// - Parameter signature: The signature to verify.
-	/// - Parameter signatureFormat: The encoding format for signature.
-	/// - Throws: System.ArgumentNullException: hash or signature is null.
-	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
-	/// - Throws: System.Security.Cryptography.CryptographicException: An error occurred in the verification operation.
-	/// - Returns: true if the digital signature is valid for the provided data; otherwise, false.
-	public func verifyHash(_ hash: DNArray<System_Byte> /* System.Byte[] */, _ signature: DNArray<System_Byte> /* System.Byte[] */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
-		let hashC = hash.__handle
-		let signatureC = signature.__handle
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyHash_2(self.__handle, hashC, signatureC, signatureFormatC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	public func verifyHash(_ hash: Data? /* System.ReadOnlySpan<System.Byte> */, _ signature: Data? /* System.ReadOnlySpan<System.Byte> */, _ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Bool /* System.Boolean */ {
-		let hashC = hash.readOnlySpanOfByte()
-		let signatureC = signature.readOnlySpanOfByte()
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_VerifyHash_3(self.__handle, hashC, signatureC, signatureFormatC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// Gets the largest size, in bytes, for a signature produced by this key in the indicated format.
-	/// - Parameter signatureFormat: The encoding format for a signature.
-	/// - Throws: System.ArgumentOutOfRangeException: signatureFormat is not a known format.
-	/// - Returns: The largest size, in bytes, for a signature produced by this key in the indicated format.
-	public func getMaxSignatureSize(_ signatureFormat: System_Security_Cryptography_DSASignatureFormat /* System.Security.Cryptography.DSASignatureFormat */) throws -> Int32 /* System.Int32 */ {
-		let signatureFormatC = signatureFormat.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_GetMaxSignatureSize(self.__handle, signatureFormatC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
-	/// This method throws in all cases.
-	/// - Parameter xmlString: The XML string to use to reconstruct the System.Security.Cryptography.AsymmetricAlgorithm object.
-	/// - Throws: System.NotImplementedException: In all cases.
-	public override func fromXmlString(_ xmlString: System_String /* System.String */) throws {
-		let xmlStringC = xmlString.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_ECDsa_FromXmlString(self.__handle, xmlStringC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	/// This method throws in all cases.
-	/// - Parameter includePrivateParameters: true to include private parameters; otherwise, false.
-	/// - Throws: System.NotImplementedException: In all cases.
-	/// - Returns: This method does not return a value.
-	public override func toXmlString(_ includePrivateParameters: Bool /* System.Boolean */) throws -> System_String /* System.String */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_ToXmlString(self.__handle, includePrivateParameters, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Gets the name of the key exchange algorithm.
-	/// - Returns: Always null.
-	public override var keyExchangeAlgorithm: System_String? /* System.String */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_KeyExchangeAlgorithm_Get(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	/// Gets the name of the signature algorithm.
-	/// - Returns: The string "ECDsa".
-	public override var signatureAlgorithm: System_String /* System.String */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDsa_SignatureAlgorithm_Get(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Security_Cryptography_ECDsa_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Security_Cryptography_ECDsa_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-/// Represents the abstract class from which elliptic-curve asymmetric algorithms can inherit.
-public class System_Security_Cryptography_ECAlgorithm /* System.Security.Cryptography.ECAlgorithm */: System_Security_Cryptography_AsymmetricAlgorithm {
-	public override class var typeName: String { get {
-		"ECAlgorithm"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Security.Cryptography.ECAlgorithm"
-	}}
-
-	/// When overridden in a derived class, exports the named or explicit System.Security.Cryptography.ECParameters for an ECCurve.
-	///             If the curve has a name, the Curve property will contain named curve parameters otherwise it will contain explicit parameters.
-	/// - Parameter includePrivateParameters: true to include private parameters, otherwise, false.
-	/// - Throws: System.NotSupportedException: A derived class has not provided an implementation.
-	/// - Returns: The exported parameters.
-	public func exportParameters(_ includePrivateParameters: Bool /* System.Boolean */) throws -> System_Security_Cryptography_ECParameters /* System.Security.Cryptography.ECParameters */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECAlgorithm_ExportParameters(self.__handle, includePrivateParameters, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_ECParameters(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// When overridden in a derived class, exports the explicit System.Security.Cryptography.ECParameters for an ECCurve.
-	/// - Parameter includePrivateParameters: true to include private parameters, otherwise, false.
-	/// - Throws: System.NotSupportedException: A derived class has not provided an implementation.
-	/// - Returns: The exported explicit parameters.
-	public func exportExplicitParameters(_ includePrivateParameters: Bool /* System.Boolean */) throws -> System_Security_Cryptography_ECParameters /* System.Security.Cryptography.ECParameters */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECAlgorithm_ExportExplicitParameters(self.__handle, includePrivateParameters, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_ECParameters(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// When overridden in a derived class, imports the specified System.Security.Cryptography.ECParameters.
-	/// - Parameter parameters: The curve parameters.
-	/// - Throws: System.NotSupportedException: A derived class has not provided an implementation.
-	public func importParameters(_ parameters: System_Security_Cryptography_ECParameters /* System.Security.Cryptography.ECParameters */) throws {
-		let parametersC = parameters.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_ECAlgorithm_ImportParameters(self.__handle, parametersC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	/// When overridden in a derived class, generates a new public/private keypair for the specified curve.
-	/// - Parameter curve: The curve to use.
-	/// - Throws: System.NotSupportedException: A derived class has not provided an implementation.
-	public func generateKey(_ curve: System_Security_Cryptography_ECCurve /* System.Security.Cryptography.ECCurve */) throws {
-		let curveC = curve.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_ECAlgorithm_GenerateKey(self.__handle, curveC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	public override func importEncryptedPkcs8PrivateKey(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
-		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
-		let sourceC = source.readOnlySpanOfByte()
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_ECAlgorithm_ImportEncryptedPkcs8PrivateKey(self.__handle, passwordBytesC, sourceC, &bytesRead, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	public override func importPkcs8PrivateKey(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
-		let sourceC = source.readOnlySpanOfByte()
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_ECAlgorithm_ImportPkcs8PrivateKey(self.__handle, sourceC, &bytesRead, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	public override func importSubjectPublicKeyInfo(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
-		let sourceC = source.readOnlySpanOfByte()
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_ECAlgorithm_ImportSubjectPublicKeyInfo(self.__handle, sourceC, &bytesRead, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	public func importECPrivateKey(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ bytesRead: inout Int32 /* System.Int32 */) throws {
-		let sourceC = source.readOnlySpanOfByte()
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_ECAlgorithm_ImportECPrivateKey(self.__handle, sourceC, &bytesRead, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	/// Exports the current key in the ECPrivateKey format.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The key could not be exported.
-	/// - Returns: A byte array containing the ECPrivateKey representation of this key.
-	public func exportECPrivateKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECAlgorithm_ExportECPrivateKey(self.__handle, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Exports the current key in the ECPrivateKey format, PEM encoded.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The key could not be exported.
-	/// - Returns: A string containing the PEM-encoded ECPrivateKey.
-	public func exportECPrivateKeyPem() throws -> System_String /* System.String */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECAlgorithm_ExportECPrivateKeyPem(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Security_Cryptography_ECAlgorithm_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Security_Cryptography_ECAlgorithm_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-/// Represents the standard parameters for the elliptic curve cryptography (ECC) algorithm.
-public class System_Security_Cryptography_ECParameters /* System.Security.Cryptography.ECParameters */: System_ValueType {
-	public override class var typeName: String { get {
-		"ECParameters"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Security.Cryptography.ECParameters"
-	}}
-
-	/// Validates the current object.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The key or curve parameters are not valid for the current curve type.
-	public func validate() throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_ECParameters_Validate(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	/// Represents the public key Q for the elliptic curve cryptography (ECC) algorithm.
-	public var q: System_Security_Cryptography_ECPoint /* System.Security.Cryptography.ECPoint */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_ECParameters_Q_Get(self.__handle)
-		
-		let __returnValue = System_Security_Cryptography_ECPoint(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// Represents the public key Q for the elliptic curve cryptography (ECC) algorithm.
-	public func q_set(_ value: System_Security_Cryptography_ECPoint /* System.Security.Cryptography.ECPoint */) {
-		let valueC = value.__handle
-		
-		
-		System_Security_Cryptography_ECParameters_Q_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// Represents the private key D for the elliptic curve cryptography (ECC) algorithm, stored in big-endian format.
-	public var d: DNArray<System_Byte>? /* System.Byte[] */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_ECParameters_D_Get(self.__handle)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// Represents the private key D for the elliptic curve cryptography (ECC) algorithm, stored in big-endian format.
-	public func d_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
-		let valueC = value?.__handle
-		
-		
-		System_Security_Cryptography_ECParameters_D_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// Represents the curve associated with the public key (System.Security.Cryptography.ECParameters.Q) and the optional private key (System.Security.Cryptography.ECParameters.D).
-	public var curve: System_Security_Cryptography_ECCurve /* System.Security.Cryptography.ECCurve */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_ECParameters_Curve_Get(self.__handle)
-		
-		let __returnValue = System_Security_Cryptography_ECCurve(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// Represents the curve associated with the public key (System.Security.Cryptography.ECParameters.Q) and the optional private key (System.Security.Cryptography.ECParameters.D).
-	public func curve_set(_ value: System_Security_Cryptography_ECCurve /* System.Security.Cryptography.ECCurve */) {
-		let valueC = value.__handle
-		
-		
-		System_Security_Cryptography_ECParameters_Curve_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// Initializes a new instance of the System.Security.Cryptography.ECParameters struct.
-	public convenience init() throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECParameters_Create(&__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Security_Cryptography_ECParameters_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Security_Cryptography_ECParameters_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-/// Represents a (X,Y) coordinate pair for elliptic curve cryptography (ECC) structures.
-public class System_Security_Cryptography_ECPoint /* System.Security.Cryptography.ECPoint */: System_ValueType {
-	public override class var typeName: String { get {
-		"ECPoint"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Security.Cryptography.ECPoint"
-	}}
-
-	/// Represents the X coordinate.
-	public var x: DNArray<System_Byte>? /* System.Byte[] */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_ECPoint_X_Get(self.__handle)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// Represents the X coordinate.
-	public func x_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
-		let valueC = value?.__handle
-		
-		
-		System_Security_Cryptography_ECPoint_X_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// Represents the Y coordinate.
-	public var y: DNArray<System_Byte>? /* System.Byte[] */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_ECPoint_Y_Get(self.__handle)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// Represents the Y coordinate.
-	public func y_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
-		let valueC = value?.__handle
-		
-		
-		System_Security_Cryptography_ECPoint_Y_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// Initializes a new instance of the System.Security.Cryptography.ECPoint struct.
-	public convenience init() throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECPoint_Create(&__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Security_Cryptography_ECPoint_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Security_Cryptography_ECPoint_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-/// Represents an elliptic curve.
-public class System_Security_Cryptography_ECCurve /* System.Security.Cryptography.ECCurve */: System_ValueType {
-	public override class var typeName: String { get {
-		"ECCurve"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Security.Cryptography.ECCurve"
-	}}
-
-	/// Creates a named curve using the specified System.Security.Cryptography.Oid object.
-	/// - Parameter curveOid: The object identifier to use.
-	/// - Returns: An object representing the named curve.
-	public class func createFromOid(_ curveOid: System_Security_Cryptography_Oid /* System.Security.Cryptography.Oid */) throws -> System_Security_Cryptography_ECCurve /* System.Security.Cryptography.ECCurve */ {
-		let curveOidC = curveOid.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECCurve_CreateFromOid(curveOidC, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_ECCurve(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Creates a named curve using the specified friendly name of the identifier.
-	/// - Parameter oidFriendlyName: The friendly name of the identifier.
-	/// - Throws: System.ArgumentNullException: oidFriendlyName is null.
-	/// - Returns: An object representing the named curve.
-	public class func createFromFriendlyName(_ oidFriendlyName: System_String /* System.String */) throws -> System_Security_Cryptography_ECCurve /* System.Security.Cryptography.ECCurve */ {
-		let oidFriendlyNameC = oidFriendlyName.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECCurve_CreateFromFriendlyName(oidFriendlyNameC, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_ECCurve(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Creates a named curve using the specified dotted-decimal representation of the identifier.
-	/// - Parameter oidValue: The dotted number of the identifier.
-	/// - Throws: System.ArgumentNullException: oidValue is null.
-	/// - Returns: An object representing the named curve.
-	public class func createFromValue(_ oidValue: System_String /* System.String */) throws -> System_Security_Cryptography_ECCurve /* System.Security.Cryptography.ECCurve */ {
-		let oidValueC = oidValue.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECCurve_CreateFromValue(oidValueC, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_ECCurve(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Validates the integrity of the current curve. Throws a System.Security.Cryptography.CryptographicException exception if the structure is not valid.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The curve parameters are not valid for the current curve type.
-	public func validate() throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_ECCurve_Validate(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	/// Gets the identifier of a named curve.
-	/// - Returns: The identifier of a named curve.
-	public var oid: System_Security_Cryptography_Oid /* System.Security.Cryptography.Oid */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECCurve_Oid_Get(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_Oid(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	/// Gets a value that indicates whether the curve type indicates an explicit prime curve.
-	/// - Returns: true if the curve is an explicit prime curve; false if the curve is a named prime, characteristic 2 or implicit curves.
-	public var isPrime: Bool /* System.Boolean */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECCurve_IsPrime_Get(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}}
-	
-	
-	/// Gets a value that indicates whether the curve type indicates an explicit characteristic 2 curve.
-	/// - Returns: true if the curve is an explicit characteristic 2 curve; false if the curve is a named characteristic 2, prime, or implicit curve.
-	public var isCharacteristic2: Bool /* System.Boolean */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECCurve_IsCharacteristic2_Get(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}}
-	
-	
-	/// Gets a value that indicates whether the curve type indicates an explicit curve (either prime or characteristic 2).
-	/// - Returns: true if the curve is an explicit curve (either prime or characteristic 2); false if the curve is a named or implicit curve.
-	public var isExplicit: Bool /* System.Boolean */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECCurve_IsExplicit_Get(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}}
-	
-	
-	/// Gets a value that indicates whether the curve type indicates a named curve.
-	/// - Returns: true if the curve is a named curve; false if the curve is an implicit or an explicit curve (either prime or characteristic 2).
-	public var isNamed: Bool /* System.Boolean */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECCurve_IsNamed_Get(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}}
-	
-	
-	/// The first coefficient for an explicit curve. A for short Weierstrass, Montgomery, and Twisted Edwards curves.
-	public var a: DNArray<System_Byte>? /* System.Byte[] */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_ECCurve_A_Get(self.__handle)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// The first coefficient for an explicit curve. A for short Weierstrass, Montgomery, and Twisted Edwards curves.
-	public func a_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
-		let valueC = value?.__handle
-		
-		
-		System_Security_Cryptography_ECCurve_A_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// The second coefficient for an explicit curve. B for short Weierstrass and d for Twisted Edwards curves.
-	public var b: DNArray<System_Byte>? /* System.Byte[] */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_ECCurve_B_Get(self.__handle)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// The second coefficient for an explicit curve. B for short Weierstrass and d for Twisted Edwards curves.
-	public func b_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
-		let valueC = value?.__handle
-		
-		
-		System_Security_Cryptography_ECCurve_B_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// The generator, or base point, for operations on the curve.
-	public var g: System_Security_Cryptography_ECPoint /* System.Security.Cryptography.ECPoint */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_ECCurve_G_Get(self.__handle)
-		
-		let __returnValue = System_Security_Cryptography_ECPoint(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// The generator, or base point, for operations on the curve.
-	public func g_set(_ value: System_Security_Cryptography_ECPoint /* System.Security.Cryptography.ECPoint */) {
-		let valueC = value.__handle
-		
-		
-		System_Security_Cryptography_ECCurve_G_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// The order of the curve. Applies only to explicit curves.
-	public var order: DNArray<System_Byte>? /* System.Byte[] */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_ECCurve_Order_Get(self.__handle)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// The order of the curve. Applies only to explicit curves.
-	public func order_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
-		let valueC = value?.__handle
-		
-		
-		System_Security_Cryptography_ECCurve_Order_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// The cofactor of the curve.
-	public var cofactor: DNArray<System_Byte>? /* System.Byte[] */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_ECCurve_Cofactor_Get(self.__handle)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// The cofactor of the curve.
-	public func cofactor_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
-		let valueC = value?.__handle
-		
-		
-		System_Security_Cryptography_ECCurve_Cofactor_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// The seed value for coefficient generation under the ANSI X9.62 generation algorithm. Applies only to explicit curves.
-	public var seed: DNArray<System_Byte>? /* System.Byte[] */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_ECCurve_Seed_Get(self.__handle)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// The seed value for coefficient generation under the ANSI X9.62 generation algorithm. Applies only to explicit curves.
-	public func seed_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
-		let valueC = value?.__handle
-		
-		
-		System_Security_Cryptography_ECCurve_Seed_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// Identifies the composition of the System.Security.Cryptography.ECCurve object.
-	public var curveType: System_Security_Cryptography_ECCurve_ECCurveType /* System.Security.Cryptography.ECCurve.ECCurveType */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_ECCurve_CurveType_Get(self.__handle)
-		
-		let __returnValue = System_Security_Cryptography_ECCurve_ECCurveType(cValue: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// Identifies the composition of the System.Security.Cryptography.ECCurve object.
-	public func curveType_set(_ value: System_Security_Cryptography_ECCurve_ECCurveType /* System.Security.Cryptography.ECCurve.ECCurveType */) {
-		let valueC = value.cValue
-		
-		
-		System_Security_Cryptography_ECCurve_CurveType_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// The name of the hash algorithm which was used to generate the curve coefficients (System.Security.Cryptography.ECCurve.A and System.Security.Cryptography.ECCurve.B) from the System.Security.Cryptography.ECCurve.Seed under the ANSI X9.62 generation algorithm. Applies only to explicit curves.
-	public var hash: System_Security_Cryptography_HashAlgorithmName? /* System.Nullable<System.Security.Cryptography.HashAlgorithmName> */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_ECCurve_Hash_Get(self.__handle)
-		
-		let __returnValue = System_Security_Cryptography_HashAlgorithmName(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// The name of the hash algorithm which was used to generate the curve coefficients (System.Security.Cryptography.ECCurve.A and System.Security.Cryptography.ECCurve.B) from the System.Security.Cryptography.ECCurve.Seed under the ANSI X9.62 generation algorithm. Applies only to explicit curves.
-	public func hash_set(_ value: System_Security_Cryptography_HashAlgorithmName? /* System.Nullable<System.Security.Cryptography.HashAlgorithmName> */) {
-		let valueC = value?.__handle
-		
-		
-		System_Security_Cryptography_ECCurve_Hash_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// The curve polynomial. Applies only to characteristic 2 curves.
-	public var polynomial: DNArray<System_Byte>? /* System.Byte[] */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_ECCurve_Polynomial_Get(self.__handle)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// The curve polynomial. Applies only to characteristic 2 curves.
-	public func polynomial_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
-		let valueC = value?.__handle
-		
-		
-		System_Security_Cryptography_ECCurve_Polynomial_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// The prime specifying the base field. Applies only to prime curves.
-	public var prime: DNArray<System_Byte>? /* System.Byte[] */ { get {
-		
-		
-		let __returnValueC = System_Security_Cryptography_ECCurve_Prime_Get(self.__handle)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		return __returnValue
-		
-	}}
-	/// The prime specifying the base field. Applies only to prime curves.
-	public func prime_set(_ value: DNArray<System_Byte>? /* System.Byte[] */) {
-		let valueC = value?.__handle
-		
-		
-		System_Security_Cryptography_ECCurve_Prime_Set(self.__handle, valueC)
-		
-		
-	}
-	
-	
-	/// Initializes a new instance of the System.Security.Cryptography.ECCurve struct.
-	public convenience init() throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECCurve_Create_1(&__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Security_Cryptography_ECCurve_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Security_Cryptography_ECCurve_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-/// Represents a cryptographic object identifier. This class cannot be inherited.
-public class System_Security_Cryptography_Oid /* System.Security.Cryptography.Oid */: System_Object {
-	public override class var typeName: String { get {
-		"Oid"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Security.Cryptography.Oid"
-	}}
-
-	/// Creates an System.Security.Cryptography.Oid object from an OID friendly name by searching the specified group.
-	/// - Parameter friendlyName: The friendly name of the identifier.
-	/// - Parameter group: The group to search in.
-	/// - Throws: System.ArgumentNullException: friendlyName is null.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The OID was not found.
-	/// - Returns: An object that represents the specified OID.
-	public class func fromFriendlyName(_ friendlyName: System_String /* System.String */, _ group: System_Security_Cryptography_OidGroup /* System.Security.Cryptography.OidGroup */) throws -> System_Security_Cryptography_Oid /* System.Security.Cryptography.Oid */ {
-		let friendlyNameC = friendlyName.__handle
-		let groupC = group.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_Oid_FromFriendlyName(friendlyNameC, groupC, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_Oid(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Creates an System.Security.Cryptography.Oid object by using the specified OID value and group.
-	/// - Parameter oidValue: The OID value.
-	/// - Parameter group: The group to search in.
-	/// - Throws: System.ArgumentNullException: oidValue is null.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The friendly name for the OID value was not found.
-	/// - Returns: A new instance of an System.Security.Cryptography.Oid object.
-	public class func fromOidValue(_ oidValue: System_String /* System.String */, _ group: System_Security_Cryptography_OidGroup /* System.Security.Cryptography.OidGroup */) throws -> System_Security_Cryptography_Oid /* System.Security.Cryptography.Oid */ {
-		let oidValueC = oidValue.__handle
-		let groupC = group.cValue
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_Oid_FromOidValue(oidValueC, groupC, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_Oid(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Initializes a new instance of the System.Security.Cryptography.Oid class.
-	public convenience init() throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_Oid_Create(&__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	/// Initializes a new instance of the System.Security.Cryptography.Oid class using a string value of an System.Security.Cryptography.Oid object.
-	/// - Parameter oid: An object identifier.
-	public convenience init(_ oid: System_String /* System.String */) throws {
-		let oidC = oid.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_Oid_Create_1(oidC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	/// Initializes a new instance of the System.Security.Cryptography.Oid class using the specified value and friendly name.
-	/// - Parameter value: The dotted number of the identifier.
-	/// - Parameter friendlyName: The friendly name of the identifier.
-	public convenience init(_ value: System_String? /* System.String */, _ friendlyName: System_String? /* System.String */) throws {
-		let valueC = value?.__handle
-		let friendlyNameC = friendlyName?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_Oid_Create_2(valueC, friendlyNameC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	/// Initializes a new instance of the System.Security.Cryptography.Oid class using the specified System.Security.Cryptography.Oid object.
-	/// - Parameter oid: The object identifier information to use to create the new object identifier.
-	/// - Throws: System.ArgumentNullException: oid is null.
-	public convenience init(_ oid: System_Security_Cryptography_Oid /* System.Security.Cryptography.Oid */) throws {
-		let oidC = oid.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_Oid_Create_3(oidC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		self.init(handle: __returnValueC)
-		
-	}
-	
-	/// Gets or sets the dotted number of the identifier.
-	/// - Throws: System.PlatformNotSupportedException: .NET 5 and later: An attempt is made to set the value and the value has previously been set.
-	/// - Returns: The dotted number of the identifier.
-	public var value: System_String? /* System.String */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_Oid_Value_Get(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	/// Gets or sets the dotted number of the identifier.
-	/// - Throws: System.PlatformNotSupportedException: .NET 5 and later: An attempt is made to set the value and the value has previously been set.
-	/// - Returns: The dotted number of the identifier.
-	public func value_set(_ value: System_String? /* System.String */) throws {
-		let valueC = value?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_Oid_Value_Set(self.__handle, valueC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	
-	/// Gets or sets the friendly name of the identifier.
-	/// - Throws: System.PlatformNotSupportedException: .NET 5 and later: An attempt is made to set the value and the value has previously been set.
-	/// - Returns: The friendly name of the identifier.
-	public var friendlyName: System_String? /* System.String */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_Oid_FriendlyName_Get(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	/// Gets or sets the friendly name of the identifier.
-	/// - Throws: System.PlatformNotSupportedException: .NET 5 and later: An attempt is made to set the value and the value has previously been set.
-	/// - Returns: The friendly name of the identifier.
-	public func friendlyName_set(_ value: System_String? /* System.String */) throws {
-		let valueC = value?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_Oid_FriendlyName_Set(self.__handle, valueC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Security_Cryptography_Oid_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Security_Cryptography_Oid_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-
-
-/// Provides an abstract base class that Elliptic Curve Diffie-Hellman (ECDH) algorithm implementations can derive from. This class provides the basic set of operations that all ECDH implementations must support.
-public class System_Security_Cryptography_ECDiffieHellman /* System.Security.Cryptography.ECDiffieHellman */: System_Security_Cryptography_ECAlgorithm {
-	public override class var typeName: String { get {
-		"ECDiffieHellman"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Security.Cryptography.ECDiffieHellman"
-	}}
-
-	/// Creates a new instance of the default implementation of the Elliptic Curve Diffie-Hellman (ECDH) algorithm.
-	/// - Returns: A new instance of the default implementation of this class.
-	public override class func create() throws -> System_Security_Cryptography_ECDiffieHellman /* System.Security.Cryptography.ECDiffieHellman */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_Create(&__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_ECDiffieHellman(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Creates a new instance of the default implementation of the Elliptic Curve Diffie-Hellman (ECDH) algorithm with a new public/private key-pair generated over the specified curve.
-	/// - Parameter curve: The curve to use to generate a new public/private key-pair.
-	/// - Throws: System.Security.Cryptography.CryptographicException: curve does not validate.
-	/// - Returns: A new instance of the default implementation of the Elliptic Curve Diffie-Hellman (ECDH) algorithm.
-	public class func create(_ curve: System_Security_Cryptography_ECCurve /* System.Security.Cryptography.ECCurve */) throws -> System_Security_Cryptography_ECDiffieHellman /* System.Security.Cryptography.ECDiffieHellman */ {
-		let curveC = curve.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_Create_1(curveC, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_ECDiffieHellman(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Creates a new instance of the default implementation of the Elliptic Curve Diffie-Hellman (ECDH) algorithm with the key described by the specified  System.Security.Cryptography.ECParameters object.
-	/// - Parameter parameters: The parameters  for the elliptic curve cryptography (ECC) algorithm.
-	/// - Throws: System.Security.Cryptography.CryptographicException: parameters does not validate.
-	/// - Returns: A new instance of the default implementation of the Elliptic Curve Diffie-Hellman (ECDH) algorithm.
-	public class func create(_ parameters: System_Security_Cryptography_ECParameters /* System.Security.Cryptography.ECParameters */) throws -> System_Security_Cryptography_ECDiffieHellman /* System.Security.Cryptography.ECDiffieHellman */ {
-		let parametersC = parameters.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_Create_2(parametersC, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_ECDiffieHellman(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Creates a new instance of the specified implementation of the Elliptic Curve Diffie-Hellman (ECDH) algorithm.
-	/// - Parameter algorithm: The name of an implementation of the ECDH algorithm.
-	/// - Throws: System.ArgumentNullException: The algorithm parameter is null.
-	/// - Returns: A new instance of the specified implementation of this class. If the specified algorithm name does not map to an ECDH implementation, this method returns null.
-	public override class func create(_ algorithm: System_String /* System.String */) throws -> System_Security_Cryptography_ECDiffieHellman? /* System.Security.Cryptography.ECDiffieHellman */ {
-		let algorithmC = algorithm.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_Create_3(algorithmC, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_ECDiffieHellman(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// When implemented in a derived class, performs a key derivation on the shared secret.
-	/// - Parameter otherPartyPublicKey: The other party's public key.
-	/// - Throws: System.ArgumentException: The curve used by otherPartyPublicKey has a different size than the curve from this key.
-	/// - Throws: System.ArgumentNullException: otherPartyPublicKey is null.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The curve used by otherPartyPublicKey is different than the curve from this key. -or- This instance represents only a public key.
-	/// - Returns: The result of the key derivation function, using the shared secret as an input.
-	public func deriveKeyMaterial(_ otherPartyPublicKey: System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Security.Cryptography.ECDiffieHellmanPublicKey */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let otherPartyPublicKeyC = otherPartyPublicKey.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_DeriveKeyMaterial(self.__handle, otherPartyPublicKeyC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Performs key derivation using a specified hash algorithm.
-	/// - Parameter otherPartyPublicKey: The other party's public key.
-	/// - Parameter hashAlgorithm: The hash algorithm to use to derive the key material.
-	/// - Throws: System.ArgumentException: The curve used by otherPartyPublicKey has a different size than the curve from this key. -or- The hashAlgorithm parameter does not specify a hash.
-	/// - Throws: System.ArgumentNullException: otherPartyPublicKey is null.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The curve used by otherPartyPublicKey is different than the curve from this key. -or- This instance represents only a public key.
-	/// - Returns: The hash of the shared secret.
-	public func deriveKeyFromHash(_ otherPartyPublicKey: System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Security.Cryptography.ECDiffieHellmanPublicKey */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let otherPartyPublicKeyC = otherPartyPublicKey.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_DeriveKeyFromHash(self.__handle, otherPartyPublicKeyC, hashAlgorithmC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// When implemented in a derived class, performs key derivation using a specified hash algorithm with optional prepended or appended data.
-	/// - Parameter otherPartyPublicKey: The other party's public key.
-	/// - Parameter hashAlgorithm: The hash algorithm to use to derive the key material.
-	/// - Parameter secretPrepend: A value to prepend to the derived secret before hashing.
-	/// - Parameter secretAppend: A value to append to the derived secret before hashing.
-	/// - Throws: System.NotImplementedException: A derived class must override this method.
-	/// - Throws: System.ArgumentException: The curve used by otherPartyPublicKey has a different size than the curve from this key. -or- The hashAlgorithm parameter does not specify a hash.
-	/// - Throws: System.ArgumentNullException: otherPartyPublicKey is null.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The curve used by otherPartyPublicKey is different than the curve from this key. -or- This instance represents only a public key.
-	/// - Returns: The hash of the shared secret after prepending or appending data as requested.
-	public func deriveKeyFromHash(_ otherPartyPublicKey: System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Security.Cryptography.ECDiffieHellmanPublicKey */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ secretPrepend: DNArray<System_Byte>? /* System.Byte[] */, _ secretAppend: DNArray<System_Byte>? /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let otherPartyPublicKeyC = otherPartyPublicKey.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		let secretPrependC = secretPrepend?.__handle
-		let secretAppendC = secretAppend?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_DeriveKeyFromHash_1(self.__handle, otherPartyPublicKeyC, hashAlgorithmC, secretPrependC, secretAppendC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Performs key derivation using a specified HMAC (Hash-based Message Authentication Code) algorithm.
-	/// - Parameter otherPartyPublicKey: The other party's public key.
-	/// - Parameter hashAlgorithm: The hash algorithm to use to derive the key material.
-	/// - Parameter hmacKey: The key for the HMAC.
-	/// - Throws: System.ArgumentException: The curve used by otherPartyPublicKey has a different size than the curve from this key. -or- The hashAlgorithm parameter does not specify a hash.
-	/// - Throws: System.ArgumentNullException: otherPartyPublicKey is null.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The curve used by otherPartyPublicKey is different than the curve from this key. -or- This instance represents only a public key.
-	/// - Returns: The HMAC of the shared secret.
-	public func deriveKeyFromHmac(_ otherPartyPublicKey: System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Security.Cryptography.ECDiffieHellmanPublicKey */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ hmacKey: DNArray<System_Byte>? /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let otherPartyPublicKeyC = otherPartyPublicKey.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		let hmacKeyC = hmacKey?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_DeriveKeyFromHmac(self.__handle, otherPartyPublicKeyC, hashAlgorithmC, hmacKeyC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// When implemented in a derived class, performs key derivation using a specified HMAC (Hash-based Message Authentication Code) algorithm with optional prepended or appended data.
-	/// - Parameter otherPartyPublicKey: The other party's public key.
-	/// - Parameter hashAlgorithm: The hash algorithm to use to derive the key material.
-	/// - Parameter hmacKey: The key for the HMAC.
-	/// - Parameter secretPrepend: A value to prepend to the derived secret before hashing.
-	/// - Parameter secretAppend: A value to append to the derived secret before hashing.
-	/// - Throws: System.NotImplementedException: A derived class must override this method.
-	/// - Throws: System.ArgumentException: The curve used by otherPartyPublicKey has a different size than the curve from this key. -or- The hashAlgorithm parameter does not specify a hash.
-	/// - Throws: System.ArgumentNullException: otherPartyPublicKey is null.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The curve used by otherPartyPublicKey is different than the curve from this key. -or- This instance represents only a public key.
-	/// - Returns: The HMAC of the shared secret after prepending or appending data as requested.
-	public func deriveKeyFromHmac(_ otherPartyPublicKey: System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Security.Cryptography.ECDiffieHellmanPublicKey */, _ hashAlgorithm: System_Security_Cryptography_HashAlgorithmName /* System.Security.Cryptography.HashAlgorithmName */, _ hmacKey: DNArray<System_Byte>? /* System.Byte[] */, _ secretPrepend: DNArray<System_Byte>? /* System.Byte[] */, _ secretAppend: DNArray<System_Byte>? /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let otherPartyPublicKeyC = otherPartyPublicKey.__handle
-		let hashAlgorithmC = hashAlgorithm.__handle
-		let hmacKeyC = hmacKey?.__handle
-		let secretPrependC = secretPrepend?.__handle
-		let secretAppendC = secretAppend?.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_DeriveKeyFromHmac_1(self.__handle, otherPartyPublicKeyC, hashAlgorithmC, hmacKeyC, secretPrependC, secretAppendC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// When implemented in a derived class, performs key derivation using the TLS (Transport Layer Security) 1.1 PRF (Pseudo-Random Function).
-	/// - Parameter otherPartyPublicKey: The other party's public key.
-	/// - Parameter prfLabel: The ASCII-encoded PRF label.
-	/// - Parameter prfSeed: The 64-byte PRF seed.
-	/// - Throws: System.NotImplementedException: A derived class must override this method.
-	/// - Throws: System.ArgumentException: The curve used by otherPartyPublicKey has a different size than the curve from this key.
-	/// - Throws: System.ArgumentNullException: otherPartyPublicKey, prfLabel or prfSeed is null.
-	/// - Throws: System.Security.Cryptography.CryptographicException: prfSeed is not exactly 64 bytes in length. -or- The curve used by otherPartyPublicKey is different than the curve from this key. -or- This instance represents only a public key.
-	/// - Returns: The first 48 bytes from the TLS 1.1 PRF, using the shared secret as the key.
-	public func deriveKeyTls(_ otherPartyPublicKey: System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Security.Cryptography.ECDiffieHellmanPublicKey */, _ prfLabel: DNArray<System_Byte> /* System.Byte[] */, _ prfSeed: DNArray<System_Byte> /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let otherPartyPublicKeyC = otherPartyPublicKey.__handle
-		let prfLabelC = prfLabel.__handle
-		let prfSeedC = prfSeed.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_DeriveKeyTls(self.__handle, otherPartyPublicKeyC, prfLabelC, prfSeedC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Derive raw key material.
-	/// - Parameter otherPartyPublicKey: The public key of the party with which to derive a mutual secret.
-	/// - Throws: System.ArgumentNullException: otherPartyPublicKey is null.
-	/// - Throws: System.ArgumentException: otherPartyPublicKey is over a different curve than this key.
-	/// - Throws: System.NotImplementedException: A derived implementation has not provided an implementation of the method.
-	/// - Throws: System.PlatformNotSupportedException: The current platform does not support raw key agreement.
-	/// - Throws: System.ObjectDisposedException: The object has already been disposed.
-	/// - Returns: The raw key agreement.
-	public func deriveRawSecretAgreement(_ otherPartyPublicKey: System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Security.Cryptography.ECDiffieHellmanPublicKey */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		let otherPartyPublicKeyC = otherPartyPublicKey.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_DeriveRawSecretAgreement(self.__handle, otherPartyPublicKeyC, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// This method throws in all cases.
-	/// - Parameter xmlString: The XML string to use to reconstruct the System.Security.Cryptography.AsymmetricAlgorithm object.
-	/// - Throws: System.NotImplementedException: In all cases.
-	public override func fromXmlString(_ xmlString: System_String /* System.String */) throws {
-		let xmlStringC = xmlString.__handle
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_ECDiffieHellman_FromXmlString(self.__handle, xmlStringC, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	/// This method throws in all cases.
-	/// - Parameter includePrivateParameters: true to include private parameters; otherwise, false.
-	/// - Throws: System.NotImplementedException: In all cases.
-	/// - Returns: This method does not return a value.
-	public override func toXmlString(_ includePrivateParameters: Bool /* System.Boolean */) throws -> System_String /* System.String */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_ToXmlString(self.__handle, includePrivateParameters, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Gets the name of the key exchange algorithm.
-	/// - Returns: The name of the key exchange algorithm.
-	public override var keyExchangeAlgorithm: System_String /* System.String */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_KeyExchangeAlgorithm_Get(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	/// Gets the name of the signature algorithm.
-	/// - Returns: Always null.
-	public override var signatureAlgorithm: System_String? /* System.String */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_SignatureAlgorithm_Get(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	/// Gets the public key that is being used by the current Elliptic Curve Diffie-Hellman (ECDH) instance.
-	/// - Returns: The public part of the ECDH key pair that is being used by this System.Security.Cryptography.ECDiffieHellman instance.
-	public var publicKey: System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Security.Cryptography.ECDiffieHellmanPublicKey */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellman_PublicKey_Get(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_ECDiffieHellmanPublicKey(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}}
-	
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Security_Cryptography_ECDiffieHellman_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Security_Cryptography_ECDiffieHellman_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-/// Provides an abstract base class from which all System.Security.Cryptography.ECDiffieHellmanCngPublicKey implementations must inherit.
-public class System_Security_Cryptography_ECDiffieHellmanPublicKey /* System.Security.Cryptography.ECDiffieHellmanPublicKey */: System_Object, System_IDisposable {
-	public override class var typeName: String { get {
-		"ECDiffieHellmanPublicKey"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Security.Cryptography.ECDiffieHellmanPublicKey"
-	}}
-
-	/// Releases all resources used by the current instance of the System.Security.Cryptography.ECDiffieHellman class.
-	public func dispose() throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Security_Cryptography_ECDiffieHellmanPublicKey_Dispose(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	/// Serializes the System.Security.Cryptography.ECDiffieHellmanPublicKey key BLOB to a byte array.
-	/// - Throws: System.PlatformNotSupportedException: Linux and macOS: In all cases.
-	/// - Returns: A byte array that contains the serialized Elliptic Curve Diffie-Hellman (ECDH) public key.
-	public func toByteArray() throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellmanPublicKey_ToByteArray(self.__handle, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Serializes the System.Security.Cryptography.ECDiffieHellmanPublicKey public key to an XML string.
-	/// - Throws: System.PlatformNotSupportedException: .NET Core and .NET 5+: In all cases.
-	/// - Returns: An XML string that contains the serialized Elliptic Curve Diffie-Hellman (ECDH) public key.
-	public func toXmlString() throws -> System_String /* System.String */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellmanPublicKey_ToXmlString(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_String(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// When overridden in a derived class, exports the named or explicit System.Security.Cryptography.ECParameters for an System.Security.Cryptography.ECCurve object.
-	/// - Throws: System.NotSupportedException: A derived class must override this method.
-	/// - Returns: An object that represents the point on the curve for this key.
-	public func exportParameters() throws -> System_Security_Cryptography_ECParameters /* System.Security.Cryptography.ECParameters */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellmanPublicKey_ExportParameters(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_ECParameters(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// When overridden in a derived class, exports the explicit System.Security.Cryptography.ECParameters for an System.Security.Cryptography.ECCurve object.
-	/// - Throws: System.NotSupportedException: A derived class must override this method.
-	/// - Returns: An object that represents the point on the curve for this key, using the explicit curve format.
-	public func exportExplicitParameters() throws -> System_Security_Cryptography_ECParameters /* System.Security.Cryptography.ECParameters */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellmanPublicKey_ExportExplicitParameters(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_Security_Cryptography_ECParameters(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Exports the current key in the X.509 SubjectPublicKeyInfo format.
-	/// - Throws: System.NotSupportedException: The member System.Security.Cryptography.ECDiffieHellmanPublicKey.ExportParameters has not been overridden in a derived class.
-	/// - Throws: System.ObjectDisposedException: The object has already been disposed.
-	/// - Throws: System.Security.Cryptography.CryptographicException: The key is invalid and could not be exported.
-	/// - Returns: A byte array containing the X.509 SubjectPublicKeyInfo representation of this key.
-	public func exportSubjectPublicKeyInfo() throws -> DNArray<System_Byte> /* System.Byte[] */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Security_Cryptography_ECDiffieHellmanPublicKey_ExportSubjectPublicKeyInfo(self.__handle, &__exceptionC)
-		
-		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Security_Cryptography_ECDiffieHellmanPublicKey_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Security_Cryptography_ECDiffieHellmanPublicKey_Destroy(self.__handle)
 		
 	}
 	
@@ -159169,154 +171969,6 @@ public class System_Xml_Schema_XmlSchemaObjectCollection /* System.Xml.Schema.Xm
 	
 	internal override func destroy() {
 		System_Xml_Schema_XmlSchemaObjectCollection_Destroy(self.__handle)
-		
-	}
-	
-	
-}
-
-
-/// Provides the abstract base class for a strongly typed collection.
-public class System_Collections_CollectionBase /* System.Collections.CollectionBase */: System_Object, System_Collections_IList, System_Collections_ICollection, System_Collections_IEnumerable {
-	public override class var typeName: String { get {
-		"CollectionBase"
-	}}
-
-	public override class var fullTypeName: String { get {
-		"System.Collections.CollectionBase"
-	}}
-
-	/// Removes all objects from the System.Collections.CollectionBase instance. This method cannot be overridden.
-	public func clear() throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Collections_CollectionBase_Clear(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	/// Removes the element at the specified index of the System.Collections.CollectionBase instance. This method is not overridable.
-	/// - Parameter index: The zero-based index of the element to remove.
-	/// - Throws: System.ArgumentOutOfRangeException: index is less than zero.  -or-  index is equal to or greater than System.Collections.CollectionBase.Count.
-	public func removeAt(_ index: Int32 /* System.Int32 */) throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Collections_CollectionBase_RemoveAt(self.__handle, index, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	/// Returns an enumerator that iterates through the System.Collections.CollectionBase instance.
-	/// - Returns: An System.Collections.IEnumerator for the System.Collections.CollectionBase instance.
-	public func getEnumerator() throws -> System_Collections_IEnumerator /* System.Collections.IEnumerator */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Collections_CollectionBase_GetEnumerator(self.__handle, &__exceptionC)
-		
-		let __returnValue = System_Collections_IEnumerator_DNInterface(handle: __returnValueC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValue
-		
-	}
-	
-	/// Gets or sets the number of elements that the System.Collections.CollectionBase can contain.
-	/// - Throws: System.ArgumentOutOfRangeException: System.Collections.CollectionBase.Capacity is set to a value that is less than System.Collections.CollectionBase.Count.
-	/// - Throws: System.OutOfMemoryException: There is not enough memory available on the system.
-	/// - Returns: The number of elements that the System.Collections.CollectionBase can contain.
-	public var capacity: Int32 /* System.Int32 */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Collections_CollectionBase_Capacity_Get(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}}
-	/// Gets or sets the number of elements that the System.Collections.CollectionBase can contain.
-	/// - Throws: System.ArgumentOutOfRangeException: System.Collections.CollectionBase.Capacity is set to a value that is less than System.Collections.CollectionBase.Count.
-	/// - Throws: System.OutOfMemoryException: There is not enough memory available on the system.
-	/// - Returns: The number of elements that the System.Collections.CollectionBase can contain.
-	public func capacity_set(_ value: Int32 /* System.Int32 */) throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		System_Collections_CollectionBase_Capacity_Set(self.__handle, value, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		
-	}
-	
-	
-	/// Gets the number of elements contained in the System.Collections.CollectionBase instance. This property cannot be overridden.
-	/// - Returns: The number of elements contained in the System.Collections.CollectionBase instance. Retrieving the value of this property is an O(1) operation.
-	public var count: Int32 /* System.Int32 */ { get throws {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Collections_CollectionBase_Count_Get(self.__handle, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}}
-	
-	
-	public override class var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_Collections_CollectionBase_TypeOf())
-		
-	}}
-	
-	internal override func destroy() {
-		System_Collections_CollectionBase_Destroy(self.__handle)
 		
 	}
 	
@@ -185337,42 +197989,48 @@ public extension System.Security {
 
 public extension System.Security {
     struct Cryptography {
+		/// Specifies encryption algorithms to be used with Password-Based Encryption (PBE).
+		public typealias PbeEncryptionAlgorithm = System_Security_Cryptography_PbeEncryptionAlgorithm
+		/// Identifies Windows cryptographic object identifier (OID) groups.
+		public typealias OidGroup = System_Security_Cryptography_OidGroup
+		/// Specifies the padding mode to use with RSA encryption or decryption operations.
+		public typealias RSAEncryptionPaddingMode = System_Security_Cryptography_RSAEncryptionPaddingMode
+		/// Specifies the padding mode to use with RSA signature creation or verification operations.
+		public typealias RSASignaturePaddingMode = System_Security_Cryptography_RSASignaturePaddingMode
+		/// Specifies the data format for signatures with the DSA family of algorithms.
+		public typealias DSASignatureFormat = System_Security_Cryptography_DSASignatureFormat
+		/// Indicates how to interpret the data contained in an System.Security.Cryptography.ECCurve object.
+		public typealias ECCurve_ECCurveType = System_Security_Cryptography_ECCurve_ECCurveType
 		/// Specifies the mode of a cryptographic stream.
 		public typealias CryptoStreamMode = System_Security_Cryptography_CryptoStreamMode
 		/// Specifies the block cipher mode to use for encryption.
 		public typealias CipherMode = System_Security_Cryptography_CipherMode
 		/// Specifies the type of padding to apply when the message data block is shorter than the full number of bytes needed for a cryptographic operation.
 		public typealias PaddingMode = System_Security_Cryptography_PaddingMode
-		/// Specifies encryption algorithms to be used with Password-Based Encryption (PBE).
-		public typealias PbeEncryptionAlgorithm = System_Security_Cryptography_PbeEncryptionAlgorithm
-		/// Specifies the data format for signatures with the DSA family of algorithms.
-		public typealias DSASignatureFormat = System_Security_Cryptography_DSASignatureFormat
-		/// Identifies Windows cryptographic object identifier (OID) groups.
-		public typealias OidGroup = System_Security_Cryptography_OidGroup
-		/// Indicates how to interpret the data contained in an System.Security.Cryptography.ECCurve object.
-		public typealias ECCurve_ECCurveType = System_Security_Cryptography_ECCurve_ECCurveType
 		/// Represents a specific algorithm within the SHL-DSA family.
 		public typealias SlhDsaAlgorithm = System_Security_Cryptography_SlhDsaAlgorithm
-		/// Defines a stream that links data streams to cryptographic transformations.
-		public typealias CryptoStream = System_Security_Cryptography_CryptoStream
-		/// Defines the basic operations of cryptographic transformations.
-		public typealias ICryptoTransform = System_Security_Cryptography_ICryptoTransform
-		/// Defines the basic operations of cryptographic transformations.
-		public typealias ICryptoTransform_DNInterface = System_Security_Cryptography_ICryptoTransform_DNInterface
-		/// Represents the abstract base class from which all implementations of the Advanced Encryption Standard (AES) must inherit.
-		public typealias Aes = System_Security_Cryptography_Aes
-		/// Represents the abstract base class from which all implementations of symmetric algorithms must inherit.
-		public typealias SymmetricAlgorithm = System_Security_Cryptography_SymmetricAlgorithm
-		/// Determines the set of valid key sizes for the symmetric cryptographic algorithms.
-		public typealias KeySizes = System_Security_Cryptography_KeySizes
-		/// Represents the abstract base class from which all implementations of the Digital Signature Algorithm (System.Security.Cryptography.DSA) must inherit.
-		public typealias DSA = System_Security_Cryptography_DSA
-		/// Represents the abstract base class from which all implementations of asymmetric algorithms must inherit.
-		public typealias AsymmetricAlgorithm = System_Security_Cryptography_AsymmetricAlgorithm
 		/// Represents parameters to be used for Password-Based Encryption (PBE).
 		public typealias PbeParameters = System_Security_Cryptography_PbeParameters
 		/// Specifies the name of a cryptographic hash algorithm.
 		public typealias HashAlgorithmName = System_Security_Cryptography_HashAlgorithmName
+		/// Represents Abstract Syntax Notation One (ASN.1)-encoded data.
+		public typealias AsnEncodedData = System_Security_Cryptography_AsnEncodedData
+		/// Represents a cryptographic object identifier. This class cannot be inherited.
+		public typealias Oid = System_Security_Cryptography_Oid
+		/// Represents the abstract base class from which all implementations of asymmetric algorithms must inherit.
+		public typealias AsymmetricAlgorithm = System_Security_Cryptography_AsymmetricAlgorithm
+		/// Determines the set of valid key sizes for the symmetric cryptographic algorithms.
+		public typealias KeySizes = System_Security_Cryptography_KeySizes
+		/// Represents the base class from which all implementations of the System.Security.Cryptography.RSA algorithm inherit.
+		public typealias RSA = System_Security_Cryptography_RSA
+		/// Represents the standard parameters for the System.Security.Cryptography.RSA algorithm.
+		public typealias RSAParameters = System_Security_Cryptography_RSAParameters
+		/// Specifies the padding mode and parameters to use with RSA encryption or decryption operations.
+		public typealias RSAEncryptionPadding = System_Security_Cryptography_RSAEncryptionPadding
+		/// Specifies the padding mode and parameters to use with RSA signature creation or verification operations.
+		public typealias RSASignaturePadding = System_Security_Cryptography_RSASignaturePadding
+		/// Represents the abstract base class from which all implementations of the Digital Signature Algorithm (System.Security.Cryptography.DSA) must inherit.
+		public typealias DSA = System_Security_Cryptography_DSA
 		/// Contains the typical parameters for the System.Security.Cryptography.DSA algorithm.
 		public typealias DSAParameters = System_Security_Cryptography_DSAParameters
 		/// Provides an abstract base class that encapsulates the Elliptic Curve Digital Signature Algorithm (ECDSA).
@@ -185385,15 +198043,81 @@ public extension System.Security {
 		public typealias ECPoint = System_Security_Cryptography_ECPoint
 		/// Represents an elliptic curve.
 		public typealias ECCurve = System_Security_Cryptography_ECCurve
-		/// Represents a cryptographic object identifier. This class cannot be inherited.
-		public typealias Oid = System_Security_Cryptography_Oid
 		/// Provides an abstract base class that Elliptic Curve Diffie-Hellman (ECDH) algorithm implementations can derive from. This class provides the basic set of operations that all ECDH implementations must support.
 		public typealias ECDiffieHellman = System_Security_Cryptography_ECDiffieHellman
 		/// Provides an abstract base class from which all System.Security.Cryptography.ECDiffieHellmanCngPublicKey implementations must inherit.
 		public typealias ECDiffieHellmanPublicKey = System_Security_Cryptography_ECDiffieHellmanPublicKey
+		/// Represents an ML-KEM key.
+		public typealias MLKem = System_Security_Cryptography_MLKem
+		/// Represents a specific algorithm within the ML-KEM family.
+		public typealias MLKemAlgorithm = System_Security_Cryptography_MLKemAlgorithm
+		/// Represents an ML-DSA key.
+		public typealias MLDsa = System_Security_Cryptography_MLDsa
+		/// Represents a specific algorithm within the ML-DSA family.
+		public typealias MLDsaAlgorithm = System_Security_Cryptography_MLDsaAlgorithm
+		/// Represents an SLH-DSA key.
+		public typealias SlhDsa = System_Security_Cryptography_SlhDsa
+		/// Represents a Composite ML-DSA key.
+		public typealias CompositeMLDsa = System_Security_Cryptography_CompositeMLDsa
+		/// Represents a composite ML-DSA algorithm identifier, combining ML-DSA with a traditional algorithm.
+		public typealias CompositeMLDsaAlgorithm = System_Security_Cryptography_CompositeMLDsaAlgorithm
+		/// Defines a stream that links data streams to cryptographic transformations.
+		public typealias CryptoStream = System_Security_Cryptography_CryptoStream
+		/// Defines the basic operations of cryptographic transformations.
+		public typealias ICryptoTransform = System_Security_Cryptography_ICryptoTransform
+		/// Defines the basic operations of cryptographic transformations.
+		public typealias ICryptoTransform_DNInterface = System_Security_Cryptography_ICryptoTransform_DNInterface
+		/// Represents the abstract base class from which all implementations of the Advanced Encryption Standard (AES) must inherit.
+		public typealias Aes = System_Security_Cryptography_Aes
+		/// Represents the abstract base class from which all implementations of symmetric algorithms must inherit.
+		public typealias SymmetricAlgorithm = System_Security_Cryptography_SymmetricAlgorithm
 		
     }
 }
+
+
+public extension System.Security.Cryptography {
+    struct X509Certificates {
+		/// Specifies the format of an X.509 certificate.
+		public typealias X509ContentType = System_Security_Cryptography_X509Certificates_X509ContentType
+		/// Specifies the export Password Based Enryption (PBE) parameters with PKCS12 / PFX.
+		public typealias Pkcs12ExportPbeParameters = System_Security_Cryptography_X509Certificates_Pkcs12ExportPbeParameters
+		/// Defines where and how to import the private key of an X.509 certificate.
+		public typealias X509KeyStorageFlags = System_Security_Cryptography_X509Certificates_X509KeyStorageFlags
+		/// Specifies characteristics of the X.500 distinguished name.
+		public typealias X500DistinguishedNameFlags = System_Security_Cryptography_X509Certificates_X500DistinguishedNameFlags
+		/// Specifies the type of name the X509 certificate contains.
+		public typealias X509NameType = System_Security_Cryptography_X509Certificates_X509NameType
+		/// Specifies the type of value the System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Find(System.Security.Cryptography.X509Certificates.X509FindType,System.Object,System.Boolean) method searches for.
+		public typealias X509FindType = System_Security_Cryptography_X509Certificates_X509FindType
+		/// Defines a collection that stores System.Security.Cryptography.X509Certificates.X509Certificate objects.
+		public typealias X509CertificateCollection = System_Security_Cryptography_X509Certificates_X509CertificateCollection
+		/// Provides methods that help you use X.509 v.3 certificates.
+		public typealias X509Certificate = System_Security_Cryptography_X509Certificates_X509Certificate
+		/// Enumerates the System.Security.Cryptography.X509Certificates.X509Certificate objects in an System.Security.Cryptography.X509Certificates.X509CertificateCollection.
+		public typealias X509CertificateCollection_X509CertificateEnumerator = System_Security_Cryptography_X509Certificates_X509CertificateCollection_X509CertificateEnumerator
+		/// Represents a collection of System.Security.Cryptography.X509Certificates.X509Certificate2 objects. This class cannot be inherited.
+		public typealias X509Certificate2Collection = System_Security_Cryptography_X509Certificates_X509Certificate2Collection
+		/// Represents an X.509 certificate.
+		public typealias X509Certificate2 = System_Security_Cryptography_X509Certificates_X509Certificate2
+		/// Represents a collection of System.Security.Cryptography.X509Certificates.X509Extension objects. This class cannot be inherited.
+		public typealias X509ExtensionCollection = System_Security_Cryptography_X509Certificates_X509ExtensionCollection
+		/// Represents an X509 extension.
+		public typealias X509Extension = System_Security_Cryptography_X509Certificates_X509Extension
+		/// Supports a simple iteration over a System.Security.Cryptography.X509Certificates.X509ExtensionCollection. This class cannot be inherited.
+		public typealias X509ExtensionEnumerator = System_Security_Cryptography_X509Certificates_X509ExtensionEnumerator
+		/// Represents the distinguished name of an X509 certificate. This class cannot be inherited.
+		public typealias X500DistinguishedName = System_Security_Cryptography_X509Certificates_X500DistinguishedName
+		/// Represents a Relative Distinguished Name component of an X.500 Distinguished Name.
+		public typealias X500RelativeDistinguishedName = System_Security_Cryptography_X509Certificates_X500RelativeDistinguishedName
+		/// Represents a certificate's public key information. This class cannot be inherited.
+		public typealias PublicKey = System_Security_Cryptography_X509Certificates_PublicKey
+		/// Supports a simple iteration over a System.Security.Cryptography.X509Certificates.X509Certificate2Collection object. This class cannot be inherited.
+		public typealias X509Certificate2Enumerator = System_Security_Cryptography_X509Certificates_X509Certificate2Enumerator
+		
+    }
+}
+
 
 
 
@@ -185976,6 +198700,8 @@ public extension Beyond.NET {
 		public typealias Transformer = Beyond_NET_Sample_Transformer
 		
 		public typealias WebProxyTests = Beyond_NET_Sample_WebProxyTests
+		
+		public typealias X509CertificatesTests = Beyond_NET_Sample_X509CertificatesTests
 		
 		public typealias Transformer_BuiltInTransformers = Beyond_NET_Sample_Transformer_BuiltInTransformers
 		///             A delegate that returns a new Address.
