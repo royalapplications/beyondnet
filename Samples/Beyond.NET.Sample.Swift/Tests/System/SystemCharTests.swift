@@ -10,7 +10,31 @@ final class SystemCharTests: XCTestCase {
         Self.sharedTearDown()
     }
     
-    func testLowercaseA() throws {
+    func testToDNObjectAndBack() throws {
+        let aCharacter = Character("a")
+        let aDNChar = try XCTUnwrap(DNChar(character: aCharacter))
+        
+        XCTAssertEqual("a", aCharacter)
+        XCTAssertNotEqual("A", aCharacter)
+        
+        let dnObj = aDNChar.dotNETObject()
+
+        // TODO: This currently fails with `caught error: "System.InvalidCastException: Specified cast is not valid. at NativeGeneratedCode.InteropUtils.DNObjectCastToChar(Void*, Void**) + 0x60"`
+        let aDNCharBack = try XCTUnwrap(dnObj.castToChar())
+        let aCharacterBack = aDNCharBack.character
+        
+        XCTAssertEqual("a", aCharacterBack)
+    }
+    
+    func testGetLowercaseA() throws {
+        let aDNChar = Beyond.NET.Sample.Source.CharTests.lowercaseA
+        let aCharacter = try XCTUnwrap(aDNChar.character)
+        
+        XCTAssertEqual("a", aCharacter)
+        XCTAssertNotEqual("A", aCharacter)
+    }
+    
+    func testPassInLowercaseA() throws {
         let aCharacter: Character = "a"
         let aDNChar = try XCTUnwrap(DNChar(character: aCharacter))
         
@@ -21,7 +45,15 @@ final class SystemCharTests: XCTestCase {
         try XCTAssertThrowsError(Beyond.NET.Sample.Source.CharTests.passInLowercaseAOrThrow(aUpperDNChar))
     }
     
-    func testUppercaseA() throws {
+    func testGetUppercaseA() throws {
+        let aUpperDNChar = Beyond.NET.Sample.Source.CharTests.uppercaseA
+        let aUpperCharacter = try XCTUnwrap(aUpperDNChar.character)
+        
+        XCTAssertEqual("A", aUpperCharacter)
+        XCTAssertNotEqual("a", aUpperCharacter)
+    }
+    
+    func testPassInUppercaseA() throws {
         let aCharacter: Character = "a"
         let aDNChar = try XCTUnwrap(DNChar(character: aCharacter))
         
@@ -32,7 +64,15 @@ final class SystemCharTests: XCTestCase {
         try XCTAssertThrowsError(Beyond.NET.Sample.Source.CharTests.passInUppercaseAOrThrow(aDNChar))
     }
     
-    func testOne() throws {
+    func testGetOne() throws {
+        let oneDNChar = Beyond.NET.Sample.Source.CharTests.one
+        let oneCharacter = try XCTUnwrap(oneDNChar.character)
+        
+        XCTAssertEqual("1", oneCharacter)
+        XCTAssertNotEqual("2", oneCharacter)
+    }
+    
+    func testPassInOne() throws {
         let oneCharacter: Character = "1"
         let oneDNChar = try XCTUnwrap(DNChar(character: oneCharacter))
         
@@ -43,14 +83,22 @@ final class SystemCharTests: XCTestCase {
         try XCTAssertThrowsError(Beyond.NET.Sample.Source.CharTests.passInOneOrThrow(twoDNChar))
     }
     
-    func testLowercaseUmlautA() throws {
+    func testGetLowercaseUmlautA() throws {
+        let aUmlautDNChar = Beyond.NET.Sample.Source.CharTests.lowercaseUmlautA
+        let aUmlautCharacter = try XCTUnwrap(aUmlautDNChar.character)
+        
+        XCTAssertEqual("ä", aUmlautCharacter)
+        XCTAssertNotEqual("Ä", aUmlautCharacter)
+    }
+    
+    func testPassInLowercaseUmlautA() throws {
         let aCharacter: Character = "ä"
         let aDNChar = try XCTUnwrap(DNChar(character: aCharacter))
         
-        let aUpperCharacter: Character = "Ä"
-        let aUpperDNChar = try XCTUnwrap(DNChar(character: aUpperCharacter))
+        let aUmlautCharacter: Character = "Ä"
+        let aUmlautDNChar = try XCTUnwrap(DNChar(character: aUmlautCharacter))
         
         try XCTAssertNoThrow(Beyond.NET.Sample.Source.CharTests.passInLowercaseUmlautAOrThrow(aDNChar))
-        try XCTAssertThrowsError(Beyond.NET.Sample.Source.CharTests.passInLowercaseUmlautAOrThrow(aUpperDNChar))
+        try XCTAssertThrowsError(Beyond.NET.Sample.Source.CharTests.passInLowercaseUmlautAOrThrow(aUmlautDNChar))
     }
 }
