@@ -349,7 +349,7 @@ internal static unsafe class InteropUtils
 
     #region Char
     [UnmanagedCallersOnly(EntryPoint = "DNObjectCastToChar")]
-    internal static char DNObjectCastToChar(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
+    internal static ushort DNObjectCastToChar(void* /* System.Object */ @object, void** /* out System.Exception */ outException)
     {
         System.Object objectConverted = InteropUtils.GetInstance<System.Object>(@object);
 
@@ -360,7 +360,7 @@ internal static unsafe class InteropUtils
                 *outException = null;
             }
 
-            return returnValue;
+            return (ushort)returnValue;
         } catch (Exception exception) {
             if (outException is not null) {
                 void* exceptionHandleAddress = exception.AllocateGCHandleAndGetAddress();
@@ -368,12 +368,12 @@ internal static unsafe class InteropUtils
                 *outException = exceptionHandleAddress;
             }
 
-            return default(char);
+            return (ushort)(default(char));
         }
     }
 
     [UnmanagedCallersOnly(EntryPoint = "DNObjectFromChar")]
-    internal static void* /* System.Object */ DNObjectFromChar(char value)
+    internal static void* /* System.Object */ DNObjectFromChar(ushort value)
     {
         return ((System.Object)value).AllocateGCHandleAndGetAddress();
     }
@@ -9217,11 +9217,12 @@ internal unsafe class System_Type
 	
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_Delimiter_Get")]
-	internal static char /* System.Char */ System_Type_Delimiter_Get()
+	internal static ushort /* System.Char */ System_Type_Delimiter_Get()
 	{
 	
 		System.Char __returnValue = System.Type.Delimiter;
-		return __returnValue;
+		ushort __returnValueNative = (ushort)__returnValue;
+		return __returnValueNative;
 	}
 	
 	
@@ -13550,7 +13551,7 @@ internal unsafe class System_IConvertible
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IConvertible_ToChar")]
-	internal static char /* System.Char */ System_IConvertible_ToChar(void* /* System.IConvertible */ __self, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_IConvertible_ToChar(void* /* System.IConvertible */ __self, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -13562,12 +13563,13 @@ internal unsafe class System_IConvertible
 	
 	    try {
 			System.Char __returnValue = __selfConverted.ToChar(providerConverted);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -15983,7 +15985,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_EndsWith_3")]
-	internal static byte /* System.Boolean */ System_String_EndsWith_3(void* /* System.String */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_EndsWith_3(void* /* System.String */ __self, ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -15991,9 +15993,10 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Boolean __returnValue = __selfConverted.EndsWith(value);
+			System.Boolean __returnValue = __selfConverted.EndsWith(valueConverted);
 			byte __returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
@@ -16322,7 +16325,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_StartsWith_3")]
-	internal static byte /* System.Boolean */ System_String_StartsWith_3(void* /* System.String */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_StartsWith_3(void* /* System.String */ __self, ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -16330,9 +16333,10 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Boolean __returnValue = __selfConverted.StartsWith(value);
+			System.Boolean __returnValue = __selfConverted.StartsWith(valueConverted);
 			byte __returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
@@ -17490,12 +17494,13 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Join")]
-	internal static void* /* System.String */ System_String_Join(char /* System.Char */ separator, void* /* System.String[] */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.String */ System_String_Join(ushort /* System.Char */ separator, void* /* System.String[] */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char separatorConverted = (char)separator;
 		System.String[] valueConverted = InteropUtils.GetInstance<System.String[]>(value);
 	
 	    try {
-			System.String __returnValue = System.String.Join(separator, valueConverted);
+			System.String __returnValue = System.String.Join(separatorConverted, valueConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -17543,12 +17548,13 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Join_2")]
-	internal static void* /* System.String */ System_String_Join_2(char /* System.Char */ separator, void* /* System.String[] */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	internal static void* /* System.String */ System_String_Join_2(ushort /* System.Char */ separator, void* /* System.String[] */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
+		System.Char separatorConverted = (char)separator;
 		System.String[] valueConverted = InteropUtils.GetInstance<System.String[]>(value);
 	
 	    try {
-			System.String __returnValue = System.String.Join(separator, valueConverted, startIndex, count);
+			System.String __returnValue = System.String.Join(separatorConverted, valueConverted, startIndex, count);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -17623,12 +17629,13 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Join_5")]
-	internal static void* /* System.String */ System_String_Join_5(char /* System.Char */ separator, void* /* System.Object[] */ values, void** /* System.Exception */ __outException)
+	internal static void* /* System.String */ System_String_Join_5(ushort /* System.Char */ separator, void* /* System.Object[] */ values, void** /* System.Exception */ __outException)
 	{
+		System.Char separatorConverted = (char)separator;
 		System.Object[] valuesConverted = InteropUtils.GetInstance<System.Object[]>(values);
 	
 	    try {
-			System.String __returnValue = System.String.Join(separator, valuesConverted);
+			System.String __returnValue = System.String.Join(separatorConverted, valuesConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -17707,7 +17714,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_PadLeft_1")]
-	internal static void* /* System.String */ System_String_PadLeft_1(void* /* System.String */ __self, int /* System.Int32 */ totalWidth, char /* System.Char */ paddingChar, void** /* System.Exception */ __outException)
+	internal static void* /* System.String */ System_String_PadLeft_1(void* /* System.String */ __self, int /* System.Int32 */ totalWidth, ushort /* System.Char */ paddingChar, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -17715,9 +17722,10 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
+		System.Char paddingCharConverted = (char)paddingChar;
 	
 	    try {
-			System.String __returnValue = __selfConverted.PadLeft(totalWidth, paddingChar);
+			System.String __returnValue = __selfConverted.PadLeft(totalWidth, paddingCharConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -17769,7 +17777,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_PadRight_1")]
-	internal static void* /* System.String */ System_String_PadRight_1(void* /* System.String */ __self, int /* System.Int32 */ totalWidth, char /* System.Char */ paddingChar, void** /* System.Exception */ __outException)
+	internal static void* /* System.String */ System_String_PadRight_1(void* /* System.String */ __self, int /* System.Int32 */ totalWidth, ushort /* System.Char */ paddingChar, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -17777,9 +17785,10 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
+		System.Char paddingCharConverted = (char)paddingChar;
 	
 	    try {
-			System.String __returnValue = __selfConverted.PadRight(totalWidth, paddingChar);
+			System.String __returnValue = __selfConverted.PadRight(totalWidth, paddingCharConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -17930,7 +17939,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Replace_2")]
-	internal static void* /* System.String */ System_String_Replace_2(void* /* System.String */ __self, char /* System.Char */ oldChar, char /* System.Char */ newChar, void** /* System.Exception */ __outException)
+	internal static void* /* System.String */ System_String_Replace_2(void* /* System.String */ __self, ushort /* System.Char */ oldChar, ushort /* System.Char */ newChar, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -17938,9 +17947,11 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
+		System.Char oldCharConverted = (char)oldChar;
+		System.Char newCharConverted = (char)newChar;
 	
 	    try {
-			System.String __returnValue = __selfConverted.Replace(oldChar, newChar);
+			System.String __returnValue = __selfConverted.Replace(oldCharConverted, newCharConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -18057,7 +18068,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Split")]
-	internal static void* /* System.String[] */ System_String_Split(void* /* System.String */ __self, char /* System.Char */ separator, System.StringSplitOptions /* System.StringSplitOptions */ options, void** /* System.Exception */ __outException)
+	internal static void* /* System.String[] */ System_String_Split(void* /* System.String */ __self, ushort /* System.Char */ separator, System.StringSplitOptions /* System.StringSplitOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18065,9 +18076,10 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
+		System.Char separatorConverted = (char)separator;
 	
 	    try {
-			System.String[] __returnValue = __selfConverted.Split(separator, options);
+			System.String[] __returnValue = __selfConverted.Split(separatorConverted, options);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -18088,7 +18100,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Split_1")]
-	internal static void* /* System.String[] */ System_String_Split_1(void* /* System.String */ __self, char /* System.Char */ separator, int /* System.Int32 */ count, System.StringSplitOptions /* System.StringSplitOptions */ options, void** /* System.Exception */ __outException)
+	internal static void* /* System.String[] */ System_String_Split_1(void* /* System.String */ __self, ushort /* System.Char */ separator, int /* System.Int32 */ count, System.StringSplitOptions /* System.StringSplitOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18096,9 +18108,10 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
+		System.Char separatorConverted = (char)separator;
 	
 	    try {
-			System.String[] __returnValue = __selfConverted.Split(separator, count, options);
+			System.String[] __returnValue = __selfConverted.Split(separatorConverted, count, options);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -18656,7 +18669,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Trim_1")]
-	internal static void* /* System.String */ System_String_Trim_1(void* /* System.String */ __self, char /* System.Char */ trimChar, void** /* System.Exception */ __outException)
+	internal static void* /* System.String */ System_String_Trim_1(void* /* System.String */ __self, ushort /* System.Char */ trimChar, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18664,9 +18677,10 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
+		System.Char trimCharConverted = (char)trimChar;
 	
 	    try {
-			System.String __returnValue = __selfConverted.Trim(trimChar);
+			System.String __returnValue = __selfConverted.Trim(trimCharConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -18750,7 +18764,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_TrimStart_1")]
-	internal static void* /* System.String */ System_String_TrimStart_1(void* /* System.String */ __self, char /* System.Char */ trimChar, void** /* System.Exception */ __outException)
+	internal static void* /* System.String */ System_String_TrimStart_1(void* /* System.String */ __self, ushort /* System.Char */ trimChar, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18758,9 +18772,10 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
+		System.Char trimCharConverted = (char)trimChar;
 	
 	    try {
-			System.String __returnValue = __selfConverted.TrimStart(trimChar);
+			System.String __returnValue = __selfConverted.TrimStart(trimCharConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -18844,7 +18859,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_TrimEnd_1")]
-	internal static void* /* System.String */ System_String_TrimEnd_1(void* /* System.String */ __self, char /* System.Char */ trimChar, void** /* System.Exception */ __outException)
+	internal static void* /* System.String */ System_String_TrimEnd_1(void* /* System.String */ __self, ushort /* System.Char */ trimChar, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18852,9 +18867,10 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
+		System.Char trimCharConverted = (char)trimChar;
 	
 	    try {
-			System.String __returnValue = __selfConverted.TrimEnd(trimChar);
+			System.String __returnValue = __selfConverted.TrimEnd(trimCharConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -18971,7 +18987,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Contains_2")]
-	internal static byte /* System.Boolean */ System_String_Contains_2(void* /* System.String */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_Contains_2(void* /* System.String */ __self, ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18979,9 +18995,10 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Boolean __returnValue = __selfConverted.Contains(value);
+			System.Boolean __returnValue = __selfConverted.Contains(valueConverted);
 			byte __returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
@@ -19002,7 +19019,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Contains_3")]
-	internal static byte /* System.Boolean */ System_String_Contains_3(void* /* System.String */ __self, char /* System.Char */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_String_Contains_3(void* /* System.String */ __self, ushort /* System.Char */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19010,9 +19027,10 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Boolean __returnValue = __selfConverted.Contains(value, comparisonType);
+			System.Boolean __returnValue = __selfConverted.Contains(valueConverted, comparisonType);
 			byte __returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
@@ -19033,7 +19051,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf")]
-	internal static int /* System.Int32 */ System_String_IndexOf(void* /* System.String */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_String_IndexOf(void* /* System.String */ __self, ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19041,9 +19059,10 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = __selfConverted.IndexOf(value);
+			System.Int32 __returnValue = __selfConverted.IndexOf(valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -19063,7 +19082,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_1")]
-	internal static int /* System.Int32 */ System_String_IndexOf_1(void* /* System.String */ __self, char /* System.Char */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_String_IndexOf_1(void* /* System.String */ __self, ushort /* System.Char */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19071,9 +19090,10 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = __selfConverted.IndexOf(value, startIndex);
+			System.Int32 __returnValue = __selfConverted.IndexOf(valueConverted, startIndex);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -19093,7 +19113,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_2")]
-	internal static int /* System.Int32 */ System_String_IndexOf_2(void* /* System.String */ __self, char /* System.Char */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_String_IndexOf_2(void* /* System.String */ __self, ushort /* System.Char */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19101,9 +19121,10 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = __selfConverted.IndexOf(value, comparisonType);
+			System.Int32 __returnValue = __selfConverted.IndexOf(valueConverted, comparisonType);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -19123,7 +19144,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_3")]
-	internal static int /* System.Int32 */ System_String_IndexOf_3(void* /* System.String */ __self, char /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_String_IndexOf_3(void* /* System.String */ __self, ushort /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19131,9 +19152,10 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = __selfConverted.IndexOf(value, startIndex, count);
+			System.Int32 __returnValue = __selfConverted.IndexOf(valueConverted, startIndex, count);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -19432,7 +19454,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf")]
-	internal static int /* System.Int32 */ System_String_LastIndexOf(void* /* System.String */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_String_LastIndexOf(void* /* System.String */ __self, ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19440,9 +19462,10 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = __selfConverted.LastIndexOf(value);
+			System.Int32 __returnValue = __selfConverted.LastIndexOf(valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -19462,7 +19485,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_1")]
-	internal static int /* System.Int32 */ System_String_LastIndexOf_1(void* /* System.String */ __self, char /* System.Char */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_String_LastIndexOf_1(void* /* System.String */ __self, ushort /* System.Char */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19470,9 +19493,10 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = __selfConverted.LastIndexOf(value, startIndex);
+			System.Int32 __returnValue = __selfConverted.LastIndexOf(valueConverted, startIndex);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -19492,7 +19516,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_2")]
-	internal static int /* System.Int32 */ System_String_LastIndexOf_2(void* /* System.String */ __self, char /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_String_LastIndexOf_2(void* /* System.String */ __self, ushort /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19500,9 +19524,10 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = __selfConverted.LastIndexOf(value, startIndex, count);
+			System.Int32 __returnValue = __selfConverted.LastIndexOf(valueConverted, startIndex, count);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -19853,11 +19878,12 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Create_2")]
-	internal static void* /* System.String */ System_String_Create_2(char /* System.Char */ c, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	internal static void* /* System.String */ System_String_Create_2(ushort /* System.Char */ c, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
+		System.Char cConverted = (char)c;
 	
 	    try {
-			System.String __returnValue = new System.String(c, count);
+			System.String __returnValue = new System.String(cConverted, count);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -19878,7 +19904,7 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Chars_Get")]
-	internal static char /* System.Char */ System_String_Chars_Get(void* /* System.String */ __self, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_String_Chars_Get(void* /* System.String */ __self, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19889,12 +19915,13 @@ internal unsafe class System_String
 	
 	    try {
 			System.Char __returnValue = __selfConverted[index];
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -23594,11 +23621,12 @@ internal unsafe class System_Globalization_CompareInfo
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IsSortable")]
-	internal static byte /* System.Boolean */ System_Globalization_CompareInfo_IsSortable(char /* System.Char */ ch, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Globalization_CompareInfo_IsSortable(ushort /* System.Char */ ch, void** /* System.Exception */ __outException)
 	{
+		System.Char chConverted = (char)ch;
 	
 	    try {
-			System.Boolean __returnValue = System.Globalization.CompareInfo.IsSortable(ch);
+			System.Boolean __returnValue = System.Globalization.CompareInfo.IsSortable(chConverted);
 			byte __returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
@@ -23995,7 +24023,7 @@ internal unsafe class System_Globalization_CompareInfo
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IndexOf")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -24004,9 +24032,10 @@ internal unsafe class System_Globalization_CompareInfo
 		System.Globalization.CompareInfo __selfConverted = InteropUtils.GetInstance<System.Globalization.CompareInfo>(__self);
 	
 		System.String sourceConverted = InteropUtils.GetInstance<System.String>(source);
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = __selfConverted.IndexOf(sourceConverted, value);
+			System.Int32 __returnValue = __selfConverted.IndexOf(sourceConverted, valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -24058,7 +24087,7 @@ internal unsafe class System_Globalization_CompareInfo
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IndexOf_2")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf_2(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, char /* System.Char */ value, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf_2(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, ushort /* System.Char */ value, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -24067,9 +24096,10 @@ internal unsafe class System_Globalization_CompareInfo
 		System.Globalization.CompareInfo __selfConverted = InteropUtils.GetInstance<System.Globalization.CompareInfo>(__self);
 	
 		System.String sourceConverted = InteropUtils.GetInstance<System.String>(source);
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = __selfConverted.IndexOf(sourceConverted, value, options);
+			System.Int32 __returnValue = __selfConverted.IndexOf(sourceConverted, valueConverted, options);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -24121,7 +24151,7 @@ internal unsafe class System_Globalization_CompareInfo
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IndexOf_4")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf_4(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, char /* System.Char */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf_4(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, ushort /* System.Char */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -24130,9 +24160,10 @@ internal unsafe class System_Globalization_CompareInfo
 		System.Globalization.CompareInfo __selfConverted = InteropUtils.GetInstance<System.Globalization.CompareInfo>(__self);
 	
 		System.String sourceConverted = InteropUtils.GetInstance<System.String>(source);
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = __selfConverted.IndexOf(sourceConverted, value, startIndex);
+			System.Int32 __returnValue = __selfConverted.IndexOf(sourceConverted, valueConverted, startIndex);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -24184,7 +24215,7 @@ internal unsafe class System_Globalization_CompareInfo
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IndexOf_6")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf_6(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, char /* System.Char */ value, int /* System.Int32 */ startIndex, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf_6(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, ushort /* System.Char */ value, int /* System.Int32 */ startIndex, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -24193,9 +24224,10 @@ internal unsafe class System_Globalization_CompareInfo
 		System.Globalization.CompareInfo __selfConverted = InteropUtils.GetInstance<System.Globalization.CompareInfo>(__self);
 	
 		System.String sourceConverted = InteropUtils.GetInstance<System.String>(source);
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = __selfConverted.IndexOf(sourceConverted, value, startIndex, options);
+			System.Int32 __returnValue = __selfConverted.IndexOf(sourceConverted, valueConverted, startIndex, options);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -24247,7 +24279,7 @@ internal unsafe class System_Globalization_CompareInfo
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IndexOf_8")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf_8(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, char /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf_8(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, ushort /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -24256,9 +24288,10 @@ internal unsafe class System_Globalization_CompareInfo
 		System.Globalization.CompareInfo __selfConverted = InteropUtils.GetInstance<System.Globalization.CompareInfo>(__self);
 	
 		System.String sourceConverted = InteropUtils.GetInstance<System.String>(source);
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = __selfConverted.IndexOf(sourceConverted, value, startIndex, count);
+			System.Int32 __returnValue = __selfConverted.IndexOf(sourceConverted, valueConverted, startIndex, count);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -24310,7 +24343,7 @@ internal unsafe class System_Globalization_CompareInfo
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_IndexOf_10")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf_10(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, char /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_IndexOf_10(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, ushort /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -24319,9 +24352,10 @@ internal unsafe class System_Globalization_CompareInfo
 		System.Globalization.CompareInfo __selfConverted = InteropUtils.GetInstance<System.Globalization.CompareInfo>(__self);
 	
 		System.String sourceConverted = InteropUtils.GetInstance<System.String>(source);
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = __selfConverted.IndexOf(sourceConverted, value, startIndex, count, options);
+			System.Int32 __returnValue = __selfConverted.IndexOf(sourceConverted, valueConverted, startIndex, count, options);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -24373,7 +24407,7 @@ internal unsafe class System_Globalization_CompareInfo
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_LastIndexOf")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -24382,9 +24416,10 @@ internal unsafe class System_Globalization_CompareInfo
 		System.Globalization.CompareInfo __selfConverted = InteropUtils.GetInstance<System.Globalization.CompareInfo>(__self);
 	
 		System.String sourceConverted = InteropUtils.GetInstance<System.String>(source);
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = __selfConverted.LastIndexOf(sourceConverted, value);
+			System.Int32 __returnValue = __selfConverted.LastIndexOf(sourceConverted, valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -24436,7 +24471,7 @@ internal unsafe class System_Globalization_CompareInfo
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_LastIndexOf_2")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf_2(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, char /* System.Char */ value, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf_2(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, ushort /* System.Char */ value, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -24445,9 +24480,10 @@ internal unsafe class System_Globalization_CompareInfo
 		System.Globalization.CompareInfo __selfConverted = InteropUtils.GetInstance<System.Globalization.CompareInfo>(__self);
 	
 		System.String sourceConverted = InteropUtils.GetInstance<System.String>(source);
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = __selfConverted.LastIndexOf(sourceConverted, value, options);
+			System.Int32 __returnValue = __selfConverted.LastIndexOf(sourceConverted, valueConverted, options);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -24499,7 +24535,7 @@ internal unsafe class System_Globalization_CompareInfo
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_LastIndexOf_4")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf_4(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, char /* System.Char */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf_4(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, ushort /* System.Char */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -24508,9 +24544,10 @@ internal unsafe class System_Globalization_CompareInfo
 		System.Globalization.CompareInfo __selfConverted = InteropUtils.GetInstance<System.Globalization.CompareInfo>(__self);
 	
 		System.String sourceConverted = InteropUtils.GetInstance<System.String>(source);
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = __selfConverted.LastIndexOf(sourceConverted, value, startIndex);
+			System.Int32 __returnValue = __selfConverted.LastIndexOf(sourceConverted, valueConverted, startIndex);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -24562,7 +24599,7 @@ internal unsafe class System_Globalization_CompareInfo
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_LastIndexOf_6")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf_6(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, char /* System.Char */ value, int /* System.Int32 */ startIndex, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf_6(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, ushort /* System.Char */ value, int /* System.Int32 */ startIndex, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -24571,9 +24608,10 @@ internal unsafe class System_Globalization_CompareInfo
 		System.Globalization.CompareInfo __selfConverted = InteropUtils.GetInstance<System.Globalization.CompareInfo>(__self);
 	
 		System.String sourceConverted = InteropUtils.GetInstance<System.String>(source);
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = __selfConverted.LastIndexOf(sourceConverted, value, startIndex, options);
+			System.Int32 __returnValue = __selfConverted.LastIndexOf(sourceConverted, valueConverted, startIndex, options);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -24625,7 +24663,7 @@ internal unsafe class System_Globalization_CompareInfo
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_LastIndexOf_8")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf_8(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, char /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf_8(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, ushort /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -24634,9 +24672,10 @@ internal unsafe class System_Globalization_CompareInfo
 		System.Globalization.CompareInfo __selfConverted = InteropUtils.GetInstance<System.Globalization.CompareInfo>(__self);
 	
 		System.String sourceConverted = InteropUtils.GetInstance<System.String>(source);
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = __selfConverted.LastIndexOf(sourceConverted, value, startIndex, count);
+			System.Int32 __returnValue = __selfConverted.LastIndexOf(sourceConverted, valueConverted, startIndex, count);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -24688,7 +24727,7 @@ internal unsafe class System_Globalization_CompareInfo
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_CompareInfo_LastIndexOf_10")]
-	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf_10(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, char /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Globalization_CompareInfo_LastIndexOf_10(void* /* System.Globalization.CompareInfo */ __self, void* /* System.String */ source, ushort /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, System.Globalization.CompareOptions /* System.Globalization.CompareOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -24697,9 +24736,10 @@ internal unsafe class System_Globalization_CompareInfo
 		System.Globalization.CompareInfo __selfConverted = InteropUtils.GetInstance<System.Globalization.CompareInfo>(__self);
 	
 		System.String sourceConverted = InteropUtils.GetInstance<System.String>(source);
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = __selfConverted.LastIndexOf(sourceConverted, value, startIndex, count, options);
+			System.Int32 __returnValue = __selfConverted.LastIndexOf(sourceConverted, valueConverted, startIndex, count, options);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -27609,7 +27649,7 @@ internal unsafe class System_Runtime_Serialization_SerializationInfo
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_AddValue_3")]
-	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfo_AddValue_3(void* /* System.Runtime.Serialization.SerializationInfo */ __self, void* /* System.String */ name, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_Runtime_Serialization_SerializationInfo_AddValue_3(void* /* System.Runtime.Serialization.SerializationInfo */ __self, void* /* System.String */ name, ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -27618,9 +27658,10 @@ internal unsafe class System_Runtime_Serialization_SerializationInfo
 		System.Runtime.Serialization.SerializationInfo __selfConverted = InteropUtils.GetInstance<System.Runtime.Serialization.SerializationInfo>(__self);
 	
 		System.String nameConverted = InteropUtils.GetInstance<System.String>(name);
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			__selfConverted.AddValue(nameConverted, value);
+			__selfConverted.AddValue(nameConverted, valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -28053,7 +28094,7 @@ internal unsafe class System_Runtime_Serialization_SerializationInfo
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_SerializationInfo_GetChar")]
-	internal static char /* System.Char */ System_Runtime_Serialization_SerializationInfo_GetChar(void* /* System.Runtime.Serialization.SerializationInfo */ __self, void* /* System.String */ name, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Runtime_Serialization_SerializationInfo_GetChar(void* /* System.Runtime.Serialization.SerializationInfo */ __self, void* /* System.String */ name, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -28065,12 +28106,13 @@ internal unsafe class System_Runtime_Serialization_SerializationInfo
 	
 	    try {
 			System.Char __returnValue = __selfConverted.GetChar(nameConverted);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -40952,7 +40994,7 @@ internal unsafe class System_DateTime
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_GetDateTimeFormats_2")]
-	internal static void* /* System.String[] */ System_DateTime_GetDateTimeFormats_2(void* /* System.DateTime */ __self, char /* System.Char */ format, void** /* System.Exception */ __outException)
+	internal static void* /* System.String[] */ System_DateTime_GetDateTimeFormats_2(void* /* System.DateTime */ __self, ushort /* System.Char */ format, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -40960,9 +41002,10 @@ internal unsafe class System_DateTime
 	
 		System.DateTime __selfConverted = InteropUtils.GetInstance<System.DateTime>(__self);
 	
+		System.Char formatConverted = (char)format;
 	
 	    try {
-			System.String[] __returnValue = __selfConverted.GetDateTimeFormats(format);
+			System.String[] __returnValue = __selfConverted.GetDateTimeFormats(formatConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -40988,7 +41031,7 @@ internal unsafe class System_DateTime
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_DateTime_GetDateTimeFormats_3")]
-	internal static void* /* System.String[] */ System_DateTime_GetDateTimeFormats_3(void* /* System.DateTime */ __self, char /* System.Char */ format, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
+	internal static void* /* System.String[] */ System_DateTime_GetDateTimeFormats_3(void* /* System.DateTime */ __self, ushort /* System.Char */ format, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -40996,10 +41039,11 @@ internal unsafe class System_DateTime
 	
 		System.DateTime __selfConverted = InteropUtils.GetInstance<System.DateTime>(__self);
 	
+		System.Char formatConverted = (char)format;
 		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
 	
 	    try {
-			System.String[] __returnValue = __selfConverted.GetDateTimeFormats(format, providerConverted);
+			System.String[] __returnValue = __selfConverted.GetDateTimeFormats(formatConverted, providerConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -49880,7 +49924,7 @@ internal unsafe class System_Runtime_Serialization_IFormatterConverter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Runtime_Serialization_IFormatterConverter_ToChar")]
-	internal static char /* System.Char */ System_Runtime_Serialization_IFormatterConverter_ToChar(void* /* System.Runtime.Serialization.IFormatterConverter */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Runtime_Serialization_IFormatterConverter_ToChar(void* /* System.Runtime.Serialization.IFormatterConverter */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -49892,12 +49936,13 @@ internal unsafe class System_Runtime_Serialization_IFormatterConverter
 	
 	    try {
 			System.Char __returnValue = __selfConverted.ToChar(valueConverted);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -86428,12 +86473,13 @@ internal unsafe class System_Text_Rune
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_TryCreate")]
-	internal static byte /* System.Boolean */ System_Text_Rune_TryCreate(char /* System.Char */ ch, void** /* System.Text.Rune */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_TryCreate(ushort /* System.Char */ ch, void** /* System.Text.Rune */ result, void** /* System.Exception */ __outException)
 	{
+		System.Char chConverted = (char)ch;
 		System.Text.Rune resultConverted;
 	
 	    try {
-			System.Boolean __returnValue = System.Text.Rune.TryCreate(ch, out resultConverted);
+			System.Boolean __returnValue = System.Text.Rune.TryCreate(chConverted, out resultConverted);
 			byte __returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
@@ -86462,12 +86508,14 @@ internal unsafe class System_Text_Rune
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_TryCreate_1")]
-	internal static byte /* System.Boolean */ System_Text_Rune_TryCreate_1(char /* System.Char */ highSurrogate, char /* System.Char */ lowSurrogate, void** /* System.Text.Rune */ result, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_Rune_TryCreate_1(ushort /* System.Char */ highSurrogate, ushort /* System.Char */ lowSurrogate, void** /* System.Text.Rune */ result, void** /* System.Exception */ __outException)
 	{
+		System.Char highSurrogateConverted = (char)highSurrogate;
+		System.Char lowSurrogateConverted = (char)lowSurrogate;
 		System.Text.Rune resultConverted;
 	
 	    try {
-			System.Boolean __returnValue = System.Text.Rune.TryCreate(highSurrogate, lowSurrogate, out resultConverted);
+			System.Boolean __returnValue = System.Text.Rune.TryCreate(highSurrogateConverted, lowSurrogateConverted, out resultConverted);
 			byte __returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
@@ -87041,11 +87089,12 @@ internal unsafe class System_Text_Rune
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_Create")]
-	internal static void* /* System.Text.Rune */ System_Text_Rune_Create(char /* System.Char */ ch, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.Rune */ System_Text_Rune_Create(ushort /* System.Char */ ch, void** /* System.Exception */ __outException)
 	{
+		System.Char chConverted = (char)ch;
 	
 	    try {
-			System.Text.Rune __returnValue = new System.Text.Rune(ch);
+			System.Text.Rune __returnValue = new System.Text.Rune(chConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -87066,11 +87115,13 @@ internal unsafe class System_Text_Rune
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_Create_1")]
-	internal static void* /* System.Text.Rune */ System_Text_Rune_Create_1(char /* System.Char */ highSurrogate, char /* System.Char */ lowSurrogate, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.Rune */ System_Text_Rune_Create_1(ushort /* System.Char */ highSurrogate, ushort /* System.Char */ lowSurrogate, void** /* System.Exception */ __outException)
 	{
+		System.Char highSurrogateConverted = (char)highSurrogate;
+		System.Char lowSurrogateConverted = (char)lowSurrogate;
 	
 	    try {
-			System.Text.Rune __returnValue = new System.Text.Rune(highSurrogate, lowSurrogate);
+			System.Text.Rune __returnValue = new System.Text.Rune(highSurrogateConverted, lowSurrogateConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -87974,7 +88025,7 @@ internal unsafe class System_Globalization_TextInfo
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_ToLower")]
-	internal static char /* System.Char */ System_Globalization_TextInfo_ToLower(void* /* System.Globalization.TextInfo */ __self, char /* System.Char */ c, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Globalization_TextInfo_ToLower(void* /* System.Globalization.TextInfo */ __self, ushort /* System.Char */ c, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -87982,15 +88033,17 @@ internal unsafe class System_Globalization_TextInfo
 	
 		System.Globalization.TextInfo __selfConverted = InteropUtils.GetInstance<System.Globalization.TextInfo>(__self);
 	
+		System.Char cConverted = (char)c;
 	
 	    try {
-			System.Char __returnValue = __selfConverted.ToLower(c);
+			System.Char __returnValue = __selfConverted.ToLower(cConverted);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -88036,7 +88089,7 @@ internal unsafe class System_Globalization_TextInfo
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_ToUpper")]
-	internal static char /* System.Char */ System_Globalization_TextInfo_ToUpper(void* /* System.Globalization.TextInfo */ __self, char /* System.Char */ c, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Globalization_TextInfo_ToUpper(void* /* System.Globalization.TextInfo */ __self, ushort /* System.Char */ c, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -88044,15 +88097,17 @@ internal unsafe class System_Globalization_TextInfo
 	
 		System.Globalization.TextInfo __selfConverted = InteropUtils.GetInstance<System.Globalization.TextInfo>(__self);
 	
+		System.Char cConverted = (char)c;
 	
 	    try {
-			System.Char __returnValue = __selfConverted.ToUpper(c);
+			System.Char __returnValue = __selfConverted.ToUpper(cConverted);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -90912,7 +90967,7 @@ internal unsafe class System_Globalization_DateTimeFormatInfo
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_GetAllDateTimePatterns_1")]
-	internal static void* /* System.String[] */ System_Globalization_DateTimeFormatInfo_GetAllDateTimePatterns_1(void* /* System.Globalization.DateTimeFormatInfo */ __self, char /* System.Char */ format, void** /* System.Exception */ __outException)
+	internal static void* /* System.String[] */ System_Globalization_DateTimeFormatInfo_GetAllDateTimePatterns_1(void* /* System.Globalization.DateTimeFormatInfo */ __self, ushort /* System.Char */ format, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -90920,9 +90975,10 @@ internal unsafe class System_Globalization_DateTimeFormatInfo
 	
 		System.Globalization.DateTimeFormatInfo __selfConverted = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
 	
+		System.Char formatConverted = (char)format;
 	
 	    try {
-			System.String[] __returnValue = __selfConverted.GetAllDateTimePatterns(format);
+			System.String[] __returnValue = __selfConverted.GetAllDateTimePatterns(formatConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -91062,7 +91118,7 @@ internal unsafe class System_Globalization_DateTimeFormatInfo
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_DateTimeFormatInfo_SetAllDateTimePatterns")]
-	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_SetAllDateTimePatterns(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.String[] */ patterns, char /* System.Char */ format, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_Globalization_DateTimeFormatInfo_SetAllDateTimePatterns(void* /* System.Globalization.DateTimeFormatInfo */ __self, void* /* System.String[] */ patterns, ushort /* System.Char */ format, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -91071,9 +91127,10 @@ internal unsafe class System_Globalization_DateTimeFormatInfo
 		System.Globalization.DateTimeFormatInfo __selfConverted = InteropUtils.GetInstance<System.Globalization.DateTimeFormatInfo>(__self);
 	
 		System.String[] patternsConverted = InteropUtils.GetInstance<System.String[]>(patterns);
+		System.Char formatConverted = (char)format;
 	
 	    try {
-			__selfConverted.SetAllDateTimePatterns(patternsConverted, format);
+			__selfConverted.SetAllDateTimePatterns(patternsConverted, formatConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -92757,7 +92814,7 @@ internal unsafe class System_CharEnumerator
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_CharEnumerator_Current_Get")]
-	internal static char /* System.Char */ System_CharEnumerator_Current_Get(void* /* System.CharEnumerator */ __self, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_CharEnumerator_Current_Get(void* /* System.CharEnumerator */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -92768,12 +92825,13 @@ internal unsafe class System_CharEnumerator
 	
 	    try {
 			System.Char __returnValue = __selfConverted.Current;
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -95423,7 +95481,7 @@ internal unsafe class System_Text_EncoderFallbackBuffer
 	// Unsupported Member "get_Remaining": Is Special Name
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_EncoderFallbackBuffer_Fallback")]
-	internal static byte /* System.Boolean */ System_Text_EncoderFallbackBuffer_Fallback(void* /* System.Text.EncoderFallbackBuffer */ __self, char /* System.Char */ charUnknown, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_EncoderFallbackBuffer_Fallback(void* /* System.Text.EncoderFallbackBuffer */ __self, ushort /* System.Char */ charUnknown, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -95431,9 +95489,10 @@ internal unsafe class System_Text_EncoderFallbackBuffer
 	
 		System.Text.EncoderFallbackBuffer __selfConverted = InteropUtils.GetInstance<System.Text.EncoderFallbackBuffer>(__self);
 	
+		System.Char charUnknownConverted = (char)charUnknown;
 	
 	    try {
-			System.Boolean __returnValue = __selfConverted.Fallback(charUnknown, index);
+			System.Boolean __returnValue = __selfConverted.Fallback(charUnknownConverted, index);
 			byte __returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
@@ -95454,7 +95513,7 @@ internal unsafe class System_Text_EncoderFallbackBuffer
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_EncoderFallbackBuffer_Fallback_1")]
-	internal static byte /* System.Boolean */ System_Text_EncoderFallbackBuffer_Fallback_1(void* /* System.Text.EncoderFallbackBuffer */ __self, char /* System.Char */ charUnknownHigh, char /* System.Char */ charUnknownLow, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Text_EncoderFallbackBuffer_Fallback_1(void* /* System.Text.EncoderFallbackBuffer */ __self, ushort /* System.Char */ charUnknownHigh, ushort /* System.Char */ charUnknownLow, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -95462,9 +95521,11 @@ internal unsafe class System_Text_EncoderFallbackBuffer
 	
 		System.Text.EncoderFallbackBuffer __selfConverted = InteropUtils.GetInstance<System.Text.EncoderFallbackBuffer>(__self);
 	
+		System.Char charUnknownHighConverted = (char)charUnknownHigh;
+		System.Char charUnknownLowConverted = (char)charUnknownLow;
 	
 	    try {
-			System.Boolean __returnValue = __selfConverted.Fallback(charUnknownHigh, charUnknownLow, index);
+			System.Boolean __returnValue = __selfConverted.Fallback(charUnknownHighConverted, charUnknownLowConverted, index);
 			byte __returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
@@ -95485,7 +95546,7 @@ internal unsafe class System_Text_EncoderFallbackBuffer
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_EncoderFallbackBuffer_GetNextChar")]
-	internal static char /* System.Char */ System_Text_EncoderFallbackBuffer_GetNextChar(void* /* System.Text.EncoderFallbackBuffer */ __self, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Text_EncoderFallbackBuffer_GetNextChar(void* /* System.Text.EncoderFallbackBuffer */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -95496,12 +95557,13 @@ internal unsafe class System_Text_EncoderFallbackBuffer
 	
 	    try {
 			System.Char __returnValue = __selfConverted.GetNextChar();
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -95801,7 +95863,7 @@ internal unsafe class System_Text_DecoderFallbackBuffer
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_DecoderFallbackBuffer_GetNextChar")]
-	internal static char /* System.Char */ System_Text_DecoderFallbackBuffer_GetNextChar(void* /* System.Text.DecoderFallbackBuffer */ __self, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Text_DecoderFallbackBuffer_GetNextChar(void* /* System.Text.DecoderFallbackBuffer */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -95812,12 +95874,13 @@ internal unsafe class System_Text_DecoderFallbackBuffer
 	
 	    try {
 			System.Char __returnValue = __selfConverted.GetNextChar();
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -102836,7 +102899,7 @@ internal unsafe class System_Security_SecureString
 	// Unsupported Member ".ctor": Has unsupported parameter(s): value: Is Managed Pointer Type; 
 
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecureString_AppendChar")]
-	internal static void /* System.Void */ System_Security_SecureString_AppendChar(void* /* System.Security.SecureString */ __self, char /* System.Char */ c, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_Security_SecureString_AppendChar(void* /* System.Security.SecureString */ __self, ushort /* System.Char */ c, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -102844,9 +102907,10 @@ internal unsafe class System_Security_SecureString
 	
 		System.Security.SecureString __selfConverted = InteropUtils.GetInstance<System.Security.SecureString>(__self);
 	
+		System.Char cConverted = (char)c;
 	
 	    try {
-			__selfConverted.AppendChar(c);
+			__selfConverted.AppendChar(cConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -102951,7 +103015,7 @@ internal unsafe class System_Security_SecureString
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecureString_InsertAt")]
-	internal static void /* System.Void */ System_Security_SecureString_InsertAt(void* /* System.Security.SecureString */ __self, int /* System.Int32 */ index, char /* System.Char */ c, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_Security_SecureString_InsertAt(void* /* System.Security.SecureString */ __self, int /* System.Int32 */ index, ushort /* System.Char */ c, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -102959,9 +103023,10 @@ internal unsafe class System_Security_SecureString
 	
 		System.Security.SecureString __selfConverted = InteropUtils.GetInstance<System.Security.SecureString>(__self);
 	
+		System.Char cConverted = (char)c;
 	
 	    try {
-			__selfConverted.InsertAt(index, c);
+			__selfConverted.InsertAt(index, cConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -103066,7 +103131,7 @@ internal unsafe class System_Security_SecureString
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_SecureString_SetAt")]
-	internal static void /* System.Void */ System_Security_SecureString_SetAt(void* /* System.Security.SecureString */ __self, int /* System.Int32 */ index, char /* System.Char */ c, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_Security_SecureString_SetAt(void* /* System.Security.SecureString */ __self, int /* System.Int32 */ index, ushort /* System.Char */ c, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -103074,9 +103139,10 @@ internal unsafe class System_Security_SecureString
 	
 		System.Security.SecureString __selfConverted = InteropUtils.GetInstance<System.Security.SecureString>(__self);
 	
+		System.Char cConverted = (char)c;
 	
 	    try {
-			__selfConverted.SetAt(index, c);
+			__selfConverted.SetAt(index, cConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -109664,11 +109730,12 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToBoolean_4")]
-	internal static byte /* System.Boolean */ System_Convert_ToBoolean_4(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Convert_ToBoolean_4(ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Boolean __returnValue = System.Convert.ToBoolean(value);
+			System.Boolean __returnValue = System.Convert.ToBoolean(valueConverted);
 			byte __returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
@@ -110019,18 +110086,19 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToChar")]
-	internal static char /* System.Char */ System_Convert_ToChar(void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Convert_ToChar(void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
 	
 	    try {
 			System.Char __returnValue = System.Convert.ToChar(valueConverted);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -110044,19 +110112,20 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToChar_1")]
-	internal static char /* System.Char */ System_Convert_ToChar_1(void* /* System.Object */ value, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Convert_ToChar_1(void* /* System.Object */ value, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
 	{
 		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
 		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
 	
 	    try {
 			System.Char __returnValue = System.Convert.ToChar(valueConverted, providerConverted);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -110070,18 +110139,19 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToChar_2")]
-	internal static char /* System.Char */ System_Convert_ToChar_2(byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Convert_ToChar_2(byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
 	{
 		System.Boolean valueConverted = value.ToBool();
 	
 	    try {
 			System.Char __returnValue = System.Convert.ToChar(valueConverted);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -110095,17 +110165,19 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToChar_3")]
-	internal static char /* System.Char */ System_Convert_ToChar_3(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Convert_ToChar_3(ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Char __returnValue = System.Convert.ToChar(value);
+			System.Char __returnValue = System.Convert.ToChar(valueConverted);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -110119,17 +110191,18 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToChar_4")]
-	internal static char /* System.Char */ System_Convert_ToChar_4(sbyte /* System.SByte */ value, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Convert_ToChar_4(sbyte /* System.SByte */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Char __returnValue = System.Convert.ToChar(value);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -110143,17 +110216,18 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToChar_5")]
-	internal static char /* System.Char */ System_Convert_ToChar_5(byte /* System.Byte */ value, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Convert_ToChar_5(byte /* System.Byte */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Char __returnValue = System.Convert.ToChar(value);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -110167,17 +110241,18 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToChar_6")]
-	internal static char /* System.Char */ System_Convert_ToChar_6(short /* System.Int16 */ value, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Convert_ToChar_6(short /* System.Int16 */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Char __returnValue = System.Convert.ToChar(value);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -110191,17 +110266,18 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToChar_7")]
-	internal static char /* System.Char */ System_Convert_ToChar_7(ushort /* System.UInt16 */ value, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Convert_ToChar_7(ushort /* System.UInt16 */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Char __returnValue = System.Convert.ToChar(value);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -110215,17 +110291,18 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToChar_8")]
-	internal static char /* System.Char */ System_Convert_ToChar_8(int /* System.Int32 */ value, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Convert_ToChar_8(int /* System.Int32 */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Char __returnValue = System.Convert.ToChar(value);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -110239,17 +110316,18 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToChar_9")]
-	internal static char /* System.Char */ System_Convert_ToChar_9(uint /* System.UInt32 */ value, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Convert_ToChar_9(uint /* System.UInt32 */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Char __returnValue = System.Convert.ToChar(value);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -110263,17 +110341,18 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToChar_10")]
-	internal static char /* System.Char */ System_Convert_ToChar_10(long /* System.Int64 */ value, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Convert_ToChar_10(long /* System.Int64 */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Char __returnValue = System.Convert.ToChar(value);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -110287,17 +110366,18 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToChar_11")]
-	internal static char /* System.Char */ System_Convert_ToChar_11(ulong /* System.UInt64 */ value, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Convert_ToChar_11(ulong /* System.UInt64 */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Char __returnValue = System.Convert.ToChar(value);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -110311,18 +110391,19 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToChar_12")]
-	internal static char /* System.Char */ System_Convert_ToChar_12(void* /* System.String */ value, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Convert_ToChar_12(void* /* System.String */ value, void** /* System.Exception */ __outException)
 	{
 		System.String valueConverted = InteropUtils.GetInstance<System.String>(value);
 	
 	    try {
 			System.Char __returnValue = System.Convert.ToChar(valueConverted);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -110336,19 +110417,20 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToChar_13")]
-	internal static char /* System.Char */ System_Convert_ToChar_13(void* /* System.String */ value, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Convert_ToChar_13(void* /* System.String */ value, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
 	{
 		System.String valueConverted = InteropUtils.GetInstance<System.String>(value);
 		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
 	
 	    try {
 			System.Char __returnValue = System.Convert.ToChar(valueConverted, providerConverted);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -110362,17 +110444,18 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToChar_14")]
-	internal static char /* System.Char */ System_Convert_ToChar_14(float /* System.Single */ value, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Convert_ToChar_14(float /* System.Single */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Char __returnValue = System.Convert.ToChar(value);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -110386,17 +110469,18 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToChar_15")]
-	internal static char /* System.Char */ System_Convert_ToChar_15(double /* System.Double */ value, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Convert_ToChar_15(double /* System.Double */ value, void** /* System.Exception */ __outException)
 	{
 	
 	    try {
 			System.Char __returnValue = System.Convert.ToChar(value);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -110410,18 +110494,19 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToChar_16")]
-	internal static char /* System.Char */ System_Convert_ToChar_16(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Convert_ToChar_16(void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
 	{
 		System.Decimal valueConverted = InteropUtils.GetInstance<System.Decimal>(value);
 	
 	    try {
 			System.Char __returnValue = System.Convert.ToChar(valueConverted);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -110435,18 +110520,19 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToChar_17")]
-	internal static char /* System.Char */ System_Convert_ToChar_17(void* /* System.DateTime */ value, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Convert_ToChar_17(void* /* System.DateTime */ value, void** /* System.Exception */ __outException)
 	{
 		System.DateTime valueConverted = InteropUtils.GetInstance<System.DateTime>(value);
 	
 	    try {
 			System.Char __returnValue = System.Convert.ToChar(valueConverted);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -110560,11 +110646,12 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToSByte_4")]
-	internal static sbyte /* System.SByte */ System_Convert_ToSByte_4(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static sbyte /* System.SByte */ System_Convert_ToSByte_4(ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.SByte __returnValue = System.Convert.ToSByte(value);
+			System.SByte __returnValue = System.Convert.ToSByte(valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -111001,11 +111088,12 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToByte_4")]
-	internal static byte /* System.Byte */ System_Convert_ToByte_4(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static byte /* System.Byte */ System_Convert_ToByte_4(ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Byte __returnValue = System.Convert.ToByte(value);
+			System.Byte __returnValue = System.Convert.ToByte(valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -111418,11 +111506,12 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToInt16_3")]
-	internal static short /* System.Int16 */ System_Convert_ToInt16_3(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static short /* System.Int16 */ System_Convert_ToInt16_3(ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int16 __returnValue = System.Convert.ToInt16(value);
+			System.Int16 __returnValue = System.Convert.ToInt16(valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -111859,11 +111948,12 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToUInt16_3")]
-	internal static ushort /* System.UInt16 */ System_Convert_ToUInt16_3(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static ushort /* System.UInt16 */ System_Convert_ToUInt16_3(ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.UInt16 __returnValue = System.Convert.ToUInt16(value);
+			System.UInt16 __returnValue = System.Convert.ToUInt16(valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -112300,11 +112390,12 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToInt32_3")]
-	internal static int /* System.Int32 */ System_Convert_ToInt32_3(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Convert_ToInt32_3(ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int32 __returnValue = System.Convert.ToInt32(value);
+			System.Int32 __returnValue = System.Convert.ToInt32(valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -112741,11 +112832,12 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToUInt32_3")]
-	internal static uint /* System.UInt32 */ System_Convert_ToUInt32_3(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static uint /* System.UInt32 */ System_Convert_ToUInt32_3(ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.UInt32 __returnValue = System.Convert.ToUInt32(value);
+			System.UInt32 __returnValue = System.Convert.ToUInt32(valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -113182,11 +113274,12 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToInt64_3")]
-	internal static long /* System.Int64 */ System_Convert_ToInt64_3(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static long /* System.Int64 */ System_Convert_ToInt64_3(ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Int64 __returnValue = System.Convert.ToInt64(value);
+			System.Int64 __returnValue = System.Convert.ToInt64(valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -113623,11 +113716,12 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToUInt64_3")]
-	internal static ulong /* System.UInt64 */ System_Convert_ToUInt64_3(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static ulong /* System.UInt64 */ System_Convert_ToUInt64_3(ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.UInt64 __returnValue = System.Convert.ToUInt64(value);
+			System.UInt64 __returnValue = System.Convert.ToUInt64(valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -114087,11 +114181,12 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToSingle_4")]
-	internal static float /* System.Single */ System_Convert_ToSingle_4(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static float /* System.Single */ System_Convert_ToSingle_4(ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Single __returnValue = System.Convert.ToSingle(value);
+			System.Single __returnValue = System.Convert.ToSingle(valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -114552,11 +114647,12 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToDouble_5")]
-	internal static double /* System.Double */ System_Convert_ToDouble_5(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static double /* System.Double */ System_Convert_ToDouble_5(ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Double __returnValue = System.Convert.ToDouble(value);
+			System.Double __returnValue = System.Convert.ToDouble(valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -114973,11 +115069,12 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToDecimal_4")]
-	internal static void* /* System.Decimal */ System_Convert_ToDecimal_4(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Decimal */ System_Convert_ToDecimal_4(ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Decimal __returnValue = System.Convert.ToDecimal(value);
+			System.Decimal __returnValue = System.Convert.ToDecimal(valueConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -115687,11 +115784,12 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToDateTime_14")]
-	internal static void* /* System.DateTime */ System_Convert_ToDateTime_14(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.DateTime */ System_Convert_ToDateTime_14(ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.DateTime __returnValue = System.Convert.ToDateTime(value);
+			System.DateTime __returnValue = System.Convert.ToDateTime(valueConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -115894,11 +115992,12 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToString_4")]
-	internal static void* /* System.String */ System_Convert_ToString_4(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.String */ System_Convert_ToString_4(ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.String __returnValue = System.Convert.ToString(value);
+			System.String __returnValue = System.Convert.ToString(valueConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -115919,12 +116018,13 @@ internal unsafe class System_Convert
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Convert_ToString_5")]
-	internal static void* /* System.String */ System_Convert_ToString_5(char /* System.Char */ value, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
+	internal static void* /* System.String */ System_Convert_ToString_5(ushort /* System.Char */ value, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
 	
 	    try {
-			System.String __returnValue = System.Convert.ToString(value, providerConverted);
+			System.String __returnValue = System.Convert.ToString(valueConverted, providerConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -131095,7 +131195,7 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append(void* /* System.Text.StringBuilder */ __self, char /* System.Char */ value, int /* System.Int32 */ repeatCount, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append(void* /* System.Text.StringBuilder */ __self, ushort /* System.Char */ value, int /* System.Int32 */ repeatCount, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -131103,9 +131203,10 @@ internal unsafe class System_Text_StringBuilder
 	
 		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Text.StringBuilder __returnValue = __selfConverted.Append(value, repeatCount);
+			System.Text.StringBuilder __returnValue = __selfConverted.Append(valueConverted, repeatCount);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -131473,7 +131574,7 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_7")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_7(void* /* System.Text.StringBuilder */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_7(void* /* System.Text.StringBuilder */ __self, ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -131481,9 +131582,10 @@ internal unsafe class System_Text_StringBuilder
 	
 		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Text.StringBuilder __returnValue = __selfConverted.Append(value);
+			System.Text.StringBuilder __returnValue = __selfConverted.Append(valueConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -132150,7 +132252,7 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendJoin_2")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_AppendJoin_2(void* /* System.Text.StringBuilder */ __self, char /* System.Char */ separator, void* /* System.Object[] */ values, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_AppendJoin_2(void* /* System.Text.StringBuilder */ __self, ushort /* System.Char */ separator, void* /* System.Object[] */ values, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -132158,10 +132260,11 @@ internal unsafe class System_Text_StringBuilder
 	
 		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
 	
+		System.Char separatorConverted = (char)separator;
 		System.Object[] valuesConverted = InteropUtils.GetInstance<System.Object[]>(values);
 	
 	    try {
-			System.Text.StringBuilder __returnValue = __selfConverted.AppendJoin(separator, valuesConverted);
+			System.Text.StringBuilder __returnValue = __selfConverted.AppendJoin(separatorConverted, valuesConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -132182,7 +132285,7 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_AppendJoin_3")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_AppendJoin_3(void* /* System.Text.StringBuilder */ __self, char /* System.Char */ separator, void* /* System.String[] */ values, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_AppendJoin_3(void* /* System.Text.StringBuilder */ __self, ushort /* System.Char */ separator, void* /* System.String[] */ values, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -132190,10 +132293,11 @@ internal unsafe class System_Text_StringBuilder
 	
 		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
 	
+		System.Char separatorConverted = (char)separator;
 		System.String[] valuesConverted = InteropUtils.GetInstance<System.String[]>(values);
 	
 	    try {
-			System.Text.StringBuilder __returnValue = __selfConverted.AppendJoin(separator, valuesConverted);
+			System.Text.StringBuilder __returnValue = __selfConverted.AppendJoin(separatorConverted, valuesConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -132371,7 +132475,7 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Insert_6")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_6(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_6(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -132379,9 +132483,10 @@ internal unsafe class System_Text_StringBuilder
 	
 		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Text.StringBuilder __returnValue = __selfConverted.Insert(index, value);
+			System.Text.StringBuilder __returnValue = __selfConverted.Insert(index, valueConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -133300,7 +133405,7 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Replace_2")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Replace_2(void* /* System.Text.StringBuilder */ __self, char /* System.Char */ oldChar, char /* System.Char */ newChar, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Replace_2(void* /* System.Text.StringBuilder */ __self, ushort /* System.Char */ oldChar, ushort /* System.Char */ newChar, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -133308,9 +133413,11 @@ internal unsafe class System_Text_StringBuilder
 	
 		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
 	
+		System.Char oldCharConverted = (char)oldChar;
+		System.Char newCharConverted = (char)newChar;
 	
 	    try {
-			System.Text.StringBuilder __returnValue = __selfConverted.Replace(oldChar, newChar);
+			System.Text.StringBuilder __returnValue = __selfConverted.Replace(oldCharConverted, newCharConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -133331,7 +133438,7 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Replace_3")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Replace_3(void* /* System.Text.StringBuilder */ __self, char /* System.Char */ oldChar, char /* System.Char */ newChar, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Replace_3(void* /* System.Text.StringBuilder */ __self, ushort /* System.Char */ oldChar, ushort /* System.Char */ newChar, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -133339,9 +133446,11 @@ internal unsafe class System_Text_StringBuilder
 	
 		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
 	
+		System.Char oldCharConverted = (char)oldChar;
+		System.Char newCharConverted = (char)newChar;
 	
 	    try {
-			System.Text.StringBuilder __returnValue = __selfConverted.Replace(oldChar, newChar, startIndex, count);
+			System.Text.StringBuilder __returnValue = __selfConverted.Replace(oldCharConverted, newCharConverted, startIndex, count);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -133664,7 +133773,7 @@ internal unsafe class System_Text_StringBuilder
 	
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Chars_Get")]
-	internal static char /* System.Char */ System_Text_StringBuilder_Chars_Get(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Text_StringBuilder_Chars_Get(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -133675,12 +133784,13 @@ internal unsafe class System_Text_StringBuilder
 	
 	    try {
 			System.Char __returnValue = __selfConverted[index];
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -133694,7 +133804,7 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Chars_Set")]
-	internal static void /* System.Void */ System_Text_StringBuilder_Chars_Set(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, char /* System.Char */ __value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_Text_StringBuilder_Chars_Set(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, ushort /* System.Char */ __value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -133704,7 +133814,7 @@ internal unsafe class System_Text_StringBuilder
 	
 	
 	    try {
-			__selfConverted[index]  = __value;
+			__selfConverted[index]  = (char)__value;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -135080,38 +135190,42 @@ internal unsafe class System_IO_Path
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_Path_DirectorySeparatorChar_Get")]
-	internal static char /* System.Char */ System_IO_Path_DirectorySeparatorChar_Get()
+	internal static ushort /* System.Char */ System_IO_Path_DirectorySeparatorChar_Get()
 	{
 	
 		System.Char __returnValue = System.IO.Path.DirectorySeparatorChar;
-		return __returnValue;
+		ushort __returnValueNative = (ushort)__returnValue;
+		return __returnValueNative;
 	}
 	
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_Path_AltDirectorySeparatorChar_Get")]
-	internal static char /* System.Char */ System_IO_Path_AltDirectorySeparatorChar_Get()
+	internal static ushort /* System.Char */ System_IO_Path_AltDirectorySeparatorChar_Get()
 	{
 	
 		System.Char __returnValue = System.IO.Path.AltDirectorySeparatorChar;
-		return __returnValue;
+		ushort __returnValueNative = (ushort)__returnValue;
+		return __returnValueNative;
 	}
 	
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_Path_VolumeSeparatorChar_Get")]
-	internal static char /* System.Char */ System_IO_Path_VolumeSeparatorChar_Get()
+	internal static ushort /* System.Char */ System_IO_Path_VolumeSeparatorChar_Get()
 	{
 	
 		System.Char __returnValue = System.IO.Path.VolumeSeparatorChar;
-		return __returnValue;
+		ushort __returnValueNative = (ushort)__returnValue;
+		return __returnValueNative;
 	}
 	
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_Path_PathSeparator_Get")]
-	internal static char /* System.Char */ System_IO_Path_PathSeparator_Get()
+	internal static ushort /* System.Char */ System_IO_Path_PathSeparator_Get()
 	{
 	
 		System.Char __returnValue = System.IO.Path.PathSeparator;
-		return __returnValue;
+		ushort __returnValueNative = (ushort)__returnValue;
+		return __returnValueNative;
 	}
 	
 	
@@ -139093,7 +139207,7 @@ internal unsafe class System_IO_StreamWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_StreamWriter_Write")]
-	internal static void /* System.Void */ System_IO_StreamWriter_Write(void* /* System.IO.StreamWriter */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_IO_StreamWriter_Write(void* /* System.IO.StreamWriter */ __self, ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -139101,9 +139215,10 @@ internal unsafe class System_IO_StreamWriter
 	
 		System.IO.StreamWriter __selfConverted = InteropUtils.GetInstance<System.IO.StreamWriter>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			__selfConverted.Write(value);
+			__selfConverted.Write(valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -139483,7 +139598,7 @@ internal unsafe class System_IO_StreamWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_StreamWriter_WriteAsync")]
-	internal static void* /* System.Threading.Tasks.Task */ System_IO_StreamWriter_WriteAsync(void* /* System.IO.StreamWriter */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Threading.Tasks.Task */ System_IO_StreamWriter_WriteAsync(void* /* System.IO.StreamWriter */ __self, ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -139491,9 +139606,10 @@ internal unsafe class System_IO_StreamWriter
 	
 		System.IO.StreamWriter __selfConverted = InteropUtils.GetInstance<System.IO.StreamWriter>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Threading.Tasks.Task __returnValue = __selfConverted.WriteAsync(value);
+			System.Threading.Tasks.Task __returnValue = __selfConverted.WriteAsync(valueConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -139609,7 +139725,7 @@ internal unsafe class System_IO_StreamWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_StreamWriter_WriteLineAsync_1")]
-	internal static void* /* System.Threading.Tasks.Task */ System_IO_StreamWriter_WriteLineAsync_1(void* /* System.IO.StreamWriter */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Threading.Tasks.Task */ System_IO_StreamWriter_WriteLineAsync_1(void* /* System.IO.StreamWriter */ __self, ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -139617,9 +139733,10 @@ internal unsafe class System_IO_StreamWriter
 	
 		System.IO.StreamWriter __selfConverted = InteropUtils.GetInstance<System.IO.StreamWriter>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Threading.Tasks.Task __returnValue = __selfConverted.WriteLineAsync(value);
+			System.Threading.Tasks.Task __returnValue = __selfConverted.WriteLineAsync(valueConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -140329,7 +140446,7 @@ internal unsafe class System_IO_TextWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write")]
-	internal static void /* System.Void */ System_IO_TextWriter_Write(void* /* System.IO.TextWriter */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_IO_TextWriter_Write(void* /* System.IO.TextWriter */ __self, ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -140337,9 +140454,10 @@ internal unsafe class System_IO_TextWriter
 	
 		System.IO.TextWriter __selfConverted = InteropUtils.GetInstance<System.IO.TextWriter>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			__selfConverted.Write(value);
+			__selfConverted.Write(valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -140879,7 +140997,7 @@ internal unsafe class System_IO_TextWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_1")]
-	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_1(void* /* System.IO.TextWriter */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_1(void* /* System.IO.TextWriter */ __self, ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -140887,9 +141005,10 @@ internal unsafe class System_IO_TextWriter
 	
 		System.IO.TextWriter __selfConverted = InteropUtils.GetInstance<System.IO.TextWriter>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			__selfConverted.WriteLine(value);
+			__selfConverted.WriteLine(valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -141401,7 +141520,7 @@ internal unsafe class System_IO_TextWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteAsync")]
-	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteAsync(void* /* System.IO.TextWriter */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteAsync(void* /* System.IO.TextWriter */ __self, ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141409,9 +141528,10 @@ internal unsafe class System_IO_TextWriter
 	
 		System.IO.TextWriter __selfConverted = InteropUtils.GetInstance<System.IO.TextWriter>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Threading.Tasks.Task __returnValue = __selfConverted.WriteAsync(value);
+			System.Threading.Tasks.Task __returnValue = __selfConverted.WriteAsync(valueConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -141561,7 +141681,7 @@ internal unsafe class System_IO_TextWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLineAsync")]
-	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteLineAsync(void* /* System.IO.TextWriter */ __self, char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteLineAsync(void* /* System.IO.TextWriter */ __self, ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141569,9 +141689,10 @@ internal unsafe class System_IO_TextWriter
 	
 		System.IO.TextWriter __selfConverted = InteropUtils.GetInstance<System.IO.TextWriter>(__self);
 	
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			System.Threading.Tasks.Task __returnValue = __selfConverted.WriteLineAsync(value);
+			System.Threading.Tasks.Task __returnValue = __selfConverted.WriteLineAsync(valueConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -165355,11 +165476,12 @@ internal unsafe class System_Uri
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Uri_HexEscape")]
-	internal static void* /* System.String */ System_Uri_HexEscape(char /* System.Char */ character, void** /* System.Exception */ __outException)
+	internal static void* /* System.String */ System_Uri_HexEscape(ushort /* System.Char */ character, void** /* System.Exception */ __outException)
 	{
+		System.Char characterConverted = (char)character;
 	
 	    try {
-			System.String __returnValue = System.Uri.HexEscape(character);
+			System.String __returnValue = System.Uri.HexEscape(characterConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -165380,7 +165502,7 @@ internal unsafe class System_Uri
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Uri_HexUnescape")]
-	internal static char /* System.Char */ System_Uri_HexUnescape(void* /* System.String */ pattern, int* /* System.Int32 */ index, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Uri_HexUnescape(void* /* System.String */ pattern, int* /* System.Int32 */ index, void** /* System.Exception */ __outException)
 	{
 		System.String patternConverted = InteropUtils.GetInstance<System.String>(pattern);
 		System.Int32 indexConverted;
@@ -165394,6 +165516,7 @@ internal unsafe class System_Uri
 	
 	    try {
 			System.Char __returnValue = System.Uri.HexUnescape(patternConverted, ref indexConverted);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -165403,7 +165526,7 @@ internal unsafe class System_Uri
 				*index = indexConverted;
 			}
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -165469,11 +165592,12 @@ internal unsafe class System_Uri
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Uri_IsHexDigit")]
-	internal static byte /* System.Boolean */ System_Uri_IsHexDigit(char /* System.Char */ character, void** /* System.Exception */ __outException)
+	internal static byte /* System.Boolean */ System_Uri_IsHexDigit(ushort /* System.Char */ character, void** /* System.Exception */ __outException)
 	{
+		System.Char characterConverted = (char)character;
 	
 	    try {
-			System.Boolean __returnValue = System.Uri.IsHexDigit(character);
+			System.Boolean __returnValue = System.Uri.IsHexDigit(characterConverted);
 			byte __returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
@@ -165494,11 +165618,12 @@ internal unsafe class System_Uri
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Uri_FromHex")]
-	internal static int /* System.Int32 */ System_Uri_FromHex(char /* System.Char */ digit, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_Uri_FromHex(ushort /* System.Char */ digit, void** /* System.Exception */ __outException)
 	{
+		System.Char digitConverted = (char)digit;
 	
 	    try {
-			System.Int32 __returnValue = System.Uri.FromHex(digit);
+			System.Int32 __returnValue = System.Uri.FromHex(digitConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -170151,7 +170276,7 @@ internal unsafe class Beyond_NET_Sample_ByRefReturnValueDelegate
 internal unsafe class Beyond_NET_Sample_CharReturnerDelegate
 {
 	internal void* Context { get; }
-	internal delegate* unmanaged<void* /* context */, char /* System.Char */ /* return type */> CFunction { get; }
+	internal delegate* unmanaged<void* /* context */, ushort /* System.Char */ /* return type */> CFunction { get; }
 	internal delegate* unmanaged<void*, void> CDestructorFunction { get; }
 
 	private WeakReference<Beyond.NET.Sample.CharReturnerDelegate> m_trampoline;
@@ -170175,7 +170300,7 @@ internal unsafe class Beyond_NET_Sample_CharReturnerDelegate
 		}
 	}
 
-	private Beyond_NET_Sample_CharReturnerDelegate(void* context, delegate* unmanaged<void* /* context */, char /* System.Char */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	private Beyond_NET_Sample_CharReturnerDelegate(void* context, delegate* unmanaged<void* /* context */, ushort /* System.Char */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
 		Context = context;
 		CFunction = cFunction;
@@ -170221,11 +170346,13 @@ internal unsafe class Beyond_NET_Sample_CharReturnerDelegate
 	
 
 		var __returnValue = CFunction(Context);
-		return __returnValue;
+		var __returnValueConverted = (char)__returnValue;
+
+		return __returnValueConverted;
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "Beyond_NET_Sample_CharReturnerDelegate_Create")]
-	public static void* Create(void* context, delegate* unmanaged<void* /* context */, char /* System.Char */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
+	public static void* Create(void* context, delegate* unmanaged<void* /* context */, ushort /* System.Char */ /* return type */> cFunction, delegate* unmanaged<void*, void> cDestructorFunction)
 	{
 		var self = new Beyond_NET_Sample_CharReturnerDelegate(context, cFunction, cDestructorFunction);
 		void* selfHandle = self.AllocateGCHandleAndGetAddress();
@@ -170234,7 +170361,7 @@ internal unsafe class Beyond_NET_Sample_CharReturnerDelegate
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "Beyond_NET_Sample_CharReturnerDelegate_Invoke")]
-	public static char /* System.Char */ Invoke(void* self, void** __outException)
+	public static ushort /* System.Char */ Invoke(void* self, void** __outException)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
@@ -170246,7 +170373,9 @@ internal unsafe class Beyond_NET_Sample_CharReturnerDelegate
 		
 
 			var __returnValue = selfConverted.Trampoline();
-			return __returnValue;
+			var __returnValueConverted = (ushort)__returnValue;
+
+			return __returnValueConverted;
 		} catch (Exception __exception) {
 			if (__outException is not null) {
 				void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -170271,7 +170400,7 @@ internal unsafe class Beyond_NET_Sample_CharReturnerDelegate
 	}
 
 	[UnmanagedCallersOnly(EntryPoint = "Beyond_NET_Sample_CharReturnerDelegate_CFunction_Get")]
-	public static delegate* unmanaged<void* /* context */, char /* System.Char */ /* return type */> CFunction_Get(void* self)
+	public static delegate* unmanaged<void* /* context */, ushort /* System.Char */ /* return type */> CFunction_Get(void* self)
 	{
 		if (self is null) {
 			throw new ArgumentNullException(nameof(self));
@@ -170428,7 +170557,7 @@ internal unsafe class Beyond_NET_Sample_Book
 internal unsafe class Beyond_NET_Sample_TestClass
 {
 	[UnmanagedCallersOnly(EntryPoint = "Beyond_NET_Sample_TestClass_GetChar")]
-	internal static char /* System.Char */ Beyond_NET_Sample_TestClass_GetChar(void* /* Beyond.NET.Sample.TestClass */ __self, void* /* Beyond.NET.Sample.CharReturnerDelegate */ charReturnerDelegate, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ Beyond_NET_Sample_TestClass_GetChar(void* /* Beyond.NET.Sample.TestClass */ __self, void* /* Beyond.NET.Sample.CharReturnerDelegate */ charReturnerDelegate, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -170440,12 +170569,13 @@ internal unsafe class Beyond_NET_Sample_TestClass
 	
 	    try {
 			System.Char __returnValue = __selfConverted.GetChar(charReturnerDelegateConverted);
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
@@ -197003,11 +197133,12 @@ internal unsafe class Beyond_NET_Sample_SubclassingTests_MySubClass
 internal unsafe class Beyond_NET_Sample_Source_CharTests
 {
 	[UnmanagedCallersOnly(EntryPoint = "Beyond_NET_Sample_Source_CharTests_PassInLowercaseAOrThrow")]
-	internal static void /* System.Void */ Beyond_NET_Sample_Source_CharTests_PassInLowercaseAOrThrow(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ Beyond_NET_Sample_Source_CharTests_PassInLowercaseAOrThrow(ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			Beyond.NET.Sample.Source.CharTests.PassInLowercaseAOrThrow(value);
+			Beyond.NET.Sample.Source.CharTests.PassInLowercaseAOrThrow(valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -197025,11 +197156,12 @@ internal unsafe class Beyond_NET_Sample_Source_CharTests
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "Beyond_NET_Sample_Source_CharTests_PassInUppercaseAOrThrow")]
-	internal static void /* System.Void */ Beyond_NET_Sample_Source_CharTests_PassInUppercaseAOrThrow(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ Beyond_NET_Sample_Source_CharTests_PassInUppercaseAOrThrow(ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			Beyond.NET.Sample.Source.CharTests.PassInUppercaseAOrThrow(value);
+			Beyond.NET.Sample.Source.CharTests.PassInUppercaseAOrThrow(valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -197047,11 +197179,12 @@ internal unsafe class Beyond_NET_Sample_Source_CharTests
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "Beyond_NET_Sample_Source_CharTests_PassInOneOrThrow")]
-	internal static void /* System.Void */ Beyond_NET_Sample_Source_CharTests_PassInOneOrThrow(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ Beyond_NET_Sample_Source_CharTests_PassInOneOrThrow(ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			Beyond.NET.Sample.Source.CharTests.PassInOneOrThrow(value);
+			Beyond.NET.Sample.Source.CharTests.PassInOneOrThrow(valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -197069,11 +197202,12 @@ internal unsafe class Beyond_NET_Sample_Source_CharTests
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "Beyond_NET_Sample_Source_CharTests_PassInLowercaseUmlautAOrThrow")]
-	internal static void /* System.Void */ Beyond_NET_Sample_Source_CharTests_PassInLowercaseUmlautAOrThrow(char /* System.Char */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ Beyond_NET_Sample_Source_CharTests_PassInLowercaseUmlautAOrThrow(ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
+		System.Char valueConverted = (char)value;
 	
 	    try {
-			Beyond.NET.Sample.Source.CharTests.PassInLowercaseUmlautAOrThrow(value);
+			Beyond.NET.Sample.Source.CharTests.PassInLowercaseUmlautAOrThrow(valueConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -197091,38 +197225,42 @@ internal unsafe class Beyond_NET_Sample_Source_CharTests
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "Beyond_NET_Sample_Source_CharTests_LowercaseA_Get")]
-	internal static char /* System.Char */ Beyond_NET_Sample_Source_CharTests_LowercaseA_Get()
+	internal static ushort /* System.Char */ Beyond_NET_Sample_Source_CharTests_LowercaseA_Get()
 	{
 	
 		System.Char __returnValue = Beyond.NET.Sample.Source.CharTests.LowercaseA;
-		return __returnValue;
+		ushort __returnValueNative = (ushort)__returnValue;
+		return __returnValueNative;
 	}
 	
 	
 	[UnmanagedCallersOnly(EntryPoint = "Beyond_NET_Sample_Source_CharTests_UppercaseA_Get")]
-	internal static char /* System.Char */ Beyond_NET_Sample_Source_CharTests_UppercaseA_Get()
+	internal static ushort /* System.Char */ Beyond_NET_Sample_Source_CharTests_UppercaseA_Get()
 	{
 	
 		System.Char __returnValue = Beyond.NET.Sample.Source.CharTests.UppercaseA;
-		return __returnValue;
+		ushort __returnValueNative = (ushort)__returnValue;
+		return __returnValueNative;
 	}
 	
 	
 	[UnmanagedCallersOnly(EntryPoint = "Beyond_NET_Sample_Source_CharTests_One_Get")]
-	internal static char /* System.Char */ Beyond_NET_Sample_Source_CharTests_One_Get()
+	internal static ushort /* System.Char */ Beyond_NET_Sample_Source_CharTests_One_Get()
 	{
 	
 		System.Char __returnValue = Beyond.NET.Sample.Source.CharTests.One;
-		return __returnValue;
+		ushort __returnValueNative = (ushort)__returnValue;
+		return __returnValueNative;
 	}
 	
 	
 	[UnmanagedCallersOnly(EntryPoint = "Beyond_NET_Sample_Source_CharTests_LowercaseUmlautA_Get")]
-	internal static char /* System.Char */ Beyond_NET_Sample_Source_CharTests_LowercaseUmlautA_Get()
+	internal static ushort /* System.Char */ Beyond_NET_Sample_Source_CharTests_LowercaseUmlautA_Get()
 	{
 	
 		System.Char __returnValue = Beyond.NET.Sample.Source.CharTests.LowercaseUmlautA;
-		return __returnValue;
+		ushort __returnValueNative = (ushort)__returnValue;
+		return __returnValueNative;
 	}
 	
 	
@@ -203708,7 +203846,7 @@ internal unsafe class System_Xml_XmlWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Xml_XmlWriter_WriteCharEntity")]
-	internal static void /* System.Void */ System_Xml_XmlWriter_WriteCharEntity(void* /* System.Xml.XmlWriter */ __self, char /* System.Char */ ch, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_Xml_XmlWriter_WriteCharEntity(void* /* System.Xml.XmlWriter */ __self, ushort /* System.Char */ ch, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -203716,9 +203854,10 @@ internal unsafe class System_Xml_XmlWriter
 	
 		System.Xml.XmlWriter __selfConverted = InteropUtils.GetInstance<System.Xml.XmlWriter>(__self);
 	
+		System.Char chConverted = (char)ch;
 	
 	    try {
-			__selfConverted.WriteCharEntity(ch);
+			__selfConverted.WriteCharEntity(chConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -203794,7 +203933,7 @@ internal unsafe class System_Xml_XmlWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Xml_XmlWriter_WriteSurrogateCharEntity")]
-	internal static void /* System.Void */ System_Xml_XmlWriter_WriteSurrogateCharEntity(void* /* System.Xml.XmlWriter */ __self, char /* System.Char */ lowChar, char /* System.Char */ highChar, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_Xml_XmlWriter_WriteSurrogateCharEntity(void* /* System.Xml.XmlWriter */ __self, ushort /* System.Char */ lowChar, ushort /* System.Char */ highChar, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -203802,9 +203941,11 @@ internal unsafe class System_Xml_XmlWriter
 	
 		System.Xml.XmlWriter __selfConverted = InteropUtils.GetInstance<System.Xml.XmlWriter>(__self);
 	
+		System.Char lowCharConverted = (char)lowChar;
+		System.Char highCharConverted = (char)highChar;
 	
 	    try {
-			__selfConverted.WriteSurrogateCharEntity(lowChar, highChar);
+			__selfConverted.WriteSurrogateCharEntity(lowCharConverted, highCharConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -205294,7 +205435,7 @@ internal unsafe class System_Xml_XmlWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Xml_XmlWriter_WriteCharEntityAsync")]
-	internal static void* /* System.Threading.Tasks.Task */ System_Xml_XmlWriter_WriteCharEntityAsync(void* /* System.Xml.XmlWriter */ __self, char /* System.Char */ ch, void** /* System.Exception */ __outException)
+	internal static void* /* System.Threading.Tasks.Task */ System_Xml_XmlWriter_WriteCharEntityAsync(void* /* System.Xml.XmlWriter */ __self, ushort /* System.Char */ ch, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -205302,9 +205443,10 @@ internal unsafe class System_Xml_XmlWriter
 	
 		System.Xml.XmlWriter __selfConverted = InteropUtils.GetInstance<System.Xml.XmlWriter>(__self);
 	
+		System.Char chConverted = (char)ch;
 	
 	    try {
-			System.Threading.Tasks.Task __returnValue = __selfConverted.WriteCharEntityAsync(ch);
+			System.Threading.Tasks.Task __returnValue = __selfConverted.WriteCharEntityAsync(chConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -205389,7 +205531,7 @@ internal unsafe class System_Xml_XmlWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Xml_XmlWriter_WriteSurrogateCharEntityAsync")]
-	internal static void* /* System.Threading.Tasks.Task */ System_Xml_XmlWriter_WriteSurrogateCharEntityAsync(void* /* System.Xml.XmlWriter */ __self, char /* System.Char */ lowChar, char /* System.Char */ highChar, void** /* System.Exception */ __outException)
+	internal static void* /* System.Threading.Tasks.Task */ System_Xml_XmlWriter_WriteSurrogateCharEntityAsync(void* /* System.Xml.XmlWriter */ __self, ushort /* System.Char */ lowChar, ushort /* System.Char */ highChar, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -205397,9 +205539,11 @@ internal unsafe class System_Xml_XmlWriter
 	
 		System.Xml.XmlWriter __selfConverted = InteropUtils.GetInstance<System.Xml.XmlWriter>(__self);
 	
+		System.Char lowCharConverted = (char)lowChar;
+		System.Char highCharConverted = (char)highChar;
 	
 	    try {
-			System.Threading.Tasks.Task __returnValue = __selfConverted.WriteSurrogateCharEntityAsync(lowChar, highChar);
+			System.Threading.Tasks.Task __returnValue = __selfConverted.WriteSurrogateCharEntityAsync(lowCharConverted, highCharConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -210761,7 +210905,7 @@ internal unsafe class System_Xml_XmlReader
 	
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Xml_XmlReader_QuoteChar_Get")]
-	internal static char /* System.Char */ System_Xml_XmlReader_QuoteChar_Get(void* /* System.Xml.XmlReader */ __self, void** /* System.Exception */ __outException)
+	internal static ushort /* System.Char */ System_Xml_XmlReader_QuoteChar_Get(void* /* System.Xml.XmlReader */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -210772,12 +210916,13 @@ internal unsafe class System_Xml_XmlReader
 	
 	    try {
 			System.Char __returnValue = __selfConverted.QuoteChar;
+			ushort __returnValueNative = (ushort)__returnValue;
 	
 	        if (__outException is not null) {
 	            *__outException = null;
 	        }
 	
-			return __returnValue;
+			return __returnValueNative;
 	    } catch (Exception __exception) {
 	        if (__outException is not null) {
 	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
