@@ -1,5 +1,5 @@
-// Number of generated types: 1718
-// Number of generated members: 8618
+// Number of generated types: 1734
+// Number of generated members: 8838
 
 // MARK: - BEGIN Header
 import Foundation
@@ -1861,9 +1861,9 @@ extension System_Array {
 
 // MARK: - BEGIN Unsupported Types
 // Unsupported Type "IEnumerator`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "IComparable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IComparisonOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
@@ -1882,28 +1882,28 @@ extension System_Array {
 // Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Span`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -1920,8 +1920,8 @@ extension System_Array {
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.IUtfChar`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.IUtfChar`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
 // Unsupported Type "System.Char&": Excluded
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
@@ -1932,57 +1932,57 @@ extension System_Array {
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.Span`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Span`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "System.ReadOnlySpan`1": Excluded
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtfChar`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.ValueTuple`2[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtfChar`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.ValueTuple`2[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -2031,11 +2031,11 @@ extension System_Array {
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ArraySegment`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ArraySegment`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "ReadOnlySpan`1": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1+Enumerator[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.ReadOnlySpan`1+Enumerator[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
 // Unsupported Type "System.Void*": Is Managed Pointer Type
-// Unsupported Type "System.ValueTuple`2[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -2084,31 +2084,31 @@ extension System_Array {
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.ValueTuple`2[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.ValueTuple`2[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -2157,30 +2157,30 @@ extension System_Array {
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.ValueTuple`2[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.ValueTuple`2[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -2229,144 +2229,144 @@ extension System_Array {
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
 // Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "INumber`1": Is Constructed Generic Type with non-constructed generic types
@@ -2399,37 +2399,37 @@ extension System_Array {
 // Unsupported Type "IPowerFunctions`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IRootFunctions`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ITrigonometricFunctions`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
 // Unsupported Type "IBinaryInteger`1": Is unsupported Type
 // Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
@@ -2526,62 +2526,62 @@ extension System_Array {
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ValueTuple`2[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ValueTuple`2[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -2630,37 +2630,37 @@ extension System_Array {
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
 // Unsupported Type "IBinaryInteger`1": Is unsupported Type
 // Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
@@ -2757,30 +2757,30 @@ extension System_Array {
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ValueTuple`2[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ValueTuple`2[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -2925,8 +2925,8 @@ extension System_Array {
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -2975,7 +2975,7 @@ extension System_Array {
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -3024,7 +3024,7 @@ extension System_Array {
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IBinaryInteger`1": Is unsupported Type
 // Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
@@ -3121,8 +3121,8 @@ extension System_Array {
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -3171,7 +3171,7 @@ extension System_Array {
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -3220,7 +3220,7 @@ extension System_Array {
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -3269,36 +3269,36 @@ extension System_Array {
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ISpanParsable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.TimeSpan, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.TimeSpan, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.DateOnly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.DateOnly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.TimeOnly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.TimeOnly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.DateTime, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.DateTime, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.TimeSpan, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.TimeSpan, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.DateOnly, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.DateOnly, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.TimeOnly, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.TimeOnly, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "System.Runtime.Serialization.DeserializationToken": Excluded
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Version, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Version, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "ValueTask`1": Is unsupported Type
-// Unsupported Type "System.Action`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.CancellationToken, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`1[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.CancellationToken, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "ValueTask`1": Is unsupported Type
-// Unsupported Type "System.ISpanParsable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ISpanParsable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Guid, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Guid, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Guid, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ISpanParsable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "System.TypedReference": Excluded
 // Unsupported Type "ValueTask`1": Is unsupported Type
-// Unsupported Type "System.EventHandler`1[[System.Threading.Tasks.UnobservedTaskExceptionEventArgs, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Nullable Value Type, but not a struct (System.Int32?)
+// Unsupported Type "System.EventHandler`1[[System.Threading.Tasks.UnobservedTaskExceptionEventArgs, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Nullable Value Type, but not a struct (System.Int32?)
 // Unsupported Type "IList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerator`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Func`2[[System.Exception, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Exception, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`1": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
@@ -3315,8 +3315,8 @@ extension System_Array {
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Action`1[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`3[[System.AsyncCallback, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`1[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`3[[System.AsyncCallback, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`4": Is Generic Delegate Type
 // Unsupported Type "Func`4": Is Generic Delegate Type
 // Unsupported Type "Func`5": Is Generic Delegate Type
@@ -3351,7 +3351,7 @@ extension System_Array {
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`6": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Task`1[]": Is Array of Generic Type
 // Unsupported Type "Action`1": Is Generic Delegate Type
 // Unsupported Type "Task`1[]": Is Array of Generic Type
@@ -3380,7 +3380,7 @@ extension System_Array {
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Task`1[]": Is Array of Generic Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
@@ -3412,7 +3412,7 @@ extension System_Array {
 // Unsupported Type "System.Runtime.CompilerServices.ITaskAwaiter": Is Not Visible (public)
 // Unsupported Type "System.Runtime.CompilerServices.IConfiguredTaskAwaiter": Is Not Visible (public)
 // Unsupported Type "System.Runtime.CompilerServices.IStateMachineBoxAwareAwaiter": Is Not Visible (public)
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
@@ -3433,7 +3433,7 @@ extension System_Array {
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
@@ -3441,7 +3441,7 @@ extension System_Array {
 // Unsupported Type "Func`1": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`1": Is Generic Delegate Type
-// Unsupported Type "System.Func`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`1": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
@@ -3598,21 +3598,21 @@ extension System_Array {
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "ReadOnlySpan`1": Is unsupported Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
@@ -3632,29 +3632,29 @@ extension System_Array {
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAsyncEnumerator`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Threading.Tasks.ValueTask`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Threading.Tasks.ValueTask`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IAsyncEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Task`1[]": Is Array of Generic Type
 // Unsupported Type "IAsyncEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ReadOnlySpan`1": Is unsupported Type
 // Unsupported Type "IAsyncEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Func`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
@@ -3665,18 +3665,20 @@ extension System_Array {
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.Threading.Tasks.ValueTask`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Memory`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlyMemory`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Nullable`1[[System.IO.UnixFileMode, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Nullable Value Type, but not a struct (System.IO.UnixFileMode?)
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Text.Rune, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ISpanParsable`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Threading.Tasks.ValueTask`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Memory`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlyMemory`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Nullable`1[[System.IO.UnixFileMode, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Nullable Value Type, but not a struct (System.IO.UnixFileMode?)
+// Unsupported Type "System.IParsable`1[[System.Text.Rune, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Text.Rune, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Text.Rune, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ISpanParsable`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "SpanAction`2": Is Generic Delegate Type
 // Unsupported Type "System.Runtime.CompilerServices.DefaultInterpolatedStringHandler&": Is ref struct
-// Unsupported Type "System.ReadOnlySpan`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.ReadOnlySpan`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "System.Char*": Is Managed Pointer Type
@@ -3687,31 +3689,31 @@ extension System_Array {
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.ValueTuple`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.ValueTuple`2[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -3760,8 +3762,8 @@ extension System_Array {
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ISpanParsable`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "ReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
@@ -4003,8 +4005,8 @@ extension System_Array {
 // Unsupported Type "IReadOnlyList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Predicate`1": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Reflection.AssemblyName, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Reflection.Assembly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`4[[System.Reflection.Assembly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Type, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Reflection.AssemblyName, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Reflection.Assembly, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`4[[System.Reflection.Assembly, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Type, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "IList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
@@ -4016,8 +4018,8 @@ extension System_Array {
 // Unsupported Type "IReadOnlyList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "System.Runtime.InteropServices.ComTypes.ITypeInfo": Excluded
-// Unsupported Type "System.ReadOnlySpan`1[[System.TimeSpan, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.GCGenerationInfo, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.TimeSpan, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.GCGenerationInfo, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
@@ -4032,9 +4034,115 @@ extension System_Array {
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.EventHandler`1[[System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Nullable Value Type, but not a struct (System.Boolean?)
-// Unsupported Type "System.ReadOnlySpan`1[[System.Threading.CancellationToken, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.EventHandler`1[[System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Nullable Value Type, but not a struct (System.Boolean?)
+// Unsupported Type "System.ReadOnlySpan`1[[System.Threading.CancellationToken, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "IBinaryInteger`1": Is unsupported Type
+// Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparisonOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IModulusOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "IShiftOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMinMaxValue`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBinaryInteger`1": Is unsupported Type
+// Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparisonOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IModulusOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "IShiftOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBinaryInteger`1": Is unsupported Type
+// Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparisonOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IModulusOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "IShiftOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBinaryFloatingPointIeee754`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparisonOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IModulusOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "IFloatingPointIeee754`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IExponentialFunctions`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IFloatingPointConstants`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IFloatingPoint`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISignedNumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IHyperbolicFunctions`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ILogarithmicFunctions`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IPowerFunctions`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IRootFunctions`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ITrigonometricFunctions`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ReadOnlySpan`1": Is unsupported Type
 // Unsupported Type "Span`1": Is unsupported Type
 // Unsupported Type "IList`1": Is Constructed Generic Type with non-constructed generic types
@@ -4054,53 +4162,25 @@ extension System_Array {
 // Unsupported Type "IReadOnlyList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Span`1": Is unsupported Type
-// Unsupported Type "System.ReadOnlyMemory`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlyMemory`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Func`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.Threading.Tasks.ValueTask`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Memory`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Func`1[[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
@@ -4111,22 +4191,24 @@ extension System_Array {
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.Func`1[[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Threading.Tasks.ValueTask`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Memory`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Func`1[[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
@@ -4137,24 +4219,130 @@ extension System_Array {
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Func`1[[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
@@ -4188,21 +4376,21 @@ extension System_Array {
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "System.ITupleInternal": Is Not Visible (public)
-// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
-// Unsupported Type "System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
+// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
+// Unsupported Type "System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
 // Unsupported Type "Beyond.NET.Sample.IAnimal[]": Is Array of Interface Type
 // Unsupported Type "Beyond.NET.Sample.DelegatesTest+TransformIntWithRefDelegate": Unsupported delegate parameter type: Has ref parameters
 // Unsupported Type "Beyond.NET.Sample.DelegatesTest+TransformIntWithOutDelegate": Unsupported delegate parameter type: Has out parameters
 // Unsupported Type "Beyond.NET.Sample.DelegatesTest+PointTransformWithRefDelegate": Unsupported delegate parameter type: Has ref parameters
 // Unsupported Type "Converter`2": Is Generic Delegate Type
-// Unsupported Type "System.Predicate`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Collections.Generic.List`1+Enumerator[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Comparison`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
-// Unsupported Type "System.Collections.Generic.Dictionary`2+KeyCollection[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Collections.Generic.Dictionary`2+ValueCollection[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Collections.Generic.Dictionary`2+Enumerator[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Predicate`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Collections.Generic.List`1+Enumerator[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Comparison`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
+// Unsupported Type "System.Collections.Generic.Dictionary`2+KeyCollection[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Collections.Generic.Dictionary`2+ValueCollection[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Collections.Generic.Dictionary`2+Enumerator[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
 // Unsupported Type "AlternateLookup`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "AlternateLookup`1&": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IList`1": Is Constructed Generic Type with non-constructed generic types
@@ -4222,54 +4410,27 @@ extension System_Array {
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Beyond.NET.Sample.IRegistrationData": Static abstract members in interface
 // Unsupported Type "Beyond.NET.Sample.INotImplementedInterfaceWithStaticAbstractMembers": Static abstract members in interface
-// Unsupported Type "System.Span`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
 // Unsupported Type "System.Nullable`1": Excluded
 // Unsupported Type "Beyond.NET.Sample.ByRefParametersDelegate": Unsupported delegate parameter type: Has ref parameters
 // Unsupported Type "Beyond.NET.Sample.OutParametersDelegate": Unsupported delegate parameter type: Has out parameters
-// Unsupported Type "System.ArraySegment`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
-// Unsupported Type "System.Func`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.ArraySegment`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
+// Unsupported Type "System.Func`1[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
-// Unsupported Type "System.Func`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
@@ -4280,22 +4441,23 @@ extension System_Array {
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.Func`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
+// Unsupported Type "System.Func`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
@@ -4306,8 +4468,34 @@ extension System_Array {
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.Int32?)
-// Unsupported Type "System.Nullable`1[[System.DateTimeKind, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.DateTimeKind?)
+// Unsupported Type "System.Func`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.Int32?)
+// Unsupported Type "System.Nullable`1[[System.DateTimeKind, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.DateTimeKind?)
 // Unsupported Type "Beyond.NET.Sample.Source.RefStructTests+TestRefStruct": Is ref struct
 // Unsupported Type "Beyond.NET.Sample.Person_Extensions+<G>$9D63B61FF3DB94B34FDAE9CFA7044FE8": Is C# 14+ extension block (and has special name)
 // Unsupported Type "Beyond.NET.Sample.Person_Extensions+<G>$9D63B61FF3DB94B34FDAE9CFA7044FE8+<M>$9737BC5C87033597E65A978C42067F7A": Is C# 14+ extension block (and has special name)
@@ -4358,6 +4546,44 @@ public enum System_TypeCode: Int32 {
 extension System_TypeCode {
 	public static var typeOf: System_Type /* System.Type */ { get {
 		return System_Type(handle: System_TypeCode_TypeOf())
+		
+	}}
+	
+	
+	
+}
+
+/// Specifies the culture, case, and sort rules to be used by certain overloads of the System.String.Compare(System.String,System.String) and System.String.Equals(System.Object) methods.
+public enum System_StringComparison: Int32 {
+	init(cValue: System_StringComparison_t) {
+		let cRawValue = cValue.rawValue
+		
+		guard let enumValue = Self(rawValue: cRawValue) else {
+		    fatalError("Initialization of \"\(Self.self)\" failed because an unknown enum raw value was provided: \(cRawValue)")
+		}
+		
+		self = enumValue
+	}
+
+	var cValue: System_StringComparison_t { get {
+		guard let cEnumValue = System_StringComparison_t(rawValue: rawValue) else {
+		    fatalError("Initialization of \"System_StringComparison_t\" failed because an unknown enum raw value was provided: \(rawValue)")
+		}
+		
+		return cEnumValue
+	}}
+
+	case currentCulture = 0
+	case currentCultureIgnoreCase = 1
+	case invariantCulture = 2
+	case invariantCultureIgnoreCase = 3
+	case ordinal = 4
+	case ordinalIgnoreCase = 5
+}
+
+extension System_StringComparison {
+	public static var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_StringComparison_TypeOf())
 		
 	}}
 	
@@ -4436,6 +4662,7 @@ public struct System_Globalization_NumberStyles: OptionSet {
 	public static let any = System_Globalization_NumberStyles(rawValue: 511)
 	public static let allowHexSpecifier = System_Globalization_NumberStyles(rawValue: 512)
 	public static let hexNumber = System_Globalization_NumberStyles(rawValue: 515)
+	public static let hexFloat = System_Globalization_NumberStyles(rawValue: 679)
 	public static let allowBinarySpecifier = System_Globalization_NumberStyles(rawValue: 1024)
 	public static let binaryNumber = System_Globalization_NumberStyles(rawValue: 1027)
 }
@@ -5629,6 +5856,45 @@ extension System_IO_SeekOrigin {
 	
 }
 
+public enum System_IO_FileHandleType: Int32 {
+	init(cValue: System_IO_FileHandleType_t) {
+		let cRawValue = cValue.rawValue
+		
+		guard let enumValue = Self(rawValue: cRawValue) else {
+		    fatalError("Initialization of \"\(Self.self)\" failed because an unknown enum raw value was provided: \(cRawValue)")
+		}
+		
+		self = enumValue
+	}
+
+	var cValue: System_IO_FileHandleType_t { get {
+		guard let cEnumValue = System_IO_FileHandleType_t(rawValue: rawValue) else {
+		    fatalError("Initialization of \"System_IO_FileHandleType_t\" failed because an unknown enum raw value was provided: \(rawValue)")
+		}
+		
+		return cEnumValue
+	}}
+
+	case unknown = 0
+	case regularFile = 1
+	case pipe = 2
+	case socket = 3
+	case characterDevice = 4
+	case directory = 5
+	case symbolicLink = 6
+	case blockDevice = 7
+}
+
+extension System_IO_FileHandleType {
+	public static var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_IO_FileHandleType_TypeOf())
+		
+	}}
+	
+	
+	
+}
+
 /// Defines constants for read, write, or read/write access to a file.
 public struct System_IO_FileAccess: OptionSet {
 	public typealias RawValue = Int32
@@ -6042,44 +6308,6 @@ extension System_Globalization_DigitShapes {
 	
 }
 
-/// Specifies the culture, case, and sort rules to be used by certain overloads of the System.String.Compare(System.String,System.String) and System.String.Equals(System.Object) methods.
-public enum System_StringComparison: Int32 {
-	init(cValue: System_StringComparison_t) {
-		let cRawValue = cValue.rawValue
-		
-		guard let enumValue = Self(rawValue: cRawValue) else {
-		    fatalError("Initialization of \"\(Self.self)\" failed because an unknown enum raw value was provided: \(cRawValue)")
-		}
-		
-		self = enumValue
-	}
-
-	var cValue: System_StringComparison_t { get {
-		guard let cEnumValue = System_StringComparison_t(rawValue: rawValue) else {
-		    fatalError("Initialization of \"System_StringComparison_t\" failed because an unknown enum raw value was provided: \(rawValue)")
-		}
-		
-		return cEnumValue
-	}}
-
-	case currentCulture = 0
-	case currentCultureIgnoreCase = 1
-	case invariantCulture = 2
-	case invariantCultureIgnoreCase = 3
-	case ordinal = 4
-	case ordinalIgnoreCase = 5
-}
-
-extension System_StringComparison {
-	public static var typeOf: System_Type /* System.Type */ { get {
-		return System_Type(handle: System_StringComparison_TypeOf())
-		
-	}}
-	
-	
-	
-}
-
 /// Defines the type of normalization to perform.
 public enum System_Text_NormalizationForm: Int32 {
 	init(cValue: System_Text_NormalizationForm_t) {
@@ -6218,6 +6446,7 @@ public struct System_Reflection_TypeAttributes: OptionSet {
 	public static let sequentialLayout = System_Reflection_TypeAttributes(rawValue: 8)
 	public static let explicitLayout = System_Reflection_TypeAttributes(rawValue: 16)
 	public static let layoutMask = System_Reflection_TypeAttributes(rawValue: 24)
+	public static let extendedLayout = System_Reflection_TypeAttributes(rawValue: 24)
 	public static let interface = System_Reflection_TypeAttributes(rawValue: 32)
 	public static let classSemanticsMask = System_Reflection_TypeAttributes(rawValue: 32)
 	public static let abstract = System_Reflection_TypeAttributes(rawValue: 128)
@@ -6268,6 +6497,7 @@ public enum System_Runtime_InteropServices_LayoutKind: Int32 {
 	}}
 
 	case sequential = 0
+	case extended = 1
 	case explicit = 2
 	case auto = 3
 }
@@ -11429,6 +11659,26 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo, System
 		
 	}
 	
+	public func getNullableUnderlyingType() throws -> System_Type? /* System.Type */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Type_GetNullableUnderlyingType(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Type(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	/// Returns the underlying type of the current enumeration type.
 	/// - Throws: System.ArgumentException: The current type is not an enumeration.  -or-  The enumeration type is not valid, because it contains more than one instance field.
 	/// - Returns: The underlying type of the current enumeration.
@@ -11572,6 +11822,50 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo, System
 		
 	}
 	
+	public class func makeFunctionPointerSignatureType(_ returnType: System_Type /* System.Type */, _ parameterTypes: DNArray<System_Type>? /* System.Type[] */, _ isUnmanaged: Bool /* System.Boolean */, _ callingConventions: DNArray<System_Type>? /* System.Type[] */) throws -> System_Type /* System.Type */ {
+		let returnTypeC = returnType.__handle
+		let parameterTypesC = parameterTypes?.__handle
+		let callingConventionsC = callingConventions?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Type_MakeFunctionPointerSignatureType(returnTypeC, parameterTypesC, isUnmanaged, callingConventionsC, &__exceptionC)
+		
+		let __returnValue = System_Type(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func makeFunctionPointerType(_ parameterTypes: DNArray<System_Type>? /* System.Type[] */, _ isUnmanaged: Bool /* System.Boolean */) throws -> System_Type /* System.Type */ {
+		let parameterTypesC = parameterTypes?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Type_MakeFunctionPointerType(self.__handle, parameterTypesC, isUnmanaged, &__exceptionC)
+		
+		let __returnValue = System_Type(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	/// Substitutes the elements of an array of types for the type parameters of the current generic type definition and returns a System.Type object representing the resulting constructed type.
 	/// - Parameter typeArguments: An array of types to be substituted for the type parameters of the current generic type.
 	/// - Throws: System.InvalidOperationException: The current type does not represent a generic type definition. That is, System.Type.IsGenericTypeDefinition returns false.
@@ -11586,6 +11880,29 @@ public class System_Type /* System.Type */: System_Reflection_MemberInfo, System
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Type_MakeGenericType(self.__handle, typeArgumentsC, &__exceptionC)
+		
+		let __returnValue = System_Type(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func makeModifiedSignatureType(_ type: System_Type /* System.Type */, _ requiredCustomModifiers: DNArray<System_Type>? /* System.Type[] */, _ optionalCustomModifiers: DNArray<System_Type>? /* System.Type[] */) throws -> System_Type /* System.Type */ {
+		let typeC = type.__handle
+		let requiredCustomModifiersC = requiredCustomModifiers?.__handle
+		let optionalCustomModifiersC = optionalCustomModifiers?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Type_MakeModifiedSignatureType(typeC, requiredCustomModifiersC, optionalCustomModifiersC, &__exceptionC)
 		
 		let __returnValue = System_Type(handle: __returnValueC)
 		
@@ -19306,6 +19623,65 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 	}
 	
+	public func endsWith(_ value: DNChar /* System.Char */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.cValue
+		let comparisonTypeC = comparisonType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_EndsWith_4(self.__handle, valueC, comparisonTypeC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func endsWith(_ value: System_Text_Rune /* System.Text.Rune */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_EndsWith_5(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func endsWith(_ value: System_Text_Rune /* System.Text.Rune */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		let comparisonTypeC = comparisonType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_EndsWith_6(self.__handle, valueC, comparisonTypeC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
 	/// Determines whether this instance and a specified object, which must also be a System.String object, have the same value.
 	/// - Parameter obj: The string to compare to this instance.
 	/// - Returns: true if obj is a System.String and its value is the same as this instance; otherwise, false.  If obj is null, the method returns false.
@@ -19553,6 +19929,65 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_String_StartsWith_3(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func startsWith(_ value: DNChar /* System.Char */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.cValue
+		let comparisonTypeC = comparisonType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_StartsWith_4(self.__handle, valueC, comparisonTypeC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func startsWith(_ value: System_Text_Rune /* System.Text.Rune */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_StartsWith_5(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func startsWith(_ value: System_Text_Rune /* System.Text.Rune */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		let comparisonTypeC = comparisonType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_StartsWith_6(self.__handle, valueC, comparisonTypeC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -21006,6 +21441,28 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 	}
 	
+	public func replace(_ oldRune: System_Text_Rune /* System.Text.Rune */, _ newRune: System_Text_Rune /* System.Text.Rune */) throws -> System_String /* System.String */ {
+		let oldRuneC = oldRune.__handle
+		let newRuneC = newRune.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_Replace_4(self.__handle, oldRuneC, newRuneC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	/// Replaces all newline sequences in the current string with System.Environment.NewLine.
 	/// - Returns: A string whose contents match the current string, but with all newline sequences replaced with System.Environment.NewLine.
 	public func replaceLineEndings() throws -> System_String /* System.String */ {
@@ -21105,6 +21562,50 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 	}
 	
+	public func split(_ separator: System_Text_Rune /* System.Text.Rune */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> DNArray<System_String> /* System.String[] */ {
+		let separatorC = separator.__handle
+		let optionsC = options.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_Split_2(self.__handle, separatorC, optionsC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_String>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func split(_ separator: System_Text_Rune /* System.Text.Rune */, _ count: Int32 /* System.Int32 */, _ options: System_StringSplitOptions /* System.StringSplitOptions */) throws -> DNArray<System_String> /* System.String[] */ {
+		let separatorC = separator.__handle
+		let optionsC = options.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_Split_3(self.__handle, separatorC, count, optionsC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_String>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	/// Splits a string into substrings based on specified delimiting characters.
 	/// - Parameter separator: An array of delimiting characters, an empty array that contains no delimiters, or null.
 	/// - Returns: An array whose elements contain the substrings from this instance that are delimited by one or more characters in separator. For more information, see the Remarks section.
@@ -21114,7 +21615,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_Split_2(self.__handle, separatorC, &__exceptionC)
+		let __returnValueC = System_String_Split_4(self.__handle, separatorC, &__exceptionC)
 		
 		let __returnValue = DNArray<System_String>(handle: __returnValueC)
 		
@@ -21140,7 +21641,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_Split_3(self.__handle, separatorC, count, &__exceptionC)
+		let __returnValueC = System_String_Split_5(self.__handle, separatorC, count, &__exceptionC)
 		
 		let __returnValue = DNArray<System_String>(handle: __returnValueC)
 		
@@ -21167,7 +21668,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_Split_4(self.__handle, separatorC, optionsC, &__exceptionC)
+		let __returnValueC = System_String_Split_6(self.__handle, separatorC, optionsC, &__exceptionC)
 		
 		let __returnValue = DNArray<System_String>(handle: __returnValueC)
 		
@@ -21196,7 +21697,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_Split_5(self.__handle, separatorC, count, optionsC, &__exceptionC)
+		let __returnValueC = System_String_Split_7(self.__handle, separatorC, count, optionsC, &__exceptionC)
 		
 		let __returnValue = DNArray<System_String>(handle: __returnValueC)
 		
@@ -21222,7 +21723,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_Split_6(self.__handle, separatorC, optionsC, &__exceptionC)
+		let __returnValueC = System_String_Split_8(self.__handle, separatorC, optionsC, &__exceptionC)
 		
 		let __returnValue = DNArray<System_String>(handle: __returnValueC)
 		
@@ -21249,7 +21750,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_Split_7(self.__handle, separatorC, count, optionsC, &__exceptionC)
+		let __returnValueC = System_String_Split_9(self.__handle, separatorC, count, optionsC, &__exceptionC)
 		
 		let __returnValue = DNArray<System_String>(handle: __returnValueC)
 		
@@ -21276,7 +21777,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_Split_8(self.__handle, separatorC, optionsC, &__exceptionC)
+		let __returnValueC = System_String_Split_10(self.__handle, separatorC, optionsC, &__exceptionC)
 		
 		let __returnValue = DNArray<System_String>(handle: __returnValueC)
 		
@@ -21305,7 +21806,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_Split_9(self.__handle, separatorC, count, optionsC, &__exceptionC)
+		let __returnValueC = System_String_Split_11(self.__handle, separatorC, count, optionsC, &__exceptionC)
 		
 		let __returnValue = DNArray<System_String>(handle: __returnValueC)
 		
@@ -21505,6 +22006,46 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 	}
 	
+	public func toUpperOrdinal() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_ToUpperOrdinal(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func toLowerOrdinal() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_ToLowerOrdinal(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	/// Removes all leading and trailing white-space characters from the current string.
 	/// - Returns: The string that remains after all white-space characters are removed from the start and end of the current string. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.
 	public func trim() throws -> System_String /* System.String */ {
@@ -21551,6 +22092,27 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 	}
 	
+	public func trim(_ trimRune: System_Text_Rune /* System.Text.Rune */) throws -> System_String /* System.String */ {
+		let trimRuneC = trimRune.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_Trim_2(self.__handle, trimRuneC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	/// Removes all leading and trailing occurrences of a set of characters specified in an array from the current string.
 	/// - Parameter trimChars: An array of Unicode characters to remove, or null.
 	/// - Returns: The string that remains after all occurrences of the characters in the trimChars parameter are removed from the start and end of the current string. If trimChars is null or an empty array, white-space characters are removed instead. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.
@@ -21560,7 +22122,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_Trim_2(self.__handle, trimCharsC, &__exceptionC)
+		let __returnValueC = System_String_Trim_3(self.__handle, trimCharsC, &__exceptionC)
 		
 		let __returnValue = System_String(handle: __returnValueC)
 		
@@ -21621,6 +22183,27 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 	}
 	
+	public func trimStart(_ trimRune: System_Text_Rune /* System.Text.Rune */) throws -> System_String /* System.String */ {
+		let trimRuneC = trimRune.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_TrimStart_2(self.__handle, trimRuneC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	/// Removes all the leading occurrences of a set of characters specified in an array from the current string.
 	/// - Parameter trimChars: An array of Unicode characters to remove, or null.
 	/// - Returns: The string that remains after all occurrences of characters in the trimChars parameter are removed from the start of the current string. If trimChars is null or an empty array, white-space characters are removed instead. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.
@@ -21630,7 +22213,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_TrimStart_2(self.__handle, trimCharsC, &__exceptionC)
+		let __returnValueC = System_String_TrimStart_3(self.__handle, trimCharsC, &__exceptionC)
 		
 		let __returnValue = System_String(handle: __returnValueC)
 		
@@ -21691,6 +22274,27 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 	}
 	
+	public func trimEnd(_ trimRune: System_Text_Rune /* System.Text.Rune */) throws -> System_String /* System.String */ {
+		let trimRuneC = trimRune.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_TrimEnd_2(self.__handle, trimRuneC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	/// Removes all the trailing occurrences of a set of characters specified in an array from the current string.
 	/// - Parameter trimChars: An array of Unicode characters to remove, or null.
 	/// - Returns: The string that remains after all occurrences of the characters in the trimChars parameter are removed from the end of the current string. If trimChars is null or an empty array, Unicode white-space characters are removed instead. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.
@@ -21700,7 +22304,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_TrimEnd_2(self.__handle, trimCharsC, &__exceptionC)
+		let __returnValueC = System_String_TrimEnd_3(self.__handle, trimCharsC, &__exceptionC)
 		
 		let __returnValue = System_String(handle: __returnValueC)
 		
@@ -21808,6 +22412,45 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 	}
 	
+	public func contains(_ value: System_Text_Rune /* System.Text.Rune */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_Contains_4(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func contains(_ value: System_Text_Rune /* System.Text.Rune */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		let comparisonTypeC = comparisonType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_Contains_5(self.__handle, valueC, comparisonTypeC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
 	/// Reports the zero-based index of the first occurrence of the specified Unicode character in this string.
 	/// - Parameter value: A Unicode character to seek.
 	/// - Returns: The zero-based index position of value if that character is found, or -1 if it is not.
@@ -21879,6 +22522,46 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 	}
 	
+	public func indexOf(_ value: DNChar /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.cValue
+		let comparisonTypeC = comparisonType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_IndexOf_3(self.__handle, valueC, startIndex, comparisonTypeC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func indexOf(_ value: DNChar /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.cValue
+		let comparisonTypeC = comparisonType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_IndexOf_4(self.__handle, valueC, startIndex, count, comparisonTypeC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
 	/// Reports the zero-based index of the first occurrence of the specified character in this instance. The search starts at a specified character position and examines a specified number of character positions.
 	/// - Parameter value: A Unicode character to seek.
 	/// - Parameter startIndex: The search starting position.
@@ -21891,7 +22574,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_IndexOf_3(self.__handle, valueC, startIndex, count, &__exceptionC)
+		let __returnValueC = System_String_IndexOf_5(self.__handle, valueC, startIndex, count, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -21988,7 +22671,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_IndexOf_4(self.__handle, valueC, &__exceptionC)
+		let __returnValueC = System_String_IndexOf_6(self.__handle, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -22013,7 +22696,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_IndexOf_5(self.__handle, valueC, startIndex, &__exceptionC)
+		let __returnValueC = System_String_IndexOf_7(self.__handle, valueC, startIndex, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -22039,7 +22722,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_IndexOf_6(self.__handle, valueC, startIndex, count, &__exceptionC)
+		let __returnValueC = System_String_IndexOf_8(self.__handle, valueC, startIndex, count, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -22065,7 +22748,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_IndexOf_7(self.__handle, valueC, comparisonTypeC, &__exceptionC)
+		let __returnValueC = System_String_IndexOf_9(self.__handle, valueC, comparisonTypeC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -22093,7 +22776,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_IndexOf_8(self.__handle, valueC, startIndex, comparisonTypeC, &__exceptionC)
+		let __returnValueC = System_String_IndexOf_10(self.__handle, valueC, startIndex, comparisonTypeC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -22122,7 +22805,124 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_IndexOf_9(self.__handle, valueC, startIndex, count, comparisonTypeC, &__exceptionC)
+		let __returnValueC = System_String_IndexOf_11(self.__handle, valueC, startIndex, count, comparisonTypeC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func indexOf(_ value: System_Text_Rune /* System.Text.Rune */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_IndexOf_12(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func indexOf(_ value: System_Text_Rune /* System.Text.Rune */, _ startIndex: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_IndexOf_13(self.__handle, valueC, startIndex, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func indexOf(_ value: System_Text_Rune /* System.Text.Rune */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_IndexOf_14(self.__handle, valueC, startIndex, count, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func indexOf(_ value: System_Text_Rune /* System.Text.Rune */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.__handle
+		let comparisonTypeC = comparisonType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_IndexOf_15(self.__handle, valueC, comparisonTypeC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func indexOf(_ value: System_Text_Rune /* System.Text.Rune */, _ startIndex: Int32 /* System.Int32 */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.__handle
+		let comparisonTypeC = comparisonType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_IndexOf_16(self.__handle, valueC, startIndex, comparisonTypeC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func indexOf(_ value: System_Text_Rune /* System.Text.Rune */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.__handle
+		let comparisonTypeC = comparisonType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_IndexOf_17(self.__handle, valueC, startIndex, count, comparisonTypeC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -22194,6 +22994,66 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_String_LastIndexOf_2(self.__handle, valueC, startIndex, count, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func lastIndexOf(_ value: DNChar /* System.Char */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.cValue
+		let comparisonTypeC = comparisonType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_LastIndexOf_3(self.__handle, valueC, comparisonTypeC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func lastIndexOf(_ value: DNChar /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.cValue
+		let comparisonTypeC = comparisonType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_LastIndexOf_4(self.__handle, valueC, startIndex, comparisonTypeC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func lastIndexOf(_ value: DNChar /* System.Char */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.cValue
+		let comparisonTypeC = comparisonType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_LastIndexOf_5(self.__handle, valueC, startIndex, count, comparisonTypeC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -22290,7 +23150,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_LastIndexOf_3(self.__handle, valueC, &__exceptionC)
+		let __returnValueC = System_String_LastIndexOf_6(self.__handle, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -22315,7 +23175,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_LastIndexOf_4(self.__handle, valueC, startIndex, &__exceptionC)
+		let __returnValueC = System_String_LastIndexOf_7(self.__handle, valueC, startIndex, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -22341,7 +23201,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_LastIndexOf_5(self.__handle, valueC, startIndex, count, &__exceptionC)
+		let __returnValueC = System_String_LastIndexOf_8(self.__handle, valueC, startIndex, count, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -22367,7 +23227,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_LastIndexOf_6(self.__handle, valueC, comparisonTypeC, &__exceptionC)
+		let __returnValueC = System_String_LastIndexOf_9(self.__handle, valueC, comparisonTypeC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -22395,7 +23255,7 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_LastIndexOf_7(self.__handle, valueC, startIndex, comparisonTypeC, &__exceptionC)
+		let __returnValueC = System_String_LastIndexOf_10(self.__handle, valueC, startIndex, comparisonTypeC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -22424,7 +23284,124 @@ public class System_String /* System.String */: System_Object, System_IComparabl
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_String_LastIndexOf_8(self.__handle, valueC, startIndex, count, comparisonTypeC, &__exceptionC)
+		let __returnValueC = System_String_LastIndexOf_11(self.__handle, valueC, startIndex, count, comparisonTypeC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func lastIndexOf(_ value: System_Text_Rune /* System.Text.Rune */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_LastIndexOf_12(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func lastIndexOf(_ value: System_Text_Rune /* System.Text.Rune */, _ startIndex: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_LastIndexOf_13(self.__handle, valueC, startIndex, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func lastIndexOf(_ value: System_Text_Rune /* System.Text.Rune */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_LastIndexOf_14(self.__handle, valueC, startIndex, count, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func lastIndexOf(_ value: System_Text_Rune /* System.Text.Rune */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.__handle
+		let comparisonTypeC = comparisonType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_LastIndexOf_15(self.__handle, valueC, comparisonTypeC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func lastIndexOf(_ value: System_Text_Rune /* System.Text.Rune */, _ startIndex: Int32 /* System.Int32 */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.__handle
+		let comparisonTypeC = comparisonType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_LastIndexOf_16(self.__handle, valueC, startIndex, comparisonTypeC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func lastIndexOf(_ value: System_Text_Rune /* System.Text.Rune */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.__handle
+		let comparisonTypeC = comparisonType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_String_LastIndexOf_17(self.__handle, valueC, startIndex, count, comparisonTypeC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -30806,6 +31783,27 @@ public class System_UInt128 /* System.UInt128 */: System_ValueType, System_Numer
 		
 	}
 	
+	public class func log10(_ value: System_UInt128 /* System.UInt128 */) throws -> System_UInt128 /* System.UInt128 */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_UInt128_Log10(valueC, &__exceptionC)
+		
+		let __returnValue = System_UInt128(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	/// Computes the number of bits that are set in a value.
 	/// - Parameter value: The value whose set bits are to be counted.
 	/// - Returns: The number of set bits in value.
@@ -31181,6 +32179,56 @@ public class System_UInt128 /* System.UInt128 */: System_ValueType, System_Numer
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_UInt128_IsOddInteger(valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func tryParsePartial(_ s: System_String? /* System.String */, _ style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ result: inout System_UInt128 /* System.UInt128 */, _ charsConsumed: inout Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
+		let sC = s?.__handle
+		let styleC = style.cValue
+		let providerC = provider?.__handle
+		var resultC = result.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_UInt128_TryParsePartial(sC, styleC, providerC, &resultC, &charsConsumed, &__exceptionC)
+		
+		result = System_UInt128(handle: resultC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func tryParsePartial(_ utf8Text: Data? /* System.ReadOnlySpan<System.Byte> */, _ style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ result: inout System_UInt128 /* System.UInt128 */, _ bytesConsumed: inout Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
+		let utf8TextC = utf8Text.readOnlySpanOfByte()
+		let styleC = style.cValue
+		let providerC = provider?.__handle
+		var resultC = result.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_UInt128_TryParsePartial_1(utf8TextC, styleC, providerC, &resultC, &bytesConsumed, &__exceptionC)
+		
+		result = System_UInt128(handle: resultC)
+		
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -33055,6 +34103,56 @@ public class System_Decimal /* System.Decimal */: System_ValueType, System_ISpan
 		
 	}
 	
+	public class func tryParsePartial(_ s: System_String? /* System.String */, _ style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ result: inout System_Decimal /* System.Decimal */, _ charsConsumed: inout Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
+		let sC = s?.__handle
+		let styleC = style.cValue
+		let providerC = provider?.__handle
+		var resultC = result.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Decimal_TryParsePartial(sC, styleC, providerC, &resultC, &charsConsumed, &__exceptionC)
+		
+		result = System_Decimal(handle: resultC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func tryParsePartial(_ utf8Text: Data? /* System.ReadOnlySpan<System.Byte> */, _ style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ result: inout System_Decimal /* System.Decimal */, _ bytesConsumed: inout Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
+		let utf8TextC = utf8Text.readOnlySpanOfByte()
+		let styleC = style.cValue
+		let providerC = provider?.__handle
+		var resultC = result.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Decimal_TryParsePartial_1(utf8TextC, styleC, providerC, &resultC, &bytesConsumed, &__exceptionC)
+		
+		result = System_Decimal(handle: resultC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
 	/// Tries to parse a string into a value.
 	/// - Parameter s: The string to parse.
 	/// - Parameter provider: An object that provides culture-specific formatting information about s.
@@ -33944,6 +35042,27 @@ public class System_Int128 /* System.Int128 */: System_ValueType, System_Numeric
 		
 	}
 	
+	public class func log10(_ value: System_Int128 /* System.Int128 */) throws -> System_Int128 /* System.Int128 */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Int128_Log10(valueC, &__exceptionC)
+		
+		let __returnValue = System_Int128(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	/// Computes the number of bits that are set in a value.
 	/// - Parameter value: The value whose set bits are to be counted.
 	/// - Returns: The number of set bits in value.
@@ -34474,6 +35593,56 @@ public class System_Int128 /* System.Int128 */: System_ValueType, System_Numeric
 		}
 		
 		return __returnValue
+		
+	}
+	
+	public class func tryParsePartial(_ s: System_String? /* System.String */, _ style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ result: inout System_Int128 /* System.Int128 */, _ charsConsumed: inout Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
+		let sC = s?.__handle
+		let styleC = style.cValue
+		let providerC = provider?.__handle
+		var resultC = result.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Int128_TryParsePartial(sC, styleC, providerC, &resultC, &charsConsumed, &__exceptionC)
+		
+		result = System_Int128(handle: resultC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func tryParsePartial(_ utf8Text: Data? /* System.ReadOnlySpan<System.Byte> */, _ style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ result: inout System_Int128 /* System.Int128 */, _ bytesConsumed: inout Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
+		let utf8TextC = utf8Text.readOnlySpanOfByte()
+		let styleC = style.cValue
+		let providerC = provider?.__handle
+		var resultC = result.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Int128_TryParsePartial_1(utf8TextC, styleC, providerC, &resultC, &bytesConsumed, &__exceptionC)
+		
+		result = System_Int128(handle: resultC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
 		
 	}
 	
@@ -37024,6 +38193,56 @@ public class System_Half /* System.Half */: System_ValueType, System_IComparable
 		}
 		
 		return __returnValue
+		
+	}
+	
+	public class func tryParsePartial(_ s: System_String? /* System.String */, _ style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ result: inout System_Half /* System.Half */, _ charsConsumed: inout Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
+		let sC = s?.__handle
+		let styleC = style.cValue
+		let providerC = provider?.__handle
+		var resultC = result.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Half_TryParsePartial(sC, styleC, providerC, &resultC, &charsConsumed, &__exceptionC)
+		
+		result = System_Half(handle: resultC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func tryParsePartial(_ utf8Text: Data? /* System.ReadOnlySpan<System.Byte> */, _ style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ result: inout System_Half /* System.Half */, _ bytesConsumed: inout Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
+		let utf8TextC = utf8Text.readOnlySpanOfByte()
+		let styleC = style.cValue
+		let providerC = provider?.__handle
+		var resultC = result.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Half_TryParsePartial_1(utf8TextC, styleC, providerC, &resultC, &bytesConsumed, &__exceptionC)
+		
+		result = System_Half(handle: resultC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
 		
 	}
 	
@@ -62189,6 +63408,26 @@ public class System_Reflection_ConstructorInfo /* System.Reflection.ConstructorI
 		"System.Reflection.ConstructorInfo"
 	}}
 
+	public override func getGenericArguments() throws -> DNArray<System_Type> /* System.Type[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Reflection_ConstructorInfo_GetGenericArguments(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Type>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	/// Invokes the constructor reflected by the instance that has the specified parameters, providing default values for the parameters not commonly used.
 	/// - Parameter parameters: An array of values that matches the number, order and type (under the constraints of the default binder) of the parameters for this constructor. If this constructor takes no parameters, then use either an array with zero elements or null, as in Object[] parameters = new Object[0]. Any object in this array that is not explicitly initialized with a value will contain the default value for that object type. For reference-type elements, this value is null. For value-type elements, this value is 0, 0.0, or false, depending on the specific element type.
 	/// - Throws: System.MemberAccessException: The class is abstract.  -or-  The constructor is a class initializer.
@@ -70895,6 +72134,30 @@ public class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeH
 		"Microsoft.Win32.SafeHandles.SafeFileHandle"
 	}}
 
+	public class func createAnonymousPipe(_ readHandle: inout Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHandles.SafeFileHandle */, _ writeHandle: inout Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHandles.SafeFileHandle */, _ asyncRead: Bool /* System.Boolean */, _ asyncWrite: Bool /* System.Boolean */) throws {
+		var readHandleC = readHandle.__handle
+		var writeHandleC = writeHandle.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		Microsoft_Win32_SafeHandles_SafeFileHandle_CreateAnonymousPipe(&readHandleC, &writeHandleC, asyncRead, asyncWrite, &__exceptionC)
+		
+		readHandle = Microsoft_Win32_SafeHandles_SafeFileHandle(handle: readHandleC)
+		
+		writeHandle = Microsoft_Win32_SafeHandles_SafeFileHandle(handle: writeHandleC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
 	/// Initializes a new instance of the Microsoft.Win32.SafeHandles.SafeFileHandle class.
 	/// - Parameter preexistingHandle: An System.IntPtr object that represents the pre-existing handle to use.
 	/// - Parameter ownsHandle: true to reliably release the handle during the finalization phase; false to prevent reliable release (not recommended).
@@ -70903,7 +72166,7 @@ public class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeH
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = Microsoft_Win32_SafeHandles_SafeFileHandle_Create(preexistingHandle, ownsHandle, &__exceptionC)
+		let __returnValueC = Microsoft_Win32_SafeHandles_SafeFileHandle_Create_1(preexistingHandle, ownsHandle, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -70922,7 +72185,7 @@ public class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeH
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = Microsoft_Win32_SafeHandles_SafeFileHandle_Create_1(&__exceptionC)
+		let __returnValueC = Microsoft_Win32_SafeHandles_SafeFileHandle_Create_2(&__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -70934,6 +72197,27 @@ public class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeH
 		self.init(handle: __returnValueC)
 		
 	}
+	
+	public var type: System_IO_FileHandleType /* System.IO.FileHandleType */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = Microsoft_Win32_SafeHandles_SafeFileHandle_Type_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_IO_FileHandleType(cValue: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
 	
 	/// Gets a value that determines if the handle is asynchronous or not.
 	/// - Returns: true if the handle is asynchronous; false otherwise.
@@ -70989,6 +72273,7 @@ public class Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeH
 	
 	
 }
+
 
 
 /// Defines a variety of configuration options for System.IO.FileStream.
@@ -73326,6 +74611,26 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType, System_I
 		
 	}
 	
+	public func equals(_ other: System_Text_Rune /* System.Text.Rune */, _ comparisonType: System_StringComparison /* System.StringComparison */) throws -> Bool /* System.Boolean */ {
+		let otherC = other.__handle
+		let comparisonTypeC = comparisonType.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Text_Rune_Equals_2(self.__handle, otherC, comparisonTypeC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
 	/// Returns the hash code for this instance.
 	/// - Returns: The hash code for this instance.
 	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
@@ -73950,6 +75255,48 @@ public class System_Text_Rune /* System.Text.Rune */: System_ValueType, System_I
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_Text_Rune_ToUpperInvariant(valueC, &__exceptionC)
+		
+		let __returnValue = System_Text_Rune(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func toUpperOrdinal(_ value: System_Text_Rune /* System.Text.Rune */) throws -> System_Text_Rune /* System.Text.Rune */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Text_Rune_ToUpperOrdinal(valueC, &__exceptionC)
+		
+		let __returnValue = System_Text_Rune(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func toLowerOrdinal(_ value: System_Text_Rune /* System.Text.Rune */) throws -> System_Text_Rune /* System.Text.Rune */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Text_Rune_ToLowerOrdinal(valueC, &__exceptionC)
 		
 		let __returnValue = System_Text_Rune(handle: __returnValueC)
 		
@@ -74710,6 +76057,48 @@ public class System_Globalization_TextInfo /* System.Globalization.TextInfo */: 
 		let __returnValueC = System_Globalization_TextInfo_ToUpper_1(self.__handle, strC, &__exceptionC)
 		
 		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func toLower(_ value: System_Text_Rune /* System.Text.Rune */) throws -> System_Text_Rune /* System.Text.Rune */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Globalization_TextInfo_ToLower_2(self.__handle, valueC, &__exceptionC)
+		
+		let __returnValue = System_Text_Rune(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func toUpper(_ value: System_Text_Rune /* System.Text.Rune */) throws -> System_Text_Rune /* System.Text.Rune */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Globalization_TextInfo_ToUpper_2(self.__handle, valueC, &__exceptionC)
+		
+		let __returnValue = System_Text_Rune(handle: __returnValueC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -99730,31 +101119,6 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		
 	}
 	
-	/// Blocks the calling thread until the thread represented by this instance terminates or the specified time elapses, while continuing to perform standard COM and SendMessage pumping.
-	/// - Parameter millisecondsTimeout: The number of milliseconds to wait for the thread to terminate.
-	/// - Throws: System.ArgumentOutOfRangeException: The value of millisecondsTimeout is negative and is not equal to System.Threading.Timeout.Infinite in milliseconds.
-	/// - Throws: System.Threading.ThreadStateException: The thread has not been started.
-	/// - Throws: System.ArgumentException: millisecondsTimeout is less than -1 (Timeout.Infinite).
-	/// - Throws: System.Threading.ThreadInterruptedException: The thread was interrupted while waiting.
-	/// - Returns: true if the thread has terminated; false if the thread has not terminated after the amount of time specified by the millisecondsTimeout parameter has elapsed.
-	public func join(_ millisecondsTimeout: Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
-		
-		
-		var __exceptionC: System_Exception_t?
-		
-		let __returnValueC = System_Threading_Thread_Join(self.__handle, millisecondsTimeout, &__exceptionC)
-		
-		if let __exceptionC {
-		    let __exception = System_Exception(handle: __exceptionC)
-		    let __error = __exception.swiftError
-		
-		    throw __error
-		}
-		
-		return __returnValueC
-		
-	}
-	
 	/// Causes the operating system to change the state of the current instance to System.Threading.ThreadState.Running, and optionally supplies an object containing data to be used by the method the thread executes.
 	/// - Parameter parameter: An object that contains data to be used by the method the thread executes.
 	/// - Throws: System.Threading.ThreadStateException: The thread has already been started.
@@ -99838,6 +101202,31 @@ public class System_Threading_Thread /* System.Threading.Thread */: System_Runti
 		    throw __error
 		}
 		
+		
+	}
+	
+	/// Blocks the calling thread until the thread represented by this instance terminates or the specified time elapses, while continuing to perform standard COM and SendMessage pumping.
+	/// - Parameter millisecondsTimeout: The number of milliseconds to wait for the thread to terminate.
+	/// - Throws: System.ArgumentOutOfRangeException: The value of millisecondsTimeout is negative and is not equal to System.Threading.Timeout.Infinite in milliseconds.
+	/// - Throws: System.Threading.ThreadStateException: The thread has not been started.
+	/// - Throws: System.ArgumentException: millisecondsTimeout is less than -1 (Timeout.Infinite).
+	/// - Throws: System.Threading.ThreadInterruptedException: The thread was interrupted while waiting.
+	/// - Returns: true if the thread has terminated; false if the thread has not terminated after the amount of time specified by the millisecondsTimeout parameter has elapsed.
+	public func join(_ millisecondsTimeout: Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Threading_Thread_Join(self.__handle, millisecondsTimeout, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
 		
 	}
 	
@@ -109147,6 +110536,93 @@ public class System_Random /* System.Random */: System_Object {
 		
 	}
 	
+	public func nextInteger(T: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let TC = T.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Random_NextInteger_A1(self.__handle, TC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func nextInteger(T: System_Type /* System.Type */, _ maxValue: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
+		let TC = T.__handle
+		let maxValueC = maxValue?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Random_NextInteger_A1_1(self.__handle, TC, maxValueC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func nextInteger(T: System_Type /* System.Type */, _ minValue: System_Object? /* System.Object */, _ maxValue: System_Object? /* System.Object */) throws -> System_Object? /* System.Object */ {
+		let TC = T.__handle
+		let minValueC = minValue?.__handle
+		let maxValueC = maxValue?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Random_NextInteger_A1_2(self.__handle, TC, minValueC, maxValueC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func nextBinaryFloat(T: System_Type /* System.Type */) throws -> System_Object? /* System.Object */ {
+		let TC = T.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Random_NextBinaryFloat_A1(self.__handle, TC, &__exceptionC)
+		
+		let __returnValue = System_Object(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	public func getItems(T: System_Type /* System.Type */, _ choices: System_Array? /* System.Array */, _ length: Int32 /* System.Int32 */) throws -> System_Array /* System.Array */ {
 		let TC = T.__handle
 		let choicesC = choices?.__handle
@@ -109288,6 +110764,10 @@ public class System_Random /* System.Random */: System_Object {
 }
 
 
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
 
 // Type "T" was skipped. Reason: It has no full name.
 
@@ -109398,6 +110878,27 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
+	public class func moveChunks(_ source: System_Text_StringBuilder /* System.Text.StringBuilder */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Text_StringBuilder_MoveChunks(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	/// Returns an object that can be used to iterate through the chunks of characters represented in a ReadOnlyMemory<Char> created from this System.Text.StringBuilder instance.
 	/// - Returns: An enumerator for the chunks in the ReadOnlyMemory<Char>.
 	public func getChunks() throws -> System_Text_StringBuilder_ChunkEnumerator /* System.Text.StringBuilder.ChunkEnumerator */ {
@@ -109408,6 +110909,26 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		let __returnValueC = System_Text_StringBuilder_GetChunks(self.__handle, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder_ChunkEnumerator(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func enumerateRunes() throws -> System_Text_StringBuilderRuneEnumerator /* System.Text.StringBuilderRuneEnumerator */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Text_StringBuilder_EnumerateRunes(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Text_StringBuilderRuneEnumerator(handle: __returnValueC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -109754,6 +111275,27 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
+	public func append(_ value: System_Text_Rune /* System.Text.Rune */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Text_StringBuilder_Append_8(self.__handle, valueC, &__exceptionC)
+		
+		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	/// Appends the string representation of a specified 8-bit signed integer to this instance.
 	/// - Parameter value: The value to append.
 	/// - Throws: System.ArgumentOutOfRangeException: Enlarging the value of this instance would exceed System.Text.StringBuilder.MaxCapacity.
@@ -109763,7 +111305,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Append_8(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Append_9(self.__handle, value, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -109787,7 +111329,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Append_9(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Append_10(self.__handle, value, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -109811,7 +111353,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Append_10(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Append_11(self.__handle, value, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -109835,7 +111377,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Append_11(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Append_12(self.__handle, value, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -109859,7 +111401,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Append_12(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Append_13(self.__handle, value, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -109883,7 +111425,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Append_13(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Append_14(self.__handle, value, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -109907,7 +111449,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Append_14(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Append_15(self.__handle, value, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -109932,7 +111474,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Append_15(self.__handle, valueC, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Append_16(self.__handle, valueC, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -109956,7 +111498,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Append_16(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Append_17(self.__handle, value, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -109980,7 +111522,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Append_17(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Append_18(self.__handle, value, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -110004,7 +111546,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Append_18(self.__handle, value, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Append_19(self.__handle, value, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -110029,7 +111571,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Append_19(self.__handle, valueC, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Append_20(self.__handle, valueC, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -110054,7 +111596,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Append_20(self.__handle, valueC, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Append_21(self.__handle, valueC, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -110078,7 +111620,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Append_21(self.__handle, &handlerC, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Append_22(self.__handle, &handlerC, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -110107,7 +111649,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Append_22(self.__handle, providerC, &handlerC, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Append_23(self.__handle, providerC, &handlerC, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -110441,6 +111983,27 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
+	public func insert(_ index: Int32 /* System.Int32 */, _ value: System_Text_Rune /* System.Text.Rune */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Text_StringBuilder_Insert_7(self.__handle, index, valueC, &__exceptionC)
+		
+		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	/// Inserts the string representation of a specified array of Unicode characters into this instance at the specified character position.
 	/// - Parameter index: The position in this instance where insertion begins.
 	/// - Parameter value: The character array to insert.
@@ -110452,7 +112015,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Insert_7(self.__handle, index, valueC, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Insert_8(self.__handle, index, valueC, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -110481,7 +112044,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Insert_8(self.__handle, index, valueC, startIndex, charCount, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Insert_9(self.__handle, index, valueC, startIndex, charCount, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -110507,7 +112070,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Insert_9(self.__handle, index, value, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Insert_10(self.__handle, index, value, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -110533,7 +112096,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Insert_10(self.__handle, index, value, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Insert_11(self.__handle, index, value, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -110559,7 +112122,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Insert_11(self.__handle, index, value, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Insert_12(self.__handle, index, value, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -110585,7 +112148,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Insert_12(self.__handle, index, value, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Insert_13(self.__handle, index, value, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -110612,7 +112175,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Insert_13(self.__handle, index, valueC, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Insert_14(self.__handle, index, valueC, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -110638,7 +112201,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Insert_14(self.__handle, index, value, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Insert_15(self.__handle, index, value, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -110664,7 +112227,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Insert_15(self.__handle, index, value, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Insert_16(self.__handle, index, value, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -110690,7 +112253,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Insert_16(self.__handle, index, value, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Insert_17(self.__handle, index, value, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -110717,7 +112280,7 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_Text_StringBuilder_Insert_17(self.__handle, index, valueC, &__exceptionC)
+		let __returnValueC = System_Text_StringBuilder_Insert_18(self.__handle, index, valueC, &__exceptionC)
 		
 		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
 		
@@ -111230,6 +112793,92 @@ public class System_Text_StringBuilder /* System.Text.StringBuilder */: System_O
 		
 	}
 	
+	public func replace(_ oldRune: System_Text_Rune /* System.Text.Rune */, _ newRune: System_Text_Rune /* System.Text.Rune */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
+		let oldRuneC = oldRune.__handle
+		let newRuneC = newRune.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Text_StringBuilder_Replace_4(self.__handle, oldRuneC, newRuneC, &__exceptionC)
+		
+		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func replace(_ oldRune: System_Text_Rune /* System.Text.Rune */, _ newRune: System_Text_Rune /* System.Text.Rune */, _ startIndex: Int32 /* System.Int32 */, _ count: Int32 /* System.Int32 */) throws -> System_Text_StringBuilder /* System.Text.StringBuilder */ {
+		let oldRuneC = oldRune.__handle
+		let newRuneC = newRune.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Text_StringBuilder_Replace_5(self.__handle, oldRuneC, newRuneC, startIndex, count, &__exceptionC)
+		
+		let __returnValue = System_Text_StringBuilder(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func getRuneAt(_ index: Int32 /* System.Int32 */) throws -> System_Text_Rune /* System.Text.Rune */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Text_StringBuilder_GetRuneAt(self.__handle, index, &__exceptionC)
+		
+		let __returnValue = System_Text_Rune(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func tryGetRuneAt(_ index: Int32 /* System.Int32 */, _ value: inout System_Text_Rune /* System.Text.Rune */) throws -> Bool /* System.Boolean */ {
+		var valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Text_StringBuilder_TryGetRuneAt(self.__handle, index, &valueC, &__exceptionC)
+		
+		value = System_Text_Rune(handle: valueC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
 	/// Initializes a new instance of the System.Text.StringBuilder class.
 	public convenience init() throws {
 		
@@ -111594,6 +113243,107 @@ public class System_Text_StringBuilder_ChunkEnumerator /* System.Text.StringBuil
 	
 	internal override func destroy() {
 		System_Text_StringBuilder_ChunkEnumerator_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+public class System_Text_StringBuilderRuneEnumerator /* System.Text.StringBuilderRuneEnumerator */: System_ValueType, System_Collections_Generic_IEnumerable_A1, System_Collections_IEnumerable, System_Collections_Generic_IEnumerator_A1, System_IDisposable, System_Collections_IEnumerator {
+	public override class var typeName: String { get {
+		"StringBuilderRuneEnumerator"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Text.StringBuilderRuneEnumerator"
+	}}
+
+	public func getEnumerator() throws -> System_Text_StringBuilderRuneEnumerator /* System.Text.StringBuilderRuneEnumerator */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Text_StringBuilderRuneEnumerator_GetEnumerator(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Text_StringBuilderRuneEnumerator(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func moveNext() throws -> Bool /* System.Boolean */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Text_StringBuilderRuneEnumerator_MoveNext(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public var current: System_Text_Rune /* System.Text.Rune */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Text_StringBuilderRuneEnumerator_Current_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Text_Rune(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Initializes a new instance of the System.Text.StringBuilderRuneEnumerator struct.
+	public convenience init() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Text_StringBuilderRuneEnumerator_Create(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Text_StringBuilderRuneEnumerator_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Text_StringBuilderRuneEnumerator_Destroy(self.__handle)
 		
 	}
 	
@@ -113141,6 +114891,26 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		var __exceptionC: System_Exception_t?
 		
 		let __returnValueC = System_IO_File_OpenHandle(pathC, modeC, accessC, shareC, optionsC, preallocationSize, &__exceptionC)
+		
+		let __returnValue = Microsoft_Win32_SafeHandles_SafeFileHandle(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func openNullHandle() throws -> Microsoft_Win32_SafeHandles_SafeFileHandle /* Microsoft.Win32.SafeHandles.SafeFileHandle */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_IO_File_OpenNullHandle(&__exceptionC)
 		
 		let __returnValue = Microsoft_Win32_SafeHandles_SafeFileHandle(handle: __returnValueC)
 		
@@ -115332,6 +117102,28 @@ public class System_IO_File /* System.IO.File */: System_Object {
 		let __returnValueC = System_IO_File_AppendAllLinesAsync_1(pathC, contentsC, encodingC, cancellationTokenC, &__exceptionC)
 		
 		let __returnValue = System_Threading_Tasks_Task(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func createHardLink(_ path: System_String /* System.String */, _ pathToTarget: System_String /* System.String */) throws -> System_IO_FileSystemInfo /* System.IO.FileSystemInfo */ {
+		let pathC = path.__handle
+		let pathToTargetC = pathToTarget.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_IO_File_CreateHardLink(pathC, pathToTargetC, &__exceptionC)
+		
+		let __returnValue = System_IO_FileSystemInfo(handle: __returnValueC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -117704,6 +119496,24 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	public func write(_ value: System_Text_Rune /* System.Text.Rune */) throws {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_IO_TextWriter_Write_1(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
 	/// Writes a character array to the text stream.
 	/// - Parameter buffer: The character array to write to the text stream.
 	/// - Throws: System.ObjectDisposedException: The System.IO.TextWriter is closed.
@@ -117714,7 +119524,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_Write_1(self.__handle, bufferC, &__exceptionC)
+		System_IO_TextWriter_Write_2(self.__handle, bufferC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -117741,7 +119551,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_Write_2(self.__handle, bufferC, index, count, &__exceptionC)
+		System_IO_TextWriter_Write_3(self.__handle, bufferC, index, count, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -117762,7 +119572,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_Write_3(self.__handle, value, &__exceptionC)
+		System_IO_TextWriter_Write_4(self.__handle, value, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -117783,7 +119593,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_Write_4(self.__handle, value, &__exceptionC)
+		System_IO_TextWriter_Write_5(self.__handle, value, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -117804,7 +119614,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_Write_5(self.__handle, value, &__exceptionC)
+		System_IO_TextWriter_Write_6(self.__handle, value, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -117825,7 +119635,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_Write_6(self.__handle, value, &__exceptionC)
+		System_IO_TextWriter_Write_7(self.__handle, value, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -117846,7 +119656,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_Write_7(self.__handle, value, &__exceptionC)
+		System_IO_TextWriter_Write_8(self.__handle, value, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -117867,7 +119677,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_Write_8(self.__handle, value, &__exceptionC)
+		System_IO_TextWriter_Write_9(self.__handle, value, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -117888,7 +119698,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_Write_9(self.__handle, value, &__exceptionC)
+		System_IO_TextWriter_Write_10(self.__handle, value, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -117910,7 +119720,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_Write_10(self.__handle, valueC, &__exceptionC)
+		System_IO_TextWriter_Write_11(self.__handle, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -117932,7 +119742,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_Write_11(self.__handle, valueC, &__exceptionC)
+		System_IO_TextWriter_Write_12(self.__handle, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -117954,7 +119764,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_Write_12(self.__handle, valueC, &__exceptionC)
+		System_IO_TextWriter_Write_13(self.__handle, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -117974,7 +119784,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_Write_13(self.__handle, valueC, &__exceptionC)
+		System_IO_TextWriter_Write_14(self.__handle, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118000,7 +119810,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_Write_14(self.__handle, formatC, arg0C, &__exceptionC)
+		System_IO_TextWriter_Write_15(self.__handle, formatC, arg0C, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118028,7 +119838,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_Write_15(self.__handle, formatC, arg0C, arg1C, &__exceptionC)
+		System_IO_TextWriter_Write_16(self.__handle, formatC, arg0C, arg1C, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118058,7 +119868,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_Write_16(self.__handle, formatC, arg0C, arg1C, arg2C, &__exceptionC)
+		System_IO_TextWriter_Write_17(self.__handle, formatC, arg0C, arg1C, arg2C, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118084,7 +119894,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_Write_17(self.__handle, formatC, argC, &__exceptionC)
+		System_IO_TextWriter_Write_18(self.__handle, formatC, argC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118138,6 +119948,24 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	public func writeLine(_ value: System_Text_Rune /* System.Text.Rune */) throws {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_IO_TextWriter_WriteLine_2(self.__handle, valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
 	/// Writes an array of characters to the text stream, followed by a line terminator.
 	/// - Parameter buffer: The character array from which data is read.
 	/// - Throws: System.ObjectDisposedException: The System.IO.TextWriter is closed.
@@ -118148,7 +119976,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_WriteLine_2(self.__handle, bufferC, &__exceptionC)
+		System_IO_TextWriter_WriteLine_3(self.__handle, bufferC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118175,7 +120003,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_WriteLine_3(self.__handle, bufferC, index, count, &__exceptionC)
+		System_IO_TextWriter_WriteLine_4(self.__handle, bufferC, index, count, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118196,7 +120024,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_WriteLine_4(self.__handle, value, &__exceptionC)
+		System_IO_TextWriter_WriteLine_5(self.__handle, value, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118217,7 +120045,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_WriteLine_5(self.__handle, value, &__exceptionC)
+		System_IO_TextWriter_WriteLine_6(self.__handle, value, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118238,7 +120066,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_WriteLine_6(self.__handle, value, &__exceptionC)
+		System_IO_TextWriter_WriteLine_7(self.__handle, value, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118259,7 +120087,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_WriteLine_7(self.__handle, value, &__exceptionC)
+		System_IO_TextWriter_WriteLine_8(self.__handle, value, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118280,7 +120108,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_WriteLine_8(self.__handle, value, &__exceptionC)
+		System_IO_TextWriter_WriteLine_9(self.__handle, value, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118301,7 +120129,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_WriteLine_9(self.__handle, value, &__exceptionC)
+		System_IO_TextWriter_WriteLine_10(self.__handle, value, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118322,7 +120150,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_WriteLine_10(self.__handle, value, &__exceptionC)
+		System_IO_TextWriter_WriteLine_11(self.__handle, value, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118344,7 +120172,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_WriteLine_11(self.__handle, valueC, &__exceptionC)
+		System_IO_TextWriter_WriteLine_12(self.__handle, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118366,7 +120194,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_WriteLine_12(self.__handle, valueC, &__exceptionC)
+		System_IO_TextWriter_WriteLine_13(self.__handle, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118386,7 +120214,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_WriteLine_13(self.__handle, valueC, &__exceptionC)
+		System_IO_TextWriter_WriteLine_14(self.__handle, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118408,7 +120236,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_WriteLine_14(self.__handle, valueC, &__exceptionC)
+		System_IO_TextWriter_WriteLine_15(self.__handle, valueC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118434,7 +120262,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_WriteLine_15(self.__handle, formatC, arg0C, &__exceptionC)
+		System_IO_TextWriter_WriteLine_16(self.__handle, formatC, arg0C, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118462,7 +120290,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_WriteLine_16(self.__handle, formatC, arg0C, arg1C, &__exceptionC)
+		System_IO_TextWriter_WriteLine_17(self.__handle, formatC, arg0C, arg1C, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118492,7 +120320,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_WriteLine_17(self.__handle, formatC, arg0C, arg1C, arg2C, &__exceptionC)
+		System_IO_TextWriter_WriteLine_18(self.__handle, formatC, arg0C, arg1C, arg2C, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118518,7 +120346,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		System_IO_TextWriter_WriteLine_18(self.__handle, formatC, argC, &__exceptionC)
+		System_IO_TextWriter_WriteLine_19(self.__handle, formatC, argC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -118556,6 +120384,27 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	public func writeAsync(_ value: System_Text_Rune /* System.Text.Rune */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_IO_TextWriter_WriteAsync_1(self.__handle, valueC, &__exceptionC)
+		
+		let __returnValue = System_Threading_Tasks_Task(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	/// Writes a string to the text stream asynchronously.
 	/// - Parameter value: The string to write. If value is null, nothing is written to the text stream.
 	/// - Throws: System.ObjectDisposedException: The text writer is disposed.
@@ -118567,7 +120416,29 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_IO_TextWriter_WriteAsync_1(self.__handle, valueC, &__exceptionC)
+		let __returnValueC = System_IO_TextWriter_WriteAsync_2(self.__handle, valueC, &__exceptionC)
+		
+		let __returnValue = System_Threading_Tasks_Task(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func writeAsync(_ value: System_String? /* System.String */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
+		let valueC = value?.__handle
+		let cancellationTokenC = cancellationToken.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_IO_TextWriter_WriteAsync_3(self.__handle, valueC, cancellationTokenC, &__exceptionC)
 		
 		let __returnValue = System_Threading_Tasks_Task(handle: __returnValueC)
 		
@@ -118594,7 +120465,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_IO_TextWriter_WriteAsync_2(self.__handle, valueC, cancellationTokenC, &__exceptionC)
+		let __returnValueC = System_IO_TextWriter_WriteAsync_4(self.__handle, valueC, cancellationTokenC, &__exceptionC)
 		
 		let __returnValue = System_Threading_Tasks_Task(handle: __returnValueC)
 		
@@ -118620,7 +120491,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_IO_TextWriter_WriteAsync_3(self.__handle, bufferC, &__exceptionC)
+		let __returnValueC = System_IO_TextWriter_WriteAsync_5(self.__handle, bufferC, &__exceptionC)
 		
 		let __returnValue = System_Threading_Tasks_Task(handle: __returnValueC)
 		
@@ -118651,7 +120522,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_IO_TextWriter_WriteAsync_4(self.__handle, bufferC, index, count, &__exceptionC)
+		let __returnValueC = System_IO_TextWriter_WriteAsync_6(self.__handle, bufferC, index, count, &__exceptionC)
 		
 		let __returnValue = System_Threading_Tasks_Task(handle: __returnValueC)
 		
@@ -118692,6 +120563,27 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 	}
 	
+	public func writeLineAsync(_ value: System_Text_Rune /* System.Text.Rune */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_IO_TextWriter_WriteLineAsync_1(self.__handle, valueC, &__exceptionC)
+		
+		let __returnValue = System_Threading_Tasks_Task(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	/// Asynchronously writes a string to the text stream, followed by a line terminator.
 	/// - Parameter value: The string to write. If the value is null, only a line terminator is written.
 	/// - Throws: System.ObjectDisposedException: The text writer is disposed.
@@ -118703,7 +120595,29 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_IO_TextWriter_WriteLineAsync_1(self.__handle, valueC, &__exceptionC)
+		let __returnValueC = System_IO_TextWriter_WriteLineAsync_2(self.__handle, valueC, &__exceptionC)
+		
+		let __returnValue = System_Threading_Tasks_Task(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func writeLineAsync(_ value: System_String? /* System.String */, _ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
+		let valueC = value?.__handle
+		let cancellationTokenC = cancellationToken.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_IO_TextWriter_WriteLineAsync_3(self.__handle, valueC, cancellationTokenC, &__exceptionC)
 		
 		let __returnValue = System_Threading_Tasks_Task(handle: __returnValueC)
 		
@@ -118730,7 +120644,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_IO_TextWriter_WriteLineAsync_2(self.__handle, valueC, cancellationTokenC, &__exceptionC)
+		let __returnValueC = System_IO_TextWriter_WriteLineAsync_4(self.__handle, valueC, cancellationTokenC, &__exceptionC)
 		
 		let __returnValue = System_Threading_Tasks_Task(handle: __returnValueC)
 		
@@ -118756,7 +120670,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_IO_TextWriter_WriteLineAsync_3(self.__handle, bufferC, &__exceptionC)
+		let __returnValueC = System_IO_TextWriter_WriteLineAsync_5(self.__handle, bufferC, &__exceptionC)
 		
 		let __returnValue = System_Threading_Tasks_Task(handle: __returnValueC)
 		
@@ -118787,7 +120701,7 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_IO_TextWriter_WriteLineAsync_4(self.__handle, bufferC, index, count, &__exceptionC)
+		let __returnValueC = System_IO_TextWriter_WriteLineAsync_6(self.__handle, bufferC, index, count, &__exceptionC)
 		
 		let __returnValue = System_Threading_Tasks_Task(handle: __returnValueC)
 		
@@ -118811,7 +120725,28 @@ public class System_IO_TextWriter /* System.IO.TextWriter */: System_MarshalByRe
 		
 		var __exceptionC: System_Exception_t?
 		
-		let __returnValueC = System_IO_TextWriter_WriteLineAsync_5(self.__handle, &__exceptionC)
+		let __returnValueC = System_IO_TextWriter_WriteLineAsync_7(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Threading_Tasks_Task(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func writeLineAsync(_ cancellationToken: System_Threading_CancellationToken /* System.Threading.CancellationToken */) throws -> System_Threading_Tasks_Task /* System.Threading.Tasks.Task */ {
+		let cancellationTokenC = cancellationToken.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_IO_TextWriter_WriteLineAsync_8(self.__handle, cancellationTokenC, &__exceptionC)
 		
 		let __returnValue = System_Threading_Tasks_Task(handle: __returnValueC)
 		
@@ -120296,6 +122231,24 @@ public class System_IO_FileInfo /* System.IO.FileInfo */: System_IO_FileSystemIn
 		var __exceptionC: System_Exception_t?
 		
 		System_IO_FileInfo_Encrypt(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	public func createAsHardLink(_ pathToTarget: System_String /* System.String */) throws {
+		let pathToTargetC = pathToTarget.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_IO_FileInfo_CreateAsHardLink(self.__handle, pathToTargetC, &__exceptionC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -123521,6 +125474,27 @@ public class System_Buffers_Binary_BinaryPrimitives /* System.Buffers.Binary.Bin
 		
 	}
 	
+	public class func readBFloat16BigEndian(_ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Buffers_Binary_BinaryPrimitives_ReadBFloat16BigEndian(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	public class func readInt16BigEndian(_ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> Int16 /* System.Int16 */ {
 		let sourceC = source.readOnlySpanOfByte()
 		
@@ -123763,6 +125737,29 @@ public class System_Buffers_Binary_BinaryPrimitives /* System.Buffers.Binary.Bin
 		let __returnValueC = System_Buffers_Binary_BinaryPrimitives_TryReadHalfBigEndian(sourceC, &valueC, &__exceptionC)
 		
 		value = System_Half(handle: valueC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func tryReadBFloat16BigEndian(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ value: inout System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let sourceC = source.readOnlySpanOfByte()
+		var valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Buffers_Binary_BinaryPrimitives_TryReadBFloat16BigEndian(sourceC, &valueC, &__exceptionC)
+		
+		value = System_Numerics_BFloat16(handle: valueC)
 		
 		
 		if let __exceptionC {
@@ -124033,6 +126030,27 @@ public class System_Buffers_Binary_BinaryPrimitives /* System.Buffers.Binary.Bin
 		
 	}
 	
+	public class func readBFloat16LittleEndian(_ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Buffers_Binary_BinaryPrimitives_ReadBFloat16LittleEndian(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	public class func readInt16LittleEndian(_ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> Int16 /* System.Int16 */ {
 		let sourceC = source.readOnlySpanOfByte()
 		
@@ -124275,6 +126293,29 @@ public class System_Buffers_Binary_BinaryPrimitives /* System.Buffers.Binary.Bin
 		let __returnValueC = System_Buffers_Binary_BinaryPrimitives_TryReadHalfLittleEndian(sourceC, &valueC, &__exceptionC)
 		
 		value = System_Half(handle: valueC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func tryReadBFloat16LittleEndian(_ source: Data? /* System.ReadOnlySpan<System.Byte> */, _ value: inout System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let sourceC = source.readOnlySpanOfByte()
+		var valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Buffers_Binary_BinaryPrimitives_TryReadBFloat16LittleEndian(sourceC, &valueC, &__exceptionC)
+		
+		value = System_Numerics_BFloat16(handle: valueC)
 		
 		
 		if let __exceptionC {
@@ -124777,6 +126818,2673 @@ public class System_Buffers_Binary_BinaryPrimitives /* System.Buffers.Binary.Bin
 }
 
 
+public class System_Numerics_BFloat16 /* System.Numerics.BFloat16 */: System_ValueType, System_IComparable, System_ISpanFormattable, System_IFormattable, System_IComparable_A1, System_IEquatable_A1, System_Numerics_IBinaryFloatingPointIeee754_A1, System_Numerics_INumber_A1, System_IUtf8SpanFormattable {
+	public override class var typeName: String { get {
+		"BFloat16"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Numerics.BFloat16"
+	}}
+
+	public class func isFinite(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_IsFinite(valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func isInfinity(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_IsInfinity(valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func isNaN(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_IsNaN(valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func isNegative(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_IsNegative(valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func isNegativeInfinity(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_IsNegativeInfinity(valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func isNormal(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_IsNormal(valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func isPositiveInfinity(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_IsPositiveInfinity(valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func isSubnormal(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_IsSubnormal(valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func isZero(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_IsZero(valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func parse(_ s: System_String /* System.String */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let sC = s.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Parse(sC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func parse(_ s: System_String /* System.String */, _ style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let sC = s.__handle
+		let styleC = style.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Parse_1(sC, styleC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func parse(_ s: System_String /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let sC = s.__handle
+		let providerC = provider?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Parse_2(sC, providerC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func parse(_ s: System_String /* System.String */, _ style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let sC = s.__handle
+		let styleC = style.cValue
+		let providerC = provider?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Parse_3(sC, styleC, providerC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func tryParse(_ s: System_String? /* System.String */, _ result: inout System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let sC = s?.__handle
+		var resultC = result.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_TryParse(sC, &resultC, &__exceptionC)
+		
+		result = System_Numerics_BFloat16(handle: resultC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func tryParse(_ utf8Text: Data? /* System.ReadOnlySpan<System.Byte> */, _ result: inout System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let utf8TextC = utf8Text.readOnlySpanOfByte()
+		var resultC = result.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_TryParse_1(utf8TextC, &resultC, &__exceptionC)
+		
+		result = System_Numerics_BFloat16(handle: resultC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func tryParse(_ s: System_String? /* System.String */, _ style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ result: inout System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let sC = s?.__handle
+		let styleC = style.cValue
+		let providerC = provider?.__handle
+		var resultC = result.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_TryParse_2(sC, styleC, providerC, &resultC, &__exceptionC)
+		
+		result = System_Numerics_BFloat16(handle: resultC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func compareTo(_ obj: System_Object? /* System.Object */) throws -> Int32 /* System.Int32 */ {
+		let objC = obj?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_CompareTo(self.__handle, objC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func compareTo(_ other: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Int32 /* System.Int32 */ {
+		let otherC = other.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_CompareTo_1(self.__handle, otherC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func equals(_ other: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let otherC = other.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Equals(self.__handle, otherC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public override func equals(_ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let objC = obj?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Equals_1(self.__handle, objC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_GetHashCode(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public override func toString() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_ToString(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func toString(_ format: System_String? /* System.String */) throws -> System_String /* System.String */ {
+		let formatC = format?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_ToString_1(self.__handle, formatC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func toString(_ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
+		let providerC = provider?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_ToString_2(self.__handle, providerC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func toString(_ format: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_String /* System.String */ {
+		let formatC = format?.__handle
+		let providerC = provider?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_ToString_3(self.__handle, formatC, providerC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func isPow2(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_IsPow2(valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func log2(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Log2(valueC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func exp(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Exp(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func expM1(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_ExpM1(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func exp2(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Exp2(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func exp2M1(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Exp2M1(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func exp10(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Exp10(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func exp10M1(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Exp10M1(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func ceiling(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Ceiling(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func floor(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Floor(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func round(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Round(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func round(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ digits: Int32 /* System.Int32 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Round_1(xC, digits, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func round(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ mode: System_MidpointRounding /* System.MidpointRounding */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		let modeC = mode.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Round_2(xC, modeC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func round(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ digits: Int32 /* System.Int32 */, _ mode: System_MidpointRounding /* System.MidpointRounding */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		let modeC = mode.cValue
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Round_3(xC, digits, modeC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func truncate(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Truncate(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func atan2(_ y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let yC = y.__handle
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Atan2(yC, xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func atan2Pi(_ y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let yC = y.__handle
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Atan2Pi(yC, xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func bitDecrement(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_BitDecrement(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func bitIncrement(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_BitIncrement(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func fusedMultiplyAdd(_ `left`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ `right`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ addend: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let leftC = `left`.__handle
+		let rightC = `right`.__handle
+		let addendC = addend.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_FusedMultiplyAdd(leftC, rightC, addendC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func ieee754Remainder(_ `left`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ `right`: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let leftC = `left`.__handle
+		let rightC = `right`.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Ieee754Remainder(leftC, rightC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func iLogB(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Int32 /* System.Int32 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_ILogB(xC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func lerp(_ value1: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ value2: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ amount: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let value1C = value1.__handle
+		let value2C = value2.__handle
+		let amountC = amount.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Lerp(value1C, value2C, amountC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func reciprocalEstimate(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_ReciprocalEstimate(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func reciprocalSqrtEstimate(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_ReciprocalSqrtEstimate(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func scaleB(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ n: Int32 /* System.Int32 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_ScaleB(xC, n, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func acosh(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Acosh(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func asinh(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Asinh(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func atanh(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Atanh(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func cosh(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Cosh(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func sinh(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Sinh(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func tanh(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Tanh(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func log(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Log_1(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func log(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ newBase: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		let newBaseC = newBase.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Log_2(xC, newBaseC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func log10(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Log10(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func logP1(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_LogP1(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func log2P1(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Log2P1(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func log10P1(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Log10P1(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func clamp(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ min: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ max: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let valueC = value.__handle
+		let minC = min.__handle
+		let maxC = max.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Clamp(valueC, minC, maxC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func copySign(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ sign: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let valueC = value.__handle
+		let signC = sign.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_CopySign(valueC, signC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func max(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		let yC = y.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Max(xC, yC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func maxNumber(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		let yC = y.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_MaxNumber(xC, yC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func min(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		let yC = y.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Min(xC, yC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func minNumber(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		let yC = y.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_MinNumber(xC, yC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func sign(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Int32 /* System.Int32 */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Sign(valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func abs(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Abs(valueC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func createChecked(TOther: System_Type /* System.Type */, _ value: System_Object? /* System.Object */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let TOtherC = TOther.__handle
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_CreateChecked_A1(TOtherC, valueC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func createSaturating(TOther: System_Type /* System.Type */, _ value: System_Object? /* System.Object */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let TOtherC = TOther.__handle
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_CreateSaturating_A1(TOtherC, valueC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func createTruncating(TOther: System_Type /* System.Type */, _ value: System_Object? /* System.Object */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let TOtherC = TOther.__handle
+		let valueC = value?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_CreateTruncating_A1(TOtherC, valueC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func isEvenInteger(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_IsEvenInteger(valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func isInteger(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_IsInteger(valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func isOddInteger(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_IsOddInteger(valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func isPositive(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_IsPositive_1(valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func isRealNumber(_ value: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let valueC = value.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_IsRealNumber(valueC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func maxMagnitude(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		let yC = y.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_MaxMagnitude(xC, yC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func maxMagnitudeNumber(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		let yC = y.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_MaxMagnitudeNumber(xC, yC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func minMagnitude(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		let yC = y.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_MinMagnitude(xC, yC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func minMagnitudeNumber(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		let yC = y.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_MinMagnitudeNumber(xC, yC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func tryParsePartial(_ s: System_String? /* System.String */, _ style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ result: inout System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ charsConsumed: inout Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
+		let sC = s?.__handle
+		let styleC = style.cValue
+		let providerC = provider?.__handle
+		var resultC = result.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_TryParsePartial(sC, styleC, providerC, &resultC, &charsConsumed, &__exceptionC)
+		
+		result = System_Numerics_BFloat16(handle: resultC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func tryParsePartial(_ utf8Text: Data? /* System.ReadOnlySpan<System.Byte> */, _ style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ result: inout System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ bytesConsumed: inout Int32 /* System.Int32 */) throws -> Bool /* System.Boolean */ {
+		let utf8TextC = utf8Text.readOnlySpanOfByte()
+		let styleC = style.cValue
+		let providerC = provider?.__handle
+		var resultC = result.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_TryParsePartial_1(utf8TextC, styleC, providerC, &resultC, &bytesConsumed, &__exceptionC)
+		
+		result = System_Numerics_BFloat16(handle: resultC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func tryParse(_ s: System_String? /* System.String */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ result: inout System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let sC = s?.__handle
+		let providerC = provider?.__handle
+		var resultC = result.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_TryParse_3(sC, providerC, &resultC, &__exceptionC)
+		
+		result = System_Numerics_BFloat16(handle: resultC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func pow(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		let yC = y.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Pow(xC, yC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func cbrt(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Cbrt(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func hypot(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ y: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		let yC = y.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Hypot(xC, yC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func rootN(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */, _ n: Int32 /* System.Int32 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_RootN(xC, n, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func sqrt(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Sqrt(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func acos(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Acos_1(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func acosPi(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_AcosPi(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func asin(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Asin_1(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func asinPi(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_AsinPi(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func atan(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Atan_1(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func atanPi(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_AtanPi(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func cos(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Cos_1(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func cosPi(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_CosPi(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func degreesToRadians(_ degrees: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let degreesC = degrees.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_DegreesToRadians(degreesC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func radiansToDegrees(_ radians: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let radiansC = radians.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_RadiansToDegrees(radiansC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func sin(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Sin_1(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func sinPi(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_SinPi(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func tan(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Tan_1(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func tanPi(_ x: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let xC = x.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_TanPi(xC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func parse(_ utf8Text: Data? /* System.ReadOnlySpan<System.Byte> */, _ style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let utf8TextC = utf8Text.readOnlySpanOfByte()
+		let styleC = style.cValue
+		let providerC = provider?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Parse_4(utf8TextC, styleC, providerC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func tryParse(_ utf8Text: Data? /* System.ReadOnlySpan<System.Byte> */, _ style: System_Globalization_NumberStyles /* System.Globalization.NumberStyles */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ result: inout System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let utf8TextC = utf8Text.readOnlySpanOfByte()
+		let styleC = style.cValue
+		let providerC = provider?.__handle
+		var resultC = result.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_TryParse_4(utf8TextC, styleC, providerC, &resultC, &__exceptionC)
+		
+		result = System_Numerics_BFloat16(handle: resultC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func parse(_ utf8Text: Data? /* System.ReadOnlySpan<System.Byte> */, _ provider: System_IFormatProvider? /* System.IFormatProvider */) throws -> System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ {
+		let utf8TextC = utf8Text.readOnlySpanOfByte()
+		let providerC = provider?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Parse_5(utf8TextC, providerC, &__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func tryParse(_ utf8Text: Data? /* System.ReadOnlySpan<System.Byte> */, _ provider: System_IFormatProvider? /* System.IFormatProvider */, _ result: inout System_Numerics_BFloat16 /* System.Numerics.BFloat16 */) throws -> Bool /* System.Boolean */ {
+		let utf8TextC = utf8Text.readOnlySpanOfByte()
+		let providerC = provider?.__handle
+		var resultC = result.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_TryParse_5(utf8TextC, providerC, &resultC, &__exceptionC)
+		
+		result = System_Numerics_BFloat16(handle: resultC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class var epsilon: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Epsilon_Get(&__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var positiveInfinity: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_PositiveInfinity_Get(&__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var negativeInfinity: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_NegativeInfinity_Get(&__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var naN: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_NaN_Get(&__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var minValue: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_MinValue_Get(&__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var maxValue: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_MaxValue_Get(&__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var e: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_E_Get(&__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var pi: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Pi_Get(&__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var tau: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Tau_Get(&__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var negativeZero: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_NegativeZero_Get(&__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var multiplicativeIdentity: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_MultiplicativeIdentity_Get(&__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var one: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_One_Get(&__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var zero: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Zero_Get(&__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var negativeOne: System_Numerics_BFloat16 /* System.Numerics.BFloat16 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_NegativeOne_Get(&__exceptionC)
+		
+		let __returnValue = System_Numerics_BFloat16(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	/// Initializes a new instance of the System.Numerics.BFloat16 struct.
+	public convenience init() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Numerics_BFloat16_Create_1(&__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		self.init(handle: __returnValueC)
+		
+	}
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Numerics_BFloat16_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Numerics_BFloat16_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 /// Represents a typed weak reference, which references an object while still allowing that object to be reclaimed by garbage collection.
 public class System_WeakReference_A1 /* System.WeakReference<> */: System_Object, System_Runtime_Serialization_ISerializable {
 	public override class var typeName: String { get {
@@ -135321,6 +140029,18 @@ public class System_Uri /* System.Uri */: System_Object, System_ISpanFormattable
 	}}
 	
 	
+	public class var uriSchemeData: System_String /* System.String */ { get {
+		
+		
+		let __returnValueC = System_Uri_UriSchemeData_Get()
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		return __returnValue
+		
+	}}
+	
+	
 	/// Specifies the characters that separate the communication protocol scheme from the address portion of the URI. This field is read-only.
 	public class var schemeDelimiter: System_String /* System.String */ { get {
 		
@@ -138080,7 +142800,8 @@ public class Beyond_NET_Sample_WebProxyTests /* Beyond.NET.Sample.WebProxyTests 
 }
 
 
-/// Contains HTTP proxy settings for the System.Net.Http.HttpClient class.
+///             Contains HTTP proxy settings for the System.Net.Http.HttpClient class.
+///             
 public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, System_Net_IWebProxy, System_Runtime_Serialization_ISerializable {
 	public override class var typeName: String { get {
 		"WebProxy"
@@ -138090,10 +142811,11 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 		"System.Net.WebProxy"
 	}}
 
-	/// Returns the proxied URI for a request.
+	///             Returns the URI of a proxy.
+	///             
 	/// - Parameter destination: The System.Uri instance of the requested Internet resource.
 	/// - Throws: System.ArgumentNullException: The destination parameter is null.
-	/// - Returns: The System.Uri instance of the Internet resource, if the resource is on the bypass list; otherwise, the System.Uri instance of the proxy.
+	/// - Returns:             The System.Uri instance of the Internet resource, if the resource is on the bypass list; otherwise, the System.Uri instance of the proxy.             
 	public func getProxy(_ destination: System_Uri /* System.Uri */) throws -> System_Uri? /* System.Uri */ {
 		let destinationC = destination.__handle
 		
@@ -138115,10 +142837,11 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 		
 	}
 	
-	/// Indicates whether to use the proxy server for the specified host.
+	///             Indicates whether to use the proxy server for the specified host.
+	///             
 	/// - Parameter host: The System.Uri instance of the host to check for proxy use.
 	/// - Throws: System.ArgumentNullException: The host parameter is null.
-	/// - Returns: true if the proxy server should not be used for host; otherwise, false.
+	/// - Returns: true if the proxy server should not be used for host; otherwise, false.             
 	public func isBypassed(_ host: System_Uri /* System.Uri */) throws -> Bool /* System.Boolean */ {
 		let hostC = host.__handle
 		
@@ -138138,9 +142861,10 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 		
 	}
 	
-	/// Reads the Internet options nondynamic proxy settings.
-	/// - Throws: System.PlatformNotSupportedException: On .NET Core.
-	/// - Returns: A System.Net.WebProxy instance that contains the nondynamic proxy settings from Internet options.
+	///             Returns the proxy information configured by the system.
+	///             
+	/// - Throws: System.PlatformNotSupportedException: This method is not supported on .NET Core and will always throw System.PlatformNotSupportedException.
+	/// - Returns:             A System.Net.WebProxy instance that contains the nondynamic proxy settings from Internet options.             
 	public class func getDefaultProxy() throws -> System_Net_WebProxy /* System.Net.WebProxy */ {
 		
 		
@@ -138161,7 +142885,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 		
 	}
 	
-	/// Initializes an empty instance of the System.Net.WebProxy class.
+	///             Initializes an empty instance of the System.Net.WebProxy class.
+	///             
 	public convenience init() throws {
 		
 		
@@ -138180,8 +142905,9 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 		
 	}
 	
-	/// Initializes a new instance of the System.Net.WebProxy class from the specified System.Uri instance.
-	/// - Parameter Address: A System.Uri instance that contains the address of the proxy server.
+	///             Initializes a new instance of the System.Net.WebProxy class from the specified System.Uri instance.
+	///             
+	/// - Parameter Address: The address of the proxy server.
 	public convenience init(_ Address: System_Uri? /* System.Uri */) throws {
 		let AddressC = Address?.__handle
 		
@@ -138201,7 +142927,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 		
 	}
 	
-	/// Initializes a new instance of the System.Net.WebProxy class with the System.Uri instance and bypass setting.
+	///             Initializes a new instance of the System.Net.WebProxy class with the System.Uri instance and bypass setting.
+	///             
 	/// - Parameter Address: A System.Uri instance that contains the address of the proxy server.
 	/// - Parameter BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
 	public convenience init(_ Address: System_Uri? /* System.Uri */, _ BypassOnLocal: Bool /* System.Boolean */) throws {
@@ -138223,7 +142950,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 		
 	}
 	
-	/// Initializes a new instance of the System.Net.WebProxy class with the specified System.Uri instance, bypass setting, and list of URIs to bypass.
+	///             Initializes a new instance of the System.Net.WebProxy class with the specified System.Uri instance, bypass setting, and list of URIs to bypass.
+	///             
 	/// - Parameter Address: A System.Uri instance that contains the address of the proxy server.
 	/// - Parameter BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
 	/// - Parameter BypassList: An array of regular expression strings that contains the URIs of the servers to bypass.
@@ -138247,7 +142975,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 		
 	}
 	
-	/// Initializes a new instance of the System.Net.WebProxy class with the specified System.Uri instance, bypass setting, list of URIs to bypass, and credentials.
+	///             Initializes a new instance of the System.Net.WebProxy class with the specified System.Uri instance, bypass setting, list of URIs to bypass, and credentials.
+	///             
 	/// - Parameter Address: A System.Uri instance that contains the address of the proxy server.
 	/// - Parameter BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
 	/// - Parameter BypassList: An array of regular expression strings that contains the URIs of the servers to bypass.
@@ -138273,7 +143002,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 		
 	}
 	
-	/// Initializes a new instance of the System.Net.WebProxy class with the specified host and port number.
+	///             Initializes a new instance of the System.Net.WebProxy class with the specified host and port number.
+	///             
 	/// - Parameter Host: The name of the proxy host.
 	/// - Parameter Port: The port number on Host to use.
 	/// - Throws: System.UriFormatException: The URI formed by combining Host and Port is not a valid URI.
@@ -138296,7 +143026,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 		
 	}
 	
-	/// Initializes a new instance of the System.Net.WebProxy class with the specified URI.
+	///             Initializes a new instance of the System.Net.WebProxy class with the specified URI.
+	///             
 	/// - Parameter Address: The URI of the proxy server.
 	/// - Throws: System.UriFormatException: Address is an invalid URI.
 	public convenience init(_ Address: System_String? /* System.String */) throws {
@@ -138318,7 +143049,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 		
 	}
 	
-	/// Initializes a new instance of the System.Net.WebProxy class with the specified URI and bypass setting.
+	///             Initializes a new instance of the System.Net.WebProxy class with the specified URI and bypass setting.
+	///             
 	/// - Parameter Address: The URI of the proxy server.
 	/// - Parameter BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
 	/// - Throws: System.UriFormatException: Address is an invalid URI.
@@ -138341,7 +143073,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 		
 	}
 	
-	/// Initializes a new instance of the System.Net.WebProxy class with the specified URI, bypass setting, and list of URIs to bypass.
+	///             Initializes a new instance of the System.Net.WebProxy class with the specified URI, bypass setting, and list of URIs to bypass.
+	///             
 	/// - Parameter Address: The URI of the proxy server.
 	/// - Parameter BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
 	/// - Parameter BypassList: An array of regular expression strings that contain the URIs of the servers to bypass.
@@ -138366,7 +143099,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 		
 	}
 	
-	/// Initializes a new instance of the System.Net.WebProxy class with the specified URI, bypass setting, list of URIs to bypass, and credentials.
+	///             Initializes a new instance of the System.Net.WebProxy class with the specified URI, bypass setting, list of URIs to bypass, and credentials.
+	///             
 	/// - Parameter Address: The URI of the proxy server.
 	/// - Parameter BypassOnLocal: true to bypass the proxy for local addresses; otherwise, false.
 	/// - Parameter BypassList: An array of regular expression strings that contains the URIs of the servers to bypass.
@@ -138393,8 +143127,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 		
 	}
 	
-	/// Gets or sets the address of the proxy server.
-	/// - Returns: A System.Uri instance that contains the address of the proxy server.
+	///             Gets or sets the address of the proxy server.
+	///             
 	public var address: System_Uri? /* System.Uri */ { get throws {
 		
 		
@@ -138414,8 +143148,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 		return __returnValue
 		
 	}}
-	/// Gets or sets the address of the proxy server.
-	/// - Returns: A System.Uri instance that contains the address of the proxy server.
+	///             Gets or sets the address of the proxy server.
+	///             
 	public func address_set(_ value: System_Uri? /* System.Uri */) throws {
 		let valueC = value?.__handle
 		
@@ -138435,8 +143169,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 	}
 	
 	
-	/// Gets or sets a value that indicates whether to bypass the proxy server for local addresses.
-	/// - Returns: true to bypass the proxy server for local addresses; otherwise, false. The default value is false.
+	///             Gets or sets a value that indicates whether to bypass the proxy server for local addresses.
+	///             
 	public var bypassProxyOnLocal: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -138454,8 +143188,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 		return __returnValueC
 		
 	}}
-	/// Gets or sets a value that indicates whether to bypass the proxy server for local addresses.
-	/// - Returns: true to bypass the proxy server for local addresses; otherwise, false. The default value is false.
+	///             Gets or sets a value that indicates whether to bypass the proxy server for local addresses.
+	///             
 	public func bypassProxyOnLocal_set(_ value: Bool /* System.Boolean */) throws {
 		
 		
@@ -138474,8 +143208,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 	}
 	
 	
-	/// Gets or sets an array of addresses that do not use the proxy server.
-	/// - Returns: An array that contains a list of regular expressions that describe URIs that do not use the proxy server when accessed.
+	///             Gets or sets an array of addresses that do not use the proxy server.
+	///             
 	public var bypassList: DNArray<System_String> /* System.String[] */ { get throws {
 		
 		
@@ -138495,8 +143229,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 		return __returnValue
 		
 	}}
-	/// Gets or sets an array of addresses that do not use the proxy server.
-	/// - Returns: An array that contains a list of regular expressions that describe URIs that do not use the proxy server when accessed.
+	///             Gets or sets an array of addresses that do not use the proxy server.
+	///             
 	public func bypassList_set(_ value: DNArray<System_String>? /* System.String[] */) throws {
 		let valueC = value?.__handle
 		
@@ -138516,8 +143250,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 	}
 	
 	
-	/// Gets a list of addresses that do not use the proxy server.
-	/// - Returns: An System.Collections.ArrayList that contains a list of System.Net.WebProxy.BypassList arrays that represents URIs that do not use the proxy server when accessed.
+	///             Gets or sets an System.Collections.ArrayList of addresses that do not use the proxy server.
+	///             
 	public var bypassArrayList: System_Collections_ArrayList /* System.Collections.ArrayList */ { get throws {
 		
 		
@@ -138539,9 +143273,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 	}}
 	
 	
-	/// Gets or sets the credentials to submit to the proxy server for authentication.
-	/// - Throws: System.InvalidOperationException: You attempted to set this property when the System.Net.WebProxy.UseDefaultCredentials property was set to true.
-	/// - Returns: An System.Net.ICredentials instance that contains the credentials to submit to the proxy server for authentication.
+	///             Gets or sets the credentials to submit to the proxy server for authentication.
+	///             
 	public var credentials: System_Net_ICredentials? /* System.Net.ICredentials */ { get throws {
 		
 		
@@ -138561,9 +143294,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 		return __returnValue
 		
 	}}
-	/// Gets or sets the credentials to submit to the proxy server for authentication.
-	/// - Throws: System.InvalidOperationException: You attempted to set this property when the System.Net.WebProxy.UseDefaultCredentials property was set to true.
-	/// - Returns: An System.Net.ICredentials instance that contains the credentials to submit to the proxy server for authentication.
+	///             Gets or sets the credentials to submit to the proxy server for authentication.
+	///             
 	public func credentials_set(_ value: System_Net_ICredentials? /* System.Net.ICredentials */) throws {
 		let valueC = value?.__handle
 		
@@ -138583,9 +143315,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 	}
 	
 	
-	/// Gets or sets a System.Boolean value that controls whether the System.Net.CredentialCache.DefaultCredentials are sent with requests.
-	/// - Throws: System.InvalidOperationException: You attempted to set this property when the System.Net.WebProxy.Credentials property contains credentials other than the default credentials.
-	/// - Returns: true if the default credentials are used; otherwise, false. The default value is false.
+	///             Gets or sets a value that controls whether the System.Net.CredentialCache.DefaultCredentials are sent with requests.
+	///             
 	public var useDefaultCredentials: Bool /* System.Boolean */ { get throws {
 		
 		
@@ -138603,9 +143334,8 @@ public class System_Net_WebProxy /* System.Net.WebProxy */: System_Object, Syste
 		return __returnValueC
 		
 	}}
-	/// Gets or sets a System.Boolean value that controls whether the System.Net.CredentialCache.DefaultCredentials are sent with requests.
-	/// - Throws: System.InvalidOperationException: You attempted to set this property when the System.Net.WebProxy.Credentials property contains credentials other than the default credentials.
-	/// - Returns: true if the default credentials are used; otherwise, false. The default value is false.
+	///             Gets or sets a value that controls whether the System.Net.CredentialCache.DefaultCredentials are sent with requests.
+	///             
 	public func useDefaultCredentials_set(_ value: Bool /* System.Boolean */) throws {
 		
 		
@@ -159153,6 +163883,108 @@ public class System_Security_Cryptography_Aes /* System.Security.Cryptography.Ae
 		let __returnValueC = System_Security_Cryptography_Aes_Create_1(algorithmNameC, &__exceptionC)
 		
 		let __returnValue = System_Security_Cryptography_Aes(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func getKeyWrapLength(_ plaintextLengthInBytes: Int32 /* System.Int32 */) throws -> Int32 /* System.Int32 */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_Aes_GetKeyWrapLength(plaintextLengthInBytes, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public func encryptKeyWrap(_ plaintext: DNArray<System_Byte> /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let plaintextC = plaintext.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_Aes_EncryptKeyWrap(self.__handle, plaintextC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func encryptKeyWrap(_ plaintext: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let plaintextC = plaintext.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_Aes_EncryptKeyWrap_1(self.__handle, plaintextC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func decryptKeyWrap(_ ciphertext: DNArray<System_Byte> /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let ciphertextC = ciphertext.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_Aes_DecryptKeyWrap(self.__handle, ciphertextC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func decryptKeyWrap(_ ciphertext: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let ciphertextC = ciphertext.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_Aes_DecryptKeyWrap_1(self.__handle, ciphertextC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
 		
 		if let __exceptionC {
 		    let __exception = System_Exception(handle: __exceptionC)
@@ -197260,14 +202092,14 @@ extension Float {
 public struct System {
 	/// Specifies the type of an object.
 	public typealias TypeCode = System_TypeCode
+	/// Specifies the culture, case, and sort rules to be used by certain overloads of the System.String.Compare(System.String,System.String) and System.String.Equals(System.Object) methods.
+	public typealias StringComparison = System_StringComparison
 	/// Specifies the strategy that mathematical rounding methods should use to round a number.
 	public typealias MidpointRounding = System_MidpointRounding
 	/// Specifies whether a System.DateTime object represents a local time, a Coordinated Universal Time (UTC), or is not specified as either local time or UTC.
 	public typealias DateTimeKind = System_DateTimeKind
 	/// Specifies the day of the week.
 	public typealias DayOfWeek = System_DayOfWeek
-	/// Specifies the culture, case, and sort rules to be used by certain overloads of the System.String.Compare(System.String,System.String) and System.String.Equals(System.Object) methods.
-	public typealias StringComparison = System_StringComparison
 	/// Specifies options for applicable Overload:System.String.Split method overloads, such as whether to omit empty substrings from the returned array or trim whitespace from substrings.
 	public typealias StringSplitOptions = System_StringSplitOptions
 	/// Specifies the kind of a garbage collection.
@@ -197878,6 +202710,8 @@ public extension System {
     struct IO {
 		/// Specifies the position in a stream to use for seeking.
 		public typealias SeekOrigin = System_IO_SeekOrigin
+		
+		public typealias FileHandleType = System_IO_FileHandleType
 		/// Defines constants for read, write, or read/write access to a file.
 		public typealias FileAccess = System_IO_FileAccess
 		/// Specifies how the operating system should open a file.
@@ -198174,6 +203008,8 @@ public extension System {
 		public typealias StringBuilder = System_Text_StringBuilder
 		/// Supports simple iteration over the chunks of a System.Text.StringBuilder instance.
 		public typealias StringBuilder_ChunkEnumerator = System_Text_StringBuilder_ChunkEnumerator
+		
+		public typealias StringBuilderRuneEnumerator = System_Text_StringBuilderRuneEnumerator
 		/// Provides a handler used by the language compiler to append interpolated strings into System.Text.StringBuilder instances.
 		public typealias StringBuilder_AppendInterpolatedStringHandler = System_Text_StringBuilder_AppendInterpolatedStringHandler
 		
@@ -198551,6 +203387,8 @@ public extension System.Collections {
 public extension System {
     struct Numerics {
 		
+		public typealias BFloat16 = System_Numerics_BFloat16
+		
     }
 }
 
@@ -198558,7 +203396,8 @@ public extension System {
 
 public extension System {
     struct Net {
-		/// Contains HTTP proxy settings for the System.Net.Http.HttpClient class.
+		///             Contains HTTP proxy settings for the System.Net.Http.HttpClient class.
+		///             
 		public typealias WebProxy = System_Net_WebProxy
 		/// Provides the base interface for implementation of proxy access for the System.Net.Http.HttpClient class.
 		public typealias IWebProxy = System_Net_IWebProxy

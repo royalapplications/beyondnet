@@ -4,8 +4,8 @@
 #nullable disable warnings
 #pragma warning disable
 
-// Number of generated types: 1719
-// Number of generated members: 8424
+// Number of generated types: 1735
+// Number of generated members: 8644
 
 // <Header>
 using System;
@@ -849,9 +849,9 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // </Shared Code>
 // <Unsupported Types>
 // Unsupported Type "IEnumerator`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "IComparable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IComparisonOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
@@ -870,28 +870,28 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Span`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -908,8 +908,8 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.IUtfChar`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.IUtfChar`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
 // Unsupported Type "System.Char&": Excluded
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
@@ -920,57 +920,57 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.Span`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Span`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "System.ReadOnlySpan`1": Excluded
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtfChar`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.ValueTuple`2[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtfChar`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.ValueTuple`2[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -1019,11 +1019,11 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ArraySegment`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ArraySegment`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "ReadOnlySpan`1": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1+Enumerator[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.ReadOnlySpan`1+Enumerator[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
 // Unsupported Type "System.Void*": Is Managed Pointer Type
-// Unsupported Type "System.ValueTuple`2[[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -1072,31 +1072,31 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.ValueTuple`2[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.ValueTuple`2[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -1145,30 +1145,30 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.ValueTuple`2[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.ValueTuple`2[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -1217,144 +1217,144 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Decimal, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
 // Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "INumber`1": Is Constructed Generic Type with non-constructed generic types
@@ -1387,37 +1387,37 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IPowerFunctions`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IRootFunctions`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ITrigonometricFunctions`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
 // Unsupported Type "IBinaryInteger`1": Is unsupported Type
 // Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
@@ -1514,62 +1514,62 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ValueTuple`2[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ValueTuple`2[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -1618,37 +1618,37 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
 // Unsupported Type "IBinaryInteger`1": Is unsupported Type
 // Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
@@ -1745,30 +1745,30 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ValueTuple`2[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ValueTuple`2[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -1913,8 +1913,8 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Half, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -1963,7 +1963,7 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -2012,7 +2012,7 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IBinaryInteger`1": Is unsupported Type
 // Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
@@ -2109,8 +2109,8 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -2159,7 +2159,7 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -2208,7 +2208,7 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ValueTuple`2[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -2257,36 +2257,36 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ISpanParsable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.TimeSpan, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.TimeSpan, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.DateOnly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.DateOnly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.TimeOnly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.TimeOnly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.DateTime, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.DateTime, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.TimeSpan, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.TimeSpan, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.DateOnly, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.DateOnly, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.TimeOnly, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.TimeOnly, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "System.Runtime.Serialization.DeserializationToken": Excluded
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Version, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Version, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "ValueTask`1": Is unsupported Type
-// Unsupported Type "System.Action`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.CancellationToken, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`1[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.CancellationToken, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "ValueTask`1": Is unsupported Type
-// Unsupported Type "System.ISpanParsable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ISpanParsable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Guid, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Guid, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Guid, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ISpanParsable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.DateTimeOffset, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "System.TypedReference": Excluded
 // Unsupported Type "ValueTask`1": Is unsupported Type
-// Unsupported Type "System.EventHandler`1[[System.Threading.Tasks.UnobservedTaskExceptionEventArgs, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Nullable Value Type, but not a struct (System.Int32?)
+// Unsupported Type "System.EventHandler`1[[System.Threading.Tasks.UnobservedTaskExceptionEventArgs, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Nullable Value Type, but not a struct (System.Int32?)
 // Unsupported Type "IList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerator`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Func`2[[System.Exception, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Exception, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`1": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
@@ -2303,8 +2303,8 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Action`1[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`3[[System.AsyncCallback, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`1[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`3[[System.AsyncCallback, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`4": Is Generic Delegate Type
 // Unsupported Type "Func`4": Is Generic Delegate Type
 // Unsupported Type "Func`5": Is Generic Delegate Type
@@ -2339,7 +2339,7 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`6": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Task`1[]": Is Array of Generic Type
 // Unsupported Type "Action`1": Is Generic Delegate Type
 // Unsupported Type "Task`1[]": Is Array of Generic Type
@@ -2368,7 +2368,7 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Task`1[]": Is Array of Generic Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
@@ -2400,7 +2400,7 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "System.Runtime.CompilerServices.ITaskAwaiter": Is Not Visible (public)
 // Unsupported Type "System.Runtime.CompilerServices.IConfiguredTaskAwaiter": Is Not Visible (public)
 // Unsupported Type "System.Runtime.CompilerServices.IStateMachineBoxAwareAwaiter": Is Not Visible (public)
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
@@ -2421,7 +2421,7 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
@@ -2429,7 +2429,7 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "Func`1": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`1": Is Generic Delegate Type
-// Unsupported Type "System.Func`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`1": Is Generic Delegate Type
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
@@ -2586,21 +2586,21 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "ReadOnlySpan`1": Is unsupported Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
@@ -2620,29 +2620,29 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "Task`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAsyncEnumerator`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Threading.Tasks.ValueTask`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Threading.Tasks.ValueTask`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IAsyncEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Task`1[]": Is Array of Generic Type
 // Unsupported Type "IAsyncEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ReadOnlySpan`1": Is unsupported Type
 // Unsupported Type "IAsyncEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Func`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
@@ -2653,18 +2653,20 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.Threading.Tasks.ValueTask`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Memory`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlyMemory`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Nullable`1[[System.IO.UnixFileMode, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Nullable Value Type, but not a struct (System.IO.UnixFileMode?)
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Text.Rune, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ISpanParsable`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Threading.Tasks.ValueTask`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Memory`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlyMemory`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Nullable`1[[System.IO.UnixFileMode, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Nullable Value Type, but not a struct (System.IO.UnixFileMode?)
+// Unsupported Type "System.IParsable`1[[System.Text.Rune, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Text.Rune, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Text.Rune, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ISpanParsable`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "SpanAction`2": Is Generic Delegate Type
 // Unsupported Type "System.Runtime.CompilerServices.DefaultInterpolatedStringHandler&": Is ref struct
-// Unsupported Type "System.ReadOnlySpan`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.ReadOnlySpan`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "System.Char*": Is Managed Pointer Type
@@ -2675,31 +2677,31 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.INumberBase`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.ISpanParsable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
-// Unsupported Type "System.ValueTuple`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryInteger`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IShiftOperators`3[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryIntegerParseAndFormatInfo`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "System.ValueTuple`2[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "INumberBase`1": Is unsupported Type
 // Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
@@ -2748,8 +2750,8 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
-// Unsupported Type "System.ISpanParsable`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
-// Unsupported Type "System.IParsable`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
 // Unsupported Type "ReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
@@ -2991,8 +2993,8 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IReadOnlyList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Predicate`1": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Reflection.AssemblyName, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Reflection.Assembly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`4[[System.Reflection.Assembly, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Type, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Reflection.AssemblyName, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Reflection.Assembly, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`4[[System.Reflection.Assembly, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Type, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "IList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
@@ -3004,8 +3006,8 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IReadOnlyList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "System.Runtime.InteropServices.ComTypes.ITypeInfo": Excluded
-// Unsupported Type "System.ReadOnlySpan`1[[System.TimeSpan, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.GCGenerationInfo, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.TimeSpan, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.GCGenerationInfo, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
@@ -3020,9 +3022,115 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.EventHandler`1[[System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Nullable Value Type, but not a struct (System.Boolean?)
-// Unsupported Type "System.ReadOnlySpan`1[[System.Threading.CancellationToken, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.EventHandler`1[[System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Nullable Value Type, but not a struct (System.Boolean?)
+// Unsupported Type "System.ReadOnlySpan`1[[System.Threading.CancellationToken, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "IBinaryInteger`1": Is unsupported Type
+// Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparisonOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IModulusOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "IShiftOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMinMaxValue`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBinaryInteger`1": Is unsupported Type
+// Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparisonOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IModulusOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "IShiftOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBinaryInteger`1": Is unsupported Type
+// Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparisonOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IModulusOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "IShiftOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBinaryFloatingPointIeee754`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBinaryNumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IBitwiseOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IComparisonOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IModulusOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "IFloatingPointIeee754`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IExponentialFunctions`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IFloatingPointConstants`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IFloatingPoint`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISignedNumber`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IHyperbolicFunctions`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ILogarithmicFunctions`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IPowerFunctions`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IRootFunctions`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ITrigonometricFunctions`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ReadOnlySpan`1": Is unsupported Type
 // Unsupported Type "Span`1": Is unsupported Type
 // Unsupported Type "IList`1": Is Constructed Generic Type with non-constructed generic types
@@ -3042,53 +3150,25 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IReadOnlyList`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Span`1": Is unsupported Type
-// Unsupported Type "System.ReadOnlyMemory`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlyMemory`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
-// Unsupported Type "System.Func`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.Threading.Tasks.ValueTask`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Memory`1[[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Func`1[[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
@@ -3099,22 +3179,24 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.Func`1[[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Threading.Tasks.ValueTask`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Memory`1[[System.Char, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Func`1[[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Byte[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
@@ -3125,24 +3207,130 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.UIntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.IntPtr, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.UInt128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.ReadOnlySpan`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
-// Unsupported Type "System.Span`1[[System.Int128, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Func`1[[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.String[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "System.Numerics.IBinaryNumber`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IBitwiseOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IComparisonOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IEqualityOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IModulusOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.INumberBase`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IAdditionOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IAdditiveIdentity`2[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDecrementOperators`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IDivisionOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IIncrementOperators`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplicativeIdentity`2[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMultiplyOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.ISpanParsable`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IParsable`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISubtractionOperators`3[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryPlusOperators`2[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IUnaryNegationOperators`2[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IUtf8SpanParsable`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Numerics.IFloatingPointIeee754`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IExponentialFunctions`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPointConstants`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IFloatingPoint`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ISignedNumber`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IHyperbolicFunctions`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ILogarithmicFunctions`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IPowerFunctions`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IRootFunctions`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.ITrigonometricFunctions`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.Numerics.IMinMaxValue`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Static abstract members in interface
+// Unsupported Type "System.IBinaryFloatParseAndFormatInfo`1[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Not Visible (public)
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "INumberBase`1": Is unsupported Type
+// Unsupported Type "IAdditionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IAdditiveIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDecrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IDivisionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEquatable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IEqualityOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IIncrementOperators`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplicativeIdentity`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IMultiplyOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISpanParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IParsable`1": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "ISubtractionOperators`3": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryPlusOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUnaryNegationOperators`2": Is Constructed Generic Type with non-constructed generic types
+// Unsupported Type "IUtf8SpanParsable`1": Is unsupported Type
+// Unsupported Type "System.ValueTuple`2[[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Numerics.BFloat16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.UInt16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.Int16, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.UInt32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.UInt64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.Int64, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.UIntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.IntPtr, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.UInt128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.ReadOnlySpan`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.Int128, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is unsupported Type
 // Unsupported Type "IEnumerable`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
@@ -3176,21 +3364,21 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "ICollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "System.ITupleInternal": Is Not Visible (public)
-// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
-// Unsupported Type "System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
+// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
+// Unsupported Type "System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
 // Unsupported Type "Beyond.NET.Sample.IAnimal[]": Is Array of Interface Type
 // Unsupported Type "Beyond.NET.Sample.DelegatesTest+TransformIntWithRefDelegate": Unsupported delegate parameter type: Has ref parameters
 // Unsupported Type "Beyond.NET.Sample.DelegatesTest+TransformIntWithOutDelegate": Unsupported delegate parameter type: Has out parameters
 // Unsupported Type "Beyond.NET.Sample.DelegatesTest+PointTransformWithRefDelegate": Unsupported delegate parameter type: Has ref parameters
 // Unsupported Type "Converter`2": Is Generic Delegate Type
-// Unsupported Type "System.Predicate`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Collections.Generic.List`1+Enumerator[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Comparison`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
-// Unsupported Type "System.Collections.Generic.Dictionary`2+KeyCollection[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Collections.Generic.Dictionary`2+ValueCollection[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Collections.Generic.Dictionary`2+Enumerator[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Predicate`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Collections.Generic.List`1+Enumerator[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Comparison`1[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
+// Unsupported Type "System.Collections.Generic.Dictionary`2+KeyCollection[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Collections.Generic.Dictionary`2+ValueCollection[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Collections.Generic.Dictionary`2+Enumerator[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Exception, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
 // Unsupported Type "AlternateLookup`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "AlternateLookup`1&": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "IList`1": Is Constructed Generic Type with non-constructed generic types
@@ -3210,54 +3398,27 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "IReadOnlyCollection`1": Is Constructed Generic Type with non-constructed generic types
 // Unsupported Type "Beyond.NET.Sample.IRegistrationData": Static abstract members in interface
 // Unsupported Type "Beyond.NET.Sample.INotImplementedInterfaceWithStaticAbstractMembers": Static abstract members in interface
-// Unsupported Type "System.Span`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
+// Unsupported Type "System.Span`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
 // Unsupported Type "System.Nullable`1": Excluded
 // Unsupported Type "Beyond.NET.Sample.ByRefParametersDelegate": Unsupported delegate parameter type: Has ref parameters
 // Unsupported Type "Beyond.NET.Sample.OutParametersDelegate": Unsupported delegate parameter type: Has out parameters
-// Unsupported Type "System.ArraySegment`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
-// Unsupported Type "System.Func`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.ArraySegment`1[[System.Byte, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is unsupported Type
+// Unsupported Type "System.Func`1[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
-// Unsupported Type "System.Func`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
@@ -3268,22 +3429,23 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.Func`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]": Is Array of Generic Type
+// Unsupported Type "System.Func`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
-// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is nested type inside generic type
-// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
-// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Boolean, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
 // Unsupported Type "Func`2": Is Generic Delegate Type
@@ -3294,8 +3456,34 @@ internal static class DNReadOnlySpanOfByte_Extensions
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
 // Unsupported Type "Func`3": Is Generic Delegate Type
-// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.Int32?)
-// Unsupported Type "System.Nullable`1[[System.DateTimeKind, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.DateTimeKind?)
+// Unsupported Type "System.Func`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.IAsyncResult, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task[], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "System.Func`2[[System.Threading.Tasks.Task, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter[[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]": Is nested type inside generic type
+// Unsupported Type "System.Action`1[[System.Threading.Tasks.Task`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "System.Action`2[[System.Threading.Tasks.Task`1[[System.Xml.XmlNodeType, System.Private.Xml, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]], System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`2": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "Func`3": Is Generic Delegate Type
+// Unsupported Type "System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.Int32?)
+// Unsupported Type "System.Nullable`1[[System.DateTimeKind, System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]&": Is Nullable Value Type, but not a struct (System.DateTimeKind?)
 // Unsupported Type "Beyond.NET.Sample.Source.RefStructTests+TestRefStruct": Is ref struct
 // Unsupported Type "Beyond.NET.Sample.Person_Extensions+<G>$9D63B61FF3DB94B34FDAE9CFA7044FE8": Is C# 14+ extension block (and has special name)
 // Unsupported Type "Beyond.NET.Sample.Person_Extensions+<G>$9D63B61FF3DB94B34FDAE9CFA7044FE8+<M>$9737BC5C87033597E65A978C42067F7A": Is C# 14+ extension block (and has special name)
@@ -6307,6 +6495,37 @@ internal unsafe class System_Type
 		}
 	}
 	
+	[UnmanagedCallersOnly(EntryPoint = "System_Type_GetNullableUnderlyingType")]
+	internal static void* /* System.Type */ System_Type_GetNullableUnderlyingType(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Type __selfConverted = InteropUtils.GetInstance<System.Type>(__self);
+	
+	
+	    try {
+			System.Type __returnValue = __selfConverted.GetNullableUnderlyingType();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_GetEnumUnderlyingType")]
 	internal static void* /* System.Type */ System_Type_GetEnumUnderlyingType(void* /* System.Type */ __self, void** /* System.Exception */ __outException)
 	{
@@ -6493,6 +6712,68 @@ internal unsafe class System_Type
 		}
 	}
 	
+	[UnmanagedCallersOnly(EntryPoint = "System_Type_MakeFunctionPointerSignatureType")]
+	internal static void* /* System.Type */ System_Type_MakeFunctionPointerSignatureType(void* /* System.Type */ returnType, void* /* System.Type[] */ parameterTypes, byte /* System.Boolean */ isUnmanaged, void* /* System.Type[] */ callingConventions, void** /* System.Exception */ __outException)
+	{
+		System.Type returnTypeConverted = InteropUtils.GetInstance<System.Type>(returnType);
+		System.Type[] parameterTypesConverted = InteropUtils.GetInstance<System.Type[]>(parameterTypes);
+		System.Boolean isUnmanagedConverted = isUnmanaged.ToBool();
+		System.Type[] callingConventionsConverted = InteropUtils.GetInstance<System.Type[]>(callingConventions);
+	
+	    try {
+			System.Type __returnValue = System.Type.MakeFunctionPointerSignatureType(returnTypeConverted, parameterTypesConverted, isUnmanagedConverted, callingConventionsConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Type_MakeFunctionPointerType")]
+	internal static void* /* System.Type */ System_Type_MakeFunctionPointerType(void* /* System.Type */ __self, void* /* System.Type[] */ parameterTypes, byte /* System.Boolean */ isUnmanaged, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Type __selfConverted = InteropUtils.GetInstance<System.Type>(__self);
+	
+		System.Type[] parameterTypesConverted = InteropUtils.GetInstance<System.Type[]>(parameterTypes);
+		System.Boolean isUnmanagedConverted = isUnmanaged.ToBool();
+	
+	    try {
+			System.Type __returnValue = __selfConverted.MakeFunctionPointerType(parameterTypesConverted, isUnmanagedConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
 	[UnmanagedCallersOnly(EntryPoint = "System_Type_MakeGenericType")]
 	internal static void* /* System.Type */ System_Type_MakeGenericType(void* /* System.Type */ __self, void* /* System.Type[] */ typeArguments, void** /* System.Exception */ __outException)
 	{
@@ -6506,6 +6787,34 @@ internal unsafe class System_Type
 	
 	    try {
 			System.Type __returnValue = __selfConverted.MakeGenericType(typeArgumentsConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Type_MakeModifiedSignatureType")]
+	internal static void* /* System.Type */ System_Type_MakeModifiedSignatureType(void* /* System.Type */ type, void* /* System.Type[] */ requiredCustomModifiers, void* /* System.Type[] */ optionalCustomModifiers, void** /* System.Exception */ __outException)
+	{
+		System.Type typeConverted = InteropUtils.GetInstance<System.Type>(type);
+		System.Type[] requiredCustomModifiersConverted = InteropUtils.GetInstance<System.Type[]>(requiredCustomModifiers);
+		System.Type[] optionalCustomModifiersConverted = InteropUtils.GetInstance<System.Type[]>(optionalCustomModifiers);
+	
+	    try {
+			System.Type __returnValue = System.Type.MakeModifiedSignatureType(typeConverted, requiredCustomModifiersConverted, optionalCustomModifiersConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -16016,6 +16325,102 @@ internal unsafe class System_String
 		}
 	}
 	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_EndsWith_4")]
+	internal static byte /* System.Boolean */ System_String_EndsWith_4(void* /* System.String */ __self, ushort /* System.Char */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Char valueConverted = (char)value;
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.EndsWith(valueConverted, comparisonType);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_EndsWith_5")]
+	internal static byte /* System.Boolean */ System_String_EndsWith_5(void* /* System.String */ __self, void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.EndsWith(valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_EndsWith_6")]
+	internal static byte /* System.Boolean */ System_String_EndsWith_6(void* /* System.String */ __self, void* /* System.Text.Rune */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.EndsWith(valueConverted, comparisonType);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Equals")]
 	internal static byte /* System.Boolean */ System_String_Equals(void* /* System.String */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
 	{
@@ -16337,6 +16742,102 @@ internal unsafe class System_String
 	
 	    try {
 			System.Boolean __returnValue = __selfConverted.StartsWith(valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_StartsWith_4")]
+	internal static byte /* System.Boolean */ System_String_StartsWith_4(void* /* System.String */ __self, ushort /* System.Char */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Char valueConverted = (char)value;
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.StartsWith(valueConverted, comparisonType);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_StartsWith_5")]
+	internal static byte /* System.Boolean */ System_String_StartsWith_5(void* /* System.String */ __self, void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.StartsWith(valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_StartsWith_6")]
+	internal static byte /* System.Boolean */ System_String_StartsWith_6(void* /* System.String */ __self, void* /* System.Text.Rune */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.StartsWith(valueConverted, comparisonType);
 			byte __returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
@@ -18004,6 +18505,39 @@ internal unsafe class System_String
 		}
 	}
 	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_Replace_4")]
+	internal static void* /* System.String */ System_String_Replace_4(void* /* System.String */ __self, void* /* System.Text.Rune */ oldRune, void* /* System.Text.Rune */ newRune, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune oldRuneConverted = InteropUtils.GetInstance<System.Text.Rune>(oldRune);
+		System.Text.Rune newRuneConverted = InteropUtils.GetInstance<System.Text.Rune>(newRune);
+	
+	    try {
+			System.String __returnValue = __selfConverted.Replace(oldRuneConverted, newRuneConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_ReplaceLineEndings")]
 	internal static void* /* System.String */ System_String_ReplaceLineEndings(void* /* System.String */ __self, void** /* System.Exception */ __outException)
 	{
@@ -18132,7 +18666,71 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Split_2")]
-	internal static void* /* System.String[] */ System_String_Split_2(void* /* System.String */ __self, void* /* System.Char[] */ separator, void** /* System.Exception */ __outException)
+	internal static void* /* System.String[] */ System_String_Split_2(void* /* System.String */ __self, void* /* System.Text.Rune */ separator, System.StringSplitOptions /* System.StringSplitOptions */ options, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune separatorConverted = InteropUtils.GetInstance<System.Text.Rune>(separator);
+	
+	    try {
+			System.String[] __returnValue = __selfConverted.Split(separatorConverted, options);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_Split_3")]
+	internal static void* /* System.String[] */ System_String_Split_3(void* /* System.String */ __self, void* /* System.Text.Rune */ separator, int /* System.Int32 */ count, System.StringSplitOptions /* System.StringSplitOptions */ options, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune separatorConverted = InteropUtils.GetInstance<System.Text.Rune>(separator);
+	
+	    try {
+			System.String[] __returnValue = __selfConverted.Split(separatorConverted, count, options);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_Split_4")]
+	internal static void* /* System.String[] */ System_String_Split_4(void* /* System.String */ __self, void* /* System.Char[] */ separator, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18163,8 +18761,8 @@ internal unsafe class System_String
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_String_Split_3")]
-	internal static void* /* System.String[] */ System_String_Split_3(void* /* System.String */ __self, void* /* System.Char[] */ separator, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_String_Split_5")]
+	internal static void* /* System.String[] */ System_String_Split_5(void* /* System.String */ __self, void* /* System.Char[] */ separator, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18195,72 +18793,8 @@ internal unsafe class System_String
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_String_Split_4")]
-	internal static void* /* System.String[] */ System_String_Split_4(void* /* System.String */ __self, void* /* System.Char[] */ separator, System.StringSplitOptions /* System.StringSplitOptions */ options, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
-	
-		System.Char[] separatorConverted = InteropUtils.GetInstance<System.Char[]>(separator);
-	
-	    try {
-			System.String[] __returnValue = __selfConverted.Split(separatorConverted, options);
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		} finally {
-		}
-	}
-	
-	[UnmanagedCallersOnly(EntryPoint = "System_String_Split_5")]
-	internal static void* /* System.String[] */ System_String_Split_5(void* /* System.String */ __self, void* /* System.Char[] */ separator, int /* System.Int32 */ count, System.StringSplitOptions /* System.StringSplitOptions */ options, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
-	
-		System.Char[] separatorConverted = InteropUtils.GetInstance<System.Char[]>(separator);
-	
-	    try {
-			System.String[] __returnValue = __selfConverted.Split(separatorConverted, count, options);
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		} finally {
-		}
-	}
-	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Split_6")]
-	internal static void* /* System.String[] */ System_String_Split_6(void* /* System.String */ __self, void* /* System.String */ separator, System.StringSplitOptions /* System.StringSplitOptions */ options, void** /* System.Exception */ __outException)
+	internal static void* /* System.String[] */ System_String_Split_6(void* /* System.String */ __self, void* /* System.Char[] */ separator, System.StringSplitOptions /* System.StringSplitOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18268,7 +18802,7 @@ internal unsafe class System_String
 	
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
-		System.String separatorConverted = InteropUtils.GetInstance<System.String>(separator);
+		System.Char[] separatorConverted = InteropUtils.GetInstance<System.Char[]>(separator);
 	
 	    try {
 			System.String[] __returnValue = __selfConverted.Split(separatorConverted, options);
@@ -18292,7 +18826,71 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Split_7")]
-	internal static void* /* System.String[] */ System_String_Split_7(void* /* System.String */ __self, void* /* System.String */ separator, int /* System.Int32 */ count, System.StringSplitOptions /* System.StringSplitOptions */ options, void** /* System.Exception */ __outException)
+	internal static void* /* System.String[] */ System_String_Split_7(void* /* System.String */ __self, void* /* System.Char[] */ separator, int /* System.Int32 */ count, System.StringSplitOptions /* System.StringSplitOptions */ options, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Char[] separatorConverted = InteropUtils.GetInstance<System.Char[]>(separator);
+	
+	    try {
+			System.String[] __returnValue = __selfConverted.Split(separatorConverted, count, options);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_Split_8")]
+	internal static void* /* System.String[] */ System_String_Split_8(void* /* System.String */ __self, void* /* System.String */ separator, System.StringSplitOptions /* System.StringSplitOptions */ options, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.String separatorConverted = InteropUtils.GetInstance<System.String>(separator);
+	
+	    try {
+			System.String[] __returnValue = __selfConverted.Split(separatorConverted, options);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_Split_9")]
+	internal static void* /* System.String[] */ System_String_Split_9(void* /* System.String */ __self, void* /* System.String */ separator, int /* System.Int32 */ count, System.StringSplitOptions /* System.StringSplitOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18323,8 +18921,8 @@ internal unsafe class System_String
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_String_Split_8")]
-	internal static void* /* System.String[] */ System_String_Split_8(void* /* System.String */ __self, void* /* System.String[] */ separator, System.StringSplitOptions /* System.StringSplitOptions */ options, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_String_Split_10")]
+	internal static void* /* System.String[] */ System_String_Split_10(void* /* System.String */ __self, void* /* System.String[] */ separator, System.StringSplitOptions /* System.StringSplitOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18355,8 +18953,8 @@ internal unsafe class System_String
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_String_Split_9")]
-	internal static void* /* System.String[] */ System_String_Split_9(void* /* System.String */ __self, void* /* System.String[] */ separator, int /* System.Int32 */ count, System.StringSplitOptions /* System.StringSplitOptions */ options, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_String_Split_11")]
+	internal static void* /* System.String[] */ System_String_Split_11(void* /* System.String */ __self, void* /* System.String[] */ separator, int /* System.Int32 */ count, System.StringSplitOptions /* System.StringSplitOptions */ options, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18637,6 +19235,68 @@ internal unsafe class System_String
 		}
 	}
 	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_ToUpperOrdinal")]
+	internal static void* /* System.String */ System_String_ToUpperOrdinal(void* /* System.String */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfConverted.ToUpperOrdinal();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_ToLowerOrdinal")]
+	internal static void* /* System.String */ System_String_ToLowerOrdinal(void* /* System.String */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfConverted.ToLowerOrdinal();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Trim")]
 	internal static void* /* System.String */ System_String_Trim(void* /* System.String */ __self, void** /* System.Exception */ __outException)
 	{
@@ -18701,7 +19361,39 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_Trim_2")]
-	internal static void* /* System.String */ System_String_Trim_2(void* /* System.String */ __self, void* /* System.Char[] */ trimChars, void** /* System.Exception */ __outException)
+	internal static void* /* System.String */ System_String_Trim_2(void* /* System.String */ __self, void* /* System.Text.Rune */ trimRune, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune trimRuneConverted = InteropUtils.GetInstance<System.Text.Rune>(trimRune);
+	
+	    try {
+			System.String __returnValue = __selfConverted.Trim(trimRuneConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_Trim_3")]
+	internal static void* /* System.String */ System_String_Trim_3(void* /* System.String */ __self, void* /* System.Char[] */ trimChars, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18796,7 +19488,39 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_TrimStart_2")]
-	internal static void* /* System.String */ System_String_TrimStart_2(void* /* System.String */ __self, void* /* System.Char[] */ trimChars, void** /* System.Exception */ __outException)
+	internal static void* /* System.String */ System_String_TrimStart_2(void* /* System.String */ __self, void* /* System.Text.Rune */ trimRune, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune trimRuneConverted = InteropUtils.GetInstance<System.Text.Rune>(trimRune);
+	
+	    try {
+			System.String __returnValue = __selfConverted.TrimStart(trimRuneConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_TrimStart_3")]
+	internal static void* /* System.String */ System_String_TrimStart_3(void* /* System.String */ __self, void* /* System.Char[] */ trimChars, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -18891,7 +19615,39 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_TrimEnd_2")]
-	internal static void* /* System.String */ System_String_TrimEnd_2(void* /* System.String */ __self, void* /* System.Char[] */ trimChars, void** /* System.Exception */ __outException)
+	internal static void* /* System.String */ System_String_TrimEnd_2(void* /* System.String */ __self, void* /* System.Text.Rune */ trimRune, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune trimRuneConverted = InteropUtils.GetInstance<System.Text.Rune>(trimRune);
+	
+	    try {
+			System.String __returnValue = __selfConverted.TrimEnd(trimRuneConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_TrimEnd_3")]
+	internal static void* /* System.String */ System_String_TrimEnd_3(void* /* System.String */ __self, void* /* System.Char[] */ trimChars, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19050,6 +19806,70 @@ internal unsafe class System_String
 		}
 	}
 	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_Contains_4")]
+	internal static byte /* System.Boolean */ System_String_Contains_4(void* /* System.String */ __self, void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.Contains(valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_Contains_5")]
+	internal static byte /* System.Boolean */ System_String_Contains_5(void* /* System.String */ __self, void* /* System.Text.Rune */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.Contains(valueConverted, comparisonType);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf")]
 	internal static int /* System.Int32 */ System_String_IndexOf(void* /* System.String */ __self, ushort /* System.Char */ value, void** /* System.Exception */ __outException)
 	{
@@ -19144,7 +19964,69 @@ internal unsafe class System_String
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_3")]
-	internal static int /* System.Int32 */ System_String_IndexOf_3(void* /* System.String */ __self, ushort /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	internal static int /* System.Int32 */ System_String_IndexOf_3(void* /* System.String */ __self, ushort /* System.Char */ value, int /* System.Int32 */ startIndex, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Char valueConverted = (char)value;
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.IndexOf(valueConverted, startIndex, comparisonType);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_4")]
+	internal static int /* System.Int32 */ System_String_IndexOf_4(void* /* System.String */ __self, ushort /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Char valueConverted = (char)value;
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.IndexOf(valueConverted, startIndex, count, comparisonType);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_5")]
+	internal static int /* System.Int32 */ System_String_IndexOf_5(void* /* System.String */ __self, ushort /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19267,8 +20149,8 @@ internal unsafe class System_String
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_4")]
-	internal static int /* System.Int32 */ System_String_IndexOf_4(void* /* System.String */ __self, void* /* System.String */ value, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_6")]
+	internal static int /* System.Int32 */ System_String_IndexOf_6(void* /* System.String */ __self, void* /* System.String */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19298,8 +20180,8 @@ internal unsafe class System_String
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_5")]
-	internal static int /* System.Int32 */ System_String_IndexOf_5(void* /* System.String */ __self, void* /* System.String */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_7")]
+	internal static int /* System.Int32 */ System_String_IndexOf_7(void* /* System.String */ __self, void* /* System.String */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19329,8 +20211,8 @@ internal unsafe class System_String
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_6")]
-	internal static int /* System.Int32 */ System_String_IndexOf_6(void* /* System.String */ __self, void* /* System.String */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_8")]
+	internal static int /* System.Int32 */ System_String_IndexOf_8(void* /* System.String */ __self, void* /* System.String */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19360,8 +20242,8 @@ internal unsafe class System_String
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_7")]
-	internal static int /* System.Int32 */ System_String_IndexOf_7(void* /* System.String */ __self, void* /* System.String */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_9")]
+	internal static int /* System.Int32 */ System_String_IndexOf_9(void* /* System.String */ __self, void* /* System.String */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19391,8 +20273,8 @@ internal unsafe class System_String
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_8")]
-	internal static int /* System.Int32 */ System_String_IndexOf_8(void* /* System.String */ __self, void* /* System.String */ value, int /* System.Int32 */ startIndex, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_10")]
+	internal static int /* System.Int32 */ System_String_IndexOf_10(void* /* System.String */ __self, void* /* System.String */ value, int /* System.Int32 */ startIndex, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19422,8 +20304,8 @@ internal unsafe class System_String
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_9")]
-	internal static int /* System.Int32 */ System_String_IndexOf_9(void* /* System.String */ __self, void* /* System.String */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_11")]
+	internal static int /* System.Int32 */ System_String_IndexOf_11(void* /* System.String */ __self, void* /* System.String */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19432,6 +20314,192 @@ internal unsafe class System_String
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
 		System.String valueConverted = InteropUtils.GetInstance<System.String>(value);
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.IndexOf(valueConverted, startIndex, count, comparisonType);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_12")]
+	internal static int /* System.Int32 */ System_String_IndexOf_12(void* /* System.String */ __self, void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.IndexOf(valueConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_13")]
+	internal static int /* System.Int32 */ System_String_IndexOf_13(void* /* System.String */ __self, void* /* System.Text.Rune */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.IndexOf(valueConverted, startIndex);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_14")]
+	internal static int /* System.Int32 */ System_String_IndexOf_14(void* /* System.String */ __self, void* /* System.Text.Rune */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.IndexOf(valueConverted, startIndex, count);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_15")]
+	internal static int /* System.Int32 */ System_String_IndexOf_15(void* /* System.String */ __self, void* /* System.Text.Rune */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.IndexOf(valueConverted, comparisonType);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_16")]
+	internal static int /* System.Int32 */ System_String_IndexOf_16(void* /* System.String */ __self, void* /* System.Text.Rune */ value, int /* System.Int32 */ startIndex, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.IndexOf(valueConverted, startIndex, comparisonType);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_IndexOf_17")]
+	internal static int /* System.Int32 */ System_String_IndexOf_17(void* /* System.String */ __self, void* /* System.Text.Rune */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
 	
 	    try {
 			System.Int32 __returnValue = __selfConverted.IndexOf(valueConverted, startIndex, count, comparisonType);
@@ -19546,6 +20614,99 @@ internal unsafe class System_String
 		}
 	}
 	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_3")]
+	internal static int /* System.Int32 */ System_String_LastIndexOf_3(void* /* System.String */ __self, ushort /* System.Char */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Char valueConverted = (char)value;
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.LastIndexOf(valueConverted, comparisonType);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_4")]
+	internal static int /* System.Int32 */ System_String_LastIndexOf_4(void* /* System.String */ __self, ushort /* System.Char */ value, int /* System.Int32 */ startIndex, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Char valueConverted = (char)value;
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.LastIndexOf(valueConverted, startIndex, comparisonType);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_5")]
+	internal static int /* System.Int32 */ System_String_LastIndexOf_5(void* /* System.String */ __self, ushort /* System.Char */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Char valueConverted = (char)value;
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.LastIndexOf(valueConverted, startIndex, count, comparisonType);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
 	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOfAny")]
 	internal static int /* System.Int32 */ System_String_LastIndexOfAny(void* /* System.String */ __self, void* /* System.Char[] */ anyOf, void** /* System.Exception */ __outException)
 	{
@@ -19639,8 +20800,8 @@ internal unsafe class System_String
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_3")]
-	internal static int /* System.Int32 */ System_String_LastIndexOf_3(void* /* System.String */ __self, void* /* System.String */ value, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_6")]
+	internal static int /* System.Int32 */ System_String_LastIndexOf_6(void* /* System.String */ __self, void* /* System.String */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19670,8 +20831,8 @@ internal unsafe class System_String
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_4")]
-	internal static int /* System.Int32 */ System_String_LastIndexOf_4(void* /* System.String */ __self, void* /* System.String */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_7")]
+	internal static int /* System.Int32 */ System_String_LastIndexOf_7(void* /* System.String */ __self, void* /* System.String */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19701,8 +20862,8 @@ internal unsafe class System_String
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_5")]
-	internal static int /* System.Int32 */ System_String_LastIndexOf_5(void* /* System.String */ __self, void* /* System.String */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_8")]
+	internal static int /* System.Int32 */ System_String_LastIndexOf_8(void* /* System.String */ __self, void* /* System.String */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19732,8 +20893,8 @@ internal unsafe class System_String
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_6")]
-	internal static int /* System.Int32 */ System_String_LastIndexOf_6(void* /* System.String */ __self, void* /* System.String */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_9")]
+	internal static int /* System.Int32 */ System_String_LastIndexOf_9(void* /* System.String */ __self, void* /* System.String */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19763,8 +20924,8 @@ internal unsafe class System_String
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_7")]
-	internal static int /* System.Int32 */ System_String_LastIndexOf_7(void* /* System.String */ __self, void* /* System.String */ value, int /* System.Int32 */ startIndex, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_10")]
+	internal static int /* System.Int32 */ System_String_LastIndexOf_10(void* /* System.String */ __self, void* /* System.String */ value, int /* System.Int32 */ startIndex, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19794,8 +20955,8 @@ internal unsafe class System_String
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_8")]
-	internal static int /* System.Int32 */ System_String_LastIndexOf_8(void* /* System.String */ __self, void* /* System.String */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_11")]
+	internal static int /* System.Int32 */ System_String_LastIndexOf_11(void* /* System.String */ __self, void* /* System.String */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -19804,6 +20965,192 @@ internal unsafe class System_String
 		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
 	
 		System.String valueConverted = InteropUtils.GetInstance<System.String>(value);
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.LastIndexOf(valueConverted, startIndex, count, comparisonType);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_12")]
+	internal static int /* System.Int32 */ System_String_LastIndexOf_12(void* /* System.String */ __self, void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.LastIndexOf(valueConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_13")]
+	internal static int /* System.Int32 */ System_String_LastIndexOf_13(void* /* System.String */ __self, void* /* System.Text.Rune */ value, int /* System.Int32 */ startIndex, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.LastIndexOf(valueConverted, startIndex);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_14")]
+	internal static int /* System.Int32 */ System_String_LastIndexOf_14(void* /* System.String */ __self, void* /* System.Text.Rune */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.LastIndexOf(valueConverted, startIndex, count);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_15")]
+	internal static int /* System.Int32 */ System_String_LastIndexOf_15(void* /* System.String */ __self, void* /* System.Text.Rune */ value, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.LastIndexOf(valueConverted, comparisonType);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_16")]
+	internal static int /* System.Int32 */ System_String_LastIndexOf_16(void* /* System.String */ __self, void* /* System.Text.Rune */ value, int /* System.Int32 */ startIndex, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.LastIndexOf(valueConverted, startIndex, comparisonType);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_String_LastIndexOf_17")]
+	internal static int /* System.Int32 */ System_String_LastIndexOf_17(void* /* System.String */ __self, void* /* System.Text.Rune */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.String __selfConverted = InteropUtils.GetInstance<System.String>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
 	
 	    try {
 			System.Int32 __returnValue = __selfConverted.LastIndexOf(valueConverted, startIndex, count, comparisonType);
@@ -20846,6 +22193,20 @@ internal unsafe class System_Numerics_IUnsignedNumber_A1
 	
 }
 
+
+
+internal unsafe class System_StringComparison
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_StringComparison_TypeOf")]
+	internal static void* /* System.Type */ System_StringComparison_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.StringComparison);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
+}
 
 
 internal unsafe class System_Globalization_CultureInfo
@@ -29537,6 +30898,8 @@ internal unsafe class System_UInt128
 
 	// Unsupported Member "get_Zero": Is Special Name
 
+	// Unsupported Member "TryParsePartial": Has unsupported parameter(s): s: Is unsupported Type; 
+
 	// Unsupported Member "op_LeftShift": Is Special Name
 
 	// Unsupported Member "op_RightShift": Is Special Name
@@ -30124,6 +31487,32 @@ internal unsafe class System_UInt128
 		}
 	}
 	
+	[UnmanagedCallersOnly(EntryPoint = "System_UInt128_Log10")]
+	internal static void* /* System.UInt128 */ System_UInt128_Log10(void* /* System.UInt128 */ value, void** /* System.Exception */ __outException)
+	{
+		System.UInt128 valueConverted = InteropUtils.GetInstance<System.UInt128>(value);
+	
+	    try {
+			System.UInt128 __returnValue = System.UInt128.Log10(valueConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
 	[UnmanagedCallersOnly(EntryPoint = "System_UInt128_PopCount")]
 	internal static void* /* System.UInt128 */ System_UInt128_PopCount(void* /* System.UInt128 */ value, void** /* System.Exception */ __outException)
 	{
@@ -30592,6 +31981,96 @@ internal unsafe class System_UInt128
 		}
 	}
 	
+	[UnmanagedCallersOnly(EntryPoint = "System_UInt128_TryParsePartial")]
+	internal static byte /* System.Boolean */ System_UInt128_TryParsePartial(void* /* System.String */ s, System.Globalization.NumberStyles /* System.Globalization.NumberStyles */ style, void* /* System.IFormatProvider */ provider, void** /* System.UInt128 */ result, int* /* System.Int32 */ charsConsumed, void** /* System.Exception */ __outException)
+	{
+		System.String sConverted = InteropUtils.GetInstance<System.String>(s);
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.UInt128 resultConverted;
+		System.Int32 charsConsumedConverted;
+	
+	    try {
+			System.Boolean __returnValue = System.UInt128.TryParsePartial(sConverted, style, providerConverted, out resultConverted, out charsConsumedConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (result is not null) {
+				*result = resultConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			if (charsConsumed is not null) {
+				*charsConsumed = charsConsumedConverted;
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
+	
+			if (charsConsumed is not null) {
+				*charsConsumed = -1;
+			}
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_UInt128_TryParsePartial_1")]
+	internal static byte /* System.Boolean */ System_UInt128_TryParsePartial_1(DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ utf8Text, System.Globalization.NumberStyles /* System.Globalization.NumberStyles */ style, void* /* System.IFormatProvider */ provider, void** /* System.UInt128 */ result, int* /* System.Int32 */ bytesConsumed, void** /* System.Exception */ __outException)
+	{
+		System.ReadOnlySpan<System.Byte> utf8TextConverted = utf8Text.CopyDataToManagedReadOnlySpanAndFree();
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.UInt128 resultConverted;
+		System.Int32 bytesConsumedConverted;
+	
+	    try {
+			System.Boolean __returnValue = System.UInt128.TryParsePartial(utf8TextConverted, style, providerConverted, out resultConverted, out bytesConsumedConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (result is not null) {
+				*result = resultConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			if (bytesConsumed is not null) {
+				*bytesConsumed = bytesConsumedConverted;
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
+	
+			if (bytesConsumed is not null) {
+				*bytesConsumed = -1;
+			}
+	
+			return 0;
+		} finally {
+		}
+	}
+	
 	[UnmanagedCallersOnly(EntryPoint = "System_UInt128_TryParse_3")]
 	internal static byte /* System.Boolean */ System_UInt128_TryParse_3(void* /* System.String */ s, void* /* System.IFormatProvider */ provider, void** /* System.UInt128 */ result, void** /* System.Exception */ __outException)
 	{
@@ -31023,6 +32502,8 @@ internal unsafe class System_Decimal
 	// Unsupported Member "op_GreaterThan": Is Special Name
 
 	// Unsupported Member "op_GreaterThanOrEqual": Is Special Name
+
+	// Unsupported Member "TryParsePartial": Has unsupported parameter(s): s: Is unsupported Type; 
 
 	// Unsupported Member "Parse": Has unsupported parameter(s): s: Is unsupported Type; 
 
@@ -32893,6 +34374,96 @@ internal unsafe class System_Decimal
 		}
 	}
 	
+	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_TryParsePartial")]
+	internal static byte /* System.Boolean */ System_Decimal_TryParsePartial(void* /* System.String */ s, System.Globalization.NumberStyles /* System.Globalization.NumberStyles */ style, void* /* System.IFormatProvider */ provider, void** /* System.Decimal */ result, int* /* System.Int32 */ charsConsumed, void** /* System.Exception */ __outException)
+	{
+		System.String sConverted = InteropUtils.GetInstance<System.String>(s);
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Decimal resultConverted;
+		System.Int32 charsConsumedConverted;
+	
+	    try {
+			System.Boolean __returnValue = System.Decimal.TryParsePartial(sConverted, style, providerConverted, out resultConverted, out charsConsumedConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (result is not null) {
+				*result = resultConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			if (charsConsumed is not null) {
+				*charsConsumed = charsConsumedConverted;
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
+	
+			if (charsConsumed is not null) {
+				*charsConsumed = -1;
+			}
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_TryParsePartial_1")]
+	internal static byte /* System.Boolean */ System_Decimal_TryParsePartial_1(DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ utf8Text, System.Globalization.NumberStyles /* System.Globalization.NumberStyles */ style, void* /* System.IFormatProvider */ provider, void** /* System.Decimal */ result, int* /* System.Int32 */ bytesConsumed, void** /* System.Exception */ __outException)
+	{
+		System.ReadOnlySpan<System.Byte> utf8TextConverted = utf8Text.CopyDataToManagedReadOnlySpanAndFree();
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Decimal resultConverted;
+		System.Int32 bytesConsumedConverted;
+	
+	    try {
+			System.Boolean __returnValue = System.Decimal.TryParsePartial(utf8TextConverted, style, providerConverted, out resultConverted, out bytesConsumedConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (result is not null) {
+				*result = resultConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			if (bytesConsumed is not null) {
+				*bytesConsumed = bytesConsumedConverted;
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
+	
+			if (bytesConsumed is not null) {
+				*bytesConsumed = -1;
+			}
+	
+			return 0;
+		} finally {
+		}
+	}
+	
 	[UnmanagedCallersOnly(EntryPoint = "System_Decimal_TryParse_3")]
 	internal static byte /* System.Boolean */ System_Decimal_TryParse_3(void* /* System.String */ s, void* /* System.IFormatProvider */ provider, void** /* System.Decimal */ result, void** /* System.Exception */ __outException)
 	{
@@ -33559,6 +35130,8 @@ internal unsafe class System_Int128
 
 	// Unsupported Member "get_Zero": Is Special Name
 
+	// Unsupported Member "TryParsePartial": Has unsupported parameter(s): s: Is unsupported Type; 
+
 	// Unsupported Member "op_LeftShift": Is Special Name
 
 	// Unsupported Member "op_RightShift": Is Special Name
@@ -34129,6 +35702,32 @@ internal unsafe class System_Int128
 	
 	    try {
 			System.Int128 __returnValue = System.Int128.LeadingZeroCount(valueConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Int128_Log10")]
+	internal static void* /* System.Int128 */ System_Int128_Log10(void* /* System.Int128 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Int128 valueConverted = InteropUtils.GetInstance<System.Int128>(value);
+	
+	    try {
+			System.Int128 __returnValue = System.Int128.Log10(valueConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -34775,6 +36374,96 @@ internal unsafe class System_Int128
 		}
 	}
 	
+	[UnmanagedCallersOnly(EntryPoint = "System_Int128_TryParsePartial")]
+	internal static byte /* System.Boolean */ System_Int128_TryParsePartial(void* /* System.String */ s, System.Globalization.NumberStyles /* System.Globalization.NumberStyles */ style, void* /* System.IFormatProvider */ provider, void** /* System.Int128 */ result, int* /* System.Int32 */ charsConsumed, void** /* System.Exception */ __outException)
+	{
+		System.String sConverted = InteropUtils.GetInstance<System.String>(s);
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Int128 resultConverted;
+		System.Int32 charsConsumedConverted;
+	
+	    try {
+			System.Boolean __returnValue = System.Int128.TryParsePartial(sConverted, style, providerConverted, out resultConverted, out charsConsumedConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (result is not null) {
+				*result = resultConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			if (charsConsumed is not null) {
+				*charsConsumed = charsConsumedConverted;
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
+	
+			if (charsConsumed is not null) {
+				*charsConsumed = -1;
+			}
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Int128_TryParsePartial_1")]
+	internal static byte /* System.Boolean */ System_Int128_TryParsePartial_1(DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ utf8Text, System.Globalization.NumberStyles /* System.Globalization.NumberStyles */ style, void* /* System.IFormatProvider */ provider, void** /* System.Int128 */ result, int* /* System.Int32 */ bytesConsumed, void** /* System.Exception */ __outException)
+	{
+		System.ReadOnlySpan<System.Byte> utf8TextConverted = utf8Text.CopyDataToManagedReadOnlySpanAndFree();
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Int128 resultConverted;
+		System.Int32 bytesConsumedConverted;
+	
+	    try {
+			System.Boolean __returnValue = System.Int128.TryParsePartial(utf8TextConverted, style, providerConverted, out resultConverted, out bytesConsumedConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (result is not null) {
+				*result = resultConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			if (bytesConsumed is not null) {
+				*bytesConsumed = bytesConsumedConverted;
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
+	
+			if (bytesConsumed is not null) {
+				*bytesConsumed = -1;
+			}
+	
+			return 0;
+		} finally {
+		}
+	}
+	
 	[UnmanagedCallersOnly(EntryPoint = "System_Int128_TryParse_3")]
 	internal static byte /* System.Boolean */ System_Int128_TryParse_3(void* /* System.String */ s, void* /* System.IFormatProvider */ provider, void** /* System.Int128 */ result, void** /* System.Exception */ __outException)
 	{
@@ -35346,6 +37035,8 @@ internal unsafe class System_Half
 	// Unsupported Member "get_One": Is Special Name
 
 	// Unsupported Member "get_Zero": Is Special Name
+
+	// Unsupported Member "TryParsePartial": Has unsupported parameter(s): s: Is unsupported Type; 
 
 	// Unsupported Member "get_NegativeOne": Is Special Name
 
@@ -37860,6 +39551,96 @@ internal unsafe class System_Half
 	        }
 	
 			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Half_TryParsePartial")]
+	internal static byte /* System.Boolean */ System_Half_TryParsePartial(void* /* System.String */ s, System.Globalization.NumberStyles /* System.Globalization.NumberStyles */ style, void* /* System.IFormatProvider */ provider, void** /* System.Half */ result, int* /* System.Int32 */ charsConsumed, void** /* System.Exception */ __outException)
+	{
+		System.String sConverted = InteropUtils.GetInstance<System.String>(s);
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Half resultConverted;
+		System.Int32 charsConsumedConverted;
+	
+	    try {
+			System.Boolean __returnValue = System.Half.TryParsePartial(sConverted, style, providerConverted, out resultConverted, out charsConsumedConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (result is not null) {
+				*result = resultConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			if (charsConsumed is not null) {
+				*charsConsumed = charsConsumedConverted;
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
+	
+			if (charsConsumed is not null) {
+				*charsConsumed = -1;
+			}
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Half_TryParsePartial_1")]
+	internal static byte /* System.Boolean */ System_Half_TryParsePartial_1(DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ utf8Text, System.Globalization.NumberStyles /* System.Globalization.NumberStyles */ style, void* /* System.IFormatProvider */ provider, void** /* System.Half */ result, int* /* System.Int32 */ bytesConsumed, void** /* System.Exception */ __outException)
+	{
+		System.ReadOnlySpan<System.Byte> utf8TextConverted = utf8Text.CopyDataToManagedReadOnlySpanAndFree();
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Half resultConverted;
+		System.Int32 bytesConsumedConverted;
+	
+	    try {
+			System.Boolean __returnValue = System.Half.TryParsePartial(utf8TextConverted, style, providerConverted, out resultConverted, out bytesConsumedConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (result is not null) {
+				*result = resultConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			if (bytesConsumed is not null) {
+				*bytesConsumed = bytesConsumedConverted;
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
+	
+			if (bytesConsumed is not null) {
+				*bytesConsumed = -1;
+			}
+	
+			return 0;
 		} finally {
 		}
 	}
@@ -71370,6 +73151,37 @@ internal unsafe class System_Reflection_ConstructorInfo
 
 	// Unsupported Member "op_Inequality": Is Special Name
 
+	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ConstructorInfo_GetGenericArguments")]
+	internal static void* /* System.Type[] */ System_Reflection_ConstructorInfo_GetGenericArguments(void* /* System.Reflection.ConstructorInfo */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Reflection.ConstructorInfo __selfConverted = InteropUtils.GetInstance<System.Reflection.ConstructorInfo>(__self);
+	
+	
+	    try {
+			System.Type[] __returnValue = __selfConverted.GetGenericArguments();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
 	[UnmanagedCallersOnly(EntryPoint = "System_Reflection_ConstructorInfo_Invoke")]
 	internal static void* /* System.Object */ System_Reflection_ConstructorInfo_Invoke(void* /* System.Reflection.ConstructorInfo */ __self, void* /* System.Object[] */ parameters, void** /* System.Exception */ __outException)
 	{
@@ -83137,12 +84949,56 @@ internal unsafe class System_IO_SeekOrigin
 
 internal unsafe class Microsoft_Win32_SafeHandles_SafeFileHandle
 {
+	// Unsupported Member "get_Type": Is Special Name
+
 	// Unsupported Member "get_IsAsync": Is Special Name
 
 	// Unsupported Member "get_IsInvalid": Is Special Name
 
-	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeFileHandle_Create")]
-	internal static void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ Microsoft_Win32_SafeHandles_SafeFileHandle_Create(nint /* System.IntPtr */ preexistingHandle, byte /* System.Boolean */ ownsHandle, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeFileHandle_CreateAnonymousPipe")]
+	internal static void /* System.Void */ Microsoft_Win32_SafeHandles_SafeFileHandle_CreateAnonymousPipe(void** /* Microsoft.Win32.SafeHandles.SafeFileHandle */ readHandle, void** /* Microsoft.Win32.SafeHandles.SafeFileHandle */ writeHandle, byte /* System.Boolean */ asyncRead, byte /* System.Boolean */ asyncWrite, void** /* System.Exception */ __outException)
+	{
+		Microsoft.Win32.SafeHandles.SafeFileHandle readHandleConverted;
+		Microsoft.Win32.SafeHandles.SafeFileHandle writeHandleConverted;
+		System.Boolean asyncReadConverted = asyncRead.ToBool();
+		System.Boolean asyncWriteConverted = asyncWrite.ToBool();
+	
+	    try {
+			Microsoft.Win32.SafeHandles.SafeFileHandle.CreateAnonymousPipe(out readHandleConverted, out writeHandleConverted, asyncReadConverted, asyncWriteConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (readHandle is not null) {
+				*readHandle = readHandleConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			if (writeHandle is not null) {
+				*writeHandle = writeHandleConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (readHandle is not null) {
+				*readHandle = null;
+			}
+	
+			if (writeHandle is not null) {
+				*writeHandle = null;
+			}
+	
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeFileHandle_Create_1")]
+	internal static void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ Microsoft_Win32_SafeHandles_SafeFileHandle_Create_1(nint /* System.IntPtr */ preexistingHandle, byte /* System.Boolean */ ownsHandle, void** /* System.Exception */ __outException)
 	{
 		System.Boolean ownsHandleConverted = ownsHandle.ToBool();
 	
@@ -83167,8 +85023,8 @@ internal unsafe class Microsoft_Win32_SafeHandles_SafeFileHandle
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeFileHandle_Create_1")]
-	internal static void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ Microsoft_Win32_SafeHandles_SafeFileHandle_Create_1(void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeFileHandle_Create_2")]
+	internal static void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ Microsoft_Win32_SafeHandles_SafeFileHandle_Create_2(void** /* System.Exception */ __outException)
 	{
 	
 	    try {
@@ -83191,6 +85047,37 @@ internal unsafe class Microsoft_Win32_SafeHandles_SafeFileHandle
 		} finally {
 		}
 	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeFileHandle_Type_Get")]
+	internal static System.IO.FileHandleType /* System.IO.FileHandleType */ Microsoft_Win32_SafeHandles_SafeFileHandle_Type_Get(void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		Microsoft.Win32.SafeHandles.SafeFileHandle __selfConverted = InteropUtils.GetInstance<Microsoft.Win32.SafeHandles.SafeFileHandle>(__self);
+	
+	
+	    try {
+			System.IO.FileHandleType __returnValue = __selfConverted.Type;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return default(System.IO.FileHandleType);
+		} finally {
+		}
+	}
+	
 	
 	[UnmanagedCallersOnly(EntryPoint = "Microsoft_Win32_SafeHandles_SafeFileHandle_IsAsync_Get")]
 	internal static byte /* System.Boolean */ Microsoft_Win32_SafeHandles_SafeFileHandle_IsAsync_Get(void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ __self, void** /* System.Exception */ __outException)
@@ -83270,6 +85157,21 @@ internal unsafe class Microsoft_Win32_SafeHandles_SafeFileHandle
 	{
 	
 		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+}
+
+
+
+internal unsafe class System_IO_FileHandleType
+{
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileHandleType_TypeOf")]
+	internal static void* /* System.Type */ System_IO_FileHandleType_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.IO.FileHandleType);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
 	}
 	
 }
@@ -86325,6 +88227,43 @@ internal unsafe class System_Text_Rune
 		}
 	}
 	
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_Equals_2")]
+	internal static byte /* System.Boolean */ System_Text_Rune_Equals_2(void* /* System.Text.Rune */ __self, void* /* System.Text.Rune */ other, System.StringComparison /* System.StringComparison */ comparisonType, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.Rune __selfConverted = InteropUtils.GetInstance<System.Text.Rune>(__self);
+	
+		System.Text.Rune otherConverted = InteropUtils.GetInstance<System.Text.Rune>(other);
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.Equals(otherConverted, comparisonType);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+			if (__self is not null) {
+				InteropUtils.ReplaceInstance(__self, __selfConverted);
+			}
+			
+			
+		}
+	}
+	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_GetHashCode")]
 	internal static int /* System.Int32 */ System_Text_Rune_GetHashCode(void* /* System.Text.Rune */ __self, void** /* System.Exception */ __outException)
 	{
@@ -87069,6 +89008,58 @@ internal unsafe class System_Text_Rune
 	
 	    try {
 			System.Text.Rune __returnValue = System.Text.Rune.ToUpperInvariant(valueConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_ToUpperOrdinal")]
+	internal static void* /* System.Text.Rune */ System_Text_Rune_ToUpperOrdinal(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	{
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Text.Rune __returnValue = System.Text.Rune.ToUpperOrdinal(valueConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_Rune_ToLowerOrdinal")]
+	internal static void* /* System.Text.Rune */ System_Text_Rune_ToLowerOrdinal(void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	{
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Text.Rune __returnValue = System.Text.Rune.ToLowerOrdinal(valueConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -88133,6 +90124,70 @@ internal unsafe class System_Globalization_TextInfo
 	
 	    try {
 			System.String __returnValue = __selfConverted.ToUpper(strConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_ToLower_2")]
+	internal static void* /* System.Text.Rune */ System_Globalization_TextInfo_ToLower_2(void* /* System.Globalization.TextInfo */ __self, void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.TextInfo __selfConverted = InteropUtils.GetInstance<System.Globalization.TextInfo>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Text.Rune __returnValue = __selfConverted.ToLower(valueConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Globalization_TextInfo_ToUpper_2")]
+	internal static void* /* System.Text.Rune */ System_Globalization_TextInfo_ToUpper_2(void* /* System.Globalization.TextInfo */ __self, void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Globalization.TextInfo __selfConverted = InteropUtils.GetInstance<System.Globalization.TextInfo>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Text.Rune __returnValue = __selfConverted.ToUpper(valueConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -92669,20 +94724,6 @@ internal unsafe class System_Globalization_DateTimeFormatInfo
 
 
 
-
-
-internal unsafe class System_StringComparison
-{
-	[UnmanagedCallersOnly(EntryPoint = "System_StringComparison_TypeOf")]
-	internal static void* /* System.Type */ System_StringComparison_TypeOf()
-	{
-	
-		System.Type __returnValue = typeof(System.StringComparison);
-		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-		return __returnValueNative;
-	}
-	
-}
 
 
 // Type "TState" was skipped. Reason: It has no full name.
@@ -117673,37 +119714,6 @@ internal unsafe class System_Threading_Thread
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_Join")]
-	internal static byte /* System.Boolean */ System_Threading_Thread_Join(void* /* System.Threading.Thread */ __self, int /* System.Int32 */ millisecondsTimeout, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Threading.Thread __selfConverted = InteropUtils.GetInstance<System.Threading.Thread>(__self);
-	
-	
-	    try {
-			System.Boolean __returnValue = __selfConverted.Join(millisecondsTimeout);
-			byte __returnValueNative = __returnValue.ToCBool();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return 0;
-		} finally {
-		}
-	}
-	
 	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_Start")]
 	internal static void /* System.Void */ System_Threading_Thread_Start(void* /* System.Threading.Thread */ __self, void* /* System.Object */ parameter, void** /* System.Exception */ __outException)
 	{
@@ -117814,6 +119824,37 @@ internal unsafe class System_Threading_Thread
 	            *__outException = __exceptionHandleAddress;
 	        }
 	
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Threading_Thread_Join")]
+	internal static byte /* System.Boolean */ System_Threading_Thread_Join(void* /* System.Threading.Thread */ __self, int /* System.Int32 */ millisecondsTimeout, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Threading.Thread __selfConverted = InteropUtils.GetInstance<System.Threading.Thread>(__self);
+	
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.Join(millisecondsTimeout);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
 		} finally {
 		}
 	}
@@ -130763,6 +132804,185 @@ internal unsafe class System_Random
 		}
 	}
 	
+	[UnmanagedCallersOnly(EntryPoint = "System_Random_NextInteger_A1")]
+	internal static void* /* System.Object */ System_Random_NextInteger_A1(void* /* System.Random */ __self, void* /* System.Type */ T, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Random __selfConverted = InteropUtils.GetInstance<System.Random>(__self);
+	
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Random);
+			System.String __memberNameForGenericCall = nameof(System.Random.NextInteger);
+			System.Object? __methodTargetForGenericCall = __selfConverted;
+	
+			System.Object[]? __parametersForGenericCall = null;
+			System.Type[] __parameterTypesForGenericCall = System.Type.EmptyTypes;
+	
+			System.Type[] __genericParameterTypesForGenericCall = new System.Type[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__memberNameForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method NextInteger not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Random_NextInteger_A1_1")]
+	internal static void* /* System.Object */ System_Random_NextInteger_A1_1(void* /* System.Random */ __self, void* /* System.Type */ T, void* /* T */ maxValue, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Random __selfConverted = InteropUtils.GetInstance<System.Random>(__self);
+	
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Object maxValueConverted = InteropUtils.GetInstance<System.Object>(maxValue);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Random);
+			System.String __memberNameForGenericCall = nameof(System.Random.NextInteger);
+			System.Object? __methodTargetForGenericCall = __selfConverted;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { maxValueConverted };
+			System.Type[] __parameterTypesForGenericCall = new System.Type[] { System.Type.MakeGenericMethodParameter(0) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new System.Type[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__memberNameForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method NextInteger not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Random_NextInteger_A1_2")]
+	internal static void* /* System.Object */ System_Random_NextInteger_A1_2(void* /* System.Random */ __self, void* /* System.Type */ T, void* /* T */ minValue, void* /* T */ maxValue, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Random __selfConverted = InteropUtils.GetInstance<System.Random>(__self);
+	
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+		System.Object minValueConverted = InteropUtils.GetInstance<System.Object>(minValue);
+		System.Object maxValueConverted = InteropUtils.GetInstance<System.Object>(maxValue);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Random);
+			System.String __memberNameForGenericCall = nameof(System.Random.NextInteger);
+			System.Object? __methodTargetForGenericCall = __selfConverted;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { minValueConverted, maxValueConverted };
+			System.Type[] __parameterTypesForGenericCall = new System.Type[] { System.Type.MakeGenericMethodParameter(0), System.Type.MakeGenericMethodParameter(0) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new System.Type[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__memberNameForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method NextInteger not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Random_NextBinaryFloat_A1")]
+	internal static void* /* System.Object */ System_Random_NextBinaryFloat_A1(void* /* System.Random */ __self, void* /* System.Type */ T, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Random __selfConverted = InteropUtils.GetInstance<System.Random>(__self);
+	
+		System.Type TConverted = InteropUtils.GetInstance<System.Type>(T);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Random);
+			System.String __memberNameForGenericCall = nameof(System.Random.NextBinaryFloat);
+			System.Object? __methodTargetForGenericCall = __selfConverted;
+	
+			System.Object[]? __parametersForGenericCall = null;
+			System.Type[] __parameterTypesForGenericCall = System.Type.EmptyTypes;
+	
+			System.Type[] __genericParameterTypesForGenericCall = new System.Type[] { TConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__memberNameForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method NextBinaryFloat not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Object __returnValue = (System.Object)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
 	[UnmanagedCallersOnly(EntryPoint = "System_Random_GetItems_A1")]
 	internal static void* /* System.Array */ System_Random_GetItems_A1(void* /* System.Random */ __self, void* /* System.Type */ T, void* /* T[] */ choices, int /* System.Int32 */ length, void** /* System.Exception */ __outException)
 	{
@@ -130977,6 +133197,10 @@ internal unsafe class System_Random
 }
 
 
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
+// Type "T" was skipped. Reason: It has no full name.
 
 // Type "T" was skipped. Reason: It has no full name.
 
@@ -131163,6 +133387,32 @@ internal unsafe class System_Text_StringBuilder
 		}
 	}
 	
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_MoveChunks")]
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_MoveChunks(void* /* System.Text.StringBuilder */ source, void** /* System.Exception */ __outException)
+	{
+		System.Text.StringBuilder sourceConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(source);
+	
+	    try {
+			System.Text.StringBuilder __returnValue = System.Text.StringBuilder.MoveChunks(sourceConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_GetChunks")]
 	internal static void* /* System.Text.StringBuilder.ChunkEnumerator */ System_Text_StringBuilder_GetChunks(void* /* System.Text.StringBuilder */ __self, void** /* System.Exception */ __outException)
 	{
@@ -131175,6 +133425,37 @@ internal unsafe class System_Text_StringBuilder
 	
 	    try {
 			System.Text.StringBuilder.ChunkEnumerator __returnValue = __selfConverted.GetChunks();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_EnumerateRunes")]
+	internal static void* /* System.Text.StringBuilderRuneEnumerator */ System_Text_StringBuilder_EnumerateRunes(void* /* System.Text.StringBuilder */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
+	
+	
+	    try {
+			System.Text.StringBuilderRuneEnumerator __returnValue = __selfConverted.EnumerateRunes();
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -131606,7 +133887,7 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_8")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_8(void* /* System.Text.StringBuilder */ __self, sbyte /* System.SByte */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_8(void* /* System.Text.StringBuilder */ __self, void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -131614,9 +133895,10 @@ internal unsafe class System_Text_StringBuilder
 	
 		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
 	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
 	
 	    try {
-			System.Text.StringBuilder __returnValue = __selfConverted.Append(value);
+			System.Text.StringBuilder __returnValue = __selfConverted.Append(valueConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -131637,7 +133919,7 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_9")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_9(void* /* System.Text.StringBuilder */ __self, byte /* System.Byte */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_9(void* /* System.Text.StringBuilder */ __self, sbyte /* System.SByte */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -131668,7 +133950,7 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_10")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_10(void* /* System.Text.StringBuilder */ __self, short /* System.Int16 */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_10(void* /* System.Text.StringBuilder */ __self, byte /* System.Byte */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -131699,7 +133981,7 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_11")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_11(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_11(void* /* System.Text.StringBuilder */ __self, short /* System.Int16 */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -131730,7 +134012,7 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_12")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_12(void* /* System.Text.StringBuilder */ __self, long /* System.Int64 */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_12(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -131761,7 +134043,7 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_13")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_13(void* /* System.Text.StringBuilder */ __self, float /* System.Single */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_13(void* /* System.Text.StringBuilder */ __self, long /* System.Int64 */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -131792,7 +134074,7 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_14")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_14(void* /* System.Text.StringBuilder */ __self, double /* System.Double */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_14(void* /* System.Text.StringBuilder */ __self, float /* System.Single */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -131823,7 +134105,38 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_15")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_15(void* /* System.Text.StringBuilder */ __self, void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_15(void* /* System.Text.StringBuilder */ __self, double /* System.Double */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
+	
+	
+	    try {
+			System.Text.StringBuilder __returnValue = __selfConverted.Append(value);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_16")]
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_16(void* /* System.Text.StringBuilder */ __self, void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -131854,39 +134167,8 @@ internal unsafe class System_Text_StringBuilder
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_16")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_16(void* /* System.Text.StringBuilder */ __self, ushort /* System.UInt16 */ value, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
-	
-	
-	    try {
-			System.Text.StringBuilder __returnValue = __selfConverted.Append(value);
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		} finally {
-		}
-	}
-	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_17")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_17(void* /* System.Text.StringBuilder */ __self, uint /* System.UInt32 */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_17(void* /* System.Text.StringBuilder */ __self, ushort /* System.UInt16 */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -131917,7 +134199,7 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_18")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_18(void* /* System.Text.StringBuilder */ __self, ulong /* System.UInt64 */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_18(void* /* System.Text.StringBuilder */ __self, uint /* System.UInt32 */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -131948,7 +134230,38 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_19")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_19(void* /* System.Text.StringBuilder */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_19(void* /* System.Text.StringBuilder */ __self, ulong /* System.UInt64 */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
+	
+	
+	    try {
+			System.Text.StringBuilder __returnValue = __selfConverted.Append(value);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_20")]
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_20(void* /* System.Text.StringBuilder */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -131979,8 +134292,8 @@ internal unsafe class System_Text_StringBuilder
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_20")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_20(void* /* System.Text.StringBuilder */ __self, void* /* System.Char[] */ value, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_21")]
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_21(void* /* System.Text.StringBuilder */ __self, void* /* System.Char[] */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -132011,8 +134324,8 @@ internal unsafe class System_Text_StringBuilder
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_21")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_21(void* /* System.Text.StringBuilder */ __self, void** /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_22")]
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_22(void* /* System.Text.StringBuilder */ __self, void** /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -132054,8 +134367,8 @@ internal unsafe class System_Text_StringBuilder
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_22")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_22(void* /* System.Text.StringBuilder */ __self, void* /* System.IFormatProvider */ provider, void** /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Append_23")]
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Append_23(void* /* System.Text.StringBuilder */ __self, void* /* System.IFormatProvider */ provider, void** /* System.Text.StringBuilder.AppendInterpolatedStringHandler */ handler, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -132507,7 +134820,39 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Insert_7")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_7(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, void* /* System.Char[] */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_7(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Text.StringBuilder __returnValue = __selfConverted.Insert(index, valueConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Insert_8")]
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_8(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, void* /* System.Char[] */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -132538,8 +134883,8 @@ internal unsafe class System_Text_StringBuilder
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Insert_8")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_8(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, void* /* System.Char[] */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ charCount, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Insert_9")]
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_9(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, void* /* System.Char[] */ value, int /* System.Int32 */ startIndex, int /* System.Int32 */ charCount, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -132570,39 +134915,8 @@ internal unsafe class System_Text_StringBuilder
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Insert_9")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_9(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, int /* System.Int32 */ value, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
-	
-	
-	    try {
-			System.Text.StringBuilder __returnValue = __selfConverted.Insert(index, value);
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		} finally {
-		}
-	}
-	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Insert_10")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_10(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, long /* System.Int64 */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_10(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, int /* System.Int32 */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -132633,7 +134947,7 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Insert_11")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_11(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, float /* System.Single */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_11(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, long /* System.Int64 */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -132664,7 +134978,7 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Insert_12")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_12(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, double /* System.Double */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_12(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, float /* System.Single */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -132695,7 +135009,38 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Insert_13")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_13(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_13(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, double /* System.Double */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
+	
+	
+	    try {
+			System.Text.StringBuilder __returnValue = __selfConverted.Insert(index, value);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Insert_14")]
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_14(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -132726,39 +135071,8 @@ internal unsafe class System_Text_StringBuilder
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Insert_14")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_14(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, ushort /* System.UInt16 */ value, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
-	
-	
-	    try {
-			System.Text.StringBuilder __returnValue = __selfConverted.Insert(index, value);
-			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-			return __returnValueNative;
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-			return null;
-		} finally {
-		}
-	}
-	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Insert_15")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_15(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, uint /* System.UInt32 */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_15(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, ushort /* System.UInt16 */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -132789,7 +135103,7 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Insert_16")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_16(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, ulong /* System.UInt64 */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_16(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, uint /* System.UInt32 */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -132820,7 +135134,38 @@ internal unsafe class System_Text_StringBuilder
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Insert_17")]
-	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_17(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_17(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, ulong /* System.UInt64 */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
+	
+	
+	    try {
+			System.Text.StringBuilder __returnValue = __selfConverted.Insert(index, value);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Insert_18")]
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Insert_18(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -133470,6 +135815,143 @@ internal unsafe class System_Text_StringBuilder
 		}
 	}
 	
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Replace_4")]
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Replace_4(void* /* System.Text.StringBuilder */ __self, void* /* System.Text.Rune */ oldRune, void* /* System.Text.Rune */ newRune, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
+	
+		System.Text.Rune oldRuneConverted = InteropUtils.GetInstance<System.Text.Rune>(oldRune);
+		System.Text.Rune newRuneConverted = InteropUtils.GetInstance<System.Text.Rune>(newRune);
+	
+	    try {
+			System.Text.StringBuilder __returnValue = __selfConverted.Replace(oldRuneConverted, newRuneConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Replace_5")]
+	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Replace_5(void* /* System.Text.StringBuilder */ __self, void* /* System.Text.Rune */ oldRune, void* /* System.Text.Rune */ newRune, int /* System.Int32 */ startIndex, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
+	
+		System.Text.Rune oldRuneConverted = InteropUtils.GetInstance<System.Text.Rune>(oldRune);
+		System.Text.Rune newRuneConverted = InteropUtils.GetInstance<System.Text.Rune>(newRune);
+	
+	    try {
+			System.Text.StringBuilder __returnValue = __selfConverted.Replace(oldRuneConverted, newRuneConverted, startIndex, count);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_GetRuneAt")]
+	internal static void* /* System.Text.Rune */ System_Text_StringBuilder_GetRuneAt(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
+	
+	
+	    try {
+			System.Text.Rune __returnValue = __selfConverted.GetRuneAt(index);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_TryGetRuneAt")]
+	internal static byte /* System.Boolean */ System_Text_StringBuilder_TryGetRuneAt(void* /* System.Text.StringBuilder */ __self, int /* System.Int32 */ index, void** /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilder __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilder>(__self);
+	
+		System.Text.Rune valueConverted;
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.TryGetRuneAt(index, out valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (value is not null) {
+				*value = valueConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (value is not null) {
+				*value = null;
+			}
+	
+			return 0;
+		} finally {
+		}
+	}
+	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_Create")]
 	internal static void* /* System.Text.StringBuilder */ System_Text_StringBuilder_Create(void** /* System.Exception */ __outException)
 	{
@@ -133965,6 +136447,163 @@ internal unsafe class System_Text_StringBuilder_ChunkEnumerator
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilder_ChunkEnumerator_Destroy")]
 	internal static void /* System.Void */ System_Text_StringBuilder_ChunkEnumerator_Destroy(void* /* System.Text.StringBuilder.ChunkEnumerator */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+}
+
+
+internal unsafe class System_Text_StringBuilderRuneEnumerator
+{
+	// Unsupported Member "get_Current": Is Special Name
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilderRuneEnumerator_GetEnumerator")]
+	internal static void* /* System.Text.StringBuilderRuneEnumerator */ System_Text_StringBuilderRuneEnumerator_GetEnumerator(void* /* System.Text.StringBuilderRuneEnumerator */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilderRuneEnumerator __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilderRuneEnumerator>(__self);
+	
+	
+	    try {
+			System.Text.StringBuilderRuneEnumerator __returnValue = __selfConverted.GetEnumerator();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+			if (__self is not null) {
+				InteropUtils.ReplaceInstance(__self, __selfConverted);
+			}
+			
+			
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilderRuneEnumerator_MoveNext")]
+	internal static byte /* System.Boolean */ System_Text_StringBuilderRuneEnumerator_MoveNext(void* /* System.Text.StringBuilderRuneEnumerator */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilderRuneEnumerator __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilderRuneEnumerator>(__self);
+	
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.MoveNext();
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+			if (__self is not null) {
+				InteropUtils.ReplaceInstance(__self, __selfConverted);
+			}
+			
+			
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilderRuneEnumerator_Current_Get")]
+	internal static void* /* System.Text.Rune */ System_Text_StringBuilderRuneEnumerator_Current_Get(void* /* System.Text.StringBuilderRuneEnumerator */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Text.StringBuilderRuneEnumerator __selfConverted = InteropUtils.GetInstance<System.Text.StringBuilderRuneEnumerator>(__self);
+	
+	
+	    try {
+			System.Text.Rune __returnValue = __selfConverted.Current;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+			if (__self is not null) {
+				InteropUtils.ReplaceInstance(__self, __selfConverted);
+			}
+			
+			
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilderRuneEnumerator_Create")]
+	internal static void* /* System.Text.StringBuilderRuneEnumerator */ System_Text_StringBuilderRuneEnumerator_Create(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Text.StringBuilderRuneEnumerator __returnValue = new System.Text.StringBuilderRuneEnumerator();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilderRuneEnumerator_TypeOf")]
+	internal static void* /* System.Type */ System_Text_StringBuilderRuneEnumerator_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Text.StringBuilderRuneEnumerator);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Text_StringBuilderRuneEnumerator_Destroy")]
+	internal static void /* System.Void */ System_Text_StringBuilderRuneEnumerator_Destroy(void* /* System.Text.StringBuilderRuneEnumerator */ __self)
 	{
 	
 		InteropUtils.FreeIfAllocated(__self);
@@ -135646,6 +138285,31 @@ internal unsafe class System_IO_File
 	
 	    try {
 			Microsoft.Win32.SafeHandles.SafeFileHandle __returnValue = System.IO.File.OpenHandle(pathConverted, mode, access, share, options, preallocationSize);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_File_OpenNullHandle")]
+	internal static void* /* Microsoft.Win32.SafeHandles.SafeFileHandle */ System_IO_File_OpenNullHandle(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			Microsoft.Win32.SafeHandles.SafeFileHandle __returnValue = System.IO.File.OpenNullHandle();
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -137638,6 +140302,33 @@ internal unsafe class System_IO_File
 	
 	    try {
 			System.Threading.Tasks.Task __returnValue = System.IO.File.AppendAllLinesAsync(pathConverted, contentsConverted, encodingConverted, cancellationTokenConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_File_CreateHardLink")]
+	internal static void* /* System.IO.FileSystemInfo */ System_IO_File_CreateHardLink(void* /* System.String */ path, void* /* System.String */ pathToTarget, void** /* System.Exception */ __outException)
+	{
+		System.String pathConverted = InteropUtils.GetInstance<System.String>(path);
+		System.String pathToTargetConverted = InteropUtils.GetInstance<System.String>(pathToTarget);
+	
+	    try {
+			System.IO.FileSystemInfo __returnValue = System.IO.File.CreateHardLink(pathConverted, pathToTargetConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -140475,7 +143166,36 @@ internal unsafe class System_IO_TextWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_1")]
-	internal static void /* System.Void */ System_IO_TextWriter_Write_1(void* /* System.IO.TextWriter */ __self, void* /* System.Char[] */ buffer, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_IO_TextWriter_Write_1(void* /* System.IO.TextWriter */ __self, void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.TextWriter __selfConverted = InteropUtils.GetInstance<System.IO.TextWriter>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			__selfConverted.Write(valueConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_2")]
+	internal static void /* System.Void */ System_IO_TextWriter_Write_2(void* /* System.IO.TextWriter */ __self, void* /* System.Char[] */ buffer, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -140503,8 +143223,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_2")]
-	internal static void /* System.Void */ System_IO_TextWriter_Write_2(void* /* System.IO.TextWriter */ __self, void* /* System.Char[] */ buffer, int /* System.Int32 */ index, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_3")]
+	internal static void /* System.Void */ System_IO_TextWriter_Write_3(void* /* System.IO.TextWriter */ __self, void* /* System.Char[] */ buffer, int /* System.Int32 */ index, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -140532,8 +143252,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_3")]
-	internal static void /* System.Void */ System_IO_TextWriter_Write_3(void* /* System.IO.TextWriter */ __self, byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_4")]
+	internal static void /* System.Void */ System_IO_TextWriter_Write_4(void* /* System.IO.TextWriter */ __self, byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -140561,36 +143281,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_4")]
-	internal static void /* System.Void */ System_IO_TextWriter_Write_4(void* /* System.IO.TextWriter */ __self, int /* System.Int32 */ value, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.IO.TextWriter __selfConverted = InteropUtils.GetInstance<System.IO.TextWriter>(__self);
-	
-	
-	    try {
-			__selfConverted.Write(value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		} finally {
-		}
-	}
-	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_5")]
-	internal static void /* System.Void */ System_IO_TextWriter_Write_5(void* /* System.IO.TextWriter */ __self, uint /* System.UInt32 */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_IO_TextWriter_Write_5(void* /* System.IO.TextWriter */ __self, int /* System.Int32 */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -140618,7 +143310,7 @@ internal unsafe class System_IO_TextWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_6")]
-	internal static void /* System.Void */ System_IO_TextWriter_Write_6(void* /* System.IO.TextWriter */ __self, long /* System.Int64 */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_IO_TextWriter_Write_6(void* /* System.IO.TextWriter */ __self, uint /* System.UInt32 */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -140646,7 +143338,7 @@ internal unsafe class System_IO_TextWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_7")]
-	internal static void /* System.Void */ System_IO_TextWriter_Write_7(void* /* System.IO.TextWriter */ __self, ulong /* System.UInt64 */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_IO_TextWriter_Write_7(void* /* System.IO.TextWriter */ __self, long /* System.Int64 */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -140674,7 +143366,7 @@ internal unsafe class System_IO_TextWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_8")]
-	internal static void /* System.Void */ System_IO_TextWriter_Write_8(void* /* System.IO.TextWriter */ __self, float /* System.Single */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_IO_TextWriter_Write_8(void* /* System.IO.TextWriter */ __self, ulong /* System.UInt64 */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -140702,7 +143394,7 @@ internal unsafe class System_IO_TextWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_9")]
-	internal static void /* System.Void */ System_IO_TextWriter_Write_9(void* /* System.IO.TextWriter */ __self, double /* System.Double */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_IO_TextWriter_Write_9(void* /* System.IO.TextWriter */ __self, float /* System.Single */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -140730,7 +143422,35 @@ internal unsafe class System_IO_TextWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_10")]
-	internal static void /* System.Void */ System_IO_TextWriter_Write_10(void* /* System.IO.TextWriter */ __self, void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_IO_TextWriter_Write_10(void* /* System.IO.TextWriter */ __self, double /* System.Double */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.TextWriter __selfConverted = InteropUtils.GetInstance<System.IO.TextWriter>(__self);
+	
+	
+	    try {
+			__selfConverted.Write(value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_11")]
+	internal static void /* System.Void */ System_IO_TextWriter_Write_11(void* /* System.IO.TextWriter */ __self, void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -140758,8 +143478,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_11")]
-	internal static void /* System.Void */ System_IO_TextWriter_Write_11(void* /* System.IO.TextWriter */ __self, void* /* System.String */ value, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_12")]
+	internal static void /* System.Void */ System_IO_TextWriter_Write_12(void* /* System.IO.TextWriter */ __self, void* /* System.String */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -140787,8 +143507,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_12")]
-	internal static void /* System.Void */ System_IO_TextWriter_Write_12(void* /* System.IO.TextWriter */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_13")]
+	internal static void /* System.Void */ System_IO_TextWriter_Write_13(void* /* System.IO.TextWriter */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -140816,8 +143536,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_13")]
-	internal static void /* System.Void */ System_IO_TextWriter_Write_13(void* /* System.IO.TextWriter */ __self, void* /* System.Text.StringBuilder */ value, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_14")]
+	internal static void /* System.Void */ System_IO_TextWriter_Write_14(void* /* System.IO.TextWriter */ __self, void* /* System.Text.StringBuilder */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -140845,8 +143565,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_14")]
-	internal static void /* System.Void */ System_IO_TextWriter_Write_14(void* /* System.IO.TextWriter */ __self, void* /* System.String */ format, void* /* System.Object */ arg0, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_15")]
+	internal static void /* System.Void */ System_IO_TextWriter_Write_15(void* /* System.IO.TextWriter */ __self, void* /* System.String */ format, void* /* System.Object */ arg0, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -140875,8 +143595,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_15")]
-	internal static void /* System.Void */ System_IO_TextWriter_Write_15(void* /* System.IO.TextWriter */ __self, void* /* System.String */ format, void* /* System.Object */ arg0, void* /* System.Object */ arg1, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_16")]
+	internal static void /* System.Void */ System_IO_TextWriter_Write_16(void* /* System.IO.TextWriter */ __self, void* /* System.String */ format, void* /* System.Object */ arg0, void* /* System.Object */ arg1, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -140906,8 +143626,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_16")]
-	internal static void /* System.Void */ System_IO_TextWriter_Write_16(void* /* System.IO.TextWriter */ __self, void* /* System.String */ format, void* /* System.Object */ arg0, void* /* System.Object */ arg1, void* /* System.Object */ arg2, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_17")]
+	internal static void /* System.Void */ System_IO_TextWriter_Write_17(void* /* System.IO.TextWriter */ __self, void* /* System.String */ format, void* /* System.Object */ arg0, void* /* System.Object */ arg1, void* /* System.Object */ arg2, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -140938,8 +143658,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_17")]
-	internal static void /* System.Void */ System_IO_TextWriter_Write_17(void* /* System.IO.TextWriter */ __self, void* /* System.String */ format, void* /* System.Object[] */ arg, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_Write_18")]
+	internal static void /* System.Void */ System_IO_TextWriter_Write_18(void* /* System.IO.TextWriter */ __self, void* /* System.String */ format, void* /* System.Object[] */ arg, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141026,7 +143746,36 @@ internal unsafe class System_IO_TextWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_2")]
-	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_2(void* /* System.IO.TextWriter */ __self, void* /* System.Char[] */ buffer, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_2(void* /* System.IO.TextWriter */ __self, void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.TextWriter __selfConverted = InteropUtils.GetInstance<System.IO.TextWriter>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			__selfConverted.WriteLine(valueConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_3")]
+	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_3(void* /* System.IO.TextWriter */ __self, void* /* System.Char[] */ buffer, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141054,8 +143803,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_3")]
-	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_3(void* /* System.IO.TextWriter */ __self, void* /* System.Char[] */ buffer, int /* System.Int32 */ index, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_4")]
+	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_4(void* /* System.IO.TextWriter */ __self, void* /* System.Char[] */ buffer, int /* System.Int32 */ index, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141083,8 +143832,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_4")]
-	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_4(void* /* System.IO.TextWriter */ __self, byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_5")]
+	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_5(void* /* System.IO.TextWriter */ __self, byte /* System.Boolean */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141112,36 +143861,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_5")]
-	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_5(void* /* System.IO.TextWriter */ __self, int /* System.Int32 */ value, void** /* System.Exception */ __outException)
-	{
-		if (__self is null) {
-			throw new ArgumentNullException(nameof(__self));
-		}
-	
-		System.IO.TextWriter __selfConverted = InteropUtils.GetInstance<System.IO.TextWriter>(__self);
-	
-	
-	    try {
-			__selfConverted.WriteLine(value);
-	
-	        if (__outException is not null) {
-	            *__outException = null;
-	        }
-	
-	    } catch (Exception __exception) {
-	        if (__outException is not null) {
-	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
-	
-	            *__outException = __exceptionHandleAddress;
-	        }
-	
-		} finally {
-		}
-	}
-	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_6")]
-	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_6(void* /* System.IO.TextWriter */ __self, uint /* System.UInt32 */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_6(void* /* System.IO.TextWriter */ __self, int /* System.Int32 */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141169,7 +143890,7 @@ internal unsafe class System_IO_TextWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_7")]
-	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_7(void* /* System.IO.TextWriter */ __self, long /* System.Int64 */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_7(void* /* System.IO.TextWriter */ __self, uint /* System.UInt32 */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141197,7 +143918,7 @@ internal unsafe class System_IO_TextWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_8")]
-	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_8(void* /* System.IO.TextWriter */ __self, ulong /* System.UInt64 */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_8(void* /* System.IO.TextWriter */ __self, long /* System.Int64 */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141225,7 +143946,7 @@ internal unsafe class System_IO_TextWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_9")]
-	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_9(void* /* System.IO.TextWriter */ __self, float /* System.Single */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_9(void* /* System.IO.TextWriter */ __self, ulong /* System.UInt64 */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141253,7 +143974,7 @@ internal unsafe class System_IO_TextWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_10")]
-	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_10(void* /* System.IO.TextWriter */ __self, double /* System.Double */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_10(void* /* System.IO.TextWriter */ __self, float /* System.Single */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141281,7 +144002,35 @@ internal unsafe class System_IO_TextWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_11")]
-	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_11(void* /* System.IO.TextWriter */ __self, void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
+	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_11(void* /* System.IO.TextWriter */ __self, double /* System.Double */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.TextWriter __selfConverted = InteropUtils.GetInstance<System.IO.TextWriter>(__self);
+	
+	
+	    try {
+			__selfConverted.WriteLine(value);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_12")]
+	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_12(void* /* System.IO.TextWriter */ __self, void* /* System.Decimal */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141309,8 +144058,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_12")]
-	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_12(void* /* System.IO.TextWriter */ __self, void* /* System.String */ value, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_13")]
+	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_13(void* /* System.IO.TextWriter */ __self, void* /* System.String */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141338,8 +144087,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_13")]
-	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_13(void* /* System.IO.TextWriter */ __self, void* /* System.Text.StringBuilder */ value, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_14")]
+	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_14(void* /* System.IO.TextWriter */ __self, void* /* System.Text.StringBuilder */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141367,8 +144116,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_14")]
-	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_14(void* /* System.IO.TextWriter */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_15")]
+	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_15(void* /* System.IO.TextWriter */ __self, void* /* System.Object */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141396,8 +144145,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_15")]
-	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_15(void* /* System.IO.TextWriter */ __self, void* /* System.String */ format, void* /* System.Object */ arg0, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_16")]
+	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_16(void* /* System.IO.TextWriter */ __self, void* /* System.String */ format, void* /* System.Object */ arg0, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141426,8 +144175,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_16")]
-	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_16(void* /* System.IO.TextWriter */ __self, void* /* System.String */ format, void* /* System.Object */ arg0, void* /* System.Object */ arg1, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_17")]
+	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_17(void* /* System.IO.TextWriter */ __self, void* /* System.String */ format, void* /* System.Object */ arg0, void* /* System.Object */ arg1, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141457,8 +144206,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_17")]
-	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_17(void* /* System.IO.TextWriter */ __self, void* /* System.String */ format, void* /* System.Object */ arg0, void* /* System.Object */ arg1, void* /* System.Object */ arg2, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_18")]
+	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_18(void* /* System.IO.TextWriter */ __self, void* /* System.String */ format, void* /* System.Object */ arg0, void* /* System.Object */ arg1, void* /* System.Object */ arg2, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141489,8 +144238,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_18")]
-	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_18(void* /* System.IO.TextWriter */ __self, void* /* System.String */ format, void* /* System.Object[] */ arg, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLine_19")]
+	internal static void /* System.Void */ System_IO_TextWriter_WriteLine_19(void* /* System.IO.TextWriter */ __self, void* /* System.String */ format, void* /* System.Object[] */ arg, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141552,7 +144301,39 @@ internal unsafe class System_IO_TextWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteAsync_1")]
-	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteAsync_1(void* /* System.IO.TextWriter */ __self, void* /* System.String */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteAsync_1(void* /* System.IO.TextWriter */ __self, void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.TextWriter __selfConverted = InteropUtils.GetInstance<System.IO.TextWriter>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Threading.Tasks.Task __returnValue = __selfConverted.WriteAsync(valueConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteAsync_2")]
+	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteAsync_2(void* /* System.IO.TextWriter */ __self, void* /* System.String */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141583,8 +144364,41 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteAsync_2")]
-	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteAsync_2(void* /* System.IO.TextWriter */ __self, void* /* System.Text.StringBuilder */ value, void* /* System.Threading.CancellationToken */ cancellationToken, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteAsync_3")]
+	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteAsync_3(void* /* System.IO.TextWriter */ __self, void* /* System.String */ value, void* /* System.Threading.CancellationToken */ cancellationToken, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.TextWriter __selfConverted = InteropUtils.GetInstance<System.IO.TextWriter>(__self);
+	
+		System.String valueConverted = InteropUtils.GetInstance<System.String>(value);
+		System.Threading.CancellationToken cancellationTokenConverted = InteropUtils.GetInstance<System.Threading.CancellationToken>(cancellationToken);
+	
+	    try {
+			System.Threading.Tasks.Task __returnValue = __selfConverted.WriteAsync(valueConverted, cancellationTokenConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteAsync_4")]
+	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteAsync_4(void* /* System.IO.TextWriter */ __self, void* /* System.Text.StringBuilder */ value, void* /* System.Threading.CancellationToken */ cancellationToken, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141616,8 +144430,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteAsync_3")]
-	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteAsync_3(void* /* System.IO.TextWriter */ __self, void* /* System.Char[] */ buffer, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteAsync_5")]
+	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteAsync_5(void* /* System.IO.TextWriter */ __self, void* /* System.Char[] */ buffer, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141648,8 +144462,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteAsync_4")]
-	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteAsync_4(void* /* System.IO.TextWriter */ __self, void* /* System.Char[] */ buffer, int /* System.Int32 */ index, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteAsync_6")]
+	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteAsync_6(void* /* System.IO.TextWriter */ __self, void* /* System.Char[] */ buffer, int /* System.Int32 */ index, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141713,7 +144527,39 @@ internal unsafe class System_IO_TextWriter
 	}
 	
 	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLineAsync_1")]
-	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteLineAsync_1(void* /* System.IO.TextWriter */ __self, void* /* System.String */ value, void** /* System.Exception */ __outException)
+	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteLineAsync_1(void* /* System.IO.TextWriter */ __self, void* /* System.Text.Rune */ value, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.TextWriter __selfConverted = InteropUtils.GetInstance<System.IO.TextWriter>(__self);
+	
+		System.Text.Rune valueConverted = InteropUtils.GetInstance<System.Text.Rune>(value);
+	
+	    try {
+			System.Threading.Tasks.Task __returnValue = __selfConverted.WriteLineAsync(valueConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLineAsync_2")]
+	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteLineAsync_2(void* /* System.IO.TextWriter */ __self, void* /* System.String */ value, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141744,8 +144590,41 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLineAsync_2")]
-	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteLineAsync_2(void* /* System.IO.TextWriter */ __self, void* /* System.Text.StringBuilder */ value, void* /* System.Threading.CancellationToken */ cancellationToken, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLineAsync_3")]
+	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteLineAsync_3(void* /* System.IO.TextWriter */ __self, void* /* System.String */ value, void* /* System.Threading.CancellationToken */ cancellationToken, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.TextWriter __selfConverted = InteropUtils.GetInstance<System.IO.TextWriter>(__self);
+	
+		System.String valueConverted = InteropUtils.GetInstance<System.String>(value);
+		System.Threading.CancellationToken cancellationTokenConverted = InteropUtils.GetInstance<System.Threading.CancellationToken>(cancellationToken);
+	
+	    try {
+			System.Threading.Tasks.Task __returnValue = __selfConverted.WriteLineAsync(valueConverted, cancellationTokenConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLineAsync_4")]
+	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteLineAsync_4(void* /* System.IO.TextWriter */ __self, void* /* System.Text.StringBuilder */ value, void* /* System.Threading.CancellationToken */ cancellationToken, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141777,8 +144656,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLineAsync_3")]
-	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteLineAsync_3(void* /* System.IO.TextWriter */ __self, void* /* System.Char[] */ buffer, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLineAsync_5")]
+	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteLineAsync_5(void* /* System.IO.TextWriter */ __self, void* /* System.Char[] */ buffer, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141809,8 +144688,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLineAsync_4")]
-	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteLineAsync_4(void* /* System.IO.TextWriter */ __self, void* /* System.Char[] */ buffer, int /* System.Int32 */ index, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLineAsync_6")]
+	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteLineAsync_6(void* /* System.IO.TextWriter */ __self, void* /* System.Char[] */ buffer, int /* System.Int32 */ index, int /* System.Int32 */ count, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141841,8 +144720,8 @@ internal unsafe class System_IO_TextWriter
 		}
 	}
 	
-	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLineAsync_5")]
-	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteLineAsync_5(void* /* System.IO.TextWriter */ __self, void** /* System.Exception */ __outException)
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLineAsync_7")]
+	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteLineAsync_7(void* /* System.IO.TextWriter */ __self, void** /* System.Exception */ __outException)
 	{
 		if (__self is null) {
 			throw new ArgumentNullException(nameof(__self));
@@ -141853,6 +144732,38 @@ internal unsafe class System_IO_TextWriter
 	
 	    try {
 			System.Threading.Tasks.Task __returnValue = __selfConverted.WriteLineAsync();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_TextWriter_WriteLineAsync_8")]
+	internal static void* /* System.Threading.Tasks.Task */ System_IO_TextWriter_WriteLineAsync_8(void* /* System.IO.TextWriter */ __self, void* /* System.Threading.CancellationToken */ cancellationToken, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.TextWriter __selfConverted = InteropUtils.GetInstance<System.IO.TextWriter>(__self);
+	
+		System.Threading.CancellationToken cancellationTokenConverted = InteropUtils.GetInstance<System.Threading.CancellationToken>(cancellationToken);
+	
+	    try {
+			System.Threading.Tasks.Task __returnValue = __selfConverted.WriteLineAsync(cancellationTokenConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -143651,6 +146562,35 @@ internal unsafe class System_IO_FileInfo
 	
 	    try {
 			__selfConverted.Encrypt();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_IO_FileInfo_CreateAsHardLink")]
+	internal static void /* System.Void */ System_IO_FileInfo_CreateAsHardLink(void* /* System.IO.FileInfo */ __self, void* /* System.String */ pathToTarget, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.IO.FileInfo __selfConverted = InteropUtils.GetInstance<System.IO.FileInfo>(__self);
+	
+		System.String pathToTargetConverted = InteropUtils.GetInstance<System.String>(pathToTarget);
+	
+	    try {
+			__selfConverted.CreateAsHardLink(pathToTargetConverted);
 	
 	        if (__outException is not null) {
 	            *__outException = null;
@@ -146996,6 +149936,8 @@ internal unsafe class System_Buffers_Binary_BinaryPrimitives
 
 	// Unsupported Member "WriteHalfBigEndian": Has unsupported parameter(s): destination: Is unsupported Type; 
 
+	// Unsupported Member "WriteBFloat16BigEndian": Has unsupported parameter(s): destination: Is unsupported Type; 
+
 	// Unsupported Member "WriteInt16BigEndian": Has unsupported parameter(s): destination: Is unsupported Type; 
 
 	// Unsupported Member "WriteInt32BigEndian": Has unsupported parameter(s): destination: Is unsupported Type; 
@@ -147021,6 +149963,8 @@ internal unsafe class System_Buffers_Binary_BinaryPrimitives
 	// Unsupported Member "TryWriteDoubleBigEndian": Has unsupported parameter(s): destination: Is unsupported Type; 
 
 	// Unsupported Member "TryWriteHalfBigEndian": Has unsupported parameter(s): destination: Is unsupported Type; 
+
+	// Unsupported Member "TryWriteBFloat16BigEndian": Has unsupported parameter(s): destination: Is unsupported Type; 
 
 	// Unsupported Member "TryWriteInt16BigEndian": Has unsupported parameter(s): destination: Is unsupported Type; 
 
@@ -147048,6 +149992,8 @@ internal unsafe class System_Buffers_Binary_BinaryPrimitives
 
 	// Unsupported Member "WriteHalfLittleEndian": Has unsupported parameter(s): destination: Is unsupported Type; 
 
+	// Unsupported Member "WriteBFloat16LittleEndian": Has unsupported parameter(s): destination: Is unsupported Type; 
+
 	// Unsupported Member "WriteInt16LittleEndian": Has unsupported parameter(s): destination: Is unsupported Type; 
 
 	// Unsupported Member "WriteInt32LittleEndian": Has unsupported parameter(s): destination: Is unsupported Type; 
@@ -147073,6 +150019,8 @@ internal unsafe class System_Buffers_Binary_BinaryPrimitives
 	// Unsupported Member "TryWriteDoubleLittleEndian": Has unsupported parameter(s): destination: Is unsupported Type; 
 
 	// Unsupported Member "TryWriteHalfLittleEndian": Has unsupported parameter(s): destination: Is unsupported Type; 
+
+	// Unsupported Member "TryWriteBFloat16LittleEndian": Has unsupported parameter(s): destination: Is unsupported Type; 
 
 	// Unsupported Member "TryWriteInt16LittleEndian": Has unsupported parameter(s): destination: Is unsupported Type; 
 
@@ -147128,6 +150076,32 @@ internal unsafe class System_Buffers_Binary_BinaryPrimitives
 	
 	    try {
 			System.Half __returnValue = System.Buffers.Binary.BinaryPrimitives.ReadHalfBigEndian(sourceConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Buffers_Binary_BinaryPrimitives_ReadBFloat16BigEndian")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Buffers_Binary_BinaryPrimitives_ReadBFloat16BigEndian(DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source, void** /* System.Exception */ __outException)
+	{
+		System.ReadOnlySpan<System.Byte> sourceConverted = source.CopyDataToManagedReadOnlySpanAndFree();
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Buffers.Binary.BinaryPrimitives.ReadBFloat16BigEndian(sourceConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
@@ -147467,6 +150441,41 @@ internal unsafe class System_Buffers_Binary_BinaryPrimitives
 	
 	    try {
 			System.Boolean __returnValue = System.Buffers.Binary.BinaryPrimitives.TryReadHalfBigEndian(sourceConverted, out valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (value is not null) {
+				*value = valueConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (value is not null) {
+				*value = null;
+			}
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Buffers_Binary_BinaryPrimitives_TryReadBFloat16BigEndian")]
+	internal static byte /* System.Boolean */ System_Buffers_Binary_BinaryPrimitives_TryReadBFloat16BigEndian(DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source, void** /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.ReadOnlySpan<System.Byte> sourceConverted = source.CopyDataToManagedReadOnlySpanAndFree();
+		System.Numerics.BFloat16 valueConverted;
+	
+	    try {
+			System.Boolean __returnValue = System.Buffers.Binary.BinaryPrimitives.TryReadBFloat16BigEndian(sourceConverted, out valueConverted);
 			byte __returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
@@ -147930,6 +150939,32 @@ internal unsafe class System_Buffers_Binary_BinaryPrimitives
 		}
 	}
 	
+	[UnmanagedCallersOnly(EntryPoint = "System_Buffers_Binary_BinaryPrimitives_ReadBFloat16LittleEndian")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Buffers_Binary_BinaryPrimitives_ReadBFloat16LittleEndian(DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source, void** /* System.Exception */ __outException)
+	{
+		System.ReadOnlySpan<System.Byte> sourceConverted = source.CopyDataToManagedReadOnlySpanAndFree();
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Buffers.Binary.BinaryPrimitives.ReadBFloat16LittleEndian(sourceConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
 	[UnmanagedCallersOnly(EntryPoint = "System_Buffers_Binary_BinaryPrimitives_ReadInt16LittleEndian")]
 	internal static short /* System.Int16 */ System_Buffers_Binary_BinaryPrimitives_ReadInt16LittleEndian(DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source, void** /* System.Exception */ __outException)
 	{
@@ -148250,6 +151285,41 @@ internal unsafe class System_Buffers_Binary_BinaryPrimitives
 	
 	    try {
 			System.Boolean __returnValue = System.Buffers.Binary.BinaryPrimitives.TryReadHalfLittleEndian(sourceConverted, out valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (value is not null) {
+				*value = valueConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (value is not null) {
+				*value = null;
+			}
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Buffers_Binary_BinaryPrimitives_TryReadBFloat16LittleEndian")]
+	internal static byte /* System.Boolean */ System_Buffers_Binary_BinaryPrimitives_TryReadBFloat16LittleEndian(DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source, void** /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.ReadOnlySpan<System.Byte> sourceConverted = source.CopyDataToManagedReadOnlySpanAndFree();
+		System.Numerics.BFloat16 valueConverted;
+	
+	    try {
+			System.Boolean __returnValue = System.Buffers.Binary.BinaryPrimitives.TryReadBFloat16LittleEndian(sourceConverted, out valueConverted);
 			byte __returnValueNative = __returnValue.ToCBool();
 	
 	        if (__outException is not null) {
@@ -148973,6 +152043,3683 @@ internal unsafe class System_Buffers_Binary_BinaryPrimitives
 }
 
 
+internal unsafe class System_Numerics_BFloat16
+{
+	// Unsupported Member "get_Epsilon": Is Special Name
+
+	// Unsupported Member "get_PositiveInfinity": Is Special Name
+
+	// Unsupported Member "get_NegativeInfinity": Is Special Name
+
+	// Unsupported Member "get_NaN": Is Special Name
+
+	// Unsupported Member "get_MinValue": Is Special Name
+
+	// Unsupported Member "get_MaxValue": Is Special Name
+
+	// Unsupported Member "Parse": Has unsupported parameter(s): s: Is unsupported Type; 
+
+	// Unsupported Member "TryParse": Has unsupported parameter(s): s: Is unsupported Type; 
+
+	// Unsupported Member "TryParse": Has unsupported parameter(s): s: Is unsupported Type; 
+
+	// Unsupported Member "op_Equality": Is Special Name
+
+	// Unsupported Member "op_Inequality": Is Special Name
+
+	// Unsupported Member "op_LessThan": Is Special Name
+
+	// Unsupported Member "op_GreaterThan": Is Special Name
+
+	// Unsupported Member "op_LessThanOrEqual": Is Special Name
+
+	// Unsupported Member "op_GreaterThanOrEqual": Is Special Name
+
+	// Unsupported Member "TryFormat": Has unsupported parameter(s): destination: Is unsupported Type; 
+
+	// Unsupported Member "TryFormat": Has unsupported parameter(s): utf8Destination: Is unsupported Type; 
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_CheckedExplicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_CheckedExplicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_CheckedExplicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_CheckedExplicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_CheckedExplicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_CheckedExplicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_CheckedExplicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_CheckedExplicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_CheckedExplicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_CheckedExplicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_CheckedExplicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_CheckedExplicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_CheckedExplicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_Implicit": Is Special Name
+
+	// Unsupported Member "op_Implicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_Explicit": Is Special Name
+
+	// Unsupported Member "op_Addition": Is Special Name
+
+	// Unsupported Member "op_Decrement": Is Special Name
+
+	// Unsupported Member "op_Division": Is Special Name
+
+	// Unsupported Member "get_E": Is Special Name
+
+	// Unsupported Member "get_Pi": Is Special Name
+
+	// Unsupported Member "get_Tau": Is Special Name
+
+	// Unsupported Member "get_NegativeZero": Is Special Name
+
+	// Unsupported Member "op_Increment": Is Special Name
+
+	// Unsupported Member "op_Modulus": Is Special Name
+
+	// Unsupported Member "get_MultiplicativeIdentity": Is Special Name
+
+	// Unsupported Member "op_Multiply": Is Special Name
+
+	// Unsupported Member "get_One": Is Special Name
+
+	// Unsupported Member "get_Zero": Is Special Name
+
+	// Unsupported Member "TryParsePartial": Has unsupported parameter(s): s: Is unsupported Type; 
+
+	// Unsupported Member "get_NegativeOne": Is Special Name
+
+	// Unsupported Member "Parse": Has unsupported parameter(s): s: Is unsupported Type; 
+
+	// Unsupported Member "TryParse": Has unsupported parameter(s): s: Is unsupported Type; 
+
+	// Unsupported Member "op_Subtraction": Is Special Name
+
+	// Unsupported Member "SinCos": Has unsupported return type: Is unsupported Type
+
+	// Unsupported Member "SinCosPi": Has unsupported return type: Is unsupported Type
+
+	// Unsupported Member "op_UnaryNegation": Is Special Name
+
+	// Unsupported Member "op_UnaryPlus": Is Special Name
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_IsFinite")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_IsFinite(void* /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.IsFinite(valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_IsInfinity")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_IsInfinity(void* /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.IsInfinity(valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_IsNaN")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_IsNaN(void* /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.IsNaN(valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_IsNegative")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_IsNegative(void* /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.IsNegative(valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_IsNegativeInfinity")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_IsNegativeInfinity(void* /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.IsNegativeInfinity(valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_IsNormal")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_IsNormal(void* /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.IsNormal(valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_IsPositiveInfinity")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_IsPositiveInfinity(void* /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.IsPositiveInfinity(valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_IsSubnormal")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_IsSubnormal(void* /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.IsSubnormal(valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_IsZero")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_IsZero(void* /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.IsZero(valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Parse")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Parse(void* /* System.String */ s, void** /* System.Exception */ __outException)
+	{
+		System.String sConverted = InteropUtils.GetInstance<System.String>(s);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Parse(sConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Parse_1")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Parse_1(void* /* System.String */ s, System.Globalization.NumberStyles /* System.Globalization.NumberStyles */ style, void** /* System.Exception */ __outException)
+	{
+		System.String sConverted = InteropUtils.GetInstance<System.String>(s);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Parse(sConverted, style);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Parse_2")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Parse_2(void* /* System.String */ s, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
+	{
+		System.String sConverted = InteropUtils.GetInstance<System.String>(s);
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Parse(sConverted, providerConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Parse_3")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Parse_3(void* /* System.String */ s, System.Globalization.NumberStyles /* System.Globalization.NumberStyles */ style, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
+	{
+		System.String sConverted = InteropUtils.GetInstance<System.String>(s);
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Parse(sConverted, style, providerConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_TryParse")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_TryParse(void* /* System.String */ s, void** /* System.Numerics.BFloat16 */ result, void** /* System.Exception */ __outException)
+	{
+		System.String sConverted = InteropUtils.GetInstance<System.String>(s);
+		System.Numerics.BFloat16 resultConverted;
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.TryParse(sConverted, out resultConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (result is not null) {
+				*result = resultConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_TryParse_1")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_TryParse_1(DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ utf8Text, void** /* System.Numerics.BFloat16 */ result, void** /* System.Exception */ __outException)
+	{
+		System.ReadOnlySpan<System.Byte> utf8TextConverted = utf8Text.CopyDataToManagedReadOnlySpanAndFree();
+		System.Numerics.BFloat16 resultConverted;
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.TryParse(utf8TextConverted, out resultConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (result is not null) {
+				*result = resultConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_TryParse_2")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_TryParse_2(void* /* System.String */ s, System.Globalization.NumberStyles /* System.Globalization.NumberStyles */ style, void* /* System.IFormatProvider */ provider, void** /* System.Numerics.BFloat16 */ result, void** /* System.Exception */ __outException)
+	{
+		System.String sConverted = InteropUtils.GetInstance<System.String>(s);
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Numerics.BFloat16 resultConverted;
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.TryParse(sConverted, style, providerConverted, out resultConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (result is not null) {
+				*result = resultConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_CompareTo")]
+	internal static int /* System.Int32 */ System_Numerics_BFloat16_CompareTo(void* /* System.Numerics.BFloat16 */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Numerics.BFloat16 __selfConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(__self);
+	
+		System.Object objConverted = InteropUtils.GetInstance<System.Object>(obj);
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.CompareTo(objConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+			if (__self is not null) {
+				InteropUtils.ReplaceInstance(__self, __selfConverted);
+			}
+			
+			
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_CompareTo_1")]
+	internal static int /* System.Int32 */ System_Numerics_BFloat16_CompareTo_1(void* /* System.Numerics.BFloat16 */ __self, void* /* System.Numerics.BFloat16 */ other, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Numerics.BFloat16 __selfConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(__self);
+	
+		System.Numerics.BFloat16 otherConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(other);
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.CompareTo(otherConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+			if (__self is not null) {
+				InteropUtils.ReplaceInstance(__self, __selfConverted);
+			}
+			
+			
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Equals")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_Equals(void* /* System.Numerics.BFloat16 */ __self, void* /* System.Numerics.BFloat16 */ other, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Numerics.BFloat16 __selfConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(__self);
+	
+		System.Numerics.BFloat16 otherConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(other);
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.Equals(otherConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+			if (__self is not null) {
+				InteropUtils.ReplaceInstance(__self, __selfConverted);
+			}
+			
+			
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Equals_1")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_Equals_1(void* /* System.Numerics.BFloat16 */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Numerics.BFloat16 __selfConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(__self);
+	
+		System.Object objConverted = InteropUtils.GetInstance<System.Object>(obj);
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+			if (__self is not null) {
+				InteropUtils.ReplaceInstance(__self, __selfConverted);
+			}
+			
+			
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_GetHashCode")]
+	internal static int /* System.Int32 */ System_Numerics_BFloat16_GetHashCode(void* /* System.Numerics.BFloat16 */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Numerics.BFloat16 __selfConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(__self);
+	
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.GetHashCode();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+			if (__self is not null) {
+				InteropUtils.ReplaceInstance(__self, __selfConverted);
+			}
+			
+			
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_ToString")]
+	internal static void* /* System.String */ System_Numerics_BFloat16_ToString(void* /* System.Numerics.BFloat16 */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Numerics.BFloat16 __selfConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfConverted.ToString();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+			if (__self is not null) {
+				InteropUtils.ReplaceInstance(__self, __selfConverted);
+			}
+			
+			
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_ToString_1")]
+	internal static void* /* System.String */ System_Numerics_BFloat16_ToString_1(void* /* System.Numerics.BFloat16 */ __self, void* /* System.String */ format, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Numerics.BFloat16 __selfConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(__self);
+	
+		System.String formatConverted = InteropUtils.GetInstance<System.String>(format);
+	
+	    try {
+			System.String __returnValue = __selfConverted.ToString(formatConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+			if (__self is not null) {
+				InteropUtils.ReplaceInstance(__self, __selfConverted);
+			}
+			
+			
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_ToString_2")]
+	internal static void* /* System.String */ System_Numerics_BFloat16_ToString_2(void* /* System.Numerics.BFloat16 */ __self, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Numerics.BFloat16 __selfConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(__self);
+	
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+	
+	    try {
+			System.String __returnValue = __selfConverted.ToString(providerConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+			if (__self is not null) {
+				InteropUtils.ReplaceInstance(__self, __selfConverted);
+			}
+			
+			
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_ToString_3")]
+	internal static void* /* System.String */ System_Numerics_BFloat16_ToString_3(void* /* System.Numerics.BFloat16 */ __self, void* /* System.String */ format, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Numerics.BFloat16 __selfConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(__self);
+	
+		System.String formatConverted = InteropUtils.GetInstance<System.String>(format);
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+	
+	    try {
+			System.String __returnValue = __selfConverted.ToString(formatConverted, providerConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+			if (__self is not null) {
+				InteropUtils.ReplaceInstance(__self, __selfConverted);
+			}
+			
+			
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_IsPow2")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_IsPow2(void* /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.IsPow2(valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Log2")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Log2(void* /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Log2(valueConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Exp")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Exp(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Exp(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_ExpM1")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_ExpM1(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.ExpM1(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Exp2")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Exp2(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Exp2(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Exp2M1")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Exp2M1(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Exp2M1(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Exp10")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Exp10(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Exp10(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Exp10M1")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Exp10M1(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Exp10M1(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Ceiling")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Ceiling(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Ceiling(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Floor")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Floor(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Floor(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Round")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Round(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Round(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Round_1")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Round_1(void* /* System.Numerics.BFloat16 */ x, int /* System.Int32 */ digits, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Round(xConverted, digits);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Round_2")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Round_2(void* /* System.Numerics.BFloat16 */ x, System.MidpointRounding /* System.MidpointRounding */ mode, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Round(xConverted, mode);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Round_3")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Round_3(void* /* System.Numerics.BFloat16 */ x, int /* System.Int32 */ digits, System.MidpointRounding /* System.MidpointRounding */ mode, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Round(xConverted, digits, mode);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Truncate")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Truncate(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Truncate(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Atan2")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Atan2(void* /* System.Numerics.BFloat16 */ y, void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 yConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(y);
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Atan2(yConverted, xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Atan2Pi")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Atan2Pi(void* /* System.Numerics.BFloat16 */ y, void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 yConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(y);
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Atan2Pi(yConverted, xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_BitDecrement")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_BitDecrement(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.BitDecrement(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_BitIncrement")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_BitIncrement(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.BitIncrement(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_FusedMultiplyAdd")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_FusedMultiplyAdd(void* /* System.Numerics.BFloat16 */ left, void* /* System.Numerics.BFloat16 */ right, void* /* System.Numerics.BFloat16 */ addend, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 leftConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(left);
+		System.Numerics.BFloat16 rightConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(right);
+		System.Numerics.BFloat16 addendConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(addend);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.FusedMultiplyAdd(leftConverted, rightConverted, addendConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Ieee754Remainder")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Ieee754Remainder(void* /* System.Numerics.BFloat16 */ left, void* /* System.Numerics.BFloat16 */ right, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 leftConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(left);
+		System.Numerics.BFloat16 rightConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(right);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Ieee754Remainder(leftConverted, rightConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_ILogB")]
+	internal static int /* System.Int32 */ System_Numerics_BFloat16_ILogB(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Int32 __returnValue = System.Numerics.BFloat16.ILogB(xConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Lerp")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Lerp(void* /* System.Numerics.BFloat16 */ value1, void* /* System.Numerics.BFloat16 */ value2, void* /* System.Numerics.BFloat16 */ amount, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 value1Converted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value1);
+		System.Numerics.BFloat16 value2Converted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value2);
+		System.Numerics.BFloat16 amountConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(amount);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Lerp(value1Converted, value2Converted, amountConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_ReciprocalEstimate")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_ReciprocalEstimate(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.ReciprocalEstimate(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_ReciprocalSqrtEstimate")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_ReciprocalSqrtEstimate(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.ReciprocalSqrtEstimate(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_ScaleB")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_ScaleB(void* /* System.Numerics.BFloat16 */ x, int /* System.Int32 */ n, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.ScaleB(xConverted, n);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Acosh")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Acosh(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Acosh(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Asinh")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Asinh(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Asinh(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Atanh")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Atanh(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Atanh(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Cosh")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Cosh(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Cosh(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Sinh")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Sinh(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Sinh(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Tanh")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Tanh(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Tanh(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Log_1")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Log_1(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Log(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Log_2")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Log_2(void* /* System.Numerics.BFloat16 */ x, void* /* System.Numerics.BFloat16 */ newBase, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+		System.Numerics.BFloat16 newBaseConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(newBase);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Log(xConverted, newBaseConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Log10")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Log10(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Log10(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_LogP1")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_LogP1(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.LogP1(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Log2P1")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Log2P1(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Log2P1(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Log10P1")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Log10P1(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Log10P1(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Clamp")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Clamp(void* /* System.Numerics.BFloat16 */ value, void* /* System.Numerics.BFloat16 */ min, void* /* System.Numerics.BFloat16 */ max, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+		System.Numerics.BFloat16 minConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(min);
+		System.Numerics.BFloat16 maxConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(max);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Clamp(valueConverted, minConverted, maxConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_CopySign")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_CopySign(void* /* System.Numerics.BFloat16 */ value, void* /* System.Numerics.BFloat16 */ sign, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+		System.Numerics.BFloat16 signConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(sign);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.CopySign(valueConverted, signConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Max")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Max(void* /* System.Numerics.BFloat16 */ x, void* /* System.Numerics.BFloat16 */ y, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+		System.Numerics.BFloat16 yConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(y);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Max(xConverted, yConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_MaxNumber")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_MaxNumber(void* /* System.Numerics.BFloat16 */ x, void* /* System.Numerics.BFloat16 */ y, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+		System.Numerics.BFloat16 yConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(y);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.MaxNumber(xConverted, yConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Min")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Min(void* /* System.Numerics.BFloat16 */ x, void* /* System.Numerics.BFloat16 */ y, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+		System.Numerics.BFloat16 yConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(y);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Min(xConverted, yConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_MinNumber")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_MinNumber(void* /* System.Numerics.BFloat16 */ x, void* /* System.Numerics.BFloat16 */ y, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+		System.Numerics.BFloat16 yConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(y);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.MinNumber(xConverted, yConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Sign")]
+	internal static int /* System.Int32 */ System_Numerics_BFloat16_Sign(void* /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+	
+	    try {
+			System.Int32 __returnValue = System.Numerics.BFloat16.Sign(valueConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Abs")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Abs(void* /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Abs(valueConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_CreateChecked_A1")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_CreateChecked_A1(void* /* System.Type */ TOther, void* /* TOther */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type TOtherConverted = InteropUtils.GetInstance<System.Type>(TOther);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Numerics.BFloat16);
+			System.String __memberNameForGenericCall = nameof(System.Numerics.BFloat16.CreateChecked);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted };
+			System.Type[] __parameterTypesForGenericCall = new System.Type[] { System.Type.MakeGenericMethodParameter(0) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new System.Type[] { TOtherConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__memberNameForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method CreateChecked not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Numerics.BFloat16 __returnValue = (System.Numerics.BFloat16)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_CreateSaturating_A1")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_CreateSaturating_A1(void* /* System.Type */ TOther, void* /* TOther */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type TOtherConverted = InteropUtils.GetInstance<System.Type>(TOther);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Numerics.BFloat16);
+			System.String __memberNameForGenericCall = nameof(System.Numerics.BFloat16.CreateSaturating);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted };
+			System.Type[] __parameterTypesForGenericCall = new System.Type[] { System.Type.MakeGenericMethodParameter(0) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new System.Type[] { TOtherConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__memberNameForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method CreateSaturating not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Numerics.BFloat16 __returnValue = (System.Numerics.BFloat16)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_CreateTruncating_A1")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_CreateTruncating_A1(void* /* System.Type */ TOther, void* /* TOther */ value, void** /* System.Exception */ __outException)
+	{
+		System.Type TOtherConverted = InteropUtils.GetInstance<System.Type>(TOther);
+		System.Object valueConverted = InteropUtils.GetInstance<System.Object>(value);
+	
+	    try {
+			System.Type __targetTypeForGenericCall = typeof(System.Numerics.BFloat16);
+			System.String __memberNameForGenericCall = nameof(System.Numerics.BFloat16.CreateTruncating);
+			System.Object? __methodTargetForGenericCall = null;
+	
+			System.Object[] __parametersForGenericCall = new System.Object[] { valueConverted };
+			System.Type[] __parameterTypesForGenericCall = new System.Type[] { System.Type.MakeGenericMethodParameter(0) };
+	
+			System.Type[] __genericParameterTypesForGenericCall = new System.Type[] { TOtherConverted };
+	
+			System.Reflection.MethodInfo __methodForGenericCall = __targetTypeForGenericCall.GetMethod(__memberNameForGenericCall, 1, __parameterTypesForGenericCall) ?? throw new Exception("Method CreateTruncating not found");
+			System.Reflection.MethodInfo __genericMethodForGenericCall = __methodForGenericCall.MakeGenericMethod(__genericParameterTypesForGenericCall);
+	
+			System.Numerics.BFloat16 __returnValue = (System.Numerics.BFloat16)__genericMethodForGenericCall.Invoke(__methodTargetForGenericCall, __parametersForGenericCall);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_IsEvenInteger")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_IsEvenInteger(void* /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.IsEvenInteger(valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_IsInteger")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_IsInteger(void* /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.IsInteger(valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_IsOddInteger")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_IsOddInteger(void* /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.IsOddInteger(valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_IsPositive_1")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_IsPositive_1(void* /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.IsPositive(valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_IsRealNumber")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_IsRealNumber(void* /* System.Numerics.BFloat16 */ value, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 valueConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(value);
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.IsRealNumber(valueConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_MaxMagnitude")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_MaxMagnitude(void* /* System.Numerics.BFloat16 */ x, void* /* System.Numerics.BFloat16 */ y, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+		System.Numerics.BFloat16 yConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(y);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.MaxMagnitude(xConverted, yConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_MaxMagnitudeNumber")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_MaxMagnitudeNumber(void* /* System.Numerics.BFloat16 */ x, void* /* System.Numerics.BFloat16 */ y, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+		System.Numerics.BFloat16 yConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(y);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.MaxMagnitudeNumber(xConverted, yConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_MinMagnitude")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_MinMagnitude(void* /* System.Numerics.BFloat16 */ x, void* /* System.Numerics.BFloat16 */ y, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+		System.Numerics.BFloat16 yConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(y);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.MinMagnitude(xConverted, yConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_MinMagnitudeNumber")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_MinMagnitudeNumber(void* /* System.Numerics.BFloat16 */ x, void* /* System.Numerics.BFloat16 */ y, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+		System.Numerics.BFloat16 yConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(y);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.MinMagnitudeNumber(xConverted, yConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_TryParsePartial")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_TryParsePartial(void* /* System.String */ s, System.Globalization.NumberStyles /* System.Globalization.NumberStyles */ style, void* /* System.IFormatProvider */ provider, void** /* System.Numerics.BFloat16 */ result, int* /* System.Int32 */ charsConsumed, void** /* System.Exception */ __outException)
+	{
+		System.String sConverted = InteropUtils.GetInstance<System.String>(s);
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Numerics.BFloat16 resultConverted;
+		System.Int32 charsConsumedConverted;
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.TryParsePartial(sConverted, style, providerConverted, out resultConverted, out charsConsumedConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (result is not null) {
+				*result = resultConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			if (charsConsumed is not null) {
+				*charsConsumed = charsConsumedConverted;
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
+	
+			if (charsConsumed is not null) {
+				*charsConsumed = -1;
+			}
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_TryParsePartial_1")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_TryParsePartial_1(DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ utf8Text, System.Globalization.NumberStyles /* System.Globalization.NumberStyles */ style, void* /* System.IFormatProvider */ provider, void** /* System.Numerics.BFloat16 */ result, int* /* System.Int32 */ bytesConsumed, void** /* System.Exception */ __outException)
+	{
+		System.ReadOnlySpan<System.Byte> utf8TextConverted = utf8Text.CopyDataToManagedReadOnlySpanAndFree();
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Numerics.BFloat16 resultConverted;
+		System.Int32 bytesConsumedConverted;
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.TryParsePartial(utf8TextConverted, style, providerConverted, out resultConverted, out bytesConsumedConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (result is not null) {
+				*result = resultConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			if (bytesConsumed is not null) {
+				*bytesConsumed = bytesConsumedConverted;
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
+	
+			if (bytesConsumed is not null) {
+				*bytesConsumed = -1;
+			}
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_TryParse_3")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_TryParse_3(void* /* System.String */ s, void* /* System.IFormatProvider */ provider, void** /* System.Numerics.BFloat16 */ result, void** /* System.Exception */ __outException)
+	{
+		System.String sConverted = InteropUtils.GetInstance<System.String>(s);
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Numerics.BFloat16 resultConverted;
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.TryParse(sConverted, providerConverted, out resultConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (result is not null) {
+				*result = resultConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Pow")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Pow(void* /* System.Numerics.BFloat16 */ x, void* /* System.Numerics.BFloat16 */ y, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+		System.Numerics.BFloat16 yConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(y);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Pow(xConverted, yConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Cbrt")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Cbrt(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Cbrt(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Hypot")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Hypot(void* /* System.Numerics.BFloat16 */ x, void* /* System.Numerics.BFloat16 */ y, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+		System.Numerics.BFloat16 yConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(y);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Hypot(xConverted, yConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_RootN")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_RootN(void* /* System.Numerics.BFloat16 */ x, int /* System.Int32 */ n, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.RootN(xConverted, n);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Sqrt")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Sqrt(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Sqrt(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Acos_1")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Acos_1(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Acos(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_AcosPi")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_AcosPi(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.AcosPi(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Asin_1")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Asin_1(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Asin(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_AsinPi")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_AsinPi(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.AsinPi(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Atan_1")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Atan_1(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Atan(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_AtanPi")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_AtanPi(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.AtanPi(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Cos_1")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Cos_1(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Cos(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_CosPi")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_CosPi(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.CosPi(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_DegreesToRadians")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_DegreesToRadians(void* /* System.Numerics.BFloat16 */ degrees, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 degreesConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(degrees);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.DegreesToRadians(degreesConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_RadiansToDegrees")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_RadiansToDegrees(void* /* System.Numerics.BFloat16 */ radians, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 radiansConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(radians);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.RadiansToDegrees(radiansConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Sin_1")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Sin_1(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Sin(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_SinPi")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_SinPi(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.SinPi(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Tan_1")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Tan_1(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Tan(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_TanPi")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_TanPi(void* /* System.Numerics.BFloat16 */ x, void** /* System.Exception */ __outException)
+	{
+		System.Numerics.BFloat16 xConverted = InteropUtils.GetInstance<System.Numerics.BFloat16>(x);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.TanPi(xConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Parse_4")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Parse_4(DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ utf8Text, System.Globalization.NumberStyles /* System.Globalization.NumberStyles */ style, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
+	{
+		System.ReadOnlySpan<System.Byte> utf8TextConverted = utf8Text.CopyDataToManagedReadOnlySpanAndFree();
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Parse(utf8TextConverted, style, providerConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_TryParse_4")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_TryParse_4(DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ utf8Text, System.Globalization.NumberStyles /* System.Globalization.NumberStyles */ style, void* /* System.IFormatProvider */ provider, void** /* System.Numerics.BFloat16 */ result, void** /* System.Exception */ __outException)
+	{
+		System.ReadOnlySpan<System.Byte> utf8TextConverted = utf8Text.CopyDataToManagedReadOnlySpanAndFree();
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Numerics.BFloat16 resultConverted;
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.TryParse(utf8TextConverted, style, providerConverted, out resultConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (result is not null) {
+				*result = resultConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Parse_5")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Parse_5(DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ utf8Text, void* /* System.IFormatProvider */ provider, void** /* System.Exception */ __outException)
+	{
+		System.ReadOnlySpan<System.Byte> utf8TextConverted = utf8Text.CopyDataToManagedReadOnlySpanAndFree();
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Parse(utf8TextConverted, providerConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_TryParse_5")]
+	internal static byte /* System.Boolean */ System_Numerics_BFloat16_TryParse_5(DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ utf8Text, void* /* System.IFormatProvider */ provider, void** /* System.Numerics.BFloat16 */ result, void** /* System.Exception */ __outException)
+	{
+		System.ReadOnlySpan<System.Byte> utf8TextConverted = utf8Text.CopyDataToManagedReadOnlySpanAndFree();
+		System.IFormatProvider providerConverted = InteropUtils.GetInstance<System.IFormatProvider>(provider);
+		System.Numerics.BFloat16 resultConverted;
+	
+	    try {
+			System.Boolean __returnValue = System.Numerics.BFloat16.TryParse(utf8TextConverted, providerConverted, out resultConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (result is not null) {
+				*result = resultConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (result is not null) {
+				*result = null;
+			}
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Epsilon_Get")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Epsilon_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Epsilon;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_PositiveInfinity_Get")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_PositiveInfinity_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.PositiveInfinity;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_NegativeInfinity_Get")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_NegativeInfinity_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.NegativeInfinity;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_NaN_Get")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_NaN_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.NaN;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_MinValue_Get")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_MinValue_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.MinValue;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_MaxValue_Get")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_MaxValue_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.MaxValue;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_E_Get")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_E_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.E;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Pi_Get")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Pi_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Pi;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Tau_Get")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Tau_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Tau;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_NegativeZero_Get")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_NegativeZero_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.NegativeZero;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_MultiplicativeIdentity_Get")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_MultiplicativeIdentity_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.MultiplicativeIdentity;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_One_Get")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_One_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.One;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Zero_Get")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Zero_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.Zero;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_NegativeOne_Get")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_NegativeOne_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = System.Numerics.BFloat16.NegativeOne;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Create_1")]
+	internal static void* /* System.Numerics.BFloat16 */ System_Numerics_BFloat16_Create_1(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Numerics.BFloat16 __returnValue = new System.Numerics.BFloat16();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_TypeOf")]
+	internal static void* /* System.Type */ System_Numerics_BFloat16_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Numerics.BFloat16);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Numerics_BFloat16_Destroy")]
+	internal static void /* System.Void */ System_Numerics_BFloat16_Destroy(void* /* System.Numerics.BFloat16 */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+}
+
+
+
+
+
+
+
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
+// Type "TOther" was skipped. Reason: It has no full name.
 internal unsafe class System_WeakReference_A1
 {
 	[UnmanagedCallersOnly(EntryPoint = "System_WeakReference_A1_TryGetTarget")]
@@ -167265,6 +174012,16 @@ internal unsafe class System_Uri
 	{
 	
 		System.String __returnValue = System.Uri.UriSchemeNetPipe;
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Uri_UriSchemeData_Get")]
+	internal static void* /* System.String */ System_Uri_UriSchemeData_Get()
+	{
+	
+		System.String __returnValue = System.Uri.UriSchemeData;
 		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 		return __returnValueNative;
 	}
@@ -200090,6 +206847,12 @@ internal unsafe class System_Security_Cryptography_CryptoStreamMode
 
 internal unsafe class System_Security_Cryptography_Aes
 {
+	// Unsupported Member "EncryptKeyWrap": Has unsupported parameter(s): destination: Is unsupported Type; 
+
+	// Unsupported Member "DecryptKeyWrap": Has unsupported parameter(s): destination: Is unsupported Type; 
+
+	// Unsupported Member "TryDecryptKeyWrap": Has unsupported parameter(s): destination: Is unsupported Type; 
+
 	// Unsupported Member "EncryptKeyWrapPadded": Has unsupported parameter(s): destination: Is unsupported Type; 
 
 	// Unsupported Member "DecryptKeyWrapPadded": Has unsupported parameter(s): destination: Is unsupported Type; 
@@ -200128,6 +206891,158 @@ internal unsafe class System_Security_Cryptography_Aes
 	
 	    try {
 			System.Security.Cryptography.Aes __returnValue = System.Security.Cryptography.Aes.Create(algorithmNameConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_Aes_GetKeyWrapLength")]
+	internal static int /* System.Int32 */ System_Security_Cryptography_Aes_GetKeyWrapLength(int /* System.Int32 */ plaintextLengthInBytes, void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Int32 __returnValue = System.Security.Cryptography.Aes.GetKeyWrapLength(plaintextLengthInBytes);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_Aes_EncryptKeyWrap")]
+	internal static void* /* System.Byte[] */ System_Security_Cryptography_Aes_EncryptKeyWrap(void* /* System.Security.Cryptography.Aes */ __self, void* /* System.Byte[] */ plaintext, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.Aes __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.Aes>(__self);
+	
+		System.Byte[] plaintextConverted = InteropUtils.GetInstance<System.Byte[]>(plaintext);
+	
+	    try {
+			System.Byte[] __returnValue = __selfConverted.EncryptKeyWrap(plaintextConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_Aes_EncryptKeyWrap_1")]
+	internal static void* /* System.Byte[] */ System_Security_Cryptography_Aes_EncryptKeyWrap_1(void* /* System.Security.Cryptography.Aes */ __self, DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ plaintext, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.Aes __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.Aes>(__self);
+	
+		System.ReadOnlySpan<System.Byte> plaintextConverted = plaintext.CopyDataToManagedReadOnlySpanAndFree();
+	
+	    try {
+			System.Byte[] __returnValue = __selfConverted.EncryptKeyWrap(plaintextConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_Aes_DecryptKeyWrap")]
+	internal static void* /* System.Byte[] */ System_Security_Cryptography_Aes_DecryptKeyWrap(void* /* System.Security.Cryptography.Aes */ __self, void* /* System.Byte[] */ ciphertext, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.Aes __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.Aes>(__self);
+	
+		System.Byte[] ciphertextConverted = InteropUtils.GetInstance<System.Byte[]>(ciphertext);
+	
+	    try {
+			System.Byte[] __returnValue = __selfConverted.DecryptKeyWrap(ciphertextConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_Aes_DecryptKeyWrap_1")]
+	internal static void* /* System.Byte[] */ System_Security_Cryptography_Aes_DecryptKeyWrap_1(void* /* System.Security.Cryptography.Aes */ __self, DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ ciphertext, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.Aes __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.Aes>(__self);
+	
+		System.ReadOnlySpan<System.Byte> ciphertextConverted = ciphertext.CopyDataToManagedReadOnlySpanAndFree();
+	
+	    try {
+			System.Byte[] __returnValue = __selfConverted.DecryptKeyWrap(ciphertextConverted);
 			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
 	
 	        if (__outException is not null) {
