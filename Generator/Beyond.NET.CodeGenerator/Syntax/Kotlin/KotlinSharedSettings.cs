@@ -4,7 +4,7 @@ static class KotlinSharedSettings
 {
     private static readonly List<Type> UnsupportedInterfaceTypes = [
         typeof(System.Net.ICredentialsByHost), // Unsupported because some implementations of this use different nullability
-        typeof(System.Net.ICredentials), // Unsupported because some implementations of this use different nullability
+        // typeof(System.Net.ICredentials), // Unsupported because some implementations of this use different nullability (eg. `System.Net.NetworkCredential`)
         typeof(System.ICloneable), // Unsupported because some implementations of this use different nullability
     ];
 
@@ -13,6 +13,7 @@ static class KotlinSharedSettings
         typeof(System.Xml.XmlProcessingInstruction), // Unsupported because some implementations of this use different nullability
         typeof(System.Xml.XmlAttributeCollection), // Unsupported because some implementations of this use different nullability
         typeof(System.Security.Cryptography.HashAlgorithm), // Unsupported because some implementations of this use different nullability
+        typeof(System.Net.NetworkCredential), // Unsupported because it uses different nullability in `GetCredential` than specified by `System.Net.ICredentials`
     ];
 
     internal static bool IsUnsupportedInterface(this Type interfaceType)
