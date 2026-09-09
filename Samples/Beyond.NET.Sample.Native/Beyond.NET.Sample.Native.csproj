@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <AssemblyName>libBeyondDotNETSampleNative</AssemblyName>
+    <UseNativeLibPrefix>false</UseNativeLibPrefix>
     <OutputType>Library</OutputType>
     <TargetFramework>net11.0</TargetFramework>
     <LangVersion>latest</LangVersion>

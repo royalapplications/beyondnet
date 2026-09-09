@@ -135,6 +135,7 @@ public class NativeCsProj
 
   <PropertyGroup>
     <AssemblyName>{TOKEN_ASSEMBLY_NAME}</AssemblyName>
+    <UseNativeLibPrefix>false</UseNativeLibPrefix>
     <OutputType>Library</OutputType>
     <TargetFramework>{TOKEN_TARGET_FRAMEWORK}</TargetFramework>
     <LangVersion>latest</LangVersion>
