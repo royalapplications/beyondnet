@@ -14,6 +14,7 @@ static class KotlinSharedSettings
         typeof(System.Xml.XmlAttributeCollection), // Unsupported because some implementations of this use different nullability
         typeof(System.Security.Cryptography.HashAlgorithm), // Unsupported because some implementations of this use different nullability
         typeof(System.Net.NetworkCredential), // Unsupported because it uses different nullability in `GetCredential` than specified by `System.Net.ICredentials`
+        typeof(System.Security.Cryptography.X509Certificates.X509Certificate2Collection) // Unsupported because of `GetEnumerator` return type collision
     ];
 
     internal static bool IsUnsupportedInterface(this Type interfaceType)
