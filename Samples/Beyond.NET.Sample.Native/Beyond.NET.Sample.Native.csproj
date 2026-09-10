@@ -27,8 +27,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <MacOSMinVersion>13.0</MacOSMinVersion>
-    <iOSMinVersion>16.0</iOSMinVersion>
+    <MacOSMinVersion>14.0</MacOSMinVersion>
+    <iOSMinVersion>17.0</iOSMinVersion>
   </PropertyGroup>
 
   <!-- Compiler Customization -->

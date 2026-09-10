@@ -23,10 +23,10 @@ public record FrameworkBuilder
     private const string BundleShortVersion = "1.0";
 
     // TODO: Get from config
-    private const string MinimumMacOsVersion = "13.0";
+    private const string MinimumMacOsVersion = "14.0";
 
     // TODO: Get from config
-    private const string MinimumiOsVersion = "16.0";
+    private const string MinimumiOsVersion = "17.0";
 
     private string MinimumOsVersion =>
         BuildForMacOS

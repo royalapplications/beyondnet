@@ -198,8 +198,8 @@ The generator currently uses a configuration file where all of its options are s
       "ProductBundleIdentifier": "com.mycompany.assemblykit",
       "ProductOutputPath": "/Path/To/ProductOutput",
 
-      "MacOSDeploymentTarget": "13.0",
-      "iOSDeploymentTarget": "16.0",
+      "MacOSDeploymentTarget": "14.0",
+      "iOSDeploymentTarget": "17.0",
 
       "DisableParallelBuild": false,
       "DisableStripDotNETSymbols": false,
@@ -253,8 +253,8 @@ The generator currently uses a configuration file where all of its options are s
     - **`ProductName`**: The name of the resulting XCFramework and Swift/Clang module. This must be different than the target assembly name and any namespaces contained within it or its dependencies. (Optional; if not provided the assembly file name suffixed with `Kit` is used)
     - **`ProductBundleIdentifier`**: The bundle identifier of the resulting frameworks. (Optional; if not provided the bundle identifier is `com.mycompany.` suffixed with the `ProductName`)
     - **`ProductOutputPath`**: The output path for the resulting XCFramework. (Optional; if not provided, the directory of the `AssemblyPath` is used)
-    - **`MacOSDeploymentTarget`**: The deployment target for the macOS portion of the XCFramework. (Optional; if not provided, `13.0` is used)
-    - **`iOSDeploymentTarget`**: The deployment target for the iOS portion of the XCFramework. (Optional; if not provided, `16.0` is used)
+    - **`MacOSDeploymentTarget`**: The deployment target for the macOS portion of the XCFramework. (Optional; if not provided, `14.0` is used)
+    - **`iOSDeploymentTarget`**: The deployment target for the iOS portion of the XCFramework. (Optional; if not provided, `17.0` is used)
     - **`DisableParallelBuild`**: Set to `true` to disable building in parallel (ie. for improved debugging). (Optional; if not provided, `false` is used)
     - **`DisableStripDotNETSymbols`**: Set to `true` to disable stripping .NET symbols (ie. for improved debugging). (Optional; if not provided, `false` is used)
     - **`NoWarn`** (Array of Strings): Use this to provide a list of [compiler warning suppressions](https://learn.microsoft.com/dotnet/csharp/language-reference/compiler-options/errors-warnings#nowarn) for the auto-generated C# project. This can be helpful in many cases, but may be required if the generated C# code uses, directly or indirectly, [.NET APIs marked as experimental](https://learn.microsoft.com/dotnet/fundamentals/runtime-libraries/preview-apis#experimentalattribute).
@@ -262,7 +262,7 @@ The generator currently uses a configuration file where all of its options are s
         For instance, in .NET 10, adding `SYSLIB5006` here helps resolve compilation issues such as:
 
         > *error SYSLIB5006: 'System.Security.Cryptography.SlhDsaAlgorithm' is for evaluation purposes only and is subject to change or removal in future updates. <mark>Suppress this diagnostic to proceed.</mark>*
-        
+
 - **`CSharpUnmanagedOutputPath`**: The generator will use this path to write the file containing the C# wrapper methods. (Required if `Build` is disabled; Optional if `Build` is enabled)
 - **`COutputPath`**: The generator will use this path to write the generated C bindings header file. (Required if `Build` is disabled; Optional if `Build` is enabled)
 - **`SwiftOutputPath`**: The generator will use this path to write the generated Swift bindings file. (Optional)

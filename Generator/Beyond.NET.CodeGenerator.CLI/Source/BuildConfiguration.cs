@@ -26,6 +26,6 @@ internal static class BuildTargets
 
 internal static class AppleDeploymentTargets
 {
-    public const string MACOS_DEFAULT = "13.0";
-    public const string IOS_DEFAULT = "16.0";
+    public const string MACOS_DEFAULT = "14.0";
+    public const string IOS_DEFAULT = "17.0";
 }
