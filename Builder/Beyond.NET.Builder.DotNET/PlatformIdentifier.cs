@@ -10,4 +10,6 @@ public static class PlatformIdentifier
     /// Made up, not part of .NET!
     /// </summary>
     public const string Apple = "apple";
+
+    public const string Android = "linux-bionic";
 }
