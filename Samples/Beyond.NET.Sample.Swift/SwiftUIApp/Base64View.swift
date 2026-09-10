@@ -14,9 +14,9 @@ struct Base64View: View {
                 Text("Input:")
                 TextField("Input", text: $inputString)
                     .textFieldStyle(.roundedBorder)
-                    .onChange(of: inputString) { _ in
+                    .onChange(of: inputString, {
                         updateBase64OutputString()
-                    }
+                    })
             }
 
             HStack {
