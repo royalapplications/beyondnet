@@ -1,5 +1,5 @@
-// Number of generated types: 627
-// Number of generated members: 8344
+// Number of generated types: 629
+// Number of generated members: 8399
 
 // MARK: - BEGIN Header
 @file:Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE", "REDUNDANT_CALL_OF_CONVERSION_METHOD")
@@ -146453,6 +146453,61 @@ open class System_Security_Cryptography_X509Certificates_X509Certificate2 /* Sys
 		return __returnValue
 		
 	}
+	open fun getCompositeMLKemPublicKey() : System_Security_Cryptography_CompositeMLKem? /* System.Security.Cryptography.CompositeMLKem */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Security_Cryptography_X509Certificates_X509Certificate2_GetCompositeMLKemPublicKey(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = if (__returnValueC != null) System_Security_Cryptography_CompositeMLKem(__returnValueC) else null
+		
+		return __returnValue
+		
+	}
+	open fun getCompositeMLKemPrivateKey() : System_Security_Cryptography_CompositeMLKem? /* System.Security.Cryptography.CompositeMLKem */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Security_Cryptography_X509Certificates_X509Certificate2_GetCompositeMLKemPrivateKey(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = if (__returnValueC != null) System_Security_Cryptography_CompositeMLKem(__returnValueC) else null
+		
+		return __returnValue
+		
+	}
+	open fun copyWithPrivateKey(privateKey: System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */) : System_Security_Cryptography_X509Certificates_X509Certificate2 /* System.Security.Cryptography.X509Certificates.X509Certificate2 */ {
+		val privateKeyC = privateKey.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Security_Cryptography_X509Certificates_X509Certificate2_CopyWithPrivateKey_5(this.__handle, privateKeyC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate2(__returnValueC)
+		
+		return __returnValue
+		
+	}
 	/**
 	 * Exports the public X.509 certificate, encoded as PEM.
 	 * @throws System.Security.Cryptography.CryptographicException: The certificate is corrupt, in an invalid state, or could not be exported             to PEM.
@@ -159194,6 +159249,951 @@ open class System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Securi
 	// MARK: - BEGIN System.IEquatable<System.Security.Cryptography.CompositeMLDsaAlgorithm>
 // Type "IEquatable`1" was skipped. Reason: It is generic somehow.
 	// MARK: - END System.IEquatable<System.Security.Cryptography.CompositeMLDsaAlgorithm>
+
+
+	// MARK: - BEGIN System.Security.Cryptography.CompositeMLKem
+open class System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */(handle: Pointer): System_Object(handle), System_IDisposable {
+	companion object : IDNObjectCompanion<System_Security_Cryptography_CompositeMLKem> {
+		public fun isAlgorithmSupported(algorithm: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */) : Boolean /* System.Boolean */ {
+			val algorithmC = algorithm.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_IsAlgorithmSupported(algorithmC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		public fun generateKey(algorithm: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */) : System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+			val algorithmC = algorithm.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_GenerateKey(algorithmC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Security_Cryptography_CompositeMLKem(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun importEncapsulationKey(algorithm: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */, source: DNArray<System_Byte> /* System.Byte[] */) : System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+			val algorithmC = algorithm.getHandleOrNull()
+			val sourceC = source.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_ImportEncapsulationKey(algorithmC, sourceC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Security_Cryptography_CompositeMLKem(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		// TODO: Method with generic parameter (System_Security_Cryptography_CompositeMLKem_ImportEncapsulationKey_1)
+		public fun importDecapsulationKey(algorithm: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */, source: DNArray<System_Byte> /* System.Byte[] */) : System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+			val algorithmC = algorithm.getHandleOrNull()
+			val sourceC = source.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_ImportDecapsulationKey(algorithmC, sourceC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Security_Cryptography_CompositeMLKem(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		// TODO: Method with generic parameter (System_Security_Cryptography_CompositeMLKem_ImportDecapsulationKey_1)
+		public fun importSubjectPublicKeyInfo(source: DNArray<System_Byte> /* System.Byte[] */) : System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+			val sourceC = source.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_ImportSubjectPublicKeyInfo(sourceC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Security_Cryptography_CompositeMLKem(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		// TODO: Method with generic parameter (System_Security_Cryptography_CompositeMLKem_ImportSubjectPublicKeyInfo_1)
+		public fun importPkcs8PrivateKey(source: DNArray<System_Byte> /* System.Byte[] */) : System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+			val sourceC = source.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_ImportPkcs8PrivateKey(sourceC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Security_Cryptography_CompositeMLKem(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		// TODO: Method with generic parameter (System_Security_Cryptography_CompositeMLKem_ImportPkcs8PrivateKey_1)
+		public fun importEncryptedPkcs8PrivateKey(password: System_String /* System.String */, source: DNArray<System_Byte> /* System.Byte[] */) : System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+			val passwordC = password.getHandleOrNull()
+			val sourceC = source.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_ImportEncryptedPkcs8PrivateKey(passwordC, sourceC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Security_Cryptography_CompositeMLKem(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		// TODO: Method with generic parameter (System_Security_Cryptography_CompositeMLKem_ImportEncryptedPkcs8PrivateKey_1)
+		public fun importFromPem(source: System_String /* System.String */) : System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+			val sourceC = source.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_ImportFromPem(sourceC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Security_Cryptography_CompositeMLKem(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun importFromEncryptedPem(source: System_String /* System.String */, password: System_String /* System.String */) : System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+			val sourceC = source.getHandleOrNull()
+			val passwordC = password.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_ImportFromEncryptedPem(sourceC, passwordC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Security_Cryptography_CompositeMLKem(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		public fun importFromEncryptedPem(source: System_String /* System.String */, passwordBytes: DNArray<System_Byte> /* System.Byte[] */) : System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+			val sourceC = source.getHandleOrNull()
+			val passwordBytesC = passwordBytes.getHandleOrNull()
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_ImportFromEncryptedPem_1(sourceC, passwordBytesC, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Security_Cryptography_CompositeMLKem(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		@JvmStatic
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public override val typeOf: System_Type /* System.Type */
+			@JvmName("typeOf_get")
+			get() {
+				return System_Type(CAPI.System_Security_Cryptography_CompositeMLKem_TypeOf())
+				
+			}
+			
+		
+		
+		@JvmStatic override fun __constructWithHandle(handle: Pointer) : System_Security_Cryptography_CompositeMLKem {
+			return System_Security_Cryptography_CompositeMLKem(handle)
+		}
+		
+	}
+	
+	open fun encapsulate(ciphertext: ObjectRef<DNArray<System_Byte>> /* System.Byte[] */, sharedSecret: ObjectRef<DNArray<System_Byte>> /* System.Byte[] */) {
+		val __ciphertextJNAByRef = ciphertext.toJNARef()
+		val __sharedSecretJNAByRef = sharedSecret.toJNARef()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		CAPI.System_Security_Cryptography_CompositeMLKem_Encapsulate(this.__handle, __ciphertextJNAByRef, __sharedSecretJNAByRef, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		ciphertext.value = DNArray<System_Byte>(System_Byte, __ciphertextJNAByRef.value)
+		
+		sharedSecret.value = DNArray<System_Byte>(System_Byte, __sharedSecretJNAByRef.value)
+		
+		
+		
+	}
+	open fun decapsulate(ciphertext: DNArray<System_Byte> /* System.Byte[] */) : DNArray<System_Byte> /* System.Byte[] */ {
+		val ciphertextC = ciphertext.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_Decapsulate(this.__handle, ciphertextC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = DNArray<System_Byte>(System_Byte, __returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun exportEncryptedPkcs8PrivateKeyPem(password: System_String /* System.String */, pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) : System_String /* System.String */ {
+		val passwordC = password.getHandleOrNull()
+		val pbeParametersC = pbeParameters.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKeyPem(this.__handle, passwordC, pbeParametersC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_String(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	// TODO: Method with generic parameter (System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKeyPem_1)
+	open fun exportEncryptedPkcs8PrivateKey(password: System_String /* System.String */, pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) : DNArray<System_Byte> /* System.Byte[] */ {
+		val passwordC = password.getHandleOrNull()
+		val pbeParametersC = pbeParameters.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKey_1(this.__handle, passwordC, pbeParametersC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = DNArray<System_Byte>(System_Byte, __returnValueC)
+		
+		return __returnValue
+		
+	}
+	// TODO: Method with generic parameter (System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKey_2)
+	open fun exportPkcs8PrivateKeyPem() : System_String /* System.String */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_ExportPkcs8PrivateKeyPem(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_String(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun exportPkcs8PrivateKey() : DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_ExportPkcs8PrivateKey_1(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = DNArray<System_Byte>(System_Byte, __returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun exportSubjectPublicKeyInfoPem() : System_String /* System.String */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_ExportSubjectPublicKeyInfoPem(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_String(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun exportSubjectPublicKeyInfo() : DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_ExportSubjectPublicKeyInfo_1(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = DNArray<System_Byte>(System_Byte, __returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun exportEncapsulationKey() : DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_ExportEncapsulationKey(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = DNArray<System_Byte>(System_Byte, __returnValueC)
+		
+		return __returnValue
+		
+	}
+	open fun exportDecapsulationKey() : DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_ExportDecapsulationKey(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = DNArray<System_Byte>(System_Byte, __returnValueC)
+		
+		return __returnValue
+		
+	}
+	open override fun dispose() {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		CAPI.System_Security_Cryptography_CompositeMLKem_Dispose(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		
+	}
+	@Suppress("INAPPLICABLE_JVM_NAME")
+	open val algorithm: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+		@JvmName("algorithm_get")
+		get() {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKem_Algorithm_Get(this.__handle, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		
+	
+	
+	open override fun destroy() {
+		CAPI.System_Security_Cryptography_CompositeMLKem_Destroy(this.__handle)
+		
+	}
+	override fun equals(other: Any?) : Boolean {
+		val otherSystemObject = other as? System_Object
+		
+		try {
+		    otherSystemObject?.let {
+		        return System_Object.equals(this, otherSystemObject)
+		    }
+		} catch (e: Exception) {
+		    return false
+		}
+		
+		return false
+	}
+	
+}
+
+
+	// MARK: - END System.Security.Cryptography.CompositeMLKem
+
+
+	// MARK: - BEGIN System.Security.Cryptography.CompositeMLKemAlgorithm
+open class System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */(handle: Pointer): System_Object(handle) {
+	companion object : IDNObjectCompanion<System_Security_Cryptography_CompositeMLKemAlgorithm> {
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val mLKem768WithRsaOaep2048: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+			@JvmName("mLKem768WithRsaOaep2048_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithRsaOaep2048_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val mLKem768WithRsaOaep3072: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+			@JvmName("mLKem768WithRsaOaep3072_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithRsaOaep3072_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val mLKem768WithRsaOaep4096: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+			@JvmName("mLKem768WithRsaOaep4096_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithRsaOaep4096_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val mLKem768WithX25519: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+			@JvmName("mLKem768WithX25519_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithX25519_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val mLKem768WithECDiffieHellmanP256: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+			@JvmName("mLKem768WithECDiffieHellmanP256_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithECDiffieHellmanP256_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val mLKem768WithECDiffieHellmanP384: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+			@JvmName("mLKem768WithECDiffieHellmanP384_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithECDiffieHellmanP384_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val mLKem768WithECDiffieHellmanBrainpoolP256r1: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+			@JvmName("mLKem768WithECDiffieHellmanBrainpoolP256r1_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithECDiffieHellmanBrainpoolP256r1_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val mLKem1024WithRsaOaep3072: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+			@JvmName("mLKem1024WithRsaOaep3072_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithRsaOaep3072_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val mLKem1024WithECDiffieHellmanP384: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+			@JvmName("mLKem1024WithECDiffieHellmanP384_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithECDiffieHellmanP384_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val mLKem1024WithECDiffieHellmanBrainpoolP384r1: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+			@JvmName("mLKem1024WithECDiffieHellmanBrainpoolP384r1_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithECDiffieHellmanBrainpoolP384r1_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val mLKem1024WithX448: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+			@JvmName("mLKem1024WithX448_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithX448_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public val mLKem1024WithECDiffieHellmanP521: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+			@JvmName("mLKem1024WithECDiffieHellmanP521_get")
+			get() {
+				
+				
+				val __exceptionC = PointerByReference()
+				
+				val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithECDiffieHellmanP521_Get(__exceptionC)
+				
+				val __exceptionCHandle = __exceptionC.value
+				
+				if (__exceptionCHandle != null) {
+				    throw System_Exception(__exceptionCHandle).toKException()
+				}
+				
+				val __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(__returnValueC)
+				
+				return __returnValue
+				
+			}
+			
+		
+		
+		@JvmStatic
+		@Suppress("INAPPLICABLE_JVM_NAME")
+		public override val typeOf: System_Type /* System.Type */
+			@JvmName("typeOf_get")
+			get() {
+				return System_Type(CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_TypeOf())
+				
+			}
+			
+		
+		
+		@JvmStatic override fun __constructWithHandle(handle: Pointer) : System_Security_Cryptography_CompositeMLKemAlgorithm {
+			return System_Security_Cryptography_CompositeMLKemAlgorithm(handle)
+		}
+		
+	}
+	
+	open fun equals(other: System_Security_Cryptography_CompositeMLKemAlgorithm? /* System.Security.Cryptography.CompositeMLKemAlgorithm */) : Boolean /* System.Boolean */ {
+		val otherC = other?.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_Equals(this.__handle, otherC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open override fun equals(obj: System_Object? /* System.Object */) : Boolean /* System.Boolean */ {
+		val objC = obj?.getHandleOrNull()
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_Equals_1(this.__handle, objC, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open override fun getHashCode() : Int /* System.Int32 */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_GetHashCode(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		return __returnValueC
+		
+	}
+	open override fun dnToString() : System_String /* System.String */ {
+		
+		
+		val __exceptionC = PointerByReference()
+		
+		val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_ToString(this.__handle, __exceptionC)
+		
+		val __exceptionCHandle = __exceptionC.value
+		
+		if (__exceptionCHandle != null) {
+		    throw System_Exception(__exceptionCHandle).toKException()
+		}
+		
+		val __returnValue = System_String(__returnValueC)
+		
+		return __returnValue
+		
+	}
+	@Suppress("INAPPLICABLE_JVM_NAME")
+	open val name: System_String /* System.String */
+		@JvmName("name_get")
+		get() {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_Name_Get(this.__handle, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			val __returnValue = System_String(__returnValueC)
+			
+			return __returnValue
+			
+		}
+		
+	
+	
+	@Suppress("INAPPLICABLE_JVM_NAME")
+	open val ciphertextSizeInBytes: Int /* System.Int32 */
+		@JvmName("ciphertextSizeInBytes_get")
+		get() {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_CiphertextSizeInBytes_Get(this.__handle, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		
+	
+	
+	@Suppress("INAPPLICABLE_JVM_NAME")
+	open val sharedSecretSizeInBytes: Int /* System.Int32 */
+		@JvmName("sharedSecretSizeInBytes_get")
+		get() {
+			
+			
+			val __exceptionC = PointerByReference()
+			
+			val __returnValueC = CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_SharedSecretSizeInBytes_Get(this.__handle, __exceptionC)
+			
+			val __exceptionCHandle = __exceptionC.value
+			
+			if (__exceptionCHandle != null) {
+			    throw System_Exception(__exceptionCHandle).toKException()
+			}
+			
+			return __returnValueC
+			
+		}
+		
+	
+	
+	open override fun destroy() {
+		CAPI.System_Security_Cryptography_CompositeMLKemAlgorithm_Destroy(this.__handle)
+		
+	}
+	override fun equals(other: Any?) : Boolean {
+		val otherSystemObject = other as? System_Object
+		
+		try {
+		    otherSystemObject?.let {
+		        return System_Object.equals(this, otherSystemObject)
+		    }
+		} catch (e: Exception) {
+		    return false
+		}
+		
+		return false
+	}
+	
+}
+
+
+	// MARK: - END System.Security.Cryptography.CompositeMLKemAlgorithm
+
+
+	// MARK: - BEGIN System.IEquatable<System.Security.Cryptography.CompositeMLKemAlgorithm>
+// Type "IEquatable`1" was skipped. Reason: It is generic somehow.
+	// MARK: - END System.IEquatable<System.Security.Cryptography.CompositeMLKemAlgorithm>
 
 
 	// MARK: - BEGIN System.Security.Cryptography.X509Certificates.X509Certificate2[]
@@ -222620,6 +223620,12 @@ object CAPI {
 	
 	external fun System_Security_Cryptography_X509Certificates_X509Certificate2_CopyWithPrivateKey_4(self: Pointer? /* System.Security.Cryptography.X509Certificates.X509Certificate2 */, privateKey: Pointer /* System.Security.Cryptography.CompositeMLDsa */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.X509Certificates.X509Certificate2 */
 	
+	external fun System_Security_Cryptography_X509Certificates_X509Certificate2_GetCompositeMLKemPublicKey(self: Pointer? /* System.Security.Cryptography.X509Certificates.X509Certificate2 */, outException: PointerByReference? /* System.Exception */) : Pointer? /* System.Security.Cryptography.CompositeMLKem */
+	
+	external fun System_Security_Cryptography_X509Certificates_X509Certificate2_GetCompositeMLKemPrivateKey(self: Pointer? /* System.Security.Cryptography.X509Certificates.X509Certificate2 */, outException: PointerByReference? /* System.Exception */) : Pointer? /* System.Security.Cryptography.CompositeMLKem */
+	
+	external fun System_Security_Cryptography_X509Certificates_X509Certificate2_CopyWithPrivateKey_5(self: Pointer? /* System.Security.Cryptography.X509Certificates.X509Certificate2 */, privateKey: Pointer /* System.Security.Cryptography.CompositeMLKem */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.X509Certificates.X509Certificate2 */
+	
 	external fun System_Security_Cryptography_X509Certificates_X509Certificate2_CreateFromPemFile(certPemFilePath: Pointer /* System.String */, keyPemFilePath: Pointer? /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.X509Certificates.X509Certificate2 */
 	
 	external fun System_Security_Cryptography_X509Certificates_X509Certificate2_ExportCertificatePem(self: Pointer? /* System.Security.Cryptography.X509Certificates.X509Certificate2 */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
@@ -224341,6 +225347,145 @@ object CAPI {
 	// MARK: - BEGIN System.IEquatable<System.Security.Cryptography.CompositeMLDsaAlgorithm>
 // Type "IEquatable`1" was skipped. Reason: It is generic somehow.
 	// MARK: - END System.IEquatable<System.Security.Cryptography.CompositeMLDsaAlgorithm>
+
+
+	// MARK: - BEGIN System.Security.Cryptography.CompositeMLKem
+	external fun System_Security_Cryptography_CompositeMLKem_IsAlgorithmSupported(algorithm: Pointer /* System.Security.Cryptography.CompositeMLKemAlgorithm */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_GenerateKey(algorithm: Pointer /* System.Security.Cryptography.CompositeMLKemAlgorithm */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKem */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_Encapsulate(self: Pointer? /* System.Security.Cryptography.CompositeMLKem */, ciphertext: PointerByReference /* System.Byte[] */, sharedSecret: PointerByReference /* System.Byte[] */, outException: PointerByReference? /* System.Exception */)
+	
+	external fun System_Security_Cryptography_CompositeMLKem_Decapsulate(self: Pointer? /* System.Security.Cryptography.CompositeMLKem */, ciphertext: Pointer /* System.Byte[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Byte[] */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ImportEncapsulationKey(algorithm: Pointer /* System.Security.Cryptography.CompositeMLKemAlgorithm */, source: Pointer /* System.Byte[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKem */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ImportEncapsulationKey_1(algorithm: Pointer /* System.Security.Cryptography.CompositeMLKemAlgorithm */, source: Pointer /* System.ReadOnlySpan<System.Byte> */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKem */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ImportDecapsulationKey(algorithm: Pointer /* System.Security.Cryptography.CompositeMLKemAlgorithm */, source: Pointer /* System.Byte[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKem */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ImportDecapsulationKey_1(algorithm: Pointer /* System.Security.Cryptography.CompositeMLKemAlgorithm */, source: Pointer /* System.ReadOnlySpan<System.Byte> */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKem */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ImportSubjectPublicKeyInfo(source: Pointer /* System.Byte[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKem */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ImportSubjectPublicKeyInfo_1(source: Pointer /* System.ReadOnlySpan<System.Byte> */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKem */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ImportPkcs8PrivateKey(source: Pointer /* System.Byte[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKem */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ImportPkcs8PrivateKey_1(source: Pointer /* System.ReadOnlySpan<System.Byte> */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKem */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ImportEncryptedPkcs8PrivateKey(password: Pointer /* System.String */, source: Pointer /* System.Byte[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKem */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ImportEncryptedPkcs8PrivateKey_1(passwordBytes: Pointer /* System.ReadOnlySpan<System.Byte> */, source: Pointer /* System.ReadOnlySpan<System.Byte> */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKem */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ImportFromPem(source: Pointer /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKem */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ImportFromEncryptedPem(source: Pointer /* System.String */, password: Pointer /* System.String */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKem */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ImportFromEncryptedPem_1(source: Pointer /* System.String */, passwordBytes: Pointer /* System.Byte[] */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKem */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKeyPem(self: Pointer? /* System.Security.Cryptography.CompositeMLKem */, password: Pointer /* System.String */, pbeParameters: Pointer /* System.Security.Cryptography.PbeParameters */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKeyPem_1(self: Pointer? /* System.Security.Cryptography.CompositeMLKem */, passwordBytes: Pointer /* System.ReadOnlySpan<System.Byte> */, pbeParameters: Pointer /* System.Security.Cryptography.PbeParameters */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKey_1(self: Pointer? /* System.Security.Cryptography.CompositeMLKem */, password: Pointer /* System.String */, pbeParameters: Pointer /* System.Security.Cryptography.PbeParameters */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Byte[] */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKey_2(self: Pointer? /* System.Security.Cryptography.CompositeMLKem */, passwordBytes: Pointer /* System.ReadOnlySpan<System.Byte> */, pbeParameters: Pointer /* System.Security.Cryptography.PbeParameters */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Byte[] */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ExportPkcs8PrivateKeyPem(self: Pointer? /* System.Security.Cryptography.CompositeMLKem */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ExportPkcs8PrivateKey_1(self: Pointer? /* System.Security.Cryptography.CompositeMLKem */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Byte[] */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ExportSubjectPublicKeyInfoPem(self: Pointer? /* System.Security.Cryptography.CompositeMLKem */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ExportSubjectPublicKeyInfo_1(self: Pointer? /* System.Security.Cryptography.CompositeMLKem */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Byte[] */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ExportEncapsulationKey(self: Pointer? /* System.Security.Cryptography.CompositeMLKem */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Byte[] */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_ExportDecapsulationKey(self: Pointer? /* System.Security.Cryptography.CompositeMLKem */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Byte[] */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_Dispose(self: Pointer? /* System.Security.Cryptography.CompositeMLKem */, outException: PointerByReference? /* System.Exception */)
+	
+	external fun System_Security_Cryptography_CompositeMLKem_Algorithm_Get(self: Pointer? /* System.Security.Cryptography.CompositeMLKem */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+	
+	
+	external fun System_Security_Cryptography_CompositeMLKem_TypeOf() : Pointer /* System.Type */
+	
+	external fun System_Security_Cryptography_CompositeMLKem_Destroy(self: Pointer? /* System.Security.Cryptography.CompositeMLKem */)
+	
+	
+	
+
+	// MARK: - END System.Security.Cryptography.CompositeMLKem
+
+
+	// MARK: - BEGIN System.Security.Cryptography.CompositeMLKemAlgorithm
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_Equals(self: Pointer? /* System.Security.Cryptography.CompositeMLKemAlgorithm */, other: Pointer? /* System.Security.Cryptography.CompositeMLKemAlgorithm */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_Equals_1(self: Pointer? /* System.Security.Cryptography.CompositeMLKemAlgorithm */, obj: Pointer? /* System.Object */, outException: PointerByReference? /* System.Exception */) : Boolean /* System.Boolean */
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_GetHashCode(self: Pointer? /* System.Security.Cryptography.CompositeMLKemAlgorithm */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_ToString(self: Pointer? /* System.Security.Cryptography.CompositeMLKemAlgorithm */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_Name_Get(self: Pointer? /* System.Security.Cryptography.CompositeMLKemAlgorithm */, outException: PointerByReference? /* System.Exception */) : Pointer /* System.String */
+	
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_CiphertextSizeInBytes_Get(self: Pointer? /* System.Security.Cryptography.CompositeMLKemAlgorithm */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_SharedSecretSizeInBytes_Get(self: Pointer? /* System.Security.Cryptography.CompositeMLKemAlgorithm */, outException: PointerByReference? /* System.Exception */) : Int /* System.Int32 */
+	
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithRsaOaep2048_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+	
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithRsaOaep3072_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+	
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithRsaOaep4096_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+	
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithX25519_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+	
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithECDiffieHellmanP256_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+	
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithECDiffieHellmanP384_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+	
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithECDiffieHellmanBrainpoolP256r1_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+	
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithRsaOaep3072_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+	
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithECDiffieHellmanP384_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+	
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithECDiffieHellmanBrainpoolP384r1_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+	
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithX448_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+	
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithECDiffieHellmanP521_Get(outException: PointerByReference? /* System.Exception */) : Pointer /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+	
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_TypeOf() : Pointer /* System.Type */
+	
+	external fun System_Security_Cryptography_CompositeMLKemAlgorithm_Destroy(self: Pointer? /* System.Security.Cryptography.CompositeMLKemAlgorithm */)
+	
+	
+	
+
+	// MARK: - END System.Security.Cryptography.CompositeMLKemAlgorithm
+
+
+	// MARK: - BEGIN System.IEquatable<System.Security.Cryptography.CompositeMLKemAlgorithm>
+// Type "IEquatable`1" was skipped. Reason: It is generic somehow.
+	// MARK: - END System.IEquatable<System.Security.Cryptography.CompositeMLKemAlgorithm>
 
 
 	// MARK: - BEGIN System.Security.Cryptography.X509Certificates.X509Certificate2[]
@@ -234840,6 +235985,10 @@ public object System {
 			 * Represents a composite ML-DSA algorithm identifier, combining ML-DSA with a traditional algorithm.
 			 */
 			typealias CompositeMLDsaAlgorithm = System_Security_Cryptography_CompositeMLDsaAlgorithm
+			
+			typealias CompositeMLKem = System_Security_Cryptography_CompositeMLKem
+			
+			typealias CompositeMLKemAlgorithm = System_Security_Cryptography_CompositeMLKemAlgorithm
 			/**
 			 * Defines a stream that links data streams to cryptographic transformations.
 			 */

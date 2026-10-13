@@ -1,5 +1,5 @@
-// Number of generated types: 1734
-// Number of generated members: 8838
+// Number of generated types: 1737
+// Number of generated members: 8893
 
 // MARK: - BEGIN Header
 import Foundation
@@ -148057,6 +148057,67 @@ public class System_Security_Cryptography_X509Certificates_X509Certificate2 /* S
 		
 	}
 	
+	public func getCompositeMLKemPublicKey() throws -> System_Security_Cryptography_CompositeMLKem? /* System.Security.Cryptography.CompositeMLKem */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_GetCompositeMLKemPublicKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func getCompositeMLKemPrivateKey() throws -> System_Security_Cryptography_CompositeMLKem? /* System.Security.Cryptography.CompositeMLKem */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_GetCompositeMLKemPrivateKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func copyWithPrivateKey(_ privateKey: System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */) throws -> System_Security_Cryptography_X509Certificates_X509Certificate2 /* System.Security.Cryptography.X509Certificates.X509Certificate2 */ {
+		let privateKeyC = privateKey.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_X509Certificates_X509Certificate2_CopyWithPrivateKey_5(self.__handle, privateKeyC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_X509Certificates_X509Certificate2(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
 	/// Creates a new X509 certificate from the file contents of an RFC 7468 PEM-encoded certificate and private key.
 	/// - Parameter certPemFilePath: The path for the PEM-encoded X509 certificate.
 	/// - Parameter keyPemFilePath: If specified, the path for the PEM-encoded private key.             If unspecified, the certPemFilePath file will be used to load the private key.
@@ -161239,6 +161300,1057 @@ public class System_Security_Cryptography_CompositeMLDsaAlgorithm /* System.Secu
 	
 	internal override func destroy() {
 		System_Security_Cryptography_CompositeMLDsaAlgorithm_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+public class System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */: System_Object, System_IDisposable {
+	public override class var typeName: String { get {
+		"CompositeMLKem"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.CompositeMLKem"
+	}}
+
+	public class func isAlgorithmSupported(_ algorithm: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */) throws -> Bool /* System.Boolean */ {
+		let algorithmC = algorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_IsAlgorithmSupported(algorithmC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public class func generateKey(_ algorithm: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */) throws -> System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+		let algorithmC = algorithm.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_GenerateKey(algorithmC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func encapsulate(_ ciphertext: inout DNArray<System_Byte> /* System.Byte[] */, _ sharedSecret: inout DNArray<System_Byte> /* System.Byte[] */) throws {
+		var ciphertextC = ciphertext.__handle
+		var sharedSecretC = sharedSecret.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_CompositeMLKem_Encapsulate(self.__handle, &ciphertextC, &sharedSecretC, &__exceptionC)
+		
+		ciphertext = DNArray<System_Byte>(handle: ciphertextC)
+		
+		sharedSecret = DNArray<System_Byte>(handle: sharedSecretC)
+		
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	public func decapsulate(_ ciphertext: DNArray<System_Byte> /* System.Byte[] */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let ciphertextC = ciphertext.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_Decapsulate(self.__handle, ciphertextC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importEncapsulationKey(_ algorithm: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */, _ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ImportEncapsulationKey(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importEncapsulationKey(_ algorithm: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ImportEncapsulationKey_1(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importDecapsulationKey(_ algorithm: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */, _ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ImportDecapsulationKey(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importDecapsulationKey(_ algorithm: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+		let algorithmC = algorithm.__handle
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ImportDecapsulationKey_1(algorithmC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importSubjectPublicKeyInfo(_ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ImportSubjectPublicKeyInfo(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importSubjectPublicKeyInfo(_ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ImportSubjectPublicKeyInfo_1(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importPkcs8PrivateKey(_ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ImportPkcs8PrivateKey(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importPkcs8PrivateKey(_ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ImportPkcs8PrivateKey_1(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importEncryptedPkcs8PrivateKey(_ password: System_String /* System.String */, _ source: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+		let passwordC = password.__handle
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ImportEncryptedPkcs8PrivateKey(passwordC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importEncryptedPkcs8PrivateKey(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ source: Data? /* System.ReadOnlySpan<System.Byte> */) throws -> System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let sourceC = source.readOnlySpanOfByte()
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ImportEncryptedPkcs8PrivateKey_1(passwordBytesC, sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importFromPem(_ source: System_String /* System.String */) throws -> System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+		let sourceC = source.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ImportFromPem(sourceC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importFromEncryptedPem(_ source: System_String /* System.String */, _ password: System_String /* System.String */) throws -> System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+		let sourceC = source.__handle
+		let passwordC = password.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ImportFromEncryptedPem(sourceC, passwordC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public class func importFromEncryptedPem(_ source: System_String /* System.String */, _ passwordBytes: DNArray<System_Byte> /* System.Byte[] */) throws -> System_Security_Cryptography_CompositeMLKem /* System.Security.Cryptography.CompositeMLKem */ {
+		let sourceC = source.__handle
+		let passwordBytesC = passwordBytes.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ImportFromEncryptedPem_1(sourceC, passwordBytesC, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKem(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func exportEncryptedPkcs8PrivateKeyPem(_ password: System_String /* System.String */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> System_String /* System.String */ {
+		let passwordC = password.__handle
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKeyPem(self.__handle, passwordC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func exportEncryptedPkcs8PrivateKeyPem(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> System_String /* System.String */ {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKeyPem_1(self.__handle, passwordBytesC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func exportEncryptedPkcs8PrivateKey(_ password: System_String /* System.String */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let passwordC = password.__handle
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKey_1(self.__handle, passwordC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func exportEncryptedPkcs8PrivateKey(_ passwordBytes: Data? /* System.ReadOnlySpan<System.Byte> */, _ pbeParameters: System_Security_Cryptography_PbeParameters /* System.Security.Cryptography.PbeParameters */) throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		let passwordBytesC = passwordBytes.readOnlySpanOfByte()
+		let pbeParametersC = pbeParameters.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKey_2(self.__handle, passwordBytesC, pbeParametersC, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func exportPkcs8PrivateKeyPem() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ExportPkcs8PrivateKeyPem(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func exportPkcs8PrivateKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ExportPkcs8PrivateKey_1(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func exportSubjectPublicKeyInfoPem() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ExportSubjectPublicKeyInfoPem(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func exportSubjectPublicKeyInfo() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ExportSubjectPublicKeyInfo_1(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func exportEncapsulationKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ExportEncapsulationKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func exportDecapsulationKey() throws -> DNArray<System_Byte> /* System.Byte[] */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_ExportDecapsulationKey(self.__handle, &__exceptionC)
+		
+		let __returnValue = DNArray<System_Byte>(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public func dispose() throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		System_Security_Cryptography_CompositeMLKem_Dispose(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		
+	}
+	
+	public var algorithm: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKem_Algorithm_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_CompositeMLKem_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_CompositeMLKem_Destroy(self.__handle)
+		
+	}
+	
+	
+}
+
+
+public class System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */: System_Object, System_IEquatable_A1 {
+	public override class var typeName: String { get {
+		"CompositeMLKemAlgorithm"
+	}}
+
+	public override class var fullTypeName: String { get {
+		"System.Security.Cryptography.CompositeMLKemAlgorithm"
+	}}
+
+	public func equals(_ other: System_Security_Cryptography_CompositeMLKemAlgorithm? /* System.Security.Cryptography.CompositeMLKemAlgorithm */) throws -> Bool /* System.Boolean */ {
+		let otherC = other?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKemAlgorithm_Equals(self.__handle, otherC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public override func equals(_ obj: System_Object? /* System.Object */) throws -> Bool /* System.Boolean */ {
+		let objC = obj?.__handle
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKemAlgorithm_Equals_1(self.__handle, objC, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public override func getHashCode() throws -> Int32 /* System.Int32 */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKemAlgorithm_GetHashCode(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}
+	
+	public override func toString() throws -> System_String /* System.String */ {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKemAlgorithm_ToString(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}
+	
+	public var name: System_String /* System.String */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKemAlgorithm_Name_Get(self.__handle, &__exceptionC)
+		
+		let __returnValue = System_String(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public var ciphertextSizeInBytes: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKemAlgorithm_CiphertextSizeInBytes_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	public var sharedSecretSizeInBytes: Int32 /* System.Int32 */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKemAlgorithm_SharedSecretSizeInBytes_Get(self.__handle, &__exceptionC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValueC
+		
+	}}
+	
+	
+	public class var mLKem768WithRsaOaep2048: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithRsaOaep2048_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var mLKem768WithRsaOaep3072: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithRsaOaep3072_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var mLKem768WithRsaOaep4096: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithRsaOaep4096_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var mLKem768WithX25519: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithX25519_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var mLKem768WithECDiffieHellmanP256: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithECDiffieHellmanP256_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var mLKem768WithECDiffieHellmanP384: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithECDiffieHellmanP384_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var mLKem768WithECDiffieHellmanBrainpoolP256r1: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithECDiffieHellmanBrainpoolP256r1_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var mLKem1024WithRsaOaep3072: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithRsaOaep3072_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var mLKem1024WithECDiffieHellmanP384: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithECDiffieHellmanP384_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var mLKem1024WithECDiffieHellmanBrainpoolP384r1: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithECDiffieHellmanBrainpoolP384r1_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var mLKem1024WithX448: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithX448_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public class var mLKem1024WithECDiffieHellmanP521: System_Security_Cryptography_CompositeMLKemAlgorithm /* System.Security.Cryptography.CompositeMLKemAlgorithm */ { get throws {
+		
+		
+		var __exceptionC: System_Exception_t?
+		
+		let __returnValueC = System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithECDiffieHellmanP521_Get(&__exceptionC)
+		
+		let __returnValue = System_Security_Cryptography_CompositeMLKemAlgorithm(handle: __returnValueC)
+		
+		if let __exceptionC {
+		    let __exception = System_Exception(handle: __exceptionC)
+		    let __error = __exception.swiftError
+		
+		    throw __error
+		}
+		
+		return __returnValue
+		
+	}}
+	
+	
+	public override class var typeOf: System_Type /* System.Type */ { get {
+		return System_Type(handle: System_Security_Cryptography_CompositeMLKemAlgorithm_TypeOf())
+		
+	}}
+	
+	internal override func destroy() {
+		System_Security_Cryptography_CompositeMLKemAlgorithm_Destroy(self.__handle)
 		
 	}
 	
@@ -202895,6 +204007,10 @@ public extension System.Security {
 		public typealias CompositeMLDsa = System_Security_Cryptography_CompositeMLDsa
 		/// Represents a composite ML-DSA algorithm identifier, combining ML-DSA with a traditional algorithm.
 		public typealias CompositeMLDsaAlgorithm = System_Security_Cryptography_CompositeMLDsaAlgorithm
+		
+		public typealias CompositeMLKem = System_Security_Cryptography_CompositeMLKem
+		
+		public typealias CompositeMLKemAlgorithm = System_Security_Cryptography_CompositeMLKemAlgorithm
 		/// Defines a stream that links data streams to cryptographic transformations.
 		public typealias CryptoStream = System_Security_Cryptography_CryptoStream
 		/// Defines the basic operations of cryptographic transformations.

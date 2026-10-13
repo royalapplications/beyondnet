@@ -1,5 +1,5 @@
-// Number of generated types: 1735
-// Number of generated members: 8644
+// Number of generated types: 1738
+// Number of generated members: 8699
 
 #pragma mark - BEGIN Header
 #ifndef TypeDefinitions_h
@@ -6229,6 +6229,12 @@ typedef void* System_Security_Cryptography_SlhDsa_t;
 typedef void* System_Security_Cryptography_CompositeMLDsa_t;
 
 typedef void* System_Security_Cryptography_CompositeMLDsaAlgorithm_t;
+
+typedef void* System_IEquatable_A1_t;
+
+typedef void* System_Security_Cryptography_CompositeMLKem_t;
+
+typedef void* System_Security_Cryptography_CompositeMLKemAlgorithm_t;
 
 typedef void* System_IEquatable_A1_t;
 
@@ -51724,6 +51730,25 @@ System_Security_Cryptography_X509Certificates_X509Certificate2_CopyWithPrivateKe
 	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
 );
 
+System_Security_Cryptography_CompositeMLKem_t _Nullable /* System.Security.Cryptography.CompositeMLKem */
+System_Security_Cryptography_X509Certificates_X509Certificate2_GetCompositeMLKemPublicKey(
+	System_Security_Cryptography_X509Certificates_X509Certificate2_t _Nullable /* System.Security.Cryptography.X509Certificates.X509Certificate2 */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_CompositeMLKem_t _Nullable /* System.Security.Cryptography.CompositeMLKem */
+System_Security_Cryptography_X509Certificates_X509Certificate2_GetCompositeMLKemPrivateKey(
+	System_Security_Cryptography_X509Certificates_X509Certificate2_t _Nullable /* System.Security.Cryptography.X509Certificates.X509Certificate2 */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_X509Certificates_X509Certificate2_t _Nonnull /* System.Security.Cryptography.X509Certificates.X509Certificate2 */
+System_Security_Cryptography_X509Certificates_X509Certificate2_CopyWithPrivateKey_5(
+	System_Security_Cryptography_X509Certificates_X509Certificate2_t _Nullable /* System.Security.Cryptography.X509Certificates.X509Certificate2 */ self,
+	System_Security_Cryptography_CompositeMLKem_t _Nonnull /* System.Security.Cryptography.CompositeMLKem */ privateKey,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
 System_Security_Cryptography_X509Certificates_X509Certificate2_t _Nonnull /* System.Security.Cryptography.X509Certificates.X509Certificate2 */
 System_Security_Cryptography_X509Certificates_X509Certificate2_CreateFromPemFile(
 	System_String_t _Nonnull /* System.String */ certPemFilePath,
@@ -56002,6 +56027,346 @@ System_Security_Cryptography_CompositeMLDsaAlgorithm_Destroy(
 );
 
 #pragma mark - END APIs of System.Security.Cryptography.CompositeMLDsaAlgorithm
+
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.CompositeMLKem
+bool /* System.Boolean */
+System_Security_Cryptography_CompositeMLKem_IsAlgorithmSupported(
+	System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nonnull /* System.Security.Cryptography.CompositeMLKemAlgorithm */ algorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_CompositeMLKem_t _Nonnull /* System.Security.Cryptography.CompositeMLKem */
+System_Security_Cryptography_CompositeMLKem_GenerateKey(
+	System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nonnull /* System.Security.Cryptography.CompositeMLKemAlgorithm */ algorithm,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_CompositeMLKem_Encapsulate(
+	System_Security_Cryptography_CompositeMLKem_t _Nullable /* System.Security.Cryptography.CompositeMLKem */ self,
+	System_Byte_Array_t _Nonnull* _Nonnull /* System.Byte[] */ ciphertext,
+	System_Byte_Array_t _Nonnull* _Nonnull /* System.Byte[] */ sharedSecret,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_CompositeMLKem_Decapsulate(
+	System_Security_Cryptography_CompositeMLKem_t _Nullable /* System.Security.Cryptography.CompositeMLKem */ self,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ ciphertext,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_CompositeMLKem_t _Nonnull /* System.Security.Cryptography.CompositeMLKem */
+System_Security_Cryptography_CompositeMLKem_ImportEncapsulationKey(
+	System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nonnull /* System.Security.Cryptography.CompositeMLKemAlgorithm */ algorithm,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ source,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_CompositeMLKem_t _Nonnull /* System.Security.Cryptography.CompositeMLKem */
+System_Security_Cryptography_CompositeMLKem_ImportEncapsulationKey_1(
+	System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nonnull /* System.Security.Cryptography.CompositeMLKemAlgorithm */ algorithm,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_CompositeMLKem_t _Nonnull /* System.Security.Cryptography.CompositeMLKem */
+System_Security_Cryptography_CompositeMLKem_ImportDecapsulationKey(
+	System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nonnull /* System.Security.Cryptography.CompositeMLKemAlgorithm */ algorithm,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ source,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_CompositeMLKem_t _Nonnull /* System.Security.Cryptography.CompositeMLKem */
+System_Security_Cryptography_CompositeMLKem_ImportDecapsulationKey_1(
+	System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nonnull /* System.Security.Cryptography.CompositeMLKemAlgorithm */ algorithm,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_CompositeMLKem_t _Nonnull /* System.Security.Cryptography.CompositeMLKem */
+System_Security_Cryptography_CompositeMLKem_ImportSubjectPublicKeyInfo(
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ source,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_CompositeMLKem_t _Nonnull /* System.Security.Cryptography.CompositeMLKem */
+System_Security_Cryptography_CompositeMLKem_ImportSubjectPublicKeyInfo_1(
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_CompositeMLKem_t _Nonnull /* System.Security.Cryptography.CompositeMLKem */
+System_Security_Cryptography_CompositeMLKem_ImportPkcs8PrivateKey(
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ source,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_CompositeMLKem_t _Nonnull /* System.Security.Cryptography.CompositeMLKem */
+System_Security_Cryptography_CompositeMLKem_ImportPkcs8PrivateKey_1(
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_CompositeMLKem_t _Nonnull /* System.Security.Cryptography.CompositeMLKem */
+System_Security_Cryptography_CompositeMLKem_ImportEncryptedPkcs8PrivateKey(
+	System_String_t _Nonnull /* System.String */ password,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ source,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_CompositeMLKem_t _Nonnull /* System.Security.Cryptography.CompositeMLKem */
+System_Security_Cryptography_CompositeMLKem_ImportEncryptedPkcs8PrivateKey_1(
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ passwordBytes,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_CompositeMLKem_t _Nonnull /* System.Security.Cryptography.CompositeMLKem */
+System_Security_Cryptography_CompositeMLKem_ImportFromPem(
+	System_String_t _Nonnull /* System.String */ source,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_CompositeMLKem_t _Nonnull /* System.Security.Cryptography.CompositeMLKem */
+System_Security_Cryptography_CompositeMLKem_ImportFromEncryptedPem(
+	System_String_t _Nonnull /* System.String */ source,
+	System_String_t _Nonnull /* System.String */ password,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_CompositeMLKem_t _Nonnull /* System.Security.Cryptography.CompositeMLKem */
+System_Security_Cryptography_CompositeMLKem_ImportFromEncryptedPem_1(
+	System_String_t _Nonnull /* System.String */ source,
+	System_Byte_Array_t _Nonnull /* System.Byte[] */ passwordBytes,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKeyPem(
+	System_Security_Cryptography_CompositeMLKem_t _Nullable /* System.Security.Cryptography.CompositeMLKem */ self,
+	System_String_t _Nonnull /* System.String */ password,
+	System_Security_Cryptography_PbeParameters_t _Nonnull /* System.Security.Cryptography.PbeParameters */ pbeParameters,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKeyPem_1(
+	System_Security_Cryptography_CompositeMLKem_t _Nullable /* System.Security.Cryptography.CompositeMLKem */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ passwordBytes,
+	System_Security_Cryptography_PbeParameters_t _Nonnull /* System.Security.Cryptography.PbeParameters */ pbeParameters,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKey_1(
+	System_Security_Cryptography_CompositeMLKem_t _Nullable /* System.Security.Cryptography.CompositeMLKem */ self,
+	System_String_t _Nonnull /* System.String */ password,
+	System_Security_Cryptography_PbeParameters_t _Nonnull /* System.Security.Cryptography.PbeParameters */ pbeParameters,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKey_2(
+	System_Security_Cryptography_CompositeMLKem_t _Nullable /* System.Security.Cryptography.CompositeMLKem */ self,
+	DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ passwordBytes,
+	System_Security_Cryptography_PbeParameters_t _Nonnull /* System.Security.Cryptography.PbeParameters */ pbeParameters,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Security_Cryptography_CompositeMLKem_ExportPkcs8PrivateKeyPem(
+	System_Security_Cryptography_CompositeMLKem_t _Nullable /* System.Security.Cryptography.CompositeMLKem */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_CompositeMLKem_ExportPkcs8PrivateKey_1(
+	System_Security_Cryptography_CompositeMLKem_t _Nullable /* System.Security.Cryptography.CompositeMLKem */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Security_Cryptography_CompositeMLKem_ExportSubjectPublicKeyInfoPem(
+	System_Security_Cryptography_CompositeMLKem_t _Nullable /* System.Security.Cryptography.CompositeMLKem */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_CompositeMLKem_ExportSubjectPublicKeyInfo_1(
+	System_Security_Cryptography_CompositeMLKem_t _Nullable /* System.Security.Cryptography.CompositeMLKem */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_CompositeMLKem_ExportEncapsulationKey(
+	System_Security_Cryptography_CompositeMLKem_t _Nullable /* System.Security.Cryptography.CompositeMLKem */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Byte_Array_t _Nonnull /* System.Byte[] */
+System_Security_Cryptography_CompositeMLKem_ExportDecapsulationKey(
+	System_Security_Cryptography_CompositeMLKem_t _Nullable /* System.Security.Cryptography.CompositeMLKem */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+void /* System.Void */
+System_Security_Cryptography_CompositeMLKem_Dispose(
+	System_Security_Cryptography_CompositeMLKem_t _Nullable /* System.Security.Cryptography.CompositeMLKem */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nonnull /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+System_Security_Cryptography_CompositeMLKem_Algorithm_Get(
+	System_Security_Cryptography_CompositeMLKem_t _Nullable /* System.Security.Cryptography.CompositeMLKem */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_CompositeMLKem_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_CompositeMLKem_Destroy(
+	System_Security_Cryptography_CompositeMLKem_t _Nullable /* System.Security.Cryptography.CompositeMLKem */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.CompositeMLKem
+
+#pragma mark - BEGIN APIs of System.Security.Cryptography.CompositeMLKemAlgorithm
+bool /* System.Boolean */
+System_Security_Cryptography_CompositeMLKemAlgorithm_Equals(
+	System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nullable /* System.Security.Cryptography.CompositeMLKemAlgorithm */ self,
+	System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nullable /* System.Security.Cryptography.CompositeMLKemAlgorithm */ other,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+bool /* System.Boolean */
+System_Security_Cryptography_CompositeMLKemAlgorithm_Equals_1(
+	System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nullable /* System.Security.Cryptography.CompositeMLKemAlgorithm */ self,
+	System_Object_t _Nullable /* System.Object */ obj,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_CompositeMLKemAlgorithm_GetHashCode(
+	System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nullable /* System.Security.Cryptography.CompositeMLKemAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Security_Cryptography_CompositeMLKemAlgorithm_ToString(
+	System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nullable /* System.Security.Cryptography.CompositeMLKemAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+System_String_t _Nonnull /* System.String */
+System_Security_Cryptography_CompositeMLKemAlgorithm_Name_Get(
+	System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nullable /* System.Security.Cryptography.CompositeMLKemAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_CompositeMLKemAlgorithm_CiphertextSizeInBytes_Get(
+	System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nullable /* System.Security.Cryptography.CompositeMLKemAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+int32_t /* System.Int32 */
+System_Security_Cryptography_CompositeMLKemAlgorithm_SharedSecretSizeInBytes_Get(
+	System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nullable /* System.Security.Cryptography.CompositeMLKemAlgorithm */ self,
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nonnull /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithRsaOaep2048_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nonnull /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithRsaOaep3072_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nonnull /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithRsaOaep4096_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nonnull /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithX25519_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nonnull /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithECDiffieHellmanP256_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nonnull /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithECDiffieHellmanP384_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nonnull /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithECDiffieHellmanBrainpoolP256r1_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nonnull /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithRsaOaep3072_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nonnull /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithECDiffieHellmanP384_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nonnull /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithECDiffieHellmanBrainpoolP384r1_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nonnull /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithX448_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nonnull /* System.Security.Cryptography.CompositeMLKemAlgorithm */
+System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithECDiffieHellmanP521_Get(
+	System_Exception_t _Nullable* _Nullable /* System.Exception */ outException
+);
+
+
+System_Type_t _Nonnull /* System.Type */
+System_Security_Cryptography_CompositeMLKemAlgorithm_TypeOf(
+	void
+);
+
+void /* System.Void */
+System_Security_Cryptography_CompositeMLKemAlgorithm_Destroy(
+	System_Security_Cryptography_CompositeMLKemAlgorithm_t _Nullable /* System.Security.Cryptography.CompositeMLKemAlgorithm */ self
+);
+
+#pragma mark - END APIs of System.Security.Cryptography.CompositeMLKemAlgorithm
 
 
 #pragma mark - BEGIN APIs of System.Security.Cryptography.X509Certificates.X509Certificate2[]

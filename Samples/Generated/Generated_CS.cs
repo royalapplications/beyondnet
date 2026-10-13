@@ -4,8 +4,8 @@
 #nullable disable warnings
 #pragma warning disable
 
-// Number of generated types: 1735
-// Number of generated members: 8644
+// Number of generated types: 1738
+// Number of generated members: 8699
 
 // <Header>
 using System;
@@ -186263,6 +186263,100 @@ internal unsafe class System_Security_Cryptography_X509Certificates_X509Certific
 		}
 	}
 	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_X509Certificates_X509Certificate2_GetCompositeMLKemPublicKey")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKem */ System_Security_Cryptography_X509Certificates_X509Certificate2_GetCompositeMLKemPublicKey(void* /* System.Security.Cryptography.X509Certificates.X509Certificate2 */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.X509Certificates.X509Certificate2 __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.X509Certificates.X509Certificate2>(__self);
+	
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKem __returnValue = __selfConverted.GetCompositeMLKemPublicKey();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_X509Certificates_X509Certificate2_GetCompositeMLKemPrivateKey")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKem */ System_Security_Cryptography_X509Certificates_X509Certificate2_GetCompositeMLKemPrivateKey(void* /* System.Security.Cryptography.X509Certificates.X509Certificate2 */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.X509Certificates.X509Certificate2 __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.X509Certificates.X509Certificate2>(__self);
+	
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKem __returnValue = __selfConverted.GetCompositeMLKemPrivateKey();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_X509Certificates_X509Certificate2_CopyWithPrivateKey_5")]
+	internal static void* /* System.Security.Cryptography.X509Certificates.X509Certificate2 */ System_Security_Cryptography_X509Certificates_X509Certificate2_CopyWithPrivateKey_5(void* /* System.Security.Cryptography.X509Certificates.X509Certificate2 */ __self, void* /* System.Security.Cryptography.CompositeMLKem */ privateKey, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.X509Certificates.X509Certificate2 __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.X509Certificates.X509Certificate2>(__self);
+	
+		System.Security.Cryptography.CompositeMLKem privateKeyConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKem>(privateKey);
+	
+	    try {
+			System.Security.Cryptography.X509Certificates.X509Certificate2 __returnValue = __selfConverted.CopyWithPrivateKey(privateKeyConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
 	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_X509Certificates_X509Certificate2_CreateFromPemFile")]
 	internal static void* /* System.Security.Cryptography.X509Certificates.X509Certificate2 */ System_Security_Cryptography_X509Certificates_X509Certificate2_CreateFromPemFile(void* /* System.String */ certPemFilePath, void* /* System.String */ keyPemFilePath, void** /* System.Exception */ __outException)
 	{
@@ -203603,6 +203697,1504 @@ internal unsafe class System_Security_Cryptography_X509Certificates_X509NameType
 	}
 	
 }
+
+
+internal unsafe class System_Security_Cryptography_CompositeMLKem
+{
+	// Unsupported Member "get_Algorithm": Is Special Name
+
+	// Unsupported Member "Encapsulate": Has unsupported parameter(s): ciphertext: Is unsupported Type; 
+
+	// Unsupported Member "Decapsulate": Has unsupported parameter(s): sharedSecret: Is unsupported Type; 
+
+	// Unsupported Member "ImportEncryptedPkcs8PrivateKey": Has unsupported parameter(s): password: Is unsupported Type; 
+
+	// Unsupported Member "ImportFromPem": Has unsupported parameter(s): source: Is unsupported Type; 
+
+	// Unsupported Member "ImportFromEncryptedPem": Has unsupported parameter(s): source: Is unsupported Type; 
+
+	// Unsupported Member "ImportFromEncryptedPem": Has unsupported parameter(s): source: Is unsupported Type; 
+
+	// Unsupported Member "ExportEncryptedPkcs8PrivateKeyPem": Has unsupported parameter(s): password: Is unsupported Type; 
+
+	// Unsupported Member "ExportEncryptedPkcs8PrivateKey": Has unsupported parameter(s): password: Is unsupported Type; 
+
+	// Unsupported Member "TryExportEncryptedPkcs8PrivateKey": Has unsupported parameter(s): destination: Is unsupported Type; 
+
+	// Unsupported Member "TryExportEncryptedPkcs8PrivateKey": Has unsupported parameter(s): password: Is unsupported Type; 
+
+	// Unsupported Member "TryExportEncryptedPkcs8PrivateKey": Has unsupported parameter(s): destination: Is unsupported Type; 
+
+	// Unsupported Member "TryExportPkcs8PrivateKey": Has unsupported parameter(s): destination: Is unsupported Type; 
+
+	// Unsupported Member "TryExportSubjectPublicKeyInfo": Has unsupported parameter(s): destination: Is unsupported Type; 
+
+	// Unsupported Member "ExportEncapsulationKey": Has unsupported parameter(s): destination: Is unsupported Type; 
+
+	// Unsupported Member "TryExportEncapsulationKey": Has unsupported parameter(s): destination: Is unsupported Type; 
+
+	// Unsupported Member "ExportDecapsulationKey": Has unsupported parameter(s): destination: Is unsupported Type; 
+
+	// Unsupported Member "TryExportDecapsulationKey": Has unsupported parameter(s): destination: Is unsupported Type; 
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_IsAlgorithmSupported")]
+	internal static byte /* System.Boolean */ System_Security_Cryptography_CompositeMLKem_IsAlgorithmSupported(void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ algorithm, void** /* System.Exception */ __outException)
+	{
+		System.Security.Cryptography.CompositeMLKemAlgorithm algorithmConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKemAlgorithm>(algorithm);
+	
+	    try {
+			System.Boolean __returnValue = System.Security.Cryptography.CompositeMLKem.IsAlgorithmSupported(algorithmConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_GenerateKey")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKem */ System_Security_Cryptography_CompositeMLKem_GenerateKey(void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ algorithm, void** /* System.Exception */ __outException)
+	{
+		System.Security.Cryptography.CompositeMLKemAlgorithm algorithmConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKemAlgorithm>(algorithm);
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKem __returnValue = System.Security.Cryptography.CompositeMLKem.GenerateKey(algorithmConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_Encapsulate")]
+	internal static void /* System.Void */ System_Security_Cryptography_CompositeMLKem_Encapsulate(void* /* System.Security.Cryptography.CompositeMLKem */ __self, void** /* System.Byte[] */ ciphertext, void** /* System.Byte[] */ sharedSecret, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKem __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKem>(__self);
+	
+		System.Byte[] ciphertextConverted;
+		System.Byte[] sharedSecretConverted;
+	
+	    try {
+			__selfConverted.Encapsulate(out ciphertextConverted, out sharedSecretConverted);
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			if (ciphertext is not null) {
+				*ciphertext = ciphertextConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+			if (sharedSecret is not null) {
+				*sharedSecret = sharedSecretConverted.AllocateGCHandleAndGetAddress();
+			}
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			if (ciphertext is not null) {
+				*ciphertext = null;
+			}
+	
+			if (sharedSecret is not null) {
+				*sharedSecret = null;
+			}
+	
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_Decapsulate")]
+	internal static void* /* System.Byte[] */ System_Security_Cryptography_CompositeMLKem_Decapsulate(void* /* System.Security.Cryptography.CompositeMLKem */ __self, void* /* System.Byte[] */ ciphertext, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKem __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKem>(__self);
+	
+		System.Byte[] ciphertextConverted = InteropUtils.GetInstance<System.Byte[]>(ciphertext);
+	
+	    try {
+			System.Byte[] __returnValue = __selfConverted.Decapsulate(ciphertextConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ImportEncapsulationKey")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKem */ System_Security_Cryptography_CompositeMLKem_ImportEncapsulationKey(void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ algorithm, void* /* System.Byte[] */ source, void** /* System.Exception */ __outException)
+	{
+		System.Security.Cryptography.CompositeMLKemAlgorithm algorithmConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKemAlgorithm>(algorithm);
+		System.Byte[] sourceConverted = InteropUtils.GetInstance<System.Byte[]>(source);
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKem __returnValue = System.Security.Cryptography.CompositeMLKem.ImportEncapsulationKey(algorithmConverted, sourceConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ImportEncapsulationKey_1")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKem */ System_Security_Cryptography_CompositeMLKem_ImportEncapsulationKey_1(void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ algorithm, DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source, void** /* System.Exception */ __outException)
+	{
+		System.Security.Cryptography.CompositeMLKemAlgorithm algorithmConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKemAlgorithm>(algorithm);
+		System.ReadOnlySpan<System.Byte> sourceConverted = source.CopyDataToManagedReadOnlySpanAndFree();
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKem __returnValue = System.Security.Cryptography.CompositeMLKem.ImportEncapsulationKey(algorithmConverted, sourceConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ImportDecapsulationKey")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKem */ System_Security_Cryptography_CompositeMLKem_ImportDecapsulationKey(void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ algorithm, void* /* System.Byte[] */ source, void** /* System.Exception */ __outException)
+	{
+		System.Security.Cryptography.CompositeMLKemAlgorithm algorithmConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKemAlgorithm>(algorithm);
+		System.Byte[] sourceConverted = InteropUtils.GetInstance<System.Byte[]>(source);
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKem __returnValue = System.Security.Cryptography.CompositeMLKem.ImportDecapsulationKey(algorithmConverted, sourceConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ImportDecapsulationKey_1")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKem */ System_Security_Cryptography_CompositeMLKem_ImportDecapsulationKey_1(void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ algorithm, DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source, void** /* System.Exception */ __outException)
+	{
+		System.Security.Cryptography.CompositeMLKemAlgorithm algorithmConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKemAlgorithm>(algorithm);
+		System.ReadOnlySpan<System.Byte> sourceConverted = source.CopyDataToManagedReadOnlySpanAndFree();
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKem __returnValue = System.Security.Cryptography.CompositeMLKem.ImportDecapsulationKey(algorithmConverted, sourceConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ImportSubjectPublicKeyInfo")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKem */ System_Security_Cryptography_CompositeMLKem_ImportSubjectPublicKeyInfo(void* /* System.Byte[] */ source, void** /* System.Exception */ __outException)
+	{
+		System.Byte[] sourceConverted = InteropUtils.GetInstance<System.Byte[]>(source);
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKem __returnValue = System.Security.Cryptography.CompositeMLKem.ImportSubjectPublicKeyInfo(sourceConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ImportSubjectPublicKeyInfo_1")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKem */ System_Security_Cryptography_CompositeMLKem_ImportSubjectPublicKeyInfo_1(DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source, void** /* System.Exception */ __outException)
+	{
+		System.ReadOnlySpan<System.Byte> sourceConverted = source.CopyDataToManagedReadOnlySpanAndFree();
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKem __returnValue = System.Security.Cryptography.CompositeMLKem.ImportSubjectPublicKeyInfo(sourceConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ImportPkcs8PrivateKey")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKem */ System_Security_Cryptography_CompositeMLKem_ImportPkcs8PrivateKey(void* /* System.Byte[] */ source, void** /* System.Exception */ __outException)
+	{
+		System.Byte[] sourceConverted = InteropUtils.GetInstance<System.Byte[]>(source);
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKem __returnValue = System.Security.Cryptography.CompositeMLKem.ImportPkcs8PrivateKey(sourceConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ImportPkcs8PrivateKey_1")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKem */ System_Security_Cryptography_CompositeMLKem_ImportPkcs8PrivateKey_1(DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source, void** /* System.Exception */ __outException)
+	{
+		System.ReadOnlySpan<System.Byte> sourceConverted = source.CopyDataToManagedReadOnlySpanAndFree();
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKem __returnValue = System.Security.Cryptography.CompositeMLKem.ImportPkcs8PrivateKey(sourceConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ImportEncryptedPkcs8PrivateKey")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKem */ System_Security_Cryptography_CompositeMLKem_ImportEncryptedPkcs8PrivateKey(void* /* System.String */ password, void* /* System.Byte[] */ source, void** /* System.Exception */ __outException)
+	{
+		System.String passwordConverted = InteropUtils.GetInstance<System.String>(password);
+		System.Byte[] sourceConverted = InteropUtils.GetInstance<System.Byte[]>(source);
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKem __returnValue = System.Security.Cryptography.CompositeMLKem.ImportEncryptedPkcs8PrivateKey(passwordConverted, sourceConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ImportEncryptedPkcs8PrivateKey_1")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKem */ System_Security_Cryptography_CompositeMLKem_ImportEncryptedPkcs8PrivateKey_1(DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ passwordBytes, DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ source, void** /* System.Exception */ __outException)
+	{
+		System.ReadOnlySpan<System.Byte> passwordBytesConverted = passwordBytes.CopyDataToManagedReadOnlySpanAndFree();
+		System.ReadOnlySpan<System.Byte> sourceConverted = source.CopyDataToManagedReadOnlySpanAndFree();
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKem __returnValue = System.Security.Cryptography.CompositeMLKem.ImportEncryptedPkcs8PrivateKey(passwordBytesConverted, sourceConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ImportFromPem")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKem */ System_Security_Cryptography_CompositeMLKem_ImportFromPem(void* /* System.String */ source, void** /* System.Exception */ __outException)
+	{
+		System.String sourceConverted = InteropUtils.GetInstance<System.String>(source);
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKem __returnValue = System.Security.Cryptography.CompositeMLKem.ImportFromPem(sourceConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ImportFromEncryptedPem")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKem */ System_Security_Cryptography_CompositeMLKem_ImportFromEncryptedPem(void* /* System.String */ source, void* /* System.String */ password, void** /* System.Exception */ __outException)
+	{
+		System.String sourceConverted = InteropUtils.GetInstance<System.String>(source);
+		System.String passwordConverted = InteropUtils.GetInstance<System.String>(password);
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKem __returnValue = System.Security.Cryptography.CompositeMLKem.ImportFromEncryptedPem(sourceConverted, passwordConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ImportFromEncryptedPem_1")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKem */ System_Security_Cryptography_CompositeMLKem_ImportFromEncryptedPem_1(void* /* System.String */ source, void* /* System.Byte[] */ passwordBytes, void** /* System.Exception */ __outException)
+	{
+		System.String sourceConverted = InteropUtils.GetInstance<System.String>(source);
+		System.Byte[] passwordBytesConverted = InteropUtils.GetInstance<System.Byte[]>(passwordBytes);
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKem __returnValue = System.Security.Cryptography.CompositeMLKem.ImportFromEncryptedPem(sourceConverted, passwordBytesConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKeyPem")]
+	internal static void* /* System.String */ System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKeyPem(void* /* System.Security.Cryptography.CompositeMLKem */ __self, void* /* System.String */ password, void* /* System.Security.Cryptography.PbeParameters */ pbeParameters, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKem __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKem>(__self);
+	
+		System.String passwordConverted = InteropUtils.GetInstance<System.String>(password);
+		System.Security.Cryptography.PbeParameters pbeParametersConverted = InteropUtils.GetInstance<System.Security.Cryptography.PbeParameters>(pbeParameters);
+	
+	    try {
+			System.String __returnValue = __selfConverted.ExportEncryptedPkcs8PrivateKeyPem(passwordConverted, pbeParametersConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKeyPem_1")]
+	internal static void* /* System.String */ System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKeyPem_1(void* /* System.Security.Cryptography.CompositeMLKem */ __self, DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ passwordBytes, void* /* System.Security.Cryptography.PbeParameters */ pbeParameters, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKem __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKem>(__self);
+	
+		System.ReadOnlySpan<System.Byte> passwordBytesConverted = passwordBytes.CopyDataToManagedReadOnlySpanAndFree();
+		System.Security.Cryptography.PbeParameters pbeParametersConverted = InteropUtils.GetInstance<System.Security.Cryptography.PbeParameters>(pbeParameters);
+	
+	    try {
+			System.String __returnValue = __selfConverted.ExportEncryptedPkcs8PrivateKeyPem(passwordBytesConverted, pbeParametersConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKey_1")]
+	internal static void* /* System.Byte[] */ System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKey_1(void* /* System.Security.Cryptography.CompositeMLKem */ __self, void* /* System.String */ password, void* /* System.Security.Cryptography.PbeParameters */ pbeParameters, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKem __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKem>(__self);
+	
+		System.String passwordConverted = InteropUtils.GetInstance<System.String>(password);
+		System.Security.Cryptography.PbeParameters pbeParametersConverted = InteropUtils.GetInstance<System.Security.Cryptography.PbeParameters>(pbeParameters);
+	
+	    try {
+			System.Byte[] __returnValue = __selfConverted.ExportEncryptedPkcs8PrivateKey(passwordConverted, pbeParametersConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKey_2")]
+	internal static void* /* System.Byte[] */ System_Security_Cryptography_CompositeMLKem_ExportEncryptedPkcs8PrivateKey_2(void* /* System.Security.Cryptography.CompositeMLKem */ __self, DNReadOnlySpanOfByte /* System.ReadOnlySpan<System.Byte> */ passwordBytes, void* /* System.Security.Cryptography.PbeParameters */ pbeParameters, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKem __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKem>(__self);
+	
+		System.ReadOnlySpan<System.Byte> passwordBytesConverted = passwordBytes.CopyDataToManagedReadOnlySpanAndFree();
+		System.Security.Cryptography.PbeParameters pbeParametersConverted = InteropUtils.GetInstance<System.Security.Cryptography.PbeParameters>(pbeParameters);
+	
+	    try {
+			System.Byte[] __returnValue = __selfConverted.ExportEncryptedPkcs8PrivateKey(passwordBytesConverted, pbeParametersConverted);
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ExportPkcs8PrivateKeyPem")]
+	internal static void* /* System.String */ System_Security_Cryptography_CompositeMLKem_ExportPkcs8PrivateKeyPem(void* /* System.Security.Cryptography.CompositeMLKem */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKem __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKem>(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfConverted.ExportPkcs8PrivateKeyPem();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ExportPkcs8PrivateKey_1")]
+	internal static void* /* System.Byte[] */ System_Security_Cryptography_CompositeMLKem_ExportPkcs8PrivateKey_1(void* /* System.Security.Cryptography.CompositeMLKem */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKem __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKem>(__self);
+	
+	
+	    try {
+			System.Byte[] __returnValue = __selfConverted.ExportPkcs8PrivateKey();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ExportSubjectPublicKeyInfoPem")]
+	internal static void* /* System.String */ System_Security_Cryptography_CompositeMLKem_ExportSubjectPublicKeyInfoPem(void* /* System.Security.Cryptography.CompositeMLKem */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKem __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKem>(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfConverted.ExportSubjectPublicKeyInfoPem();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ExportSubjectPublicKeyInfo_1")]
+	internal static void* /* System.Byte[] */ System_Security_Cryptography_CompositeMLKem_ExportSubjectPublicKeyInfo_1(void* /* System.Security.Cryptography.CompositeMLKem */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKem __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKem>(__self);
+	
+	
+	    try {
+			System.Byte[] __returnValue = __selfConverted.ExportSubjectPublicKeyInfo();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ExportEncapsulationKey")]
+	internal static void* /* System.Byte[] */ System_Security_Cryptography_CompositeMLKem_ExportEncapsulationKey(void* /* System.Security.Cryptography.CompositeMLKem */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKem __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKem>(__self);
+	
+	
+	    try {
+			System.Byte[] __returnValue = __selfConverted.ExportEncapsulationKey();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_ExportDecapsulationKey")]
+	internal static void* /* System.Byte[] */ System_Security_Cryptography_CompositeMLKem_ExportDecapsulationKey(void* /* System.Security.Cryptography.CompositeMLKem */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKem __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKem>(__self);
+	
+	
+	    try {
+			System.Byte[] __returnValue = __selfConverted.ExportDecapsulationKey();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_Dispose")]
+	internal static void /* System.Void */ System_Security_Cryptography_CompositeMLKem_Dispose(void* /* System.Security.Cryptography.CompositeMLKem */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKem __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKem>(__self);
+	
+	
+	    try {
+			__selfConverted.Dispose();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_Algorithm_Get")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ System_Security_Cryptography_CompositeMLKem_Algorithm_Get(void* /* System.Security.Cryptography.CompositeMLKem */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKem __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKem>(__self);
+	
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKemAlgorithm __returnValue = __selfConverted.Algorithm;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_TypeOf")]
+	internal static void* /* System.Type */ System_Security_Cryptography_CompositeMLKem_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Security.Cryptography.CompositeMLKem);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKem_Destroy")]
+	internal static void /* System.Void */ System_Security_Cryptography_CompositeMLKem_Destroy(void* /* System.Security.Cryptography.CompositeMLKem */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+}
+
+
+internal unsafe class System_Security_Cryptography_CompositeMLKemAlgorithm
+{
+	// Unsupported Member "get_Name": Is Special Name
+
+	// Unsupported Member "get_CiphertextSizeInBytes": Is Special Name
+
+	// Unsupported Member "get_SharedSecretSizeInBytes": Is Special Name
+
+	// Unsupported Member "get_MLKem768WithRsaOaep2048": Is Special Name
+
+	// Unsupported Member "get_MLKem768WithRsaOaep3072": Is Special Name
+
+	// Unsupported Member "get_MLKem768WithRsaOaep4096": Is Special Name
+
+	// Unsupported Member "get_MLKem768WithX25519": Is Special Name
+
+	// Unsupported Member "get_MLKem768WithECDiffieHellmanP256": Is Special Name
+
+	// Unsupported Member "get_MLKem768WithECDiffieHellmanP384": Is Special Name
+
+	// Unsupported Member "get_MLKem768WithECDiffieHellmanBrainpoolP256r1": Is Special Name
+
+	// Unsupported Member "get_MLKem1024WithRsaOaep3072": Is Special Name
+
+	// Unsupported Member "get_MLKem1024WithECDiffieHellmanP384": Is Special Name
+
+	// Unsupported Member "get_MLKem1024WithECDiffieHellmanBrainpoolP384r1": Is Special Name
+
+	// Unsupported Member "get_MLKem1024WithX448": Is Special Name
+
+	// Unsupported Member "get_MLKem1024WithECDiffieHellmanP521": Is Special Name
+
+	// Unsupported Member "op_Equality": Is Special Name
+
+	// Unsupported Member "op_Inequality": Is Special Name
+
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_Equals")]
+	internal static byte /* System.Boolean */ System_Security_Cryptography_CompositeMLKemAlgorithm_Equals(void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ __self, void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ other, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKemAlgorithm __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKemAlgorithm>(__self);
+	
+		System.Security.Cryptography.CompositeMLKemAlgorithm otherConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKemAlgorithm>(other);
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.Equals(otherConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_Equals_1")]
+	internal static byte /* System.Boolean */ System_Security_Cryptography_CompositeMLKemAlgorithm_Equals_1(void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ __self, void* /* System.Object */ obj, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKemAlgorithm __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKemAlgorithm>(__self);
+	
+		System.Object objConverted = InteropUtils.GetInstance<System.Object>(obj);
+	
+	    try {
+			System.Boolean __returnValue = __selfConverted.Equals(objConverted);
+			byte __returnValueNative = __returnValue.ToCBool();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return 0;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_GetHashCode")]
+	internal static int /* System.Int32 */ System_Security_Cryptography_CompositeMLKemAlgorithm_GetHashCode(void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKemAlgorithm __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKemAlgorithm>(__self);
+	
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.GetHashCode();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_ToString")]
+	internal static void* /* System.String */ System_Security_Cryptography_CompositeMLKemAlgorithm_ToString(void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKemAlgorithm __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKemAlgorithm>(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfConverted.ToString();
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_Name_Get")]
+	internal static void* /* System.String */ System_Security_Cryptography_CompositeMLKemAlgorithm_Name_Get(void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKemAlgorithm __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKemAlgorithm>(__self);
+	
+	
+	    try {
+			System.String __returnValue = __selfConverted.Name;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_CiphertextSizeInBytes_Get")]
+	internal static int /* System.Int32 */ System_Security_Cryptography_CompositeMLKemAlgorithm_CiphertextSizeInBytes_Get(void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKemAlgorithm __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKemAlgorithm>(__self);
+	
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.CiphertextSizeInBytes;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_SharedSecretSizeInBytes_Get")]
+	internal static int /* System.Int32 */ System_Security_Cryptography_CompositeMLKemAlgorithm_SharedSecretSizeInBytes_Get(void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ __self, void** /* System.Exception */ __outException)
+	{
+		if (__self is null) {
+			throw new ArgumentNullException(nameof(__self));
+		}
+	
+		System.Security.Cryptography.CompositeMLKemAlgorithm __selfConverted = InteropUtils.GetInstance<System.Security.Cryptography.CompositeMLKemAlgorithm>(__self);
+	
+	
+	    try {
+			System.Int32 __returnValue = __selfConverted.SharedSecretSizeInBytes;
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValue;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return -1;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithRsaOaep2048_Get")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithRsaOaep2048_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKemAlgorithm __returnValue = System.Security.Cryptography.CompositeMLKemAlgorithm.MLKem768WithRsaOaep2048;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithRsaOaep3072_Get")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithRsaOaep3072_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKemAlgorithm __returnValue = System.Security.Cryptography.CompositeMLKemAlgorithm.MLKem768WithRsaOaep3072;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithRsaOaep4096_Get")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithRsaOaep4096_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKemAlgorithm __returnValue = System.Security.Cryptography.CompositeMLKemAlgorithm.MLKem768WithRsaOaep4096;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithX25519_Get")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithX25519_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKemAlgorithm __returnValue = System.Security.Cryptography.CompositeMLKemAlgorithm.MLKem768WithX25519;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithECDiffieHellmanP256_Get")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithECDiffieHellmanP256_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKemAlgorithm __returnValue = System.Security.Cryptography.CompositeMLKemAlgorithm.MLKem768WithECDiffieHellmanP256;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithECDiffieHellmanP384_Get")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithECDiffieHellmanP384_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKemAlgorithm __returnValue = System.Security.Cryptography.CompositeMLKemAlgorithm.MLKem768WithECDiffieHellmanP384;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithECDiffieHellmanBrainpoolP256r1_Get")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem768WithECDiffieHellmanBrainpoolP256r1_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKemAlgorithm __returnValue = System.Security.Cryptography.CompositeMLKemAlgorithm.MLKem768WithECDiffieHellmanBrainpoolP256r1;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithRsaOaep3072_Get")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithRsaOaep3072_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKemAlgorithm __returnValue = System.Security.Cryptography.CompositeMLKemAlgorithm.MLKem1024WithRsaOaep3072;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithECDiffieHellmanP384_Get")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithECDiffieHellmanP384_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKemAlgorithm __returnValue = System.Security.Cryptography.CompositeMLKemAlgorithm.MLKem1024WithECDiffieHellmanP384;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithECDiffieHellmanBrainpoolP384r1_Get")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithECDiffieHellmanBrainpoolP384r1_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKemAlgorithm __returnValue = System.Security.Cryptography.CompositeMLKemAlgorithm.MLKem1024WithECDiffieHellmanBrainpoolP384r1;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithX448_Get")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithX448_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKemAlgorithm __returnValue = System.Security.Cryptography.CompositeMLKemAlgorithm.MLKem1024WithX448;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithECDiffieHellmanP521_Get")]
+	internal static void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ System_Security_Cryptography_CompositeMLKemAlgorithm_MLKem1024WithECDiffieHellmanP521_Get(void** /* System.Exception */ __outException)
+	{
+	
+	    try {
+			System.Security.Cryptography.CompositeMLKemAlgorithm __returnValue = System.Security.Cryptography.CompositeMLKemAlgorithm.MLKem1024WithECDiffieHellmanP521;
+			void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+	
+	        if (__outException is not null) {
+	            *__outException = null;
+	        }
+	
+			return __returnValueNative;
+	    } catch (Exception __exception) {
+	        if (__outException is not null) {
+	            void* __exceptionHandleAddress = __exception.AllocateGCHandleAndGetAddress();
+	
+	            *__outException = __exceptionHandleAddress;
+	        }
+	
+			return null;
+		} finally {
+		}
+	}
+	
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_TypeOf")]
+	internal static void* /* System.Type */ System_Security_Cryptography_CompositeMLKemAlgorithm_TypeOf()
+	{
+	
+		System.Type __returnValue = typeof(System.Security.Cryptography.CompositeMLKemAlgorithm);
+		void* __returnValueNative = __returnValue.AllocateGCHandleAndGetAddress();
+		return __returnValueNative;
+	}
+	
+	[UnmanagedCallersOnly(EntryPoint = "System_Security_Cryptography_CompositeMLKemAlgorithm_Destroy")]
+	internal static void /* System.Void */ System_Security_Cryptography_CompositeMLKemAlgorithm_Destroy(void* /* System.Security.Cryptography.CompositeMLKemAlgorithm */ __self)
+	{
+	
+		InteropUtils.FreeIfAllocated(__self);
+	}
+	
+}
+
 
 
 
