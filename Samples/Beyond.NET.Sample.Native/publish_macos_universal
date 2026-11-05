@@ -2,6 +2,59 @@
 
 set -e
 
+# NativeAOT links against OpenSSL and Brotli on macOS; Homebrew installs are not on the default linker path.
+configure_native_aot_linker_paths() {
+  local paths=()
+
+  if command -v brew >/dev/null 2>&1; then
+    for pkg in openssl@3 brotli; do
+      local prefix
+      prefix="$(brew --prefix "${pkg}" 2>/dev/null)" || continue
+
+      if [ -d "${prefix}/lib" ]; then
+        paths+=("${prefix}/lib")
+      fi
+    done
+  fi
+
+  for dir in \
+    /opt/homebrew/opt/openssl@3/lib \
+    /usr/local/opt/openssl@3/lib \
+    /opt/homebrew/opt/brotli/lib \
+    /usr/local/opt/brotli/lib; do
+    if [ -d "${dir}" ]; then
+      paths+=("${dir}")
+    fi
+  done
+
+  if [ ${#paths[@]} -eq 0 ]; then
+    echo "Warning: OpenSSL/Brotli library paths not found. NativeAOT publish may fail with \"library 'ssl' not found\"."
+    echo "Install dependencies with: brew install openssl@3 brotli"
+    return
+  fi
+
+  local joined=""
+  local dir
+
+  for dir in "${paths[@]}"; do
+    case ":${joined}:" in
+      *":${dir}:"*) ;;
+      *)
+        if [ -n "${joined}" ]; then
+          joined="${joined}:${dir}"
+        else
+          joined="${dir}"
+        fi
+        ;;
+    esac
+  done
+
+  export LIBRARY_PATH="${joined}${LIBRARY_PATH:+:${LIBRARY_PATH}}"
+  echo "NativeAOT linker library paths: ${joined}"
+}
+
+configure_native_aot_linker_paths
+
 OUTPUT_PRODUCT_NAME="libBeyondDotNETSampleNative"
 BUILD_CONFIGURATION="Release"
 
