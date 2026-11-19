@@ -11,9 +11,5 @@
     <ProjectReference Include="..\Beyond.NET.Builder.DotNET\Beyond.NET.Builder.DotNET.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="build_android.sh" CopyToOutputDirectory="PreserveNewest" />
-  </ItemGroup>
-
 </Project>
 

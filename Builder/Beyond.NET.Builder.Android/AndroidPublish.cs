@@ -20,6 +20,7 @@ public static class AndroidPublish
             new[] {
                 "-c",
                 configuration,
+                "-p:DisableUnsupportedError=true",
                 "-p:PublishAotUsingRuntimePack=true"
             }
         );
