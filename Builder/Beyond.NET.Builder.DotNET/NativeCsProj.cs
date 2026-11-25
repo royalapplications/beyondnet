@@ -235,6 +235,22 @@ public class NativeCsProj
     </When>
   </Choose>
 
+  <!-- linux-bionic NativeAOT still requires these properties:
+       https://github.com/dotnet/runtime/blob/release/10.0/src/coreclr/nativeaot/docs/android-bionic.md -->
+  <Choose>
+    <When Condition="$(RuntimeIdentifier.StartsWith('linux-bionic'))">
+      <PropertyGroup>
+        <DisableUnsupportedError>true</DisableUnsupportedError>
+        <PublishAotUsingRuntimePack>true</PublishAotUsingRuntimePack>
+      </PropertyGroup>
+      <!-- Workaround for "version script assignment of 'V1.0' to symbol '_init' failed".
+           Same flag as Samples/Beyond.NET.Sample.Native. -->
+      <ItemGroup>
+        <LinkerArg Include="-Wl,--undefined-version" />
+      </ItemGroup>
+    </When>
+  </Choose>
+
   <!-- Item Excludes -->
   <PropertyGroup>
     <DefaultItemExcludes>$(DefaultItemExcludes);.gitignore;*.sln.DotSettings;</DefaultItemExcludes>

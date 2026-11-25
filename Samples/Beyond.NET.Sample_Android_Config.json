@@ -1,0 +1,19 @@
+{
+  "AssemblyPath": "Beyond.NET.Sample.Managed/bin/Release/Beyond.NET.Sample.Managed.dll",
+  "Build": {
+    "Target": "android-arm64",
+    "ProductName": "BeyondDotNETSample",
+    "ProductOutputPath": "Beyond.NET.Sample.Android/app/src/main/jniLibs"
+  },
+  "CSharpUnmanagedOutputPath": "Beyond.NET.Sample.Native/Generated.cs",
+  "COutputPath": "Beyond.NET.Sample.C/Generated.h",
+  "KotlinOutputPath": "Beyond.NET.Sample.Android/app/src/main/java/com/example/beyondnetsampleandroid/Generated.kt",
+  "KotlinPackageName": "com.example.beyondnetsampleandroid",
+  "KotlinNativeLibraryName": "BeyondDotNETSample",
+  "EmitUnsupported": false,
+  "GenerateTypeCheckedDestroyMethods": true,
+  "EnableGenericsSupport": true,
+  "DoNotGenerateDocumentation": false,
+  "DoNotDeleteTemporaryDirectories": true
+}
+

@@ -28,4 +28,6 @@ public static class RuntimeIdentifier
     /// Made up, not part of .NET!
     /// </summary>
     public const string APPLE_UNIVERSAL = $"{PlatformIdentifier.Apple}-{TargetIdentifier.UNIVERSAL}";
+
+    public const string Android_ARM64 = $"{PlatformIdentifier.Android}-{TargetIdentifier.ARM64}";
 }
